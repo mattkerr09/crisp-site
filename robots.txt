@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crispvideo.app/sitemap.xml
