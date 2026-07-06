@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "crisp-ui-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8977", "--directory", "/Users/matthewkerr/Projects/Outlier/crisp/ui/src"],
+      "port": 8977
+    }
+  ]
+}
