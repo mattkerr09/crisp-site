@@ -1,7 +1,7 @@
 {
-  "number": 186,
-  "sha": "845ed36",
+  "number": 187,
+  "sha": "f9fe688",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Audio 'Reduce wind noise' mode (firm high-pass cuts mic wind buffeting while keeping voice), reverse now stays A/V-synced on clips whose audio and video lengths differ, plus 18 editing lanes and reliability fixes."
+  "notes": "In-app updates: Crisp now updates itself from inside the app — no more downloading a DMG. Plus the new 'Reduce wind noise' audio mode, a reverse A/V-sync fix, and 18 editing lanes."
 }
