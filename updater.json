@@ -1,10 +1,10 @@
 {
-  "version": "0.1.189",
-  "notes": "New Compress lane: shrink a video's file size in one tap (great for email/upload) \u2014 three quality levels, dimensions kept, nothing uploaded. Delivered to you automatically via Crisp's new in-app updater.",
-  "pub_date": "2026-07-07T22:14:17Z",
+  "version": "0.1.191",
+  "notes": "New Audio 'Level' mode \u2014 evens out loud and quiet so quiet talking is audible without the loud parts blasting. Plus a compress reliability fix. Delivered automatically via Crisp's in-app updater.",
+  "pub_date": "2026-07-07T23:54:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ORlg4dGJxWUxEdG04R2J6TDhoemswOXZxUjF4cmdpRURZOS81SkJVMVU5SGFDejBxQU53N1VHSldXRWtVWHJxdEh5ZFBiN0h1WWxoSlQ3SG4zYWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDYyNDU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxN3E5VUVwbWdzNVkrSHBXd1BEc2V4NFVDRVBTbVNHTW9SSm5yRGhtRWtTQlJVU0tMMEY3WlRWSlhGYzltQzI1WGsyWFVoVzZFR1NCNVJ4c2VWdzZBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhQZWdXczdkT3hPSzJBZldNSWtjQ2loaTR5WHNXekVNMjJPRHp3VW9wTWdQTU9oRHdUWXlpKy9VMWsyU3VwNFlCL3dwM2libHN2NmdvRzE5Mld3SVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDY4NDYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4N1I2Mm5kTndETElKRGREbElLSmNwT1JqdVcrVnd2WVcybTEwbDhsRmJEaFhBWVpGdjA0NDFuUWsrbjhqV3ZQMjdzYkpwTkJFM21qNjZkMGxmV0tCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

@@ -1,7 +1,7 @@
 {
-  "number": 189,
-  "sha": "a21437d",
+  "number": 191,
+  "sha": "5b289ad",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Compress lane \u2014 shrink a video's file size for email/upload (three levels, dimensions kept, offline). 18 editing lanes. In-app updates deliver this automatically."
+  "notes": "New Audio 'Level' mode \u2014 even out loud & quiet so quiet talking is audible. 18 lanes, 7 audio modes. In-app updates deliver this automatically."
 }
