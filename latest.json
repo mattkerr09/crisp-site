@@ -1,7 +1,7 @@
 {
-  "number": 182,
-  "sha": "3935132",
+  "number": 183,
+  "sha": "e747292",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Audio Normalize (auto loudness leveling), 16 editing lanes, in-app update checks, and reliability fixes."
+  "notes": "New Stabilize lane (steady shaky footage), 17 editing lanes, Audio Normalize, in-app update checks, and reliability fixes."
 }
