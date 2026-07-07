@@ -1,7 +1,7 @@
 {
-  "number": 187,
-  "sha": "f9fe688",
+  "number": 189,
+  "sha": "a21437d",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "In-app updates: Crisp now updates itself from inside the app — no more downloading a DMG. Plus the new 'Reduce wind noise' audio mode, a reverse A/V-sync fix, and 18 editing lanes."
+  "notes": "New Compress lane \u2014 shrink a video's file size for email/upload (three levels, dimensions kept, offline). 18 editing lanes. In-app updates deliver this automatically."
 }

@@ -1,10 +1,10 @@
 {
-  "version": "0.1.187",
-  "notes": "In-app updates are here: Crisp now updates itself \u2014 no more downloading a DMG. Plus the new 'Reduce wind noise' audio mode and reverse A/V-sync fix.",
-  "pub_date": "2026-07-07T20:35:30Z",
+  "version": "0.1.189",
+  "notes": "New Compress lane: shrink a video's file size in one tap (great for email/upload) \u2014 three quality levels, dimensions kept, nothing uploaded. Delivered to you automatically via Crisp's new in-app updater.",
+  "pub_date": "2026-07-07T22:14:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1xOVdESXE4aytUMmVuUDREWTREMkRSMUtHSzR5STB6Q2VWS1Y4a2ZFM21tK2l0dEl3Y2lUclFBWXFMeGtCVldRNElqZitLQzNzNXRVWnh4NmU3ZEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDU2NTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqWWhTMjladEJNSDNHeWVCNkxhY0N2WGcycTMzRGY1V3lqUDVOcnJzNFBGWDRkckcrU29FV1lscVRRRnozVTlZVHJQR09YQld0enR2SkluTVhKZDNEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ORlg4dGJxWUxEdG04R2J6TDhoemswOXZxUjF4cmdpRURZOS81SkJVMVU5SGFDejBxQU53N1VHSldXRWtVWHJxdEh5ZFBiN0h1WWxoSlQ3SG4zYWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDYyNDU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxN3E5VUVwbWdzNVkrSHBXd1BEc2V4NFVDRVBTbVNHTW9SSm5yRGhtRWtTQlJVU0tMMEY3WlRWSlhGYzltQzI1WGsyWFVoVzZFR1NCNVJ4c2VWdzZBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
