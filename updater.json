@@ -1,5 +1,5 @@
 {
-  "version": "0.1.187",
+  "version": "0.1.999",
   "notes": "In-app updates are here: Crisp now updates itself \u2014 no more downloading a DMG. Plus the new 'Reduce wind noise' audio mode and reverse A/V-sync fix.",
   "pub_date": "2026-07-07T20:35:30Z",
   "platforms": {
@@ -7,5 +7,6 @@
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1xOVdESXE4aytUMmVuUDREWTREMkRSMUtHSzR5STB6Q2VWS1Y4a2ZFM21tK2l0dEl3Y2lUclFBWXFMeGtCVldRNElqZitLQzNzNXRVWnh4NmU3ZEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDU2NTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqWWhTMjladEJNSDNHeWVCNkxhY0N2WGcycTMzRGY1V3lqUDVOcnJzNFBGWDRkckcrU29FV1lscVRRRnozVTlZVHJQR09YQld0enR2SkluTVhKZDNEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
-  }
+  },
+  "_test_original_version": "0.1.187"
 }
