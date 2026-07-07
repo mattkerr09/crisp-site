@@ -1,7 +1,7 @@
 {
-  "number": 180,
-  "sha": "678f459",
+  "number": 182,
+  "sha": "3935132",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "16 editing lanes including the new Loop (repeat a clip N times), in-app update checks, and reliability fixes."
+  "notes": "New Audio Normalize (auto loudness leveling), 16 editing lanes, in-app update checks, and reliability fixes."
 }
