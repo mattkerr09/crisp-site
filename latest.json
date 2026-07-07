@@ -1,7 +1,7 @@
 {
-  "number": 184,
-  "sha": "3740332",
+  "number": 186,
+  "sha": "845ed36",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Audio Denoise (reduce background noise/hiss/hum), 17 editing lanes, Stabilize, in-app update checks, and reliability fixes."
+  "notes": "New Audio 'Reduce wind noise' mode (firm high-pass cuts mic wind buffeting while keeping voice), reverse now stays A/V-synced on clips whose audio and video lengths differ, plus 18 editing lanes and reliability fixes."
 }
