@@ -1,10 +1,10 @@
 {
-  "version": "0.1.195",
-  "notes": "New Convert lane \u2014 change a video's container to MP4 or MOV so a stubborn file will upload or open; lossless (video kept) when the codec fits. Plus a fade-out reliability fix. Delivered automatically via Crisp's in-app updater.",
-  "pub_date": "2026-07-08T03:19:32Z",
+  "version": "0.1.197",
+  "notes": "Fit-to-duration: say 'fit to 15 seconds' and Crisp speeds the whole clip to land at that length — perfect for Reels/TikTok/Shorts limits.",
+  "pub_date": "2026-07-08T05:01:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFkZE9TQUR1WU5kK3JCRmJmRFpBMTUvZDU5NHdPa29EeEF2a1NpenZ6WjZTQVpNajZaU0xueW0wdU00RmVWcEl2VUNRb01ORlRLaWxNdFFSVG04Y0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDgwNzY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDcnFDSnJ4bERxNjJFQW5BWjRWYnVQemNRU3FqK0FQYkViYXFpcVRiMjczd3pvRFppQUx6cTRoRmZaVktwTWRIYzZpVjVvSWZUYTlpRVk1ek5PU0xEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx3TlRnK2t1NEtoRy95U1laZHlkWnNrY2F3ZDhHRUF0Z0JZbVhTU1JCVDFHbU5qSFFqMEZYRmxBSDlPcE4reGd0OUtDTFB3R0ZhR3FqVXVxa2VwWVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDg2NjkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5bGZVUjRXQ280OFlJanUvTUcyRXMzeUpDN29UdGtjYVp6M3p0YTg2VkR2SGxqYUN1TTZpRUJreHI0YWV4NzZ1V0F0TDVpbGtnT0piYlI1cncxMWlDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

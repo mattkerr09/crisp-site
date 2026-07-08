@@ -1,7 +1,7 @@
 {
-  "number": 195,
-  "sha": "4c0b0a1",
+  "number": 197,
+  "sha": "6e2e93e",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Convert lane \u2014 change a video to MP4/MOV (lossless when the codec fits). 20 editing lanes. In-app updates deliver this automatically."
+  "notes": "Fit-to-duration on the Speed lane \u2014 'fit to 15 seconds' speeds the whole clip to land at that length."
 }
