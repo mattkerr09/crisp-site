@@ -1,10 +1,10 @@
 {
-  "version": "0.1.193",
-  "notes": "New Border lane \u2014 add a colored margin around your video (the framed / Instagram-post look), 7 colors and three thicknesses, fully offline. Delivered automatically via Crisp's in-app updater.",
-  "pub_date": "2026-07-08T01:37:32Z",
+  "version": "0.1.195",
+  "notes": "New Convert lane \u2014 change a video's container to MP4 or MOV so a stubborn file will upload or open; lossless (video kept) when the codec fits. Plus a fade-out reliability fix. Delivered automatically via Crisp's in-app updater.",
+  "pub_date": "2026-07-08T03:19:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM0bkJkMWlQbU56S2lMMFlmVUZodlRtZEZDZndvbDA4c25aeG12U01nbmVoeGtkUzBHTFJJUmxjWWJ4QktXd0ZacnJoSWk2VGhtWGVndGhOOUFLdkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDc0NjUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0SUdaenYrWnQwb0xBa3RWSk9lRVlxR1p5Zzc3UzB5K2owck5QckpFWlg1dlloZ0tNbVFBcmFsbjF0aXRLZElScWp0UVJDb0gvQjhna25nSzF1ekJEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFkZE9TQUR1WU5kK3JCRmJmRFpBMTUvZDU5NHdPa29EeEF2a1NpenZ6WjZTQVpNajZaU0xueW0wdU00RmVWcEl2VUNRb01ORlRLaWxNdFFSVG04Y0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDgwNzY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDcnFDSnJ4bERxNjJFQW5BWjRWYnVQemNRU3FqK0FQYkViYXFpcVRiMjczd3pvRFppQUx6cTRoRmZaVktwTWRIYzZpVjVvSWZUYTlpRVk1ek5PU0xEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

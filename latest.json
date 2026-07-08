@@ -1,7 +1,7 @@
 {
-  "number": 193,
-  "sha": "8f57281",
+  "number": 195,
+  "sha": "4c0b0a1",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Border lane \u2014 add a colored margin around your video (framed / social-post look). 19 editing lanes. In-app updates deliver this automatically."
+  "notes": "New Convert lane \u2014 change a video to MP4/MOV (lossless when the codec fits). 20 editing lanes. In-app updates deliver this automatically."
 }
