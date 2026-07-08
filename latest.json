@@ -1,7 +1,7 @@
 {
-  "number": 191,
-  "sha": "5b289ad",
+  "number": 193,
+  "sha": "8f57281",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "New Audio 'Level' mode \u2014 even out loud & quiet so quiet talking is audible. 18 lanes, 7 audio modes. In-app updates deliver this automatically."
+  "notes": "New Border lane \u2014 add a colored margin around your video (framed / social-post look). 19 editing lanes. In-app updates deliver this automatically."
 }

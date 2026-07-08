@@ -1,10 +1,10 @@
 {
-  "version": "0.1.191",
-  "notes": "New Audio 'Level' mode \u2014 evens out loud and quiet so quiet talking is audible without the loud parts blasting. Plus a compress reliability fix. Delivered automatically via Crisp's in-app updater.",
-  "pub_date": "2026-07-07T23:54:23Z",
+  "version": "0.1.193",
+  "notes": "New Border lane \u2014 add a colored margin around your video (the framed / Instagram-post look), 7 colors and three thicknesses, fully offline. Delivered automatically via Crisp's in-app updater.",
+  "pub_date": "2026-07-08T01:37:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhQZWdXczdkT3hPSzJBZldNSWtjQ2loaTR5WHNXekVNMjJPRHp3VW9wTWdQTU9oRHdUWXlpKy9VMWsyU3VwNFlCL3dwM2libHN2NmdvRzE5Mld3SVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDY4NDYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4N1I2Mm5kTndETElKRGREbElLSmNwT1JqdVcrVnd2WVcybTEwbDhsRmJEaFhBWVpGdjA0NDFuUWsrbjhqV3ZQMjdzYkpwTkJFM21qNjZkMGxmV0tCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM0bkJkMWlQbU56S2lMMFlmVUZodlRtZEZDZndvbDA4c25aeG12U01nbmVoeGtkUzBHTFJJUmxjWWJ4QktXd0ZacnJoSWk2VGhtWGVndGhOOUFLdkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDc0NjUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0SUdaenYrWnQwb0xBa3RWSk9lRVlxR1p5Zzc3UzB5K2owck5QckpFWlg1dlloZ0tNbVFBcmFsbjF0aXRLZElScWp0UVJDb0gvQjhna25nSzF1ekJEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
