@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to add a vignette to a video on a Mac (2026) — free, offline | Crisp</title>
+<meta name="description" content="Add a vignette to a video on a Mac in one tap — softly darken the edges for a cinematic, focus-the-eye look — 100% offline. No account, no upload, no watermark. Just type &quot;add a vignette&quot;.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/add-a-vignette-to-video-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to add a vignette to a video on a Mac — free">
+<meta property="og:description" content="Softly darken the edges of a clip for a cinematic vignette on your Mac, 100% offline — one tap, no upload, no watermark.">
+<meta property="og:url" content="https://crispvideo.app/how-to/add-a-vignette-to-video-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add a vignette to a video on a Mac">
+<meta name="twitter:description" content="Softly darken the edges of a clip for a cinematic look on your Mac — offline, no upload.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  ol.steps{list-style:none;margin:1.3rem 0;padding:0;counter-reset:step;}
+  ol.steps>li{position:relative;padding:0 0 1.1rem 2.6rem;counter-increment:step;}
+  ol.steps>li::before{content:counter(step);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+  ol.steps>li h3{margin:.1rem 0 .3rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to add a vignette to a video on a Mac","description":"Add a vignette to a video on a Mac, 100% offline: drop in the clip, ask for a vignette (or open the Color lane), and Crisp softly darkens the edges toward the corners on-device so the eye is drawn to the centre. Nothing is uploaded.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
+{"@type":"HowToStep","position":1,"name":"Open Crisp and drop in your video","text":"Download the free Crisp app for Mac, open it, and drag your video onto the window. Everything runs on-device — nothing is uploaded."},
+{"@type":"HowToStep","position":2,"name":"Ask for a vignette","text":"Type \"add a vignette\" in the plain-English box, or open the Color lane. Crisp switches to grading and turns the vignette on."},
+{"@type":"HowToStep","position":3,"name":"Press it","text":"Crisp darkens the frame gradually toward the corners while the centre stays bright — a soft, natural falloff, not a hard black ring."},
+{"@type":"HowToStep","position":4,"name":"Save","text":"The graded clip is saved beside your original — no watermark, no upload."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I add a vignette to a video on a Mac for free?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp. Drop your clip in and type \"add a vignette\" (or open the Color lane). Crisp darkens the edges toward the corners entirely on your Mac — no account, no upload, no watermark."}},
+{"@type":"Question","name":"What is a vignette?","acceptedAnswer":{"@type":"Answer","text":"A vignette gradually darkens the edges and corners of the frame while the centre stays bright. It draws the eye to the subject and gives footage a warmer, more cinematic, film-like feel."}},
+{"@type":"Question","name":"Does a vignette crop or shrink the video?","acceptedAnswer":{"@type":"Answer","text":"No. A vignette only changes brightness toward the edges — the whole picture stays the same size and every pixel is still there. It is a lighting effect, not a crop."}},
+{"@type":"Question","name":"Can I combine a vignette with a colour grade?","acceptedAnswer":{"@type":"Answer","text":"Yes. The vignette lives in the same Color lane as Crisp's looks (cinematic, moody, warm, and more), so you can grade the colour and darken the edges in the same pass — for example a moody look with a vignette."}},
+{"@type":"Question","name":"Is my video uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp adds the vignette entirely on your Mac — nothing is uploaded, so there's no queue, no size cap, and your footage never leaves the device."}}
+]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">Guide · Add a vignette on Mac</div>
+  <h1>How to add a <span class="grad">vignette</span> to a video on a Mac</h1>
+  <p class="lede">A <strong>vignette</strong> softly darkens the edges of the frame so the eye is pulled to the centre — it's one of the quickest ways to make a clip look <strong>cinematic and film-like</strong>. Here's how to <strong>add a vignette to a video on a Mac</strong> in one tap, <strong>100% offline</strong>: the whole picture stays, and there's no account, no upload, no watermark.</p>
+  <div class="updated">Updated July 2026 · step-by-step</div>
+
+  <h2>The fastest way: just ask</h2>
+  <p>Crisp has a plain-English box ("Or just tell Crisp what to do…"). Drop your video in and type it:</p>
+  <ul>
+    <li><strong>add a vignette</strong> — the classic soft-dark-edges look</li>
+    <li><strong>darken the edges</strong> — same effect, plain words</li>
+    <li><strong>give it a vignette</strong> — Crisp reads it either way</li>
+    <li><strong>add a subtle vignette</strong> — a gentle, understated falloff</li>
+  </ul>
+  <p>Crisp reads the request, switches to the <strong>Color</strong> lane, and turns the vignette on — you just press the button.</p>
+
+  <h2>Step by step: the Color lane</h2>
+  <ol class="steps">
+    <li>
+      <h3>Open Crisp and drop in your video</h3>
+      <p>Get the free <a href="https://crispvideo.app/#download">Crisp app for Mac</a> and drag your clip onto the window. Nothing is uploaded — the whole job runs on your Mac.</p>
+    </li>
+    <li>
+      <h3>Ask for a vignette (or open the Color lane)</h3>
+      <p>Type <strong>add a vignette</strong>, or choose <strong>Color</strong> in the task row. Crisp turns the vignette on.</p>
+    </li>
+    <li>
+      <h3>Press it</h3>
+      <p>Crisp darkens the frame <strong>gradually toward the corners</strong> while the centre stays bright — a soft, natural falloff, not a hard black ring.</p>
+    </li>
+    <li>
+      <h3>Save</h3>
+      <p>The graded clip lands beside your original — watermark-free.</p>
+    </li>
+  </ol>
+
+  <div class="box">
+    <h3 style="margin-top:0">A vignette is lighting, not a crop</h3>
+    <p style="margin-bottom:0">A vignette only changes <strong>brightness</strong> toward the edges — the frame stays exactly the same size and every pixel is still there. That's different from <a href="https://crispvideo.app/how-to/crop-video-mac/">Crop</a> (which trims the edges off) and from <a href="https://crispvideo.app/how-to/add-a-border-to-video-mac/">Border</a> (which paints a solid margin <em>around</em> the picture). Crisp uses a smooth radial falloff so the darkening looks natural, the way a real lens vignettes.</p>
+  </div>
+
+  <h2>Vignette vs Border vs Crop</h2>
+  <p>Three edge-related tools, three different jobs:</p>
+  <ul>
+    <li><strong>Vignette</strong> — softly <em>darken</em> the edges (lighting). That's this guide.</li>
+    <li><strong>Border</strong> — paint a solid coloured <em>margin</em> around the video. See <a href="https://crispvideo.app/how-to/add-a-border-to-video-mac/">add a border</a>.</li>
+    <li><strong>Crop</strong> — <em>trim</em> the edges off. See <a href="https://crispvideo.app/how-to/crop-video-mac/">crop a video</a>.</li>
+  </ul>
+
+  <h2>Stack it with a look</h2>
+  <p>The vignette lives in the same <strong>Color</strong> lane as Crisp's one-tap looks, so you can grade the colour <em>and</em> darken the edges in one pass — a <a href="https://crispvideo.app/how-to/color-grade-video-mac/">moody or cinematic grade</a> with a vignette reads instantly as "shot on something nicer than a phone". Add a little <strong>film grain</strong> too and it's a full retro-film treatment, all on-device.</p>
+
+  <h2>Crisp vs iMovie vs online vignette tools</h2>
+  <table class="cmp">
+    <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>Online tools</th></tr></thead>
+    <tbody>
+      <tr><td>One-tap vignette</td><td class="yes">Yes</td><td class="no">No direct control</td><td class="yes">Varies</td></tr>
+      <tr><td>Grade + vignette in one pass</td><td class="yes">Yes</td><td class="no">Fiddly</td><td class="no">Rarely</td></tr>
+      <tr><td>Plain-English request</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>100% offline, nothing uploaded</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Uploads your clip</td></tr>
+      <tr><td>Price</td><td class="yes">Free during beta</td><td class="yes">Free</td><td class="no">Free + upsell</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">iMovie has no direct "vignette" control (you'd overlay a darkened shape); online tools upload your footage first. Crisp adds a real vignette in one tap and keeps it local.</p>
+
+  <h2>Why offline matters</h2>
+  <ul>
+    <li><strong>Your footage stays yours.</strong> The "add vignette to video online" tools upload your clip first. Crisp does it on your Mac.</li>
+    <li><strong>No queue, no size cap.</strong> It works on the whole file locally.</li>
+    <li><strong>Fast.</strong> HEVC hardware encoding on Apple Silicon.</li>
+    <li><strong>Stack it.</strong> Grade the colour, add a vignette, add grain — all on-device.</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Give your video a vignette — offline</h2>
+    <p>Free to try on your Mac. One tap for a soft, cinematic vignette — no account, no upload, nothing leaves your device.</p>
+    <a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a>
+    <p class="muted" style="margin-top:.8rem;margin-bottom:0">Apple Silicon · macOS 12+ · Notarized</p>
+  </div>
+
+  <h2>FAQ</h2>
+  <h3>How do I add a vignette to a video on a Mac for free?</h3>
+  <p>Use Crisp: drop your clip in and type "add a vignette" (or open the Color lane). It darkens the edges toward the corners on your Mac — no account, no upload, no watermark.</p>
+  <h3>Does it crop or shrink the video?</h3>
+  <p>No — a vignette only darkens toward the edges. The frame stays the same size and every pixel is still there. It's lighting, not a crop.</p>
+  <h3>Can I combine it with a colour grade?</h3>
+  <p>Yes — the vignette is part of the Color lane, so you can apply a look (cinematic, moody, warm…) and the vignette in the same pass.</p>
+  <h3>Is my video uploaded anywhere?</h3>
+  <p>No — it's all done on your Mac, so there's no upload, no queue, no size cap.</p>
+  <h3>Related guides</h3>
+  <p><a href="https://crispvideo.app/how-to/color-grade-video-mac/">Color grade a video</a> · <a href="https://crispvideo.app/how-to/add-a-border-to-video-mac/">Add a border</a> · <a href="https://crispvideo.app/how-to/crop-video-mac/">Crop a video</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
