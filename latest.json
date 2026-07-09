@@ -1,7 +1,7 @@
 {
-  "number": 197,
-  "sha": "6e2e93e",
+  "number": 234,
+  "sha": "74c718c",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Fit-to-duration on the Speed lane \u2014 'fit to 15 seconds' speeds the whole clip to land at that length."
+  "notes": "Upscales ~half the file size at the same quality \u2014 plus new looks, audio effects, and an alpha/screen-recording grade fix."
 }

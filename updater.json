@@ -1,10 +1,10 @@
 {
-  "version": "0.1.197",
-  "notes": "Fit-to-duration: say 'fit to 15 seconds' and Crisp speeds the whole clip to land at that length — perfect for Reels/TikTok/Shorts limits.",
-  "pub_date": "2026-07-08T05:01:00Z",
+  "version": "0.1.234",
+  "notes": "Upscales are now ~half the file size at the same visual quality. New looks (vignette, film grain, matte, sepia), audio effects (echo/reverb, telephone, pitch shift), and a fix so grading screen recordings / alpha clips no longer fails.",
+  "pub_date": "2026-07-09T15:14:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx3TlRnK2t1NEtoRy95U1laZHlkWnNrY2F3ZDhHRUF0Z0JZbVhTU1JCVDFHbU5qSFFqMEZYRmxBSDlPcE4reGd0OUtDTFB3R0ZhR3FqVXVxa2VwWVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNDg2NjkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5bGZVUjRXQ280OFlJanUvTUcyRXMzeUpDN29UdGtjYVp6M3p0YTg2VkR2SGxqYUN1TTZpRUJreHI0YWV4NzZ1V0F0TDVpbGtnT0piYlI1cncxMWlDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1FMStkQllveVZTUm9IVHd3SVR3VkVoYjZveTZXeFNSdFZnUmdLZWxHL0VKQVNjNDk2UHpjOEdweUMxYzBvVDZCbmVHRGY5OHNTYWdZendZbXlMN2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjA4OTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxOUJMUXVUaTZTV1FuZEMyNkF2SkhjNUptenVzYnVES1dRMFJIbDFJK3hYbEJtU3VPZmxwUlVqSFVWYXV4RW5nVDJqcHUwcjFZaUM2NlZnSUF1SURDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
