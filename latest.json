@@ -1,7 +1,7 @@
 {
-  "number": 236,
-  "sha": "3d82c92",
+  "number": 237,
+  "sha": "e461067",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "The Editor: a real timeline \u2014 combine clips, trim, preview, auto-montage, export. All offline."
+  "notes": "Editor polish: rotation-correct exports, tight A/V sync, looping music, autosave \u2014 plus the alpha-file export crash fixed for good."
 }

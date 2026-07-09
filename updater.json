@@ -1,10 +1,10 @@
 {
-  "version": "0.1.236",
-  "notes": "NEW: the Editor \u2014 a real timeline. Import clips into a media bin, arrange and trim them on a timeline with a live preview player, apply looks/speed/fades/music to the whole project, auto-montage the clips you arranged, and export. Plus: the version badge now shows your build number so you can see updates land.",
-  "pub_date": "2026-07-09T16:25:26Z",
+  "version": "0.1.237",
+  "notes": "Editor fixes from a deep review: portrait phone clips export portrait (not pillarboxed), audio stays in sync across cuts, a short song loops instead of cutting your movie short, new 'None' transition, your project auto-saves \u2014 and the 'ayuv' export crash on alpha/screen-recording files is fixed everywhere, permanently.",
+  "pub_date": "2026-07-09T18:11:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcrYXc0d3BOcjMxNU5JaENJZElFZVNOMVNPcWhHRWR4TVRBVCtURE5XeXJHQ0MvOEgvNXMwUEE0ZmpFQVBmMWlnOHFJL1paQjh0b0dhZ1hwZWJqdnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjEzODY2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaREZxSW1SbGtSbkVHVjUwYjBIUnVyaERPQjlWeXBKRFRzV0wvb1NUUTVvVDZjWVdCTS9QZVpORk5yTlY3VWlNNnplV2lCR2VmVEUwTWd0aXlpWWdBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUptR3VNdmNYckJwc2crQW4xSmNpK2JMQ3JVQU5iN0xqRzREK241VW1uWDRGYkFER1dlUFAzVDFkdGRLbWduTjJzTGNmSHVSZVZKSmx5WG9DVUhwRVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjE5MzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOeDkxcFFVdUZyR3FVN0diSS82eVdJKytVcjAxNEpZWmZIY1lDSFBhUnN0TVhVb0ZXcWlxcG9VMytzQ01zUDhrVkxZWk0xQ2FqNE84MzVTZ0FNU1pCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
