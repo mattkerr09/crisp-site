@@ -1,10 +1,10 @@
 {
-  "version": "0.1.237",
-  "notes": "Editor fixes from a deep review: portrait phone clips export portrait (not pillarboxed), audio stays in sync across cuts, a short song loops instead of cutting your movie short, new 'None' transition, your project auto-saves \u2014 and the 'ayuv' export crash on alpha/screen-recording files is fixed everywhere, permanently.",
-  "pub_date": "2026-07-09T18:11:22Z",
+  "version": "0.1.238",
+  "notes": "Crisp is now a real editor. The app opens straight into the timeline: import clips, arrange and trim them, and use every Crisp feature \u2014 Enhance, Looks, Audio effects, Speed, Rotate, Reframe, Stabilize, Reverse \u2014 as a tool on any clip, non-destructively with one-click Revert. Type what you want ('make it cinematic', 'mute it') and Crisp does it to the selected clip. Jobs live in a drawer; photos get their own Enhance tool in the media bin.",
+  "pub_date": "2026-07-09T18:45:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUptR3VNdmNYckJwc2crQW4xSmNpK2JMQ3JVQU5iN0xqRzREK241VW1uWDRGYkFER1dlUFAzVDFkdGRLbWduTjJzTGNmSHVSZVZKSmx5WG9DVUhwRVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjE5MzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOeDkxcFFVdUZyR3FVN0diSS82eVdJKytVcjAxNEpZWmZIY1lDSFBhUnN0TVhVb0ZXcWlxcG9VMytzQ01zUDhrVkxZWk0xQ2FqNE84MzVTZ0FNU1pCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5Db1V2d3YzRTl2SWE5UFUvSklOcE9uZ25HeFZiTURFSXd6Q3p5N1VPdGkvdFdDQ2JVZFQvWCtHWW5WcEVPRVVlaVROV2dCczE2RE8xdGpSRGVQMWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjIyMzAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpubURBcjNXYUxEeWRYU3RlMytnTXgrcU5FaHUwWkR2ZnpsU1VVS25BdWhMaHVMRi9kR3lqa2xUbnd5VGd3YjFENXFrM3FmOE9rVGloLzhieFYwMmJCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
