@@ -1,10 +1,10 @@
 {
-  "version": "0.1.234",
-  "notes": "Upscales are now ~half the file size at the same visual quality. New looks (vignette, film grain, matte, sepia), audio effects (echo/reverb, telephone, pitch shift), and a fix so grading screen recordings / alpha clips no longer fails.",
-  "pub_date": "2026-07-09T15:14:01Z",
+  "version": "0.1.236",
+  "notes": "NEW: the Editor \u2014 a real timeline. Import clips into a media bin, arrange and trim them on a timeline with a live preview player, apply looks/speed/fades/music to the whole project, auto-montage the clips you arranged, and export. Plus: the version badge now shows your build number so you can see updates land.",
+  "pub_date": "2026-07-09T16:25:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1FMStkQllveVZTUm9IVHd3SVR3VkVoYjZveTZXeFNSdFZnUmdLZWxHL0VKQVNjNDk2UHpjOEdweUMxYzBvVDZCbmVHRGY5OHNTYWdZendZbXlMN2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjA4OTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxOUJMUXVUaTZTV1FuZEMyNkF2SkhjNUptenVzYnVES1dRMFJIbDFJK3hYbEJtU3VPZmxwUlVqSFVWYXV4RW5nVDJqcHUwcjFZaUM2NlZnSUF1SURDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcrYXc0d3BOcjMxNU5JaENJZElFZVNOMVNPcWhHRWR4TVRBVCtURE5XeXJHQ0MvOEgvNXMwUEE0ZmpFQVBmMWlnOHFJL1paQjh0b0dhZ1hwZWJqdnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjEzODY2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaREZxSW1SbGtSbkVHVjUwYjBIUnVyaERPQjlWeXBKRFRzV0wvb1NUUTVvVDZjWVdCTS9QZVpORk5yTlY3VWlNNnplV2lCR2VmVEUwTWd0aXlpWWdBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

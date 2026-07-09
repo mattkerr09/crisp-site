@@ -1,7 +1,7 @@
 {
-  "number": 234,
-  "sha": "74c718c",
+  "number": 236,
+  "sha": "3d82c92",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Upscales ~half the file size at the same quality \u2014 plus new looks, audio effects, and an alpha/screen-recording grade fix."
+  "notes": "The Editor: a real timeline \u2014 combine clips, trim, preview, auto-montage, export. All offline."
 }
