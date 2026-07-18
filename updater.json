@@ -1,10 +1,10 @@
 {
-  "version": "0.1.238",
-  "notes": "Crisp is now a real editor. The app opens straight into the timeline: import clips, arrange and trim them, and use every Crisp feature \u2014 Enhance, Looks, Audio effects, Speed, Rotate, Reframe, Stabilize, Reverse \u2014 as a tool on any clip, non-destructively with one-click Revert. Type what you want ('make it cinematic', 'mute it') and Crisp does it to the selected clip. Jobs live in a drawer; photos get their own Enhance tool in the media bin.",
-  "pub_date": "2026-07-09T18:45:30Z",
+  "version": "0.1.243",
+  "notes": "Fixes: escape the clip panel (\u2039 Back to project, Esc, or click empty timeline), Make-a-Montage reachable again, delete clips from Media (hover \u00d7), and Max (SeedVR2) is back in the Enhance tool. Plus per-clip Look / Speed / Mute as live, stackable adjustments applied at export.",
+  "pub_date": "2026-07-18T02:13:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5Db1V2d3YzRTl2SWE5UFUvSklOcE9uZ25HeFZiTURFSXd6Q3p5N1VPdGkvdFdDQ2JVZFQvWCtHWW5WcEVPRVVlaVROV2dCczE2RE8xdGpSRGVQMWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzNjIyMzAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpubURBcjNXYUxEeWRYU3RlMytnTXgrcU5FaHUwWkR2ZnpsU1VVS25BdWhMaHVMRi9kR3lqa2xUbnd5VGd3YjFENXFrM3FmOE9rVGloLzhieFYwMmJCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4U2dKNXpjaE1BdmQ4SE9hNE9PNFV2Qm1na0NsalZjZ3BJbG1iN0QvQ3NpRU9CclB1Nnp1c3RuUWRiUDdJQ1lPYTAvczdybGdxRGp4ajh4RXpHelFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQwNTk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHRHdPVjBsbllhT2dMTldDeW5jL2dRYzVxM3BqNlI1YWtpMlJrZ2g0VklCVWxQcDY0a3ErZElOeFhRVUkydXI2SERnd1hRcm5UT3VDK0tqcVNRME5DUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

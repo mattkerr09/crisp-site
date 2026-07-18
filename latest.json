@@ -1,7 +1,7 @@
 {
-  "number": 238,
-  "sha": "4722309",
+  "number": 243,
+  "sha": "bf3eb6f",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Crisp is now a real editor: timeline-first, with every feature as a non-destructive tool on your clips."
+  "notes": "Editor fixes (clip-panel escape, montage, media delete, Max upscale) + per-clip Look/Speed/Mute."
 }
