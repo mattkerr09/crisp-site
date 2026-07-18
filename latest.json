@@ -1,7 +1,7 @@
 {
-  "number": 248,
-  "sha": "d7f740f",
+  "number": 250,
+  "sha": "a66613e",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Photos on the timeline (stills)."
+  "notes": "Ken Burns on stills + photo-first timeline fix."
 }

@@ -1,10 +1,10 @@
 {
-  "version": "0.1.248",
-  "notes": "New: Photos on the timeline. Drop a photo in and it becomes a held frame (3s by default \u2014 drag the edge to change) for title cards, intros/outros and slideshows, mixed right in with your video clips and exported together.",
-  "pub_date": "2026-07-18T04:19:11Z",
+  "version": "0.1.250",
+  "notes": "New: photos on the timeline now get a gentle cinematic zoom (Ken Burns) by default \u2014 slideshows and title cards feel pro. Prefer a static photo? Pick Hold in the clip's Photo motion. Plus a fix so photo-first timelines export correctly.",
+  "pub_date": "2026-07-18T05:00:33Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg1Y2prWTVNSkZFVVhmdkFZdlRpVUd1Z2lVeXkvK2dUbWNTZ0Fld3UxZFE0Ny9haUlKblNDd2ZhblVYOSs1VnBxdkZtNUVJTWZuYTBUbGRKd2QwN1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQ4MTEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuMW53eElPSklmOU5ma3VPenlDZDFYVlN2cjdPcnRkeUdaakMrREd0UHNRc2E2Y3FXY0gzTlNnWHJwVi93STdKOHpyOFpaL0dkaFl0UmhiTndTR1NEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJRUDN0WE1CNERMNWxlMHNONnlROVB1RmYwellscUhXTTE1VnNFYXFGQzFObXMyaExTTSs3NXhaaXI5VlREZUwwWEFVQmlHNHl1ZFNvWXJCTWE1OXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzUwNjgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negprUlEwZVFBbGM3Mk84Qi9qT2h5TjN1eTJac3BCOWRmdkFrREhpSFV4ZGFIQ29tMm1CZ1d2Y25EUG55ZUV3SGEwaEtNY0Mxb0E2dHBoOHlROTBwK0VEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
