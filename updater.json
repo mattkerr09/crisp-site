@@ -1,10 +1,10 @@
 {
-  "version": "0.1.243",
-  "notes": "Fixes: escape the clip panel (\u2039 Back to project, Esc, or click empty timeline), Make-a-Montage reachable again, delete clips from Media (hover \u00d7), and Max (SeedVR2) is back in the Enhance tool. Plus per-clip Look / Speed / Mute as live, stackable adjustments applied at export.",
-  "pub_date": "2026-07-18T02:13:40Z",
+  "version": "0.1.244",
+  "notes": "Fixes Max (SeedVR2) upscale \u2014 it ran the full restore then crashed at the final encode on every clip; now completes. Plus the earlier editor fixes: escape the clip panel, montage reachable, delete from Media, and per-clip Look/Speed/Mute.",
+  "pub_date": "2026-07-18T02:34:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4U2dKNXpjaE1BdmQ4SE9hNE9PNFV2Qm1na0NsalZjZ3BJbG1iN0QvQ3NpRU9CclB1Nnp1c3RuUWRiUDdJQ1lPYTAvczdybGdxRGp4ajh4RXpHelFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQwNTk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHRHdPVjBsbllhT2dMTldDeW5jL2dRYzVxM3BqNlI1YWtpMlJrZ2g0VklCVWxQcDY0a3ErZElOeFhRVUkydXI2SERnd1hRcm5UT3VDK0tqcVNRME5DUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtQWStBRTBxSW5ER0N1NHZCSFdEYm5lTHJpRTZ4aUlGM3ZFK2N5TEtKUnptcU84WjVIK1U5UGQ4NUp1aFFnZ3ZuMFVOZUVUckNYTHg1WUMrVkZJS0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQxOTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWNTZyYVBnWi9oNk5MNDc3V2E2WkZJcm1LNHgyTnRqT1grSWVTbUQzY1BPUXNsUHk4dm9tc2RUVmZlbGpZQjEzNXNoQWd5djR5VENocVBGRmFOQnpBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

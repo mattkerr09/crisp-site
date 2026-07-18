@@ -1,7 +1,7 @@
 {
-  "number": 243,
-  "sha": "bf3eb6f",
+  "number": 244,
+  "sha": "6a87452",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Editor fixes (clip-panel escape, montage, media delete, Max upscale) + per-clip Look/Speed/Mute."
+  "notes": "Max (SeedVR2) upscale now completes; editor fixes + per-clip ops."
 }
