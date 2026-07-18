@@ -1,10 +1,10 @@
 {
-  "version": "0.1.244",
-  "notes": "Fixes Max (SeedVR2) upscale \u2014 it ran the full restore then crashed at the final encode on every clip; now completes. Plus the earlier editor fixes: escape the clip panel, montage reachable, delete from Media, and per-clip Look/Speed/Mute.",
-  "pub_date": "2026-07-18T02:34:08Z",
+  "version": "0.1.245",
+  "notes": "New: Split at the playhead (\u2702 in the transport, or press S) to cut a clip in two \u2014 each half edits independently. Cleaner inspector: Look, Speed and Mute are live per-clip adjustments applied at export; the Tools palette is now just the heavier one-shot effects.",
+  "pub_date": "2026-07-18T03:05:27Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtQWStBRTBxSW5ER0N1NHZCSFdEYm5lTHJpRTZ4aUlGM3ZFK2N5TEtKUnptcU84WjVIK1U5UGQ4NUp1aFFnZ3ZuMFVOZUVUckNYTHg1WUMrVkZJS0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQxOTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWNTZyYVBnWi9oNk5MNDc3V2E2WkZJcm1LNHgyTnRqT1grSWVTbUQzY1BPUXNsUHk4dm9tc2RUVmZlbGpZQjEzNXNoQWd5djR5VENocVBGRmFOQnpBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVVS0NOU1BHR3dVNkdBbU51clg5dTZiUnlsTzhHM21zcXl5bTNPbE4vSi9VNkgyM0EvbVhzcVJxWkZ2YkJiVXhqdHhmcU96KzQxWEt0KzBCZWV6VFFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQzODI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxSXNVRUN1ZGdMWS82QWMrSTFKVVpLOVo1RnlxcGdDdFJJbWVac0c4L28xZGpldWl3Z1FKN0hZYTJqanJ4NHFxWkZ5eDJiYXVIellsQkduM1VnYVFDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

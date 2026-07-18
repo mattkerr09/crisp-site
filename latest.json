@@ -1,7 +1,7 @@
 {
-  "number": 244,
-  "sha": "6a87452",
+  "number": 245,
+  "sha": "ec8dffc",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Max (SeedVR2) upscale now completes; editor fixes + per-clip ops."
+  "notes": "Split-at-playhead + cleaner inspector (Look/Speed/Mute as clip properties)."
 }
