@@ -1,10 +1,10 @@
 {
-  "version": "0.1.245",
-  "notes": "New: Split at the playhead (\u2702 in the transport, or press S) to cut a clip in two \u2014 each half edits independently. Cleaner inspector: Look, Speed and Mute are live per-clip adjustments applied at export; the Tools palette is now just the heavier one-shot effects.",
-  "pub_date": "2026-07-18T03:05:27Z",
+  "version": "0.1.246",
+  "notes": "New: Upscale on export \u2014 arrange and grade your edit, then export the whole thing Enhanced to 4K (or a SeedVR2 Max remake) in one job. The edit-then-upscale flow, all offline.",
+  "pub_date": "2026-07-18T03:41:25Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVVS0NOU1BHR3dVNkdBbU51clg5dTZiUnlsTzhHM21zcXl5bTNPbE4vSi9VNkgyM0EvbVhzcVJxWkZ2YkJiVXhqdHhmcU96KzQxWEt0KzBCZWV6VFFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQzODI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxSXNVRUN1ZGdMWS82QWMrSTFKVVpLOVo1RnlxcGdDdFJJbWVac0c4L28xZGpldWl3Z1FKN0hZYTJqanJ4NHFxWkZ5eDJiYXVIellsQkduM1VnYVFDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVB3emgvWUJJdllzNVp0a1RIekJyNmd6TzA4QlR3UzVVY0xWYzJqSUdCaWlLcDlBRzR4L3pTS0dPY3BpVkc0dWkrbU5jaUVsdno4cG5kSytydWxLSnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0MzQ1OTEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkR2luVHlMZW1tenJIdktWblpzYUpYMjIxenY3NDF2Um5uUHV5RU93OWpYRUpSaCtCMVUxRnE0NXFqc0E1TjBGMHpQdDcwK3V0eE5tQTVDYWVPNGxDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }

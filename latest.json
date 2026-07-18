@@ -1,7 +1,7 @@
 {
-  "number": 245,
-  "sha": "ec8dffc",
+  "number": 246,
+  "sha": "61b4ba2",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Split-at-playhead + cleaner inspector (Look/Speed/Mute as clip properties)."
+  "notes": "Upscale on export (edit \u2192 4K in one job)."
 }
