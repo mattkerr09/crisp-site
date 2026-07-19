@@ -1,7 +1,7 @@
 {
-  "number": 250,
-  "sha": "a66613e",
+  "number": 253,
+  "sha": "9127cac",
   "version": "0.1.0-beta",
   "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
-  "notes": "Ken Burns on stills + photo-first timeline fix."
+  "notes": "Full-screen preview + zoom/pan, and right-click clip menu (Split here, Duplicate, Set In/Out, Remove)."
 }
