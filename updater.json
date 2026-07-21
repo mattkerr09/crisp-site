@@ -1,10 +1,10 @@
 {
-  "version": "0.1.259",
-  "notes": "Crisp Pro is here \u2014 a one-time $19 unlocks watermark-free exports, Max Quality (generative restore), and batch processing. The timeline editor and 4K upscaling stay free (free exports carry a small \u201cMade with Crisp\u201d mark). Also: HDR exports are now always preserved untouched, plus container and export-reliability fixes.",
-  "pub_date": "2026-07-19T19:46:41Z",
+  "version": "0.1.263",
+  "notes": "Fixes Pro activation (license keys were being rejected). Adds Split Screen \u2014 stack two clips top/bottom, side-by-side, picture-in-picture or 2x2 grid.",
+  "pub_date": "2026-07-21T19:14:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUorQjZRMk5GVXlzQndXRUlPNjVjMVkza0d0WCtDM055eUd2ZENnQjBoUkJSbGlUKzZtRndoalY4ZVQvT2xpc29YaWJnaUU0ZGJHSGxVVEhHelpydGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NDkwMzEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQZmc1a0NoVS9iSCthV0VwRldlb2dCQmhDRjZrdWVvWS9QTHpScnpRbHpQbnlCNmFSMEtYdjg0TWlpQk1TT1ZJZEpGUjhZYWNRQXR3M09QbitxOWpCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUEvb2U2TWRDZ2VsaC8xWVBiV0RHVnIzRUhmSFVTZHhxd3NVRVYxMVVyelZhQmhMZzhjN3lZTXA3SG05NThVYTRNb2tWZitTZ2NwemluSzlGR3Fxb2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NjYxMDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2UEVzZXM3S2lXNU94SDYrQUd0NmFIbTY5aDBLRXlSck9SNnJqa0RQYUdKTmFDTkJVU2Q5dHhkcmdvY0x0SlpEdFpTbXhjajhFcXR0WWliQ2lVMEpCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
