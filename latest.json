@@ -1,10 +1,10 @@
 {
-  "version": "0.1.267",
-  "notes": "Photos no longer disappear from the timeline when you apply a tool. Clearer errors when Max quality fails. Plus the 0.1.265 activation fix.",
+  "version": "0.1.270",
+  "notes": "Max quality now runs in ~11GB (was 60GB) and no longer crashes; fixes the Max paywall leak and iPhone/HEIC exports.",
   "pub_date": "2026-07-21T19:14:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBEUG1jVVlEUmlHZDRYMmdGR0NSMGlIM2x5N2E5UWtiVnNobTMwVTA5SjBNRDhQUmhpNDRabGpFUWtMNUZOMC9vVHJzOTFha0RsS09oWTd1TW1naGdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0Njg5MDk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpubHdScVVYcG1pU05QKzU0Tjdsc0ludlBCSVRHWE1nVjFnN2o3KzFCeFZQUk9aOEdFcmx3KzcwY043bEhmdzRMck9qMXlFSGhGeVc1UVBlcGdJcnNDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhJSG0wUDgwamY3TERsOWcxVzNmWUo1aGYxTTdWMW9sN2pmdEpzMEpxZGVuNkRzSEtFY0F6SEZCSGFobzdMRXpJcC9ndGY0SWc1ckpHL3BzcmxCeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NzU2OTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2YXViY01CYnNXdXFmNGM5M2xwRm1uVXl1VE5OWkxoamFrL1hYUWNjeC9XSzNoRGxQOXJ3U3phLy9YRTNNaWYxRTR4ZFlrQUVqVlk2UG1nMFJmL01DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
