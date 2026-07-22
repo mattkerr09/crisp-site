@@ -1,10 +1,10 @@
 {
-  "version": "0.1.263",
-  "notes": "Fixes Pro activation (license keys were being rejected). Adds Split Screen \u2014 stack two clips top/bottom, side-by-side, picture-in-picture or 2x2 grid.",
+  "version": "0.1.265",
+  "notes": "Activation fix (critical): Cloudflare was blocking every license activation. Max quality no longer swap-crashes your Mac (60GB peak -> bounded). Enhance no longer truncates video when audio ends early. New: Split Screen.",
   "pub_date": "2026-07-21T19:14:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUEvb2U2TWRDZ2VsaC8xWVBiV0RHVnIzRUhmSFVTZHhxd3NVRVYxMVVyelZhQmhMZzhjN3lZTXA3SG05NThVYTRNb2tWZitTZ2NwemluSzlGR3Fxb2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NjYxMDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2UEVzZXM3S2lXNU94SDYrQUd0NmFIbTY5aDBLRXlSck9SNnJqa0RQYUdKTmFDTkJVU2Q5dHhkcmdvY0x0SlpEdFpTbXhjajhFcXR0WWliQ2lVMEpCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVjaHBHTHlHL2dGYlBhR25pRDRIaWFLYjJjY2xvWjJBd0NLalI5bEZCTWpvZkI3d1I1WnFNM284YWlGODZzTEZtdjRvSUkvTmNFZkVDTFkwV2MxdmdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NjgzMzY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3Zjl1ZUFGZXhSNHZnd3hRSHNVWHNGbzYxZE9tRm9KN054a0V5cENOcjRFVTAxM0tIUmZCTE5hbDkzaFFvdnRFRlp1aXdhRXE3M0t3OVY2QzdtNDdEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
