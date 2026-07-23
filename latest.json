@@ -1,10 +1,10 @@
 {
-  "version": "0.1.276",
-  "notes": "Fixes a bug where enhancing a trimmed clip could produce a file with no video at all while reporting success, restores HDR/iPhone video support in Enhance and Max, and makes undo reliable across every edit.",
-  "pub_date": "2026-07-23T07:39:00Z",
+  "version": "0.1.279",
+  "notes": "Security: the engine no longer answers pages served from other local ports. Fixes a crash when previewing during a render, and stops a leftover engine from a previous run being used after an update.",
+  "pub_date": "2026-07-23T09:05:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl0TjV4dmdoTXk5OXZzb2JDeG5GTGRtTmRzVm51WDRXNVNmd3BQdlJScEJtNGlzZ1VoOTdNMHFlVHE3RHBDYSswVWhFV0NNdHNTYWVZdjNwQmVoVlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NzkyMzUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6OHBCcFlIY3lQYW5TR2N5M3E5cVVyZWhkcUZYV0ZZcFNLOUlSME9qcmhRbEJkSGh1cGlnZzNjak9mdDFhVFFXZWsybndNRGowUE9CMGQrUDlHMlBCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA2UTYveHNiZ2pJaG1zVnI2RllzaEg0UmZIOWw4K3AzV2FlUHVWT3l1eTEvWk1ybDBEWDdOTmZGaTFySThYdDh5aGJrYUwwNjFTNjIxUGxCZzFXTWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0Nzk0NTg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwUE0xajhsbVpTRTlDbW8xUENITnBHcS9TQ3RCRUZGYmpmNlcxdXRReHpmQ0h2SHB4c2NYeFowdURjSk42ZzhBY0NqNTNpdE9PbDlGcU5TcmxzM1BBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
