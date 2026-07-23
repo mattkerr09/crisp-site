@@ -1,10 +1,10 @@
 {
-  "version": "0.1.286",
-  "notes": "Fixes 20 more bugs found by an adversarial code review: quitting mid-render left ffmpeg running invisibly, the Unlock Pro window was unreadable in Light mode, and the plan card could promise a job different from the one that ran.",
-  "pub_date": "2026-07-23T14:47:42Z",
+  "version": "0.1.289",
+  "notes": "Fixes 12 more bugs from the code review: one photo could blow the whole movie's resolution, portrait phone clips got the wrong Auto settings, a ProRes + colour edit could export an empty file, Smart Condense ignored targets over 64s, and the plan could promise a job different from the one that ran.",
+  "pub_date": "2026-07-23T18:27:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4YjdlQmovTVVRRDVoTW9PT0JyQ1ZUdkQzZ0Z3ekhwcFRaM1pESGdnUy9HaTg2N3JIZkxDVDh4MFN2eFprMFFPUTl5Y3pDa0w5c2hDNERHOUVoMUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODE3OTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIWEgwUSt3bXdCT1hiVER2S01YdWdvN0NjWllpbEpiN2pyYmJLNkJDWllMcnBrRDFGYjlsaFE4dnE3cWIxZXQ1dFlMNmk2VWNIOEhZNkMwY2Z0dU1Cdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVArLzIvVWhGOEtacjJ2V2tFdzF1UnJuSVNoMjdGVGtOVUh5V3Eyc21EY3J0M1B1NkpLc1Z5UytCUlV4dFV4eGNYcWpHZDQ4UC9ja3V5V3JTME12OEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODMxMTE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkL1NSTUVYTlpFK3JrTmRzR1dXWk9IN0VrRFp6NlZ2RmRBRTc2SzZCS3Z0MC91NWh0alg2WU5iSDFjQmJneWlEdU1SbzBLWGlzK05BMGRjWE44QUxBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
