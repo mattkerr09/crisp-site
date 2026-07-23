@@ -1,10 +1,10 @@
 {
-  "version": "0.1.279",
-  "notes": "Security: the engine no longer answers pages served from other local ports. Fixes a crash when previewing during a render, and stops a leftover engine from a previous run being used after an update.",
-  "pub_date": "2026-07-23T09:05:00Z",
+  "version": "0.1.284",
+  "notes": "Fixes 14 bugs found by an adversarial code review: undo could hand back footage you had cut, split screen ran to the longest clip with the short one frozen, iPhone HDR came back grey through Max, and a slow connection could tell a paying customer their key was invalid.",
+  "pub_date": "2026-07-23T13:49:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA2UTYveHNiZ2pJaG1zVnI2RllzaEg0UmZIOWw4K3AzV2FlUHVWT3l1eTEvWk1ybDBEWDdOTmZGaTFySThYdDh5aGJrYUwwNjFTNjIxUGxCZzFXTWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0Nzk0NTg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwUE0xajhsbVpTRTlDbW8xUENITnBHcS9TQ3RCRUZGYmpmNlcxdXRReHpmQ0h2SHB4c2NYeFowdURjSk42ZzhBY0NqNTNpdE9PbDlGcU5TcmxzM1BBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpoeUdTNXBoQlpFMG5WV0RkV2U0QzRVWEhiSmxMak1kb2VFZDdtVjdSWm5VVlZtT2JmTkpZOXNKQXQ4akwySjFZTVRBQjg4MGQraEhab01RcUF0N0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODEzOTAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNUzdvNmw4Vm83bktIMXVnVjJKSGxJSkJhaDM4aGYvbmEyMG5Va0FVbUpmdDZ0QUFxZys4SjF3eEp5NFFvOC9KeWtqMmtlZkRMMFMzRGRpZDR6dHJEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
