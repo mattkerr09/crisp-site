@@ -1,10 +1,10 @@
 {
-  "version": "0.1.289",
-  "notes": "Fixes 12 more bugs from the code review: one photo could blow the whole movie's resolution, portrait phone clips got the wrong Auto settings, a ProRes + colour edit could export an empty file, Smart Condense ignored targets over 64s, and the plan could promise a job different from the one that ran.",
-  "pub_date": "2026-07-23T18:27:00Z",
+  "version": "0.1.291",
+  "notes": "More code-review fixes: HEVC 10-bit exports keep full precision, Stop now halts a Max render within a second (not minutes), cancelling a loop no longer leaves a temp file, the Unlock Pro window traps keyboard focus, and previews work from the Shared folder.",
+  "pub_date": "2026-07-23T18:46:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVArLzIvVWhGOEtacjJ2V2tFdzF1UnJuSVNoMjdGVGtOVUh5V3Eyc21EY3J0M1B1NkpLc1Z5UytCUlV4dFV4eGNYcWpHZDQ4UC9ja3V5V3JTME12OEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODMxMTE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkL1NSTUVYTlpFK3JrTmRzR1dXWk9IN0VrRFp6NlZ2RmRBRTc2SzZCS3Z0MC91NWh0alg2WU5iSDFjQmJneWlEdU1SbzBLWGlzK05BMGRjWE44QUxBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9uK3kxWmZqaUtZc3h6SFN5aGpaT0lrdWcxaHQrK2IvdGpYVGZ1QXdmV0hnNzdrWW9uMXdXVklicDl0WW1lY2ZrTi9zeGVtREN4ZFBnSFE1aEtSZVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODMyMzI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPdUlOemcvV2hEakR0cGtGc1NRNmRhejlNeVJPeUJwNmZXdDlLZ1BkaTg4ZnYzdnMzeUttaFU1ZDJtdnBrY3VLTUxnaVI2aHRZMnM5cnJNVFlVejlEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
