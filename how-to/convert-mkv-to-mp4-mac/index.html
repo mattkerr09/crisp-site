@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to convert MKV to MP4 on a Mac without re-encoding (2026) — Crisp</title>
+<meta name="description" content="MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to convert MKV to MP4 on a Mac">
+<meta property="og:description" content="MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.">
+<meta property="og:url" content="https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to convert MKV to MP4 on a Mac">
+<meta name="twitter:description" content="MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to convert MKV to MP4 on a Mac","description":"MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does converting MKV to MP4 lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not if you copy the streams instead of re-encoding. The video and audio data are moved into a different container untouched, so the result is bit-identical. Re-encoding does lose quality."}},{"@type":"Question","name":"Why won't my MKV play on a Mac?","acceptedAnswer":{"@type":"Answer","text":"QuickTime doesn't support the MKV container. The video inside is often perfectly playable h.264 or HEVC — it's the wrapper macOS objects to, which is why a container swap fixes it in seconds."}},{"@type":"Question","name":"What if the audio doesn't work after converting?","acceptedAnswer":{"@type":"Answer","text":"MKV commonly carries codecs MP4 doesn't allow, chiefly DTS and FLAC. Those need re-encoding to AAC while the video is still copied — you lose a little audio quality and no picture quality."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › MKV to MP4</div>
+  <h1>How to convert MKV to MP4 on a Mac</h1>
+
+  <p class="lede">Most of the time this is a container swap, not a conversion: the video and audio
+  are copied across untouched and the whole thing takes seconds regardless of file size. Nothing is
+  re-encoded and nothing is lost. The command is
+  <code>ffmpeg -i in.mkv -c copy out.mp4</code>, and if that works for you the rest of this page is
+  optional reading.</p>
+
+  <h2>What a container actually is</h2>
+  <p>MKV and MP4 are boxes, not formats. The picture inside is h.264, HEVC, AV1 or similar, and the
+  sound is AAC, AC3, DTS or FLAC. The box decides how those streams are labelled and interleaved —
+  it does not decide how they look. That is why the conversion is usually free: you are relabelling,
+  not re-compressing.</p>
+  <p>QuickTime and most Apple software simply do not open the MKV box, even when the h.264 inside is
+  something they play perfectly. That mismatch — playable content in an unsupported wrapper — is the
+  entire reason this question exists.</p>
+
+  <h2>When the copy works, and when it doesn't</h2>
+  <table>
+    <thead><tr><th>Inside the MKV</th><th>Straight copy to MP4?</th></tr></thead>
+    <tbody>
+      <tr><td>h.264 video</td><td class="yes">Yes</td></tr>
+      <tr><td>HEVC / h.265 video</td><td class="yes">Yes</td></tr>
+      <tr><td>AAC or AC3 audio</td><td class="yes">Yes</td></tr>
+      <tr><td>AV1 video</td><td>Usually — support is recent but real</td></tr>
+      <tr><td>DTS audio</td><td class="no">No — re-encode the audio only</td></tr>
+      <tr><td>FLAC audio</td><td class="no">No — re-encode the audio only</td></tr>
+      <tr><td>VP9 video</td><td class="no">No — MP4 won't carry it</td></tr>
+      <tr><td>SRT / ASS subtitles</td><td>Partly — MP4 subtitle support is limited</td></tr>
+    </tbody>
+  </table>
+  <p>When only the audio is the problem, re-encode only the audio:
+  <code>-c:v copy -c:a aac -b:a 192k</code>. The picture stays bit-identical and you take a small,
+  usually inaudible hit on sound. Re-encoding the video too, which is what a careless tool does, costs
+  you real picture quality and an hour of your afternoon for no reason.</p>
+
+  <h2>The subtitle catch</h2>
+  <p>MKV is popular partly because it handles subtitles well — multiple tracks, styled ASS, and image
+  subtitles ripped from discs. MP4's subtitle support is much narrower. Copy an MKV with styled
+  subtitles into MP4 and they may arrive stripped of formatting, converted to plain text, or missing
+  entirely.</p>
+  <p>If the subtitles matter, extract them to a separate .srt before converting, and keep the MKV.
+  This is one of the few cases where the original container is genuinely the better one to hold on to.</p>
+
+  <h2>Three ways to actually do it</h2>
+  <ol>
+    <li><strong>ffmpeg</strong>, if you have it: <code>ffmpeg -i in.mkv -c copy out.mp4</code>. Free,
+    seconds, lossless. The correct answer for a one-off.</li>
+    <li><strong>HandBrake</strong>, which is free and excellent — but note that HandBrake always
+    re-encodes. That is what it is for. Use it when you also want to compress; do not use it for a
+    pure container swap.</li>
+    <li><strong>A general video app</strong>, when the conversion is part of something larger: the
+    file also needs trimming, cleaning, or upscaling. Doing all of it in one pass beats a container
+    swap followed by a separate lossy re-encode.</li>
+  </ol>
+
+  <h2>In Crisp</h2>
+  <p>Drop the MKV in and export as MP4. Where the streams are compatible it copies them rather than
+  re-encoding, so you keep the original quality; where the audio can't ride along it re-encodes the
+  audio alone and leaves the picture untouched. If the clip also needs cleaning up, that runs in the
+  same export instead of being a second lossy generation — and it all happens on your Mac.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
