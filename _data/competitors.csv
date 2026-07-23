@@ -1,0 +1,22 @@
+slug,name,category,pricing_model,price_2026,offline,mac_native,covered,note
+topaz-video-ai,Topaz Video AI,ai-upscaler,subscription,$299/yr,yes,yes,yes,Killed one-time licence Oct 2025; the single biggest source of alternative-seeking traffic
+aiarty-video-enhancer,Aiarty Video Enhancer,ai-upscaler,one-time,$149,yes,yes,no,Lifetime licence 3 PCs; the closest one-time rival
+unifab,UniFab All-In-One,ai-upscaler,one-time,$319.99,yes,partial,no,22 bundled AI tools; most expensive lifetime
+hitpaw-vikpea,HitPaw VikPea,ai-upscaler,one-time,~$100,yes,yes,no,Consumer-friendly; lifetime licence
+avclabs-video-enhancer,AVCLabs Video Enhancer AI,ai-upscaler,subscription,~$120/yr,yes,yes,no,Cloud+local hybrid
+videoproc-converter-ai,VideoProc Converter AI,ai-upscaler,one-time,$149.90,yes,yes,yes,Existing page is THIN (542w) - expand
+waifu2x,waifu2x,open-source,free,$0,yes,partial,no,Anime-first; the free baseline people try before paying
+real-esrgan,Real-ESRGAN,open-source,free,$0,yes,partial,no,The model under many paid tools; CLI only
+ffmpeg-lanczos,ffmpeg (Lanczos),open-source,free,$0,yes,yes,no,The honest non-AI baseline the Index must include
+handbrake,HandBrake,transcoder,free,$0,yes,yes,yes,Transcode not upscale; common confusion worth owning
+davinci-resolve,DaVinci Resolve,nle,freemium,$295 Studio,yes,yes,yes,Free tier is production-grade; Studio has Super Scale
+final-cut-pro,Final Cut Pro,nle,one-time,$299,yes,yes,no,Apple first-party; big comparison gap
+adobe-premiere,Adobe Premiere Pro,nle,subscription,$22.99/mo,yes,yes,yes,Enhance Speech + AI tools
+imovie,iMovie,nle,free,$0,yes,yes,yes,The default Mac users start from
+capcut,CapCut,social-editor,freemium,$7.99/mo Pro,no,yes,yes,Watermark-gated free tier; the model Crisp mirrors
+descript,Descript,social-editor,subscription,$12/mo,no,yes,no,Studio Sound is the AI hook
+clipchamp,Clipchamp,social-editor,freemium,$11.99/mo,no,no,yes,Microsoft; browser-based
+kapwing,Kapwing,web-editor,subscription,$16/mo,no,no,yes,Browser; upload required
+veed,VEED,web-editor,subscription,$12/mo,no,no,yes,Browser; upload required
+inshot,InShot,mobile-editor,freemium,$3.99/mo,no,no,yes,Mobile-first
+filmora,Wondershare Filmora,nle,subscription,$49.99/yr,yes,yes,yes,Consumer NLE with AI add-ons

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switching from Topaz Video AI to Crisp (2026) — $19 once vs $299/year | Crisp</title>
+<meta name="description" content="Topaz went subscription-only in October 2025 ($299/yr). Crisp is $19 one-time and fully offline on Mac. An honest migration guide — including the cases where Topaz is still the better buy.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Switching from Topaz Video AI to Crisp — $19 once vs $299/year">
+<meta property="og:description" content="Topaz ended perpetual licences in Oct 2025. What moves across to Crisp, and where Topaz still wins.">
+<meta property="og:url" content="https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Switching from Topaz Video AI to Crisp">
+<meta name="twitter:description" content="$19 once vs $299/year — an honest migration guide for Mac.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"Switching from Topaz Video AI to Crisp",
+ "description":"Topaz went subscription-only in October 2025. An honest migration guide to Crisp for Mac, including where Topaz remains the better choice.",
+ "datePublished":"2026-07-23","dateModified":"2026-07-23",
+ "author":{"@type":"Person","name":"Matt Kerr"},
+ "publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},
+ "mainEntityOfPage":"https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/"}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">Compare · Switching from Topaz Video AI</div>
+  <h1>Switching from <span class="grad">Topaz Video AI</span> to Crisp</h1>
+
+  <p class="lede">Topaz ended perpetual licences in October 2025. Renewal is now $299/year for
+  Personal and $699/year for Pro. Crisp is $19 once, runs entirely on your Mac, and never
+  uploads your footage. If the subscription is why you're here, this page tells you exactly
+  what moves across and what doesn't.</p>
+
+  <h2>What actually changed at Topaz</h2>
+  <p>Before October 2025 you could buy Topaz Video AI outright and keep the version you paid
+  for. That option is gone for new buyers. Existing perpetual holders keep their last
+  purchased build, but new models and updates require an active plan.</p>
+  <p>That single change is why the "Topaz alternative" search volume exploded. It isn't that
+  the software got worse. The ownership model changed.</p>
+
+  <h2>Price, honestly</h2>
+  <table>
+    <thead><tr><th>Tool</th><th>Model</th><th>Cost</th><th>Runs offline</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Crisp</strong></td><td>One-time</td><td><strong>$19</strong></td><td>Yes</td></tr>
+      <tr><td>Topaz Video AI</td><td>Subscription</td><td>$299/yr</td><td>Yes</td></tr>
+      <tr><td>Aiarty Video Enhancer</td><td>One-time</td><td>$149</td><td>Yes</td></tr>
+      <tr><td>VideoProc Converter AI</td><td>One-time</td><td>$149.90</td><td>Yes</td></tr>
+      <tr><td>UniFab All-In-One</td><td>One-time</td><td>$319.99</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  <p>Every remaining one-time option sits between roughly $95 and $320. Crisp is the cheapest
+  by a wide margin, and that deserves a caveat rather than a victory lap: a $19 app built by
+  one person is not going to match a decade of Topaz engineering on every axis. Read the next
+  section before you switch.</p>
+
+  <h2>Where Topaz is still the better buy</h2>
+  <p>Worth saying plainly, because a comparison page that never concedes anything is an advert.</p>
+  <ul>
+    <li><strong>Model breadth.</strong> Topaz ships many specialised models — different ones for
+      progressive footage, interlaced sources, CGI, and heavy compression. Crisp has a much
+      smaller set.</li>
+    <li><strong>Frame interpolation.</strong> Topaz's slow-motion and frame-rate conversion work
+      is genuinely strong and mature. Crisp does not compete there.</li>
+    <li><strong>Fine control.</strong> If you want to tune individual model parameters per shot,
+      Topaz exposes far more.</li>
+    <li><strong>Windows.</strong> Crisp is Mac-only. Topaz isn't.</li>
+  </ul>
+  <p>If you upscale professionally every day and bill for it, $299/year is a rounding error
+  against your time, and the breadth is worth it. Switch for the ownership model and the
+  privacy, not because Crisp out-features Topaz. It doesn't.</p>
+
+  <h2>What moves across cleanly</h2>
+  <p>The everyday jobs — taking soft 1080p to 4K, cleaning up compressed capture footage,
+  denoising a dim clip — are what most people actually bought Topaz for, and those transfer
+  fine. Crisp adds a full timeline editor Topaz has no equivalent for: trim, split, montage,
+  split-screen, titles, colour, audio. You upscale and cut in the same app instead of
+  round-tripping through a second one.</p>
+
+  <h2>Your footage never leaves the Mac</h2>
+  <p>Crisp does every render on-device. No upload, no queue, no account, and it works on a
+  plane. For anyone under an NDA, handling client footage, or editing anything they'd rather
+  not hand to a server, that constraint matters more than any quality benchmark.</p>
+  <p>Topaz also processes locally, so this isn't a point against it — but it <em>is</em> a real
+  difference against the browser tools people often shortlist alongside it, where the upload
+  is mandatory.</p>
+
+  <h2>Try it before you cancel anything</h2>
+  <p>Crisp's free tier is the whole editor plus 4K AI upscaling, with a small "Made with Crisp"
+  watermark on exports. That's enough to run your own comparison on your own footage, which is
+  the only test that counts. The $19 licence removes the watermark and unlocks the Max quality
+  lane (a heavier generative restore) and batch processing.</p>
+  <p>One caveat on Max: it's slow. It's an overnight-batch feature on a long clip, not something
+  you sit and wait for. Use the standard Enhance lane for day-to-day work.</p>
+
+  <h2>The short version</h2>
+  <p>If you're a working pro who needs model breadth and interpolation, stay on Topaz. If you
+  resent paying $299 every year to keep software you used to own, and your work is mostly
+  upscaling plus editing on a Mac, $19 once is a straightforward trade.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

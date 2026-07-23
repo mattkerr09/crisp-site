@@ -1,0 +1,17 @@
+slug,name,intent,crisp_lane,paid,covered
+upscale-video,upscale video,commercial,upscale,no,yes
+upscale-to-4k,upscale to 4K,commercial,upscale,no,yes
+upscale-to-1080p,upscale 480p to 1080p,commercial,upscale,no,no
+restore-old-video,restore old video,commercial,max,yes,no
+denoise-video,remove video noise,informational,upscale,no,yes
+deinterlace-video,deinterlace video,informational,convert,no,no
+fix-blurry-video,fix blurry video,commercial,upscale,no,no
+stabilize-video,stabilize shaky video,informational,stabilize,no,yes
+color-grade,color grade video,informational,grade,no,yes
+split-screen,make a split screen video,informational,splitscreen,no,no
+picture-in-picture,picture in picture video,informational,splitscreen,no,no
+montage,make a montage,informational,montage,no,yes
+compress-video,compress video,informational,compress,no,yes
+convert-format,convert video format,informational,convert,no,yes
+remove-watermark,remove a watermark,commercial,overlay,no,no
+batch-process,batch process videos,commercial,batch,yes,no

@@ -1,0 +1,8 @@
+slug,name,chip,unified_ram_gb,year,max_capable,note
+m1-macbook-air,MacBook Air M1,Apple M1,8|16,2020,16gb-only,The most common Mac; the 16GB memory story matters most here
+m2-macbook-air,MacBook Air M2,Apple M2,8|16|24,2022,16gb-only,
+m3-macbook-pro,MacBook Pro M3,Apple M3,18|36,2023,yes,
+m4-macbook-pro,MacBook Pro M4,Apple M4,24|48,2024,yes,
+mac-mini-m4,Mac mini M4,Apple M4,16|32,2024,yes,Cheapest capable desktop
+mac-studio,Mac Studio,M1/M2 Ultra,64|128,2022,yes,
+intel-mac,Intel Mac,Intel,8|16|32,pre-2020,no,No Apple Silicon - honest limits page

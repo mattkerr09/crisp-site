@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restoring old home videos on a Mac (2026) — VHS, camcorder, 8mm | Crisp</title>
+<meta name="description" content="How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing, and why your footage should never be uploaded.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/for/family-archivists/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Restoring <span class=&quot;grad&quot;>old home videos</span> on a Mac">
+<meta property="og:description" content="How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing, and why your footage should never be uploaded.">
+<meta property="og:url" content="https://crispvideo.app/for/family-archivists/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Restoring <span class=&quot;grad&quot;>old home videos</span> on a Mac">
+<meta name="twitter:description" content="How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing, and why your footage should never be uploaded.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Restoring <span class=&quot;grad&quot;>old home videos</span> on a Mac","description":"How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing, and why your footage should never be uploaded.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/for/family-archivists/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can AI really restore old VHS footage?","acceptedAnswer":{"@type":"Answer","text":"It can meaningfully improve sharpness and reduce noise, and it cannot invent detail the tape never recorded. Expect a clearly better version of your footage, not a modern-camera version of it."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">For · Family archives</div>
+  <h1>Restoring <span class="grad">old home videos</span> on a Mac</h1>
+
+  <p class="lede">Home video is the one category where upscaling genuinely earns its reputation.
+  The footage is soft, noisy, interlaced and irreplaceable — and unlike a modern phone clip, there
+  is real room for improvement. Here's what actually helps, and what no tool can do.</p>
+
+  <h2>Get the transfer right first</h2>
+  <p>Everything downstream is limited by the capture. If you're digitising tapes yourself, capture
+  at the highest quality your device offers and save a lossless or lightly compressed master before
+  you touch anything. Every restoration you attempt should start from that master, not from a
+  compressed export you made along the way.</p>
+  <p>Keep the original file forever, even after you've made a beautiful restored version. Tools
+  improve. In five years you'll want to run the tape again through something better, and you can
+  only do that if you kept the raw capture.</p>
+
+  <h2>Deinterlace before you upscale</h2>
+  <p>Tape and old camcorder footage is usually interlaced: each frame is two half-images captured a
+  fraction of a second apart. Upscale that without deinterlacing first and the AI faithfully
+  enlarges the comb-shaped tearing on every moving edge, making it more obvious rather than less.</p>
+  <p>Deinterlace first, then upscale. Getting this order wrong is the single most common reason a
+  restoration looks worse than the original.</p>
+
+  <h2>What AI can and cannot recover</h2>
+  <p>It genuinely helps with: soft focus from a cheap lens, tape noise and colour speckle, mild
+  compression damage from an old digitisation, and the general lack of sharpness that makes VHS
+  look like VHS.</p>
+  <p>It cannot recover: a face that was six pixels wide, text on a sign that was never legible, or
+  detail lost to a badly degraded tape. When a model "restores" those it is inventing plausible
+  detail — which on a stranger's footage is fine, and on your grandmother's face is not. If a
+  result looks impressively sharp but subtly wrong, trust that instinct and dial the strength back.</p>
+
+  <h2>Be conservative with faces</h2>
+  <p>Faces are the whole reason you're doing this, and they're where aggressive processing does the
+  most damage. Over-sharpened skin goes waxy and the person stops looking like themselves. Always
+  compare a still of a face before and after at full zoom, and prefer the gentler result — you're
+  preserving a memory, not producing a demo reel.</p>
+
+  <h2>Your family footage should not be uploaded</h2>
+  <p>Most online upscalers require handing your files to a server. For holiday footage of your
+  children, a wedding, or someone who has died, that's a genuinely different proposition from
+  uploading a product demo — and the terms of service on free tools are rarely reassuring about
+  what happens to what you upload.</p>
+  <p>Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi
+  switched off. For this category that isn't a feature comparison, it's the reason to choose a
+  local tool at all.</p>
+
+  <h2>A workable process</h2>
+  <ol>
+    <li>Capture at the best quality available and archive that master untouched.</li>
+    <li>Deinterlace.</li>
+    <li>Trim the dead ends — tape starts and stops are usually minutes of nothing.</li>
+    <li>Denoise gently, then upscale. In that order; upscaling noise just makes bigger noise.</li>
+    <li>Compare faces at 100% against the original before you commit.</li>
+    <li>Export one archival-quality copy and one smaller copy for sharing with family.</li>
+  </ol>
+  <p>Crisp does steps two through six in one app, on-device, for $19 one-time — and the free tier
+  is complete apart from a watermark, so you can restore a test clip before spending anything.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

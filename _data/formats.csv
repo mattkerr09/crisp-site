@@ -1,0 +1,10 @@
+slug,name,direction,note
+mov-to-mp4,MOV to MP4,convert,covered
+heic-photos,HEIC photos,input,iPhone default; Crisp handles it
+prores,ProRes,output,Pro delivery codec
+hevc-h265,HEVC / H.265,both,Apple default capture
+av1,AV1,output,Modern web codec
+webm,WebM,output,
+mkv,MKV,both,
+gif,GIF,output,covered
+vhs-capture,VHS capture,input,Interlaced + noisy - restoration intent

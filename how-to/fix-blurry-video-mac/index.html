@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to fix blurry video on a Mac (2026) — what works and what can't | Crisp</title>
+<meta name="description" content="Blurry video has four different causes and only some are fixable. How to tell which one you have, what AI upscaling actually recovers, and how to fix it offline on a Mac.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/fix-blurry-video-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to fix <span class=&quot;grad&quot;>blurry video</span> on a Mac">
+<meta property="og:description" content="Blurry video has four different causes and only some are fixable. How to tell which one you have, what AI upscaling actually recovers, and how to fix it offline on a Mac.">
+<meta property="og:url" content="https://crispvideo.app/how-to/fix-blurry-video-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to fix <span class=&quot;grad&quot;>blurry video</span> on a Mac">
+<meta name="twitter:description" content="Blurry video has four different causes and only some are fixable. How to tell which one you have, what AI upscaling actually recovers, and how to fix it offline on a Mac.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to fix <span class=&quot;grad&quot;>blurry video</span> on a Mac","description":"Blurry video has four different causes and only some are fixable. How to tell which one you have, what AI upscaling actually recovers, and how to fix it offline on a Mac.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/fix-blurry-video-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can blurry video be fixed?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. Softness from low resolution or compression responds well to AI upscaling. Motion blur and genuine focus miss are recorded into the pixels and cannot be undone."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">How-to · Fix blurry video</div>
+  <h1>How to fix <span class="grad">blurry video</span> on a Mac</h1>
+
+  <p class="lead">Before reaching for any tool, work out which kind of blurry you have. Four
+  different faults all get described the same way, and only two of them can be improved — spending
+  an hour processing the other two is wasted effort.</p>
+  <h2>1. Out of focus — not fixable</h2>
+  <p>If the camera focused on the wrong thing, the detail was never recorded. Sharpening raises
+  local contrast and creates halos around edges, which reads as crunchy rather than sharp. No tool
+  recovers focus that was missed; this is a reshoot.</p>
+  <h2>2. Motion blur — not fixable</h2>
+  <p>A subject moving fast during a long exposure is smeared within each frame. That smear is the
+  image. Frame interpolation can make motion smoother, but it can't unsmear the individual frames.</p>
+  <h2>3. Low resolution — very fixable</h2>
+  <p>Footage that's simply small — old 480p or 720p clips viewed on a modern display — is the ideal
+  case for AI upscaling. The detail is there, there just isn't much of it, and a good model
+  reconstructs plausible fine structure convincingly. This is where upscalers earn their reputation.</p>
+  <h2>4. Compression damage — partly fixable</h2>
+  <p>Footage sent through messaging apps, downloaded from social platforms, or captured at a low
+  bitrate loses fine detail and gains blocky artefacts. Upscaling helps meaningfully, though it
+  can't invent what the encoder discarded. Expect clear improvement, not a pristine result.</p>
+  <h2>How to tell them apart in ten seconds</h2>
+  <p>Pause on a frame and zoom in. Everything uniformly soft including static objects in the
+  background points to focus or resolution. Moving subjects smeared while static background is sharp
+  is motion blur. Blocky squares in flat areas like sky or shadow is compression. Fine speckle that
+  changes every frame is noise, which is a different fix again.</p>
+  <h2>Fixing the fixable ones</h2>
+  <p>For low resolution and compression damage, AI upscaling is the right tool. Two rules make the
+  difference between a good result and an obviously processed one:</p>
+  <ul>
+    <li><strong>Denoise before upscaling, gently.</strong> Upscaling noise produces larger, more
+      obvious noise. But heavy denoising strips real texture, so use the lightest setting that
+      helps.</li>
+    <li><strong>Judge in motion.</strong> An upscale that looks great paused can shimmer during
+      playback. Always watch it play before committing to a long render.</li>
+  </ul>
+  <h2>Doing it on a Mac without uploading</h2>
+  <p>Crisp upscales on-device, so nothing leaves your machine and there's no queue or file limit.
+  Import the clip, run Enhance, and compare against the original before exporting. The free tier
+  watermarks exports but is otherwise complete, so you can find out whether your specific clip is
+  the fixable kind before spending $19.</p>
+  <h2>The realistic expectation</h2>
+  <p>A good upscale makes footage look like a better version of itself. It does not make a 2009
+  camcorder clip look like it was shot yesterday, and any tool whose marketing implies otherwise is
+  showing you a favourable example. Test on your own worst clip and decide from that.</p>
+
+  <h2>Sharpening is not the same as upscaling</h2>
+  <p>Worth separating, because the sharpen slider is usually the first thing people reach for.
+  Sharpening increases contrast at existing edges — it makes detail that's already there more
+  visible, and it makes noise and compression blocks more visible too. Push it and you get white
+  halos around every edge, which the eye reads as artificial immediately.</p>
+  <p>Upscaling reconstructs detail that isn't in the pixels, using a model trained on what real
+  footage looks like. That's why it can improve a genuinely soft clip where sharpening only makes it
+  crunchier. If your first instinct was the sharpen slider and the result looked worse, this is why.</p>
+
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

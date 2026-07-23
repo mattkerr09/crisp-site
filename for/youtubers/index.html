@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upscaling old YouTube uploads to 4K on a Mac (2026) | Crisp</title>
+<meta name="description" content="Your back catalogue is 1080p and looks soft beside 4K competitors. How to upscale old uploads on a Mac offline, whether re-uploading is worth it, and when it is not.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/for/youtubers/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crisp for <span class=&quot;grad&quot;>YouTubers</span>">
+<meta property="og:description" content="Your back catalogue is 1080p and looks soft beside 4K competitors. How to upscale old uploads on a Mac offline, whether re-uploading is worth it, and when it is not.">
+<meta property="og:url" content="https://crispvideo.app/for/youtubers/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crisp for <span class=&quot;grad&quot;>YouTubers</span>">
+<meta name="twitter:description" content="Your back catalogue is 1080p and looks soft beside 4K competitors. How to upscale old uploads on a Mac offline, whether re-uploading is worth it, and when it is not.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Crisp for <span class=&quot;grad&quot;>YouTubers</span>","description":"Your back catalogue is 1080p and looks soft beside 4K competitors. How to upscale old uploads on a Mac offline, whether re-uploading is worth it, and when it is not.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/for/youtubers/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I re-upload an old video in 4K?","acceptedAnswer":{"@type":"Answer","text":"Only if the video still gets meaningful traffic. Re-uploading resets the URL, view count and comments, so for an evergreen video that still earns, the usual answer is to upscale future content and leave the archive alone."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">For · YouTubers</div>
+  <h1>Crisp for <span class="grad">YouTubers</span></h1>
+
+  <p class="lede">If you've been publishing for a few years, your back catalogue is 1080p and it
+  shows next to newer 4K channels — especially on a big TV, which is where a growing share of
+  YouTube watch time happens. Upscaling can close some of that gap, but it's worth being clear
+  about when it's worth doing.</p>
+
+  <h2>The 4K bitrate advantage is real</h2>
+  <p>Here's the part most people miss: YouTube allocates more bitrate to 4K uploads than to 1080p.
+  A 1080p video upscaled to 4K and uploaded as 4K is often served with noticeably less compression
+  damage than the same content uploaded at 1080p — even on a viewer watching in a small window.</p>
+  <p>So the benefit isn't only resolution. It's that your footage survives YouTube's encoder better.
+  That matters most for high-motion content, gameplay and anything with fine texture, which is
+  exactly where 1080p uploads look muddiest.</p>
+
+  <h2>Don't re-upload your best videos</h2>
+  <p>Re-uploading means a new URL, zero views, no comments, and losing whatever search position the
+  original earned. For a video that still brings in traffic every month, that's a bad trade no
+  matter how much better the picture is.</p>
+  <p>The sensible pattern: upscale going forward, and only revisit archive videos that have
+  genuinely stopped performing, or that you're repackaging into a compilation anyway.</p>
+
+  <h2>Where upscaling helps most</h2>
+  <ul>
+    <li><strong>Old gameplay capture</strong> recorded at 1080p with a hardware encoder — usually
+      heavily compressed, and it responds well.</li>
+    <li><strong>Screen recordings</strong> where text has gone soft.</li>
+    <li><strong>Compilations</strong> built from older clips, where the finished edit can go out at
+      4K in one pass.</li>
+    <li><strong>Talking-head footage</strong> from an older camera, where the subject is well lit
+      and there's real detail to sharpen.</li>
+  </ul>
+
+  <h2>Upscale the finished edit, not every clip</h2>
+  <p>Cut first, upscale the export. Upscaling each source clip means paying render time on footage
+  you're about to trim away, and each extra encode costs a little quality. One pass at the end is
+  faster and cleaner.</p>
+
+  <h2>Doing it without a subscription</h2>
+  <p>Topaz moved to $299 a year in October 2025, which is a meaningful line item for a channel that
+  isn't yet earning. Crisp is $19 once, runs on your Mac, and includes the editor — so the
+  compilation edit and the upscale happen in the same place.</p>
+  <p>The free tier is the whole app with a watermark on exports, which is enough to test the
+  bitrate argument yourself: upscale one old video, upload it unlisted at 4K, and compare it
+  against the original on a TV. That's a better basis for deciding than anyone's sample footage.</p>
+
+  <h2>What it won't fix</h2>
+  <p>Bad audio, shaky handheld footage and poor lighting all survive upscaling intact, and viewers
+  forgive soft video far more readily than bad sound. If you're deciding where to spend effort on an
+  old catalogue, audio first, stabilisation second, resolution third.</p>
+
+  <h2>A realistic time budget</h2>
+  <p>Upscaling is not instant. A ten-minute 1080p video going to 4K is a meaningful render on any
+  machine, and on a laptop it's something you start and walk away from. Plan it as a batch you run
+  overnight rather than a step you wait on between edits — and if you're doing a whole back
+  catalogue, expect to leave the Mac working for a few nights.</p>
+
+  <h2>Thumbnails are the other half</h2>
+  <p>The same upscaling that helps footage helps stills pulled from it. If your thumbnail is a frame
+  grab from an old 1080p video, it's being displayed at sizes that expose every soft edge — and the
+  thumbnail does more for click-through than the video's resolution ever will. Upscaling a frame
+  grab before you add text is a small, cheap win that most channels skip.</p>
+
+
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

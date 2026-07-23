@@ -114,6 +114,39 @@
   <p>Yes &mdash; free upscaling/restoration up to 4K with no watermark. Only the generative Max lane and batch are the paid $15 unlock.</p>
   <h3>Does my video get uploaded anywhere?</h3>
   <p>No. Everything runs on your Mac.</p>
+
+  <h2>What "free" usually means</h2>
+  <p>Most tools calling themselves free upscalers fall into one of three buckets, and it's worth
+  knowing which you're getting before you spend an evening on one.</p>
+  <ul>
+    <li><strong>Free with a watermark.</strong> Full quality, but the export carries a logo until
+      you pay. Fine for testing, useless for delivery.</li>
+    <li><strong>Free trial.</strong> Unrestricted for a few days, then it stops.</li>
+    <li><strong>Genuinely free, but command-line.</strong> Real-ESRGAN and waifu2x are free and
+      good, with no watermark ever — but you'll be typing commands and handling frame
+      sequences yourself.</li>
+  </ul>
+  <h2>The free option nobody mentions</h2>
+  <p>If your footage is only slightly soft, plain ffmpeg with a Lanczos scaler costs nothing and
+  is often enough. It's not AI and it won't invent detail that isn't there, but for a clean
+  1080p source going to 4K for a timeline that's already 4K, it's honest and fast.</p>
+  <p>AI upscaling earns its keep on genuinely damaged footage — old camcorder tape, heavy
+  compression, low-light noise — where there's real detail to reconstruct. On clean modern
+  footage the difference is smaller than the marketing suggests.</p>
+  <h2>How to judge one without trusting the demo</h2>
+  <p>Vendor before-and-after sliders are chosen to flatter. Test on your own worst clip, then
+  look at three things: faces at 100% zoom, fine repeating texture like brick or fabric, and
+  whether the image shimmers when you play it back rather than pausing on a frame. That last
+  one — temporal stability — is what separates a good upscaler from one that just sharpens
+  each frame in isolation.</p>
+
+
+  <h2>A realistic shortlist</h2>
+  <p>For most people on a Mac the sensible order is: try ffmpeg's Lanczos scaler first because
+  it costs nothing and takes a minute; if the footage is genuinely damaged, try a free AI tool
+  on a short section; and only pay for something once you've seen a difference on your own clip
+  rather than on a vendor's sample. Crisp fits that last step at $19 one-time, with a free tier
+  that watermarks exports so you can compare before deciding.</p>
 </div></article>
 <footer><div class="wrap"><p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p></div></footer>
 </body>
