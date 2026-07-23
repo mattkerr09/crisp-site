@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to make a picture-in-picture video on a Mac (2026) — Crisp</title>
+<meta name="description" content="PIP is easy to do and easy to do badly. Where to put the inset, how big it should be, which audio to keep, and the mistake that makes it look amateur.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/picture-in-picture-video-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to make a picture-in-picture video on a Mac">
+<meta property="og:description" content="PIP is easy to do and easy to do badly. Where to put the inset, how big it should be, which audio to keep, and the mistake that makes it look amateur.">
+<meta property="og:url" content="https://crispvideo.app/how-to/picture-in-picture-video-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to make a picture-in-picture video on a Mac">
+<meta name="twitter:description" content="PIP is easy to do and easy to do badly. Where to put the inset, how big it should be, which audio to keep, and the mistake that makes it look amateur.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to make a picture-in-picture video on a Mac","description":"PIP is easy to do and easy to do badly. Where to put the inset, how big it should be, which audio to keep, and the mistake that makes it look amateur.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/picture-in-picture-video-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size should a picture-in-picture inset be?","acceptedAnswer":{"@type":"Answer","text":"Between a fifth and a quarter of the frame width. Smaller and a face is unreadable on a phone; larger and it competes with the main content instead of supporting it."}},{"@type":"Question","name":"Which corner should the inset go in?","acceptedAnswer":{"@type":"Answer","text":"Bottom-right by default on landscape, because that's where the eye finishes and where most on-screen furniture already lives. Move it if it covers something in the main footage."}},{"@type":"Question","name":"Should both clips keep their audio?","acceptedAnswer":{"@type":"Answer","text":"Almost never. Two audio tracks playing at once is unlistenable — pick one. Usually the speaking one, whichever picture is larger."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › Picture-in-picture</div>
+  <h1>How to make a picture-in-picture video on a Mac</h1>
+
+  <p class="lede">Picture-in-picture is one small clip laid over a larger one — a webcam over a screen
+  recording, a reaction over gameplay, a detail shot over a wide. The technique takes a minute. The
+  things that make it look amateur are the inset being too small to read, both audio tracks playing
+  at once, and the inset parked on top of something that mattered.</p>
+
+  <h2>Size and position</h2>
+  <p>Aim for the inset at roughly a fifth to a quarter of the frame width. That sounds small until
+  you remember most viewers are on a phone: a webcam at a tenth of the width is a thumbnail of a face
+  nobody can read expressions on, and expressions are the entire reason the webcam is there.</p>
+  <p>Bottom-right is the default for landscape, because Western viewers finish scanning there and
+  most existing on-screen furniture sits there. Two reasons to move it: the main footage has
+  something important in that corner, or the platform puts its own interface there — vertical video
+  on any social platform has controls and captions crowding the bottom, so a bottom inset is a bad
+  idea and top-left is usually safer.</p>
+  <p>Whatever you pick, keep it in the same place for the whole video. An inset that hops around
+  draws attention to itself and away from the content.</p>
+
+  <h2>The audio decision, made once</h2>
+  <p>Two audio tracks playing simultaneously is unlistenable, and it is the single most common
+  mistake in PIP video. Decide which clip carries the sound and mute the other outright.</p>
+  <p>Usually that is the person speaking. If the main footage has meaningful audio too — gameplay,
+  a demo with sound — you have a mix, not a PIP problem, and the fix is to duck the background under
+  the voice rather than to let both run flat. If you cannot duck, mute the background.</p>
+
+  <h2>The mistake that looks amateur</h2>
+  <p>Stretching. A 16:9 webcam squeezed into a square inset, or a vertical phone clip stretched to
+  fill a landscape box, distorts faces in a way viewers notice instantly even when they cannot say
+  what is wrong. Crop the inset to the shape of the box instead of scaling it — you lose some edges
+  and keep correct proportions, which is always the better trade.</p>
+  <p>A close second: no separation. An inset that shares a colour with the region behind it dissolves
+  into the background. A thin border or a subtle drop shadow fixes that in one step, and is the
+  difference between "layered" and "pasted on".</p>
+
+  <h2>Syncing two clips without timecode</h2>
+  <p>If both cameras recorded the same moment, clap once at the start of the take. In the edit, line
+  the two audio waveforms up on the clap spike and the picture follows. It is a fifty-year-old trick
+  because it works, and it takes ten seconds at the shoot versus a frustrating hour afterwards.</p>
+  <p>Without a clap, find any shared transient — a door, a laugh, a hand hitting a desk. Failing
+  that, align on a visible action and accept a frame or two of drift, which nobody notices unless
+  the subject is speaking on camera in both.</p>
+
+  <h2>In Crisp</h2>
+  <p>Add both clips, choose the picture-in-picture layout, pick which one keeps its audio, and
+  export. The inset is cropped to fit rather than stretched, so faces keep their proportions. It runs
+  on your Mac, so a screen recording that contains anything private never leaves it.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Video Upscaler Index — objective, reproducible AI upscaling benchmarks for Mac</title>
+<meta name="description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/index/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Video Upscaler Index">
+<meta property="og:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta property="og:url" content="https://crispvideo.app/index/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Video Upscaler Index">
+<meta name="twitter:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Video Upscaler Index?","acceptedAnswer":{"@type":"Answer","text":"A published set of objective, reproducible quality measurements for AI video upscaling on Mac — seven metrics computed from raw frames with ffmpeg and pure Python, along with the harness that produced them so anyone can re-run them."}},{"@type":"Question","name":"Why does it only contain Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because those are the only outputs we have actually measured. Publishing a score for a tool we never ran would invalidate the rest of the page. Competitor results will be added when we have real measurements, including results that beat Crisp."}},{"@type":"Question","name":"What is added_flicker and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"It is the output's frame-to-frame instability minus the source's — the shimmer the upscaler introduced. Per-frame upscalers can invent slightly different detail on each frame, so a still looks excellent while the moving clip crawls. It is the axis reviewers describe subjectively and the one this index measures directly."}},{"@type":"Question","name":"How fast is Crisp?","acceptedAnswer":{"@type":"Answer","text":"Between 3.6 and 5.6 frames per second end-to-end on an M1 Ultra Mac Studio across the sources tested, including decode and encode. That is roughly an hour for a ten-minute clip. It runs entirely on your own Mac, which is why it is slower than a cloud service."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> → Index</div>
+  <h1>The Video Upscaler Index</h1>
+
+  <p><strong>Nobody in this category publishes reproducible numbers.</strong> Every upscaler
+  review, including the ones that rank first for the term, is a pair of screenshots and an
+  opinion. This page is the opposite: a fixed set of measurements, the exact harness that
+  produced them, and the sources they ran on — so you can disagree with us by running it
+  yourself rather than by trusting a different screenshot.</p>
+
+  <p>It is published by the people who make Crisp, which is a reason to read the methodology
+  before the results. So we have made that easy, and we have published the places Crisp comes
+  off worse.</p>
+
+  <h2>What is actually measured</h2>
+  <p>Seven axes, computed on raw decoded frames with ffmpeg and pure Python — no reference
+  library, no perceptual model, nothing that requires trusting a black box:</p>
+  <table>
+    <thead><tr><th>Metric</th><th>What it means</th><th>Better</th></tr></thead>
+    <tbody>
+    <tr><td><code>sharpness</code></td><td>Mean variance-of-Laplacian over sampled grayscale frames — how much edge detail survives.</td><td>Higher</td></tr>
+    <tr><td><code>levels</code></td><td>Distinct luma levels used, out of 256. A gradient that collapses to fewer levels is banding.</td><td>Higher</td></tr>
+    <tr><td><code>flat_steps</code></td><td>Share of near-flat-region pixels sitting on a hard step — banding you can see in skies and walls.</td><td>Lower</td></tr>
+    <tr><td><code>noise</code></td><td>Residual grain estimate on the output.</td><td>Context</td></tr>
+    <tr><td><code>temporal</code></td><td>Median frame-to-frame luma change: the flicker floor.</td><td>Lower</td></tr>
+    <tr><td><code>added_flicker</code></td><td><strong>Output flicker minus source flicker.</strong> Shimmer the upscaler <em>introduced</em>.</td><td>Lower</td></tr>
+    <tr><td><code>color_drift</code></td><td>Mean per-channel difference against the source.</td><td>Context</td></tr>
+    </tbody>
+  </table>
+
+  <p><code>added_flicker</code> is the one that matters most and the one nobody reports. A
+  per-frame upscaler treats every frame independently, so it can invent slightly different
+  detail on each one — and a still frame looks superb while the moving clip crawls. That
+  temporal stability is Topaz's most-cited advantage. It is measurable, so we measure it.</p>
+
+  <h2>Results — Crisp 0.1.284</h2>
+  <p>M1 Ultra Mac Studio, 64GB, macOS 15. Each source processed for its first 3 seconds.
+  Throughput is end-to-end frames per second including decode, upscale and encode.</p>
+  <table>
+    <thead><tr><th>Source</th><th>Preset</th><th>Output</th><th>sharpness</th><th>levels</th><th>flat_steps</th><th>added_flicker</th><th>fps</th></tr></thead>
+    <tbody>
+    <tr><td>Compressed 480p web video</td><td>Enhance</td><td>2560&times;1440</td><td>428.5</td><td>223.8</td><td>6.70%</td><td>0.00</td><td>5.3</td></tr>
+    <tr><td>Compressed 480p web video</td><td>Low-light</td><td>2560&times;1440</td><td>382.0</td><td>194.2</td><td>6.62%</td><td>0.00</td><td>5.6</td></tr>
+    <tr><td>Dark, noisy phone clip</td><td>Enhance</td><td>3416&times;1920</td><td>161.9</td><td>141.8</td><td>14.78%</td><td>0.00</td><td>3.7</td></tr>
+    <tr><td>Dark, noisy phone clip</td><td>Low-light</td><td>3416&times;1920</td><td>230.6</td><td>176.8</td><td>15.58%</td><td>+0.25</td><td>3.6</td></tr>
+    <tr><td>Soft camcorder / DVD-era</td><td>Enhance</td><td>2880&times;1920</td><td>417.0</td><td>218.6</td><td>13.61%</td><td>&minus;0.50</td><td>4.4</td></tr>
+    <tr><td>Soft camcorder / DVD-era</td><td>Low-light</td><td>2880&times;1920</td><td>287.5</td><td>191.6</td><td>10.89%</td><td>&minus;0.75</td><td>3.7</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Where Crisp comes off worse</h2>
+  <p>Three things in that table are not flattering, and they are the reason it is worth
+  reading.</p>
+  <p><strong>Low-light on already-noisy footage adds shimmer.</strong> On the dark, noisy phone
+  clip the Low-light preset scores <code>+0.25</code> added flicker — it introduced temporal
+  instability that was not in the source. It buys real detail for that (sharpness 230.6 against
+  Enhance's 161.9), so it is a trade rather than a defect, but if your clip is noisy <em>and</em>
+  you care more about steadiness than detail, Enhance is the better choice on this evidence.</p>
+  <p><strong>Banding is worse on the dark source.</strong> <code>flat_steps</code> is 14.78% and
+  15.58% on the noisy phone clip, against 6.7% on the compressed web video. Lifting shadows
+  stretches a small range of near-black values over a wider one, and the steps between them
+  become visible. That is inherent to brightening, not something we have solved.</p>
+  <p><strong>Throughput is not fast.</strong> 3.6–5.6 fps means a 10-minute clip takes roughly
+  an hour. Cloud services are faster because they are not running on your laptop. If you need a
+  90-minute film done this afternoon, this is the wrong tool.</p>
+
+  <h2>Why there are no competitor columns</h2>
+  <p>Because we have not run the competitors. Publishing a number for a tool we did not measure
+  would make everything else here worthless.</p>
+  <p>The harness is built for head-to-head comparison — <code>eval.py compare</code> takes two
+  outputs of the same source and marks the per-axis winner plus their mutual SSIM. What it needs
+  is the other half: the same clip processed by Topaz Video AI, Aiarty, UniFab, HitPaw, AVCLabs,
+  or plain ffmpeg Lanczos. If you have a licence for one of those and are willing to run one
+  clip through it, send us the output and the source, and the result goes up here unchanged —
+  including if it beats Crisp. That is the whole point of keeping the method public.</p>
+
+  <h2>Reproducing this</h2>
+  <p>The harness is <code>scripts/eval.py</code> in the Crisp repository. It depends on ffmpeg
+  and the Python standard library, nothing else.</p>
+  <pre><code>scripts/eval.py run SOURCE.mp4 --preset enhance --trim-end 3
+scripts/eval.py score OUTPUT.mp4 --ref SOURCE.mp4
+scripts/eval.py compare crisp_out.mp4 other_out.mp4 --ref SOURCE.mp4</code></pre>
+  <p>Two honest caveats about the run above. The sources are <strong>synthesised</strong> —
+  ffmpeg test patterns degraded to imitate a compressed web video, a dark noisy phone clip and a
+  soft camcorder transfer — because they can be regenerated byte-for-byte by anyone, where our
+  own home footage cannot. Synthetic degradation is not the same as real degradation, and these
+  numbers should be read as an A/B instrument rather than as an absolute score. And every metric
+  here is content-dependent: comparing <code>sharpness</code> across two different sources tells
+  you about the sources, not the upscalers. Only same-source comparisons mean anything.</p>
+
+  <h2>What this is for</h2>
+  <p>Two things. It keeps us honest — a quality change that improves the picture in someone's
+  opinion but moves <code>added_flicker</code> the wrong way is a regression, and we can see
+  that before shipping it rather than after. And it gives anyone comparing upscalers something
+  better than screenshots to argue with.</p>
+  <p>It will be re-run and re-published as Crisp changes. Where a number gets worse, the number
+  gets updated.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
