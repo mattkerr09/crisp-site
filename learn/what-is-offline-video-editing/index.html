@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is offline video editing? (And why 'offline' means two different things) — Crisp</title>
+<meta name="description" content="In traditional post, 'offline editing' means cutting with proxies. In 2026 it usually means software that runs without an internet connection. Both matter, and one of them is now a privacy decision.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-offline-video-editing/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is offline video editing?">
+<meta property="og:description" content="In traditional post, 'offline editing' means cutting with proxies. In 2026 it usually means software that runs without an internet connection. Both matter, and one of them is now a privacy decision.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-offline-video-editing/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is offline video editing?">
+<meta name="twitter:description" content="In traditional post, 'offline editing' means cutting with proxies. In 2026 it usually means software that runs without an internet connection. Both matter, and one of them is now a privacy decision.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What is offline video editing?","description":"In traditional post, 'offline editing' means cutting with proxies. In 2026 it usually means software that runs without an internet connection. Both matter, and one of them is now a privacy decision.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/learn/what-is-offline-video-editing/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does offline video editing mean editing without internet?","acceptedAnswer":{"@type":"Answer","text":"In current usage, yes — software that does all its processing on your own machine and needs no server. The older post-production meaning is different: cutting with low-resolution proxies and conforming to the full-quality media later."}},{"@type":"Question","name":"Is offline editing better for privacy?","acceptedAnswer":{"@type":"Answer","text":"It is categorically different, not just better. If the footage never leaves the machine there is no upload log, no retention policy, and no third-party breach that can expose it. That is the entire argument for anyone editing client, legal, medical or family footage."}},{"@type":"Question","name":"Do offline tools have worse AI features?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. A server can run a much larger model than a laptop. For upscaling and cleanup the gap is small on Apple Silicon; for very large generative features it is real."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Learn › Offline video editing</div>
+  <h1>What is offline video editing?</h1>
+
+  <p class="lede">Two different answers, depending on who is asking. To an editor who trained in a post
+  house, <strong>offline editing</strong> means cutting with low-resolution proxies and conforming to
+  the real media later. To almost everyone searching for it in 2026, it means <strong>software that
+  works with the internet turned off</strong> — no upload, no account, no server. This page covers
+  both, because the two have quietly merged.</p>
+
+  <h2>The original meaning: offline and online</h2>
+  <p>When editing systems couldn't handle full-quality footage in real time, you made small
+  low-bitrate copies — proxies — and cut those. That stage was the <em>offline</em> edit, so named
+  because it happened away from the expensive online suite. When the cut was locked, an
+  <em>online</em> session relinked the edit decisions to the original media and did colour and
+  finishing at full quality.</p>
+  <p>The hardware reason for that split is largely gone; a modern Mac cuts 4K natively. The workflow
+  survives anyway, because proxies are still the fastest way to work with heavy formats, and because
+  it is genuinely useful to separate "what is the cut" from "what does it look like".</p>
+  <p>Crisp's export path is a direct descendant of it. You edit against fast, manageable media and the
+  upscale runs once at export, applied to the finished cut. Running an AI upscaler live on every
+  preview frame would make scrubbing unusable, and you'd be spending compute on frames that end up on
+  the cutting-room floor.</p>
+
+  <h2>The current meaning: it runs on your machine</h2>
+  <p>The word got reused because the thing it now describes became worth naming. A large share of
+  video tools shipped since roughly 2020 are web apps: you upload footage, a server processes it, you
+  download the result. That model has real advantages — nothing to install, any device, and access to
+  models far bigger than a laptop can hold.</p>
+  <p>It also means your footage is on someone else's computer. For a lot of work nobody cares. For
+  some work it is disqualifying, and the list is longer than people expect:</p>
+  <ul>
+    <li>Anything under NDA, which is most commercial and corporate work.</li>
+    <li>Legal, medical, insurance and investigative footage.</li>
+    <li>Interior walkthroughs of a client's home — real-estate video is the inside of somebody's
+    house, and they did not agree to it being uploaded anywhere.</li>
+    <li>Family archives. No breach policy is worth a stranger's access to your childhood.</li>
+    <li>Anything you'd have to check a retention policy before uploading. If you have to check, that
+    is the answer.</li>
+  </ul>
+
+  <h2>Where offline actually loses</h2>
+  <p>Two places, honestly. Collaboration is the first: if three people need to review a cut from three
+  cities, a cloud tool with shared timelines and comment threads is simply the right choice, and
+  Frame.io or a web editor will beat a local app at it. The second is model size — a data centre can
+  load a model that will not fit in 16GB of unified memory, and for the hardest generative tasks that
+  gap shows.</p>
+  <p>What has changed is that for the specific job of upscaling and cleanup, Apple Silicon closed most
+  of the gap. The models that do this well are a few hundred megabytes and run on the GPU that is
+  already in the machine. Crisp's heaviest mode runs in about 11GB of peak memory, which is why it
+  works on a 16GB MacBook Air rather than requiring a workstation.</p>
+
+  <h2>How to tell whether a tool is genuinely offline</h2>
+  <p>Marketing copy says "local" fairly freely. Two checks settle it in under a minute:</p>
+  <ol>
+    <li><strong>Turn off Wi-Fi and use it.</strong> Not just launch it — actually run the AI feature
+    end to end. Plenty of "local" apps do the editing locally and quietly send the enhance job to a
+    server. If the feature fails offline, it was never local.</li>
+    <li><strong>Watch the network.</strong> macOS's Activity Monitor has a Network tab. Run an
+    export and see whether hundreds of megabytes leave the machine. Licence checks and update pings
+    are small and expected; your footage is not small.</li>
+  </ol>
+  <p>A related tell: if the tool requires an account before it will process anything, the processing
+  is probably not on your machine. Local software has no reason to know who you are.</p>
+
+  <h2>The practical position</h2>
+  <p>Offline is not a philosophy, it is a constraint you either have or don't. If you edit holiday
+  clips and the convenience of a browser tool suits you, use one. If you handle other people's
+  footage, the question of where it goes is part of the job, and the simplest defensible answer is
+  that it never went anywhere.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

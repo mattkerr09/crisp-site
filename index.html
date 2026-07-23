@@ -238,6 +238,79 @@
   .specstrip{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-bottom:1.2rem;}
   .compare .sub{color:var(--text-dim);font-weight:400;font-size:.85em;}
 </style>
+
+<!-- Entity schema. Every value here is checked against the shipping build: price from
+     entitlement.py, minimumSystemVersion from tauri.conf.json, version from latest.json.
+     Deliberately NO aggregateRating — Crisp has no review corpus, and inventing one is both
+     dishonest and a structured-data manual action waiting to happen. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://crispvideo.app/#org",
+      "name": "Crisp",
+      "url": "https://crispvideo.app/",
+      "logo": "https://crispvideo.app/apple-touch-icon.png",
+      "description": "Crisp makes offline AI video and photo software for Mac. Everything runs on the user's own machine; no footage is uploaded.",
+      "sameAs": ["https://github.com/mattkerr09/crisp-site"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://crispvideo.app/#website",
+      "url": "https://crispvideo.app/",
+      "name": "Crisp",
+      "publisher": {"@id": "https://crispvideo.app/#org"},
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://crispvideo.app/#author",
+      "name": "Matt Kerr",
+      "description": "Builds Crisp. Every performance and quality number published on this site comes from running the software on his own hardware — primarily an Apple M1 Ultra Mac Studio.",
+      "knowsAbout": ["AI video upscaling", "offline video editing", "macOS", "Apple Silicon", "ffmpeg", "video restoration"],
+      "worksFor": {"@id": "https://crispvideo.app/#org"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://crispvideo.app/#app",
+      "name": "Crisp",
+      "alternateName": "Crisp for Mac",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Video Editor and AI Upscaler",
+      "operatingSystem": "macOS 12.0 or later",
+      "processorRequirements": "Apple Silicon (M1 or later)",
+      "softwareVersion": "0.1.270",
+      "url": "https://crispvideo.app/",
+      "downloadUrl": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
+      "installUrl": "https://crispvideo.app/#download",
+      "screenshot": "https://crispvideo.app/og.png",
+      "author": {"@id": "https://crispvideo.app/#author"},
+      "publisher": {"@id": "https://crispvideo.app/#org"},
+      "description": "Offline AI video upscaler with a full timeline editor for Mac. Arrange, trim and split clips, add photos and looks, then export the finished cut upscaled to 4K. Runs entirely on-device — no cloud, no account, no subscription. Free with a watermark; $19 once to remove it.",
+      "featureList": [
+        "AI video upscaling to 4K, fully offline",
+        "Photo upscaling and restoration",
+        "Timeline editor with trim, split, reorder and per-clip looks",
+        "Low-light and noise cleanup",
+        "Split-screen and picture-in-picture layouts",
+        "Ken Burns motion on stills",
+        "Audio normalisation and background-noise removal",
+        "Upscale on export — edit at proxy speed, deliver at 4K"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "19",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://crispvideo.app/#download",
+        "description": "One-time purchase. No subscription, no recurring fee."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -633,56 +706,84 @@
   </div>
   <div class="wrap" style="text-align:center;padding:.2rem 0 1.4rem;">
     <div style="font-size:.82rem;color:#6b7690;line-height:2;">
-      Guides:
-      <a href="/how-to/upscale-video-on-mac/">How to upscale video on Mac</a> ·
-      <a href="/how-to/make-a-photo-slideshow-mac/">Make a photo slideshow</a> ·
-      <a href="/how-to/upscale-a-finished-edit-to-4k-mac/">Upscale a finished edit to 4K</a> ·
-      <a href="/how-to/split-a-clip-in-video-mac/">Split a clip</a> ·
-      <a href="/how-to/add-title-cards-to-a-video-mac/">Add title cards</a> ·
-      <a href="/how-to/make-video-vertical-mac/">Make a video vertical</a> ·
-      <a href="/how-to/slow-mo-video-mac/">Slow-mo a video</a> ·
-      <a href="/how-to/remove-noise-from-video-mac/">Remove video noise</a> ·
-      <a href="/how-to/edit-hdr-video-mac/">Edit HDR video</a> ·
-      <a href="/how-to/add-captions-to-video-mac/">Add captions to a video</a> ·
-      <a href="/how-to/reverse-video-mac/">Reverse a video</a> ·
-      <a href="/how-to/mute-video-mac/">Mute a video</a> ·
-      <a href="/how-to/fade-video-mac/">Fade a video</a> ·
-      <a href="/how-to/trim-video-mac/">Trim a video</a> ·
-      <a href="/how-to/crop-video-mac/">Crop a video</a> ·
-      <a href="/how-to/rotate-video-mac/">Rotate a video</a> ·
-      <a href="/how-to/change-video-speed-mac/">Change video speed</a> ·
-      <a href="/how-to/extract-audio-from-video-mac/">Extract audio from video</a> ·
-      <a href="/how-to/make-a-gif-on-mac/">Make a GIF</a> ·
-      <a href="/how-to/add-watermark-to-video-mac/">Add a watermark</a> ·
-      <a href="/how-to/screenshot-from-video-mac/">Screenshot a video</a> ·
-      <a href="/how-to/color-grade-video-mac/">Color grade a video</a> ·
-      <a href="/how-to/add-a-vignette-to-video-mac/">Add a vignette</a> ·
-      <a href="/how-to/add-film-grain-to-video-mac/">Add film grain</a> ·
-      <a href="/how-to/add-a-matte-look-to-video-mac/">Matte look</a> ·
-      <a href="/how-to/loop-video-mac/">Loop a video</a> ·
-      <a href="/how-to/make-a-highlight-reel-mac/">Make a highlight reel</a> ·
-      <a href="/how-to/normalize-audio-video-mac/">Normalize audio</a> ·
-      <a href="/how-to/stabilize-shaky-video-mac/">Stabilize shaky video</a> ·
-      <a href="/how-to/remove-background-noise-video-mac/">Remove background noise</a> ·
-      <a href="/how-to/remove-wind-noise-from-video-mac/">Remove wind noise</a> ·
-      <a href="/how-to/compress-video-on-mac/">Compress a video</a> ·
-      <a href="/how-to/make-quiet-parts-louder-video-mac/">Make quiet parts louder</a> ·
-      <a href="/how-to/add-a-border-to-video-mac/">Add a border</a> ·
-      <a href="/how-to/convert-mov-to-mp4-mac/">Convert MOV to MP4</a> ·
-      <a href="/vs/topaz-alternative-mac/">Topaz alternative</a> ·
-      <a href="/vs/topaz-video-ai-alternative-mac/">Topaz Video AI alternative</a> ·
-      <a href="/vs/videoproc-alternative-mac/">VideoProc alternative</a> ·
-      <a href="/vs/inshot-alternative-mac/">InShot alternative</a> ·
-      <a href="/vs/capcut-alternative-mac/">CapCut alternative</a> ·
-      <a href="/vs/imovie-alternative-mac/">iMovie alternative</a> ·
-      <a href="/vs/clipchamp-alternative-mac/">Clipchamp alternative</a> ·
-      <a href="/vs/handbrake-alternative-mac/">HandBrake alternative</a> ·
-      <a href="/vs/veed-alternative-mac/">VEED alternative</a> ·
-      <a href="/vs/filmora-alternative-mac/">Filmora alternative</a> ·
-      <a href="/vs/adobe-premiere-alternative-mac/">Adobe Premiere alternative</a> ·
-      <a href="/vs/davinci-resolve-alternative-mac/">DaVinci Resolve alternative</a> ·
-      <a href="/vs/kapwing-alternative-mac/">Kapwing alternative</a> ·
-      <a href="/best/free-video-upscaler-mac/">Free video upscaler for Mac</a>
+      <!--HUBLINKS:START-->
+      <div style="margin-bottom:.6rem;">
+        <strong style="color:#8592a8;">Learn:</strong>
+        <a href="/learn/what-is-ai-video-upscaling/">What is AI video upscaling?</a> ·
+        <a href="/learn/what-is-offline-video-editing/">What is offline video editing?</a>
+      </div>
+      <div style="margin-bottom:.6rem;">
+        <strong style="color:#8592a8;">Compare:</strong>
+        <a href="/vs/aiarty-video-enhancer-alternative-mac/">A cheaper Aiarty alternative for Mac</a> ·
+        <a href="/vs/videoproc-alternative-mac/">A cheaper VideoProc alternative for Mac</a> ·
+        <a href="/vs/waifu2x-alternative-mac/">A practical waifu2x alternative for Mac</a> ·
+        <a href="/vs/final-cut-pro-alternative-mac/">A simpler Final Cut Pro alternative for Mac</a> ·
+        <a href="/vs/switch-from-topaz-video-ai-to-crisp/">Switching from Topaz Video AI to Crisp</a> ·
+        <a href="/vs/adobe-premiere-alternative-mac/">The best Adobe Premiere alternative for Mac</a> ·
+        <a href="/vs/capcut-alternative-mac/">The best CapCut alternative for Mac</a> ·
+        <a href="/vs/clipchamp-alternative-mac/">The best Clipchamp alternative for Mac</a> ·
+        <a href="/vs/davinci-resolve-alternative-mac/">The best DaVinci Resolve alternative for Mac</a> ·
+        <a href="/vs/filmora-alternative-mac/">The best Filmora alternative for Mac</a> ·
+        <a href="/vs/handbrake-alternative-mac/">The best HandBrake alternative for Mac</a> ·
+        <a href="/vs/inshot-alternative-mac/">The best InShot alternative for Mac</a> ·
+        <a href="/vs/kapwing-alternative-mac/">The best Kapwing alternative for Mac</a> ·
+        <a href="/vs/topaz-alternative-mac/">The best Topaz alternative for Mac</a> ·
+        <a href="/vs/veed-alternative-mac/">The best VEED alternative for Mac</a> ·
+        <a href="/vs/imovie-alternative-mac/">The best iMovie alternative for Mac</a> ·
+        <a href="/vs/topaz-video-ai-alternative-mac/">The best offline Topaz Video AI alternative for Mac</a>
+      </div>
+      <div style="margin-bottom:.6rem;">
+        <strong style="color:#8592a8;">By use:</strong>
+        <a href="/for/youtubers/">Crisp for YouTubers</a> ·
+        <a href="/for/gamers/">Crisp for gamers and streamers</a> ·
+        <a href="/for/real-estate/">Crisp for real estate</a> ·
+        <a href="/for/family-archivists/">Restoring old home videos on a Mac</a>
+      </div>
+      <div style="margin-bottom:.6rem;">
+        <strong style="color:#8592a8;">Roundups:</strong>
+        <a href="/best/free-video-upscaler-mac/">The best free video upscaler for Mac</a>
+      </div>
+      <div style="margin-bottom:.6rem;">
+        <strong style="color:#8592a8;">Guides:</strong>
+        <a href="/how-to/add-a-border-to-video-mac/">How to add a border to a video on a Mac</a> ·
+        <a href="/how-to/add-a-vignette-to-video-mac/">How to add a vignette to a video on a Mac</a> ·
+        <a href="/how-to/add-watermark-to-video-mac/">How to add a watermark to a video on a Mac</a> ·
+        <a href="/how-to/add-captions-to-video-mac/">How to add captions or text to a video on a Mac</a> ·
+        <a href="/how-to/add-film-grain-to-video-mac/">How to add film grain to a video on a Mac</a> ·
+        <a href="/how-to/add-title-cards-to-a-video-mac/">How to add title cards to a video on a Mac</a> ·
+        <a href="/how-to/change-video-speed-mac/">How to change video speed on a Mac</a> ·
+        <a href="/how-to/color-grade-video-mac/">How to color grade a video on a Mac</a> ·
+        <a href="/how-to/compress-video-on-mac/">How to compress a video on a Mac</a> ·
+        <a href="/how-to/convert-mov-to-mp4-mac/">How to convert MOV to MP4 on a Mac</a> ·
+        <a href="/how-to/crop-video-mac/">How to crop a video on a Mac</a> ·
+        <a href="/how-to/edit-hdr-video-mac/">How to edit HDR video on a Mac</a> ·
+        <a href="/how-to/extract-audio-from-video-mac/">How to extract audio from a video on a Mac</a> ·
+        <a href="/how-to/fade-video-mac/">How to fade a video in and out on a Mac</a> ·
+        <a href="/how-to/fix-blurry-video-mac/">How to fix blurry video on a Mac</a> ·
+        <a href="/how-to/add-a-matte-look-to-video-mac/">How to give a video a matte look on a Mac</a> ·
+        <a href="/how-to/loop-video-mac/">How to loop a video on a Mac</a> ·
+        <a href="/how-to/make-a-gif-on-mac/">How to make a GIF on a Mac</a> ·
+        <a href="/how-to/make-a-highlight-reel-mac/">How to make a highlight reel on a Mac</a> ·
+        <a href="/how-to/make-a-photo-slideshow-mac/">How to make a photo slideshow on a Mac</a> ·
+        <a href="/how-to/make-a-split-screen-video-mac/">How to make a split screen video on a Mac</a> ·
+        <a href="/how-to/make-video-vertical-mac/">How to make a video vertical (9:16) on a Mac</a> ·
+        <a href="/how-to/make-quiet-parts-louder-video-mac/">How to make the quiet parts of a video louder on a Mac</a> ·
+        <a href="/how-to/mute-video-mac/">How to mute a video on a Mac</a> ·
+        <a href="/how-to/normalize-audio-video-mac/">How to normalize audio in a video on a Mac</a> ·
+        <a href="/how-to/remove-background-noise-video-mac/">How to remove background noise from a video on a Mac</a> ·
+        <a href="/how-to/remove-noise-from-video-mac/">How to remove noise &amp; grain from a video on a Mac</a> ·
+        <a href="/how-to/remove-wind-noise-from-video-mac/">How to remove wind noise from a video on a Mac</a> ·
+        <a href="/how-to/reverse-video-mac/">How to reverse a video on a Mac</a> ·
+        <a href="/how-to/rotate-video-mac/">How to rotate a video on a Mac</a> ·
+        <a href="/how-to/slow-mo-video-mac/">How to slow down a video on a Mac</a> ·
+        <a href="/how-to/split-a-clip-in-video-mac/">How to split a clip in a video on a Mac</a> ·
+        <a href="/how-to/stabilize-shaky-video-mac/">How to stabilize a shaky video on a Mac</a> ·
+        <a href="/how-to/screenshot-from-video-mac/">How to take a screenshot from a video on a Mac</a> ·
+        <a href="/how-to/trim-video-mac/">How to trim a video on a Mac</a> ·
+        <a href="/how-to/upscale-a-finished-edit-to-4k-mac/">How to upscale a finished edit to 4K on a Mac</a> ·
+        <a href="/how-to/upscale-video-on-mac/">How to upscale video on a Mac</a>
+      </div>
+      <!--HUBLINKS:END-->
     </div>
   </div>
 </footer>

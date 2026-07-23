@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is AI video upscaling? A plain explanation (2026) — Crisp</title>
+<meta name="description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is AI video upscaling?">
+<meta property="og:description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-ai-video-upscaling/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is AI video upscaling?">
+<meta name="twitter:description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What is AI video upscaling?","description":"AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/learn/what-is-ai-video-upscaling/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling add detail that wasn't there?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the honest description of it. The model predicts what the missing pixels most likely looked like based on millions of examples of real footage. It is plausible reconstruction, not recovery, which is why upscaled video should never be treated as evidence."}},{"@type":"Question","name":"Is AI upscaling better than just exporting at a higher resolution?","acceptedAnswer":{"@type":"Answer","text":"Exporting at a higher resolution does nothing on its own — it stretches the same pixels over a larger grid. Traditional scaling (bicubic, Lanczos) interpolates between known pixels and cannot invent edge detail. An AI model can, because it has seen what real edges look like."}},{"@type":"Question","name":"How much can you upscale before it looks fake?","acceptedAnswer":{"@type":"Answer","text":"2x is reliable on most footage. 4x works when the source is clean. Beyond that the model is inventing more than it is reconstructing, and faces are where people notice first."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Learn › AI video upscaling</div>
+  <h1>What is AI video upscaling?</h1>
+
+  <p class="lede">AI video upscaling increases a video's resolution by <em>reconstructing</em> detail
+  that was never stored in the file, using a neural network trained on millions of real
+  high-resolution frames. Traditional scaling can only stretch the pixels you already have. That
+  difference — inventing plausible detail versus interpolating existing detail — is the whole
+  subject.</p>
+
+  <h2>The problem it solves</h2>
+  <p>A 480p frame is 640×480, about 307,000 pixels. A 4K frame is 3840×2160, about 8.3 million. Going
+  from one to the other means producing 27 pixels for every 1 you started with. There is no
+  arithmetic that recovers information which was thrown away at capture or at encode time — the
+  question is only what you put in the empty space.</p>
+  <p>Traditional scalers answer with a local average. Bicubic looks at the neighbouring pixels and
+  fades between them; Lanczos does something more sophisticated with a windowed sinc filter, but the
+  principle is the same. Both produce a soft, slightly blurry result, because a blur is the safest
+  guess when you know nothing about what the image contains.</p>
+
+  <h2>What the model does differently</h2>
+  <p>A super-resolution model has been shown enormous numbers of image pairs: a high-quality frame,
+  and a degraded version of that frame. Over training it learns the mapping. It learns what a real
+  eyelash looks like at full resolution when it has been reduced to three grey pixels. It learns that
+  a hard vertical edge in a low-res frame was probably a hard vertical edge and not a gradient.</p>
+  <p>So when it meets your footage it is not averaging. It is pattern-matching against everything it
+  has seen and producing the most likely high-resolution frame. That is why the output has crisp
+  edges and readable texture where bicubic gives you a smooth smear.</p>
+  <p>It is also why the output is a guess. A well-trained model guesses well enough that the result
+  looks like a better camera was used. It is still a guess, and that matters in exactly one context:
+  never use upscaled footage as evidence of what something actually looked like. Licence plates and
+  faces are the classic trap — the model will happily produce a sharp, confident, wrong plate.</p>
+
+  <h2>The four things it genuinely fixes</h2>
+  <table>
+    <thead><tr><th>Problem</th><th>Fixable?</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Low resolution</td><td>Yes</td><td>The core case. Detail is missing but structure survives.</td></tr>
+      <tr><td>Compression damage</td><td>Mostly</td><td>Blocking and banding are learnable artefacts with consistent shapes.</td></tr>
+      <tr><td>Sensor noise / grain</td><td>Yes, with care</td><td>Denoise first or the model sharpens the noise into detail.</td></tr>
+      <tr><td>Out-of-focus or motion blur</td><td class="no">No</td><td>The information is gone from every frame, not just compressed.</td></tr>
+    </tbody>
+  </table>
+  <p>That last row is the one nobody wants to hear. If the camera missed focus, no upscaler recovers
+  it — the model will sharpen the blur into a slightly crunchier blur. Same for motion blur from a
+  slow shutter. Those are optical events, not encoding losses.</p>
+
+  <h2>Frames are not photos, and that's the hard part</h2>
+  <p>Upscaling one photo is a solved problem. Upscaling 1,500 consecutive frames is not, because each
+  frame gets processed independently and the model's guesses differ slightly between them. A texture
+  that the model renders one way on frame 200 and slightly differently on frame 201 produces
+  <strong>shimmer</strong> — a crawling, boiling quality in flat areas that is instantly obvious in
+  motion and completely invisible in a screenshot comparison.</p>
+  <p>This is why upscaler reviews built on still-frame comparisons are close to useless, and why
+  temporal stability is the axis that separates good tools from demo-quality ones. Crisp's own
+  evaluation harness measures it directly as an <code>added_flicker</code> score, comparing
+  frame-to-frame variation in the output against the same measure in the source, so a tool that
+  introduces shimmer cannot hide behind a nice still.</p>
+
+  <h2>Cloud or on-device</h2>
+  <p>Super-resolution models are small by modern standards — a few hundred megabytes — and run well on
+  Apple Silicon's GPU. There is no technical reason a Mac needs to send footage to a server for this,
+  and two good reasons not to: an hour of 4K is a slow upload, and client footage often shouldn't
+  leave the building at all. Crisp runs the whole pipeline locally for both reasons.</p>
+  <p>The trade is real, though: cloud services can throw far larger models at a frame than a laptop
+  can. For a difficult restoration, a heavy cloud model may simply produce a better frame. Local wins
+  on privacy, on cost, and on anything you'd rather not queue for.</p>
+
+  <h2>What to actually do with a bad clip</h2>
+  <ol>
+    <li>Work out which problem you have. Pause on a still frame and zoom in: soft everywhere and no
+    hard edges anywhere is focus, which is unfixable. Visible square blocks in dark or fast-moving
+    areas is compression, which is fixable.</li>
+    <li>Denoise before upscaling, never after. Upscaling noise makes the model treat grain as texture
+    and amplify it.</li>
+    <li>Pick 2x before 4x. If the source is 1080p, 2x to 4K is the same operation and less risky than
+    pushing a 480p file straight to 4K.</li>
+    <li>Judge the result in motion, at full size. Not on a paused frame, not in a small preview
+    window — shimmer only appears when it plays.</li>
+  </ol>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
