@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-ESRGAN on Mac: the free CLI vs a $19 app (2026) — Crisp</title>
+<meta name="description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Real-ESRGAN on Mac — and when to use an app instead">
+<meta property="og:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
+<meta property="og:url" content="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Real-ESRGAN on Mac — and when to use an app instead">
+<meta name="twitter:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Real-ESRGAN on Mac — and when to use an app instead","description":"Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/real-esrgan-alternative-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Real-ESRGAN free?","acceptedAnswer":{"@type":"Answer","text":"Yes, genuinely — BSD-3 licensed, and the ncnn build runs on Apple Silicon's GPU via Vulkan. There is no catch and no trial."}},{"@type":"Question","name":"Does Crisp use Real-ESRGAN?","acceptedAnswer":{"@type":"Answer","text":"Crisp uses an ncnn Real-ESRGAN build for its standard upscaling lane, and a heavier diffusion model for its Max lane. The model is not the secret; the frame handling, memory management and editing around it are the work."}},{"@type":"Question","name":"Can Real-ESRGAN do video?","acceptedAnswer":{"@type":"Answer","text":"Not directly. It upscales images. Video means extracting frames with ffmpeg, upscaling each one, then reassembling with the original audio — which is exactly the pipeline you end up writing."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Compare › Real-ESRGAN</div>
+  <h1>Real-ESRGAN on Mac — and when to use an app instead</h1>
+
+  <p class="lede">Real-ESRGAN is free, open source, runs on Apple Silicon, and produces genuinely good
+  upscales. If you are comfortable in a terminal you can get most of the way to a paid tool's output
+  at zero cost, and anyone telling you otherwise is selling something. What you are actually paying
+  $19 for is video handling, memory management, and not writing the pipeline yourself.</p>
+
+  <h2>What you get for free</h2>
+  <p>The <code>realesrgan-ncnn-vulkan</code> binary takes an image and gives back a larger one. It is
+  a single self-contained download, it needs no Python environment, and it uses the GPU. For stills
+  it is close to a complete answer — batch a folder of photos through it and the results will hold up
+  against most paid photo upscalers.</p>
+  <p>It is also the model underneath a surprising number of commercial products. Several tools in this
+  category are, at their core, a licence-checked interface over an open model. That is not a scandal
+  — the interface is real work — but it does mean the gap between free and paid is smaller than
+  pricing implies.</p>
+
+  <h2>What breaks when you point it at video</h2>
+  <p>Real-ESRGAN has no concept of video. The pipeline you end up building looks like this:</p>
+  <ol>
+    <li>Explode the video into PNG frames with ffmpeg. A five-minute 30fps clip is 9,000 files and
+    can easily be 40GB of disk.</li>
+    <li>Run the upscaler over every frame.</li>
+    <li>Reassemble to video, matching the original frame rate exactly.</li>
+    <li>Mux the original audio back in without letting the durations drift apart.</li>
+  </ol>
+  <p>Each step has a way to go wrong that costs you the whole run. Frame rate is the classic one:
+  reassemble a 29.97fps source at 30fps and the audio drifts progressively out of sync — imperceptible
+  at the start, half a second out by the end. Variable-frame-rate footage, which is what phones
+  record, makes this worse, because there is no single correct number to use.</p>
+  <p>Then there is memory. Upscaling a 4K frame to 8K needs a large contiguous allocation, and the
+  naive approach dies partway through a long job. Tiling fixes it, and tiling introduces seams unless
+  the tiles overlap and blend correctly. That specific problem — bounding peak memory without visible
+  tile boundaries — is most of what makes a heavy upscaler usable on a laptop.</p>
+
+  <h2>And the one it cannot solve at all</h2>
+  <p>Frames are upscaled independently, so the model's guesses vary slightly between consecutive
+  frames. In flat areas — a wall, sky, a jacket — that variation reads as a crawling shimmer. It is
+  invisible in a still comparison and obvious the moment it plays, which is why screenshot-based
+  reviews of upscalers are close to worthless.</p>
+  <p>You cannot fix that with a shell script, because the fix lives in how frames are processed
+  relative to each other. It is the main quality axis separating tools that use the same underlying
+  model, and it is why Crisp measures it explicitly: the evaluation harness compares frame-to-frame
+  variation in the output against the same measure in the source, so added shimmer shows up as a
+  number rather than an argument.</p>
+
+  <h2>The honest recommendation</h2>
+  <ul>
+    <li><strong>Use Real-ESRGAN directly</strong> if you are upscaling stills, if you are comfortable
+    with ffmpeg, or if you want to understand what these tools actually do. It costs nothing and it
+    is a genuinely good model.</li>
+    <li><strong>Use an app</strong> when you are doing this on video, repeatedly, and would rather not
+    debug a frame-rate mismatch at midnight. Crisp is $19 once, handles the frame and audio plumbing,
+    keeps peak memory around 11GB even in its heaviest mode, and has a timeline so the upscale runs
+    against your finished cut instead of footage you later discard.</li>
+  </ul>
+  <p>Try the free path first. If it works for you, keep the $19.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

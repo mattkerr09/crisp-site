@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ffmpeg Lanczos vs AI upscaling — when the free one is enough (2026) — Crisp</title>
+<meta name="description" content="One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ffmpeg Lanczos vs AI upscaling">
+<meta property="og:description" content="One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.">
+<meta property="og:url" content="https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ffmpeg Lanczos vs AI upscaling">
+<meta name="twitter:description" content="One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"ffmpeg Lanczos vs AI upscaling","description":"One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the ffmpeg command to upscale a video?","acceptedAnswer":{"@type":"Answer","text":"ffmpeg -i in.mp4 -vf scale=3840:-2:flags=lanczos -c:a copy out.mp4 — that resizes to 4K width using the Lanczos filter and copies the audio untouched."}},{"@type":"Question","name":"Is Lanczos better than bicubic?","acceptedAnswer":{"@type":"Answer","text":"For upscaling, generally yes — it preserves more edge definition. It also rings slightly on hard edges. Both are interpolation; neither adds detail."}},{"@type":"Question","name":"Is AI upscaling always better?","acceptedAnswer":{"@type":"Answer","text":"No. On clean, sharp source that only needs resizing, Lanczos is faster, free, and does not risk inventing wrong detail. AI wins when the source is genuinely degraded."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Compare › ffmpeg (Lanczos)</div>
+  <h1>ffmpeg Lanczos vs AI upscaling</h1>
+
+  <p class="lede">One command, no install beyond ffmpeg, no cost:
+  <code>ffmpeg -i in.mp4 -vf scale=3840:-2:flags=lanczos -c:a copy out.mp4</code>. It will upscale
+  any video to 4K in about the time it takes to re-encode. For a real share of jobs that is the
+  correct answer and an AI upscaler is overkill. Knowing which jobs is the useful part.</p>
+
+  <h2>What Lanczos actually does</h2>
+  <p>It is a resampling filter — a windowed sinc function — that computes each new pixel from a
+  weighted neighbourhood of the old ones. It preserves edges better than bilinear or bicubic, which
+  is why it is the standard recommendation for enlargement. It also produces slight ringing next to
+  hard edges, visible as a faint halo, which is the known cost of its sharpness.</p>
+  <p>What it does not do, at all, is add information. A 480p source resized to 4K contains exactly the
+  detail of the 480p source, distributed over more pixels. It will look bigger and slightly soft. It
+  will not look like it was shot at 4K, because nothing in the arithmetic could make that happen.</p>
+
+  <h2>When free is the right answer</h2>
+  <table>
+    <thead><tr><th>Situation</th><th>Use</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Clean 1080p → 4K for a delivery spec</td><td class="yes">Lanczos</td><td>Nothing is damaged; you just need the pixel dimensions.</td></tr>
+      <tr><td>Matching resolutions in a timeline</td><td class="yes">Lanczos</td><td>Fast, predictable, no invented detail to mismatch.</td></tr>
+      <tr><td>Batch of 500 files, deadline tonight</td><td class="yes">Lanczos</td><td>Seconds per file against minutes per file.</td></tr>
+      <tr><td>Old 480p footage you want to actually watch</td><td>AI</td><td>Detail is missing; interpolation cannot invent it.</td></tr>
+      <tr><td>Heavily compressed download</td><td>AI</td><td>Blocking is a learnable artefact; Lanczos enlarges the blocks.</td></tr>
+      <tr><td>Noisy low-light phone video</td><td>AI</td><td>Denoise plus reconstruction; Lanczos sharpens the noise.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The case against reaching for AI by default</h2>
+  <p>An AI upscaler guesses. On degraded footage that guess is a large improvement. On clean footage
+  it is a risk: models can smooth skin into plastic, turn fine fabric texture into a repeating
+  pattern, and render text as confident nonsense. Lanczos has no opinions and therefore no way to be
+  creatively wrong.</p>
+  <p>Speed is the other half. Lanczos is close to free computationally. A diffusion-based upscaler is
+  minutes per minute of footage on a good machine. If you are resizing because a client asked for 4K
+  deliverables and the source is already sharp, spending an hour of GPU time to arrive somewhere
+  slightly worse is a bad trade.</p>
+
+  <h2>What an app adds over the command</h2>
+  <p>Mostly: knowing which of these to do, and not having to remember <code>-2</code> means "keep the
+  aspect ratio and round to an even number so the encoder accepts it". Crisp picks the appropriate
+  path for the footage, keeps audio in sync across frame-rate oddities, and puts the whole thing
+  behind a timeline so you can cut first and upscale the finished sequence once.</p>
+  <p>But if the command above does what you needed, use it. It is free and it is not a compromise.</p>
+
+  <h2>The test that settles it for your footage</h2>
+  <p>Take thirty seconds of your worst clip and run it both ways, then watch them back at full screen
+  rather than in a preview window. If the Lanczos version looks acceptable, you are done and you have
+  spent nothing. If it looks like a bigger version of the same bad video — which is exactly what it
+  is — then the source is genuinely degraded and reconstruction is the only thing that will help.</p>
+  <p>Zoom in on a flat area while it plays, too. Lanczos will never introduce shimmer, because it makes
+  the same decision on every frame. An AI upscaler can, and comparing the two side by side is the
+  fastest way to find out whether a given tool has that problem on your kind of footage.</p>
+  <h2>One thing to get right either way</h2>
+  <p>Do not upscale twice. Going 480p to 1080p and later 1080p to 4K compounds whatever each pass got
+  wrong, and with an AI model it compounds the invented detail as well — the second pass treats the
+  first pass's guesses as real source material. Decide the final resolution and get there in one
+  operation.</p>
+
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
