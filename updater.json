@@ -1,10 +1,10 @@
 {
-  "version": "0.1.291",
-  "notes": "More code-review fixes: HEVC 10-bit exports keep full precision, Stop now halts a Max render within a second (not minutes), cancelling a loop no longer leaves a temp file, the Unlock Pro window traps keyboard focus, and previews work from the Shared folder.",
-  "pub_date": "2026-07-23T18:46:56Z",
+  "version": "0.1.292",
+  "notes": "Stability + fairness fixes: previewing a clip during a Max-quality render can no longer crash the app and lose your work, activating a license won't accidentally burn an extra activation, and compressing an already-small clip won't ever make it bigger.",
+  "pub_date": "2026-07-23T19:20:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9uK3kxWmZqaUtZc3h6SFN5aGpaT0lrdWcxaHQrK2IvdGpYVGZ1QXdmV0hnNzdrWW9uMXdXVklicDl0WW1lY2ZrTi9zeGVtREN4ZFBnSFE1aEtSZVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODMyMzI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPdUlOemcvV2hEakR0cGtGc1NRNmRhejlNeVJPeUJwNmZXdDlLZ1BkaTg4ZnYzdnMzeUttaFU1ZDJtdnBrY3VLTUxnaVI2aHRZMnM5cnJNVFlVejlEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNGVmxLUFRhT3FhWjFySlN5eFFpdnVSUnd2SFJjVU4xWlBxSWh6aXBjYlltWk5ENWhmOFJYQk1hYmllN2JJaWVnb3pPOFlmalA0aGdXNTJhQTVNVGdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODM0MzIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPSkpTeVpUY1UzT1p2UWd6SXVFMjJuNkh2azV3b05Wb2k2ZEJ5SjBPdE1lbkQzRXRkVTRsVFVxdnJtV1hmcnFjclRJVDNVQWlGQ0lvL1BiNFBtUS9Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
