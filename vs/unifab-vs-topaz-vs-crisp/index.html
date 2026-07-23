@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topaz vs UniFab vs Crisp — the real cost over 3 years (2026)</title>
+<meta name="description" content="Topaz is $299/year, UniFab $319 once, Crisp $19 once. Three years of ownership costed out, plus what each one actually buys you beyond the price.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/vs/unifab-vs-topaz-vs-crisp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Topaz vs UniFab vs Crisp">
+<meta property="og:description" content="Topaz is $299/year, UniFab $319 once, Crisp $19 once. Three years of ownership costed out, plus what each one actually buys you beyond the price.">
+<meta property="og:url" content="https://crispvideo.app/vs/unifab-vs-topaz-vs-crisp/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Topaz vs UniFab vs Crisp">
+<meta name="twitter:description" content="Topaz is $299/year, UniFab $319 once, Crisp $19 once. Three years of ownership costed out, plus what each one actually buys you beyond the price.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Topaz vs UniFab vs Crisp","description":"Topaz is $299/year, UniFab $319 once, Crisp $19 once. Three years of ownership costed out, plus what each one actually buys you beyond the price.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/unifab-vs-topaz-vs-crisp/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which AI upscaler is cheapest over time?","acceptedAnswer":{"@type":"Answer","text":"Crisp at $19 once. Over three years Topaz Personal costs $897 and UniFab $319.99, both compared against $19 — but price is only decisive if the cheaper tool actually does your job."}},{"@type":"Question","name":"Is Topaz still worth it in 2026?","acceptedAnswer":{"@type":"Answer","text":"For professional restoration work where its temporal models matter and $299/year is a business expense, yes. For occasional personal use the subscription is the wrong shape regardless of quality."}},{"@type":"Question","name":"Why did Topaz go subscription?","acceptedAnswer":{"@type":"Answer","text":"Topaz ended perpetual licences in October 2025. Recurring revenue is easier to build a company on; the compute still runs on your own GPU either way."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Compare › Three-way</div>
+  <h1>Topaz vs UniFab vs Crisp</h1>
+
+  <p class="lede">Topaz Video AI is $299/year. UniFab All-In-One is $319.99 once. Crisp is $19 once.
+  Over three years that is $897, $319.99 and $19 — but the price only decides it if the cheaper tool
+  does the job you actually have, so here is what each one buys.</p>
+
+  <h2>Three years of ownership</h2>
+  <table>
+    <thead><tr><th></th><th>Topaz Video AI</th><th>UniFab</th><th>Crisp</th></tr></thead>
+    <tbody>
+      <tr><td>Structure</td><td>$299/yr subscription</td><td>$319.99 lifetime</td><td class="yes">$19 lifetime</td></tr>
+      <tr><td>Year 1</td><td>$299</td><td>$319.99</td><td class="yes">$19</td></tr>
+      <tr><td>Year 3 total</td><td>$897</td><td>$319.99</td><td class="yes">$19</td></tr>
+      <tr><td>Stops working if you stop paying</td><td class="no">Yes</td><td>No</td><td>No</td></tr>
+      <tr><td>Built for Mac</td><td class="yes">Yes</td><td>Windows-first</td><td class="yes">Apple Silicon native</td></tr>
+      <tr><td>Timeline editor</td><td>No</td><td>No</td><td class="yes">Yes</td></tr>
+      <tr><td>Disc ripping</td><td>No</td><td class="yes">Yes</td><td>No</td></tr>
+      <tr><td>Temporal / multi-frame models</td><td class="yes">Its main strength</td><td>Basic</td><td>Single-frame + stabilisation pass</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What Topaz is actually selling</h2>
+  <p>Not resolution — temporal consistency. Its models look at several frames together rather than
+  upscaling each one independently, which is the difference between a result that holds still and one
+  that shimmers in flat areas. That is a genuinely hard problem, it is the axis most reviews never
+  test because it is invisible in screenshots, and Topaz is the best-known name at it for a reason.</p>
+  <p>If you restore footage professionally and $299/year is a line item on an invoice, that is a
+  defensible purchase. The complaint that followed October 2025 was not about quality — it was that
+  people who had bought a perpetual licence were moved onto a recurring one.</p>
+
+  <h2>What UniFab is selling</h2>
+  <p>Breadth. Twenty-two modules including DVD and Blu-ray ripping, format conversion, deinterlacing
+  and audio tools, for a one-time $319.99. If you are digitising a shelf of discs, nothing else here
+  competes and the price is fair for what it is.</p>
+  <p>The catch is Windows. UniFab's centre of gravity is NVIDIA GPUs on Windows, and a Mac user is
+  buying a port. That matters more than it sounds for GPU-bound work.</p>
+
+  <h2>What Crisp is selling</h2>
+  <p>Being cheap enough not to think about, native to the machine, and a timeline in the same app —
+  so you cut first and upscale the finished sequence once at export, rather than enhancing footage
+  you later discard. Its heaviest mode peaks around 11GB, which is why it runs on a 16GB MacBook Air
+  rather than needing a workstation.</p>
+  <p>What it does not have: Topaz's multi-frame temporal models, UniFab's disc tools, and any kind
+  of multicam. On a hard restoration where shimmer is the problem, Topaz will likely give you a
+  better frame.</p>
+
+  <h2>Picking, honestly</h2>
+  <ul>
+    <li><strong>Topaz</strong> if restoration is your job, shimmer is your enemy, and the fee is a
+    business expense.</li>
+    <li><strong>UniFab</strong> if you rip discs, or you genuinely want the wide toolkit, or you are
+    mainly on Windows.</li>
+    <li><strong>Crisp</strong> if you are on a Mac, want to own it, and would rather cut and clean
+    in one place. It is free with a watermark, so the sensible move is to run your hardest clip
+    through it before spending anything anywhere.</li>
+  </ul>
+  <p>And if your footage is already sharp and only needs to be a different size, all three are
+  overkill — a plain ffmpeg Lanczos resize is free, instant, and invents nothing.</p>
+
+  <h2>The comparison nobody publishes</h2>
+  <p>Every review in this category compares upscalers with paused screenshots, which is the one
+  method guaranteed to miss the thing that separates them. Frames are upscaled independently, so a
+  model's guesses vary slightly between consecutive frames, and in flat regions — a wall, sky, a
+  plain jacket — that variation reads as a fine crawling shimmer. A still frame cannot show it. It is
+  also precisely the axis Topaz's temporal models exist to win.</p>
+  <p>So when you test these yourself, use a clip with motion and a flat background, watch it at full
+  size while it plays, and ignore how the paused frame looks. That single change in method tells you
+  more than any spec sheet, and it is free.</p>
+  <h2>A note on the lifetime-licence catch</h2>
+  <p>Both one-time options here share an honest downside: updates eventually stop, or a major version
+  becomes a new purchase. That is real and worth saying. The difference from a subscription is what
+  happens at the end — when updates stop on software that runs locally, the copy you installed keeps
+  working on your footage indefinitely, which is not true of anything that phones home to authorise
+  itself or does the processing on someone else's machine.</p>
+
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
