@@ -1,10 +1,10 @@
 {
-  "version": "0.1.292",
-  "notes": "Stability + fairness fixes: previewing a clip during a Max-quality render can no longer crash the app and lose your work, activating a license won't accidentally burn an extra activation, and compressing an already-small clip won't ever make it bigger.",
-  "pub_date": "2026-07-23T19:20:07Z",
+  "version": "0.1.294",
+  "notes": "Photos: you can now upscale a picture straight from your media \u2014 no timeline needed. And the before/after Compare works on photos again instead of saying \u201cPreview unavailable\u201d.",
+  "pub_date": "2026-07-23T20:25:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNGVmxLUFRhT3FhWjFySlN5eFFpdnVSUnd2SFJjVU4xWlBxSWh6aXBjYlltWk5ENWhmOFJYQk1hYmllN2JJaWVnb3pPOFlmalA0aGdXNTJhQTVNVGdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODM0MzIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPSkpTeVpUY1UzT1p2UWd6SXVFMjJuNkh2azV3b05Wb2k2ZEJ5SjBPdE1lbkQzRXRkVTRsVFVxdnJtV1hmcnFjclRJVDNVQWlGQ0lvL1BiNFBtUS9Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZhcFFaSG9SaXdwenNwZThCNTQybVkwNG9UV1llZC82bzZ1SXgvNU5sZThlb0txdUNDT2QvUVJ5K3UzaGp4YVBRM1AxVWJyY3N6S1VLS3pMa284M1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODM4MTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFMGdXM3Z0Uk83eG5YRmNFTUJzZUlDM1c4VEo4Wit2bWlkQkI5RTVCcFNzK0UxNDFvK0hBcGpZcVE3Y1JrLzhXS2o1NkpFdklObVBmOTBEOUcxd0tDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
