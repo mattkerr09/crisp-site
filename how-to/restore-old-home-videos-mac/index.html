@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to restore old home videos on a Mac (2026) — Crisp</title>
+<meta name="description" content="VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise before upscaling, deinterlace first of all.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/restore-old-home-videos-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to restore old home videos on a Mac">
+<meta property="og:description" content="VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise before upscaling, deinterlace first of all.">
+<meta property="og:url" content="https://crispvideo.app/how-to/restore-old-home-videos-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to restore old home videos on a Mac">
+<meta name="twitter:description" content="VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise before upscaling, deinterlace first of all.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to restore old home videos on a Mac","description":"VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise before upscaling, deinterlace first of all.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/restore-old-home-videos-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What order should I restore old video in?","acceptedAnswer":{"@type":"Answer","text":"Deinterlace, then denoise, then upscale, then colour. Every one of those steps makes the next one harder if you do it out of order — upscaling before denoising in particular turns tape noise into permanent fake texture."}},{"@type":"Question","name":"Can you fix VHS tracking lines?","acceptedAnswer":{"@type":"Answer","text":"Not in software, and not really. Tracking damage means the signal was never read correctly. Re-capture the tape with tracking adjusted on the deck — the fix lives in the capture, not the file."}},{"@type":"Question","name":"Is it worth digitising old tapes now?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it gets less worth it every year. Magnetic tape sheds oxide and VHS decks are no longer manufactured. The tape is the deadline, not the software."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › Restore old home video</div>
+  <h1>How to restore old home videos on a Mac</h1>
+
+  <p class="lede">Do it in this order: deinterlace, denoise, upscale, then colour. Every step makes
+  the next one harder if you take it out of turn, and the single most common mistake — upscaling
+  first — permanently bakes tape noise into the picture as invented detail.</p>
+
+  <h2>Before any of that: the capture matters more</h2>
+  <p>If the tape has not been digitised yet, the capture decides your ceiling and no amount of
+  software recovers what the capture threw away. A composite dub through a cheap USB dongle at 480p
+  and a low bitrate is a worse starting point than a decent deck over S-Video into a real capture
+  card, and the difference is much larger than anything an upscaler contributes afterwards.</p>
+  <p>It is also the only step with a deadline. Tape sheds oxide, and VHS decks stopped being
+  manufactured years ago — the working ones are finite. Capture everything first, at the best
+  quality you can manage, and restore later at your leisure. Restoration can wait; the tape cannot.</p>
+
+  <h2>1. Deinterlace</h2>
+  <p>Anything from a camcorder or off a tape is almost certainly interlaced: each frame is two fields
+  captured a fiftieth of a second apart, woven together. On a modern display that shows up as
+  comb-toothed horizontal stripes along every moving edge.</p>
+  <p>This must come first because every later step treats those stripes as real detail. An upscaler
+  will happily sharpen the combing into a crisp permanent artefact, and a denoiser will read the
+  regular pattern as texture worth keeping. Deinterlace, check a moving shot, and only then continue.</p>
+
+  <h2>2. Denoise</h2>
+  <p>Tape noise is not film grain. Film grain is fine and reasonably stable; tape noise is coarse,
+  moves independently every frame, and sits heaviest in the shadows and in saturated reds — which is
+  why a red jumper in a 1994 birthday video looks like it is boiling.</p>
+  <p>Denoise here, before any resolution change. An upscaling model has no way to distinguish noise
+  from detail: feed it a noisy frame and it reconstructs the noise into confident, permanent
+  texture. Once that happens no later denoise can remove it, because it is no longer noise — it is
+  detail the model believes in.</p>
+  <p>Do not overdo it. Aggressive noise reduction on a moving subject produces a waxy, smeared look
+  that is worse than the noise, and it does not show on a paused frame. Judge it playing.</p>
+
+  <h2>3. Upscale</h2>
+  <p>Now the resolution. VHS is roughly 333×480 lines of real luminance detail regardless of what the
+  file says, so a 480p capture already contains more pixels than the tape held information for.
+  Going to 1080p is realistic. Going to 4K is mostly the model inventing three quarters of the frame,
+  and faces are where that shows first.</p>
+  <p>Judge the result in motion, at full size. Frames are upscaled independently, so a model's guesses
+  vary slightly between them, and in flat areas — walls, sky, a car door — that reads as a crawling
+  shimmer that a still comparison cannot show you.</p>
+
+  <h2>4. Colour, last</h2>
+  <p>Old tape drifts warm and loses saturation, and the fix is mostly white balance rather than a
+  creative grade. Leave it until last because denoising and upscaling both change the noise floor and
+  therefore the black point, so a grade set earlier will be wrong by the time you finish.</p>
+  <p>Resist making it look modern. Slightly warm and slightly soft is what 1994 looked like, and
+  pushing an old transfer toward contemporary contrast and saturation usually reads as an error
+  rather than a restoration.</p>
+
+  <h2>What cannot be fixed, so you stop trying</h2>
+  <ul>
+    <li><strong>Tracking lines and dropouts.</strong> The signal was never read. Re-capture with the
+    deck's tracking adjusted — this one genuinely is fixable, but at the deck, not in software.</li>
+    <li><strong>Out-of-focus shots.</strong> Gone. No upscaler recovers focus.</li>
+    <li><strong>Blown-out windows.</strong> Nothing was recorded above white. Lifting produces grey.</li>
+    <li><strong>Audio hiss under a certain point.</strong> Noise reduction past mild leaves voices
+    sounding underwater, which is more distracting than the hiss was.</li>
+  </ul>
+
+  <h2>Doing it in Crisp</h2>
+  <p>Drop the capture in, and the low-light and denoise controls handle steps 2 and 4 with the upscale
+  applied on export, so the ordering above happens by construction rather than by discipline. It runs
+  entirely on your Mac, which for family footage is the point — nobody's childhood needs to be
+  uploaded to a server to be cleaned up.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

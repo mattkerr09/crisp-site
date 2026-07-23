@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to deinterlace video on a Mac (2026) — Crisp</title>
+<meta name="description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/deinterlace-video-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to deinterlace video on a Mac">
+<meta property="og:description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta property="og:url" content="https://crispvideo.app/how-to/deinterlace-video-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to deinterlace video on a Mac">
+<meta name="twitter:description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to deinterlace video on a Mac","description":"Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/deinterlace-video-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know if my video is interlaced?","acceptedAnswer":{"@type":"Answer","text":"Pause on a frame with fast movement and zoom in. Horizontal comb teeth along moving edges — and only on moving edges — means interlaced. A still shot in the same clip will look perfectly clean, which is why it is easy to miss."}},{"@type":"Question","name":"Does deinterlacing lose quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, unavoidably. You either discard half the vertical detail or interpolate it back, and both are lossy. The alternative is leaving visible combing, which is worse."}},{"@type":"Question","name":"Should I deinterlace before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Before, always. An upscaler treats comb teeth as real detail and sharpens them into permanent artefacts."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › Deinterlace</div>
+  <h1>How to deinterlace video on a Mac</h1>
+
+  <p class="lede">If moving objects in your footage have horizontal comb teeth along their edges while
+  everything stationary looks fine, the video is interlaced. Deinterlace it before you do anything
+  else to it — every other operation treats those teeth as detail worth preserving.</p>
+
+  <h2>What interlacing is</h2>
+  <p>Broadcast television could not transmit enough bandwidth for full frames at a smooth rate, so it
+  sent half of each frame at a time: all the odd-numbered lines, then all the even ones, a fiftieth
+  or sixtieth of a second later. On a CRT this worked, because the phosphors and your eye blended the
+  two fields into one apparently complete image.</p>
+  <p>Modern displays do not work that way. They show whole frames, so the two fields — captured at
+  genuinely different moments — get displayed simultaneously. Anything that moved between them
+  appears twice, offset, interleaved a line at a time. That is the comb.</p>
+  <p>It is invisible on static shots, which is the trap. A talking-head interview can look completely
+  fine until someone waves, and then a third of the frame turns into a zipper.</p>
+
+  <h2>Where it comes from</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Interlaced?</th></tr></thead>
+    <tbody>
+      <tr><td>VHS, Hi8, MiniDV camcorder tape</td><td>Almost always</td></tr>
+      <tr><td>DVD (especially TV recordings)</td><td>Usually</td></tr>
+      <tr><td>Broadcast capture, 1080i</td><td>Yes — the "i" says so</td></tr>
+      <tr><td>Old digital camcorders, 60i mode</td><td>Yes</td></tr>
+      <tr><td>Anything shot on a phone</td><td>No</td></tr>
+      <tr><td>Modern cameras, 1080p / 4K</td><td>No</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The two ways to fix it, and what each costs</h2>
+  <p><strong>Blend or discard.</strong> Throw away one field and interpolate the missing lines back.
+  You keep the original frame rate and lose real vertical resolution — a 1080i source becomes
+  something closer to 540 lines of genuine detail, resampled back up. Simple, fast, slightly soft.</p>
+  <p><strong>Bob, or field doubling.</strong> Treat each field as its own frame, so 50 fields per
+  second become 50 frames per second. You keep the full temporal smoothness — motion looks
+  genuinely fluid, which is what interlacing was buying in the first place — at the cost of doubling
+  the frame rate, which changes how the footage cuts against anything else.</p>
+  <p>For home video and archive restoration, the first is usually right: it preserves the frame rate
+  the rest of your edit expects. For sport or anything where the motion itself is the content, the
+  second preserves something real that the first discards.</p>
+  <p>There is no third option that loses nothing. The information genuinely was captured at two
+  different instants, and any single frame you produce is a compromise between them.</p>
+
+  <h2>Why it has to come first</h2>
+  <p>An AI upscaler has no concept of fields. Hand it a combed frame and it sees a regular
+  high-contrast horizontal pattern — exactly what it has been trained to preserve and enhance — and
+  it will render those teeth sharper and more permanent than they were. Denoisers make the same
+  mistake in reverse, reading the regular pattern as structure and protecting it.</p>
+  <p>Once either has run, the combing is no longer a separable artefact. It is part of the picture.</p>
+
+  <h2>The check that takes ten seconds</h2>
+  <ol>
+    <li>Scrub to a shot with real movement — a person walking, a car, a pan.</li>
+    <li>Pause and zoom in on a moving edge.</li>
+    <li>Teeth on the moving edge and clean stationary background means interlaced. Uniform softness
+    everywhere with no teeth means it is progressive and merely soft, which is a different problem
+    with a different fix.</li>
+  </ol>
+  <p>Crisp deinterlaces automatically when the source is flagged interlaced, so on a tape capture the
+  ordering above happens without you having to sequence it — then denoise, then the upscale on
+  export.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

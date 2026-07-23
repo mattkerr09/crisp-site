@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to upscale 480p to 1080p on a Mac (2026) — Crisp</title>
+<meta name="description" content="480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to upscale 480p to 1080p on a Mac">
+<meta property="og:description" content="480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.">
+<meta property="og:url" content="https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to upscale 480p to 1080p on a Mac">
+<meta name="twitter:description" content="480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<style>
+  :root{--bg:#060810;--surface:#0b0e18;--surface-2:#10141f;--surface-3:#161c2b;--text:#eef2fb;--text-mid:#a6b0c6;--text-dim:#6b7690;--accent:#2e9bff;--accent-light:#67b6ff;--cyan:#5eead4;--green:#34d399;--amber:#fbbf24;--border:rgba(46,155,255,0.14);--radius:14px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:var(--accent-light);text-decoration:none;transition:color .2s;}
+  a:hover{color:var(--text);text-decoration:underline;}
+  .wrap{width:min(800px,calc(100% - 2rem));margin:0 auto;}
+  nav{position:sticky;top:0;z-index:10;background:rgba(6,8,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-brand{display:flex;align-items:center;gap:.5rem;font-weight:750;color:var(--text);font-size:1.08rem;letter-spacing:-0.02em;}
+  .nav-brand:hover{text-decoration:none;color:var(--accent-light);}
+  .grad{background:linear-gradient(120deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:650;padding:.6rem 1.15rem;border-radius:10px;font-size:.95rem;}
+  .btn:hover{background:var(--accent-deep,#0a6fe0);color:#fff;text-decoration:none;}
+  article{padding:2.6rem 0 4rem;}
+  .crumb{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:1rem;}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-0.025em;margin-bottom:1rem;}
+  h2{font-size:1.5rem;letter-spacing:-0.02em;margin:2.4rem 0 .9rem;}
+  h3{font-size:1.12rem;margin:1.6rem 0 .5rem;}
+  p{color:var(--text-mid);margin-bottom:1rem;}
+  strong{color:var(--text);font-weight:650;}
+  .lede{font-size:1.16rem;color:var(--text);}
+  ul,ol{color:var(--text-mid);margin:0 0 1rem 1.2rem;}
+  li{margin-bottom:.4rem;}
+  table.cmp{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.94rem;}
+  table.cmp th,table.cmp td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp th{color:var(--text);font-weight:650;background:var(--surface-2);}
+  table.cmp td:first-child{color:var(--text);font-weight:600;}
+  .yes{color:var(--green);font-weight:650;}
+  .no{color:var(--text-dim);}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.35rem;margin:1.4rem 0;}
+  .cta{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--accent-border,rgba(46,155,255,0.22));border-radius:var(--radius);padding:1.8rem;margin:2.4rem 0 1rem;text-align:center;}
+  .cta h2{margin-top:0;}
+  .muted{color:var(--text-dim);font-size:.9rem;}
+  .prompt{font-family:var(--mono);font-size:.9rem;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.15rem .5rem;color:var(--cyan);white-space:nowrap;}
+  footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-dim);font-size:.88rem;}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin-top:.3rem;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to upscale 480p to 1080p on a Mac","description":"480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you really upscale 480p to 1080p?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is the most reliable jump in this whole category. You are asking a model to produce about 5 pixels for every 1 it has, which is well within what current super-resolution does convincingly."}},{"@type":"Question","name":"Should I go straight to 4K instead?","acceptedAnswer":{"@type":"Answer","text":"Usually not. 480p to 4K is 27 pixels invented per real pixel, and past a point the model is composing rather than reconstructing — faces are where it shows."}},{"@type":"Question","name":"Will upscaling fix a blurry 480p video?","acceptedAnswer":{"@type":"Answer","text":"It fixes low resolution and compression damage. It does not fix a focus miss or motion blur, which are optical and permanently gone."}}]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">◆ Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › 480p to 1080p</div>
+  <h1>How to upscale 480p to 1080p on a Mac</h1>
+
+  <p class="lede">480p to 1080p works. It is a 2.25× jump in each dimension, about five new pixels for
+  every real one, and modern models handle that convincingly enough that the result usually looks
+  like it was shot on better equipment. 480p to 4K is 27 new pixels per real one, and that is where
+  reconstruction turns into invention.</p>
+
+  <h2>Why 1080p is the honest target</h2>
+  <table>
+    <thead><tr><th>From 640×480</th><th>Pixels to invent, each real one</th><th>Realistic?</th></tr></thead>
+    <tbody>
+      <tr><td>→ 1280×720</td><td>3</td><td class="yes">Comfortably</td></tr>
+      <tr><td>→ 1920×1080</td><td>~5</td><td class="yes">Yes — the sweet spot</td></tr>
+      <tr><td>→ 3840×2160</td><td>27</td><td>Diminishing; faces suffer</td></tr>
+    </tbody>
+  </table>
+  <p>The failure at 4K is not that it looks blurry — it is that it looks confident and wrong. Skin
+  smooths into plastic, fabric weave becomes a repeating pattern the camera never saw, and small
+  text becomes crisp nonsense. At 1080p the model has enough real signal to stay anchored.</p>
+  <p>There is also a practical argument. Most people watching your footage are on a laptop or a phone,
+  where 1080p is already at or beyond the panel's ability to show a difference, and the file is a
+  quarter the size.</p>
+
+  <h2>Do these two things first</h2>
+  <p><strong>Denoise before upscaling.</strong> 480p sources are usually old, and old usually means
+  noisy. The model cannot tell noise from detail, so it will reconstruct the grain into permanent
+  texture — and once it has, no later denoise removes it, because it is no longer noise.</p>
+  <p><strong>Deinterlace if it came off tape or a DVD.</strong> Comb teeth on moving edges get
+  sharpened into permanent artefacts by any upscaler.</p>
+
+  <h2>One pass, not two</h2>
+  <p>Do not go 480p → 720p today and 720p → 1080p next week. The second pass treats the first pass's
+  invented detail as real source material and builds on top of it, compounding whatever it got
+  wrong. Pick the final resolution and get there in a single operation.</p>
+
+  <h2>Judging the result properly</h2>
+  <p>Watch it playing, at full size. Not paused, and not in a small preview pane. Frames are upscaled
+  independently, so the model's guesses differ slightly frame to frame, and in flat areas — a wall,
+  the sky, a plain shirt — that difference reads as a fine crawling shimmer. It is invisible in a
+  screenshot and obvious in motion, which is why still-frame comparisons of upscalers tell you
+  almost nothing.</p>
+  <p>If you see it, that is the tool, not your footage. It is the axis good upscalers win on and the
+  one most reviews never test.</p>
+
+  <h2>In Crisp</h2>
+  <p>Drop the file in, pick 2× rather than the maximum, and export. It runs on your Mac — no upload,
+  which for a 480p file of somebody's family is the sensible default anyway. The free tier
+  watermarks the output, so you can check the result on your own footage before deciding whether the
+  $19 is worth it.</p>
+
+  <h2>Where the 480p came from changes what's possible</h2>
+  <p>A 480p file that was shot at 480p — a MiniDV camcorder, an early digital camera — holds close to
+  480 lines of real detail, and upscaling has genuine information to work from. A 480p file that was
+  downscaled from something larger, or that arrived through a messaging app, is a different case: it
+  has been through an encoder that threw away high-frequency detail deliberately, and what is left
+  is both smaller and damaged.</p>
+  <p>Counterintuitively the second one often improves more, because compression artefacts are highly
+  learnable — blocking and banding have consistent shapes that a model has seen a million times —
+  while genuinely missing fine detail has to be invented from nothing. If your source came off
+  WhatsApp or a re-uploaded video, expect a bigger jump than the resolution alone suggests.</p>
+  <h2>Frame rate is worth checking too</h2>
+  <p>A lot of 480p material is 29.97fps rather than a round 30, a legacy of NTSC broadcast timing.
+  Treat it as 30 anywhere in the chain and the audio drifts progressively out of sync — inaudible at
+  the start and half a second out by the end of a long clip. Any decent tool preserves the original
+  rate exactly; it is worth confirming the output matches the input rather than assuming.</p>
+
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
