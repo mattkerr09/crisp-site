@@ -1,10 +1,10 @@
 {
-  "version": "0.1.270",
-  "notes": "Max quality now runs in ~11GB (was 60GB) and no longer crashes; fixes the Max paywall leak and iPhone/HEIC exports.",
-  "pub_date": "2026-07-21T19:14:10Z",
+  "version": "0.1.276",
+  "notes": "Fixes a bug where enhancing a trimmed clip could produce a file with no video at all while reporting success, restores HDR/iPhone video support in Enhance and Max, and makes undo reliable across every edit.",
+  "pub_date": "2026-07-23T07:39:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhJSG0wUDgwamY3TERsOWcxVzNmWUo1aGYxTTdWMW9sN2pmdEpzMEpxZGVuNkRzSEtFY0F6SEZCSGFobzdMRXpJcC9ndGY0SWc1ckpHL3BzcmxCeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NzU2OTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2YXViY01CYnNXdXFmNGM5M2xwRm1uVXl1VE5OWkxoamFrL1hYUWNjeC9XSzNoRGxQOXJ3U3phLy9YRTNNaWYxRTR4ZFlrQUVqVlk2UG1nMFJmL01DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl0TjV4dmdoTXk5OXZzb2JDeG5GTGRtTmRzVm51WDRXNVNmd3BQdlJScEJtNGlzZ1VoOTdNMHFlVHE3RHBDYSswVWhFV0NNdHNTYWVZdjNwQmVoVlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NzkyMzUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6OHBCcFlIY3lQYW5TR2N5M3E5cVVyZWhkcUZYV0ZZcFNLOUlSME9qcmhRbEJkSGh1cGlnZzNjak9mdDFhVFFXZWsybndNRGowUE9CMGQrUDlHMlBCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
