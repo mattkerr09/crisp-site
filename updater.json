@@ -1,10 +1,10 @@
 {
-  "version": "0.1.284",
-  "notes": "Fixes 14 bugs found by an adversarial code review: undo could hand back footage you had cut, split screen ran to the longest clip with the short one frozen, iPhone HDR came back grey through Max, and a slow connection could tell a paying customer their key was invalid.",
-  "pub_date": "2026-07-23T13:49:48Z",
+  "version": "0.1.286",
+  "notes": "Fixes 20 more bugs found by an adversarial code review: quitting mid-render left ffmpeg running invisibly, the Unlock Pro window was unreadable in Light mode, and the plan card could promise a job different from the one that ran.",
+  "pub_date": "2026-07-23T14:47:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpoeUdTNXBoQlpFMG5WV0RkV2U0QzRVWEhiSmxMak1kb2VFZDdtVjdSWm5VVlZtT2JmTkpZOXNKQXQ4akwySjFZTVRBQjg4MGQraEhab01RcUF0N0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODEzOTAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNUzdvNmw4Vm83bktIMXVnVjJKSGxJSkJhaDM4aGYvbmEyMG5Va0FVbUpmdDZ0QUFxZys4SjF3eEp5NFFvOC9KeWtqMmtlZkRMMFMzRGRpZDR6dHJEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4YjdlQmovTVVRRDVoTW9PT0JyQ1ZUdkQzZ0Z3ekhwcFRaM1pESGdnUy9HaTg2N3JIZkxDVDh4MFN2eFprMFFPUTl5Y3pDa0w5c2hDNERHOUVoMUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODE3OTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIWEgwUSt3bXdCT1hiVER2S01YdWdvN0NjWllpbEpiN2pyYmJLNkJDWllMcnBrRDFGYjlsaFE4dnE3cWIxZXQ1dFlMNmk2VWNIOEhZNkMwY2Z0dU1Cdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
