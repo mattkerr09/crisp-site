@@ -1,10 +1,10 @@
 {
-  "version": "0.1.298",
-  "notes": "Files you'd moved or deleted came back in your media looking normal, then failed with a developer error. They're now struck through and labelled, the message explains what happened, and plugging a drive back in un-marks them automatically.",
-  "pub_date": "2026-07-24T16:20:55Z",
+  "version": "0.1.300",
+  "notes": "Two exports whose names differed only by capitalisation or accent could overwrite each other silently \u2014 fixed. Max quality is now correctly shown as unavailable when its pack isn't installed, instead of asking you to pay for it first.",
+  "pub_date": "2026-07-24T16:38:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU1UTFKRXk1TGdwdm5yY2hPZ1dBVGRKZ3ZBSGQ5NXBIWHpvZ1ZJZHBndDZ0d1VZUDF2TjRDL0dPUnY1MTJ5M3hjemVEeGhPVFZCbUh4cENuNmpBZXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTA5OTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYdWxCQWFmaDhjUUNvK0s3eCsrQU9tR0hPTFZHaytLTWc5WEhPOTdrNlYyY2tDTnZWLzU5eGtuRldVajVBWi9VMzg1cE53eEZFcjFrNlBQN281TWdCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURCd0RVNjg1V0hqMGUrQ1BKeE9UbEFnOGk1KzRHLyszdE1reWNDVjRHQzRpK1Q2Um41V0NGMXN4WWdNaFdpUjY1R1NsZ01sVVljVWZ6bExLcDExU1FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTExMDQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTc0REL2Z0NitjWUVEWjBod0k0bjNkVEhNendiSzBzUEdpUWl6MnBUc0NRWjVNYkhXNldtV0NhZ2pBT3dnS3RoQ0ZXVU9HaWN5SlVzaWg4eldpemtEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
