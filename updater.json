@@ -1,10 +1,10 @@
 {
-  "version": "0.1.303",
-  "notes": "Max quality installs itself with a one-time download you can pause and resume. Error messages no longer blame your memory for problems that aren't about memory, and a real failure can no longer be mistaken for you cancelling.",
-  "pub_date": "2026-07-24T19:14:32Z",
+  "version": "0.1.304",
+  "notes": "Max quality installs itself, and its progress bar now tells the truth \u2014 it used to sit near 100% for the whole render, which looked frozen.",
+  "pub_date": "2026-07-24T19:25:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcrSzlISWpiZWsraklWRlFrM3hna3ViTW5mNnJxbTFqR01lMmVEUzZGNTJRVExqdm0rTXIxOXZRcWNIQ0hGNUpxdTNvNGQ0U0l3SFBDSmJOUStzY2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTIwNDAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNV2lwQ2Uyd3c1Uys2N2x0ZVNka2Fta1pHVnlYZVd1Rm1CK3lhcmFLdXcvcWYzcjZzcUduN1hQWXN3RktEVVZqU0s3YjZ3R3lzenJiNmxqdXM4bDREZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFlY2hnS1NObHBscVVsTUh2OFhkSzNhdXlBblI5b1owSkF5YU9MTG5CTGJNYUFvbk10UjYvRENaY0tDczhIY25JN1ExZlpHa0dyUW5yN1dBZUNOVFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTIxMDU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPcE1DcjdzSXJ2dFlBSXc1Y3F1bUlEK0FnVVBWWFU1bWhUYW1KZVFuUHloajdnVGtEM1I4T0RjTjRyWVJ3dGxsR01vdWUvdDhaWWV6bnZiMThNUHJBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
