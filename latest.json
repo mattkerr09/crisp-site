@@ -1,10 +1,10 @@
 {
-  "version": "0.1.302",
-  "notes": "Max quality now installs itself. It needs a one-time 4.6GB download, which Crisp fetches with a progress bar you can stop and resume \u2014 previously it was advertised but there was no way to get it.",
-  "pub_date": "2026-07-24T19:01:34Z",
+  "version": "0.1.303",
+  "notes": "Max quality installs itself with a one-time download you can pause and resume. Error messages no longer blame your memory for problems that aren't about memory, and a real failure can no longer be mistaken for you cancelling.",
+  "pub_date": "2026-07-24T19:14:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxEZXh5dVd4dEl4U1dIMVZXWTRTWWtaaUpTbDlVZFdoWW0vY21ZNUdZMXB2QWNsTVhxT2tqY20yUW9CMHhXajNZUEJKcXFidkZzakFOMGlNRmRHbWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTE5NjI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjRXFNaFNGNlFoaGtFNzA0cS9kMEZJK3BWSHpSQnMxTGJmeEZndTdPT2tHRFlJZFFoNC9GZWNCV1RIeFkxOG5ycGZTa0FjTlA1VGkxTVpkdFNzQ0dCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcrSzlISWpiZWsraklWRlFrM3hna3ViTW5mNnJxbTFqR01lMmVEUzZGNTJRVExqdm0rTXIxOXZRcWNIQ0hGNUpxdTNvNGQ0U0l3SFBDSmJOUStzY2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTIwNDAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNV2lwQ2Uyd3c1Uys2N2x0ZVNka2Fta1pHVnlYZVd1Rm1CK3lhcmFLdXcvcWYzcjZzcUduN1hQWXN3RktEVVZqU0s3YjZ3R3lzenJiNmxqdXM4bDREZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
