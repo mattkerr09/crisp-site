@@ -1,10 +1,10 @@
 {
-  "version": "0.1.295",
-  "notes": "Enhancing a photo now targets the size it promises instead of ballooning it \u2014 a 12MP phone photo comes back around 49MP rather than 195MP, so it is a quarter the file and much faster to open.",
-  "pub_date": "2026-07-23T21:02:43Z",
+  "version": "0.1.298",
+  "notes": "Files you'd moved or deleted came back in your media looking normal, then failed with a developer error. They're now struck through and labelled, the message explains what happened, and plugging a drive back in un-marks them automatically.",
+  "pub_date": "2026-07-24T16:20:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpTTWRtK3kwV2tvL0hiUDFvaEFCQS9jOXk0ZDF3ZG9XUVZNSUFUNks4VS95eWE4NjE0akZHbiszd3p4eWY1NGVnaVJWK2Z1aHp1TVNlbVR6d2pHSUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0ODM5MzQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIcWNCRkVuVWU2SVBhWFU2V2hIU2REaW9TZStUempudXFpZW5zQzk5RW5iN1oyQ2lIVWJ6aStvTi9wNDRJZkhPVm8wOTM2RWJkL0xFbFNNNmQvVVNCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU1UTFKRXk1TGdwdm5yY2hPZ1dBVGRKZ3ZBSGQ5NXBIWHpvZ1ZJZHBndDZ0d1VZUDF2TjRDL0dPUnY1MTJ5M3hjemVEeGhPVFZCbUh4cENuNmpBZXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTA5OTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYdWxCQWFmaDhjUUNvK0s3eCsrQU9tR0hPTFZHaytLTWc5WEhPOTdrNlYyY2tDTnZWLzU5eGtuRldVajVBWi9VMzg1cE53eEZFcjFrNlBQN281TWdCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
