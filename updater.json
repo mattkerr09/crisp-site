@@ -1,10 +1,10 @@
 {
-  "version": "0.1.300",
-  "notes": "Two exports whose names differed only by capitalisation or accent could overwrite each other silently \u2014 fixed. Max quality is now correctly shown as unavailable when its pack isn't installed, instead of asking you to pay for it first.",
-  "pub_date": "2026-07-24T16:38:18Z",
+  "version": "0.1.302",
+  "notes": "Max quality now installs itself. It needs a one-time 4.6GB download, which Crisp fetches with a progress bar you can stop and resume \u2014 previously it was advertised but there was no way to get it.",
+  "pub_date": "2026-07-24T19:01:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURCd0RVNjg1V0hqMGUrQ1BKeE9UbEFnOGk1KzRHLyszdE1reWNDVjRHQzRpK1Q2Um41V0NGMXN4WWdNaFdpUjY1R1NsZ01sVVljVWZ6bExLcDExU1FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTExMDQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTc0REL2Z0NitjWUVEWjBod0k0bjNkVEhNendiSzBzUEdpUWl6MnBUc0NRWjVNYkhXNldtV0NhZ2pBT3dnS3RoQ0ZXVU9HaWN5SlVzaWg4eldpemtEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxEZXh5dVd4dEl4U1dIMVZXWTRTWWtaaUpTbDlVZFdoWW0vY21ZNUdZMXB2QWNsTVhxT2tqY20yUW9CMHhXajNZUEJKcXFidkZzakFOMGlNRmRHbWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTE5NjI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjRXFNaFNGNlFoaGtFNzA0cS9kMEZJK3BWSHpSQnMxTGJmeEZndTdPT2tHRFlJZFFoNC9GZWNCV1RIeFkxOG5ycGZTa0FjTlA1VGkxTVpkdFNzQ0dCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
