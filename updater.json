@@ -1,10 +1,10 @@
 {
-  "version": "0.1.310",
-  "notes": "Max quality now refuses to hand back a broken file as if it finished, and keeps variable-frame-rate phone clips in sync. A job whose engine restarted no longer sticks on 'Processing' forever, and every job type in the queue shows its real name.",
-  "pub_date": "2026-07-26T02:13:33Z",
+  "version": "0.1.311",
+  "notes": "Max quality no longer swaps your Mac: it now sizes itself to your total RAM (not the momentarily-free amount) and aborts safely before the machine runs low, instead of ballooning past physical memory.",
+  "pub_date": "2026-07-26T18:18:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9YbHF5WjhXSmRZN3JnRS94aFRPbzkxTEFZdkdNVmVINWlJNy9CUXZMRmJCbU43RlNxMEpzcHArT01SbnlINzJCcjZJUGNyM2NzN2RDYjMwbXdNUXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMxOTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOZzV1bXR0c1VwSEhjVzhEMlZwV1RNbE13T3RzL3pXQU5mSHpaZGJWK1gwaGFiSTZrK2daTGkxVXU4YzVIM0YyNzhHaEFteHR4TEY5Z0dnMWNibkxBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU41dk8yYTZTOTNYdWJsZXZhT095UU4rQnRZbklacy9jQXBLWTJ5SUVxVkJrQ3ZVMmN5R2YxeExyQzIxS2VrbEh5TXpOWHJYWllndHFZcDcrYzBQamdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDg5ODU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRV21ZQ1ZDelpxU1RyWS80RnVaZ2dUSzQ3NVZ3NHZDdjNvenJWV1NFY3VRUUoxTE1CQzloT0pTZzV4T0xIVGhhWk5FSWVpUHptUUhYYmxIK2R3WkZCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
