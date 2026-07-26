@@ -1,10 +1,10 @@
 {
-  "version": "0.1.304",
-  "notes": "Max quality installs itself, and its progress bar now tells the truth \u2014 it used to sit near 100% for the whole render, which looked frozen.",
-  "pub_date": "2026-07-24T19:25:06Z",
+  "version": "0.1.306",
+  "notes": "Nine fixes: finished jobs no longer vanish from a busy queue, the timeline is fully keyboard-operable, non-Latin captions wrap correctly, error messages show the whole message including the fix, and upscale-on-export now checks you have the disk space first.",
+  "pub_date": "2026-07-26T01:16:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFlY2hnS1NObHBscVVsTUh2OFhkSzNhdXlBblI5b1owSkF5YU9MTG5CTGJNYUFvbk10UjYvRENaY0tDczhIY25JN1ExZlpHa0dyUW5yN1dBZUNOVFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTIxMDU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPcE1DcjdzSXJ2dFlBSXc1Y3F1bUlEK0FnVVBWWFU1bWhUYW1KZVFuUHloajdnVGtEM1I4T0RjTjRyWVJ3dGxsR01vdWUvdDhaWWV6bnZiMThNUHJBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUsyTDBhUjBKbDlHVWx1c1ljbUFocTVER0pCNnZGZ3Q0OURPQnNISmhnZUhpVXY1WXpEaUpTYzhUNE5rejhjelIydUhDZ1Y5bEU4MWhucDYvR0dJRlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDI4NTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLK3dxWnV6WmhUcXI0NHA5MlRaVkZUeW9rNTlCcGwyaTZ1dW1WcWRZb0FJeUZIOUFvcEdNVVR5WUNqbW9pSmwwTzE5NWZudDNBWXZpU0NqY1A3TWtBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
