@@ -1,10 +1,10 @@
 {
-  "version": "0.1.306",
-  "notes": "Nine fixes: finished jobs no longer vanish from a busy queue, the timeline is fully keyboard-operable, non-Latin captions wrap correctly, error messages show the whole message including the fix, and upscale-on-export now checks you have the disk space first.",
-  "pub_date": "2026-07-26T01:16:39Z",
+  "version": "0.1.308",
+  "notes": "Fixes a crash on the editor's Upscale-on-export, stops a cancelled job from sometimes running anyway, and closes a rare case where an export could overwrite your original file. The Max download now checks you have space before starting.",
+  "pub_date": "2026-07-26T01:45:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUsyTDBhUjBKbDlHVWx1c1ljbUFocTVER0pCNnZGZ3Q0OURPQnNISmhnZUhpVXY1WXpEaUpTYzhUNE5rejhjelIydUhDZ1Y5bEU4MWhucDYvR0dJRlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDI4NTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLK3dxWnV6WmhUcXI0NHA5MlRaVkZUeW9rNTlCcGwyaTZ1dW1WcWRZb0FJeUZIOUFvcEdNVVR5WUNqbW9pSmwwTzE5NWZudDNBWXZpU0NqY1A3TWtBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUkzVGhvcWRwb0JUdS9LRlNyWWNrV2tSM3JsWk56Q0g4c2VIVEx1SmNrUE9Fanl5RW5Oa01wdThMRzhoTWozNjd2S0xzWXJ3dkRwYm5rOThXRjRvZ1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMwMjY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRRmJnM1NxUUdJcm1EM3V2UkoxR3Zoc3ZoQ1NjWFF5c2lpU0RmOU0vcEdsQXBQTmJuakV6a2xTa1k2M1diNm8wZlpjaXBWVEhLSVV6ZTdHSVJQajdDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
