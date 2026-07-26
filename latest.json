@@ -1,10 +1,10 @@
 {
-  "version": "0.1.309",
-  "notes": "Asking to enhance and colour-adjust in one go (e.g. 'enhance this and make it warmer') now does both \u2014 it used to silently drop the enhancement and only apply the colour.",
-  "pub_date": "2026-07-26T02:01:03Z",
+  "version": "0.1.310",
+  "notes": "Max quality now refuses to hand back a broken file as if it finished, and keeps variable-frame-rate phone clips in sync. A job whose engine restarted no longer sticks on 'Processing' forever, and every job type in the queue shows its real name.",
+  "pub_date": "2026-07-26T02:13:33Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9uaStVM1B4cHduak9QQUJBN0NZb2lKN1RRMFFkN2xuWjhwSjc3MVI0cGg2eC9Bbm8yNHlzeHdsU1RxcGZQbVdDNmh4WmRqakZuaFJVSmdzQ2U4RHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMxMjE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4QXB3cXNhZXhMWWhNVWh6RlNsY1haRnNTYlBOOVNwNHR1dTArdldNeXhZem5BNUsxVCttWEJxKytBUjdIenhqYkszQ0E4V21VM0VtUGpDcjd2aXhBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9YbHF5WjhXSmRZN3JnRS94aFRPbzkxTEFZdkdNVmVINWlJNy9CUXZMRmJCbU43RlNxMEpzcHArT01SbnlINzJCcjZJUGNyM2NzN2RDYjMwbXdNUXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMxOTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOZzV1bXR0c1VwSEhjVzhEMlZwV1RNbE13T3RzL3pXQU5mSHpaZGJWK1gwaGFiSTZrK2daTGkxVXU4YzVIM0YyNzhHaEFteHR4TEY5Z0dnMWNibkxBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
