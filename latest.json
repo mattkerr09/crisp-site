@@ -1,10 +1,10 @@
 {
-  "version": "0.1.308",
-  "notes": "Fixes a crash on the editor's Upscale-on-export, stops a cancelled job from sometimes running anyway, and closes a rare case where an export could overwrite your original file. The Max download now checks you have space before starting.",
-  "pub_date": "2026-07-26T01:45:24Z",
+  "version": "0.1.309",
+  "notes": "Asking to enhance and colour-adjust in one go (e.g. 'enhance this and make it warmer') now does both \u2014 it used to silently drop the enhancement and only apply the colour.",
+  "pub_date": "2026-07-26T02:01:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUkzVGhvcWRwb0JUdS9LRlNyWWNrV2tSM3JsWk56Q0g4c2VIVEx1SmNrUE9Fanl5RW5Oa01wdThMRzhoTWozNjd2S0xzWXJ3dkRwYm5rOThXRjRvZ1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMwMjY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRRmJnM1NxUUdJcm1EM3V2UkoxR3Zoc3ZoQ1NjWFF5c2lpU0RmOU0vcEdsQXBQTmJuakV6a2xTa1k2M1diNm8wZlpjaXBWVEhLSVV6ZTdHSVJQajdDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9uaStVM1B4cHduak9QQUJBN0NZb2lKN1RRMFFkN2xuWjhwSjc3MVI0cGg2eC9Bbm8yNHlzeHdsU1RxcGZQbVdDNmh4WmRqakZuaFJVSmdzQ2U4RHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDMxMjE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4QXB3cXNhZXhMWWhNVWh6RlNsY1haRnNTYlBOOVNwNHR1dTArdldNeXhZem5BNUsxVCttWEJxKytBUjdIenhqYkszQ0E4V21VM0VtUGpDcjd2aXhBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
