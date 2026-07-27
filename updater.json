@@ -1,10 +1,10 @@
 {
-  "version": "0.1.321",
-  "notes": "Auto-Montage now finds the MAIN SUBJECT in action instead of whoever's talking \u2014 it uses on-device Vision to see where the subject is and whether it's moving, and adapts to golf / game capture / sports / talking clips. Much better highlight reels.",
-  "pub_date": "2026-07-27T22:48:39Z",
+  "version": "0.1.322",
+  "notes": "Fixes the on-device Vision that powers smart montage selection (it had never actually shipped), so Auto-Montage now really sees the main subject and picks the action.",
+  "pub_date": "2026-07-27T22:55:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURKc25IVkxOQnM3cHl6S1RJTlJZN1p6SmN0Tk1DN2RlSTVKcHpwZ2RwejZSdGcrb0NWTCtTWTNaWnkyM0pwSjh4Zm5tczVKMUhTekhnWXN0aytGS2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkyMzgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4bjlMcmRkTy9idnp6eVVIdkgrOWRnaTdQOVZGcUxtd3RORjFFaDhFbGFPR3h2T3NmMlBjajRyUGlud0hDSVg5dmtveWxQTDFpMllDYkJPbGJDRHRBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU52Y3VrdzlUWVg2eDE4dTZwdSt1Q1M5azFLZ1hCcnNrT1JsZDVUNGw5dVpJYkVtRHNSMmZUY0kxTWJ0TEgwMTJOSmYzOUtQeTBpcllMbXM3U0M3eFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkyODY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsNjVWVE8xZHRxZ0dyV3EvWU5LV2tES2R2QjVMSUY0K1lMUzNiWHZRQ1hpa0trMmpRNTZOcDVicHp2VkY2WjAxbEp5YjlOdHlnUDNZVFJjY0FYU1REUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
