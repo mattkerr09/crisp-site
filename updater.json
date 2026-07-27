@@ -1,10 +1,10 @@
 {
-  "version": "0.1.316",
-  "notes": "Max quality now works on PHOTOS \u2014 including on 16GB Macs. A single photo has no temporal window, so it fits in ~11GB where video Max needs far more. Same flagship model, generative restore, for stills.",
-  "pub_date": "2026-07-27T18:41:07Z",
+  "version": "0.1.317",
+  "notes": "Max on photos: never downscales (large photos are steered to Enhance instead of shrunk), Stop works, HDR and transparency handled correctly.",
+  "pub_date": "2026-07-27T19:05:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBGWFdvalRGWFgxbVd5WFpIZ2ZNU09IMHUwNjhuWmh5ZEVxVHdPL2ZIeWZFM3JVWll6aW1JTGJZQlNmd3BWOWk5ZVZWaExsSjRyU0Z4WmhMZE5XREFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTc3NjIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiM01JVnUxbm9UTGtNbE5MT0podXcvSUh4NUVmdGZoR3c3N2tTRU9NY3NsaDZ3UjZIbHdyYmtSY2ZsNk00UExhRzdoM2U4Zkl0QXZLVTdQR2pLNS9EQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBJK2RzL3dCbzJINFp6ZUVCcWlOeFRjNXZtZHlYVFRXSVZ2YkVWbjkwMzFyWDIxSHZqdzkvNUM1azJ1SFJmT0RzUERLbDJ0VEphQkdtcHl3QVFpd3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTc4OTg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoeTNlb2t2WjJtd0RCNTA4bmc1VStROUxJLzc3bHBUS0QyNjFUU0lPYVg2OE14WHFiRFltK2RZeXUyUThkL1I0bUlCQmp2VEJIK2lwNnUwcEVlN1VBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
