@@ -1,10 +1,10 @@
 {
-  "version": "0.1.313",
-  "notes": "Fixes from a self-review: the Max preset card now correctly falls back to Enhance when the pack isn't installed, Max sizes its memory to fit your Mac (a 24GB Mac now runs it, a 16GB Mac declines cleanly), and iPhone-HDR variable-rate clips stay in sync.",
-  "pub_date": "2026-07-27T14:42:35Z",
+  "version": "0.1.314",
+  "notes": "Max now tells you clearly up front when your Mac doesn't have enough free memory (it needs about 34GB free), instead of starting a long render that then stops. Sizes to fit and never swaps your machine.",
+  "pub_date": "2026-07-27T16:50:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlwK3FjYXZZaGJNZ2JLbm96cHJhMlpIcURqQTBRd2ZnWXBReVNqemIvaVJROVhnQnNsSHYyaTZjUHNLL1ZYc2pwMkI4SlFsYjFGOExDUzhnRFp6M1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTYzMTg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3VFpPZEJCYlU1SkpyZkdvNjh4RXBhc0hpTHY5QjdaY0VjUGx1ZjhGQW9FS2dYVFFkeDAwMURNb0xIdG8rdk1BWVAyY1JYdDArdE5GMCtLbVNvMElEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVSb21ZNDhhYlhIZ2RjbWpNdWlRbnhtZ0ltaTZHQXYyQTR1dTdrNDBOaWpUa2tXbnN2a3Aza0VyVWZQcXNsQWZVSlhDSTNNZEJ4aWx5Q0tqeThNbnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTcwODk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negozRlI5VXRKc3pSUUZ0M2VRYXZiSlJIQ1Bpc3N4K3FhRlhmRUY1dUNkWnhTZHk3NWxHSUM0SWZ4N2I2TlFrdWkvK2FlemJjWkFpM1JMb3o2K1NVYm9Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
