@@ -1,10 +1,10 @@
 {
-  "version": "0.1.317",
-  "notes": "Max on photos: never downscales (large photos are steered to Enhance instead of shrunk), Stop works, HDR and transparency handled correctly.",
-  "pub_date": "2026-07-27T19:05:49Z",
+  "version": "0.1.318",
+  "notes": "Auto-Montage now adapts to what it's watching \u2014 golf, baseball, video-game capture and talking clips each get their own highlight-picking strategy \u2014 and you can render a montage as a split-screen or grid reel (multiple highlights at once), not just one after another.",
+  "pub_date": "2026-07-27T20:16:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBJK2RzL3dCbzJINFp6ZUVCcWlOeFRjNXZtZHlYVFRXSVZ2YkVWbjkwMzFyWDIxSHZqdzkvNUM1azJ1SFJmT0RzUERLbDJ0VEphQkdtcHl3QVFpd3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTc4OTg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoeTNlb2t2WjJtd0RCNTA4bmc1VStROUxJLzc3bHBUS0QyNjFUU0lPYVg2OE14WHFiRFltK2RZeXUyUThkL1I0bUlCQmp2VEJIK2lwNnUwcEVlN1VBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp1RTM1WDNSeGF5M0VvNW43SXdMRnprSHlWMEJBTDc1L21WVHRxTUZDRkFXUW5KUHZ0clExZWp1TXZuZHc0RG8yY3R0LzFJU0c4WEpFNlFvWlhTa3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTgzMzQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQMkZyb1BjVFFLVENwak8rN2NicWVKUTVyRkk4TmYxV3VrRkRoNDd6bXllNnh1eGRkOGhYeWVRdVFWVDdjK3J1TUlBby9nay9EdGJKOXAvaGRIcG1CZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
