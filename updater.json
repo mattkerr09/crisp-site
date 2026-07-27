@@ -1,10 +1,10 @@
 {
-  "version": "0.1.311",
-  "notes": "Max quality no longer swaps your Mac: it now sizes itself to your total RAM (not the momentarily-free amount) and aborts safely before the machine runs low, instead of ballooning past physical memory.",
-  "pub_date": "2026-07-26T18:18:45Z",
+  "version": "0.1.312",
+  "notes": "Max quality now checks whether your Mac actually has room before it starts \u2014 if memory is tight (another heavy app or a stuck model server) it says so up front instead of starting a long render that fails. Sizes to your total RAM and aborts before the machine swaps.",
+  "pub_date": "2026-07-27T14:11:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU41dk8yYTZTOTNYdWJsZXZhT095UU4rQnRZbklacy9jQXBLWTJ5SUVxVkJrQ3ZVMmN5R2YxeExyQzIxS2VrbEh5TXpOWHJYWllndHFZcDcrYzBQamdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDg5ODU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRV21ZQ1ZDelpxU1RyWS80RnVaZ2dUSzQ3NVZ3NHZDdjNvenJWV1NFY3VRUUoxTE1CQzloT0pTZzV4T0xIVGhhWk5FSWVpUHptUUhYYmxIK2R3WkZCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhpcldpMXJtY1l3RzZwU3BuMmhJVnYrOVpCNEFwSnBvZ2gxNE5GalU4akJkcWlEZ3FTV0twMmM3eUhSR1V0SS9ZL0xkbmZGUGN5cldORkg2cDVHVkFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MDk0MTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDK1ZEQlNDcFlOWWpvVGJnZFp3VkJsQno0akk2aGpVZTZ6TjdrNEJWSERyNk1aejhlYWNVNDBtclBWajdqaUNaTlFlcU5Bajg2ejBDM3pvK1Bva21DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
