@@ -1,10 +1,10 @@
 {
-  "version": "0.1.320",
-  "notes": "Built-in royalty-free music now ships with the app (single-clip montages, split-screen montage layout, and the music library \u2014 all together).",
-  "pub_date": "2026-07-27T21:06:08Z",
+  "version": "0.1.321",
+  "notes": "Auto-Montage now finds the MAIN SUBJECT in action instead of whoever's talking \u2014 it uses on-device Vision to see where the subject is and whether it's moving, and adapts to golf / game capture / sports / talking clips. Much better highlight reels.",
+  "pub_date": "2026-07-27T22:48:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdUcVBzOTcvSXluZENTWmJ2M3A4dksxV1pTMS9QUkVRUHZwbzRhc2FnV2QxQTE3MUZTWTdVUG5SRVRlNVZhZHB0dlhrQUlmSU1xSzdkSXNHbXZJYmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTg2MjYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpValhIbC8raFM2NkJNZ1Q3Z3A5OWpLOGc1dnJTUmN0UkYycHRab1FZNWxCUVY5cjBRV0RCNlFKUzlGMHJmeGxraWJVZFh4dzlLU2t1MXdwYjNjbEZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURKc25IVkxOQnM3cHl6S1RJTlJZN1p6SmN0Tk1DN2RlSTVKcHpwZ2RwejZSdGcrb0NWTCtTWTNaWnkyM0pwSjh4Zm5tczVKMUhTekhnWXN0aytGS2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkyMzgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4bjlMcmRkTy9idnp6eVVIdkgrOWRnaTdQOVZGcUxtd3RORjFFaDhFbGFPR3h2T3NmMlBjajRyUGlud0hDSVg5dmtveWxQTDFpMllDYkJPbGJDRHRBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
