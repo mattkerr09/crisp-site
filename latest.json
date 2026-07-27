@@ -1,10 +1,10 @@
 {
-  "version": "0.1.322",
-  "notes": "Fixes the on-device Vision that powers smart montage selection (it had never actually shipped), so Auto-Montage now really sees the main subject and picks the action.",
-  "pub_date": "2026-07-27T22:55:50Z",
+  "version": "0.1.323",
+  "notes": "Fixes low-light and Enhance on photos \u2014 screenshots, HEIC and PNGs with an (opaque) alpha channel were silently skipping the enhancement and coming out flat/gray. They now get the full restore.",
+  "pub_date": "2026-07-27T23:10:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU52Y3VrdzlUWVg2eDE4dTZwdSt1Q1M5azFLZ1hCcnNrT1JsZDVUNGw5dVpJYkVtRHNSMmZUY0kxTWJ0TEgwMTJOSmYzOUtQeTBpcllMbXM3U0M3eFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkyODY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsNjVWVE8xZHRxZ0dyV3EvWU5LV2tES2R2QjVMSUY0K1lMUzNiWHZRQ1hpa0trMmpRNTZOcDVicHp2VkY2WjAxbEp5YjlOdHlnUDNZVFJjY0FYU1REUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh0SmV3R05zeE8zb2lGb2NIaHUzQ0xzQjlnSFM0bStxRmFya2pKMTVYSTVlRlh5UkhCU1NxbyszVW9iRGI1WkRpRDJLTG1EcERqMzdFYzdvQWRkK0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkzNzIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1L3ZTODlEVWdIdnhSOVVMdFhxRURNOEhRZW9wbGFEaTQxM3ZQRHR2ZWtrSjh0bzBjQjh3Rm1weXE2a3M4WUw3NUFyZXVLeFVwMEp5bHhaV0puRXRDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
