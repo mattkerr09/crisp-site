@@ -1,10 +1,10 @@
 {
-  "version": "0.1.319",
-  "notes": "Auto-Montage now works from a single video (a whole game into a highlight reel), split-screen is a montage layout you can pick right in the editor, and there's built-in royalty-free music to choose from \u2014 no need to supply your own song.",
-  "pub_date": "2026-07-27T20:58:43Z",
+  "version": "0.1.320",
+  "notes": "Built-in royalty-free music now ships with the app (single-clip montages, split-screen montage layout, and the music library \u2014 all together).",
+  "pub_date": "2026-07-27T21:06:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZoT2hPWHg3L1B5YjRlZVBUV3hlWUc1WlcxbXlzZnJpY2t1MnhHNXRmaExKVTd4V1NWdTJTNmoxRXVEQmZibTVZaDVuaGVlTEhDLzh0dlFpTDIvT3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTg1ODI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwU3M2bHV1d2IvOTZIa0FES3R5c0tob2pEQytjalNEdTluOGxnM2pxdkRxS1hFdWxrZXlONHVTemYrcW53UjY3ejB5YVl1T2kyVSt3ek5BSWl3Q3hEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdUcVBzOTcvSXluZENTWmJ2M3A4dksxV1pTMS9QUkVRUHZwbzRhc2FnV2QxQTE3MUZTWTdVUG5SRVRlNVZhZHB0dlhrQUlmSU1xSzdkSXNHbXZJYmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTg2MjYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpValhIbC8raFM2NkJNZ1Q3Z3A5OWpLOGc1dnJTUmN0UkYycHRab1FZNWxCUVY5cjBRV0RCNlFKUzlGMHJmeGxraWJVZFh4dzlLU2t1MXdwYjNjbEZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
