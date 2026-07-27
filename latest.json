@@ -1,10 +1,10 @@
 {
-  "version": "0.1.314",
-  "notes": "Max now tells you clearly up front when your Mac doesn't have enough free memory (it needs about 34GB free), instead of starting a long render that then stops. Sizes to fit and never swaps your machine.",
-  "pub_date": "2026-07-27T16:50:24Z",
+  "version": "0.1.315",
+  "notes": "Max quality memory sizing corrected from live measurement \u2014 it now picks a tile that completes on your Mac instead of aborting near the end, and states its real memory need up front.",
+  "pub_date": "2026-07-27T17:20:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVSb21ZNDhhYlhIZ2RjbWpNdWlRbnhtZ0ltaTZHQXYyQTR1dTdrNDBOaWpUa2tXbnN2a3Aza0VyVWZQcXNsQWZVSlhDSTNNZEJ4aWx5Q0tqeThNbnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTcwODk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negozRlI5VXRKc3pSUUZ0M2VRYXZiSlJIQ1Bpc3N4K3FhRlhmRUY1dUNkWnhTZHk3NWxHSUM0SWZ4N2I2TlFrdWkvK2FlemJjWkFpM1JMb3o2K1NVYm9Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9NQ0RRU3laOTExL2crWGVCc0gzZkgyZVNlZVVWaE1pbzlWT1QyaVhMc3FXdTBtZGdyOExJdWhMRkNwZks3NHhpMGhJNElYMUxtWkdOQ0tSenUvSEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTcyODEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpScHUzVlRiL3BqUlA3OFhVTEw1cUVmR0FBa3hLNFgycGpXNGNjU0FzVTNWRnBoQXpEdW8wM1lPZXVYL0VZbmV4ZFNRZDN2ME5SZkxnQ29xWHFIQ0tBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
