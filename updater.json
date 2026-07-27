@@ -1,10 +1,10 @@
 {
-  "version": "0.1.318",
-  "notes": "Auto-Montage now adapts to what it's watching \u2014 golf, baseball, video-game capture and talking clips each get their own highlight-picking strategy \u2014 and you can render a montage as a split-screen or grid reel (multiple highlights at once), not just one after another.",
-  "pub_date": "2026-07-27T20:16:35Z",
+  "version": "0.1.319",
+  "notes": "Auto-Montage now works from a single video (a whole game into a highlight reel), split-screen is a montage layout you can pick right in the editor, and there's built-in royalty-free music to choose from \u2014 no need to supply your own song.",
+  "pub_date": "2026-07-27T20:58:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp1RTM1WDNSeGF5M0VvNW43SXdMRnprSHlWMEJBTDc1L21WVHRxTUZDRkFXUW5KUHZ0clExZWp1TXZuZHc0RG8yY3R0LzFJU0c4WEpFNlFvWlhTa3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTgzMzQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQMkZyb1BjVFFLVENwak8rN2NicWVKUTVyRkk4TmYxV3VrRkRoNDd6bXllNnh1eGRkOGhYeWVRdVFWVDdjK3J1TUlBby9nay9EdGJKOXAvaGRIcG1CZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZoT2hPWHg3L1B5YjRlZVBUV3hlWUc1WlcxbXlzZnJpY2t1MnhHNXRmaExKVTd4V1NWdTJTNmoxRXVEQmZibTVZaDVuaGVlTEhDLzh0dlFpTDIvT3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTg1ODI3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwU3M2bHV1d2IvOTZIa0FES3R5c0tob2pEQytjalNEdTluOGxnM2pxdkRxS1hFdWxrZXlONHVTemYrcW53UjY3ejB5YVl1T2kyVSt3ek5BSWl3Q3hEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
