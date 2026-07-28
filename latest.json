@@ -1,10 +1,10 @@
 {
-  "version": "0.1.345",
-  "notes": "Condense now delivers exactly the length you ask for (it was returning double on many clips).",
-  "pub_date": "2026-07-28T14:55:43Z",
+  "version": "0.1.346",
+  "notes": "Adds Terms, Privacy and Refund links to the Unlock Pro window, and condense now delivers the exact length you ask for.",
+  "pub_date": "2026-07-28T15:09:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNyRktkTW9nNC9pZ3V2cE1sME9KR29BQWdmZzkzRERjZzRVeUV6S09UWklXeExldlBrSHNwTUhIUXdTdis2aWNhaXEzTWhRZERKZlBXNysyQUJTemc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjUwNDQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negplME1Rc2JWWnMwY3FyZzBsS2Z1VXlnNkt0bmRMeHJ5TEllbDIvL2dVc0U1QWkzNElsMzdmZGl6MS9MNUpLL2lSZjVLL1dzeWtxSDZROXRmSElyeUpCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrdDFJbmtpSTBNd2JVMU94M0tNN2tiRFJ4SGc3NGVKcEdiM3hCaWVtQ0JjOW8xQ3d0VjFLM2pvQ0hPTmNWNDE2Umx3a1BLUm1JdmRXSUU3cVM0eFFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjUxMzE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpodjh0MGRUMVJKTXh5NFJXamh4WXhMMWdXMk5EOHl5MEtNWWZDRDFxOG9vWFBUZldrSVVlbFVIRDNBUDI1S0VicWE5dzlBUG5QeHY0U2Iwd1RQaVREZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
