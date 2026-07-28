@@ -1,10 +1,10 @@
 {
-  "version": "0.1.325",
-  "notes": "Max on photos is faster \u2014 it now uses your Mac's free memory to skip the slow low-memory streaming, at the same full resolution (no cap).",
-  "pub_date": "2026-07-28T04:38:02Z",
+  "version": "0.1.326",
+  "notes": "Fixes split-screen/grid montage being ignored when you have more than one clip, the built-in music tracks not showing up, Stop being ignored while analysing a long clip, and Max on photos aborting on smaller Macs.",
+  "pub_date": "2026-07-28T07:27:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN6NzUrQmpOMmM4azRXVk1Cb3pGNHpNWHJ0VDdYbWJyVjI3bkY3WjA0OXVJU3ZjQ2J6V0s2eS9abnNFNjcwTzJzdUdhZnNLUERoeTJraDdvcWk2clFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjEzNDQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5V3hURjFtcVVZV0M4THgyNC9KQmhYK2xwendvcjFlZGhCb3RTRFB3V1J1dllwTTJnRWpieUhNdjliR1Y1NDhTYWs0VVJCRVFYMWVZVkVNZThKYm9BUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtraWdFQWlCRjUxRmtQV1BHa2g4NTBGdGwzT21lVkY0YURxclNWVjJFT0swTVl5NkxyZ2kxUVlZOGtSYTZxeDRSSWdhNmNIWGo1TkxsMjgvWmRGaEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjIzNTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyYm9ZRmFrdWsveUN5OUdSUVJBTWlqTEdqK1hzbXlUdEtzSjhvd1RVZHZ2T2Z4YmVGYkxGNEZLNi8xbVFGTkJJK3ZSODJCd216c0YzdS9HaUc1UWxDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
