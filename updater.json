@@ -1,10 +1,10 @@
 {
-  "version": "0.1.329",
-  "notes": "Montage fixes: highlight picking now works on long recordings, split-screen reels keep their sound when a clip is silent, and the target length is honoured for split and grid layouts.",
-  "pub_date": "2026-07-28T10:32:35Z",
+  "version": "0.1.330",
+  "notes": "Montages now work with the None (hard cuts) transition instead of failing, and Try again keeps your split-screen or grid layout.",
+  "pub_date": "2026-07-28T10:46:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlSTWZYZURMRmVhT3RuR3ZESmYxdWthYXFuNkI2MUpLSXEwQnZIWUlOMGVlQ2I5ZVd6aG83NEo1MkdXdlJ4Zjh4S2dmTXJDSHhlUUxxL1kvRkxLQ1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM0NzA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwenJPN1NCTWw1dUlPejNxNUl6RjliZmIrUGhSZVc1MmdoSFZabGEycVhtaVdMcDc4TjBkc3lJU3luQVJKR2FLVDd4NURjTFlzR00zbUpKOFVrYkxBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJmTkJCM1RhQjVCZ3Y4REdNM2NYb2NyZDJuOWxKbitaa2ZBUHdMZkR2TWw0NUFZelQ2WGovekF0V3Y3ZzM1RmlsTjI0NDU2NjBQbENGOExMb29BelFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM1NTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpISVphbEhPVElLSW5kYzhCc3Fvbjl0KzRUaUdXM1JlRUpWK3FvUTFocmFHdjRSVGg4WTdQRHNxYzdtdTA3cWFKcTE5OTNwTmw1YVhEZEtlOWFpeS9Edz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
