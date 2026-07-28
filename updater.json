@@ -1,10 +1,10 @@
 {
-  "version": "0.1.342",
-  "notes": "Stop now tells you honestly when a job is in its final uninterruptible step instead of claiming it cancelled, and exported file sizes are reported accurately.",
-  "pub_date": "2026-07-28T13:49:26Z",
+  "version": "0.1.343",
+  "notes": "Fixes Loop overwriting a previous export, Condense stopping short of the length you asked for, free-tier Compress coming back bigger than it should, and Stop giving no feedback while a job finishes.",
+  "pub_date": "2026-07-28T14:29:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUttbDhZempETHZBMWJuYXY2TmRiZjFIL0czSjZXRmNka1BRejlGL1l1THc5OURYRUIxS3ZMaGJvVVQzSTd0aXpaMUNQSmthNjFxcFpsWGlzak9aUkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ2NTIwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVQzNlVzNlTVRXem5hdmtneUczaE1zMmRnU1hZM3NTTEo2UFdUVXJxak9aV2tqdzczMng2b2dNVktzdENMWXR5TzlrNGRhcGZCK2piaVZNNkRFVllCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBtWXVJU0VYejVqVi80Rzh1YW1PYmFyUlI3MldFSGFTVCswY0ZibVdKMmZPUUQ3Z0E3d1R6QnBhTG9jZ0tXdGRscFZlSHJnQU1OUUVTN2JxcVBMVWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ4ODk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoR0EzbGpEVFRFWllCVW82ZEJMeDQ1VU9VL25KSnFvVVZWbEJDMFZsWHNMZS9iZTlkZU1QMzI4OHBiRkYrbWhlYVJlTEZCRE1Id2MyT2tULzI4UEFEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
