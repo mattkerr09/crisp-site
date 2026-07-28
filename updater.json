@@ -1,10 +1,10 @@
 {
-  "version": "0.1.332",
-  "notes": "Music montages now run the full length of longer songs instead of stopping short, and HDR photos are tonemapped properly in Enhance.",
-  "pub_date": "2026-07-28T11:05:39Z",
+  "version": "0.1.333",
+  "notes": "Try again no longer runs a different job than the one that failed, and montages made from several clips now use the same smart highlight picking as single-clip ones.",
+  "pub_date": "2026-07-28T11:17:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY3NEgzVG0xRDFBVi9mMkQvbmFvUXBwU3piTGcxWWpMaUxwdzZnUkM0RjlPbjYrMElrOWVpTFRQRWUxMllDT3NGVWR5ODA0cmZEYUp1Y1V4QjZJUEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM2NzAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjTStUL3BvYzNDU0dacjJsU0szWDA4UXJqNDBKc0o5TmM5T1d4bjk2M0tTdTlQVkZDLzRvZmMvbWZjbGFTbzJXNHVQck8wL05HK3NaRWxkbUNwc2lDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdjZkNXWUEwczQ2QXFXZFV1Q1ZmcmF3U2UzYkxMZU1JcUZRVXJ4TFhhVEJLUnJsbDBxSXgxdThWb0lkZjdhc3FkMkRybk1JQzM5T3BPbkNSVVVPS1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM3MzkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucDdjT2NPUmQrRTh0SnYxNWovQlJRV0h4eXk2bXNqRmo5MnpyUCtTN3Rza1haaUx3elNpNTZ2RUNUSjYxM0FjckpweXU2bmhmL2RkTjhZR0RsNUlCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
