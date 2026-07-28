@@ -1,10 +1,10 @@
 {
-  "version": "0.1.330",
-  "notes": "Montages now work with the None (hard cuts) transition instead of failing, and Try again keeps your split-screen or grid layout.",
-  "pub_date": "2026-07-28T10:46:17Z",
+  "version": "0.1.332",
+  "notes": "Music montages now run the full length of longer songs instead of stopping short, and HDR photos are tonemapped properly in Enhance.",
+  "pub_date": "2026-07-28T11:05:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJmTkJCM1RhQjVCZ3Y4REdNM2NYb2NyZDJuOWxKbitaa2ZBUHdMZkR2TWw0NUFZelQ2WGovekF0V3Y3ZzM1RmlsTjI0NDU2NjBQbENGOExMb29BelFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM1NTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpISVphbEhPVElLSW5kYzhCc3Fvbjl0KzRUaUdXM1JlRUpWK3FvUTFocmFHdjRSVGg4WTdQRHNxYzdtdTA3cWFKcTE5OTNwTmw1YVhEZEtlOWFpeS9Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY3NEgzVG0xRDFBVi9mMkQvbmFvUXBwU3piTGcxWWpMaUxwdzZnUkM0RjlPbjYrMElrOWVpTFRQRWUxMllDT3NGVWR5ODA0cmZEYUp1Y1V4QjZJUEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM2NzAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjTStUL3BvYzNDU0dacjJsU0szWDA4UXJqNDBKc0o5TmM5T1d4bjk2M0tTdTlQVkZDLzRvZmMvbWZjbGFTbzJXNHVQck8wL05HK3NaRWxkbUNwc2lDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
