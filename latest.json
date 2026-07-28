@@ -1,10 +1,10 @@
 {
-  "version": "0.1.341",
-  "notes": "Preview no longer hangs while a Max render is running, and Crisp now tells you Max is a Pro feature before starting the 4.6 GB download rather than after.",
-  "pub_date": "2026-07-28T13:35:51Z",
+  "version": "0.1.342",
+  "notes": "Stop now tells you honestly when a job is in its final uninterruptible step instead of claiming it cancelled, and exported file sizes are reported accurately.",
+  "pub_date": "2026-07-28T13:49:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY1aDRESDZlclJEOXUwMzlxMGtldDNSdWxLYW02OXd0dDh0TWV2YjhiempqQ0kzVmlTUHRmeDhEMEFqYUFtbjMzVDB3VEJuZWd2WUJzNEdieXd5T2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ1NzAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyOTNaSVkzUVI4Z290SUhnM2FBVmlNMzQ2anpsU1B2TGttZGVpUkkvZzIvai93dzBwWFl6QUFURlFiOWZ3ZkhmZFRLUnZrY2hocTU2U0lINGpYT2xEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUttbDhZempETHZBMWJuYXY2TmRiZjFIL0czSjZXRmNka1BRejlGL1l1THc5OURYRUIxS3ZMaGJvVVQzSTd0aXpaMUNQSmthNjFxcFpsWGlzak9aUkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ2NTIwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVQzNlVzNlTVRXem5hdmtneUczaE1zMmRnU1hZM3NTTEo2UFdUVXJxak9aV2tqdzczMng2b2dNVktzdENMWXR5TzlrNGRhcGZCK2piaVZNNkRFVllCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
