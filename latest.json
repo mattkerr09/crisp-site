@@ -1,10 +1,10 @@
 {
-  "version": "0.1.323",
-  "notes": "Fixes low-light and Enhance on photos \u2014 screenshots, HEIC and PNGs with an (opaque) alpha channel were silently skipping the enhancement and coming out flat/gray. They now get the full restore.",
-  "pub_date": "2026-07-27T23:10:35Z",
+  "version": "0.1.324",
+  "notes": "Fixes Max quality failing on many real photos (odd pixel dimensions broke the render). Plus the earlier low-light/enhance photo fix.",
+  "pub_date": "2026-07-28T00:25:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh0SmV3R05zeE8zb2lGb2NIaHUzQ0xzQjlnSFM0bStxRmFya2pKMTVYSTVlRlh5UkhCU1NxbyszVW9iRGI1WkRpRDJLTG1EcERqMzdFYzdvQWRkK0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTkzNzIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1L3ZTODlEVWdIdnhSOVVMdFhxRURNOEhRZW9wbGFEaTQxM3ZQRHR2ZWtrSjh0bzBjQjh3Rm1weXE2a3M4WUw3NUFyZXVLeFVwMEp5bHhaV0puRXRDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1VckdpUDJyR1ExbVY0ZGJzU1hxOHYxb3VzT1hYc3FBRzM2M3JMMXBqNnp2bHpDcUhGbXVkU04vR1BUeGh0Mzh6K0Zydkk5UXo2MkZ6V2s3bER6QlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MTk4MjcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppRTRQZjNPVndMdGxpQnErTVJNQzdjaWkzVlN0dkFYQlNqWVlxSmFOaXFaeTZkNTNSZ0lGeFNyWU5kNm9ZT2dEcUJWc0FyczRFdE1vdUw4RllzeCtBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
