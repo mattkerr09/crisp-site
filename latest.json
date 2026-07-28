@@ -1,10 +1,10 @@
 {
-  "version": "0.1.326",
-  "notes": "Fixes split-screen/grid montage being ignored when you have more than one clip, the built-in music tracks not showing up, Stop being ignored while analysing a long clip, and Max on photos aborting on smaller Macs.",
-  "pub_date": "2026-07-28T07:27:08Z",
+  "version": "0.1.327",
+  "notes": "Split-screen and grid montages set to music now run the full length of the song instead of ending early.",
+  "pub_date": "2026-07-28T10:05:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtraWdFQWlCRjUxRmtQV1BHa2g4NTBGdGwzT21lVkY0YURxclNWVjJFT0swTVl5NkxyZ2kxUVlZOGtSYTZxeDRSSWdhNmNIWGo1TkxsMjgvWmRGaEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjIzNTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyYm9ZRmFrdWsveUN5OUdSUVJBTWlqTEdqK1hzbXlUdEtzSjhvd1RVZHZ2T2Z4YmVGYkxGNEZLNi8xbVFGTkJJK3ZSODJCd216c0YzdS9HaUc1UWxDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZpOXNQMStaYURTSmtISlVKVDFzNXh3ZU84czM0Q0xUeUdDcktxdXVzOElRMnMwaDU3a1NFREtNY0d5eE1iQU1pbHQ1aDRoSCtlOGpzemJ0R29ya0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjMzMDI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEZ2xXeU11ZUgyMS9MQUs5aGt6MkFGSDEwdzBOcmxCbnZXcW9TZ01IdVAwb0dJa3ZiWmN0THQrbjZiUDJRTUJVRzRaWmtKWnpsOHB4eWJuTXB1MTZBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
