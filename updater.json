@@ -1,10 +1,10 @@
 {
-  "version": "0.1.343",
-  "notes": "Fixes Loop overwriting a previous export, Condense stopping short of the length you asked for, free-tier Compress coming back bigger than it should, and Stop giving no feedback while a job finishes.",
-  "pub_date": "2026-07-28T14:29:32Z",
+  "version": "0.1.344",
+  "notes": "Condense now lands exactly on the length you asked for instead of overshooting.",
+  "pub_date": "2026-07-28T14:41:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBtWXVJU0VYejVqVi80Rzh1YW1PYmFyUlI3MldFSGFTVCswY0ZibVdKMmZPUUQ3Z0E3d1R6QnBhTG9jZ0tXdGRscFZlSHJnQU1OUUVTN2JxcVBMVWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ4ODk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoR0EzbGpEVFRFWllCVW82ZEJMeDQ1VU9VL25KSnFvVVZWbEJDMFZsWHNMZS9iZTlkZU1QMzI4OHBiRkYrbWhlYVJlTEZCRE1Id2MyT2tULzI4UEFEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVpTFNmblQ4OEhvTVVjNUd1eFpnMGJKMVlDWGFSLy9oQkdRdWFScUorNVZRN2xvenk3ODA0Z3BNNUlHWGg4ZXhyaU9IcWt2b3NKcks4WnFBMXhrM1FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ5NjE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoybDhGRG13eXZDcWJ2VjBwMmF4Ti8yTSt3UkFOR3YxTzRDVmVuZ0xkdmdwYTd4U2x1dDV2S3JWbnBidFB2QnRXN3JNNGdVakdnaGxYZ0JJZlhDdjBDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
