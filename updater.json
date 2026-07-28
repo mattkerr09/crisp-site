@@ -1,10 +1,10 @@
 {
-  "version": "0.1.334",
-  "notes": "Crisp no longer leaves a copy of every photo you process on disk, and the montage length hint and Run it button now match the split-screen layout you picked.",
-  "pub_date": "2026-07-28T11:28:54Z",
+  "version": "0.1.335",
+  "notes": "Big montage fix: highlights from a long recording (a full game, a whole event) can now come from anywhere in the clip, not just the first half. Multi-clip grid montages and music montages also reach the length you asked for.",
+  "pub_date": "2026-07-28T11:55:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU95ODVaUzcyLzVxeGw2M042RE56MmVzc0RaZzV5eFFpZGNXTjc5cXJ2OGF4RWhkZWpHdTI3aFVrekVRaWo4T0lHRkczTFVDTXBtT2NCQUJseGRNUkFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM4MDg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZMUVXYzlrY3AzRE5IaEMzdUFickhzVWpuQ2JXRW9Qd0VYbzNMemxNbmZyNjl5OVZPWXUwZDBSZFZwWDUranB1S1Z2bnlCRElYWStmTE5ac2RONjVDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVAzZkpjdjdZRzFHdmt3Y3V3bVNPNEpXMzJBbDFwalh6Q2o5ajg5RU9GR0RlRFV5S0x2ejVqV1N6V1BmU2RMcVN3b1VOZXplemlGMmwyZ3JkL0M2N0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM5NjYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoZTEwRU5QUlZjWUpqckJGN255R1NXNWl0QTBJNWNDTVVyY1VOeTlUMWZYZzFUK1k1MjBDRHVDTHJwNTRqUWMvVXNNamVLZEI4blVTeDczb2x1amZCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
