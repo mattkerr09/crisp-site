@@ -1,10 +1,10 @@
 {
-  "version": "0.1.335",
-  "notes": "Big montage fix: highlights from a long recording (a full game, a whole event) can now come from anywhere in the clip, not just the first half. Multi-clip grid montages and music montages also reach the length you asked for.",
-  "pub_date": "2026-07-28T11:55:19Z",
+  "version": "0.1.336",
+  "notes": "Photos in folders with an apostrophe (or a date like 7/4/24) are enhanced properly again, the plan card now respects the montage settings shown beside it, and grid montages no longer repeat the same clip in their last tile.",
+  "pub_date": "2026-07-28T12:09:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVAzZkpjdjdZRzFHdmt3Y3V3bVNPNEpXMzJBbDFwalh6Q2o5ajg5RU9GR0RlRFV5S0x2ejVqV1N6V1BmU2RMcVN3b1VOZXplemlGMmwyZ3JkL0M2N0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM5NjYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoZTEwRU5QUlZjWUpqckJGN255R1NXNWl0QTBJNWNDTVVyY1VOeTlUMWZYZzFUK1k1MjBDRHVDTHJwNTRqUWMvVXNNamVLZEI4blVTeDczb2x1amZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVB5M0JLNjF6a3JSNnNFcmlkbWJjS2pZWVJKMm5yWVg2ZWpiaSs0WGpqalhOZWdOZGFDYnl6WFVFeDU5c3FPRTBnR1MvSjhlQVNzdHN4UGNheVQwdlFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQwNTA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHTVYyNVlUNWx5ZzVSZmtFcHVUZ3IwdUUxbW5nWXh4czJoOUVxU0V5Yi9yM3dXeFB5QkVuN0V5UmEyazZlVVZjQk5LVWFSblZFSXloTW9EUjAyNXVCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
