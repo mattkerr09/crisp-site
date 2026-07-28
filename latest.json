@@ -1,10 +1,10 @@
 {
-  "version": "0.1.339",
-  "notes": "Highlight reels from long recordings are proper montages again \u2014 short punchy cuts spread across the whole clip, at the length you asked for \u2014 and every clip you combine is guaranteed to appear.",
-  "pub_date": "2026-07-28T13:08:41Z",
+  "version": "0.1.341",
+  "notes": "Preview no longer hangs while a Max render is running, and Crisp now tells you Max is a Pro feature before starting the 4.6 GB download rather than after.",
+  "pub_date": "2026-07-28T13:35:51Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1EdjRQUmRCbjZvZVRSVnhhMWhzWjFpVnBzUHV4NHg1ajNpak4ra0w0TSsxSTZxT2VCRjFjQkd1WTlqK3RheEJRSTBZQmRFRVByaXZ5RlFhZDUybEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ0MDYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphVndSdnVYaEJ3Vmg1ekt5TjhERWdRNWVObmhvQ0x1U0tTK3FuVWMvalozVEE5N0NqdDJRaFBDWGhybU0xSlloR3lPaHJveDV3aEhWTTc2Z20wbkRCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY1aDRESDZlclJEOXUwMzlxMGtldDNSdWxLYW02OXd0dDh0TWV2YjhiempqQ0kzVmlTUHRmeDhEMEFqYUFtbjMzVDB3VEJuZWd2WUJzNEdieXd5T2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ1NzAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyOTNaSVkzUVI4Z290SUhnM2FBVmlNMzQ2anpsU1B2TGttZGVpUkkvZzIvai93dzBwWFl6QUFURlFiOWZ3ZkhmZFRLUnZrY2hocTU2U0lINGpYT2xEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
