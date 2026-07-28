@@ -1,10 +1,10 @@
 {
-  "version": "0.1.328",
-  "notes": "Music montages now fade out at the end instead of the song being cut off mid-note.",
-  "pub_date": "2026-07-28T10:18:19Z",
+  "version": "0.1.329",
+  "notes": "Montage fixes: highlight picking now works on long recordings, split-screen reels keep their sound when a clip is silent, and the target length is honoured for split and grid layouts.",
+  "pub_date": "2026-07-28T10:32:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtaWmlBQ2Z6bHNXWHQyZDlyVW1rZzNmT0ZCZ3NLOUw3K0dSUG9ueWpQK0t0a05TaTFVVFMvTW55SHo4RktycExncGtRdE1PS0VXS0c3NVdNTzMwSndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjMzODEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqY3kwaHpoSnFmZC85WDNFWUxBZi9HTmVKbHNRQjE4SGNvT2JkUDRUQndXV0E2QkxUc3FKR3plR0NRVS9qWHdQdm9ndVAyTytSS2RITW8vMjJXdG1DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlSTWZYZURMRmVhT3RuR3ZESmYxdWthYXFuNkI2MUpLSXEwQnZIWUlOMGVlQ2I5ZVd6aG83NEo1MkdXdlJ4Zjh4S2dmTXJDSHhlUUxxL1kvRkxLQ1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM0NzA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwenJPN1NCTWw1dUlPejNxNUl6RjliZmIrUGhSZVc1MmdoSFZabGEycVhtaVdMcDc4TjBkc3lJU3luQVJKR2FLVDd4NURjTFlzR00zbUpKOFVrYkxBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
