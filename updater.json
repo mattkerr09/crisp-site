@@ -1,10 +1,10 @@
 {
-  "version": "0.1.344",
-  "notes": "Condense now lands exactly on the length you asked for instead of overshooting.",
-  "pub_date": "2026-07-28T14:41:35Z",
+  "version": "0.1.345",
+  "notes": "Condense now delivers exactly the length you ask for (it was returning double on many clips).",
+  "pub_date": "2026-07-28T14:55:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVpTFNmblQ4OEhvTVVjNUd1eFpnMGJKMVlDWGFSLy9oQkdRdWFScUorNVZRN2xvenk3ODA0Z3BNNUlHWGg4ZXhyaU9IcWt2b3NKcks4WnFBMXhrM1FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ5NjE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoybDhGRG13eXZDcWJ2VjBwMmF4Ti8yTSt3UkFOR3YxTzRDVmVuZ0xkdmdwYTd4U2x1dDV2S3JWbnBidFB2QnRXN3JNNGdVakdnaGxYZ0JJZlhDdjBDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNyRktkTW9nNC9pZ3V2cE1sME9KR29BQWdmZzkzRERjZzRVeUV6S09UWklXeExldlBrSHNwTUhIUXdTdis2aWNhaXEzTWhRZERKZlBXNysyQUJTemc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjUwNDQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negplME1Rc2JWWnMwY3FyZzBsS2Z1VXlnNkt0bmRMeHJ5TEllbDIvL2dVc0U1QWkzNElsMzdmZGl6MS9MNUpLL2lSZjVLL1dzeWtxSDZROXRmSElyeUpCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
