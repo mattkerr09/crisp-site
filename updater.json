@@ -1,10 +1,10 @@
 {
-  "version": "0.1.338",
-  "notes": "Cancelling a Max photo no longer leaves a copy of it on your Mac, and the montage length hint now warns you when a split-screen layout can't reach the length you asked for.",
-  "pub_date": "2026-07-28T12:37:02Z",
+  "version": "0.1.339",
+  "notes": "Highlight reels from long recordings are proper montages again \u2014 short punchy cuts spread across the whole clip, at the length you asked for \u2014 and every clip you combine is guaranteed to appear.",
+  "pub_date": "2026-07-28T13:08:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhEZkRlOUZXeDFrMlVKYWtZR2JZUTAyZEx4ZjFXVzViQ3hRR3FZTTNWaElJcXdPdm91SzRkWDR4d0k5cUFpM0tvZi9ERnFZMUZXQW5QMXdFL2lSQ2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQyMTQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2c09naDlRVDhYVU9JeGZGYVJ6NWFldkFGemdLWTNSQnJRM0I5cHB5TDhrbkphRllXQ2pRcnl0eWcyT2tNdElRdXIzUExVYk5SU3Fsa255U0NUZC9Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1EdjRQUmRCbjZvZVRSVnhhMWhzWjFpVnBzUHV4NHg1ajNpak4ra0w0TSsxSTZxT2VCRjFjQkd1WTlqK3RheEJRSTBZQmRFRVByaXZ5RlFhZDUybEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQ0MDYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphVndSdnVYaEJ3Vmg1ekt5TjhERWdRNWVObmhvQ0x1U0tTK3FuVWMvalozVEE5N0NqdDJRaFBDWGhybU0xSlloR3lPaHJveDV3aEhWTTc2Z20wbkRCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
