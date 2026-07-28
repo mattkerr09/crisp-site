@@ -1,10 +1,10 @@
 {
-  "version": "0.1.336",
-  "notes": "Photos in folders with an apostrophe (or a date like 7/4/24) are enhanced properly again, the plan card now respects the montage settings shown beside it, and grid montages no longer repeat the same clip in their last tile.",
-  "pub_date": "2026-07-28T12:09:45Z",
+  "version": "0.1.337",
+  "notes": "Montages made from several clips now judge them fairly \u2014 a short clip of the good stuff is no longer crowded out by a long quiet one.",
+  "pub_date": "2026-07-28T12:23:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVB5M0JLNjF6a3JSNnNFcmlkbWJjS2pZWVJKMm5yWVg2ZWpiaSs0WGpqalhOZWdOZGFDYnl6WFVFeDU5c3FPRTBnR1MvSjhlQVNzdHN4UGNheVQwdlFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQwNTA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHTVYyNVlUNWx5ZzVSZmtFcHVUZ3IwdUUxbW5nWXh4czJoOUVxU0V5Yi9yM3dXeFB5QkVuN0V5UmEyazZlVVZjQk5LVWFSblZFSXloTW9EUjAyNXVCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVLRjVpTkJ3cXlneDQvZ3IxcmNJeHloNFlIRFhiUjNwZE14MDdFckJwTFQydStwUDdWeitWeURpWnBNWVhiWTh3b2g5SjVtOTAxQUdKbHlqSkdBUWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjQxMzE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqaFprd3c2WnU5bUxWdHVQa3V6ZG5valVNYkxZZ1I3RWpzTExEZ29KWlFRaEF0RTUydmNoOS9PSVhNdkRiMk1KRWI5STl0dm5BWlVEeWtwdHNPOEhEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
