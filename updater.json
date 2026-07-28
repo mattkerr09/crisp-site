@@ -1,10 +1,10 @@
 {
-  "version": "0.1.333",
-  "notes": "Try again no longer runs a different job than the one that failed, and montages made from several clips now use the same smart highlight picking as single-clip ones.",
-  "pub_date": "2026-07-28T11:17:22Z",
+  "version": "0.1.334",
+  "notes": "Crisp no longer leaves a copy of every photo you process on disk, and the montage length hint and Run it button now match the split-screen layout you picked.",
+  "pub_date": "2026-07-28T11:28:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdjZkNXWUEwczQ2QXFXZFV1Q1ZmcmF3U2UzYkxMZU1JcUZRVXJ4TFhhVEJLUnJsbDBxSXgxdThWb0lkZjdhc3FkMkRybk1JQzM5T3BPbkNSVVVPS1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM3MzkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucDdjT2NPUmQrRTh0SnYxNWovQlJRV0h4eXk2bXNqRmo5MnpyUCtTN3Rza1haaUx3elNpNTZ2RUNUSjYxM0FjckpweXU2bmhmL2RkTjhZR0RsNUlCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU95ODVaUzcyLzVxeGw2M042RE56MmVzc0RaZzV5eFFpZGNXTjc5cXJ2OGF4RWhkZWpHdTI3aFVrekVRaWo4T0lHRkczTFVDTXBtT2NCQUJseGRNUkFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MjM4MDg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZMUVXYzlrY3AzRE5IaEMzdUFickhzVWpuQ2JXRW9Qd0VYbzNMemxNbmZyNjl5OVZPWXUwZDBSZFZwWDUranB1S1Z2bnlCRElYWStmTE5ac2RONjVDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
