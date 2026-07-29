@@ -1,10 +1,10 @@
 {
-  "version": "0.1.413",
-  "notes": "A folder dragged in by mistake now says so instead of claiming your file is damaged, and a clip that disappears mid-render \u2014 an unplugged drive, a synced folder \u2014 is reported as missing rather than blamed on your codec.",
+  "version": "0.1.414",
+  "notes": "A clip whose file has gone missing no longer offers to add itself to your timeline \u2014 the row says so, and now the button agrees. Dragging in a folder by mistake says it is a folder instead of claiming your video is damaged.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIwL2drczF2QmJMcVZ0d05xM09XRDdIa3Q2cndScEdwR1ZDdkVORHYrOEFYYXFwOFAydWlqOFVyU3BRV0k1K2lJZXpXY2s3RGUxM1h1dStYd1VVaGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMwNDI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLd3cwR1I0cWxTTzhmTXE3aFVqRW1BZURueUIwZnREWkp6cWVweURDQnZSRTBNdEFsVnBOdUEzNTFiS3h4cnIyazZoYzF3S3NkZ2hXY0Q5cEhDUitBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpvV1Y2VUF0Q3hlOFVSYUpMVGo2S2MxbnV5dGRESlpzSkN3alZpVHg4MjRsbFNMMG5JMWVjS2ZJczNoeVdKTVcrallYTnRVdVNmR29pMS95ZzAyd2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMxODU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3R1p5Zk84T2hac1JCYklnUHN6OUZEcUZYSVFqQzFTRk1lNzRWUStlazczWndpTHF5ZkhtOENNcDhjMnh6d3Z5a3JlQ1NySk9EOUVnV0YxSlJSb1BDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
