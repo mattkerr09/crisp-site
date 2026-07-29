@@ -1,10 +1,10 @@
 {
-  "version": "0.1.438",
-  "notes": "Fixes a caption bug from the last update: asking for “a caption that says Hi for the first 5 seconds” showed the right timing on the card and then burned the caption in for the whole clip. The window you describe now reaches the render.",
-  "pub_date": "2026-07-29T22:26:43Z",
+  "version": "0.1.439",
+  "notes": "Two edits in one sentence now both happen. “Add a caption that says Hi and add my logo” used to render the words “Hi and add my logo” onto the video and skip the logo; “mute it and normalize the audio” only muted. Same-lane requests are chained properly now.",
+  "pub_date": "2026-07-29T22:40:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9xbHcvK2M3SlBBVW53b1hxblFSYUdSTll1YUVJZGdUcURtZ3dVVFhtR21XRFhpT3RzYk9uSitMMzFOd0daMi9kN3haQzBWRGxBVEI5MmJaWklxZlFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYzODM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3M1hWYmlQVWRQaWVlTnBPNVFKWUVjWDdBa0ZINFlqeHRWVXhLNlZQalBHYUxTeXVBWElNTmRrcEdvTVRkQytYMnBJeXFXZGJrZFFVakV1bitFblVCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU53bzFFUWFSakVJVFp6UVBncWszSVBhOC9LMUY0Wk4ydlIwcUFLaDVKRy8zTWtNeVgwY0laZC9PUGhWWFVEQndmeW5URURCblVIRTFJdnRjMlJIS3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY0NzExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPOXVoL3dzTUZOL1F4M21lOWVJSkhSNVVTSld0cDRqcEJ3U1pSMEFzTS8wL1NnQndvb1FvOU5sMXlZbUNpcGVCYnFldkpXUmU1c1lQOXB4amoyaXhDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
