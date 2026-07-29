@@ -1,10 +1,10 @@
 {
-  "version": "0.1.425",
-  "notes": "Asking for something in plain English no longer sneaks in a full 4K render alongside it. \u201cTake the sound off\u201d and \u201cfade the start and end\u201d now do exactly that \u2014 before, both ran an upscale instead.",
+  "version": "0.1.426",
+  "notes": "However you phrase it \u2014 \u201cfade the start and end\u201d, \u201cfade the beginning and the end\u201d \u2014 Crisp now fades both ends instead of quietly doing only the opening.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlpMFpKSVgrQVJJR0xxUnY5cCttazE3TjQxR2dOTVBXcGFCZVlBZVBQUXFtT0F2eEZlbDBIMWFSbTNMZEpQVHhVTnRTZjU5clBnaFduZjhYck9MMkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ1Njc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSbnJkVlQvQjlQTEw3bEtGUDdPOGZBNUpja0JBZUpVSitHeFE3VkNLZkZuYmtIVnJ4S2huSENoL2RNQXd5UHJjVTRFbHZHVDVYQThmVytDdktoSWFBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhiZUxJYy9NbDVMYkxuRFMrS0tzQmhNZmJPYlFnRzFMeFpldTBhSVJNWFB0cjZDcWpHd0JBRVVXaXMyRVZGY2VGeWU2VmFMWTJiWlF5QVZZVUJhU0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ2MzQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmNkZoSTRYQk1vWmhZOGx0enJzcklLd2ZrMXFpVUJCdlRRM3RNNjdBci9GanU2ZTViSy95L1hCT2ptV3NEZUpPa3EyVTdkUTlvOE5VS0xBK1pqVUVCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
