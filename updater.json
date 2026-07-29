@@ -1,10 +1,10 @@
 {
-  "version": "0.1.416",
-  "notes": "The playhead no longer counts past the end of your edit \u2014 with crossfades on, the position and the total now agree with the file you actually export.",
+  "version": "0.1.417",
+  "notes": "A clip on your timeline whose file has moved or been deleted now says so on the timeline itself \u2014 greyed out and marked \u2014 instead of looking fine until the export fails.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yYUJpTCtObDMxTUlRZGhzb3Z4dnFlRCs1NHBYd1YwakhXL2dmbSsxL0tkdVUvSXdaN3NQV2NUS3BuZmIvaUFUeEpRVUR0Y0xSRWZlMWhhWjVUeFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM0ODQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4N21KNnlKSW5HcWxrTTNEMURiWFZsejBXK0xOSlZmSTVtNXVDb3dCcjVYRzJtUEJGMW94ZWJiZ285TnQ5cEE1RnR4Qi9IK0M1dUpNMndobnM1QnBCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFOcCtSbkRZcklTaC96US84RFltZTA1ZUpOYlNIVWU3ZGhGMkQzNXgvek5maTZyMzRwck5kQ0lNNHJrTkhsZ0g2MWUrM0tPM1VyaE5FeTFqWVdGNXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM2NDg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyZzVjcDVQeVBKS1YyWFl2SFFhRW4xK1NZWFI0RUEzbGdOSFYyRGkrbnFCOCtmSk1XN290Z1JCMTR6amVRUUprVllrTlVrZ3dLazM4Z1M1NExmRUlEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
