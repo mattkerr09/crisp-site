@@ -1,10 +1,10 @@
 {
-  "version": "0.1.429",
-  "notes": "Ask for \u201ca gif at 10 fps\u201d or \u201ca small gif\u201d and Crisp now uses those numbers instead of its defaults. And \u201cmake it smaller\u201d asks what you meant rather than quietly rendering a 4K upscale \u2014 the opposite of the request.",
+  "version": "0.1.430",
+  "notes": "\u201cJust the last 10 seconds\u201d now trims to the last 10 seconds instead of running an upscale. And describing a bad stretch \u2014 \u201cthe first 10 seconds are shaky\u201d \u2014 no longer cuts your video down to the part you were complaining about.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUc3S0FISW5Nc0xIYWlkMEtPdWRUNUZaczZPSlNLWWR4aEFHS0xZbHlaMnduUk1iOHM5d0xNOGZGZ3ZYeTAvNk4yUGlGdHZHd2pXTlJNMXY0bWpIQlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ4Nzk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBMTdGSTYyK2xJbWtoU3ZqUE9OVjRZVm1hYjdtNWF4SEdYcWR0TzIrQmNxNTIwUE5yV1k1N3pYZzk0c0FQdEt0UW9DalprL2VkUUNLOWswVTArVWZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFkU2tRZHI3ejZQR3FuYnRHeG51L1NiQTlrUE4rY0N3QUFKL0o0aVZjTkxiNkd3bDlKS1pVM3NkNGppK213RGZhMWR0MkVIV3VESVo0MmRNSm1jclFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUwMTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2N24zVXJtNGdXeFRaSVhnWFBtK21oWVJ0TUliY3ZXZW9sN2QxNTRxQmRxZ1dSM01ML0RNcnBucnpmV1ZjNU5GRkFZeDBFWVJCZ0lGaExyU21vbldDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
