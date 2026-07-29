@@ -1,10 +1,10 @@
 {
-  "version": "0.1.420",
-  "notes": "Housekeeping build: the ship-verification tooling now catches stale release notes properly, so the update dialog can no longer describe an older version of Crisp.",
+  "version": "0.1.421",
+  "notes": "If the folder you chose to save into has gone \u2014 an external drive unplugged, a folder renamed \u2014 Crisp now names it and tells you what to do, instead of showing you a file path.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFKRnhtSHZVWStVREZrakhLRGV6Tmk1Q2ZIbjh1Szk0SEJPZFB4OWNrWkRYNWFidEpYN1dSVmVqZDVUL2dJUjhMK3ZHY0pEUTF3V1NSalhFSGpZbEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM5NTEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvbXBMVk0wN1lSdnI1NEhKb1V1UmhXQ2xKdDVyOEVLKzlkeXdGY3lDcVVUK1AzT3ZNZUlpYSs4WkxDUk9mMFNzT0NPSXlCRlpmWE1UK09hWkV5eTNCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYzNVRjRzh3QmdhWjFOb0NwdUlsRTQwczZsR0Y0NVRRTHQ2elhYOFZGVEhZVE5vbEx1TXM3UEZDWEVKK3FpK3h4c0YyMnFZMlVCRmpzVklodEhoZ2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQwMjMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaNG5KZDhkc0RLZk1WKy9QS21nanVoNXNZeGUwREpNdll4VWVvRHQ3VjZqbGVzb3RSVUxNSWVnK2M2bWdiQ0xMSVhmdlhaOHdUcXFQMDc0MUs0UENEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
