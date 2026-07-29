@@ -1,10 +1,10 @@
 {
-  "version": "0.1.432",
-  "notes": "Typing something Crisp doesn't understand now gets you a helpful suggestion instead of a multi-minute 4K render you didn't ask for. Asking for an upscale still upscales.",
-  "pub_date": "2026-07-29T03:20:00Z",
+  "version": "0.1.433",
+  "notes": "“Crop it tighter”, “make it portrait”, “make it landscape” and “crop it into a square” now do what they say instead of quietly running an upscale. Asking to ADD black bars no longer crops them off — Crisp tells you it can’t add them. And “I need this upscaled” upscales again, in any tense.",
+  "pub_date": "2026-07-29T20:50:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpyWFlZSW9teG5VcFBZeEEybXpjV3dNV01JS2ZTd21IS2o5bzFoQ2VFNllwSnl1UnBwc0EzbUgvM3JSQnpFY0NiMXJlMVJVUFQzam9GQk9LZEkwdXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUzMDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWend6NFJSU3F6QTlJNGVpaVVyeWFmcTViOG44VW4xdVdGTmF0M203TFUyUkRLNndzaE9LdmRlQU5RL2JSb1pMY1REQ0RDUDdEaWpXSzY3MG1tbTRCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1taDRGcDRGYnozMXRqbldQaDZQaTR5Tm9rbHQveEl0ZDZQUEJpYzlMUHUyaS9HaDk0RlNqbTl6a08raTI4cnozejhhNUxEU0duaFpVRmtaYjVoNXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzU4MDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZemJ6NDB1cW5QWWt2RTZuK1duYUpSN05vTTZNOW9lN1JoZjd4R2VUWk5lV3QwSUVEcVFTdmJOdEpUblZnOWlPS3FsWW1iUWJLenRJWUFYRnFSTVFBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
