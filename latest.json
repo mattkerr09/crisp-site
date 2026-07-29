@@ -1,10 +1,10 @@
 {
-  "version": "0.1.436",
-  "notes": "Asking for part of a clip no longer eats the rest of it: “mute the first 10 seconds” used to delete the other fifty. Crisp now says it works a clip at a time and points at Split. Fades and captions honour a stated length — “fade in over 2 seconds”, “a caption that says Hi for the first 5 seconds” — and “blur the face” says Crisp has no blur tool instead of running an upscale.",
-  "pub_date": "2026-07-29T21:51:35Z",
+  "version": "0.1.437",
+  "notes": "Say it your way. “Normalize my audio”, “loop my video”, “steady my footage” and about 120 other everyday phrasings did nothing at all before — the app only knew them with “the”. Also: “cut the audio noise” no longer mutes the whole track, and “get rid of the background” says Crisp has no green-screen tool instead of quietly filtering the sound.",
+  "pub_date": "2026-07-29T22:17:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdsREV4dms3OURYb0QwQ0puR0FQbGt3LzdKSUpOSjZSelJyVzN6NzhOb1JsTVBSS1BNbHpiQXJvTy94TkxGb3BiVTVIemNBYVdRb09EWEtYNWwwaEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYxODA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzdTdFY3VsMk1BUCswMUxoVVFMRExCMzFYcWM3RkUwSnhwcW9jekRucTluSjNpeTdjMHhOQ0szODJNUld2dWhBS3JmellOYlF1aElqVWNZZGZtbEJDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9JelE5OFlOTW04UVJYaS85Nk1iQUR3N0ZhV25lS2UwMUVlMDdQanFYQjNvUW1mWHMxYm1jSk1jekxHY0JCWVpocjVhTDUwcUcraTBqazU5cGVUQnc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYzMzcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOOS9wdXNYbE00WTNMZk8wakFlYkZyMHZlNG8zdktMVFR3N3FPOFJNMEJqM2xsQlZaUDJVd3N6TUdoUGJuWmlNcUJoT1kwL3FEcG1hK1BycWtiY2dBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
