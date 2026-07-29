@@ -1,10 +1,10 @@
 {
-  "version": "0.1.415",
-  "notes": "Whichever clip in your edit has gone missing, Crisp now names it and tells you what happened \u2014 before, only the first clip got a readable message and the rest showed a raw file path.",
+  "version": "0.1.416",
+  "notes": "The playhead no longer counts past the end of your edit \u2014 with crossfades on, the position and the total now agree with the file you actually export.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8zT2tMRUtXd2hQZlFhNkxIc0RvQzU2dGVZRVFLL2FLbERaWGwxRTdlU0gxcS83blp5aldXRTFHNXZWTko0OHpIam1GZjVqYTJFSDkzTzROd3BHaGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMzNzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmYjRmcWlzb284c2NodEdxV1ptNVNIUlJRYWtXTEJsMW5hV3pNYmtoVU82aURoNzJmWmJkcHUvdzVHV3loSXEwOEsxZGZXVko4eTNlNUIyWkFOa05EZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yYUJpTCtObDMxTUlRZGhzb3Z4dnFlRCs1NHBYd1YwakhXL2dmbSsxL0tkdVUvSXdaN3NQV2NUS3BuZmIvaUFUeEpRVUR0Y0xSRWZlMWhhWjVUeFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM0ODQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4N21KNnlKSW5HcWxrTTNEMURiWFZsejBXK0xOSlZmSTVtNXVDb3dCcjVYRzJtUEJGMW94ZWJiZ285TnQ5cEE1RnR4Qi9IK0M1dUpNMndobnM1QnBCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
