@@ -1,10 +1,10 @@
 {
-  "version": "0.1.421",
-  "notes": "If the folder you chose to save into has gone \u2014 an external drive unplugged, a folder renamed \u2014 Crisp now names it and tells you what to do, instead of showing you a file path.",
+  "version": "0.1.422",
+  "notes": "Crisp now cleans up hidden half-finished render files left behind by a crash or a force quit, even when it has no record of them \u2014 they used to sit in your save folder, full-size and invisible, indefinitely.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYzNVRjRzh3QmdhWjFOb0NwdUlsRTQwczZsR0Y0NVRRTHQ2elhYOFZGVEhZVE5vbEx1TXM3UEZDWEVKK3FpK3h4c0YyMnFZMlVCRmpzVklodEhoZ2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQwMjMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaNG5KZDhkc0RLZk1WKy9QS21nanVoNXNZeGUwREpNdll4VWVvRHQ3VjZqbGVzb3RSVUxNSWVnK2M2bWdiQ0xMSVhmdlhaOHdUcXFQMDc0MUs0UENEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFPLzJjSStOUVIvNkxwS2FIWFNJRTF0T3BOc29rN2VCKzk4L3VKR25VdGQ2b2w1alpZSGlRUWc4ZnlzT2RIZ0Q3TzZ3S3J6UnZ2TjhQYWdZdzZJTkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQxMjk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDSElneENFblZSTjF3bER3cUZoc2lBMjNla3kwNEQ2QldBbDBXbVlMODR3VHJweFd2ZjBLQkxrMWgxR2ZsWHFxM3BLQ1dRK2dDUitoZVR0dEcxZDhCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
