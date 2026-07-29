@@ -1,10 +1,10 @@
 {
-  "version": "0.1.417",
-  "notes": "A clip on your timeline whose file has moved or been deleted now says so on the timeline itself \u2014 greyed out and marked \u2014 instead of looking fine until the export fails.",
+  "version": "0.1.418",
+  "notes": "Export, Montage and Split-screen now stop and name the clip when one of your files has moved or been deleted, instead of queuing a render that was always going to fail.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFOcCtSbkRZcklTaC96US84RFltZTA1ZUpOYlNIVWU3ZGhGMkQzNXgvek5maTZyMzRwck5kQ0lNNHJrTkhsZ0g2MWUrM0tPM1VyaE5FeTFqWVdGNXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM2NDg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyZzVjcDVQeVBKS1YyWFl2SFFhRW4xK1NZWFI0RUEzbGdOSFYyRGkrbnFCOCtmSk1XN290Z1JCMTR6amVRUUprVllrTlVrZ3dLazM4Z1M1NExmRUlEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBGRVpVVWRlUDJFVUlXaVFHcFBaVkUrc0UwUnFNUmtvYUErZ2dwYTAvY01ZLzl4VHd6KzVscVVOcXFVOTRKa3lGcUhsenZLaXhGQ2RQYmtMTGdWc2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzM3NzkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpocmV5V1N3THFxMWc4L0ZROWg5OTh5M01aT2F3RDRsY3JNY1NZc3BhMU83MFh1cXQyZlM4WWlxY05Xb0ZGc1R1MUk1WjVNSUF2YmVNWlMrU2dqbHlCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
