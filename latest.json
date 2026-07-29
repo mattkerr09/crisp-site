@@ -1,10 +1,10 @@
 {
-  "version": "0.1.414",
-  "notes": "A clip whose file has gone missing no longer offers to add itself to your timeline \u2014 the row says so, and now the button agrees. Dragging in a folder by mistake says it is a folder instead of claiming your video is damaged.",
+  "version": "0.1.415",
+  "notes": "Whichever clip in your edit has gone missing, Crisp now names it and tells you what happened \u2014 before, only the first clip got a readable message and the rest showed a raw file path.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpvV1Y2VUF0Q3hlOFVSYUpMVGo2S2MxbnV5dGRESlpzSkN3alZpVHg4MjRsbFNMMG5JMWVjS2ZJczNoeVdKTVcrallYTnRVdVNmR29pMS95ZzAyd2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMxODU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3R1p5Zk84T2hac1JCYklnUHN6OUZEcUZYSVFqQzFTRk1lNzRWUStlazczWndpTHF5ZkhtOENNcDhjMnh6d3Z5a3JlQ1NySk9EOUVnV0YxSlJSb1BDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8zT2tMRUtXd2hQZlFhNkxIc0RvQzU2dGVZRVFLL2FLbERaWGwxRTdlU0gxcS83blp5aldXRTFHNXZWTko0OHpIam1GZjVqYTJFSDkzTzROd3BHaGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMzNzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmYjRmcWlzb284c2NodEdxV1ptNVNIUlJRYWtXTEJsMW5hV3pNYmtoVU82aURoNzJmWmJkcHUvdzVHV3loSXEwOEsxZGZXVko4eTNlNUIyWkFOa05EZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
