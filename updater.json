@@ -1,10 +1,10 @@
 {
-  "version": "0.1.440",
-  "notes": "Questions get answered instead of executed: “what does enhance do” used to start an Enhance render. “Looping it 3 times” now loops instead of upscaling, “make it 1080 not 4K” respects the “not”, and “never mind the caption, mute it” just mutes.",
-  "pub_date": "2026-07-29T22:59:52Z",
+  "version": "0.1.441",
+  "notes": "Clearer answers when something doesn’t apply. Ask a photo to be trimmed or muted and Crisp now tells you that feature is for videos, instead of claiming it didn’t understand. Ask to mute a clip with no audio and it says so before starting a render.",
+  "pub_date": "2026-07-29T23:16:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtSRWtiTVVSOHJBY3cvbGhDdEJlQ3V6RlVBZm5BeFRRN05sN2RSRWlRblpjR0lPbEVUbDlGUkdEeVRBUjFqZ0k0TXZoZ3lFT1J2UWc4S2FiWFIvSndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY1ODE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0azJDQmxOQ0h5T29LUE5Vcjd2WWtSZmZyNXpCejV2cnhtRy9PaW5zVzUvd0ZLTlM2OTdQdUI5eHlqbGIwRkJnaUNQdVpsU25zemMrQ0JMN3RVdS9Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUd2VnBIMWR0di8vMGx3SmhWR29lRitiTXBUdWRuQ09OcXlOR0N0KzJGaEpUdTZyenY2cnhvUUJhODhHZ1MwM0g4SlBwajlRWHRTQ2FKeTh1YlZ3Y1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY2MzQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpudm1YUDVxYklveUFaZEZuSTkraEt3Y0VQWm9Wd2gzcmtvZ2J3amg1NnlDWUNUS0tEWFV0VDNTVDdkQ3pyTVdVendBd2hCUTBUR2VhNzNVZnQvREhCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
