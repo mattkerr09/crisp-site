@@ -1,10 +1,10 @@
 {
-  "version": "0.1.435",
-  "notes": "“Turn it upside down” used to turn the volume up instead. A stated number is honoured now too: “make a 5 second gif” makes five seconds, not the whole clip, and “trim the first minute and a half” keeps ninety seconds. “Add subtitles” explains that Crisp can’t transcribe, rather than asking for your logo.",
-  "pub_date": "2026-07-29T21:35:40Z",
+  "version": "0.1.436",
+  "notes": "Asking for part of a clip no longer eats the rest of it: “mute the first 10 seconds” used to delete the other fifty. Crisp now says it works a clip at a time and points at Split. Fades and captions honour a stated length — “fade in over 2 seconds”, “a caption that says Hi for the first 5 seconds” — and “blur the face” says Crisp has no blur tool instead of running an upscale.",
+  "pub_date": "2026-07-29T21:51:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUphRlIrQjduVjduQ2dMQm9vMDIwSlRmUHphN29IT21pNGxKVXJWd0N4b2RZRm9qbVErdmpQYTMxSmVzVmJIekNRN3U0REZjemlDRE5NTW5OWTc3UVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYwNjcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiOUFidjJpSnNPMzAwQlNDVHBDR21wY1ZERmhJYWVjUVhIaDZ3djhlaVNPRHVIdmZBQjZJV081K1d1ZzVhSW5tdXVsVTc5VW95a2NabnBaRnMyUzVBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdsREV4dms3OURYb0QwQ0puR0FQbGt3LzdKSUpOSjZSelJyVzN6NzhOb1JsTVBSS1BNbHpiQXJvTy94TkxGb3BiVTVIemNBYVdRb09EWEtYNWwwaEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYxODA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzdTdFY3VsMk1BUCswMUxoVVFMRExCMzFYcWM3RkUwSnhwcW9jekRucTluSjNpeTdjMHhOQ0szODJNUld2dWhBS3JmellOYlF1aElqVWNZZGZtbEJDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
