@@ -1,10 +1,10 @@
 {
-  "version": "0.1.426",
-  "notes": "However you phrase it \u2014 \u201cfade the start and end\u201d, \u201cfade the beginning and the end\u201d \u2014 Crisp now fades both ends instead of quietly doing only the opening.",
+  "version": "0.1.427",
+  "notes": "Asking Crisp to \u201crotate it left\u201d now rotates left \u2014 it used to turn the video the other way \u2014 and \u201clight compression\u201d gives you the light setting rather than the medium one.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhiZUxJYy9NbDVMYkxuRFMrS0tzQmhNZmJPYlFnRzFMeFpldTBhSVJNWFB0cjZDcWpHd0JBRVVXaXMyRVZGY2VGeWU2VmFMWTJiWlF5QVZZVUJhU0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ2MzQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmNkZoSTRYQk1vWmhZOGx0enJzcklLd2ZrMXFpVUJCdlRRM3RNNjdBci9GanU2ZTViSy95L1hCT2ptV3NEZUpPa3EyVTdkUTlvOE5VS0xBK1pqVUVCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5NdVA3bkRrNm1PWHkxSjZTczVkcFFZOTJVSnlRRHoya3YrRWdtZ2xRZk9BNkk3cFdJZWRqS2plbWFOdDZvUTdYUHBrQnBuNFlkU0FPZVJNOU1hRndvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ3MTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphemV2R3lka0Y5TGdlU1J0ZWs1dU5rcUZaWFlBcE1paGxTeUVRQVpGUjRVQmhSbUVGdHlhQ2xGd0QyUFVqODZDQkt6K0l5U1RSQWtOMHNFUThYOGxBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
