@@ -1,10 +1,10 @@
 {
-  "version": "0.1.437",
-  "notes": "Say it your way. “Normalize my audio”, “loop my video”, “steady my footage” and about 120 other everyday phrasings did nothing at all before — the app only knew them with “the”. Also: “cut the audio noise” no longer mutes the whole track, and “get rid of the background” says Crisp has no green-screen tool instead of quietly filtering the sound.",
-  "pub_date": "2026-07-29T22:17:39Z",
+  "version": "0.1.438",
+  "notes": "Fixes a caption bug from the last update: asking for “a caption that says Hi for the first 5 seconds” showed the right timing on the card and then burned the caption in for the whole clip. The window you describe now reaches the render.",
+  "pub_date": "2026-07-29T22:26:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9JelE5OFlOTW04UVJYaS85Nk1iQUR3N0ZhV25lS2UwMUVlMDdQanFYQjNvUW1mWHMxYm1jSk1jekxHY0JCWVpocjVhTDUwcUcraTBqazU5cGVUQnc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYzMzcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOOS9wdXNYbE00WTNMZk8wakFlYkZyMHZlNG8zdktMVFR3N3FPOFJNMEJqM2xsQlZaUDJVd3N6TUdoUGJuWmlNcUJoT1kwL3FEcG1hK1BycWtiY2dBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9xbHcvK2M3SlBBVW53b1hxblFSYUdSTll1YUVJZGdUcURtZ3dVVFhtR21XRFhpT3RzYk9uSitMMzFOd0daMi9kN3haQzBWRGxBVEI5MmJaWklxZlFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYzODM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3M1hWYmlQVWRQaWVlTnBPNVFKWUVjWDdBa0ZINFlqeHRWVXhLNlZQalBHYUxTeXVBWElNTmRrcEdvTVRkQytYMnBJeXFXZGJrZFFVakV1bitFblVCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
