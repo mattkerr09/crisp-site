@@ -1,10 +1,10 @@
 {
-  "version": "0.1.443",
-  "notes": "Typing something the project panel does — “export it”, “join these clips”, “clear the timeline”, “save as ProRes” — now points you at the button instead of shrugging, and “clear the timeline” no longer starts a render.",
-  "pub_date": "2026-07-29T23:38:48Z",
+  "version": "0.1.444",
+  "notes": "Ask for two things where Crisp can only do one, and it now does that one. “Blur the face and upscale it to 4K” used to give you a refusal and no render; now it upscales and tells you the blur isn’t something it can do.",
+  "pub_date": "2026-07-29T23:47:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQxK1ZRU3RzWFFKRWdwVzdjcjZ0cEs4VEpWYmRiV1ZxWG0rVmZNTGl0U3JkUXFJTWlBQmZGVzdDOVZ0N2xQWFB6T1VRMEc2a1c1WTNYYitKK2o3VXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY4MDQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvdVE2VVVPZXQ2Tk1TZVQwRXV0RHNrL3ZubzBnOXVjcmtFSFNFRERsM0k4cENFL2EwWVBmL2xtNExlTTBjZXdVUWJMbkhTSWV5d0VHcW93K2w1clFEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNRTBiSjE1SVdwRUtaWC8xNUluUVE4OURxODQ3ZW9uTVVBaWJyb2R6QStMQXp4TGpnMENYamI5bmdiM2xWck1OOVRHRGpQbE9yckFPWTlscXZKdEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY4NjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYNitmNWUzcnlXQVJZRWRwU0J1TG5aWGFDUG5IYkpSNUZhN3ZFbzVmTjBqUW1aNkJpOUpzVWlod2J1TE4rTWtjeVcrQjBENmpKUHNUNll4Mm80Z3hDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
