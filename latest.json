@@ -1,10 +1,10 @@
 {
-  "version": "0.1.442",
-  "notes": "No more waiting on a render that can’t change anything. Asking to upscale a 4K clip to 4K, reframe an already-vertical clip, or drop a 120fps clip to 60fps now tells you why instead of running for hours — and offers Enhance when detail is what you actually want.",
-  "pub_date": "2026-07-29T23:24:07Z",
+  "version": "0.1.443",
+  "notes": "Typing something the project panel does — “export it”, “join these clips”, “clear the timeline”, “save as ProRes” — now points you at the button instead of shrugging, and “clear the timeline” no longer starts a render.",
+  "pub_date": "2026-07-29T23:38:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJHYlB5NkJIeWVQSHlqVzYvOG9XdnAwS3dFcTFJL0RlOWZnVkZIMlkwUG9xOHBIWFJKVmh0OE5pdDRGUXA5OWxkeXhSZzFtcXJkVDZNV3ZiMkRueHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY3MzI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucWNPb25BYW8xaUdJYWFRNHhHUHc1ejgrNy9JV01RbnJOaVl1dWFUT1UrcVNWU1c0cldlMWRPTTlXL0NidURDM2dnVkUwNVdqMG9QN0xHWHZVZXdDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQxK1ZRU3RzWFFKRWdwVzdjcjZ0cEs4VEpWYmRiV1ZxWG0rVmZNTGl0U3JkUXFJTWlBQmZGVzdDOVZ0N2xQWFB6T1VRMEc2a1c1WTNYYitKK2o3VXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY4MDQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvdVE2VVVPZXQ2Tk1TZVQwRXV0RHNrL3ZubzBnOXVjcmtFSFNFRERsM0k4cENFL2EwWVBmL2xtNExlTTBjZXdVUWJMbkhTSWV5d0VHcW93K2w1clFEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
