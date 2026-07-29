@@ -1,10 +1,10 @@
 {
-  "version": "0.1.441",
-  "notes": "Clearer answers when something doesn’t apply. Ask a photo to be trimmed or muted and Crisp now tells you that feature is for videos, instead of claiming it didn’t understand. Ask to mute a clip with no audio and it says so before starting a render.",
-  "pub_date": "2026-07-29T23:16:54Z",
+  "version": "0.1.442",
+  "notes": "No more waiting on a render that can’t change anything. Asking to upscale a 4K clip to 4K, reframe an already-vertical clip, or drop a 120fps clip to 60fps now tells you why instead of running for hours — and offers Enhance when detail is what you actually want.",
+  "pub_date": "2026-07-29T23:24:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUd2VnBIMWR0di8vMGx3SmhWR29lRitiTXBUdWRuQ09OcXlOR0N0KzJGaEpUdTZyenY2cnhvUUJhODhHZ1MwM0g4SlBwajlRWHRTQ2FKeTh1YlZ3Y1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY2MzQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpudm1YUDVxYklveUFaZEZuSTkraEt3Y0VQWm9Wd2gzcmtvZ2J3amg1NnlDWUNUS0tEWFV0VDNTVDdkQ3pyTVdVendBd2hCUTBUR2VhNzNVZnQvREhCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJHYlB5NkJIeWVQSHlqVzYvOG9XdnAwS3dFcTFJL0RlOWZnVkZIMlkwUG9xOHBIWFJKVmh0OE5pdDRGUXA5OWxkeXhSZzFtcXJkVDZNV3ZiMkRueHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY3MzI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucWNPb25BYW8xaUdJYWFRNHhHUHc1ejgrNy9JV01RbnJOaVl1dWFUT1UrcVNWU1c0cldlMWRPTTlXL0NidURDM2dnVkUwNVdqMG9QN0xHWHZVZXdDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
