@@ -1,10 +1,10 @@
 {
-  "version": "0.1.430",
-  "notes": "\u201cJust the last 10 seconds\u201d now trims to the last 10 seconds instead of running an upscale. And describing a bad stretch \u2014 \u201cthe first 10 seconds are shaky\u201d \u2014 no longer cuts your video down to the part you were complaining about.",
+  "version": "0.1.431",
+  "notes": "Telling Crisp about your clip is no longer mistaken for an instruction. Saying \u201cit's already been compressed\u201d used to compress it a second time; now Crisp asks what you'd like done.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFkU2tRZHI3ejZQR3FuYnRHeG51L1NiQTlrUE4rY0N3QUFKL0o0aVZjTkxiNkd3bDlKS1pVM3NkNGppK213RGZhMWR0MkVIV3VESVo0MmRNSm1jclFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUwMTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2N24zVXJtNGdXeFRaSVhnWFBtK21oWVJ0TUliY3ZXZW9sN2QxNTRxQmRxZ1dSM01ML0RNcnBucnpmV1ZjNU5GRkFZeDBFWVJCZ0lGaExyU21vbldDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ4MEtBREFzSllFU0hjYk1OQzBCcFVsRjlwSEhtYU9NT1hKelhhSW5FeGRQTWZsNlZCMUlEU29Ec05HMjdCR0JmMlR2KzNiT3g0aFgrekNCV09wT0FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUxNDk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3a2hZSzJpY0ZESWhMNjJ1dlNwTFZKVXJlaFIwR1VJVmdEWjcyYWZURG5ZL0tkOTVyMnluVnNEV2JsK2dWVi94cHYxYmFJaXdMY3UvYWdNY2hKWm5Edz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
