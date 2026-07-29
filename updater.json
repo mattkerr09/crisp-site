@@ -1,10 +1,10 @@
 {
-  "version": "0.1.433",
-  "notes": "“Crop it tighter”, “make it portrait”, “make it landscape” and “crop it into a square” now do what they say instead of quietly running an upscale. Asking to ADD black bars no longer crops them off — Crisp tells you it can’t add them. And “I need this upscaled” upscales again, in any tense.",
-  "pub_date": "2026-07-29T20:50:15Z",
+  "version": "0.1.434",
+  "notes": "Asking about the sound no longer renders the picture: “make the audio better”, “the audio is noisy” and “make the voice clearer” used to start a multi-minute video upscale. “strip the sound” and “save just the sound” work now, and asking to split music from voices says plainly that Crisp can’t.",
+  "pub_date": "2026-07-29T21:10:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1taDRGcDRGYnozMXRqbldQaDZQaTR5Tm9rbHQveEl0ZDZQUEJpYzlMUHUyaS9HaDk0RlNqbTl6a08raTI4cnozejhhNUxEU0duaFpVRmtaYjVoNXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzU4MDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZemJ6NDB1cW5QWWt2RTZuK1duYUpSN05vTTZNOW9lN1JoZjd4R2VUWk5lV3QwSUVEcVFTdmJOdEpUblZnOWlPS3FsWW1iUWJLenRJWUFYRnFSTVFBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtncXRjVzNJd3hjRHE4cWsrUldjeGRobU15eGFBYVFXQnpKdnRTZEdSMzZvRTdKV1J2MURDSHNLb3hSUSszU1RsZ1RyRTdTOVhzNXJ1RU5nMy9VY3djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzU5Mzc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiK0RycUZ2aGJJZGVNNXZFbE1UZWducklwU2xxU0xVVldJWjBGcmwwdmNpdWxqSEZmMVllS2ppRmlIbVliVm00NDh1WC9HVm9oM2xLaHc0YmF5bTJEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
