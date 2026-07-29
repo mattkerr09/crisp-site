@@ -1,10 +1,10 @@
 {
-  "version": "0.1.389",
+  "version": "0.1.390",
   "notes": "Stop now works during the final step of an export, converting to MP4 no longer fails when ProRes is your saved export format, and Compress reports its real size saving.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh5UlY1NUJxckh0U2YvWlcwbXdQOWpvRGtJNHNPc3NUdytQbld6NEgxUHhTeGVlWGxONDZiVnpNd1d1RVNQRjN2U2swZG05cFNpN3NZcE93N3FzU0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzAxNzI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBOXQ0OTdnSXZVN1NOcVRsODFuNm1sZ2pHRVFleFdkQTRzUUFHTm54MmJlY2QyUzBDWFdZWGZ2MkMyZlRiUHBiUVdqckZER3E4WVlxN2FScjRCbVNDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY5SGoyaWtDR0VDT29UcVZOUDR3cGZpN2xkdDAzWTlrNGFvcjZHZVYxWGhoWG82NkNRTS9oRTlEdHlwSnJROUpQYWVyQUxkWlBPdVNMYlBFaXgra1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzAyNDI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHUWk4Z05KYVJ2MW9rekdreTlkaGxYQVdsNk9xWHI1YU1nVHQ0Tzc2ZnRsR0tmZE5MUVBuMHBHOXNPUHViS0ljR2IrOGxkZnNJdnZjV0RvM0lrT25CUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
