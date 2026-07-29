@@ -1,10 +1,10 @@
 {
-  "version": "0.1.434",
-  "notes": "Asking about the sound no longer renders the picture: “make the audio better”, “the audio is noisy” and “make the voice clearer” used to start a multi-minute video upscale. “strip the sound” and “save just the sound” work now, and asking to split music from voices says plainly that Crisp can’t.",
-  "pub_date": "2026-07-29T21:10:52Z",
+  "version": "0.1.435",
+  "notes": "“Turn it upside down” used to turn the volume up instead. A stated number is honoured now too: “make a 5 second gif” makes five seconds, not the whole clip, and “trim the first minute and a half” keeps ninety seconds. “Add subtitles” explains that Crisp can’t transcribe, rather than asking for your logo.",
+  "pub_date": "2026-07-29T21:35:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtncXRjVzNJd3hjRHE4cWsrUldjeGRobU15eGFBYVFXQnpKdnRTZEdSMzZvRTdKV1J2MURDSHNLb3hSUSszU1RsZ1RyRTdTOVhzNXJ1RU5nMy9VY3djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzU5Mzc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiK0RycUZ2aGJJZGVNNXZFbE1UZWducklwU2xxU0xVVldJWjBGcmwwdmNpdWxqSEZmMVllS2ppRmlIbVliVm00NDh1WC9HVm9oM2xLaHc0YmF5bTJEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUphRlIrQjduVjduQ2dMQm9vMDIwSlRmUHphN29IT21pNGxKVXJWd0N4b2RZRm9qbVErdmpQYTMxSmVzVmJIekNRN3U0REZjemlDRE5NTW5OWTc3UVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzYwNjcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiOUFidjJpSnNPMzAwQlNDVHBDR21wY1ZERmhJYWVjUVhIaDZ3djhlaVNPRHVIdmZBQjZJV081K1d1ZzVhSW5tdXVsVTc5VW95a2NabnBaRnMyUzVBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
