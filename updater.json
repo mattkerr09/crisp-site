@@ -1,10 +1,10 @@
 {
-  "version": "0.1.427",
-  "notes": "Asking Crisp to \u201crotate it left\u201d now rotates left \u2014 it used to turn the video the other way \u2014 and \u201clight compression\u201d gives you the light setting rather than the medium one.",
+  "version": "0.1.429",
+  "notes": "Ask for \u201ca gif at 10 fps\u201d or \u201ca small gif\u201d and Crisp now uses those numbers instead of its defaults. And \u201cmake it smaller\u201d asks what you meant rather than quietly rendering a 4K upscale \u2014 the opposite of the request.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5NdVA3bkRrNm1PWHkxSjZTczVkcFFZOTJVSnlRRHoya3YrRWdtZ2xRZk9BNkk3cFdJZWRqS2plbWFOdDZvUTdYUHBrQnBuNFlkU0FPZVJNOU1hRndvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ3MTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphemV2R3lka0Y5TGdlU1J0ZWs1dU5rcUZaWFlBcE1paGxTeUVRQVpGUjRVQmhSbUVGdHlhQ2xGd0QyUFVqODZDQkt6K0l5U1RSQWtOMHNFUThYOGxBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUc3S0FISW5Nc0xIYWlkMEtPdWRUNUZaczZPSlNLWWR4aEFHS0xZbHlaMnduUk1iOHM5d0xNOGZGZ3ZYeTAvNk4yUGlGdHZHd2pXTlJNMXY0bWpIQlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ4Nzk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBMTdGSTYyK2xJbWtoU3ZqUE9OVjRZVm1hYjdtNWF4SEdYcWR0TzIrQmNxNTIwUE5yV1k1N3pYZzk0c0FQdEt0UW9DalprL2VkUUNLOWswVTArVWZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
