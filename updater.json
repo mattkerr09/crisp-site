@@ -1,10 +1,10 @@
 {
-  "version": "0.1.422",
-  "notes": "Crisp now cleans up hidden half-finished render files left behind by a crash or a force quit, even when it has no record of them \u2014 they used to sit in your save folder, full-size and invisible, indefinitely.",
+  "version": "0.1.423",
+  "notes": "Every upscale now reports the size it actually produced. Picking \u201cEnhance \u2192 4K\u201d on a small clip used to say 4K and hand you 1440p \u2014 4\u00d7 is the ceiling, so the summary now reads \u201cEnhance \u2192 4K \u00b7 4\u00d7 (~1440p)\u201d.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFPLzJjSStOUVIvNkxwS2FIWFNJRTF0T3BOc29rN2VCKzk4L3VKR25VdGQ2b2w1alpZSGlRUWc4ZnlzT2RIZ0Q3TzZ3S3J6UnZ2TjhQYWdZdzZJTkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQxMjk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDSElneENFblZSTjF3bER3cUZoc2lBMjNla3kwNEQ2QldBbDBXbVlMODR3VHJweFd2ZjBLQkxrMWgxR2ZsWHFxM3BLQ1dRK2dDUitoZVR0dEcxZDhCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpMVnZKSERld1JucTFxazU2RzR0Y1VsYVkyb0VkY05RTTlOMjcrMVdKN3U0bHd2bUVDakhSVXVIcTc0UzFHYUtkYk41VE5BSG1pYUQ1UWNucE1KK0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQzNDQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYbEthK3pteVhxcHBaNnRwTHRVMVN6aFB6MEdUY1VUNW53NjkzNThRQTJ1eEdQQjR1SllhekxrZnNSaEwrcGlyUDQ3T2JSbjFMVlJ6RGZpZWRTZ2ZDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
