@@ -1,10 +1,10 @@
 {
-  "version": "0.1.411",
-  "notes": "Captions, GIF, still-frame, your own logo and batch upscaling are now reachable in the app \u2014 they were in the engine and on the site, but no control started them. The Export panel picks the format (H.264, HEVC, AV1, ProRes) and container. Ask Crisp for several things at once and it does all of them. Big media bins keep their thumbnails, and a file that vanishes mid-render says so instead of blaming your codec.",
+  "version": "0.1.413",
+  "notes": "A folder dragged in by mistake now says so instead of claiming your file is damaged, and a clip that disappears mid-render \u2014 an unplugged drive, a synced folder \u2014 is reported as missing rather than blamed on your codec.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUsvYk1ubDVtN3hqbFRSKzVFVkhKclAzOE5WQmhxY1hUMHlXMklYa0pTK1B6ZmlqbzE0SDZzZDJUY1VPM1IxU2p2WkkrMHg4VUFQWVZoWUFqTjZpaHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzI5MjE5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5Y2lVYVhEK2lSSXdKeTljajlJZUUwZjlTZTRNVWlYNEFwajhpdzNkL0JteFU3QXJySEY3MG51VjVESFdxbWNuVElpSnBWams3OXZLbzZCUUM5TFhDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIwL2drczF2QmJMcVZ0d05xM09XRDdIa3Q2cndScEdwR1ZDdkVORHYrOEFYYXFwOFAydWlqOFVyU3BRV0k1K2lJZXpXY2s3RGUxM1h1dStYd1VVaGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzMwNDI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLd3cwR1I0cWxTTzhmTXE3aFVqRW1BZURueUIwZnREWkp6cWVweURDQnZSRTBNdEFsVnBOdUEzNTFiS3h4cnIyazZoYzF3S3NkZ2hXY0Q5cEhDUitBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
