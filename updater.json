@@ -1,10 +1,10 @@
 {
-  "version": "0.1.431",
-  "notes": "Telling Crisp about your clip is no longer mistaken for an instruction. Saying \u201cit's already been compressed\u201d used to compress it a second time; now Crisp asks what you'd like done.",
+  "version": "0.1.432",
+  "notes": "Typing something Crisp doesn't understand now gets you a helpful suggestion instead of a multi-minute 4K render you didn't ask for. Asking for an upscale still upscales.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ4MEtBREFzSllFU0hjYk1OQzBCcFVsRjlwSEhtYU9NT1hKelhhSW5FeGRQTWZsNlZCMUlEU29Ec05HMjdCR0JmMlR2KzNiT3g0aFgrekNCV09wT0FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUxNDk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3a2hZSzJpY0ZESWhMNjJ1dlNwTFZKVXJlaFIwR1VJVmdEWjcyYWZURG5ZL0tkOTVyMnluVnNEV2JsK2dWVi94cHYxYmFJaXdMY3UvYWdNY2hKWm5Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpyWFlZSW9teG5VcFBZeEEybXpjV3dNV01JS2ZTd21IS2o5bzFoQ2VFNllwSnl1UnBwc0EzbUgvM3JSQnpFY0NiMXJlMVJVUFQzam9GQk9LZEkwdXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzUzMDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWend6NFJSU3F6QTlJNGVpaVVyeWFmcTViOG44VW4xdVdGTmF0M203TFUyUkRLNndzaE9LdmRlQU5RL2JSb1pMY1REQ0RDUDdEaWpXSzY3MG1tbTRCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
