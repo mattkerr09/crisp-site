@@ -1,10 +1,10 @@
 {
-  "version": "0.1.423",
-  "notes": "Every upscale now reports the size it actually produced. Picking \u201cEnhance \u2192 4K\u201d on a small clip used to say 4K and hand you 1440p \u2014 4\u00d7 is the ceiling, so the summary now reads \u201cEnhance \u2192 4K \u00b7 4\u00d7 (~1440p)\u201d.",
+  "version": "0.1.425",
+  "notes": "Asking for something in plain English no longer sneaks in a full 4K render alongside it. \u201cTake the sound off\u201d and \u201cfade the start and end\u201d now do exactly that \u2014 before, both ran an upscale instead.",
   "pub_date": "2026-07-29T03:20:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpMVnZKSERld1JucTFxazU2RzR0Y1VsYVkyb0VkY05RTTlOMjcrMVdKN3U0bHd2bUVDakhSVXVIcTc0UzFHYUtkYk41VE5BSG1pYUQ1UWNucE1KK0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQzNDQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYbEthK3pteVhxcHBaNnRwTHRVMVN6aFB6MEdUY1VUNW53NjkzNThRQTJ1eEdQQjR1SllhekxrZnNSaEwrcGlyUDQ3T2JSbjFMVlJ6RGZpZWRTZ2ZDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlpMFpKSVgrQVJJR0xxUnY5cCttazE3TjQxR2dOTVBXcGFCZVlBZVBQUXFtT0F2eEZlbDBIMWFSbTNMZEpQVHhVTnRTZjU5clBnaFduZjhYck9MMkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzQ1Njc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSbnJkVlQvQjlQTEw3bEtGUDdPOGZBNUpja0JBZUpVSitHeFE3VkNLZkZuYmtIVnJ4S2huSENoL2RNQXd5UHJjVTRFbHZHVDVYQThmVytDdktoSWFBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
