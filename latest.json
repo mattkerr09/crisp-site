@@ -1,10 +1,10 @@
 {
-  "version": "0.1.450",
-  "notes": "Timestamps work: “trim to 1:30”, “trim from 1:00 to 1:30”, “keep 0:10 to 0:20” and “start at 0:30” all did nothing before. Aspect ratios like 4:3 are still read as shapes, not times.",
-  "pub_date": "2026-07-30T01:10:40Z",
+  "version": "0.1.451",
+  "notes": "Timestamps now work everywhere, not just for trimming: “fade in over 0:02”, “make a 0:30 highlight reel”, “fit it into 0:15”, and a caption written “from 0:05 to 0:10” — which used to render those numbers onto the video.",
+  "pub_date": "2026-07-30T01:23:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUErL1ZaYlEyNEx4S2xWdUVYT1VlZEp0ZmxScTlkdm9ETHJDa1lSeW1DbW9vMDZ4TWZhaHY4YWpVTFd0VGIxUGtvOWp1VVJIWGVYN3JWSHdZd1A1NHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzczNzM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4Q2llYmg0UXhBRmVaUGkxWVR1V0xGNkM4S3FpK3FOT2ZwYVEzYUE4aGZTTUVCWUJuRnZIVktBNEZOdmUwUVpLRHI1VXhldnZKWGt4THgxcXUzbmVBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl5Y0dRVnM2YnRlSEpkM1dBelZKaWluTUJFaWlCeVdUZC9KWEY1aXlycTZ1UGp6YWI4ckxva2VaMmFZdkp1UXFpVmVjaHBmaURjMUt2OXNNVURHSkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc0NDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMME5qelVwTXVQOXVuUGFLd3dkSzkrMmNFT0xNREFiMEIzbmQ4REFsKzdhWlUrSzc1czRxQjIwQzVlS1JYdFVhZTlOWm9Dc25MKzdVSm1DclloMjJCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
