@@ -1,10 +1,10 @@
 {
-  "version": "0.1.489",
-  "notes": "Split screen is in the editor at last \u2014 layout, audio and a Make button in the project panel. The app has always been able to do it and the website has always advertised it, but there was no way to reach it. Also: saying what you DON'T want works even when you name a target (\"don't upscale to 4k\" was running the 4x upscale), decimal numbers are read properly (\"loop it 2.9 times\" gave nine plays), and \"put my logo in the middle\" places the logo instead of refusing.",
+  "version": "0.1.490",
+  "notes": "Two GIF requests that used to finish with nothing to show now work or explain themselves: asking for a gif as part of a multi-step request (\"speed it up 2x and turn it into a gif\"), and asking for a slice of the clip that runs past its end.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxzVnRpaXlTTFdRam9DSjllOTczMDN3Z25KYjEzR0tnampzNk03U2tZRzllbC9QSzAxczU1TzNFSTRYcTlrZjkyVzlmTnAwdVIxQmovbjlHUjRzNWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDEzNzE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyMkx5V1F4bnFBcHU5TDUvdDZDVlBzRk5qelJrRFVLdVRPcFJ1cDNNOU0rTGJsWk9XVjkzMlRBdUJLL2QxbTcrdkU4WTd4K3BTL2FhT0FDNDJGczlDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN2Q3VCMFVOdDJ5aFhRang3QmhqN2g1S2EyZFRQVXowVUhKQ0NQVXFtbi9JalBzK2FURE9abjY3VGYxdTRLdjlnTE5nVEpZaHViMkk3bmJubEdxWHdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE0OTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowcTRkdzd6WDNjQVRBZVMvd3ZJeUVmNitKRndGdTZZU2tDZElUNW00UTZIeVQzeHlXZ0U1MVIzVEtUK3F0NWxmTkdCMzNCZ01EUEV4QVg5RGRqdytCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
