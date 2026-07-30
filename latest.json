@@ -1,10 +1,10 @@
 {
-  "version": "0.1.510",
-  "notes": "The \u201ca render is still running\u201d warning can be answered from the keyboard now \u2014 Escape keeps rendering, and quitting takes a deliberate press on a button that says \u201cQuit anyway\u201d. Before this it could only be answered with the mouse.",
-  "pub_date": "2026-07-30T19:54:17Z",
+  "version": "0.1.512",
+  "notes": "Every confirmation now says what its buttons do \u2014 \u201cKeep rendering\u201d and \u201cQuit anyway\u201d rather than Cancel and OK, and \u201cCancel this render?\u201d (where both buttons said a form of cancel) is now \u201cStop this render?\u201d with a Keep rendering button. Escape answers them all.",
+  "pub_date": "2026-07-30T20:12:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI5Q2RyWCtXTWV6eGQzTlY1TnBqTUo3WndJNjM0eFNmMzdsVGRUOWhxZUFidnFyWmJnTlQ2TUdIUWhMenJCVXJ4UlFIU29BS0Z6TFVuSUlha2NZakFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQwODExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHdlBuSWJyblQ0OXQrMnBSVDBJelcycGV2d3o4VEMyYk9QTXhRVDhjWXV0QTF6eUZyWGFQRTlRKytPSlhYenorWUIzWUVpWXJXeis1clRNRTFialZBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxjZzZWOXNNR05tUk1mMThMK01sNUo0M2tYVTRPZmhFcjJobWdSRC9sZzFVOEhuSHRvTFl4RHZPeWVBMnUyejNkTFVzWExvL3ZoM2dFaHJLOHJCOGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQyMTczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6RzlGMHkxSnFSTlpyakVOcFppRzI2bHN5b0lIejRKMTVGZHpWOUlYVWx0SVJMYzhvcjJqeEM1RmhNeWo4ZjBSdHlnQVNvd1AyTWFQbmNUZlpBVkFEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
