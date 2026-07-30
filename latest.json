@@ -1,10 +1,10 @@
 {
-  "version": "0.1.528",
-  "notes": "Asking Crisp to play a clip at 1\u00d7 \u2014 no change at all \u2014 used to start a long upscale. It now says that\u2019s the speed it already plays at.",
-  "pub_date": "2026-07-30T23:36:12Z",
+  "version": "0.1.529",
+  "notes": "Evening out the sound on a clip whose audio is silent now says so, instead of blaming the export settings and sending you to the Advanced panel.",
+  "pub_date": "2026-07-30T23:43:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUphbjFvNTdzM05YVXBGRVdGV2kxa1NPTnpTc25IVGFRT2t5RTZVV0ZZR1JNMTdxSm9wMGNwbnU1enp4Y1dmZE41UTY3cURPcEVkL3g2TXROV1FXY3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU0MjQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPYVBDQmF6TGh0b0xMczAyWkFWd0hFcWtWVEw3UjYyL0lLd2paMnVjY284Y3lwZ3h3MUxUUENEaU1FRHVPYTdiSEZQOGFrSHNOSmFFZm8rUmlaMi9CQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtkTkQ3cTdDTWtKcmhySFVUSWhpb05vbVpaMXp5dnFyMVJtTWc5blArd25KdkdHS21Pb3NiL2cwSmxicG1VZ29BSXcxNzhUeEtmNW9FQnpYK3ord3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU0OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnd0FvSW9aeEFzWktvalI1M0Jya2FSamwzSkNqTzIxaHE0TkgwS3VzblIwemp4c1MwR05KZXNlNE9PTXdiNG9CQ2swclhQcGpPVHkxeVZlK0U4bXlDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
