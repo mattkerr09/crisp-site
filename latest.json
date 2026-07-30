@@ -1,10 +1,10 @@
 {
-  "version": "0.1.522",
-  "notes": "Trimming, speed changes, GIFs and loops show real progress too \u2014 and their bars move at the right rate, which matters most for slow motion, where the finished clip is longer than the one you started with.",
-  "pub_date": "2026-07-30T22:38:24Z",
+  "version": "0.1.523",
+  "notes": "The \u201ctime left\u201d is more accurate, especially at the start of a job \u2014 it used to count the few seconds Crisp spends getting ready as part of the render, which made the first estimate too pessimistic.",
+  "pub_date": "2026-07-30T22:53:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5yYXBRYnErTEVKamhONnhEbG1WS2tUNUdINzR3OTdqaU5OQWI0TURsODMzQlI5RklHVzFTMlE1M0lYWnVvRTFML1FXeXZXRU91YW1TdzhVbERiVGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUwODgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxR3BYZDJ1YmNpblJObEZTZkJnajR5Z2Jla3RYWTZveHBuR3ZtSnBJK0FDOFJiTVVNVllNd3MyMzVYYllyVUpsMWdiajR3V0hqeStFTncydWxCQXpCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44S1FVeEt3TUFMVWVjQnlMeWNQT3I5dFBBcUNyV2dzVlVHeU94Vk8wNUF1VkZYcWdFak1DTlRtQi9PdFZQaXlzdEdTK2hEZG1FVElCSVk3SGVYVXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUxNDA2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVNUtjUk0xSjJQcHZUWE1OaVFuOWh0a2drdHo4eDNoY2Fudm56ekZvalZ1cTNmL1d2UTVkQUF6dlB6YWpYNnZUaktwczIyeHdJVDRxZWJjZW9yL1lCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
