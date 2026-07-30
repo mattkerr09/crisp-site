@@ -1,10 +1,10 @@
 {
-  "version": "0.1.444",
-  "notes": "Ask for two things where Crisp can only do one, and it now does that one. “Blur the face and upscale it to 4K” used to give you a refusal and no render; now it upscales and tells you the blur isn’t something it can do.",
-  "pub_date": "2026-07-29T23:47:03Z",
+  "version": "0.1.445",
+  "notes": "Explanations now stay on screen long enough to read — they were disappearing after 3.2 seconds regardless of length. And when a sentence asks for two things Crisp can’t do, it names both.",
+  "pub_date": "2026-07-30T00:07:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNRTBiSjE1SVdwRUtaWC8xNUluUVE4OURxODQ3ZW9uTVVBaWJyb2R6QStMQXp4TGpnMENYamI5bmdiM2xWck1OOVRHRGpQbE9yckFPWTlscXZKdEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY4NjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYNitmNWUzcnlXQVJZRWRwU0J1TG5aWGFDUG5IYkpSNUZhN3ZFbzVmTjBqUW1aNkJpOUpzVWlod2J1TE4rTWtjeVcrQjBENmpKUHNUNll4Mm80Z3hDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNNNG9SZEhFUWw1UDNXN3I3bDkwQ2tOVURYREVKUFEwZFFqZ2xBcEVxK0p2Y3ZPRUd0ckRidk4rMS83RlR3cGV0M1p0US80L3Z6OFRIcFltbnljbkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY5NDE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIUFQvRmJaTFhHUyt4eFllaEVURzZtdDFyeWdWL1NuaWMzcXcxdWYraHRCZ0cwYXpha3BNUHhKSjk4aWhNUGdYT2tLT1FxcW1vUkxPV2QvSVFsQndEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
