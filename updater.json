@@ -1,6 +1,6 @@
 {
   "version": "0.1.512",
-  "notes": "Every confirmation now says what its buttons do \u2014 \u201cKeep rendering\u201d and \u201cQuit anyway\u201d rather than Cancel and OK, and \u201cCancel this render?\u201d (where both buttons said a form of cancel) is now \u201cStop this render?\u201d with a Keep rendering button. Escape answers them all.",
+  "notes": "Every confirmation now says what its buttons do \u2014 \u201cKeep rendering\u201d and \u201cQuit anyway\u201d rather than Cancel and OK, and \u201cCancel this render?\u201d (where both buttons said a form of cancel) is now \u201cStop this render?\u201d. They can be answered from the keyboard: the safe choice is focused, Tab moves between the buttons, and Return takes the safe one.",
   "pub_date": "2026-07-30T20:12:57Z",
   "platforms": {
     "darwin-aarch64": {
