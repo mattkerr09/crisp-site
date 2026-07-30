@@ -1,6 +1,6 @@
 {
   "version": "0.1.467",
-  "notes": "When the plan lists two steps, Run it now does both \u2014 it was doing only the first and dropping the rest without a word. Requests Crisp can't do the way you asked now say so instead of starting a long enhance you didn't want: sharpening without enlarging, cropping an exact number of pixels off one edge, or shrinking a clip. \"Double the length\" repeats the clip instead of upscaling it, and \"take the noise out of the audio\" cleans the audio.",
+  "notes": "Requests Crisp can't do the way you asked now say so instead of starting a long enhance you didn't want: sharpening without enlarging, cropping an exact number of pixels off one edge, or shrinking a clip. \"Double the length\" repeats the clip instead of upscaling it, \"take the noise out of the audio\" cleans the audio rather than the picture, and \"lower the highlights\" adjusts the highlights instead of building a highlight reel.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
