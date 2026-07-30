@@ -1,10 +1,10 @@
 {
-  "version": "0.1.481",
-  "notes": "Asking for a GIF at a specific width works again \u2014 Crisp was refusing every width smaller than your video, including the ones its own small/large presets use. \"Make a gif with no sound\" makes the gif instead of just muting the clip. \"Drop the part between 2 and 3 minutes\" no longer keeps exactly that part. And \"turn off the watermark\" is understood as taking it off, not adding one.",
+  "version": "0.1.482",
+  "notes": "Multi-step requests are faster and more accurate. Crisp was quietly re-encoding the whole clip between steps, reporting a step that failed as if it had worked, and \u2014 for things like \"loop it 3 times and trim the last second\" \u2014 trimming with the length the clip had BEFORE the loop, throwing away most of what it had just made.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxkU24xNVhOdTlOTndzd0paWWx3ZFloVklRdlVuc2hJNmdEa0s3WUdhdlY4VXArMkJuclRXR0hZNkFuM3FFcGpvVFZDQU1qbVloVGRFZk5EZVdpdkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA0MjcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTMVV2RDNKT2R1bXRoLyt4T1RVUWR4aUlhYzJMZHUwVzVJbURZS1k1UTRhTVVYUTU0cUtlZFA0Q1Q5Uk5vN2NidnFYZ0hnWXVPZVRDY2VvL0FvOFRDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU10OUI0anZGVXNHNGNwb2g0UnNEUmMxUDZPaVFYUzM5ODV0ZkRBajRFT1RBMENJNzNKS2xkZEt0UVFIcHd1UVhqd2k0Tm11UmV5cm5EWS8zWFpqYXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA1NDQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1SWYvL2EzSnE1NVNPK0Y4VURJQmx4UXJUcklWWFBSTTVibzh0NThaVU1WVFNZQXMyNGovVGRMWll5eTBBVDNBWDh1UmFYRW9mRUlkRXNpMlR0eC9CQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
