@@ -1,10 +1,10 @@
 {
-  "version": "0.1.477",
-  "notes": "Photo motion now tells you how it frames the picture. Ken Burns fills the frame and crops the edges; Hold keeps the whole photo. That was never stated, so the default quietly trimmed the top and bottom off a 4:3 photo in a widescreen project while the preview showed all of it. Photos with motion also flag the preview as approximate now.",
+  "version": "0.1.478",
+  "notes": "A clip Crisp can't read no longer blocks your export with \"Still reading clip durations\" forever \u2014 it now names the file and says what's likely wrong. And if a clip's file has moved, Export tells you that directly instead of the vague duration message.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU4zZUczQlQ0NmRJdUppaXZGaFJRTnBXdGt0THkyMzJnY3RqQkFUVlZuRkVLSXNyUXc3V3ZwVWNTMUhsTllVYnAxV21wcjBuZUFJN1pCVEdHdmw5cFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDAxMDUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiQVhvVm9TTnY5a0tkVUlSZkV2MC91VlRXY3Y4bXFWYVpDSVhrYjZGYWZUN05ERkxUTHVHREt1YkUwNzBCNDhUQmJhSlliYnhTcENwSHZ1TS8zM29Cdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9LRG0rVTB5dHBQa1JOUzN3cjFhSEkxMk5YMlduRjdhZW15N0tzOEFZRzdERzBLTzQ2Ykw5YlVBVWRzRlpDVmtNR0ZQRFVJeHlCOHZUNWFZUWRSM2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDAyMjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmeUUxZjV5b1BCdWdUbUsrZnlYQ3YxUEd5L0FCbDlaUmtnVzd6NisvMmZUd3NMbHdxM0d6Z2IzaG5sWk5HQjYrZVdmZHFtdzhXOWtLdUQ3R2wyV0xEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
