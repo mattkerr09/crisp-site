@@ -1,10 +1,10 @@
 {
-  "version": "0.1.459",
-  "notes": "Asking to fit a clip into a length it already fits now explains why, instead of saying Crisp didn’t understand. Typing “make a 30-second highlight reel” builds one instead of sending you to the project panel.",
-  "pub_date": "2026-07-30T03:05:01Z",
+  "version": "0.1.460",
+  "notes": "The “Make a 30-second highlight reel” suggestion now builds the reel instead of pointing you at the project panel.",
+  "pub_date": "2026-07-30T03:12:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV3ZnBJMEREZWV0WStuVjQ3NUpCSVhkYk05UGtGNVdIMGJjck5JOTBKR0lwS1dRYnAvM3ZtdUFPV05HOVpxMndCMDBpTXJBMGxaZUJ3YVNTS3lPbUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgwMzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplZGVkK0pxdmtjSCtjVEF0cWZMQ1MxcG42UldLcU5KcWR6VjJsTVhUc0kycHRSSlJxb0hBcFd0bysveUs0bHVkVVRhNkE5cHlnUkZFdHpKYUVLRUFCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU43Y3h4Nkxha1N2WVFGbGlOeGRqdEJ6d3dOclBBM2N4OFlJT1pNdVlmSTBiNEszdDFyUkxnMU1iK3RUUTUvWHBDOVBzQkFIMThUc2FNdXJlVklVeXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgxMDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3RjNDNnUyUS9wTFVoVmdGYzB1Z1JKUGFhSHBhU0lRZk1hT3NPSHcveENTT3lZN3ZUUnBsSGdkMTFyd21SZnM3Q3BsSEd6bWRUdnkzbmMzTi9BdXZDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
