@@ -1,10 +1,10 @@
 {
-  "version": "0.1.467",
-  "notes": "Requests Crisp can't do the way you asked now say so instead of starting a long enhance you didn't want: sharpening without enlarging, cropping an exact number of pixels off one edge, or shrinking a clip. \"Double the length\" repeats the clip instead of upscaling it, \"take the noise out of the audio\" cleans the audio rather than the picture, and \"lower the highlights\" adjusts the highlights instead of building a highlight reel.",
+  "version": "0.1.468",
+  "notes": "Speed and Reverse now respect a trimmed clip. Trim a long clip down, press Speed, and you get the piece you trimmed at the new speed \u2014 it used to come back as the whole original file with your trim gone. A caption with a start and end time now appears where you asked on a trimmed clip; before, it could be burned in outside the part you export, so the render finished with no caption in it.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhjc0hzSkROd2pzL1RmUDNBbEN4UjQyY0VlLzZ0Vm5nQ1l3Rzd6akZqRTF1VmNhVWpzQm9NaWlXVWNveWVBcHZDaXNXZ0F1c0VpVEtzbGZKZ0h6NlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzkyMTAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqMEJ3TTBuOUxIZkRuaHVSaDZ4SUdWOEJZb2paL2lzdzdZN2ZZallpdUV4T0Y3TlJIcFJseFl1UjNuaG9iZUtuRFFQMmRlb1o2czd6bHhpeDRnZ1NEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVB5TTdoak91N3RlYWtaMmhZYjBlTXBaUm9QRVBiUGVSUTJ5UjlxcW1IcWtCN3J2N0ttendIQnoybmdMbG1Mb3VidVdHa3JBQ1NPWXEwZnVyOE1BUUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzkzMDc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRK08vOE8vT0xFNGwrWkF3UW9DcFBpMTFUY0gxenM5Wk1HTmo1d2s1eUE1RUw2ZVhmUmhBcVU3S3BYZ2VrU3lLRzFXREVYS0dyQ1F4dmlMZWZIdWdBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
