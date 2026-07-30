@@ -1,10 +1,10 @@
 {
-  "version": "0.1.512",
-  "notes": "Every confirmation now says what its buttons do \u2014 \u201cKeep rendering\u201d and \u201cQuit anyway\u201d rather than Cancel and OK, and \u201cCancel this render?\u201d (where both buttons said a form of cancel) is now \u201cStop this render?\u201d. They can be answered from the keyboard: the safe choice is focused, Tab moves between the buttons, and Return takes the safe one.",
-  "pub_date": "2026-07-30T20:12:57Z",
+  "version": "0.1.515",
+  "notes": "When Crisp can\u2019t do something to a photo it now suggests things it CAN do. Asking to make a photo smaller used to point you at \u201ccompress it\u201d, which photos don\u2019t support \u2014 and the general \u201ctry something like\u2026\u201d examples were all video-only.",
+  "pub_date": "2026-07-30T20:50:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxjZzZWOXNNR05tUk1mMThMK01sNUo0M2tYVTRPZmhFcjJobWdSRC9sZzFVOEhuSHRvTFl4RHZPeWVBMnUyejNkTFVzWExvL3ZoM2dFaHJLOHJCOGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQyMTczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6RzlGMHkxSnFSTlpyakVOcFppRzI2bHN5b0lIejRKMTVGZHpWOUlYVWx0SVJMYzhvcjJqeEM1RmhNeWo4ZjBSdHlnQVNvd1AyTWFQbmNUZlpBVkFEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBQYWNLNERpQUVLMlplSDB2VjhhOVJubFJPQVVZVDlyc3FhWGFRYzdsWGZHczMwanFpeUs5b2IvRjdkN21wWEkzYXVWSjJsTDd3d1VYcHpnREc0MGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQzOTc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHSkhRZGpYSnhWamJjQ3Q4QU9kbFNkY3RuSE1rOVFvRzdMOTAwUnp3TDhUaTczeXZRQ3lmT2hsNVZlTWg1SUZkbGxERmxTZUFWakNHblNmYUZmM0ZCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
