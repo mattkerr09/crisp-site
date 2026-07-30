@@ -1,10 +1,10 @@
 {
-  "version": "0.1.473",
-  "notes": "Max quality can now actually be downloaded. The one-time model pack it needs had no install button anywhere you could reach it \u2014 the app told you it needed a download and gave you no way to start one. The button now sits in the editor under Tools \u25b8 Enhance and under Upscale on export. Also: exporting your edit no longer makes Crisp ask a free user to pay for batch processing they aren't using.",
+  "version": "0.1.474",
+  "notes": "Two edits in one sentence both happen now. \"Make it sharper and mute it\" was running the enhance and silently dropping the mute \u2014 same for \"clean it up and compress it\" and \"denoise it and mute it\". And asking to slow down a photo says speed changes are for videos, instead of quietly starting a 2\u00d7 enhance you didn't ask for.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpwZHY4RkR6R2VXTExsdWVmbG1JcU5JSmdCQzd5WWFObXVuSVk0dEMrNCtiYURxR2tVK3d3V0czTExweml4RUpwSlY2V3NkZjRzTFlPZ2ZCNE5hQUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk3OTE5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyUEsxZ0d0eDV6dHhGTXhjOStLZzhGZGYzVXJiYWpBUlZCOXc1elJKSnlaTHA5aW5VTC9tMEtXa3hweUNvby95ZHFMamJRMG84SW0yanN1dGFPRnNBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdoUjhMa1hhSEdvS0RSckhrYzZBeEUrTG5QV2lmYmg1eEZQc0V2VXZUdzRWT2RKTUR5bzNsSWFiYXdQMmJRVkZvQ05hQ0dSQXlEcXNtSFpIR2EzclFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk4OTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHeUlTTTJXOEViaWd4eFR3ZG1nZFZyN2wzcnpNZVRJK29mcG1DYzZkdVM1Y3B0TXVrc01qc3RrQjdZaGNTaURvSFFtd0dHQXBEVExOWCtmR3VpakpBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
