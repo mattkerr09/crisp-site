@@ -1,10 +1,10 @@
 {
-  "version": "0.1.480",
-  "notes": "Saying what you DON'T want now works whichever way round you say it. \"Without upscaling, make it sharper\" was starting the very upscale you ruled out \u2014 while telling you nothing had been run. \"Avoid upscaling\", \"instead of upscaling\" and \"rather than upscaling\" are understood as refusals too, instead of being read as a request to upscale.",
+  "version": "0.1.481",
+  "notes": "Asking for a GIF at a specific width works again \u2014 Crisp was refusing every width smaller than your video, including the ones its own small/large presets use. \"Make a gif with no sound\" makes the gif instead of just muting the clip. \"Drop the part between 2 and 3 minutes\" no longer keeps exactly that part. And \"turn off the watermark\" is understood as taking it off, not adding one.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFVOCt6d21sS2xMMFJrOFE5bXdPallOTEorVEYzd3JQTFdwSWQ2S205MCttS202bzZObG93WnNpTXoyRHdTb2FVbWx3MnlvZTJNWUMzRll3UkVEalE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDAzMTc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSdWdPYkxQSW5lR08xL0tMK3NkTm1HZWpHRWUzQXpnVlZRNWVsQTlUSjVRZ1ZTOHVYSW5DUDgwYk5CSkRjeTh4dnN1NUNKQlpqa2hNQk1kWWJ1cndDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxkU24xNVhOdTlOTndzd0paWWx3ZFloVklRdlVuc2hJNmdEa0s3WUdhdlY4VXArMkJuclRXR0hZNkFuM3FFcGpvVFZDQU1qbVloVGRFZk5EZVdpdkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA0MjcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTMVV2RDNKT2R1bXRoLyt4T1RVUWR4aUlhYzJMZHUwVzVJbURZS1k1UTRhTVVYUTU0cUtlZFA0Q1Q5Uk5vN2NidnFYZ0hnWXVPZVRDY2VvL0FvOFRDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
