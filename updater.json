@@ -1,10 +1,10 @@
 {
-  "version": "0.1.507",
-  "notes": "Two conflicting requests in one sentence no longer both run: \u201cmake it vertical and make it square\u201d used to make it vertical and then square THAT, blurred bars and all. Crisp now uses the last shape, speed or rotation you named and tells you which one it skipped.",
-  "pub_date": "2026-07-30T19:23:50Z",
+  "version": "0.1.508",
+  "notes": "Housekeeping: the length shown above the timeline now matches the exported file to the millisecond. It was a couple of milliseconds out on edits with several crossfades.",
+  "pub_date": "2026-07-30T19:32:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1Xd2RLZEE5dStCYUhKWXBSZi8zUjd6bDYrNVdES1MwdEtzb2F4bFBjVDZRYjFZWDkzUEI4U0EwRUtSckNkVk05YUlSNEIyTlR3WXhoN2pIai9iR0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM5MTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXVE5NaUhxVlFQc2hYcUw1cmlvbVllaXBYa3NSTTJGbENDY3hXMzFucTdCancyaFhncGVFWTBLNHNGV045TFVuNmNuZURkeThKQUg1dmtLT0lwSGZDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU15T2NXYld5SEZpajBJYWFqODlKOEl4V1JPdkJCdEQzRUJUTGxnaGRLMDFvTXV0ZFFLYXJmSWZzdnJoVCs2SDF0a21MRDBEamV1a2k5L1BxNktrakE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM5NzczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmZEdhSG9xZGJEUjRtcVJzM2pMY3FmcmQzZ1M3ZENFSDBOeTNtM29yaGR6VTYrV0lrMTA5RURxNlVFN0hXT2pVZVdKcUx5cGhKaVFteE5aclA0bC9Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
