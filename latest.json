@@ -1,10 +1,10 @@
 {
-  "version": "0.1.505",
-  "notes": "Caption text you type is the caption text you get: \u201ccaption it with Summer 2026\u201d and \u201cwrite Hello on it\u201d used to add an empty caption and then ask you to type the words you had just typed. \u201cLabel it Take 3\u201d works too.",
-  "pub_date": "2026-07-30T18:48:28Z",
+  "version": "0.1.506",
+  "notes": "Ask for something Crisp does with a button and it tells you where the button is, instead of \u201cI didn\u2019t catch an edit\u201d. Split screen, music, transitions and the photo pan-and-zoom all answer properly now, and asking to lower the frame rate explains that Crisp keeps the one your clip already has.",
+  "pub_date": "2026-07-30T19:10:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUo2RU5XbDU5dGdJVCtnbDVzaU0rWkY1Vkh1KzhqSTBITmk3c0JRRTc5Zi90WE9iSTgrMjZnckRWNzczSXdsbktMU3RCRDEzT1NCbW0xVDJRTjYvY0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM3MjI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2RGN0blBmLzFEVFNLZGdVRzNOdnFIWTJGZ29YV2FjcHVMQmNCUjIzVlBLa09NVXR0andFbzJxOGdDTEcwWXN0ZGtmRnpQR0l2cHVOUi9hYnVQenNEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZwZUVtVXFmdDZ5UEgvL2JJR004c3JzVUcyNC9PSTNGSW9IMzZNb1ZuS1ZVNnZQekpGTHZQM0d3bnNmUkE1MzFwVkJQU0lrdmRWYzY0eEEwMXpzMkE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM4MzUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptTmpqMGZmNHhwT0JEQ0FyZXhRT08vTjBQeUNOM1BYRkpvR3dWUjNLeS9vM2tIRERESk1xRXcyS0JTaDE1em85dFh0RXprVzF0UEk2M1FNV1gyc2FCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
