@@ -1,10 +1,10 @@
 {
-  "version": "0.1.456",
-  "notes": "“Upscale my timelapse” now upscales instead of speeding the clip up 4x, and “enhance my slow-mo clip” enhances it. Describing the footage you have no longer changes what Crisp does to it.",
-  "pub_date": "2026-07-30T02:32:24Z",
+  "version": "0.1.457",
+  "notes": "Half-finished requests get a straight answer. “Trim it” now replies “trimming needs an amount — try trim the first 5 seconds”, and the same for crop, fade, speed, grade, reframe and convert, instead of saying Crisp didn’t understand.",
+  "pub_date": "2026-07-30T02:49:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURkM3VzR0w5bWdPZzM3R2xha0ZycVNiRGJrN0g3bk83UzFLeFErREZvQ3lzMFl2V1BGUGJMVlpoUmkwMEpCc0JRR2ZtUXB6Rk8rbjBtZXNaWjVCaHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc4NTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPWHp0M3NqTmFDREkzY1BycjJ1ZDViTGRXa3JMUEJTM1Z1WVNVUmI0bGl3S1RYRlNNanNMME5EWG5qTHUzRWhkZndzaDFWcmMydlNraFNFd3NlL1FCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYrR1lWMVlZTm8yOTlEWWdGbkFYYzJQV1BBbVRNMkpMck5TRFN0Qy9nMklPYW02dWRJSGVpQ1hjaXRlNkI0bmxJcTRFR0ZqYlZnaG5lNUJHRmg5d0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc5NjM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1RkNUZ2YvdFhWYTlqRFlJeldadTFCV0hyN2d0aHBtbWlTeEdLRUFFbVNuTk50d3MwNVExb09ZNnVRYjJQZmt6VkRyLy9TUmN3dTVMVDVVMmVxbVBBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
