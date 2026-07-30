@@ -1,10 +1,10 @@
 {
-  "version": "0.1.493",
-  "notes": "File \u25b8 Open (\u2318O) works \u2014 it was silently doing nothing. Naming a codec no longer cancels your edit (\"upscale it to 4k in h264\" now upscales), and \"remove the background wind\" cleans the wind off your audio instead of saying Crisp has no green-screen tool.",
+  "version": "0.1.494",
+  "notes": "Quitting while a render is running now asks first \u2014 it used to throw the work away without a word. Telling Crisp what you have before what you want (\"it's already 720p so upscale to 4k\") works, \"extract the music\" saves the soundtrack, and a music montage says up front that it runs for the length of the song.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlwUEdNNFRlSDdhc1NFZXVPVHpNSkkrR2NKMW1zWis2QWZNdWNmUlBLdm42N1l6clBkU3JBZ2FBWDQyM3B0ZlNaTS9xNzkzRjZVY3B2c3hLcnJXK1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE4ODIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphNDZka3B6NU5PQ0YyVndRd0dPYW5yN0xGRlNVck8wek4yT2Nzd2YrT0tJY0k2K295Qm1IWUR1R0xvMDVaeEt6dXd3bzZLdCtzK3RpamFESmlJTXlBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhzdnV2R3dFOW5lRVEzNFp5cXo2Y1dTTHFNU0ZMbXNvWXRENnBRZk5SR3FJY3drM1YrdjJXRUtvNGUyTzh5bDhxc3FDQ0JWMHB3Mnc4WUlWSGtVZ0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDIxMzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4d0J3MjNvTklqb3hkc1c0QTQvNmVvd2pZTDJCWE0zbHVPTXdGeHVuNGpRcHlkUVhzbE9sUXU5ZG9sbGtRbVZaNUF2RS80bDJOVTZ0NUpUSmNsVDVCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
