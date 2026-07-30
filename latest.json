@@ -1,10 +1,10 @@
 {
-  "version": "0.1.490",
-  "notes": "Two GIF requests that used to finish with nothing to show now work or explain themselves: asking for a gif as part of a multi-step request (\"speed it up 2x and turn it into a gif\"), and asking for a slice of the clip that runs past its end.",
+  "version": "0.1.491",
+  "notes": "Asking Crisp to do something to \"all of these\" runs the batch again \u2014 if the sentence also asked for a second edit, that used to cancel the batch and quietly work on one clip. And a GIF, still frame or audio file that fails to save now tells you, instead of leaving you looking for a file that was never written.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN2Q3VCMFVOdDJ5aFhRang3QmhqN2g1S2EyZFRQVXowVUhKQ0NQVXFtbi9JalBzK2FURE9abjY3VGYxdTRLdjlnTE5nVEpZaHViMkk3bmJubEdxWHdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE0OTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowcTRkdzd6WDNjQVRBZVMvd3ZJeUVmNitKRndGdTZZU2tDZElUNW00UTZIeVQzeHlXZ0U1MVIzVEtUK3F0NWxmTkdCMzNCZ01EUEV4QVg5RGRqdytCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpXZXByaHlNMi9STHFBdTZmcnZWSXhqTStiUFNqRElPNkpkaXJaaWh5M21VL29NU2c2eVhsSEFHQWdUMzFTOHBESDJZZjkrRFU0V1JDR3BTRUlQTHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE1NjYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoramEyaXI1TERDdFdSZXM3aWxleGtDTjJRYW1kZHpUN1VQT1pxNzJQNkZFWCs0a1JiUDIyWGI2RXErSE44RmdLTVVHSkFjUmVsSmJYem10NlFtb1ZBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
