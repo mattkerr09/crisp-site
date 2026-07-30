@@ -1,10 +1,10 @@
 {
-  "version": "0.1.457",
-  "notes": "Half-finished requests get a straight answer. “Trim it” now replies “trimming needs an amount — try trim the first 5 seconds”, and the same for crop, fade, speed, grade, reframe and convert, instead of saying Crisp didn’t understand.",
-  "pub_date": "2026-07-30T02:49:08Z",
+  "version": "0.1.458",
+  "notes": "Asking to fit a clip into a length it already fits now explains why, instead of saying Crisp didn’t understand.",
+  "pub_date": "2026-07-30T03:03:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYrR1lWMVlZTm8yOTlEWWdGbkFYYzJQV1BBbVRNMkpMck5TRFN0Qy9nMklPYW02dWRJSGVpQ1hjaXRlNkI0bmxJcTRFR0ZqYlZnaG5lNUJHRmg5d0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc5NjM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1RkNUZ2YvdFhWYTlqRFlJeldadTFCV0hyN2d0aHBtbWlTeEdLRUFFbVNuTk50d3MwNVExb09ZNnVRYjJQZmt6VkRyLy9TUmN3dTVMVDVVMmVxbVBBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV3ZnBJMEREZWV0WStuVjQ3NUpCSVhkYk05UGtGNVdIMGJjck5JOTBKR0lwS1dRYnAvM3ZtdUFPV05HOVpxMndCMDBpTXJBMGxaZUJ3YVNTS3lPbUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgwMzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplZGVkK0pxdmtjSCtjVEF0cWZMQ1MxcG42UldLcU5KcWR6VjJsTVhUc0kycHRSSlJxb0hBcFd0bysveUs0bHVkVVRhNkE5cHlnUkZFdHpKYUVLRUFCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
