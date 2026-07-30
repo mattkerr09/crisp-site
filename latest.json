@@ -1,10 +1,10 @@
 {
-  "version": "0.1.495",
-  "notes": "Hardening for the quit warning added in the last build: it now recognises exactly which renders are still going, so it can't get confused by a job in an unusual state and refuse to let you quit.",
-  "pub_date": "2026-07-30T03:42:40Z",
+  "version": "0.1.496",
+  "notes": "The \u201crenders are still running\u201d warning added in the last two builds never actually appeared \u2014 closing the window shut the engine down before it could. It works now, and \u2318Q asks too. Also: asking for the audio while describing the picture (\u201cthe intro is noisy, clean up the audio\u201d) no longer starts a long upscale you didn\u2019t ask for; \u201ccut out the middle from 100 to 150\u201d is refused again instead of keeping exactly the part you wanted gone; and \u201cmake a gif from 60 to 90\u201d uses the seconds you named instead of the first 30.",
+  "pub_date": "2026-07-30T15:34:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA5Qjc5dWdqbEM3MnJXQzk5Kzd1NDlOcVBVZ2FIeDNDSnN4Uk5VYTh1R0hNeDY1MGZTRlpYLzVDb29lRUtlckpqYlN6UFhTM09VQ244Y2J3RDIzeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDIyNDkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1U0VNdkM4ZG11TGpQOUdkTWZlYXFhMGN1QVAzZGxsWjZkaTBYRjB0b2x4Ym1FNUNxN21VdXo5SFBHZWZhb2c5Z2M4andML0FKc2psTTRXdFMxRjBDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM5WHFXbEh4Slk4UlFqYnBGeUw5eTJ5OFNZcUdhdmIzTGIvMVhKQURzMzFnN2VCZ2g2KytSRWNxRWZ0V3I1UkxCeTVvLzVOV3dTUWRibDAzcG94Y3djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDI1NTk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHZ2UxYzJFU3pISkc1b2hrNU52TC9OcVdRRTd2VndQUjhpQXdKd1l4a0xZb213TkxXa1Z5TG9uN3ZIZ09KakU4aEZnWXRvU21ZRXZ1anoraGpUWkJDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
