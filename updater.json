@@ -1,10 +1,10 @@
 {
-  "version": "0.1.491",
-  "notes": "Asking Crisp to do something to \"all of these\" runs the batch again \u2014 if the sentence also asked for a second edit, that used to cancel the batch and quietly work on one clip. And a GIF, still frame or audio file that fails to save now tells you, instead of leaving you looking for a file that was never written.",
+  "version": "0.1.492",
+  "notes": "\"Is there a way to make it vertical?\" now just does it \u2014 polite questions like that were being treated as questions and ignored. Asking to change a setting from one number to another (\"drop the fps from 60 to 30\") no longer gets mistaken for a request to cut part of the clip, and \"remove the scratches and marks\" is understood as restoring old footage.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpXZXByaHlNMi9STHFBdTZmcnZWSXhqTStiUFNqRElPNkpkaXJaaWh5M21VL29NU2c2eVhsSEFHQWdUMzFTOHBESDJZZjkrRFU0V1JDR3BTRUlQTHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE1NjYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoramEyaXI1TERDdFdSZXM3aWxleGtDTjJRYW1kZHpUN1VQT1pxNzJQNkZFWCs0a1JiUDIyWGI2RXErSE44RmdLTVVHSkFjUmVsSmJYem10NlFtb1ZBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlTWmZnczhsc2JJVkNMaEpzT2ZqdTRrc2l1OUNSMmNuYjdxZlcyK0lWR05FcXUwNlk5Q2VkMmIxMjNPQ3UxYkFha3IxSGlXczZNYTAvUTRZbWd1cXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDE3NDQ4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPSzlGMjh3T3djV2FNc1d3bkgvVDR3bFZXQW9MaW5xajdELy9MVHpyd3l2V3JOTGcrQkJ6RWFNclhSRXM3dzFlbW1EZ3A1OTQ3KzlLQXY0YWcrOXJEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
