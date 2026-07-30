@@ -1,10 +1,10 @@
 {
-  "version": "0.1.501",
-  "notes": "Split screen with \u201cNo audio\u201d works \u2014 it used to fail the job outright. And for a portrait clip from a phone, the upscale card now shows the size you\u2019ll actually get (2160\u00d73840) instead of the sideways one.",
-  "pub_date": "2026-07-30T17:47:46Z",
+  "version": "0.1.502",
+  "notes": "Still frame now grabs the frame under the playhead on every clip. On any clip except the first it quietly took that clip\u2019s opening frame instead, whatever the playhead was showing.",
+  "pub_date": "2026-07-30T18:01:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrc1I2S3BuYTlxV25XVCtXdXJVNWR6dkJ1VHpFQkwrbEx0VDh6cXVKd2lOMldZZFlFMm14VjBGTndWRXBCeDQvUE9YQVZsMExFejVPdkNRclJMVnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMzMTQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwaGYyd0czemZwVk1CUWs3SVF1RzVuS3AzdE83Rm1KbVRiTUpDZmhodmNTY3pySU90d1doQTlNSUpYMmNDY3FYRGtnckdhRGgveUF1bmswR2dPcG1EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1uNGVpczhzbXRIVjk3M0RjdnlybGQyWkpzQ1lwYnZ5S1d6cWxMaCtqRkdlckJQQTRkM0JmTnlCckdpRGY0bllEZnVvUDI1ZGJlMHowQW1pNmJRbkFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM0MDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphOE85YmE1U25GYUUwaEo2MHNjWjZyWi9jOW9vYVJwQzNVTkxYT0pzaVNrZS9Eb2NCL2JBNlprOGxuRFFhak5tMjFlNDg4M3krL0x1WWx2bk1tTVNBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
