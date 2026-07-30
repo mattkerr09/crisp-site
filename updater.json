@@ -1,10 +1,10 @@
 {
-  "version": "0.1.474",
-  "notes": "Two edits in one sentence both happen now. \"Make it sharper and mute it\" was running the enhance and silently dropping the mute \u2014 same for \"clean it up and compress it\" and \"denoise it and mute it\". And asking to slow down a photo says speed changes are for videos, instead of quietly starting a 2\u00d7 enhance you didn't ask for.",
+  "version": "0.1.475",
+  "notes": "The timeline now tells you how long your export will actually be when Project Speed is set \u2014 it was showing the un-sped length, so a project at 4x claimed four times the real file. And \"Queue everything\" says which files it couldn't start and why, instead of quietly skipping them \u2014 when every file was refused it used to do nothing at all with no message.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdoUjhMa1hhSEdvS0RSckhrYzZBeEUrTG5QV2lmYmg1eEZQc0V2VXZUdzRWT2RKTUR5bzNsSWFiYXdQMmJRVkZvQ05hQ0dSQXlEcXNtSFpIR2EzclFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk4OTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHeUlTTTJXOEViaWd4eFR3ZG1nZFZyN2wzcnpNZVRJK29mcG1DYzZkdVM1Y3B0TXVrc01qc3RrQjdZaGNTaURvSFFtd0dHQXBEVExOWCtmR3VpakpBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV4R242aTdPUTdIVkh0VEdhb0gyOTM5SUt3NjhnbEpZVldiS2YxMS93WmFnQUg0SGVFUllDdDhWMndQenIxdXZmM1NTcUhWazl0V3FmaWJNNThRRFFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk5ODkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvOUV3T2VSSmY3RitTT0txNStpNE1YVFdqTTZYQTZnN0h5MnVxNElUaTNpUWprWWJPemxBTi9laENVcjdQaEtWbDB1VzZ3NG50cXpZRW5rakgxKzZCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
