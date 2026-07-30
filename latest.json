@@ -1,10 +1,10 @@
 {
-  "version": "0.1.499",
-  "notes": "Say how much and Crisp uses it: \u201cmake it 50% louder\u201d used to apply its own 2\u00d7 default and label the card 2\u00d7, and \u201cmake it 30% quieter\u201d cut twice as much as asked. And when a trim covers the whole clip \u2014 \u201ctrim the first 30 seconds\u201d on a 4-second clip \u2014 the card now says so instead of describing a cut that never happens.",
-  "pub_date": "2026-07-30T17:15:10Z",
+  "version": "0.1.500",
+  "notes": "Ask Crisp about your clip and it answers instead of starting a render \u2014 \u201cwhat resolution is it\u201d used to kick off a 4K upscale. Describing your footage no longer runs a job either: \u201cmy clip is 4k\u201d planned an upscale to 8K, and \u201cthe montage came out wrong\u201d re-ran the same montage. Complaints still work as before \u2014 \u201cthe video is blurry\u201d enhances, and now every way of saying a clip is shaky reaches the stabiliser.",
+  "pub_date": "2026-07-30T17:28:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8yci9xdTJydng5cktRQ1Q4d0N2SzJUbmN3ZzRtdG92bTBtei9xc3R3MzRGTzVFZ0QvQURDRVROUTZHTmxGVU9HdlRROS9QSExmWTB6d3F5ejZNekFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMxMTA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2MXdBZlc3TDZEVW5UQlBobitqSzdqQ1JYOU80eFhWY1FMSUNTM3FKSCtlM2xRN2tQMlFPUndRM2k0aENwd3VPTTFvbkFEZVhyWkhteC9jOHBuVUVEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8ybUt0SFFRbFFudW1qOUY1MjBueFdXT1JJZGdKUU5MSnE4NWp5ZktIWXVrNlB6L0ZOWGdsWkxOQkRvTmsrZjJqR1N3SnF1V1pZZXFLZjdKZW9lemdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMyMzQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMUzFFV2o1SDl1VFRhZXR4cExqcFAwM3FrMDB0dHF5SERpUkkxNnJFdGxXWU5tMDh3R09QSUVHbVVTeFBpOWxoSkh5TVlySXlyTlFQV0x1b0VDeVpDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
