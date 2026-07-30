@@ -1,10 +1,10 @@
 {
-  "version": "0.1.460",
-  "notes": "The “Make a 30-second highlight reel” suggestion now builds the reel instead of pointing you at the project panel.",
-  "pub_date": "2026-07-30T03:12:15Z",
+  "version": "0.1.461",
+  "notes": "Two instructions in one line both happen now: “mute it. make it vertical.” used to reframe and quietly skip the mute, and a pasted list only ran its first item. “Trim the first minute and a half” keeps ninety seconds instead of sixty.",
+  "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU43Y3h4Nkxha1N2WVFGbGlOeGRqdEJ6d3dOclBBM2N4OFlJT1pNdVlmSTBiNEszdDFyUkxnMU1iK3RUUTUvWHBDOVBzQkFIMThUc2FNdXJlVklVeXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgxMDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3RjNDNnUyUS9wTFVoVmdGYzB1Z1JKUGFhSHBhU0lRZk1hT3NPSHcveENTT3lZN3ZUUnBsSGdkMTFyd21SZnM3Q3BsSEd6bWRUdnkzbmMzTi9BdXZDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp1WXFNQ29DcldSSkZQaXhJWEc1eEJ1cDZhYTk5Q3haSjQwNm9SQmYyMGZVNTNJYXFBQlFVZ2JwSTZGM0RhQVdsYkhTZlVGUDc3SzU2dWxCd1VBV3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgyODMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzUEg5SEtmc0pWcWV1Ykd4OWNFejFRVUl0dmRhTlRhRlArSjRmbUFzblc5L1JUMXpKUGNQVm9kak5sc25iVnk0eFdaT3M1QURKWGtaL1JCOThaV2ZBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
