@@ -1,10 +1,10 @@
 {
-  "version": "0.1.498",
-  "notes": "\u2318Q now asks before it throws away a render \u2014 the last two builds only asked when you closed the window. \u201cRotate it 5 degrees\u201d used to turn the picture a full 90\u00b0; Crisp turns in quarter turns and now says so, as it does for \u201cstraighten it\u201d. And five plain requests that got \u201cI didn\u2019t catch an edit\u201d are answered properly: saving as WebM or AVI explains that Crisp writes MP4 and MOV, \u201ccut off the bottom\u201d explains the crops it has, \u201cthumbnail from the middle\u201d grabs the middle frame, \u201cfix the levels\u201d evens out the sound, and \u201cmake it emailable\u201d compresses.",
-  "pub_date": "2026-07-30T16:51:00Z",
+  "version": "0.1.499",
+  "notes": "Say how much and Crisp uses it: \u201cmake it 50% louder\u201d used to apply its own 2\u00d7 default and label the card 2\u00d7, and \u201cmake it 30% quieter\u201d cut twice as much as asked. And when a trim covers the whole clip \u2014 \u201ctrim the first 30 seconds\u201d on a 4-second clip \u2014 the card now says so instead of describing a cut that never happens.",
+  "pub_date": "2026-07-30T17:15:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhCSk5GRDFpWFdQRjJyczhZQVVZb0p0cDQ0NTZramZvdVRHRmR3UDZRODlZeEdJbEVvS2k2RmIyS0xMejZaSDYrbE1ESHJzenFoWUZDVGQyb1hRNEFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDI5NjQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaV0NpNSt6OWJHZDhXMXU4dmhlL1pOUmpNdVRFNUNDYm42SFBLWkNyWE00cHBMZTdEK3A0Y1hVdjJzQ0lnMDJvb055djlySzZ0YmpHNWxyd3FKdExBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8yci9xdTJydng5cktRQ1Q4d0N2SzJUbmN3ZzRtdG92bTBtei9xc3R3MzRGTzVFZ0QvQURDRVROUTZHTmxGVU9HdlRROS9QSExmWTB6d3F5ejZNekFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMxMTA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2MXdBZlc3TDZEVW5UQlBobitqSzdqQ1JYOU80eFhWY1FMSUNTM3FKSCtlM2xRN2tQMlFPUndRM2k0aENwd3VPTTFvbkFEZVhyWkhteC9jOHBuVUVEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
