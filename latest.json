@@ -1,10 +1,10 @@
 {
-  "version": "0.1.500",
-  "notes": "Ask Crisp about your clip and it answers instead of starting a render \u2014 \u201cwhat resolution is it\u201d used to kick off a 4K upscale. Describing your footage no longer runs a job either: \u201cmy clip is 4k\u201d planned an upscale to 8K, and \u201cthe montage came out wrong\u201d re-ran the same montage. Complaints still work as before \u2014 \u201cthe video is blurry\u201d enhances, and now every way of saying a clip is shaky reaches the stabiliser.",
-  "pub_date": "2026-07-30T17:28:55Z",
+  "version": "0.1.501",
+  "notes": "Split screen with \u201cNo audio\u201d works \u2014 it used to fail the job outright. And for a portrait clip from a phone, the upscale card now shows the size you\u2019ll actually get (2160\u00d73840) instead of the sideways one.",
+  "pub_date": "2026-07-30T17:47:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8ybUt0SFFRbFFudW1qOUY1MjBueFdXT1JJZGdKUU5MSnE4NWp5ZktIWXVrNlB6L0ZOWGdsWkxOQkRvTmsrZjJqR1N3SnF1V1pZZXFLZjdKZW9lemdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMyMzQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMUzFFV2o1SDl1VFRhZXR4cExqcFAwM3FrMDB0dHF5SERpUkkxNnJFdGxXWU5tMDh3R09QSUVHbVVTeFBpOWxoSkh5TVlySXlyTlFQV0x1b0VDeVpDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrc1I2S3BuYTlxV25XVCtXdXJVNWR6dkJ1VHpFQkwrbEx0VDh6cXVKd2lOMldZZFlFMm14VjBGTndWRXBCeDQvUE9YQVZsMExFejVPdkNRclJMVnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDMzMTQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwaGYyd0czemZwVk1CUWs3SVF1RzVuS3AzdE83Rm1KbVRiTUpDZmhodmNTY3pySU90d1doQTlNSUpYMmNDY3FYRGtnckdhRGgveUF1bmswR2dPcG1EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
