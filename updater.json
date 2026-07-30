@@ -1,10 +1,10 @@
 {
-  "version": "0.1.470",
-  "notes": "Trimming now survives Speed and Reverse everywhere \u2014 the Tools panel, the prompt bar, and multi-step requests. Trim a clip down, ask Crisp to reverse or speed it up, and you get the piece you trimmed at the new speed; it used to come back as the whole original file with your trim gone. A caption with a start and end time also lands where you asked on a trimmed clip, instead of being burned in outside the part you export.",
+  "version": "0.1.471",
+  "notes": "Asking for a long fade now tells you the limit up front instead of failing when you press Run \u2014 a fade tops out at 10 seconds, and the plan says so. And asking for a montage plus another edit (\"make a montage and mute it\") no longer drops the second half without a word: Crisp makes the montage and tells you what's left to do once you drop it on the timeline.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBYNldKRGZKclgzOXoyc21yNFJ2R3NZRU5KbWtkL0R0bUF0K0lJSFFrcDhJQVl5VnNBUDBod0JUdHQ2cGUzclpqREg2RW9GcHhnZXcyTG5xRGF6SkFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk0ODU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyNFZyOUFMdnZVWldGTUhlVHVkVkYrTkJBMlJTc3kxNnhaWVg5OWZVbXdBZUlXOGhFeHM4VXZSc1JzRUU2cmo5ZVZZTVdjdUw4VU5Ra1QvVEVZT0VCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU4wUGhETHZCUXVvbExOR2NWQnNvaktMTFhKOEpIbllEY2JrbzBCbENaQnB2dWV5WkhZR3dzeGdPd0IrQ2RPTVE4bERYY21OQ3llb09DQ0NRYVJTWndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk2MTU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyRDlWbnRYSS9oaUVza2s0TmQvdm1TaURtWWJHckZ2SXUxVUJmZ21sVlIwQUVBNUxSSSs0SkQ5WUtGL3IzU3ZIUm95NCt2YU53akw3VVMzK0N4RlVDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
