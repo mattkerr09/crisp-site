@@ -1,10 +1,10 @@
 {
-  "version": "0.1.483",
-  "notes": "Saving the audio as an mp3 no longer replaces the video on your timeline with the audio file \u2014 it saves alongside, like a GIF or a still does. And a fade on a trimmed clip now appears in the part you export; before, it was painted at the start and end of the whole original, so the render finished with no fade in it at all.",
+  "version": "0.1.484",
+  "notes": "Numbers you type are used. \"3x louder\" was always giving 2x, \"a gif that plays once\" looped forever, and asking for a frame past the end of the clip claimed a time it couldn't reach. Where Crisp has a limit \u2014 8x speed, 10s fades, 30s gifs \u2014 the plan now says so instead of quietly using a different number.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdoQk1DT2YySjdXeTNZMTc0blF0emgwQ0tSUUhsS04zd015dGhuQ0Y5cWN6czRNUzhLSFRDSHkwRit4YTlwZUZPTzQrc056cEFUcWliNEF4S1YzaGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA2NTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucHU2NTdZR2JQcmRGdjE5WmJWZHZMQ0VKbnBwaTlmbVNIMmM3L05xMzBoOXpna3VjUDhhNEppMExyOWVGYlFXZkx3VmY0Qk03UmNGNS9ZT3JadElEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdaMG03aXZuUXRVM2VFbHBRLzNRVXBJWlV3RlJ2dUNzWnA2eVdYMm5zcTEvOHVpcFhVcHZabmcyMWZWUmowazJXc3FLRkxSVkJYKzBocG1wNW1udHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA3NzEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiQnVPS2xTNHFYODkyNFg0NEt4MU5BYTF4SHNncXZlUWovUzgyL2sxblNvZ0VvZnYxZjI5S29xT0xVNjYrbjI0aEcxK2lkQ202Q1FDVDVKS1l0ajNCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
