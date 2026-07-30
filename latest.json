@@ -1,7 +1,7 @@
 {
-  "version": "0.1.458",
-  "notes": "Asking to fit a clip into a length it already fits now explains why, instead of saying Crisp didn’t understand.",
-  "pub_date": "2026-07-30T03:03:57Z",
+  "version": "0.1.459",
+  "notes": "Asking to fit a clip into a length it already fits now explains why, instead of saying Crisp didn’t understand. Typing “make a 30-second highlight reel” builds one instead of sending you to the project panel.",
+  "pub_date": "2026-07-30T03:05:01Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV3ZnBJMEREZWV0WStuVjQ3NUpCSVhkYk05UGtGNVdIMGJjck5JOTBKR0lwS1dRYnAvM3ZtdUFPV05HOVpxMndCMDBpTXJBMGxaZUJ3YVNTS3lPbUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgwMzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplZGVkK0pxdmtjSCtjVEF0cWZMQ1MxcG42UldLcU5KcWR6VjJsTVhUc0kycHRSSlJxb0hBcFd0bysveUs0bHVkVVRhNkE5cHlnUkZFdHpKYUVLRUFCQT09Cg==",
