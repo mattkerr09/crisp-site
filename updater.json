@@ -1,10 +1,10 @@
 {
-  "version": "0.1.515",
-  "notes": "When Crisp can\u2019t do something to a photo it now suggests things it CAN do. Asking to make a photo smaller used to point you at \u201ccompress it\u201d, which photos don\u2019t support \u2014 and the general \u201ctry something like\u2026\u201d examples were all video-only.",
-  "pub_date": "2026-07-30T20:50:12Z",
+  "version": "0.1.516",
+  "notes": "Internal hardening \u2014 no change to what you see. This build adds checks that stop Crisp ever telling you to press a button that isn\u2019t on your screen, and that the free-tier mark behaves exactly as intended.",
+  "pub_date": "2026-07-30T21:07:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBQYWNLNERpQUVLMlplSDB2VjhhOVJubFJPQVVZVDlyc3FhWGFRYzdsWGZHczMwanFpeUs5b2IvRjdkN21wWEkzYXVWSjJsTDd3d1VYcHpnREc0MGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQzOTc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHSkhRZGpYSnhWamJjQ3Q4QU9kbFNkY3RuSE1rOVFvRzdMOTAwUnp3TDhUaTczeXZRQ3lmT2hsNVZlTWg1SUZkbGxERmxTZUFWakNHblNmYUZmM0ZCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdnQ2hRN0dleVFCVnArMG05ZVl5Tzd6TWUrSlkyL0plTFU0R3VPOURyR0FVeWRRa1pPYzhoTFB5NEZYbzZaZmpZVFJzcW1DeTVncDZIZU9KTjVYSlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ0OTU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYTkJ2OWtSVDBGNFY4QzdCMGx0ZytNd2Q5OFZ3SkpWajVFS2VUMnZsVHRnV0Vadk9DUFhOY205KzdGZmtEUjNDdjdHVFBrNjFLVjlMUVgxM3haMlhEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
