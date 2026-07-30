@@ -1,10 +1,10 @@
 {
-  "version": "0.1.451",
-  "notes": "Timestamps now work everywhere, not just for trimming: “fade in over 0:02”, “make a 0:30 highlight reel”, “fit it into 0:15”, and a caption written “from 0:05 to 0:10” — which used to render those numbers onto the video.",
-  "pub_date": "2026-07-30T01:23:20Z",
+  "version": "0.1.452",
+  "notes": "Lengths written as “1m30s” or “1min 30sec” keep both numbers — the seconds used to be thrown away. “Slow it down three times” is three times slower, not the default half.",
+  "pub_date": "2026-07-30T01:34:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl5Y0dRVnM2YnRlSEpkM1dBelZKaWluTUJFaWlCeVdUZC9KWEY1aXlycTZ1UGp6YWI4ckxva2VaMmFZdkp1UXFpVmVjaHBmaURjMUt2OXNNVURHSkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc0NDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMME5qelVwTXVQOXVuUGFLd3dkSzkrMmNFT0xNREFiMEIzbmQ4REFsKzdhWlUrSzc1czRxQjIwQzVlS1JYdFVhZTlOWm9Dc25MKzdVSm1DclloMjJCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1HcS9YTDlMVzFvQVdZY2hwM29ZK25iQndaYS85aGZZQXN4SVZUeTZCcS9qbTBqOThkNUJBUmdpcFFjSlZlbWF4dVkxYnlMNStudHVyc1J4NmV2eEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc1MTgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCdmJ6V3BpajE0TjZ4V0ZKOXdyUDNIbUptWDdkUktwNVRSY2xhM1pyeitGVGNuWmhTZkZsL2oyam1pMmpjODFSMnVFK1lsek1jRmlRYVlZUkdxYklDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
