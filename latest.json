@@ -1,10 +1,10 @@
 {
-  "version": "0.1.485",
-  "notes": "Asking about the watermark now gets a straight answer however you phrase it \u2014 it used to only recognise the question if you said the word \"Crisp\", and otherwise told you the mark couldn't be removed. And a Max quality download that stopped part-way can be resumed on a nearly-full disk: Crisp was ignoring the gigabytes it had already fetched.",
+  "version": "0.1.486",
+  "notes": "\"Turn the last 40 seconds into a gif\" now uses the last 40 seconds. It was quietly rendering the opening of the clip instead \u2014 the same request phrased as \"make a gif of the last 40 seconds\" always worked, which is what kept it hidden.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1KdkxEQmt1N1ZnOWRGTmtuc1FoSkE1SEIxSEhoYncxL3pMczB4ZVlEZ0EvNkdEVDdZVC9QWmV3ejFrRENMUk1SNkZGdFlhZWNNWnNqOUpDOGdWL3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA4ODg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqZmk5dFVSdEFuYnhZbjZ2c0xWbTdnb1Z0QmM3ckRhZnRyTEkzM1FxUnU0OCthU3p4R0ozbW9sM1BXZC9wZ2FCcktreHBuU0tvZnMrVXJ3UFlYRUJDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJQWlRGM01Ya2o0Y0M0RGlBaUxGQjdBYjJBRG5WSEhseGRzc2E2VHN2TmlOejRMcmpWUnJ4L0hEUnE4YTF4Mi9GcUpjL1N2eEkrWjNrekxzVW8xeHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA5NjM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpReHlBL2pKM1NBWVA1bGhDU3dnVmNRZU5zUXBHWnNBQ3lLRGhIclNTTVA1VFR0bWlxN0V1SVVyN2twRnFjdWlxOUNoTmdmNkRQSGNmWWpqV0ZPWHJBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
