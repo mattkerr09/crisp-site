@@ -1,10 +1,10 @@
 {
-  "version": "0.1.527",
-  "notes": "The \u201cthat\u2019s an audio file\u201d message now appears wherever you meet it \u2014 dropping a song onto a tool, or running one that was already in your media list, not just on import.",
-  "pub_date": "2026-07-30T23:24:43Z",
+  "version": "0.1.528",
+  "notes": "Asking Crisp to play a clip at 1\u00d7 \u2014 no change at all \u2014 used to start a long upscale. It now says that\u2019s the speed it already plays at.",
+  "pub_date": "2026-07-30T23:36:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM1cWRjb0ZJMjNKSFQrR3Q3SmVYM2h3dllCMlgvSkMxd3JCa3JZZlNFQ0FJRFdzRVlRV0F5K0h5Ry9GYm9GR0RFUUJyRFRKSUhWWDdyZVNqUkRQNmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUzNjQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2NlI3NW5MTlNlYy9KTTl4UlRRTVp5ZUx1bEdRMUNlNWJkSldHSWw4Q0ZUdXpYRGdwYlk3UlN3UjlOazZoMkZDZEV1VHVrT1Bkb2o3WTV4TFZieW9Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUphbjFvNTdzM05YVXBGRVdGV2kxa1NPTnpTc25IVGFRT2t5RTZVV0ZZR1JNMTdxSm9wMGNwbnU1enp4Y1dmZE41UTY3cURPcEVkL3g2TXROV1FXY3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU0MjQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPYVBDQmF6TGh0b0xMczAyWkFWd0hFcWtWVEw3UjYyL0lLd2paMnVjY284Y3lwZ3h3MUxUUENEaU1FRHVPYTdiSEZQOGFrSHNOSmFFZm8rUmlaMi9CQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
