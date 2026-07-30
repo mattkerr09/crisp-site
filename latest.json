@@ -1,10 +1,10 @@
 {
-  "version": "0.1.494",
-  "notes": "Quitting while a render is running now asks first \u2014 it used to throw the work away without a word. Telling Crisp what you have before what you want (\"it's already 720p so upscale to 4k\") works, \"extract the music\" saves the soundtrack, and a music montage says up front that it runs for the length of the song.",
+  "version": "0.1.495",
+  "notes": "Hardening for the quit warning added in the last build: it now recognises exactly which renders are still going, so it can't get confused by a job in an unusual state and refuse to let you quit.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhzdnV2R3dFOW5lRVEzNFp5cXo2Y1dTTHFNU0ZMbXNvWXRENnBRZk5SR3FJY3drM1YrdjJXRUtvNGUyTzh5bDhxc3FDQ0JWMHB3Mnc4WUlWSGtVZ0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDIxMzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4d0J3MjNvTklqb3hkc1c0QTQvNmVvd2pZTDJCWE0zbHVPTXdGeHVuNGpRcHlkUVhzbE9sUXU5ZG9sbGtRbVZaNUF2RS80bDJOVTZ0NUpUSmNsVDVCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA5Qjc5dWdqbEM3MnJXQzk5Kzd1NDlOcVBVZ2FIeDNDSnN4Uk5VYTh1R0hNeDY1MGZTRlpYLzVDb29lRUtlckpqYlN6UFhTM09VQ244Y2J3RDIzeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDIyNDkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1U0VNdkM4ZG11TGpQOUdkTWZlYXFhMGN1QVAzZGxsWjZkaTBYRjB0b2x4Ym1FNUNxN21VdXo5SFBHZWZhb2c5Z2M4andML0FKc2psTTRXdFMxRjBDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
