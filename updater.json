@@ -1,10 +1,10 @@
 {
-  "version": "0.1.445",
-  "notes": "Explanations now stay on screen long enough to read — they were disappearing after 3.2 seconds regardless of length. And when a sentence asks for two things Crisp can’t do, it names both.",
-  "pub_date": "2026-07-30T00:07:07Z",
+  "version": "0.1.446",
+  "notes": "Messages queue up instead of overwriting each other, so an explanation isn’t wiped out by the next “done”. “Cancel it”, “how long left” and “try again” now point at the button that does it, and “still processing” no longer grabs a still frame.",
+  "pub_date": "2026-07-30T00:23:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNNNG9SZEhFUWw1UDNXN3I3bDkwQ2tOVURYREVKUFEwZFFqZ2xBcEVxK0p2Y3ZPRUd0ckRidk4rMS83RlR3cGV0M1p0US80L3Z6OFRIcFltbnljbkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzY5NDE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIUFQvRmJaTFhHUyt4eFllaEVURzZtdDFyeWdWL1NuaWMzcXcxdWYraHRCZ0cwYXpha3BNUHhKSjk4aWhNUGdYT2tLT1FxcW1vUkxPV2QvSVFsQndEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1pdXNENWZUZHpwdjMxUFRSQkdPS1JvcWtra3ZTYnduQTVjdXdyYWtvNFBPVGlGS2dYVDVieWNJQXhyNkVxVW9GVEZPMFFsNytidTVQV1d4b08zWmd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzcwNzM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTUnh1amdEclV6TU9qeEZrMFRlR3BObnNBVC9sUmt4KzNLQXhHWmREZ2tFRHZTWWtvNkgvZzZHMk9FOGpGRXBLemhjeVdHYjNUQVdvUFdEVUJ1OVFBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
