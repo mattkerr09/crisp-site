@@ -1,10 +1,10 @@
 {
-  "version": "0.1.471",
-  "notes": "Asking for a long fade now tells you the limit up front instead of failing when you press Run \u2014 a fade tops out at 10 seconds, and the plan says so. And asking for a montage plus another edit (\"make a montage and mute it\") no longer drops the second half without a word: Crisp makes the montage and tells you what's left to do once you drop it on the timeline.",
+  "version": "0.1.473",
+  "notes": "Max quality can now actually be downloaded. The one-time model pack it needs had no install button anywhere you could reach it \u2014 the app told you it needed a download and gave you no way to start one. The button now sits in the editor under Tools \u25b8 Enhance and under Upscale on export. Also: exporting your edit no longer makes Crisp ask a free user to pay for batch processing they aren't using.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU4wUGhETHZCUXVvbExOR2NWQnNvaktMTFhKOEpIbllEY2JrbzBCbENaQnB2dWV5WkhZR3dzeGdPd0IrQ2RPTVE4bERYY21OQ3llb09DQ0NRYVJTWndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk2MTU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyRDlWbnRYSS9oaUVza2s0TmQvdm1TaURtWWJHckZ2SXUxVUJmZ21sVlIwQUVBNUxSSSs0SkQ5WUtGL3IzU3ZIUm95NCt2YU53akw3VVMzK0N4RlVDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpwZHY4RkR6R2VXTExsdWVmbG1JcU5JSmdCQzd5WWFObXVuSVk0dEMrNCtiYURxR2tVK3d3V0czTExweml4RUpwSlY2V3NkZjRzTFlPZ2ZCNE5hQUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk3OTE5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyUEsxZ0d0eDV6dHhGTXhjOStLZzhGZGYzVXJiYWpBUlZCOXc1elJKSnlaTHA5aW5VTC9tMEtXa3hweUNvby95ZHFMamJRMG84SW0yanN1dGFPRnNBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
