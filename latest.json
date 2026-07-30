@@ -1,10 +1,10 @@
 {
-  "version": "0.1.448",
-  "notes": "Saying “it’s too echoey” no longer adds echo. Crisp explains that it can add reverb but can’t take room echo out, instead of giving you more of what you complained about.",
-  "pub_date": "2026-07-30T00:46:15Z",
+  "version": "0.1.449",
+  "notes": "Complaints are read as complaints. “Too many captions” no longer adds another, “too contrasty” reduces contrast instead of adding it, and “it’s too fast” slows the clip down. “Add noise” adds grain rather than running the denoiser.",
+  "pub_date": "2026-07-30T00:58:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU94ZFN4WkdSSWRpQ2ljdnA4eTBZNnNtaFNCNldOQXFCVVNUcnFFdEt3QytORVhwTDRPcnB5OVF4eXNzYkkwYmtVdEZuN0NDVkJ1RWVaTnFZdXpBemdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzcyMTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvdXJPeXUwTERJdGJObDFWdlk1aXF2a29yektpUXd6cEliZUNTd2d5RXpscXV6eS85OXZzU0xBUUVWR092TVhoc0hMNTkvTGpJV29IN09WU2dvZHZCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1xdlJFOHFLOWFlR25zWjJwZDI0RjJJSHkzL1hFNlpEYm5xSi96Z3FYZ0xBUEl2L3hDYUx0VEloSERhVGlHaXdieml3dWFrZEVuVFRHQ2xlaTNuOUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzcyOTYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2WTlTN0tHSVJIYWRrZzlxODU3U3d6bzdvUndoVTU2TlM2SXJ0UGt0QUlzSVdCclRuYkVXRzdxMFpOUDdlTGZ5a3QvWk1GV1hYdE1jUnorQmJSUVJEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
