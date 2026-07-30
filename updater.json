@@ -1,10 +1,10 @@
 {
-  "version": "0.1.521",
-  "notes": "Real progress bars. Compressing, converting, reversing, cropping, rotating, reframing, adding a border, fading and audio work all used to sit at 0% until the moment they finished \u2014 on a long clip that looked like nothing was happening. They now show how far along they are, and the time remaining.",
-  "pub_date": "2026-07-30T22:28:00Z",
+  "version": "0.1.522",
+  "notes": "Trimming, speed changes, GIFs and loops show real progress too \u2014 and their bars move at the right rate, which matters most for slow motion, where the finished clip is longer than the one you started with.",
+  "pub_date": "2026-07-30T22:38:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxISDJCQlpreFpudUJXemdpZzlnSHZSVzdSMm4wR0JjVHp5bG80NEp3V0UrOVNyYTNIM2RUZng1STY3N2JRUVRHdUpZZHZGVkJMVG1FTWZMZkQ1YlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUwMjQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxUUJlTFh1QnZLNDBoTkxFcEpPQldZVW5pYkJGR0EyRlVPTlNzRG44b2hTUXZtUWNYcTR6eFlRdXJBVjhqdDFXcVpad3MzNStjRnVScjg1ekx0OTNCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5yYXBRYnErTEVKamhONnhEbG1WS2tUNUdINzR3OTdqaU5OQWI0TURsODMzQlI5RklHVzFTMlE1M0lYWnVvRTFML1FXeXZXRU91YW1TdzhVbERiVGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUwODgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxR3BYZDJ1YmNpblJObEZTZkJnajR5Z2Jla3RYWTZveHBuR3ZtSnBJK0FDOFJiTVVNVllNd3MyMzVYYllyVUpsMWdiajR3V0hqeStFTncydWxCQXpCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
