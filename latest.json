@@ -1,10 +1,10 @@
 {
-  "version": "0.1.466",
-  "notes": "Asking Crisp to REMOVE something no longer adds it. \"Remove the ugly border\" was adding a border, \"remove that watermark\" was offering to add one, and \"cut the boring first 5 seconds\" kept exactly those five seconds \u2014 any describing word slipped past the guard. Asking about the \"Made with Crisp\" mark now tells you how it comes off. Cutting a chunk out of the middle explains the two-split recipe instead of keeping the chunk. And \"a two and a half minute recap\" is no longer a thirty-second one.",
+  "version": "0.1.467",
+  "notes": "When the plan lists two steps, Run it now does both \u2014 it was doing only the first and dropping the rest without a word. Requests Crisp can't do the way you asked now say so instead of starting a long enhance you didn't want: sharpening without enlarging, cropping an exact number of pixels off one edge, or shrinking a clip. \"Double the length\" repeats the clip instead of upscaling it, and \"take the noise out of the audio\" cleans the audio.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl0Z2x4ckd4VFJLZ1kzSWloYnh4OFBXNzl2NHpTS3kyM0s2YzVUQ21paWc4LzdNVjRNRmRlMEMxQTE5aUU5QkEvMEo3SDg4ZDhqN00zbkhtMFdDSmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzkwMzkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaNjhBdFV4ZVNhUHR1TGZFV3I2VGJqTmF4U0w2VThjcjZRcW5KdjhRTklpc2c0MzdKRERxWHZNTXZ3ck4zNXFGQ2lOVVlCQXhuZEhrQVJrOHUyNm5EZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhjc0hzSkROd2pzL1RmUDNBbEN4UjQyY0VlLzZ0Vm5nQ1l3Rzd6akZqRTF1VmNhVWpzQm9NaWlXVWNveWVBcHZDaXNXZ0F1c0VpVEtzbGZKZ0h6NlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzkyMTAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqMEJ3TTBuOUxIZkRuaHVSaDZ4SUdWOEJZb2paL2lzdzdZN2ZZallpdUV4T0Y3TlJIcFJseFl1UjNuaG9iZUtuRFFQMmRlb1o2czd6bHhpeDRnZ1NEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
