@@ -1,10 +1,10 @@
 {
-  "version": "0.1.452",
-  "notes": "Lengths written as “1m30s” or “1min 30sec” keep both numbers — the seconds used to be thrown away. “Slow it down three times” is three times slower, not the default half.",
-  "pub_date": "2026-07-30T01:34:53Z",
+  "version": "0.1.453",
+  "notes": "“Double the volume” now changes the volume — it used to start a 4K upscale. And an out-of-range zoom like “upscale 8x” is honoured up to Crisp’s 4x limit and says so, instead of quietly ignoring the number.",
+  "pub_date": "2026-07-30T01:48:14Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1HcS9YTDlMVzFvQVdZY2hwM29ZK25iQndaYS85aGZZQXN4SVZUeTZCcS9qbTBqOThkNUJBUmdpcFFjSlZlbWF4dVkxYnlMNStudHVyc1J4NmV2eEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc1MTgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCdmJ6V3BpajE0TjZ4V0ZKOXdyUDNIbUptWDdkUktwNVRSY2xhM1pyeitGVGNuWmhTZkZsL2oyam1pMmpjODFSMnVFK1lsek1jRmlRYVlZUkdxYklDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg1NU1EejdORjN1RUtDUW1DT2ovN1doZ3l6cXJRaEo5dXlraitFTVB4UlVTenA5Z1ZvNVVqVTJ6eTZpclVBUGdBcldtZ0dxajEzaS9SKzV5N2U4Z0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc1OTAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovMXFhaUJYdm5hVUJWWGpKZ2xtUU5qL1c2REZBYktsRnlHbHZiTURLQmpocTBwcDFWVWY3VkhrUHRDbTUxREd1MzQ1UTFPbFdVNFhkU2FEaEFrb3VDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
