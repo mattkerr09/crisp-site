@@ -1,10 +1,10 @@
 {
-  "version": "0.1.454",
-  "notes": "Say where it’s going: “export for Premiere” points you at ProRes, and “optimise it for WhatsApp” or “make it email friendly” compresses it. Both used to say Crisp didn’t understand.",
-  "pub_date": "2026-07-30T02:07:32Z",
+  "version": "0.1.455",
+  "notes": "Describing your clip no longer changes what Crisp does to it: “upscale my highlight reel” upscales instead of rebuilding a montage, and “enhance my old film” doesn’t add a warm tint. Lengths like “trim the video to 1:30” work too.",
+  "pub_date": "2026-07-30T02:19:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUorQWpsNzFFSWhyZXhMSG5PT0kyZHBxREZBUHY3UDQ0ekhJNnZIQTYzQlRTYnpmdDVUaFE3ekZUeEZ0WmRJcFVvTzNQY1pCcFhGdG93NmF0bWwwQWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc2NjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZZld1ZVVQY3dBTy9JR1ZCWEthN2tsd2ErejF1R0VZdm85VVZYT3Z1L2FoSGxwVFR4S2RTbFMyTzR2TDc0eUlqWmQ2Uk12NjhxUDFIRW02cU02QWdBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlUR1ZvSVRyWW00dVE3ZytQUmdQUkZOM1hHQ1RWL0ZsaHhhTmQvaEtWMlh0Vk9ibHZnMFhyejlZRm51a3N2cXJTSmJMYnl3QUdreW1wb0pJSG4vTndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc3ODIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaM3ZKdDZYODVQWExYTU1xRDBWMFN0RmJzaGVqazNMN2s5aEc4b0dZMjlOc0k2dkk2b2ZJOXcxejc2Q2p1Y1lqQVFkcXJXc2JUWEpZaEh0Q2JYbGFEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
