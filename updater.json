@@ -1,10 +1,10 @@
 {
-  "version": "0.1.524",
-  "notes": "Stability work around the new progress bars \u2014 cancelling a running job is unaffected by them, on every lane.",
-  "pub_date": "2026-07-30T23:06:04Z",
+  "version": "0.1.526",
+  "notes": "Drop a song into Crisp by mistake and it says so \u2014 \u201cthat\u2019s an audio file, Crisp edits video\u201d \u2014 instead of telling you the file might be damaged and sending you off to re-export something that was perfectly fine.",
+  "pub_date": "2026-07-30T23:14:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURJbkRjb3RqSExpV3lWWXFtOGx3WGt0M3lDbnRMRDU5Qm5VREdMK29KamVKYUVzT3BoMm5Kei81VnY2VEZtTTI2WjBBNWpaczFya1VwZy9uQmxLRnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUyMzI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTQXp0RGtqNmN5aFMwYTM4c2tTWkk3QkdyNTBZK3JrRytSNzZodHVLNktFYWpaaldjYUtDOUh3QUQ0Qnh5Nmp3UzJnazdOanNMMlE3RkdmN2lPOGVEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp4eDQybFdpRjZ6M0RYWkFaK2lqVnpMT25TWVg0VVJNM3VGbE93emJZYVVtNXJTa2ZHSzB6WDZ4NTJwcEloOTl2TUorSEsvV1N0OVlFcmVQZXFXWGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUzMDk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqeVpCamJzTVhWdGkvRGIxYUV1NFhUUUNqSlo5N25NcHhjMHFHajlpUTlmSFAxUjlYRFBhN0tJUWJ3YTQ0V3JPWmpLTmxwSUMwU2xqcDdtUGJROUxEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
