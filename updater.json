@@ -1,10 +1,10 @@
 {
-  "version": "0.1.464",
-  "notes": "Ask for a resolution and Crisp now says what you will actually get \u2014 \"Upscale 4\u00d7 \u2192 1280\u00d7720 \u2014 4K needs a larger source\" instead of a bare \"Upscale 4\u00d7\". \"make it 720p\" and \"make it 1920x1080\" work at all now, and \"upscale to 8k\" no longer answers with 1440p. Naming your clip a montage, recap or highlight reel no longer stops the other edits working, and \"loop the highlight reel 3 times\" repeats the clip instead of starting a 3\u00d7 upscale.",
+  "version": "0.1.465",
+  "notes": "Ask for \"two and a half minutes\" and you get two and a half minutes \u2014 it was being read as thirty seconds. \"a minute\" and \"an hour\" work as lengths now too. When a request runs into a limit Crisp says so up front: speeding a long clip to a short target now shows the length it will actually reach, and a GIF says it caps at 30 seconds instead of promising 60. \"Make it look 80s\" gets the vintage look instead of doing nothing.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ0K0g2NXhGQTlCT3RpSFNlc0ZicEpiNU9qcnZvZjhQU1ZQQnNZanV4c21xcUJvZUFzQ3E4NFliQUpPTERXZElheHU4UWZORVp0NmdIOUZEMld2SVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzg3MTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjZFhBbmRMZW56alJlazZFdytIeVllZEJBU1BMRndaZTJYQi9DaGhoUHc4ZjhEOGJvUkZZb3B4R0g4aWdmUzh5SHZmenZodWVZLzJ1U1diTzhqMTREdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhvVHRrck1ZNE0rWnMyUEdhdTZPL3c1bEZGWmhSbWtiZ1ZFRWZZZlREUUVsakVEbSs5MnZtY0RSNVo1QmtyWDgwdXlVQnc1ZUhYSTg1RjhTc3VxZ2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzg4NjUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzcDJSQ0lETXlhMDgvZmZnNDBxNm5KWkRUZ1V5ZUh2SUk3ZTBRemh0WEdkQ3RiRWtpeWZ1RmtFWEVwYlJrNXFtcmRoL3ZjYWlIRENzY3BLL2pRRkxBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
