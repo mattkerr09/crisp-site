@@ -1,10 +1,10 @@
 {
-  "version": "0.1.461",
-  "notes": "Two instructions in one line both happen now: “mute it. make it vertical.” used to reframe and quietly skip the mute, and a pasted list only ran its first item. “Trim the first minute and a half” keeps ninety seconds instead of sixty.",
+  "version": "0.1.462",
+  "notes": "\"don't upscale it\" no longer upscales. A negated ask now declines the lane it forbids instead of running it, a valid two-step plan is no longer thrown away by a stale decline, and a trim runs before an expensive upscale rather than after it.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp1WXFNQ29DcldSSkZQaXhJWEc1eEJ1cDZhYTk5Q3haSjQwNm9SQmYyMGZVNTNJYXFBQlFVZ2JwSTZGM0RhQVdsYkhTZlVGUDc3SzU2dWxCd1VBV3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzgyODMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzUEg5SEtmc0pWcWV1Ykd4OWNFejFRVUl0dmRhTlRhRlArSjRmbUFzblc5L1JUMXpKUGNQVm9kak5sc25iVnk0eFdaT3M1QURKWGtaL1JCOThaV2ZBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5sYmVwdVNzQWIwUUFVUXVsZEQyMkR1UnFQc09YWTI0RXczVWdCWWhEZldSVEZCbVcrVHloaGtZQmt5MGhtY1lXOURIakYwVVl3Tzcxa2NEMjdqV2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzg1MDEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpROWtrN3p2RVZZZkFwa0UzZGJ0Y2srQzlaVi9hOHNWQzkxUUgydERkdUlablRqSytCMC91MjYrQ1Yyb1NSUzJ3S3Vpd2ZFeGxibjNXc1pwOFhyaUVCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
