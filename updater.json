@@ -1,10 +1,10 @@
 {
-  "version": "0.1.478",
-  "notes": "A clip Crisp can't read no longer blocks your export with \"Still reading clip durations\" forever \u2014 it now names the file and says what's likely wrong. And if a clip's file has moved, Export tells you that directly instead of the vague duration message.",
+  "version": "0.1.480",
+  "notes": "Saying what you DON'T want now works whichever way round you say it. \"Without upscaling, make it sharper\" was starting the very upscale you ruled out \u2014 while telling you nothing had been run. \"Avoid upscaling\", \"instead of upscaling\" and \"rather than upscaling\" are understood as refusals too, instead of being read as a request to upscale.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9LRG0rVTB5dHBQa1JOUzN3cjFhSEkxMk5YMlduRjdhZW15N0tzOEFZRzdERzBLTzQ2Ykw5YlVBVWRzRlpDVmtNR0ZQRFVJeHlCOHZUNWFZUWRSM2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDAyMjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmeUUxZjV5b1BCdWdUbUsrZnlYQ3YxUEd5L0FCbDlaUmtnVzd6NisvMmZUd3NMbHdxM0d6Z2IzaG5sWk5HQjYrZVdmZHFtdzhXOWtLdUQ3R2wyV0xEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFVOCt6d21sS2xMMFJrOFE5bXdPallOTEorVEYzd3JQTFdwSWQ2S205MCttS202bzZObG93WnNpTXoyRHdTb2FVbWx3MnlvZTJNWUMzRll3UkVEalE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDAzMTc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSdWdPYkxQSW5lR08xL0tMK3NkTm1HZWpHRWUzQXpnVlZRNWVsQTlUSjVRZ1ZTOHVYSW5DUDgwYk5CSkRjeTh4dnN1NUNKQlpqa2hNQk1kWWJ1cndDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
