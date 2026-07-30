@@ -1,10 +1,10 @@
 {
-  "version": "0.1.453",
-  "notes": "“Double the volume” now changes the volume — it used to start a 4K upscale. And an out-of-range zoom like “upscale 8x” is honoured up to Crisp’s 4x limit and says so, instead of quietly ignoring the number.",
-  "pub_date": "2026-07-30T01:48:14Z",
+  "version": "0.1.454",
+  "notes": "Say where it’s going: “export for Premiere” points you at ProRes, and “optimise it for WhatsApp” or “make it email friendly” compresses it. Both used to say Crisp didn’t understand.",
+  "pub_date": "2026-07-30T02:07:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg1NU1EejdORjN1RUtDUW1DT2ovN1doZ3l6cXJRaEo5dXlraitFTVB4UlVTenA5Z1ZvNVVqVTJ6eTZpclVBUGdBcldtZ0dxajEzaS9SKzV5N2U4Z0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc1OTAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovMXFhaUJYdm5hVUJWWGpKZ2xtUU5qL1c2REZBYktsRnlHbHZiTURLQmpocTBwcDFWVWY3VkhrUHRDbTUxREd1MzQ1UTFPbFdVNFhkU2FEaEFrb3VDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUorQWpsNzFFSWhyZXhMSG5PT0kyZHBxREZBUHY3UDQ0ekhJNnZIQTYzQlRTYnpmdDVUaFE3ekZUeEZ0WmRJcFVvTzNQY1pCcFhGdG93NmF0bWwwQWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc2NjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZZld1ZVVQY3dBTy9JR1ZCWEthN2tsd2ErejF1R0VZdm85VVZYT3Z1L2FoSGxwVFR4S2RTbFMyTzR2TDc0eUlqWmQ2Uk12NjhxUDFIRW02cU02QWdBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
