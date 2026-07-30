@@ -1,10 +1,10 @@
 {
-  "version": "0.1.518",
-  "notes": "Internal hardening \u2014 the update you're installing now is itself checked more strictly before release: Crisp verifies its own update signature against the key built into the app, so a bad signature can never reach you as a silently failing update.",
-  "pub_date": "2026-07-30T21:28:47Z",
+  "version": "0.1.519",
+  "notes": "If a licence key doesn\u2019t work, Crisp now tells you why in plain words \u2014 including when you\u2019ve pasted more than the key itself, which used to produce an unreadable error.",
+  "pub_date": "2026-07-30T21:43:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJwUUtCRjVzZEFiWHJERXUxbmN5R0lIK1Q5TVpSd1ZlRnpubGJlbmV1eVJFMXBjd3I1R2pISGZhWHZUaGlHMnZPNHFTS21VdmFuSFExREovYkhRMWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ2NjgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negprenNLTUhOZGVBYWpJOGVyd1V6cThkODkvSkdjYkhneHZyNWQrNkp4aEIrNmFuMG12RFcwMDJRN2hackVXMnNsc2lqVFVYV0czRkkxK0V3NEE3V2ZDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFhTG90eUNpemhkRGUrTGFVRzlVU3FCb0N6bUdWWTZnNUpKcDZEYjVPNXJtYm5ENS9ZVE9NbElBWFpUMzdCMzZ2K1R5Vm5wY0U0bXBQcWRSM0c0SWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ3MjQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDWmRCNlZFWVVJYWdnWElieHNtSVlIL1UxbGwzQlUvMTQ5UnpiRG1jelpwK1NoNHY5dVlvOW1DRzdLb1BsQ0tOc2wvTmV2Zk80VjJzTjV6dHF5Rk5BQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
