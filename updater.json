@@ -1,10 +1,10 @@
 {
-  "version": "0.1.502",
-  "notes": "Still frame now grabs the frame under the playhead on every clip. On any clip except the first it quietly took that clip\u2019s opening frame instead, whatever the playhead was showing.",
-  "pub_date": "2026-07-30T18:01:45Z",
+  "version": "0.1.503",
+  "notes": "Say how far to crop and Crisp crops that far: \u201czoom in 2\u00d7\u201d used to give the same 1.2\u00d7 as a plain \u201ccrop it tighter\u201d, and \u201ca lot tighter\u201d was identical to \u201ca bit tighter\u201d. The card now names the amount, and says when you\u2019ve asked for more than it can do.",
+  "pub_date": "2026-07-30T18:22:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1uNGVpczhzbXRIVjk3M0RjdnlybGQyWkpzQ1lwYnZ5S1d6cWxMaCtqRkdlckJQQTRkM0JmTnlCckdpRGY0bllEZnVvUDI1ZGJlMHowQW1pNmJRbkFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM0MDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphOE85YmE1U25GYUUwaEo2MHNjWjZyWi9jOW9vYVJwQzNVTkxYT0pzaVNrZS9Eb2NCL2JBNlprOGxuRFFhak5tMjFlNDg4M3krL0x1WWx2bk1tTVNBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpibTk3ZjFsVDdxOEVrMHR3QTkxYmFOUEczaUNuTTEyenVTUTFya1NJcFJWQ2Z3MTEwelNoRWpuQWxQZVloK1EyZ09wTy9aQTBpL213a2J4cEJpTUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM0Nzk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0enE4R1BRTHdlRHpGNGw3ODlHc0pSenNXQ3FDTFozVEt1RGRMWGR4bHBld0ZzOS9HSm8zK1lyeEFOZWQ1TC83dmljUk14TVU5dWNjREdaQVdNcVpDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
