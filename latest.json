@@ -1,10 +1,10 @@
 {
-  "version": "0.1.468",
-  "notes": "Speed and Reverse now respect a trimmed clip. Trim a long clip down, press Speed, and you get the piece you trimmed at the new speed \u2014 it used to come back as the whole original file with your trim gone. A caption with a start and end time now appears where you asked on a trimmed clip; before, it could be burned in outside the part you export, so the render finished with no caption in it.",
+  "version": "0.1.469",
+  "notes": "Trimming now survives Speed and Reverse everywhere \u2014 the Tools panel, the prompt bar, and multi-step requests. Trim a clip down, ask Crisp to reverse or speed it up, and you get the piece you trimmed; it used to come back as the whole original file with the trim gone. A caption with a start and end time also lands where you asked on a trimmed clip, instead of being burned in outside the part you export.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVB5TTdoak91N3RlYWtaMmhZYjBlTXBaUm9QRVBiUGVSUTJ5UjlxcW1IcWtCN3J2N0ttendIQnoybmdMbG1Mb3VidVdHa3JBQ1NPWXEwZnVyOE1BUUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1MzkzMDc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRK08vOE8vT0xFNGwrWkF3UW9DcFBpMTFUY0gxenM5Wk1HTmo1d2s1eUE1RUw2ZVhmUmhBcVU3S3BYZ2VrU3lLRzFXREVYS0dyQ1F4dmlMZWZIdWdBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ3TUJ5RG9kWjB3SndCWTZNYkNJQTRGSVJhNVdjOXNqRVFZOEpoUXdnTG53ZEFUeTFyWGt2TkhBb0o5ckRub1R5QUVCQ0lkU2NUZ3hwL0Rkb240eXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzk0MTQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKWnp0Y0hnSFBIa1UxNmtHK1BTVVdKS3NFVDNtQW4zMXlraXhGYmZGY290TFkzZ1NLNHVnVVlybVdTeG9lREtqekRlY3RvSzV2ckcxSjBmN0R6am5EQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
