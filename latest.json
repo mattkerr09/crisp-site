@@ -1,10 +1,10 @@
 {
-  "version": "0.1.523",
-  "notes": "The \u201ctime left\u201d is more accurate, especially at the start of a job \u2014 it used to count the few seconds Crisp spends getting ready as part of the render, which made the first estimate too pessimistic.",
-  "pub_date": "2026-07-30T22:53:23Z",
+  "version": "0.1.524",
+  "notes": "Stability work around the new progress bars \u2014 cancelling a running job is unaffected by them, on every lane.",
+  "pub_date": "2026-07-30T23:06:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44S1FVeEt3TUFMVWVjQnlMeWNQT3I5dFBBcUNyV2dzVlVHeU94Vk8wNUF1VkZYcWdFak1DTlRtQi9PdFZQaXlzdEdTK2hEZG1FVElCSVk3SGVYVXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUxNDA2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVNUtjUk0xSjJQcHZUWE1OaVFuOWh0a2drdHo4eDNoY2Fudm56ekZvalZ1cTNmL1d2UTVkQUF6dlB6YWpYNnZUaktwczIyeHdJVDRxZWJjZW9yL1lCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURJbkRjb3RqSExpV3lWWXFtOGx3WGt0M3lDbnRMRDU5Qm5VREdMK29KamVKYUVzT3BoMm5Kei81VnY2VEZtTTI2WjBBNWpaczFya1VwZy9uQmxLRnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUyMzI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTQXp0RGtqNmN5aFMwYTM4c2tTWkk3QkdyNTBZK3JrRytSNzZodHVLNktFYWpaaldjYUtDOUh3QUQ0Qnh5Nmp3UzJnazdOanNMMlE3RkdmN2lPOGVEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
