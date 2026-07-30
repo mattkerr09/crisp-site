@@ -1,10 +1,10 @@
 {
-  "version": "0.1.482",
-  "notes": "Multi-step requests are faster and more accurate. Crisp was quietly re-encoding the whole clip between steps, reporting a step that failed as if it had worked, and \u2014 for things like \"loop it 3 times and trim the last second\" \u2014 trimming with the length the clip had BEFORE the loop, throwing away most of what it had just made.",
+  "version": "0.1.483",
+  "notes": "Saving the audio as an mp3 no longer replaces the video on your timeline with the audio file \u2014 it saves alongside, like a GIF or a still does. And a fade on a trimmed clip now appears in the part you export; before, it was painted at the start and end of the whole original, so the render finished with no fade in it at all.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU10OUI0anZGVXNHNGNwb2g0UnNEUmMxUDZPaVFYUzM5ODV0ZkRBajRFT1RBMENJNzNKS2xkZEt0UVFIcHd1UVhqd2k0Tm11UmV5cm5EWS8zWFpqYXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA1NDQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1SWYvL2EzSnE1NVNPK0Y4VURJQmx4UXJUcklWWFBSTTVibzh0NThaVU1WVFNZQXMyNGovVGRMWll5eTBBVDNBWDh1UmFYRW9mRUlkRXNpMlR0eC9CQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdoQk1DT2YySjdXeTNZMTc0blF0emgwQ0tSUUhsS04zd015dGhuQ0Y5cWN6czRNUzhLSFRDSHkwRit4YTlwZUZPTzQrc056cEFUcWliNEF4S1YzaGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA2NTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpucHU2NTdZR2JQcmRGdjE5WmJWZHZMQ0VKbnBwaTlmbVNIMmM3L05xMzBoOXpna3VjUDhhNEppMExyOWVGYlFXZkx3VmY0Qk03UmNGNS9ZT3JadElEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
