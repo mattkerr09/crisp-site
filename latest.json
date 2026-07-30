@@ -1,10 +1,10 @@
 {
-  "version": "0.1.503",
-  "notes": "Say how far to crop and Crisp crops that far: \u201czoom in 2\u00d7\u201d used to give the same 1.2\u00d7 as a plain \u201ccrop it tighter\u201d, and \u201ca lot tighter\u201d was identical to \u201ca bit tighter\u201d. The card now names the amount, and says when you\u2019ve asked for more than it can do.",
-  "pub_date": "2026-07-30T18:22:35Z",
+  "version": "0.1.504",
+  "notes": "More of the numbers you type are used as typed: a GIF asked for at 480 wide came out 640, \u201cslow it to 0.25\u00d7\u201d wasn\u2019t understood at all, \u201cplay it at 2\u00d7\u201d looped the clip twice instead of speeding it up, and \u201cfade in over half a second\u201d used the default length. Asking for a file size (\u201cunder 25MB\u201d) now explains that Crisp compresses by quality rather than aiming at a size.",
+  "pub_date": "2026-07-30T18:36:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpibTk3ZjFsVDdxOEVrMHR3QTkxYmFOUEczaUNuTTEyenVTUTFya1NJcFJWQ2Z3MTEwelNoRWpuQWxQZVloK1EyZ09wTy9aQTBpL213a2J4cEJpTUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM0Nzk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0enE4R1BRTHdlRHpGNGw3ODlHc0pSenNXQ3FDTFozVEt1RGRMWGR4bHBld0ZzOS9HSm8zK1lyeEFOZWQ1TC83dmljUk14TVU5dWNjREdaQVdNcVpDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpJU2hzUkh4SllpdFdNU0dTV2lKbkZHSE14aEQyNFdOcndJTzRDK2hmSGVtVm5MbFdDN1ZKRlJINkk0UXp3cVpQaEprSUw4R0VEYm4yUlZtd1Y3Y3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDM2MDc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmMkc4RkY3emZoUER2b3c3aC9qV3F6VUUyZEhvWmJIeTYrNHBqMTA1ZXdiNUIzeHdTcDUzejZMc2tnNkthZ0paMDlhVHd5Y2dES3g3WnR2d2hFRDREdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
