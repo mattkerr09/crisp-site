@@ -1,10 +1,10 @@
 {
-  "version": "0.1.484",
-  "notes": "Numbers you type are used. \"3x louder\" was always giving 2x, \"a gif that plays once\" looped forever, and asking for a frame past the end of the clip claimed a time it couldn't reach. Where Crisp has a limit \u2014 8x speed, 10s fades, 30s gifs \u2014 the plan now says so instead of quietly using a different number.",
+  "version": "0.1.485",
+  "notes": "Asking about the watermark now gets a straight answer however you phrase it \u2014 it used to only recognise the question if you said the word \"Crisp\", and otherwise told you the mark couldn't be removed. And a Max quality download that stopped part-way can be resumed on a nearly-full disk: Crisp was ignoring the gigabytes it had already fetched.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdaMG03aXZuUXRVM2VFbHBRLzNRVXBJWlV3RlJ2dUNzWnA2eVdYMm5zcTEvOHVpcFhVcHZabmcyMWZWUmowazJXc3FLRkxSVkJYKzBocG1wNW1udHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA3NzEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiQnVPS2xTNHFYODkyNFg0NEt4MU5BYTF4SHNncXZlUWovUzgyL2sxblNvZ0VvZnYxZjI5S29xT0xVNjYrbjI0aEcxK2lkQ202Q1FDVDVKS1l0ajNCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1KdkxEQmt1N1ZnOWRGTmtuc1FoSkE1SEIxSEhoYncxL3pMczB4ZVlEZ0EvNkdEVDdZVC9QWmV3ejFrRENMUk1SNkZGdFlhZWNNWnNqOUpDOGdWL3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA4ODg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqZmk5dFVSdEFuYnhZbjZ2c0xWbTdnb1Z0QmM3ckRhZnRyTEkzM1FxUnU0OCthU3p4R0ozbW9sM1BXZC9wZ2FCcktreHBuU0tvZnMrVXJ3UFlYRUJDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
