@@ -1,10 +1,10 @@
 {
-  "version": "0.1.520",
-  "notes": "When something goes wrong, Crisp says so in plain words \u2014 a few error messages could previously come through as unreadable technical output.",
-  "pub_date": "2026-07-30T22:18:58Z",
+  "version": "0.1.521",
+  "notes": "Real progress bars. Compressing, converting, reversing, cropping, rotating, reframing, adding a border, fading and audio work all used to sit at 0% until the moment they finished \u2014 on a long clip that looked like nothing was happening. They now show how far along they are, and the time remaining.",
+  "pub_date": "2026-07-30T22:28:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4andyRFZCeWkzVWF4OTFCQ202U2E1b1ZidXI0RXRGWGZZa012MlE0VFl4SnZEQk5LS3dhcmZ4dERaVEdNdjkwaG9SRjkvQ2lULzQ5RHlhUm4yRnc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ4MTc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1SlBGeWlXd09Yd2YyZmJWVTk4bGw2aFBEOUlYbGhGTTMxODVFRVE1a3hYSlFhbG5CQXZ4bnNIeFQ0eGFIeVo5WjBPaUg2bHVjMHNqS1RGREpOUkpCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxISDJCQlpreFpudUJXemdpZzlnSHZSVzdSMm4wR0JjVHp5bG80NEp3V0UrOVNyYTNIM2RUZng1STY3N2JRUVRHdUpZZHZGVkJMVG1FTWZMZkQ1YlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDUwMjQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxUUJlTFh1QnZLNDBoTkxFcEpPQldZVW5pYkJGR0EyRlVPTlNzRG44b2hTUXZtUWNYcTR6eFlRdXJBVjhqdDFXcVpad3MzNStjRnVScjg1ekx0OTNCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
