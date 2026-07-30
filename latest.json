@@ -1,10 +1,10 @@
 {
-  "version": "0.1.455",
-  "notes": "Describing your clip no longer changes what Crisp does to it: “upscale my highlight reel” upscales instead of rebuilding a montage, and “enhance my old film” doesn’t add a warm tint. Lengths like “trim the video to 1:30” work too.",
-  "pub_date": "2026-07-30T02:19:50Z",
+  "version": "0.1.456",
+  "notes": "“Upscale my timelapse” now upscales instead of speeding the clip up 4x, and “enhance my slow-mo clip” enhances it. Describing the footage you have no longer changes what Crisp does to it.",
+  "pub_date": "2026-07-30T02:32:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlUR1ZvSVRyWW00dVE3ZytQUmdQUkZOM1hHQ1RWL0ZsaHhhTmQvaEtWMlh0Vk9ibHZnMFhyejlZRm51a3N2cXJTSmJMYnl3QUdreW1wb0pJSG4vTndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc3ODIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaM3ZKdDZYODVQWExYTU1xRDBWMFN0RmJzaGVqazNMN2s5aEc4b0dZMjlOc0k2dkk2b2ZJOXcxejc2Q2p1Y1lqQVFkcXJXc2JUWEpZaEh0Q2JYbGFEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURkM3VzR0w5bWdPZzM3R2xha0ZycVNiRGJrN0g3bk83UzFLeFErREZvQ3lzMFl2V1BGUGJMVlpoUmkwMEpCc0JRR2ZtUXB6Rk8rbjBtZXNaWjVCaHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Mzc4NTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPWHp0M3NqTmFDREkzY1BycjJ1ZDViTGRXa3JMUEJTM1Z1WVNVUmI0bGl3S1RYRlNNanNMME5EWG5qTHUzRWhkZndzaDFWcmMydlNraFNFd3NlL1FCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
