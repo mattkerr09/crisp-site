@@ -1,10 +1,10 @@
 {
-  "version": "0.1.516",
-  "notes": "Internal hardening \u2014 no change to what you see. This build adds checks that stop Crisp ever telling you to press a button that isn\u2019t on your screen, and that the free-tier mark behaves exactly as intended.",
-  "pub_date": "2026-07-30T21:07:50Z",
+  "version": "0.1.518",
+  "notes": "Internal hardening \u2014 the update you're installing now is itself checked more strictly before release: Crisp verifies its own update signature against the key built into the app, so a bad signature can never reach you as a silently failing update.",
+  "pub_date": "2026-07-30T21:28:47Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdnQ2hRN0dleVFCVnArMG05ZVl5Tzd6TWUrSlkyL0plTFU0R3VPOURyR0FVeWRRa1pPYzhoTFB5NEZYbzZaZmpZVFJzcW1DeTVncDZIZU9KTjVYSlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ0OTU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYTkJ2OWtSVDBGNFY4QzdCMGx0ZytNd2Q5OFZ3SkpWajVFS2VUMnZsVHRnV0Vadk9DUFhOY205KzdGZmtEUjNDdjdHVFBrNjFLVjlMUVgxM3haMlhEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJwUUtCRjVzZEFiWHJERXUxbmN5R0lIK1Q5TVpSd1ZlRnpubGJlbmV1eVJFMXBjd3I1R2pISGZhWHZUaGlHMnZPNHFTS21VdmFuSFExREovYkhRMWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDQ2NjgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negprenNLTUhOZGVBYWpJOGVyd1V6cThkODkvSkdjYkhneHZyNWQrNkp4aEIrNmFuMG12RFcwMDJRN2hackVXMnNsc2lqVFVYV0czRkkxK0V3NEE3V2ZDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
