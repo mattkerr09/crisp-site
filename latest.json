@@ -1,10 +1,10 @@
 {
-  "version": "0.1.486",
-  "notes": "\"Turn the last 40 seconds into a gif\" now uses the last 40 seconds. It was quietly rendering the opening of the clip instead \u2014 the same request phrased as \"make a gif of the last 40 seconds\" always worked, which is what kept it hidden.",
+  "version": "0.1.489",
+  "notes": "Split screen is in the editor at last \u2014 layout, audio and a Make button in the project panel. The app has always been able to do it and the website has always advertised it, but there was no way to reach it. Also: saying what you DON'T want works even when you name a target (\"don't upscale to 4k\" was running the 4x upscale), decimal numbers are read properly (\"loop it 2.9 times\" gave nine plays), and \"put my logo in the middle\" places the logo instead of refusing.",
   "pub_date": "2026-07-30T03:42:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJQWlRGM01Ya2o0Y0M0RGlBaUxGQjdBYjJBRG5WSEhseGRzc2E2VHN2TmlOejRMcmpWUnJ4L0hEUnE4YTF4Mi9GcUpjL1N2eEkrWjNrekxzVW8xeHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDA5NjM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpReHlBL2pKM1NBWVA1bGhDU3dnVmNRZU5zUXBHWnNBQ3lLRGhIclNTTVA1VFR0bWlxN0V1SVVyN2twRnFjdWlxOUNoTmdmNkRQSGNmWWpqV0ZPWHJBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxzVnRpaXlTTFdRam9DSjllOTczMDN3Z25KYjEzR0tnampzNk03U2tZRzllbC9QSzAxczU1TzNFSTRYcTlrZjkyVzlmTnAwdVIxQmovbjlHUjRzNWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDEzNzE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyMkx5V1F4bnFBcHU5TDUvdDZDVlBzRk5qelJrRFVLdVRPcFJ1cDNNOU0rTGJsWk9XVjkzMlRBdUJLL2QxbTcrdkU4WTd4K3BTL2FhT0FDNDJGczlDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
