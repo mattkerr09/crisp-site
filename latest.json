@@ -1,10 +1,10 @@
 {
-  "version": "0.1.618",
-  "notes": "\u201cQueue everything\u201d works. The batch button was passing the click itself where the quality preset should have gone, so every file it queued came straight back refused \u2014 the whole feature did nothing. It now queues your media list properly.",
-  "pub_date": "2026-07-31T22:20:52Z",
+  "version": "0.1.619",
+  "notes": "Adding a photo to a slideshow no longer changes the frame rate of your video. A still has no frame rate of its own, but Crisp was letting it vote \u2014 so one title card dropped onto 24fps footage rendered the whole movie at 25fps, with the frames resampled to fit.",
+  "pub_date": "2026-07-31T22:41:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5nektldHhidXlmbjByYnJuYkxlUUhUTzJhSzFBMm1yRDA2NEJCVjdmMDZYaTIySHJOZHpUNVRuYUFtWENNMXFndG9HMlhWTEs5TThzTTk1WDhmL2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM2NDA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEOEMwNHZkZ0FtaVpVRnJrMW1PVUNGV0ZURGg3NlVyQ3JEQ2krSGJ5SmJ4bUVPRC8remcwVmNna2JwOVluYkZxWWthNHV0L1ZOaUFYaU5WWndCdjFDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNXendlbFh4WUFhK0FzMHBLNVFTNUtPMHVQdXBtT3dmTkdyR3pHYzhaOXptRmp1aU5FdUg4QjlQRXBvOEovRTg0OVVIOWtWVHpuVVFqTTBDZ2FTY3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM3NjE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQQ0tPd2l0RmpzdkFxK2J2UCtOUDhIMEtZNkk5Qk9pSnJVZ01tV0RZV3RTZE4rQi9IU05wbjZNeHg0TGhyWGh5cThyTi9WaU5jMEhzeTlPaGRKVVNDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
