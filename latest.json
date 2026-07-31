@@ -1,10 +1,10 @@
 {
-  "version": "0.1.593",
-  "notes": "Internal: tests making sure a clip's length arriving late can never overwrite a trim you already typed. No user-facing change.",
-  "pub_date": "2026-07-31T14:08:58Z",
+  "version": "0.1.594",
+  "notes": "Internal: tests for removing a clip from your media \u2014 it must never touch the copy on your timeline, exactly as the confirmation says. No user-facing change.",
+  "pub_date": "2026-07-31T14:20:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR3L2QzTWREeEtQdm5wTkJhdlAzWHNIOGpTZGhYd0o2eGVobC9KYU1mVG5Ed2NtRUNyenVuMnJoQnltZUkwcXZ4MUExV0ZnK1UyM3lkTmRaQTZtOEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA2NTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negozYjYyRzBGTkZ1UDhMaHdiVkFQSzRhZ2xFTmk1QkRnTHJ3a3hlYTAxaFBsaDJBN2ZYb3FGZjFRR0RQVEpSNnhGUGtqUzd6YmVtYkdiUGZaWk0zR2ZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVLdDhoV0o1QnVaUzQ1MGlVZFR1Z2hGeU1jYTdnVEJjN081Z3A4YmhVaVdycVVPUEpoOHlnWUd2ODcvTnRlcURyODdVbVA0Q2JuV2t2ZTczeFZBU2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA3Mjc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0YlF5NzVOZTVNU05RRmhlOWRaRGxuT0xjR2JWL29nOVZrejBBZmpacnhwZUlRMm9QZjZyVlBOUTZGRDRFY2VqSnZYUG8yR2JCbDBtcjZPSFhHazhDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
