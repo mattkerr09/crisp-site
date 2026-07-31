@@ -1,10 +1,10 @@
 {
-  "version": "0.1.616",
-  "notes": "Two fixes in the editor. A vertical 4K project now exports at full 4K \u2014 the size limit was written for landscape footage, so tall videos were quietly shrunk to a third of their pixels on every export. And on a slideshow with crossfades, the end of the timeline is reachable again: the playhead used to stop short, so scrubbing, Next cut and right-click \u201cSplit here\u201d on the last few clips acted on the wrong clip.",
-  "pub_date": "2026-07-31T21:24:18Z",
+  "version": "0.1.617",
+  "notes": "The timeline clock reads properly. Just under ten seconds it briefly showed \u201c0:010.0\u201d, and just under a minute \u201c0:60.0\u201d \u2014 times that do not exist. And giving one clip its own Look now raises the \u201cpreview is approximate\u201d note, instead of the app telling you the preview matched an export that would be colour-graded.",
+  "pub_date": "2026-07-31T21:55:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtVMzNXMlpXQzczNUFkNU91VlVZVlpxcHRTTWlRT0x2bzVDRDhTaXJZd3dMS2VHUGZMVHZxaXhaSk9Vd0Z6b3lNRzFxMm5Zd3pzS3pINE93SEROUEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTMyOTQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpicitEcFdUcGhvY2R0dUdWeTFBRDNSclV3YU1XMis3Tk5tb0RPQ2pyc2x4cFl2L1RvenlsM1hOZ3ZkQloxMnNQUTAwWVkyZEZhV2czd09UZVlORzlBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxmems2ZG80MkFObmpOZW5DOVd2VjJtc2VTOTRHYjNkcEdFbnFxK09uNFZCYnZPaVlOVDFxb0F1QWVCUnk4NlZBRGwxcEMxQWMzN3NpNjBrMlhLOWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM0ODA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0RFhpbUhLK1ZWMGRiYVFRVVFhUkFFK28wcmpYQzhDS2IwWERYU1RTME40VGtXemNrQzVSaVhQK3NsVnhEQ1N0SUFlVktEeGp5T09VSHIwenVyVWRBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
