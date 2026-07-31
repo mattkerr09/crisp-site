@@ -1,10 +1,10 @@
 {
-  "version": "0.1.599",
-  "notes": "A trim without an amount now asks how much instead of saying it didn't understand \u2014 \"I only need the first bit\", \"cut the end off\".",
-  "pub_date": "2026-07-31T15:31:54Z",
+  "version": "0.1.600",
+  "notes": "Crisp now recognises more ways of asking for a still \u2014 \"I need a thumbnail\", \"grab a picture from this\" \u2014 and \"it's still shaky\" now reaches the stabiliser.",
+  "pub_date": "2026-07-31T15:45:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVERVVLK2oyWERxS1dCVmExSWZZRWVwd2lldkd3MysydVhIKy9nUUJYNFJCV09oYXZ3K0REck9UUE53MDhPN1l0TlByVDE4UWpORnhkMnM1K1k4ZHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTExMzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZVjFNMjV1Wnhqam1pRDh6M2tlMjdFbVZ4Ym9FRG93R3N4UHFyaDNIN0hFcTlOeER6ZjNacTczOWdPUG55S1AzRlRFQldNSzRmbU42S1M0cndPWUtCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF6WWw0bEtxNUFET09rNG04UDUyQUhqTGxSOENnSTV5N1VQNFJRU1p6VHlLR1VXK3N0MWQzNHliTnY4aHpxMnluMnBBZ3ozdE9LWEoxeklvRnA2ZXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEyMjQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYMFBIV2tLTGFSU25WaFNWYVI0cTBYSjlDaXJEZUVwNUdzanp4WFFWTDBocDc4K2dvaENjV0FPMzA0cHRPZ1RSSGxwMVF6UnQ0ZG4xc0dPam52eXNCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
