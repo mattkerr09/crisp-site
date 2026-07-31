@@ -1,10 +1,10 @@
 {
-  "version": "0.1.620",
-  "notes": "Trimming a clip no longer leaves the playhead stranded past the end of your timeline. Dragging a trim handle in, typing a new in/out, or speeding a clip up all make the movie shorter \u2014 and the position readout kept showing a time the edit no longer contained, which also made Split and Set In/Out act on the wrong spot.",
-  "pub_date": "2026-07-31T23:08:41Z",
+  "version": "0.1.621",
+  "notes": "Duplicating a clip no longer moves the player onto a different one. Copying a clip that sits earlier in the timeline shifted everything after it, and the preview kept pointing at the old position \u2014 so the playhead readout stalled, or playback jumped to the wrong clip when the current one ended.",
+  "pub_date": "2026-07-31T23:25:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU50QkVoWmRiSmg0cm9Zc2psQlIvbUZnMkFmRE5Hc1NKL25hOEM3a2RPWEJmejE2WFVIWUxDd01IMW1xSXBndzZHSVU5WnpvN2R4eFJwejNta2FKMFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM5MjQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpESWNhaCsxRVNFMFlRN3JLb0FQN2dLZDFDbDFxMXZ1aUdreVB1b2xBY1M1YW9GMXVKcUxLZkpCQ3lLQ0RUK08vV0w3azBpSm5zUThvUzhQbE9QcnJDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxySzhpcE9SVUlBQWlNWWExVDBGTlRPaUdFd1l2OTZoNXkvMGFFK3ZBeXI2ZzJyeFdFcFpIUGdtL2FMQVRyMFo0RlFyT0t1dFpQRXlIdWxIc0pHMkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQwMjU4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTWEQzNGp1V3lOcy9DMm10cThVM3ljenJQTGU5REl1Q2VVbDdkOVl4bVVPelQxazl4TFM4VXNKVjhJL3pzbVJ4UmFCOEttMXRnZVF4NzN1NXlkK05EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
