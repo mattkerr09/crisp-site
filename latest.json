@@ -1,10 +1,10 @@
 {
-  "version": "0.1.590",
-  "notes": "Internal: tests for the startup cleanup that removes leftover temporary files \u2014 it must only ever touch Crisp's own, never yours. No user-facing change.",
-  "pub_date": "2026-07-31T13:23:07Z",
+  "version": "0.1.591",
+  "notes": "Internal: tests for the bitrate cap that stops ordinary edits re-encoding a clip larger than the original, and for filenames containing an apostrophe. No user-facing change.",
+  "pub_date": "2026-07-31T13:35:51Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtSclVna1BMTllKUFIvU2RYYXY2ZGphTkdldUgvMWEwMUNSa214bTRzQ2tuN2pTcFdGL2Z3UHA1a1ZqdGVtdTFMSC9ZYm1QVGZ4SjUrRjFhaXd0Q1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAzODAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyV3ZrRHBNNjRqSWtrYUVyQnRuRmhYRWpYUTFqM0xKR0pPS2krYkFTSGwxWVNqTnZONXhRazlaRTg1RUxndmJkNkNhZzVDTWdWb2hPVzBXZk0vUklEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yelUwVGlkS1R3VXVDRXRlbERqSThvYUMrWXVtQkIxT0RsY1hhd3Izc0RzblR1Y3BuRmYvMXNQanZoT3VXMDByZlZiTXovRGN5UnpkbXRiREdJZHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA0NTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxTGFqN01iZjFJOG8xc0pSNHVLdEFnd0RnRk5PVEVOMTVYUVRIWUVQSjMvWm5pRDZFSDdCaHNBZ0dtMUtSM0RydldlTEJXZHJGUG5zQkhWeGVtcitBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
