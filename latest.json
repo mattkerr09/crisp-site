@@ -1,10 +1,10 @@
 {
-  "version": "0.1.607",
-  "notes": "A silent audio track can no longer be 'made louder' or 'normalised' \u2014 Crisp now measures the loudest sample in the whole track and says plainly that there is nothing to raise, instead of running a full re-encode and handing back the same silence.",
-  "pub_date": "2026-07-31T17:53:24Z",
+  "version": "0.1.610",
+  "notes": "Footage from a phone is read the way you see it. A portrait iPhone clip is stored sideways with a rotation flag, and Crisp was reading the stored shape \u2014 so it told you a vertical video was \u201calready widescreen\u201d and quietly re-encoded it when you asked to make it vertical. Anamorphic footage was wrong the other way. Asking for a ratio as a decimal works too: \u201cmake it 1.91:1\u201d used to plan a square. A width on a watermark (\u201cadd a watermark 200px wide\u201d) now sizes the watermark instead of being mistaken for shrinking the video. And \u201cstabilise it\u201d measures your clip first \u2014 on a tripod shot or a smooth pan it says so rather than adding wobble.",
+  "pub_date": "2026-07-31T19:14:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNbGw2QkJMamE3MUxGMFM1TCtud1laSDlseGVyTjdOVWhSN1lRMFhCNnMyWWRHVVRyVUJqbVhOZitNNm5ZVTNYT1ZmY2k1QjVJK1lNU2t2VUgwdEFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE5NjA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6VitVZWV2S0ZsMzJiSTVaUWkycytNRjZ6clovZG5tQ2s0cGxCZmpYL09nd29tR2tOd3d0UVYvWThFQ3RkcE5GdzJwc3ZmWFRtUEFrY0I0OUxucTdDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZuMlFzUTdhOER6Z0YrTFFGeXFSYmZYQnk2R1JZOWp1UGJ6WHdWUW8xVTZNZEVXZ1hwMHR6NFZkNW81ZHpadS9aZmRhRGF0K1FjNE5LS29uRE4rZHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI1MTkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmSUhFcUFNaDlwdzhzZ1VxQVhiNlRxaFpNRWJad2gvYkMvRmdEVU1TTFhVb3JsQ2Yxd0x2VngzUEZyZmhPTlFzMkdhc0xEVUY1QWFRM0RhR0c0K3JDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
