@@ -1,10 +1,10 @@
 {
-  "version": "0.1.571",
-  "notes": "Asking for a shape a clip already is now says so plainly instead of suggesting a crop that would also do nothing.",
-  "pub_date": "2026-07-31T09:06:09Z",
+  "version": "0.1.572",
+  "notes": "Internal: Crisp's own tests now check that no suggestion it makes leads back to another refusal, on every shape and kind of file. No user-facing change.",
+  "pub_date": "2026-07-31T09:17:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNocE9Gc0xCczU0Z1NMSnBsbEJrRUZ5bFZyWU8rTEFZajl0ck8wY010ZGNaUTEvVnNmVmQ2OTJTZHlwUnBYd1o0TmFQZXc2NC9iWHVLUGs5M2F2RmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg4MjAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozaFI0UUYwL2FzR2xoZWs3RkZYMDFIbzVaRXl4SkJ4ZFJpdjJJdlJFbjZrcG1pSjR3RUY2cXJFSzFTaHl5QnBldzVOdjJGcWRxTGdNWXVOczB0QldBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYyZmk0aEY1Wk5CT2x0N3BlYm9zWjB6c3dGZmRrVlhUQTB3WWxSUnlXZDR3MmVSSVZTdGdFUFEwV0NhMXE3aWNIdVhVOVZ0QmE5NGRFK1g4a2dFd3dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg5MDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TXVMSkoza3N1dzM2V3pTdDNzRFVpTWs4eFp3b1pMRnhCNlQvS2pRWWhCc3JWcXpNNm5nWEFGenZtb1JEUXNHT3JUdjRVUHVFOXhQNC9MNGdMQ0lCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
