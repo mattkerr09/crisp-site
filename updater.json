@@ -1,10 +1,10 @@
 {
-  "version": "0.1.604",
-  "notes": "Internal: a check that every plain-English request can actually be submitted, not just understood. No user-facing change.",
-  "pub_date": "2026-07-31T16:35:31Z",
+  "version": "0.1.605",
+  "notes": "Internal: tests for the tool that measures upscale quality, so the numbers it reports can be trusted. No user-facing change.",
+  "pub_date": "2026-07-31T16:49:25Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA3YkFiL2lySVJhdSs4cU1oUUhEbFVCbVUrOHNVMlpBTTdsY0FiNCtsRVV6bXdvZHJadm9KNHgzRnYxM1JrQVJoc21rcTVQQk8xQnlSVkdhOW9maXcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE1MjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprTHVwdXF2YXJHc3dsZlZxNkdyZ1ArNi83empXZ28zQmxBODMzUUZReWE0K2phajlRajhaTmtMbFpTRjlxTFlLWlI2Lzd4V0xJRTNxOVpoY3JrQ1BBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxtRXoveVMyVCtMeU01N3dubEpuVHV2c28yRDEwVWJqRkNsMm5GeHBUOHR3d1JSTlFERXE4b1BQelNnTUlXMGk4YUlnT1BhQUFUWFliY1ZkNFhZaVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE2MDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6dzdXd1pKc2JKRnZMa2JSMU96cGRRM0dWNVgxd2dWMTdyYUFLVlVlblB3dGREY0JOTEp3eE53bVdFMjkrNFFLcnd3TGVpbklDWXB5M2F6Y2tPYm5Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
