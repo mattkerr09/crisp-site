@@ -1,10 +1,10 @@
 {
-  "version": "0.1.561",
-  "notes": "Asking Crisp to change part of the picture \u2014 \"brighten just the left half\", \"brighten the background\" \u2014 used to quietly change the whole frame instead. It now explains that it edits the whole picture.",
-  "pub_date": "2026-07-31T06:32:27Z",
+  "version": "0.1.562",
+  "notes": "Asking to change just one side of the sound \u2014 \"mute the right channel\" \u2014 used to silence everything. Crisp now explains it works on the soundtrack as a whole.",
+  "pub_date": "2026-07-31T06:43:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVuMHcxcmE0bTdXZ0ZOM2pRc3lkMStxODlIQVQ5RVIvbFpONElmZE5JeDB1cnJvUXlraEY3b1RNU0ZLNG81Y1pIRlVmZy9mcnIwVW5jc2tpS3ROSUE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc5MDYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppUi9xa1FGYXpTUWdqdHhCWTVUcjROcnpMYUhoYjE0aTh0SVVmSjNEdjdlSXlkbitrQUwxcDdSelhHL1B4R0ptOEl3eXI5eVpQQnZ2TVNLdkQveUhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZlczBYWDd2dkY5RVdiUDMydHRJbUFEUFNYekNnVGdvT3RwVWtBR3A5MFNJenRTNUtmeTZ1TEJwRk1HNUErZWprL0FRN0J5WHI1c2t1NUhkSHpCaWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc5ODM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCU3NjUkFHY2VyQnQ1RDlxSVFiSjJnQWZWZFlPUXJyOHNLYzRzUHJMRGJqUGZJenU1LzdPL3FKZ2gxMmdKTnBXQzJOOEh2VlNQM0RNc3RBL3hsbWNBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
