@@ -1,10 +1,10 @@
 {
-  "version": "0.1.596",
-  "notes": "Internal: tests for the player's zoom, so zooming back out always recentres the picture. No user-facing change.",
-  "pub_date": "2026-07-31T14:47:36Z",
+  "version": "0.1.597",
+  "notes": "Crisp now understands more of the ways people describe what they want \u2014 \"the camera was shaking\", \"you can't hear what she's saying\", \"make it small enough to text\" \u2014 instead of saying it didn't catch an edit.",
+  "pub_date": "2026-07-31T15:02:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM5NW85Z2hsUm5BbTkvYzFlYXZkRFBpMzBlMzEyWVRwTDlrTFJkTGlnbHZsQjBvZHBjeUw0aS9YZmhNMExJUWRRV2dlK3pRS0c3SEI4aFZaVHRFTVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA4NzM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEWGN6L01NUlZXU2RLQU1VNVgzclBjZ3FsVnFMLzJ3Q2hVZDVxL2x3TjF2cjg1SFQrMXVWN1ZnNWJ6QTI2Sm5XN2w2dkY0dVFDV1grTlA3YkdzVk5EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU16cCt0MU91cDNzK1dlclNpcTFBcERlalRuM3o3NVl3VTh6KzhNNXg5OG11dDd3R0M1OG5yY2JmRDZDYTI4eFJTTDNJUFY2OUx4S1dKZUh6OGhNcXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA5NTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoTFM5MG1IU3hDV0JqMFRpY25JYnpLQjJvQmhhTGF6NmhQUmZONm5QdmdFS1lCQUNWZmh2T2NkbkhNRkhyREZaK1hYM1NhSW9BbFV1S294MUdKVm9Edz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
