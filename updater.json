@@ -1,10 +1,10 @@
 {
-  "version": "0.1.581",
-  "notes": "Internal: Crisp's own tests now render a three-part request end to end and check each step built on the one before it. No user-facing change.",
-  "pub_date": "2026-07-31T11:22:12Z",
+  "version": "0.1.582",
+  "notes": "Internal: Crisp's own tests now cover what you're told when one step of a multi-part edit fails \u2014 it can never report more than it actually did. No user-facing change.",
+  "pub_date": "2026-07-31T11:35:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5iZ2pScjhkcmM0bUtWckU0eTB6WVJqQzRBUUpUcGFJMlFYVjMrWDZIQ0xvK1Y5L0tDemt5dU1wS1pWNDg2aHliQy9qb25MSkk1V3JFWkMxQk51TVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk2NTI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5WlZlZmtRK2tjK2JZc1g0YmQ5YVpYcTQ3Z2k3cVZQVzFzc3FkeXlOUUVrTHRWWVB2c2FWT21LQnc3ZUYySGk4aWwvajJORlBzNTM0RHQ0dHBvRjRCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlBY0VEMVVJR2puUksvSFltdUFYcWN2MmpqT1RBelpPT2M3UXFWNnUvM01RS1dhYk9KdllreGNCV2g3cUQ2ajBmRWJXZG9MYk5ZYlZidGJOZkg4MGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk3MjYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqNDhTOEE1amRGV0xuaXFHY3gweld4ZXZ1c2ZKS3hQQTVoV2NoR0x2NkJzZm1kSWlVT1hkQWd0bnFyWnIzVXlSWDRyekRlSlhuM2dxRWNyNWgxQWpEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
