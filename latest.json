@@ -1,10 +1,10 @@
 {
-  "version": "0.1.587",
-  "notes": "Internal: a sweep of every re-entrancy guard in the app, checking each one clears itself on every exit. No user-facing change.",
-  "pub_date": "2026-07-31T12:44:44Z",
+  "version": "0.1.588",
+  "notes": "Internal: tests covering what Crisp tells you when a licence key can't be activated \u2014 every message now has to name a next step. No user-facing change.",
+  "pub_date": "2026-07-31T12:58:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBodnNOQU13NFhzS0V1VnVxMHRCcUJYZDdWV3ZhUjBaeG1nOVp5OEZqam1wb1hlNFk1R2I4VThtdjJDbTlpUitCaTVvSjBQdFZLNnNFOG9CcDBSK0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAxNDQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDSVo0TlY2Q2x0UEVxNUV1ZmxRcWRWeS9KTEVVTnhtWDdPT0FiWnljaDJ2a09FaWlkb0VuRDVBN1llY25jY2hPWG1aVVJmZE15RVA1UDNNRDB0MGxDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdGRGtMZXE5TW9YRFVNbjhyUWJyZFhncjhtTzExZHRtU1hyTjcrVlR4ZmhHL1F4aU9QaFBkSFdhc1RaUDJXN3drNHVSdDh5TW5oMyt6SjhLWnZIWFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAyMjkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvMVduSU10ajQycy8wSnVHM1BoQUlZamZocXJRNVFGOHVwL2RocGxDWVJIZ2tVdVJTSGttYkRhWlRsQS9ldGxHVzJndTZwN2lUdjllVk1wWDVDQldEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
