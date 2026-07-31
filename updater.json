@@ -1,10 +1,10 @@
 {
-  "version": "0.1.547",
-  "notes": "Asking for a GIF's size the plainest way now works \u2014 \"make a gif at 800\" was making a default-size GIF and saying nothing about the number you typed.",
-  "pub_date": "2026-07-31T03:22:29Z",
+  "version": "0.1.548",
+  "notes": "Two fixes for numbers you type: asking for a size Crisp can't go down to (\"make it 360p\") showed a raw error instead of an explanation, and asking for the volume as a multiplier (\"volume 2x\") started an upscale of the picture instead.",
+  "pub_date": "2026-07-31T03:35:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIwd2tlK3V2Rmh4SkhMK2hBT2N4T20xMmRlRmFsd1U5SUlDdWhpcVVtejhWR2cxdkZWMkxvSzNxQWo1R0VSQ3pLV2wra3NFQWFRNzI2cVVodTNldncwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY3NDg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2ditkUkhuZlhpV2FtNzk5M1gwbE1wQmkzYXIxd0JhUmNzbEpzcXFyWTBkTktURTA5MGorbUlYTHR4N1hFa2JmR0h6cHJSblNWc2s5RFA1b1duZk9Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlEU1Z1N2hnTTBFYnFTZEU4anJDSkV5aFhJMGx4OEwybExJSlc5dDNDYVZ3Zlc1VXBoWEg4cCtJWHgvQWZhY1J5NERpNUxyaENPWCsyUUpFVjNqd3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY4NDY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSdzVObjlLK0hrdGZJTWZOUDhCZFI3N1pLVllzOGdETkljbTk5S3RwbC93L0pSVytCTjVHS3BoMDJ3NWNYU3dOOEZXMVJBZnluZmVSQ0Rub3hUSlBBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
