@@ -1,10 +1,10 @@
 {
-  "version": "0.1.551",
-  "notes": "Housekeeping build: pins down what Crisp's noise-reduction setting really does, so the app can never claim a level of control the engine doesn't have.",
-  "pub_date": "2026-07-31T04:23:35Z",
+  "version": "0.1.552",
+  "notes": "Typing an exact start or end on a very short clip no longer runs past the end of the footage, and a reopened project with odd saved values can't leave the timeline showing NaN.",
+  "pub_date": "2026-07-31T04:38:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlINXl5TXg4NVJralp3dWp5MWRnTmkwL2ZrRWtPNDdwL3ZUUGk2bDZHcXhRZFRITGlUQ21LZ1A0WFFwdHlGWGdjZXhSWUUzdTFXOGw1dm1SWmdwQlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDcxMDc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1WktFcnRtMzBZVmhWYStFc1NjYXhDMkttWnorYXRyNGk5L0sySER2RytDbHFkOU5uWjU3clhjRHhQMTFIdWdQT2VZRHZhcnVoRFZyY29wa08wZzZDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx2WWVrQ1Vkc3MwVE5HSWRJMWlDeDgwUjFpdEVqU0dONkRxbDFLY3ZRL1E1bitTQ2ZpbU9teXB4Y095Wk4vSTZQRWhJWXMyWjVkWmVib2JBay8rSndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDcyMDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjRmsrbzZSanUxSUdGZmZEc3RzZHpNSlVBR3pUTFBkelRGQ21IRDlDMU1tUy9NS1p2TkV4LzVaL2dvK3NlcmdpWXJFSWZWSXBUdFlreE15cGJpK1VEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
