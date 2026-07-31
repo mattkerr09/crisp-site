@@ -1,10 +1,10 @@
 {
-  "version": "0.1.568",
-  "notes": "Internal: Crisp's own tests now check that every colour look actually changes the picture, and that no two looks come out the same. No user-facing change.",
-  "pub_date": "2026-07-31T08:09:09Z",
+  "version": "0.1.569",
+  "notes": "Asking for a shape Crisp doesn't offer \u2014 \"make it 4:3\" \u2014 used to say it didn't understand. It now names the shapes it can make, and offers to crop to 4:3 where that works.",
+  "pub_date": "2026-07-31T08:39:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9scFd2a0lQeXlFVWREVTZQeTZNVXhsQy9QYUppMVk5c3c0SForMUdCa0FnVEtSbndxRm9hWk0xTWdNMndMK3dnS0orWkhOaitCNE81Q1dDTmdkYkE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg0NzA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpReXcwb204cUI1aWdDU0dnNittaEZUeTBmL2gvdy8vZ1lqaDQ3eGFwbWcrbTFUaFkwQkpsTXRhUGJ2bWw4Qzh3bzBpTzJEbG5pYmNsQ0lLMHY0OHNDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQwdHNHNmJrTjNIWjlzVU15Rklnd1d3SG9JdWpIQWJvUWZqQklMb2JBbGtRSVQ0MWphcDB0ZWNyVk9ISXI3b210VTZCUFVzYVEvT2RtNWZBb0tOVkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg1NjQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1SW5MemthZGYyNFNRZDAxaEZXaGRobk5wZk5mVjlDVFBUZDZDb1ZDWDdXclg1UmpJaW9oWm9PaUZ5dlg1WS9xeXNWTVFBazM3MFNkbHJZODgxelJEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
