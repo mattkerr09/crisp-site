@@ -1,10 +1,10 @@
 {
-  "version": "0.1.558",
-  "notes": "Dropping a file Crisp already has now says so instead of appearing to do nothing, and when a file can't be opened Crisp names it rather than saying \"that file\".",
-  "pub_date": "2026-07-31T05:34:30Z",
+  "version": "0.1.559",
+  "notes": "Internal robustness for the video playhead \u2014 no user-facing change in this build.",
+  "pub_date": "2026-07-31T05:47:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk3ZkJhandJaE5Zb2wrMWs3S0tDQ0R6cWNmL1M2Z0p0SDQwcXZiVndDbWw4TjU3ODN0ckc1ZGs2TkViOU1qVzdNSzZuYUZaUVRLM2QyTGRtUXFvNWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc1NTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJZTZ5ZnlNRzZEa2IwVEx6N2xKSGlsL25FZ1VtWFVteHhmZmRudHBFOUZiSElRMFNGUUNtRXI3ek41WlJpR1FheEZVTmp1enpsRzlRb2JCSXhjUllCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpDNXdiU3k0YU1mdEQvN0xPaW9lb3NrL2I2OW1MZVoyU1FJcytHRS9HdkE0bmNudEY0STNhQWl6akR1NXUyYnhCem10bW01dHpmeXRlT0ttOE5XOHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc2MzYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMTVlhUElWcGl6OFNOUTVKSHpWTktmRVVRSHZqWCtLanBpaytZc2pCd3ZiUTVnK3ZkV0EyRE1ibVRSeHlDQVVTemxpOW52ZnBydlRtdE1WRm51RHVDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
