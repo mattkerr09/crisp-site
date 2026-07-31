@@ -1,6 +1,6 @@
 {
   "version": "0.1.565",
-  "notes": "Internal test coverage \u2014 no user-facing change in this build.",
+  "notes": "Internal: Crisp's own tests now check a typed speed like \"25% faster\" against the length of the finished file, not just the plan. No user-facing change in this build.",
   "pub_date": "2026-07-31T07:20:38Z",
   "platforms": {
     "darwin-aarch64": {
