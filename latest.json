@@ -1,10 +1,10 @@
 {
-  "version": "0.1.614",
-  "notes": "Every number on a card is the number the job uses. A fade asked for 3 seconds on a short clip now shows the length it will actually apply, rather than one the render quietly shortens. Trimming 1.5 seconds says 1.5, not 2. Asking for a frame rate below 48 \u2014 \u201cmake it 40fps\u201d \u2014 is understood instead of answered with \u201cI didn't catch an edit in that\u201d, and the card names the rate you will actually get.",
-  "pub_date": "2026-07-31T20:34:12Z",
+  "version": "0.1.616",
+  "notes": "Two fixes in the editor. A vertical 4K project now exports at full 4K \u2014 the size limit was written for landscape footage, so tall videos were quietly shrunk to a third of their pixels on every export. And on a slideshow with crossfades, the end of the timeline is reachable again: the playhead used to stop short, so scrubbing, Next cut and right-click \u201cSplit here\u201d on the last few clips acted on the wrong clip.",
+  "pub_date": "2026-07-31T21:24:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5xSXM1cERPbFVnZTRvOVNjWC9USlBhNmw2eUxvRU9Ea1VXcTFLRUFESnFmSm5qMlNIOGdLOEFlZHM4ZW1lSzVlZENxNmx4OG9vZTNNTmUwbWpDZ0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI5OTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjUStwWFVvdktyRU9iaGg4SmZ3NzkxWDRYdEdOUTV1VlhsTUtGYURkNjB5bUYvaDlSMURlRUlwdHBseDhweVFyRFVVQ3pkTC9DNWVxc05ZVGYvcmlBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtVMzNXMlpXQzczNUFkNU91VlVZVlpxcHRTTWlRT0x2bzVDRDhTaXJZd3dMS2VHUGZMVHZxaXhaSk9Vd0Z6b3lNRzFxMm5Zd3pzS3pINE93SEROUEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTMyOTQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpicitEcFdUcGhvY2R0dUdWeTFBRDNSclV3YU1XMis3Tk5tb0RPQ2pyc2x4cFl2L1RvenlsM1hOZ3ZkQloxMnNQUTAwWVkyZEZhV2czd09UZVlORzlBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
