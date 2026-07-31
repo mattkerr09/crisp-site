@@ -1,10 +1,10 @@
 {
-  "version": "0.1.598",
-  "notes": "Asking for a loop by describing it \u2014 \"play it over and over\", \"repeat it on a screen all day\" \u2014 now works instead of saying Crisp didn't catch an edit.",
-  "pub_date": "2026-07-31T15:15:53Z",
+  "version": "0.1.599",
+  "notes": "A trim without an amount now asks how much instead of saying it didn't understand \u2014 \"I only need the first bit\", \"cut the end off\".",
+  "pub_date": "2026-07-31T15:31:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFYaEE2UU12bE5yTkFRK2E4cHpDS0F5UkV1a0FiU093WGRucUlNM083VSs3Sk1CbStaWlYydW5CTjF6anBkTHlEcUlqTk1waHBjZkduSGFEMlFqaVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEwNTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprbk5zMVJzeXcrR0NzcklndmQ5WnFzSWZtU0s0ZVo3RHpSdFhmVWlVZnhtazFuNDlnRmNXR2lxZjZrb2NYcS9iTjlFb241U3hYd0lPaXg5VWlmR1FEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVERVVLK2oyWERxS1dCVmExSWZZRWVwd2lldkd3MysydVhIKy9nUUJYNFJCV09oYXZ3K0REck9UUE53MDhPN1l0TlByVDE4UWpORnhkMnM1K1k4ZHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTExMzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZVjFNMjV1Wnhqam1pRDh6M2tlMjdFbVZ4Ym9FRG93R3N4UHFyaDNIN0hFcTlOeER6ZjNacTczOWdPUG55S1AzRlRFQldNSzRmbU42S1M0cndPWUtCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
