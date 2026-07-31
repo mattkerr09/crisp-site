@@ -1,10 +1,10 @@
 {
-  "version": "0.1.583",
-  "notes": "Cancelling a step no longer reports it as a failure \u2014 Crisp now says the clip is unchanged, and in a multi-part edit says you cancelled it rather than that it failed.",
-  "pub_date": "2026-07-31T11:47:29Z",
+  "version": "0.1.584",
+  "notes": "Internal: Crisp's own tests now check every way a job can finish carries a message you can act on. No user-facing change.",
+  "pub_date": "2026-07-31T12:00:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQyaTh3Y1doYWxvdk1XRkhUZ2tIZ1kzM0ZWQklPcGhRS3lRd3U0TENMSTR4SDZpQ0J6L1NqWTFzZGowQkxLR1NPNkpiem9vTWwydVZQYzRvdk0zdVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk4MDM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvY0ZFYVdhK1ZvRThUQUZJL0lOS1BoOWo3YmdTODVRVzhDeUhuemhVUUlrT0hySTQ3OXEydDNyR0NscG1haVU5aFRuTlRRSVhIbFpRZUViUGx3ZWlEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdrQUhHamdyTnBoaEVIaEtkdUVGdWZNZnZWQnJjYXRRbmMyVmNlZXg2WFp2VkNia0NBTXVocGUxeUhzS245dlArR1pRZUxVUkdGbWsvNG1aWXhsamdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk4NzkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyUEpQSERsY1BHZmVxZEM4V3hBQndTMUpiRjdaSW1XcmhpOGdNMVBlaVNraFJJSUZwTHMydzRZaElLMVhqUmM0aFA5dEhDUTE0UGdaSWhwelpyVUZCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
