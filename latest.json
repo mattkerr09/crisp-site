@@ -1,10 +1,10 @@
 {
-  "version": "0.1.617",
-  "notes": "The timeline clock reads properly. Just under ten seconds it briefly showed \u201c0:010.0\u201d, and just under a minute \u201c0:60.0\u201d \u2014 times that do not exist. And giving one clip its own Look now raises the \u201cpreview is approximate\u201d note, instead of the app telling you the preview matched an export that would be colour-graded.",
-  "pub_date": "2026-07-31T21:55:08Z",
+  "version": "0.1.618",
+  "notes": "\u201cQueue everything\u201d works. The batch button was passing the click itself where the quality preset should have gone, so every file it queued came straight back refused \u2014 the whole feature did nothing. It now queues your media list properly.",
+  "pub_date": "2026-07-31T22:20:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxmems2ZG80MkFObmpOZW5DOVd2VjJtc2VTOTRHYjNkcEdFbnFxK09uNFZCYnZPaVlOVDFxb0F1QWVCUnk4NlZBRGwxcEMxQWMzN3NpNjBrMlhLOWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM0ODA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0RFhpbUhLK1ZWMGRiYVFRVVFhUkFFK28wcmpYQzhDS2IwWERYU1RTME40VGtXemNrQzVSaVhQK3NsVnhEQ1N0SUFlVktEeGp5T09VSHIwenVyVWRBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5nektldHhidXlmbjByYnJuYkxlUUhUTzJhSzFBMm1yRDA2NEJCVjdmMDZYaTIySHJOZHpUNVRuYUFtWENNMXFndG9HMlhWTEs5TThzTTk1WDhmL2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM2NDA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEOEMwNHZkZ0FtaVpVRnJrMW1PVUNGV0ZURGg3NlVyQ3JEQ2krSGJ5SmJ4bUVPRC8remcwVmNna2JwOVluYkZxWWthNHV0L1ZOaUFYaU5WWndCdjFDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
