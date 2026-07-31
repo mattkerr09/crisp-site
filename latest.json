@@ -1,10 +1,10 @@
 {
-  "version": "0.1.540",
-  "notes": "Internal checks that a split screen really shows both of your clips, in the order and layout you chose \u2014 and that every audio option works, including no audio.",
-  "pub_date": "2026-07-31T01:53:48Z",
+  "version": "0.1.541",
+  "notes": "Internal checks that combining two edits keeps both \u2014 trimming then looping loops the trimmed piece, muting then trimming stays muted, and a reframe survives a later trim.",
+  "pub_date": "2026-07-31T02:04:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdEZ21IQ3hhQWNyMHpyR0NRM1FGZ3p2RndmZm9VV2kyN0gvU2dmN0JlVlZtMWpseFBZZWIvb0V0bHVMdEYxT0FveCt0UTBVdnA1RkRhbVA5dE5tc1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYyNTUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3S3BtNE9oMzA0TS9nRDdkOUI2TzFhdnNka3BLK0R0Q0RWWlR0eUMzT3BCYmlqaVdxeEhrUy91aFBmUUFncFZwV3ZVY0VRcWNMOU8rRi9uSmh0cVVDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNmbi9RMDJkZG5nU0JJeWdEaU9IWnVUNFlaNENnanU4MEx1NEJ6eFRDbEhYQ3RDNFZ6VGloNy9aNkQwbTFEZlFzVi85alRHZE81QzBwOU84aXVjbUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYzMTIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMZTNnZDZzbnRKTU84VjJ1OVRpZFQ0MmtLYllKb0hDQmhmdEY5UUk1b3pDNFJXektiQlNtNlYwWlBZU0RQaTR5cWhDY09jc0RPVHZHKzhMcElabDFEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
