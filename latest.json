@@ -1,10 +1,10 @@
 {
-  "version": "0.1.531",
-  "notes": "Internal checks that every tool writes what it promises \u2014 a 30-second trim really is 30 seconds, a quarter turn really swaps the frame, muting really removes the audio track.",
-  "pub_date": "2026-07-31T00:16:53Z",
+  "version": "0.1.532",
+  "notes": "\u201cBrighten it\u201d now actually brightens. The Bright look was cancelling most of its own lift, so an underexposed clip came back looking almost the same \u2014 and \u201cmuch brighter\u201d did exactly what \u201cbrighter\u201d did. Both fixed; the strength you ask for is the strength you get.",
+  "pub_date": "2026-07-31T00:28:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhYeXdJdGtEcnZ3NmxINVJ5SFgyVFcxdk1uelJDRlZ5UWwrOTY1SUcrSXcwcUJnK1RtQjczam9rT0Z5cHRkanpKWVZJZHorcTVmTTBWSklzMW8wVnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU2MjUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEOTVFb3JPL2U4dmpiTmxkM0F6VytjN3BWSXl3T3B1UHVhaERMaStqWDBJYkxiSVFzVmNVWXdaaFVZOXAzZVZmY0MrSVVFSktxT1ByYVN6RjRzTzZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNid0J4aXkzUDl0ODhoZ3ExdGt3RUl5VWsyM1NlbXIrRndzbngwV0h2OFYxYXAxdVZUOG5rQXJocG0zczhoWjU3VjEvOFBCeXE3YXorZEl0QmZuclFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU3MzU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpndkg5bmV0TnlrbFB6S01XVGRpZXdWK1dScWJEWFB4YzRzaWpoSXZEOUhPWHl0WEFVT3prdllHdUtLYXVHR3FoY2xZbmMxekV5amduOVdsOU5wc0dBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
