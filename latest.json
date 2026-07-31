@@ -1,10 +1,10 @@
 {
-  "version": "0.1.605",
-  "notes": "Internal: tests for the tool that measures upscale quality, so the numbers it reports can be trusted. No user-facing change.",
-  "pub_date": "2026-07-31T16:49:25Z",
+  "version": "0.1.606",
+  "notes": "Internal: measurements of how speed changes behave on unusual footage. No user-facing change.",
+  "pub_date": "2026-07-31T17:34:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxtRXoveVMyVCtMeU01N3dubEpuVHV2c28yRDEwVWJqRkNsMm5GeHBUOHR3d1JSTlFERXE4b1BQelNnTUlXMGk4YUlnT1BhQUFUWFliY1ZkNFhZaVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE2MDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6dzdXd1pKc2JKRnZMa2JSMU96cGRRM0dWNVgxd2dWMTdyYUFLVlVlblB3dGREY0JOTEp3eE53bVdFMjkrNFFLcnd3TGVpbklDWXB5M2F6Y2tPYm5Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUwrT1hqSGoraUJkNUhjaFRmQUgzTVJMOEM3cWhKNDFvclc3M3lEUDVpZUM1Zy9HOW81QUgrQ0UrUGorNFZJcGY5YnJWRmRQL3FhYWs3cWpta0hBaHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE2ODkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQQ0NrRlBlSHNvTG02REp6UkJwTHBLQUYzZFhxOWU5RWNNdWkxU1BNWUk0N3pXbE5XNmdiekFMbDFOUVg3UUZwdUhidEs2NmdXN3hRMVgwL3J2ZGREdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
