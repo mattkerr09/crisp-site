@@ -1,10 +1,10 @@
 {
-  "version": "0.1.595",
-  "notes": "Internal: tests for adding a photo or video to the timeline, so a clip can never claim more length than it has. No user-facing change.",
-  "pub_date": "2026-07-31T14:33:23Z",
+  "version": "0.1.596",
+  "notes": "Internal: tests for the player's zoom, so zooming back out always recentres the picture. No user-facing change.",
+  "pub_date": "2026-07-31T14:47:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBSeVcvejd6WEtIVWMxaEc0YzNFTk90Y0NrN3FVdFl4STFtQ0tmMXV2RVdUNG5neXNWQnk4V01wdXQ3RXU1QWhCMnR6VWFORlF0TWxDbGpnSE5TWGdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA3OTU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZNkJPR25hK3FRc3hTNUxrQmQyYnBLamt2NGY1ODFaR1FHUjNIWUtReWttY1BiNGR4WlpmUFcvL0FaODFIUytTWlFtNXp1U1RMaVYxNDMrbnRiTG1DZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM5NW85Z2hsUm5BbTkvYzFlYXZkRFBpMzBlMzEyWVRwTDlrTFJkTGlnbHZsQjBvZHBjeUw0aS9YZmhNMExJUWRRV2dlK3pRS0c3SEI4aFZaVHRFTVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA4NzM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEWGN6L01NUlZXU2RLQU1VNVgzclBjZ3FsVnFMLzJ3Q2hVZDVxL2x3TjF2cjg1SFQrMXVWN1ZnNWJ6QTI2Sm5XN2w2dkY0dVFDV1grTlA3YkdzVk5EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
