@@ -1,10 +1,10 @@
 {
-  "version": "0.1.606",
-  "notes": "Internal: measurements of how speed changes behave on unusual footage. No user-facing change.",
-  "pub_date": "2026-07-31T17:34:23Z",
+  "version": "0.1.607",
+  "notes": "A silent audio track can no longer be 'made louder' or 'normalised' \u2014 Crisp now measures the loudest sample in the whole track and says plainly that there is nothing to raise, instead of running a full re-encode and handing back the same silence.",
+  "pub_date": "2026-07-31T17:53:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUwrT1hqSGoraUJkNUhjaFRmQUgzTVJMOEM3cWhKNDFvclc3M3lEUDVpZUM1Zy9HOW81QUgrQ0UrUGorNFZJcGY5YnJWRmRQL3FhYWs3cWpta0hBaHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE2ODkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQQ0NrRlBlSHNvTG02REp6UkJwTHBLQUYzZFhxOWU5RWNNdWkxU1BNWUk0N3pXbE5XNmdiekFMbDFOUVg3UUZwdUhidEs2NmdXN3hRMVgwL3J2ZGREdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNbGw2QkJMamE3MUxGMFM1TCtud1laSDlseGVyTjdOVWhSN1lRMFhCNnMyWWRHVVRyVUJqbVhOZitNNm5ZVTNYT1ZmY2k1QjVJK1lNU2t2VUgwdEFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE5NjA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6VitVZWV2S0ZsMzJiSTVaUWkycytNRjZ6clovZG5tQ2s0cGxCZmpYL09nd29tR2tOd3d0UVYvWThFQ3RkcE5GdzJwc3ZmWFRtUEFrY0I0OUxucTdDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
