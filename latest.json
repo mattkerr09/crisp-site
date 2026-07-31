@@ -1,10 +1,10 @@
 {
-  "version": "0.1.556",
-  "notes": "Split screen no longer asks for two clips when two are already on the timeline \u2014 it now says it needs two different files \u2014 and both split screen and montage tell you when they'll use the whole file instead of your trim.",
-  "pub_date": "2026-07-31T05:20:13Z",
+  "version": "0.1.558",
+  "notes": "Dropping a file Crisp already has now says so instead of appearing to do nothing, and when a file can't be opened Crisp names it rather than saying \"that file\".",
+  "pub_date": "2026-07-31T05:34:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU96RnhxVitaZDFmQ1ZpK3pTcG1OVFA5QlYrSkhGOEZ4c1BXQ1liYlFOemVhR1V5dzg1SGdPWDh2ZXJxMmxaL2tDa0s5K1Q5MHBuRWVJcG55WU5veHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc0NzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwYld5VGZYdXRtT09TUXdwdyt4SUNmbUFTZ3NON282WVdWc2tKdmlyTmtZTUZTSjVYM0RrUDEvMjBNeVhYY0FUZis1OGF4dkZjWnNWU2FrdlM4UjlEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk3ZkJhandJaE5Zb2wrMWs3S0tDQ0R6cWNmL1M2Z0p0SDQwcXZiVndDbWw4TjU3ODN0ckc1ZGs2TkViOU1qVzdNSzZuYUZaUVRLM2QyTGRtUXFvNWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc1NTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJZTZ5ZnlNRzZEa2IwVEx6N2xKSGlsL25FZ1VtWFVteHhmZmRudHBFOUZiSElRMFNGUUNtRXI3ek41WlJpR1FheEZVTmp1enpsRzlRb2JCSXhjUllCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
