@@ -1,10 +1,10 @@
 {
-  "version": "0.1.577",
-  "notes": "Typing two requests with a \"+\" or \"&\" \u2014 like \"mute it + brighten it\" \u2014 no longer silently drops the first one.",
-  "pub_date": "2026-07-31T10:29:58Z",
+  "version": "0.1.578",
+  "notes": "More ways of writing two requests now work \u2014 \"mute it / brighten it\", \"mute it plus brighten it\" \u2014 and a caption typed in single quotes is no longer cut in half.",
+  "pub_date": "2026-07-31T10:44:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtmQTRIa0JQM1BIRjZKN25kSi9tVks1aTZTbE1laE91NzBsQ052ZWU5Wm5BR0hnOGM0V0RINTR0Z1Y3QnlYRnBWY0V2ZjN6d29pQTBMZWVvK0ZXQ2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDkyNjkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNY2pFbXJadVkvQ29VMVBzYzFna3cxdURSTEU3YmljbndJeW1hQXIxWis2RnVZZTZNcS8yQjB3WExiVHdpVisrNDdmN2kwRmVUWWdDUit4Vlc1U3ZEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU45RCt3NjNQODlxeGRYSm1nN1Z0QWNtK2NtKzc2djFLZU9NdEI3NU1OQUszU0tZQzl2aW9LMUdXVzRIR0FQTGVteXJqZEJHUVI0VWJta3QvclBTa0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk0MTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5aitKVG9yNEM5a1NuSXF5SllTZ2RJL01HZEhKeG1pRnBWTGh3OEhhVFliRDBKZVFkSHNmSVJhN09FSlRBTTdLV1NpOVhCVExJR0xPczZ5SkUrbVRBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
