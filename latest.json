@@ -1,10 +1,10 @@
 {
-  "version": "0.1.529",
-  "notes": "Evening out the sound on a clip whose audio is silent now says so, instead of blaming the export settings and sending you to the Advanced panel.",
-  "pub_date": "2026-07-30T23:43:28Z",
+  "version": "0.1.531",
+  "notes": "Internal checks that every tool writes what it promises \u2014 a 30-second trim really is 30 seconds, a quarter turn really swaps the frame, muting really removes the audio track.",
+  "pub_date": "2026-07-31T00:16:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtkTkQ3cTdDTWtKcmhySFVUSWhpb05vbVpaMXp5dnFyMVJtTWc5blArd25KdkdHS21Pb3NiL2cwSmxicG1VZ29BSXcxNzhUeEtmNW9FQnpYK3ord3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU0OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnd0FvSW9aeEFzWktvalI1M0Jya2FSamwzSkNqTzIxaHE0TkgwS3VzblIwemp4c1MwR05KZXNlNE9PTXdiNG9CQ2swclhQcGpPVHkxeVZlK0U4bXlDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhYeXdJdGtEcnZ3NmxINVJ5SFgyVFcxdk1uelJDRlZ5UWwrOTY1SUcrSXcwcUJnK1RtQjczam9rT0Z5cHRkanpKWVZJZHorcTVmTTBWSklzMW8wVnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU2MjUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEOTVFb3JPL2U4dmpiTmxkM0F6VytjN3BWSXl3T3B1UHVhaERMaStqWDBJYkxiSVFzVmNVWXdaaFVZOXAzZVZmY0MrSVVFSktxT1ByYVN6RjRzTzZCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
