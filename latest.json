@@ -1,10 +1,10 @@
 {
-  "version": "0.1.562",
-  "notes": "Asking to change just one side of the sound \u2014 \"mute the right channel\" \u2014 used to silence everything. Crisp now explains it works on the soundtrack as a whole.",
-  "pub_date": "2026-07-31T06:43:19Z",
+  "version": "0.1.563",
+  "notes": "\"Sharpen the sky\" and similar requests now get the same clear explanation as \"brighten just the left half\" \u2014 Crisp edits the whole picture, and says so.",
+  "pub_date": "2026-07-31T06:55:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZlczBYWDd2dkY5RVdiUDMydHRJbUFEUFNYekNnVGdvT3RwVWtBR3A5MFNJenRTNUtmeTZ1TEJwRk1HNUErZWprL0FRN0J5WHI1c2t1NUhkSHpCaWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc5ODM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCU3NjUkFHY2VyQnQ1RDlxSVFiSjJnQWZWZFlPUXJyOHNLYzRzUHJMRGJqUGZJenU1LzdPL3FKZ2gxMmdKTnBXQzJOOEh2VlNQM0RNc3RBL3hsbWNBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNVN2hLMUttREhOalU2L2tHaU4yY043ZHlsMWZtQ3NGRVQ3SkZpOFVmSVA0eG5DM1UwTzA4cmphNzBSRnZaNU1BeU5lT0RSVnR6RHVLNENtNTFWcGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgwNTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIeThhRW9ZcW1kYTBBZmhTeVF6WHVzbjJGYkxwZ2VGOHBaRE1XZk42anN1NVRLZ2lQMVFQck8xSTNQNlpSV0xoZXMvTDdLNHZ6RnBDaHZWYk9pZGpEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
