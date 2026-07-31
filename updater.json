@@ -1,10 +1,10 @@
 {
-  "version": "0.1.602",
-  "notes": "Internal: a cross-check that every plain-English request still reaches the right tool after six rounds of improvements \u2014 and that questions and descriptions still run nothing. No user-facing change.",
-  "pub_date": "2026-07-31T16:09:25Z",
+  "version": "0.1.603",
+  "notes": "Internal: a check that asking in plain English produces exactly the same edit as asking by feature name \u2014 same settings, not just the same tool. No user-facing change.",
+  "pub_date": "2026-07-31T16:21:33Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5QU2hQaUpWYnpQYmxJdldTTkpNOWhxNGFxbUsrMU9sZnJ2WFA5WCtTeGI3NE1lYnBvaHZQVE40TjVCVUFvVFFxaE82aWpndis1QUtibGJpVVhlandjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEzODI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVTnRXT1RXVUh5YTAvWlI5ZUZRc0ZHaExUV3dBOHhzd3lzOWRxRkZEaWdiNnQwakpnazRDejNESmt5U3lzZEU5Um9ZUUlXL0JlOW5OQ3MxcXBsM0tCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR2Rm1WK3BRSktlcjZ0S09uRHdTd1N4VjJkY2Y3WHAvd0NFa25xM0poUXF4ZXpRTEUwNUZFVkREYW1LektBNEdDVWMwUjR5aE9mTW83WEtQcXFDdHdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTE0NTMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsRUxCdVdTYkNvOVc5bDVON0tidmJqMm9aSTFZMDBVeDBWWFZJQnJUUktIYUlBTmJHd2hQOTZ4Z2tpY21NdFpSVmRZeXlHaDZnVnExV0RuM0xjT1FDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
