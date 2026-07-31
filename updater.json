@@ -1,10 +1,10 @@
 {
-  "version": "0.1.533",
-  "notes": "Every look in the Look menu is now checked to actually change the picture \u2014 the same check that caught Bright doing almost nothing.",
-  "pub_date": "2026-07-31T00:41:15Z",
+  "version": "0.1.534",
+  "notes": "Internal checks around Auto \u2014 the scale it picks, the cleanup that goes with it, and the low-light route are now held in place, so they can\u2019t quietly become one setting for everything.",
+  "pub_date": "2026-07-31T00:48:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtaZ1I3KzExNDNQV0pUeFgxMUIxcUNmVGM1RGhEdFNMMWIzVHhsaFJwNUszYWhVRjBqbFZnYXBWMlZyb05vNjNnTXd6dWRPaUtoNHNGMkVvMXB4RWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU4MDg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1YW0yaURuTFhyQkxmL09oRmFLZ0ZsbWVTVXFna29sc21EYkpMbFAzUWRVUm50RkI0TURaTHc3WXR5VjlIUE00elJjMWpWdTlPbCtBSnpwRHZYc2VCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJnOEg5c01NY29hK2J3Qit2eWp0WEFQNFJDcUhobWNkRVlIb1U2RER5UXBBTmZraTZQZXpzNTZjaW9Uci9TREF3bDlRZTAxSFI4cnB0V0FTVU9SaHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU4ODAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovM0tiWFNqY0lNZFlVYStzbHQ0ZVU0VVFMNXg2dm8vT0lFd3lBbVdSUUc4L1c2UjBua1RxT2YxbFFPR0E2QVQ5VFNYRG56OTdoaDN0MHM3ZmxMd2lCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
