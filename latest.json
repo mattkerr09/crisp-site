@@ -1,10 +1,10 @@
 {
-  "version": "0.1.573",
-  "notes": "Internal test coverage for the numbers Crisp shows on its edit cards. No user-facing change in this build.",
-  "pub_date": "2026-07-31T09:39:03Z",
+  "version": "0.1.576",
+  "notes": "Internal cleanup: reverted an over-eager change from the previous build and added tests that check two-part requests through the same path the app uses. No user-facing change.",
+  "pub_date": "2026-07-31T10:03:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUwxZTlLQVBNcTJqaXg1NzJLczVZRm15QlNRaGFrQyszTmJaVmlYcnV1RjRkenZaa1hNdjhWYmhIVmpHTm0yaWpqTThTK1N1bWQwekM1SkhVRFV5SVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg5NzQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWQno0bkF1SEVmak5qK0l2L1Q5S1d2eGx1bDNmVXJHa05sVEJqdmxzZnVYQ0F3WjlDNWc1bzNJRkUrNUtIQzhxUTM4U01sdC82cFpkNjFnbXBqeGdCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk1d1kzTUkvS3dHQi90SDhZTlRzZ3ZSYTJqQW8ydml3cTI5YmtHZ3ZoSS83UUFtdkpMdmNCbXR6QzFpSzROeCtsWTdtYmhXZ3hIdGZWNXpkN050VEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDkxNzIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowNzhSbCtIZWJhc3Vici9zUWdxczlqbHlSS3NLdktwMytqUW5oeE53d052S2p4UnhMNVE3ZnI1cXhDaU9OY3d1Z2NDOUM4bjRkYjZ5NThMMndPVVVDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
