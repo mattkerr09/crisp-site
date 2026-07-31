@@ -1,10 +1,10 @@
 {
-  "version": "0.1.553",
-  "notes": "Undo no longer forgets that a file has gone missing \u2014 pressing \u2318Z after Crisp flagged a moved or deleted clip used to clear the warning and let the export run against the missing file.",
-  "pub_date": "2026-07-31T04:53:07Z",
+  "version": "0.1.555",
+  "notes": "Internal test coverage for the export request \u2014 no user-facing change in this build.",
+  "pub_date": "2026-07-31T05:06:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxlVlFRWlJhdERuZURnRmhDVk1RRlhvZTJVaUhYL1NLU1VRUjdkTkVuaHdHeElhaDdqalA2S0hsUXYvaWNlY1VVYjlXZzJ0d2l4VzJHYjRSazdramdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDczMDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptdm1vWG1nQTUyN0FSUE83WFpzQmdSSFJLMjV2M0IxS1lPdU1KbkhJcDJENlIwT1o5aVNUNlpoT1M3VXoxMnhVR2FmT2Q3enQwcEVFMnE5UW04Um5BUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUE3cTh1a3lQZTVNMWx3UDhLZ01UcGJwZDBMRlBwTXd3VDA0YWVwdWhYNEp1V3lPaDJjS1YrM2UrUkZnUmxST3JwYy9jTWVkaE0xZDRtVTdvbkJRamdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDczODk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphRStKQlpGaGxvR25TNjJTQi9VbFgzTUhDT1NOdTV6SmNSZXZjS3Bab1RNUlZGTStaN25SczNsSkxWRnJFRUMvYzh4bVMxV0dOYmRQYm8xUHAzOVREQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
