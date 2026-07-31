@@ -1,10 +1,10 @@
 {
-  "version": "0.1.592",
-  "notes": "Internal: tests for the auto-updater's failure path \u2014 a download that fails now always leaves a way forward. No user-facing change.",
-  "pub_date": "2026-07-31T13:57:10Z",
+  "version": "0.1.593",
+  "notes": "Internal: tests making sure a clip's length arriving late can never overwrite a trim you already typed. No user-facing change.",
+  "pub_date": "2026-07-31T14:08:58Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNKaFkrRXVzNHlnOUI5Q2NwZFFTVmdjSVFSOXRyM0dRbDVKaStkUitFYVNIUnBNSEhPWU41a1h0bGR4YU5OK010cXROMkN4OUNLVjZlaTRDdmQwT1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA1MjkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowMFRPYVJNMXA0REVCczdDSnZmYTRWcHJmamdTdXQybFJGUnhab0ZlRkUyR1h1UW9pK0ZzTW9tTE9aZ3daQlRZWXBqcnR5eE9pdU9GWFB0alNiaUxCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR3L2QzTWREeEtQdm5wTkJhdlAzWHNIOGpTZGhYd0o2eGVobC9KYU1mVG5Ed2NtRUNyenVuMnJoQnltZUkwcXZ4MUExV0ZnK1UyM3lkTmRaQTZtOEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA2NTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negozYjYyRzBGTkZ1UDhMaHdiVkFQSzRhZ2xFTmk1QkRnTHJ3a3hlYTAxaFBsaDJBN2ZYb3FGZjFRR0RQVEpSNnhGUGtqUzd6YmVtYkdiUGZaWk0zR2ZCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
