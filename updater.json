@@ -1,10 +1,10 @@
 {
-  "version": "0.1.610",
-  "notes": "Footage from a phone is read the way you see it. A portrait iPhone clip is stored sideways with a rotation flag, and Crisp was reading the stored shape \u2014 so it told you a vertical video was \u201calready widescreen\u201d and quietly re-encoded it when you asked to make it vertical. Anamorphic footage was wrong the other way. Asking for a ratio as a decimal works too: \u201cmake it 1.91:1\u201d used to plan a square. A width on a watermark (\u201cadd a watermark 200px wide\u201d) now sizes the watermark instead of being mistaken for shrinking the video. And \u201cstabilise it\u201d measures your clip first \u2014 on a tripod shot or a smooth pan it says so rather than adding wobble.",
-  "pub_date": "2026-07-31T19:14:50Z",
+  "version": "0.1.612",
+  "notes": "Numbers you type are the numbers Crisp uses. Ask for audio \u201c6dB louder\u201d and it lifts it by 6dB \u2014 every decibel figure used to apply the same fixed 2\u00d7 instead, and the card said \u201c2\u00d7\u201d as if you had asked for it. A GIF \u201cfrom 20s to 55s\u201d is now described as 20s\u201350s rather than \u201cthe first 30s\u201d. Asking a 480p clip for 1080p reaches 1080p instead of stopping at 960p and telling you it could not go further. And cutting more than the clip has now explains that, instead of saying it did not understand.",
+  "pub_date": "2026-07-31T19:47:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZuMlFzUTdhOER6Z0YrTFFGeXFSYmZYQnk2R1JZOWp1UGJ6WHdWUW8xVTZNZEVXZ1hwMHR6NFZkNW81ZHpadS9aZmRhRGF0K1FjNE5LS29uRE4rZHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI1MTkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmSUhFcUFNaDlwdzhzZ1VxQVhiNlRxaFpNRWJad2gvYkMvRmdEVU1TTFhVb3JsQ2Yxd0x2VngzUEZyZmhPTlFzMkdhc0xEVUY1QWFRM0RhR0c0K3JDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJaVUlOYmdHU3FqRHU1eWRiS3RoUVY1VktJUWlEeE8yZHlPN3dKM0hXTjZNUS9IZ255elo2dUhKQjdEelEydFdrYW9JT0xGSWpBbzA5b2J0VTc1Y3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI3MTI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJekl0OVJFY3pzdmZxWlFETjV1VlFKNkd0VnlLRW9DNFBhNzFSa2Y0bDF6WDJZNDRId1VsZHc0ak5TMmhtdTIrMnlJcVdLVWVTTUxCT1l3dElFZXFDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
