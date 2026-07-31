@@ -1,10 +1,10 @@
 {
-  "version": "0.1.585",
-  "notes": "Internal: tests covering what the Jobs list shows for each state a job can end in. No user-facing change.",
-  "pub_date": "2026-07-31T12:13:03Z",
+  "version": "0.1.586",
+  "notes": "The Try again button no longer stops responding after one press when a job can't be rebuilt \u2014 it now explains itself every time you press it.",
+  "pub_date": "2026-07-31T12:29:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtFejNlSCtjV3RVSXl6bTRGemFSTGRWdHpJc0xTL0hjRS9qdDF0am03TGNYSlA0MEtWVzh1N0VHbk5HRkxkdXJONjllM2dhQStqV3JzbloyclIvRFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk5NTI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDVXVQbG94R2lNT0tQY0cxdnJvOVc2VElQQlFzSTc2dk1IUWZlZjQwU0h1UkpCdUU2WmhwTzNxVEg0cDN6cCtOOFRabHF4TnVxZTljNm5kNFZZMllDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtMaXJKekJBbkFlZy8yVGMxR0pJREJoNCtYS2lEZi9VUGFuck50UER1T01jUmU2TjdMaVRqZG1hY21YblhBZVNYMFNLdmMzaWZhQzNpd2FIVXdlN2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAwNjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpveEhrWUc1YUcyRTQ1bmFwYUpYYTVjVFRla1pJdHpIVHZvTkd2SWdXMnpuYS9KYzdiQm5VMitDWDZybzlNTFBNd1NYVHpJVW1OcHBPR2NlTTUxdEhBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
