@@ -1,10 +1,10 @@
 {
-  "version": "0.1.563",
-  "notes": "\"Sharpen the sky\" and similar requests now get the same clear explanation as \"brighten just the left half\" \u2014 Crisp edits the whole picture, and says so.",
-  "pub_date": "2026-07-31T06:55:17Z",
+  "version": "0.1.564",
+  "notes": "Internal test coverage \u2014 no user-facing change in this build.",
+  "pub_date": "2026-07-31T07:08:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNVN2hLMUttREhOalU2L2tHaU4yY043ZHlsMWZtQ3NGRVQ3SkZpOFVmSVA0eG5DM1UwTzA4cmphNzBSRnZaNU1BeU5lT0RSVnR6RHVLNENtNTFWcGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgwNTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIeThhRW9ZcW1kYTBBZmhTeVF6WHVzbjJGYkxwZ2VGOHBaRE1XZk42anN1NVRLZ2lQMVFQck8xSTNQNlpSV0xoZXMvTDdLNHZ6RnBDaHZWYk9pZGpEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9VSk04TEcvMXVNY0YwZWtrTWFDVVlKY3FsK0RERlo4ZVdHbWdoVTZPU0ZKRXVNN1NveGdNRzZzSlBYdHNWbC9TcU9yS2hMQWJObWR1NW5lQXFBQ0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgxMjQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIZy9idXBTU2pmVE8zdnJBcG5yQ2d6K0tSa0IvLzNvTlhWSytVN25ya1p6enhTeklPVEVpSC8zY21Fb0JmSWQxb1YrbitmMlRNSS9LUGFnVUxoNWNEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
