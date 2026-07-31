@@ -1,10 +1,10 @@
 {
-  "version": "0.1.582",
-  "notes": "Internal: Crisp's own tests now cover what you're told when one step of a multi-part edit fails \u2014 it can never report more than it actually did. No user-facing change.",
-  "pub_date": "2026-07-31T11:35:00Z",
+  "version": "0.1.583",
+  "notes": "Cancelling a step no longer reports it as a failure \u2014 Crisp now says the clip is unchanged, and in a multi-part edit says you cancelled it rather than that it failed.",
+  "pub_date": "2026-07-31T11:47:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlBY0VEMVVJR2puUksvSFltdUFYcWN2MmpqT1RBelpPT2M3UXFWNnUvM01RS1dhYk9KdllreGNCV2g3cUQ2ajBmRWJXZG9MYk5ZYlZidGJOZkg4MGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk3MjYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqNDhTOEE1amRGV0xuaXFHY3gweld4ZXZ1c2ZKS3hQQTVoV2NoR0x2NkJzZm1kSWlVT1hkQWd0bnFyWnIzVXlSWDRyekRlSlhuM2dxRWNyNWgxQWpEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQyaTh3Y1doYWxvdk1XRkhUZ2tIZ1kzM0ZWQklPcGhRS3lRd3U0TENMSTR4SDZpQ0J6L1NqWTFzZGowQkxLR1NPNkpiem9vTWwydVZQYzRvdk0zdVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk4MDM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvY0ZFYVdhK1ZvRThUQUZJL0lOS1BoOWo3YmdTODVRVzhDeUhuemhVUUlrT0hySTQ3OXEydDNyR0NscG1haVU5aFRuTlRRSVhIbFpRZUViUGx3ZWlEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
