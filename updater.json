@@ -1,10 +1,10 @@
 {
-  "version": "0.1.612",
-  "notes": "Numbers you type are the numbers Crisp uses. Ask for audio \u201c6dB louder\u201d and it lifts it by 6dB \u2014 every decibel figure used to apply the same fixed 2\u00d7 instead, and the card said \u201c2\u00d7\u201d as if you had asked for it. A GIF \u201cfrom 20s to 55s\u201d is now described as 20s\u201350s rather than \u201cthe first 30s\u201d. Asking a 480p clip for 1080p reaches 1080p instead of stopping at 960p and telling you it could not go further. And cutting more than the clip has now explains that, instead of saying it did not understand.",
-  "pub_date": "2026-07-31T19:47:01Z",
+  "version": "0.1.613",
+  "notes": "Compression levels tell the truth on small files. On a clip already near the lowest bitrate worth re-encoding, \u201ccompress it a lot\u201d and \u201ccompress it\u201d produce the same file \u2014 Crisp now says so on the card instead of promising two different results and delivering one.",
+  "pub_date": "2026-07-31T20:06:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJaVUlOYmdHU3FqRHU1eWRiS3RoUVY1VktJUWlEeE8yZHlPN3dKM0hXTjZNUS9IZ255elo2dUhKQjdEelEydFdrYW9JT0xGSWpBbzA5b2J0VTc1Y3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI3MTI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJekl0OVJFY3pzdmZxWlFETjV1VlFKNkd0VnlLRW9DNFBhNzFSa2Y0bDF6WDJZNDRId1VsZHc0ak5TMmhtdTIrMnlJcVdLVWVTTUxCT1l3dElFZXFDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg2Zk9DOWcwYngyb2thd2pNU0svVHdCdVdiak9ZcnQrUVFPNVJWUit0Nnp5dHQ5ejVHQWxsZkZ1L253SkdLZGg3MEtlQ3l0dkp4czErZzV4VkVYeUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI4Mjg4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRa2JRbzc3Ylg0OWVPYldyWmcyWlRSdnArekYrV1JpZkQxRjNxeml6U2wvUFl4UTYzOGQ3UVVEWlVHWExvRzBLdTc4T2ZvUU9tcWd5SVRFUXBiNEZDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
