@@ -1,10 +1,10 @@
 {
-  "version": "0.1.601",
-  "notes": "Crisp now understands a watermark asked for by other names \u2014 \"put my name in the corner\", \"I need my brand on this\", \"add my handle to it\".",
-  "pub_date": "2026-07-31T15:57:42Z",
+  "version": "0.1.602",
+  "notes": "Internal: a cross-check that every plain-English request still reaches the right tool after six rounds of improvements \u2014 and that questions and descriptions still run nothing. No user-facing change.",
+  "pub_date": "2026-07-31T16:09:25Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNGZ1I0TzIrdTd5cWpLUjVNeXIvT0xSSjFqK1dkQjBMNFVPNGJEd0lQQjFpWXpDY3k0VVN3ZGp0alRKU0NjdGFzOVdXdDZsS3hxLzg5TzhXRld6SVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEzMDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLb0xXWEFtdHI0WlVCVWdYSXcrakJRSDlHSXEwMkVjQ0hYR0ZVNDdTRFVPakozYWlZc3lQRlBZVEN4dldTclFGUTVabXFvekNqSzA1UitnRG9GTEpDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5QU2hQaUpWYnpQYmxJdldTTkpNOWhxNGFxbUsrMU9sZnJ2WFA5WCtTeGI3NE1lYnBvaHZQVE40TjVCVUFvVFFxaE82aWpndis1QUtibGJpVVhlandjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEzODI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVTnRXT1RXVUh5YTAvWlI5ZUZRc0ZHaExUV3dBOHhzd3lzOWRxRkZEaWdiNnQwakpnazRDejNESmt5U3lzZEU5Um9ZUUlXL0JlOW5OQ3MxcXBsM0tCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
