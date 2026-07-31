@@ -1,10 +1,10 @@
 {
-  "version": "0.1.543",
-  "notes": "Tidying up while Crisp is working no longer costs you the render \u2014 deleting or moving the clip mid-export still produces a complete file. And if the place it's saving to becomes unavailable, you get a plain explanation rather than a technical one.",
-  "pub_date": "2026-07-31T02:27:34Z",
+  "version": "0.1.544",
+  "notes": "Checks against the kinds of files real cameras and screen recorders produce \u2014 iPhone HEVC, variable frame rate, 60fps \u2014 and in particular that a portrait phone video stays portrait through every edit.",
+  "pub_date": "2026-07-31T02:39:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9kMHVwenRSRkZOZVVnL2N2NG1pQjh6UTZqSU9oMGQ4U2lhYVJadEU2S2VTVFU4Z0s1ODNybXhQUEJRckplTTdqUEtQTGlodmE1ZkEzNjArUm9jUndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY0NDMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOb0lUVDFVMy9TOHNXMmwxQm1Bbk1vdTRrSmlVbG5kRTB6TUxRYVQvbHQ5R05HVENiRlZYV0c5TUtVUmNlS3FZeHR5b3hYbXpYYnAxQmsyZmw2dkxDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1rTGNsZE9sQ1R2c045bU5XeUprWmJLL1lldlJrZEFMR0lnNEtHTTVwNUZxYlRsZmNXVTEzUkk3ZmdCZ1NHTFZLQi9VU2s4cXRJWWc2Y2F5a1ZKM0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY1MTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpreDljR21iQmRGcm5TUk5EOGRyY21Sa0c1c3VTMG9IS3hRcnVERjcxQXZJS0JRSndqUEdkN20rRWU1dG1KeGNKa3Y3UjFLeEcwM3FNcHNYN2ZjSVZEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
