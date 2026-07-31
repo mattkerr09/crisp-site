@@ -1,10 +1,10 @@
 {
-  "version": "0.1.550",
-  "notes": "Crisp now uses the number you type for speed \u2014 \"make it 25% faster\" was running at 2\u00d7, four times the change asked for \u2014 and asking to compress by a percentage explains itself instead of quietly picking a different setting.",
-  "pub_date": "2026-07-31T04:06:19Z",
+  "version": "0.1.551",
+  "notes": "Housekeeping build: pins down what Crisp's noise-reduction setting really does, so the app can never claim a level of control the engine doesn't have.",
+  "pub_date": "2026-07-31T04:23:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFNbkF3N0xGdzU5elpEcW1GakYzYW1KNlpZK1lybjg2Y0h0c1R5YTFYYi93blIreUV4V2ZOZFNBWDUrbS9maDFrdWhFdElqRmdLRmZPVm9lam5FZVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDcwMjY2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTdUxoakJZMFFmMnJqZ21LV2lVZWxMYnVISUR5aldKbnVaNENSYWFpNVkwMEljMHE3UnZXS3Y4VHRtNWV3U0VBQ2lEdGZVZ3IzZzlUTmxObCs5YnZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlINXl5TXg4NVJralp3dWp5MWRnTmkwL2ZrRWtPNDdwL3ZUUGk2bDZHcXhRZFRITGlUQ21LZ1A0WFFwdHlGWGdjZXhSWUUzdTFXOGw1dm1SWmdwQlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDcxMDc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1WktFcnRtMzBZVmhWYStFc1NjYXhDMkttWnorYXRyNGk5L0sySER2RytDbHFkOU5uWjU3clhjRHhQMTFIdWdQT2VZRHZhcnVoRFZyY29wa08wZzZDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
