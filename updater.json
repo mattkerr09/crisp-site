@@ -1,10 +1,10 @@
 {
-  "version": "0.1.569",
-  "notes": "Asking for a shape Crisp doesn't offer \u2014 \"make it 4:3\" \u2014 used to say it didn't understand. It now names the shapes it can make, and offers to crop to 4:3 where that works.",
-  "pub_date": "2026-07-31T08:39:42Z",
+  "version": "0.1.570",
+  "notes": "Cropping to the shape a clip already is no longer re-encodes it for nothing \u2014 Crisp says there's nothing to take off, and points at the zoom control instead.",
+  "pub_date": "2026-07-31T08:51:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQwdHNHNmJrTjNIWjlzVU15Rklnd1d3SG9JdWpIQWJvUWZqQklMb2JBbGtRSVQ0MWphcDB0ZWNyVk9ISXI3b210VTZCUFVzYVEvT2RtNWZBb0tOVkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg1NjQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1SW5MemthZGYyNFNRZDAxaEZXaGRobk5wZk5mVjlDVFBUZDZDb1ZDWDdXclg1UmpJaW9oWm9PaUZ5dlg1WS9xeXNWTVFBazM3MFNkbHJZODgxelJEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURYUWE4Mnp3b0pzY3pqd0NvUGwrSThCUVdDcXZ5RUljeDhnaG40MTVqMkQ5bExlR2ZsYStsUlF4RDM0Y2sycGk3a2hQQnNDY1hSNENoWFRnWWhaK1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg3NTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNNUVDVWk3VGpncnJsaC9WVlBLcU1qaVNyTG1XZFhSRjlLTERIaDBHS2E0TXhMSU5ma3ZxOTNqV0tCTXMvTTMzNU9ROWFWQUwxekdIUFJ0VTBCS3RCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
