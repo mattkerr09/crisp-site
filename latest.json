@@ -1,10 +1,10 @@
 {
-  "version": "0.1.541",
-  "notes": "Internal checks that combining two edits keeps both \u2014 trimming then looping loops the trimmed piece, muting then trimming stays muted, and a reframe survives a later trim.",
-  "pub_date": "2026-07-31T02:04:03Z",
+  "version": "0.1.542",
+  "notes": "Internal checks that Crisp's habit of doing the quick edit first \u2014 trimming before a slow effect, to save you the wait \u2014 produces exactly the same result as doing them in the order you typed.",
+  "pub_date": "2026-07-31T02:15:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNmbi9RMDJkZG5nU0JJeWdEaU9IWnVUNFlaNENnanU4MEx1NEJ6eFRDbEhYQ3RDNFZ6VGloNy9aNkQwbTFEZlFzVi85alRHZE81QzBwOU84aXVjbUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYzMTIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMZTNnZDZzbnRKTU84VjJ1OVRpZFQ0MmtLYllKb0hDQmhmdEY5UUk1b3pDNFJXektiQlNtNlYwWlBZU0RQaTR5cWhDY09jc0RPVHZHKzhMcElabDFEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhLWm95NlRlOEZtODZCSkRuQTFjSDFFeThuUkpnNnduOStoNHVSYU1hc3hyQnRxZHVWZ1FBdzZiejErZ3pmcFoxbWZtbGk5NlFjWkh2UEhaeDlyUHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY0MDA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTL0RsczdDenFYOFlSSDFPYjlHd1JVUWlBdWhHNittZVVNekZGYmF1ZFNmYzlheXl5ZWRMaGVOS2p5NFV3REpDZnIwTXVuZU9mSEdGbCs0UWgvbHFCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
