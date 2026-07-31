@@ -1,10 +1,10 @@
 {
-  "version": "0.1.591",
-  "notes": "Internal: tests for the bitrate cap that stops ordinary edits re-encoding a clip larger than the original, and for filenames containing an apostrophe. No user-facing change.",
-  "pub_date": "2026-07-31T13:35:51Z",
+  "version": "0.1.592",
+  "notes": "Internal: tests for the auto-updater's failure path \u2014 a download that fails now always leaves a way forward. No user-facing change.",
+  "pub_date": "2026-07-31T13:57:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yelUwVGlkS1R3VXVDRXRlbERqSThvYUMrWXVtQkIxT0RsY1hhd3Izc0RzblR1Y3BuRmYvMXNQanZoT3VXMDByZlZiTXovRGN5UnpkbXRiREdJZHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA0NTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxTGFqN01iZjFJOG8xc0pSNHVLdEFnd0RnRk5PVEVOMTVYUVRIWUVQSjMvWm5pRDZFSDdCaHNBZ0dtMUtSM0RydldlTEJXZHJGUG5zQkhWeGVtcitBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNKaFkrRXVzNHlnOUI5Q2NwZFFTVmdjSVFSOXRyM0dRbDVKaStkUitFYVNIUnBNSEhPWU41a1h0bGR4YU5OK010cXROMkN4OUNLVjZlaTRDdmQwT1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA1MjkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowMFRPYVJNMXA0REVCczdDSnZmYTRWcHJmamdTdXQybFJGUnhab0ZlRkUyR1h1UW9pK0ZzTW9tTE9aZ3daQlRZWXBqcnR5eE9pdU9GWFB0alNiaUxCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
