@@ -1,10 +1,10 @@
 {
-  "version": "0.1.545",
-  "notes": "Groundwork so Crisp's own tests can't be fooled by their test footage \u2014 the checks now refuse to measure a change on material that couldn't show it.",
-  "pub_date": "2026-07-31T02:52:05Z",
+  "version": "0.1.546",
+  "notes": "Asking for a GIF's size the plainest way now works \u2014 \"make a gif at 800\" was making a default-size GIF and saying nothing about the number you typed.",
+  "pub_date": "2026-07-31T03:06:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJoNVBIVjdxOWRFb3kzWmpYbFRvT2VUWGJnbTRROHMvVW9uS2lCZWNTRDdHSUlzL0xubmcyL2NHa3M5ZS9tWENTY29KRzVqNkhLM1p5MzRncVhzMFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY1ODc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFR09NRGk1dkJIbXdPWDZzalVXU0tiNkVITjBEWTJRZG1WMisremNmbnUzZlNBZDhuRnVoNHdkZUpPUnY4N0F1RENvZCtObm1JTDY2cTZkYVFIamVDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9DelZDQmdjRGFXMTRBdlQ5Tjg4NHhRZzZrc0syVVJENTlyVjRBakp2Mk9udmpjVnRzd2dpbTJ3YlZVczFuaUJyeVRXNnVtek8vMk4zWjNTTVpXcXdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY2NTk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovVEJyc2FjSTlFb1VnUzhraUdnT3VUZFgvbDFVbGxwcElFSTYrRjhHVHBDNEF4L1BpRUQwcGZZZ1JIRFJDdzdybmZUd2hGS01KQzMzZG9oOFBzQzVBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
