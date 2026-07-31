@@ -1,10 +1,10 @@
 {
-  "version": "0.1.619",
-  "notes": "Adding a photo to a slideshow no longer changes the frame rate of your video. A still has no frame rate of its own, but Crisp was letting it vote \u2014 so one title card dropped onto 24fps footage rendered the whole movie at 25fps, with the frames resampled to fit.",
-  "pub_date": "2026-07-31T22:41:57Z",
+  "version": "0.1.620",
+  "notes": "Trimming a clip no longer leaves the playhead stranded past the end of your timeline. Dragging a trim handle in, typing a new in/out, or speeding a clip up all make the movie shorter \u2014 and the position readout kept showing a time the edit no longer contained, which also made Split and Set In/Out act on the wrong spot.",
+  "pub_date": "2026-07-31T23:08:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNXendlbFh4WUFhK0FzMHBLNVFTNUtPMHVQdXBtT3dmTkdyR3pHYzhaOXptRmp1aU5FdUg4QjlQRXBvOEovRTg0OVVIOWtWVHpuVVFqTTBDZ2FTY3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM3NjE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQQ0tPd2l0RmpzdkFxK2J2UCtOUDhIMEtZNkk5Qk9pSnJVZ01tV0RZV3RTZE4rQi9IU05wbjZNeHg0TGhyWGh5cThyTi9WaU5jMEhzeTlPaGRKVVNDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU50QkVoWmRiSmg0cm9Zc2psQlIvbUZnMkFmRE5Hc1NKL25hOEM3a2RPWEJmejE2WFVIWUxDd01IMW1xSXBndzZHSVU5WnpvN2R4eFJwejNta2FKMFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTM5MjQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpESWNhaCsxRVNFMFlRN3JLb0FQN2dLZDFDbDFxMXZ1aUdreVB1b2xBY1M1YW9GMXVKcUxLZkpCQ3lLQ0RUK08vV0w3azBpSm5zUThvUzhQbE9QcnJDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
