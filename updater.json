@@ -1,10 +1,10 @@
 {
-  "version": "0.1.536",
-  "notes": "Internal checks on the exported timeline itself \u2014 that cuts and dissolves add up, mixed portrait and landscape clips land on one frame, and a silent clip can\u2019t take the soundtrack down with it.",
-  "pub_date": "2026-07-31T01:07:53Z",
+  "version": "0.1.537",
+  "notes": "Internal checks on Auto-Montage \u2014 a reel you asked to be 30 seconds really comes out about 30 seconds, and always shorter than the footage it came from.",
+  "pub_date": "2026-07-31T01:21:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZMSHNJdStaT0NWQzM2UVhLaG1RUllhL1lMTS9janVRTDlhRmNvaGo3OWRmZ1BvU0dOZzhteGtKb00xSkJXSmQ1bVZWRWJsbGRYL2g4dms0aENxTFFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU5Nzc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxSHUvdEx2YUdQbTlIUUZZeEZ5aVpLSkFHRmxlNkxDNkorOWRHanBYUHZ2d0o5bWZFdFlkQkRNUzhvNEdSano4bkh4UktTOTkxUlpWYWdoOTE2c2lDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUllcXM1anhUWmJzbTFsdzdvNmM5R1BPVmFRMWxYelBTUEFXNTRIdllzcGtPbnpaMUwwVGVOV3Y5VG9wdUlGbjRneWR5OEl0cWFDeVlyNFBTRlFYVGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYwMzYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCdkFkbWlhY1JnRGd5eGV2REtFV0REZXlCbWdodzBXcTNvekhnL1Z5ckhCV045OGFGOXlLTVJTRTVFTzJZaVZHY1R6NENjb2VDZFZoMUlTL1NJSmlCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
