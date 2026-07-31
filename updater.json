@@ -1,10 +1,10 @@
 {
-  "version": "0.1.538",
-  "notes": "Internal checks that a burnt-in caption lands where you put it, and that a caption set to show for the first few seconds really disappears afterwards.",
-  "pub_date": "2026-07-31T01:43:31Z",
+  "version": "0.1.540",
+  "notes": "Internal checks that a split screen really shows both of your clips, in the order and layout you chose \u2014 and that every audio option works, including no audio.",
+  "pub_date": "2026-07-31T01:53:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUyS2htbkZwUDNPVmJja3dNNEIwbWlIMXYwRDFCSFJlZ216Y3B6OE83WFdMNjZCSDFLa2tnRmdnc3d0S2VZSnkvam5VQ3JOYVlRYWRuQWlwY3ZHNmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYxNzMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovOWc5MzFJZTFUdHgwOVl1a3piMWVsMnkwMzRlY0kzQ1phaVkrenpGOUh2REoyMEZjOFRVTDdiMnRkYVZVdmkzVnVrUkFIOFlmZi9uZmtTUWVXeXRCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdEZ21IQ3hhQWNyMHpyR0NRM1FGZ3p2RndmZm9VV2kyN0gvU2dmN0JlVlZtMWpseFBZZWIvb0V0bHVMdEYxT0FveCt0UTBVdnA1RkRhbVA5dE5tc1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYyNTUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3S3BtNE9oMzA0TS9nRDdkOUI2TzFhdnNka3BLK0R0Q0RWWlR0eUMzT3BCYmlqaVdxeEhrUy91aFBmUUFncFZwV3ZVY0VRcWNMOU8rRi9uSmh0cVVDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
