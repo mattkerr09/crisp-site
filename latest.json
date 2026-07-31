@@ -1,10 +1,10 @@
 {
-  "version": "0.1.597",
-  "notes": "Crisp now understands more of the ways people describe what they want \u2014 \"the camera was shaking\", \"you can't hear what she's saying\", \"make it small enough to text\" \u2014 instead of saying it didn't catch an edit.",
-  "pub_date": "2026-07-31T15:02:36Z",
+  "version": "0.1.598",
+  "notes": "Asking for a loop by describing it \u2014 \"play it over and over\", \"repeat it on a screen all day\" \u2014 now works instead of saying Crisp didn't catch an edit.",
+  "pub_date": "2026-07-31T15:15:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU16cCt0MU91cDNzK1dlclNpcTFBcERlalRuM3o3NVl3VTh6KzhNNXg5OG11dDd3R0M1OG5yY2JmRDZDYTI4eFJTTDNJUFY2OUx4S1dKZUh6OGhNcXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTA5NTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoTFM5MG1IU3hDV0JqMFRpY25JYnpLQjJvQmhhTGF6NmhQUmZONm5QdmdFS1lCQUNWZmh2T2NkbkhNRkhyREZaK1hYM1NhSW9BbFV1S294MUdKVm9Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFYaEE2UU12bE5yTkFRK2E4cHpDS0F5UkV1a0FiU093WGRucUlNM083VSs3Sk1CbStaWlYydW5CTjF6anBkTHlEcUlqTk1waHBjZkduSGFEMlFqaVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTEwNTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprbk5zMVJzeXcrR0NzcklndmQ5WnFzSWZtU0s0ZVo3RHpSdFhmVWlVZnhtazFuNDlnRmNXR2lxZjZrb2NYcS9iTjlFb241U3hYd0lPaXg5VWlmR1FEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
