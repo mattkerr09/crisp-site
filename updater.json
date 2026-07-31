@@ -1,10 +1,10 @@
 {
-  "version": "0.1.566",
-  "notes": "Internal: Crisp's own tests now check a typed volume like \"2x\" against the loudness of the finished audio, in both directions. No user-facing change in this build.",
-  "pub_date": "2026-07-31T07:31:16Z",
+  "version": "0.1.567",
+  "notes": "Internal: Crisp's own tests now check the brightness steps against the finished picture \u2014 \"a lot\" must be visibly more than \"a bit\", not just different. No user-facing change.",
+  "pub_date": "2026-07-31T07:53:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9CMjhGTEpUaTl6akhycXp1cXpvRStjZGJRaEFOcFBmelBkYUU0NUN0S1MyRUNwcVlYd2hYUjM3ZXJvZ3kzVXFUK3dEcGI5V09YQVB1OUNvOW1EZWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgyODQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIVUxLOUVQeW82VUNEeExpRmhMaFcya1g5d0hZZExET0dlTnBRdFVCRWlwZlJXbFhRN3hTZWl6NWg5WWs5UmFrTnJLQUFNdFRHangwTmV2RmxnbUNCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhhUVpEVWdINEpEdXl1QnV6VFFQNVE0dlNuNTBKZGpOVzlMMkFHUlQzNGlQUGk4WE1TNE5TMEYzVVNkcUlNOVRzdkhjUHRBNFNZMVBXYnBDVG5UL3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg0MDM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2RU00clFrRmZpeElZckJERi91Z3FIK01kb3BucFB4cnYvYmpOc2FpVVZIYzdFb2NPRm5TMWNjV25tWE9SOWcwajU4UEpQMkJpZGNNQWYyUXBFeE1DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
