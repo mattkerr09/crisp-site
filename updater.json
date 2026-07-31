@@ -1,10 +1,10 @@
 {
-  "version": "0.1.559",
-  "notes": "Internal robustness for the video playhead \u2014 no user-facing change in this build.",
-  "pub_date": "2026-07-31T05:47:36Z",
+  "version": "0.1.560",
+  "notes": "When something goes wrong, Crisp now explains it in plain language \u2014 three kinds of failure were showing raw technical text instead.",
+  "pub_date": "2026-07-31T06:19:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpDNXdiU3k0YU1mdEQvN0xPaW9lb3NrL2I2OW1MZVoyU1FJcytHRS9HdkE0bmNudEY0STNhQWl6akR1NXUyYnhCem10bW01dHpmeXRlT0ttOE5XOHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc2MzYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMTVlhUElWcGl6OFNOUTVKSHpWTktmRVVRSHZqWCtLanBpaytZc2pCd3ZiUTVnK3ZkV0EyRE1ibVRSeHlDQVVTemxpOW52ZnBydlRtdE1WRm51RHVDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBKT1prUFVtZ0ZBSDNuS2tCdHBNbVk0dzZXeWFmRnBxUGtNbWxMelAxUWZFTCtQMUF3TGlxUFd1bEhkMW8xTTFFR09lanhJMXBrUmtmRWVKa0hOWmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDc3MTQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsb0ZPMk9WZWlIYVdONHBrSUJvelVBY2tOVWY4RTBpdyszVHZ5aWVOYnFFY0YzWGp5aThDbStVT0tSeTNJMkJpdTEzNDQ0Q2tVVG5Vd1NjWWtzVFBDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
