@@ -1,10 +1,10 @@
 {
-  "version": "0.1.537",
-  "notes": "Internal checks on Auto-Montage \u2014 a reel you asked to be 30 seconds really comes out about 30 seconds, and always shorter than the footage it came from.",
-  "pub_date": "2026-07-31T01:21:19Z",
+  "version": "0.1.538",
+  "notes": "Internal checks that a burnt-in caption lands where you put it, and that a caption set to show for the first few seconds really disappears afterwards.",
+  "pub_date": "2026-07-31T01:43:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUllcXM1anhUWmJzbTFsdzdvNmM5R1BPVmFRMWxYelBTUEFXNTRIdllzcGtPbnpaMUwwVGVOV3Y5VG9wdUlGbjRneWR5OEl0cWFDeVlyNFBTRlFYVGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYwMzYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCdkFkbWlhY1JnRGd5eGV2REtFV0REZXlCbWdodzBXcTNvekhnL1Z5ckhCV045OGFGOXlLTVJTRTVFTzJZaVZHY1R6NENjb2VDZFZoMUlTL1NJSmlCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUyS2htbkZwUDNPVmJja3dNNEIwbWlIMXYwRDFCSFJlZ216Y3B6OE83WFdMNjZCSDFLa2tnRmdnc3d0S2VZSnkvam5VQ3JOYVlRYWRuQWlwY3ZHNmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDYxNzMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovOWc5MzFJZTFUdHgwOVl1a3piMWVsMnkwMzRlY0kzQ1phaVkrenpGOUh2REoyMEZjOFRVTDdiMnRkYVZVdmkzVnVrUkFIOFlmZi9uZmtTUWVXeXRCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
