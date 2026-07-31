@@ -1,10 +1,10 @@
 {
-  "version": "0.1.586",
-  "notes": "The Try again button no longer stops responding after one press when a job can't be rebuilt \u2014 it now explains itself every time you press it.",
-  "pub_date": "2026-07-31T12:29:46Z",
+  "version": "0.1.587",
+  "notes": "Internal: a sweep of every re-entrancy guard in the app, checking each one clears itself on every exit. No user-facing change.",
+  "pub_date": "2026-07-31T12:44:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtMaXJKekJBbkFlZy8yVGMxR0pJREJoNCtYS2lEZi9VUGFuck50UER1T01jUmU2TjdMaVRqZG1hY21YblhBZVNYMFNLdmMzaWZhQzNpd2FIVXdlN2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAwNjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpveEhrWUc1YUcyRTQ1bmFwYUpYYTVjVFRla1pJdHpIVHZvTkd2SWdXMnpuYS9KYzdiQm5VMitDWDZybzlNTFBNd1NYVHpJVW1OcHBPR2NlTTUxdEhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBodnNOQU13NFhzS0V1VnVxMHRCcUJYZDdWV3ZhUjBaeG1nOVp5OEZqam1wb1hlNFk1R2I4VThtdjJDbTlpUitCaTVvSjBQdFZLNnNFOG9CcDBSK0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAxNDQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDSVo0TlY2Q2x0UEVxNUV1ZmxRcWRWeS9KTEVVTnhtWDdPT0FiWnljaDJ2a09FaWlkb0VuRDVBN1llY25jY2hPWG1aVVJmZE15RVA1UDNNRDB0MGxDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
