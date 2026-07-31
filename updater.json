@@ -1,10 +1,10 @@
 {
-  "version": "0.1.532",
-  "notes": "\u201cBrighten it\u201d now actually brightens. The Bright look was cancelling most of its own lift, so an underexposed clip came back looking almost the same \u2014 and \u201cmuch brighter\u201d did exactly what \u201cbrighter\u201d did. Both fixed; the strength you ask for is the strength you get.",
-  "pub_date": "2026-07-31T00:28:42Z",
+  "version": "0.1.533",
+  "notes": "Every look in the Look menu is now checked to actually change the picture \u2014 the same check that caught Bright doing almost nothing.",
+  "pub_date": "2026-07-31T00:41:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNid0J4aXkzUDl0ODhoZ3ExdGt3RUl5VWsyM1NlbXIrRndzbngwV0h2OFYxYXAxdVZUOG5rQXJocG0zczhoWjU3VjEvOFBCeXE3YXorZEl0QmZuclFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU3MzU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpndkg5bmV0TnlrbFB6S01XVGRpZXdWK1dScWJEWFB4YzRzaWpoSXZEOUhPWHl0WEFVT3prdllHdUtLYXVHR3FoY2xZbmMxekV5amduOVdsOU5wc0dBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtaZ1I3KzExNDNQV0pUeFgxMUIxcUNmVGM1RGhEdFNMMWIzVHhsaFJwNUszYWhVRjBqbFZnYXBWMlZyb05vNjNnTXd6dWRPaUtoNHNGMkVvMXB4RWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU4MDg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1YW0yaURuTFhyQkxmL09oRmFLZ0ZsbWVTVXFna29sc21EYkpMbFAzUWRVUm50RkI0TURaTHc3WXR5VjlIUE00elJjMWpWdTlPbCtBSnpwRHZYc2VCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
