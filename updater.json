@@ -1,6 +1,6 @@
 {
   "version": "0.1.546",
-  "notes": "Asking for a GIF's size the plainest way now works \u2014 \"make a gif at 800\" was making a default-size GIF and saying nothing about the number you typed.",
+  "notes": "Groundwork so Crisp's own tests can't be fooled by their test footage \u2014 the checks now refuse to measure a change on material that couldn't show it.",
   "pub_date": "2026-07-31T03:06:38Z",
   "platforms": {
     "darwin-aarch64": {
