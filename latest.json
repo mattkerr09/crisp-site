@@ -1,10 +1,10 @@
 {
-  "version": "0.1.579",
-  "notes": "Internal: when part of a request can't be done, Crisp's own tests now prove the explanation still reaches you \u2014 including when the rest of the request runs. No user-facing change.",
-  "pub_date": "2026-07-31T10:57:36Z",
+  "version": "0.1.580",
+  "notes": "Internal: Crisp's own tests now render a two-part request end to end and check both halves reached the finished file, not just the plan. No user-facing change.",
+  "pub_date": "2026-07-31T11:09:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFSSzRQSXVZaiszMWhTRnFQK3ZlbVd5WUhMNnpycDhvL3lMaUtlTnUrVnJ5c0w4ZG5OQWY3WUphZEhxa0F5WTVvbVlOSGwrSWppaUJPcUlVV1B2dWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk0OTY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyVVZmdGw2MkxEUkFONi9zZGZjVWRBSU9lU0lzbzNNUysvdGU4SGhkVFZUa05JbDV2VkpEaFVLNW53bDJDeDloN1d4dFpLWWRONTZvVGVPRTFSZ3ZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURSakhwTE1NWEdTOVNOaTRsbXNiRGdZcGRMMm0vcVVyNHBxWlQydDR0c3JmWXQ0R0xtUW5rRnpLTUtJeDdqdDVNVlZEZ2lMRyttbUgzSGdsNXd4MXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDk1ODA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyRjVCc0xmMFdYSTJiTFhLNUkzWkVIT3RNVU9aNnZmWEdrbnFpb05EaEFrOWxRUkRIRjE5aVlzc2o5VFdkRm5KbG1kcjVIUkIrVmx0QmJaMlhrNmhDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
