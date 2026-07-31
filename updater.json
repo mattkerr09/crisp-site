@@ -1,6 +1,6 @@
 {
   "version": "0.1.561",
-  "notes": "Asking Crisp to change part of the picture \u2014 \"brighten just the left half\", \"sharpen the sky\" \u2014 used to quietly change the whole frame instead. It now explains that it edits the whole picture.",
+  "notes": "Asking Crisp to change part of the picture \u2014 \"brighten just the left half\", \"brighten the background\" \u2014 used to quietly change the whole frame instead. It now explains that it edits the whole picture.",
   "pub_date": "2026-07-31T06:32:27Z",
   "platforms": {
     "darwin-aarch64": {
