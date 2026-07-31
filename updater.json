@@ -1,10 +1,10 @@
 {
-  "version": "0.1.589",
-  "notes": "Internal: tests covering the wording Crisp uses when it asks you to unlock a paid feature \u2014 it must name the price and what's already free. No user-facing change.",
-  "pub_date": "2026-07-31T13:11:03Z",
+  "version": "0.1.590",
+  "notes": "Internal: tests for the startup cleanup that removes leftover temporary files \u2014 it must only ever touch Crisp's own, never yours. No user-facing change.",
+  "pub_date": "2026-07-31T13:23:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBiQ1FYWmhuVEhSYmp4UzVPY1Nrazkyc0x4MkdRS2h5NVdXSGtxSUJ1cVIwZlQrTWJTc2gzN2NZY0dxRG1JbStBN2QzQ2QrZ3g3djF6U3czekQ5cmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAzMDQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaclBtUlVib1U5ZE1IekFjZlN5WHhNSHorRXhCaGJGZkFvNEtmSW5DR3cwOHY2ZFU5cHVTbFRtRVNSdDdoMWxJdHJtZ3dFRDhPRExxeW9qeCtLLytEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtSclVna1BMTllKUFIvU2RYYXY2ZGphTkdldUgvMWEwMUNSa214bTRzQ2tuN2pTcFdGL2Z3UHA1a1ZqdGVtdTFMSC9ZYm1QVGZ4SjUrRjFhaXd0Q1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTAzODAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyV3ZrRHBNNjRqSWtrYUVyQnRuRmhYRWpYUTFqM0xKR0pPS2krYkFTSGwxWVNqTnZONXhRazlaRTg1RUxndmJkNkNhZzVDTWdWb2hPVzBXZk0vUklEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
