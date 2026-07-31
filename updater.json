@@ -1,10 +1,10 @@
 {
-  "version": "0.1.621",
-  "notes": "Duplicating a clip no longer moves the player onto a different one. Copying a clip that sits earlier in the timeline shifted everything after it, and the preview kept pointing at the old position \u2014 so the playhead readout stalled, or playback jumped to the wrong clip when the current one ended.",
-  "pub_date": "2026-07-31T23:25:24Z",
+  "version": "0.1.622",
+  "notes": "Crisp now tells you when a clip is too short to dissolve. A single clip under 0.3 seconds turns every crossfade in the movie into a hard cut \u2014 that has always been true, but the Transition control still said \u201cDissolve\u201d and nothing explained the result. The timeline summary now names the clip and its length, so it is a one-clip fix.",
+  "pub_date": "2026-07-31T23:52:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxySzhpcE9SVUlBQWlNWWExVDBGTlRPaUdFd1l2OTZoNXkvMGFFK3ZBeXI2ZzJyeFdFcFpIUGdtL2FMQVRyMFo0RlFyT0t1dFpQRXlIdWxIc0pHMkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQwMjU4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTWEQzNGp1V3lOcy9DMm10cThVM3ljenJQTGU5REl1Q2VVbDdkOVl4bVVPelQxazl4TFM4VXNKVjhJL3pzbVJ4UmFCOEttMXRnZVF4NzN1NXlkK05EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhRQTB2Y0lxVEhBSXFsS3hsMjVlSnBSdkk1SUF6OHg2K3pPRkh1N0I1ZGkxTUFmdXZDYzVEMHJjRGthYmhlS0VjZ09DVG1tdGVoQWdueDdjclVVT0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQxODUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMZW85MWZramxzT2laQ0Rtc00zanNFSnVxajRzQVUrcmRDV2I4NHAvQlcwMXVEQWprdmdIRkdpTFdmZnd6bnI2TTVvYXdrRkhsWjlQdWhWbUJCT0xEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
