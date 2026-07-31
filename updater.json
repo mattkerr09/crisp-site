@@ -1,10 +1,10 @@
 {
-  "version": "0.1.613",
-  "notes": "Compression levels tell the truth on small files. On a clip already near the lowest bitrate worth re-encoding, \u201ccompress it a lot\u201d and \u201ccompress it\u201d produce the same file \u2014 Crisp now says so on the card instead of promising two different results and delivering one.",
-  "pub_date": "2026-07-31T20:06:20Z",
+  "version": "0.1.614",
+  "notes": "Every number on a card is the number the job uses. A fade asked for 3 seconds on a short clip now shows the length it will actually apply, rather than one the render quietly shortens. Trimming 1.5 seconds says 1.5, not 2. Asking for a frame rate below 48 \u2014 \u201cmake it 40fps\u201d \u2014 is understood instead of answered with \u201cI didn't catch an edit in that\u201d, and the card names the rate you will actually get.",
+  "pub_date": "2026-07-31T20:34:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg2Zk9DOWcwYngyb2thd2pNU0svVHdCdVdiak9ZcnQrUVFPNVJWUit0Nnp5dHQ5ejVHQWxsZkZ1L253SkdLZGg3MEtlQ3l0dkp4czErZzV4VkVYeUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI4Mjg4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRa2JRbzc3Ylg0OWVPYldyWmcyWlRSdnArekYrV1JpZkQxRjNxeml6U2wvUFl4UTYzOGQ3UVVEWlVHWExvRzBLdTc4T2ZvUU9tcWd5SVRFUXBiNEZDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5xSXM1cERPbFVnZTRvOVNjWC9USlBhNmw2eUxvRU9Ea1VXcTFLRUFESnFmSm5qMlNIOGdLOEFlZHM4ZW1lSzVlZENxNmx4OG9vZTNNTmUwbWpDZ0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTI5OTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjUStwWFVvdktyRU9iaGg4SmZ3NzkxWDRYdEdOUTV1VlhsTUtGYURkNjB5bUYvaDlSMURlRUlwdHBseDhweVFyRFVVQ3pkTC9DNWVxc05ZVGYvcmlBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
