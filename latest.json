@@ -1,10 +1,10 @@
 {
-  "version": "0.1.576",
-  "notes": "Internal cleanup: reverted an over-eager change from the previous build and added tests that check two-part requests through the same path the app uses. No user-facing change.",
-  "pub_date": "2026-07-31T10:03:49Z",
+  "version": "0.1.577",
+  "notes": "Typing two requests with a \"+\" or \"&\" \u2014 like \"mute it + brighten it\" \u2014 no longer silently drops the first one.",
+  "pub_date": "2026-07-31T10:29:58Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk1d1kzTUkvS3dHQi90SDhZTlRzZ3ZSYTJqQW8ydml3cTI5YmtHZ3ZoSS83UUFtdkpMdmNCbXR6QzFpSzROeCtsWTdtYmhXZ3hIdGZWNXpkN050VEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDkxNzIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negowNzhSbCtIZWJhc3Vici9zUWdxczlqbHlSS3NLdktwMytqUW5oeE53d052S2p4UnhMNVE3ZnI1cXhDaU9OY3d1Z2NDOUM4bjRkYjZ5NThMMndPVVVDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtmQTRIa0JQM1BIRjZKN25kSi9tVks1aTZTbE1laE91NzBsQ052ZWU5Wm5BR0hnOGM0V0RINTR0Z1Y3QnlYRnBWY0V2ZjN6d29pQTBMZWVvK0ZXQ2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDkyNjkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNY2pFbXJadVkvQ29VMVBzYzFna3cxdURSTEU3YmljbndJeW1hQXIxWis2RnVZZTZNcS8yQjB3WExiVHdpVisrNDdmN2kwRmVUWWdDUit4Vlc1U3ZEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
