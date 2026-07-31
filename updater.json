@@ -1,10 +1,10 @@
 {
-  "version": "0.1.570",
-  "notes": "Cropping to the shape a clip already is no longer re-encodes it for nothing \u2014 Crisp says there's nothing to take off, and points at the zoom control instead.",
-  "pub_date": "2026-07-31T08:51:53Z",
+  "version": "0.1.571",
+  "notes": "Asking for a shape a clip already is now says so plainly instead of suggesting a crop that would also do nothing.",
+  "pub_date": "2026-07-31T09:06:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURYUWE4Mnp3b0pzY3pqd0NvUGwrSThCUVdDcXZ5RUljeDhnaG40MTVqMkQ5bExlR2ZsYStsUlF4RDM0Y2sycGk3a2hQQnNDY1hSNENoWFRnWWhaK1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg3NTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNNUVDVWk3VGpncnJsaC9WVlBLcU1qaVNyTG1XZFhSRjlLTERIaDBHS2E0TXhMSU5ma3ZxOTNqV0tCTXMvTTMzNU9ROWFWQUwxekdIUFJ0VTBCS3RCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNocE9Gc0xCczU0Z1NMSnBsbEJrRUZ5bFZyWU8rTEFZajl0ck8wY010ZGNaUTEvVnNmVmQ2OTJTZHlwUnBYd1o0TmFQZXc2NC9iWHVLUGs5M2F2RmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDg4MjAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozaFI0UUYwL2FzR2xoZWs3RkZYMDFIbzVaRXl4SkJ4ZFJpdjJJdlJFbjZrcG1pSjR3RUY2cXJFSzFTaHl5QnBldzVOdjJGcWRxTGdNWXVOczB0QldBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
