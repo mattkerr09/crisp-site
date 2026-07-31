@@ -1,10 +1,10 @@
 {
-  "version": "0.1.564",
+  "version": "0.1.565",
   "notes": "Internal test coverage \u2014 no user-facing change in this build.",
-  "pub_date": "2026-07-31T07:08:18Z",
+  "pub_date": "2026-07-31T07:20:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9VSk04TEcvMXVNY0YwZWtrTWFDVVlKY3FsK0RERlo4ZVdHbWdoVTZPU0ZKRXVNN1NveGdNRzZzSlBYdHNWbC9TcU9yS2hMQWJObWR1NW5lQXFBQ0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgxMjQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIZy9idXBTU2pmVE8zdnJBcG5yQ2d6K0tSa0IvLzNvTlhWSytVN25ya1p6enhTeklPVEVpSC8zY21Fb0JmSWQxb1YrbitmMlRNSS9LUGFnVUxoNWNEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVvNnBYWnplZGdpRzNhOUoyRnd1LzRTY2pUY1RkWnlpZFJBY0ptYUpJTEh1SmJ6dGdLdHVmZ2ZQUlhOdjIyN1N0S28weWczYWhVc1JWYzJiOERnVFFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDgyMDI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwVEZzaitMVWNyRWtOQXFkK2crRU1KWFFmQ0trNU16TWVTQ0xOaFdmZ3o3MFpKemlVWE9ESENhV05xQlFENjd4MVowd1R5OU93VEpQa1pVNjN5NlNCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
