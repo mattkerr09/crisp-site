@@ -1,10 +1,10 @@
 {
-  "version": "0.1.534",
-  "notes": "Internal checks around Auto \u2014 the scale it picks, the cleanup that goes with it, and the low-light route are now held in place, so they can\u2019t quietly become one setting for everything.",
-  "pub_date": "2026-07-31T00:48:21Z",
+  "version": "0.1.535",
+  "notes": "Internal checks on the exported timeline itself \u2014 that cuts and dissolves add up, mixed portrait and landscape clips land on one frame, and a silent clip can\u2019t take the soundtrack down with it.",
+  "pub_date": "2026-07-31T01:07:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJnOEg5c01NY29hK2J3Qit2eWp0WEFQNFJDcUhobWNkRVlIb1U2RER5UXBBTmZraTZQZXpzNTZjaW9Uci9TREF3bDlRZTAxSFI4cnB0V0FTVU9SaHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU4ODAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovM0tiWFNqY0lNZFlVYStzbHQ0ZVU0VVFMNXg2dm8vT0lFd3lBbVdSUUc4L1c2UjBua1RxT2YxbFFPR0E2QVQ5VFNYRG56OTdoaDN0MHM3ZmxMd2lCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZMSHNJdStaT0NWQzM2UVhLaG1RUllhL1lMTS9janVRTDlhRmNvaGo3OWRmZ1BvU0dOZzhteGtKb00xSkJXSmQ1bVZWRWJsbGRYL2g4dms0aENxTFFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDU5Nzc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxSHUvdEx2YUdQbTlIUUZZeEZ5aVpLSkFHRmxlNkxDNkorOWRHanBYUHZ2d0o5bWZFdFlkQkRNUzhvNEdSano4bkh4UktTOTkxUlpWYWdoOTE2c2lDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
