@@ -1,10 +1,10 @@
 {
-  "version": "0.1.552",
-  "notes": "Typing an exact start or end on a very short clip no longer runs past the end of the footage, and a reopened project with odd saved values can't leave the timeline showing NaN.",
-  "pub_date": "2026-07-31T04:38:44Z",
+  "version": "0.1.553",
+  "notes": "Undo no longer forgets that a file has gone missing \u2014 pressing \u2318Z after Crisp flagged a moved or deleted clip used to clear the warning and let the export run against the missing file.",
+  "pub_date": "2026-07-31T04:53:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx2WWVrQ1Vkc3MwVE5HSWRJMWlDeDgwUjFpdEVqU0dONkRxbDFLY3ZRL1E1bitTQ2ZpbU9teXB4Y095Wk4vSTZQRWhJWXMyWjVkWmVib2JBay8rSndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDcyMDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjRmsrbzZSanUxSUdGZmZEc3RzZHpNSlVBR3pUTFBkelRGQ21IRDlDMU1tUy9NS1p2TkV4LzVaL2dvK3NlcmdpWXJFSWZWSXBUdFlreE15cGJpK1VEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxlVlFRWlJhdERuZURnRmhDVk1RRlhvZTJVaUhYL1NLU1VRUjdkTkVuaHdHeElhaDdqalA2S0hsUXYvaWNlY1VVYjlXZzJ0d2l4VzJHYjRSazdramdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDczMDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptdm1vWG1nQTUyN0FSUE83WFpzQmdSSFJLMjV2M0IxS1lPdU1KbkhJcDJENlIwT1o5aVNUNlpoT1M3VXoxMnhVR2FmT2Q3enQwcEVFMnE5UW04Um5BUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
