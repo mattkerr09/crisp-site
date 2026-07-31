@@ -1,10 +1,10 @@
 {
-  "version": "0.1.548",
-  "notes": "Two fixes for numbers you type: asking for a size Crisp can't go down to (\"make it 360p\") showed a raw error instead of an explanation, and asking for the volume as a multiplier (\"volume 2x\") started an upscale of the picture instead.",
-  "pub_date": "2026-07-31T03:35:15Z",
+  "version": "0.1.549",
+  "notes": "Nonsense sizes no longer show a raw error, and a couple of number-reading fixes: \"upscale 23.976p\" was reading the frame rate as a resolution.",
+  "pub_date": "2026-07-31T03:52:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlEU1Z1N2hnTTBFYnFTZEU4anJDSkV5aFhJMGx4OEwybExJSlc5dDNDYVZ3Zlc1VXBoWEg4cCtJWHgvQWZhY1J5NERpNUxyaENPWCsyUUpFVjNqd3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY4NDY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSdzVObjlLK0hrdGZJTWZOUDhCZFI3N1pLVllzOGdETkljbTk5S3RwbC93L0pSVytCTjVHS3BoMDJ3NWNYU3dOOEZXMVJBZnluZmVSQ0Rub3hUSlBBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdPbkF0ZWoyUnNIa2VqV2h6KzkvY1dYdHg5UGorSDBtUU13bTJaMCtpTUptYTQ3YlB4cHNzVllKRTVxN2NqaEM0UEdENVZVZ0FhR2lxdXFPanZiN1F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NDY5MjI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkVXJWUmM2VHN6ZjZuSk52amFZK3doS2pLZUZVYlpNSi90UjU0djhpL01pTE0rTDBGWUVGcmZiWUNYNWt4UEE5Mml6NFNsd2NvNEtsMVhLaWJ1aWFBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
