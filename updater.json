@@ -1,10 +1,10 @@
 {
-  "version": "0.1.622",
-  "notes": "Crisp now tells you when a clip is too short to dissolve. A single clip under 0.3 seconds turns every crossfade in the movie into a hard cut \u2014 that has always been true, but the Transition control still said \u201cDissolve\u201d and nothing explained the result. The timeline summary now names the clip and its length, so it is a one-clip fix.",
-  "pub_date": "2026-07-31T23:52:13Z",
+  "version": "0.1.623",
+  "notes": "A song that has gone missing now gets the same clear explanation as a missing clip, instead of a raw file path.",
+  "pub_date": "2026-08-01T00:10:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhRQTB2Y0lxVEhBSXFsS3hsMjVlSnBSdkk1SUF6OHg2K3pPRkh1N0I1ZGkxTUFmdXZDYzVEMHJjRGthYmhlS0VjZ09DVG1tdGVoQWdueDdjclVVT0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQxODUxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMZW85MWZramxzT2laQ0Rtc00zanNFSnVxajRzQVUrcmRDV2I4NHAvQlcwMXVEQWprdmdIRkdpTFdmZnd6bnI2TTVvYXdrRkhsWjlQdWhWbUJCT0xEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtqbnJCR1ZyaUMxRHd2WC9JS3lOREZuOU9aQ0pXWFR5Z0VDZ1piL3hNYTEvWk9rb1JXTHg1NWhtRFRUdmFVeG9aNXpLcVN0SjVHd0c2N0RIWE5nSUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQyOTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuSkc4c29QMmVDcDNzK2lWdW5tNUlrVGs3ekNGeG5nUDNtbC9yWmsyaHEva2NEK0FrdW0rSDg0enk3OHFOUmljQUpHdGpSakN2R1RtWTJLV01DUFZDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
