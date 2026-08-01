@@ -1,10 +1,10 @@
 {
-  "version": "0.1.623",
-  "notes": "A song that has gone missing now gets the same clear explanation as a missing clip, instead of a raw file path.",
-  "pub_date": "2026-08-01T00:10:18Z",
+  "version": "0.1.624",
+  "notes": "A file Crisp has marked \u201cfile not found\u201d can no longer be double-clicked onto the timeline. The Add button was already greyed out for those, but double-clicking the row bypassed it \u2014 and the clip then broke the export later, with nothing to connect the two.",
+  "pub_date": "2026-08-01T00:28:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtqbnJCR1ZyaUMxRHd2WC9JS3lOREZuOU9aQ0pXWFR5Z0VDZ1piL3hNYTEvWk9rb1JXTHg1NWhtRFRUdmFVeG9aNXpLcVN0SjVHd0c2N0RIWE5nSUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQyOTM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuSkc4c29QMmVDcDNzK2lWdW5tNUlrVGs3ekNGeG5nUDNtbC9yWmsyaHEva2NEK0FrdW0rSDg0enk3OHFOUmljQUpHdGpSakN2R1RtWTJLV01DUFZDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtkVk9ubzdXOTlsRFFoWGxyQTYwY0krVytQdllmdTNqeGVqVGNtaWNRQ3RINXQxMStnWEl4OXlxbVJPMGVqN3ZCU0lyWjJoRkk0SnhMUlh3THFwS2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQzOTcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBMjYwZms4MUh3ZEY5M3RVOWhhMGF6NnpYUjRHZnorT0NjQXVqaHZiWlQ5WDdLNGErUG03RUNaZGZaRkN6NTl1MTEveTdaaWxqVzExaEQyOXF1SUdBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
