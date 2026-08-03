@@ -1,10 +1,10 @@
 {
-  "version": "0.1.629",
-  "notes": "A file with a very long name now gets a clear explanation instead of a generic failure. Crisp could not even check whether the file existed, and reported it as if something had gone wrong with the export.",
-  "pub_date": "2026-08-03T20:55:11Z",
+  "version": "0.1.630",
+  "notes": "If Crisp cannot move a finished export into place \u2014 an external drive, a network volume, a locked destination \u2014 it now copies it there instead, and if even that is impossible it tells you where the file really is. Before, the export existed but Crisp reported a path with nothing on it.",
+  "pub_date": "2026-08-03T21:13:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcvYU1JbSthVTV2bEk2UUw3b1VIN2ZJMEF5K0VjYnRjRHlDd2hRdVJzTE1DcUtrUHdnSkZYK3FBSWNmdEpRTnBhNU1FWVp4WkNBekU1N2Z3alZXWVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzkwNDI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxTjg2ZDY3dzlWeUl5eFpkNjhBd3NlWjEwc0tmbFc5dGZuYmtzdEZwZVlyVEpPeXpNYUNGK3RkSFpUMEZIOE4vNStJb3Y4a2Rhb0hlR0FvZFRNWE1BQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5Mblp5a21vY0hKTHJMTGxEUnRLQkd5Q25FbzdwU2R1N0E3Wmd1ZkNZeGkrRlFFemxrSm1TM2ZSeDM2aGFxYVgxeXF4RFFUMTJRZnRXN2c4aWY2TXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzkxNDk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxS3pBdGlqNW1wWC9md2plTVEyalpiN2ZKUjFEUlBkZ1gydmlsNzIyZUEyUWFOaWFsQmFUSlJQQjI4b1VZZ2t0bFRyVGdBa2J3UGUrMkRKK0tPQklDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
