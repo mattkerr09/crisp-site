@@ -1,10 +1,10 @@
 {
-  "version": "0.1.625",
-  "notes": "Splitting a slow-motion clip near its edge no longer creates a piece the export refuses. The editor measured the minimum piece length in played seconds while the export measures it in source seconds \u2014 so on slowed footage a split looked fine and then failed when you exported.",
-  "pub_date": "2026-08-01T00:46:19Z",
+  "version": "0.1.627",
+  "notes": "An export whose filename contains the word \u201ccancelled\u201d is no longer deleted. If the watermarking pass hit any ordinary error, Crisp read the word in your own filename as \u201cthe user pressed Stop\u201d and threw the finished export away \u2014 nobody had pressed anything.",
+  "pub_date": "2026-08-03T19:51:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8rVjA5OXpGa25vQU14Q1pneHMzdjRWcVBBVVVpSG54THlER2kxUzhJZjhKSnJZdUx4ZzZDOGhjRncyUnIzQmFHY0ErRzRxUE9seVpZckc1dzhvNXcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NTQ1MDg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1SDJaODNKcDZPL2xndituQTkwNmNDMmNhVHpHUDd3SkV5bHZiOFpQNmZvVGhHVjkrVmIvNUVtWjVJeWZHeWJxWEZvSjJteE1zM2ZjNVp6YjhqMzdCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpIRE9DZG5waEJTdEFWdzFmY1JZdUkxUzhFYy9tZFdESkp2T2diTlUxQ3ErbHJNTEhKOC96WkhMN29WSUxLNGcrZm8vcjVJN0ttcVhqQ3VrcGY4ZkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Nzg2NDY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprZU5pdE0wUEttMFNHWVlqTklsSkorU2xubXVvaTN2ZFJTbDdFbGN0NnRlbkZkaDJWQlBmdzhtdklzTDk0bFNzd29QY3gwM0RQWTVnWWtOa3kya3NDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
