@@ -1,10 +1,10 @@
 {
-  "version": "0.1.628",
-  "notes": "If Crisp can't save an activation on your Mac \u2014 a full disk, or a permissions problem \u2014 it now releases that activation instead of leaving it spent. Nothing is used up, so you can free up space and activate again normally.",
-  "pub_date": "2026-08-03T20:27:11Z",
+  "version": "0.1.629",
+  "notes": "A file with a very long name now gets a clear explanation instead of a generic failure. Crisp could not even check whether the file existed, and reported it as if something had gone wrong with the export.",
+  "pub_date": "2026-08-03T20:55:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNtQ2hKbnhoekhCUVVKQ3NwOC9jSEVxQmRYbHlpby9IanRpRGZYYjBaOEhkVmNZdEswYzJtMmtQN3lPcDI3WUJxT0M2dGZjeVk1MmNwK2JCL0hNeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Nzg4NTY2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyM3hocVN6M2hlWE1WbjB6QjhNcElvZ3I4QTYrQmkxV3Z5bmw5OXlPRUUrbVBxYlhOMGVaaVhPcldPd3R3MVBpV2hKZnR3TGViRDU3QVZUSU1GbytEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcvYU1JbSthVTV2bEk2UUw3b1VIN2ZJMEF5K0VjYnRjRHlDd2hRdVJzTE1DcUtrUHdnSkZYK3FBSWNmdEpRTnBhNU1FWVp4WkNBekU1N2Z3alZXWVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzkwNDI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxTjg2ZDY3dzlWeUl5eFpkNjhBd3NlWjEwc0tmbFc5dGZuYmtzdEZwZVlyVEpPeXpNYUNGK3RkSFpUMEZIOE4vNStJb3Y4a2Rhb0hlR0FvZFRNWE1BQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
