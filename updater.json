@@ -1,10 +1,10 @@
 {
-  "version": "0.1.627",
-  "notes": "An export whose filename contains the word \u201ccancelled\u201d is no longer deleted. If the watermarking pass hit any ordinary error, Crisp read the word in your own filename as \u201cthe user pressed Stop\u201d and threw the finished export away \u2014 nobody had pressed anything.",
-  "pub_date": "2026-08-03T19:51:03Z",
+  "version": "0.1.628",
+  "notes": "If Crisp can't save an activation on your Mac \u2014 a full disk, or a permissions problem \u2014 it now releases that activation instead of leaving it spent. Nothing is used up, so you can free up space and activate again normally.",
+  "pub_date": "2026-08-03T20:27:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpIRE9DZG5waEJTdEFWdzFmY1JZdUkxUzhFYy9tZFdESkp2T2diTlUxQ3ErbHJNTEhKOC96WkhMN29WSUxLNGcrZm8vcjVJN0ttcVhqQ3VrcGY4ZkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Nzg2NDY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprZU5pdE0wUEttMFNHWVlqTklsSkorU2xubXVvaTN2ZFJTbDdFbGN0NnRlbkZkaDJWQlBmdzhtdklzTDk0bFNzd29QY3gwM0RQWTVnWWtOa3kya3NDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNtQ2hKbnhoekhCUVVKQ3NwOC9jSEVxQmRYbHlpby9IanRpRGZYYjBaOEhkVmNZdEswYzJtMmtQN3lPcDI3WUJxT0M2dGZjeVk1MmNwK2JCL0hNeFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1Nzg4NTY2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyM3hocVN6M2hlWE1WbjB6QjhNcElvZ3I4QTYrQmkxV3Z5bmw5OXlPRUUrbVBxYlhOMGVaaVhPcldPd3R3MVBpV2hKZnR3TGViRDU3QVZUSU1GbytEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
