@@ -1,10 +1,10 @@
 {
-  "version": "0.1.632",
-  "notes": "Music montage now cuts at the song's real rate. The shortest cut was fixed at 0.8 seconds regardless of tempo, so on anything faster than 75 BPM Crisp quietly cut on every SECOND beat \u2014 a 128 BPM track got 26 cuts where the music asked for 51. Slow songs are unchanged.",
-  "pub_date": "2026-08-04T02:14:13Z",
+  "version": "0.1.633",
+  "notes": "Long music montages now cut all the way through. Crisp capped any reel at 64 cuts, so a three-minute song got a cut every 2.8 seconds while the music asked for one every half second. A three-minute 128 BPM track now gets the full 384.",
+  "pub_date": "2026-08-04T02:38:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhGeURTQ1UrT1I0SkNwdy92cjM5TU9xMUhzUXZIZGZvL1c1WTh4c3l4RkRHQWErWEIzNUhEYU9sY2xrdlNybWUwSTNidUJGTmRqWmJydVY5Nnl4VGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA5NTc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOSzh6TldVSTgxYUQweEZMVlczVWJqbWtyaWJVUXlYV3lvY3g0YnlOZ3F2Wmk0K0ROcGtNNWR0c2l4RUhSU1ZmNVBSRDFMYXZaeFo0ckJzQm1TdnhEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURVSVluRzIzdjNmVDBPb3NVaXBCTGVkblpzU1d6MUt0VzZ6RjZCSVNBODNWQ05aY0tYU25UVEhwU1hxMnNISHZ0VDgvanBSalR3V3h2dDlsTklCaEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODExMDMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplZmltNTJMU0FSNkVzL2I0dlZXNUVRUFp1N0JMMWdPQzBIS2xpb1BpSHRVTFNEOWlQV3F4Skhta1pRVFhUWlVUUWtWd2c3SGV5MFFZODZrUld4OTRBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
