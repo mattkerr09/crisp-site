@@ -1,10 +1,10 @@
 {
-  "version": "0.1.633",
-  "notes": "Long music montages now cut all the way through. Crisp capped any reel at 64 cuts, so a three-minute song got a cut every 2.8 seconds while the music asked for one every half second. A three-minute 128 BPM track now gets the full 384.",
-  "pub_date": "2026-08-04T02:38:54Z",
+  "version": "0.1.635",
+  "notes": "The app no longer freezes while loading a video. Crisp read preview files on the same thread that draws the window, so a slow or stalled read left the whole app not responding with no way out but force-quit. Video now streams from Crisp's own background service instead.",
+  "pub_date": "2026-08-04T15:36:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURVSVluRzIzdjNmVDBPb3NVaXBCTGVkblpzU1d6MUt0VzZ6RjZCSVNBODNWQ05aY0tYU25UVEhwU1hxMnNISHZ0VDgvanBSalR3V3h2dDlsTklCaEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODExMDMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplZmltNTJMU0FSNkVzL2I0dlZXNUVRUFp1N0JMMWdPQzBIS2xpb1BpSHRVTFNEOWlQV3F4Skhta1pRVFhUWlVUUWtWd2c3SGV5MFFZODZrUld4OTRBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxNMy9tNHFoTVdORlo2Tm5FUko2NDR6NUo5Nlk4Tkd2NDFBYUpaZGZ3WjUvVW5tUVNSMUVoUk1qSHdsY3NuWjlXRDZ4N3RyS2YzOHRRd1hJNzRDSndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODU3NzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBR1Fqelhud3dMcGhtaUtZU25tQlpXZHJDcytGMzNWRmhoU3ZQWWw4eUZ0bVMzQkU4Y0V4VDJKYTl6bEVvUXBqRlhFRWM2UHhPdlBKdzZtUkJjNUJDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
