@@ -1,10 +1,10 @@
 {
-  "version": "0.1.630",
-  "notes": "If Crisp cannot move a finished export into place \u2014 an external drive, a network volume, a locked destination \u2014 it now copies it there instead, and if even that is impossible it tells you where the file really is. Before, the export existed but Crisp reported a path with nothing on it.",
-  "pub_date": "2026-08-03T21:13:04Z",
+  "version": "0.1.631",
+  "notes": "Music montage now cuts far closer to the beat. Crisp measured the music ten times more precisely \u2014 beats were previously rounded to the nearest tenth of a second, so on a 128 BPM track the cuts could land up to 94 milliseconds late. They now land within about 9.",
+  "pub_date": "2026-08-04T01:50:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5Mblp5a21vY0hKTHJMTGxEUnRLQkd5Q25FbzdwU2R1N0E3Wmd1ZkNZeGkrRlFFemxrSm1TM2ZSeDM2aGFxYVgxeXF4RFFUMTJRZnRXN2c4aWY2TXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzkxNDk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxS3pBdGlqNW1wWC9md2plTVEyalpiN2ZKUjFEUlBkZ1gydmlsNzIyZUEyUWFOaWFsQmFUSlJQQjI4b1VZZ2t0bFRyVGdBa2J3UGUrMkRKK0tPQklDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZsUmlIVXVEYzFNclNDbFZsMlhKcTluWjdnYkJLamM4OUs3UjlQUGtNbVVURkMwRVR3VDY2Q3BFV3V1aFl4NnhPNjRlQ0I4RFg5Y2dVUTVNUzFvRUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA4MTcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvMEJMZVNxanJXUjFpRmkzYlhuYVVXT1VKNmxKVTYzOWU1b0lpVzJEQ1o0RzJEdldKYXhIcDZVMW9mUEw2QjBONmhyRys3YlRxV01XV1dOd0xMblhCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
