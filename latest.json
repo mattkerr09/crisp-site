@@ -1,10 +1,10 @@
 {
-  "version": "0.1.631",
-  "notes": "Music montage now cuts far closer to the beat. Crisp measured the music ten times more precisely \u2014 beats were previously rounded to the nearest tenth of a second, so on a 128 BPM track the cuts could land up to 94 milliseconds late. They now land within about 9.",
-  "pub_date": "2026-08-04T01:50:43Z",
+  "version": "0.1.632",
+  "notes": "Music montage now cuts at the song's real rate. The shortest cut was fixed at 0.8 seconds regardless of tempo, so on anything faster than 75 BPM Crisp quietly cut on every SECOND beat \u2014 a 128 BPM track got 26 cuts where the music asked for 51. Slow songs are unchanged.",
+  "pub_date": "2026-08-04T02:14:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZsUmlIVXVEYzFNclNDbFZsMlhKcTluWjdnYkJLamM4OUs3UjlQUGtNbVVURkMwRVR3VDY2Q3BFV3V1aFl4NnhPNjRlQ0I4RFg5Y2dVUTVNUzFvRUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA4MTcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvMEJMZVNxanJXUjFpRmkzYlhuYVVXT1VKNmxKVTYzOWU1b0lpVzJEQ1o0RzJEdldKYXhIcDZVMW9mUEw2QjBONmhyRys3YlRxV01XV1dOd0xMblhCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhGeURTQ1UrT1I0SkNwdy92cjM5TU9xMUhzUXZIZGZvL1c1WTh4c3l4RkRHQWErWEIzNUhEYU9sY2xrdlNybWUwSTNidUJGTmRqWmJydVY5Nnl4VGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA5NTc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOSzh6TldVSTgxYUQweEZMVlczVWJqbWtyaWJVUXlYV3lvY3g0YnlOZ3F2Wmk0K0ROcGtNNWR0c2l4RUhSU1ZmNVBSRDFMYXZaeFo0ckJzQm1TdnhEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
