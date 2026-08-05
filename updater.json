@@ -1,10 +1,10 @@
 {
-  "version": "0.1.646",
-  "notes": "The 4-up split screen really does keep your video's shape now \u2014 the previous fix only applied when the setting was passed explicitly, which the app never did, so widescreen clips still came back square. Queuing several files no longer freezes the app either, for the same reason.",
-  "pub_date": "2026-08-05T10:17:50Z",
+  "version": "0.1.652",
+  "notes": "Right-clicking a clip and choosing \u201cSplit here\u201d now cuts that clip, at the point you clicked. On a timeline of short clips \u2014 the normal shape of a music montage \u2014 it was landing on a different clip entirely, sometimes many seconds away.",
+  "pub_date": "2026-08-05T12:28:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUyZVZQY2Z6MUdoNlVNU1BOYUpWWVQrVzhDaWcxN2JJMVBoMk5QRGpCU0V3RlpkTzF6SzFrWHVTakNGYjFjajhBSi83SUxUZElyTWt6WlJoNFNDbWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTI0OTk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYYUpVVm55UkgrOU5haFFXcTRsUkhES2RURDEvZFVzbHhRdjBUYUVOU01TcUlhSTV6S3BEOTlFbHpmdHQ5SXBrU08yLzdiOHNBV2d3R2pIN0htWllEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx2eWUvSnJ1NzhRWmpJakduWHZCR2JPdmNWcERpdUVuS2h3TkJ1SVpsUVQyMnFxTUtjeXJaNmVESzJpZjUwY2oxamhMZDZGeEQ1V25ZUGkveHlJQ2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTMyODQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5d3A4dS81SEh4YkZXa1FFbElGdUZXUndlK0tpTmtyd3NoclRkaDIvSUpxemYxbE1OdUNmSCt6WEsxVHVLeVJNNWR1YTFBeTlINE52V2pVWVg1eEFEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
