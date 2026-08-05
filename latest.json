@@ -1,10 +1,10 @@
 {
-  "version": "0.1.652",
-  "notes": "Right-clicking a clip and choosing \u201cSplit here\u201d now cuts that clip, at the point you clicked. On a timeline of short clips \u2014 the normal shape of a music montage \u2014 it was landing on a different clip entirely, sometimes many seconds away.",
-  "pub_date": "2026-08-05T12:28:45Z",
+  "version": "0.1.655",
+  "notes": "Crisp now finds the beat in real music, not just in a drum loop. It was listening to the whole mix, so a melody note landing between beats counted as one \u2014 on a track with a tune it invented a third more beats than the song had and cut up to a sixth of a second late. It now listens to the low end, where the beat actually is.",
+  "pub_date": "2026-08-05T13:52:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx2eWUvSnJ1NzhRWmpJakduWHZCR2JPdmNWcERpdUVuS2h3TkJ1SVpsUVQyMnFxTUtjeXJaNmVESzJpZjUwY2oxamhMZDZGeEQ1V25ZUGkveHlJQ2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTMyODQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5d3A4dS81SEh4YkZXa1FFbElGdUZXUndlK0tpTmtyd3NoclRkaDIvSUpxemYxbE1OdUNmSCt6WEsxVHVLeVJNNWR1YTFBeTlINE52V2pVWVg1eEFEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5HNk1aa08vd21hZ1NhUmpCU003aXE3MEdjTzR3bzlvejQrU054SGlBQzdIQVUyYjE5TmVISWJtOERwMWQ4b3RLV0c0b2IzS05xVXl2bGFCUnAza0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTM3ODY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLekZLVmtkeE5BYWNnWm9acFd5eUpvWFVleDN3RitEajlOVUNRSzZpM3hscVZ3aEhtK3hyZmlvRDl1WTE1RXQzRFQvL2kwQ1ZTMzVXNjZHMkRuSFhCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
