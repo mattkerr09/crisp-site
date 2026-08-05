@@ -1,10 +1,10 @@
 {
-  "version": "0.1.635",
-  "notes": "The app no longer freezes while loading a video. Crisp read preview files on the same thread that draws the window, so a slow or stalled read left the whole app not responding with no way out but force-quit. Video now streams from Crisp's own background service instead.",
-  "pub_date": "2026-08-04T15:36:41Z",
+  "version": "0.1.636",
+  "notes": "Queueing several files no longer freezes the app. Every waiting file held one of the browser engine's six connections, so from the sixth file on, nothing responded \u2014 including Stop \u2014 until the running job finished. Waiting files now share a single connection.",
+  "pub_date": "2026-08-05T01:29:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxNMy9tNHFoTVdORlo2Tm5FUko2NDR6NUo5Nlk4Tkd2NDFBYUpaZGZ3WjUvVW5tUVNSMUVoUk1qSHdsY3NuWjlXRDZ4N3RyS2YzOHRRd1hJNzRDSndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODU3NzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBR1Fqelhud3dMcGhtaUtZU25tQlpXZHJDcytGMzNWRmhoU3ZQWWw4eUZ0bVMzQkU4Y0V4VDJKYTl6bEVvUXBqRlhFRWM2UHhPdlBKdzZtUkJjNUJDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU42MWtoUTN5MWg4dFZkVmlETWVsNXlWMHEybzRFdS9YaUY0L0psdm90SjlWTEh5b3ovU05acHJVY0k3Vmszd1NsOE10ajkzbWhxc2czS3lYOTRFbmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODU4OTU4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUQjlvUzkzUHBKdzhPaDdtYXBjZlplTFl6MXJsNDdVVFFuVHNkUnVFZ1VaSnMwcnlpS3VGVGtrS3BTdnRnajFJUTNFY3hHVGhqUE1CVkZRU0ZVL3JDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
