@@ -1,10 +1,10 @@
 {
-  "version": "0.1.642",
-  "notes": "Music montages now breathe with the song. Crisp cut at one fixed rate from start to finish no matter what the track was doing \u2014 a quiet intro was cut as hard as the drop. It now holds shots through the quiet parts and cuts on every beat when the music opens up.",
-  "pub_date": "2026-08-05T08:17:59Z",
+  "version": "0.1.646",
+  "notes": "The 4-up split screen really does keep your video's shape now \u2014 the previous fix only applied when the setting was passed explicitly, which the app never did, so widescreen clips still came back square. Queuing several files no longer freezes the app either, for the same reason.",
+  "pub_date": "2026-08-05T10:17:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp5VEVkNVRzZWhYNm9KclpqWGhTUVVGYUROR3lHQXVzT0JubzRETy9LK3ZDMWU3WnBITmNMQU53VXdBakNEZDR3cmNkdEZvLzMyVms1aURhM0tQRkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTE3Nzk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1T0luaW05TmRZSEU1Z3pEbEJwYU5HUUgzUHA3cEk3WjB6ajRWSVNGcm9taVJ4K3RUY1VJZHJPZVowQm5hU2FxV3FseGJZV2VRcE9zbmhEa1RJUjdCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUyZVZQY2Z6MUdoNlVNU1BOYUpWWVQrVzhDaWcxN2JJMVBoMk5QRGpCU0V3RlpkTzF6SzFrWHVTakNGYjFjajhBSi83SUxUZElyTWt6WlJoNFNDbWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTI0OTk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYYUpVVm55UkgrOU5haFFXcTRsUkhES2RURDEvZFVzbHhRdjBUYUVOU01TcUlhSTV6S3BEOTlFbHpmdHQ5SXBrU08yLzdiOHNBV2d3R2pIN0htWllEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
