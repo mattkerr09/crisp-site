@@ -1,10 +1,10 @@
 {
-  "version": "0.1.637",
-  "notes": "The 4-up split screen keeps your video's shape. Four widescreen clips came back as a square, cropping every cell to fit a shape the footage never had. A grid now matches the source \u2014 widescreen stays widescreen, portrait stays portrait.",
-  "pub_date": "2026-08-05T02:08:03Z",
+  "version": "0.1.642",
+  "notes": "Music montages now breathe with the song. Crisp cut at one fixed rate from start to finish no matter what the track was doing \u2014 a quiet intro was cut as hard as the drop. It now holds shots through the quiet parts and cuts on every beat when the music opens up.",
+  "pub_date": "2026-08-05T08:17:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURZT0VHVHpGVlpEVUNEOEt6cEIrK2o5aEl2REEyK0dOK3FmMWgydDM0RWpxaGpqYTJGMlBRUzZDSEFxQ290QVBTMld0YzlqR3ZuUTlKNERaNEhwd1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODkzNzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqRUVYMEdsWlNmcjdIbERYUUR5SDNkZHk0R2tPK1psbnNoOS9KdTZLeEh0MHc0czAwMjQ2UXN4cEE0NTcvSDRjUnpwa1RWNXMyOXNzdk1xZ2hEZFlCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp5VEVkNVRzZWhYNm9KclpqWGhTUVVGYUROR3lHQXVzT0JubzRETy9LK3ZDMWU3WnBITmNMQU53VXdBakNEZDR3cmNkdEZvLzMyVms1aURhM0tQRkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTE3Nzk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1T0luaW05TmRZSEU1Z3pEbEJwYU5HUUgzUHA3cEk3WjB6ajRWSVNGcm9taVJ4K3RUY1VJZHJPZVowQm5hU2FxV3FseGJZV2VRcE9zbmhEa1RJUjdCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
