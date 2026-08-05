@@ -1,10 +1,10 @@
 {
-  "version": "0.1.636",
-  "notes": "Queueing several files no longer freezes the app. Every waiting file held one of the browser engine's six connections, so from the sixth file on, nothing responded \u2014 including Stop \u2014 until the running job finished. Waiting files now share a single connection.",
-  "pub_date": "2026-08-05T01:29:38Z",
+  "version": "0.1.637",
+  "notes": "The 4-up split screen keeps your video's shape. Four widescreen clips came back as a square, cropping every cell to fit a shape the footage never had. A grid now matches the source \u2014 widescreen stays widescreen, portrait stays portrait.",
+  "pub_date": "2026-08-05T02:08:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU42MWtoUTN5MWg4dFZkVmlETWVsNXlWMHEybzRFdS9YaUY0L0psdm90SjlWTEh5b3ovU05acHJVY0k3Vmszd1NsOE10ajkzbWhxc2czS3lYOTRFbmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODU4OTU4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUQjlvUzkzUHBKdzhPaDdtYXBjZlplTFl6MXJsNDdVVFFuVHNkUnVFZ1VaSnMwcnlpS3VGVGtrS3BTdnRnajFJUTNFY3hHVGhqUE1CVkZRU0ZVL3JDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURZT0VHVHpGVlpEVUNEOEt6cEIrK2o5aEl2REEyK0dOK3FmMWgydDM0RWpxaGpqYTJGMlBRUzZDSEFxQ290QVBTMld0YzlqR3ZuUTlKNERaNEhwd1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODkzNzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqRUVYMEdsWlNmcjdIbERYUUR5SDNkZHk0R2tPK1psbnNoOS9KdTZLeEh0MHc0czAwMjQ2UXN4cEE0NTcvSDRjUnpwa1RWNXMyOXNzdk1xZ2hEZFlCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
