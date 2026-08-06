@@ -1,10 +1,10 @@
 {
-  "version": "0.1.655",
-  "notes": "Crisp now finds the beat in real music, not just in a drum loop. It was listening to the whole mix, so a melody note landing between beats counted as one \u2014 on a track with a tune it invented a third more beats than the song had and cut up to a sixth of a second late. It now listens to the low end, where the beat actually is.",
-  "pub_date": "2026-08-05T13:52:24Z",
+  "version": "0.1.681",
+  "notes": "The playhead now lines up with the clip it is playing. On a timeline of short clips \u2014 the normal shape of a beat-cut montage \u2014 the tiles drifted right of the ruler, so the playhead could sit over one clip while the preview showed another.",
+  "pub_date": "2026-08-06T05:19:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5HNk1aa08vd21hZ1NhUmpCU003aXE3MEdjTzR3bzlvejQrU054SGlBQzdIQVUyYjE5TmVISWJtOERwMWQ4b3RLV0c0b2IzS05xVXl2bGFCUnAza0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTM3ODY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLekZLVmtkeE5BYWNnWm9acFd5eUpvWFVleDN3RitEajlOVUNRSzZpM3hscVZ3aEhtK3hyZmlvRDl1WTE1RXQzRFQvL2kwQ1ZTMzVXNjZHMkRuSFhCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9IdDIzL3pOYmxuSjhzNGQxUytqbkp6TkFvandZb0l4MDZsbEpOZ0t4TVVTQ3d2cTg3M3Iyb0dvR0dST3JmcUZqU1lJM0tuU0ZQb0tiNkJYd21SalFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTkzNDkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVWDluQXFsRVlPdkxMU1Uxa2RYUGxDR0VNREtIQW03YnIyR3RKT1haMGsxTWh4VGJmZDEvdzNvMHU4N1IyRmFGMXFnTE9xbE8zM1hKZTR4eFVhekVBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
