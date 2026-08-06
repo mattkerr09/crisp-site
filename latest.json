@@ -1,10 +1,10 @@
 {
-  "version": "0.1.687",
-  "notes": "Split-screen and grid music montages are split screens again. Choosing Split-screen or Grid with a single video produced one clip padded onto the frame, running several times the length of the song, instead of the tiled reel it promised.",
-  "pub_date": "2026-08-06T10:40:50Z",
+  "version": "0.1.689",
+  "notes": "Clearer messages when a music montage can't start: Crisp now tells you whether you haven't picked a song yet or the song you picked has been moved, and names the file.",
+  "pub_date": "2026-08-06T11:31:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI4RHdUeEZ0L1N4YTZhTFRBdk92eWFLeFZ2ZDVDYklCS2lTRkJtSkcrTFNrRDNTeldHcFVrOXVhbUFTb1VybmdHczBtU2pPOTIwNzZRdXJKZklxdVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDEyNzk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwUDU4QTdsaG5kS2UyWkQ2bWJrbXBzTTdSdDBYTEJDOE85UWREeS9iS3BGZG4wYkx5ODJBWVAwM0ZpWEJwQ0ZiRHhvOUdyQUxKN0N5azJMNzFiQkhBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk0YnVWNjYzNWxjcUtScWRlRjA3dk5ZcmVUOFYrbWFqVC9ZUHlCRTdqQW5oS05JaysreFJDendtRS9TdllMSUM2QVFlQTBUL0YyWEhrOTV2L0NCaHdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDE1ODQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXSS9VUjRKWlk4V2lyTTlxR1NWRVdwSjlMSS90ZldIaEpJMjlxc2Zta1BCQ2dDRHN3U2ZkUmJhOHdFWGd1ZkFYbUNVU1lwb0JtRHBNZGxMb3d3eStEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
