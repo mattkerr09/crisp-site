@@ -1,0 +1,51 @@
+# Deploy the site with GitHub Actions instead of the legacy Pages builder.
+#
+# WHY THIS EXISTS. The legacy builder stopped working on 2026-08-06: two builds errored
+# ("Page build failed.", no further detail) and a third sat in `building` with duration 0 for
+# almost an hour, so a pushed fix to live marketing copy simply never reached the site. Every
+# trigger available from outside was tried first — a fresh push, `POST /pages/builds`, and an
+# empty commit — and none of them moved it. The repository's own Pages status read `errored`.
+#
+# It is not the content: `.nojekyll` is present, there is no Jekyll config or Gemfile, and the
+# whole site is 81 static HTML files and about 96 files in total. Nothing here needs building —
+# which is exactly why the Actions path suits it better. This workflow just uploads the directory
+# and publishes it, with no builder in the middle to fail.
+#
+# The custom domain lives in the CNAME file at the repo root and is uploaded with everything
+# else, so the domain survives the switch.
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:      # so a stuck deploy can be re-run by hand without an empty commit
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue instead, and do not cancel one that is midway through
+# publishing — a half-published site is worse than a late one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload the site as-is
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
