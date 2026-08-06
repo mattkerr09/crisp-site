@@ -1,10 +1,10 @@
 {
-  "version": "0.1.684",
-  "notes": "Music montages made from several clips now cut on the beat too. Dropping in one file and dropping in four went through different code, and only one of them had the beat work \u2014 the multi-clip reel drifted off the music while a single-clip reel stayed locked to it.",
-  "pub_date": "2026-08-06T07:47:37Z",
+  "version": "0.1.685",
+  "notes": "Split-screen and grid music montages now cut on the beat, and run the full length of the song. Each tile group was rounded down by a sliver of a frame, which added up to more than half a beat by the end of a reel and left the last quarter-second of the song with no picture.",
+  "pub_date": "2026-08-06T09:03:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZFNkpiVTRwODFmMCtmTWo3REhsMDBQY3kvZEJUbGVaTDJDTjE0cnZ5OU5lTVUzaFp5MTdRL3E2RjB1bllGcVhjem1FMGtFQzF6b0k1dnEzY1lXOHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDAyNDA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCb1RBWElFUk1SWVBkK2F5QUROcm9JRHNuakI5RUxvL21hRHV5SFdrSnhrdzBldjIrdmtiVFdtUmNKc1d1OWpvNnhQYzM5ZHF3R3hmYlFhRklhc0tDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQvbzJWSTI2UkVlMzN4MklTT0ZFN0NielFGTWhyZTQ2QzIwZkU1TjU5NXBZQnRnR2hBY0hWRzl2QXlHbEFuQXlIMHBtakRJaWRxYkZDVzhPdkREb1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDA2OTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpheHBPbThWQjhmYW54cThuVDRVS0dCYzNHNnBWTUlxOVp5RUl6U0pvWWdONmxkWTBSZGJNNXk2N3RhVHB0Q0t6WW1wYzNPNnB6ZjA5Mkx2UllwS0lCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
