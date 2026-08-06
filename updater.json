@@ -1,10 +1,10 @@
 {
-  "version": "0.1.681",
-  "notes": "The playhead now lines up with the clip it is playing. On a timeline of short clips \u2014 the normal shape of a beat-cut montage \u2014 the tiles drifted right of the ruler, so the playhead could sit over one clip while the preview showed another.",
-  "pub_date": "2026-08-06T05:19:40Z",
+  "version": "0.1.682",
+  "notes": "Music montages now stay on the beat for the whole song \u2014 and fill it. Cuts drifted up to a sixth of a second by the end of a three-minute track, and at some tempos the reel simply ended a minute early with the music still playing.",
+  "pub_date": "2026-08-06T06:14:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9IdDIzL3pOYmxuSjhzNGQxUytqbkp6TkFvandZb0l4MDZsbEpOZ0t4TVVTQ3d2cTg3M3Iyb0dvR0dST3JmcUZqU1lJM0tuU0ZQb0tiNkJYd21SalFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTkzNDkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVWDluQXFsRVlPdkxMU1Uxa2RYUGxDR0VNREtIQW03YnIyR3RKT1haMGsxTWh4VGJmZDEvdzNvMHU4N1IyRmFGMXFnTE9xbE8zM1hKZTR4eFVhekVBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV5ajFNRXVUQ290cnplZkh0WkhkUjVvTWt3WFRtQUIzQ3loYWpuNkdBdVRIeHRZVUF3MVAzQkp2Ukw0Qm1rSUQwell6UE53T2JzNHlXUmZ1bkMrOXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTk2ODE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXbHlJSnE1UDFaQ3B1WS8vN01wSExBVTlJZ0F6bm5yWUI4WGY4Uld1ajV3RGpoTW1LSVZqc2JZVmRDRnNhOHdtT0REYmpuK2pQRXA2Ti8zeW4zMXJDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
