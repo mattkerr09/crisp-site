@@ -1,10 +1,10 @@
 {
-  "version": "0.1.683",
-  "notes": "Beat-matched montages now cut on the beat in the finished video, not just in the plan. The cuts drifted further off the music the longer the reel ran, because each cut was rounded to a whole frame on its own and the leftovers piled up.",
-  "pub_date": "2026-08-06T06:56:09Z",
+  "version": "0.1.684",
+  "notes": "Music montages made from several clips now cut on the beat too. Dropping in one file and dropping in four went through different code, and only one of them had the beat work \u2014 the multi-clip reel drifted off the music while a single-clip reel stayed locked to it.",
+  "pub_date": "2026-08-06T07:47:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU4wZ1VOTUVBa2lYcCt4Z0dFOVMzQ0ZHcXUyVkVLNGgvWEJGb3hza0VVUWh5ZXJEaGU1UU1wbEJ6N0tZTDlwbThQenl1TDJRQmhNNGdpdUhmVXhwRUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTk5MzEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozYmprS0tiQTUvd29mdjYwTitJTm4wYVZCd0o4MU5Kd2wzT3NBMFFVRWdDYWFuNS9qdXh3VnprQmk5cytIOGovRHFXeWFIOEppOWFnaVpaZm1LQ1ZBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZFNkpiVTRwODFmMCtmTWo3REhsMDBQY3kvZEJUbGVaTDJDTjE0cnZ5OU5lTVUzaFp5MTdRL3E2RjB1bllGcVhjem1FMGtFQzF6b0k1dnEzY1lXOHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDAyNDA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCb1RBWElFUk1SWVBkK2F5QUROcm9JRHNuakI5RUxvL21hRHV5SFdrSnhrdzBldjIrdmtiVFdtUmNKc1d1OWpvNnhQYzM5ZHF3R3hmYlFhRklhc0tDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
