@@ -1,0 +1,158 @@
+/* Crisp — shared styles for the guide and comparison pages.
+ *
+ * The homepage was rebuilt around the product; these 79 pages still carried their own inline
+ * CSS, so following a "Guides" link dropped visitors into a different-looking site. They share
+ * one templated vocabulary — 17 classes total — which is why a single stylesheet can carry all
+ * of them, and why future changes are one file instead of seventy-nine.
+ *
+ * Tokens are identical to the homepage on purpose: same black, same hairlines, same cyan.
+ */
+
+:root{
+  --black:#000; --panel:#08090d; --panel-2:#0d0f15; --card:#101319;
+  --hair:#1c2029; --hair-lit:#2a3040;
+  --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#6b7382;
+  --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff; --green:#4ade80;
+  --r:18px; --r-sm:12px;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
+  --w:820px;                 /* narrower than home: these are reading pages */
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--black);color:var(--white);font-family:var(--sans);
+  font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--ice);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+.wrap{width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;}
+
+/* ---- nav (shared with the homepage's shape) ---- */
+nav{
+  position:sticky;top:0;z-index:80;background:rgba(0,0,0,.6);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(28,32,41,.9);
+}
+nav .btn{padding:.5rem 1.05rem;font-size:.88rem;}
+/* Same column as the prose below it, so the wordmark sits directly above the H1. */
+.nav-inner{
+  display:flex;align-items:center;gap:1.5rem;height:56px;
+  width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;
+}
+.nav-inner .btn{margin-left:auto;}
+body > .nav-inner:first-child,
+header .nav-inner{position:relative;}
+.nav-brand{
+  display:flex;align-items:center;gap:.55rem;color:var(--white);font-weight:640;
+  font-size:1.02rem;letter-spacing:-.015em;text-decoration:none;
+}
+.nav-brand:hover{text-decoration:none;}
+.nav-brand svg{width:21px;height:21px;color:var(--cyan);}
+
+/* ---- headings ---- */
+h1{
+  font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.06;letter-spacing:-.035em;
+  font-weight:690;margin:.6rem 0 1rem;
+}
+h2{
+  font-size:clamp(1.45rem,2.7vw,2rem);line-height:1.18;letter-spacing:-.028em;
+  font-weight:660;margin:3.2rem 0 .9rem;
+}
+h3{font-size:1.12rem;font-weight:640;letter-spacing:-.012em;margin:2rem 0 .5rem;}
+p{margin:0 0 1.05rem;}
+
+.grad{
+  background:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lede,.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.55;color:var(--grey);margin:0 0 1.6rem;}
+.muted{color:var(--grey);}
+.crumb{font-size:.85rem;color:var(--grey-dim);margin:2.2rem 0 .4rem;}
+.crumb a{color:var(--grey);}
+.updated{font-size:.83rem;color:var(--grey-dim);margin:.2rem 0 2.4rem;}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.78rem 1.4rem;border-radius:999px;font-weight:600;font-size:.96rem;
+  background:linear-gradient(180deg,#7ad6fd,#32aeea);color:#021019;border:1px solid transparent;
+  box-shadow:0 10px 34px -12px rgba(90,200,250,.85);
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s;text-decoration:none;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px -12px rgba(90,200,250,1);text-decoration:none;}
+
+/* ---- call-to-action block ---- */
+.cta{
+  margin:3rem 0;padding:2rem;border:1px solid var(--hair);border-radius:var(--r);
+  background:
+    radial-gradient(600px 300px at 20% -20%, rgba(90,200,250,.12), transparent 70%),
+    linear-gradient(180deg,var(--card),var(--panel-2));
+  text-align:center;
+}
+.cta p{color:var(--grey);}
+.cta p:last-of-type{margin-bottom:1.3rem;}
+
+/* ---- callout box ---- */
+.box{
+  margin:2rem 0;padding:1.35rem 1.5rem;border:1px solid var(--hair);border-radius:var(--r-sm);
+  background:var(--panel-2);color:var(--grey);
+}
+.box strong{color:var(--white);}
+.box p:last-child{margin-bottom:0;}
+
+/* ---- prompt / command sample ---- */
+.prompt{
+  display:inline-block;padding:.35rem .7rem;border-radius:8px;border:1px solid var(--hair-lit);
+  background:rgba(90,200,250,.07);color:var(--ice);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;
+}
+
+/* ---- comparison tables ----
+   .cmp is the <table> itself, so the scroll box has to be a real wrapper: a table can't be its
+   own overflow container, and without one a min-width table pushes the whole page sideways on a
+   phone. The wrapper scrolls; the page never does. */
+.cmp-wrap{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.6rem 0 2.4rem;max-width:100%;
+  border:1px solid var(--hair);border-radius:var(--r);background:var(--panel-2);
+}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:.94rem;margin:0;}
+th,td{padding:.9rem 1.1rem;text-align:left;border-bottom:1px solid var(--hair);}
+thead th{
+  background:rgba(255,255,255,.028);font-weight:640;font-size:.86rem;
+  letter-spacing:.02em;color:var(--grey);
+}
+thead th:nth-child(2){color:var(--ice);}
+tbody tr:last-child td{border-bottom:none;}
+tbody td:first-child{color:var(--grey);}
+.yes{color:var(--green);font-weight:560;}
+.no{color:var(--grey-dim);}
+
+/* ---- step lists ---- */
+.steps{counter-reset:s;list-style:none;padding:0;margin:1.6rem 0 2.2rem;display:grid;gap:1.15rem;}
+.steps > li{position:relative;padding-left:3rem;color:var(--grey);}
+.steps > li::before{
+  counter-increment:s;content:counter(s);position:absolute;left:0;top:-1px;
+  width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  font-weight:700;font-size:.88rem;color:var(--ice);
+  background:rgba(90,200,250,.12);border:1px solid rgba(90,200,250,.32);
+}
+.steps > li strong{color:var(--white);}
+/* The template opens each step with an <h3>, whose section margin would otherwise drop the
+   text a full line below its own number. */
+.steps > li > h3{margin:0 0 .35rem;font-size:1.05rem;}
+.steps > li > p{margin:0;}
+.steps > li > p + p{margin-top:.6rem;}
+
+ul,ol{padding-left:1.25rem;color:var(--grey);}
+li{margin:.4rem 0;}
+ul li::marker{color:var(--cyan);}
+
+hr{border:none;border-top:1px solid var(--hair);margin:3rem 0;}
+
+footer{border-top:1px solid var(--hair);margin-top:4rem;padding:2.4rem 0 3rem;
+  color:var(--grey-dim);font-size:.88rem;}
+footer a{color:var(--grey);}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
