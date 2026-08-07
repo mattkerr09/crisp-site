@@ -296,33 +296,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   </div>
 </div>
 
-<section id="restore">
-  <div class="wrap">
-    <div class="head">
-      <p class="kicker">Real output</p>
-      <h2 class="h-lg">Close enough to read the badge</h2>
-      <p class="lede">A 1950 film reel, restored on a Mac. Drag the handle across the emblem —
-        left is the original at this size, right is what Crisp gave back. No cloud, no cherry-picking.</p>
-    </div>
-
-    <div class="ba" id="ba">
-      <img class="ba-after" src="/demo-after.jpg" width="1072" height="804"
-        alt="After Crisp: the New York Central emblem is legible and the chrome edges are clean." loading="lazy" decoding="async">
-      <img class="ba-before" src="/demo-before.jpg" width="1072" height="804"
-        alt="The original film frame at the same size — the emblem lettering is a smudge." loading="lazy" decoding="async">
-      <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Original</span><span class="ba-tag ba-r">Crisp 4×</span>
-      <input class="ba-range" type="range" min="0" max="100" value="30" step="0.1"
-        aria-label="Reveal more of the original or the restored frame">
-    </div>
-
-    <p class="ba-note">Source: <a href="https://archive.org/details/BigTrain1950_2" rel="noopener">
-      <em>The Big Train</em> (1950)</a>, Prelinger Archives — public domain. This is a detail from a
-      640×480 frame, restored and upscaled 4× by Crisp on Apple Silicon. The “Original” side is that
-      same detail scaled to the same size, not degraded to flatter the result — the only difference
-      is Crisp.</p>
-  </div>
-</section>
 
 <section id="what" class="band">
   <div class="wrap">
@@ -629,18 +602,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   ]
 }</script>
 
-<script>
-// Before/after handle. Without this the block still renders — the divider just stays at 50%
-// and both frames are visible — so nothing here is load-bearing for seeing the comparison.
-(function () {
-  var ba = document.getElementById('ba');
-  if (!ba) return;
-  var range = ba.querySelector('.ba-range');
-  function put(v) { ba.style.setProperty('--x', Math.max(0, Math.min(100, v)) + '%'); }
-  range.addEventListener('input', function () { put(parseFloat(range.value)); });
-  put(parseFloat(range.value));
-})();
-</script>
 
 </body>
 </html>
