@@ -92,6 +92,33 @@ a{color:inherit;text-decoration:none;}
 .frame img{display:block;width:100%;height:auto;}
 .cap{margin-top:1rem;font-size:.82rem;color:var(--grey-dim);text-align:center;}
 
+/* before/after — a range input does the work so it is keyboard- and touch-native, and the
+   comparison still shows both images if JS or CSS never arrives. */
+.ba{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--hair-lit);background:var(--card);line-height:0;
+  box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:50%;}
+.ba img{display:block;width:100%;height:auto;}
+/* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
+   full-width image stays pixel-aligned with the one beneath it at every container width. */
+.ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:rgba(255,255,255,.9);
+  transform:translateX(-1px);pointer-events:none;box-shadow:0 0 18px rgba(0,0,0,.6);}
+.ba-grip{position:absolute;top:50%;left:50%;width:42px;height:42px;transform:translate(-50%,-50%);
+  border-radius:50%;background:rgba(10,12,16,.82);border:1.5px solid rgba(255,255,255,.85);
+  backdrop-filter:blur(6px);}
+.ba-grip::before,.ba-grip::after{content:"";position:absolute;top:50%;width:0;height:0;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;margin-top:-5px;}
+.ba-grip::before{left:9px;border-right:6px solid rgba(255,255,255,.9);}
+.ba-grip::after{right:9px;border-left:6px solid rgba(255,255,255,.9);}
+.ba-tag{position:absolute;bottom:14px;padding:.3rem .7rem;border-radius:999px;font-size:.76rem;
+  font-weight:650;letter-spacing:.02em;line-height:1.6;background:rgba(6,8,12,.72);
+  border:1px solid rgba(255,255,255,.14);color:var(--white);backdrop-filter:blur(6px);}
+.ba-l{left:14px;} .ba-r{right:14px;color:var(--ice);border-color:rgba(90,200,250,.45);}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;
+  -webkit-appearance:none;appearance:none;background:transparent;}
+.ba-range:focus-visible{opacity:1;outline:3px solid var(--cyan);outline-offset:-3px;}
+.ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.8rem;line-height:1.65;color:var(--grey-dim);text-align:center;}
+
 /* sections */
 section{padding:7.5rem 0;position:relative;}
 .band{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
@@ -264,6 +291,34 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </figure>
   </div>
 </div>
+
+<section id="restore">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Real output</p>
+      <h2 class="h-lg">A 1950 film reel, restored on a Mac</h2>
+      <p class="lede">Drag the handle. Left is the original frame at this size; right is what Crisp
+        gave back — no cloud, no subscription, no cherry-picking.</p>
+    </div>
+
+    <div class="ba" id="ba">
+      <img class="ba-after" src="/demo-after.jpg" width="1440" height="1080"
+        alt="The same frame after Crisp restored and upscaled it 4× — clean chrome edges and a legible emblem." loading="lazy" decoding="async">
+      <img class="ba-before" src="/demo-before.jpg" width="1440" height="1080"
+        alt="The original 640×480 film frame, soft and grainy." loading="lazy" decoding="async">
+      <div class="ba-line"><span class="ba-grip"></span></div>
+      <span class="ba-tag ba-l">Original</span><span class="ba-tag ba-r">Crisp 4×</span>
+      <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1"
+        aria-label="Reveal more of the original or the restored frame">
+    </div>
+
+    <p class="ba-note">Source: <a href="https://archive.org/details/BigTrain1950_2" rel="noopener">
+      <em>The Big Train</em> (1950)</a>, Prelinger Archives — public domain.
+      640×480 original, restored and upscaled 4× to 2560×1920 by Crisp on Apple Silicon:
+      150 frames in 20.5 seconds. The “Original” side is that same frame scaled to the same size,
+      not degraded — the only difference is Crisp.</p>
+  </div>
+</section>
 
 <section id="what" class="band">
   <div class="wrap">
@@ -569,6 +624,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     }
   ]
 }</script>
+
+<script>
+// Before/after handle. Without this the block still renders — the divider just stays at 50%
+// and both frames are visible — so nothing here is load-bearing for seeing the comparison.
+(function () {
+  var ba = document.getElementById('ba');
+  if (!ba) return;
+  var range = ba.querySelector('.ba-range');
+  function put(v) { ba.style.setProperty('--x', Math.max(0, Math.min(100, v)) + '%'); }
+  range.addEventListener('input', function () { put(parseFloat(range.value)); });
+  put(parseFloat(range.value));
+})();
+</script>
 
 </body>
 </html>
