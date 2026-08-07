@@ -1,10 +1,10 @@
 {
-  "version": "0.1.712",
-  "notes": "Restore old film: remove single-frame dust and flicker, no cloud, no extra download",
-  "pub_date": "2026-08-07T19:03:03Z",
+  "version": "0.1.713",
+  "notes": "Old film: remove dust and steady flicker, now with checkboxes in the app",
+  "pub_date": "2026-08-07T20:22:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ6RTlYMlBUaGRhY3d2dEFHSkVuclk1bmlHWXgrdm9xNmVyK001MStPTzR0aW1aNWQvUDNLWk51akRQVkR4MVZqU1lSdVdqWjJlcVUrZkNEVHlHSlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTI5MjYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5aE5ZME56MnhwTEloTGpiUVlRNHRyOVJQaFlka21lckh3QVRqR1pRR0FiVE5adkNwTnVNRlNTdkc0Z3NYcGt3Tm4vWElpaDNyZVR5WjBHNlJBaEJDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhNTktBMU1XdXdteGhtQ0hKc3o0MHVadUpUcHovb1E2U1VhYlMzTThHbldzYlFXQkZZaXRXU0dPZ3UyNlZtWmtTMm5BK2NEOCtiZWFoNGJ3cFJHQlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTM0MDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWTS9Gd3hCREw0SDlTRjhPRkxCanU1K1NudXlIUnJjTWNMVURMb2R3YmVMOVZKUHZ1aVE5QXpoYjRZWENmWm9US05CRHNkOXg4LysyNUtXak11YWRBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
