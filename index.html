@@ -115,7 +115,11 @@ a{color:inherit;text-decoration:none;}
   border:1px solid rgba(255,255,255,.14);color:var(--white);backdrop-filter:blur(6px);}
 .ba-l{left:14px;} .ba-r{right:14px;color:var(--ice);border-color:rgba(90,200,250,.45);}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;
-  -webkit-appearance:none;appearance:none;background:transparent;}
+  -webkit-appearance:none;appearance:none;background:transparent;
+  /* The input covers the whole image, so without this a vertical swipe that starts on the
+     photo is eaten by the slider and the page won't scroll — the comparison would trap a
+     phone reader. pan-y hands vertical gestures back to the page, keeps horizontal ones. */
+  touch-action:pan-y;}
 .ba-range:focus-visible{opacity:1;outline:3px solid var(--cyan);outline-offset:-3px;}
 .ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.8rem;line-height:1.65;color:var(--grey-dim);text-align:center;}
 
