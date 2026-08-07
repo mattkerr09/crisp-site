@@ -96,7 +96,7 @@ a{color:inherit;text-decoration:none;}
    comparison still shows both images if JS or CSS never arrives. */
 .ba{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
-  box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:50%;}
+  box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:30%;}
 .ba img{display:block;width:100%;height:auto;}
 /* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
    full-width image stays pixel-aligned with the one beneath it at every container width. */
@@ -296,27 +296,27 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
-      <h2 class="h-lg">A 1950 film reel, restored on a Mac</h2>
-      <p class="lede">Drag the handle. Left is the original frame at this size; right is what Crisp
-        gave back — no cloud, no subscription, no cherry-picking.</p>
+      <h2 class="h-lg">Close enough to read the badge</h2>
+      <p class="lede">A 1950 film reel, restored on a Mac. Drag the handle across the emblem —
+        left is the original at this size, right is what Crisp gave back. No cloud, no cherry-picking.</p>
     </div>
 
     <div class="ba" id="ba">
-      <img class="ba-after" src="/demo-after.jpg" width="1440" height="1080"
-        alt="The same frame after Crisp restored and upscaled it 4× — clean chrome edges and a legible emblem." loading="lazy" decoding="async">
-      <img class="ba-before" src="/demo-before.jpg" width="1440" height="1080"
-        alt="The original 640×480 film frame, soft and grainy." loading="lazy" decoding="async">
+      <img class="ba-after" src="/demo-after.jpg" width="1072" height="804"
+        alt="After Crisp: the New York Central emblem is legible and the chrome edges are clean." loading="lazy" decoding="async">
+      <img class="ba-before" src="/demo-before.jpg" width="1072" height="804"
+        alt="The original film frame at the same size — the emblem lettering is a smudge." loading="lazy" decoding="async">
       <div class="ba-line"><span class="ba-grip"></span></div>
       <span class="ba-tag ba-l">Original</span><span class="ba-tag ba-r">Crisp 4×</span>
-      <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1"
+      <input class="ba-range" type="range" min="0" max="100" value="30" step="0.1"
         aria-label="Reveal more of the original or the restored frame">
     </div>
 
     <p class="ba-note">Source: <a href="https://archive.org/details/BigTrain1950_2" rel="noopener">
-      <em>The Big Train</em> (1950)</a>, Prelinger Archives — public domain.
-      640×480 original, restored and upscaled 4× to 2560×1920 by Crisp on Apple Silicon:
-      150 frames in 20.5 seconds. The “Original” side is that same frame scaled to the same size,
-      not degraded — the only difference is Crisp.</p>
+      <em>The Big Train</em> (1950)</a>, Prelinger Archives — public domain. This is a detail from a
+      640×480 frame, restored and upscaled 4× by Crisp on Apple Silicon. The “Original” side is that
+      same detail scaled to the same size, not degraded to flatter the result — the only difference
+      is Crisp.</p>
   </div>
 </section>
 
