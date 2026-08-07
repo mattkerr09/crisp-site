@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crisp — offline AI video upscaler &amp; editor for Mac</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Restore and upscale video to 4K on your Mac, fully offline. A real timeline editor, auto-montage cut to the beat, and a generative restore lane — one-time $19, no subscription, nothing uploaded.">
 <link rel="canonical" href="https://crispvideo.app/">
 <meta name="theme-color" content="#000000">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://crispvideo.app/">
 <meta property="og:title" content="Crisp — offline AI video upscaler &amp; editor for Mac">
@@ -87,6 +87,9 @@ a{color:inherit;text-decoration:none;}
 .shot{margin:4.5rem auto 0;max-width:1060px;padding-bottom:6rem;}
 .frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--hair-lit);background:var(--card);
   box-shadow:0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset;}
+/* The shot is 900px natural but the frame is wider, so without this the screenshot sits
+   left with dead frame beside it. Fill the frame; the 1800px source keeps it sharp. */
+.frame img{display:block;width:100%;height:auto;}
 .cap{margin-top:1rem;font-size:.82rem;color:var(--grey-dim);text-align:center;}
 
 /* sections */
@@ -146,6 +149,29 @@ td.y{color:#4ade80;font-weight:560;}
 td.n{color:var(--grey-dim);}
 
 /* pricing */
+/* cost-over-time — a subscription's real price is the one you pay again next year */
+.cost{max-width:840px;margin:3.6rem auto 0;border:1px solid var(--hair);border-radius:var(--r);
+  background:linear-gradient(180deg,var(--card),var(--panel-2));padding:2.2rem 2.2rem 1.8rem;}
+.cost h3{font-size:1.35rem;font-weight:660;letter-spacing:-.022em;margin:0 0 .5rem;}
+.cost .sub{color:var(--grey);font-size:.95rem;margin:0 0 1.9rem;}
+.cost-row{display:grid;grid-template-columns:5.6rem 1fr;gap:1rem;align-items:center;margin:.75rem 0;}
+.cost-row .yr{font-size:.82rem;color:var(--grey-dim);letter-spacing:.01em;}
+/* flex, not grid: inside a grid the bar's percentage would resolve against an auto-sized
+   column that is itself sized from the bar — so every bar came out label-width. */
+.cost-bars{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;min-width:0;}
+.cost-bar{height:32px;border-radius:9px;display:flex;align-items:center;padding:0 .8rem;white-space:nowrap;
+  font-size:.88rem;font-weight:640;width:var(--p);min-width:max-content;max-width:100%;flex:none;}
+.cost-bar.us{background:linear-gradient(90deg,rgba(90,200,250,.34),rgba(90,200,250,.11));
+  border:1px solid rgba(90,200,250,.5);color:var(--ice);}
+.cost-bar.them{background:linear-gradient(90deg,rgba(255,99,99,.26),rgba(255,99,99,.07));
+  border:1px solid rgba(255,99,99,.38);color:#ffb9b9;}
+.cost .src{font-size:.78rem;color:var(--grey-dim);margin:1.6rem 0 0;line-height:1.6;}
+.cost .src a{color:var(--grey);}
+@media(max-width:640px){
+  .cost{padding:1.6rem 1.2rem 1.3rem;}
+  .cost-row{grid-template-columns:1fr;gap:.35rem;}
+  .cost-bar{font-size:.82rem;height:30px;}
+}
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem;max-width:840px;margin:0 auto;}
 .tier{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
   border-radius:var(--r);padding:2.2rem 1.9rem;display:flex;flex-direction:column;}
@@ -231,8 +257,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One-time $19</span>
     </div>
     <figure class="shot">
-      <div class="frame"><img src="/img-app.png" srcset="/img-app.png 1x, /img-app@2x.png 2x"
-        width="900" height="614" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="eager" decoding="async"></div>
+      <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 900w, /img-app@2x.png 1800w"
+        sizes="(max-width: 1100px) 100vw, 1060px"
+        width="1800" height="1228" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="eager" decoding="async"></div>
       <figcaption class="cap">Crisp on macOS — editor, queue and upscaler in one window.</figcaption>
     </figure>
   </div>
@@ -360,7 +387,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <table>
         <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc</th></tr></thead>
         <tbody>
-          <tr><td>Price</td><td class="y">$19 one-time</td><td class="n">Subscription</td><td class="n">Subscription or licence</td></tr>
+          <tr><td>Price</td><td class="y">$19 one-time</td><td class="n">$299/yr — or $59/mo</td><td class="n">Subscription or licence</td></tr>
+          <tr><td>Cost after 5 years</td><td class="y">$19</td><td class="n">$1,495</td><td class="n">Recurring</td></tr>
+          <tr><td>Keeps working if you stop paying</td><td class="y">Yes — it's yours</td><td class="n">No — subscription-only since Oct 2025</td><td class="n">Varies</td></tr>
           <tr><td>Runs fully offline</td><td class="y">Yes</td><td class="n">Best model is cloud</td><td class="n">Varies by feature</td></tr>
           <tr><td>Timeline editor</td><td class="y">Yes</td><td class="n">No</td><td class="n">Basic</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
@@ -403,6 +432,33 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         </ul>
         <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Get Crisp</a>
       </div>
+    </div>
+
+    <div class="cost">
+      <h3>What it costs to still be using it in five years</h3>
+      <p class="sub">Crisp is $19 once. Topaz Video is $299 a year, every year — and since October 2025
+        new licences are subscription-only, so when it lapses the app stops opening.</p>
+
+      <div class="cost-row"><div class="yr">Year 1</div><div class="cost-bars">
+        <div class="cost-bar us" style="--p:2%">Crisp — $19</div>
+        <div class="cost-bar them" style="--p:20%">Topaz Video — $299</div></div></div>
+
+      <div class="cost-row"><div class="yr">Year 2</div><div class="cost-bars">
+        <div class="cost-bar us" style="--p:2%">Crisp — $19</div>
+        <div class="cost-bar them" style="--p:40%">Topaz Video — $598</div></div></div>
+
+      <div class="cost-row"><div class="yr">Year 3</div><div class="cost-bars">
+        <div class="cost-bar us" style="--p:2%">Crisp — $19</div>
+        <div class="cost-bar them" style="--p:60%">Topaz Video — $897</div></div></div>
+
+      <div class="cost-row"><div class="yr">Year 5</div><div class="cost-bars">
+        <div class="cost-bar us" style="--p:2%">Crisp — $19</div>
+        <div class="cost-bar them" style="--p:100%">Topaz Video — $1,495</div></div></div>
+
+      <p class="src">Topaz Video is $299/yr paid annually, or $59/mo month-to-month. Topaz Studio, which
+        bundles all seven apps, is $399/yr, and the commercial licence is $799/yr. Prices taken from
+        <a href="https://www.topazlabs.com/pricing" rel="nofollow noopener">topazlabs.com/pricing</a>,
+        checked 7 August 2026 — Crisp's $19 buys the version you have, forever.</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Same viewfinder mark as the nav wordmark, on the site's black so it reads in a light tab bar. -->
+  <rect width="64" height="64" rx="14" fill="#08090d"/>
+  <g fill="none" stroke="#5ac8fa" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 24v-5a2 2 0 0 1 2-2h5"/>
+    <path d="M40 17h5a2 2 0 0 1 2 2v5"/>
+    <path d="M47 40v5a2 2 0 0 1-2 2h-5"/>
+    <path d="M24 47h-5a2 2 0 0 1-2-2v-5"/>
+  </g>
+  <circle cx="32" cy="32" r="8.5" fill="none" stroke="#5ac8fa" stroke-width="5.5"/>
+</svg>
