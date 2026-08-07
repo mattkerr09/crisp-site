@@ -1,10 +1,10 @@
 {
-  "version": "0.1.704",
-  "notes": "The X button didn't close Crisp \u2014 clicking it did nothing at all unless a render was in flight. That's fixed, and quitting now shuts the engine down with it. Also in this build: the Anime preset can make smooth motion again, the download is 42% smaller, and if the engine ever stops the app restarts it instead of leaving you with a window where nothing works.",
-  "pub_date": "2026-08-07T01:30:40Z",
+  "version": "0.1.706",
+  "notes": "Quitting works properly now. The X button closes Crisp, and if a render is still going it asks first \u2014 choosing Quit anyway actually quits instead of leaving the window sitting there. Quitting also shuts the engine down with it, so nothing is left running in the background.",
+  "pub_date": "2026-08-07T03:33:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdTajRXNzZ2eGlveWNCQVN6N1NnL1NXVC9zK3E0ZjRFdFdNZEN6ZjZYM2dXazlneHlwd1ZMWE12R0JhUXhkUmlrL3VTWXNQbGRHZTNWdDhBQVZia0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDY0ODIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCYjRGWjZjaERVd3FZUk1qNVA2ZDFhcllkdytMeFN6ci9NWHA0eWptYUhRL0x1YTJDYnVWdnY0YWpCV2d6Q3NkaEZzL1FXTkgrcHBKV3NvYUhlU1ZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJDRVd0dTdZSDhTVWdZTVFHa0NzdC9HYS93QWxXeVZWNkVEY0NIeldLYUFXRWJydWxySTFGOFBZdGxWLy85djZxY05VbWNDZzJ5UkpTaTRLeGpHV1FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDczNDk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKK0dPY0dLV1BJd2VNaWI5eDdXbFpuSnBKdnBsR2E5enZwOGU0OVdXbnMvanVxL0w5U2tGNk43VnQ4R2NkNVRmNWZ4dTdnZjVRclBYUzFiWXNuVUNBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
