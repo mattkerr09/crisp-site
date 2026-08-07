@@ -1,10 +1,10 @@
 {
-  "version": "0.1.713",
-  "notes": "Old film: remove dust and steady flicker, now with checkboxes in the app",
-  "pub_date": "2026-08-07T20:22:55Z",
+  "version": "0.1.714",
+  "notes": "Fix: cleaning old film no longer shortens the clip",
+  "pub_date": "2026-08-07T23:22:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhNTktBMU1XdXdteGhtQ0hKc3o0MHVadUpUcHovb1E2U1VhYlMzTThHbldzYlFXQkZZaXRXU0dPZ3UyNlZtWmtTMm5BK2NEOCtiZWFoNGJ3cFJHQlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTM0MDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWTS9Gd3hCREw0SDlTRjhPRkxCanU1K1NudXlIUnJjTWNMVURMb2R3YmVMOVZKUHZ1aVE5QXpoYjRZWENmWm9US05CRHNkOXg4LysyNUtXak11YWRBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlaU1IyRG5GOWRHOFR4cnBIVUpUaXY2Vm9jcEsybFRYazNmMjBIMGQrZWRWNUU2bjBBSWdrdWtDeDlWVFB1cjdPSjF2OFY1ck1rTGFXMGtsRnlrTndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTQ0ODY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorOThpY0NjSS9STmxtRWRwRGNNQTAva1lzQ3M2VmppNEtGNnFXUXl2UHVOZUw4dmpkUWJlTGxQeE05ZzlkZHgvSzN4RytWVGNOSnRLbXJQY2VxaHBEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
