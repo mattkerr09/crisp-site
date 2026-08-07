@@ -1,10 +1,10 @@
 {
-  "version": "0.1.689",
-  "notes": "Clearer messages when a music montage can't start: Crisp now tells you whether you haven't picked a song yet or the song you picked has been moved, and names the file.",
-  "pub_date": "2026-08-06T11:42:44Z",
+  "version": "0.1.702",
+  "notes": "The Anime preset couldn't make smooth motion at all \u2014 it failed and told you to try a standard preset. That's fixed. Crisp's download is also 42% smaller (128MB to 74MB). And if Crisp's engine ever stops, the app now restarts it instead of leaving you with a window where nothing works.",
+  "pub_date": "2026-08-07T00:29:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk0YnVWNjYzNWxjcUtScWRlRjA3dk5ZcmVUOFYrbWFqVC9ZUHlCRTdqQW5oS05JaysreFJDendtRS9TdllMSUM2QVFlQTBUL0YyWEhrOTV2L0NCaHdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDE1ODQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXSS9VUjRKWlk4V2lyTTlxR1NWRVdwSjlMSS90ZldIaEpJMjlxc2Zta1BCQ2dDRHN3U2ZkUmJhOHdFWGd1ZkFYbUNVU1lwb0JtRHBNZGxMb3d3eStEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5WK2Z4aUhPM3VqUzROMk5qcDdmakR3YmQ5NnFpcDZMMW92eERVU3pxNFlzNlBPTXVUb2g5NW0zKzREVlptenZ1b21HeXFKYUtmQ0hacUJtOHhlendvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDYyNTA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMcUlIL3gyTGljTExrTUZZNnBLek41RWtpalV2NjNiRUdCWG5ycGR2RkY0blc1QjM2L0FaUllpc0wyUnpCUDV1b1piNFlJakZZNHJwZm0wbk5teEVDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
