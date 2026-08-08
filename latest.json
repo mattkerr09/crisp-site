@@ -1,10 +1,10 @@
 {
-  "version": "0.1.726",
-  "notes": "Crisp asks which way, instead of saying it didn't understand.\n\nTyping 'adjust the brightness' used to get 'I didn't catch an edit in that' \u2014 which wasn't true. Crisp knew exactly what you meant and was missing one word: which way.\n\nIt now asks, and names the answer: 'Brighter or darker? Crisp got the rest \u2014 say brighten it or darken it.' Same for contrast, saturation, exposure, colour, volume, speed and sharpness.",
-  "pub_date": "2026-08-08T07:14:23Z",
+  "version": "0.1.727",
+  "notes": "Asking to brighten the picture no longer changes the volume.\n\n'turn the brightness up' planned a 2x volume boost \u2014 the card even said 'Increase the volume (2x)'. A request about the picture, answered by doubling the sound. Same for 'turn the exposure up'.\n\nIt now grades the picture, and so do 'adjust the brightness down', 'crank the contrast up', 'dial the saturation down' and the rest of that word order, which previously reached nothing at all. 'turn the audio down' and 'turn the sound down' also work now \u2014 only 'turn the volume down' did before.",
+  "pub_date": "2026-08-08T08:10:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIzOCs1MDNYbmV2VVUwT1J6aDQvUXFaZU1INFRDL2U3bVZqSUw1Vnozb3c4ZCsxK3F1S1l5L2FxcVlFbE9UeEhIUFZGNWd5b3RnUE1kTzUySEtSaUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTczMjE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyQ1grYThoZ0tpQmovMXRRNFVOZXQvL01kQ21uY3NaV2RzcjR3dUhsUU5ONXV6NnBlNE1HekN6UXlMV1RUek1MZjZmYkRTS2JEU2NyZzcxbFBCYndBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxDTjZ1SDRZcnVBUlp6UWtCWmZmS3JzRFl3azhRZWNpYmZGU1pkTXdKcXR6L2Z4aXNZbDlPL3RORjJkdThmT2xoSHhLcHc1V2xwWFlkaTdVMlY5OXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTc2NTYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYeUhlY3pGLytLQ1oxVDFhdms3MlVQbENrSlpLemk4U2hRK1dSaFFscyt2dXBNTGlwWkNFNjZhZ2E0cmRIVEtreS9zVjBqeWJGc05LbjJNMGFTRXRCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
