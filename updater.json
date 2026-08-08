@@ -1,10 +1,10 @@
 {
-  "version": "0.1.737",
-  "notes": "Asking conditionally no longer doubles the effect.\n\n'if it is too dark, brighten it' was applying the brightening twice \u2014 once for the 'if' and once for the request \u2014 so the clip came out over-bright. It now does it once.",
-  "pub_date": "2026-08-08T16:16:53Z",
+  "version": "0.1.739",
+  "notes": "Groundwork for Windows, and no change to how your Mac encodes.\n\nCrisp now picks its video encoder from what the machine actually has rather than assuming Apple's. On a Mac that is still VideoToolbox, exactly as before \u2014 the Mac path returns before it even looks. The point is the other platforms.",
+  "pub_date": "2026-08-08T17:16:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJjTk1qT0VxSTdDa3NrSkhvTmduOFI0UERkb1hlVzA4UFJ1N1laSmFhNFNKR1k2WVB4UEZJMzF1UitpQ0hRdFY1Q1l6NzVjR3VPbGFpSm1CSXQ1MndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjA1NzA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0cWMxTjFtMTFwQzFyUVNTWU4zdlYrdk5laDlMaGg4ZUxZM3BiQzRNWHNiZWZadkF0UVdhZWlxOENwaXRXRDdsa1p2emFVV0xPMmJ4TU5LMk5QRlJBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8xajBnZTNaM1NGcTViZVdVeENPZzhvWUZIUDlDSGdZamUzRGloZ2RNK3p4YVR5MzYzRXU2TnFsSjZ3eUxuZjQ2THF1MksrSTY2bzJSWDVOaitZeGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjA5MzE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQKyt3bEs5V2lVUEczdDljOFEvelNzZmRxSU1QbWwvb0VmaDE4TmVxbGt5c3JXR3ZwOVFzTkdZa1d6MlRWWmh4b0lzRi9tT3RaTW9xYWl1TUpZTDVCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
