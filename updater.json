@@ -1,10 +1,10 @@
 {
-  "version": "0.1.736",
-  "notes": "Saying 'before' at the start of a sentence now runs the steps in the right order.\n\n'before upscaling it to 4k, trim it to 10s' was upscaling first and trimming after \u2014 backwards, and on a 4K render that is the expensive way round. Every way of saying it now gives the same order.",
-  "pub_date": "2026-08-08T15:22:43Z",
+  "version": "0.1.737",
+  "notes": "Asking conditionally no longer doubles the effect.\n\n'if it is too dark, brighten it' was applying the brightening twice \u2014 once for the 'if' and once for the request \u2014 so the clip came out over-bright. It now does it once.",
+  "pub_date": "2026-08-08T16:16:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtiOUJHWU5ZZU1WR0UzSWFUQW1SK0ltQXJNL1NYUGRZVE1COGFsc1E3VFNscHllNzFTa2M4TXJER0UzVXp6TGc0U1dNSlVaNENyNFpMLzU0a0dWMEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjAyNDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5aEQ4VGEzamlEMy9CZU1nclRRbXkyN3dpOXAvWUd1ZnRpbjA5Q01oN0w1TjFuWEt0eDZualFhTXQyc3h1V2E3VFhoRXg3QktIQzdwVitHd3pka0lCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJjTk1qT0VxSTdDa3NrSkhvTmduOFI0UERkb1hlVzA4UFJ1N1laSmFhNFNKR1k2WVB4UEZJMzF1UitpQ0hRdFY1Q1l6NzVjR3VPbGFpSm1CSXQ1MndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjA1NzA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0cWMxTjFtMTFwQzFyUVNTWU4zdlYrdk5laDlMaGg4ZUxZM3BiQzRNWHNiZWZadkF0UVdhZWlxOENwaXRXRDdsa1p2emFVV0xPMmJ4TU5LMk5QRlJBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
