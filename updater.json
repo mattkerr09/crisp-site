@@ -1,10 +1,10 @@
 {
-  "version": "0.1.719",
-  "notes": "Trim from a point, and a straight answer about interlaced footage.\n\n'trim the footage from 5s' used to answer 'I didn't catch an edit in that', while 'start at 5s' \u2014 the same request \u2014 worked fine. It now trims from where you say.\n\nAnd asking Crisp to deinterlace no longer pretends not to understand you. Crisp doesn't deinterlace; it now says so, and points you at HandBrake's Decomb filter or ffmpeg's yadif, because combing has to come off before an upscaler sees it or it gets sharpened in permanently.",
-  "pub_date": "2026-08-08T03:15:22Z",
+  "version": "0.1.721",
+  "notes": "Asking to trim several clips no longer starts a render instead.\n\n'trim all the clips to 10s' and 'trim both clips to 10s' used to plan a full GPU upscale \u2014 not a polite decline, an expensive render of footage you had just asked to shorten. 'trim the clips to 10s', one word shorter, worked fine. Quantifiers now count as part of what you're pointing at.",
+  "pub_date": "2026-08-08T04:09:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ0ZEtCNUNuM1Zod3pIVzRZMnNpQ29uQUpKT1lDdzV3d0FFK2FEcTBBY3RNek9TZ21hZ0p4ZGJaenV4Q1ExVllVMlRFejFBZzFaZ2NWc1Yvb0l6a3dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTU4ODM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorK08zRzhkWjZIZERYVE0yWDdhWVBLbk00SEVpSjVOaUFsRUNIbVFIQmJodG5PdjA5UDZHMjFqSElacC9pZDBTT1MyMDB1bUtmNVp4alN3RktQVGREdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpMSllPZ1NmclMzN0twSjhmTVNtTUNRSndqcExoQ244MWNmSlZkb0ljSnBPcGlnSFlhamJQRFpTQTV6ZFY4aFFuMDZLbnpnUzB3bUJHbStUc0Y1T3dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTYyMTE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBL0F1WXRjaVBDblcwOVd0VjhENGNoSzVKcUtxVDQ2VDRGWlh4QnBia0djQjgwZ0NpM0tvVHVJSlh6YXQxc3pETlNrYzR3dENFbnVGcDJzTDc5UFhEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
