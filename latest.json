@@ -1,10 +1,10 @@
 {
-  "version": "0.1.743",
+  "version": "0.1.744",
   "notes": "More Windows groundwork. No change on your Mac.",
-  "pub_date": "2026-08-08T21:22:29Z",
+  "pub_date": "2026-08-08T22:29:14Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdjSTRvNUFaQ2k3Y2RUMGY4M0llYWFNZHZsTFlCbWZ5WDJua3BraXNFNVYrR0QzQ2lTTTlGOWJzeG5MSktTa1BtZlErenR0cGNpWng2OWtSTG5oM2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjI0MDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negorNUZLVjA4RTQ2WHJsUEh2dGUwZHplY0xORVVsaDIwT0tOd3BFd2d1a003dTM2UGxDRkwreWQrYVNQTUFteEtPTVRxdWFvS00zUVZDdG5xaWgvekxDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ6bmlCbGFoS3cwQUlBYkRHTjlIaEt4ZStDRUxTT2QxU0R2dGE1ZS8wV3hlNTVmcE90ZzlKaWt3K2wzSU03OSsvU0cwWC9lR0VnYUpRSEo4VWIwaVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjI4MTE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSVljZDRHVXdqa2VmYzJLTFRLdGZaOHU5RENzVmM2WWZEK0VrZ3U4MUxCcUVBbkZNb1VBMFlKT0NBTnlqU0FJakZrM2lrWkJ2aVRrczZPVGhoMy9DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
