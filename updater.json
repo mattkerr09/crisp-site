@@ -1,10 +1,10 @@
 {
-  "version": "0.1.729",
-  "notes": "Asking about a caption or logo that's already burned in gets a straight answer.\n\n'make the logo bigger' used to plan a full re-render of your whole video. 'make the captions smaller' and 'make the watermark bigger' offered to add a NEW one on top. Meanwhile 'make the subtitles smaller' \u2014 the same request, one word different \u2014 correctly explained that a burned-in overlay is part of the picture.\n\nThey all give that explanation now, and point you back to the original clip.",
-  "pub_date": "2026-08-08T09:25:24Z",
+  "version": "0.1.731",
+  "notes": "Saying 'but not too much' no longer reverses what you asked for.\n\n'speed it up but not too fast' was slowing the clip down. 'make it darker but not too dark' was brightening it. The qualifier limits how far to go, not which way \u2014 it now leaves the main verb to decide.\n\nAlso: 'not so bright', 'make it less loud' and 'a bit less fast' used to reach nothing at all, while 'too bright', 'too loud' and 'too fast' worked fine. Same complaint, so they work the same now.",
+  "pub_date": "2026-08-08T11:25:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUo2bDdhejhWUFV1UEhZaU9iNnBiUHFTNEFneUFLMGFnTmVCUlpydkJ0dkdrNFcydlpvSnBWQndCbWQ1eFBBUjNoeTVOK0VBTVBqcGZwRmt6Y3dxOGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTgxMDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3QkdkQ1BFbXRKc0NuQU9qMmRKM2FramQ3UVltK2E4ZENoWFZOUXYva0UwQytwQjl0ZGc0dUxBVkk5VkFaaDdKczZ6cFk5SEl2RTA2L1lJMzVYQ0FCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdYOVo4NDhwdyt3bnpubjZ4OFRCMER6aGx0V3I3UXhZdnRWRmFCWUl0WHg4RW5HK21CYnVVQ2NLWm1ibTJ1U2dYQVhMcEhiaUtyeUJUSDhzT2cwaGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTg4MjUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQdjJIbDJOb2pheTBHVENTcDVyVmtrOGV2R05xenIxUk5CRi9nOXlwbld4WStQWlpjUFMwOWJJTUY1QlZiMEwwQzlqVWJ3aUZ6VzJUNk9hWVRLMlhCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
