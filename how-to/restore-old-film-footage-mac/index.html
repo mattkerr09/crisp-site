@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to restore old film footage on a Mac (2026) — remove dust and flicker, offline | Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Clean up an old film or video transfer on a Mac — remove single-frame dust and blotches, steady the brightness flicker, and upscale. 100% offline, no account, no upload. Honest about what it can't do: persistent vertical scratches.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/restore-old-film-footage-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to restore old film footage on a Mac — free to try">
+<meta property="og:description" content="Remove single-frame film dust and steady old-film flicker on your Mac, 100% offline — plus what it honestly can't fix.">
+<meta property="og:url" content="https://crispvideo.app/how-to/restore-old-film-footage-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Restore old film footage on a Mac">
+<meta name="twitter:description" content="Remove film dust and flicker on your Mac — offline, no upload, and honest about the limits.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to restore old film footage on a Mac","description":"Clean up an old film or tape transfer on a Mac, 100% offline: drop the clip in, turn on Remove dust & blotches and Steady the brightness, pick an upscale preset, and export. Nothing is uploaded.","totalTime":"PT5M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
+{"@type":"HowToStep","position":1,"name":"Open Crisp and drop in your transfer","text":"Download Crisp for Mac, open it, and drag the scanned film or tape capture onto the window. Everything runs on-device — nothing is uploaded."},
+{"@type":"HowToStep","position":2,"name":"Turn on the old-film repairs","text":"Under Old film, tick “Remove dust &amp; blotches” to clear single-frame dirt, and “Steady the brightness” to even out old-film flicker. Use either on its own or both together."},
+{"@type":"HowToStep","position":3,"name":"Pick a preset","text":"Enhance is the everyday choice. Max quality rebuilds detail generatively and outputs up to 1080p; both honour the two repairs."},
+{"@type":"HowToStep","position":4,"name":"Export","text":"The restored clip is saved beside the original, the same length as the original, with the audio still in sync."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can Crisp remove dust and specks from old film?","acceptedAnswer":{"@type":"Answer","text":"Yes, for dirt that sits in a single frame — the most common kind on a film transfer. In our measurements single-frame specks were cleared essentially completely, while a deliberate three-frame mark was left alone, which is what stops it eating real detail."}},
+{"@type":"Question","name":"Can it remove vertical scratches from film?","acceptedAnswer":{"@type":"Answer","text":"No. A scratch that persists across many frames looks the same to an automatic filter as a thin bright object that belongs in the shot, so removing it unattended risks destroying real picture. Crisp does not claim scratch removal."}},
+{"@type":"Question","name":"Will it flatten a deliberate fade when it fixes flicker?","acceptedAnswer":{"@type":"Answer","text":"No. The flicker fix evens out frame-to-frame exposure jitter but leaves intentional brightness changes alone — we test it against a deliberate fade, which keeps its range."}},
+{"@type":"Question","name":"Does restoring change the length of my clip?","acceptedAnswer":{"@type":"Answer","text":"No. Frames in equals frames out, and the audio stays in sync — including on very short clips of only one or two frames."}},
+{"@type":"Question","name":"Is my footage uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp restores entirely on your Mac — no account, no queue, no size cap, and family footage never leaves the device."}}
+]}
+</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb">Guide · Restore old film on Mac</div>
+  <h1>How to <span class="grad">restore old film</span> footage on a Mac</h1>
+  <p class="lede">Scanned reels and old tape captures arrive with two problems that have nothing to do with resolution: <strong>dirt that flashes for a single frame</strong>, and a <strong>brightness flicker</strong> that makes the whole picture breathe. Here's how to fix both on your Mac, <strong>100% offline</strong> — and, just as important, what a program like this honestly <em>can't</em> fix.</p>
+  <div class="updated">Updated August 2026 · step-by-step</div>
+
+  <h2>What's actually wrong with old footage</h2>
+  <p>It helps to separate the faults, because they need completely different treatment:</p>
+  <ul>
+    <li><strong>Single-frame dust and blotches.</strong> A speck of dirt on the gate or the scanner glass shows up in <em>one</em> frame and is gone the next. This is the most common defect on a film transfer, and it's the one that can be fixed safely — the frames on either side show what belongs there.</li>
+    <li><strong>Brightness flicker.</strong> Frame-to-frame exposure wobble from the original camera, the lamp, or the scanner. The picture pulses even though nothing in the shot changed.</li>
+    <li><strong>Vertical scratches.</strong> A tramline running down the film for hundreds of frames. This one is different in kind — see <a href="#scratches">below</a>.</li>
+    <li><strong>Softness and low resolution.</strong> A separate job, and the one an upscaler is for.</li>
+  </ul>
+
+  <h2>Clean it up in Crisp</h2>
+  <ol class="steps">
+    <li><h3>Drop the clip in</h3><p>Open Crisp and drag your transfer onto the window. It never leaves your Mac.</p></li>
+    <li><h3>Turn on the old-film repairs</h3><p>Under <strong>Old film</strong> there are two tick boxes: <strong>Remove dust &amp; blotches</strong> and <strong>Steady the brightness</strong>. Use either alone or both together — they're independent.</p></li>
+    <li><h3>Pick a preset</h3><p><strong>Enhance</strong> is the everyday choice. <strong>Max quality</strong> rebuilds detail generatively and outputs up to 1080p. Both honour the two repairs.</p></li>
+    <li><h3>Export</h3><p>The restored file lands beside the original — same length, audio still in sync.</p></li>
+  </ol>
+
+  <h2>What we measured</h2>
+  <p>Every restoration tool sounds convincing in a sentence, so here are the actual test results, including the case that's <em>supposed</em> to fail:</p>
+  <div class="cmp-wrap">
+  <table class="cmp">
+    <thead><tr><th>Test</th><th>Result</th><th>Why this one</th></tr></thead>
+    <tbody>
+      <tr><td>Dirt present in a <strong>single frame</strong></td><td>Cleared</td><td>The defect we're targeting.</td></tr>
+      <tr><td>A mark deliberately held for <strong>three frames</strong></td><td><strong>Survives</strong></td><td>The control. A filter that removed this too would also erase small real things — a bird, a spark, a distant light.</td></tr>
+      <tr><td>Frame-to-frame brightness jitter</td><td>Cut by ~88%</td><td>The flicker you actually see.</td></tr>
+      <tr><td>A deliberate <strong>fade</strong> in the same clip</td><td><strong>Survives</strong></td><td>The control. Intentional brightness changes must be left alone.</td></tr>
+      <tr><td>Clip length and audio sync</td><td>Unchanged</td><td>Frames in equals frames out — checked down to one- and two-frame clips.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">The two "survives" rows are the point. Anyone can delete detail; the difficulty is removing dirt while leaving the picture intact, so we test the opposite case every time.</p>
+
+  <h2 id="scratches">What this <em>won't</em> do: persistent vertical scratches</h2>
+  <p>Crisp does not remove long vertical scratches, and we'd rather say so than sell you a disappointment.</p>
+  <p>The reason is worth understanding, because it applies to every automatic tool. Removing a scratch is not the hard part — <em>recognising</em> one is. A tramline that runs down hundreds of frames is, to a filter, indistinguishable from a thin bright vertical thing that genuinely belongs in the shot: a railing, a mast, a window frame, a strip light. We tested this directly, and detection is the wall, not reconstruction. A tool that removes scratches unattended will sooner or later erase something real, in a way you won't notice until you look closely at a shot you cared about.</p>
+  <p>This is why scratch removal in professional workflows is a <strong>supervised, per-scratch</strong> job rather than a checkbox. If your footage has them, that's the honest route.</p>
+
+  <h2>Why doing it offline matters here</h2>
+  <ul>
+    <li><strong>It's usually family footage.</strong> Home movies and old reels are exactly the material you don't want to hand to an upload queue.</li>
+    <li><strong>No size cap, no queue.</strong> A long transfer runs locally at whatever length it is.</li>
+    <li><strong>Nothing expires.</strong> No account, no subscription, no server that has to still exist next year.</li>
+    <li><strong>Stack it.</strong> Clean the dirt, steady the brightness, then upscale — one pass, on-device.</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Clean up your old footage — offline</h2>
+    <p>Free to try on your Mac. Remove single-frame film dirt and steady old-film flicker without uploading a thing.</p>
+    <a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a>
+    <p class="muted" style="margin-top:.8rem;margin-bottom:0">Apple Silicon · macOS 12+ · Notarized</p>
+  </div>
+
+  <h2>FAQ</h2>
+  <h3>Can Crisp remove dust and specks from old film?</h3>
+  <p>Yes — for dirt that sits in a single frame, which is the common case on a transfer. Single-frame specks were cleared in our tests, while a deliberate three-frame mark was left alone. That second result is what stops the filter eating real detail.</p>
+  <h3>Can it remove vertical scratches?</h3>
+  <p>No, and it doesn't claim to. See <a href="#scratches">the section above</a> — the obstacle is telling a scratch apart from a thin object that belongs in the shot.</p>
+  <h3>Will fixing flicker flatten a deliberate fade?</h3>
+  <p>No. The fix targets frame-to-frame exposure jitter and leaves intentional changes alone; a deliberate fade keeps its range in our tests.</p>
+  <h3>Does restoring shorten the clip?</h3>
+  <p>No. Frames in equals frames out and the audio stays in sync — including on clips only one or two frames long.</p>
+  <h3>Does it work with Max quality?</h3>
+  <p>Yes. Both repairs apply on every upscale preset, Max included.</p>
+  <h3>Is my footage uploaded anywhere?</h3>
+  <p>No — it's all done on your Mac, so there's no upload, no queue and no size cap.</p>
+  <h3>Related guides</h3>
+  <p><a href="https://crispvideo.app/how-to/fix-blurry-video-mac/">Fix blurry video</a> · <a href="https://crispvideo.app/how-to/add-film-grain-to-video-mac/">Add film grain</a> · <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">Deinterlace old video</a> · <a href="https://crispvideo.app/how-to/color-grade-video-mac/">Colour grade</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
