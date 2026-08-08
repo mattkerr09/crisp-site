@@ -1,10 +1,10 @@
 {
-  "version": "0.1.734",
-  "notes": "Longer sentences with 'after' in them no longer lose a step.\n\nYesterday's fix taught Crisp that 'after' means do that part first. It turned out to drop anything else in the sentence: 'make it vertical after trimming it to 10s and mute it' did the mute and the reframe but quietly skipped the trim.\n\nAll three now run, and the 'after' part still goes first.",
-  "pub_date": "2026-08-08T13:41:37Z",
+  "version": "0.1.735",
+  "notes": "Sentences with two time words in them keep every step.\n\n'mute it after trimming it to 10s before upscaling it to 4k' was doing the upscale and the mute and quietly skipping the trim. All three run now, in the order you said them.",
+  "pub_date": "2026-08-08T14:29:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUMwT0RXSGJ6TXBkbUpDQkZrMXQ1VEUzVjJqWjdONlJvYVpJbng2c0R6MkU0em9Zb0piU2hzd3ZlL0YyZzhZVWxMdmU4QnEzSlVsMCtBRkgyM05HZkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTk2NDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppdERjUFoxbWpINDFqZzFieTJkMlFRZjhzeC9tNWVvT0J2Y3Z3WW9CUWhYMUtaNjdjOUVTeGpWeVNETVVIcUxyUE4xOFJIZGY4d2d2Si9LQ1NtMEhCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl3ZmlpUkxIMWF1OHZvMDdzWXdxZjZTYTRENGZ5a211Q1YrZk9LaTBnNzJKY2Q2cEs0T1MvbU5vdFN2dEo1OXRRdk1zbkdmdDFjWnY2dVEzRnphSUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTk5MzM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqVlNSdlVzRG9xNmlxcm80TmErcXVKdC84N1BuMmlsWXg1MWVXdVhIbjJxbngxSGpGR0c4RTJON2I4OU00ak10azdJQnBsc0t4Yk01a3RwTTRZMVJCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
