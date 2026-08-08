@@ -1,10 +1,10 @@
 {
-  "version": "0.1.724",
-  "notes": "A straight answer when a trim can't be done.\n\nTyping 'trim it to 0s' used to get 'I didn't catch an edit in that' \u2014 Crisp claiming it hadn't understood you, when it had understood exactly and simply can't produce an empty file. It now says so, and offers both readings, since that's usually a slip for one of them: name the length to keep ('trim it to 10s'), or say which part to cut ('cut the first 5 seconds').",
-  "pub_date": "2026-08-08T06:15:53Z",
+  "version": "0.1.726",
+  "notes": "Crisp asks which way, instead of saying it didn't understand.\n\nTyping 'adjust the brightness' used to get 'I didn't catch an edit in that' \u2014 which wasn't true. Crisp knew exactly what you meant and was missing one word: which way.\n\nIt now asks, and names the answer: 'Brighter or darker? Crisp got the rest \u2014 say brighten it or darken it.' Same for contrast, saturation, exposure, colour, volume, speed and sharpness.",
+  "pub_date": "2026-08-08T07:14:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtVN3dzWHI1azJPUVZ6ZVRaQmRqREpIcXF0UkxkdCszeEFrYzRUNVJlSXVmeTlYUVBiU2NnTlRYbTNGSHJEejdValJnNXdseVNVYm92RXVnRXpDb2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTY5Njk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmY3dQYldFem1IWXdXNzV2a0hYY3VjN2dWTDRrbVdrK1NHSEc3ZmNxaFA1MUE5K3cyS3hWcXRITVlKUDU4L1lYR0x6SDBhclBCOFppbit6VHZOVURDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIzOCs1MDNYbmV2VVUwT1J6aDQvUXFaZU1INFRDL2U3bVZqSUw1Vnozb3c4ZCsxK3F1S1l5L2FxcVlFbE9UeEhIUFZGNWd5b3RnUE1kTzUySEtSaUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTczMjE2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyQ1grYThoZ0tpQmovMXRRNFVOZXQvL01kQ21uY3NaV2RzcjR3dUhsUU5ONXV6NnBlNE1HekN6UXlMV1RUek1MZjZmYkRTS2JEU2NyZzcxbFBCYndBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
