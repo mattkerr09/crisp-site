@@ -1,10 +1,10 @@
 {
-  "version": "0.1.714",
-  "notes": "Fix: cleaning old film no longer shortens the clip",
-  "pub_date": "2026-08-07T23:22:42Z",
+  "version": "0.1.715",
+  "notes": "Old film repairs now work on Max quality, and you can just ask for them.\n\nTicking Remove dust & blotches or Steady the brightness with Max quality selected used to do nothing at all \u2014 the controls were there, the render ran, and the dirt came back untouched. They now apply on every preset.\n\nYou can also just type it: 'remove the dust and specks', 'fix the flickering', 'steady the brightness'. Those phrasings previously answered 'I didn't catch an edit in that' for a feature that was already working.\n\nAlso fixed: 'give my industrial video a warmer look' planned a full GPU upscale instead of a colour grade, because 'industrial' contains the letters of 'dust'.",
+  "pub_date": "2026-08-08T00:46:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlaU1IyRG5GOWRHOFR4cnBIVUpUaXY2Vm9jcEsybFRYazNmMjBIMGQrZWRWNUU2bjBBSWdrdWtDeDlWVFB1cjdPSjF2OFY1ck1rTGFXMGtsRnlrTndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTQ0ODY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorOThpY0NjSS9STmxtRWRwRGNNQTAva1lzQ3M2VmppNEtGNnFXUXl2UHVOZUw4dmpkUWJlTGxQeE05ZzlkZHgvSzN4RytWVGNOSnRLbXJQY2VxaHBEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpjNmtLN0NhQXRGQmFoallqYjFJbzdJdUlYODI0Vy83UCt0SmpjcEpzZXZ6MHo3ZXBrRGRCeFN0Tmh0Ym9DcUNZcGJUT0UwcVZPb3dOSEVrNGxIQXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTQ5NDcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSWnYzb0NRR1ZQVFRoRXFZRUdKTGh6L1h0VGhDM0IxSzZzTXJMQTJaSThiVTlTeDBCU1lKcVdSQVhiSDhmQTcvZWlzKzBzcE1ZMkpSc052dHFPNStEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
