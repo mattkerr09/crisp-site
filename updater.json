@@ -1,10 +1,10 @@
 {
-  "version": "0.1.744",
-  "notes": "Trim, compress, crop and rotate now pick their encoder when they run.\n\nGroundwork for Windows: these four lanes used to have Apple's encoder baked into their signatures. They now ask the machine at the moment they do the work. On a Mac the answer is the same as it has always been.\n\nOne real bug fell out of it \u2014 compressing a ProRes file forces a different codec, since ProRes cannot be rate-controlled, and it was forcing an Apple-only one by name.",
-  "pub_date": "2026-08-08T22:54:15Z",
+  "version": "0.1.745",
+  "notes": "Looping, fading, borders and stabilisation now pick their encoder at the moment they run.\n\nMore Windows groundwork, and no change to what your Mac produces \u2014 these four lanes had Apple's encoder written into their signatures and now ask the machine instead.",
+  "pub_date": "2026-08-08T23:49:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ6bmlCbGFoS3cwQUlBYkRHTjlIaEt4ZStDRUxTT2QxU0R2dGE1ZS8wV3hlNTVmcE90ZzlKaWt3K2wzSU03OSsvU0cwWC9lR0VnYUpRSEo4VWIwaVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjI4MTE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSVljZDRHVXdqa2VmYzJLTFRLdGZaOHU5RENzVmM2WWZEK0VrZ3U4MUxCcUVBbkZNb1VBMFlKT0NBTnlqU0FJakZrM2lrWkJ2aVRrczZPVGhoMy9DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM2TWN2WmQ2Zk11bmpOakV6M3FINUo4b3dhK2hHcElSMzVRbEIySEVWVjBUNjdnY1QxUEhuaHE4RnBNL1RPcE50ejBiaHhUZHYrOXBEYm1lUmYra2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjMyODk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEN0hreHg5WGRUWnpVcVVPTzlkVzAvSnhhVXNFaXVyWE9rc0RhQ1FBUFlUK0RLZjNTczB6bkZKYWtqbXdjeTcwNDR1MmJqNVpmMHRicjVaWGNFbkJEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
