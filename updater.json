@@ -1,10 +1,10 @@
 {
-  "version": "0.1.733",
-  "notes": "Saying when to do something now works, in the right order.\n\n'make it vertical after trimming it to 10s' used to do only the reframe \u2014 the trim vanished without a word. It now does both, and does the trimming first, because that is what 'after' means. Same for 'once it is trimmed', and 'before' keeps the order you said it in.\n\n'and' and 'then' always worked, which is why this one went unnoticed.",
-  "pub_date": "2026-08-08T12:42:43Z",
+  "version": "0.1.734",
+  "notes": "Longer sentences with 'after' in them no longer lose a step.\n\nYesterday's fix taught Crisp that 'after' means do that part first. It turned out to drop anything else in the sentence: 'make it vertical after trimming it to 10s and mute it' did the mute and the reframe but quietly skipped the trim.\n\nAll three now run, and the 'after' part still goes first.",
+  "pub_date": "2026-08-08T13:41:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUE1NHEyajRWcVZqc1UrL0JkSDN3QVJDNU1jYnVlaTRyMzI5RGlZUXBnYXJuVXRBbG9Xa3B6TWREcDdHRW5zWjEyNzZkd0NFQ0RPRENRQmtXeVAwTHdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTkyOTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCbm5OMlRvNzVDTFRsd1FOUTRTN2VRcE0wQmo0Z0RqRHdtWURCYzVlSGhEcVlVTElQTEFGVkQyYVhVY2dhbzIzeE1KLzhBOXU5bFZHZTd5bTdoeFJDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUMwT0RXSGJ6TXBkbUpDQkZrMXQ1VEUzVjJqWjdONlJvYVpJbng2c0R6MkU0em9Zb0piU2hzd3ZlL0YyZzhZVWxMdmU4QnEzSlVsMCtBRkgyM05HZkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTk2NDMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppdERjUFoxbWpINDFqZzFieTJkMlFRZjhzeC9tNWVvT0J2Y3Z3WW9CUWhYMUtaNjdjOUVTeGpWeVNETVVIcUxyUE4xOFJIZGY4d2d2Si9LQ1NtMEhCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
