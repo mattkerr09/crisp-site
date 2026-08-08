@@ -1,10 +1,10 @@
 {
-  "version": "0.1.727",
-  "notes": "Asking to brighten the picture no longer changes the volume.\n\n'turn the brightness up' planned a 2x volume boost \u2014 the card even said 'Increase the volume (2x)'. A request about the picture, answered by doubling the sound. Same for 'turn the exposure up'.\n\nIt now grades the picture, and so do 'adjust the brightness down', 'crank the contrast up', 'dial the saturation down' and the rest of that word order, which previously reached nothing at all. 'turn the audio down' and 'turn the sound down' also work now \u2014 only 'turn the volume down' did before.",
-  "pub_date": "2026-08-08T08:10:37Z",
+  "version": "0.1.728",
+  "notes": "A clearer confirmation card for brightness and contrast changes.\n\nAsking to 'turn the brightness up' showed two lines on the card \u2014 one of them describing an upscale, inherited from a different plan. It now shows the one thing it's actually going to do, the same as 'brighten it' always did.",
+  "pub_date": "2026-08-08T08:37:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxDTjZ1SDRZcnVBUlp6UWtCWmZmS3JzRFl3azhRZWNpYmZGU1pkTXdKcXR6L2Z4aXNZbDlPL3RORjJkdThmT2xoSHhLcHc1V2xwWFlkaTdVMlY5OXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTc2NTYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYeUhlY3pGLytLQ1oxVDFhdms3MlVQbENrSlpLemk4U2hRK1dSaFFscyt2dXBNTGlwWkNFNjZhZ2E0cmRIVEtreS9zVjBqeWJGc05LbjJNMGFTRXRCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxGM3dNNHhHaW1JUzlXRVE1V2N2RG9ML0hZeXJ4bWVObzhwaXIvVEQzN3NINy9zL1ZpUXYvSERmcXJFTkNJL3BKcTRBNnNqTytPY3hqNHFHR0l4dlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTc4MjMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSU5xZGpWWXhIU2RlY2h4aDVZclhveW9NVnpWczFHQzVKSE9laGtxNEJZN1g5S0ZMT2NHNWl0UXZaNG1BSVF5MkQ1SFZ4d0pvczY5M2NrSDZLeERBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
