@@ -1,10 +1,10 @@
 {
-  "version": "0.1.716",
-  "notes": "One restore is one render again.\n\nAsking for a full restore in a sentence \u2014 'restore this old home movie, remove dust and flicker' \u2014 used to plan three separate upscales of the same clip, each re-rendering the output of the last, and the summary card named neither repair. It's now a single pass that does both and says so.",
-  "pub_date": "2026-08-08T01:21:36Z",
+  "version": "0.1.718",
+  "notes": "Say what your video is, and Crisp still understands you.\n\n'trim the wedding footage to 10s', 'slow the wedding footage down', 'speed the footage up' and 'loop the footage' all used to answer 'I didn't catch an edit in that' \u2014 while the same sentences with a shorter object ('trim the footage to 10s', 'loop the video', 'speed it up') worked fine. Four different rules were each sized to one example sentence rather than to the words people actually use for their own footage. One of them literally counted characters, so 'wedding footage' failed where 'drone footage' worked.",
+  "pub_date": "2026-08-08T02:25:16Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUcvUlBuRjhua1FFVFlpUFhWdWVYMmV2KzRzb2Q1bTJ0aVowVXRERDFocGpYSUowVEdJcFBRcWt4NW9mZmRMUHk1ZGZ6TGJBVlJFaVoybkpXNHVqZEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTUxNzExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negphWmV5b2RES1dhdmhUOUU0bER4SHVVWXRDYzBlbytVMWV6OGd1WGNSSjRVQy8zRXpuTURpMlNZYkNGVjFMTUg4Q090YXhXbzRTZXFaOUhJbkYyWXZEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJSUm0ya0hqOWF0UmJyeXJ6S1d3M251dVNXUWJRK085R3hnMlZXSmoxeE9HTWE5eE9NRXlPTTNEOWl1TUFsb1gwQnlqSlBBTThoS3dacWVsZWFWVUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTU1ODM1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovUktqSVNHRFpjUzJBaEFZRlMwNitJN0Vhck9IdEpRZW92cjRnYnB6SlJMOFRUZXdDLzQzV1Y1VzhqZFIwcTA2UUlFTnA3NWcrNzhBL0l3R2hBL0FCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
