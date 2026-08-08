@@ -1,10 +1,10 @@
 {
-  "version": "0.1.728",
-  "notes": "A clearer confirmation card for brightness and contrast changes.\n\nAsking to 'turn the brightness up' showed two lines on the card \u2014 one of them describing an upscale, inherited from a different plan. It now shows the one thing it's actually going to do, the same as 'brighten it' always did.",
-  "pub_date": "2026-08-08T08:37:56Z",
+  "version": "0.1.729",
+  "notes": "Asking about a caption or logo that's already burned in gets a straight answer.\n\n'make the logo bigger' used to plan a full re-render of your whole video. 'make the captions smaller' and 'make the watermark bigger' offered to add a NEW one on top. Meanwhile 'make the subtitles smaller' \u2014 the same request, one word different \u2014 correctly explained that a burned-in overlay is part of the picture.\n\nThey all give that explanation now, and point you back to the original clip.",
+  "pub_date": "2026-08-08T09:25:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxGM3dNNHhHaW1JUzlXRVE1V2N2RG9ML0hZeXJ4bWVObzhwaXIvVEQzN3NINy9zL1ZpUXYvSERmcXJFTkNJL3BKcTRBNnNqTytPY3hqNHFHR0l4dlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTc4MjMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSU5xZGpWWXhIU2RlY2h4aDVZclhveW9NVnpWczFHQzVKSE9laGtxNEJZN1g5S0ZMT2NHNWl0UXZaNG1BSVF5MkQ1SFZ4d0pvczY5M2NrSDZLeERBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUo2bDdhejhWUFV1UEhZaU9iNnBiUHFTNEFneUFLMGFnTmVCUlpydkJ0dkdrNFcydlpvSnBWQndCbWQ1eFBBUjNoeTVOK0VBTVBqcGZwRmt6Y3dxOGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTgxMDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3QkdkQ1BFbXRKc0NuQU9qMmRKM2FramQ3UVltK2E4ZENoWFZOUXYva0UwQytwQjl0ZGc0dUxBVkk5VkFaaDdKczZ6cFk5SEl2RTA2L1lJMzVYQ0FCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
