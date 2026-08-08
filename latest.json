@@ -1,10 +1,10 @@
 {
-  "version": "0.1.739",
-  "notes": "Groundwork for Windows, and no change to how your Mac encodes.\n\nCrisp now picks its video encoder from what the machine actually has rather than assuming Apple's. On a Mac that is still VideoToolbox, exactly as before \u2014 the Mac path returns before it even looks. The point is the other platforms.",
-  "pub_date": "2026-08-08T17:16:35Z",
+  "version": "0.1.740",
+  "notes": "More Windows groundwork. Nothing changes on your Mac.\n\nCrisp now looks for its bundled tools by the name each platform actually uses, and keeps its downloadable Max pack in the right place for the operating system it is on. On macOS both answers are exactly what they were before \u2014 the Mac path is asserted unchanged, down to the real files resolving.",
+  "pub_date": "2026-08-08T18:23:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8xajBnZTNaM1NGcTViZVdVeENPZzhvWUZIUDlDSGdZamUzRGloZ2RNK3p4YVR5MzYzRXU2TnFsSjZ3eUxuZjQ2THF1MksrSTY2bzJSWDVOaitZeGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjA5MzE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQKyt3bEs5V2lVUEczdDljOFEvelNzZmRxSU1QbWwvb0VmaDE4TmVxbGt5c3JXR3ZwOVFzTkdZa1d6MlRWWmh4b0lzRi9tT3RaTW9xYWl1TUpZTDVCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU94UG9XUkljMytRWno2Q0NOUjJ6b21ScndtNzhXaHlBeVlKajlaRlFCUTZtZEhFb0xTYzNqaHd2bkprbnR0anI5ZU5zOHlnODZjRnBDUEtRNkpja0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjEzMzUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozdVQ0Y3IwMjhUZGtLbVVVQm5hTk5Oa1ZrVkl1VnpoaTNIdE1mbUcxbGdWeFdwVHBGVmRBSXFDZVFjWmk1eUhvaFBqZ3Uxa3ZNK2xvWlNKTXRrSnhEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
