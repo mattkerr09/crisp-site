@@ -1,10 +1,10 @@
 {
-  "version": "0.1.721",
-  "notes": "Asking to trim several clips no longer starts a render instead.\n\n'trim all the clips to 10s' and 'trim both clips to 10s' used to plan a full GPU upscale \u2014 not a polite decline, an expensive render of footage you had just asked to shorten. 'trim the clips to 10s', one word shorter, worked fine. Quantifiers now count as part of what you're pointing at.",
-  "pub_date": "2026-08-08T04:09:29Z",
+  "version": "0.1.722",
+  "notes": "One upscale request is one render, however you word it.\n\n'remove the dust and upscale it to 4k' used to plan two full GPU passes \u2014 a dust pass, then an upscale of that pass's output \u2014 when dust is just a filter on the render already happening. And 'make it 4k and make it 1080p' upscaled 4x to 3840x2160 and then upscaled that again.\n\nA clip gets one render now. If you name two sizes, Crisp uses the last one and says on the card which it skipped, instead of quietly doing both.",
+  "pub_date": "2026-08-08T05:01:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpMSllPZ1NmclMzN0twSjhmTVNtTUNRSndqcExoQ244MWNmSlZkb0ljSnBPcGlnSFlhamJQRFpTQTV6ZFY4aFFuMDZLbnpnUzB3bUJHbStUc0Y1T3dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTYyMTE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBL0F1WXRjaVBDblcwOVd0VjhENGNoSzVKcUtxVDQ2VDRGWlh4QnBia0djQjgwZ0NpM0tvVHVJSlh6YXQxc3pETlNrYzR3dENFbnVGcDJzTDc5UFhEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZPdGVFb0k3Ry9sM05LRC94UXpYVDM0SFVyQlN6WEI4aUxVYnd6a01oNmVtdXpCK3V3bTJkU05qbndxMWFBZU8ybEM0Y1hQb3hNSUozQzRVaWp0cGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTY1MjMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozRUZIVUtKVnBmKzErWUg2ZEFUdDlldGc1REpNYmpVR05qdVFXT1BEMWFnNU9SeStpTkRYZGFKS083UXUzVHpSQnFsOHJvUGdGWkV0a1pOc0RlU2FDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
