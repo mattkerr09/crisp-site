@@ -95,9 +95,19 @@
     everywhere with no teeth means it is progressive and merely soft, which is a different problem
     with a different fix.</li>
   </ol>
-  <p>Crisp does <strong>not</strong> deinterlace. If your tape capture is interlaced, deinterlace it
-  first with the tool in step 1 — then bring the progressive file here for the denoise and the
-  upscale on export.</p>
+  <h2>What to deinterlace with</h2>
+  <p>Crisp does <strong>not</strong> deinterlace, so this is one to do before you get here. Two free
+  options, matching the two methods above:</p>
+  <ul>
+    <li><strong>HandBrake</strong> — free and open source, with a window. Its <em>Decomb</em> filter
+    detects combing per frame and only deinterlaces the frames that actually need it, which is the
+    "blend or discard" route: same frame rate, slightly softer.</li>
+    <li><strong>ffmpeg</strong>, if you are comfortable at a command line. <code>-vf yadif</code> is
+    the standard blend/discard filter and <code>-vf bwdif</code> is a better-quality version of the
+    same idea. For the bob route — field doubling, double the frame rate — use
+    <code>-vf yadif=1</code>.</li>
+  </ul>
+  <p>Then bring the progressive file here for the denoise and the upscale on export.</p>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
 
