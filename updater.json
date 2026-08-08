@@ -1,10 +1,10 @@
 {
-  "version": "0.1.740",
-  "notes": "More Windows groundwork. Nothing changes on your Mac.\n\nCrisp now looks for its bundled tools by the name each platform actually uses, and keeps its downloadable Max pack in the right place for the operating system it is on. On macOS both answers are exactly what they were before \u2014 the Mac path is asserted unchanged, down to the real files resolving.",
-  "pub_date": "2026-08-08T18:23:20Z",
+  "version": "0.1.741",
+  "notes": "More Windows groundwork, no change on your Mac.",
+  "pub_date": "2026-08-08T19:11:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU94UG9XUkljMytRWno2Q0NOUjJ6b21ScndtNzhXaHlBeVlKajlaRlFCUTZtZEhFb0xTYzNqaHd2bkprbnR0anI5ZU5zOHlnODZjRnBDUEtRNkpja0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjEzMzUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozdVQ0Y3IwMjhUZGtLbVVVQm5hTk5Oa1ZrVkl1VnpoaTNIdE1mbUcxbGdWeFdwVHBGVmRBSXFDZVFjWmk1eUhvaFBqZ3Uxa3ZNK2xvWlNKTXRrSnhEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVAwZ3EvbFdYZFFSMXBBV2dkUy9hZm4zUDhJeThhWEltaXlHcjJRKzg4WlQ4eXFHK01KR2NzMm42SUc2a1R0U1A0V0ZTWlo2Sy9CNXpTM2QvNkUwQXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjE2MjI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnc3JNdDJ4VGVXRldaM3FvUEhlT2JFaU4rdFpTclpWdEozYlhXRXpScjZseW1FNjNWamx1QU5aUFhwRUZaTmxkbmhkakdGbUJpajcreXZQcnc4bVZCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
