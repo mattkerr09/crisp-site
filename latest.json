@@ -1,10 +1,10 @@
 {
-  "version": "0.1.735",
-  "notes": "Sentences with two time words in them keep every step.\n\n'mute it after trimming it to 10s before upscaling it to 4k' was doing the upscale and the mute and quietly skipping the trim. All three run now, in the order you said them.",
-  "pub_date": "2026-08-08T14:29:55Z",
+  "version": "0.1.736",
+  "notes": "Saying 'before' at the start of a sentence now runs the steps in the right order.\n\n'before upscaling it to 4k, trim it to 10s' was upscaling first and trimming after \u2014 backwards, and on a 4K render that is the expensive way round. Every way of saying it now gives the same order.",
+  "pub_date": "2026-08-08T15:22:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl3ZmlpUkxIMWF1OHZvMDdzWXdxZjZTYTRENGZ5a211Q1YrZk9LaTBnNzJKY2Q2cEs0T1MvbU5vdFN2dEo1OXRRdk1zbkdmdDFjWnY2dVEzRnphSUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTk5MzM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqVlNSdlVzRG9xNmlxcm80TmErcXVKdC84N1BuMmlsWXg1MWVXdVhIbjJxbngxSGpGR0c4RTJON2I4OU00ak10azdJQnBsc0t4Yk01a3RwTTRZMVJCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtiOUJHWU5ZZU1WR0UzSWFUQW1SK0ltQXJNL1NYUGRZVE1COGFsc1E3VFNscHllNzFTa2M4TXJER0UzVXp6TGc0U1dNSlVaNENyNFpMLzU0a0dWMEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjAyNDY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5aEQ4VGEzamlEMy9CZU1nclRRbXkyN3dpOXAvWUd1ZnRpbjA5Q01oN0w1TjFuWEt0eDZualFhTXQyc3h1V2E3VFhoRXg3QktIQzdwVitHd3pka0lCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
