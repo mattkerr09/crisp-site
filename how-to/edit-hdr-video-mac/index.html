@@ -108,6 +108,12 @@
   <p>It's HDR (Dolby Vision/HLG) being squeezed into a standard file without tone mapping. Use an editor that converts properly — Crisp does it automatically.</p>
   <h3>Do I need to change any iPhone settings?</h3>
   <p>No. Keep recording HDR; Crisp detects and handles it. (If you prefer, you can disable HDR video in iPhone Settings → Camera, but you lose the extra dynamic range.)</p>
+  <h3>Does Crisp keep the video in HDR, or convert it?</h3>
+  <p>It converts. Crisp tone-maps HDR down to standard SDR (bt709) during the edit, so the export looks correct in every app and on every screen rather than only on an HDR display. End-to-end HDR output is on the roadmap — but correct SDR beats broken pseudo-HDR for anything you're actually sharing today, which is why it's the default.</p>
+  <h3>Which HDR formats does it handle?</h3>
+  <p>The common camera ones: <strong>HLG</strong> (what iPhones record by default), <strong>HDR10/PQ</strong> (smpte2084), and bt2020 10-bit sources. Detection is automatic from the file's own colour metadata, so there's nothing to set — if the clip says it's HDR, Crisp treats it as HDR.</p>
+  <h3>Can I upscale an HDR clip?</h3>
+  <p>Not yet in one step. The AI upscale lanes (Enhance and Max) need an SDR source today, so convert the clip first — trim, reframe or colour it in Crisp, export, then upscale that file. The editing lanes above all take HDR directly.</p>
   <h3>Related guides</h3>
   <p><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Make a video vertical</a> · <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">Remove noise from video</a> · <a href="https://crispvideo.app/vs/capcut-alternative-mac/">CapCut alternative for Mac</a></p>
 </div></article>
