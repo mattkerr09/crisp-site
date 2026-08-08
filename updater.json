@@ -1,10 +1,10 @@
 {
-  "version": "0.1.741",
-  "notes": "More Windows groundwork, no change on your Mac.",
-  "pub_date": "2026-08-08T19:11:34Z",
+  "version": "0.1.742",
+  "notes": "More Windows groundwork. Your Mac encodes exactly as before.",
+  "pub_date": "2026-08-08T20:10:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVAwZ3EvbFdYZFFSMXBBV2dkUy9hZm4zUDhJeThhWEltaXlHcjJRKzg4WlQ4eXFHK01KR2NzMm42SUc2a1R0U1A0V0ZTWlo2Sy9CNXpTM2QvNkUwQXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjE2MjI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnc3JNdDJ4VGVXRldaM3FvUEhlT2JFaU4rdFpTclpWdEozYlhXRXpScjZseW1FNjNWamx1QU5aUFhwRUZaTmxkbmhkakdGbUJpajcreXZQcnc4bVZCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUt0R0JIZFFvOEU5UlN0ZzgxcmQzRjR4YjlBYjcrMGw4U2ViNkF4S3pPdEUyZTNqa05jcnVDa29tMmpta2NsQlc4Z28rakhrTHRNeTJrNFg4NkE1ekFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjE5Nzc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2eU9Ed3hTYXZpcGNsUktqbjdoc2VHcnM3d0ZldHpBS016ZEZTajcwajRLTDRwWHd6Z3JZRVV2Y0lRTTVlUUNQTWlmK1ZKUmVQVHJkeDdaVlU0R0hEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
