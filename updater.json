@@ -1,10 +1,10 @@
 {
-  "version": "0.1.718",
-  "notes": "Say what your video is, and Crisp still understands you.\n\n'trim the wedding footage to 10s', 'slow the wedding footage down', 'speed the footage up' and 'loop the footage' all used to answer 'I didn't catch an edit in that' \u2014 while the same sentences with a shorter object ('trim the footage to 10s', 'loop the video', 'speed it up') worked fine. Four different rules were each sized to one example sentence rather than to the words people actually use for their own footage. One of them literally counted characters, so 'wedding footage' failed where 'drone footage' worked.",
-  "pub_date": "2026-08-08T02:25:16Z",
+  "version": "0.1.719",
+  "notes": "Trim from a point, and a straight answer about interlaced footage.\n\n'trim the footage from 5s' used to answer 'I didn't catch an edit in that', while 'start at 5s' \u2014 the same request \u2014 worked fine. It now trims from where you say.\n\nAnd asking Crisp to deinterlace no longer pretends not to understand you. Crisp doesn't deinterlace; it now says so, and points you at HandBrake's Decomb filter or ffmpeg's yadif, because combing has to come off before an upscaler sees it or it gets sharpened in permanently.",
+  "pub_date": "2026-08-08T03:15:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJSUm0ya0hqOWF0UmJyeXJ6S1d3M251dVNXUWJRK085R3hnMlZXSmoxeE9HTWE5eE9NRXlPTTNEOWl1TUFsb1gwQnlqSlBBTThoS3dacWVsZWFWVUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTU1ODM1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovUktqSVNHRFpjUzJBaEFZRlMwNitJN0Vhck9IdEpRZW92cjRnYnB6SlJMOFRUZXdDLzQzV1Y1VzhqZFIwcTA2UUlFTnA3NWcrNzhBL0l3R2hBL0FCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ0ZEtCNUNuM1Zod3pIVzRZMnNpQ29uQUpKT1lDdzV3d0FFK2FEcTBBY3RNek9TZ21hZ0p4ZGJaenV4Q1ExVllVMlRFejFBZzFaZ2NWc1Yvb0l6a3dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTU4ODM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorK08zRzhkWjZIZERYVE0yWDdhWVBLbk00SEVpSjVOaUFsRUNIbVFIQmJodG5PdjA5UDZHMjFqSElacC9pZDBTT1MyMDB1bUtmNVp4alN3RktQVGREdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
