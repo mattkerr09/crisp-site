@@ -1,10 +1,10 @@
 {
-  "version": "0.1.755",
-  "notes": "Conditions are stricter about what they will act on \u2014 and about what they will refuse.\n\nA follow-up to the last build. Crisp now only skips an edit when your condition means one measurable thing about the file: its shape, whether it has sound, how long it is, its resolution. Words that could mean two things no longer decide \u2014 \"if it is HD\" and \"if it is quiet\" were each cancelling edits people had genuinely asked for. And a condition you put at the START of a sentence now covers the whole sentence, so \"if it's vertical, mute it after trimming to 10 seconds\" no longer trims a landscape clip.",
-  "pub_date": "2026-08-09T06:45:02Z",
+  "version": "0.1.756",
+  "notes": "A condition Crisp cannot check no longer changes what it does.\n\nAsk for something like \"if the audio is noisy, trim it to 10 seconds\" and Crisp used to hear the words in your condition instead of your actual request \u2014 it ran an audio job and lost the trim completely. It now separates the two, so the edit you asked for is the edit you get. Conditions Crisp cannot measure still go ahead as before, and it tells you so. On a photo, where there is no length or sound to check, it now says that too rather than quietly acting.",
+  "pub_date": "2026-08-09T13:55:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZjY0c2SXRXSjZPT3NiY2N1UG0xRnVqN1N0ME1RKzlNVWIvMzdGZzUrOW50a3RsQ3RjdXZZdFN4dkhPeUpmWS9zNG5PU3BtTU1RMTZYWFBQbjJlUFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjU3ODI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOMkFUeHVpVVEwdGFaWFZGMGhlc2l3ejNINmNiSlNlL2pzTEdMd3hnbzhyMStmb2htamp1SHhvL3dRMVJOb09YMHIycmo5ZVFqM0tPVGx0a0gyT0pCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrSEdkTjJLUHR1aWxGUHNacG9yZ3ZnekxWbHJtbGJjMk9BNHY4anhMTG9KOFBvV0VoS1lqdFlhUkVhNVNiVWlqa3hCK1R3U1dLNnhveVZxR0N3aUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjgzNjc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TTBIeUxBdllFNUFRNStSdERibEMweFd1S0dYWGV1NVp6Z2xZSkR3dHVycDNJSENQdmt1UnN2V2dsa3pUYTNxTTJFWFVSMldpejRHeHlpa0VyU1dEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
