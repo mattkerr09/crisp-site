@@ -1,10 +1,10 @@
 {
-  "version": "0.1.760",
-  "notes": "Two-part requests keep both parts, whichever verb you use.\n\n\"Make it vertical after turning the volume down\" only made it vertical \u2014 the volume change was dropped without a word, because Crisp recognised the second half of a sentence for some verbs and not others. It now knows every verb it can act on, so both halves of an \"after\", \"once\" or \"before\" request survive.",
-  "pub_date": "2026-08-09T17:22:13Z",
+  "version": "0.1.762",
+  "notes": "Telling Crisp to leave something alone no longer starts a job.\n\n\"Upscale it and keep the audio\" upscaled the clip and then saved the soundtrack as a separate MP3 \u2014 you were reassuring Crisp, not asking it for a file. It now hears the difference, while \"keep only the audio\" still exports as before. And a request like \"upscale it, don't crop it\" no longer says \"nothing has been run\" while the upscale is running.",
+  "pub_date": "2026-08-09T18:14:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxlOVYyWUN3dGNzTjFuTy84aDVTQnpXRXJSbU5zTE1YcjJuNjMrVDVLcXYvTzZyelVNVGkwNmpyV2czRmt0a21wYzVxUWFtb2VlV216ejA0VWcrVkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk2MDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjKzNmemMvdW9EZlh0cWRWVENucXZwbHlkUHdMVDAxK3M3NXdiTExGbmpGYlVZc1pBRlJuWmJFdkhTdEFSR3lrcU5rZlAvaG1la1JzZ0NDbXR2VTBDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYzOUR0cGpBbHZIYWtPR1hPenlmekRTV0hvd3RkQUhwZWFINks3VmhMR2tRbXNwUEkva2dkWFNvc0tlVnp4TWwzd1hnY0NFYzFhVzY4VW9TQ1NRendJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk5MjA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIZ3BiV2FOUkluU0VUdG00c0NBSTRjOTJ6OFJoelVHT3AyZUUralhvUjd4RnBxSmZQMHVyWTZQK2owbXd5YloyVlU1VGNDRWZ5eGkxZmdDeWNjdjVEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
