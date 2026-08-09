@@ -1,10 +1,10 @@
 {
-  "version": "0.1.746",
-  "notes": "Captions, timelines, reframing and speed changes now pick their encoder at the moment they run.\n\nWindows groundwork continues; nothing changes about what your Mac produces.",
-  "pub_date": "2026-08-09T00:38:43Z",
+  "version": "0.1.747",
+  "notes": "Converting and watermarking pick their fallback encoder from the machine.\n\nWhen a container cannot hold the codec you asked for \u2014 ProRes into an mp4, say \u2014 Crisp falls back. That fallback named Apple's encoder outright; it now asks what the machine has. No change on a Mac.",
+  "pub_date": "2026-08-09T01:25:33Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNDa3Q1MENOTm5QR281dndCUXREaFNSa0FLSDl5TmEvQWdpYlFueGphRnFKREpBc21ZMVl3aUFUdUhYSEVLTzVrV1Bic0pEZ0JZZnhoVkgvOVJTQ3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjM1ODY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHS1JzZjlkbVRvRXRLUzFlN3dFcEdaeXl3NjA1QmVVaFJxdXZKcDZvQUdzMTJuMy9HSUQwVld0Vjd6NmdhdGNORUZ1V2FFVUE5SHkxWnc5MTZ0cmhEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZxWlRGK24rNm92QW5mQm1aOG8ybWswYkRnMmRNT2tGem44aFVuNjdRM0F2dDYwUnpGQzQvTElKRzRCdFF4d0JmRFprcjdleHZ6NytyUzdRMDN1WUE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjM4NjcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5Tmd5U0wyVVNrTmNwN2Q0dDBpY01wRHFHRjhmZGZnamovOGxrYjJpRmZaSlVwaHRNVjUyV0FZR2hMT2g5ZXlHV0JCVEV0TWt3d1g2Q3dQWmVjejBEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
