@@ -1,10 +1,10 @@
 {
-  "version": "0.1.763",
-  "notes": "Crisp stays quiet about the things you asked it to leave alone.\n\n\"Upscale it and keep the audio\" did the upscale and then said it had not understood you \u2014 because \"keep the audio\" is a promise, not a request, and there was nothing for Crisp to do with it. It now does the part you asked for and says nothing about the part that was already true. \"Keep only the audio\" still exports the soundtrack, as before.",
-  "pub_date": "2026-08-09T18:43:29Z",
+  "version": "0.1.764",
+  "notes": "Ask a question alongside an edit and Crisp answers honestly about both.\n\n\"Upscale it and what size is it?\" ran the upscale and then told you nothing had been run. The edit was happening while the message said it wasn't. Crisp now answers the question, does the edit, and describes what actually took place \u2014 and a mixed request like \"trim it to 10s and is this 4k?\" reliably keeps the trim.",
+  "pub_date": "2026-08-09T19:13:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF4aXB4UjZFaFR5dTJrRFNpNUk4ZUQ2eGU4ZGF4akhpMDJGd1FZdDg1cVAxL3pwZHJLMXNSRVNzK29vRlJGU05zcU9hT21tL0QrQnFZbEI5V2MxU2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzAwOTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGcW9NazBIN3NEek1WRkRCblVKRUtNQUFxTlZhQTA2SUM1Y2FtK2FLVVkrc2p4bTB2VXJqR1Z4cUtXZGNkQTJJVGNSRW83TkRKb2lqWGR4cHFCVjlEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZOMjBjSWpTa1lFOUxoV2dWT043Ulc2QTJlSU9UODN0TWMvVElXUHNaOVl2djVqR0xaekFIdDdaQktlb3FBNEtCdXVzUE1uWFNHRVQ2ajV0clNTd2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzAyNzk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOSHhYRm1aSU5LUnFrOSt6ak5XZzlLd3pmR1FucUVBZGs3ZkpMd3pKYXRlNHE3aDJyaEFvT2twaXVTTGQwQXVyNGd6TVpGVkt3VHArMFFwZmQ4U3pCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
