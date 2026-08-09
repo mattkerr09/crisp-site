@@ -1,10 +1,10 @@
 {
-  "version": "0.1.769",
-  "notes": "Crisp now reports back every setting a job was given.\n\nIf you started a render with dust removal or flicker evening switched on, the job's own record left them out \u2014 so nothing reading it could tell you they had been applied. Same for the quality preset an export upscales with. All three are reported now, which matters most for anything that inspects or resumes a job.",
-  "pub_date": "2026-08-09T22:10:20Z",
+  "version": "0.1.771",
+  "notes": "Ask for half the clip, or the middle of it.\n\n\"Keep the second half\", \"keep the last third\", \"cut the first half\", \"keep the middle 20 seconds\" \u2014 all of these used to come back asking you for an amount, even though they name one exactly. Crisp works the range out from the length of your clip. It still asks when a request genuinely has no answer: \"the middle\" on its own names no boundary, and cutting a slice out of the middle would leave two pieces rather than one video.",
+  "pub_date": "2026-08-09T23:00:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxrZHJnb1ViYWF1VWFlZ2oycmJQWHhZVXF2akFWU3FEakZ6ZG10Sk1icnlRUEJjQ0pwU2d1Mk1RSERrRlhqSld4T1FMOXZBL205L3FVSjBpWkU2cUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzEzMzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEdnhjbERFUm5ZMitXd1FlTDFtbjdmZVczZlAyN0JtUUJqWjNRTzJZZldyZk5zOE9JMFBFQ2hMMlZSbXB5SitTWWc1SUFHMGJrZXg1MVlFbjUzek5DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9iTHQ3ZDFBNzkyLzJYdlNVUWd6UXVFUEFHczl2S2Jhak5zUmJFOEJCQVU4d3lUcmo1U2dHVXFIc3o1S2wwcEpBbkV6NWcvd21LMFBjcDBzd0psQmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzE2MzkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBSm5icnFNTWJmSnhvZDlEcGRCdGZwN2lyUGR5M213WlFHNlM0TnQzVHJieG40azViUVZKZnpHZTdXMXh5Z1FuNmZBYkZGWXU5eUVZem1kaEZUQk9Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
