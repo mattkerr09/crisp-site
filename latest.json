@@ -1,10 +1,10 @@
 {
-  "version": "0.1.766",
-  "notes": "Crisp understands \"its shaky\" the way you meant it.\n\nTyping \"it's shaky\" asked Crisp to steady your clip, but dropping the apostrophe \u2014 \"its shaky\" \u2014 reached nothing at all, because Crisp read that \"its\" as belonging to something. It now tells the two apart. Same for \"its wobbly\" and \"its jittery\", which previously only worked if you mentioned the camera.",
-  "pub_date": "2026-08-09T20:17:15Z",
+  "version": "0.1.767",
+  "notes": "Asking a question alongside an edit gets an answer about both halves.\n\nIf you type something like \"what does enhance do and mute it\", Crisp now runs the mute and tells you the other half was a question \u2014 for two builds it ran the edit and said nothing at all about what you had asked. Internal to this release: a batch of self-checks that had quietly stopped running are working again, including the ones that guard Crisp Pro.",
+  "pub_date": "2026-08-09T20:50:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJCZitZU0M4KzBJNEV3YVhDdFliVU1rZzlRTFMyZ1RpU1JqRlpJM3JWVTVuNUovdzFreW43U1lCQTVUQ1g1cWVYTllMR3F4aW9DMVFkblVZUWRzdFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzA2NTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRbHdGekF6SklIZldCakJFRGxmRk1QUkFGWUhaMlZBdnd1cXdxNko2Qk93Q1ZMcDI4WENNUGlQUHRwWE5YVHNSSWdURzYyWjZmZE9uRWtrNk1NZ2NEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBDOUNsZEN6WUFIL3RHN0VTZStYVjg5Um1sZVhSOFBpQVhOcVFKYyt0K1ZnQ3N2WnltNjAvUUttazdUL3lQK3BiQ0lQN3BnZzVOMnJRdGt0T1NKTmcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzA4NTc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYRk1KVDIxYk45MnRKbk16UmRiZFZodXppZVRlL2V3Q1NlWnlmT29UTlFYSC8zOHkwY0xJWWptaUhWbUJyQUtvc1Q4SU12ck0xZUdFalZIL1FBVk1DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
