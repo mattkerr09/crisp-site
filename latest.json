@@ -1,10 +1,10 @@
 {
-  "version": "0.1.750",
-  "notes": "HEVC files from any encoder now carry the tag that lets Apple devices play them.\n\nGroundwork for Windows: when Crisp encodes HEVC with something other than Apple's encoder, the output now gets the hvc1 tag and a pinned pixel format \u2014 without the tag, an HEVC mp4 silently refuses to open in QuickTime, Safari and on iOS. Your Mac's output is unchanged.",
-  "pub_date": "2026-08-09T03:43:45Z",
+  "version": "0.1.752",
+  "notes": "The export format menu now matches what your machine can actually encode.\n\nGroundwork for Windows: the codec picker used to be a fixed list of Apple's encoder names, written into the page. It now asks the engine what this machine can really produce and shows exactly that. On a Mac the answer is the same seven formats as before, so nothing about your export changes \u2014 but the app no longer assumes the hardware it is running on.",
+  "pub_date": "2026-08-09T04:43:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBIWFZCbWRPdGdNb1ZjMllEYXlzNnVjR0NDV3lOZGs1ZlZxNVVaMjVnZURYdVRBRkZ0bWxmVGc5MG1FVXdEMVZTeG9IVWVCQ1FRem5Ra29sN0F4d3dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjQ2OTYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZdGFES2dyTUxvQlNmZkJaeFg5bFAzdmhQUkJ4WndVejJlK2ZIVk02a3VtZjV3ZGFLbkVaTForVGtVa016SkFmTE85S0xwSVVtQ2NVS1N4MHo0WnJBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUptc3VGbXcwT1VUL0hIdFo0VVhQTnUwbWlKZm5aY09xTEo1NjEyajUvNGEzejcwNVIwSXdaUy9uOFpzd0ZhOXMwTFp1TkNIMlcwNmRIdHZqWHI3VVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjUwNTgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvNmpVR2svK2Vjd3BXbVpuUkxqNGFKZEswcjM1RkhYTHBEMDZkdTR0V0U3TEZxdXpUODEybWVvTzh1ZllINUFUQzR5cFhsdFBsdThEdW05WDUrUnFEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
