@@ -1,10 +1,10 @@
 {
-  "version": "0.1.757",
-  "notes": "Conditions now understand how people actually type them.\n\n\"If they are vertical, crop them\" and \"if its vertical, mute it\" were being ignored \u2014 Crisp only recognised the exact phrasing \"if it is\", so a plural or a missing apostrophe meant the condition was skipped and the edit ran on any clip. Both work now, along with \"they're\", \"the clips are\", and the rest. Ordinary requests are unaffected: a gift video is still just a video.",
-  "pub_date": "2026-08-09T14:24:49Z",
+  "version": "0.1.758",
+  "notes": "\"Upscale them all\" now actually does them all.\n\nCrisp understood \"upscale all of them\" and ran the batch, but \"upscale them all\" quietly did just the selected clip \u2014 the same request, typed the other way round. Both work now. And when you ask for something across every clip that Crisp can only do one at a time, it says so instead of leaving you to notice.",
+  "pub_date": "2026-08-09T14:55:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN4OXRlL3NtN0dqbnFaaDNsMnhVWjVPaFYxSUdLRGVoTDU4Zi9UWGZ3SmI4cDhxNnNpbDNVdlhjT3RMZCtwVFJqbW56aDhLQ1RLNyt4eklpZGtGb0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjg1NDM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkSENIcmdnbEdTa3ExUzdMQTB1SFVjZVUvK1VqVEo1VEVJRTl2S0lBVGU2NjJ2NEN4cTJOREtMVHlEQ2EzMEtOcE1xRklXNXRMNk1vL0tVdXJLY2RBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBxMGluc0xvNnduVXhYd0pGNDhYS2p0NHpMcEZSdk5zN1Fob2doUlFoQmNERTBma2E0R3BUdllMbkh5b2tqSE1XWG5LVzU0akQyUUxZS1dqRXIxdWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjg3MzA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negplMkNhV2Y2Tit2cGcxQ2FXc1E2bnhYTUpjOERyR1BZdGdWbGZyQzJYQTlvUytiVXhxNWxsQVd5Z2tNalNlNnl6WHdTMlFoZk16NE5CenVlZjZXVy9EQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
