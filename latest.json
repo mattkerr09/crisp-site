@@ -1,10 +1,10 @@
 {
-  "version": "0.1.768",
-  "notes": "Housekeeping: a batch of Crisp's own self-checks are running again.\n\nNo change to how the app behaves. Internally, a group of checks had quietly stopped running \u2014 including ones that guard what Crisp Pro unlocks, and one that makes sure the advice Crisp gives you always tells you the size it will produce. They are all back, and this release is the first built with them.",
-  "pub_date": "2026-08-09T21:40:42Z",
+  "version": "0.1.769",
+  "notes": "Crisp now reports back every setting a job was given.\n\nIf you started a render with dust removal or flicker evening switched on, the job's own record left them out \u2014 so nothing reading it could tell you they had been applied. Same for the quality preset an export upscales with. All three are reported now, which matters most for anything that inspects or resumes a job.",
+  "pub_date": "2026-08-09T22:10:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR1ZHR4MDhPNlNsVTNZSFZJeWRXTzJFUDN6UEs0TjRVc0kxV25RbFdackhldHBmVlBGMTFwV2tjdzJHU1RSUTkwYjRNVFl4MXFPU0RpSWhRcE1UdkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzExNTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPcnRUVCtiVllNWUZYdG50Wm9nWGl4alBCTUdVNGVxZ3JVUGtzb2RaOUcvVWlFc29BZ0lrY1dXOVVBalViYkRLNjlIcVNSQ2o0Uy8wdE8wNzJUODJCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxrZHJnb1ViYWF1VWFlZ2oycmJQWHhZVXF2akFWU3FEakZ6ZG10Sk1icnlRUEJjQ0pwU2d1Mk1RSERrRlhqSld4T1FMOXZBL205L3FVSjBpWkU2cUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzEzMzQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEdnhjbERFUm5ZMitXd1FlTDFtbjdmZVczZlAyN0JtUUJqWjNRTzJZZldyZk5zOE9JMFBFQ2hMMlZSbXB5SitTWWc1SUFHMGJrZXg1MVlFbjUzek5DQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
