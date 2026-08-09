@@ -1,10 +1,10 @@
 {
-  "version": "0.1.759",
-  "notes": "Crisp now understands both halves of a phrasal verb.\n\n\"Smooth out the shakiness\" worked; \"smooth the shakiness out\" started a full upscale instead \u2014 the same sentence, with the last word moved. \"Tone the colours down\" and \"turn the sound off\" reached nothing at all. Crisp now tries the other word order whenever it does not recognise a request, so both ways of saying something land in the same place. Anything that already worked is untouched.",
-  "pub_date": "2026-08-09T16:52:20Z",
+  "version": "0.1.760",
+  "notes": "Two-part requests keep both parts, whichever verb you use.\n\n\"Make it vertical after turning the volume down\" only made it vertical \u2014 the volume change was dropped without a word, because Crisp recognised the second half of a sentence for some verbs and not others. It now knows every verb it can act on, so both halves of an \"after\", \"once\" or \"before\" request survive.",
+  "pub_date": "2026-08-09T17:22:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44S3l0YTJJSGpRektScUNTZDlSZ0xvR3Jjb1pYZVdGejNIT0dPdzZ1UUEySXAxdGY0YXBJOUhiTVFITy9BTzZBbko2cFIxM0VnZlhLY2JHNUxBZ3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk0Mjk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwbzlFRE0vWWJtL0lMYzJ6a3NBRTV0RER1ZXA1REhnUU0wdXJtRTBZL05oUnRpTjA0WE43VWJXYjNQYTNCeFg3a2kxOW1EeGd2VjhGb1VuUjNVcXZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxlOVYyWUN3dGNzTjFuTy84aDVTQnpXRXJSbU5zTE1YcjJuNjMrVDVLcXYvTzZyelVNVGkwNmpyV2czRmt0a21wYzVxUWFtb2VlV216ejA0VWcrVkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk2MDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjKzNmemMvdW9EZlh0cWRWVENucXZwbHlkUHdMVDAxK3M3NXdiTExGbmpGYlVZc1pBRlJuWmJFdkhTdEFSR3lrcU5rZlAvaG1la1JzZ0NDbXR2VTBDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
