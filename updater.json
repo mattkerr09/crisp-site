@@ -1,10 +1,10 @@
 {
-  "version": "0.1.767",
-  "notes": "Asking a question alongside an edit gets an answer about both halves.\n\nIf you type something like \"what does enhance do and mute it\", Crisp now runs the mute and tells you the other half was a question \u2014 for two builds it ran the edit and said nothing at all about what you had asked. Internal to this release: a batch of self-checks that had quietly stopped running are working again, including the ones that guard Crisp Pro.",
-  "pub_date": "2026-08-09T20:50:11Z",
+  "version": "0.1.768",
+  "notes": "Housekeeping: a batch of Crisp's own self-checks are running again.\n\nNo change to how the app behaves. Internally, a group of checks had quietly stopped running \u2014 including ones that guard what Crisp Pro unlocks, and one that makes sure the advice Crisp gives you always tells you the size it will produce. They are all back, and this release is the first built with them.",
+  "pub_date": "2026-08-09T21:40:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBDOUNsZEN6WUFIL3RHN0VTZStYVjg5Um1sZVhSOFBpQVhOcVFKYyt0K1ZnQ3N2WnltNjAvUUttazdUL3lQK3BiQ0lQN3BnZzVOMnJRdGt0T1NKTmcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzA4NTc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYRk1KVDIxYk45MnRKbk16UmRiZFZodXppZVRlL2V3Q1NlWnlmT29UTlFYSC8zOHkwY0xJWWptaUhWbUJyQUtvc1Q4SU12ck0xZUdFalZIL1FBVk1DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR1ZHR4MDhPNlNsVTNZSFZJeWRXTzJFUDN6UEs0TjRVc0kxV25RbFdackhldHBmVlBGMTFwV2tjdzJHU1RSUTkwYjRNVFl4MXFPU0RpSWhRcE1UdkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzExNTgxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPcnRUVCtiVllNWUZYdG50Wm9nWGl4alBCTUdVNGVxZ3JVUGtzb2RaOUcvVWlFc29BZ0lrY1dXOVVBalViYkRLNjlIcVNSQ2o0Uy8wdE8wNzJUODJCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
