@@ -1,10 +1,10 @@
 {
-  "version": "0.1.765",
-  "notes": "Saying \"it's 4k\" no longer starts a 4K render.\n\nCrisp understood \"it is 4k\" as you describing your file, but \"it's 4k\" \u2014 the way most people write it \u2014 slipped through and began a full upscale of a clip that needed nothing done to it. Both are read the same way now. Asking for the change still works exactly as before: \"make it 4k\" upscales.",
-  "pub_date": "2026-08-09T19:42:54Z",
+  "version": "0.1.766",
+  "notes": "Crisp understands \"its shaky\" the way you meant it.\n\nTyping \"it's shaky\" asked Crisp to steady your clip, but dropping the apostrophe \u2014 \"its shaky\" \u2014 reached nothing at all, because Crisp read that \"its\" as belonging to something. It now tells the two apart. Same for \"its wobbly\" and \"its jittery\", which previously only worked if you mentioned the camera.",
+  "pub_date": "2026-08-09T20:17:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZTVEJRakVZSzE3MHAxUGZoVHNqRHVCOWU5RkZOUTZnVmQ2QUxjS3NJRmpsV01aSGtOQnc5bU1xbmZlcUxhNnpHcGJzdlFYRGY2UnFyV0xqRDJlZWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzA0NTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFYUZ1OFlKaEFERm94Z0F0U2FrWTdHN3VmT1VrOXQ1SGViOXExSStLd0J5aUNFNGlpNlNibEtDcTliREsrYjErMHpqY2t1dWxubkYrTkh4T2ZuS3VBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJCZitZU0M4KzBJNEV3YVhDdFliVU1rZzlRTFMyZ1RpU1JqRlpJM3JWVTVuNUovdzFreW43U1lCQTVUQ1g1cWVYTllMR3F4aW9DMVFkblVZUWRzdFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzA2NTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRbHdGekF6SklIZldCakJFRGxmRk1QUkFGWUhaMlZBdnd1cXdxNko2Qk93Q1ZMcDI4WENNUGlQUHRwWE5YVHNSSWdURzYyWjZmZE9uRWtrNk1NZ2NEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
