@@ -1,10 +1,10 @@
 {
-  "version": "0.1.745",
-  "notes": "Looping, fading, borders and stabilisation now pick their encoder at the moment they run.\n\nMore Windows groundwork, and no change to what your Mac produces \u2014 these four lanes had Apple's encoder written into their signatures and now ask the machine instead.",
-  "pub_date": "2026-08-08T23:49:46Z",
+  "version": "0.1.746",
+  "notes": "Captions, timelines, reframing and speed changes now pick their encoder at the moment they run.\n\nWindows groundwork continues; nothing changes about what your Mac produces.",
+  "pub_date": "2026-08-09T00:38:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM2TWN2WmQ2Zk11bmpOakV6M3FINUo4b3dhK2hHcElSMzVRbEIySEVWVjBUNjdnY1QxUEhuaHE4RnBNL1RPcE50ejBiaHhUZHYrOXBEYm1lUmYra2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjMyODk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEN0hreHg5WGRUWnpVcVVPTzlkVzAvSnhhVXNFaXVyWE9rc0RhQ1FBUFlUK0RLZjNTczB6bkZKYWtqbXdjeTcwNDR1MmJqNVpmMHRicjVaWGNFbkJEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNDa3Q1MENOTm5QR281dndCUXREaFNSa0FLSDl5TmEvQWdpYlFueGphRnFKREpBc21ZMVl3aUFUdUhYSEVLTzVrV1Bic0pEZ0JZZnhoVkgvOVJTQ3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjM1ODY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHS1JzZjlkbVRvRXRLUzFlN3dFcEdaeXl3NjA1QmVVaFJxdXZKcDZvQUdzMTJuMy9HSUQwVld0Vjd6NmdhdGNORUZ1V2FFVUE5SHkxWnc5MTZ0cmhEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
