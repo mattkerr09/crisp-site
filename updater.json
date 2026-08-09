@@ -1,10 +1,10 @@
 {
-  "version": "0.1.758",
-  "notes": "\"Upscale them all\" now actually does them all.\n\nCrisp understood \"upscale all of them\" and ran the batch, but \"upscale them all\" quietly did just the selected clip \u2014 the same request, typed the other way round. Both work now. And when you ask for something across every clip that Crisp can only do one at a time, it says so instead of leaving you to notice.",
-  "pub_date": "2026-08-09T14:55:55Z",
+  "version": "0.1.759",
+  "notes": "Crisp now understands both halves of a phrasal verb.\n\n\"Smooth out the shakiness\" worked; \"smooth the shakiness out\" started a full upscale instead \u2014 the same sentence, with the last word moved. \"Tone the colours down\" and \"turn the sound off\" reached nothing at all. Crisp now tries the other word order whenever it does not recognise a request, so both ways of saying something land in the same place. Anything that already worked is untouched.",
+  "pub_date": "2026-08-09T16:52:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBxMGluc0xvNnduVXhYd0pGNDhYS2p0NHpMcEZSdk5zN1Fob2doUlFoQmNERTBma2E0R3BUdllMbkh5b2tqSE1XWG5LVzU0akQyUUxZS1dqRXIxdWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjg3MzA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negplMkNhV2Y2Tit2cGcxQ2FXc1E2bnhYTUpjOERyR1BZdGdWbGZyQzJYQTlvUytiVXhxNWxsQVd5Z2tNalNlNnl6WHdTMlFoZk16NE5CenVlZjZXVy9EQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44S3l0YTJJSGpRektScUNTZDlSZ0xvR3Jjb1pYZVdGejNIT0dPdzZ1UUEySXAxdGY0YXBJOUhiTVFITy9BTzZBbko2cFIxM0VnZlhLY2JHNUxBZ3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk0Mjk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwbzlFRE0vWWJtL0lMYzJ6a3NBRTV0RER1ZXA1REhnUU0wdXJtRTBZL05oUnRpTjA0WE43VWJXYjNQYTNCeFg3a2kxOW1EeGd2VjhGb1VuUjNVcXZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
