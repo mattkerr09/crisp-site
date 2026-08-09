@@ -1,10 +1,10 @@
 {
-  "version": "0.1.762",
-  "notes": "Telling Crisp to leave something alone no longer starts a job.\n\n\"Upscale it and keep the audio\" upscaled the clip and then saved the soundtrack as a separate MP3 \u2014 you were reassuring Crisp, not asking it for a file. It now hears the difference, while \"keep only the audio\" still exports as before. And a request like \"upscale it, don't crop it\" no longer says \"nothing has been run\" while the upscale is running.",
-  "pub_date": "2026-08-09T18:14:46Z",
+  "version": "0.1.763",
+  "notes": "Crisp stays quiet about the things you asked it to leave alone.\n\n\"Upscale it and keep the audio\" did the upscale and then said it had not understood you \u2014 because \"keep the audio\" is a promise, not a request, and there was nothing for Crisp to do with it. It now does the part you asked for and says nothing about the part that was already true. \"Keep only the audio\" still exports the soundtrack, as before.",
+  "pub_date": "2026-08-09T18:43:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYzOUR0cGpBbHZIYWtPR1hPenlmekRTV0hvd3RkQUhwZWFINks3VmhMR2tRbXNwUEkva2dkWFNvc0tlVnp4TWwzd1hnY0NFYzFhVzY4VW9TQ1NRendJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjk5MjA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIZ3BiV2FOUkluU0VUdG00c0NBSTRjOTJ6OFJoelVHT3AyZUUralhvUjd4RnBxSmZQMHVyWTZQK2owbXd5YloyVlU1VGNDRWZ5eGkxZmdDeWNjdjVEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF4aXB4UjZFaFR5dTJrRFNpNUk4ZUQ2eGU4ZGF4akhpMDJGd1FZdDg1cVAxL3pwZHJLMXNSRVNzK29vRlJGU05zcU9hT21tL0QrQnFZbEI5V2MxU2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzAwOTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGcW9NazBIN3NEek1WRkRCblVKRUtNQUFxTlZhQTA2SUM1Y2FtK2FLVVkrc2p4bTB2VXJqR1Z4cUtXZGNkQTJJVGNSRW83TkRKb2lqWGR4cHFCVjlEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
