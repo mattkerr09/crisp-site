@@ -1,10 +1,10 @@
 {
-  "version": "0.1.748",
-  "notes": "The upscale path resolves its encoder from the machine.\n\nThe last of the Windows encoder groundwork in the main render path. On a Mac the result is identical \u2014 verified by rendering a clip through the shipped build and checking the output is still hevc.",
-  "pub_date": "2026-08-09T02:10:59Z",
+  "version": "0.1.749",
+  "notes": "Montages, grades, reverses and split-screens pick their encoder from the machine.\n\nThat completes the encoder groundwork across every editing lane. On a Mac nothing changes \u2014 the answer is still VideoToolbox everywhere.",
+  "pub_date": "2026-08-09T02:57:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN1Q3Vsa2d2c1RuMDJRdmZzMDFUdlJ1dU9NcnR3Ymg1ZFJQUDZEMnV1SmMwRkNBNVYxcTltOGZCaGw0MVdlWXF4Tk9CalVRTmZ0Q0J1SlZEQ0Y0cGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjQxNDE5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6RUd2RmhZODFDZ0pQeUd4QVZBQlJPNS9TYWNnemFnUnZuS3pvSjlIOWVnYjhxUEFXaWJxRDhjbVRTUHk4SmdKdHhwZnYrT3Q2MlZyY2ZaN3ZybDhEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVUL3pXazFkclRxU0FKUEVDVmxGUkVtSjNKT1JaMHVmQmVYOExoTENSWVg0cGhRMm9JM1ptMDNma01vdk1xeGJpdzRJQkJZc1NmdGt3TGo2bzdrdVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjQ0MTcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2STc4bElPNmRRbXFSQ3VPWkpESFpoRVA2cGhLc1g5R2E0UmVxMDg2RXc4SVBTdTJtVGlLTnlKY2o4YTBOallBaEprak9WMjRTN3ViRmc2UHR4aW1Ddz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
