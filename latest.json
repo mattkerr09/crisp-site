@@ -1,10 +1,10 @@
 {
-  "version": "0.1.756",
-  "notes": "A condition Crisp cannot check no longer changes what it does.\n\nAsk for something like \"if the audio is noisy, trim it to 10 seconds\" and Crisp used to hear the words in your condition instead of your actual request \u2014 it ran an audio job and lost the trim completely. It now separates the two, so the edit you asked for is the edit you get. Conditions Crisp cannot measure still go ahead as before, and it tells you so. On a photo, where there is no length or sound to check, it now says that too rather than quietly acting.",
-  "pub_date": "2026-08-09T13:55:17Z",
+  "version": "0.1.757",
+  "notes": "Conditions now understand how people actually type them.\n\n\"If they are vertical, crop them\" and \"if its vertical, mute it\" were being ignored \u2014 Crisp only recognised the exact phrasing \"if it is\", so a plural or a missing apostrophe meant the condition was skipped and the edit ran on any clip. Both work now, along with \"they're\", \"the clips are\", and the rest. Ordinary requests are unaffected: a gift video is still just a video.",
+  "pub_date": "2026-08-09T14:24:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrSEdkTjJLUHR1aWxGUHNacG9yZ3ZnekxWbHJtbGJjMk9BNHY4anhMTG9KOFBvV0VoS1lqdFlhUkVhNVNiVWlqa3hCK1R3U1dLNnhveVZxR0N3aUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MjgzNjc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TTBIeUxBdllFNUFRNStSdERibEMweFd1S0dYWGV1NVp6Z2xZSkR3dHVycDNJSENQdmt1UnN2V2dsa3pUYTNxTTJFWFVSMldpejRHeHlpa0VyU1dEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN4OXRlL3NtN0dqbnFaaDNsMnhVWjVPaFYxSUdLRGVoTDU4Zi9UWGZ3SmI4cDhxNnNpbDNVdlhjT3RMZCtwVFJqbW56aDhLQ1RLNyt4eklpZGtGb0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mjg1NDM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkSENIcmdnbEdTa3ExUzdMQTB1SFVjZVUvK1VqVEo1VEVJRTl2S0lBVGU2NjJ2NEN4cTJOREtMVHlEQ2EzMEtOcE1xRklXNXRMNk1vL0tVdXJLY2RBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
