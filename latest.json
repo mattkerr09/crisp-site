@@ -1,10 +1,10 @@
 {
-  "version": "0.1.773",
-  "notes": "Crisp tells you there isn't room before it spends an hour finding out.\n\nIf you saved to a drive without space for the finished file, Crisp ran the whole upscale and only failed at the very last step \u2014 on a long 4K job that could be hours of work for nothing. It now checks the destination before starting and says how big the render will be and how much room you have. It only speaks when it is certain, so a render that fits still just runs.",
-  "pub_date": "2026-08-10T02:09:04Z",
+  "version": "0.1.774",
+  "notes": "Exporting an edit now checks there is room for it first.\n\nThe last release added a space check before an upscale, but the editor's own Export \u2014 which upscales a whole timeline and is the longest job Crisp runs \u2014 was not covered by it. It is now, and it measures the parts of your clips you actually kept rather than the whole files, so a trimmed edit is never turned away for space it was never going to use.",
+  "pub_date": "2026-08-10T02:58:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJLRi9xL2cwSStMb2Y1WUlHN0dnVGZnd2NpN0duSGRBN2lURFd3di82emxKQXJGa0c5S0JWNnpuTXFlT3Q2dFdDell2bEpHNUtjcVFHdHRxamlyUWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzI3Njk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOR1cxVkVzcFJYOEVwWnNJTk9lZXY2QzBxK1MxZjhqTzJMM0QyWDdrOGR3emxNVjhvYTB4cmt4NVpyYmVYVjhWVUdxdjhvVGRudk0zeTR4S0p6emRCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU50em55T1QwMk1EYVNKcC9zWWFqWmNKNmlGbkwyeHBHdTVQTnpoVFYxUHRrTEMzdUlkdU5UMFg3WHJnQWZOZzJ2Y2xNNDYzQjkwZnF4YVMxRUhiVndzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzMwNjMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsTVpCdXBIZUJRS1lJZXVjNEJYbDN2ejlZUk1mZ0tBWkR2WFUzNWpwb3dwVmlnaXpmSE9SN2JiTStMajNoZ1hHRXZSV0ZkSUpnVVdGTm1pZ3l1QlFEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
