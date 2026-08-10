@@ -1,10 +1,10 @@
 {
-  "version": "0.1.772",
-  "notes": "Say how much, and Crisp listens.\n\n\"Make it a bit faster\" and \"make it way faster\" used to do exactly the same thing \u2014 two times speed, either way. Same for a bit louder, a bit sharper, slightly more saturated: every strength of the ask got the strongest answer. Crisp now reads the words, across speed, volume, sharpening and colour, as it already did for brightness. Asking for it plainly still does what it always did.",
-  "pub_date": "2026-08-10T00:17:13Z",
+  "version": "0.1.773",
+  "notes": "Crisp tells you there isn't room before it spends an hour finding out.\n\nIf you saved to a drive without space for the finished file, Crisp ran the whole upscale and only failed at the very last step \u2014 on a long 4K job that could be hours of work for nothing. It now checks the destination before starting and says how big the render will be and how much room you have. It only speaks when it is certain, so a render that fits still just runs.",
+  "pub_date": "2026-08-10T02:09:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlTOEFLbGxhaitJL2VQQmFWOG96bmtsaHdzOFZpM1FMbEcwWGp1VWhaNHBmK09obXVpSjVFTXFJdXAvQjgrYllQTkZ3c0NEeHhwa01oRmJxZmJWemdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzIwOTg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6M0x3M05HYkNBQ2ZISzlwRHFEQTMreTlMazhVcEFLL0JvdmdMdXk2N2ExbjA4eDdjejAwU1hQUVdBOU96Z1JzUGZ6SVYrcUdxUDJrWFU3V3NlV1RBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJLRi9xL2cwSStMb2Y1WUlHN0dnVGZnd2NpN0duSGRBN2lURFd3di82emxKQXJGa0c5S0JWNnpuTXFlT3Q2dFdDell2bEpHNUtjcVFHdHRxamlyUWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzI3Njk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOR1cxVkVzcFJYOEVwWnNJTk9lZXY2QzBxK1MxZjhqTzJMM0QyWDdrOGR3emxNVjhvYTB4cmt4NVpyYmVYVjhWVUdxdjhvVGRudk0zeTR4S0p6emRCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
