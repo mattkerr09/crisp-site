@@ -1,10 +1,10 @@
 {
-  "version": "0.1.777",
-  "notes": "The timeline no longer says \"Still reading this clip\" forever. A clip whose duration could not be read left the editor stuck on that message with nothing actually reading and no way out \u2014 split, trim, clip tools and Export all refused. Crisp now gives up on an unreadable clip instead of waiting on it, tells you which file it is and what to do about it, and retries a duration read that got lost.",
-  "pub_date": "2026-08-10T18:04:37Z",
+  "version": "0.1.778",
+  "notes": "Previews and progress states can no longer get stuck. If a preview frame never arrived, the before/after view sat on \"Loading preview\u2026\" forever with no error and nothing to click; the editor's player could go black with no explanation; and an update that installed but couldn't relaunch left its banner promising a restart that was never coming. Each of those now ends in a real message that tells you what happened.",
+  "pub_date": "2026-08-10T19:21:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVuUndBdUNzUTlxTnQxN2F0VG9nb08zenlCaDZ6N1BReUd4Q0JGdXFzb2g1cWFvalFiaGNkY0UxZzdlWXpOY1RsYS9USXFDTGJDRDlUT1AxdFc1MUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mzg1MDMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovQll6dzFqVEtvYkhzWVF1dE53Umw5bk9HL25zdHdJVFBZcVNOczVwa1NoTXRKUTY5ZVFBSlVtVWdYL3hPNXY4endWK2lYRlJ6dWVXbmRTNlE3THBEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU4ZGdXUjc4QmpZbHRlbnJ0SkdGQWdVNHhHVTQ3U0pnN0hnWkJFZngvcUlobTNCYWZBbXJ6czRybmFDeEh0VHMxTllsZUQ3M2lwRDR6WXk2TFZuVndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mzg4NzA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSZjhGY0VYNWNEZDBkaHh4Q0FFd05RZUU0RytsSUE1T3EwK3l4ZnRlc0RUaXFuTW1PT2FEcVdsNHZnVzU1K0xjQTBnTVY1NHV2Z3JTWmZDbjN5TXFBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
