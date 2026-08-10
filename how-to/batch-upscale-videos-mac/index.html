@@ -49,13 +49,13 @@
   at files from two folders with one output destination and you have two jobs headed for the same
   output path.</p>
   <p>A careful tool detects that and suffixes the second one. A careless one lets the second render
-  overwrite the first — and because both jobs report success, you find out only when a file you
+  overwrite the first, and because both jobs report success, you find out only when a file you
   needed contains something else. It is worth a ten-second test with two same-named files before you
   trust any tool with an irreplaceable batch.</p>
 
   <h2>Why it takes as long as it does</h2>
   <p>Upscaling is GPU-bound and runs one file at a time, because two concurrent jobs compete for the
-  same video memory and finish no faster — often slower, and on a machine with less headroom they
+  same video memory and finish no faster, often slower, and on a machine with less headroom they
   can exhaust memory outright. So a batch takes roughly the sum of its parts. There is no batch
   discount, and a tool claiming one is either queuing (same thing, different word) or cutting
   quality.</p>

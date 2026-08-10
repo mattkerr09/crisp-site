@@ -47,8 +47,8 @@
   sent half of each frame at a time: all the odd-numbered lines, then all the even ones, a fiftieth
   or sixtieth of a second later. On a CRT this worked, because the phosphors and your eye blended the
   two fields into one apparently complete image.</p>
-  <p>Modern displays do not work that way. They show whole frames, so the two fields — captured at
-  genuinely different moments — get displayed simultaneously. Anything that moved between them
+  <p>Modern displays do not work that way. They show whole frames, so the two fields, captured at
+  genuinely different moments, get displayed simultaneously. Anything that moved between them
   appears twice, offset, interleaved a line at a time. That is the comb.</p>
   <p>It is invisible on static shots, which is the trap. A talking-head interview can look completely
   fine until someone waves, and then a third of the frame turns into a zipper.</p>
@@ -68,7 +68,7 @@
 
   <h2>The two ways to fix it, and what each costs</h2>
   <p><strong>Blend or discard.</strong> Throw away one field and interpolate the missing lines back.
-  You keep the original frame rate and lose real vertical resolution — a 1080i source becomes
+  You keep the original frame rate and lose real vertical resolution: a 1080i source becomes
   something closer to 540 lines of genuine detail, resampled back up. Simple, fast, slightly soft.</p>
   <p><strong>Bob, or field doubling.</strong> Treat each field as its own frame, so 50 fields per
   second become 50 frames per second. You keep the full temporal smoothness — motion looks
@@ -82,7 +82,7 @@
 
   <h2>Why it has to come first</h2>
   <p>An AI upscaler has no concept of fields. Hand it a combed frame and it sees a regular
-  high-contrast horizontal pattern — exactly what it has been trained to preserve and enhance — and
+  high-contrast horizontal pattern, exactly what it has been trained to preserve and enhance, and
   it will render those teeth sharper and more permanent than they were. Denoisers make the same
   mistake in reverse, reading the regular pattern as structure and protecting it.</p>
   <p>Once either has run, the combing is no longer a separable artefact. It is part of the picture.</p>

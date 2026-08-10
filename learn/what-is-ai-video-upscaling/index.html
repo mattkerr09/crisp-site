@@ -47,7 +47,7 @@
   <h2>The problem it solves</h2>
   <p>A 480p frame is 640×480, about 307,000 pixels. A 4K frame is 3840×2160, about 8.3 million. Going
   from one to the other means producing 27 pixels for every 1 you started with. There is no
-  arithmetic that recovers information which was thrown away at capture or at encode time — the
+  arithmetic that recovers information which was thrown away at capture or at encode time: the
   question is only what you put in the empty space.</p>
   <p>Traditional scalers answer with a local average. Bicubic looks at the neighbouring pixels and
   fades between them; Lanczos does something more sophisticated with a windowed sinc filter, but the
@@ -65,7 +65,7 @@
   <p>It is also why the output is a guess. A well-trained model guesses well enough that the result
   looks like a better camera was used. It is still a guess, and that matters in exactly one context:
   never use upscaled footage as evidence of what something actually looked like. Licence plates and
-  faces are the classic trap — the model will happily produce a sharp, confident, wrong plate.</p>
+  faces are the classic trap: the model will happily produce a sharp, confident, wrong plate.</p>
 
   <h2>The four things it genuinely fixes</h2>
   <table>
@@ -78,7 +78,7 @@
     </tbody>
   </table>
   <p>That last row is the one nobody wants to hear. If the camera missed focus, no upscaler recovers
-  it — the model will sharpen the blur into a slightly crunchier blur. Same for motion blur from a
+  it: the model will sharpen the blur into a slightly crunchier blur. Same for motion blur from a
   slow shutter. Those are optical events, not encoding losses.</p>
 
   <h2>Frames are not photos, and that's the hard part</h2>
