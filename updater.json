@@ -1,10 +1,10 @@
 {
-  "version": "0.1.771",
-  "notes": "Ask for half the clip, or the middle of it.\n\n\"Keep the second half\", \"keep the last third\", \"cut the first half\", \"keep the middle 20 seconds\" \u2014 all of these used to come back asking you for an amount, even though they name one exactly. Crisp works the range out from the length of your clip. It still asks when a request genuinely has no answer: \"the middle\" on its own names no boundary, and cutting a slice out of the middle would leave two pieces rather than one video.",
-  "pub_date": "2026-08-09T23:00:45Z",
+  "version": "0.1.772",
+  "notes": "Say how much, and Crisp listens.\n\n\"Make it a bit faster\" and \"make it way faster\" used to do exactly the same thing \u2014 two times speed, either way. Same for a bit louder, a bit sharper, slightly more saturated: every strength of the ask got the strongest answer. Crisp now reads the words, across speed, volume, sharpening and colour, as it already did for brightness. Asking for it plainly still does what it always did.",
+  "pub_date": "2026-08-10T00:17:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9iTHQ3ZDFBNzkyLzJYdlNVUWd6UXVFUEFHczl2S2Jhak5zUmJFOEJCQVU4d3lUcmo1U2dHVXFIc3o1S2wwcEpBbkV6NWcvd21LMFBjcDBzd0psQmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzE2MzkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBSm5icnFNTWJmSnhvZDlEcGRCdGZwN2lyUGR5M213WlFHNlM0TnQzVHJieG40azViUVZKZnpHZTdXMXh5Z1FuNmZBYkZGWXU5eUVZem1kaEZUQk9Ddz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlTOEFLbGxhaitJL2VQQmFWOG96bmtsaHdzOFZpM1FMbEcwWGp1VWhaNHBmK09obXVpSjVFTXFJdXAvQjgrYllQTkZ3c0NEeHhwa01oRmJxZmJWemdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzIwOTg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6M0x3M05HYkNBQ2ZISzlwRHFEQTMreTlMazhVcEFLL0JvdmdMdXk2N2ExbjA4eDdjejAwU1hQUVdBOU96Z1JzUGZ6SVYrcUdxUDJrWFU3V3NlV1RBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
