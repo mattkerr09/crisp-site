@@ -1,10 +1,10 @@
 {
-  "version": "0.1.774",
-  "notes": "Exporting an edit now checks there is room for it first.\n\nThe last release added a space check before an upscale, but the editor's own Export \u2014 which upscales a whole timeline and is the longest job Crisp runs \u2014 was not covered by it. It is now, and it measures the parts of your clips you actually kept rather than the whole files, so a trimmed edit is never turned away for space it was never going to use.",
-  "pub_date": "2026-08-10T02:58:10Z",
+  "version": "0.1.776",
+  "notes": "Crisp will not write over a clip it is still working on.\n\nIf one job was told to save over a file another job was reading, it did it \u2014 and the original was gone for good. Crisp now refuses that and says why. You could only reach it from the command line or your own scripts, never by clicking around the app, but a lost original is a lost original.",
+  "pub_date": "2026-08-10T03:51:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU50em55T1QwMk1EYVNKcC9zWWFqWmNKNmlGbkwyeHBHdTVQTnpoVFYxUHRrTEMzdUlkdU5UMFg3WHJnQWZOZzJ2Y2xNNDYzQjkwZnF4YVMxRUhiVndzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzMwNjMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsTVpCdXBIZUJRS1lJZXVjNEJYbDN2ejlZUk1mZ0tBWkR2WFUzNWpwb3dwVmlnaXpmSE9SN2JiTStMajNoZ1hHRXZSV0ZkSUpnVVdGTm1pZ3l1QlFEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBVbkdTOHVibjlxNmRNUmR3L1NscElNaHZScmVyeS9LY05QK0NhclJUZDRDNWZJY0JJeWhIL2srRE1oakR6R3EvY1NFV0krNWtaNWNud0Q2bGEraFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzMzNzg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyb1ltY0hUOHZwQWM4cnE2K2ZUUHZKV2FKRnRqVEsvK0FsYkVDQTFVb05XVkdjdTkzQlRhcnhNZWgvR29FK2NRVG1TZUNyRUp6WG8zSDYvZFBpM0pCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
