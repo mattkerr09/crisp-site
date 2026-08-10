@@ -81,4 +81,10 @@
   <url><loc>https://crispvideo.app/legal/privacy/</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://crispvideo.app/legal/terms/</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://crispvideo.app/legal/refunds/</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://crispvideo.app/learn/why-video-looks-worse-after-uploading/</loc><priority>0.7</priority></url>
+  <url><loc>https://crispvideo.app/learn/what-is-interlacing/</loc><priority>0.7</priority></url>
+  <url><loc>https://crispvideo.app/learn/what-is-frame-interpolation/</loc><priority>0.7</priority></url>
+  <url><loc>https://crispvideo.app/learn/bitrate-vs-resolution/</loc><priority>0.7</priority></url>
+  <url><loc>https://crispvideo.app/learn/what-is-a-video-codec/</loc><priority>0.7</priority></url>
+  <url><loc>https://crispvideo.app/learn/</loc><priority>0.8</priority></url>
 </urlset>

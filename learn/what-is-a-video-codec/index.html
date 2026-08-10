@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a video codec? H.264, HEVC, ProRes and AV1 explained — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="A codec decides how your video is compressed, a container decides how it is packaged, and confusing the two is why files refuse to open. A plain guide to the ones you will actually meet.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-a-video-codec/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is a video codec?">
+<meta property="og:description" content="A codec decides how your video is compressed, a container decides how it is packaged, and confusing the two is why files refuse to open. A plain guide to the ones you will actually meet.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-a-video-codec/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is a video codec?">
+<meta name="twitter:description" content="A codec decides how your video is compressed, a container decides how it is packaged, and confusing the two is why files refuse to open. A plain guide to the ones you will actually meet.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a video codec?","description":"A codec decides how your video is compressed, a container decides how it is packaged, and confusing the two is why files refuse to open. A plain guide to the ones you will actually meet.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between .mp4 and .mov?","acceptedAnswer":{"@type":"Answer","text":"They're both containers, and they can hold much the same content. .mov is Apple's format and is the only one of the two that can carry ProRes. For sending a file to someone else, .mp4 with H.264 inside is the safest choice by a wide margin."}},{"@type":"Question","name":"Why won't my file play on someone else's computer?","acceptedAnswer":{"@type":"Answer","text":"Almost always the codec rather than the container. HEVC and ProRes are the usual culprits, since both depend on support that older machines and some web platforms don't have. Converting to H.264 in an .mp4 fixes nearly every case."}},{"@type":"Question","name":"Does converting a file lose quality?","acceptedAnswer":{"@type":"Answer","text":"Only if it re-encodes. A stream copy, where the compressed video is moved into a different container untouched, is lossless. A genuine re-encode always costs something, though at a sensible bitrate the loss is usually invisible in a single generation."}},{"@type":"Question","name":"Should I edit in ProRes?","acceptedAnswer":{"@type":"Answer","text":"If you're doing heavy grading or several rounds of export, it's worth the disk space. For a quick trim and upload it's overkill, and the file sizes are large enough to be genuinely inconvenient."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Video codecs</div>
+  <h1>What is a video codec?</h1>
+
+  <p>A codec is the method used to compress and decompress video. A container is the file wrapper that
+  holds the compressed video, the audio, and the metadata. They're different things, and almost every
+  confusing playback problem comes from treating them as the same thing.</p>
+  <p>The giveaway is that .mp4 and .mov are containers, not codecs. Either one can hold H.264, HEVC,
+  ProRes and several others. So "my MP4 won't play" is rarely about MP4. It's about what's inside it.</p>
+
+  <h2>The ones you'll actually encounter</h2>
+  <table>
+    <tr><th>Codec</th><th>What it's for</th><th>The catch</th></tr>
+    <tr><td>H.264 (AVC)</td><td>The universal default. Plays on essentially everything.</td><td>Least efficient of the modern options, so files are larger for the same quality.</td></tr>
+    <tr><td>HEVC (H.265)</td><td>Roughly half the size of H.264 at similar quality. Standard for 4K and for iPhone recording.</td><td>Patchier support on older hardware and some web platforms.</td></tr>
+    <tr><td>ProRes</td><td>An editing and mastering codec. Very light to decode, near-lossless.</td><td>Enormous files. It lives in .mov, not .mp4.</td></tr>
+    <tr><td>AV1</td><td>Royalty-free, very efficient, increasingly used for streaming delivery.</td><td>Encoding is slow, and hardware support is still arriving.</td></tr>
+    <tr><td>VP9</td><td>Mostly a web delivery codec, common in .webm.</td><td>Can't be stream-copied into an .mp4, so conversion means a full re-encode.</td></tr>
+  </table>
+
+  <h2>Delivery codecs and editing codecs are not the same job</h2>
+  <p>H.264, HEVC, AV1 and VP9 are delivery codecs. They're built to make files small, and they achieve
+  that partly by describing frames in terms of other frames. That's efficient to store and awkward to
+  edit, because reaching an arbitrary point means reconstructing the frames leading up to it.</p>
+  <p>ProRes and similar intermediate codecs go the other way. Every frame is stored independently, so
+  scrubbing is instant and repeated re-encoding costs you very little. You pay in disk space, sometimes
+  by an order of magnitude. Grading and heavy multi-pass work is where that trade pays off.</p>
+
+  <h2>Why converting is sometimes instant and sometimes slow</h2>
+  <p>If the codec inside your file is already valid for the container you want, the video can be copied
+  across untouched. That's a stream copy, it takes seconds, and it's mathematically lossless because
+  nothing is re-compressed. Moving H.264 from a .mov into an .mp4 works this way.</p>
+  <p>If the codec isn't compatible with the target container, everything has to be decoded and
+  re-encoded. That's slower and it costs a compression generation. Going from VP9 in a .webm to an .mp4
+  is the common example.</p>
+  <p>Crisp takes the fast path wherever the source allows it and only falls back to a full re-encode
+  when the codec genuinely can't live in the container you asked for. The practical upshot is that most
+  format conversions finish in seconds with no quality cost at all, and the ones that don't are the
+  ones where no tool could have avoided it.</p>
+
+  <h2>Codecs and containers, in detail</h2>
+  <h3>What's the difference between .mp4 and .mov?</h3>
+  <p>They're both containers, and they can hold much the same content. .mov is Apple's format and is the only one of the two that can carry ProRes. For sending a file to someone else, .mp4 with H.264 inside is the safest choice by a wide margin.</p>
+  <h3>Why won't my file play on someone else's computer?</h3>
+  <p>Almost always the codec rather than the container. HEVC and ProRes are the usual culprits, since both depend on support that older machines and some web platforms don't have. Converting to H.264 in an .mp4 fixes nearly every case.</p>
+  <h3>Does converting a file lose quality?</h3>
+  <p>Only if it re-encodes. A stream copy, where the compressed video is moved into a different container untouched, is lossless. A genuine re-encode always costs something, though at a sensible bitrate the loss is usually invisible in a single generation.</p>
+  <h3>Should I edit in ProRes?</h3>
+  <p>If you're doing heavy grading or several rounds of export, it's worth the disk space. For a quick trim and upload it's overkill, and the file sizes are large enough to be genuinely inconvenient.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
