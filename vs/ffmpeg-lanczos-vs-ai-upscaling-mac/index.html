@@ -44,7 +44,7 @@
   correct answer and an AI upscaler is overkill. Knowing which jobs is the useful part.</p>
 
   <h2>What Lanczos actually does</h2>
-  <p>It is a resampling filter — a windowed sinc function — that computes each new pixel from a
+  <p>It is a resampling filter, a windowed sinc function, that computes each new pixel from a
   weighted neighbourhood of the old ones. It preserves edges better than bilinear or bicubic, which
   is why it is the standard recommendation for enlargement. It also produces slight ringing next to
   hard edges, visible as a faint halo, which is the known cost of its sharpness.</p>

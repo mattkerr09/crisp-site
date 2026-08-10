@@ -42,11 +42,11 @@
 <article><div class="wrap">
   <div class="crumb">Compare · Topaz alternative for Mac</div>
   <h1>The best <span class="grad">Topaz alternative</span> for Mac — offline, one-time, and it edits too</h1>
-  <p class="lede">Let's be fair up front: <strong>Topaz</strong> is a mature, pro-grade AI enhancement suite with a deep model catalogue and a control surface for every artifact — it earned its reputation. But if what you actually want is an upscaler you <strong>own</strong>, that runs <strong>100% offline</strong> on your Mac, that skips the model picker entirely, and that also <em>edits</em> your footage instead of only enhancing it, here's the honest alternative. This isn't a "Crisp beats Topaz" pitch — it's a map of where each one wins.</p>
+  <p class="lede">Let's be fair up front: <strong>Topaz</strong> is a mature, pro-grade AI enhancement suite with a deep model catalogue and a control surface for every artifact — it earned its reputation. But if what you actually want is an upscaler you <strong>own</strong>, that runs <strong>100% offline</strong> on your Mac, that skips the model picker entirely, and that also <em>edits</em> your footage instead of only enhancing it, here's the honest alternative. This isn't a "Crisp beats Topaz" pitch. It's a map of where each one wins.</p>
   <div class="updated">Updated July 2026 · honest comparison</div>
 
   <h2>Why people look for a Topaz alternative</h2>
-  <p>Two reasons come up again and again. First, <strong>pricing and ownership</strong>: Topaz Labs ended perpetual licenses for new buyers in late 2025 and moved to subscription pricing (around $299/year for Video AI, more for the full suite), so people want a one-time, own-it tool with no renewals. Second, <strong>simplicity and scope</strong>: Topaz is a wall of specialised models and sliders built for pros, and its Starlight restore models run locally only on newer macOS or with 36&nbsp;GB of memory, depending on the variant. A lot of Mac users just want to drop a clip in, get a clean 4K result offline, and maybe reframe or trim it too — without learning a model zoo or uploading their footage. If that's you, a simpler local app is a cleaner fit. If you <em>do</em> need the model zoo, keep Topaz — and we'll say exactly when below.</p>
+  <p>Two reasons come up again and again. First, <strong>pricing and ownership</strong>: Topaz Labs ended perpetual licenses for new buyers in late 2025 and moved to subscription pricing (around $299/year for Video AI, more for the full suite), so people want a one-time, own-it tool with no renewals. Second, <strong>simplicity and scope</strong>: Topaz is a wall of specialised models and sliders built for pros, and its Starlight restore models run locally only on newer macOS or with 36&nbsp;GB of memory, depending on the variant. A lot of Mac users just want to drop a clip in, get a clean 4K result offline, and maybe reframe or trim it too — without learning a model zoo or uploading their footage. If that's you, a simpler local app is a cleaner fit. If you <em>do</em> need the model zoo, keep Topaz, and we'll say exactly when below.</p>
   <p class="muted">Note: if you specifically want the deep dive on Topaz <em>Video AI</em>'s subscription move, we have a focused page: <a href="https://crispvideo.app/vs/topaz-video-ai-alternative-mac/">Topaz Video AI alternative for Mac</a>. This page covers the broader "Topaz alternative" question across upscaling and editing.</p>
 
   <h2>Crisp vs Topaz, at a glance</h2>
@@ -72,7 +72,7 @@
   </table></div>
 
   <h2>Where Topaz still wins (being honest)</h2>
-  <p>Topaz is a pro toolbox and it's fair to say so plainly. It ships a broad, more sophisticated catalogue of upscaling and restoration models — <strong>Proteus, Artemis, Iris</strong> and others — each with fine-grained sliders you can tune per clip, plus several frame-interpolation options, a RAW pipeline (Photo AI / Gigapixel), and plugins for Premiere, After Effects and Photoshop. It has an established track record on difficult archival work, and on the hardest restores its <strong>quality ceiling is higher</strong> than Crisp's precisely because it has more specialised models and more control. If your job is meticulous restoration where you want a knob for every artifact — or you're already inside an NLE plugin workflow — Topaz is the stronger tool, and we won't pretend otherwise. Crisp deliberately doesn't chase the model-zoo-and-sliders approach.</p>
+  <p>Topaz is a pro toolbox and it's fair to say so plainly. It ships a broad, more sophisticated catalogue of upscaling and restoration models — <strong>Proteus, Artemis, Iris</strong> and others — each with fine-grained sliders you can tune per clip, plus several frame-interpolation options, a RAW pipeline (Photo AI / Gigapixel), and plugins for Premiere, After Effects and Photoshop. It has an established track record on difficult archival work, and on the hardest restores its <strong>quality ceiling is higher</strong> than Crisp's precisely because it has more specialised models and more control. If your job is meticulous restoration where you want a knob for every artifact, or you're already inside an NLE plugin workflow, Topaz is the stronger tool, and we won't pretend otherwise. Crisp deliberately doesn't chase the model-zoo-and-sliders approach.</p>
 
   <h2>Where Crisp wins</h2>
   <ul>
@@ -86,7 +86,7 @@
   <p>Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is <strong>Real-ESRGAN (ncnn/Vulkan)</strong>, running <strong>2×–4×</strong> up to 4K on-device. Under the hood there are a few purpose-built models — a general live-action model, a low-light/denoise variant, an anime/line-art model, and a fast native-2× network for clean HD→4K passes — but you never pick them by hand: <strong>Auto</strong> detects the source (resolution, brightness) and routes to the right one. For badly degraded footage there's a separate <strong>Max quality</strong> lane driven by a generative, one-step diffusion restorer (SeedVR2) that runs fully offline — Crisp's answer to Topaz's Starlight, minus the cloud. It's slow and video-only, best left running a while, but it rebuilds real detail. Honest limits: this is one upscaler with a handful of models, not Topaz's deep model catalogue, and it enhances and restores footage you already have — it won't generate or remove objects, swap faces or replace backgrounds, and it tells you so rather than faking it.</p>
 
   <h2>The part Topaz doesn't do: editing</h2>
-  <p>Topaz is enhance-only. Crisp adds a whole editor beside the upscaler, driven by the same drop-a-file-in simplicity — and you can steer any of it in plain English. The lanes are real, deterministic ffmpeg/ncnn operations, not a chatbot guessing:</p>
+  <p>Topaz is enhance-only. Crisp adds a whole editor beside the upscaler, driven by the same drop-a-file-in simplicity, and you can steer any of it in plain English. The lanes are real, deterministic ffmpeg/ncnn operations, not a chatbot guessing:</p>
   <ul>
     <li><strong>Enhance</strong> — AI upscale 2×–4× (up to 4K), low-light cleanup, denoise/grain removal, generative Max-quality restore, and smooth motion (2×/3× frame interpolation).</li>
     <li><strong>Montage</strong> — auto-build a highlight reel, condense out the dead air, or cut to the beat of a song, on-device.</li>
@@ -99,7 +99,7 @@
   </ul>
 
   <h3>Or just type what you want</h3>
-  <p>Crisp has a <strong>plain-English command box</strong> that turns your words into a plan, shows you exactly what it's about to do, and runs it after you confirm — all offline. Real examples that work today (verified against the actual parser):</p>
+  <p>Crisp has a <strong>plain-English command box</strong> that turns your words into a plan, shows you exactly what it's about to do, and runs it after you confirm: all offline. Real examples that work today (verified against the actual parser):</p>
   <ul>
     <li><span class="prompt">upscale to 4K</span> — picks the model and the right scale for your source's resolution.</li>
     <li><span class="prompt">clean up the low-light noise</span> — routes to the low-light denoise + upscale stage.</li>
@@ -131,7 +131,7 @@
   <h3>Is Crisp as good as Topaz for upscaling?</h3>
   <p>For common upscale/denoise/restore jobs it targets strong results offline. For the hardest archival restores and per-model control, Topaz's broader lineup still wins — we're honest about that.</p>
   <h3>What can Crisp do that Topaz can't?</h3>
-  <p>Edit. Beyond enhancing, Crisp trims, reframes, changes speed, grades color, builds montages, adds captions and watermarks, reverses and adjusts audio — a full auto-editor Topaz doesn't include.</p>
+  <p>Edit. Beyond enhancing, Crisp trims, reframes, changes speed, grades color, builds montages, adds captions and watermarks, reverses and adjusts audio: a full auto-editor Topaz doesn't include.</p>
   <h3>Related guides</h3>
   <p><a href="https://crispvideo.app/vs/topaz-video-ai-alternative-mac/">Topaz Video AI alternative for Mac</a> · <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">How to upscale video on a Mac</a> · <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">How to remove noise from video</a> · <a href="https://crispvideo.app/vs/videoproc-alternative-mac/">VideoProc alternative for Mac</a></p>
 </div></article>

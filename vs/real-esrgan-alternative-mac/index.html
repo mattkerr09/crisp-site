@@ -49,8 +49,7 @@
   it is close to a complete answer — batch a folder of photos through it and the results will hold up
   against most paid photo upscalers.</p>
   <p>It is also the model underneath a surprising number of commercial products. Several tools in this
-  category are, at their core, a licence-checked interface over an open model. That is not a scandal
-  — the interface is real work — but it does mean the gap between free and paid is smaller than
+  category are, at their core, a licence-checked interface over an open model. That is not a scandal, the interface is real work, but it does mean the gap between free and paid is smaller than
   pricing implies.</p>
 
   <h2>What breaks when you point it at video</h2>
@@ -68,8 +67,8 @@
   record, makes this worse, because there is no single correct number to use.</p>
   <p>Then there is memory. Upscaling a 4K frame to 8K needs a large contiguous allocation, and the
   naive approach dies partway through a long job. Tiling fixes it, and tiling introduces seams unless
-  the tiles overlap and blend correctly. That specific problem — bounding peak memory without visible
-  tile boundaries — is most of what makes a heavy upscaler usable on a laptop.</p>
+  the tiles overlap and blend correctly. That specific problem, bounding peak memory without visible
+  tile boundaries, is most of what makes a heavy upscaler usable on a laptop.</p>
 
   <h2>And the one it cannot solve at all</h2>
   <p>Frames are upscaled independently, so the model's guesses vary slightly between consecutive
