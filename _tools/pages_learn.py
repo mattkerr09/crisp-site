@@ -318,4 +318,204 @@ PAGES = [
    "If you're doing heavy grading or several rounds of export, it's worth the disk space. For a quick trim and upload it's overkill, and the file sizes are large enough to be genuinely inconvenient."),
  ],
 },
+
+{
+ "slug": "learn/why-ai-upscaling-cant-fix-focus",
+ "crumb": "Focus and upscaling",
+ "title": "Why AI upscaling can't fix out-of-focus video — Crisp",
+ "h1": "Why AI upscaling can't rescue a shot that missed focus",
+ "desc": "Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.",
+ "faq_heading": "Soft footage, in detail",
+ "body": """
+  <p>People try this constantly, and it's worth explaining why it disappoints. You have a shot that
+  matters, it's slightly out of focus, and an AI upscaler seems like exactly the tool. You run it, the
+  result looks sharper at a glance, and something about it is wrong.</p>
+
+  <h2>What an upscaler is actually doing</h2>
+  <p>An upscaler is a prediction engine. It was trained on millions of pairs of images, each pair
+  being a high-quality original and a degraded copy, and it learned the statistical relationship
+  between them. When you feed it a low-resolution frame, it predicts what the high-resolution version
+  probably looked like.</p>
+  <p>That works because degradation is usually partial. A 480p frame still contains edges, and the
+  model has seen enough edges to know what a sharper one looks like. Compression damage leaves the
+  underlying structure intact. Sensor noise sits on top of a real signal. In each case there's
+  something genuine to reason from.</p>
+
+  <h2>Focus is different in kind</h2>
+  <p>An out-of-focus lens doesn't degrade detail, it never records it. Light from a single point in
+  the scene lands as a disc rather than a point, so information from neighbouring parts of the subject
+  is physically averaged together before it ever reaches the sensor. There's no encoding of the
+  original arrangement anywhere in the file.</p>
+  <p>Ask a model to sharpen that and it does the only thing it can. It generates plausible detail
+  where the training data suggests detail belongs. On a stranger's footage that's often fine, because
+  nobody can check. On a face you know, it isn't, because the invented detail is not that person's
+  face. The eyes come back subtly wrong, and the effect is unsettling in a way that's hard to name.</p>
+  <p>The same reasoning covers heavy motion blur from too slow a shutter, and blown highlights, where
+  every pixel in a clipped region holds the identical maximum value and nothing distinguishes a bright
+  sky from a brighter one.</p>
+
+  <h2>What does respond well</h2>
+  <table>
+    <tr><th>Problem</th><th>Recoverable?</th><th>Why</th></tr>
+    <tr><td>Low resolution, in focus</td><td>Yes, genuinely</td><td>Real structure survives; the model has something to reason from.</td></tr>
+    <tr><td>Compression blocking</td><td>Yes</td><td>Damage sits on top of intact underlying detail.</td></tr>
+    <tr><td>Sensor noise, low light</td><td>Yes</td><td>Signal is present, just buried.</td></tr>
+    <tr><td>Soft focus</td><td>No</td><td>The detail was never recorded.</td></tr>
+    <tr><td>Heavy motion blur</td><td>No</td><td>Same reason: averaged before capture.</td></tr>
+    <tr><td>Blown highlights</td><td>No</td><td>Clipped pixels are all identical.</td></tr>
+  </table>
+
+  <h2>What to do with a soft shot instead</h2>
+  <p>Be honest about what you're doing. If the shot is precious and slightly soft, a gentle
+  sharpening pass and good grading will make it read better without pretending to recover anything.
+  Cropping in less, keeping it on screen for less time, and cutting to a sharper angle all do more
+  than any amount of processing.</p>
+  <p>If the softness is uniform across the whole frame rather than just the subject, check whether it
+  is actually focus at all. A dirty lens, a cheap filter, heavy denoising applied in-camera or a bad
+  transfer all produce something that resembles soft focus and some of those do respond to
+  restoration.</p>
+  <p>Crisp will run any of this on-device, and it will not tell you a soft shot came back sharp when
+  it didn't. That honesty is the useful part: knowing which of your footage is worth the render time
+  saves more than a faster renderer would.</p>
+""",
+ "faq": [
+  ("Can any tool fix out-of-focus video?",
+   "Nothing recovers the original detail, because it was never recorded. Tools that claim otherwise are generating plausible detail rather than restoring real detail. That can look acceptable on unfamiliar subjects and tends to look wrong on faces you know."),
+  ("Why does the sharpened version look strange rather than just sharp?",
+   "Because the fine detail is invented. Your eye is very good at faces specifically, so small errors in the arrangement of features read as uncanny even when you can't articulate what changed. On landscapes or textures the same invention usually passes unnoticed."),
+  ("Is a slightly soft shot worth upscaling at all?",
+   "Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks."),
+  ("Does shooting at a higher resolution protect against this?",
+   "It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards."),
+ ],
+},
+{
+ "slug": "learn/what-is-variable-frame-rate",
+ "crumb": "Variable frame rate",
+ "title": "What is variable frame rate (VFR), and why does it break edits? — Crisp",
+ "h1": "What is variable frame rate?",
+ "desc": "Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one, which is why audio drifts out of sync partway through a cut.",
+ "faq_heading": "Frame rate questions",
+ "body": """
+  <p>Most video stores frames at a fixed interval. Thirty frames per second means a frame every
+  thirty-third of a second, forever, and everything downstream can rely on that. Variable frame rate
+  breaks the assumption: the gap between frames changes during the recording.</p>
+
+  <h2>Why anything records this way</h2>
+  <p>It's usually a sensible decision made for good reasons. Screen recorders capture a new frame when
+  something on screen changes, so a static document produces almost no frames and a scrolling page
+  produces many. That saves an enormous amount of space.</p>
+  <p>Phones do something similar for a different reason. In low light the sensor needs a longer
+  exposure per frame, so the capture rate drops to let more light in, then climbs again when you walk
+  outside. Thermal limits and battery saving push the same way. The file that comes out says 30fps in
+  its metadata and contains stretches that were really recorded at 24, or 17.</p>
+
+  <h2>How it shows up as a problem</h2>
+  <p>Editors and encoders overwhelmingly assume a constant rate. Hand them a variable-rate file and
+  they read the nominal rate from the header, lay the frames out at that spacing, and everything is
+  fine until it isn't. Audio was recorded against real time and doesn't drift. Video laid out at the
+  wrong spacing does.</p>
+  <p>The signature is unmistakable once you know it: sync is perfect at the start of the clip and
+  progressively worse towards the end. If your lips are half a second ahead by the five minute mark
+  but fine at the beginning, you have a variable frame rate file, not a sync problem.</p>
+  <p>Two other symptoms come from the same cause. Cuts landing a frame or two off where you placed
+  them, and exported files whose duration doesn't match the source.</p>
+
+  <h2>The fix is conversion, not correction</h2>
+  <p>You can't repair the timing after the fact by nudging the audio, because the error accumulates
+  rather than being a fixed offset. The fix is to convert the video to a constant frame rate before
+  editing, duplicating or dropping frames as needed so that real time and frame position agree
+  again.</p>
+  <p>Done properly, this is close to invisible. The frames themselves are untouched; only their
+  spacing changes. Done badly, by simply reinterpreting the file at a different nominal rate, it makes
+  the drift worse.</p>
+  <p>Crisp resamples to a constant rate as part of its decode stage, so anything you run through it
+  comes out with the timing already regularised and the audio still lined up. That's not a feature
+  anybody asks for by name. It's the reason screen recordings and phone clips behave predictably
+  afterwards.</p>
+
+  <h2>Catching it before it costs you an edit</h2>
+  <p>The quickest check is duration against frame count. If the two disagree with the declared frame
+  rate, the file is variable. Failing that, the practical habit is simply to normalise anything that
+  came from a screen recorder, a phone shot in low light, or a game capture tool before it goes near a
+  timeline. Those three sources account for the overwhelming majority of cases.</p>
+""",
+ "faq": [
+  ("Why is my audio in sync at the start and drifting by the end?",
+   "That pattern is nearly always variable frame rate. A fixed offset would be wrong from the first frame. Progressive drift means video and audio are being laid out against different clocks, and the gap accumulates as the clip plays."),
+  ("Does converting to constant frame rate lose quality?",
+   "The frames themselves aren't re-encoded by the resampling itself, so the picture is unchanged. What changes is spacing, which means some frames get duplicated or dropped. On footage that was genuinely varying a lot you can occasionally see a small hitch where a frame was repeated."),
+  ("Which sources are usually variable?",
+   "Screen recorders almost always, phone footage frequently once light drops, and game capture tools very often. Dedicated cameras generally record constant frame rate, which is why footage from a proper camera tends to behave in an editor."),
+  ("Can I just tell my editor the real frame rate?",
+   "No, because there isn't one. The rate genuinely changed during the recording, so no single number describes the file. That's what makes conversion rather than reinterpretation the only reliable fix."),
+ ],
+},
+{
+ "slug": "learn/film-grain-vs-digital-noise",
+ "crumb": "Grain vs noise",
+ "title": "Film grain vs digital noise: how to tell them apart — Crisp",
+ "h1": "Film grain and digital noise are not the same thing",
+ "desc": "One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove. Telling them apart decides whether you denoise a clip or ruin it.",
+ "faq_heading": "Grain and noise, in detail",
+ "body": """
+  <p>Both look like a fine speckle over the picture. They come from completely different places, they
+  behave differently frame to frame, and treating one as the other is how footage gets ruined in a
+  single pass.</p>
+
+  <h2>Grain is structure. Noise is error.</h2>
+  <p>Film grain comes from the silver halide crystals in the emulsion. They're physically distributed
+  through the film, they vary in size, and they're the mechanism by which the image exists at all.
+  Grain is finer in shadows and coarser in highlights on some stocks, the opposite on others, and it
+  has a texture that people find pleasant enough to simulate deliberately decades after shooting on
+  film became unusual.</p>
+  <p>Digital noise is measurement error. A sensor photosite counts photons, the count is uncertain,
+  and amplifying a weak signal amplifies the uncertainty along with it. That's why noise climbs with
+  ISO and why it's worst in shadows, which is the exact inverse of how most film grain behaves.</p>
+
+  <h2>The tells, in order of usefulness</h2>
+  <p><strong>Colour.</strong> Digital noise usually has chroma noise mixed in, showing as red and
+  green blotches in dark areas. Film grain is largely luminance and stays neutral. Coloured speckle in
+  shadows is close to conclusive.</p>
+  <p><strong>Where it lives.</strong> Noise concentrates in the darkest parts of the frame and
+  disappears in bright areas. Grain is present across the whole exposure range.</p>
+  <p><strong>Behaviour over time.</strong> Both change every frame, but noise often has a directional
+  or banded quality from the sensor readout, sometimes visible as faint horizontal streaking. Grain is
+  isotropic.</p>
+  <p><strong>Scale.</strong> Grain has a consistent size determined by the stock. Digital noise scales
+  with whatever processing has been applied, so a heavily compressed file shows blocky noise that
+  clusters at the edges of compression blocks.</p>
+
+  <h2>Why it matters before you denoise</h2>
+  <p>Denoising treats fine high-frequency variation as something to remove. Run it hard on genuinely
+  grainy film and you get the waxy, plastic look that gives cheap restorations away, because the grain
+  was carrying the impression of texture and detail. Faces suffer worst, since skin texture and grain
+  occupy a similar frequency band.</p>
+  <p>Run it on real sensor noise and it does exactly what you want. The signal underneath is real and
+  the noise genuinely is error.</p>
+  <p>The practical rule for restoring old footage is to denoise conservatively and stop earlier than
+  feels right. You can always run a second pass. You can't put grain back convincingly once the
+  structure it was sitting on has been smoothed away, and adding synthetic grain afterwards on top of
+  a waxy image fools nobody.</p>
+
+  <h2>Adding grain on purpose</h2>
+  <p>Going the other way is legitimate and common. A little grain hides banding in gradients, gives
+  digital footage a texture that reads as less clinical, and can mask mild compression artefacts.</p>
+  <p>Two cautions. Grain is close to incompressible, so adding it before a platform re-encode spends
+  bitrate that the rest of the frame needed. And it should go on last, after upscaling and grading,
+  or the upscaler will treat it as detail to reconstruct and the grade will shift its character.</p>
+  <p>Crisp handles both directions on-device: denoise for real sensor noise, and a grain pass in the
+  colour lane for when you want the texture back.</p>
+""",
+ "faq": [
+  ("Should I remove grain from old film footage?",
+   "Usually only a little. Grain is part of how film footage looks, and aggressive denoising produces the waxy appearance that makes a restoration obvious. Remove enough that the picture reads cleanly and stop there."),
+  ("How do I tell noise from grain quickly?",
+   "Look at the shadows for coloured speckle. Red and green blotches in dark areas are chroma noise and mean digital. Neutral speckle spread evenly across bright and dark areas is more likely to be grain."),
+  ("Does adding grain make my video look more cinematic?",
+   "In moderation it can, mostly because it breaks up banding and softens the clinical look of clean digital footage. Overdone it just looks noisy, and it costs real bitrate on any platform that re-encodes."),
+  ("Should grain go on before or after upscaling?",
+   "After. An upscaler reconstructs what it reads as detail, and grain applied first gets magnified and reinterpreted. Grade, upscale, then add grain last."),
+ ],
+},
 ]

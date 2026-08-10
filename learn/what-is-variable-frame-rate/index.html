@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is variable frame rate (VFR), and why does it break edits? — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one, which is why audio drifts out of sync partway through a cut.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-variable-frame-rate/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is variable frame rate?">
+<meta property="og:description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one, which is why audio drifts out of sync partway through a cut.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-variable-frame-rate/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is variable frame rate?">
+<meta name="twitter:description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one, which is why audio drifts out of sync partway through a cut.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is variable frame rate?","description":"Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one, which is why audio drifts out of sync partway through a cut.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is my audio in sync at the start and drifting by the end?","acceptedAnswer":{"@type":"Answer","text":"That pattern is nearly always variable frame rate. A fixed offset would be wrong from the first frame. Progressive drift means video and audio are being laid out against different clocks, and the gap accumulates as the clip plays."}},{"@type":"Question","name":"Does converting to constant frame rate lose quality?","acceptedAnswer":{"@type":"Answer","text":"The frames themselves aren't re-encoded by the resampling itself, so the picture is unchanged. What changes is spacing, which means some frames get duplicated or dropped. On footage that was genuinely varying a lot you can occasionally see a small hitch where a frame was repeated."}},{"@type":"Question","name":"Which sources are usually variable?","acceptedAnswer":{"@type":"Answer","text":"Screen recorders almost always, phone footage frequently once light drops, and game capture tools very often. Dedicated cameras generally record constant frame rate, which is why footage from a proper camera tends to behave in an editor."}},{"@type":"Question","name":"Can I just tell my editor the real frame rate?","acceptedAnswer":{"@type":"Answer","text":"No, because there isn't one. The rate genuinely changed during the recording, so no single number describes the file. That's what makes conversion rather than reinterpretation the only reliable fix."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Variable frame rate</div>
+  <h1>What is variable frame rate?</h1>
+
+  <p>Most video stores frames at a fixed interval. Thirty frames per second means a frame every
+  thirty-third of a second, forever, and everything downstream can rely on that. Variable frame rate
+  breaks the assumption: the gap between frames changes during the recording.</p>
+
+  <h2>Why anything records this way</h2>
+  <p>It's usually a sensible decision made for good reasons. Screen recorders capture a new frame when
+  something on screen changes, so a static document produces almost no frames and a scrolling page
+  produces many. That saves an enormous amount of space.</p>
+  <p>Phones do something similar for a different reason. In low light the sensor needs a longer
+  exposure per frame, so the capture rate drops to let more light in, then climbs again when you walk
+  outside. Thermal limits and battery saving push the same way. The file that comes out says 30fps in
+  its metadata and contains stretches that were really recorded at 24, or 17.</p>
+
+  <h2>How it shows up as a problem</h2>
+  <p>Editors and encoders overwhelmingly assume a constant rate. Hand them a variable-rate file and
+  they read the nominal rate from the header, lay the frames out at that spacing, and everything is
+  fine until it isn't. Audio was recorded against real time and doesn't drift. Video laid out at the
+  wrong spacing does.</p>
+  <p>The signature is unmistakable once you know it: sync is perfect at the start of the clip and
+  progressively worse towards the end. If your lips are half a second ahead by the five minute mark
+  but fine at the beginning, you have a variable frame rate file, not a sync problem.</p>
+  <p>Two other symptoms come from the same cause. Cuts landing a frame or two off where you placed
+  them, and exported files whose duration doesn't match the source.</p>
+
+  <h2>The fix is conversion, not correction</h2>
+  <p>You can't repair the timing after the fact by nudging the audio, because the error accumulates
+  rather than being a fixed offset. The fix is to convert the video to a constant frame rate before
+  editing, duplicating or dropping frames as needed so that real time and frame position agree
+  again.</p>
+  <p>Done properly, this is close to invisible. The frames themselves are untouched; only their
+  spacing changes. Done badly, by simply reinterpreting the file at a different nominal rate, it makes
+  the drift worse.</p>
+  <p>Crisp resamples to a constant rate as part of its decode stage, so anything you run through it
+  comes out with the timing already regularised and the audio still lined up. That's not a feature
+  anybody asks for by name. It's the reason screen recordings and phone clips behave predictably
+  afterwards.</p>
+
+  <h2>Catching it before it costs you an edit</h2>
+  <p>The quickest check is duration against frame count. If the two disagree with the declared frame
+  rate, the file is variable. Failing that, the practical habit is simply to normalise anything that
+  came from a screen recorder, a phone shot in low light, or a game capture tool before it goes near a
+  timeline. Those three sources account for the overwhelming majority of cases.</p>
+
+  <h2>Frame rate questions</h2>
+  <h3>Why is my audio in sync at the start and drifting by the end?</h3>
+  <p>That pattern is nearly always variable frame rate. A fixed offset would be wrong from the first frame. Progressive drift means video and audio are being laid out against different clocks, and the gap accumulates as the clip plays.</p>
+  <h3>Does converting to constant frame rate lose quality?</h3>
+  <p>The frames themselves aren't re-encoded by the resampling itself, so the picture is unchanged. What changes is spacing, which means some frames get duplicated or dropped. On footage that was genuinely varying a lot you can occasionally see a small hitch where a frame was repeated.</p>
+  <h3>Which sources are usually variable?</h3>
+  <p>Screen recorders almost always, phone footage frequently once light drops, and game capture tools very often. Dedicated cameras generally record constant frame rate, which is why footage from a proper camera tends to behave in an editor.</p>
+  <h3>Can I just tell my editor the real frame rate?</h3>
+  <p>No, because there isn't one. The rate genuinely changed during the recording, so no single number describes the file. That's what makes conversion rather than reinterpretation the only reliable fix.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

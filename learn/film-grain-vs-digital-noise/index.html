@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Film grain vs digital noise: how to tell them apart — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove. Telling them apart decides whether you denoise a clip or ruin it.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/film-grain-vs-digital-noise/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Film grain and digital noise are not the same thing">
+<meta property="og:description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove. Telling them apart decides whether you denoise a clip or ruin it.">
+<meta property="og:url" content="https://crispvideo.app/learn/film-grain-vs-digital-noise/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Film grain and digital noise are not the same thing">
+<meta name="twitter:description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove. Telling them apart decides whether you denoise a clip or ruin it.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Film grain and digital noise are not the same thing","description":"One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove. Telling them apart decides whether you denoise a clip or ruin it.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I remove grain from old film footage?","acceptedAnswer":{"@type":"Answer","text":"Usually only a little. Grain is part of how film footage looks, and aggressive denoising produces the waxy appearance that makes a restoration obvious. Remove enough that the picture reads cleanly and stop there."}},{"@type":"Question","name":"How do I tell noise from grain quickly?","acceptedAnswer":{"@type":"Answer","text":"Look at the shadows for coloured speckle. Red and green blotches in dark areas are chroma noise and mean digital. Neutral speckle spread evenly across bright and dark areas is more likely to be grain."}},{"@type":"Question","name":"Does adding grain make my video look more cinematic?","acceptedAnswer":{"@type":"Answer","text":"In moderation it can, mostly because it breaks up banding and softens the clinical look of clean digital footage. Overdone it just looks noisy, and it costs real bitrate on any platform that re-encodes."}},{"@type":"Question","name":"Should grain go on before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"After. An upscaler reconstructs what it reads as detail, and grain applied first gets magnified and reinterpreted. Grade, upscale, then add grain last."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Grain vs noise</div>
+  <h1>Film grain and digital noise are not the same thing</h1>
+
+  <p>Both look like a fine speckle over the picture. They come from completely different places, they
+  behave differently frame to frame, and treating one as the other is how footage gets ruined in a
+  single pass.</p>
+
+  <h2>Grain is structure. Noise is error.</h2>
+  <p>Film grain comes from the silver halide crystals in the emulsion. They're physically distributed
+  through the film, they vary in size, and they're the mechanism by which the image exists at all.
+  Grain is finer in shadows and coarser in highlights on some stocks, the opposite on others, and it
+  has a texture that people find pleasant enough to simulate deliberately decades after shooting on
+  film became unusual.</p>
+  <p>Digital noise is measurement error. A sensor photosite counts photons, the count is uncertain,
+  and amplifying a weak signal amplifies the uncertainty along with it. That's why noise climbs with
+  ISO and why it's worst in shadows, which is the exact inverse of how most film grain behaves.</p>
+
+  <h2>The tells, in order of usefulness</h2>
+  <p><strong>Colour.</strong> Digital noise usually has chroma noise mixed in, showing as red and
+  green blotches in dark areas. Film grain is largely luminance and stays neutral. Coloured speckle in
+  shadows is close to conclusive.</p>
+  <p><strong>Where it lives.</strong> Noise concentrates in the darkest parts of the frame and
+  disappears in bright areas. Grain is present across the whole exposure range.</p>
+  <p><strong>Behaviour over time.</strong> Both change every frame, but noise often has a directional
+  or banded quality from the sensor readout, sometimes visible as faint horizontal streaking. Grain is
+  isotropic.</p>
+  <p><strong>Scale.</strong> Grain has a consistent size determined by the stock. Digital noise scales
+  with whatever processing has been applied, so a heavily compressed file shows blocky noise that
+  clusters at the edges of compression blocks.</p>
+
+  <h2>Why it matters before you denoise</h2>
+  <p>Denoising treats fine high-frequency variation as something to remove. Run it hard on genuinely
+  grainy film and you get the waxy, plastic look that gives cheap restorations away, because the grain
+  was carrying the impression of texture and detail. Faces suffer worst, since skin texture and grain
+  occupy a similar frequency band.</p>
+  <p>Run it on real sensor noise and it does exactly what you want. The signal underneath is real and
+  the noise genuinely is error.</p>
+  <p>The practical rule for restoring old footage is to denoise conservatively and stop earlier than
+  feels right. You can always run a second pass. You can't put grain back convincingly once the
+  structure it was sitting on has been smoothed away, and adding synthetic grain afterwards on top of
+  a waxy image fools nobody.</p>
+
+  <h2>Adding grain on purpose</h2>
+  <p>Going the other way is legitimate and common. A little grain hides banding in gradients, gives
+  digital footage a texture that reads as less clinical, and can mask mild compression artefacts.</p>
+  <p>Two cautions. Grain is close to incompressible, so adding it before a platform re-encode spends
+  bitrate that the rest of the frame needed. And it should go on last, after upscaling and grading,
+  or the upscaler will treat it as detail to reconstruct and the grade will shift its character.</p>
+  <p>Crisp handles both directions on-device: denoise for real sensor noise, and a grain pass in the
+  colour lane for when you want the texture back.</p>
+
+  <h2>Grain and noise, in detail</h2>
+  <h3>Should I remove grain from old film footage?</h3>
+  <p>Usually only a little. Grain is part of how film footage looks, and aggressive denoising produces the waxy appearance that makes a restoration obvious. Remove enough that the picture reads cleanly and stop there.</p>
+  <h3>How do I tell noise from grain quickly?</h3>
+  <p>Look at the shadows for coloured speckle. Red and green blotches in dark areas are chroma noise and mean digital. Neutral speckle spread evenly across bright and dark areas is more likely to be grain.</p>
+  <h3>Does adding grain make my video look more cinematic?</h3>
+  <p>In moderation it can, mostly because it breaks up banding and softens the clinical look of clean digital footage. Overdone it just looks noisy, and it costs real bitrate on any platform that re-encodes.</p>
+  <h3>Should grain go on before or after upscaling?</h3>
+  <p>After. An upscaler reconstructs what it reads as detail, and grain applied first gets magnified and reinterpreted. Grade, upscale, then add grain last.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
