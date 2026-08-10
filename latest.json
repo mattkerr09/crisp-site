@@ -1,10 +1,10 @@
 {
-  "version": "0.1.776",
-  "notes": "Crisp will not write over a clip it is still working on.\n\nIf one job was told to save over a file another job was reading, it did it \u2014 and the original was gone for good. Crisp now refuses that and says why. You could only reach it from the command line or your own scripts, never by clicking around the app, but a lost original is a lost original.",
-  "pub_date": "2026-08-10T03:51:15Z",
+  "version": "0.1.777",
+  "notes": "The timeline no longer says \"Still reading this clip\" forever. A clip whose duration could not be read left the editor stuck on that message with nothing actually reading and no way out \u2014 split, trim, clip tools and Export all refused. Crisp now gives up on an unreadable clip instead of waiting on it, tells you which file it is and what to do about it, and retries a duration read that got lost.",
+  "pub_date": "2026-08-10T18:04:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBVbkdTOHVibjlxNmRNUmR3L1NscElNaHZScmVyeS9LY05QK0NhclJUZDRDNWZJY0JJeWhIL2srRE1oakR6R3EvY1NFV0krNWtaNWNud0Q2bGEraFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MzMzNzg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyb1ltY0hUOHZwQWM4cnE2K2ZUUHZKV2FKRnRqVEsvK0FsYkVDQTFVb05XVkdjdTkzQlRhcnhNZWgvR29FK2NRVG1TZUNyRUp6WG8zSDYvZFBpM0pCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVuUndBdUNzUTlxTnQxN2F0VG9nb08zenlCaDZ6N1BReUd4Q0JGdXFzb2g1cWFvalFiaGNkY0UxZzdlWXpOY1RsYS9USXFDTGJDRDlUT1AxdFc1MUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mzg1MDMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovQll6dzFqVEtvYkhzWVF1dE53Umw5bk9HL25zdHdJVFBZcVNOczVwa1NoTXRKUTY5ZVFBSlVtVWdYL3hPNXY4endWK2lYRlJ6dWVXbmRTNlE3THBEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
