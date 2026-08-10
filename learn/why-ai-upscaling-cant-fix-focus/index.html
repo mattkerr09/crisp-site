@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why AI upscaling can't fix out-of-focus video — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why AI upscaling can't rescue a shot that missed focus">
+<meta property="og:description" content="Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.">
+<meta property="og:url" content="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why AI upscaling can't rescue a shot that missed focus">
+<meta name="twitter:description" content="Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why AI upscaling can't rescue a shot that missed focus","description":"Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can any tool fix out-of-focus video?","acceptedAnswer":{"@type":"Answer","text":"Nothing recovers the original detail, because it was never recorded. Tools that claim otherwise are generating plausible detail rather than restoring real detail. That can look acceptable on unfamiliar subjects and tends to look wrong on faces you know."}},{"@type":"Question","name":"Why does the sharpened version look strange rather than just sharp?","acceptedAnswer":{"@type":"Answer","text":"Because the fine detail is invented. Your eye is very good at faces specifically, so small errors in the arrangement of features read as uncanny even when you can't articulate what changed. On landscapes or textures the same invention usually passes unnoticed."}},{"@type":"Question","name":"Is a slightly soft shot worth upscaling at all?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks."}},{"@type":"Question","name":"Does shooting at a higher resolution protect against this?","acceptedAnswer":{"@type":"Answer","text":"It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Focus and upscaling</div>
+  <h1>Why AI upscaling can't rescue a shot that missed focus</h1>
+
+  <p>People try this constantly, and it's worth explaining why it disappoints. You have a shot that
+  matters, it's slightly out of focus, and an AI upscaler seems like exactly the tool. You run it, the
+  result looks sharper at a glance, and something about it is wrong.</p>
+
+  <h2>What an upscaler is actually doing</h2>
+  <p>An upscaler is a prediction engine. It was trained on millions of pairs of images, each pair
+  being a high-quality original and a degraded copy, and it learned the statistical relationship
+  between them. When you feed it a low-resolution frame, it predicts what the high-resolution version
+  probably looked like.</p>
+  <p>That works because degradation is usually partial. A 480p frame still contains edges, and the
+  model has seen enough edges to know what a sharper one looks like. Compression damage leaves the
+  underlying structure intact. Sensor noise sits on top of a real signal. In each case there's
+  something genuine to reason from.</p>
+
+  <h2>Focus is different in kind</h2>
+  <p>An out-of-focus lens doesn't degrade detail, it never records it. Light from a single point in
+  the scene lands as a disc rather than a point, so information from neighbouring parts of the subject
+  is physically averaged together before it ever reaches the sensor. There's no encoding of the
+  original arrangement anywhere in the file.</p>
+  <p>Ask a model to sharpen that and it does the only thing it can. It generates plausible detail
+  where the training data suggests detail belongs. On a stranger's footage that's often fine, because
+  nobody can check. On a face you know, it isn't, because the invented detail is not that person's
+  face. The eyes come back subtly wrong, and the effect is unsettling in a way that's hard to name.</p>
+  <p>The same reasoning covers heavy motion blur from too slow a shutter, and blown highlights, where
+  every pixel in a clipped region holds the identical maximum value and nothing distinguishes a bright
+  sky from a brighter one.</p>
+
+  <h2>What does respond well</h2>
+  <table>
+    <tr><th>Problem</th><th>Recoverable?</th><th>Why</th></tr>
+    <tr><td>Low resolution, in focus</td><td>Yes, genuinely</td><td>Real structure survives; the model has something to reason from.</td></tr>
+    <tr><td>Compression blocking</td><td>Yes</td><td>Damage sits on top of intact underlying detail.</td></tr>
+    <tr><td>Sensor noise, low light</td><td>Yes</td><td>Signal is present, just buried.</td></tr>
+    <tr><td>Soft focus</td><td>No</td><td>The detail was never recorded.</td></tr>
+    <tr><td>Heavy motion blur</td><td>No</td><td>Same reason: averaged before capture.</td></tr>
+    <tr><td>Blown highlights</td><td>No</td><td>Clipped pixels are all identical.</td></tr>
+  </table>
+
+  <h2>What to do with a soft shot instead</h2>
+  <p>Be honest about what you're doing. If the shot is precious and slightly soft, a gentle
+  sharpening pass and good grading will make it read better without pretending to recover anything.
+  Cropping in less, keeping it on screen for less time, and cutting to a sharper angle all do more
+  than any amount of processing.</p>
+  <p>If the softness is uniform across the whole frame rather than just the subject, check whether it
+  is actually focus at all. A dirty lens, a cheap filter, heavy denoising applied in-camera or a bad
+  transfer all produce something that resembles soft focus and some of those do respond to
+  restoration.</p>
+  <p>Crisp will run any of this on-device, and it will not tell you a soft shot came back sharp when
+  it didn't. That honesty is the useful part: knowing which of your footage is worth the render time
+  saves more than a faster renderer would.</p>
+
+  <h2>Soft footage, in detail</h2>
+  <h3>Can any tool fix out-of-focus video?</h3>
+  <p>Nothing recovers the original detail, because it was never recorded. Tools that claim otherwise are generating plausible detail rather than restoring real detail. That can look acceptable on unfamiliar subjects and tends to look wrong on faces you know.</p>
+  <h3>Why does the sharpened version look strange rather than just sharp?</h3>
+  <p>Because the fine detail is invented. Your eye is very good at faces specifically, so small errors in the arrangement of features read as uncanny even when you can't articulate what changed. On landscapes or textures the same invention usually passes unnoticed.</p>
+  <h3>Is a slightly soft shot worth upscaling at all?</h3>
+  <p>Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks.</p>
+  <h3>Does shooting at a higher resolution protect against this?</h3>
+  <p>It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
