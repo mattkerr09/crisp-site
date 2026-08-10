@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn: video restoration explained — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is interlacing?">
+<meta property="og:description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta property="og:url" content="https://crispvideo.app/learn/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is interlacing?">
+<meta name="twitter:description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is interlacing?","description":"Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I just upscale interlaced footage and fix it afterwards?","acceptedAnswer":{"@type":"Answer","text":"No, and this is the single most expensive mistake with old video. The upscaler treats comb teeth as real detail and sharpens them. Deinterlacing afterwards then has to work against artefacts that have been reinforced and enlarged. Deinterlace first, always."}},{"@type":"Question","name":"Does deinterlacing lose quality?","acceptedAnswer":{"@type":"Answer","text":"It costs something, unavoidably, because you're reconstructing whole frames from half-pictures. A good deinterlacer blends or interpolates intelligently rather than simply discarding one field. Throwing away every other line is the fast method and it halves your vertical resolution."}},{"@type":"Question","name":"How do I know whether my footage is interlaced?","acceptedAnswer":{"@type":"Answer","text":"Find a shot with fast horizontal movement and step through it a frame at a time. If moving edges break into fine horizontal stripes while static areas stay clean, it's interlaced. Footage from DV camcorders, DVDs and pre-2010 broadcast very often is."}},{"@type":"Question","name":"Is 1080i actually 1080p?","acceptedAnswer":{"@type":"Answer","text":"Not in terms of motion. 1080i carries the same line count but delivers it as two half-height fields per frame, so a moving subject never has a full 1920x1080 sample at a single instant. Deinterlaced 1080i and true 1080p are not equivalent."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn</div>
+  <h1>Learn</h1>
+  <p>Short, plain explanations of what is actually happening to your footage. No jargon for its
+  own sake, and no assumed background.</p>
+
+  <h2>Start with the order of operations</h2>
+  <p>If you only take one thing from this section, take this: the order you apply fixes in matters
+  more than which tool you use. Restoration steps interact, and several of them are destructive to
+  the ones that follow. Doing them in the wrong sequence produces results that no amount of
+  re-processing will recover.</p>
+  <p>The order that works is deinterlace, then denoise, then upscale, then colour.</p>
+  <p><strong>Deinterlace first.</strong> Old footage often stores each frame as two half-pictures
+  captured a moment apart, which shows up as horizontal comb teeth on anything moving. An upscaler
+  has no concept of this, so it reads the comb as fine detail and sharpens it into something far
+  harder to remove. <a href="https://crispvideo.app/learn/what-is-interlacing/">What interlacing is</a> covers how to
+  recognise it.</p>
+  <p><strong>Denoise second.</strong> Noise and compression blocking are, to an upscaler, texture
+  worth reconstructing. Magnify them first and you have committed to keeping them. Clean footage also
+  compresses far better, which matters if the clip is headed for a platform that will re-encode
+  it.</p>
+  <p><strong>Upscale third</strong>, once the frame is clean and progressive. This is the step that
+  reconstructs detail rather than merely enlarging pixels, and it works best on a source that is not
+  fighting it.</p>
+  <p><strong>Colour last.</strong> Grading decisions depend on what the picture looks like after
+  everything else, and a grade applied to a noisy or combed frame will need redoing anyway.</p>
+  <p>The articles below go into each piece on its own terms.</p>
+
+  <h2>The explainers</h2>
+  <h2><a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">What is AI video upscaling?</a></h2>
+  <p>What the model reconstructs, and what it honestly cannot recover.</p>
+  <h2><a href="https://crispvideo.app/learn/what-is-offline-video-editing/">What is offline video editing?</a></h2>
+  <p>What it means for your footage to never leave your Mac.</p>
+  <h2><a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">Why your video looks worse after you upload it</a></h2>
+  <p>Every platform re-encodes what you send it. What that does, and the two things that actually help.</p>
+  <h2><a href="https://crispvideo.app/learn/what-is-interlacing/">What is interlacing?</a></h2>
+  <p>Where those horizontal comb teeth come from, and why deinterlacing has to happen before anything else.</p>
+  <h2><a href="https://crispvideo.app/learn/what-is-frame-interpolation/">What is frame interpolation?</a></h2>
+  <p>How smooth motion is generated, where it fails, and when smoother is the wrong choice.</p>
+  <h2><a href="https://crispvideo.app/learn/bitrate-vs-resolution/">Bitrate vs resolution</a></h2>
+  <p>Why a 4K file can look worse than a good 1080p one, and which number to protect.</p>
+  <h2><a href="https://crispvideo.app/learn/what-is-a-video-codec/">What is a video codec?</a></h2>
+  <p>H.264, HEVC, ProRes and AV1, and why confusing a codec with a container breaks playback.</p>
+  <h2>What none of this can fix</h2>
+  <p>Restoration reconstructs plausible detail from what survived. It cannot recover information that
+  was never recorded, and being clear about that saves a lot of wasted rendering.</p>
+  <p>Focus is the big one. A shot that missed focus has no high-frequency information anywhere in the
+  frame, so there is nothing for a model to sharpen towards. It will produce something that looks
+  crisper at a glance and is essentially invented. The same applies to severe motion blur from too
+  slow a shutter.</p>
+  <p>Blown highlights are gone in the same way. Once a region has clipped to pure white, every pixel
+  in it holds the same value, and no amount of processing distinguishes a bright sky from a brighter
+  one. Detail can be darkened but not restored.</p>
+  <p>Tape damage from a misaligned head, dropouts where the signal was never read, and heavy chroma
+  bleed on old analogue transfers are all better fixed at the source if a source still exists.
+  Re-capturing a tape on a properly aligned deck routinely beats anything software can do afterwards,
+  and it is worth checking before committing hours to processing.</p>
+  <p>Where restoration genuinely earns its keep is soft-but-focused footage, low resolution,
+  compression damage, sensor noise, low light, minor camera shake and the ordinary degradation of
+  ageing digital files. That covers most of what people actually have.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

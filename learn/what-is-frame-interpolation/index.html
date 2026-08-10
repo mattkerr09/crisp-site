@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is frame interpolation? Smooth motion explained (2026) — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-frame-interpolation/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is frame interpolation?">
+<meta property="og:description" content="Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-frame-interpolation/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is frame interpolation?">
+<meta name="twitter:description" content="Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is frame interpolation?","description":"Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does interpolation add real detail?","acceptedAnswer":{"@type":"Answer","text":"No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it."}},{"@type":"Question","name":"What multiplier should I use?","acceptedAnswer":{"@type":"Answer","text":"Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first."}},{"@type":"Question","name":"Will it fix a video that stutters?","acceptedAnswer":{"@type":"Answer","text":"It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause."}},{"@type":"Question","name":"Can I interpolate and upscale in the same pass?","acceptedAnswer":{"@type":"Answer","text":"In Crisp, yes for the standard lanes, and the two are handled as separate stages internally so neither compromises the other. The generative Max restore lane is the exception and doesn't combine with interpolation."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Frame interpolation</div>
+  <h1>What is frame interpolation?</h1>
+
+  <p>Frame interpolation creates frames that were never captured. Given two consecutive frames, the
+  model works out how things moved between them and generates one or more intermediate pictures. Do
+  that once between every pair and 30fps footage becomes 60fps. Do it more aggressively and you can
+  push further, or turn ordinary footage into slow motion that was never shot as slow motion.</p>
+
+  <h2>It's motion estimation, not guesswork</h2>
+  <p>The useful mental model is that the software is tracking, not painting. It builds a map of how
+  each region of the picture moved from one frame to the next, then warps both frames towards a point
+  in between and blends them. Modern approaches estimate that motion field with a neural network,
+  which is what makes them dramatically better than the frame blending that older editors offered.</p>
+  <p>Frame blending simply cross-fades two frames. It produces a soft double image on anything that
+  moves. Real interpolation moves the pixels, so a hand crossing the frame stays a hand rather than
+  becoming two transparent hands.</p>
+
+  <h2>Where it goes wrong</h2>
+  <p>Interpolation fails in specific, predictable places, and knowing them saves a lot of wasted
+  rendering.</p>
+  <p>It struggles when something appears or disappears between frames, because there's nothing to
+  track towards. Edges of the frame suffer for the same reason. It struggles with fast motion where
+  an object travels a long way between samples, since the search has to guess which part of frame two
+  corresponds to which part of frame one. Repeating patterns like railings, brickwork and venetian
+  blinds confuse the matching badly. Motion blur is another one: a heavily blurred subject has no
+  crisp features to track, so the estimate wanders.</p>
+  <p>The failure looks like warping, tearing at edges, or a brief rubbery wobble as something passes
+  in front of something else. It's usually confined to a handful of frames, which is precisely why it
+  slips past a quick scrub through the timeline.</p>
+
+  <h2>When smoother is worse</h2>
+  <p>There's a reason cinema still shoots at 24fps. That frame rate carries strong associations, and
+  interpolating a film-look sequence to 60fps produces the effect people describe as looking like a
+  soap opera, or like behind-the-scenes video rather than the film itself. It isn't a technical fault.
+  The motion is genuinely smoother. It just reads as cheaper.</p>
+  <p>So the honest rule is that interpolation belongs on footage where smoothness is a virtue.
+  Gameplay capture, sports, action cameras, drone shots, screen recordings and anything you intend to
+  slow down all benefit. Narrative and cinematic work usually shouldn't be touched.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp runs interpolation on-device. You can either pick a multiplier from the Smooth motion
+  control or type what you want, and it keeps the audio in sync rather than leaving you to fix drift
+  afterwards. Because it runs locally there's no per-minute billing, which matters here more than
+  usual: interpolation is one of the most compute-heavy things you can ask of a clip, and it's exactly
+  the operation cloud services price aggressively.</p>
+
+  <h2>Smoother motion, in detail</h2>
+  <h3>Does interpolation add real detail?</h3>
+  <p>No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it.</p>
+  <h3>What multiplier should I use?</h3>
+  <p>Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first.</p>
+  <h3>Will it fix a video that stutters?</h3>
+  <p>It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause.</p>
+  <h3>Can I interpolate and upscale in the same pass?</h3>
+  <p>In Crisp, yes for the standard lanes, and the two are handled as separate stages internally so neither compromises the other. The generative Max restore lane is the exception and doesn't combine with interpolation.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

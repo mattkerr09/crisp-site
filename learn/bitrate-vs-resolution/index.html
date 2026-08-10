@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitrate vs resolution: why 4K can look worse than 1080p — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/bitrate-vs-resolution/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bitrate vs resolution">
+<meta property="og:description" content="Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.">
+<meta property="og:url" content="https://crispvideo.app/learn/bitrate-vs-resolution/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bitrate vs resolution">
+<meta name="twitter:description" content="Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bitrate vs resolution","description":"Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a bigger file always better?","acceptedAnswer":{"@type":"Answer","text":"Up to a point, and then it stops mattering. Past the bitrate a scene actually needs, extra bits describe information the encoder has already captured perfectly well, and you're only making the file harder to store and slower to upload. The point of diminishing returns depends entirely on how difficult the footage is."}},{"@type":"Question","name":"Should I export at a higher resolution than I shot?","acceptedAnswer":{"@type":"Answer","text":"For upload, often yes, because platforms allocate bitrate by resolution. For archival or local playback, no. You aren't adding real information, and you're making every future operation on the file slower."}},{"@type":"Question","name":"What is variable bitrate, and should I use it?","acceptedAnswer":{"@type":"Answer","text":"Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate."}},{"@type":"Question","name":"Why does my footage look worse after editing even though I didn't change anything?","acceptedAnswer":{"@type":"Answer","text":"Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Bitrate vs resolution</div>
+  <h1>Bitrate vs resolution</h1>
+
+  <p>Two numbers decide how a video looks, and most people only pay attention to one of them.
+  Resolution is the pixel count: 1920x1080, 3840x2160. Bitrate is how many bits per second the file
+  spends describing those pixels. Resolution sets the size of the canvas. Bitrate decides how much
+  paint you get.</p>
+  <p>Starve a 4K file of bitrate and it will look worse than a well-fed 1080p one, on the same screen,
+  every time. This is not a marginal effect. It's the single most common reason a video that should
+  look good doesn't.</p>
+
+  <h2>Why more pixels need more bits</h2>
+  <p>A 4K frame has four times as many pixels as a 1080p frame. Hold the bitrate constant and each
+  pixel gets a quarter of the description it had. The encoder responds the only way it can, by
+  grouping pixels together and describing them as blocks rather than individually.</p>
+  <p>That's what compression artefacts are. Blocking in dark areas, banding across skies and gradients,
+  smeared texture on skin and hair, and detail that dissolves whenever the camera moves. The frame is
+  still technically 3840 pixels wide. It just doesn't contain 3840 pixels worth of information.</p>
+
+  <h2>What the numbers actually look like</h2>
+  <table>
+    <tr><th>Situation</th><th>Rough working range</th><th>What you notice if you go under</th></tr>
+    <tr><td>1080p, talking head, locked off</td><td>8-12 Mbps</td><td>Very little. This is an easy scene.</td></tr>
+    <tr><td>1080p, handheld, moving background</td><td>15-25 Mbps</td><td>Texture smears during movement.</td></tr>
+    <tr><td>4K, general delivery</td><td>35-50 Mbps</td><td>Banding in skies, mushy foliage.</td></tr>
+    <tr><td>4K, high motion or grain</td><td>60-100 Mbps</td><td>Blocking that pulses with the motion.</td></tr>
+    <tr><td>Archival master</td><td>Higher, or an intermediate codec</td><td>Generational loss on every future edit.</td></tr>
+  </table>
+  <p>Treat those as starting points rather than rules. The honest answer is that the right bitrate
+  depends on the content, and the way to find it is to encode a difficult thirty seconds and look at
+  it, not to trust a table.</p>
+
+  <h2>A rule of thumb that holds up</h2>
+  <p>If you have to choose between resolution and bitrate, choose bitrate. A clean 1080p file beats a
+  starved 4K one on any display, because a good scaler upsizing clean pixels produces a better picture
+  than a decoder reconstructing damaged ones.</p>
+  <p>The exception is upload, where platforms tie their bitrate allocation to the resolution you give
+  them. There, going up in resolution can buy you a bigger budget than you would otherwise qualify for,
+  which is a quirk of how the platforms work rather than anything about the format.</p>
+
+  <h2>What to do with a file that's already starved</h2>
+  <p>You can't recover information the encoder discarded. What you can do is stop making it worse and
+  clean up what's visible. Compression artefacts respond reasonably well to targeted denoising, and an
+  AI upscaler that has been trained on compressed footage will reconstruct plausible texture where
+  blocking removed it. Crisp does both on-device, and it's worth doing before any re-encode rather than
+  after, since a second compression pass will otherwise preserve the artefacts as if they were detail.</p>
+
+  <h2>Bitrate questions</h2>
+  <h3>Is a bigger file always better?</h3>
+  <p>Up to a point, and then it stops mattering. Past the bitrate a scene actually needs, extra bits describe information the encoder has already captured perfectly well, and you're only making the file harder to store and slower to upload. The point of diminishing returns depends entirely on how difficult the footage is.</p>
+  <h3>Should I export at a higher resolution than I shot?</h3>
+  <p>For upload, often yes, because platforms allocate bitrate by resolution. For archival or local playback, no. You aren't adding real information, and you're making every future operation on the file slower.</p>
+  <h3>What is variable bitrate, and should I use it?</h3>
+  <p>Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate.</p>
+  <h3>Why does my footage look worse after editing even though I didn't change anything?</h3>
+  <p>Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

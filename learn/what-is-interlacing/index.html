@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is interlacing, and why does old video have comb teeth? — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-interlacing/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is interlacing?">
+<meta property="og:description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-interlacing/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is interlacing?">
+<meta name="twitter:description" content="Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is interlacing?","description":"Those horizontal comb teeth on moving objects in old footage are interlacing. Here is where it came from, how to recognise it, and why deinterlacing has to happen before anything else.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I just upscale interlaced footage and fix it afterwards?","acceptedAnswer":{"@type":"Answer","text":"No, and this is the single most expensive mistake with old video. The upscaler treats comb teeth as real detail and sharpens them. Deinterlacing afterwards then has to work against artefacts that have been reinforced and enlarged. Deinterlace first, always."}},{"@type":"Question","name":"Does deinterlacing lose quality?","acceptedAnswer":{"@type":"Answer","text":"It costs something, unavoidably, because you're reconstructing whole frames from half-pictures. A good deinterlacer blends or interpolates intelligently rather than simply discarding one field. Throwing away every other line is the fast method and it halves your vertical resolution."}},{"@type":"Question","name":"How do I know whether my footage is interlaced?","acceptedAnswer":{"@type":"Answer","text":"Find a shot with fast horizontal movement and step through it a frame at a time. If moving edges break into fine horizontal stripes while static areas stay clean, it's interlaced. Footage from DV camcorders, DVDs and pre-2010 broadcast very often is."}},{"@type":"Question","name":"Is 1080i actually 1080p?","acceptedAnswer":{"@type":"Answer","text":"Not in terms of motion. 1080i carries the same line count but delivers it as two half-height fields per frame, so a moving subject never has a full 1920x1080 sample at a single instant. Deinterlaced 1080i and true 1080p are not equivalent."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Interlacing</div>
+  <h1>What is interlacing?</h1>
+
+  <p>If moving objects in a clip have fine horizontal stripes along their edges while everything
+  standing still looks perfectly normal, you're looking at interlacing. It isn't damage, and it isn't
+  a bad transfer. It's the footage working exactly as designed, on a kind of display that no longer
+  exists.</p>
+
+  <h2>A bandwidth trick from the 1930s</h2>
+  <p>Broadcast television couldn't carry enough bandwidth to send complete frames at a smooth rate.
+  The workaround was to send half a picture at a time: all the odd-numbered lines, then all the
+  even-numbered lines, each one a fraction of a second apart. Each half is called a field. A cathode
+  ray tube drew them in sequence fast enough that your eye combined them, and you got the motion
+  smoothness of fifty or sixty pictures per second for the bandwidth of twenty-five or thirty.</p>
+  <p>It was a genuinely clever piece of engineering, and it survived into DV camcorders, DVDs and
+  early digital broadcast. Which is why so much family footage from roughly 1980 to 2010 is
+  interlaced.</p>
+
+  <h2>Why it looks wrong now</h2>
+  <p>Modern displays don't work that way. They show whole frames. So the two fields, captured at
+  genuinely different moments, get displayed at the same instant. Anything that moved in the gap
+  between them appears twice, offset, one stripe apart. That's the comb.</p>
+  <p>Stationary parts of the frame look fine because nothing moved between the two fields, which is
+  why the effect appears to cling to moving objects specifically.</p>
+
+  <h2>Why it has to be fixed first</h2>
+  <p>This is the part people get wrong, and it's expensive. An AI upscaler has no concept of fields.
+  Hand it a combed frame and it sees a regular, high-contrast horizontal pattern, exactly the sort of
+  fine structure it was trained to preserve and sharpen. So it preserves and sharpens the comb. You
+  end up with crisp, high-resolution interlacing artefacts, which are far harder to remove than the
+  originals and often impossible to fully undo.</p>
+  <p>The order that works is deinterlace, then denoise, then upscale, then colour. Every step makes
+  the following ones harder if you take it out of turn, and interlacing is the least forgiving of the
+  lot.</p>
+
+  <h2>Telling interlacing apart from things that look similar</h2>
+  <p>Comb teeth only appear on movement, and they're perfectly horizontal and evenly spaced. Rolling
+  shutter skew leans vertical edges over but doesn't stripe them. Compression blocking shows up as
+  square patches, usually in dark or busy areas, and it doesn't care whether anything moved. Ghosting
+  from a bad tape transfer smears rather than combs.</p>
+  <p>If you're unsure, step through a few frames one at a time on a shot with fast motion. Interlacing
+  is unmistakable frame by frame, and almost invisible at normal speed on some displays, which is how
+  it survives into finished edits without anyone noticing.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp detects interlaced sources and handles the deinterlace pass on-device, before any
+  enhancement runs, so the ordering problem above is taken care of without you having to think about
+  it. Nothing is uploaded, which tends to matter for exactly the sort of irreplaceable family footage
+  that's most likely to be interlaced in the first place.</p>
+
+  <h2>Interlacing, in detail</h2>
+  <h3>Can I just upscale interlaced footage and fix it afterwards?</h3>
+  <p>No, and this is the single most expensive mistake with old video. The upscaler treats comb teeth as real detail and sharpens them. Deinterlacing afterwards then has to work against artefacts that have been reinforced and enlarged. Deinterlace first, always.</p>
+  <h3>Does deinterlacing lose quality?</h3>
+  <p>It costs something, unavoidably, because you're reconstructing whole frames from half-pictures. A good deinterlacer blends or interpolates intelligently rather than simply discarding one field. Throwing away every other line is the fast method and it halves your vertical resolution.</p>
+  <h3>How do I know whether my footage is interlaced?</h3>
+  <p>Find a shot with fast horizontal movement and step through it a frame at a time. If moving edges break into fine horizontal stripes while static areas stay clean, it's interlaced. Footage from DV camcorders, DVDs and pre-2010 broadcast very often is.</p>
+  <h3>Is 1080i actually 1080p?</h3>
+  <p>Not in terms of motion. 1080i carries the same line count but delivers it as two half-height fields per frame, so a moving subject never has a full 1920x1080 sample at a single instant. Deinterlaced 1080i and true 1080p are not equivalent.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
