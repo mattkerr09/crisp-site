@@ -1,10 +1,10 @@
 {
-  "version": "0.1.789",
-  "notes": "Saying this instead of the now works everywhere. Boost this audio, clean up this audio, denoise this audio and about a hundred other ordinary phrasings used to reach nothing, or worse, start a full video render for a request about the sound.",
-  "pub_date": "2026-08-11T19:51:31Z",
+  "version": "0.1.791",
+  "notes": "Refusing an effect no longer applies it. Do not add grain, no vignette, and do not make it black and white each used to do the very thing they refused.",
+  "pub_date": "2026-08-11T21:10:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA4ZTFFbmVJN2lBY0FBd2JFM2RYTVJRYS9tKy94V1pWZFV5b1hQS0RWRmhKYlA3U0RERTE3SmZCeVIzSFh1Z3N6S1p3REtROENBeTFGRTlxK1NXQncwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDc3NzEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpseXZ4V2dUa0NMaWV2MjBzd1loNCtsemUvSFBGVzFYcWxMeWdhdmhBbHEzdWxPTFFKa2VmNHBCcm5RK01MYTVmTFY0Nm9jODBmT2NmQUtaUzdpMkhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBmcldDZXZjMVVWaForVFdTNU1hMEd4VmlsTk5DU2NIdDZHWG9aNCs0bTlYQkQ1UGREbFJkcHdKdGlKbkRTQzY5Z3laVHRnRCtEZGh4dHN5a0pLZXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDgyNTExCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4UVlQTWlocVZ1Tk9xSzdhYmZkcmVZNXZ5bHZMOVlONXM5cnVoSjAxalRvOCtaL0xpaDBkZnRuZktDbFdtWnNPVGRyMHpUYTBqRTcvWmpCTWYxM2NEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
