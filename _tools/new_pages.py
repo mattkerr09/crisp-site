@@ -60,7 +60,7 @@ HEAD = """<!DOCTYPE html>
 </div></nav>
 
 <article><div class="wrap">
-  <div class="crumb"><a href="{site}/">Crisp</a> &rsaquo; Learn &rsaquo; {crumb}</div>
+  <div class="crumb"><a href="{site}/">Crisp</a> &rsaquo; {section} &rsaquo; {crumb}</div>
   <h1>{h1}</h1>
 {body}
   <h2>{faq_heading}</h2>
@@ -92,6 +92,7 @@ def build(page):
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}' % qs
     return HEAD.format(site=SITE, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
+                       section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,
                        article_ld=article_ld, faq_ld=faq_ld)
 
