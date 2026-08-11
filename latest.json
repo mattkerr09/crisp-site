@@ -1,10 +1,10 @@
 {
-  "version": "0.1.778",
-  "notes": "Previews and progress states can no longer get stuck. If a preview frame never arrived, the before/after view sat on \"Loading preview\u2026\" forever with no error and nothing to click; the editor's player could go black with no explanation; and an update that installed but couldn't relaunch left its banner promising a restart that was never coming. Each of those now ends in a real message that tells you what happened.",
-  "pub_date": "2026-08-10T19:21:09Z",
+  "version": "0.1.783",
+  "notes": "Max restore now tells you how long it will take before it starts, instead of after. Clips that would run for days say so up front, while you can still trim to the part you actually need. If Max stops because your Mac ran low on memory, the message now says that the finished work can't be picked up part-way, and what to try instead.",
+  "pub_date": "2026-08-11T16:20:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU4ZGdXUjc4QmpZbHRlbnJ0SkdGQWdVNHhHVTQ3U0pnN0hnWkJFZngvcUlobTNCYWZBbXJ6czRybmFDeEh0VHMxTllsZUQ3M2lwRDR6WXk2TFZuVndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Mzg4NzA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSZjhGY0VYNWNEZDBkaHh4Q0FFd05RZUU0RytsSUE1T3EwK3l4ZnRlc0RUaXFuTW1PT2FEcVdsNHZnVzU1K0xjQTBnTVY1NHV2Z3JTWmZDbjN5TXFBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl0T3BSUUpkZnMrVzdneE1qQStPenZ0TlJBQXBjN3h0YmswQ09hdUZUeTFJYkF3eWtnVVRhNVlzc1VMRjlMT2dCOUFac3R5ZWVkbUdLOVdkV0V4UVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDY1MTU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2OHZkSkpRSEE3alR1Zi9BS3FTZHZoMnEyVVltY1lpYVl3SmdNWWVJYkJ0NHZzUjFySEtPYzFWT2JMMmxYN3pWeXVXVHlPcUo1dCttTEZUNlVmOTJBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
