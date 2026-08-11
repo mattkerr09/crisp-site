@@ -1027,4 +1027,133 @@ PAGES = [
    "Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file."),
  ],
 },
+
+{
+ "slug": "learn/why-vhs-tapes-degrade",
+ "crumb": "VHS degradation",
+ "title": "Why VHS tapes degrade, and what can still be recovered — Crisp",
+ "h1": "Why VHS tapes degrade",
+ "desc": "Magnetic tape loses signal whether you play it or not. What is actually failing, which faults respond to restoration, and why the capture matters more than the software.",
+ "faq_heading": "Tape damage, in detail",
+ "body": """
+  <p>A VHS tape is a strip of plastic coated in magnetic particles, and the picture exists as the
+  alignment of those particles. Everything that goes wrong follows from that being a physical
+  arrangement rather than a recorded number.</p>
+
+  <h2>What is actually failing</h2>
+  <p>Magnetic particles gradually lose their alignment. The effect is slow, it happens whether or not
+  the tape is ever played, and it shows as a picture that grows softer and noisier over decades.
+  Nothing stops it. Cool, dry, dark storage slows it considerably.</p>
+  <p>The binder holding those particles to the plastic can absorb moisture and break down, which is
+  the failure people call sticky shed. The tape squeals, sheds oxide onto the heads, and can jam. It
+  is sometimes recoverable by careful baking before capture, and that is a job for someone who has
+  done it before rather than an experiment on an irreplaceable tape.</p>
+  <p>Then there is mechanical wear. Every playback drags the tape across the heads. Tapes that were
+  watched to death in the nineties have visibly worse pictures than tapes that sat in a box, and that
+  damage is physical abrasion rather than signal loss.</p>
+
+  <h2>The faults you see, and whether software helps</h2>
+  <table>
+    <tr><th>Symptom</th><th>Cause</th><th>Fixable after capture?</th></tr>
+    <tr><td>Soft, low-detail picture</td><td>Format limit plus particle decay</td><td>Partly. Upscaling genuinely helps here.</td></tr>
+    <tr><td>Grainy speckle</td><td>Analogue noise floor</td><td>Yes, denoise handles it well.</td></tr>
+    <tr><td>Comb teeth on movement</td><td>Interlacing</td><td>Yes, and it must be done first.</td></tr>
+    <tr><td>Horizontal streaks and dropouts</td><td>Missing oxide, head clog</td><td>Barely. Fix at the deck.</td></tr>
+    <tr><td>Picture tearing at the top</td><td>Tracking misalignment</td><td>No. Re-capture with tracking adjusted.</td></tr>
+    <tr><td>Colour bleeding sideways</td><td>Very low chroma bandwidth</td><td>Partly, and never fully.</td></tr>
+    <tr><td>Rolling or flagging</td><td>Timebase instability</td><td>No. Needs a timebase corrector at capture.</td></tr>
+  </table>
+  <p>The pattern is worth internalising. Anything caused by the signal being noisy or low-resolution
+  responds to restoration. Anything caused by the signal never being read correctly in the first place
+  has to be fixed at the deck, and no amount of processing invents it back.</p>
+
+  <h2>The capture matters more than the software</h2>
+  <p>This is the part people skip, and it costs them. A tape captured on a clean, well-aligned deck
+  with a timebase corrector produces a file that restoration can genuinely improve. The same tape
+  captured on a jammed thrift-store VCR through a cheap USB dongle produces a file with damage baked
+  in that no tool can remove.</p>
+  <p>If the tapes matter, it is worth finding a good deck or a transfer service, and worth capturing
+  once at the highest quality you can rather than repeatedly. Every playback costs a little more of
+  the tape.</p>
+
+  <h2>Then the software order</h2>
+  <p>Deinterlace, denoise, upscale, colour. Interlacing first is not a preference: an upscaler reads
+  comb teeth as fine detail and sharpens them into something far harder to remove. Denoise before
+  upscaling for the same reason, since magnified noise is a much bigger problem than the original.</p>
+  <p>Crisp runs that chain on-device, which for family tapes tends to matter more than it sounds. The
+  usual alternative involves uploading footage of your family to a service, and these are the tapes
+  people are least willing to hand over.</p>
+""",
+ "faq": [
+  ("Are my tapes still playable after 30 years?",
+   "Usually yes, if they were stored somewhere cool and dry. Heat and humidity are what kill tapes, not age alone. The picture will be softer and noisier than it was, and that part responds well to restoration."),
+  ("Should I digitise now or wait for better software?",
+   "Now. The tape is degrading whether or not you use it, and software improves far faster than tape survives. Capture at the best quality you can manage today and restore the digital file whenever you like."),
+  ("Why does my capture look worse than the tape did on the old TV?",
+   "A CRT was hiding a lot. Its softness and the way it drew interlaced fields flattered analogue video, and a modern flat panel shows every fault sharply. The tape has not necessarily got worse; the display got more honest."),
+  ("Can Crisp fix tracking lines and dropouts?",
+   "No. Those are places where the signal was never read correctly, so there is nothing in the file to recover. They have to be addressed at capture, with a properly aligned deck and ideally a timebase corrector."),
+ ],
+},
+{
+ "slug": "learn/what-is-aspect-ratio",
+ "crumb": "Aspect ratio",
+ "title": "What is aspect ratio? 16:9, 9:16 and the black bars — Crisp",
+ "h1": "What is aspect ratio?",
+ "desc": "Why your footage gets black bars, why cropping to vertical loses half the frame, and the difference between letterboxing and actually reframing a shot.",
+ "faq_heading": "Aspect ratio questions",
+ "body": """
+  <p>Aspect ratio is the shape of the frame: its width divided by its height. 16:9 is the widescreen
+  shape almost all video uses. 9:16 is the same shape turned on its side, which is what phones shoot
+  and what vertical feeds expect. 1:1 is square, 4:3 is the old television shape, and cinema uses
+  wider ratios still such as 2.39:1.</p>
+  <p>The number itself is simple. The consequences of changing it are where the difficulty lives.</p>
+
+  <h2>Something has to give</h2>
+  <p>A 16:9 frame cannot become a 9:16 frame without losing something. You have three options and they
+  are all trade-offs.</p>
+  <p><strong>Crop.</strong> Cut the sides off. You keep full resolution and lose about three quarters
+  of the width. If your subject is centred this works well. If two people are talking on opposite
+  sides of the frame, one of them is now gone.</p>
+  <p><strong>Letterbox or pillarbox.</strong> Add bars to pad the frame to the new shape. Nothing is
+  lost, the composition survives intact, and the picture is smaller on screen. Perfectly respectable,
+  and often the right answer for something that was carefully framed.</p>
+  <p><strong>Fill with a blurred background.</strong> Scale the original to fit the height, then fill
+  the space either side with a blurred, enlarged copy of the same frame. It reads as deliberate rather
+  than accidental, keeps the whole composition, and has become the default look on vertical feeds for
+  good reason.</p>
+
+  <h2>Reframing is a different thing entirely</h2>
+  <p>Cropping picks one region and keeps it for the whole clip. Reframing follows the subject, moving
+  the crop window as they move, so a person walking across a wide shot stays in the vertical frame
+  throughout.</p>
+  <p>That is much closer to what an editor would do by hand, and it is the difference between a
+  vertical version that works and one where the subject drifts out of shot halfway through.</p>
+
+  <h2>The mistakes worth avoiding</h2>
+  <p><strong>Stretching.</strong> Squashing a 16:9 frame into a 9:16 box makes everyone look wrong in
+  a way viewers notice without being able to name. Never do this. Crop, pad, or fill.</p>
+  <p><strong>Cropping before you have finished editing.</strong> Once the sides are gone they are
+  gone, and any later decision to reframe has nothing left to work with. Keep the full-frame master.</p>
+  <p><strong>Baking bars into the master.</strong> Letterbox for a specific delivery, not in your
+  archive copy, or a future crop will be cropping your own black bars.</p>
+  <p><strong>Ignoring safe areas.</strong> Vertical feeds overlay captions, usernames and buttons over
+  roughly the bottom fifth of the screen. Anything important down there will be covered.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp handles all three approaches on-device and will pick a sensible default rather than making
+  you specify one. Ask for a vertical version in plain English and you get the fill-and-blur treatment
+  unless you say otherwise, because it is the option that loses nothing and reads as intentional.</p>
+""",
+ "faq": [
+  ("Why does my video have black bars on the sides?",
+   "The player is pillarboxing a narrower frame into a wider window rather than distorting it. That is correct behaviour. Bars top and bottom are the same thing in the other direction, usually a cinema-ratio frame in a 16:9 window."),
+  ("Is cropping or blur-fill better for vertical?",
+   "Crop when the subject is centred and there is nothing important at the edges, because you keep full resolution. Blur-fill when the composition matters or several things are happening across the width, because nothing is lost."),
+  ("Does converting to vertical lose quality?",
+   "Cropping keeps the pixels it keeps at full quality, so the result is lower resolution overall but not degraded. Blur-fill keeps the whole picture and scales it down slightly. Neither reduces quality the way a re-encode does."),
+  ("What resolution should a vertical video be?",
+   "1080 by 1920 covers essentially every vertical platform. Going higher rarely helps, since the platform will re-encode to its own ladder anyway, and it makes the upload slower for no visible gain."),
+ ],
+},
 ]
