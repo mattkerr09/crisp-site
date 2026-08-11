@@ -901,4 +901,130 @@ PAGES = [
    "Frequently, yes. The subject-to-background edge is precisely the fine colour detail that 4:2:0 discards. Shooting 4:2:2 or better, and lighting the screen evenly, both matter more than the software doing the key."),
  ],
 },
+
+{
+ "slug": "learn/what-is-a-keyframe",
+ "crumb": "Keyframes",
+ "title": "What is a keyframe in video? Why scrubbing and trimming behave oddly — Crisp",
+ "h1": "What is a keyframe?",
+ "desc": "Most frames in a video file are not pictures. They are instructions describing how the last frame changed. That single fact explains scrubbing lag, odd cut points and why some edits are instant.",
+ "faq_heading": "Keyframes, in detail",
+ "body": """
+  <p>Open a video file and you might assume it contains a sequence of pictures. It mostly doesn't. A
+  small fraction of the frames are complete images, and the rest are descriptions of how the previous
+  frame changed.</p>
+  <p>The complete ones are keyframes, also called I-frames. Everything else depends on them.</p>
+
+  <h2>Why encoders work this way</h2>
+  <p>Consecutive frames are overwhelmingly similar. In a two second shot of someone talking, the wall
+  behind them is identical in every frame. Storing that wall sixty times is enormously wasteful, so
+  the encoder stores it once and then records only what moved.</p>
+  <p>The saving is not marginal. A typical delivery file might place a keyframe every two to ten
+  seconds, and the frames in between can be a small fraction of the size. That is most of why a
+  ten minute video is not gigabytes.</p>
+
+  <h2>The three consequences you actually feel</h2>
+  <p><strong>Scrubbing feels sticky on some files.</strong> To display an arbitrary frame, the decoder
+  has to find the previous keyframe and rebuild every frame from there to the one you asked for. Drop
+  the playhead just before a keyframe and the work is small. Drop it just after and there may be
+  hundreds of frames to reconstruct first.</p>
+  <p><strong>Cuts can land where you didn't put them.</strong> A trim that re-encodes can cut
+  anywhere. A trim that copies the stream without re-encoding can only start at a keyframe, because
+  there is nothing else to start from. That is why some tools quietly move your in-point by up to a
+  few seconds and why the result is sometimes shorter or longer than you asked for.</p>
+  <p><strong>Some operations are instant and some are not.</strong> Anything that can be done by
+  copying compressed data straight across is fast and lossless. Anything that has to decode and
+  re-encode costs time and a generation of quality.</p>
+
+  <h2>Editing codecs make a different trade</h2>
+  <p>ProRes and similar intermediate codecs store every frame independently, which is to say every
+  frame is a keyframe. That is why scrubbing a ProRes file is instant and why cuts land exactly where
+  you place them. You pay in file size, often by a factor of ten or more.</p>
+  <p>That trade is the whole reason both kinds of codec exist. Delivery codecs optimise for the
+  viewer who watches start to finish. Editing codecs optimise for the editor who jumps around.</p>
+
+  <h2>What this means in practice</h2>
+  <p>If scrubbing is painful on a long file, the codec is usually the reason rather than your machine.
+  Transcoding to an intermediate before a heavy edit is a real fix, not a superstition.</p>
+  <p>If a trim landed in the wrong place, the tool almost certainly took the fast stream-copy path.
+  Crisp uses that path for container conversion, where it is genuinely lossless and finishes in
+  seconds, and re-encodes when the codec cannot survive the change. Frame-accurate trimming in the
+  timeline re-encodes, which is slower and lands exactly where you asked.</p>
+  <p>And if you are re-exporting the same file repeatedly, remember that each re-encode is a
+  generation of loss. Keep the master.</p>
+""",
+ "faq": [
+  ("Why does my video scrub smoothly in one app and badly in another?",
+   "Usually because one app has transcoded or cached an intermediate version. The underlying file still needs a keyframe plus every frame since, so an app that quietly builds a proxy will feel far faster on the same source."),
+  ("Can I add more keyframes to make editing easier?",
+   "Only by re-encoding, which means a quality generation. If you are doing serious work the better move is transcoding to an intermediate codec where every frame is independent, rather than nudging the keyframe interval of a delivery codec."),
+  ("Why is trimming sometimes instant and sometimes slow?",
+   "Instant means the tool copied the compressed stream without decoding, which can only start at a keyframe. Slow means it decoded and re-encoded, which lands the cut exactly where you asked and costs a generation."),
+  ("Does a shorter keyframe interval improve quality?",
+   "Not directly, and it can hurt. Keyframes are large, so more of them at a fixed bitrate leaves fewer bits for everything else. Shorter intervals help seeking and streaming startup, which is why streaming platforms use them."),
+ ],
+},
+{
+ "slug": "learn/what-is-color-space",
+ "crumb": "Colour space",
+ "title": "What is a colour space? Rec.709, Rec.2020 and why colours shift — Crisp",
+ "h1": "What is a colour space?",
+ "desc": "A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.",
+ "faq_heading": "Colour space questions",
+ "body": """
+  <p>A video file contains numbers. The number 200 in the red channel means nothing on its own. A
+  colour space is the agreement that turns those numbers into actual colours: which red is the reddest
+  red, how brightness maps to the values, and what white looks like.</p>
+  <p>When everything in the chain shares the agreement, colour just works. When something loses track
+  of it, you get footage that looks flat, oversaturated, or subtly green, and nothing in the picture
+  tells you why.</p>
+
+  <h2>The ones you will meet</h2>
+  <p><strong>Rec.709</strong> is the standard for ordinary HD video, and it is what most footage and
+  most displays assume. If nothing is tagged and nothing is unusual, it is almost certainly this.</p>
+  <p><strong>sRGB</strong> is its close cousin from the computer world. The primaries match Rec.709,
+  the brightness curve differs slightly, which is why exported video can look a shade off next to the
+  same frame in an image editor.</p>
+  <p><strong>Rec.2020</strong> is the much wider space used for HDR and 4K delivery. It can describe
+  colours Rec.709 simply cannot reach.</p>
+  <p><strong>Log formats</strong> such as S-Log or C-Log are not really display spaces at all. They
+  store a wide dynamic range in a deliberately flat, washed-out looking curve, expecting you to grade
+  them afterwards. Footage that looks grey and lifeless straight out of a camera is usually log, not
+  broken.</p>
+
+  <h2>Why colours shift</h2>
+  <p>Three failures cause nearly all of it.</p>
+  <p><strong>Missing tags.</strong> The file never recorded which space it used, so the player guesses,
+  and different players guess differently. This is why a clip can look right in one app and wrong in
+  another with no edit in between.</p>
+  <p><strong>Wrong interpretation.</strong> The tag exists but something ignores it. Rec.2020 content
+  read as Rec.709 comes out oversaturated; the reverse comes out dull.</p>
+  <p><strong>Missing conversion.</strong> Wide-gamut content sent to a standard display without a
+  proper conversion looks flat and grey, because the numbers are being read against the wrong
+  reference. That is the same failure as untagged HDR.</p>
+
+  <h2>The practical rules</h2>
+  <p>Normalise before you edit. Mixing spaces on one timeline means a grade that looks right on one
+  clip is wrong on the next, and you will chase that inconsistency for hours before spotting the
+  cause.</p>
+  <p>Convert deliberately rather than by accident. A real conversion maps colours between the two
+  spaces; simply relabelling a file changes what players think without changing the data, which is a
+  different operation with a different result.</p>
+  <p>Check on more than one screen. A colour problem that only exists on your display is a calibration
+  issue, not a file issue, and the fix is in a different place entirely.</p>
+  <p>Crisp reads the colour metadata on the way in and tone maps HDR sources properly when the output
+  needs standard range, which removes the commonest version of this problem without asking you to
+  understand any of the above.</p>
+""",
+ "faq": [
+  ("Why does my footage look washed out before I have touched it?",
+   "Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes."),
+  ("What is the difference between converting and relabelling?",
+   "Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else."),
+  ("Should I edit in Rec.2020?",
+   "Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway."),
+  ("Why do the same colours look different in my editor and my browser?",
+   "Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file."),
+ ],
+},
 ]

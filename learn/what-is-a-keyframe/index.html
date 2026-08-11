@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a keyframe in video? Why scrubbing and trimming behave oddly — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Most frames in a video file are not pictures. They are instructions describing how the last frame changed. That single fact explains scrubbing lag, odd cut points and why some edits are instant.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-a-keyframe/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is a keyframe?">
+<meta property="og:description" content="Most frames in a video file are not pictures. They are instructions describing how the last frame changed. That single fact explains scrubbing lag, odd cut points and why some edits are instant.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-a-keyframe/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is a keyframe?">
+<meta name="twitter:description" content="Most frames in a video file are not pictures. They are instructions describing how the last frame changed. That single fact explains scrubbing lag, odd cut points and why some edits are instant.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a keyframe?","description":"Most frames in a video file are not pictures. They are instructions describing how the last frame changed. That single fact explains scrubbing lag, odd cut points and why some edits are instant.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my video scrub smoothly in one app and badly in another?","acceptedAnswer":{"@type":"Answer","text":"Usually because one app has transcoded or cached an intermediate version. The underlying file still needs a keyframe plus every frame since, so an app that quietly builds a proxy will feel far faster on the same source."}},{"@type":"Question","name":"Can I add more keyframes to make editing easier?","acceptedAnswer":{"@type":"Answer","text":"Only by re-encoding, which means a quality generation. If you are doing serious work the better move is transcoding to an intermediate codec where every frame is independent, rather than nudging the keyframe interval of a delivery codec."}},{"@type":"Question","name":"Why is trimming sometimes instant and sometimes slow?","acceptedAnswer":{"@type":"Answer","text":"Instant means the tool copied the compressed stream without decoding, which can only start at a keyframe. Slow means it decoded and re-encoded, which lands the cut exactly where you asked and costs a generation."}},{"@type":"Question","name":"Does a shorter keyframe interval improve quality?","acceptedAnswer":{"@type":"Answer","text":"Not directly, and it can hurt. Keyframes are large, so more of them at a fixed bitrate leaves fewer bits for everything else. Shorter intervals help seeking and streaming startup, which is why streaming platforms use them."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Keyframes</div>
+  <h1>What is a keyframe?</h1>
+
+  <p>Open a video file and you might assume it contains a sequence of pictures. It mostly doesn't. A
+  small fraction of the frames are complete images, and the rest are descriptions of how the previous
+  frame changed.</p>
+  <p>The complete ones are keyframes, also called I-frames. Everything else depends on them.</p>
+
+  <h2>Why encoders work this way</h2>
+  <p>Consecutive frames are overwhelmingly similar. In a two second shot of someone talking, the wall
+  behind them is identical in every frame. Storing that wall sixty times is enormously wasteful, so
+  the encoder stores it once and then records only what moved.</p>
+  <p>The saving is not marginal. A typical delivery file might place a keyframe every two to ten
+  seconds, and the frames in between can be a small fraction of the size. That is most of why a
+  ten minute video is not gigabytes.</p>
+
+  <h2>The three consequences you actually feel</h2>
+  <p><strong>Scrubbing feels sticky on some files.</strong> To display an arbitrary frame, the decoder
+  has to find the previous keyframe and rebuild every frame from there to the one you asked for. Drop
+  the playhead just before a keyframe and the work is small. Drop it just after and there may be
+  hundreds of frames to reconstruct first.</p>
+  <p><strong>Cuts can land where you didn't put them.</strong> A trim that re-encodes can cut
+  anywhere. A trim that copies the stream without re-encoding can only start at a keyframe, because
+  there is nothing else to start from. That is why some tools quietly move your in-point by up to a
+  few seconds and why the result is sometimes shorter or longer than you asked for.</p>
+  <p><strong>Some operations are instant and some are not.</strong> Anything that can be done by
+  copying compressed data straight across is fast and lossless. Anything that has to decode and
+  re-encode costs time and a generation of quality.</p>
+
+  <h2>Editing codecs make a different trade</h2>
+  <p>ProRes and similar intermediate codecs store every frame independently, which is to say every
+  frame is a keyframe. That is why scrubbing a ProRes file is instant and why cuts land exactly where
+  you place them. You pay in file size, often by a factor of ten or more.</p>
+  <p>That trade is the whole reason both kinds of codec exist. Delivery codecs optimise for the
+  viewer who watches start to finish. Editing codecs optimise for the editor who jumps around.</p>
+
+  <h2>What this means in practice</h2>
+  <p>If scrubbing is painful on a long file, the codec is usually the reason rather than your machine.
+  Transcoding to an intermediate before a heavy edit is a real fix, not a superstition.</p>
+  <p>If a trim landed in the wrong place, the tool almost certainly took the fast stream-copy path.
+  Crisp uses that path for container conversion, where it is genuinely lossless and finishes in
+  seconds, and re-encodes when the codec cannot survive the change. Frame-accurate trimming in the
+  timeline re-encodes, which is slower and lands exactly where you asked.</p>
+  <p>And if you are re-exporting the same file repeatedly, remember that each re-encode is a
+  generation of loss. Keep the master.</p>
+
+  <h2>Keyframes, in detail</h2>
+  <h3>Why does my video scrub smoothly in one app and badly in another?</h3>
+  <p>Usually because one app has transcoded or cached an intermediate version. The underlying file still needs a keyframe plus every frame since, so an app that quietly builds a proxy will feel far faster on the same source.</p>
+  <h3>Can I add more keyframes to make editing easier?</h3>
+  <p>Only by re-encoding, which means a quality generation. If you are doing serious work the better move is transcoding to an intermediate codec where every frame is independent, rather than nudging the keyframe interval of a delivery codec.</p>
+  <h3>Why is trimming sometimes instant and sometimes slow?</h3>
+  <p>Instant means the tool copied the compressed stream without decoding, which can only start at a keyframe. Slow means it decoded and re-encoded, which lands the cut exactly where you asked and costs a generation.</p>
+  <h3>Does a shorter keyframe interval improve quality?</h3>
+  <p>Not directly, and it can hurt. Keyframes are large, so more of them at a fixed bitrate leaves fewer bits for everything else. Shorter intervals help seeking and streaming startup, which is why streaming platforms use them.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

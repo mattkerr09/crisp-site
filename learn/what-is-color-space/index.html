@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a colour space? Rec.709, Rec.2020 and why colours shift — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-color-space/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is a colour space?">
+<meta property="og:description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-color-space/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is a colour space?">
+<meta name="twitter:description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a colour space?","description":"A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my footage look washed out before I have touched it?","acceptedAnswer":{"@type":"Answer","text":"Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes."}},{"@type":"Question","name":"What is the difference between converting and relabelling?","acceptedAnswer":{"@type":"Answer","text":"Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else."}},{"@type":"Question","name":"Should I edit in Rec.2020?","acceptedAnswer":{"@type":"Answer","text":"Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway."}},{"@type":"Question","name":"Why do the same colours look different in my editor and my browser?","acceptedAnswer":{"@type":"Answer","text":"Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Colour space</div>
+  <h1>What is a colour space?</h1>
+
+  <p>A video file contains numbers. The number 200 in the red channel means nothing on its own. A
+  colour space is the agreement that turns those numbers into actual colours: which red is the reddest
+  red, how brightness maps to the values, and what white looks like.</p>
+  <p>When everything in the chain shares the agreement, colour just works. When something loses track
+  of it, you get footage that looks flat, oversaturated, or subtly green, and nothing in the picture
+  tells you why.</p>
+
+  <h2>The ones you will meet</h2>
+  <p><strong>Rec.709</strong> is the standard for ordinary HD video, and it is what most footage and
+  most displays assume. If nothing is tagged and nothing is unusual, it is almost certainly this.</p>
+  <p><strong>sRGB</strong> is its close cousin from the computer world. The primaries match Rec.709,
+  the brightness curve differs slightly, which is why exported video can look a shade off next to the
+  same frame in an image editor.</p>
+  <p><strong>Rec.2020</strong> is the much wider space used for HDR and 4K delivery. It can describe
+  colours Rec.709 simply cannot reach.</p>
+  <p><strong>Log formats</strong> such as S-Log or C-Log are not really display spaces at all. They
+  store a wide dynamic range in a deliberately flat, washed-out looking curve, expecting you to grade
+  them afterwards. Footage that looks grey and lifeless straight out of a camera is usually log, not
+  broken.</p>
+
+  <h2>Why colours shift</h2>
+  <p>Three failures cause nearly all of it.</p>
+  <p><strong>Missing tags.</strong> The file never recorded which space it used, so the player guesses,
+  and different players guess differently. This is why a clip can look right in one app and wrong in
+  another with no edit in between.</p>
+  <p><strong>Wrong interpretation.</strong> The tag exists but something ignores it. Rec.2020 content
+  read as Rec.709 comes out oversaturated; the reverse comes out dull.</p>
+  <p><strong>Missing conversion.</strong> Wide-gamut content sent to a standard display without a
+  proper conversion looks flat and grey, because the numbers are being read against the wrong
+  reference. That is the same failure as untagged HDR.</p>
+
+  <h2>The practical rules</h2>
+  <p>Normalise before you edit. Mixing spaces on one timeline means a grade that looks right on one
+  clip is wrong on the next, and you will chase that inconsistency for hours before spotting the
+  cause.</p>
+  <p>Convert deliberately rather than by accident. A real conversion maps colours between the two
+  spaces; simply relabelling a file changes what players think without changing the data, which is a
+  different operation with a different result.</p>
+  <p>Check on more than one screen. A colour problem that only exists on your display is a calibration
+  issue, not a file issue, and the fix is in a different place entirely.</p>
+  <p>Crisp reads the colour metadata on the way in and tone maps HDR sources properly when the output
+  needs standard range, which removes the commonest version of this problem without asking you to
+  understand any of the above.</p>
+
+  <h2>Colour space questions</h2>
+  <h3>Why does my footage look washed out before I have touched it?</h3>
+  <p>Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes.</p>
+  <h3>What is the difference between converting and relabelling?</h3>
+  <p>Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else.</p>
+  <h3>Should I edit in Rec.2020?</h3>
+  <p>Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway.</p>
+  <h3>Why do the same colours look different in my editor and my browser?</h3>
+  <p>Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
