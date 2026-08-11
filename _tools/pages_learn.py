@@ -1555,4 +1555,79 @@ PAGES = [
    "Yes, at full resolution and at the exact timestamp, which is different from screenshotting a player. A screenshot gives you the display-scaled image with player colour management applied, which is not the frame you shot."),
  ],
 },
+
+{
+ "slug": "for/churches",
+ "section": "By use",
+ "crumb": "Churches",
+ "title": "Crisp for churches and places of worship on a Mac",
+ "h1": "Crisp for churches and places of worship",
+ "desc": "A service every week, volunteers running the camera, and an archive going back years. The realistic version of what helps and what does not.",
+ "faq_heading": "Service recordings, in detail",
+ "body": """
+  <p>Church video has a shape almost no commercial workflow shares. There is a new recording every
+  week whether anyone is ready or not, the person operating the camera is a volunteer who may be
+  different from last week, and the archive goes back further than anybody planned for.</p>
+  <p>That combination rewards workflows that are simple and repeatable far more than ones that are
+  powerful.</p>
+
+  <h2>The weekly job</h2>
+  <p>Most of the work is the same four steps every time: trim the dead air at the start and end, level
+  the audio so the sermon and the music are both audible, compress the file so it will upload before
+  Tuesday, and cut two or three short clips for social.</p>
+  <p>Being able to ask for those in plain English matters more here than in most settings, because the
+  person doing it this week may not have done it last week. A workflow that needs remembering where a
+  setting lives is a workflow that breaks the moment the usual volunteer is away.</p>
+
+  <h2>Audio is the whole game</h2>
+  <p>Congregations forgive a soft picture and will not forgive audio they cannot follow. The common
+  faults are a speaker who moves off the microphone, a music segment far louder than the spoken word,
+  and room noise from the back.</p>
+  <p>Levelling the quiet parts up rather than raising everything is what makes a recording listenable
+  on a phone speaker, which is how most of the congregation will actually watch it. Do that before
+  compressing, not after.</p>
+  <p>Take the feed from the sound desk if there is one. A camera microphone at the back of a room with
+  a PA in it is fighting a losing battle, and no processing fixes that.</p>
+
+  <h2>Low light and long lenses</h2>
+  <p>Sanctuaries are usually darker than they look, and volunteers often shoot from the back on a long
+  lens, which is the worst combination for both noise and shake. Denoise before any brightening, or
+  you amplify the noise along with the picture. Stabilization helps genuine handheld movement; it will
+  not fix the wobble from a long lens on a cheap tripod head, which is often rolling shutter rather
+  than shake.</p>
+
+  <h2>The archive nobody has time for</h2>
+  <p>Most churches have a shelf of tapes and DVDs of anniversaries, weddings and funerals going back
+  decades. That material is genuinely worth restoring, and it responds well, because the faults are
+  the recoverable kind: low resolution, analogue noise, interlacing.</p>
+  <p>Deinterlace first, then denoise, then upscale. Almost all of it will be interlaced, and an
+  upscaler run first will sharpen the comb artefacts into something much harder to remove.</p>
+  <p>Batch processing is the practical route for a shelf rather than a clip, and because everything
+  runs on the machine there is no per-minute billing on a job that might run overnight.</p>
+
+  <h2>Privacy is not an abstract concern here</h2>
+  <p>Services include children, funerals, baptisms and people who did not choose to be filmed. Uploading
+  that to a third-party service to process it is a conversation most churches would rather not have.
+  Crisp runs entirely on the machine, with nothing transmitted, which makes the answer short.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It does not stream, so live broadcast needs whatever you already use. It does not generate
+  captions from speech, which matters because accessibility is a real obligation for many
+  congregations, and that needs a transcription service. It has no multicam sync, so a genuinely
+  multi-camera edit belongs in an NLE. And it will not fix audio recorded on a camera microphone at
+  the back of a hall.</p>
+  <p>What it does is the weekly cleanup, the short clips, and the archive, without any of it leaving
+  the building.</p>
+""",
+ "faq": [
+  ("Can Crisp add captions to our service recordings?",
+   "It burns in captions you have typed, but it does not transcribe speech. If captions are an accessibility requirement, you need a transcription service to produce the text first. That is worth checking before planning a workflow around it."),
+  ("How do we make the sermon audible on a phone?",
+   "Level the quiet parts up rather than raising the overall volume, and do it before compressing. Most of a congregation watches on a phone speaker, and levelling makes far more difference there than any picture improvement."),
+  ("Is it practical to restore an archive of old service tapes?",
+   "Yes, and it is one of the better uses for it. The faults on old tape are the recoverable kind. Work through it in batches, deinterlace before upscaling, and expect it to run overnight rather than in minutes."),
+  ("Does any footage leave our machine?",
+   "No. There is no upload, no account and no cloud step, which for recordings involving children and funerals is usually the deciding factor rather than a bonus."),
+ ],
+},
 ]
