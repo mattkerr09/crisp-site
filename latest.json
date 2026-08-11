@@ -1,10 +1,10 @@
 {
-  "version": "0.1.792",
-  "notes": "Asking to speed a clip up now changes the speed. Twice as fast, three times as fast and half as fast used to start a full upscale render, loop the clip, or reach nothing at all.",
-  "pub_date": "2026-08-11T22:07:37Z",
+  "version": "0.1.793",
+  "notes": "Crisp no longer waits forever on its own engine. If the engine is busy finishing a render, a request now gives up after 20 seconds and says so, instead of leaving a control that never comes back.",
+  "pub_date": "2026-08-11T23:29:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVMUk5FcjlDVDI1cFc2YTdMeDAzQ0g3cUNGOGRLdllXeDMxck9IaHFDR1JScUc3R1ZGV0R2VEJhRmJFMHNuY3JtVGxGNUdBd1dvZ1Zianpoa3RXK2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDg1OTY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxMGxrZ2FuVGZ4L3I1Umlwd3c5UVhPMGxVODJjaG1KdEdnajEyNXZrVGd4aXRwZ015eGJDUXFtVS9vTTdoRnJFdGs3NThNakVKa2tOQVA1U0xPUHpDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxjRlB3eVFBRDMvTTVzNm4xLy90RUZtQjVhdzE4ZnRRNDBGYXlUem0yckFxaW5JTUJiaXVoZVNVRC9yajNFSDhMdm1IK3lDeTRIU0taQmtaSFJwd0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDkwODY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKNVpINUcyN0JyYktHTWpqNVV1VktPTWQvcW5PWUJZUzl6N1RpQWsvdnFJcjRPbW5VUTExRFRFRTM1SXQyMDd2djFCdjF1T0JYY3RVY1gwalJQMm1EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
