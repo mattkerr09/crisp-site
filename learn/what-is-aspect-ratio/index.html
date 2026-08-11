@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is aspect ratio? 16:9, 9:16 and the black bars — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Why your footage gets black bars, why cropping to vertical loses half the frame, and the difference between letterboxing and actually reframing a shot.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-aspect-ratio/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is aspect ratio?">
+<meta property="og:description" content="Why your footage gets black bars, why cropping to vertical loses half the frame, and the difference between letterboxing and actually reframing a shot.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-aspect-ratio/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is aspect ratio?">
+<meta name="twitter:description" content="Why your footage gets black bars, why cropping to vertical loses half the frame, and the difference between letterboxing and actually reframing a shot.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is aspect ratio?","description":"Why your footage gets black bars, why cropping to vertical loses half the frame, and the difference between letterboxing and actually reframing a shot.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my video have black bars on the sides?","acceptedAnswer":{"@type":"Answer","text":"The player is pillarboxing a narrower frame into a wider window rather than distorting it. That is correct behaviour. Bars top and bottom are the same thing in the other direction, usually a cinema-ratio frame in a 16:9 window."}},{"@type":"Question","name":"Is cropping or blur-fill better for vertical?","acceptedAnswer":{"@type":"Answer","text":"Crop when the subject is centred and there is nothing important at the edges, because you keep full resolution. Blur-fill when the composition matters or several things are happening across the width, because nothing is lost."}},{"@type":"Question","name":"Does converting to vertical lose quality?","acceptedAnswer":{"@type":"Answer","text":"Cropping keeps the pixels it keeps at full quality, so the result is lower resolution overall but not degraded. Blur-fill keeps the whole picture and scales it down slightly. Neither reduces quality the way a re-encode does."}},{"@type":"Question","name":"What resolution should a vertical video be?","acceptedAnswer":{"@type":"Answer","text":"1080 by 1920 covers essentially every vertical platform. Going higher rarely helps, since the platform will re-encode to its own ladder anyway, and it makes the upload slower for no visible gain."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Aspect ratio</div>
+  <h1>What is aspect ratio?</h1>
+
+  <p>Aspect ratio is the shape of the frame: its width divided by its height. 16:9 is the widescreen
+  shape almost all video uses. 9:16 is the same shape turned on its side, which is what phones shoot
+  and what vertical feeds expect. 1:1 is square, 4:3 is the old television shape, and cinema uses
+  wider ratios still such as 2.39:1.</p>
+  <p>The number itself is simple. The consequences of changing it are where the difficulty lives.</p>
+
+  <h2>Something has to give</h2>
+  <p>A 16:9 frame cannot become a 9:16 frame without losing something. You have three options and they
+  are all trade-offs.</p>
+  <p><strong>Crop.</strong> Cut the sides off. You keep full resolution and lose about three quarters
+  of the width. If your subject is centred this works well. If two people are talking on opposite
+  sides of the frame, one of them is now gone.</p>
+  <p><strong>Letterbox or pillarbox.</strong> Add bars to pad the frame to the new shape. Nothing is
+  lost, the composition survives intact, and the picture is smaller on screen. Perfectly respectable,
+  and often the right answer for something that was carefully framed.</p>
+  <p><strong>Fill with a blurred background.</strong> Scale the original to fit the height, then fill
+  the space either side with a blurred, enlarged copy of the same frame. It reads as deliberate rather
+  than accidental, keeps the whole composition, and has become the default look on vertical feeds for
+  good reason.</p>
+
+  <h2>Reframing is a different thing entirely</h2>
+  <p>Cropping picks one region and keeps it for the whole clip. Reframing follows the subject, moving
+  the crop window as they move, so a person walking across a wide shot stays in the vertical frame
+  throughout.</p>
+  <p>That is much closer to what an editor would do by hand, and it is the difference between a
+  vertical version that works and one where the subject drifts out of shot halfway through.</p>
+
+  <h2>The mistakes worth avoiding</h2>
+  <p><strong>Stretching.</strong> Squashing a 16:9 frame into a 9:16 box makes everyone look wrong in
+  a way viewers notice without being able to name. Never do this. Crop, pad, or fill.</p>
+  <p><strong>Cropping before you have finished editing.</strong> Once the sides are gone they are
+  gone, and any later decision to reframe has nothing left to work with. Keep the full-frame master.</p>
+  <p><strong>Baking bars into the master.</strong> Letterbox for a specific delivery, not in your
+  archive copy, or a future crop will be cropping your own black bars.</p>
+  <p><strong>Ignoring safe areas.</strong> Vertical feeds overlay captions, usernames and buttons over
+  roughly the bottom fifth of the screen. Anything important down there will be covered.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp handles all three approaches on-device and will pick a sensible default rather than making
+  you specify one. Ask for a vertical version in plain English and you get the fill-and-blur treatment
+  unless you say otherwise, because it is the option that loses nothing and reads as intentional.</p>
+
+  <h2>Aspect ratio questions</h2>
+  <h3>Why does my video have black bars on the sides?</h3>
+  <p>The player is pillarboxing a narrower frame into a wider window rather than distorting it. That is correct behaviour. Bars top and bottom are the same thing in the other direction, usually a cinema-ratio frame in a 16:9 window.</p>
+  <h3>Is cropping or blur-fill better for vertical?</h3>
+  <p>Crop when the subject is centred and there is nothing important at the edges, because you keep full resolution. Blur-fill when the composition matters or several things are happening across the width, because nothing is lost.</p>
+  <h3>Does converting to vertical lose quality?</h3>
+  <p>Cropping keeps the pixels it keeps at full quality, so the result is lower resolution overall but not degraded. Blur-fill keeps the whole picture and scales it down slightly. Neither reduces quality the way a re-encode does.</p>
+  <h3>What resolution should a vertical video be?</h3>
+  <p>1080 by 1920 covers essentially every vertical platform. Going higher rarely helps, since the platform will re-encode to its own ladder anyway, and it makes the upload slower for no visible gain.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
