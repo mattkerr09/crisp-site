@@ -1,10 +1,10 @@
 {
-  "version": "0.1.791",
-  "notes": "Refusing an effect no longer applies it. Do not add grain, no vignette, and do not make it black and white each used to do the very thing they refused.",
-  "pub_date": "2026-08-11T21:10:04Z",
+  "version": "0.1.792",
+  "notes": "Asking to speed a clip up now changes the speed. Twice as fast, three times as fast and half as fast used to start a full upscale render, loop the clip, or reach nothing at all.",
+  "pub_date": "2026-08-11T22:07:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBmcldDZXZjMVVWaForVFdTNU1hMEd4VmlsTk5DU2NIdDZHWG9aNCs0bTlYQkQ1UGREbFJkcHdKdGlKbkRTQzY5Z3laVHRnRCtEZGh4dHN5a0pLZXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDgyNTExCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4UVlQTWlocVZ1Tk9xSzdhYmZkcmVZNXZ5bHZMOVlONXM5cnVoSjAxalRvOCtaL0xpaDBkZnRuZktDbFdtWnNPVGRyMHpUYTBqRTcvWmpCTWYxM2NEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVMUk5FcjlDVDI1cFc2YTdMeDAzQ0g3cUNGOGRLdllXeDMxck9IaHFDR1JScUc3R1ZGV0R2VEJhRmJFMHNuY3JtVGxGNUdBd1dvZ1Zianpoa3RXK2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDg1OTY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxMGxrZ2FuVGZ4L3I1Umlwd3c5UVhPMGxVODJjaG1KdEdnajEyNXZrVGd4aXRwZ015eGJDUXFtVS9vTTdoRnJFdGs3NThNakVKa2tOQVA1U0xPUHpDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
