@@ -703,4 +703,77 @@ PAGES = [
    "Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."),
  ],
 },
+
+{
+ "slug": "vs/upscayl-alternative-mac",
+ "section": "Compare",
+ "crumb": "Upscayl",
+ "title": "Upscayl vs Crisp on Mac: same engine, different job — Crisp",
+ "h1": "Upscayl vs Crisp: the same engine, doing a different job",
+ "desc": "Crisp bundles the same Real-ESRGAN engine Upscayl uses. That is not a coincidence and it is worth being straight about, because it means the honest comparison is not about upscaling quality at all.",
+ "faq_heading": "Upscayl and Crisp, in detail",
+ "body": """
+  <p>Let's start with the part most comparison pages would bury. Crisp bundles <code>upscayl-bin</code>,
+  the same ncnn build of Real-ESRGAN that Upscayl is built around, redistributed under its
+  BSD-3-Clause and MIT licences and credited in Crisp's NOTICES file. On a single photo, at the same
+  model and the same scale, you should expect the same result. There is no secret sauce and claiming
+  one would be easy to disprove.</p>
+  <p>So the real question isn't which upscales better. It's what happens either side of the upscale.</p>
+
+  <h2>Upscayl is an image tool, and a good one</h2>
+  <p>Upscayl is free, open source, actively developed, and genuinely excellent at what it does. Point
+  it at a folder of photos, pick a model, get bigger photos. If that is your problem, it solves it
+  completely and costs nothing, and you should use it.</p>
+  <p>What it does not do is video. That is not a shortcoming, it's scope. A video is not a folder of
+  photos, and treating it as one is where the difficulty starts.</p>
+
+  <h2>What a video actually needs around the model</h2>
+  <p>Run an image upscaler over extracted frames and you meet the problems in roughly this order.</p>
+  <p><strong>Audio.</strong> Frames carry none. You have to demux it, keep it aligned through any
+  frame-rate change, and mux it back without drift.</p>
+  <p><strong>Frame rate.</strong> Phone and screen-recorded footage is often variable frame rate, so
+  the gap between frames changes during the clip. Extract to stills and that timing information is
+  gone, which is how audio ends up half a second out by the end of a long take.</p>
+  <p><strong>Interlacing.</strong> Older footage stores each frame as two half-pictures captured
+  moments apart. An upscaler reads the resulting comb pattern as fine detail and sharpens it into
+  something much harder to remove. It has to be deinterlaced first, and nothing about a folder of PNGs
+  tells you that it should be.</p>
+  <p><strong>Colour.</strong> HDR sources need a proper tone map on the way in and out, or the result
+  is flat and grey.</p>
+  <p><strong>Order.</strong> Deinterlace, denoise, upscale, colour. Get that wrong and each step makes
+  the next harder.</p>
+  <p><strong>Scale.</strong> A ten minute clip is eighteen thousand frames. Somebody has to manage
+  disk, memory, resumability and the encode at the end.</p>
+  <p>None of that is upscaling. All of it is what makes upscaling a video work.</p>
+
+  <h2>The comparison that's actually useful</h2>
+  <table>
+    <tr><th></th><th>Upscayl</th><th>Crisp</th></tr>
+    <tr><td>Price</td><td>Free, open source</td><td>Free with a watermark; $19 once to remove it</td></tr>
+    <tr><td>Photos</td><td>Yes, its whole purpose</td><td>Yes, 9 formats including HEIC and AVIF</td></tr>
+    <tr><td>Video</td><td>No</td><td>Yes, with audio, timing and colour handled</td></tr>
+    <tr><td>Upscaling engine</td><td>Real-ESRGAN (ncnn)</td><td>The same Real-ESRGAN (ncnn)</td></tr>
+    <tr><td>Editing</td><td>No</td><td>Trim, crop, grade, stabilize, captions, timeline</td></tr>
+    <tr><td>Plain-English requests</td><td>No</td><td>Type what you want</td></tr>
+    <tr><td>Runs offline</td><td>Yes</td><td>Yes</td></tr>
+  </table>
+
+  <h2>The honest recommendation</h2>
+  <p>If you are upscaling photos, use Upscayl. It is free, it is excellent, and Crisp would be
+  charging you for an engine you can already run yourself.</p>
+  <p>If you are upscaling video, the model was never the hard part, and a tool that only wraps the
+  model leaves you to solve the rest by hand. That is the work Crisp is actually selling, and it is
+  worth being clear that this, not image quality, is the difference.</p>
+""",
+ "faq": [
+  ("Does Crisp really use the same upscaler as Upscayl?",
+   "Yes. Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its BSD-3-Clause and MIT licences, credited in Crisp's NOTICES file. On a single image at the same model and scale you should expect the same output."),
+  ("Then why would I pay for Crisp?",
+   "For video, and for everything around the model: audio kept in sync, variable frame rate normalised, interlacing handled before it gets sharpened, HDR tone mapped, the ordering of restoration steps handled for you, and a timeline to actually cut with. For photos alone, Upscayl is free and does the job."),
+  ("Can Upscayl do video if I extract the frames myself?",
+   "You can upscale the frames, yes. You then have to reassemble them with the original audio, preserve the timing of a variable-rate source, and handle interlacing and colour yourself. It's doable and it is a real afternoon of work per clip."),
+  ("Is Crisp just a wrapper around Upscayl?",
+   "For the standard upscale lane it uses that engine, and says so. The rest of the app is its own: the timeline editor, the plain-English layer, stabilization, grading, captions, the montage builder, and the generative Max restore lane, which is a different model entirely."),
+ ],
+},
 ]
