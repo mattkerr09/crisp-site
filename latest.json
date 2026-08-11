@@ -1,10 +1,10 @@
 {
-  "version": "0.1.785",
-  "notes": "Plain-English requests about motion now reach the right lane. Asking to smooth the motion, double the frame rate, or interpolate frames used to start a long upscale that did not smooth anything; asking to increase the frame rate to 60 was told Crisp cannot lower a frame rate. Softening the skin and preserving fine detail were being half-applied the same way.",
-  "pub_date": "2026-08-11T17:44:03Z",
+  "version": "0.1.787",
+  "notes": "Asking to remove noise no longer adds film grain. Saying it as a sentence \u2014 I want to remove the noise \u2014 used to plan the opposite edit and grain the clip instead of cleaning it.",
+  "pub_date": "2026-08-11T18:45:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVUcUc0UnkvQUcrRFVqN0RYWTZuYVNGKytoWmE5eElhSVJla3FjcXZaYVpWZVZWd1JaTXpDQzNPQUZYQWthanlLdHludkc5VGhRbkpBSXJ1akdGNUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDcwMTMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoNDB2UG9hWkY3eHpjYVRYcWtNY2p4YVo0U3NNNi80TVdONGRJZ0JETlJaR2xyNzVGZGduMXRPWDY0VlVZV01rWkdlOFBVc2ZmQWY2MWpWaHo3eGlDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg2SDlkYTVvRkdDcXAwRVowS0VMSzZmMHRCZjMyanJObUI2dGlSRy9DVnV4UWlLSXVlZ3FvcE1GTlJTaXJuQ1hEL3RsNEhmVExzaGNkelpwS3B0L0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDczNzk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4SjFFWUJ5K29wd2lld3pTdFRwTGl4blJHRFczVWZ4cVJ0SDc4SFI4N0xjcWNTcnhtOFh3SlRaekQ0V3lFZTc1NVlBZjUvNVNoSW41QWYzVVhDMWlDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
