@@ -1,10 +1,10 @@
 {
-  "version": "0.1.783",
-  "notes": "Max restore now tells you how long it will take before it starts, instead of after. Clips that would run for days say so up front, while you can still trim to the part you actually need. If Max stops because your Mac ran low on memory, the message now says that the finished work can't be picked up part-way, and what to try instead.",
-  "pub_date": "2026-08-11T16:20:31Z",
+  "version": "0.1.785",
+  "notes": "Plain-English requests about motion now reach the right lane. Asking to smooth the motion, double the frame rate, or interpolate frames used to start a long upscale that did not smooth anything; asking to increase the frame rate to 60 was told Crisp cannot lower a frame rate. Softening the skin and preserving fine detail were being half-applied the same way.",
+  "pub_date": "2026-08-11T17:44:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl0T3BSUUpkZnMrVzdneE1qQStPenZ0TlJBQXBjN3h0YmswQ09hdUZUeTFJYkF3eWtnVVRhNVlzc1VMRjlMT2dCOUFac3R5ZWVkbUdLOVdkV0V4UVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDY1MTU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2OHZkSkpRSEE3alR1Zi9BS3FTZHZoMnEyVVltY1lpYVl3SmdNWWVJYkJ0NHZzUjFySEtPYzFWT2JMMmxYN3pWeXVXVHlPcUo1dCttTEZUNlVmOTJBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVUcUc0UnkvQUcrRFVqN0RYWTZuYVNGKytoWmE5eElhSVJla3FjcXZaYVpWZVZWd1JaTXpDQzNPQUZYQWthanlLdHludkc5VGhRbkpBSXJ1akdGNUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDcwMTMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoNDB2UG9hWkY3eHpjYVRYcWtNY2p4YVo0U3NNNi80TVdONGRJZ0JETlJaR2xyNzVGZGduMXRPWDY0VlVZV01rWkdlOFBVc2ZmQWY2MWpWaHo3eGlDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
