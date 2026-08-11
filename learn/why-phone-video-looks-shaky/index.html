@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why phone video looks shaky, and what stabilization can fix — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why phone video looks shaky">
+<meta property="og:description" content="Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.">
+<meta property="og:url" content="https://crispvideo.app/learn/why-phone-video-looks-shaky/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why phone video looks shaky">
+<meta name="twitter:description" content="Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why phone video looks shaky","description":"Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can stabilization fix rolling shutter?","acceptedAnswer":{"@type":"Answer","text":"Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation."}},{"@type":"Question","name":"Does stabilizing crop my video?","acceptedAnswer":{"@type":"Answer","text":"Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage."}},{"@type":"Question","name":"Should I stabilize before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order."}},{"@type":"Question","name":"Why does my footage look worse after stabilizing?","acceptedAnswer":{"@type":"Answer","text":"Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Shaky phone video</div>
+  <h1>Why phone video looks shaky</h1>
+
+  <p>Two things make handheld footage unpleasant, and people tend to lump them together. One is
+  ordinary camera shake. The other is rolling shutter, and it is a different problem with a different
+  answer.</p>
+
+  <h2>Shake is movement. Skew is a sampling artefact.</h2>
+  <p>Shake is what it sounds like. Your hands move, the whole frame moves with them, and the picture
+  jitters. Every part of the frame moves together, which is the important detail: the geometry inside
+  the frame stays correct.</p>
+  <p>Rolling shutter is stranger. Most phone and mirrorless sensors don't capture a whole frame at
+  once. They read it out line by line, top to bottom, over a few milliseconds. If the camera or the
+  subject moves during that readout, the top of the frame was captured at a slightly different moment
+  than the bottom, so vertical lines lean. Pan quickly past a lamp post and it bends. Shoot from a
+  moving car and the world tilts. Shoot a propeller and it turns into something surreal.</p>
+  <p>You can tell them apart by looking at a still frame. Shake looks fine frozen and bad in motion.
+  Rolling shutter is visible in a single frame, because the distortion is baked into the geometry.</p>
+
+  <h2>What stabilization actually does</h2>
+  <p>Stabilization estimates how much the frame moved between one frame and the next, then shifts each
+  frame back the other way to cancel it out. Because shifting exposes empty edges, it either crops in
+  slightly or fills the edges by mirroring what's next to them.</p>
+  <p>That works genuinely well on shake, and it costs you a little framing. What it cannot do is undo
+  rolling shutter, because the distortion isn't a whole-frame offset. Different rows of the same frame
+  need different corrections, which is a fundamentally harder operation and one Crisp does not
+  attempt. Stabilizing skewed footage produces steady, still-skewed footage.</p>
+
+  <h2>What to do about each</h2>
+  <table>
+    <tr><th>Symptom</th><th>Cause</th><th>Fixable afterwards?</th></tr>
+    <tr><td>Whole frame jitters, stills look fine</td><td>Camera shake</td><td>Yes, stabilization handles this well</td></tr>
+    <tr><td>Vertical lines lean during pans</td><td>Rolling shutter</td><td>No, not in Crisp</td></tr>
+    <tr><td>Sharp jolts at footsteps</td><td>Walking shake</td><td>Partly, and a slower walk helps more</td></tr>
+    <tr><td>Wobble that looks like jelly</td><td>Rolling shutter plus shake</td><td>The shake, not the wobble</td></tr>
+  </table>
+  <p>On the shooting side, the fixes are boring and effective. Pan slower, because rolling shutter
+  scales with how fast the scene crosses the sensor. Brace against something. Use the phone's own
+  stabilization if it has it, since correcting during capture beats correcting afterwards. And shoot a
+  little wider than you need, so stabilization has room to crop into without losing your framing.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp stabilizes on-device using frame-to-frame motion estimation, keeps the audio in sync, and
+  saves the result alongside the original rather than overwriting it. You can ask for it in plain
+  English, and if the clip turns out to be steady enough already that stabilizing would cost framing
+  for no visible gain, it will tell you rather than burning the render time.</p>
+
+  <h2>Shaky footage questions</h2>
+  <h3>Can stabilization fix rolling shutter?</h3>
+  <p>Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation.</p>
+  <h3>Does stabilizing crop my video?</h3>
+  <p>Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage.</p>
+  <h3>Should I stabilize before or after upscaling?</h3>
+  <p>Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order.</p>
+  <h3>Why does my footage look worse after stabilizing?</h3>
+  <p>Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

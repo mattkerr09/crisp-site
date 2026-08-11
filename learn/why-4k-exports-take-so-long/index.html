@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why AI upscaling to 4K takes so long — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why upscaling to 4K takes so long">
+<meta property="og:description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta property="og:url" content="https://crispvideo.app/learn/why-4k-exports-take-so-long/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why upscaling to 4K takes so long">
+<meta name="twitter:description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why upscaling to 4K takes so long","description":"A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it normal for a ten minute clip to take over an hour?","acceptedAnswer":{"@type":"Answer","text":"For AI upscaling to 4K, yes. Each frame goes through a neural network individually, and a ten minute clip at 30fps is eighteen thousand of them. The time scales with length and with output resolution, and there is no shortcut that preserves the quality."}},{"@type":"Question","name":"Does a faster Mac help?","acceptedAnswer":{"@type":"Answer","text":"Substantially, because the work is dominated by model inference and that is exactly what Apple Silicon's neural and GPU hardware accelerates. Available memory matters too, since tight memory forces the frame to be processed in tiles."}},{"@type":"Question","name":"Why is the first frame slower than the rest?","acceptedAnswer":{"@type":"Answer","text":"The model has to be loaded and initialised before the first frame can be processed. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds usually reads pessimistically."}},{"@type":"Question","name":"Can I use my Mac while it runs?","acceptedAnswer":{"@type":"Answer","text":"Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Why exports take so long</div>
+  <h1>Why upscaling to 4K takes so long</h1>
+
+  <p>People are often surprised that upscaling a short clip can take longer than the clip itself by a
+  large multiple. It is worth understanding where the time goes, because some of it is avoidable and
+  some of it really is not.</p>
+
+  <h2>Every frame is a separate job</h2>
+  <p>A normal video export re-encodes frames, which modern hardware does in dedicated silicon at
+  extraordinary speed. AI upscaling is a different kind of work. Each frame is passed through a neural
+  network that performs many millions of operations to produce its output, and it does that
+  independently for every single frame.</p>
+  <p>A ten minute clip at 30fps is eighteen thousand frames. Even at a very respectable third of a
+  second per frame, that is an hour and a half of pure model inference before any encoding happens.
+  The maths is unforgiving and it scales linearly with length.</p>
+
+  <h2>Where the rest of the time goes</h2>
+  <p>Decoding the source, applying the colour chain, and writing frames out are all real costs, though
+  smaller. Upscaling to 4K means the model is producing roughly eight million pixels per frame, and
+  the encoder afterwards is compressing eight million pixels per frame too, which is four times the
+  work of a 1080p export at the same length.</p>
+  <p>Memory matters more than people expect. Large frames and large models compete for the same pool,
+  and when that pool is tight the work has to be broken into tiles and reassembled, which costs both
+  time and a little quality at the seams.</p>
+
+  <h2>What genuinely makes it faster</h2>
+  <p><strong>Trim first.</strong> The single biggest lever, and the most ignored. If you only need
+  thirty seconds of a ten minute clip, cutting before upscaling removes 95% of the work. Do this
+  before anything else.</p>
+  <p><strong>Pick the target you actually need.</strong> Upscaling 1080p to 4K is four times the
+  output pixels of 1080p to 1440p. If the destination is a phone screen or a social feed, the larger
+  target may be invisible to every viewer.</p>
+  <p><strong>Do not stack lanes you do not need.</strong> Frame interpolation multiplies the frame
+  count before upscaling ever runs, so doubling the frame rate doubles an already long job.</p>
+  <p><strong>Let it run unattended.</strong> Because everything is on-device there is no per-minute
+  billing and no upload, so a long job overnight costs nothing but electricity. That changes the
+  calculation compared with cloud services, where the incentive is to keep jobs short.</p>
+
+  <h2>What does not help</h2>
+  <p>Closing other applications rarely makes a measurable difference unless you were genuinely short
+  of memory. Neither does exporting at a higher bitrate, which affects file size rather than the
+  inference that dominates the time. And re-running a job at a lower quality preset to "warm it up"
+  does nothing at all, since nothing is cached between runs.</p>
+
+  <h2>Render time, in detail</h2>
+  <h3>Is it normal for a ten minute clip to take over an hour?</h3>
+  <p>For AI upscaling to 4K, yes. Each frame goes through a neural network individually, and a ten minute clip at 30fps is eighteen thousand of them. The time scales with length and with output resolution, and there is no shortcut that preserves the quality.</p>
+  <h3>Does a faster Mac help?</h3>
+  <p>Substantially, because the work is dominated by model inference and that is exactly what Apple Silicon's neural and GPU hardware accelerates. Available memory matters too, since tight memory forces the frame to be processed in tiles.</p>
+  <h3>Why is the first frame slower than the rest?</h3>
+  <p>The model has to be loaded and initialised before the first frame can be processed. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds usually reads pessimistically.</p>
+  <h3>Can I use my Mac while it runs?</h3>
+  <p>Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

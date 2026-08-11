@@ -518,4 +518,189 @@ PAGES = [
    "After. An upscaler reconstructs what it reads as detail, and grain applied first gets magnified and reinterpreted. Grade, upscale, then add grain last."),
  ],
 },
+
+{
+ "slug": "learn/why-phone-video-looks-shaky",
+ "crumb": "Shaky phone video",
+ "title": "Why phone video looks shaky, and what stabilization can fix — Crisp",
+ "h1": "Why phone video looks shaky",
+ "desc": "Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.",
+ "faq_heading": "Shaky footage questions",
+ "body": """
+  <p>Two things make handheld footage unpleasant, and people tend to lump them together. One is
+  ordinary camera shake. The other is rolling shutter, and it is a different problem with a different
+  answer.</p>
+
+  <h2>Shake is movement. Skew is a sampling artefact.</h2>
+  <p>Shake is what it sounds like. Your hands move, the whole frame moves with them, and the picture
+  jitters. Every part of the frame moves together, which is the important detail: the geometry inside
+  the frame stays correct.</p>
+  <p>Rolling shutter is stranger. Most phone and mirrorless sensors don't capture a whole frame at
+  once. They read it out line by line, top to bottom, over a few milliseconds. If the camera or the
+  subject moves during that readout, the top of the frame was captured at a slightly different moment
+  than the bottom, so vertical lines lean. Pan quickly past a lamp post and it bends. Shoot from a
+  moving car and the world tilts. Shoot a propeller and it turns into something surreal.</p>
+  <p>You can tell them apart by looking at a still frame. Shake looks fine frozen and bad in motion.
+  Rolling shutter is visible in a single frame, because the distortion is baked into the geometry.</p>
+
+  <h2>What stabilization actually does</h2>
+  <p>Stabilization estimates how much the frame moved between one frame and the next, then shifts each
+  frame back the other way to cancel it out. Because shifting exposes empty edges, it either crops in
+  slightly or fills the edges by mirroring what's next to them.</p>
+  <p>That works genuinely well on shake, and it costs you a little framing. What it cannot do is undo
+  rolling shutter, because the distortion isn't a whole-frame offset. Different rows of the same frame
+  need different corrections, which is a fundamentally harder operation and one Crisp does not
+  attempt. Stabilizing skewed footage produces steady, still-skewed footage.</p>
+
+  <h2>What to do about each</h2>
+  <table>
+    <tr><th>Symptom</th><th>Cause</th><th>Fixable afterwards?</th></tr>
+    <tr><td>Whole frame jitters, stills look fine</td><td>Camera shake</td><td>Yes, stabilization handles this well</td></tr>
+    <tr><td>Vertical lines lean during pans</td><td>Rolling shutter</td><td>No, not in Crisp</td></tr>
+    <tr><td>Sharp jolts at footsteps</td><td>Walking shake</td><td>Partly, and a slower walk helps more</td></tr>
+    <tr><td>Wobble that looks like jelly</td><td>Rolling shutter plus shake</td><td>The shake, not the wobble</td></tr>
+  </table>
+  <p>On the shooting side, the fixes are boring and effective. Pan slower, because rolling shutter
+  scales with how fast the scene crosses the sensor. Brace against something. Use the phone's own
+  stabilization if it has it, since correcting during capture beats correcting afterwards. And shoot a
+  little wider than you need, so stabilization has room to crop into without losing your framing.</p>
+
+  <h2>Doing it on a Mac</h2>
+  <p>Crisp stabilizes on-device using frame-to-frame motion estimation, keeps the audio in sync, and
+  saves the result alongside the original rather than overwriting it. You can ask for it in plain
+  English, and if the clip turns out to be steady enough already that stabilizing would cost framing
+  for no visible gain, it will tell you rather than burning the render time.</p>
+""",
+ "faq": [
+  ("Can stabilization fix rolling shutter?",
+   "Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation."),
+  ("Does stabilizing crop my video?",
+   "Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage."),
+  ("Should I stabilize before or after upscaling?",
+   "Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order."),
+  ("Why does my footage look worse after stabilizing?",
+   "Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it."),
+ ],
+},
+{
+ "slug": "learn/what-is-hdr-video",
+ "crumb": "HDR video",
+ "title": "What is HDR video, and why does it look washed out? — Crisp",
+ "h1": "What is HDR video?",
+ "desc": "Your iPhone records HDR by default. Open that file somewhere that does not understand it and the colours go grey and flat. What HDR actually stores, and why tone mapping matters.",
+ "faq_heading": "HDR questions",
+ "body": """
+  <p>HDR video stores a wider range of brightness than traditional video, and a wider range of colour
+  with it. Where standard video assumes a display that peaks around 100 nits, HDR formats carry
+  information for displays reaching ten times that or more, so a sunlit window can be genuinely bright
+  while the shadows beside it stay detailed rather than crushed to black.</p>
+  <p>If you own a recent iPhone, you are almost certainly shooting it already, and possibly without
+  having chosen to.</p>
+
+  <h2>Why it looks washed out somewhere else</h2>
+  <p>This is the complaint that brings most people to the topic. Footage looks vivid on the phone,
+  then grey and flat once it is somewhere else.</p>
+  <p>The file stores brightness using a transfer curve designed for HDR displays, most often PQ or
+  HLG. Software that understands the tagging maps those values onto whatever display you have.
+  Software that does not simply reads the numbers as if they were ordinary values, and the result is
+  flat, desaturated and slightly milky. Nothing is damaged. It is being interpreted with the wrong
+  assumption.</p>
+  <p>The same thing happens on upload. A platform that strips or ignores the HDR metadata serves
+  everyone the washed-out interpretation, which is why a clip can look fine in your editor and wrong
+  in the feed.</p>
+
+  <h2>Tone mapping is the honest answer</h2>
+  <p>Converting HDR to standard range properly is called tone mapping, and it is not a simple scale.
+  You are fitting a wide brightness range into a narrower one, so something has to give. A good tone
+  map compresses the highlights gradually, keeps mid-tones roughly where the eye expects them, and
+  preserves colour relationships while it does so.</p>
+  <p>A bad conversion clips the highlights flat, which throws away exactly the detail HDR was
+  capturing, or lifts everything uniformly, which produces the grey look people are trying to escape.</p>
+  <p>Crisp detects HDR sources from their colour metadata and runs a proper tone map on-device when
+  the output needs standard range. There is no setting to get wrong, which matters because the failure
+  mode here is silent: nothing errors, the colours are just quietly incorrect.</p>
+
+  <h2>When to keep HDR and when to convert</h2>
+  <p>Keep it when your delivery target genuinely supports it end to end, and when the footage has a
+  brightness range worth preserving. A sunset, a stage with hard lighting, a window in an interior
+  shot.</p>
+  <p>Convert when the destination is uncertain. Anything going to a general audience, an older
+  machine, a projector, or a platform whose handling you have not tested is safer delivered in
+  standard range where you controlled the conversion, rather than left to whatever the viewer's
+  software decides.</p>
+  <p>Mixing HDR and non-HDR clips on one timeline is the other common trap. Convert everything to a
+  single range before you start editing, or the grade you apply to one clip will be wrong on the
+  next.</p>
+""",
+ "faq": [
+  ("Why does my iPhone video look grey on my computer?",
+   "It is HDR, and whatever you are viewing it in is not interpreting the HDR tagging. The file is fine. Converting it to standard range with a proper tone map gives you a version that looks right everywhere."),
+  ("Should I turn HDR off on my phone?",
+   "If most of your footage ends up on social platforms or gets shared widely, turning it off removes a whole class of problem. If you are shooting things with genuinely wide brightness range and you control delivery, keeping it is worth the extra care."),
+  ("Does converting HDR to SDR lose quality?",
+   "It loses range, unavoidably, because you are fitting a wider brightness scale into a narrower one. Done with a proper tone map the result looks natural and the loss is mostly in highlight detail you could not have displayed anyway."),
+  ("Can I mix HDR and standard clips in one edit?",
+   "You can, but you should not without converting first. The two ranges grade completely differently, so adjustments that look right on one clip will be wrong on the next. Normalise everything to one range before you start."),
+ ],
+},
+{
+ "slug": "learn/why-4k-exports-take-so-long",
+ "crumb": "Why exports take so long",
+ "title": "Why AI upscaling to 4K takes so long — Crisp",
+ "h1": "Why upscaling to 4K takes so long",
+ "desc": "A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.",
+ "faq_heading": "Render time, in detail",
+ "body": """
+  <p>People are often surprised that upscaling a short clip can take longer than the clip itself by a
+  large multiple. It is worth understanding where the time goes, because some of it is avoidable and
+  some of it really is not.</p>
+
+  <h2>Every frame is a separate job</h2>
+  <p>A normal video export re-encodes frames, which modern hardware does in dedicated silicon at
+  extraordinary speed. AI upscaling is a different kind of work. Each frame is passed through a neural
+  network that performs many millions of operations to produce its output, and it does that
+  independently for every single frame.</p>
+  <p>A ten minute clip at 30fps is eighteen thousand frames. Even at a very respectable third of a
+  second per frame, that is an hour and a half of pure model inference before any encoding happens.
+  The maths is unforgiving and it scales linearly with length.</p>
+
+  <h2>Where the rest of the time goes</h2>
+  <p>Decoding the source, applying the colour chain, and writing frames out are all real costs, though
+  smaller. Upscaling to 4K means the model is producing roughly eight million pixels per frame, and
+  the encoder afterwards is compressing eight million pixels per frame too, which is four times the
+  work of a 1080p export at the same length.</p>
+  <p>Memory matters more than people expect. Large frames and large models compete for the same pool,
+  and when that pool is tight the work has to be broken into tiles and reassembled, which costs both
+  time and a little quality at the seams.</p>
+
+  <h2>What genuinely makes it faster</h2>
+  <p><strong>Trim first.</strong> The single biggest lever, and the most ignored. If you only need
+  thirty seconds of a ten minute clip, cutting before upscaling removes 95% of the work. Do this
+  before anything else.</p>
+  <p><strong>Pick the target you actually need.</strong> Upscaling 1080p to 4K is four times the
+  output pixels of 1080p to 1440p. If the destination is a phone screen or a social feed, the larger
+  target may be invisible to every viewer.</p>
+  <p><strong>Do not stack lanes you do not need.</strong> Frame interpolation multiplies the frame
+  count before upscaling ever runs, so doubling the frame rate doubles an already long job.</p>
+  <p><strong>Let it run unattended.</strong> Because everything is on-device there is no per-minute
+  billing and no upload, so a long job overnight costs nothing but electricity. That changes the
+  calculation compared with cloud services, where the incentive is to keep jobs short.</p>
+
+  <h2>What does not help</h2>
+  <p>Closing other applications rarely makes a measurable difference unless you were genuinely short
+  of memory. Neither does exporting at a higher bitrate, which affects file size rather than the
+  inference that dominates the time. And re-running a job at a lower quality preset to "warm it up"
+  does nothing at all, since nothing is cached between runs.</p>
+""",
+ "faq": [
+  ("Is it normal for a ten minute clip to take over an hour?",
+   "For AI upscaling to 4K, yes. Each frame goes through a neural network individually, and a ten minute clip at 30fps is eighteen thousand of them. The time scales with length and with output resolution, and there is no shortcut that preserves the quality."),
+  ("Does a faster Mac help?",
+   "Substantially, because the work is dominated by model inference and that is exactly what Apple Silicon's neural and GPU hardware accelerates. Available memory matters too, since tight memory forces the frame to be processed in tiles."),
+  ("Why is the first frame slower than the rest?",
+   "The model has to be loaded and initialised before the first frame can be processed. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds usually reads pessimistically."),
+  ("Can I use my Mac while it runs?",
+   "Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."),
+ ],
+},
 ]
