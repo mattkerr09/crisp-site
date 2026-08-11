@@ -1422,4 +1422,137 @@ PAGES = [
    "Usually yes. The faults on old live footage are the recoverable kind, low resolution, analogue noise and interlacing, and the results are often dramatic. Deinterlace before upscaling or the upscaler will sharpen the comb artefacts."),
  ],
 },
+
+{
+ "slug": "for/genealogists",
+ "section": "By use",
+ "crumb": "Genealogists",
+ "title": "Crisp for genealogists and family historians on a Mac",
+ "h1": "Crisp for genealogists and family historians",
+ "desc": "Boxes of tape and cine film, one copy of everything, and relatives who will not be there next year. What to do first, and what no software can recover.",
+ "faq_heading": "Family archives, in detail",
+ "body": """
+  <p>Family history work has a deadline nobody sets. The tapes are decaying, the people who can
+  identify who is in them are getting older, and there is exactly one copy of most of it.</p>
+  <p>That changes the priorities. Restoration quality matters less than getting everything captured
+  and identified while it is still possible.</p>
+
+  <h2>Capture first, restore later</h2>
+  <p>This is the single most useful thing to know. Magnetic tape loses signal whether or not anyone
+  plays it, and every playback wears it slightly. Software gets better every year; a tape from 1987
+  does not.</p>
+  <p>So capture the whole collection at the best quality you can manage now, even if you have no time
+  to restore any of it. A digital file sitting on two drives is safe. A tape in a loft is on a clock.
+  Restoration can happen in ten years; capture frequently cannot.</p>
+  <p>If a tape squeals or sheds powder, stop and get advice before playing it again. That is binder
+  breakdown, and forcing it through a deck can destroy both the tape and the heads.</p>
+
+  <h2>Identify while people still can</h2>
+  <p>Sit down with the oldest relatives and record them watching the footage. Their commentary is
+  frequently more valuable than the footage itself, and it is the part that genuinely cannot be
+  recovered later. Names, places, dates, the year a house looked like that.</p>
+  <p>Do this before restoration, not after. It needs no processing and it is the piece with a hard
+  deadline attached.</p>
+
+  <h2>Then the restoration, in order</h2>
+  <p>Deinterlace, denoise, upscale, colour. That sequence matters more than any individual setting.
+  Nearly all tape and broadcast material is interlaced, and an upscaler reads the comb pattern as fine
+  detail and sharpens it into something much harder to remove. Denoise before upscaling for the same
+  reason: magnified noise is a worse problem than the original.</p>
+  <p>Be conservative with denoising on old film. Grain is part of how film looks, and stripping it out
+  gives faces the waxy appearance that makes an over-restored archive obvious. You can always run a
+  second pass; you cannot put the texture back.</p>
+
+  <h2>What cannot be recovered</h2>
+  <p>Worth knowing before you spend a weekend on it. Tracking tears, dropouts where the signal was
+  never read, and timebase instability all have to be fixed at capture with a properly aligned deck,
+  not afterwards in software. A shot that missed focus has no detail to recover, and an upscaler will
+  invent plausible features rather than restore real ones, which on a face you are trying to identify
+  is worse than leaving it soft.</p>
+  <p>Blown highlights are gone. Audio that was never recorded is gone. Accepting that early saves the
+  time better spent on capture.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It does not capture from tape, so you still need a deck, a capture device and ideally a timebase
+  corrector. It does not catalogue, tag or manage metadata, which for a serious archive matters as
+  much as the footage. And it does not transcribe speech, so the commentary you record still needs
+  transcribing elsewhere.</p>
+  <p>What it does is the restoration pass, on your own machine, on footage of your family that never
+  goes to anyone else's server. For this particular use, that tends to be the point rather than a
+  feature.</p>
+""",
+ "faq": [
+  ("Should I restore before or after digitising everything?",
+   "Digitise everything first, without exception. The tape is degrading on a clock and software only improves. A complete set of raw captures is far more valuable than a handful of beautifully restored clips and a box you never got to."),
+  ("How much should I denoise old film?",
+   "Less than feels right. Grain is part of the image, and heavy denoising produces the waxy, plastic faces that give an over-processed archive away. Remove enough that it reads cleanly and stop there."),
+  ("Can Crisp fix tracking lines and dropouts?",
+   "No. Those are places where the signal was never read, so there is nothing in the file to work from. They need a properly aligned deck and ideally a timebase corrector at capture time."),
+  ("Is upscaling a face reliable for identification?",
+   "Be careful here. An upscaler predicts plausible detail rather than recovering real detail, so a sharpened face is partly invented. For identification purposes the soft original is more honest evidence than the crisp reconstruction."),
+ ],
+},
+{
+ "slug": "for/filmmakers",
+ "section": "By use",
+ "crumb": "Filmmakers",
+ "title": "Crisp for independent filmmakers on a Mac",
+ "h1": "Crisp for independent filmmakers",
+ "desc": "A finishing and repair tool that sits beside your NLE rather than replacing it. Where it earns its place on a low-budget shoot, and where it does not.",
+ "faq_heading": "Film work, in detail",
+ "body": """
+  <p>Let's be direct about scope. If you are cutting a film, that happens in Resolve, Premiere or Final
+  Cut, and it should. Crisp is not an NLE and pretending otherwise would waste your time.</p>
+  <p>Where it earns a place is the unglamorous work around the edit, the shots that need rescuing and
+  the deliverables nobody budgeted for.</p>
+
+  <h2>The shot you cannot reshoot</h2>
+  <p>Every low-budget production has a few. The location is gone, the actor has left, the light was
+  never coming back. The shot is noisy, or soft, or shaky, and it has to be in the film.</p>
+  <p>Denoising and stabilization are genuinely useful here, with an important caveat: they work on
+  faults of degradation, not faults of capture. Sensor noise, yes. Camera shake, yes. Missed focus,
+  no. Rolling shutter skew, no. Knowing which category a problem falls into before you start the
+  render saves hours you do not have.</p>
+
+  <h2>Archival and stock material</h2>
+  <p>Period footage, home video inserts, public-domain archive, a clip from a source that only exists
+  at 480p. This is where upscaling earns its keep, because the fault is genuinely low resolution
+  rather than something invented.</p>
+  <p>The rule is the same as everywhere: deinterlace first if it is broadcast or tape material, then
+  denoise, then upscale. Interlaced material sharpened by an upscaler is much harder to fix than it
+  was originally.</p>
+
+  <h2>Deliverables nobody budgets for</h2>
+  <p>Once the film is done there is a second job: the trailer, the vertical cutdowns for socials, the
+  festival submission at a specific resolution, the compressed screener that has to be small enough to
+  email, and the stills for the press kit. None of that is creative work, all of it takes time, and
+  most of it is mechanical enough to describe in a sentence rather than build in a timeline.</p>
+  <p>Pulling a full-resolution still from an exact frame is worth mentioning specifically, because
+  screenshotting the player gives you the display-scaled version with the wrong colour, and press kits
+  need the real frame.</p>
+
+  <h2>Client and unreleased material</h2>
+  <p>Everything runs on your machine. For work under embargo, under NDA, or simply not yet announced,
+  that removes a conversation rather than starting one. It also means an overnight batch costs
+  electricity rather than per-minute cloud billing, which matters at the scale a feature generates.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>No multicam sync, no audio post, no conform, no colour-managed grading pipeline, no LUT import,
+  no motion graphics, no round-tripping with your NLE. It does not replace any part of a professional
+  finishing chain, and a film that needs those things needs the tools that do them.</p>
+  <p>It also cannot invent a shot you did not get. The most valuable thing it offers a low-budget
+  production is an honest answer about which problems are fixable, delivered before you spend the
+  night rendering one that is not.</p>
+""",
+ "faq": [
+  ("Can Crisp replace Resolve or Premiere?",
+   "No, and it does not try. There is a timeline for assembling and cutting down, but no multicam sync, no audio post, no conform and no colour-managed grading pipeline. It is a repair and finishing tool that sits beside an NLE."),
+  ("Does it support LUTs?",
+   "No. It applies its own looks rather than importing .cube files, so if your grade depends on a specific LUT chain that work belongs in your NLE."),
+  ("Is upscaled archive footage good enough to intercut with modern camera footage?",
+   "Often yes, if the source is genuinely low-resolution rather than soft or damaged, and if you match grain and colour afterwards. Upscaled material that is too clean sits oddly next to real footage, so adding a little grain back usually helps it blend."),
+  ("Can it pull a press still from an exact frame?",
+   "Yes, at full resolution and at the exact timestamp, which is different from screenshotting a player. A screenshot gives you the display-scaled image with player colour management applied, which is not the frame you shot."),
+ ],
+},
 ]
