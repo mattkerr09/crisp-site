@@ -1156,4 +1156,138 @@ PAGES = [
    "1080 by 1920 covers essentially every vertical platform. Going higher rarely helps, since the platform will re-encode to its own ladder anyway, and it makes the upload slower for no visible gain."),
  ],
 },
+
+{
+ "slug": "for/wedding-videographers",
+ "section": "By use",
+ "crumb": "Wedding videographers",
+ "title": "Crisp for wedding videographers — offline finishing on a Mac",
+ "h1": "Crisp for wedding videographers",
+ "desc": "Reception footage shot at ISO 12800, a second camera that does not match, and client media you would rather not upload anywhere. What Crisp handles and what it does not.",
+ "faq_heading": "Wedding work, in detail",
+ "body": """
+  <p>Wedding work has a shape no other genre quite shares. You get one take of everything, the light
+  goes from a bright ceremony to a dark reception in a single day, half the footage comes from a
+  camera you were not operating, and the client is emotionally invested in every frame in a way a
+  corporate client never is.</p>
+
+  <h2>The reception is where the footage falls apart</h2>
+  <p>By the evening you are shooting at whatever ISO keeps the shutter usable, and that means noise.
+  Not a little grain, but the coloured speckle in the shadows that compression then turns into
+  blotches. Denoising before you grade rather than after makes a visible difference, because a grade
+  applied to noisy footage amplifies the noise along with everything else.</p>
+  <p>The other reception problem is handheld movement. Dancing shots, walking shots, anything grabbed
+  quickly. Stabilization helps genuinely with shake, and it is worth knowing it cannot help with
+  rolling shutter skew, which is what the wobble on fast pans usually is.</p>
+
+  <h2>Two cameras that do not match</h2>
+  <p>A second shooter, a locked-off camera at the back, and a phone clip someone sent you afterwards.
+  Three sources, three colour renderings, three noise characteristics, and often three frame rates.</p>
+  <p>Normalise before you cut, not after. Get everything to the same frame rate and the same colour
+  range first, then grade. The alternative is a grade that looks right on the A camera and wrong every
+  time you cut away, which is the sort of thing that is invisible while you work and obvious to a
+  viewer.</p>
+  <p>Phone footage is the frequent offender because it is often variable frame rate and often HDR.
+  Both are handled on the way in rather than left for you to notice at the export stage.</p>
+
+  <h2>The delivery problem nobody warns you about</h2>
+  <p>You grade a film carefully, export it, and the couple watches it on a platform that re-encodes
+  everything you sent. Gradients band, the dress goes blotchy in the highlights, and the grain you
+  added reads as noise.</p>
+  <p>The practical countermeasures are to clean the footage before delivery so the encoder spends its
+  budget on faces rather than noise, and to deliver at a higher resolution than strictly needed,
+  because platforms allocate bitrate by resolution. A 1080p film uploaded as 4K frequently survives
+  better than the same film uploaded at 1080p.</p>
+
+  <h2>Client media and where it goes</h2>
+  <p>This is the part that matters more in this genre than most. Wedding footage is intimate, it
+  includes children and elderly relatives, and couples increasingly ask where their files are being
+  processed. Crisp runs everything on your Mac, with no upload, no account and no cloud step, which
+  makes that an easy question to answer rather than an awkward one.</p>
+  <p>It also means an overnight batch costs electricity rather than per-minute cloud billing, which
+  matters when a wedding is three hundred gigabytes of source.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It is not an NLE. If you are cutting a full film with multicam sync, audio sweetening, music
+  licensing and a client review round, that lives in Resolve or Premiere and should. Crisp is a
+  finishing and repair tool: cleaning up the footage that needs help, fixing the clips that do not
+  match, making the vertical cutdowns for socials, and handling the archive job on the couple's
+  parents' old tapes.</p>
+  <p>It also cannot rescue a shot that missed focus, recover a blown highlight on a white dress, or
+  fix a ceremony where the audio was never recorded. Nothing can, and knowing that before you promise
+  a fix is worth more than any feature.</p>
+""",
+ "faq": [
+  ("Can Crisp match two cameras automatically?",
+   "It normalises the technical side, frame rate, colour range and HDR, so both clips are in the same space before you grade. Matching the creative look of two different sensors is still a grading decision, and it is much easier once the technical differences are gone."),
+  ("Will it fix noisy reception footage?",
+   "Yes, that is one of the things on-device denoising genuinely does well, and doing it before grading rather than after makes a real difference. It cannot recover detail that was never captured in the very darkest areas."),
+  ("Is client footage uploaded anywhere?",
+   "No. Everything runs on your Mac. There is no upload endpoint, no account and no cloud processing step, which for wedding work tends to be the deciding factor rather than a nice-to-have."),
+  ("Can it replace Premiere or Resolve for a full wedding film?",
+   "No, and it does not try to. It has a timeline for assembling and cutting down, but a full film with multicam sync and audio work belongs in an NLE. Crisp is for the repair and finishing passes around that."),
+ ],
+},
+{
+ "slug": "for/teachers",
+ "section": "By use",
+ "crumb": "Teachers",
+ "title": "Crisp for teachers and educators — offline video on a Mac",
+ "h1": "Crisp for teachers and educators",
+ "desc": "Lecture recordings that are too big to share, screen captures where the text went soft, and student footage that should not be uploaded to a third party.",
+ "faq_heading": "Classroom video, in detail",
+ "body": """
+  <p>Teaching video has an unusual constraint: most of the tooling assumes you are making something
+  polished for an audience of strangers, when what you actually need is something clear, quick to
+  produce, and safe to share within an institution.</p>
+
+  <h2>The four problems that come up constantly</h2>
+  <p><strong>The file is too big to send.</strong> A one-hour lecture recording can be several
+  gigabytes, and mail systems and LMS uploads reject it. Compression is the whole answer here, and it
+  costs far less quality than people expect on screen-heavy content, because a static slide compresses
+  extremely well.</p>
+  <p><strong>The text in the screen recording is soft.</strong> This is usually not a resolution
+  problem. Video stores colour at a quarter the detail of brightness, so coloured text on a
+  contrasting background is the worst case for the format. Recording at a higher resolution helps more
+  than raising the bitrate does.</p>
+  <p><strong>The recording is an hour of which twelve minutes matter.</strong> Trimming before you do
+  anything else is the single biggest time saver, both for you and for the student watching.</p>
+  <p><strong>The audio is quiet in places.</strong> A lapel microphone that drifted, or a question from
+  the back of the room. Levelling the quiet parts up rather than turning everything up is what makes
+  a recording listenable on a laptop speaker.</p>
+
+  <h2>Student footage and where it goes</h2>
+  <p>This is the constraint that rules out most convenient tools. Footage containing identifiable
+  students frequently cannot be uploaded to a third-party service, and the answer to "where is this
+  processed" needs to be simple enough to put in an email to a head of department.</p>
+  <p>Crisp processes everything on the machine. No upload, no account, nothing transmitted. That is a
+  short answer to a question that otherwise involves reading somebody's terms of service.</p>
+
+  <h2>A workflow that fits a prep period</h2>
+  <p>Trim to what matters. Compress for the platform you are actually using. Level the audio. Export.
+  Four steps, all of which can be asked for in plain English rather than found in a menu, which
+  matters when the tool is used once a fortnight rather than daily.</p>
+  <p>For lecture capture specifically, the compression step is the one worth learning. Slides and
+  talking heads compress dramatically better than general footage, so you can often cut the file size
+  by an order of magnitude with no visible difference on the screen a student will watch it on.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It does not record your screen, so you still want whatever capture tool you already use. It does
+  not generate captions from speech, so accessibility captioning needs a dedicated service or your
+  institution's system, and that is worth checking before you plan around it. And it is not a course
+  authoring tool, so quizzes, chaptering and LMS packaging live elsewhere.</p>
+  <p>What it does is take the raw recording you already have and make it smaller, shorter, clearer and
+  easier to listen to, without any of it leaving your Mac.</p>
+""",
+ "faq": [
+  ("Can Crisp generate captions from the audio?",
+   "No. It burns in typed captions you provide, but it does not transcribe speech. If you need accessibility captions, use a transcription service or your institution's system and bring the text across."),
+  ("How much can I compress a lecture recording?",
+   "More than you would expect. Slides and a mostly static presenter compress extremely well, so an order-of-magnitude reduction with no visible difference is common. Footage with lots of movement will not shrink nearly as far."),
+  ("Why is the text in my screen recording blurry?",
+   "Chroma subsampling. Video stores colour at a quarter the resolution of brightness, and text is defined by a colour edge. Recording at a higher resolution gives the colour channel more samples and helps more than raising the bitrate."),
+  ("Is student footage safe?",
+   "It never leaves the machine. There is no upload endpoint and no account, so the answer to an institutional question about third-party processing is simply that there isn't any."),
+ ],
+},
 ]
