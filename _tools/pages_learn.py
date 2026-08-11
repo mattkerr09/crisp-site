@@ -776,4 +776,129 @@ PAGES = [
    "For the standard upscale lane it uses that engine, and says so. The rest of the app is its own: the timeline editor, the plain-English layer, stabilization, grading, captions, the montage builder, and the generative Max restore lane, which is a different model entirely."),
  ],
 },
+
+{
+ "slug": "learn/what-is-rolling-shutter",
+ "crumb": "Rolling shutter",
+ "title": "What is rolling shutter, and can it be fixed? — Crisp",
+ "h1": "What is rolling shutter?",
+ "desc": "Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.",
+ "faq_heading": "Rolling shutter, in detail",
+ "body": """
+  <p>Pan quickly past a lamp post and it leans. Film out of a car window and the buildings tilt.
+  Shoot a spinning propeller and it turns into something from a dream. That is rolling shutter, and
+  once you know the cause you can predict exactly when it will bite.</p>
+
+  <h2>The sensor doesn't take the picture all at once</h2>
+  <p>A global shutter captures every pixel at the same instant. Almost nothing you own has one. Most
+  phone, mirrorless and action-camera sensors read out row by row from the top of the frame to the
+  bottom, over a few milliseconds.</p>
+  <p>That means the bottom of a frame is a snapshot of a slightly later moment than the top. If
+  nothing moved during the readout, no problem. If the camera or the subject moved, each row
+  captured the scene from a marginally different position, and straight vertical lines come out
+  slanted.</p>
+
+  <h2>Why the effect scales the way it does</h2>
+  <p>The distortion is proportional to how far the scene travels across the sensor during one
+  readout. That gives you the practical rules.</p>
+  <p>Fast pans are worse than slow pans. Long lenses are worse than wide ones, because the same
+  angular movement sweeps far more of the frame. Vibration from an engine or a drone body is
+  especially bad, because it moves the camera many times within a single readout and the frame
+  ripples rather than simply leaning. And a cheaper or older sensor generally reads out more slowly,
+  so it distorts more at the same shutter speed.</p>
+  <p>Shutter speed itself is not the cause, which surprises people. A fast shutter freezes motion
+  within each row but does nothing about the delay between the first row and the last.</p>
+
+  <h2>Can it be fixed afterwards?</h2>
+  <p>Not in Crisp, and it is worth explaining why rather than just saying no.</p>
+  <p>Stabilization works by estimating how the whole frame moved between one frame and the next, then
+  shifting the frame back to cancel it. That is a single transform applied to the entire picture.
+  Rolling shutter is not a whole-frame offset. Every row needs a different correction, because every
+  row was captured at a different moment, so undoing it means estimating motion per row and warping
+  the frame non-uniformly. That is a fundamentally harder operation, it needs a good estimate of the
+  sensor's readout time, and done badly it introduces wobble of its own.</p>
+  <p>So stabilizing skewed footage gives you steady, still-skewed footage. Worse, removing the shake
+  can make the skew more visible, because the shake was masking it.</p>
+
+  <h2>What to do instead</h2>
+  <p>Almost all of the fix happens at the camera. Pan slower, and if you need a fast whip, embrace it
+  as a transition rather than something viewers will study. Use a wider lens and step closer. Isolate
+  the camera from vibration, which matters more than anything else on drones and vehicles. Turn on
+  in-body or in-app stabilization, because correcting during capture is far more effective than
+  correcting after.</p>
+  <p>In the edit, the honest options are to cut around the worst of it, slow the shot down so the
+  distortion reads as motion blur, or crop in on a region where the skew is less obvious. None of
+  those are glamorous, and all of them beat a render that cannot deliver.</p>
+""",
+ "faq": [
+  ("Is rolling shutter the same as motion blur?",
+   "No. Motion blur is smearing within a single exposure and affects the whole frame equally. Rolling shutter is geometric distortion caused by different rows being captured at different times, so it leans and wobbles rather than smearing."),
+  ("Does a faster shutter speed help?",
+   "Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see."),
+  ("Why do propellers and helicopter blades look so strange?",
+   "They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves."),
+  ("Will Crisp's stabilizer make it worse?",
+   "It will not add skew, but it can make existing skew more noticeable by removing the shake that was disguising it. If a clip is mostly rolling shutter rather than shake, stabilizing costs you a small crop for little visible gain."),
+ ],
+},
+{
+ "slug": "learn/what-is-chroma-subsampling",
+ "crumb": "Chroma subsampling",
+ "title": "What is chroma subsampling? 4:2:0 vs 4:4:4 explained — Crisp",
+ "h1": "What is chroma subsampling?",
+ "desc": "Almost every video you own stores colour at a quarter of the detail of brightness. Usually invisible, occasionally the reason red text looks like it is bleeding.",
+ "faq_heading": "Colour detail, in detail",
+ "body": """
+  <p>Here is a fact about nearly every video file you have ever watched: it stores far less colour
+  information than brightness information. Not a little less. Typically a quarter as much.</p>
+  <p>This is chroma subsampling, it has been standard since analogue television, and it works because
+  of how your eyes are built.</p>
+
+  <h2>Your eyes are not symmetrical about this</h2>
+  <p>Human vision has far more rod cells, which resolve brightness, than cone cells, which resolve
+  colour. We are extremely good at seeing fine detail in light and shade, and comparatively poor at
+  seeing fine detail in hue. Video encoding exploits that directly: keep full resolution for
+  brightness, throw away most of the colour resolution, and the loss is close to invisible on the
+  sort of images cameras usually capture.</p>
+  <p>The notation describes the sampling of a small block of pixels. 4:4:4 keeps colour at full
+  resolution. 4:2:2 halves it horizontally. 4:2:0 halves it both horizontally and vertically, so one
+  colour sample covers a two-by-two block of pixels. That last one is what your phone shoots, what
+  streaming services deliver, and what almost every h.264 and HEVC file uses.</p>
+
+  <h2>When you actually notice</h2>
+  <p>On ordinary photographic footage, essentially never. The places it shows up are specific and
+  worth knowing, because they explain problems that otherwise look like a bug.</p>
+  <p><strong>Saturated text and graphics.</strong> Red or blue text on a contrasting background is
+  the classic case. The edges look soft or fringed, because the letterforms are defined by a colour
+  boundary that is being stored at half or quarter resolution. Screen recordings suffer the most.</p>
+  <p><strong>Chroma keying.</strong> Pulling a clean key from green screen footage is much harder at
+  4:2:0, because the edge between subject and background is exactly the fine colour detail that was
+  discarded. This is why people shoot 4:2:2 or better for compositing.</p>
+  <p><strong>Heavy grading.</strong> Pushing colour hard exaggerates whatever colour resolution you
+  have, so banding and blockiness in gradients become visible.</p>
+  <p><strong>Repeated re-encoding.</strong> Each generation resamples chroma again, and errors
+  compound around sharp colour edges.</p>
+
+  <h2>What you can and cannot do about it</h2>
+  <p>You cannot recover colour detail that was never sampled, in the same way you cannot recover
+  focus. Converting a 4:2:0 file to 4:4:4 upsamples what is there; it invents nothing.</p>
+  <p>What you can do is avoid making it worse. Shoot 4:2:2 if your camera offers it and you plan to
+  key or grade heavily. Keep an intermediate master rather than re-encoding a delivery file
+  repeatedly. And when adding text or graphics, do it at the final stage so the letterforms are
+  encoded once rather than surviving several generations.</p>
+  <p>Crisp exports 4:2:0 for the same reason everyone does: universal compatibility. A file that
+  plays everywhere is worth more than colour resolution most viewers cannot see, and the exceptions
+  above are narrow enough to plan around.</p>
+""",
+ "faq": [
+  ("Should I export 4:4:4?",
+   "Only for a specific reason, such as delivering to someone who will key or grade the footage, or archiving text-heavy screen content. For anything headed to a viewer, 4:2:0 is what plays reliably everywhere, and the difference is invisible on photographic material."),
+  ("Why does red text look blurry in my screen recording?",
+   "Chroma subsampling. Text edges are defined by a colour boundary, and at 4:2:0 that boundary is stored at a quarter resolution. Recording at a higher resolution helps more than raising the bitrate, because it gives the colour channel more samples to work with."),
+  ("Does upscaling fix it?",
+   "It can improve the appearance, because a good model reconstructs plausible edges, but it is not recovering the original colour samples. Treat it as making the best of what survived rather than a genuine restoration."),
+  ("Is this why green screen keys look ragged?",
+   "Frequently, yes. The subject-to-background edge is precisely the fine colour detail that 4:2:0 discards. Shooting 4:2:2 or better, and lighting the screen evenly, both matter more than the software doing the key."),
+ ],
+},
 ]
