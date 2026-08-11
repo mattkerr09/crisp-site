@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is rolling shutter, and can it be fixed? — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-rolling-shutter/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is rolling shutter?">
+<meta property="og:description" content="Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-rolling-shutter/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is rolling shutter?">
+<meta name="twitter:description" content="Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is rolling shutter?","description":"Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is rolling shutter the same as motion blur?","acceptedAnswer":{"@type":"Answer","text":"No. Motion blur is smearing within a single exposure and affects the whole frame equally. Rolling shutter is geometric distortion caused by different rows being captured at different times, so it leans and wobbles rather than smearing."}},{"@type":"Question","name":"Does a faster shutter speed help?","acceptedAnswer":{"@type":"Answer","text":"Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see."}},{"@type":"Question","name":"Why do propellers and helicopter blades look so strange?","acceptedAnswer":{"@type":"Answer","text":"They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves."}},{"@type":"Question","name":"Will Crisp's stabilizer make it worse?","acceptedAnswer":{"@type":"Answer","text":"It will not add skew, but it can make existing skew more noticeable by removing the shake that was disguising it. If a clip is mostly rolling shutter rather than shake, stabilizing costs you a small crop for little visible gain."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Rolling shutter</div>
+  <h1>What is rolling shutter?</h1>
+
+  <p>Pan quickly past a lamp post and it leans. Film out of a car window and the buildings tilt.
+  Shoot a spinning propeller and it turns into something from a dream. That is rolling shutter, and
+  once you know the cause you can predict exactly when it will bite.</p>
+
+  <h2>The sensor doesn't take the picture all at once</h2>
+  <p>A global shutter captures every pixel at the same instant. Almost nothing you own has one. Most
+  phone, mirrorless and action-camera sensors read out row by row from the top of the frame to the
+  bottom, over a few milliseconds.</p>
+  <p>That means the bottom of a frame is a snapshot of a slightly later moment than the top. If
+  nothing moved during the readout, no problem. If the camera or the subject moved, each row
+  captured the scene from a marginally different position, and straight vertical lines come out
+  slanted.</p>
+
+  <h2>Why the effect scales the way it does</h2>
+  <p>The distortion is proportional to how far the scene travels across the sensor during one
+  readout. That gives you the practical rules.</p>
+  <p>Fast pans are worse than slow pans. Long lenses are worse than wide ones, because the same
+  angular movement sweeps far more of the frame. Vibration from an engine or a drone body is
+  especially bad, because it moves the camera many times within a single readout and the frame
+  ripples rather than simply leaning. And a cheaper or older sensor generally reads out more slowly,
+  so it distorts more at the same shutter speed.</p>
+  <p>Shutter speed itself is not the cause, which surprises people. A fast shutter freezes motion
+  within each row but does nothing about the delay between the first row and the last.</p>
+
+  <h2>Can it be fixed afterwards?</h2>
+  <p>Not in Crisp, and it is worth explaining why rather than just saying no.</p>
+  <p>Stabilization works by estimating how the whole frame moved between one frame and the next, then
+  shifting the frame back to cancel it. That is a single transform applied to the entire picture.
+  Rolling shutter is not a whole-frame offset. Every row needs a different correction, because every
+  row was captured at a different moment, so undoing it means estimating motion per row and warping
+  the frame non-uniformly. That is a fundamentally harder operation, it needs a good estimate of the
+  sensor's readout time, and done badly it introduces wobble of its own.</p>
+  <p>So stabilizing skewed footage gives you steady, still-skewed footage. Worse, removing the shake
+  can make the skew more visible, because the shake was masking it.</p>
+
+  <h2>What to do instead</h2>
+  <p>Almost all of the fix happens at the camera. Pan slower, and if you need a fast whip, embrace it
+  as a transition rather than something viewers will study. Use a wider lens and step closer. Isolate
+  the camera from vibration, which matters more than anything else on drones and vehicles. Turn on
+  in-body or in-app stabilization, because correcting during capture is far more effective than
+  correcting after.</p>
+  <p>In the edit, the honest options are to cut around the worst of it, slow the shot down so the
+  distortion reads as motion blur, or crop in on a region where the skew is less obvious. None of
+  those are glamorous, and all of them beat a render that cannot deliver.</p>
+
+  <h2>Rolling shutter, in detail</h2>
+  <h3>Is rolling shutter the same as motion blur?</h3>
+  <p>No. Motion blur is smearing within a single exposure and affects the whole frame equally. Rolling shutter is geometric distortion caused by different rows being captured at different times, so it leans and wobbles rather than smearing.</p>
+  <h3>Does a faster shutter speed help?</h3>
+  <p>Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see.</p>
+  <h3>Why do propellers and helicopter blades look so strange?</h3>
+  <p>They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves.</p>
+  <h3>Will Crisp's stabilizer make it worse?</h3>
+  <p>It will not add skew, but it can make existing skew more noticeable by removing the shake that was disguising it. If a clip is mostly rolling shutter rather than shake, stabilizing costs you a small crop for little visible gain.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>

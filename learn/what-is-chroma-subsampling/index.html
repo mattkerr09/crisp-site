@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is chroma subsampling? 4:2:0 vs 4:4:4 explained — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Almost every video you own stores colour at a quarter of the detail of brightness. Usually invisible, occasionally the reason red text looks like it is bleeding.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-is-chroma-subsampling/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is chroma subsampling?">
+<meta property="og:description" content="Almost every video you own stores colour at a quarter of the detail of brightness. Usually invisible, occasionally the reason red text looks like it is bleeding.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-is-chroma-subsampling/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is chroma subsampling?">
+<meta name="twitter:description" content="Almost every video you own stores colour at a quarter of the detail of brightness. Usually invisible, occasionally the reason red text looks like it is bleeding.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is chroma subsampling?","description":"Almost every video you own stores colour at a quarter of the detail of brightness. Usually invisible, occasionally the reason red text looks like it is bleeding.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I export 4:4:4?","acceptedAnswer":{"@type":"Answer","text":"Only for a specific reason, such as delivering to someone who will key or grade the footage, or archiving text-heavy screen content. For anything headed to a viewer, 4:2:0 is what plays reliably everywhere, and the difference is invisible on photographic material."}},{"@type":"Question","name":"Why does red text look blurry in my screen recording?","acceptedAnswer":{"@type":"Answer","text":"Chroma subsampling. Text edges are defined by a colour boundary, and at 4:2:0 that boundary is stored at a quarter resolution. Recording at a higher resolution helps more than raising the bitrate, because it gives the colour channel more samples to work with."}},{"@type":"Question","name":"Does upscaling fix it?","acceptedAnswer":{"@type":"Answer","text":"It can improve the appearance, because a good model reconstructs plausible edges, but it is not recovering the original colour samples. Treat it as making the best of what survived rather than a genuine restoration."}},{"@type":"Question","name":"Is this why green screen keys look ragged?","acceptedAnswer":{"@type":"Answer","text":"Frequently, yes. The subject-to-background edge is precisely the fine colour detail that 4:2:0 discards. Shooting 4:2:2 or better, and lighting the screen evenly, both matter more than the software doing the key."}}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Learn &rsaquo; Chroma subsampling</div>
+  <h1>What is chroma subsampling?</h1>
+
+  <p>Here is a fact about nearly every video file you have ever watched: it stores far less colour
+  information than brightness information. Not a little less. Typically a quarter as much.</p>
+  <p>This is chroma subsampling, it has been standard since analogue television, and it works because
+  of how your eyes are built.</p>
+
+  <h2>Your eyes are not symmetrical about this</h2>
+  <p>Human vision has far more rod cells, which resolve brightness, than cone cells, which resolve
+  colour. We are extremely good at seeing fine detail in light and shade, and comparatively poor at
+  seeing fine detail in hue. Video encoding exploits that directly: keep full resolution for
+  brightness, throw away most of the colour resolution, and the loss is close to invisible on the
+  sort of images cameras usually capture.</p>
+  <p>The notation describes the sampling of a small block of pixels. 4:4:4 keeps colour at full
+  resolution. 4:2:2 halves it horizontally. 4:2:0 halves it both horizontally and vertically, so one
+  colour sample covers a two-by-two block of pixels. That last one is what your phone shoots, what
+  streaming services deliver, and what almost every h.264 and HEVC file uses.</p>
+
+  <h2>When you actually notice</h2>
+  <p>On ordinary photographic footage, essentially never. The places it shows up are specific and
+  worth knowing, because they explain problems that otherwise look like a bug.</p>
+  <p><strong>Saturated text and graphics.</strong> Red or blue text on a contrasting background is
+  the classic case. The edges look soft or fringed, because the letterforms are defined by a colour
+  boundary that is being stored at half or quarter resolution. Screen recordings suffer the most.</p>
+  <p><strong>Chroma keying.</strong> Pulling a clean key from green screen footage is much harder at
+  4:2:0, because the edge between subject and background is exactly the fine colour detail that was
+  discarded. This is why people shoot 4:2:2 or better for compositing.</p>
+  <p><strong>Heavy grading.</strong> Pushing colour hard exaggerates whatever colour resolution you
+  have, so banding and blockiness in gradients become visible.</p>
+  <p><strong>Repeated re-encoding.</strong> Each generation resamples chroma again, and errors
+  compound around sharp colour edges.</p>
+
+  <h2>What you can and cannot do about it</h2>
+  <p>You cannot recover colour detail that was never sampled, in the same way you cannot recover
+  focus. Converting a 4:2:0 file to 4:4:4 upsamples what is there; it invents nothing.</p>
+  <p>What you can do is avoid making it worse. Shoot 4:2:2 if your camera offers it and you plan to
+  key or grade heavily. Keep an intermediate master rather than re-encoding a delivery file
+  repeatedly. And when adding text or graphics, do it at the final stage so the letterforms are
+  encoded once rather than surviving several generations.</p>
+  <p>Crisp exports 4:2:0 for the same reason everyone does: universal compatibility. A file that
+  plays everywhere is worth more than colour resolution most viewers cannot see, and the exceptions
+  above are narrow enough to plan around.</p>
+
+  <h2>Colour detail, in detail</h2>
+  <h3>Should I export 4:4:4?</h3>
+  <p>Only for a specific reason, such as delivering to someone who will key or grade the footage, or archiving text-heavy screen content. For anything headed to a viewer, 4:2:0 is what plays reliably everywhere, and the difference is invisible on photographic material.</p>
+  <h3>Why does red text look blurry in my screen recording?</h3>
+  <p>Chroma subsampling. Text edges are defined by a colour boundary, and at 4:2:0 that boundary is stored at a quarter resolution. Recording at a higher resolution helps more than raising the bitrate, because it gives the colour channel more samples to work with.</p>
+  <h3>Does upscaling fix it?</h3>
+  <p>It can improve the appearance, because a good model reconstructs plausible edges, but it is not recovering the original colour samples. Treat it as making the best of what survived rather than a genuine restoration.</p>
+  <h3>Is this why green screen keys look ragged?</h3>
+  <p>Frequently, yes. The subject-to-background edge is precisely the fine colour detail that 4:2:0 discards. Shooting 4:2:2 or better, and lighting the screen evenly, both matter more than the software doing the key.</p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
