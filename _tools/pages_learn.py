@@ -1290,4 +1290,136 @@ PAGES = [
    "It never leaves the machine. There is no upload endpoint and no account, so the answer to an institutional question about third-party processing is simply that there isn't any."),
  ],
 },
+
+{
+ "slug": "for/product-video",
+ "section": "By use",
+ "crumb": "Product video",
+ "title": "Crisp for product and e-commerce video on a Mac",
+ "h1": "Crisp for product and e-commerce video",
+ "desc": "A hundred listings that need the same treatment, vertical cutdowns for every platform, and footage that has to look consistent rather than cinematic.",
+ "faq_heading": "Product video, in detail",
+ "body": """
+  <p>Product video has a different success criterion from almost everything else. Nobody is going to
+  praise your shot selection. The video works if the item is clearly visible, the colour is accurate,
+  the file loads fast, and the two hundred other listings look like they came from the same shop.</p>
+  <p>Consistency and throughput, in other words, rather than craft.</p>
+
+  <h2>The throughput problem</h2>
+  <p>One product video is easy. A catalogue of them is a different job, and it is where most people
+  lose their evenings. The same crop, the same grade, the same compression, applied identically, over
+  and over.</p>
+  <p>Batch processing is the whole answer, and it is worth structuring your shoot around it: shoot
+  every item the same way, at the same distance, under the same light, so one recipe applies to all
+  of them. Footage that varies shot to shot forces you back into per-item decisions, which is the
+  cost you were trying to avoid.</p>
+
+  <h2>Colour accuracy matters more here than anywhere</h2>
+  <p>In most genres colour is taste. In e-commerce it is a returns problem. A jumper that photographs
+  slightly warmer than it is generates a stream of complaints and refunds, and no amount of styling
+  compensates for it.</p>
+  <p>The practical measures are unglamorous. Shoot under consistent light rather than mixed daylight
+  and tungsten. Include a reference in a test frame so you have something to check against. Grade to
+  accurate rather than pleasing. And be aware that if your camera shoots HDR by default, footage will
+  render differently across devices unless it is converted properly, which is a silent way to end up
+  with inaccurate colour without ever making a colour decision.</p>
+
+  <h2>One master, many shapes</h2>
+  <p>The same product video usually needs to exist as 16:9 for the listing page, 9:16 for stories and
+  short-form, and often 1:1 for a feed. Shoot wide enough to survive the crop, keep the full-frame
+  master, and generate the shapes from it rather than shooting three times.</p>
+  <p>For a centred product on a plain background, cropping is usually fine and keeps full resolution.
+  For anything where the composition matters, filling the frame with a blurred background loses
+  nothing and reads as deliberate.</p>
+
+  <h2>File size is a conversion metric</h2>
+  <p>Product video is frequently watched on a phone on a weak connection by someone deciding whether
+  to buy. A file that takes four seconds to start is a file many people never watch. Compression is
+  not a quality compromise here, it is part of the job, and product footage on a plain background
+  compresses extremely well because most of the frame is not changing.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It does not remove backgrounds or generate cutouts, so if your workflow depends on isolating the
+  product from its surroundings, that lives elsewhere. It does not do motion graphics, animated price
+  overlays or template-driven branding. And it will not rescue a badly lit shot: no restoration
+  recovers detail from a blown highlight on a glossy surface, which is the single most common product
+  photography failure.</p>
+  <p>What it does is take the footage you shot and make it consistent, correctly sized, correctly
+  coloured, and small enough to load, in batches, without uploading a product line that has not
+  launched yet to somebody else's server.</p>
+""",
+ "faq": [
+  ("Can Crisp process a whole catalogue at once?",
+   "Batch processing is part of the paid unlock, and it applies the same treatment across a set of clips. The practical constraint is your own shoot: a recipe only applies cleanly if the footage was captured consistently."),
+  ("Does it remove backgrounds?",
+   "No. There is no cutout or background-removal lane. If isolating the product is core to your workflow, that needs a different tool and Crisp handles the finishing afterwards."),
+  ("How small should a product video be?",
+   "Small enough to start almost instantly on a phone. Product footage on a plain background compresses far better than general video, so aggressive compression usually costs nothing visible and directly affects how many people watch it."),
+  ("Will upscaling make an old product video usable?",
+   "If it is soft because it is low resolution, yes, meaningfully. If it is soft because it missed focus or the highlights are blown, no. Those are not recoverable by any tool, and re-shooting is cheaper than the render time."),
+ ],
+},
+{
+ "slug": "for/musicians",
+ "section": "By use",
+ "crumb": "Musicians",
+ "title": "Crisp for musicians — live footage and music video on a Mac",
+ "h1": "Crisp for musicians",
+ "desc": "Dark venue footage shot on phones, three angles of the same set that do not match, and a release deadline. The realistic version of what can be fixed.",
+ "faq_heading": "Music footage, in detail",
+ "body": """
+  <p>Almost all music footage arrives with the same two problems: it was shot in a dark room, and it
+  came from several phones held by people who were not thinking about your edit.</p>
+  <p>Both are more fixable than they look, within limits worth knowing in advance.</p>
+
+  <h2>Dark venues are a noise problem, not a brightness problem</h2>
+  <p>The instinct is to brighten the footage. That usually makes it worse, because lifting the
+  exposure lifts the sensor noise with it, and the noise in a dark venue is the dominant fault.</p>
+  <p>The order that works is to clean the noise first, then lift, then grade. Doing it the other way
+  bakes amplified noise into the picture before anything has a chance to remove it. Stage lighting also
+  tends to produce heavily saturated colour that clips in one channel, most often red, and that part
+  is genuinely unrecoverable rather than a grading challenge.</p>
+
+  <h2>Several phones, one show</h2>
+  <p>Audience footage is a gift and a nuisance. Different phones, different colour rendering,
+  different frame rates, and often variable frame rate, which is why a multi-angle cut can drift out
+  of sync with the audio partway through even when it started aligned.</p>
+  <p>Normalise everything to a constant frame rate and the same colour range before you cut. The sync
+  problem largely disappears, and the grade you apply to one angle stops looking wrong on the next.</p>
+  <p>Use the board mix or a dedicated recorder for the audio and treat the phone audio as a sync
+  reference only. No amount of processing turns a phone microphone in front of a PA into a usable
+  music recording, and this is the single most common way a live video gets abandoned.</p>
+
+  <h2>Short-form is the actual distribution</h2>
+  <p>The full show video matters less than the thirty-second clips cut from it. That means vertical
+  versions, and it means picking the moments where something visibly happens rather than the moments
+  that sounded best.</p>
+  <p>Shoot wide enough that a vertical crop still has the performer in it, keep the full-frame master,
+  and generate the cutdowns from it. An auto-montage cut to the music is a reasonable starting point
+  for a highlights reel, and it is a starting point rather than a finished edit.</p>
+
+  <h2>Old footage from before phones were good</h2>
+  <p>Plenty of bands have a box of tapes from a decade when video was terrible. That material responds
+  well to restoration, because the faults are exactly the recoverable kind: low resolution, analogue
+  noise, and interlacing. Deinterlace first, then denoise, then upscale, and it is worth the render
+  time on the one show that mattered.</p>
+
+  <h2>Where Crisp is the wrong tool</h2>
+  <p>It does not touch your music. There is no mixing, mastering, pitch correction or stem separation,
+  and it deliberately refuses to pretend it can isolate the music from a mixed soundtrack. It is not
+  a multicam NLE either, so genuine multi-angle synced editing belongs in Resolve or Premiere.</p>
+  <p>And it cannot make a phone recording of a PA sound like a board mix. That one is worth accepting
+  early, because it decides whether the shoot is worth doing at all.</p>
+ """,
+ "faq": [
+  ("Can Crisp fix audio recorded on a phone at a gig?",
+   "It can level and clean it up, and it cannot make it sound like a proper recording. A phone microphone in front of a PA is clipping and compressing before the file even exists. Use a board feed or a recorder and keep the phone audio for sync."),
+  ("Can it separate the music from the crowd noise?",
+   "No, and it says so rather than trying. Stem separation is a different class of tool. Crisp handles overall level, background noise reduction and wind, not pulling one source out of a mix."),
+  ("Why does my multi-angle cut drift out of sync?",
+   "Almost always variable frame rate on the phone footage. The clip declares one rate and was recorded at a changing one, so video and audio drift apart as it plays. Converting to a constant frame rate before editing fixes it."),
+  ("Is old tape footage of a show worth restoring?",
+   "Usually yes. The faults on old live footage are the recoverable kind, low resolution, analogue noise and interlacing, and the results are often dramatic. Deinterlace before upscaling or the upscaler will sharpen the comb artefacts."),
+ ],
+},
 ]
