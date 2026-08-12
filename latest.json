@@ -1,10 +1,10 @@
 {
-  "version": "0.1.794",
-  "notes": "A stray double space no longer loses your request. Typing make  it  black  and  white with an extra space used to reach nothing at all, silently.",
-  "pub_date": "2026-08-12T00:31:46Z",
+  "version": "0.1.795",
+  "notes": "Hyphens no longer lose your request. Asking for black-and-white, or to up-scale a clip, used to reach nothing at all even though slow-motion and fast-forward worked.",
+  "pub_date": "2026-08-12T01:26:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZXZG9KbldRRzlYbGU5MGtpNGFSNVRRdkdYTkJTL0g3MTB2Q3B5K2NqbU9ZeVRORXZQdC8xS1hPNjlaZzBucG1Wc1Q4U3FkbkVZVWJKcDY5MkZPVGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDk0Mjk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovNHVybkR4K3NXczhmb2NLRlFlNWgzaHFtZm5qOFhnK1ZwK3UzSFdrdW1HdjlidExHejZzRlhYMnVXVDRhaCs0VlVtN0ZvSktJekxFR3Z3WEhVL0dBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNFc2s4ZWR4clJuT0Mwbm1LOTdGWWRRQkl1cVp0WDhaQ2ppUTFac3JRTUxqSUVjT29tYmtWZmtQSDRvMlJ1ZE9reDc0NEFOLzBDbjYvRnQ3YUltaUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDk3OTU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGekZmRlRCQWs2b3ZyM25vYXJiNG5lR2NaMi9DdmZyV1dqZzE5Kzd5VTA2Z0tTVkZoTlF3UjBCOHVLaHJSRWEzbkh0VTVLNk55RE43UVFUL1dJSnNBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
