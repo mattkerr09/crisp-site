@@ -1,10 +1,10 @@
 {
-  "version": "0.1.796",
-  "notes": "Housekeeping build. The timeline playhead fix from an earlier release is now guarded by a test that can actually catch it breaking again.",
-  "pub_date": "2026-08-12T02:22:34Z",
+  "version": "0.1.797",
+  "notes": "Housekeeping build. Removed a stale test guard that could have hidden 48 checks without reporting anything.",
+  "pub_date": "2026-08-12T03:40:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1FeFoyQmsycTl4UCtJcXpqdEUxcXpFMFdGbFBLNk1HUHdoY1VuYVQyWnVJeFBFaEo1T3pkOElFWFF5eU5xM2RVcitWWS9iL0lXaTBtK0t5OW5oYndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTAxMjUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVZ3dwMys1TE9kSXVUMEZlZUhURThNZ2cvVDRadkszS21hbTBrOFF5UXRzNENoZnZ3T3FzejBvdnpiOFNXdWJMWFJ0WGgwcU9ReXdZRWV6VmhQOWdEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxyTGpoWkY1Ly9scUE1K29sdHBNajFCNWgyRlJXdmZxOENhUUlhQ2FrQkFWMVhWT2Jqd1pqYWE0d0RCT29PVDlGdjZDSFErRGxSdklqVXBkZ1hpemdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTA1OTQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMaTlTZ0VCN2dpT3gzWTMzdDNpYlM2TW9vMjJMZ09VM1FUMC9LVEFnMXRUMGRhWWdLelgraFU3cDYyNTNqK01XVjM5NUttbHJqNDJISzUyVzkzYmREZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
