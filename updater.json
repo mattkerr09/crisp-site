@@ -1,7 +1,7 @@
 {
   "version": "0.1.811",
   "notes": "Crisp no longer starts a multi-hour restore just because you said something was \"really bad\". It reaches for the heaviest restore when you are talking about the picture \u2014 \"really bad quality\", \"the footage is really bad\" \u2014 and complaints about the lighting or the framing now get an honest answer instead.",
-  "pub_date": "2026-08-12T20:10:01Z",
+  "pub_date": "2026-08-12T20:10:51Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBKT0o2bm1uMS82Mi9MRjRCVU4yL2lMeGF1bTdNNVJJcEU1RkkxVzcyQ1h1WTAram1xNExMcXh4NU1YOUl0R0hIcXREVys3ZjhlQ28vTTkzOUFjV0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTY0NDg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6aTNIaVZqU3RPNklBSDRYVlRiOEFDU0w1c01zZ0NuWDgyYW90VXZGbi9pYVhyc0lCbTh2cHRGVnNldDV4WTRRcmJvWE55Tk14azQ3UGtoSHhRSHNCZz09Cg==",
