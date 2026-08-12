@@ -1,7 +1,7 @@
 {
   "version": "0.1.812",
   "notes": "Rotating and flipping now do what you asked however you word it. \"Rotate it 180\" was turning clips 90 degrees sideways, and \"flip it vertically\" was mirroring them left-to-right instead of top-to-bottom. Asking to rotate by an angle Crisp cannot do now says so, instead of quietly turning it a quarter turn.",
-  "pub_date": "2026-08-12T21:11:15Z",
+  "pub_date": "2026-08-12T21:11:42Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUw3UHhNR2FLanU2Q2QxMEdKb3F2cjNURjZLVTBPMk0renR2RjF6d1hrUTJtY3hvQW16ZHZnSHFsdk85aVZ5QWgwL05PSS9kNUlISHkxWmNVTklhL2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTY4MjMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRQy95b2t5K2ZQZ1V3MkNmV0c2KytScmJtSlZMU1hRUFl4YUphcVJBMFlEbmV2NGwxSldQdGhkMFhLN0ZBVThHYXM3bEtidno1cmRjeC8wTFVNbzBBQT09Cg==",
