@@ -1,7 +1,7 @@
 {
   "version": "0.1.810",
   "notes": "Asking Crisp to keep the grain no longer removes it. \"Keep the noise\", \"keep grain\", \"leave the grain\" and \"don't remove the noise\" were all quietly denoising anyway \u2014 only two exact spellings were understood. And \"no noise\" now removes noise, which is what it sounds like; it used to do the opposite.",
-  "pub_date": "2026-08-12T17:26:46Z",
+  "pub_date": "2026-08-12T17:28:01Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU14aUtxbHU2UmVLdE9LUnYrQ3FBMTJKY0VUMTRpbmN5bGhYY3lGQmg5Vk5qM0JURlNqM2prbEtpOXl4MTE1N05YTVZIV0ZNK2VQVEJQd3lWN1BNaHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTU1NDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUL0tGOFlNTmt3cXRQRmFsN2l1dGJKQXdFTVM0MUFTWTFuNUtGMncyV1duTDBaRE1zN0NLMWh4dDdCM2pnd0JlVkFRbCtDUUlYOGRJZE54VjRFcGxDZz09Cg==",
