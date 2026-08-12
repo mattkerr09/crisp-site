@@ -1,10 +1,10 @@
 {
-  "version": "0.1.799",
-  "notes": "Asking for a GIF from a point in the clip now starts there. Make a gif from 30s used to give you the opening 30 seconds instead, and asking for a point past the end of the clip is now refused rather than quietly making a gif of the whole thing.",
-  "pub_date": "2026-08-12T05:34:54Z",
+  "version": "0.1.801",
+  "notes": "Housekeeping build. Two test guards that could have gone quiet without reporting anything now hold their own line.",
+  "pub_date": "2026-08-12T07:19:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl6RWtaNWFjV2JTZERLNW5SQWd1M0dxeDVTRFh6aEE3cHN3d08yNkUrV21vaDZrbE96Wmk3RFVCeHRVOWVPUjZMc2ViVERUNlNsZ0IzUEtGSDhTTlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTEyNzA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjeVl5R29HbzNMemZGVDF2OEVsTHdQbjFKbHhZRnAyRDZpaGxPaGZKTUp4dDgzL25LTnViME90cGhhWGlzR2hTdnE0TFNqeWw4dUNCelZ5NmJpVUZCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUgrMkxzUW5zZFVncVJYckZLWkxQc2FhUHJFa0l1QnR3L2xwb3IyTVVtbmRWZjdrRUpRalRISkVkWFRvUDVaTlY4VDlwWVUwVHMya0ltNklidng1Vnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTE5MTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsR0Z5dXo2dXNad1IzUHg3VXI2VnYwaUFRTjhmUC9ObkQ5QS94eFhtbFZPNDlRRGwrSFY3VHUwaUoyYm9MT2RvZHYwL1UwMVFoWmVWNW5VWng4YjZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
