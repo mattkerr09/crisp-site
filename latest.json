@@ -1,10 +1,10 @@
 {
-  "version": "0.1.793",
-  "notes": "Crisp no longer waits forever on its own engine. If the engine is busy finishing a render, a request now gives up after 20 seconds and says so, instead of leaving a control that never comes back.",
-  "pub_date": "2026-08-11T23:29:15Z",
+  "version": "0.1.794",
+  "notes": "A stray double space no longer loses your request. Typing make  it  black  and  white with an extra space used to reach nothing at all, silently.",
+  "pub_date": "2026-08-12T00:31:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxjRlB3eVFBRDMvTTVzNm4xLy90RUZtQjVhdzE4ZnRRNDBGYXlUem0yckFxaW5JTUJiaXVoZVNVRC9yajNFSDhMdm1IK3lDeTRIU0taQmtaSFJwd0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDkwODY4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKNVpINUcyN0JyYktHTWpqNVV1VktPTWQvcW5PWUJZUzl6N1RpQWsvdnFJcjRPbW5VUTExRFRFRTM1SXQyMDd2djFCdjF1T0JYY3RVY1gwalJQMm1EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZXZG9KbldRRzlYbGU5MGtpNGFSNVRRdkdYTkJTL0g3MTB2Q3B5K2NqbU9ZeVRORXZQdC8xS1hPNjlaZzBucG1Wc1Q4U3FkbkVZVWJKcDY5MkZPVGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NDk0Mjk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovNHVybkR4K3NXczhmb2NLRlFlNWgzaHFtZm5qOFhnK1ZwK3UzSFdrdW1HdjlidExHejZzRlhYMnVXVDRhaCs0VlVtN0ZvSktJekxFR3Z3WEhVL0dBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
