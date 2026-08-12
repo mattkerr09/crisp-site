@@ -1,10 +1,10 @@
 {
-  "version": "0.1.807",
-  "notes": "Speed requests written out in words now mean what they say. \"Speed it up twenty times\" used to quietly give you two times instead. And \"play it 3 times faster\" now speeds the clip up \u2014 it used to repeat it three times over, making it longer when you asked for shorter.",
-  "pub_date": "2026-08-12T13:24:06Z",
+  "version": "0.1.808",
+  "notes": "Asking to play your clip back no longer reverses it. \"Play it back at half speed\" and \"play it back slower\" now do what they say \u2014 before, Crisp played the whole thing backwards and ignored the speed you asked for. Asking to reverse still works exactly as it did: \"play it backwards\", \"in reverse\", \"rewind it\".",
+  "pub_date": "2026-08-12T13:59:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU42VWF4WFRLWXBBcU1NZDFldWtHL3dSOXNhREV1d1ZQRHhqSkZUcFRvdHllOU4wOHhWa2xhTS9mL3ZzOHBXZjRFczJURk11YWV4QlBCZXFyTVBrTlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTQxMDAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZRktZRU80QUhrSXM5anNXOStZOVZKaWVSL0ZUWDRRWU8ydDNMT21laC9DRW5HME5HOFliaHlQakhMMnV5OHQ0Wk9ncWVqUmVKQnFnbDFLOXZ1TXJCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtud21xbzRZTVhyUlFrOHNTWk44RzJuKy9jZFpKb3pVU3RwbWtjRGkyOXZSZUpEMjE0ZXNNcmtKUHpnWU81S1RzSGJaS3o0dmhTOXVpdHdkS0FZSHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTQzMDc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3MzhSTGVuTDA1MXExa01pWm1rR0oyVVJSRWRvV0xabjVqS3ZaSXBESEJTTmdUanFVdnlQRGVVRDRFR3Npd3NQT3pueXpqNDByOHpxVmpMNXNkSWlBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
