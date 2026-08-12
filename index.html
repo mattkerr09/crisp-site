@@ -65,6 +65,10 @@ a{color:inherit;text-decoration:none;}
 .btn-ghost{border-color:var(--hair-lit);color:var(--white);background:rgba(255,255,255,.03);}
 .btn-ghost:hover{background:rgba(255,255,255,.07);}
 .btn-sm{padding:.5rem 1.05rem;font-size:.88rem;}
+/* A checkout button with no destination. Until CRISP_CHECKOUT_URL is filled in (see the script
+   at the foot of this file) the Buy button has no href at all, so it cannot quietly send someone
+   to the free download the way it used to — it reads as unavailable and says why underneath. */
+.btn[aria-disabled="true"]{opacity:.48;box-shadow:none;pointer-events:none;}
 
 /* hero — halo is a gradient, not a blurred layer (cheap, no compositing artefacts) */
 .hero{position:relative;text-align:center;padding:7rem 0 0;
@@ -301,7 +305,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
-      <h2 class="h-lg">Seven times the detail</h2>
+      <h2 class="h-lg">426&times;224 in. 1704&times;896 out.</h2>
       <p class="lede">Drag the handle. Left is the low-resolution source scaled up to fit;
         right is what Crisp gave back. No cloud, no cherry-picking.</p>
     </div>
@@ -317,7 +321,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note">Source: NASA &mdash; a city at night photographed from the International Space Station, public domain. Downscaled to 426&times;224 to stand in for low-resolution footage, then restored and upscaled 4&times; to 1704&times;896 by Crisp on Apple Silicon in 0.9 seconds. Measured on the images served here, after compression: 5.4&times; the fine detail.</p>
+    <p class="ba-note">Source: NASA &mdash; a city at night photographed from the International Space Station, public domain. Downscaled to 426&times;224 to stand in for low-resolution footage, then restored and upscaled 4&times; to 1704&times;896 by Crisp on Apple Silicon. Both images are served here unedited, at the same size, so you can judge it yourself &mdash; we would rather show you the frames than a number you cannot reproduce.</p>
   </div>
 </section>
 
@@ -453,9 +457,23 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc</th></tr></thead>
         <tbody>
           <tr><td>Price</td><td class="y">$19 one-time</td><td class="n">$299/yr — or $59/mo</td><td class="n">Subscription or licence</td></tr>
-          <tr><td>Cost after 5 years</td><td class="y">$19</td><td class="n">$1,495</td><td class="n">Recurring</td></tr>
-          <tr><td>Keeps working if you stop paying</td><td class="y">Yes — it's yours</td><td class="n">No — subscription-only since Oct 2025</td><td class="n">Varies</td></tr>
-          <tr><td>Runs fully offline</td><td class="y">Yes</td><td class="n">Best model is cloud</td><td class="n">Varies by feature</td></tr>
+          <!-- VideoProc's 5-year cost read "Recurring" and its keep-working cell read
+               "Varies". Both were wrong, and both were wrong in our favour. VideoProc sells a
+               one-time Lifetime License alongside its Premium 365 subscription, so a buyer who
+               picks the licence pays once and keeps it - checked on videoproc.com, 12 Aug 2026.
+               Misstating a named competitor's pricing model is the one error on this page that
+               is actually actionable, so these rows now describe their cheaper option rather
+               than their dearer one. No figure is quoted: the licence is running at a deep
+               promotional discount off list, and a promo quoted today is a false claim next
+               month. The "Varies" three rows down is about audio handling, is a different
+               claim, and has not been verified either way - leave it or check it, do not
+               assume this note covered it. -->
+          <tr><td>Cost after 5 years</td><td class="y">$19</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
+          <tr><td>Keeps working if you stop paying</td><td class="y">Yes — it's yours</td><td class="n">No — subscription-only since Oct 2025</td><td class="n">Yes, on the lifetime licence</td></tr>
+          <!-- "Best model is cloud" was wrong and the FAQ already said so: Starlight runs
+               on-device, it just needs macOS 26 or 36 GB depending on the variant. The table
+               kept the old line for a month after the FAQ was corrected. -->
+          <tr><td>Runs fully offline</td><td class="y">Yes — every lane, generative included</td><td class="n">Mostly — Starlight needs macOS&nbsp;26 or 36&nbsp;GB to stay local</td><td class="n">Varies by feature</td></tr>
           <tr><td>Timeline editor</td><td class="y">Yes</td><td class="n">No</td><td class="n">Basic</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Varies</td></tr>
@@ -495,7 +513,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Batch processing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Pay once, own it forever</li>
         </ul>
-        <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Get Crisp</a>
+        <!-- THE ONLY PAID CTA ON THIS PAGE. It must never point at the DMG: this button sat
+             under a $19 price and downloaded the free, watermarked build. It now goes to #buy,
+             and CRISP_CHECKOUT_URL (foot of this file) repoints it at Polar in one edit. -->
+        <a class="btn btn-primary" data-crisp-checkout href="#buy">Buy Crisp Pro</a>
       </div>
     </div>
 
@@ -528,13 +549,109 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════════════════════════════
+     GET CRISP — this section exists to carry the two anchors the rest of the
+     product already links to, and to say what a buyer actually receives.
+
+     ⚠️ DRAFT, NOT REVIEWED BY A LAWYER. The commercial statements below (seller
+     identity, what the licence covers, delivery, refund window) were drafted by an
+     AI assistant from the source code and the existing /legal/ pages. They have not
+     been checked by a solicitor or against Polar's merchant-of-record onboarding
+     requirements, and the seller's street address is still missing — see
+     TODO-SELLER-ADDRESS below. Review before this ships.
+
+     #download — 243 links across the generated pages (/learn, /vs, /how-to, /for)
+                 and backend/server.py's _DOWNLOAD_PAGE all point at
+                 https://crispvideo.app/#download. No element on this page carried
+                 that id, so every one of them landed at the top of the homepage
+                 next to a download button by luck rather than design.
+     #buy      — ui/src/index.html's "Get a key ($19)" button, inside the Unlock
+                 Crisp Pro modal, is the ONLY purchase affordance in the shipped
+                 app. It points at https://crispvideo.app/#buy, which did not exist,
+                 so the one screen where a blocked user goes to pay led nowhere.
+
+     Do not rename or remove either id without changing those callers.
+  ══════════════════════════════════════════════════════════════════════════════ -->
+<section id="download">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Get Crisp</p>
+      <h2 class="h-lg">Try it first.<br>Buy it if it earns it.</h2>
+      <p class="lede">The free download is the whole app, not a demo build. Pro is the same app
+        with the mark removed — there is no second installer, no trial clock, and no account.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Download and use it free</h3>
+        <p>74&nbsp;MB, Apple Silicon, notarized by Apple. The full editor, 4K upscale and
+          montage, one file at a time. Video exports carry a small “Made with Crisp” mark.</p>
+        <p><a class="btn btn-ghost btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Download for Mac</a></p>
+      </div>
+      <div class="step"><div class="n">2</div><h3>Buy a licence key — $19</h3>
+        <p>One payment, in US dollars, through Polar. Your key is emailed to you by Polar once
+          the payment clears. Nothing else is shipped and nothing else is installed.</p>
+      </div>
+      <div class="step"><div class="n">3</div><h3>Paste it into Crisp</h3>
+        <p>Open Crisp, choose <em>Unlock Crisp Pro</em>, paste the key and press Activate. That
+          activation is the one moment Crisp talks to the licence server; Pro then keeps working
+          with the Wi-Fi switched off.</p>
+      </div>
+    </div>
+
+    <div class="cost" id="buy">
+      <h3>Crisp Pro — $19, once</h3>
+      <p class="sub">Sold by Kerr &amp; Company LLC, Grand Rapids, Michigan, USA, through Polar,
+        our merchant of record. Polar takes the payment and handles sales tax and VAT; Crisp
+        never sees or stores your card details.</p>
+      <!-- TODO-SELLER-ADDRESS: UK/EU distance-selling rules want a geographic address on the
+           site itself, not only in the merchant of record's records. City and state are here;
+           the street address still needs adding once it is decided what to publish. -->
+
+      <p><strong>What the $19 unlocks.</strong> Video exports without the “Made with Crisp”
+        mark, the Max Quality generative restore lane, and batch processing. It is a licence for
+        the version line you buy — not a subscription. It does not expire, there is nothing to
+        renew, and it keeps working if you never come back.</p>
+
+      <p><strong>How it reaches you.</strong> By email from Polar, immediately after payment: a
+        licence key that looks like <code>CRISP-XXXX-XXXX-XXXX-XXXX</code>. Paste it into
+        <em>Unlock Crisp Pro</em> in the app. The key activates the Mac you paste it into, and
+        that activation is stored locally in <code>~/.crisp/</code>, so Pro survives being
+        offline. There is no separate Pro download.</p>
+
+      <p><strong>One extra download, only if you want Max.</strong> The generative Max Quality
+        models are a one-time ~4.6&nbsp;GB download from inside the app, and Max is genuinely
+        slow — read the FAQ numbers before you count on it. Everything else Pro unlocks works
+        the moment you activate.</p>
+
+      <p><strong>If it isn't right.</strong> Ask within 30 days of purchase and you get your
+        money back, no reason needed, to the card you paid with.</p>
+
+      <p><a class="btn btn-primary" data-crisp-checkout aria-disabled="true">Buy Crisp Pro — $19</a></p>
+
+      <p class="src" data-checkout-pending>Checkout is not open yet. The $19 purchase goes live
+        the moment the Polar checkout link is dropped into <code>CRISP_CHECKOUT_URL</code> at the
+        foot of this page's source — until then nobody can be charged, and Crisp stays free to
+        use with the watermark. If you already hold a key, it activates today.</p>
+
+      <p class="src"><a href="/legal/terms/">Terms</a> ·
+        <a href="/legal/privacy/">Privacy</a> ·
+        <a href="/legal/refunds/">30-day refunds</a></p>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg">Clear answers.</h2></div>
     <div class="faq">
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
       <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models need either macOS&nbsp;26 or 36&nbsp;GB of memory depending on the variant. Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, a low-light stage Topaz lacks, and interpolation that keeps your audio.</p></details>
-      <details><summary>Do I need a powerful Mac?</summary><p>Any Apple-Silicon Mac runs the fast tier (1080p → 4K at interactive speed). The generative <em>Max</em> tier is an optional download and is happiest with 32 GB+ of memory. It's the slow, overnight, best-quality lane.</p></details>
+      <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
+           _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
+           1080p output on an M1 Ultra, from a floor of 21.0 s per output megapixel per frame.
+           The docstring there says not to soften the strings; the same applies here. Keep the
+           "at least" — it is a floor off a fast desktop Mac, so a laptop is slower. -->
+      <details><summary>Do I need a powerful Mac?</summary><p>Any Apple-Silicon Mac runs the fast tier (1080p → 4K at interactive speed). The generative <em>Max</em> tier is an optional 4.6&nbsp;GB download, wants 32 GB+ of memory, and is far slower than the word “overnight” suggests. At 1080p output on a fast desktop Mac it takes <strong>at least about 1.8 hours for five seconds of video, 11 hours for thirty seconds, and 43 hours for two minutes</strong>. Crisp shows you that estimate before the job starts, not three minutes into it. Treat Max as a seconds-at-a-time tool for the one shot that matters — Enhance is the lane for whole clips.</p></details>
       <details><summary>Will it strip my audio or drift out of sync?</summary><p>No. Audio is stream-copied and never re-timed, even when you interpolate to a higher frame rate. Color is converted and re-tagged correctly, so nothing comes out washed-out.</p></details>
       <details><summary>What about damaged, dark, or noisy footage?</summary><p>That's exactly the target. Crisp denoises, lifts shadows, and restores detail <em>before</em> it upscales, so low-light and compressed clips come out clean instead of amplifying the mess.</p></details>
       <details><summary>Does it do photos and editing too?</summary><p>Yes. Drop a JPEG, PNG, or HEIC and Crisp upscales &amp; restores the still in about a second. And the built-in <em>Montage</em> mode auto-edits a long video into a highlight reel, a tightened condense, or a music montage cut to the beat — all on-device, no timeline required.</p></details>
@@ -628,7 +745,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         "price": "19",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://crispvideo.app/#download",
+        "url": "https://crispvideo.app/#buy",
         "description": "One-time purchase. No subscription, no recurring fee."
       }
     }
@@ -645,6 +762,39 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   function put(v) { ba.style.setProperty('--x', Math.max(0, Math.min(100, v)) + '%'); }
   range.addEventListener('input', function () { put(parseFloat(range.value)); });
   put(parseFloat(range.value));
+})();
+</script>
+
+<script>
+/* ── CRISP_CHECKOUT_URL ─────────────────────────────────────────────────────────────────────
+   THE ONE PLACE THE $19 CHECKOUT LINK LIVES. Paste the Polar checkout URL between the quotes
+   (it looks like https://buy.polar.sh/polar_cl_…) and every paid button on this page — the
+   Crisp Pro tier under Pricing, and the Buy button in #buy — points at it, and the "checkout is
+   not open yet" note disappears. That is the entire change. Nothing else needs editing, and no
+   other file on the site hardcodes a checkout URL.
+
+   ⚠️ NEVER POINT A PAID BUTTON AT THE DMG. Until this landed, all five buttons on this page
+   pointed at the same free download — including the one under the $19 price — so "Get Crisp"
+   charged nobody and handed over the watermarked build, while the app's own paywall (402 from
+   backend/server.py, Max and batch) was live. The four free CTAs (nav, hero, Free tier, closing
+   band) keep the DMG on purpose; the paid one must never drift back onto it.
+
+   While this is empty the Buy button carries no href and is marked aria-disabled, so it reads
+   as unavailable instead of quietly doing the wrong thing. An honest "not yet" beats a button
+   that takes money nowhere.
+   ───────────────────────────────────────────────────────────────────────────────────────── */
+var CRISP_CHECKOUT_URL = ""; // TODO-POLAR-URL
+
+(function () {
+  var url = (CRISP_CHECKOUT_URL || "").trim();
+  if (!url) return;   // leave the pending state exactly as authored — it is the truthful one
+  var buys = document.querySelectorAll('[data-crisp-checkout]');
+  for (var i = 0; i < buys.length; i++) {
+    buys[i].setAttribute('href', url);
+    buys[i].removeAttribute('aria-disabled');
+  }
+  var notes = document.querySelectorAll('[data-checkout-pending]');
+  for (var j = 0; j < notes.length; j++) notes[j].hidden = true;
 })();
 </script>
 
