@@ -1,10 +1,10 @@
 {
-  "version": "0.1.797",
-  "notes": "Housekeeping build. Removed a stale test guard that could have hidden 48 checks without reporting anything.",
-  "pub_date": "2026-08-12T03:40:04Z",
+  "version": "0.1.798",
+  "notes": "Housekeeping build. Replaced a test case that could never exercise the check it was written for, and recorded two GIF timing bugs it was hiding.",
+  "pub_date": "2026-08-12T04:36:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxyTGpoWkY1Ly9scUE1K29sdHBNajFCNWgyRlJXdmZxOENhUUlhQ2FrQkFWMVhWT2Jqd1pqYWE0d0RCT29PVDlGdjZDSFErRGxSdklqVXBkZ1hpemdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTA1OTQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMaTlTZ0VCN2dpT3gzWTMzdDNpYlM2TW9vMjJMZ09VM1FUMC9LVEFnMXRUMGRhWWdLelgraFU3cDYyNTNqK01XVjM5NUttbHJqNDJISzUyVzkzYmREZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZkOU9CN01pOWlyNzZneURRN1VtRk5vOWNadHlSak1CRG9IYys2YjkvZmFWTmpqZC9qbGR5NWtGMGJXbStJb3NIL254cWZoSk9ZT2FkVGVJbTFNL0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTA5MjI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLUU9lQ0FTc3pZZUcvM0krZ2JsbmtLOFM1NHJ0ZzAzUm96MzZ5eDdIMlkvWjlQSlRzTGlRYjdXRTh4ek5CS1JmajgvRDRHMTA2YjhYZUFNNHhleGtEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
