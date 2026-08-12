@@ -1,10 +1,10 @@
 {
-  "version": "0.1.803",
-  "notes": "Curly apostrophes no longer flip a request into its opposite. Typing don't add grain on a Mac, where the apostrophe is curled for you as you type, used to add grain instead of leaving it alone.",
-  "pub_date": "2026-08-12T09:07:24Z",
+  "version": "0.1.804",
+  "notes": "Two renders can no longer quietly overwrite one another. Asking for a second render to a file another job is already writing now says so instead of replacing it and reporting success.",
+  "pub_date": "2026-08-12T10:31:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZTTm9Mb1YvVnBncjBEUk4wMThKR1lrMzZLeHhiNXV3QXY4MHh1QjdXZ01BM2o0QzFHMFlTYlJSUFhKZ1Rkb2cvZ1RmWGlCS215VEs4ZE85MENsc2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTI1NDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFWVpKNFhlVzhQT2JsR21vcXFEVHl4VVpjUVpaem9tQ2JLY2FRY21vUlcvWWtubXg1UDM2Rld1RDkveFRJNXIwbCtXVnJLRVZ1aGFiZWluc0ZLWndDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUllbndsdyt0b0E5UlZGaVRaOWNIUWxJTmRWd1V6QlpKbTNOWXp0dFFlcE5vbklUMUwrMlhXTXA4L3RNWDhLTFRXNk1IaTA5c1F0TjdJcnhleTQyOEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTMwNTg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprS3lBQ01hWlB5RnVmTE42VnJjTFRNYnVyZzk0T0FBUEJOUFZYTDYxZXZuOTdRcG16Rm5JZ2dTdkZ6NGlSYXE3NkFqbEdsQ2dqQmRnLzE1K3FCeVNCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
