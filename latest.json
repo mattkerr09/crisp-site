@@ -1,10 +1,10 @@
 {
-  "version": "0.1.806",
-  "notes": "Telling Crisp where to start now works however you write it. \"Start at thirty seconds\", \"start at two minutes\" and \"start at an hour\" are understood \u2014 before, only digits were, and \"start at 2 hours\" quietly began two seconds in instead. If you ask to start past the end of the clip, Crisp now says so rather than starting somewhere else.",
-  "pub_date": "2026-08-12T12:46:15Z",
+  "version": "0.1.807",
+  "notes": "Speed requests written out in words now mean what they say. \"Speed it up twenty times\" used to quietly give you two times instead. And \"play it 3 times faster\" now speeds the clip up \u2014 it used to repeat it three times over, making it longer when you asked for shorter.",
+  "pub_date": "2026-08-12T13:24:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oS0FZbHM3aExNcWUwNXBDZlVwcVZ1QTNsNmFTQ3RaZDZ1dGtTcEI3TWQ4T2VUREdoNElWZk1sazBzaHhzVnVqdWFWRTdPNHA4Qkh0cm5yV0IyL3dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTM4NzEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppUW9yemZuN0Vvdyt1c1JkVTk3aXEzRUxtcm5Ec0RJdHIvUEhsMWp4WTBrVFRPTXo0Nko1a1dYZjRHS0VmdXZtUFJMZzdvc1JzL0JMb2xmS0ViaVFBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU42VWF4WFRLWXBBcU1NZDFldWtHL3dSOXNhREV1d1ZQRHhqSkZUcFRvdHllOU4wOHhWa2xhTS9mL3ZzOHBXZjRFczJURk11YWV4QlBCZXFyTVBrTlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTQxMDAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZRktZRU80QUhrSXM5anNXOStZOVZKaWVSL0ZUWDRRWU8ydDNMT21laC9DRW5HME5HOFliaHlQakhMMnV5OHQ0Wk9ncWVqUmVKQnFnbDFLOXZ1TXJCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
