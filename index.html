@@ -125,7 +125,7 @@ a{color:inherit;text-decoration:none;}
      phone reader. pan-y hands vertical gestures back to the page, keeps horizontal ones. */
   touch-action:pan-y;}
 .ba-range:focus-visible{opacity:1;outline:3px solid var(--cyan);outline-offset:-3px;}
-.ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.8rem;line-height:1.65;color:var(--grey-dim);text-align:center;}
+.ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.9rem;line-height:1.65;color:var(--grey);text-align:center;}
 
 /* sections */
 section{padding:7.5rem 0;position:relative;}
@@ -449,8 +449,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="head">
       <p class="kicker">Honest comparison</p>
       <h2 class="h-lg">Crisp vs Topaz vs VideoProc</h2>
-      <p class="lede">Topaz has a deeper model library. VideoProc is a broader toolbox. Here's the
-        trade, without the spin.</p>
+      <p class="lede">Topaz has a deeper model library. VideoProc is a broader toolbox. Neither one
+        lets you arrange clips on a timeline. Crisp is the one where the upscale is a step inside an
+        edit &mdash; and that editor is in the free download, so you can check this before you spend
+        anything.</p>
     </div>
     <div class="cmp">
       <table>
@@ -474,7 +476,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
                on-device, it just needs macOS 26 or 36 GB depending on the variant. The table
                kept the old line for a month after the FAQ was corrected. -->
           <tr><td>Runs fully offline</td><td class="y">Yes — every lane, generative included</td><td class="n">Mostly — Starlight needs macOS&nbsp;26 or 36&nbsp;GB to stay local</td><td class="n">Varies by feature</td></tr>
-          <tr><td>Timeline editor</td><td class="y">Yes</td><td class="n">No</td><td class="n">Basic</td></tr>
+          <tr><td>Multi-clip timeline</td><td class="y">Yes &mdash; arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Varies</td></tr>
           <tr><td>Model choice</td><td class="y">Auto, with override</td><td class="n">Manual, 15+ models</td><td class="n">Limited</td></tr>
@@ -482,6 +484,14 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         </tbody>
       </table>
     </div>
+      <p class="ba-note">The timeline row is the one worth checking yourself, on each vendor's own
+        feature page &mdash; read 12&nbsp;August 2026. Topaz Video AI and Aiarty list trim and crop.
+        VideoProc and Winxvideo cut and merge in a batch queue. HitPaw VikPea ships AI editing tools
+        but no timeline. AVCLabs, Upscale Whale and Unsqueeze ship no editing at all. None of them
+        arranges clips on a timeline. The editors that <em>do</em> have one mostly send the upscale
+        elsewhere &mdash; Filmora's runs on AI Credits bought from your account. The closest honest
+        rival is DaVinci&nbsp;Resolve&nbsp;Studio, which does both on your own machine for $295
+        one-time. Crisp's editor is in the free build: open it before you buy anything.</p>
   </div>
 </section>
 
@@ -645,7 +655,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg">Clear answers.</h2></div>
     <div class="faq">
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
-      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models need either macOS&nbsp;26 or 36&nbsp;GB of memory depending on the variant. Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, a low-light stage Topaz lacks, and interpolation that keeps your audio.</p></details>
+      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models need either macOS&nbsp;26 or 36&nbsp;GB of memory depending on the variant. Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. The bigger difference is shape: Topaz's own docs list trim and crop, so it takes a file and hands a file back. Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
       <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
            _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
            1080p output on an M1 Ultra, from a floor of 21.0 s per output megapixel per frame.
@@ -722,7 +732,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       "applicationSubCategory": "Video Editor and AI Upscaler",
       "operatingSystem": "macOS 12.0 or later",
       "processorRequirements": "Apple Silicon (M1 or later)",
-      "softwareVersion": "0.1.384",
+      "softwareVersion": "0.1.810",
       "url": "https://crispvideo.app/",
       "downloadUrl": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
       "installUrl": "https://crispvideo.app/#download",
