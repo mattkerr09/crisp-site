@@ -1,10 +1,10 @@
 {
-  "version": "0.1.805",
-  "notes": "Amounts written out in words now work everywhere, and so do hours. \"Trim it to twenty five minutes\", \"an hour and a half\", \"a hundred seconds\" and \"cut the first two hours\" all understood \u2014 before, a lot of them quietly did nothing, and \"shorten it to 2 hours\" could hand back a five-minute montage instead. Asking to change part of a clip now always explains that Crisp works on the whole clip and offers to split it, whichever way you write the amount. \"Brighten the first twenty seconds\" used to return a twenty-second video and throw the rest away.",
-  "pub_date": "2026-08-12T12:07:31Z",
+  "version": "0.1.806",
+  "notes": "Telling Crisp where to start now works however you write it. \"Start at thirty seconds\", \"start at two minutes\" and \"start at an hour\" are understood \u2014 before, only digits were, and \"start at 2 hours\" quietly began two seconds in instead. If you ask to start past the end of the clip, Crisp now says so rather than starting somewhere else.",
+  "pub_date": "2026-08-12T12:46:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA1VXc5Q3dDVFpEai9PcnNiQVhVSTJOUk9ZQkJwMGNMeHFVYWNvT1ROUXRiaVdUSGF0R3k2UkhXVksrVmNDVXc3YlFLWHhFSUUzaXlmcER3ME5hMmdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTM2Mzc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSFl6WDhmVlg4MExqWEQvVTFRbGZMdXV3Y29YWkdPUFIyT3ZHd3p2NUxkai9tS2ZtVTBBeHU4d0t3cXZhcGk3WWt1MjRuSml4cWlxTThISHNNYjNEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oS0FZbHM3aExNcWUwNXBDZlVwcVZ1QTNsNmFTQ3RaZDZ1dGtTcEI3TWQ4T2VUREdoNElWZk1sazBzaHhzVnVqdWFWRTdPNHA4Qkh0cm5yV0IyL3dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTM4NzEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppUW9yemZuN0Vvdyt1c1JkVTk3aXEzRUxtcm5Ec0RJdHIvUEhsMWp4WTBrVFRPTXo0Nko1a1dYZjRHS0VmdXZtUFJMZzdvc1JzL0JMb2xmS0ViaVFBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
