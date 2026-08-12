@@ -1,10 +1,10 @@
 {
-  "version": "0.1.804",
-  "notes": "Two renders can no longer quietly overwrite one another. Asking for a second render to a file another job is already writing now says so instead of replacing it and reporting success.",
-  "pub_date": "2026-08-12T10:31:22Z",
+  "version": "0.1.805",
+  "notes": "Amounts written out in words now work everywhere, and so do hours. \"Trim it to twenty five minutes\", \"an hour and a half\", \"a hundred seconds\" and \"cut the first two hours\" all understood \u2014 before, a lot of them quietly did nothing, and \"shorten it to 2 hours\" could hand back a five-minute montage instead. Asking to change part of a clip now always explains that Crisp works on the whole clip and offers to split it, whichever way you write the amount. \"Brighten the first twenty seconds\" used to return a twenty-second video and throw the rest away.",
+  "pub_date": "2026-08-12T12:07:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUllbndsdyt0b0E5UlZGaVRaOWNIUWxJTmRWd1V6QlpKbTNOWXp0dFFlcE5vbklUMUwrMlhXTXA4L3RNWDhLTFRXNk1IaTA5c1F0TjdJcnhleTQyOEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTMwNTg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprS3lBQ01hWlB5RnVmTE42VnJjTFRNYnVyZzk0T0FBUEJOUFZYTDYxZXZuOTdRcG16Rm5JZ2dTdkZ6NGlSYXE3NkFqbEdsQ2dqQmRnLzE1K3FCeVNCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVA1VXc5Q3dDVFpEai9PcnNiQVhVSTJOUk9ZQkJwMGNMeHFVYWNvT1ROUXRiaVdUSGF0R3k2UkhXVksrVmNDVXc3YlFLWHhFSUUzaXlmcER3ME5hMmdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTM2Mzc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWSFl6WDhmVlg4MExqWEQvVTFRbGZMdXV3Y29YWkdPUFIyT3ZHd3p2NUxkai9tS2ZtVTBBeHU4d0t3cXZhcGk3WWt1MjRuSml4cWlxTThISHNNYjNEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
