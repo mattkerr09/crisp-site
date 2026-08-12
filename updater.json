@@ -1,10 +1,10 @@
 {
-  "version": "0.1.808",
-  "notes": "Asking to play your clip back no longer reverses it. \"Play it back at half speed\" and \"play it back slower\" now do what they say \u2014 before, Crisp played the whole thing backwards and ignored the speed you asked for. Asking to reverse still works exactly as it did: \"play it backwards\", \"in reverse\", \"rewind it\".",
-  "pub_date": "2026-08-12T13:59:06Z",
+  "version": "0.1.810",
+  "notes": "Asking Crisp to keep the grain no longer removes it. \"Keep the noise\", \"keep grain\", \"leave the grain\" and \"don't remove the noise\" were all quietly denoising anyway \u2014 only two exact spellings were understood. And \"no noise\" now removes noise, which is what it sounds like; it used to do the opposite.",
+  "pub_date": "2026-08-12T17:26:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtud21xbzRZTVhyUlFrOHNTWk44RzJuKy9jZFpKb3pVU3RwbWtjRGkyOXZSZUpEMjE0ZXNNcmtKUHpnWU81S1RzSGJaS3o0dmhTOXVpdHdkS0FZSHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTQzMDc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3MzhSTGVuTDA1MXExa01pWm1rR0oyVVJSRWRvV0xabjVqS3ZaSXBESEJTTmdUanFVdnlQRGVVRDRFR3Npd3NQT3pueXpqNDByOHpxVmpMNXNkSWlBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU14aUtxbHU2UmVLdE9LUnYrQ3FBMTJKY0VUMTRpbmN5bGhYY3lGQmg5Vk5qM0JURlNqM2prbEtpOXl4MTE1N05YTVZIV0ZNK2VQVEJQd3lWN1BNaHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTU1NDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUL0tGOFlNTmt3cXRQRmFsN2l1dGJKQXdFTVM0MUFTWTFuNUtGMncyV1duTDBaRE1zN0NLMWh4dDdCM2pnd0JlVkFRbCtDUUlYOGRJZE54VjRFcGxDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
