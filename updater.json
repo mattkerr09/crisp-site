@@ -1,10 +1,10 @@
 {
-  "version": "0.1.801",
-  "notes": "Housekeeping build. Two test guards that could have gone quiet without reporting anything now hold their own line.",
-  "pub_date": "2026-08-12T07:19:52Z",
+  "version": "0.1.803",
+  "notes": "Curly apostrophes no longer flip a request into its opposite. Typing don't add grain on a Mac, where the apostrophe is curled for you as you type, used to add grain instead of leaving it alone.",
+  "pub_date": "2026-08-12T09:07:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUgrMkxzUW5zZFVncVJYckZLWkxQc2FhUHJFa0l1QnR3L2xwb3IyTVVtbmRWZjdrRUpRalRISkVkWFRvUDVaTlY4VDlwWVUwVHMya0ltNklidng1Vnc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTE5MTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsR0Z5dXo2dXNad1IzUHg3VXI2VnYwaUFRTjhmUC9ObkQ5QS94eFhtbFZPNDlRRGwrSFY3VHUwaUoyYm9MT2RvZHYwL1UwMVFoWmVWNW5VWng4YjZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZTTm9Mb1YvVnBncjBEUk4wMThKR1lrMzZLeHhiNXV3QXY4MHh1QjdXZ01BM2o0QzFHMFlTYlJSUFhKZ1Rkb2cvZ1RmWGlCS215VEs4ZE85MENsc2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTI1NDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFWVpKNFhlVzhQT2JsR21vcXFEVHl4VVpjUVpaem9tQ2JLY2FRY21vUlcvWWtubXg1UDM2Rld1RDkveFRJNXIwbCtXVnJLRVZ1aGFiZWluc0ZLWndDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
