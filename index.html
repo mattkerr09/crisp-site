@@ -23,6 +23,16 @@
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
   --r:18px; --r-sm:12px;
   --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
+  /* Crisp is the only site here with a display face of its own, and that is the
+     point: four of these five sites were near-black with a blue accent and
+     -apple-system, so they read as one company shipping four things. Ground
+     colour cannot move — true black is functionally correct for a video tool,
+     it is what a video canvas is — so the separation has to come from type.
+     Futura is macOS-resident and is the display face of film titling, which is
+     authentic to a video restorer rather than decorative. Crisp is a macOS-only
+     app, so its visitors are on macOS and this renders for essentially all of
+     them; the stack degrades to Avenir Next and then the system sans. */
+  --head:Futura,"Avenir Next Condensed","Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --w:1180px;
 }
 *{box-sizing:border-box;}
@@ -34,8 +44,8 @@ a{color:inherit;text-decoration:none;}
 .wrap{width:min(var(--w),calc(100% - 3rem));margin:0 auto;}
 
 /* type */
-.h-xl{font-size:clamp(3rem,7.4vw,6.2rem);line-height:.98;letter-spacing:-.042em;font-weight:700;margin:0;}
-.h-lg{font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.035em;font-weight:680;margin:0 0 1rem;}
+.h-xl{font-family:var(--head);font-size:clamp(3rem,7.4vw,6.2rem);line-height:.98;letter-spacing:-.03em;font-weight:700;margin:0;}
+.h-lg{font-family:var(--head);font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.024em;font-weight:680;margin:0 0 1rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
 .lede{font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--grey);margin:0;}
 .grad{background:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
@@ -47,7 +57,7 @@ a{color:inherit;text-decoration:none;}
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);}
 .nav-in{display:flex;align-items:center;gap:2rem;height:56px;}
-.brand{display:flex;align-items:center;gap:.55rem;font-weight:640;font-size:1.02rem;letter-spacing:-.015em;}
+.brand{font-family:var(--head);display:flex;align-items:center;gap:.55rem;font-weight:640;font-size:1.02rem;letter-spacing:-.015em;}
 .brand svg{width:21px;height:21px;color:var(--cyan);}
 .nav-links{display:flex;gap:1.9rem;margin-left:auto;}
 .nav-links a{color:var(--grey);font-size:.92rem;font-weight:500;transition:color .2s;}
