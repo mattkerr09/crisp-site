@@ -285,9 +285,17 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <div class="hero">
   <div class="wrap">
+    <!-- The pill sits where Screen Studio puts "#1 Product of the Year" and Warp puts its
+         GitHub star count: the slot above the H1 that a stranger reads as credibility. It
+         used to say "Everything runs on your Mac" — a self-claim, and the third thing on
+         this screen to say it, after the lede and the "100% offline" tick. Apple's
+         notarization is the only assertion in this hero that a THIRD PARTY made and that a
+         visitor can check without trusting us: `spctl -a -t install /Applications/Crisp.app`
+         answers "Notarized Developer ID". Verified against the shipping bundle, staple
+         valid, on 2026-08-13, and the readiness scorer gates it on every run. -->
     <div class="pill">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
-      Everything runs on your Mac
+      Notarized by Apple
     </div>
     <h1 class="h-xl">Low-quality in.<br><span class="grad">Clean 4K out.</span></h1>
     <p class="lede">Crisp restores and upscales video on-device — then lets you actually edit it.
@@ -298,9 +306,18 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
         Download for Mac
       </a>
-      <a class="btn btn-ghost" href="#pricing">See pricing</a>
     </div>
-    <p class="fine">Free to use · 74&nbsp;MB · Apple Silicon · notarized by Apple</p>
+    <!-- ONE action in the hero, deliberately. "See pricing" used to sit here as a ghost
+         button, and it is the dilution pattern the reference set never uses: Screen Studio
+         has one CTA, Linear has none, and where Cursor and Raycast have two the second is a
+         different AUDIENCE (enterprise demo; Windows users) rather than a softer version of
+         the same click. Pricing is already in the nav, and the pricing section is four
+         screens down the same page — nothing was made harder to find.
+         The requirement line is Screen Studio's move: state the OS floor under the button so
+         nobody downloads 74 MB to find out it will not open. macOS 12.0 is the shipping
+         bundle's own LSMinimumSystemVersion, not a guess, and it already agrees with the
+         JSON-LD `operatingSystem` further down this file. -->
+    <p class="fine">Free to use · 74&nbsp;MB · macOS 12 or later · Apple Silicon</p>
     <div class="trust">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> 100% offline</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Nothing uploaded</span>
