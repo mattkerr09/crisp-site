@@ -1,10 +1,10 @@
 {
-  "version": "0.1.835",
-  "notes": "\"Cleaning up the audio\" and \"getting rid of the hiss\" now work, like \"clean up the audio\" always did.",
-  "pub_date": "2026-08-13T21:43:23Z",
+  "version": "0.1.836",
+  "notes": "\"Hiss removal\" and \"audio cleanup\" now work, like \"remove the hiss\" always did.",
+  "pub_date": "2026-08-13T23:37:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNCK1JTd1AyZGJSNDVXY2I5YlVyZmhDYm1GOUdPZW1lQ21TSHQ4YlJ0cXloSmIxOEYxUlA2blkrREZTaytlMnREUCtKQ2hScjhBMGc5TlllVzV4TWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjU2NDk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTZEN0V3J6VC9mUDFCMlhsL1lpeFQxY1crbFJIMW1adjFQOW5CZmJPOHk3cDkzVmpIK1oyTDlMdzUxSDBoNnZZNjBBSVRaU04xWVpRWVVoSmlGdnVDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURmTWJmOHZCeUQzdlZxa09ZelJMSXNwTDFUVWhIR0lUZGZhK1hzK1hLalkzeS9nbjdza1Vsd1pDaUNIcU5kSElnUXRaaWRhc2JOMG1oeEhrd09aTFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjYzMjYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBbW5RWFQ4K205WjlHVjRJbG5VNFFxN3hEMjFYQmpoZm1YSTdIbThBN0NJYTJjSnRmSS9VSEp6UlVCQWZidmpOYVpCMW4weDNJeVVldzVONGtLQWNBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
