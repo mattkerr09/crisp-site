@@ -1,10 +1,10 @@
 {
-  "version": "0.1.833",
-  "notes": "Telling Crisp \"there is static on the audio\" now works, not just \"remove the static\".",
-  "pub_date": "2026-08-13T18:36:33Z",
+  "version": "0.1.834",
+  "notes": "\"Removing the hiss\" and \"softening the skin\" now work, like \"remove the hiss\" always did.",
+  "pub_date": "2026-08-13T19:44:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxzd2pqd0RHeW9xNVB3Ulp4NTZIRTlMUG81QStUYkhCRk9yUUNSdmRIWTFFSHdrMGNYN1B2eTI2clNPNGJ2MThvOWdZOWh3L0RKWmdTRlZqVENBaEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjQ1MjU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEbVMxTDkyajQxRlRiYm5WaExDK29WdUFSN2xPQVk1M2loTUhNa2JDYTlOR3hqZ0h6Y3J0dVJQbC9mM01kTEVyU1c0SmRibmJkN2czZnEzKzI3dlhEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZpRlUwaFEyRTEzQXUxK2ZrS1NRaTNlbzJzVksxaFB6OXAwRFZFdFRCU1FNMi9STGtCNVZldDF1dW8zbXhvNkhlc0ZnanVDalAwWDEvK0huc013eGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjQ5MjExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyT1I5RG9MZjFuRWlmd2xJYjJTK3RvZmVSRTRlTFlCK1NZc3NMeVB2Slg2dktwTkk2dkttaXdYU09rblk5aWJ2MXhKUzE2MURoRmlTN0NIVlFYU0lDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
