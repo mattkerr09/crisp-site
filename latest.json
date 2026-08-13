@@ -1,10 +1,10 @@
 {
-  "version": "0.1.815",
-  "notes": "Asking Crisp to clean up a hiss, hum or buzz now fixes the sound instead of starting a picture render. \"Clean up the hiss\" and \"take out the hum\" were going to the wrong place entirely.",
-  "pub_date": "2026-08-12T23:57:49Z",
+  "version": "0.1.816",
+  "notes": "Cutting to music works however you say it. \"Cut it to music\", \"sync it to the beat\" and \"edit to the rhythm\" all reach the beat-sync montage now \u2014 before, only a couple of exact spellings did.",
+  "pub_date": "2026-08-13T01:31:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhYTGFYcDBRUE1Ubk1nV1k0UlQ5L0dSSjh1QmNDMHBTbnV1eFdFdWtobGVZSmF6REdlYnVwdnRpcFBBTTRMNG9kTDJDZjZTT1VQYUkvTGMxWXR2cmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTc3NjM1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiamovVTVadVFaVkQ5QnR2MWkxckhweUJrZ1NkZEd4bVV6TjJEdnlFNTJPK2hUTjE4bGw4c2VXenQzU0RId2R3dG0xaktsMzRSUUthQmNTajVVY1hDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUgxOXhnNzd0RHJQZ0NFQVpEbE81Uk1vYXUzR3JwSm91dVo5L0swVHJHVUZKZHE2UUxYeW5rVU8rdWtqbEdJRTFSdHlNbTg2eU16dVEyR3ZSY1pvWEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NTgzODM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxMUd1TFFiVXh4SDJKdlVvczQ5NUEvVGhwRVZxaUhLanBBdlRJSTBZcHFOZHhaU0F0dmlNSCtIMmxKeU8wejQ2TzlBU0pNVGxHR1VpRTh2QkIvdVFDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
