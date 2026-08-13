@@ -1,10 +1,10 @@
 {
-  "version": "0.1.822",
-  "notes": "The app now keeps its price in one place, so it cannot tell you one number while the site says another.",
-  "pub_date": "2026-08-13T07:33:53Z",
+  "version": "0.1.823",
+  "notes": "\"Tidy it up\" and \"good as new\" now do what \"clean it up\" and \"like new\" already did.",
+  "pub_date": "2026-08-13T08:47:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ3UkZTQUFEY0RUUGwxYjhxRHZ6TWpac3J0U3gzQVVrd2RWMlJHY0draG1TSnlsRTQvZ2pkYTNxUjVXempWbW1BcHVBUWxJeWpGOGF4MTYrZUVmZncwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjA1NDcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQZzZkWW5lWDA3d2dXZVVNZEpXNUdnZGYzOUE2enE0dXFZZ3dPa0RlV3daU2xSbnM0UStZS2lmUyttTDQyM3NXQmRuT1VOeGhMSmo2ZUhzYW1ETGdBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJoUWpMYmNlU2l3TVBjZjR4a3hEYVdtckdWVG45Q2lIdmhRR1hROTd2UEhnWDAwbHo5ZjNEeFdZVE5zWUtrb0hXajdsbmszRWtQaWNGZVZCRkRWV3dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjA5OTIwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzMDJOREtwaVUyWktXVEk5MjhsUE5OeE1rWW1yVXJ1amwzdnRwZEF4aVp1V0FIVWRCRjN3eVRLWmoyVDhDL0FZcEdkVG9iYTU0Wmljc3RDdEN6S1hCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
