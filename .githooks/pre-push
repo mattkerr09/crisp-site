@@ -1,0 +1,65 @@
+#!/bin/sh
+# Refuse to push a site that advertises a different version than it ships.
+#
+# THIS EXISTS BECAUSE INSTRUCTION DID NOT WORK. index.html's JSON-LD
+# softwareVersion drifted from latest.json three times in one evening —
+# 0.1.810 vs 0.1.813, 0.1.813 vs 0.1.815, 0.1.815 vs 0.1.816 — each time
+# through a ship done by hand rather than through scripts/publish_release.sh.
+#
+# The first fix patched publish_release.sh to derive the field from the built
+# app's Info.plist. It did not hold, because the path that causes this never
+# calls that script: the "<version>: ship artifacts" commits come from a session
+# shipping by hand. Patching one script cannot cover a path that does not invoke
+# it, so this moves the check to the one place every path passes through.
+#
+# latest.json is the source of truth: every ship writes it and the Tauri updater
+# reads it, so it cannot silently be wrong without the updater breaking too.
+# index.html is the copy, and the copy is what rots.
+#
+# The first version of THIS hook used __file__ to find the repo, which is
+# "<stdin>" inside a heredoc, so it resolved to nothing, took its own
+# "not my layout" branch and passed silently while the drift was present. Git
+# runs hooks from the top of the working tree, so cwd is the answer — and a
+# missing file now FAILS instead of being waved through, because a gate that
+# cannot see its subject must never report success.
+#
+# ops/drift.py still checks this against the LIVE url as a backstop. That
+# catches a wrong number after publication; this catches it before.
+#
+# Bypass with --no-verify if you genuinely mean it.
+
+python3 - <<'PY' || exit 1
+import json, pathlib, re, sys
+
+root = pathlib.Path.cwd()
+latest, index = root / "latest.json", root / "index.html"
+
+missing = [p.name for p in (latest, index) if not p.is_file()]
+if missing:
+    print(f"pre-push BLOCKED: cannot find {', '.join(missing)} in {root}.")
+    print("  This gate compares them and it will not pass when it cannot look.")
+    sys.exit(1)
+
+shipped = json.loads(latest.read_text()).get("version", "")
+m = re.search(r'"softwareVersion":\s*"([^"]*)"', index.read_text())
+if not m:
+    print("pre-push BLOCKED: index.html has no softwareVersion field, so the "
+          "gate cannot check it. Restore the field or remove this hook "
+          "deliberately — do not leave it blind.")
+    sys.exit(1)
+
+advertised = m.group(1)
+if not shipped:
+    print("pre-push BLOCKED: latest.json has no version.")
+    sys.exit(1)
+
+if advertised != shipped:
+    print(f"pre-push BLOCKED: index.html advertises {advertised}, "
+          f"latest.json ships {shipped}.")
+    print("  Every visitor and every crawler would read the wrong version.")
+    print("  Fix it by shipping through scripts/publish_release.sh, which sets")
+    print("  the field from the built app, or by correcting index.html by hand.")
+    sys.exit(1)
+
+print(f"pre-push: version sync ok ({shipped})")
+PY
