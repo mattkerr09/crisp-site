@@ -37,8 +37,9 @@
 
   <p class="lede"><strong>Crisp processes your photos and videos entirely on your Mac. They are
   never uploaded, and there is no analytics or telemetry of any kind in the app.</strong></p>
-  <p>Last updated: 28 July 2026. This page describes what the software actually does — it was
-  written against the shipping code, not from a template.</p>
+  <p>Last updated: 13 August 2026. This page describes what the software actually does — it was
+  written against the shipping code, not from a template — and, since 13 August, what this
+  website does too.</p>
 
   <h2>Your media never leaves your device</h2>
   <p>Every operation — upscaling, low-light repair, montages, split screen, exports — runs
@@ -46,10 +47,37 @@
   receives your files. You can verify this by running Crisp with networking disabled: everything
   except licence activation and update checks continues to work.</p>
 
-  <h2>There is no analytics or telemetry</h2>
+  <h2>There is no analytics or telemetry in the app</h2>
   <p>Crisp contains no analytics SDK, no crash reporter, no usage tracking, no advertising
   identifiers, and no third-party scripts. Nothing reports which features you use, which files
   you open, or how often you launch the app.</p>
+
+  <!-- Added 2026-08-13. This page said "no third-party scripts" and never mentioned the
+       website at all, while crispvideo.app loads usesled.com/kerr-and-company/t.js, which
+       sets a ta_ref cookie so an affiliate who referred a sale is credited for it. Every
+       sentence above was true — they are all scoped to the app — but a visitor reading a
+       privacy policy linked from a website footer is asking about the website, and the one
+       third-party script on it was not named anywhere. On a product whose whole argument is
+       privacy, that omission does more damage than the cookie does. -->
+  <h2>The website is a separate thing, and it sets one cookie</h2>
+  <p>Everything above is about the software. This site, <code>crispvideo.app</code>, is not the
+  software, and it is honest to say what it does separately.</p>
+  <ul>
+    <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script from
+    <code>usesled.com</code>. If you arrive on a link carrying a <code>?ref=</code> parameter, it
+    stores that referral code in a cookie named <code>ta_ref</code> for <strong>90 days</strong>,
+    and tells <code>usesled.com</code> the click happened — which means Sled sees your IP address
+    on that first visit, as any site you request a file from does. Its only purpose is to pay the
+    person who referred you if you later buy Crisp Pro. The cookie holds a referral code, not an
+    identity, and it is set by this website — never by the app.</li>
+    <li><strong>No site analytics.</strong> There is no Plausible, Google Analytics or
+    equivalent on crispvideo.app.</li>
+    <li><strong>Self-hosted assets.</strong> The page loads no external fonts, stylesheets or
+    images. The two other domains it links to — <code>github.com</code> for the download and
+    <code>topazlabs.com</code> in a comparison — are ordinary links you have to click.</li>
+  </ul>
+  <p>None of this touches your media. Nothing you open in Crisp is ever seen by this website,
+  because the website and the app do not talk to each other.</p>
 
   <h2>The only times Crisp contacts the internet</h2>
   <p>There are exactly four, and each is listed with what is sent:</p>
