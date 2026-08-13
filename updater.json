@@ -1,10 +1,10 @@
 {
-  "version": "0.1.829",
-  "notes": "Trimming an \"HDR clip\" or an \"HDMI capture\" no longer runs the upscaler you did not ask for.",
-  "pub_date": "2026-08-13T13:47:07Z",
+  "version": "0.1.830",
+  "notes": "\"Make it more flattering\" no longer applies the flat, washed-out grade that means the opposite.",
+  "pub_date": "2026-08-13T15:18:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBBQVAwRUxzeCs0MEZldFQvck9rWStTb3gxc2txS1dTc25rL1luWkJtRkdGWnRUcTV5Q0Z3alVXUTRJUEpmY2t3SzZNeTBUUnNZYXRDN2Q3SU9Kd0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjI3NzYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0dlRhdVBoNUpVYUFUMWVMdmUrWW96OGtGZ1pBOGtsZGpmTk5uSVAvbWJVdkdkNHgyOWFONXJnNnVKZ1pESFZ4TW4yMk40ek9WYzYrbC9FQnhaR25CUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU54cHlVT2pyMFNoUGQycDNXUGpwaDAvczRocjJGQzFRaTJwbWFBRGJvMkNUMDRsSWZWV2FNd3YyUzIwVk1lajk0L2c0S1Q2L3pqWVFrclAzWXZTMFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjMzMjk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5VzlGK1RsTlZXUE9yMG4zWXkvbm5DbWFEd01mOWRuMDRWYWM2MmlVMm5KSEJCNUgyeGdmeWQ3NSt1STlGU21SMWNoaVl0K1ZQdHlOekM2L0FpRmdCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
