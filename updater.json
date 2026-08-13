@@ -1,10 +1,10 @@
 {
-  "version": "0.1.827",
-  "notes": "\"Can you crop it\" now gets the same helpful question that \"crop it\" always did.",
-  "pub_date": "2026-08-13T11:53:35Z",
+  "version": "0.1.828",
+  "notes": "\"Make it quicker\" and \"hurry it up\" now speed the clip up, like \"make it faster\" always did.",
+  "pub_date": "2026-08-13T13:00:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZoTStrUDZSVjRrNjZMbUllZ0FwN3ZGdGgzY0ZHaENiMTl5WThmZWUrcG53c2tBS1RJMk5BZkxKTHJEa1J2QmVMcUFzcWZzUENHUFppempXOTA2ZHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjIxMTU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5elY5NjRiUWRwYkExZlVYUTN1N1BOTXBzU1ZxbHNic1pOOE42WDM5UmpGaXhGMnJqVEtxbnZFVnducjl3c0RRZ0NpSExXKzlsUGlYeWQ0bFVDempBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg1NWZrdHNMcWQ2MXRFc1RDRzNyYTBYS3BHK0pWbnBOZWdqQlJrWlJ6WUdQK05vZ1dUeXZ1dVhna0NwOVMzYWNUZ0N0ckZFakROUFlrVkswZm1PZHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjI1Nzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWZFl4aEEwdHBjMlJsQzlOelNKbFFsSGxIZ2FMa0p6ZE5BOUtsRzRHYkVXVzRNZ2VSS3MvcG5ESkJXaThTS0hsVDZmRy96SUw4bDJXOVJhemNaQm9CUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
