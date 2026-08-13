@@ -1,10 +1,10 @@
 {
-  "version": "0.1.820",
-  "notes": "\"Make it dimmer\" and \"it is overexposed\" now adjust the exposure instead of reaching nothing. The app also asked for the old price in the places the site had already updated.",
-  "pub_date": "2026-08-13T06:32:42Z",
+  "version": "0.1.822",
+  "notes": "The app now keeps its price in one place, so it cannot tell you one number while the site says another.",
+  "pub_date": "2026-08-13T07:33:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN4Y3NxYUdyTzdiM2F4TU5qemtkVzM4cnpURWthbGQ3NE8vcUpFdStOZ0ZCeGVzd2NSdG13UG5NaFI4VDBJMWYzWjN3K3Q5WnJiYWtaY2tEQnM5T3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjAwOTMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDeEVaRFV6bmxNMnpmRkZidFJPbDZ2TDBMdkwvSC90akYzY0xPM2I4a1YyUXREazRDbmdOUG5rNkpDbndvYjBVMUpGS2pza0ZhRkE1U3VvNmliSXNBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ3UkZTQUFEY0RUUGwxYjhxRHZ6TWpac3J0U3gzQVVrd2RWMlJHY0draG1TSnlsRTQvZ2pkYTNxUjVXempWbW1BcHVBUWxJeWpGOGF4MTYrZUVmZncwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjA1NDcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQZzZkWW5lWDA3d2dXZVVNZEpXNUdnZGYzOUE2enE0dXFZZ3dPa0RlV3daU2xSbnM0UStZS2lmUyttTDQyM3NXQmRuT1VOeGhMSmo2ZUhzYW1ETGdBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
