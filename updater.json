@@ -1,10 +1,10 @@
 {
-  "version": "0.1.828",
-  "notes": "\"Make it quicker\" and \"hurry it up\" now speed the clip up, like \"make it faster\" always did.",
-  "pub_date": "2026-08-13T13:00:12Z",
+  "version": "0.1.829",
+  "notes": "Trimming an \"HDR clip\" or an \"HDMI capture\" no longer runs the upscaler you did not ask for.",
+  "pub_date": "2026-08-13T13:47:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg1NWZrdHNMcWQ2MXRFc1RDRzNyYTBYS3BHK0pWbnBOZWdqQlJrWlJ6WUdQK05vZ1dUeXZ1dVhna0NwOVMzYWNUZ0N0ckZFakROUFlrVkswZm1PZHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjI1Nzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWZFl4aEEwdHBjMlJsQzlOelNKbFFsSGxIZ2FMa0p6ZE5BOUtsRzRHYkVXVzRNZ2VSS3MvcG5ESkJXaThTS0hsVDZmRy96SUw4bDJXOVJhemNaQm9CUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBBQVAwRUxzeCs0MEZldFQvck9rWStTb3gxc2txS1dTc25rL1luWkJtRkdGWnRUcTV5Q0Z3alVXUTRJUEpmY2t3SzZNeTBUUnNZYXRDN2Q3SU9Kd0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjI3NzYwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0dlRhdVBoNUpVYUFUMWVMdmUrWW96OGtGZ1pBOGtsZGpmTk5uSVAvbWJVdkdkNHgyOWFONXJnNnVKZ1pESFZ4TW4yMk40ek9WYzYrbC9FQnhaR25CUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
