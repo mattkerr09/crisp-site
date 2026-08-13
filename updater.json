@@ -1,10 +1,10 @@
 {
-  "version": "0.1.826",
-  "notes": "\"Shorten it by 10 seconds\" no longer builds a ten-second montage \u2014 a length to cut BY is not a length to cut TO.",
-  "pub_date": "2026-08-13T10:41:17Z",
+  "version": "0.1.827",
+  "notes": "\"Can you crop it\" now gets the same helpful question that \"crop it\" always did.",
+  "pub_date": "2026-08-13T11:53:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtoTGJXRjAyL2tEVEFqckJOS1NtaEROWFlrNFdTY25Jb0FsNjhWdmd1dXZOK1ZjaFFwdVJrYUUxcDF5WDEwcTV5MmVBQlpHdXQ4VFRhVnZjRlBMaUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjE2NzEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovNm83SHZaTmk1Z1RwcUZLcTBQZXZoRC8wRGYrSUhFbEwxMVVWeC9iWElOTTNBVmg0aHFFV1c1N21HQWcrMnliSUd1eVhqT3FsYjZZZDRUL3VuaHZDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZoTStrUDZSVjRrNjZMbUllZ0FwN3ZGdGgzY0ZHaENiMTl5WThmZWUrcG53c2tBS1RJMk5BZkxKTHJEa1J2QmVMcUFzcWZzUENHUFppempXOTA2ZHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjIxMTU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5elY5NjRiUWRwYkExZlVYUTN1N1BOTXBzU1ZxbHNic1pOOE42WDM5UmpGaXhGMnJqVEtxbnZFVnducjl3c0RRZ0NpSExXKzlsUGlYeWQ0bFVDempBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
