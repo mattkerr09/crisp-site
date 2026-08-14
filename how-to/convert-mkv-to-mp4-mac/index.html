@@ -27,6 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does converting MKV to MP4 lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not if you copy the streams instead of re-encoding. The video and audio data are moved into a different container untouched, so the result is bit-identical. Re-encoding does lose quality."}},{"@type":"Question","name":"Why won't my MKV play on a Mac?","acceptedAnswer":{"@type":"Answer","text":"QuickTime doesn't support the MKV container. The video inside is often perfectly playable h.264 or HEVC — it's the wrapper macOS objects to, which is why a container swap fixes it in seconds."}},{"@type":"Question","name":"What if the audio doesn't work after converting?","acceptedAnswer":{"@type":"Answer","text":"MKV commonly carries codecs MP4 doesn't allow, chiefly DTS and FLAC. Those need re-encoding to AAC while the video is still copied — you lose a little audio quality and no picture quality."}}]}
 </script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">

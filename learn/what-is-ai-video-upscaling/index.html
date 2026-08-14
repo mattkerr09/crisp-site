@@ -27,6 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling add detail that wasn't there?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the honest description of it. The model predicts what the missing pixels most likely looked like based on millions of examples of real footage. It is plausible reconstruction, not recovery, which is why upscaled video should never be treated as evidence."}},{"@type":"Question","name":"Is AI upscaling better than just exporting at a higher resolution?","acceptedAnswer":{"@type":"Answer","text":"Exporting at a higher resolution does nothing on its own — it stretches the same pixels over a larger grid. Traditional scaling (bicubic, Lanczos) interpolates between known pixels and cannot invent edge detail. An AI model can, because it has seen what real edges look like."}},{"@type":"Question","name":"How much can you upscale before it looks fake?","acceptedAnswer":{"@type":"Answer","text":"2x is reliable on most footage. 4x works when the source is clean. Beyond that the model is inventing more than it is reconstructing, and faces are where people notice first."}}]}
 </script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
