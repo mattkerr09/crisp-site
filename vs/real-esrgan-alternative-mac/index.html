@@ -27,6 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Real-ESRGAN free?","acceptedAnswer":{"@type":"Answer","text":"Yes, genuinely — BSD-3 licensed, and the ncnn build runs on Apple Silicon's GPU via Vulkan. There is no catch and no trial."}},{"@type":"Question","name":"Does Crisp use Real-ESRGAN?","acceptedAnswer":{"@type":"Answer","text":"Crisp uses an ncnn Real-ESRGAN build for its standard upscaling lane, and a heavier diffusion model for its Max lane. The model is not the secret; the frame handling, memory management and editing around it are the work."}},{"@type":"Question","name":"Can Real-ESRGAN do video?","acceptedAnswer":{"@type":"Answer","text":"Not directly. It upscales images. Video means extracting frames with ffmpeg, upscaling each one, then reassembling with the original audio — which is exactly the pipeline you end up writing."}}]}
 </script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
