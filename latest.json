@@ -1,10 +1,10 @@
 {
-  "version": "1.0.850",
-  "notes": "Pin the Max memory levers that are real, and the one that is not",
-  "pub_date": "2026-08-14T19:48:48Z",
+  "version": "1.0.851",
+  "notes": "8x and 16x had no button, and 4K at 4x never could encode",
+  "pub_date": "2026-08-14T21:12:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxqMSttNkVwZVl1bHNDNitneXVYMGp1eWJjOHkwejdTcURnaHBWV3JtakFQdUU1N1gxSUxNRDRpeFdDQ0o5ZUtyMElPdWl2Q2VNNWZNRkdleGRyRVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzM2ODkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLdUNzdkQ1NEtpZTJiRStsRkdyYWY4c0xlbGVlbU9Xd1RHclJTWHFIeCtROXRoOFZ2VzFndlZiYWdyLzlBSXVuY0dlZE9kSWsraU9kN3ArNDlqTmpBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR2NG9LWmVINmRrdTd5Nm1Hd0RDNkYwcDlKRDk5ZlpnQmlFRmdQY1U3Y3I4Y2pBSDB0OHZJSWxwUjc1aXdWS1VjalBsd0NyazduTmJTMWV0REQyYmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzQxOTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqRUcyQWJyaEF5WTltczhhVkVrcWNhb0dlQlRsUkx0WFpUNk41NUMrSGZHaTJkTnNmQlFCazVxLzZpYUpHYXpHOUNiclV2UFFUbGZGTnM5dUhUUDlEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
