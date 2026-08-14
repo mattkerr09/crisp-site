@@ -1,10 +1,10 @@
 {
-  "version": "0.1.838",
-  "notes": "\"Colour grade it\", \"colour correct it\" and \"regrade it\" now reach the same question \"grade it\" always did.",
-  "pub_date": "2026-08-14T05:18:15Z",
+  "version": "0.1.839",
+  "notes": "Describing combing \u2014 \"the field order is wrong\" \u2014 now gets the deinterlace answer instead of being asked to rephrase.",
+  "pub_date": "2026-08-14T06:27:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNOGlwVmVrSUZOT1JvZGFydWJOTUFHWVFHamdGWXZTTWp4V3pmYThMV2IvNHNLcjFocTRjLzNYVVhuSnkzamlYM2RCUnNIVkhEZ2MweGphSG5JR0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njg0NjAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplcmJZK05USTFIdGk5N3FtMjVDQkkvYXpjaFFvZVQ3SmhseEJ4d2c2TGsrR2YvT3NmL1ZsT0oxRFZqV3oyUkdtYVJ4WXQ1MjNiMEFTZE5Pak1CS3JCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN3MWhDRzVIaXFNRW9PeXpMeVlQTjVBMDFMcTlkS3lrVkNDeWs1WmZUc2pEZDZSWVpIWWp6anlpWEU1YXVFM1BhdnlSZTJMT2tpdUpIdzl1Mkdub1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njg4Nzg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPV3ZtL3FZdldGVVl4VXZ1RXRxS29uSTdqbkVsbk9rb09kVnBjT1NZaWJCdERUVVphVWlPYUVjVWszZkkwdDBUN25vTnVpbUlkMnd1WHRpMnlSR1lBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
