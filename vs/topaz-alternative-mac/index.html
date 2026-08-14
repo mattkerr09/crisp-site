@@ -59,7 +59,7 @@
       <tr><td>Model selection</td><td>Plain-English + Auto (no picker)</td><td class="yes">Large lineup (Proteus, Artemis, Iris…)</td></tr>
       <tr><td>Fine per-model / per-artifact control</td><td class="no">Deliberately minimal</td><td class="yes">Extensive sliders</td></tr>
       <tr><td>Quality ceiling on hard restores</td><td>Strong for common jobs</td><td class="yes">Higher — more specialised models</td></tr>
-      <tr><td>AI upscale · denoise · low-light</td><td class="yes">Yes (2×–4×, up to 4K)</td><td class="yes">Yes</td></tr>
+      <tr><td>AI upscale · denoise · low-light</td><td class="yes">Yes (2×–16×)</td><td class="yes">Yes</td></tr>
       <tr><td>Generative Max-quality restore</td><td class="yes">Yes — on-device (SeedVR2)</td><td class="yes">Yes (Starlight, often cloud)</td></tr>
       <tr><td>Frame interpolation (smooth motion)</td><td class="yes">Yes — 2×/3×</td><td class="yes">Yes (Apollo/Chronos)</td></tr>
       <tr><td>Auto-editor (trim, reframe, speed, color…)</td><td class="yes">Yes — 11 lanes</td><td class="no">No — enhance only</td></tr>
@@ -84,12 +84,12 @@
   </ul>
 
   <h3>What the upscaler actually is</h3>
-  <p>Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is <strong>Real-ESRGAN (ncnn/Vulkan)</strong>, running <strong>2×–4×</strong> up to 4K on-device. Under the hood there are a few purpose-built models — a general live-action model, a low-light/denoise variant, an anime/line-art model, and a fast native-2× network for clean HD→4K passes — but you never pick them by hand: <strong>Auto</strong> detects the source (resolution, brightness) and routes to the right one. For badly degraded footage there's a separate <strong>Max quality</strong> lane driven by a generative, one-step diffusion restorer (SeedVR2) that runs fully offline — Crisp's answer to Topaz's Starlight, minus the cloud. It's slow and video-only, best left running a while, but it rebuilds real detail. Honest limits: this is one upscaler with a handful of models, not Topaz's deep model catalogue, and it enhances and restores footage you already have — it won't generate or remove objects, swap faces or replace backgrounds, and it tells you so rather than faking it.</p>
+  <p>Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is <strong>Real-ESRGAN (ncnn/Vulkan)</strong>, running <strong>2×–16×</strong> on-device, with the large steps reserved for small sources. Under the hood there are a few purpose-built models — a general live-action model, a low-light/denoise variant, an anime/line-art model, and a fast native-2× network for clean HD→4K passes — but you never pick them by hand: <strong>Auto</strong> detects the source (resolution, brightness) and routes to the right one. For badly degraded footage there's a separate <strong>Max quality</strong> lane driven by a generative, one-step diffusion restorer (SeedVR2) that runs fully offline — Crisp's answer to Topaz's Starlight, minus the cloud. It's slow and video-only, best left running a while, but it rebuilds real detail. Honest limits: this is one upscaler with a handful of models, not Topaz's deep model catalogue, and it enhances and restores footage you already have — it won't generate or remove objects, swap faces or replace backgrounds, and it tells you so rather than faking it.</p>
 
   <h2>The part Topaz doesn't do: editing</h2>
   <p>Topaz is enhance-only. Crisp adds a whole editor beside the upscaler, driven by the same drop-a-file-in simplicity, and you can steer any of it in plain English. The lanes are real, deterministic ffmpeg/ncnn operations, not a chatbot guessing:</p>
   <ul>
-    <li><strong>Enhance</strong> — AI upscale 2×–4× (up to 4K), low-light cleanup, denoise/grain removal, generative Max-quality restore, and smooth motion (2×/3× frame interpolation).</li>
+    <li><strong>Enhance</strong> — AI upscale 2×–16×, low-light cleanup, denoise/grain removal, generative Max-quality restore, and smooth motion (2×/3× frame interpolation).</li>
     <li><strong>Montage</strong> — auto-build a highlight reel, condense out the dead air, or cut to the beat of a song, on-device.</li>
     <li><strong>Reframe</strong> — 9:16, 1:1, 4:5 or 16:9 with the whole frame kept and a soft blurred fill, for Reels/TikTok/Shorts.</li>
     <li><strong>Speed</strong> — slow-mo or fast-forward, clamped to a sane 0.1×–8× range.</li>
