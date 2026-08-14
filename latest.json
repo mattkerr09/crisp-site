@@ -1,10 +1,10 @@
 {
-  "version": "0.1.837",
-  "notes": "\"Colour grading\" and \"stabilisation\" now work on their own, like \"make it warmer\" always did.",
-  "pub_date": "2026-08-14T03:48:18Z",
+  "version": "0.1.838",
+  "notes": "\"Colour grade it\", \"colour correct it\" and \"regrade it\" now reach the same question \"grade it\" always did.",
+  "pub_date": "2026-08-14T05:18:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJNZ2sraUU0czFiQVVNamdaUzBIbnFObitHYkI2SHZpSUo2WmllMHNNaTNmdUg0d2pkTFZENWM0dGxYY0ttcGxCbUdmd0FSQ3E2Mm9pbEo2RHBHTEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njc5MTY1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMams2SmkyYTFTQlJwRXlpK0Fjc0I3eGpPaXVFSUVlVElTcEE4cWV3UktPVWwrTTk4ajBlMDRZODQyQ0VIQkdSc0luakQxcm1EZkRyNzNDZG1QMUdBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNOGlwVmVrSUZOT1JvZGFydWJOTUFHWVFHamdGWXZTTWp4V3pmYThMV2IvNHNLcjFocTRjLzNYVVhuSnkzamlYM2RCUnNIVkhEZ2MweGphSG5JR0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njg0NjAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negplcmJZK05USTFIdGk5N3FtMjVDQkkvYXpjaFFvZVQ3SmhseEJ4d2c2TGsrR2YvT3NmL1ZsT0oxRFZqV3oyUkdtYVJ4WXQ1MjNiMEFTZE5Pak1CS3JCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
