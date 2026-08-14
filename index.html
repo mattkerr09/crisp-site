@@ -897,7 +897,13 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
 
        It is also 3.3MB, which nobody should pay for on a phone, on a 1x display, or without
        ever scrolling here — hence preload="none" plus the observer. */
-    var tier = (window.devicePixelRatio || 1) >= 1.5 ? '2x' : '1x';
+    /* ⚠️ DPR ALONE PICKS THE WRONG FILE ON A PHONE. A handset is DPR 2-3, so a devicePixelRatio
+       test hands a 375px-wide screen the 2560 pair — 2.8MB of pixels it can never show. What
+       decides the file is how many device pixels this BOX needs: CSS width x DPR. A 343px box
+       at DPR 3 wants ~1029, so the 1280 pair covers it; a 1000px box at DPR 2 wants 2000, and
+       only the 2560 pair covers that without the browser stretching it. */
+    var need = ba.getBoundingClientRect().width * (window.devicePixelRatio || 1);
+    var tier = need > 1400 ? '2x' : '1x';
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var started = false;
     /* ⚠️ CONTROLS GO ON THE TOP VIDEO ONLY. The source sits underneath with clip-path applied,
