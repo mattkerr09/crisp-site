@@ -146,7 +146,11 @@ a{color:inherit;text-decoration:none;}
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
   box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
 .ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
-.ba-note + .ba{margin-top:2.8rem;}   /* the second panel follows a caption, not another panel */
+/* ⚠️ BOTH ADJACENCIES, because only one was covered and the other was visibly broken: a panel
+   that follows a CAPTION got its gap, and a panel that follows ANOTHER PANEL got none, so the
+   NASA and Max sliders sat flush against each other with no separation at all. */
+.ba-note + .ba,
+.ba + .ba{margin-top:2.8rem;}
 /* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
    full-width image stays pixel-aligned with the one beneath it at every container width. */
 .ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
@@ -315,7 +319,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <a href="#what">Features</a><a href="#how">How it works</a>
       <a href="#compare">Compare</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Download</a>
+    <a class="btn btn-primary btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download</a>
   </div>
 </header>
 
@@ -338,7 +342,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       A real timeline, auto-montage cut to the beat, and a generative restore lane.
       No cloud. No account. No subscription.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">
+      <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
         Download for Mac
       </a>
@@ -647,7 +651,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Auto-montage &amp; music mode</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One file at a time</li>
         </ul>
-        <a class="btn btn-ghost" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Download free</a>
+        <a class="btn btn-ghost" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free</a>
       </div>
       <div class="tier pro">
         <div class="name">Crisp Pro</div><div class="price">$39 <small>once</small></div>
@@ -730,7 +734,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="step"><div class="n">1</div><h3>Download and use it free</h3>
         <p>78&nbsp;MB, Apple Silicon, notarized by Apple. The full editor, 4K upscale and
           montage, one file at a time. Video exports carry a small “Made with Crisp” mark.</p>
-        <p><a class="btn btn-ghost btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">Download for Mac</a></p>
+        <p><a class="btn btn-ghost btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
       </div>
       <div class="step"><div class="n">2</div><h3>Buy a licence key — $39</h3>
         <p>One payment, in US dollars, through Polar. Your key is emailed to you by Polar once
@@ -810,7 +814,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <h2 class="h-lg">Make it crisp.</h2>
     <p class="lede">Free to use, 78&nbsp;MB, and it opens in about a second. Nothing to sign up for.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg">
+      <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
         Download for Mac
       </a>
@@ -869,7 +873,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       "processorRequirements": "Apple Silicon (M1 or later)",
       "softwareVersion": "0.1.843",
       "url": "https://crispvideo.app/",
-      "downloadUrl": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.dmg",
+      "downloadUrl": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg",
       "installUrl": "https://crispvideo.app/#download",
       "screenshot": "https://crispvideo.app/og.png",
       "author": {"@id": "https://crispvideo.app/#author"},
