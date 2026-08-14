@@ -1,10 +1,10 @@
 {
-  "version": "0.1.840",
-  "notes": "\"It is too warm\" and \"it looks orange\" now cool the picture, the way \"make it cooler\" always did.",
-  "pub_date": "2026-08-14T07:34:09Z",
+  "version": "0.1.841",
+  "notes": "\"The exposure is too low\" and \"the contrast could be higher\" now adjust the picture, the way \"raise the exposure\" always did.",
+  "pub_date": "2026-08-14T08:43:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIxOGNJZGJKazBHMTBLSmNsVlhxbzQxM2psa3QxNlRBSnpCVHNVd2E0Z2Q5eW1nN05RVWpXdHpLY1o2c1hHM1c2emNnbXcrYXUyQXc5OEdtMGRQOFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjkyNzg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEUjY4YmFnNFBIMm1EU0Jyd3dOOGZjNWFEWmg1SjR3ZXNpTFAyMk1OcXlHSXFKOG1PWGVROURlTTQyYXFOUGI2elpDTUFVUklNbGhxNkdRM0ZzSXBCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBCNWRMbTRnZ05nbGFYcktHN2RIUGhEQ2oyREJnSEdTTW0vRzdiTkF2ckpXRTdxdlRYdFRSZmZCbmxkZW16cDIwMDgxaHM3ZXEvQVNFM2dLeVFUSVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njk2OTUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHK3VhL1Q0RDQxaXdKTWovanNJSmhTWnB2K0M2ZGVoRkh0a0QrUjB4RGdLNjR5Rno5Ny82WkRwRnRCajZhZld3QnRDcjh3b2Z0K3NlejRZUkI1N3VBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
