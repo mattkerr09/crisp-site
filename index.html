@@ -143,6 +143,7 @@ a{color:inherit;text-decoration:none;}
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
   box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
 .ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
+.ba-note + .ba{margin-top:2.8rem;}   /* the second panel follows a caption, not another panel */
 /* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
    full-width image stays pixel-aligned with the one beneath it at every container width. */
 .ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
@@ -372,7 +373,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="kicker">Real output</p>
       <h2 class="h-lg">640&times;480 in. 2560&times;1920 out.</h2>
       <p class="lede">Drag the handle. Left is the low-resolution source scaled up to fit;
-        right is what Crisp gave back. No cloud, no cherry-picking.</p>
+        right is what Crisp gave back. Two clips, the hard case first. No cloud, no cherry-picking.</p>
     </div>
 
     <div class="ba" id="ba">
@@ -382,7 +383,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
         data-src-1x="/demo-after.mp4" data-src-2x="/demo-after@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="After Crisp: the same 1940 film, grain cleaned and the crowd and pagoda edges resolved."></video>
+        aria-label="After Crisp: the same 1940 film, grain cleaned and the pagoda roof brackets resolved."></video>
       <video class="ba-before" id="baBefore" width="1280" height="720"
         data-src-1x="/demo-before.mp4" data-src-2x="/demo-before@2x.mp4"
         muted loop playsinline preload="none"
@@ -393,7 +394,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note">Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times;, its maximum, to 2560&times;1920 on Apple Silicon, with single-frame dust removal on, in 48 seconds. Both clips play here unedited at the same size, from the same five seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. The improvement is real and it is not night-and-day; we would rather show you the frames than a number you cannot reproduce.</p>
+    <p class="ba-note"><strong>The hard case.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times;, its maximum, to 2560&times;1920 on Apple Silicon in 36 seconds. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail, the restore carries 1.68&times; the fine detail of simply scaling the source up.</p>
+
+    <div class="ba" id="ba2">
+      <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
+        alt="After Crisp: individual streetlights and roads resolve as distinct points and lines.">
+      <img class="ba-before" src="/demo-still-before.jpg" width="1704" height="896" loading="lazy" decoding="async"
+        alt="The 426x224 source at the same size — a muddy smear of light.">
+      <div class="ba-line"><span class="ba-grip"></span></div>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 4&times;</span>
+      <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
+        aria-label="Reveal more of the source or the restored frame">
+    </div>
+
+    <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then restored 4&times;. That is a much kinder test than real archival film &mdash; the detail was genuinely there to begin with &mdash; and it scores 6.8&times; the fine detail rather than 1.68&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
   </div>
 </section>
 
@@ -837,10 +851,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <script>
 // Before/after handle. Without it the divider simply stays put and both frames remain visible.
-(function () {
-  var ba = document.getElementById('ba');
-  if (!ba) return;
+/* Drives EVERY .ba panel on the page, not a single hardcoded id — there are two now (the video
+   pair and the still pair) and a second copy of this block would be two things to keep in step. */
+Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
   var range = ba.querySelector('.ba-range');
+  if (!range) return;
   function put(v) { ba.style.setProperty('--x', Math.max(0, Math.min(100, v)) + '%'); }
   range.addEventListener('input', function () { put(parseFloat(range.value)); });
   put(parseFloat(range.value));
@@ -850,7 +865,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
      difference restoration. They start together and are the same length, but autoplay grants
      and decode cost are not identical, so this pulls the source back whenever it slips more
      than a frame and a half behind. Cheap: one comparison per timeupdate tick, no rAF loop. */
-  var vA = document.getElementById('baAfter'), vB = document.getElementById('baBefore');
+  var vA = ba.querySelector('video.ba-after'), vB = ba.querySelector('video.ba-before');
   if (vA && vB) {
     vA.addEventListener('timeupdate', function () {
       if (Math.abs(vB.currentTime - vA.currentTime) > 0.05) vB.currentTime = vA.currentTime;
@@ -904,7 +919,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       start();   /* no observer: load immediately rather than show an empty box forever */
     }
   }
-})();
+});
 </script>
 
 <script>
