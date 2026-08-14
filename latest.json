@@ -1,10 +1,10 @@
 {
-  "version": "0.1.839",
-  "notes": "Describing combing \u2014 \"the field order is wrong\" \u2014 now gets the deinterlace answer instead of being asked to rephrase.",
-  "pub_date": "2026-08-14T06:27:22Z",
+  "version": "0.1.840",
+  "notes": "\"It is too warm\" and \"it looks orange\" now cool the picture, the way \"make it cooler\" always did.",
+  "pub_date": "2026-08-14T07:34:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN3MWhDRzVIaXFNRW9PeXpMeVlQTjVBMDFMcTlkS3lrVkNDeWs1WmZUc2pEZDZSWVpIWWp6anlpWEU1YXVFM1BhdnlSZTJMT2tpdUpIdzl1Mkdub1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Njg4Nzg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPV3ZtL3FZdldGVVl4VXZ1RXRxS29uSTdqbkVsbk9rb09kVnBjT1NZaWJCdERUVVphVWlPYUVjVWszZkkwdDBUN25vTnVpbUlkMnd1WHRpMnlSR1lBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIxOGNJZGJKazBHMTBLSmNsVlhxbzQxM2psa3QxNlRBSnpCVHNVd2E0Z2Q5eW1nN05RVWpXdHpLY1o2c1hHM1c2emNnbXcrYXUyQXc5OEdtMGRQOFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NjkyNzg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEUjY4YmFnNFBIMm1EU0Jyd3dOOGZjNWFEWmg1SjR3ZXNpTFAyMk1OcXlHSXFKOG1PWGVROURlTTQyYXFOUGI2elpDTUFVUklNbGhxNkdRM0ZzSXBCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v0.1.0-beta/Crisp.app.tar.gz"
     }
   }
