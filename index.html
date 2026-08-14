@@ -24,7 +24,13 @@
 
 <style>
 :root{
-  --black:#000; --panel:#08090d; --panel-2:#0d0f15; --card:#101319;
+  /* Was pure #000. Linear ships rgb(8,9,10) and Vercel/Stripe are similarly
+     near-black, because #000 behind #f5f7fa text haloes on OLED and reads cheap.
+     The old comment argued true black is "what a video canvas is" — that is a
+     fair point for the PLAYER, so the shot frame below keeps #000 and only the
+     page ground lifts. The video still sits on true black; the page no longer
+     pretends the whole browser window is a canvas. */
+  --black:#08090b; --panel:#0c0e13; --panel-2:#0d0f15; --card:#101319;
   --hair:#1c2029; --hair-lit:#2a3040;
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#6b7382;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
@@ -88,9 +94,12 @@ a{color:inherit;text-decoration:none;}
   padding:.8rem 1.45rem;border-radius:999px;font-weight:600;font-size:.97rem;
   border:1px solid transparent;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s;}
 .btn:hover{transform:translateY(-2px);}
-.btn-primary{background:linear-gradient(180deg,#7ad6fd,#32aeea);color:#021019;
-  box-shadow:0 10px 34px -12px rgba(90,200,250,.85);}
-.btn-primary:hover{box-shadow:0 16px 44px -12px rgba(90,200,250,1);}
+/* The vertical blue gradient plus a coloured glow is the same 2023-SaaS signature
+   the headline gradient was. Apple, Linear and Stripe all ship a FLAT primary
+   button; the glow is what makes a page read as a template. Solid fill, and the
+   lift on hover comes from the button itself rather than a halo around it. */
+.btn-primary{background:#5ac8fa;color:#04121b;box-shadow:none;}
+.btn-primary:hover{background:#7ad6fd;}
 .btn-ghost{border-color:var(--hair-lit);color:var(--white);background:rgba(255,255,255,.03);}
 .btn-ghost:hover{background:rgba(255,255,255,.07);}
 .btn-sm{padding:.5rem 1.05rem;font-size:.88rem;}
@@ -102,8 +111,11 @@ a{color:inherit;text-decoration:none;}
 /* hero — halo is a gradient, not a blurred layer (cheap, no compositing artefacts) */
 .hero{position:relative;text-align:center;padding:7rem 0 0;
   background:
-    radial-gradient(1100px 620px at 50% -8%, rgba(90,200,250,.16), transparent 62%),
-    radial-gradient(760px 460px at 82% 14%, rgba(157,140,255,.11), transparent 66%);
+    /* The blue-and-violet double halo was the third template signature on this
+       page, after the headline gradient and the glowing button — a cyan/purple
+       wash behind a hero is the visual shorthand for "AI startup". One faint
+       cool light remains so the fold is not flat; the violet is gone. */
+    radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.07), transparent 60%);
 }
 .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;
   border:1px solid var(--hair-lit);background:rgba(90,200,250,.06);color:var(--ice);
