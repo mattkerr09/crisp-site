@@ -109,7 +109,10 @@ a{color:inherit;text-decoration:none;}
 .btn[aria-disabled="true"]{opacity:.48;box-shadow:none;pointer-events:none;}
 
 /* hero — halo is a gradient, not a blurred layer (cheap, no compositing artefacts) */
-.hero{position:relative;text-align:center;padding:7rem 0 0;
+/* 7rem of head-room made sense when the hero ended in a static screenshot nobody needed to
+   reach. Now the proof is a playing clip, and every rem above the H1 pushes it under the fold —
+   so the top pad is tightened and the trust row pulled in, which lifts the demo ~90px. */
+.hero{position:relative;text-align:center;padding:4.6rem 0 0;
   background:
     /* The blue-and-violet double halo was the third template signature on this
        page, after the headline gradient and the glowing button — a cyan/purple
@@ -119,12 +122,12 @@ a{color:inherit;text-decoration:none;}
 }
 .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;
   border:1px solid var(--hair-lit);background:rgba(90,200,250,.06);color:var(--ice);
-  font-size:.81rem;font-weight:600;margin-bottom:1.7rem;}
+  font-size:.81rem;font-weight:600;margin-bottom:1.4rem;}
 .pill svg{width:13px;height:13px;}
-.hero .lede{max-width:58ch;margin:1.5rem auto 2.4rem;}
+.hero .lede{max-width:58ch;margin:1.3rem auto 2rem;}
 .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
 .fine{margin-top:1.1rem;font-size:.85rem;color:var(--grey-dim);}
-.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:2.6rem;}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;}
 .trust span{display:inline-flex;align-items:center;gap:.45rem;font-size:.87rem;color:var(--grey);font-weight:500;}
 .trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
 
@@ -357,29 +360,16 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One-time $39</span>
     </div>
-    <figure class="shot">
-      <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 900w, /img-app@2x.png 1800w"
-        sizes="(max-width: 1100px) 100vw, 1060px"
-        width="1800" height="1228" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="eager" decoding="async"></div>
-      <figcaption class="cap">Crisp on macOS — editor, queue and upscaler in one window.</figcaption>
-    </figure>
-  </div>
-</div>
-
-
-<section id="restore">
-  <div class="wrap">
-    <div class="head">
-      <p class="kicker">Real output</p>
-      <h2 class="h-lg">640&times;480 in. 2560&times;1920 out.</h2>
-      <p class="lede">Drag the handle. Left is the low-resolution source scaled up to fit;
-        right is what Crisp gave back. Two clips, the hard case first. No cloud, no cherry-picking.</p>
-    </div>
-
+    <!-- ⚠️ THIS SLOT USED TO HOLD A SCREENSHOT OF AN EMPTY APP — a timeline reading "Your
+         timeline is empty", which is the least persuasive thing that could sit above the fold
+         on a page whose whole claim is what comes out the other side. The reference set puts
+         the PROOF here: Screen Studio opens on a playing video at top:0. So this is the actual
+         restore, running, before a visitor has scrolled anywhere. The screenshot moved down to
+         "What it does", where showing the interface is the point. -->
     <div class="ba" id="ba">
-      <!-- No src= on purpose: the loader below picks the 1x or 2x file by devicePixelRatio and
-           only fetches it when this section nears the viewport. A hardcoded src would pull 3.3MB
-           on every visit, including from people who never scroll this far. -->
+      <!-- No src= on purpose: the loader picks the 1x or 2x file by devicePixelRatio. It is in
+           the hero now, so the observer fires immediately — but preload="none" still means a
+           1x display never fetches the 2.8MB retina pair. -->
       <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
         data-src-1x="/demo-after.mp4" data-src-2x="/demo-after@2x.mp4"
         muted loop playsinline preload="none"
@@ -393,8 +383,23 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
+    <p class="ba-note">Real 1940 archival film at 640&times;480, restored 4&times; to 2560&times;1920 on
+      a Mac in 36 seconds. Drag the handle. <a href="#restore">How this was measured &rarr;</a></p>
+  </div>
+</div>
 
-    <p class="ba-note"><strong>The hard case.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times;, its maximum, to 2560&times;1920 on Apple Silicon in 36 seconds. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail, the restore carries 1.68&times; the fine detail of simply scaling the source up.</p>
+
+<section id="restore">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Real output</p>
+      <h2 class="h-lg">Measured, not claimed.</h2>
+      <p class="lede">Where the clip at the top of this page came from, what it scored, and a
+        second example that flatters us — labelled as such.</p>
+    </div>
+
+
+    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times;, its maximum, to 2560&times;1920 on Apple Silicon in 36 seconds. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail, the restore carries 1.68&times; the fine detail of simply scaling the source up.</p>
 
     <div class="ba" id="ba2">
       <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
@@ -419,6 +424,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
         lift, restore, upscale — then hands you an editor for what comes next.</p>
     </div>
+
+    <!-- Moved down from the hero, where an empty timeline was the first thing a visitor saw.
+         Here the interface IS the subject, so an empty project is honest rather than limp. -->
+    <figure class="shot">
+      <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 900w, /img-app@2x.png 1800w"
+        sizes="(max-width: 1100px) 100vw, 1060px"
+        width="1800" height="1228" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="lazy" decoding="async"></div>
+      <figcaption class="cap">Crisp on macOS — editor, queue and upscaler in one window.</figcaption>
+    </figure>
 
     <div class="row">
       <div class="col-text">
