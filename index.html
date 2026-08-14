@@ -142,7 +142,7 @@ a{color:inherit;text-decoration:none;}
 .ba{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
   box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
-.ba img{display:block;width:100%;height:auto;}
+.ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
 /* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
    full-width image stays pixel-aligned with the one beneath it at every container width. */
 .ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
@@ -376,17 +376,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
 
     <div class="ba" id="ba">
-      <img class="ba-after" src="/demo-after.jpg" width="1704" height="896"
-        alt="After Crisp: individual streetlights and roads resolve as distinct points and lines." loading="lazy" decoding="async">
-      <img class="ba-before" src="/demo-before.jpg" width="1704" height="896"
-        alt="The low-resolution source at the same size — city lights smear into muddy blobs." loading="lazy" decoding="async">
+      <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
+        src="/demo-after.mp4" muted autoplay loop playsinline preload="metadata"
+        aria-label="After Crisp: the same 1940 film, grain cleaned and the crowd and pagoda edges resolved."></video>
+      <video class="ba-before" id="baBefore" width="1280" height="720"
+        src="/demo-before.mp4" muted autoplay loop playsinline preload="metadata"
+        aria-label="The 640x480 archival scan at the same size — soft, grainy, edges smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 4&times;</span>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 2&times;</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note">Source: NASA &mdash; a city at night photographed from the International Space Station, public domain. Downscaled to 426&times;224 to stand in for low-resolution footage, then restored and upscaled 4&times; to 1704&times;896 by Crisp on Apple Silicon. Both images are served here unedited, at the same size, so you can judge it yourself &mdash; we would rather show you the frames than a number you cannot reproduce.</p>
+    <p class="ba-note">Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it 2&times; to 1280&times;960 on Apple Silicon, with single-frame dust removal on, in about sixteen seconds. Both clips play here unedited at the same size, from the same five seconds, so you can judge it yourself. The improvement is real and it is not night-and-day; we would rather show you the frames than a number you cannot reproduce.</p>
   </div>
 </section>
 
@@ -837,6 +839,25 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   function put(v) { ba.style.setProperty('--x', Math.max(0, Math.min(100, v)) + '%'); }
   range.addEventListener('input', function () { put(parseFloat(range.value)); });
   put(parseFloat(range.value));
+
+  /* Two <video> elements comparing the same five seconds have to stay on the same frame or the
+     comparison is a lie — a drifting pair shows you two different moments and calls the
+     difference restoration. They start together and are the same length, but autoplay grants
+     and decode cost are not identical, so this pulls the source back whenever it slips more
+     than a frame and a half behind. Cheap: one comparison per timeupdate tick, no rAF loop. */
+  var vA = document.getElementById('baAfter'), vB = document.getElementById('baBefore');
+  if (vA && vB) {
+    vA.addEventListener('timeupdate', function () {
+      if (Math.abs(vB.currentTime - vA.currentTime) > 0.05) vB.currentTime = vA.currentTime;
+    });
+    /* Safari and iOS refuse autoplay until the element is muted AND the gesture policy is
+       satisfied; muted+playsinline covers it, but play() can still reject, and an unplayed
+       pair would sit on a black rectangle with no explanation. Fall back to the poster. */
+    [vA, vB].forEach(function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { v.controls = true; });
+    });
+  }
 })();
 </script>
 
