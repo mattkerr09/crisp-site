@@ -1,10 +1,10 @@
 {
-  "version": "0.1.843",
-  "notes": "This release fixes a bug where a complaint about the picture changed the sound instead.\n\nTyping \"the brightness is not high enough\" \u2014 or the same phrasing about exposure or sharpness \u2014 planned an audio change and doubled the volume, rather than lifting the picture. The rule that recognises \"not loud enough\" had no audio word required anywhere in it, so it matched that phrasing in any sentence at all. Contrast and saturation escaped only because a different rule reached them first.\n\nAll five picture properties now do the right thing, and every way of asking for more volume still reaches the audio path.\n\nApple silicon, signed and notarized under Developer ID, stapled so a first run works with no network.",
-  "pub_date": "2026-08-14T13:15:37Z",
+  "version": "1.0.850",
+  "notes": "Pin the Max memory levers that are real, and the one that is not",
+  "pub_date": "2026-08-14T19:48:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNjQlROcHBUR0NXdGF2eHh3NDJ2cThYa1NpbzBMOEM1NDlUZzZtcndJb3dQVmkzcmJTVnoxQllvNERwcTZjWDBLY1ZhZWNnbzY0dFRkY3V6WW83UmdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzEzMTkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMUUczV1BBR2lqTlVUY2J0ZmFFLzFNWUw0L0RKZThuRWFFODdWSnRobUQvREtINitTL2ttanUvelZDQjBxU2pVNVpNTk45T0NDeXAvcm0rNERGVEhEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxqMSttNkVwZVl1bHNDNitneXVYMGp1eWJjOHkwejdTcURnaHBWV3JtakFQdUU1N1gxSUxNRDRpeFdDQ0o5ZUtyMElPdWl2Q2VNNWZNRkdleGRyRVFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzM2ODkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLdUNzdkQ1NEtpZTJiRStsRkdyYWY4c0xlbGVlbU9Xd1RHclJTWHFIeCtROXRoOFZ2VzFndlZiYWdyLzlBSXVuY0dlZE9kSWsraU9kN3ArNDlqTmpBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
