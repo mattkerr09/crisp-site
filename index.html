@@ -370,25 +370,30 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
-      <h2 class="h-lg">426&times;224 in. 1704&times;896 out.</h2>
+      <h2 class="h-lg">640&times;480 in. 2560&times;1920 out.</h2>
       <p class="lede">Drag the handle. Left is the low-resolution source scaled up to fit;
         right is what Crisp gave back. No cloud, no cherry-picking.</p>
     </div>
 
     <div class="ba" id="ba">
+      <!-- No src= on purpose: the loader below picks the 1x or 2x file by devicePixelRatio and
+           only fetches it when this section nears the viewport. A hardcoded src would pull 3.3MB
+           on every visit, including from people who never scroll this far. -->
       <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
-        src="/demo-after.mp4" muted autoplay loop playsinline preload="metadata"
+        data-src-1x="/demo-after.mp4" data-src-2x="/demo-after@2x.mp4"
+        muted loop playsinline preload="none"
         aria-label="After Crisp: the same 1940 film, grain cleaned and the crowd and pagoda edges resolved."></video>
       <video class="ba-before" id="baBefore" width="1280" height="720"
-        src="/demo-before.mp4" muted autoplay loop playsinline preload="metadata"
+        data-src-1x="/demo-before.mp4" data-src-2x="/demo-before@2x.mp4"
+        muted loop playsinline preload="none"
         aria-label="The 640x480 archival scan at the same size — soft, grainy, edges smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 2&times;</span>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 4&times;</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note">Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it 2&times; to 1280&times;960 on Apple Silicon, with single-frame dust removal on, in about sixteen seconds. Both clips play here unedited at the same size, from the same five seconds, so you can judge it yourself. The improvement is real and it is not night-and-day; we would rather show you the frames than a number you cannot reproduce.</p>
+    <p class="ba-note">Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times;, its maximum, to 2560&times;1920 on Apple Silicon, with single-frame dust removal on, in 48 seconds. Both clips play here unedited at the same size, from the same five seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. The improvement is real and it is not night-and-day; we would rather show you the frames than a number you cannot reproduce.</p>
   </div>
 </section>
 
@@ -850,13 +855,54 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     vA.addEventListener('timeupdate', function () {
       if (Math.abs(vB.currentTime - vA.currentTime) > 0.05) vB.currentTime = vA.currentTime;
     });
-    /* Safari and iOS refuse autoplay until the element is muted AND the gesture policy is
-       satisfied; muted+playsinline covers it, but play() can still reject, and an unplayed
-       pair would sit on a black rectangle with no explanation. Fall back to the poster. */
-    [vA, vB].forEach(function (v) {
-      var p = v.play();
-      if (p && p.catch) p.catch(function () { v.controls = true; });
-    });
+    /* If autoplay was refused and the viewer presses play on the restored side, the source has
+       to actually run alongside it. Without this it would only get seek-stepped once per
+       timeupdate tick — visibly stuttering next to a smooth clip, which reads as a defect in
+       the source rather than in the page. */
+    vA.addEventListener('play', function () { var p = vB.play(); if (p && p.catch) p.catch(function () {}); });
+    vA.addEventListener('pause', function () { vB.pause(); });
+    /* ⚠️ THE PAGE SHOWS THIS IN A 1000px BOX, AND EVERY MAC IS RETINA — so at devicePixelRatio 2
+       the browser wants 2000 real pixels and a 1280-wide file gets stretched 1.56x. The whole
+       point of the section is resolution, so shipping a demo the browser has to upscale
+       undercuts the argument. The 2x pair is the 2560x1920 restore delivered intact.
+
+       It is also 3.3MB, which nobody should pay for on a phone, on a 1x display, or without
+       ever scrolling here — hence preload="none" plus the observer. */
+    var tier = (window.devicePixelRatio || 1) >= 1.5 ? '2x' : '1x';
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var started = false;
+    /* ⚠️ CONTROLS GO ON THE TOP VIDEO ONLY. The source sits underneath with clip-path applied,
+       so a scrubber drawn on it is sliced down the middle by the handle and cannot be clicked.
+       One usable set of controls on the restored frame is enough: the sync handler above seeks
+       the source to match, so scrubbing one scrubs both and the comparison stays honest. */
+    function showControls() { vA.controls = true; vB.controls = false; }
+    function start() {
+      if (started) return;
+      started = true;
+      [vA, vB].forEach(function (v) {
+        v.src = v.getAttribute('data-src-' + tier);
+        v.load();
+        /* Reduced motion: load the frames but do not move them. The comparison still works —
+           the handle drags over two paused stills — so the section keeps its meaning. */
+        if (still) { showControls(); return; }
+        /* Safari and iOS refuse autoplay until the element is muted AND the gesture policy is
+           satisfied; muted+playsinline covers it, but play() can still reject — Low Power Mode
+           and data-saver refuse it outright — and an unplayed pair would sit on a black
+           rectangle with no explanation. */
+        var p = v.play();
+        if (p && p.catch) p.catch(showControls);
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { start(); io.disconnect(); return; }
+        }
+      }, { rootMargin: '500px 0px' });   /* start the fetch before it is on screen, not after */
+      io.observe(ba);
+    } else {
+      start();   /* no observer: load immediately rather than show an empty box forever */
+    }
   }
 })();
 </script>
