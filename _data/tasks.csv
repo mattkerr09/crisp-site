@@ -1,17 +1,17 @@
-slug,name,intent,crisp_lane,paid,covered
-upscale-video,upscale video,commercial,upscale,no,yes
-upscale-to-4k,upscale to 4K,commercial,upscale,no,yes
-upscale-to-1080p,upscale 480p to 1080p,commercial,upscale,no,no
-restore-old-video,restore old video,commercial,max,yes,no
-denoise-video,remove video noise,informational,upscale,no,yes
-deinterlace-video,deinterlace video,informational,convert,no,no
-fix-blurry-video,fix blurry video,commercial,upscale,no,no
-stabilize-video,stabilize shaky video,informational,stabilize,no,yes
-color-grade,color grade video,informational,grade,no,yes
-split-screen,make a split screen video,informational,splitscreen,no,no
-picture-in-picture,picture in picture video,informational,splitscreen,no,no
-montage,make a montage,informational,montage,no,yes
-compress-video,compress video,informational,compress,no,yes
-convert-format,convert video format,informational,convert,no,yes
-remove-watermark,remove a watermark,commercial,overlay,no,no
-batch-process,batch process videos,commercial,batch,yes,no
+slug,name,intent,crisp_lane,paid,covered,page
+upscale-video,upscale video,commercial,upscale,no,yes,how-to/upscale-video-on-mac
+upscale-to-4k,upscale to 4K,commercial,upscale,no,yes,how-to/upscale-a-finished-edit-to-4k-mac
+upscale-to-1080p,upscale 480p to 1080p,commercial,upscale,no,yes,how-to/upscale-480p-to-1080p-mac
+restore-old-video,restore old video,commercial,max,yes,yes,how-to/restore-old-film-footage-mac
+denoise-video,remove video noise,informational,upscale,no,yes,how-to/remove-noise-from-video-mac
+deinterlace-video,deinterlace video,informational,refused,no,yes,how-to/deinterlace-video-mac
+fix-blurry-video,fix blurry video,commercial,upscale,no,yes,how-to/fix-blurry-video-mac
+stabilize-video,stabilize shaky video,informational,stabilize,no,yes,how-to/stabilize-shaky-video-mac
+color-grade,color grade video,informational,grade,no,yes,how-to/color-grade-video-mac
+split-screen,make a split screen video,informational,splitscreen,no,yes,how-to/make-a-split-screen-video-mac
+picture-in-picture,picture in picture video,informational,splitscreen,no,yes,how-to/picture-in-picture-video-mac
+montage,make a montage,informational,montage,no,yes,how-to/make-a-highlight-reel-mac
+compress-video,compress video,informational,compress,no,yes,how-to/compress-video-on-mac
+convert-format,convert video format,informational,convert,no,yes,how-to/convert-mov-to-mp4-mac
+remove-watermark,remove a watermark,commercial,refused,no,yes,how-to/remove-watermark-from-video-mac
+batch-process,batch process videos,commercial,batch,yes,yes,how-to/batch-upscale-videos-mac

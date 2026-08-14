@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to remove a watermark from a video on a Mac (2026) — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="A burned-in watermark is not a layer you can switch off, it is pixels. Here is what each of the three real methods costs you, and which one is worth doing.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/remove-watermark-from-video-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to remove a watermark from a video on a Mac">
+<meta property="og:description" content="A burned-in watermark is not a layer you can switch off, it is pixels. Here is what each of the three real methods costs you, and which one is worth doing.">
+<meta property="og:url" content="https://crispvideo.app/how-to/remove-watermark-from-video-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to remove a watermark from a video on a Mac">
+<meta name="twitter:description" content="A burned-in watermark is not a layer you can switch off, it is pixels. Here is what each of the three real methods costs you, and which one is worth doing.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to remove a watermark from a video on a Mac","description":"A burned-in watermark is not a layer you can switch off, it is pixels. Here is what each of the three real methods costs you, and which one is worth doing.","datePublished":"2026-08-14","dateModified":"2026-08-14","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/remove-watermark-from-video-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp remove a watermark?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp can add a watermark, caption or border, but once one has been burned into the picture it is ordinary pixels and Crisp will tell you so rather than pretend. If you still hold the project file or the original camera file, re-exporting from that beats every repair method described here."}},{"@type":"Question","name":"Does upscaling remove a watermark?","acceptedAnswer":{"@type":"Answer","text":"The opposite. An upscaler has no concept of which pixels you dislike, so it treats the logo as detail and reconstructs its edges more sharply than before. Any repair has to happen first, and the repaired patch is then the softest region in the frame."}},{"@type":"Question","name":"Why do watermark remover apps leave a smear?","acceptedAnswer":{"@type":"Answer","text":"They are guessing. Inpainting invents replacement pixels from the surrounding area and from earlier frames, which works while the background behind the mark is simple and static. Over moving detail the guess changes every frame, and that flicker reads as a smear."}}]}
+</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> › Guides › Remove a watermark</div>
+  <h1>How to remove a watermark from a video on a Mac</h1>
+
+  <p class="lede">The honest answer first, because most pages on this topic bury it: nothing removes a
+  burned-in watermark cleanly. Once a logo has been written into the picture it is the same kind of
+  pixel as the face next to it, and every method below is a way of hiding it rather than lifting it
+  off. Which one you want depends on what sits behind the mark.</p>
+
+  <h2>Why it cannot simply be switched off</h2>
+  <p>When an editor puts a logo on a clip, the logo lives on its own layer and the export flattens
+  everything into one image. That flattening is the point at which the information is lost. The
+  finished file does not record that a logo was ever separate, any more than a photograph records
+  which object the photographer was standing behind.</p>
+  <p>So there is no undo. What is left is the question of what to put in the affected region, and
+  there are only three answers anyone has ever found.</p>
+
+  <h2>The three methods, and what each one costs</h2>
+  <table>
+    <thead><tr><th>Method</th><th>Works when</th><th>What you give up</th></tr></thead>
+    <tbody>
+      <tr><td>Crop it out</td><td>The mark sits in a corner or along an edge</td><td>Framing and resolution. A corner crop on 1080p can leave you near 720p.</td></tr>
+      <tr><td>Cover it</td><td>You control where the video will be shown</td><td>Nothing technically, but you have swapped one visible block for another.</td></tr>
+      <tr><td>Inpaint it</td><td>The background behind it is plain and mostly still</td><td>Sharpness in that patch, and stability if anything moves through it.</td></tr>
+    </tbody>
+  </table>
+
+  <p>Cropping is the only one of the three that is not a guess, which is why it is worth considering
+  first even though it sounds crude. If the logo occupies the bottom right eighth of the frame and
+  your subject is centred, a crop costs you resolution you can partly buy back on export. That is a
+  known, bounded loss. The other two trade a certainty for a maybe.</p>
+
+  <h2>What inpainting is actually doing</h2>
+  <p>An inpainting tool masks the region you mark and fills it using two sources: the pixels
+  immediately around the hole, and the same region in nearby frames where the background may have
+  been briefly visible. On a static shot over a plain wall this is close to invisible, because both
+  sources agree with each other and with the truth.</p>
+  <p>Put the same tool over grass, water, a moving crowd or a camera pan and the two sources stop
+  agreeing. The fill is then recomputed frame by frame from changing evidence, so the patch shimmers
+  even when each individual frame looks passable paused. That shimmer is the thing viewers notice,
+  and it is why results that look fine in a screenshot disappoint in motion.</p>
+  <p>The practical test takes ten seconds. Scrub to the busiest moment in the clip, look at the
+  region behind the mark, and ask whether you could describe what should be there. If you cannot, no
+  software can either.</p>
+
+  <h2>Do the repair before any upscale, never after</h2>
+  <p>This order matters more than the choice of method. An upscaler is trained to reconstruct edges
+  it believes are real, and it has no way of knowing you consider one particular set of edges to be
+  the enemy. Feed it a watermarked frame and it will hand back a crisper watermark.</p>
+  <p>Repair first, then upscale, and accept that the repaired region will be the softest part of the
+  finished frame, because it is the only part built from a guess rather than from the sensor.</p>
+
+  <h2>Where Crisp fits</h2>
+  <p>Crisp does not remove watermarks, and it says so when you ask rather than running something and
+  hoping. It works the other direction: it can add a watermark, caption or border to footage on
+  export, so if you are the one protecting a clip this is the side of the job it handles.</p>
+  <p>Once a mark has been dealt with elsewhere, bring the file here for the parts that are not a
+  guess. Denoise, stabilise, colour, and an upscale that puts back the resolution a crop cost you.
+  Those all work from real detail that is present in the frame.</p>
+  <p>One more thing worth checking before any of this: if the clip is yours, look for the project
+  file or the original camera file first. A re-export takes a minute and beats every method on this
+  page, and people reach for a repair tool surprisingly often when the clean master is still sitting
+  in a folder.</p>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+
+  <h3>Related guides</h3>
+  <p><a href="https://crispvideo.app/how-to/add-watermark-to-video-mac/">Add a watermark</a> · <a href="https://crispvideo.app/how-to/crop-video-mac/">Crop a video</a> · <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Upscale a video</a></p>
+  <p>Also useful: <a href="https://crispvideo.app/how-to/add-a-border-to-video-mac/">add a border</a> when a crop leaves an odd aspect ratio.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
