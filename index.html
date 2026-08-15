@@ -377,18 +377,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
         data-src-1x="/demo-after.mp4" data-src-2x="/demo-after@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="After Crisp: the same 1940 film, grain cleaned and the pagoda roof brackets resolved."></video>
+        aria-label="After Crisp Max: the same 1940 film, grain cleaned and the carved blocks under the pagoda eave separated into individual shapes."></video>
       <video class="ba-before" id="baBefore" width="1280" height="720"
         data-src-1x="/demo-before.mp4" data-src-2x="/demo-before@2x.mp4"
         muted loop playsinline preload="none"
         aria-label="The 640x480 archival scan at the same size — soft, grainy, edges smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 4&times;</span>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp Max</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
-    <p class="ba-note">Real 1940 archival film at 640&times;480, restored 4&times; to 2560&times;1920 on
-      a Mac in 36 seconds. Drag the handle. <a href="#restore">How this was measured &rarr;</a></p>
+    <p class="ba-note">Real 1940 archival film, run through <strong>Max</strong> &mdash; the
+      generative restore, on-device. Drag the handle. Max is the slow lane by design: this clip is
+      132 frames and took about 33 seconds each. The free Enhance lane does a whole clip in
+      seconds. <a href="#restore">Both, measured &rarr;</a></p>
   </div>
 </div>
 
@@ -403,7 +405,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
 
 
-    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. Crisp restored and upscaled it at 4&times; to 2560&times;1920 on Apple Silicon in 36 seconds. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail, the restore carries 1.68&times; the fine detail of simply scaling the source up.</p>
+    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. The clip at the top is this film run through <strong>Max</strong>, the generative restore, on Apple
+      Silicon &mdash; a restore at 1280&times;720 rather than an upscale, so both sides of the
+      slider are the same size and only the detail differs. Max works a frame at a time: 132 frames
+      at about 33 seconds each, so roughly 72 minutes for four seconds of film. The free Enhance lane upscales the same clip 4&times; to 2560&times;1920 in 36 seconds, which is the trade and why Enhance is the default. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail as mean absolute Laplacian, the Max frame carries 1.50&times; the fine detail of the source it was given.</p>
 
     <div class="ba" id="ba2">
       <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
@@ -411,12 +416,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <img class="ba-before" src="/demo-still-before.jpg" width="1704" height="896" loading="lazy" decoding="async"
         alt="The 426x224 source at the same size — a muddy smear of light.">
       <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 4&times;</span>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 16&times;</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then restored 4&times;. That is a much kinder test than real archival film &mdash; the detail was genuinely there to begin with &mdash; and it scores 6.8&times; the fine detail rather than 1.68&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
+    <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then upscaled 16&times; to 6816&times;3584 and shown here at 1704&times;896. That is a much kinder test than real archival film &mdash; the detail was genuinely there to begin with &mdash; and against a plain resize to the same delivered size it scores 3.42&times; the fine detail, where the archival clip above manages 1.50&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
 
     <!-- The generative lane had NO picture anywhere on this site until now, which is odd for the
          thing the pricing page charges for. It cannot be the clip at the top: Max works in
@@ -452,15 +457,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       8&times; is not simply 16&times; stopped early. On the same 160&times;120 crop, 4&times; takes
       0.6 seconds, 8&times; takes 1.0, and 16&times; takes 1.5.</p>
 
-    <img src="/ladder-4-8-16.jpg" width="1800" height="450" loading="lazy" decoding="async"
-      style="width:100%;height:auto;border-radius:12px"
-      alt="The same crop of moulding upscaled 4x, 8x and 16x. The dentil blocks separate between 4x and 8x; the difference between 8x and 16x is slight.">
-
-    <p class="ba-note">Look at the small blocks under the moulding. Between 4&times; and 8&times;
-      they stop being one ridge and become separate blocks with shadow between them. Between
-      8&times; and 16&times; the change is slight, and we would rather say so than let three panels
-      imply each step buys as much as the last. 16&times; earns its place when you need the pixel
-      dimensions, not because it sees more detail than 8&times; found.</p>
+    <p class="ba-note">Side by side, 4&times;, 8&times; and 16&times; of the same crop look nearly
+      identical, so there is no panel of them here. The extra passes buy pixel dimensions, not
+      visibly more detail &mdash; 16&times; is for when you need the size, and past 8&times; the
+      picture stops changing much.</p>
 
     <p class="ba-note"><strong>These are for small sources, and Crisp will tell you so.</strong>
       The big multipliers exist for the footage that needs them: tape captures, old camcorder
