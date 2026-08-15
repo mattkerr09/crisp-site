@@ -407,8 +407,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. The clip at the top is this film run through <strong>Max</strong>, the generative restore, on Apple
       Silicon &mdash; a restore at 1280&times;720 rather than an upscale, so both sides of the
-      slider are the same size and only the detail differs. Max works a frame at a time: 132 frames
-      at about 33 seconds each, so roughly 72 minutes for four seconds of film. The free Enhance lane upscales the same clip 4&times; to 2560&times;1920 in 36 seconds, which is the trade and why Enhance is the default. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail as mean absolute Laplacian, the Max frame carries 1.50&times; the fine detail of the source it was given.</p>
+      slider are the same size and only the detail differs. Max works a frame at a time and it is not free: a single frame takes about 52 seconds on an
+      M1 Ultra, and longer runs only amortise so far &mdash; five frames cost 51.6 seconds each,
+      thirteen 44.2, and this 132-frame clip 32.9, which is still 72 minutes for four seconds of
+      film. Look at the row of small blocks under the eave: scaled up they are one smear, and Max
+      separates them into individual blocks with light and shadow on each. The free Enhance lane upscales the same clip 4&times; to 2560&times;1920 in 36 seconds, which is the trade and why Enhance is the default. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail as mean absolute Laplacian, the Max frame carries 1.50&times; the fine detail of the source it was given.</p>
 
     <div class="ba" id="ba2">
       <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
@@ -422,33 +425,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
 
     <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then upscaled 16&times; to 6816&times;3584 and shown here at 1704&times;896. That is a much kinder test than real archival film &mdash; the detail was genuinely there to begin with &mdash; and against a plain resize to the same delivered size it scores 3.42&times; the fine detail, where the archival clip above manages 1.50&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
-
-    <!-- The generative lane had NO picture anywhere on this site until now, which is odd for the
-         thing the pricing page charges for. It cannot be the clip at the top: Max works in
-         temporal batches and only the first is coherent, and it costs about eighty seconds for a
-         SINGLE frame — a four-second clip is over two hours of compute for a result that would
-         drift after the first few frames. One frame is one batch, which is exactly the shape
-         this lane is good at, and exactly how the FAQ already tells people to use it. -->
-    <div class="ba" id="ba3">
-      <img class="ba-after" src="/demo-max-after.jpg" width="1280" height="720" loading="lazy" decoding="async"
-        alt="After Max: the dentil moulding under the eave resolves into separate blocks.">
-      <img class="ba-before" src="/demo-max-before.jpg" width="1280" height="720" loading="lazy" decoding="async"
-        alt="The same frame scaled up without Max — the moulding is an unbroken smear.">
-      <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Max</span>
-      <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
-        aria-label="Reveal more of the source or the Max frame">
-    </div>
-
-    <p class="ba-note"><strong>And the slow lane, on one frame.</strong> Same 1940 film, same
-      untouched source, run through <em>Max</em> &mdash; the generative restore, on-device. Look at
-      the row of small blocks under the eave: scaled up they are one smear, and Max separates them
-      into individual blocks with light and shadow on each. This is not free. That single frame
-      took <strong>52 seconds</strong> on an M1 Ultra, and a longer run only helps a little:
-      five frames cost 51.6 seconds each, thirteen frames 44.2. There is no batch discount that
-      changes the shape of it, which is why
-      Max is a shot-at-a-time tool and Enhance is the lane for whole clips &mdash; the same advice the FAQ gives. It is the
-      honest reason the clip at the top of the page is Enhance and not this.</p>
 
     <p class="ba-note"><strong>Past 4&times;, and who it is for.</strong> The upscaling networks are
       trained at 2&times;, 3&times; and 4&times;, so anything larger has to be a chain of real
