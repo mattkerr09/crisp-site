@@ -61,6 +61,16 @@
     <li><strong>Softness and low resolution.</strong> A separate job, and the one an upscaler is for.</li>
   </ul>
 
+  <h2>A real example: 35mm combat film from 1945</h2>
+  <p>Rather than a staged sample, here is a public-domain archival transfer with all the usual faults — a soft 556&times;412 scan, heavy grain, and the compression of a copy that has been passed around for decades. On the left is that file scaled up the way any video player would scale it. On the right is the same two seconds through Crisp.</p>
+  <video src="/ww2-before-after.mp4" width="1440" height="532" controls loop muted playsinline
+    preload="none" poster="/ww2-before-after-poster.jpg"
+    style="width:100%;height:auto;border-radius:12px"
+    aria-label="Two soldiers in profile against a bright sky, from 1945 film. Left: the original scan enlarged, grain and compression visible across the sky and faces. Right: the same frames after Crisp, with the grain cleared and the features defined."></video>
+  <p class="muted">Source: <em>San Pietro</em> (1945), U.S. Army Signal Corps &mdash; public domain. Restored with <strong>Enhance</strong> at 2&times; with both old-film repairs on: 50 frames in <strong>3.8&nbsp;seconds</strong> on an M1&nbsp;Ultra. That is the fast lane, not the slow generative one &mdash; <strong>Max</strong> rebuilds more detail and takes about 25&nbsp;seconds per frame instead.</p>
+  <p>Two things in that clip are worth pointing out, because they are the honest boundary of what happened. The grain and the single-frame dirt are gone, and the edges of the helmet and collar are cleaner. What you are <em>not</em> seeing is invented detail: the fast lane removes what should not be there rather than imagining what should. Faces stay the faces that were photographed.</p>
+  <p>The clip is also black and white, which is its own trap. General-purpose upscalers are trained on colour photographs, and handed a neutral grey frame they tend to hand back a faintly warm one. We measured ours doing exactly that &mdash; about six levels of blue pulled out of every frame &mdash; and now detect a monochrome source and hold the output to it. Your black-and-white footage comes back black and white, not quietly sepia.</p>
+
   <h2>Clean it up in Crisp</h2>
   <ol class="steps">
     <li><h3>Drop the clip in</h3><p>Open Crisp and drag your transfer onto the window. It never leaves your Mac.</p></li>
