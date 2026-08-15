@@ -1,10 +1,10 @@
 {
-  "version": "1.0.855",
-  "notes": "Auto-montage opened on a title card, on both films I tried",
-  "pub_date": "2026-08-15T03:47:39Z",
+  "version": "1.0.856",
+  "notes": "8x and 16x shipped everywhere except the command line",
+  "pub_date": "2026-08-15T05:06:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVySktHMlNDSW9FM3ZJZFU5NCtiVFRla0pFamFPOFluL0czT0J0dVd6bW1uZXlCR1cvZm1LUFcrMEVlVERBTS9CbW9vbmJmdDdVWlRORnRCeFordVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzY1NjE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovQ1M5MEhNYTlBV3FEK25RR0wyRVA1RWEweWx1TVV4eDA4dVdSSTg5VGtqeGYrSmhqR3BCVHFWNUhydTIvTytYSk5mbDZjZkNUSytvNCt1VzQ1bklCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxBUHRTZS8veDY5RkhxUTRwV1oyc1hqSk5lS3B1K0VQYUtuOTRPM1RMT3o2eTFIRWtTYjl3SU4xem5teDY5aXJmUEhqeVZQcWpDWWlOREM5bjRWRUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzcwMzg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoRUZTaFZuV2IwWWMwZER3VDg4NkhsMkYrdnlOYU5ON2ZBL0xCNG51dmFzWW94anlkSjFNaklPcEZTUS9nOXdFRmlmMS9tT2cwL1VJOUVpTUJ5WkZEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
