@@ -1,10 +1,10 @@
 {
-  "version": "1.0.851",
-  "notes": "8x and 16x had no button, and 4K at 4x never could encode",
-  "pub_date": "2026-08-14T21:12:37Z",
+  "version": "1.0.854",
+  "notes": "The other eleven places the app said $39, found by the suite",
+  "pub_date": "2026-08-15T01:39:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR2NG9LWmVINmRrdTd5Nm1Hd0RDNkYwcDlKRDk5ZlpnQmlFRmdQY1U3Y3I4Y2pBSDB0OHZJSWxwUjc1aXdWS1VjalBsd0NyazduTmJTMWV0REQyYmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzQxOTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqRUcyQWJyaEF5WTltczhhVkVrcWNhb0dlQlRsUkx0WFpUNk41NUMrSGZHaTJkTnNmQlFCazVxLzZpYUpHYXpHOUNiclV2UFFUbGZGTnM5dUhUUDlEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUrT0VMZXZYSmFwblFWVzZISDhhREwyTDJnTFhzR3VTclRjRjdTQ1lENzlsWFBCMjdqcU1aaCtvQzkyLzR5eDVxVUtWd2xydFFwKzFpVXA1VERtNHc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2NzU3OTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0ZkhLZ0RySndWbThIVkJTc1laOEpEYmdPNWY4VDZTTm9nd1kzdk84bTN1UEY5d2t2REtYeWxLZUdWbnVOb2N6ZENIWlRjb0RKR01rYnhNVDhlL2tCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
