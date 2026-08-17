@@ -1,10 +1,10 @@
 {
-  "version": "1.0.858",
-  "notes": "Darkness is not a disqualifier \u2014 it broke the rendered reel twice",
-  "pub_date": "2026-08-15T06:46:25Z",
+  "version": "1.0.868",
+  "notes": "Black-and-white footage stays black and white. Max quality stops part-way far less often, and when it cannot run it now tells you the truth about why. Several engine messages that were being replaced by unrelated codec advice now reach you intact. A brief dip in free memory no longer throws away a render.",
+  "pub_date": "2026-08-17T17:31:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFxc3NHNm9sMHJCc2Y3K0VGOWtqWmt3UWhrV1F4bDRWSEtFNThQVHBCMS9oVWV6Q1VNY2ZTcFQxemFqVHZkTGw1dkY4ZW03NGVCenBzU0VORjVhTFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2Nzc2MzU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMZ21UTjZHbjg1RnI2Z21CekEvVzYvdVdCNDFVVGUzZG4wdStjQmMvcFZsQzFzUS94ZjRhZXZCYzljNlI3OTV6VFp5SGVCM0pGeFUwZ3ZISSt3WE9DQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtGZ3Rkd2RqTWtnNXhyR1NGVitTMkpZbE1RYXNYNG5GbnNlTXh3bTgzYkZneWsxdWx0bklaenRjMzRWenRsaWZlWm55TWx4T2NXU2F3cWlXbittVEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTg2ODI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZN1dlL2hTVCsxTmRCckk2dHhPc0Rlam1CVGRYMnhLa2o2dkNGNHh0S2dTTzlOWjBVNEI5VDhON2RPN0dEb0lwczgrSi9lM3FlSkpycXB2Sm8zWTFDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
