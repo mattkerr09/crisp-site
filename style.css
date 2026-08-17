@@ -154,5 +154,15 @@ hr{border:none;border-top:1px solid var(--hair);margin:3rem 0;}
 footer{border-top:1px solid var(--hair);margin-top:4rem;padding:2.4rem 0 3rem;
   color:var(--grey-dim);font-size:.88rem;}
 footer a{color:var(--grey);}
+/* The sibling-products line. Sits BELOW the existing footer row, separated by a
+   hairline and dimmed one step further than the copyright, so it reads as a
+   footnote rather than a second pitch. Crisp's whole design argument is
+   restraint; a cross-sell that shouts would undo more than it earns.
+   max-width keeps it near 65 characters at desktop widths. */
+.foot-sibling{border-top:1px solid var(--hair);margin-top:1.6rem;padding-top:1.6rem;
+  color:var(--grey-dim);font-size:.84rem;line-height:1.65;max-width:62ch;}
+.foot-sibling strong{color:var(--grey);font-weight:600;}
+.foot-sibling a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}
+.foot-sibling a:hover{color:var(--white,#fff);}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
