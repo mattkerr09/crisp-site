@@ -1,10 +1,10 @@
 {
-  "version": "1.0.868",
-  "notes": "Black-and-white footage stays black and white. Max quality stops part-way far less often, and when it cannot run it now tells you the truth about why. Several engine messages that were being replaced by unrelated codec advice now reach you intact. A brief dip in free memory no longer throws away a render.",
-  "pub_date": "2026-08-17T17:31:26Z",
+  "version": "1.0.876",
+  "notes": "\"Enhance \u2192 4K\" turns a 4K source into an 8K file, and the comment said it would not",
+  "pub_date": "2026-08-17T22:42:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtGZ3Rkd2RqTWtnNXhyR1NGVitTMkpZbE1RYXNYNG5GbnNlTXh3bTgzYkZneWsxdWx0bklaenRjMzRWenRsaWZlWm55TWx4T2NXU2F3cWlXbittVEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTg2ODI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZN1dlL2hTVCsxTmRCckk2dHhPc0Rlam1CVGRYMnhLa2o2dkNGNHh0S2dTTzlOWjBVNEI5VDhON2RPN0dEb0lwczgrSi9lM3FlSkpycXB2Sm8zWTFDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpsdjhNbkJrMGo0S2hVUjN3WklSY0ZJaWZUblBFMHdPNXFtUis4UC9pUTNxYUluNUo5MEtvZGdaOGo3TTlMb2xmeVp6TFZlWG9UTm5zRlBsa0RaN0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDA2NDgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNazA5Ty9NclJlQWd0bE5EemxjVFpYT2NPWU9sanpjanV3MWE2Nm5sQnhQNDkzWm1iSnJjclNSWjZLbHBwaitDbTRCeStXcEo1eFNIQm4yWGM1NjRBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
