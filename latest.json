@@ -1,10 +1,10 @@
 {
-  "version": "1.0.876",
-  "notes": "\"Enhance \u2192 4K\" turns a 4K source into an 8K file, and the comment said it would not",
-  "pub_date": "2026-08-17T22:42:18Z",
+  "version": "1.0.877",
+  "notes": "The upsell message quoted $39 while checkout charged $99, and my own guard could not see it",
+  "pub_date": "2026-08-17T23:47:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpsdjhNbkJrMGo0S2hVUjN3WklSY0ZJaWZUblBFMHdPNXFtUis4UC9pUTNxYUluNUo5MEtvZGdaOGo3TTlMb2xmeVp6TFZlWG9UTm5zRlBsa0RaN0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDA2NDgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNazA5Ty9NclJlQWd0bE5EemxjVFpYT2NPWU9sanpjanV3MWE2Nm5sQnhQNDkzWm1iSnJjclNSWjZLbHBwaitDbTRCeStXcEo1eFNIQm4yWGM1NjRBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdkdTdmKzJtWUpmUTlFYXdhb3oxTUtFakN1cUwvZ29IT0pqNHlaY3E2T21RSUpBaDM4WVBDdXdXWWowYzUrRFBmS3RDTmhuekZCQTNoSnFsMDMyUFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDEwMzk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1NEEzbDhQL3VtbzNFMzd1YzJLM2FSL0lyeG1RNmZNK2xZZmp6MVNoTWZpaFRjQTBYRXhUdWJJOXg5a2NZVG16L0RoZFhmSlZ5ZGxYWnpFOVVrRm5EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
