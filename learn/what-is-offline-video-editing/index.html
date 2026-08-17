@@ -84,8 +84,13 @@
   gap shows.</p>
   <p>What has changed is that for the specific job of upscaling and cleanup, Apple Silicon closed most
   of the gap. The models that do this well are a few hundred megabytes and run on the GPU that is
-  already in the machine. Crisp's heaviest mode runs in about 11GB of peak memory, which is why it
-  works on a 16GB MacBook Air rather than requiring a workstation.</p>
+  already in the machine. Crisp's fast tiers stay inside roughly 11GB of peak memory, so a 16GB
+  MacBook Air handles the upscaling and cleanup this article is about without a workstation.</p>
+  <p>The honest exception is generative restoration on video, which is a different shape of problem.
+  Because it reasons across several frames together, it has to hold them at once, and that pushed
+  peak past 27GB in our own measurements — past what a 16GB or even a 32GB machine can give it. That
+  is the gap in the paragraph above, made concrete: not every model that runs locally runs locally
+  on a laptop, and it is worth checking which tier a tool's memory figure describes.</p>
 
   <h2>How to tell whether a tool is genuinely offline</h2>
   <p>Marketing copy says "local" fairly freely. Two checks settle it in under a minute:</p>
