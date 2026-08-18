@@ -1,7 +1,7 @@
 {
   "version": "1.0.887",
-  "notes": "The ship gate verified the tarball on my disk, not the one users download",
-  "pub_date": "2026-08-18T05:55:24Z",
+  "notes": "automated",
+  "pub_date": "2026-08-18T05:56:48Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUltcmN1NHZiZ1NYV1dORmdDeFAwVkNRdkVLRHZpTlJxdHJUd2FNWTl2aU8vWXUxaTM4akR5R3ZNQzNXT09PZzZscHJabitnbjB5aTBFRkl6VjIvM0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDMyNDgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2dVVrazNHZnNwMmxSWkhpd1BwTEh3Q0tvQUZJNUhhdDlLMWQ3VjF1MTNPdVh6QVpjNXQ1SW1FSkE0SkZvZStCUHB4YlE2VnkweXRlemVqM1NPbWhBQT09Cg==",
