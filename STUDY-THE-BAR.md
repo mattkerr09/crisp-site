@@ -45,8 +45,13 @@ wall. 339 images and 14 canvases.
 1. **They show the product.** Framer shows its editor, AVO shows its dashboard, Cofounder shows its
    toasts firing. Crisp shows a before/after slider of *footage* — not the app. A visitor cannot
    see what using Crisp looks like.
-2. **Something moves on arrival.** Cofounder's hero autoplays. Ours has three `<video>` elements
-   and **none of them autoplay** — all three read `playing: false` on load.
+2. **Something moves on arrival.** Cofounder's hero autoplays a full-bleed loop. Ours lazy-loads
+   its hero pair on intersection and then plays them muted — which works, and which I briefly
+   recorded here as "none of them autoplay". **That was my measurement error, not a site defect:**
+   the Browser pane was not displayed, so `document.hidden` was true, IntersectionObserver never
+   fired, and the videos sat at `readyState: 0`. With the pane visible they load and play. The
+   real gap is not that ours fails to move — it is that what moves is a clip of *footage*, where
+   Cofounder's is a designed scene and Framer's is the product itself.
 3. **Social proof in the first screen.** LangChain: 17 logos. AVO: 89+ sportsbooks. Crisp: none.
 4. **Density.** They put 51-339 images on a page. We put three on a page 14,700px tall.
 5. **Art direction.** LangChain commissioned an engraving. Cofounder commissioned pixel art. Mistral
