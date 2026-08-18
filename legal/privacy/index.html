@@ -61,10 +61,16 @@
        privacy policy linked from a website footer is asking about the website, and the one
        third-party script on it was not named anywhere. On a product whose whole argument is
        privacy, that omission does more damage than the cookie does. -->
-  <h2>The website is a separate thing, and it sets one cookie</h2>
+  <h2>The website is a separate thing, and it counts visits</h2>
   <p>Everything above is about the software. This site, <code>crispvideo.app</code>, is not the
   software, and it is honest to say what it does separately.</p>
   <ul>
+    <li><strong>Page views, counted without a cookie.</strong> Every page on this site loads
+    <code>plausible.io/js/script.js</code>, which records that a page was viewed &mdash; the URL,
+    the referrer, and coarse details like browser and country. It sets no cookie, does not follow
+    you between sites, and does not build a profile. It is how we know whether anyone read the
+    thing we just wrote. If you would rather not be counted, any content blocker stops it, and
+    nothing on the site depends on it loading.</li>
     <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script
     from <strong>this domain</strong> &mdash; <code>/sled.js</code>, a pinned copy we serve
     ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
