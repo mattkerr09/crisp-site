@@ -34,7 +34,7 @@ SITE = "https://crispvideo.app"
 #: This site repo is nested and gitignored by the app repo, so it cannot import
 #: entitlement.PRICE_USD. One declared constant per repo is the achievable
 #: single source; keep it equal to entitlement.PRICE_USD.
-PRICE_USD = 99
+PRICE_USD = 129
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
