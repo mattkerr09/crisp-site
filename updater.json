@@ -1,6 +1,6 @@
 {
   "version": "1.0.925",
-  "notes": "The upgrade price shown inside Crisp now matches what checkout actually charges \u2014 it said $39 while the real price was $129. Licences bought from our new store also unlock Crisp now, and existing licences are unaffected.",
+  "notes": "Licences bought from our new store now unlock Crisp. If you already have a licence, nothing changes \u2014 it keeps working exactly as before.",
   "pub_date": "2026-08-18T22:12:06Z",
   "platforms": {
     "darwin-aarch64": {
