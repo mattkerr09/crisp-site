@@ -217,7 +217,14 @@ p em, li em{color:#c3cad6;}
   /* A full-bleed 16:9 is 810px tall at 1440 — nearly an entire screen on its own, which pushes
      everything below it off the fold. Capped to a cinematic band instead: the clip still runs edge
      to edge, but crops rather than dictating the height of the page. */
-  aspect-ratio:auto;max-height:min(56vh,520px);}
+  /* ⚠️ A DEFINITE HEIGHT, NOT max-height. With only a max-height the container's own height is
+     auto, so `height:100%` on the in-flow layer resolves against nothing and is ignored: the
+     .ba-after video kept its natural 16:9 height (810px at 1440 wide) and was merely CLIPPED,
+     while .ba-before — absolutely positioned to inset:0 — took the container's real 502px. Two
+     layers of different heights, each cropped by object-fit:cover from a different origin, so the
+     two halves of the comparison no longer showed the same part of the frame. Measured 810 vs 502.
+     A definite height makes both layers resolve to the same box and the halves line up again. */
+  aspect-ratio:auto;height:min(56vh,520px);}
 .hero .ba video{width:100%;height:100%;object-fit:cover;}
 @media (max-width:900px){
   /* narrow screens are already edge to edge; the negative margin would only cause overflow */
