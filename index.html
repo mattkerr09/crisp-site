@@ -186,6 +186,23 @@ p em, li em{color:#c3cad6;}
   font-weight:500;color:var(--ice);}
 .cap-l{margin:.5rem 0 0;font-size:.88rem;color:var(--grey);line-height:1.4;}
 @media (max-width:720px){.caps-in{grid-template-columns:repeat(2,1fr);padding:2rem 1.2rem;}}
+/* THE CONTROLS BESIDE THE EXPLANATION. The montage section carried the OUTPUT — a real 27s reel
+   cut from 174s of 1940 film — and a paragraph explaining how the choosing works, and no picture
+   of the thing doing the choosing. Framer and avo.bet both show their own interface at the point
+   where they explain it; we described ours.
+   The image is the real Auto-Montage panel from the shipped webview (Style, Target length, Layout,
+   the montage button, and the Split screen block under it), photographed in its first-open state
+   with only the loading splash hidden. Nothing is populated or posed. */
+.side-fig{display:grid;grid-template-columns:1fr 258px;gap:2rem;align-items:start;margin-top:.4rem;}
+/* <figure> carries a 40px default margin on each side in every browser, which ate 80px of a 258px
+   column and rendered the panel at 178px — measured, not guessed. */
+.side-fig figure{margin:0;}
+/* .ba-note is centred, which is right for a note under a full-width clip and wrong beside a
+   figure — a centred ragged column next to a hard image edge reads as a mistake. */
+.side-fig .ba-note{text-align:left;margin-top:0;}
+.side-fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--hair-lit);display:block;}
+.side-fig figcaption{margin-top:.6rem;font-size:.82rem;line-height:1.45;color:var(--grey-dim);}
+@media (max-width:820px){.side-fig{grid-template-columns:1fr;gap:1.4rem;}}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
 /* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
    1440x900, ours was the only one whose visual floated: 998px of footage centred in a 1440px
@@ -662,11 +679,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       the Gayway at night. Nothing was chosen by hand and nothing was trimmed afterwards. It is
       upscaled 2&times; for this page, because the source is a 640&times;480 scan.</p>
 
+    <div class="side-fig">
     <p class="ba-note">It reads the footage rather than the clock. Motion, audio, where the
       attention falls in frame, and whether the shot is in focus all feed the choice, and a golf
       swing, a game capture and a stadium sport each get a different weighting. Captions and
       fades are skipped &mdash; an early version of this reel opened on four seconds of title
       card, which is the sort of thing you only find by running it on real film.</p>
+      <figure>
+        <img src="/img-montage-panel.jpg" width="516" height="760" loading="lazy"
+          alt="Crisp's Auto-Montage panel: a Style menu set to Highlights, a Target length slider at 30 seconds, a Layout menu set to Sequential, and a Split screen section below.">
+        <figcaption>The controls that cut the reel above &mdash; style, target length and layout.
+          Photographed from the app, not mocked up.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
