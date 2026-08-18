@@ -229,7 +229,14 @@ p em, li em{color:#c3cad6;}
 @media (max-width:900px){
   /* narrow screens are already edge to edge; the negative margin would only cause overflow */
   .hero .ba{width:auto;margin-left:0;border-radius:var(--r);border-left:1px solid var(--hair-lit);
-    border-right:1px solid var(--hair-lit);}
+    border-right:1px solid var(--hair-lit);
+    /* AND THE HEIGHT CAP GOES WITH THE BLEED. It exists so a full-bleed 16:9 does not eat the
+       desktop fold; there is no bleed here, so all it did was crop. Measured at 390: a 342-wide
+       container held at 472 tall cut a 16:9 frame to roughly 0.72:1 — a narrow vertical slice of
+       the subject, with the "Crisp Max" label clipped off the right edge. A comparison the reader
+       cannot read is not a comparison. Natural aspect below the breakpoint. */
+    height:auto;}
+  .hero .ba video{height:auto;object-fit:fill;}
 }
 .trust span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
 .trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
