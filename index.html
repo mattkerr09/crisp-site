@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -333,6 +334,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .foot .links{margin-left:auto;display:flex;gap:1.5rem;flex-wrap:wrap;}
 
 /* scroll reveal */
+/* CONTENT THAT RISES INTO PLACE. The page had the ESCAPE HATCH for this and not the feature:
+   `.rv` existed only inside the reduced-motion block below, with no base rule and not one element
+   using it. So the accessibility guard was written and the thing it guards never landed.
+   26px is outlier.host's figure and it is the right one — far enough to read as movement, short
+   enough that nothing appears to fly. The easing is its cubic-bezier too: fast out, long settle,
+   which is what makes it read as settling rather than sliding.
+   ⚠️ GATED ON .js, WHICH AN INLINE SCRIPT ADDS BEFORE PAINT. Without that, a browser with
+   JavaScript off — or any failure before the observer runs — leaves every revealed element at
+   opacity:0 forever, which is a blank page rather than a page without an animation. Absence of
+   the enhancement must never remove the content. */
+.js .rv{opacity:0;transform:translateY(26px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.js .rv.in{opacity:1;transform:none;}
+.js .rv.d1{transition-delay:.08s;} .js .rv.d2{transition-delay:.16s;} .js .rv.d3{transition-delay:.24s;}
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none;}
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
@@ -458,7 +473,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
-      <h2 class="h-lg">Measured, not claimed.</h2>
+      <h2 class="h-lg rv">Measured, not claimed.</h2>
       <p class="lede">Where the clip at the top of this page came from, what it scored, and a
         second example that flatters us — labelled as such.</p>
     </div>
@@ -512,7 +527,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Auto-montage</p>
-      <h2 class="h-lg">Three minutes in.<br>Twenty-seven seconds out.</h2>
+      <h2 class="h-lg rv">Three minutes in.<br>Twenty-seven seconds out.</h2>
       <p class="lede">Nobody watches the whole tape. Point Crisp at a long clip and it finds the
         moments worth keeping, cuts them together and hands you the result — or drops them on the
         timeline if you would rather finish by hand.</p>
@@ -541,7 +556,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">What it does</p>
-      <h2 class="h-lg">The whole restore pipeline,<br>in one drop.</h2>
+      <h2 class="h-lg rv">The whole restore pipeline,<br>in one drop.</h2>
       <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
         lift, restore, upscale — then hands you an editor for what comes next.</p>
     </div>
@@ -601,10 +616,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">More than an upscaler</p>
-      <h2 class="h-lg">A finishing tool, not a filter.</h2>
+      <h2 class="h-lg rv">A finishing tool, not a filter.</h2>
     </div>
     <div class="cards">
-        <div class="card">
+        <div class="card rv d1">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="11" cy="18" r="1.6"/></svg></div>
           <h3>Old film, cleaned up</h3>
           <p>Dust and blotches that flash for a single frame get voted away by comparing
@@ -613,32 +628,32 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
             fades are kept. Scratches run across many frames, so they are outside what this does
             and we don't pretend otherwise.</p>
         </div>
-      <div class="card">
+      <div class="card rv d2">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 10v9M14 10v9"/></svg></div>
         <h3>Real timeline editor</h3>
         <p>Arrange, trim and split clips, add photos and looks, set per-clip speed and volume — then export the cut upscaled to 4K.</p>
       </div>
-      <div class="card">
+      <div class="card rv d3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 8v8M19 8v8"/><circle cx="12" cy="12" r="9"/></svg></div>
         <h3>Restores what's damaged</h3>
         <p>Denoise, shadow lift and detail restore run <em>before</em> the upscale — so dark and compressed clips come out clean, not amplified.</p>
       </div>
-      <div class="card">
+      <div class="card rv d1">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
         <h3>Audio stays in sync</h3>
         <p>Sound is stream-copied and never re-timed — even when you interpolate to a higher frame rate. Nothing drifts.</p>
       </div>
-      <div class="card">
+      <div class="card rv d2">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.4"/></svg></div>
         <h3>Photos too</h3>
         <p>Drop a JPEG, PNG or HEIC and Crisp upscales and restores the still in about a second.</p>
       </div>
-      <div class="card">
+      <div class="card rv d3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div>
         <h3>Opens in about a second</h3>
         <p>No splash screen, no project wizard. The slow, best-quality generative lane is a choice you make — never the default.</p>
       </div>
-      <div class="card">
+      <div class="card rv d1">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h13"/></svg></div>
         <h3>Say it in plain English</h3>
         <p>Type “make it vertical”, “slow it down”, “clean up the audio”. Crisp picks the job and sensible settings.</p>
@@ -651,15 +666,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">How it works</p>
-      <h2 class="h-lg">Open. Drop. Done.</h2>
+      <h2 class="h-lg rv">Open. Drop. Done.</h2>
       <p class="lede">No project to create, no media to import first, no render farm to babysit.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Drop your clip in</h3>
+      <div class="step rv d1"><div class="n">1</div><h3>Drop your clip in</h3>
         <p>Video or photo. Crisp reads what it is and suggests the right job.</p></div>
-      <div class="step"><div class="n">2</div><h3>Pick the job</h3>
+      <div class="step rv d2"><div class="n">2</div><h3>Pick the job</h3>
         <p>Upscale, restore, montage, reframe for vertical, trim — <strong>or open the timeline and cut it properly</strong>.</p></div>
-      <div class="step"><div class="n">3</div><h3>Export</h3>
+      <div class="step rv d3"><div class="n">3</div><h3>Export</h3>
         <p>The finished file lands beside your original, with your audio intact.</p></div>
     </div>
   </div>
@@ -669,12 +684,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Honest comparison</p>
-      <h2 class="h-lg">Crisp vs Topaz vs VideoProc Converter AI</h2>
+      <h2 class="h-lg rv">Crisp vs Topaz vs VideoProc Converter AI</h2>
       <p class="lede">Topaz has a deeper model library. VideoProc Converter AI is a broader toolbox. Neither one
         lets you arrange clips on a timeline. Crisp is the one where the upscale is a step inside an
         edit.</p>
     </div>
-    <div class="cmp">
+    <div class="cmp rv">
       <table>
         <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc Converter AI</th></tr></thead>
         <tbody>
@@ -732,11 +747,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Pricing</p>
-      <h2 class="h-lg">One price. Yours forever.</h2>
+      <h2 class="h-lg rv">One price. Yours forever.</h2>
       <p class="lede">No subscription, no credits, no cloud bill. Buy it once and it stays bought.</p>
     </div>
     <div class="tiers">
-      <div class="tier">
+      <div class="tier rv d1">
         <div class="name">Free</div><div class="price">$0</div>
         <p class="blurb">The full editor and the 4K upscaler, with a small “Made with Crisp” mark on exports.</p>
         <ul>
@@ -747,7 +762,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         </ul>
         <a class="btn btn-ghost" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free</a>
       </div>
-      <div class="tier pro">
+      <div class="tier pro rv d2">
         <div class="name">Crisp Pro</div><div class="price">$129 <small>once</small></div>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
@@ -819,22 +834,22 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Get Crisp</p>
-      <h2 class="h-lg">Try it first.<br>Buy it if it earns it.</h2>
+      <h2 class="h-lg rv">Try it first.<br>Buy it if it earns it.</h2>
       <p class="lede">Pro is the same app
         with the mark removed — there is no second installer, no trial clock, and no account.</p>
     </div>
 
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Download and use it free</h3>
+      <div class="step rv d1"><div class="n">1</div><h3>Download and use it free</h3>
         <p>78&nbsp;MB, Apple Silicon, notarized by Apple. The full editor, 4K upscale and
           montage, one file at a time. Video exports carry a small “Made with Crisp” mark.</p>
         <p><a class="btn btn-ghost btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
       </div>
-      <div class="step"><div class="n">2</div><h3>Buy a licence key — $129</h3>
+      <div class="step rv d2"><div class="n">2</div><h3>Buy a licence key — $129</h3>
         <p>One payment, in US dollars, through Polar. Your key is emailed to you by Polar once
           the payment clears. Nothing else is shipped and nothing else is installed.</p>
       </div>
-      <div class="step"><div class="n">3</div><h3>Paste it into Crisp</h3>
+      <div class="step rv d3"><div class="n">3</div><h3>Paste it into Crisp</h3>
         <p>Open Crisp, choose <em>Unlock Crisp Pro</em>, paste the key and press Activate. That
           activation is the one moment Crisp talks to the licence server; Pro then keeps working
           with the Wi-Fi switched off.</p>
@@ -885,7 +900,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <section id="faq">
   <div class="wrap">
-    <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg">Clear answers.</h2></div>
+    <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg rv">Clear answers.</h2></div>
     <div class="faq">
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
       <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models need either macOS&nbsp;26 or 36&nbsp;GB of memory depending on the variant. Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. The bigger difference is shape: Topaz's own docs list trim and crop, so it takes a file and hands a file back. Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
@@ -907,7 +922,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <section class="final">
   <div class="wrap">
-    <h2 class="h-lg">Make it crisp.</h2>
+    <h2 class="h-lg rv">Make it crisp.</h2>
     <p class="lede">Free to use, 78&nbsp;MB, and it opens in about a second. Nothing to sign up for.</p>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
@@ -1133,5 +1148,24 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
 })();
 </script>
 
+<script>
+/* Reveal on scroll. Adds .in once, then stops watching — a revealed element never un-reveals,
+   so re-observing it would only cost work. Anything already on screen at load is revealed
+   immediately by the observer's first callback, so the fold is never blank. */
+(function () {
+  var els = document.querySelectorAll('.rv');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {          /* old browser: show everything, no motion */
+    for (var i = 0; i < els.length; i++) els[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) { entries[i].target.classList.add('in'); io.unobserve(entries[i].target); }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+  for (var j = 0; j < els.length; j++) io.observe(els[j]);
+})();
+</script>
 </body>
 </html>
