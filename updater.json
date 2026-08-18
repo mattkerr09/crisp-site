@@ -1,10 +1,10 @@
 {
-  "version": "1.0.877",
-  "notes": "The upsell message quoted $39 while checkout charged $99, and my own guard could not see it",
-  "pub_date": "2026-08-17T23:47:21Z",
+  "version": "1.0.887",
+  "notes": "The ship gate verified the tarball on my disk, not the one users download",
+  "pub_date": "2026-08-18T05:55:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdkdTdmKzJtWUpmUTlFYXdhb3oxTUtFakN1cUwvZ29IT0pqNHlaY3E2T21RSUpBaDM4WVBDdXdXWWowYzUrRFBmS3RDTmhuekZCQTNoSnFsMDMyUFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDEwMzk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1NEEzbDhQL3VtbzNFMzd1YzJLM2FSL0lyeG1RNmZNK2xZZmp6MVNoTWZpaFRjQTBYRXhUdWJJOXg5a2NZVG16L0RoZFhmSlZ5ZGxYWnpFOVVrRm5EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUltcmN1NHZiZ1NYV1dORmdDeFAwVkNRdkVLRHZpTlJxdHJUd2FNWTl2aU8vWXUxaTM4akR5R3ZNQzNXT09PZzZscHJabitnbjB5aTBFRkl6VjIvM0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDMyNDgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2dVVrazNHZnNwMmxSWkhpd1BwTEh3Q0tvQUZJNUhhdDlLMWQ3VjF1MTNPdVh6QVpjNXQ1SW1FSkE0SkZvZStCUHB4YlE2VnkweXRlemVqM1NPbWhBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
