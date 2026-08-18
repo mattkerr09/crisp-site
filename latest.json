@@ -1,10 +1,10 @@
 {
-  "version": "1.0.925",
-  "notes": "Licences bought from our new store now unlock Crisp. If you already have a licence, nothing changes \u2014 it keeps working exactly as before.",
-  "pub_date": "2026-08-18T22:12:06Z",
+  "version": "1.0.929",
+  "notes": "Deactivating Crisp now frees the seat properly for licences bought from our new store, so moving to another Mac no longer costs you an activation. If you already have a licence, nothing changes.",
+  "pub_date": "2026-08-18T23:19:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx1Wm1nbk94eXRYQ0xrU3M2QzFwWU5pZmlOUXZNaC9SeitkejJJREdQQ2VLOUVxamV0Zm1VQzFvY1RFME8yaWFPelJOeDNkbFRXV1RiODNyMDVUYVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDkwNjE4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPNnZRUXZOYmlXVytMSHhmdW1KTXhicEIwZVZkaGVUeDc3VGRCTURhdGgzSzUrYkZpcjNzbCtiRzhzT29EaTc2Yk0yL3p2Q2tjeHplZTRFM3RGdDlDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5rOXN1T2FDV2pJOG96MytzVlVWVk9HTXRLcWg5Y25NTEg0SjQvVk1HWmt1UjVFMTk2LzUrd2hKeGNxb1R0U2pJbjczL2pxL1J1YVRCWVVNZ2h6dlFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDk0OTQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpab3ZzOVUvVXdzNSs0Qlg5Q28veDg4cndpMEJVQ04vV0tnQWlCYkhZWnhSM28xVk83cENtK1c0S0FWUFNYa3NzNWFPV0lHK3lkK3B4TzVpV3I2bDNDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
