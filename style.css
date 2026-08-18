@@ -11,7 +11,7 @@
 :root{
   --black:#000; --panel:#08090d; --panel-2:#0d0f15; --card:#101319;
   --hair:#1c2029; --hair-lit:#2a3040;
-  --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#6b7382;
+  --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff; --green:#4ade80;
   --r:18px; --r-sm:12px;
   --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
