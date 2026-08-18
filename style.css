@@ -166,3 +166,9 @@ footer a{color:var(--grey);}
 .foot-sibling a:hover{color:var(--white,#fff);}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+/* Source citations under a price table. It had no rule at all, so a paragraph of fine print
+   rendered at full body size and weight directly beneath the comparison it qualifies — louder
+   than the prices it was footnoting. --grey-dim is 4.82:1 on the page background (raised in
+   55cf220 after it measured 3.90:1). */
+.price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
