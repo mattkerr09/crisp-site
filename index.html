@@ -1,12 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-FDQdGe4vyjyQeW8-kCxHk.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -299,12 +293,26 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
 }
 </style>
-<!-- Sled affiliate attribution. Sets a ta_ref cookie only when a visitor
-     arrives with ?ref=<code>, so an affiliate can be credited for the sale.
-     The privacy page's "no third-party scripts" claim is scoped to the APP
-     ("Crisp contains no analytics SDK... nothing reports which features you
-     use"), not to this website, so this does not contradict it. -->
-<script async src="https://usesled.com/kerr-and-company/t.js"></script>
+<!-- Sled affiliate attribution, SERVED FIRST-PARTY on purpose.
+     Sets a ta_ref cookie only when a visitor arrives with ?ref=<code>, so an
+     affiliate can be credited. ops/checkout-worker/worker.js:138 reads that
+     cookie into metadata[referral] — deleting this script would silently turn
+     every affiliate sale into a direct sale against a 50-60% programme, which
+     DO-NOT-REBREAK section 5 records me getting wrong twice already.
+
+     It was loaded from usesled.com until 2026-08-17. That meant a third-party
+     host saw every visitor's IP and Referer, 218px above a hero reading
+     "Nothing uploaded" — and it made the privacy page's conditional wording
+     ("sees your IP address on that first visit" if you arrive with ?ref=)
+     understate what actually happened, because the fetch itself disclosed every
+     visitor regardless of ?ref=. Pinned copy, 778 bytes, no dependencies. The
+     only usesled.com contact left is the api/click beacon, which the source
+     fires strictly inside `if(ref)` — so it now happens solely for visitors who
+     really did arrive on an affiliate link, exactly as the privacy page says.
+
+     Cost, stated because honest-uncertainty is the brand: a pinned copy does
+     not receive vendor updates. -->
+<script async src="/sled.js"></script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>

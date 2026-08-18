@@ -65,15 +65,26 @@
   <p>Everything above is about the software. This site, <code>crispvideo.app</code>, is not the
   software, and it is honest to say what it does separately.</p>
   <ul>
-    <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script from
-    <code>usesled.com</code>. If you arrive on a link carrying a <code>?ref=</code> parameter, it
-    stores that referral code in a cookie named <code>ta_ref</code> for <strong>90 days</strong>,
-    and tells <code>usesled.com</code> the click happened — which means Sled sees your IP address
-    on that first visit, as any site you request a file from does. Its only purpose is to pay the
-    person who referred you if you later buy Crisp Pro. The cookie holds a referral code, not an
-    identity, and it is set by this website — never by the app.</li>
-    <li><strong>No site analytics.</strong> There is no Plausible, Google Analytics or
-    equivalent on crispvideo.app.</li>
+    <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script
+    from <strong>this domain</strong> &mdash; <code>/sled.js</code>, a pinned copy we serve
+    ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
+    referral code in a cookie named <code>ta_ref</code> for <strong>90 days</strong> and tells
+    <code>usesled.com</code> that the click happened, which means Sled sees your IP address on
+    that one request. <strong>If you did not arrive on a referral link, nothing is sent to
+    usesled.com at all.</strong> Until 17 August 2026 that script was fetched from
+    <code>usesled.com</code> directly, so they saw every visitor&rsquo;s IP whether or not a
+    referral was involved; serving it ourselves is what makes the sentence above literally true.
+    Its only purpose is to pay the person who referred you if you later buy Crisp Pro. The cookie
+    holds a referral code, not an identity, and it is set by this website &mdash; never by the
+    app.</li>
+    <li><strong>Privacy-friendly site analytics.</strong> This page said
+    &ldquo;no site analytics &hellip; there is no Plausible&rdquo; until 17 August 2026, and that
+    was <strong>wrong</strong> &mdash; Plausible has been on all 114 pages of this site. It is
+    corrected here rather than quietly deleted, because a privacy policy that has been inaccurate
+    should say so. Plausible is cookieless, stores no IP addresses, does not track you across
+    sites, and counts pageviews only. It is what tells us which comparison pages people read. The
+    homepage also carried a <em>second</em>, duplicate Plausible install until the same date, so
+    its visits were being counted twice; that one is gone.</li>
     <li><strong>Self-hosted assets.</strong> The page loads no external fonts, stylesheets or
     images. The two other domains it links to — <code>github.com</code> for the download and
     <code>topazlabs.com</code> in a comparison — are ordinary links you have to click.</li>

@@ -63,3 +63,10 @@ if advertised != shipped:
 
 print(f"pre-push: version sync ok ({shipped})")
 PY
+
+# No third-party host may load for a visitor who did not ask for one. On
+# 2026-08-17 the homepage fired three cross-origin scripts — two Plausible
+# installs and usesled.com — directly above a hero reading "Nothing uploaded".
+# A comment above the tag argued the privacy claim was "scoped to the APP, not
+# this website", which is how it survived review. Hence a gate.
+python3 "$(dirname "$0")/../_tools/gate_thirdparty.py" || exit 1
