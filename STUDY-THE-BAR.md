@@ -121,3 +121,26 @@ like-for-like rather than eyeballed.
 `app-editor.jpg` in this directory is the real Crisp editor, rendered from the shipped webview at
 1440x900 and cropped below the title bar. It is on disk and not yet on the page — that is the next
 change, not a claim that it is done.
+
+## CORRECTION — the site does show the product, and I said it did not
+
+I wrote above that "the product is a real editor and the site never shows it" and that "none of it
+appears on crispvideo.app". **Both are false.** `img-app.png` has been on the page all along, in the
+"What it does" section: the full editor in a macOS window with traffic lights, a **Pro** badge and a
+real build number, framed and captioned. It is a better screenshot than the one I rendered — mine
+had no window chrome and I had to crop a "Backend offline" pill out of it. I deleted mine.
+
+**How I got it wrong.** I measured `imgs: 3` and `productUIImages: 3` on the live page. The second
+number was the answer, sitting in my own output, and I read the first as "almost nothing" and
+concluded the product was absent without looking at what those three images were. Fourth
+wrong-property measurement today, and the most consequential, because I reported it to Matthew and
+committed it twice.
+
+**The accurate gap is placement, not absence:**
+
+    img-app.png sits at y=4,842 — 5.4 screens down a 14,641px page
+
+Framer's editor is in the **first screen**. AVO's dashboard is in the **first screen**. Cofounder's
+product toasts are in the **first screen**. Ours is past the fold five times over, which for most
+visitors is the same as not having it. That is a fixable placement problem and a much smaller one
+than what I claimed.
