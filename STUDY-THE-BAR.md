@@ -75,3 +75,25 @@ the metrics did not catch it because none of them was pointed at motion, demonst
 
 This file is the study, not the fix. Nothing here is done until there are screenshots of ours beside
 theirs at the same width.
+
+## What the product actually looks like, and why that matters
+
+I served the app's own UI (`ui/src`, the real shipped webview) and looked at it. The editor screen
+carries: a Media panel with Import, a natural-language command bar — *"Tell Crisp what to do with
+the selected clip — 'make it cinematic', 'mute it', '2x speed'"* with a **Do it** button — a
+preview stage, transport controls with timecode, a Project panel (Transition, Look, Fade, Speed,
+Music, and an **Auto-Montage** block with Style and Target-length controls), and a timeline with a
+playhead and ruler. The tool palette lists **22 tools**: Enhance, Editor, Montage, Split Screen,
+Reframe, Speed, Color, Trim, Rotate, Caption, Watermark, Reverse, Audio, Fade, Crop, GIF, Frame,
+Loop, Stabilize, Compress, Border, Convert.
+
+**None of it appears on crispvideo.app.** The site shows a before/after slider of footage that could
+have come from anywhere. It never shows that Crisp is a real editor with a timeline — which is the
+thing Framer and AVO both do with their own products, and the single biggest reason our page reads
+as a description rather than a demonstration.
+
+⚠️ The screenshot I can take today shows the empty state and a red "Backend offline" pill, because
+the UI served over http cannot reach the sidecar — the Origin guard requires `tauri://localhost`,
+which is correct and I am not weakening it. A populated screenshot has to come from the real app
+with clips actually loaded. **I will not fabricate one by injecting state**: this site's own
+truth-clause gate exists precisely to stop a page depicting something the product did not do.
