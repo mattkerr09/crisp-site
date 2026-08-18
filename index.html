@@ -167,6 +167,26 @@ p em, li em{color:#c3cad6;}
    reach the second .ba further down the page, whereas any `.ba`-based selector needed certainty
    about nesting that I did not have. */
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
+/* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
+   1440x900, ours was the only one whose visual floated: 998px of footage centred in a 1440px
+   viewport with dark margin either side and nothing framing it. Cofounder's scene runs edge to
+   edge with no margin at all; Framer's product surface bleeds off the right edge. Theirs fill the
+   frame, ours sat in the middle of one.
+   Capped at 2200px because the 2x asset is 2560x1440 — past that the footage would be upscaled on
+   the page, which is a poor advertisement for an upscaler. The rounded corners and side borders go
+   with the bleed; a full-width band with rounded ends reads as a mistake. */
+.hero .ba{max-width:none;width:min(100vw,2200px);margin-left:calc(50% - min(50vw,1100px));
+  border-radius:0;border-left:0;border-right:0;
+  /* A full-bleed 16:9 is 810px tall at 1440 — nearly an entire screen on its own, which pushes
+     everything below it off the fold. Capped to a cinematic band instead: the clip still runs edge
+     to edge, but crops rather than dictating the height of the page. */
+  aspect-ratio:auto;max-height:min(56vh,520px);}
+.hero .ba video{width:100%;height:100%;object-fit:cover;}
+@media (max-width:900px){
+  /* narrow screens are already edge to edge; the negative margin would only cause overflow */
+  .hero .ba{width:auto;margin-left:0;border-radius:var(--r);border-left:1px solid var(--hair-lit);
+    border-right:1px solid var(--hair-lit);}
+}
 .trust span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
 .trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
 
