@@ -166,6 +166,26 @@ p em, li em{color:#c3cad6;}
    Put on .trust rather than on the demo: .trust appears exactly once on the site, so it cannot
    reach the second .ba further down the page, whereas any `.ba`-based selector needed certainty
    about nesting that I did not have. */
+/* CAPABILITY ROW. framer.com and avo.bet both carry proof inside the first two screens — a
+   customer logo wall and "Supports 89+ Sportbooks". We have roughly one customer, so a CUSTOMER
+   wall would be a lie; AVO's is a CAPABILITY wall and that shape is available to us honestly.
+   Every figure here is read off the shipped app, not chosen for effect:
+     21   tasks the server dispatches (audio border compress convert crop fade frame gif grade
+          loop montage overlay reframe reverse rotate speed splitscreen stabilize timeline trim
+          upscale)
+     16   input formats — 9 video (_VIDEO_EXTS) + 7 image (IMAGE_EXTS)
+     16x  presets.SCALE_PASSES tops out at 16
+     0    the number of bytes that leave the machine, which is the whole product
+   The accent finally does some work here: the page was near-black, grey, and one blue button,
+   where cofounder runs a full-colour scene and avo carries purple and green through its UI. */
+.caps{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  background:linear-gradient(180deg,rgba(90,200,250,.04),transparent 70%);}
+.caps-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem 1rem;
+  max-width:var(--w);margin:0 auto;padding:2.6rem 1.5rem;text-align:center;}
+.cap-n{font-family:var(--head);font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.02em;
+  font-weight:500;color:var(--ice);}
+.cap-l{margin:.5rem 0 0;font-size:.88rem;color:var(--grey);line-height:1.4;}
+@media (max-width:720px){.caps-in{grid-template-columns:repeat(2,1fr);padding:2rem 1.2rem;}}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
 /* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
    1440x900, ours was the only one whose visual floated: 998px of footage centred in a 1440px
@@ -489,7 +509,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 </div>
 
 
-<section id="what" class="band">
+
+  <!-- Read off the shipped app: 21 dispatched tasks, 9 video + 7 image input extensions,
+       SCALE_PASSES topping out at 16. Nothing here is rounded up. -->
+  <section class="caps" aria-label="What Crisp handles">
+    <div class="caps-in">
+      <div><div class="cap-n">21</div><p class="cap-l">tools, one window — restore, edit,<br>montage, convert</p></div>
+      <div><div class="cap-n">16</div><p class="cap-l">video &amp; photo formats in,<br>ProRes / H.265 / AV1 out</p></div>
+      <div><div class="cap-n">16&times;</div><p class="cap-l">upscale, and a generative<br>restore lane past that</p></div>
+      <div><div class="cap-n">0</div><p class="cap-l">bytes uploaded — every frame<br>stays on your Mac</p></div>
+    </div>
+  </section>
+
+    <section id="what" class="band">
   <div class="wrap">
     <div class="head">
       <p class="kicker">What it does</p>
