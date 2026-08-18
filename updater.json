@@ -1,10 +1,10 @@
 {
-  "version": "1.0.910",
-  "notes": "Crisp now tells you when it closed unexpectedly, instead of failing silently. The command line refuses impossible times and sizes up front rather than part-way through a render, and it will no longer write a montage over the clip it is reading.",
-  "pub_date": "2026-08-18T16:10:47Z",
+  "version": "1.0.925",
+  "notes": "The upgrade price shown inside Crisp now matches what checkout actually charges \u2014 it said $39 while the real price was $129. Licences bought from our new store also unlock Crisp now, and existing licences are unaffected.",
+  "pub_date": "2026-08-18T22:12:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtoZEtENmV4Zk1UM0MxZjFwcU1jTDlpYkpCK2hlVS81VktOOXNzOTdNaTBXLzNmMDVwMGRDa3p6SDZlcWZseXRvNEttM1dnL3M1ZTRqTGs5UlQ3K3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDY5Mjg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorMUxTNVB6d2o1SVJyQS9sbjlpOTh3aFd1TzdaZHFKMGZnR294MWpMTVhoZnAyRXAvMzMyME1GUERJdE4yWXcxdVFYK1dnKzN6dldHd2ZpVEZRYXpEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx1Wm1nbk94eXRYQ0xrU3M2QzFwWU5pZmlOUXZNaC9SeitkejJJREdQQ2VLOUVxamV0Zm1VQzFvY1RFME8yaWFPelJOeDNkbFRXV1RiODNyMDVUYVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDkwNjE4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPNnZRUXZOYmlXVytMSHhmdW1KTXhicEIwZVZkaGVUeDc3VGRCTURhdGgzSzUrYkZpcjNzbCtiRzhzT29EaTc2Yk0yL3p2Q2tjeHplZTRFM3RGdDlDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
