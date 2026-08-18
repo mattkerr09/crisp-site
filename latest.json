@@ -1,10 +1,10 @@
 {
-  "version": "1.0.896",
-  "notes": "A price guard went red because the code stopped hardcoding prices",
-  "pub_date": "2026-08-18T12:49:36Z",
+  "version": "1.0.910",
+  "notes": "Nothing would fail if the publisher stopped calling the ship verifier",
+  "pub_date": "2026-08-18T16:09:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ZUDZNTC80R1FNUkxIMmhxWkdUd2JnOXBoV0p1d1dsQ3RvajB3dS8yRXhOM3d1WTBqTnNQRW1oOE9sRFl6RGduTUNGbTVRME5hclNBZHNSakJiQ1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDU3MzMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyWlFoZ2NJamxaM1k1TnMzbFNpVzZLd1V0em1HSm0vMUNJVzd3b05tUE1UeXovNGltMFE2OGFoSm1MUHA0ZGg1TnRQeDVCaHpranRzczlDejNpa0JDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtoZEtENmV4Zk1UM0MxZjFwcU1jTDlpYkpCK2hlVS81VktOOXNzOTdNaTBXLzNmMDVwMGRDa3p6SDZlcWZseXRvNEttM1dnL3M1ZTRqTGs5UlQ3K3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDY5Mjg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorMUxTNVB6d2o1SVJyQS9sbjlpOTh3aFd1TzdaZHFKMGZnR294MWpMTVhoZnAyRXAvMzMyME1GUERJdE4yWXcxdVFYK1dnKzN6dldHd2ZpVEZRYXpEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
