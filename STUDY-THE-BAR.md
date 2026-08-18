@@ -144,3 +144,31 @@ Framer's editor is in the **first screen**. AVO's dashboard is in the **first sc
 product toasts are in the **first screen**. Ours is past the fold five times over, which for most
 visitors is the same as not having it. That is a fixable placement problem and a much smaller one
 than what I claimed.
+
+## Colour is NOT the gap — measured, and my own hypothesis was wrong
+
+I had "almost no colour" on the open list for hours, on the strength of counting text colours
+(116 white / 65 grey / 17 ice / 10 cyan). So I measured mean saturation and brightness on renders
+of all four at an identical 1440x1800:
+
+    site              saturation   brightness
+    cofounder.co          63.7        108.8      painted full-colour scene
+    mistral.ai            57.8         61.5      brand-orange geometric blocks
+    crispvideo.app        10.4         38.8      us
+    avo.bet                5.6         12.4      darker and LESS saturated than us
+
+**avo.bet is half our saturation and a third our brightness, and Matthew named it as the bar.**
+So the bar contains both highly-saturated sites and a near-monochrome one, which means colour is not
+what separates us from it. Adding colour would have been effort spent on a property the reference
+set does not agree on — and Crisp's restrained dark palette is defensible precisely because avo
+proves a dark monochrome site can be at that level.
+
+What avo has instead is 339 images, 14 canvases, its dashboard rendered at an angle, and a logo
+wall inside the first two screens. **The gap is density and product presence, not colour.** That is
+the one item that every site above us shares.
+
+⚠️ THE FIRST MEASUREMENT WAS AN INSTRUMENT ARTIFACT AND I NEARLY PUBLISHED IT. Rendering avo.bet at
+1440x9000 gave saturation 1.1, which would have made it the most monochrome site by far. The render
+was nearly EMPTY — nav and background, no content — because its page does not populate at that
+viewport height. A number that surprising is a hypothesis about the instrument first; I looked at
+the image before believing it, and re-measured at a height where content is known to load.
