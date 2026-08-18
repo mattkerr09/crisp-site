@@ -1,6 +1,6 @@
 {
   "version": "1.0.910",
-  "notes": "automated",
+  "notes": "Crisp now tells you when it closed unexpectedly, instead of failing silently. The command line refuses impossible times and sizes up front rather than part-way through a render, and it will no longer write a montage over the clip it is reading.",
   "pub_date": "2026-08-18T16:10:47Z",
   "platforms": {
     "darwin-aarch64": {
