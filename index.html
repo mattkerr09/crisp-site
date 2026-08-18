@@ -61,6 +61,15 @@ a{color:inherit;text-decoration:none;}
 .h-xl .setup{color:#6f7681;}
 .h-lg{font-family:var(--head);font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.024em;font-weight:680;margin:0 0 1rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
+/* EMPHASIS THAT ACTUALLY EMPHASISES. There was no `strong` rule anywhere on this site, so every
+   <strong> inherited the muted body grey and changed only its weight — 16 of them, all rendering
+   at rgb(161,169,184) exactly like the prose around them. Bold alone against a near-black
+   background is a very small step in value, which is why the copy read flat no matter how much of
+   it was marked up. Lifting to --white is the change; 600 rather than the browser's 700 keeps it
+   from shouting once it also carries colour. */
+p strong, li strong, td strong{color:var(--white);font-weight:600;}
+/* em keeps its italic and gains a little value — it is used for asides, not for emphasis. */
+p em, li em{color:#c3cad6;}
 .lede{font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--grey);margin:0;}
 /* The cyan-to-purple headline gradient was the most template-coded thing on the
    page — it is the signature of every AI landing page shipped since 2023, and
@@ -126,7 +135,7 @@ a{color:inherit;text-decoration:none;}
    Only the arrangement is borrowed. The face stays Futura and the size stays the 62.4px clamp
    that was set against Linear's 64px; morphic runs Inter at 700, which is the most common
    combination in SaaS and the opposite of why this site does not look like its competitors. */
-.hero-top{display:grid;grid-template-columns:1.06fr .94fr;gap:1rem 3rem;align-items:end;
+.hero-top{display:grid;grid-template-columns:1.06fr .94fr;gap:1rem 3rem;align-items:start;
   text-align:left;margin-bottom:2rem;}
 .hero-top .pill{margin-bottom:1.1rem;}
 /* A grid child defaults to min-width:auto, which refuses to shrink below its content — so a
@@ -386,9 +395,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <h1 class="h-xl"><span class="setup">Restore old memories</span><br>and make new ones.</h1>
       </div>
       <div class="hero-say">
-    <p class="lede">Crisp restores and upscales video on-device — then lets you actually edit it.
-      A real timeline, auto-montage cut to the beat, and a generative restore lane.
-      No cloud. No account. No subscription.</p>
+    <p class="lede">Crisp <strong>restores and upscales video on-device</strong> — then lets you
+      actually edit it. A real timeline, auto-montage cut to the beat, and a generative restore
+      lane. <strong>No cloud. No account. No subscription.</strong></p>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
