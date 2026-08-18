@@ -26,6 +26,15 @@ import sys
 from pathlib import Path
 
 SITE = "https://crispvideo.app"
+#: The price, declared once. This generator said $19 through TWO portfolio-wide
+#: price changes (19->39 in e2769c6, 39->99 in 6cbe217) because both sweeps
+#: corrected the PUBLISHED pages and never the thing that writes them. A bare
+#: 19->99 rewrite would just reset that clock a third time.
+#:
+#: This site repo is nested and gitignored by the app repo, so it cannot import
+#: entitlement.PRICE_USD. One declared constant per repo is the achievable
+#: single source; keep it equal to entitlement.PRICE_USD.
+PRICE_USD = 99
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -65,7 +74,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try, one-time $19 to remove the watermark. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try, one-time ${price} to remove the watermark. Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -90,7 +99,7 @@ def build(page):
     qs = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}'
                   % (esc(q), esc(re.sub(r"<[^>]+>", "", a))) for q, a in page["faq"])
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}' % qs
-    return HEAD.format(site=SITE, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    return HEAD.format(site=SITE, price=PRICE_USD, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,

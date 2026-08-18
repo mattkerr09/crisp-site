@@ -749,7 +749,7 @@ PAGES = [
   <h2>The comparison that's actually useful</h2>
   <table>
     <tr><th></th><th>Upscayl</th><th>Crisp</th></tr>
-    <tr><td>Price</td><td>Free, open source</td><td>Free with a watermark; $19 once to remove it</td></tr>
+    <tr><td>Price</td><td>Free, open source</td><td>Free with a watermark; $99 once to remove it</td></tr>
     <tr><td>Photos</td><td>Yes, its whole purpose</td><td>Yes, 9 formats including HEIC and AVIF</td></tr>
     <tr><td>Video</td><td>No</td><td>Yes, with audio, timing and colour handled</td></tr>
     <tr><td>Upscaling engine</td><td>Real-ESRGAN (ncnn)</td><td>The same Real-ESRGAN (ncnn)</td></tr>
