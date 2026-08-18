@@ -15,10 +15,42 @@
 # else, so the domain survives the switch.
 name: Deploy site to GitHub Pages
 
+# THIS WORKFLOW DOES NOT DEPLOY THE SITE TODAY, AND MUST NOT BE ASSUMED TO.
+#
+# Read the history above and it looks like the 2026-08-06 outage was fixed. It was
+# not. `build_type` on this repo is still `legacy`, so Pages deploys from the main
+# branch and IGNORES this workflow entirely. What actually publishes crispvideo.app
+# is GitHub's automatic `pages-build-deployment` — the very builder this file was
+# written to escape. It recovered on its own.
+#
+# So until 2026-08-18 this ran on every push and was SUPERSEDED every time. An
+# Actions tab full of cancelled runs, and an escape hatch bolted to nothing.
+#
+# A disconnected safety mechanism is worse than none, because it produces false
+# confidence: if the legacy builder fails again the way it did on 6 August, this
+# will NOT take over, and the natural assumption will be that it did.
+#
+# Decision (Matthew, 2026-08-18): leave the deploy path alone — it works today.
+# So the `push` trigger is removed rather than `build_type` being flipped. This
+# file is now what docket-site's workflow already is: a documented manual
+# fallback, deliberately off the critical path, that cannot pretend otherwise.
+#
+# TO ACTUALLY USE IT, the setting must be flipped FIRST — running it by hand
+# while build_type is `legacy` publishes nothing:
+#
+#   gh api -X PUT repos/mattkerr09/crisp-site/pages -f build_type=workflow
+#   gh workflow run pages.yml --repo mattkerr09/crisp-site
+#
+# Flipping back:  gh api -X PUT repos/mattkerr09/crisp-site/pages \
+#                   -f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/'
+#
+# Pages does not un-publish, so the worst case of a broken workflow is that the
+# site stops UPDATING — it cannot go dark.
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:      # so a stuck deploy can be re-run by hand without an empty commit
+  # No `push` trigger ON PURPOSE. See above: while build_type is `legacy` a push
+  # run is cancelled by the legacy builder every single time, which taught the
+  # Actions tab to look broken and taught us to ignore it.
+  workflow_dispatch:      # manual only — and read the flip instructions above first
 
 permissions:
   contents: read
