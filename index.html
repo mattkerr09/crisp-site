@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none;}
    near-black); the SIZE and WEIGHT were doing the damage, not the typeface. */
 .h-xl{font-family:var(--head);font-size:clamp(2.5rem,4.6vw,3.9rem);line-height:1.04;letter-spacing:-.02em;font-weight:500;margin:0;}
 .h-xl .setup{color:#6f7681;}
-.h-lg{font-family:var(--head);font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.024em;font-weight:680;margin:0 0 1rem;}
+.h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.08;letter-spacing:-.024em;font-weight:600;margin:0 0 .9rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
 /* EMPHASIS THAT ACTUALLY EMPHASISES. There was no `strong` rule anywhere on this site, so every
    <strong> inherited the muted body grey and changed only its weight — 16 of them, all rendering
@@ -259,7 +259,13 @@ p em, li em{color:#c3cad6;}
 /* sections */
 section{padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative;}
 .band{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
-.head{max-width:60ch;margin:0 auto 3.5rem;text-align:center;}
+/* SECTION HEADS LEFT, NOT CENTRED. Rendered beside framer.com and avo.bet at 1440, every heading
+   on this page was centred at up to 57.6px weight 680 — heavier AND larger than Framer's 54px/500
+   — which made "The whole restore pipeline, in one drop." stack over three lines and eat most of a
+   screen before any content. Both references set their section heads left and compact.
+   The bottom margin comes down with it: 3.5rem under a centred block reads as deliberate air, but
+   under a left-aligned head it just reads as a gap. */
+.head{max-width:64ch;margin:0 0 2.2rem;text-align:left;}
 .head .lede{font-size:1.06rem;}
 
 /* alternating feature rows */
@@ -1219,6 +1225,18 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
+  /* ⚠️ AN OBSERVER THAT NEVER FIRES LEAVES EVERY HEADING INVISIBLE. IntersectionObserver does not
+     report for a document that is hidden (document.hidden === true), which is the state of any
+     background tab, any headless render, and potentially a crawler. Measured: in that state all
+     ten <h2> on this page sit at opacity 0 — the page keeps its text for a reader but loses it for
+     anything that photographs or indexes it, and my own comparison screenshots were missing every
+     heading without my noticing.
+     So the reveal gets a deadline. After 2.5s anything still unrevealed is shown regardless. A
+     visitor scrolling normally never reaches it, because the observer resolves first; everything
+     else gets the page. */
+  setTimeout(function () {
+    for (var k = 0; k < els.length; k++) els[k].classList.add('in');
+  }, 2500);
 })();
 </script>
 </body>
