@@ -97,3 +97,27 @@ the UI served over http cannot reach the sidecar — the Origin guard requires `
 which is correct and I am not weakening it. A populated screenshot has to come from the real app
 with clips actually loaded. **I will not fabricate one by injecting state**: this site's own
 truth-clause gate exists precisely to stop a page depicting something the product did not do.
+
+## The side-by-side, at last — and what it actually shows
+
+All four rendered headless at an identical 1440x900 (`--window-size=1440,900`), so the comparison is
+like-for-like rather than eyeballed.
+
+**Ours is mostly empty.** That is the finding, and it is not "add more images":
+
+1. **Our visual floats in dark space.** The hero clip is 998px centred in a 1440px viewport with
+   dark margin either side, and nothing frames it. Framer's product surface **bleeds off the right
+   edge**. Cofounder's scene is **full-bleed, edge to edge, no margin at all**. Theirs fill the
+   frame; ours sits in the middle of it.
+2. **We have no colour.** Near-black, grey text, one blue button. Cofounder runs a full-colour
+   painted scene, AVO carries purple and green accents through the UI, Framer has a blue glow
+   behind the product. Our page has one accent and barely uses it.
+3. **Our visual does not show the product.** A pagoda clip demonstrates *footage*. Framer shows its
+   editor mid-keystroke ("homepage for a|"), AVO shows its odds dashboard, Cofounder shows task
+   toasts firing. A visitor learns what their product IS from the first screen. Ours does not.
+4. **Density below the fold.** AVO is already into "Supports 89+ Sportbooks" and a logo wall at
+   900px. We are still in whitespace.
+
+`app-editor.jpg` in this directory is the real Crisp editor, rendered from the shipped webview at
+1440x900 and cropped below the title bar. It is on disk and not yet on the page — that is the next
+change, not a claim that it is done.
