@@ -24,6 +24,18 @@ body{
   margin:0;background:var(--black);color:var(--white);font-family:var(--sans);
   font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
+
+/* EMPHASIS THAT ACTUALLY EMPHASISES — the shared stylesheet had no `strong` rule, so all 1,285
+   <strong> tags across the other 112 pages inherited the muted body grey (rgb(161,169,184)) and
+   changed only their weight. Measured live on /vs/topaz-alternative-mac/: 27 of them, every one
+   the same colour as the prose around it, including "100% offline" and "own" — the exact phrases
+   those pages are arguing. Bold alone against a near-black background is a very small step in
+   value, so the markup was there and the emphasis was not.
+   This matches index.html's inline rule exactly; the homepage got it first and the rest of the
+   site is 112 pages of the same problem. 600 rather than the browser's 700 keeps it from shouting
+   now that it also carries colour. Where the parent is already --white this is a no-op. */
+p strong, li strong, td strong{color:var(--white);font-weight:600;}
+p em, li em{color:#c3cad6;}
 img{max-width:100%;height:auto;display:block;}
 a{color:var(--ice);text-decoration:none;}
 a:hover{text-decoration:underline;text-underline-offset:3px;}
@@ -172,3 +184,28 @@ footer a{color:var(--grey);}
    than the prices it was footnoting. --grey-dim is 4.82:1 on the page background (raised in
    55cf220 after it measured 3.90:1). */
 .price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
+
+
+/* CONTENT THAT RISES INTO PLACE, on the 113 pages that share this stylesheet.
+   index.html does this with an IntersectionObserver because it needed per-element stagger. Here
+   it is pure CSS, deliberately: adding a script tag to 113 files to hide their content is a
+   change whose failure mode is 113 blank pages, and the whole point of the js-gate on the
+   homepage was that hiding content is only safe when something guarantees it gets unhidden.
+   @supports gives that guarantee for free — a browser without scroll-driven animations simply
+   never applies the rule and shows the page normally. Nothing can hide content that is not
+   unhidden, because the hiding only exists where the un-hiding does.
+   Selectors are structural on purpose, so no page needs an edit: every /vs/ page has h2 and
+   article, 23 of 24 have a table, 11 have .cmp. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    article h2, article table, article .cmp, article figure {
+      animation: crisp-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    @keyframes crisp-rise {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+}
