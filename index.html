@@ -489,7 +489,67 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 </div>
 
 
-<section id="restore">
+<section id="what" class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">What it does</p>
+      <h2 class="h-lg rv">The whole restore pipeline,<br>in one drop.</h2>
+      <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
+        lift, restore, upscale — then hands you an editor for what comes next.</p>
+    </div>
+
+    <!-- Moved down from the hero, where an empty timeline was the first thing a visitor saw.
+         Here the interface IS the subject, so an empty project is honest rather than limp. -->
+    <figure class="shot">
+      <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 1100w, /img-app@2x.png 2200w"
+        sizes="(max-width: 1100px) 100vw, 1060px"
+        width="2200" height="1520" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="lazy" decoding="async"></div>
+      <figcaption class="cap">Crisp on macOS — editor, queue and upscaler in one window.</figcaption>
+    </figure>
+
+    <div class="row">
+      <div class="col-text">
+        <h3 class="h-md">Up to 4K, decided for you</h3>
+        <p>An <strong>Auto</strong> mode reads your footage and picks the model, instead of handing
+          you a fifteen-item list and wishing you luck. Manual override is there when you want it.</p>
+      </div>
+      <div class="visual"><div class="metric">
+        <div class="big">4K</div>
+        <div class="small">from 1080p and below — 2× to 16×, and it greys out what your clip cannot encode</div>
+      </div></div>
+    </div>
+
+    <div class="row flip">
+      <div class="col-text">
+        <h3 class="h-md">Cuts that land on the beat</h3>
+        <p>Hand Crisp a long video and a song. It finds the moments worth keeping and places every
+          cut on the beat — within half a frame of it, for the whole track, not just the first minute.</p>
+      </div>
+      <div class="visual"><div class="metric">
+        <div class="bars">
+          <i style="height:34%"></i><i style="height:62%"></i><i style="height:100%"></i><i style="height:48%"></i>
+          <i style="height:78%"></i><i style="height:36%"></i><i style="height:92%"></i><i style="height:54%"></i>
+          <i style="height:70%"></i><i style="height:40%"></i><i style="height:86%"></i><i style="height:58%"></i>
+        </div>
+        <div class="small">beat-matched montage, on-device</div>
+      </div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-text">
+        <h3 class="h-md">Your footage never leaves</h3>
+        <p>Every frame is processed on your own machine. No upload, no queue, no account — and it
+          keeps working with the Wi-Fi switched off.</p>
+      </div>
+      <div class="visual"><div class="metric">
+        <div class="big">0</div>
+        <div class="small">frames uploaded, ever</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+    <section id="restore">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
@@ -572,65 +632,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   </div>
 </section>
 
-<section id="what" class="band">
-  <div class="wrap">
-    <div class="head">
-      <p class="kicker">What it does</p>
-      <h2 class="h-lg rv">The whole restore pipeline,<br>in one drop.</h2>
-      <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
-        lift, restore, upscale — then hands you an editor for what comes next.</p>
-    </div>
 
-    <!-- Moved down from the hero, where an empty timeline was the first thing a visitor saw.
-         Here the interface IS the subject, so an empty project is honest rather than limp. -->
-    <figure class="shot">
-      <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 1100w, /img-app@2x.png 2200w"
-        sizes="(max-width: 1100px) 100vw, 1060px"
-        width="2200" height="1520" alt="Crisp on macOS: media panel, preview, project settings and timeline." loading="lazy" decoding="async"></div>
-      <figcaption class="cap">Crisp on macOS — editor, queue and upscaler in one window.</figcaption>
-    </figure>
-
-    <div class="row">
-      <div class="col-text">
-        <h3 class="h-md">Up to 4K, decided for you</h3>
-        <p>An <strong>Auto</strong> mode reads your footage and picks the model, instead of handing
-          you a fifteen-item list and wishing you luck. Manual override is there when you want it.</p>
-      </div>
-      <div class="visual"><div class="metric">
-        <div class="big">4K</div>
-        <div class="small">from 1080p and below — 2× to 16×, and it greys out what your clip cannot encode</div>
-      </div></div>
-    </div>
-
-    <div class="row flip">
-      <div class="col-text">
-        <h3 class="h-md">Cuts that land on the beat</h3>
-        <p>Hand Crisp a long video and a song. It finds the moments worth keeping and places every
-          cut on the beat — within half a frame of it, for the whole track, not just the first minute.</p>
-      </div>
-      <div class="visual"><div class="metric">
-        <div class="bars">
-          <i style="height:34%"></i><i style="height:62%"></i><i style="height:100%"></i><i style="height:48%"></i>
-          <i style="height:78%"></i><i style="height:36%"></i><i style="height:92%"></i><i style="height:54%"></i>
-          <i style="height:70%"></i><i style="height:40%"></i><i style="height:86%"></i><i style="height:58%"></i>
-        </div>
-        <div class="small">beat-matched montage, on-device</div>
-      </div></div>
-    </div>
-
-    <div class="row">
-      <div class="col-text">
-        <h3 class="h-md">Your footage never leaves</h3>
-        <p>Every frame is processed on your own machine. No upload, no queue, no account — and it
-          keeps working with the Wi-Fi switched off.</p>
-      </div>
-      <div class="visual"><div class="metric">
-        <div class="big">0</div>
-        <div class="small">frames uploaded, ever</div>
-      </div></div>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
