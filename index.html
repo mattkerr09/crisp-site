@@ -203,6 +203,16 @@ p em, li em{color:#c3cad6;}
 .side-fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--hair-lit);display:block;}
 .side-fig figcaption{margin-top:.6rem;font-size:.82rem;line-height:1.45;color:var(--grey-dim);}
 @media (max-width:820px){.side-fig{grid-template-columns:1fr;gap:1.4rem;}}
+/* NAMING THE 21, NOT JUST COUNTING THEM. The capability row says "21 tools" and a number is a
+   claim a visitor cannot check. avo.bet's density is largely its "Supports 89+ Sportbooks" wall —
+   it NAMES what it handles, and that is the honest kind of density: content a reader can use
+   rather than decoration. These are the tasks server.py actually dispatches, in the words the app
+   uses for them. */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem;
+  margin:1.6rem 0 0;}
+.tools-grid span{display:block;padding:.55rem .7rem;border:1px solid var(--hair);border-radius:10px;
+  background:var(--panel);font-size:.82rem;color:var(--grey-dim);line-height:1.35;}
+.tools-grid b{display:block;color:var(--white);font-weight:600;font-size:.9rem;}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
 /* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
    1440x900, ours was the only one whose visual floated: 998px of footage centred in a 1440px
@@ -566,6 +576,33 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
         lift, restore, upscale — then hands you an editor for what comes next.</p>
     </div>
+      <!-- The 21 tasks server.py dispatches, named rather than counted. Read off the dispatch
+           list: audio border compress convert crop fade frame gif grade loop montage overlay
+           reframe reverse rotate speed splitscreen stabilize timeline trim upscale. -->
+      <div class="tools-grid">
+        <span><b>Upscale</b>to 4K, 2–16×</span>
+        <span><b>Restore</b>generative Max lane</span>
+        <span><b>Montage</b>cut to the beat</span>
+        <span><b>Timeline</b>a real editor</span>
+        <span><b>Split screen</b>2 or 4 up</span>
+        <span><b>Reframe</b>vertical, square</span>
+        <span><b>Trim</b>start and end</span>
+        <span><b>Speed</b>faster or slower</span>
+        <span><b>Grade</b>look and colour</span>
+        <span><b>Stabilize</b>shake removal</span>
+        <span><b>Rotate</b>and flip</span>
+        <span><b>Crop</b>ratio or zoom</span>
+        <span><b>Border</b>colour and size</span>
+        <span><b>Overlay</b>watermark or logo</span>
+        <span><b>Caption</b>burned in</span>
+        <span><b>Fade</b>in, out, both</span>
+        <span><b>Loop</b>repeat a clip</span>
+        <span><b>Reverse</b>backwards</span>
+        <span><b>Audio</b>extract, mute, gain</span>
+        <span><b>Compress</b>smaller files</span>
+        <span><b>Convert</b>mp4, mov, mkv, gif</span>
+      </div>
+
 
     <!-- Moved down from the hero, where an empty timeline was the first thing a visitor saw.
          Here the interface IS the subject, so an empty project is honest rather than limp. -->
