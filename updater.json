@@ -1,10 +1,10 @@
 {
-  "version": "1.0.893",
-  "notes": "Crisp is $129. One constant, and the test that guards it no longer hardcodes it",
-  "pub_date": "2026-08-18T11:00:35Z",
+  "version": "1.0.896",
+  "notes": "A price guard went red because the code stopped hardcoding prices",
+  "pub_date": "2026-08-18T12:49:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYrcWJFU0ZKeXpDNFpUUEplZkl5ZE1DQmN1MmZQZm1yK2xDR1VJM1pYd3FCaDg1Sjc3VlVScmtLK3NGaWp1eDdCbnZzMnl2ZW1vU0puek8wT3V2SWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDUwNzkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoYm0yeFhxVldpOVhGSEJNcCtNYW1Lem82N3V6UkYzaFhtMk9UTmZ1d0tCMUJWaFZ2TUlaek5JVkpyaGgvclEvU3A1c3hpNThsd2J6TnZEQUYzVzhEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ZUDZNTC80R1FNUkxIMmhxWkdUd2JnOXBoV0p1d1dsQ3RvajB3dS8yRXhOM3d1WTBqTnNQRW1oOE9sRFl6RGduTUNGbTVRME5hclNBZHNSakJiQ1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MDU3MzMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyWlFoZ2NJamxaM1k1TnMzbFNpVzZLd1V0em1HSm0vMUNJVzd3b05tUE1UeXovNGltMFE2OGFoSm1MUHA0ZGg1TnRQeDVCaHpranRzczlDejNpa0JDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
