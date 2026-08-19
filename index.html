@@ -758,23 +758,24 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <!-- No src= on purpose: the loader picks the 1x or 2x file by devicePixelRatio. It is in
            the hero now, so the observer fires immediately — but preload="none" still means a
            1x display never fetches the 4.5MB retina pair. -->
-      <video class="ba-after" id="baAfter" width="1280" height="720" poster="/boxing-poster.jpg"
-        data-src-1x="/boxing-after.mp4" data-src-2x="/boxing-after@2x.mp4"
+      <video class="ba-after" id="baAfter" width="960" height="720" poster="/birthday-poster.jpg"
+        data-src-1x="/birthday-after.mp4" data-src-2x="/birthday-after@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="After Crisp Max: the same 1936 newsreel, grain cleaned and the collar and button placket on the young man's shirt resolved into distinct edges."></video>
-      <video class="ba-before" id="baBefore" width="1280" height="720"
-        data-src-1x="/boxing-before.mp4" data-src-2x="/boxing-before@2x.mp4"
+        aria-label="After Crisp Max: the same 1950s newsreel, grain cleaned and the checked shirt, the iced cake and both faces resolved into distinct edges."></video>
+      <video class="ba-before" id="baBefore" width="960" height="720"
+        data-src-1x="/birthday-before.mp4" data-src-2x="/birthday-before@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="The 640x480 archival scan of the same crowd at the same size — soft, grainy, faces and collars smeared."></video>
+        aria-label="The 640x480 archival scan of the same birthday table at the same size — soft, grainy, faces and the cake smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
       <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp Max</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
-    <p class="ba-note">Real 1936 archival film, run through <strong>Max</strong> &mdash; the
-      generative restore, on-device. Drag the handle. Max is the slow lane by design: this restore
-      was 90 frames at 30.3 seconds each. The free Enhance lane did the same clip in 13.0 seconds.
-      <a href="#restore">Both, measured &rarr;</a></p>
+    <p class="ba-note">Real 1950s newsreel &mdash; Amos Alonzo Stagg&rsquo;s 95th birthday &mdash;
+      run through <strong>Max</strong>, the generative restore, on-device. Drag the handle. Max is
+      the slow lane by design: this restore ran at about 22 seconds a frame. Against a plain resize
+      to the same size it holds 1.23&times; the fine detail; the harder 1936 clip further down
+      manages 1.50&times;. <a href="#restore">Both, measured &rarr;</a></p>
   </div>
 </div>
 
@@ -883,17 +884,32 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="head">
       <p class="kicker">Real output</p>
       <h2 class="h-lg rv">Measured, <span class="grad">not claimed.</span></h2>
-      <p class="lede">Where the clip at the top of this page came from, what it scored, and a
+      <p class="lede">Where these clips came from, what they scored, and a
         second example that flatters us — labelled as such.</p>
     </div>
 
 
-    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Chevrolet
+    <div class="ba" id="ba3">
+      <video class="ba-after" width="1280" height="720" poster="/boxing-poster.jpg"
+        data-src-1x="/boxing-after.mp4" data-src-2x="/boxing-after@2x.mp4"
+        muted loop playsinline preload="none"
+        aria-label="After Crisp Max: the same 1936 newsreel, grain cleaned and the collar and button placket on the young man's shirt resolved into distinct edges."></video>
+      <video class="ba-before" width="1280" height="720"
+        data-src-1x="/boxing-before.mp4" data-src-2x="/boxing-before@2x.mp4"
+        muted loop playsinline preload="none"
+        aria-label="The 640x480 archival scan of the same crowd at the same size — soft, grainy, faces and collars smeared."></video>
+      <div class="ba-line"><span class="ba-grip"></span></div>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp Max</span>
+      <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
+        aria-label="Reveal more of the source or the restored frame">
+    </div>
+
+    <p class="ba-note"><strong>The hard case.</strong> Source: <em>Chevrolet
       Leader News</em> (Vol.&nbsp;2, No.&nbsp;3, 1936) &mdash; the crowd at an open-air boxing
       match, not the fight &mdash; from the Prelinger Archives at the Internet Archive under a
       Creative Commons public-domain dedication. This is a real archival scan at 640&times;480,
       not a clean file we degraded on purpose: it is soft and grainy because 1936 film digitised
-      decades later is soft and grainy. The clip at the top is that film run through
+      decades later is soft and grainy. The clip above is that film run through
       <strong>Max</strong>, the generative restore, on Apple Silicon &mdash; a restore rather than
       an upscale, so both sides of the slider are the same size and only the detail differs.
       One thing had to happen first, and it is the most useful thing on this page if you have
