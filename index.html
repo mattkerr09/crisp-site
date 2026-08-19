@@ -30,8 +30,8 @@
      page reads as one designed object instead of dark chrome around content. Crisp's accent is
      cyan, so the ground leans the same way, by about as much: 2-6 levels of blue, nowhere near
      enough to tint a video frame, and the shot frame itself still sits on true #000. */
-  --black:#070911; --panel:#0b0e16; --panel-2:#0c1018; --card:#0f131d;
-  --hair:#1b2130; --hair-lit:#2a3146;
+  --black:#060814; --panel:#0a0d1a; --panel-2:#0b0e1c; --card:#0e1222;
+  --hair:#1b2133; --hair-lit:#2a314a;
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
   --grad:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
@@ -175,7 +175,7 @@ p em, li em{color:#c3cad6;}
        page, after the headline gradient and the glowing button — a cyan/purple
        wash behind a hero is the visual shorthand for "AI startup". One faint
        cool light remains so the fold is not flat; the violet is gone. */
-    radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.07), transparent 60%);
+    radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.11), transparent 60%);
 }
 /* THE GROUND UNDER THE FOLD. outlier.host puts a 34px dot grid behind its hero and
    masks it out before it reaches the content, which is what stops the page reading
@@ -418,7 +418,7 @@ section > *{position:relative;z-index:1;}
    off. outlier.host solves this with a --glass surface rather than a solid one. Same here:
    the band is now the panel colour at 78%, which still separates it from the page but lets
    the light through. */
-.band{background:rgba(11,14,22,.62);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+.band{background:rgba(10,13,26,.60);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
 /* The seam where the light gets out. A flat 1px --hair rule across the top of a banded section
    is the edge of a box; the same rule brightened in the middle and faded at both ends is the
    edge of something lit. It rides above the section's own border on the same line. */
