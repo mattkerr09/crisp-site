@@ -449,6 +449,7 @@ section > *{position:relative;z-index:1;}
 /* metric tiles inside visuals */
 .metric{position:relative;text-align:center;padding:2rem;}
 .metric .big{font-size:clamp(2.6rem,6vw,4rem);font-weight:700;letter-spacing:-.04em;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
   background:linear-gradient(120deg,#dff4ff,#5ac8fa);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .metric .small{color:var(--grey);font-size:.94rem;margin-top:.7rem;}
 .bars{display:flex;align-items:flex-end;gap:7px;height:110px;margin-top:1.4rem;justify-content:center;}
@@ -526,6 +527,10 @@ td.n{color:var(--grey-dim);}
 .tier .name{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--grey-dim);}
 .tier.pro .name{color:var(--cyan);}
 .tier .price{font-size:3rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1;}
+.tier .price.grad-price{background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  color:transparent;width:fit-content;}
+/* The "once" after the price must NOT inherit the transparent fill, or it disappears. */
+.tier .price.grad-price small{-webkit-text-fill-color:var(--grey-dim);color:var(--grey-dim);}
 .tier .price small{font-size:.94rem;font-weight:500;color:var(--grey-dim);letter-spacing:0;}
 .tier .blurb{color:var(--grey);font-size:.94rem;margin:0 0 1.5rem;}
 .tier ul{list-style:none;padding:0;margin:0 0 1.9rem;display:grid;gap:.65rem;}
@@ -568,10 +573,26 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
    JavaScript off — or any failure before the observer runs — leaves every revealed element at
    opacity:0 forever, which is a blank page rather than a page without an animation. Absence of
    the enhancement must never remove the content. */
-.js .rv{opacity:0;transform:translateY(26px);
+/* THE OFFSET LIVES IN VARIABLES, NOT IN THE TRANSFORM. outlier.host documents the trap in its
+   own stylesheet and it is worth repeating: a rule like `.rv:nth-child(odd){transform:...}` is
+   (0,2,0) and OUTRANKS `.rv.in{transform:none}` at (0,2,0) on source order — so a directional
+   offset written directly as a transform wins against the settled state and the element never
+   arrives. Variables carry the intent; one transform reads them. */
+.js .rv{opacity:0;transform:translate(var(--rx,0),var(--ry,26px)) scale(var(--rs,1));
   transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
 .js .rv.in{opacity:1;transform:none;}
 .js .rv.d1{transition-delay:.08s;} .js .rv.d2{transition-delay:.16s;} .js .rv.d3{transition-delay:.24s;}
+/* Content arrives from the side it sits on, the way outlier.host does it, so a grid does not
+   rise as one slab. Scoped to the grids where there is a left and a right to mean anything. */
+.js .cards > .rv:nth-child(odd),
+.js .steps > .rv:nth-child(odd){--rx:-30px;--ry:10px;}
+.js .cards > .rv:nth-child(even),
+.js .steps > .rv:nth-child(even){--rx:30px;--ry:10px;}
+.js .tiers > .rv:nth-child(odd){--rx:-34px;--ry:6px;}
+.js .tiers > .rv:nth-child(even){--rx:34px;--ry:6px;}
+.js .side-fig > .rv{--rx:26px;--ry:8px;}
+.js .shot.rv,.js .cmp-wrap.rv{--ry:34px;--rs:.985;}
+.js .caps-in > .rv{--ry:18px;--rs:.97;}
 /* A REVEALED ELEMENT HANDS ITS TRANSITION BACK. `.js .rv` (0,2,0) outranks `.card` (0,1,0),
    so every card and tier was running its HOVER on the reveal's 0.8s curve — and on the
    stagger delay, so a .d3 card sat still for 240ms after the pointer arrived — while
@@ -579,7 +600,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
    computed style, not guessed. Once the reveal has played there is nothing left for it to
    animate, so the element takes this list instead. Placed after the delay rules so it wins
    the tie on source order and can zero the delay. */
-.js .rv.rvd{transition:border-color .28s,transform .28s,box-shadow .28s,background .24s,color .22s;
+.js .rv.rvd{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.2,.8,.2,1),
+  border-color .28s,box-shadow .28s,background .24s,color .22s;
   transition-delay:0s;}
 @media(prefers-reduced-motion:reduce){
   .mesh b{animation:none;}
@@ -722,7 +744,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">What it does</p>
-      <h2 class="h-lg rv">The whole restore pipeline,<br>in one drop.</h2>
+      <h2 class="h-lg rv">The whole restore pipeline,<br><span class="grad">in one drop.</span></h2>
       <p class="lede">Most tools give you a single stage. Crisp runs the lot — denoise, low-light
         lift, restore, upscale — then hands you an editor for what comes next.</p>
     </div>
@@ -809,7 +831,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Real output</p>
-      <h2 class="h-lg rv">Measured, not claimed.</h2>
+      <h2 class="h-lg rv">Measured, <span class="grad">not claimed.</span></h2>
       <p class="lede">Where the clip at the top of this page came from, what it scored, and a
         second example that flatters us — labelled as such.</p>
     </div>
@@ -863,7 +885,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Auto-montage</p>
-      <h2 class="h-lg rv">Three minutes in.<br>Twenty-seven seconds out.</h2>
+      <h2 class="h-lg rv">Three minutes in.<br><span class="grad">Twenty-seven seconds out.</span></h2>
       <p class="lede">Nobody watches the whole tape. Point Crisp at a long clip and it finds the
         moments worth keeping, cuts them together and hands you the result — or drops them on the
         timeline if you would rather finish by hand.</p>
@@ -955,7 +977,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">How it works</p>
-      <h2 class="h-lg rv">Open. Drop. Done.</h2>
+      <h2 class="h-lg rv">Open. Drop. <span class="grad">Done.</span></h2>
       <p class="lede">No project to create, no media to import first, no render farm to babysit.</p>
     </div>
     <div class="steps">
@@ -1036,7 +1058,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">Pricing</p>
-      <h2 class="h-lg rv">One price. Yours forever.</h2>
+      <h2 class="h-lg rv">One price. <span class="grad">Yours forever.</span></h2>
       <p class="lede">No subscription, no credits, no cloud bill. Buy it once and it stays bought.</p>
     </div>
     <div class="tiers">
@@ -1052,7 +1074,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <a class="btn btn-ghost" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free</a>
       </div>
       <div class="tier pro rv d2">
-        <div class="name">Crisp Pro</div><div class="price">$129 <small>once</small></div>
+        <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small></div>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Watermark-free exports</li>
@@ -1211,7 +1233,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <section class="final">
   <div class="wrap">
-    <h2 class="h-lg rv">Make it crisp.</h2>
+    <h2 class="h-lg rv">Make it <span class="grad">crisp.</span></h2>
     <p class="lede">Free to use, 78&nbsp;MB, and it opens in about a second. Nothing to sign up for.</p>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
@@ -1465,16 +1487,26 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
      transition plus the longest stagger delay. transitionend would be exact, but it never
      fires when transitions are off (reduced motion) or when the document is hidden, and
      those are the two cases this page has already been bitten by. */
-  function show(el) { el.classList.add('in'); setTimeout(function () { el.classList.add('rvd'); }, 1150); }
+  function show(el) {
+    el.classList.add('in');
+    if (!el._rvdT) el._rvdT = setTimeout(function () { el.classList.add('rvd'); }, 1150);
+  }
   if (!('IntersectionObserver' in window)) {          /* old browser: show everything, no motion */
     for (var i = 0; i < els.length; i++) show(els[i]);
     return;
   }
+  /* TWO-WAY, like outlier.host: reveal on the way down and un-reveal on the way back up, so the
+     page animates in both directions instead of filling in once and staying filled. The observer
+     is deliberately NOT unobserved — that call was exactly what made the effect one-shot here.
+     Matthew asked for this after comparing the two pages side by side. */
+  var revealed = 0;
   var io = new IntersectionObserver(function (entries) {
     for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) { show(entries[i].target); io.unobserve(entries[i].target); }
+      var t = entries[i].target;
+      if (entries[i].isIntersecting) { revealed++; show(t); }
+      else { t.classList.remove('in'); }
     }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
   /* ⚠️ AN OBSERVER THAT NEVER FIRES LEAVES EVERY HEADING INVISIBLE. IntersectionObserver does not
      report for a document that is hidden (document.hidden === true), which is the state of any
@@ -1486,6 +1518,16 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
      visitor scrolling normally never reaches it, because the observer resolves first; everything
      else gets the page. */
   setTimeout(function () {
+    /* ⚠️ THE DEADLINE AND THE TWO-WAY OBSERVER MUST NOT FIGHT. Now that the observer also
+       REMOVES .in, a deadline that blindly reveals everything would be undone the moment the
+       observer next fired, and off-screen content would visibly flash in and out. So it only
+       fires when the observer has revealed NOTHING — which is the case it was written for: a
+       document that is hidden (background tab, headless render, crawler) never gets an
+       IntersectionObserver callback at all, and every heading would otherwise sit at opacity 0
+       for anything that photographs or indexes the page. In that case the observer is also
+       disconnected, so nothing can take the content away again. */
+    if (revealed) return;
+    io.disconnect();
     for (var k = 0; k < els.length; k++) show(els[k]);
   }, 2500);
 })();
