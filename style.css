@@ -1,3 +1,23 @@
+/* SELF-HOSTED, woff2 only, and never a third-party host — the site's own pre-push check asserts
+   that an ordinary visitor loads nothing from anyone else, and a font CDN would break that as
+   surely as an analytics tag would.
+   WHY THESE. The display face was Futura, which is macOS-resident: on Windows the whole stack
+   fell through to system-ui and the page lost its typographic identity for every visitor who was
+   not already on a Mac — including the search traffic the 113 comparison and explainer pages
+   exist to catch. A webfont is the only way every reader sees the same page.
+   DM Sans carries the body: SIL Open Font Licence, one 30KB VARIABLE file covering 400-700, a
+   large x-height that holds up at 17px on a near-black ground, and — deliberately — not Inter,
+   which is the typeface every AI landing page reaches for.
+   Clash Display carries the headings, the same face outlier.host uses, so the two sites read as
+   one company. */
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var.woff2') format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var-italic.woff2') format('woff2');
+  font-weight:400 700;font-style:italic;font-display:swap;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-500.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-600.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;}
 /* Crisp — shared styles for the guide and comparison pages.
  *
  * The homepage was rebuilt around the product; these 79 pages still carried their own inline
@@ -14,7 +34,8 @@
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff; --green:#4ade80;
   --r:18px; --r-sm:12px;
-  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
+  --head:'Clash Display',Futura,"Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --w:820px;                 /* narrower than home: these are reading pages */
 }
 
@@ -64,13 +85,19 @@ header .nav-inner{position:relative;}
 .nav-brand svg{width:21px;height:21px;color:var(--cyan);}
 
 /* ---- headings ---- */
+/* The display face carries the headings here too, so a visitor who lands on a guide from search
+   meets the same page as one who lands on the home page. Weight comes DOWN to 600 with it: only
+   500 and 600 are shipped, and asking for 690 would have the browser synthesise a fake bold —
+   smeared stems, wrong sidebearings — which is worse than no display face at all. */
 h1{
-  font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.06;letter-spacing:-.035em;
-  font-weight:690;margin:.6rem 0 1rem;
+  font-family:var(--head);
+  font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.07;letter-spacing:-.012em;
+  font-weight:600;margin:.6rem 0 1rem;
 }
 h2{
-  font-size:clamp(1.45rem,2.7vw,2rem);line-height:1.18;letter-spacing:-.028em;
-  font-weight:660;margin:3.2rem 0 .9rem;
+  font-family:var(--head);
+  font-size:clamp(1.45rem,2.7vw,2rem);line-height:1.2;letter-spacing:-.01em;
+  font-weight:600;margin:3.2rem 0 .9rem;
 }
 h3{font-size:1.12rem;font-weight:640;letter-spacing:-.012em;margin:2rem 0 .5rem;}
 p{margin:0 0 1.05rem;}

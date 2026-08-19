@@ -6,7 +6,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crisp — offline AI video upscaler &amp; editor for Mac</title>
-<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<!-- The two faces the first screen actually needs. They are declared in the inline <style> below,
+     so the browser would find them at parse time anyway; preloading starts the fetch a beat
+     earlier and shortens the swap from the fallback. Only these two: preloading the italic or the
+     600 weight would compete for bandwidth with the clip that IS the hero. -->
+<link rel="preload" href="/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-500.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Restore and upscale video to 4K on your Mac, fully offline. A real timeline editor, auto-montage cut to the beat, and a generative restore lane — one-time $129, no subscription, nothing uploaded.">
 <link rel="canonical" href="https://crispvideo.app/">
 <meta name="theme-color" content="#000000">
@@ -18,6 +24,26 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
+/* SELF-HOSTED, woff2 only, and never a third-party host — the site's own pre-push check asserts
+   that an ordinary visitor loads nothing from anyone else, and a font CDN would break that as
+   surely as an analytics tag would.
+   WHY THESE. The display face was Futura, which is macOS-resident: on Windows the whole stack
+   fell through to system-ui and the page lost its typographic identity for every visitor who was
+   not already on a Mac — including the search traffic the 113 comparison and explainer pages
+   exist to catch. A webfont is the only way every reader sees the same page.
+   DM Sans carries the body: SIL Open Font Licence, one 30KB VARIABLE file covering 400-700, a
+   large x-height that holds up at 17px on a near-black ground, and — deliberately — not Inter,
+   which is the typeface every AI landing page reaches for.
+   Clash Display carries the headings, the same face outlier.host uses, so the two sites read as
+   one company. */
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var.woff2') format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var-italic.woff2') format('woff2');
+  font-weight:400 700;font-style:italic;font-display:swap;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-500.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-600.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;}
 :root{
   /* Was pure #000. Linear ships rgb(8,9,10) and Vercel/Stripe are similarly
      near-black, because #000 behind #f5f7fa text haloes on OLED and reads cheap.
@@ -41,7 +67,7 @@
   --lift:0 24px 50px -28px rgba(90,200,250,.40);
   --lift-lg:0 32px 70px -34px rgba(90,200,250,.50);
   --r:18px; --r-sm:12px;
-  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
   /* Crisp is the only site here with a display face of its own, and that is the
      point: four of these five sites were near-black with a blue accent and
      -apple-system, so they read as one company shipping four things. Ground
@@ -51,7 +77,7 @@
      authentic to a video restorer rather than decorative. Crisp is a macOS-only
      app, so its visitors are on macOS and this renders for essentially all of
      them; the stack degrades to Avenir Next and then the system sans. */
-  --head:Futura,"Avenir Next Condensed","Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --head:'Clash Display',Futura,"Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --w:1180px;
 }
 *{box-sizing:border-box;}
@@ -69,9 +95,14 @@ a{color:inherit;text-decoration:none;}
    read as a party poster rather than a product. The face stays (it is the reason
    this site does not look like the four competitors that all run -apple-system on
    near-black); the SIZE and WEIGHT were doing the damage, not the typeface. */
-.h-xl{font-family:var(--head);font-size:clamp(2.5rem,4.6vw,3.9rem);line-height:1.04;letter-spacing:-.02em;font-weight:500;margin:0;}
+/* Clash Display sets WIDER than Futura at the same size, and the h1 is written with its own
+   line break — so at 3.9rem "Restore old memories" stopped fitting and wrapped to three lines,
+   pushing the fold down and shrinking the clip below it. Measured at 1440, not guessed. The
+   size comes down and the tracking tightens to hold the intended two lines. */
+.h-xl{font-family:var(--head);font-size:clamp(2.3rem,4.05vw,3.45rem);line-height:1.07;
+  letter-spacing:-.015em;font-weight:500;margin:0;}
 .h-xl .setup{color:#6f7681;}
-.h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.08;letter-spacing:-.024em;font-weight:600;margin:0 0 .9rem;}
+.h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.1;letter-spacing:-.012em;font-weight:600;margin:0 0 .9rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
 /* EMPHASIS THAT ACTUALLY EMPHASISES. There was no `strong` rule anywhere on this site, so every
    <strong> inherited the muted body grey and changed only its weight — 16 of them, all rendering
