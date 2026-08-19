@@ -751,24 +751,24 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="ba" id="ba">
       <!-- No src= on purpose: the loader picks the 1x or 2x file by devicePixelRatio. It is in
            the hero now, so the observer fires immediately — but preload="none" still means a
-           1x display never fetches the 2.8MB retina pair. -->
-      <video class="ba-after" id="baAfter" width="1280" height="720" poster="/demo-poster.jpg"
-        data-src-1x="/demo-after.mp4" data-src-2x="/demo-after@2x.mp4"
+           1x display never fetches the 4.5MB retina pair. -->
+      <video class="ba-after" id="baAfter" width="1280" height="720" poster="/boxing-poster.jpg"
+        data-src-1x="/boxing-after.mp4" data-src-2x="/boxing-after@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="After Crisp Max: the same 1940 film, grain cleaned and the carved blocks under the pagoda eave separated into individual shapes."></video>
+        aria-label="After Crisp Max: the same 1936 newsreel, grain cleaned and the collar and button placket on the young man's shirt resolved into distinct edges."></video>
       <video class="ba-before" id="baBefore" width="1280" height="720"
-        data-src-1x="/demo-before.mp4" data-src-2x="/demo-before@2x.mp4"
+        data-src-1x="/boxing-before.mp4" data-src-2x="/boxing-before@2x.mp4"
         muted loop playsinline preload="none"
-        aria-label="The 640x480 archival scan at the same size — soft, grainy, edges smeared."></video>
+        aria-label="The 640x480 archival scan of the same crowd at the same size — soft, grainy, faces and collars smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
       <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp Max</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
-    <p class="ba-note">Real 1940 archival film, run through <strong>Max</strong> &mdash; the
-      generative restore, on-device. Drag the handle. Max is the slow lane by design: this clip is
-      132 frames and took about 33 seconds each. The free Enhance lane does a whole clip in
-      seconds. <a href="#restore">Both, measured &rarr;</a></p>
+    <p class="ba-note">Real 1936 archival film, run through <strong>Max</strong> &mdash; the
+      generative restore, on-device. Drag the handle. Max is the slow lane by design: this restore
+      was 90 frames at 30.3 seconds each. The free Enhance lane did the same clip in 13.0 seconds.
+      <a href="#restore">Both, measured &rarr;</a></p>
   </div>
 </div>
 
@@ -882,13 +882,35 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
 
 
-    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Farewell to Treasure Island</em> (1940), the closing days of the Golden Gate International Exposition, from the Prelinger Archives at the Internet Archive under a Creative Commons public-domain dedication. This is a real archival scan at 640&times;480, not a clean file we degraded on purpose &mdash; it is soft and grainy because 1940 film digitised in the 1990s is soft and grainy. The clip at the top is this film run through <strong>Max</strong>, the generative restore, on Apple
-      Silicon &mdash; a restore at 1280&times;720 rather than an upscale, so both sides of the
-      slider are the same size and only the detail differs. Max works a frame at a time and it is not free: a single frame takes about 52 seconds on an
-      M1 Ultra, and longer runs only amortise so far &mdash; five frames cost 51.6 seconds each,
-      thirteen 44.2, and this 132-frame clip 32.9, which is still 72 minutes for four seconds of
-      film. Look at the row of small blocks under the eave: scaled up they are one smear, and Max
-      separates them into individual blocks with light and shadow on each. The free Enhance lane upscales the same clip 4&times; to 2560&times;1920 in 36 seconds, which is the trade and why Enhance is the default. Both clips play unedited at the same size, from the same four seconds, and both were compressed for the web with identical settings, so neither side is flattered. On a Retina display you are watching the full 2560-wide file. Measured on the roof detail as mean absolute Laplacian, the Max frame carries 1.50&times; the fine detail of the source it was given.</p>
+    <p class="ba-note"><strong>The hard case &mdash; the clip at the top of this page.</strong> Source: <em>Chevrolet
+      Leader News</em> (Vol.&nbsp;2, No.&nbsp;3, 1936) &mdash; the crowd at an open-air boxing
+      match, not the fight &mdash; from the Prelinger Archives at the Internet Archive under a
+      Creative Commons public-domain dedication. This is a real archival scan at 640&times;480,
+      not a clean file we degraded on purpose: it is soft and grainy because 1936 film digitised
+      decades later is soft and grainy. The clip at the top is that film run through
+      <strong>Max</strong>, the generative restore, on Apple Silicon &mdash; a restore rather than
+      an upscale, so both sides of the slider are the same size and only the detail differs.
+      One thing had to happen first, and it is the most useful thing on this page if you have
+      old footage of your own: the scan is <strong>telecined</strong>. It is 24fps film spread
+      across 30fps video, so a third of its frames are two film frames woven together. Restore
+      that as-is and you get the weave reconstructed in high fidelity &mdash; we did, the first
+      time, and threw away fifty minutes of compute. <code>fieldmatch,decimate</code> puts the
+      film frames back together first. <a href="/how-to/deinterlace-video-mac/">How to tell, and
+      how to fix it &rarr;</a>
+      Then Max works a frame at a time and it is not free: this 90-frame restore took
+      45.4&nbsp;minutes at 1280&times;960 &mdash; 30.3&nbsp;seconds a frame &mdash; for
+      3.75&nbsp;seconds of film at 23.976fps. The free Enhance lane upscales the same clip
+      4&times; to 2560&times;1920 in 13.0&nbsp;seconds, which is 209 times faster and the reason
+      Enhance is the default.
+      Look at the young man's shirt on the right: in the scan the collar and the button placket
+      are one grey smear, and Max resolves them into an edge with separate buttons. The same
+      happens to the placket and stud on the white polo in the middle of frame.
+      <strong>And the part that flatters us, said plainly:</strong> Max removes the grain
+      completely, and skin and hair come back smoother than the film ever recorded &mdash; those
+      strands are the model filling in, not detail recovered from the negative. Believe the
+      collar; do not believe the hair. Both clips play unedited at the same size, from the same
+      two and a half seconds, and both were compressed for the web with identical settings, so
+      neither side is flattered. On a Retina display you are watching the full 2560-wide file.</p>
 
     <div class="ba" id="ba2">
       <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
@@ -944,8 +966,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <div class="side-fig">
       <div class="sf-text">
-      <p class="ba-note"><strong>This is the unedited output.</strong> Same film as above &mdash;
-        <em>Farewell to Treasure Island</em>, 174 seconds of it &mdash; asked for a 30-second
+      <p class="ba-note"><strong>This is the unedited output.</strong> A different film from the
+        one at the top of the page &mdash; <em>Farewell to Treasure Island</em> (1940), also from
+        the Prelinger Archives, 174 seconds of it &mdash; asked for a 30-second
         highlights reel. Crisp picked 11 moments in 9.5 seconds of analysis: the fair from the
         water, both bridges, the tower, the arch, the crowds on the concourse, the pagoda garden,
         the Gayway at night. Nothing was chosen by hand and nothing was trimmed afterwards. It is
