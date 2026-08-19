@@ -1,6 +1,6 @@
 {
   "version": "1.0.945",
-  "notes": "The combing detector goes blind after a resize \u2014 pin it before it fools someone",
+  "notes": "You can now release a Mac from your licence inside Crisp, so moving to a new machine no longer costs you one of your five activations. Crisp also stops telling you it is up to date when an update is waiting, and it now checks again while the app stays open instead of only at launch. If a licence key cannot be used, the message says what to do next instead of stopping at “no longer valid”.",
   "pub_date": "2026-08-19T07:32:54Z",
   "platforms": {
     "darwin-aarch64": {
