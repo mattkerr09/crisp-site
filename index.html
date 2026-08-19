@@ -629,7 +629,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
    the right of a 342px column is 10px wider than a 390px viewport, which made the whole document
    scroll sideways. Measured in a real 390 viewport: scrollWidth 400 against clientWidth 390,
    cards at L-6 R396. The page had no horizontal overflow before I added these offsets. */
-@media (max-width:820px){.js .rv{--rx:0 !important;}}
+/* Overriding the TRANSFORM, not the variable. `--rx:0 !important` on `.js .rv` did not take:
+   measured live at a real 390 viewport with the media query matching (mq820 true) and the
+   computed value still -30px, transform still matrix(1,0,0,1,-30,10). Rather than keep guessing
+   at why a custom property lost a cascade it should have won, this sets the thing that actually
+   moves the box. `.js .rv.in{transform:none}` is more specific, so a revealed element still
+   lands where it belongs. */
+@media (max-width:820px){
+  .js .rv{transform:translateY(var(--ry,26px)) scale(var(--rs,1));}
+}
 /* A REVEALED ELEMENT HANDS ITS TRANSITION BACK. `.js .rv` (0,2,0) outranks `.card` (0,1,0),
    so every card and tier was running its HOVER on the reveal's 0.8s curve — and on the
    stagger delay, so a .d3 card sat still for 240ms after the pointer arrived — while
