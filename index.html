@@ -980,7 +980,16 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         timeline if you would rather finish by hand.</p>
     </div>
 
-    <video src="/demo-montage.mp4" width="1280" height="960" controls playsinline preload="none"
+    <!-- ⚠️ THIS PLAYS ITSELF, AND IT DID NOT USED TO. With controls + preload="none" and no
+         autoplay it sat as a motionless poster directly beneath a hero that autoplays, so the
+         section advertising automatic CUTTING showed no cuts at all. Measured on the live page,
+         scrolled fully into view for eight seconds: paused true, currentTime 0, readyState 0 —
+         matt's "it's the same still" was a precise description of the page, not of the footage
+         (the file itself averages 25.2 mean abs diff second to second; it was never static).
+         Muted because it carries no audio track anyway, so nothing is lost and autoplay is
+         allowed; controls stay so it can still be scrubbed. -->
+    <video src="/demo-montage.mp4" width="1280" height="960" controls playsinline muted loop
+      preload="none" data-play-in-view
       poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
       aria-label="A 27-second highlight reel Crisp cut automatically from a 174-second 1940 film."></video>
 
@@ -1454,6 +1463,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 // Before/after handle. Without it the divider simply stays put and both frames remain visible.
 /* Drives EVERY .ba panel on the page, not a single hardcoded id — there are two now (the video
    pair and the still pair) and a second copy of this block would be two things to keep in step. */
+/* Play the standalone demo clips once they are actually on screen. preload="none" means
+   nothing is fetched until then, so this costs a visitor who never scrolls here nothing. */
+Array.prototype.forEach.call(document.querySelectorAll('video[data-play-in-view]'), function (v) {
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) { if (!v.paused) v.pause(); return; }
+      if (v.preload === 'none') { v.preload = 'auto'; v.load(); }
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    });
+  }, { threshold: 0.25 });
+  io.observe(v);
+});
+
 Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
   var range = ba.querySelector('.ba-range');
   if (!range) return;
