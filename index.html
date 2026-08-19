@@ -1524,10 +1524,16 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
        fires when the observer has revealed NOTHING — which is the case it was written for: a
        document that is hidden (background tab, headless render, crawler) never gets an
        IntersectionObserver callback at all, and every heading would otherwise sit at opacity 0
-       for anything that photographs or indexes the page. In that case the observer is also
-       disconnected, so nothing can take the content away again. */
+       for anything that photographs or indexes the page.
+       ⚠️ AND IT MUST NOT DISCONNECT THE OBSERVER. My first version did, reasoning that nothing
+       should be able to take the content away again — but that is a ONE-WAY DOOR: a tab that
+       loads in the background gets no callbacks, trips this deadline, and then has the two-way
+       reveal permanently dead for the rest of the session even after the user switches to it.
+       Measured: 80 of 80 elements revealed with 6 on screen. Leaving the observer connected is
+       both safer and more correct — a renderer that never fires it (crawler, headless) keeps the
+       content this just revealed, and a renderer that starts firing later simply corrects itself
+       to what is actually on screen. */
     if (revealed) return;
-    io.disconnect();
     for (var k = 0; k < els.length; k++) show(els[k]);
   }, 2500);
 })();
