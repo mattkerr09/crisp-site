@@ -198,7 +198,13 @@ p em, li em{color:#c3cad6;}
 /* Everything the page actually says rides above the mesh. A fixed positioned layer paints over
    any NON-positioned content that follows it, so this is not optional decoration — without it
    the blobs would sit on top of the footer. */
-.nav,.hero,section,.foot,.band{z-index:1;}
+.hero,section,.foot,.band{z-index:1;}
+/* The nav needs to clear the sections, not just the mesh. It is sticky and first in the DOM, so
+   at an equal z-index every later section paints over it — which silently killed the header
+   Download button at every scroll position except the very top (hit-tested: reachable at y=0,
+   unreachable at 700/1500/2600, at both 390 and 1440). Restated after the mesh block so a later
+   equal-specificity rule cannot quietly demote it again. */
+.nav{z-index:80;}
 .foot{position:relative;}
 .hero{position:relative;text-align:center;padding:4.6rem 0 0;
   background:
