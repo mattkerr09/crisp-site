@@ -96,6 +96,31 @@
     everywhere with no teeth means it is progressive and merely soft, which is a different problem
     with a different fix.</li>
   </ol>
+  <h2>If it started life on film, deinterlacing is the wrong fix</h2>
+  <p>Most old footage people want restored was <em>shot on film</em> and transferred to video
+  later. To fit 24 film frames into 30 video frames a second, the transfer splits some film frames
+  across two video frames — <strong>3:2 pulldown</strong>, or telecine. The result looks like
+  interlacing, and it is not: the original progressive frames are all still in there, chopped up.</p>
+  <p>Deinterlace it and you throw away what you were trying to keep. <code>yadif</code> will happily
+  process a telecined file, soften every frame it touches and leave you at 30fps. The right move is
+  <strong>inverse telecine</strong>, which reassembles the film frames and gives you back the
+  23.976fps progressive footage the camera actually shot:</p>
+  <pre><code>ffmpeg -i in.mp4 -vf "fieldmatch,decimate" -r 24000/1001 out.mp4</code></pre>
+  <p>Two things worth knowing, both measured on a 1936 newsreel we restored for this site. The
+  first is that <strong>the file lies about itself</strong>: the original scan honestly reported
+  its fields, but once it had been cut and re-encoded — which is how most footage reaches you —
+  the container claimed to be progressive while every single frame was still combed. Do not trust
+  the flag; look at the frames. <code>ffmpeg -i in.mp4 -vf idet -f null -</code> counts them for
+  you, and the last "Multi frame detection" line is the verdict.</p>
+  <p>The second is that <strong>the check stops working once anything has been resized</strong>.
+  Scaling blends the two woven fields into each other, so the comb teeth turn into a soft ghost
+  that looks like motion blur. On our clip the 640&times;480 original read as interlaced and the
+  identical frames scaled to 1280&times;720 read as clean — with the damage still plainly visible.
+  Check the original, before you touch it.</p>
+  <p>Inverse telecine also has a bonus: it removes about a fifth of the frames, because a fifth of
+  them were duplicates. Anything you do afterwards — restoring, upscaling, exporting — has 20%
+  less work to do.</p>
+
   <h2>What to deinterlace with</h2>
   <p>Crisp does <strong>not</strong> deinterlace, so this is one to do before you get here. Two free
   options, matching the two methods above:</p>
