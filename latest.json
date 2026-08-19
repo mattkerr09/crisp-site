@@ -1,10 +1,10 @@
 {
-  "version": "1.0.945",
-  "notes": "You can now release a Mac from your licence inside Crisp, so moving to a new machine no longer costs you one of your five activations. Crisp also stops telling you it is up to date when an update is waiting, and it now checks again while the app stays open instead of only at launch. If a licence key cannot be used, the message says what to do next instead of stopping at “no longer valid”.",
-  "pub_date": "2026-08-19T07:32:54Z",
+  "version": "1.0.949",
+  "notes": "Crisp now warns you when a clip looks interlaced before the slow generative restore starts, instead of spending up to an hour faithfully rebuilding the comb lines. It does not stop you \u2014 if you know your footage and want it restored anyway, it runs \u2014 but it says so, and points at how to fix it first.",
+  "pub_date": "2026-08-19T09:42:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU01N1pab0RDNXo2WEhLZktodFZOZy82OGRwK1VlZVQ3azZFeW83bC9jMk1PZVQ1ZW94MTNSV2pHVnF6NlVEMmcvS3FLSEkrUENRSVlUaUhUQjJEV2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MTI0NzQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyU1FUaU1iS0hZYnFvOWNER0NkcmFvc2wzamJ2eFRLN25FZmRkOFkybmZQNVVNU1ljb29CZDFKaUNhVTQyQXJyZERxN3lhOVF2dU9LVnVoTC92OXVBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5CSDZoRWM3UCtOaGd1VU42Sm5JZW1PQ1hXZmJqbEREaU1zMVBjbGppbWQ2aTlpZW0ybmVHSnhjTVlOV1QvZ1MxTnhadWkyMFkzUlF2RmpDak1rV0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MTMyNDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0UWV0amlzWUt3TnloL0RMUWVybGswL1o1Snd5VzdOckJXVTA4Uks1Z0MxdzdPZjBicUtnK2dMcW9KOEx0enFFMjZJeE1jYmdua2ptYWl0SkZXR2NCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
