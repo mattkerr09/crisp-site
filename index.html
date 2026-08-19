@@ -29,6 +29,12 @@
   --hair:#1c2029; --hair-lit:#2a3040;
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
+  --grad:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
+  /* One glow, three strengths. outlier.host gets its floating look from a single
+     coloured shadow reused at different intensities — resting, hover, and featured
+     — rather than a different shadow per component. Same idea in Crisp's cyan. */
+  --lift:0 24px 50px -28px rgba(90,200,250,.40);
+  --lift-lg:0 32px 70px -34px rgba(90,200,250,.50);
   --r:18px; --r-sm:12px;
   --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif;
   /* Crisp is the only site here with a display face of its own, and that is the
@@ -75,10 +81,17 @@ p em, li em{color:#c3cad6;}
 /* The cyan-to-purple headline gradient was the most template-coded thing on the
    page — it is the signature of every AI landing page shipped since 2023, and
    none of the sites this wants to sit beside (Linear, Stripe, Apple, Screen
-   Studio) colour their headline at all. The contrast now comes from weight and
-   value instead: the setup line recedes, the payoff line is plain white. */
-.grad{background:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;}
+   Studio) colour their headline at all. Matthew asked for outlier.host's
+   treatment, and outlier.host does not colour a headline either: it colours a
+   SHORT PHRASE inside one ("that never leaves your Mac", "not just a chat box")
+   and leaves the rest white. Three spans on this page use it — the payoff half
+   of the H1, one section heading, and the four numerals in the capability row,
+   which have no descenders to muddy. The setup line still recedes by value. */
+.grad{background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  /* An inline gradient span collapses its own descenders in Safari unless it is a
+     block box; outlier.host carries the same display:inline-block on .accent. */
+  display:inline-block;}
 .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 1rem;}
 
 /* nav */
@@ -98,12 +111,16 @@ p em, li em{color:#c3cad6;}
   padding:.8rem 1.45rem;border-radius:999px;font-weight:600;font-size:1rem;
   border:1px solid transparent;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s;}
 .btn:hover{transform:translateY(-2px);}
-/* The vertical blue gradient plus a coloured glow is the same 2023-SaaS signature
-   the headline gradient was. Apple, Linear and Stripe all ship a FLAT primary
-   button; the glow is what makes a page read as a template. Solid fill, and the
-   lift on hover comes from the button itself rather than a halo around it. */
-.btn-primary{background:#5ac8fa;color:#04121b;box-shadow:none;}
-.btn-primary:hover{background:#7ad6fd;}
+/* This button was flattened in an earlier pass on the argument that a coloured
+   glow is a 2023-SaaS tell. Matthew asked for outlier.host's treatment here, and
+   outlier.host is ours, so it is the house style rather than a template: a solid
+   fill (no vertical gradient, which is the part that actually reads as stock), a
+   1px inset highlight along the top edge so the cap catches light, and a glow
+   that is faint at rest and grows on hover. The lift stays. */
+.btn-primary{background:#5ac8fa;color:#04121b;
+  box-shadow:0 10px 30px -14px rgba(90,200,250,.75),inset 0 1px 0 rgba(255,255,255,.34);}
+.btn-primary:hover{background:#7ad6fd;
+  box-shadow:0 18px 46px -14px rgba(90,200,250,.9),inset 0 1px 0 rgba(255,255,255,.42);}
 .btn-ghost{border-color:var(--hair-lit);color:var(--white);background:rgba(255,255,255,.03);}
 .btn-ghost:hover{background:rgba(255,255,255,.07);}
 .btn-sm{padding:.5rem 1.05rem;font-size:.88rem;}
@@ -124,6 +141,19 @@ p em, li em{color:#c3cad6;}
        cool light remains so the fold is not flat; the violet is gone. */
     radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.07), transparent 60%);
 }
+/* THE GROUND UNDER THE FOLD. outlier.host puts a 34px dot grid behind its hero and
+   masks it out before it reaches the content, which is what stops the page reading
+   as a flat black rectangle and makes everything on top of it look like it is
+   sitting ABOVE something. The mask is the important half: an unmasked repeating
+   grid tiles all the way to a hard edge and looks like a texture swatch. */
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);
+  mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);}
+/* Everything the hero actually contains rides above that layer. Scoped to direct
+   children so a later addition to the hero cannot land underneath the grid. */
+.hero > *{position:relative;z-index:1;}
 .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;
   border:1px solid var(--hair-lit);background:rgba(90,200,250,.06);color:var(--ice);
   font-size:.82rem;font-weight:600;margin-bottom:1.4rem;}
@@ -182,8 +212,12 @@ p em, li em{color:#c3cad6;}
   background:linear-gradient(180deg,rgba(90,200,250,.04),transparent 70%);}
 .caps-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem 1rem;
   max-width:var(--w);margin:0 auto;padding:2.6rem 1.5rem;text-align:center;}
+/* The four numbers are the one place on this page where a gradient earns itself:
+   outlier.host runs the same treatment on its stat row, and a numeral has no
+   descenders or long measure to suffer from it. */
 .cap-n{font-family:var(--head);font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.02em;
-  font-weight:500;color:var(--ice);}
+  font-weight:500;color:var(--ice);
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .cap-l{margin:.5rem 0 0;font-size:.88rem;color:var(--grey);line-height:1.4;}
 @media (max-width:720px){.caps-in{grid-template-columns:repeat(2,1fr);padding:2rem 1.2rem;}}
 /* THE CONTROLS BESIDE THE EXPLANATION. The montage section carried the OUTPUT — a real 27s reel
@@ -217,7 +251,10 @@ p em, li em{color:#c3cad6;}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem;
   margin:1.6rem 0 0;}
 .tools-grid span{display:block;padding:.55rem .7rem;border:1px solid var(--hair);border-radius:10px;
-  background:var(--panel);font-size:.82rem;color:var(--grey-dim);line-height:1.35;}
+  background:var(--panel);font-size:.82rem;color:var(--grey-dim);line-height:1.35;
+  transition:border-color .22s,background .22s,color .22s,transform .22s;}
+.tools-grid span:hover{border-color:var(--hair-lit);background:var(--card);color:var(--grey);
+  transform:translateY(-2px);}
 .tools-grid b{display:block;color:var(--white);font-weight:600;font-size:.9rem;}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
 /* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
@@ -259,8 +296,15 @@ p em, li em{color:#c3cad6;}
 
 /* product shot */
 .shot{margin:4.5rem auto 0;max-width:1060px;padding-bottom:6rem;}
+/* THE APP WINDOW HOVERS OVER THE PAGE. A black drop shadow reads as depth on white and as
+   almost nothing on a near-black ground, so the light has to be coloured — the same move
+   outlier.host makes behind its showcase. Two earlier attempts at this were a blurred ellipse
+   BEHIND the frame; both measured 0 levels of change above the window, because a radial
+   gradient that is transparent by its own edge puts all its light where the window already
+   covers it. A third shadow on the frame itself cannot miss: it is cast outward by definition. */
 .frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--hair-lit);background:var(--card);
-  box-shadow:0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset;}
+  box-shadow:0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset,
+             0 30px 110px -40px rgba(90,200,250,.55);}
 /* The shot is 900px natural but the frame is wider, so without this the screenshot sits
    left with dead frame beside it. Fill the frame; the 1800px source keeps it sharp. */
 .frame img{display:block;width:100%;height:auto;}
@@ -337,9 +381,14 @@ section{padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative;}
 
 /* grid cards */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.1rem;}
+/* WHY THESE BOXES LOOK LIKE THEY ARE FLOATING. outlier.host does three things at
+   once on hover — the border lights, the box rises, and a coloured shadow appears
+   under it. Crisp did the first two, so its cards MOVED without ever looking
+   lifted: nothing was cast underneath them. The shadow is the whole effect. */
 .card{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
-  border-radius:var(--r);padding:1.75rem;transition:border-color .25s,transform .25s;}
-.card:hover{border-color:var(--hair-lit);transform:translateY(-3px);}
+  border-radius:var(--r);padding:1.75rem;
+  transition:border-color .28s,transform .28s,box-shadow .28s;}
+.card:hover{border-color:var(--hair-lit);transform:translateY(-4px);box-shadow:var(--lift);}
 .card .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;margin-bottom:1.1rem;
   background:rgba(90,200,250,.1);border:1px solid rgba(90,200,250,.22);}
 .card .ico svg{width:20px;height:20px;color:var(--cyan);}
@@ -360,6 +409,8 @@ table{border-collapse:collapse;width:100%;min-width:660px;font-size:.94rem;}
 th,td{padding:.95rem 1.15rem;text-align:left;border-bottom:1px solid var(--hair);}
 thead th{background:rgba(255,255,255,.028);font-weight:640;font-size:.88rem;letter-spacing:.02em;color:var(--grey);}
 thead th:nth-child(2){color:var(--ice);}
+tbody tr{transition:background .2s;}
+tbody tr:hover td{background:rgba(90,200,250,.045);}
 tbody tr:last-child td{border-bottom:none;}
 tbody td:first-child{color:var(--grey);}
 td.y{color:#4ade80;font-weight:560;}
@@ -391,9 +442,12 @@ td.n{color:var(--grey-dim);}
 }
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem;max-width:840px;margin:0 auto;}
 .tier{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
-  border-radius:var(--r);padding:2.2rem 1.9rem;display:flex;flex-direction:column;}
+  border-radius:var(--r);padding:2.2rem 1.9rem;display:flex;flex-direction:column;
+  transition:border-color .28s,transform .28s,box-shadow .28s;}
+.tier:hover{border-color:var(--hair-lit);transform:translateY(-4px);box-shadow:var(--lift-lg);}
 .tier.pro{border-color:rgba(90,200,250,.42);
   box-shadow:0 0 0 1px rgba(90,200,250,.1),0 40px 90px -46px rgba(90,200,250,.5);}
+.tier.pro:hover{box-shadow:0 0 0 1px rgba(90,200,250,.2),0 46px 100px -44px rgba(90,200,250,.66);}
 .tier .name{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--grey-dim);}
 .tier.pro .name{color:var(--cyan);}
 .tier .price{font-size:3rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1;}
@@ -406,7 +460,9 @@ td.n{color:var(--grey-dim);}
 
 /* faq */
 .faq{max-width:780px;margin:0 auto;display:grid;gap:.65rem;}
-details{background:var(--panel-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:1.1rem 1.35rem;}
+details{background:var(--panel-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:1.1rem 1.35rem;
+  transition:border-color .22s,background .22s;}
+details:hover{border-color:var(--hair-lit);background:var(--card);}
 details[open]{border-color:var(--hair-lit);}
 summary{cursor:pointer;font-weight:600;font-size:1rem;list-style:none;display:flex;
   justify-content:space-between;align-items:center;gap:1rem;}
@@ -441,6 +497,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
 .js .rv.in{opacity:1;transform:none;}
 .js .rv.d1{transition-delay:.08s;} .js .rv.d2{transition-delay:.16s;} .js .rv.d3{transition-delay:.24s;}
+/* A REVEALED ELEMENT HANDS ITS TRANSITION BACK. `.js .rv` (0,2,0) outranks `.card` (0,1,0),
+   so every card and tier was running its HOVER on the reveal's 0.8s curve — and on the
+   stagger delay, so a .d3 card sat still for 240ms after the pointer arrived — while
+   box-shadow, which is not in that list at all, snapped with no transition. Measured on the
+   computed style, not guessed. Once the reveal has played there is nothing left for it to
+   animate, so the element takes this list instead. Placed after the delay rules so it wins
+   the tie on source order and can zero the delay. */
+.js .rv.rvd{transition:border-color .28s,transform .28s,box-shadow .28s,background .24s,color .22s;
+  transition-delay:0s;}
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none;}
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
@@ -500,7 +565,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
       Notarized by Apple
     </div>
-    <h1 class="h-xl"><span class="setup">Restore old memories</span><br>and make new ones.</h1>
+    <h1 class="h-xl"><span class="setup">Restore old memories</span><br><span class="grad">and make new ones.</span></h1>
       </div>
       <div class="hero-say">
     <p class="lede">Crisp <strong>restores and upscales video on-device</strong> — then lets you
@@ -761,7 +826,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head">
       <p class="kicker">More than an upscaler</p>
-      <h2 class="h-lg rv">A finishing tool, not a filter.</h2>
+      <h2 class="h-lg rv">A finishing tool, <span class="grad">not a filter.</span></h2>
     </div>
     <div class="cards">
         <div class="card rv d1">
@@ -1300,13 +1365,19 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
 (function () {
   var els = document.querySelectorAll('.rv');
   if (!els.length) return;
+  /* .in plays the reveal; .rvd, once it has finished, gives the element its own transition
+     back so hover feels like hover instead of like the reveal. 1150ms covers the 800ms
+     transition plus the longest stagger delay. transitionend would be exact, but it never
+     fires when transitions are off (reduced motion) or when the document is hidden, and
+     those are the two cases this page has already been bitten by. */
+  function show(el) { el.classList.add('in'); setTimeout(function () { el.classList.add('rvd'); }, 1150); }
   if (!('IntersectionObserver' in window)) {          /* old browser: show everything, no motion */
-    for (var i = 0; i < els.length; i++) els[i].classList.add('in');
+    for (var i = 0; i < els.length; i++) show(els[i]);
     return;
   }
   var io = new IntersectionObserver(function (entries) {
     for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) { entries[i].target.classList.add('in'); io.unobserve(entries[i].target); }
+      if (entries[i].isIntersecting) { show(entries[i].target); io.unobserve(entries[i].target); }
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
@@ -1320,7 +1391,7 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
      visitor scrolling normally never reaches it, because the observer resolves first; everything
      else gets the page. */
   setTimeout(function () {
-    for (var k = 0; k < els.length; k++) els[k].classList.add('in');
+    for (var k = 0; k < els.length; k++) show(els[k]);
   }, 2500);
 })();
 </script>
