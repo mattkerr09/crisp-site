@@ -195,6 +195,18 @@ footer a{color:var(--grey);}
    55cf220 after it measured 3.90:1). */
 .price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
 
+/* LIT FROM BEHIND, on the 113 pages that share this stylesheet. index.html lights each
+   <section>; these pages have no sections — they are one <article> — so the light goes on the
+   article instead: two soft washes, cyan high on the left and violet lower on the right, with
+   radii in percent so they scale with however long the page runs. Everything the article holds
+   rides above on z-index 1, because a wash that paints over body copy is a smear, not light. */
+article{position:relative;}
+article::before{content:"";position:absolute;inset:-3rem 0 0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(76% 20% at 16% 0%, rgba(90,200,250,.10), transparent 66%),
+    radial-gradient(64% 18% at 88% 38%, rgba(157,140,255,.07), transparent 68%);}
+article > *{position:relative;z-index:1;}
+
 
 /* CONTENT THAT RISES INTO PLACE, on the 113 pages that share this stylesheet.
    index.html does this with an IntersectionObserver because it needed per-element stagger. Here

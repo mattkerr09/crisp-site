@@ -349,7 +349,36 @@ p em, li em{color:#c3cad6;}
 
 /* sections */
 section{padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative;}
+/* LIT FROM BEHIND. Every section carries a light source sitting just above its own top edge,
+   so the page reads as a stack of panels with something glowing behind each one instead of one
+   flat sheet of black. The light alternates side and hue down the page — cyan from the left,
+   violet from the right — because eleven identical glows would read as a repeating texture
+   rather than as light.
+   It has to be a ::before and not another background layer on the section itself: .band
+   sections already paint --panel, and a second background-image on the same element sits
+   UNDER that, which is where the first attempt at the app-window glow died. Everything the
+   section holds rides above it on z-index 1. */
+section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  /* Radii in PERCENT, not pixels. The sections on this page run from 355px to 2991px tall —
+     measured — so a fixed 500px light lit the top eighth of the long ones and nothing else,
+     which is not "lit from behind", it is a stripe. A percentage radius scales with whatever
+     section it lands in. Two lights each, opposite corners, so a tall section is lit along its
+     whole length rather than at one end. */
+  background:
+    radial-gradient(82% 44% at 18% -4%, rgba(90,200,250,.11), transparent 64%),
+    radial-gradient(72% 40% at 88% 104%, rgba(157,140,255,.08), transparent 66%);}
+section:nth-of-type(even)::before{
+  background:
+    radial-gradient(82% 44% at 82% -4%, rgba(157,140,255,.10), transparent 64%),
+    radial-gradient(72% 40% at 12% 104%, rgba(90,200,250,.08), transparent 66%);}
+section > *{position:relative;z-index:1;}
 .band{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+/* The seam where the light gets out. A flat 1px --hair rule across the top of a banded section
+   is the edge of a box; the same rule brightened in the middle and faded at both ends is the
+   edge of something lit. It rides above the section's own border on the same line. */
+.band::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(90,200,250,.5) 22%,rgba(157,140,255,.42) 62%,transparent);}
 /* SECTION HEADS LEFT, NOT CENTRED. Rendered beside framer.com and avo.bet at 1440, every heading
    on this page was centred at up to 57.6px weight 680 — heavier AND larger than Framer's 54px/500
    — which made "The whole restore pipeline, in one drop." stack over three lines and eat most of a
