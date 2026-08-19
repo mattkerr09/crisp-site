@@ -25,8 +25,13 @@
      fair point for the PLAYER, so the shot frame below keeps #000 and only the
      page ground lifts. The video still sits on true black; the page no longer
      pretends the whole browser window is a canvas. */
-  --black:#08090b; --panel:#0c0e13; --panel-2:#0d0f15; --card:#101319;
-  --hair:#1c2029; --hair-lit:#2a3040;
+  /* The ground carries a trace of the brand rather than being neutral grey-black. outlier.host
+     runs #070510 — a purple-black under a purple accent — and that single choice is why its
+     page reads as one designed object instead of dark chrome around content. Crisp's accent is
+     cyan, so the ground leans the same way, by about as much: 2-6 levels of blue, nowhere near
+     enough to tint a video frame, and the shot frame itself still sits on true #000. */
+  --black:#070911; --panel:#0b0e16; --panel-2:#0c1018; --card:#0f131d;
+  --hair:#1b2130; --hair-lit:#2a3146;
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
   --grad:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
@@ -133,6 +138,37 @@ p em, li em{color:#c3cad6;}
 /* 7rem of head-room made sense when the hero ended in a static screenshot nobody needed to
    reach. Now the proof is a playing clip, and every rem above the H1 pushes it under the fold —
    so the top pad is tightened and the trust row pulled in, which lifts the demo ~90px. */
+/* THE MESH, ported from outlier.host. Three big blurred blobs on a fixed layer, drifting on
+   slow offset cycles so the ground under the page is never quite still. This is the single
+   thing that separates a live page from a dark rectangle, and it costs three empty <b> tags.
+   Crisp's cyan/ice/violet instead of Outlier's purple/fuchsia/indigo, and dialled down: this
+   sits behind a VIDEO tool, where a strong colour cast over footage would misrepresent the
+   thing being sold. blur(120px) on a fixed layer is composited once, not per scroll frame. */
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.mesh b{position:absolute;border-radius:50%;filter:blur(120px);opacity:.58;}
+.mesh .m1{width:60vw;height:60vw;max-width:820px;max-height:820px;
+  background:radial-gradient(circle,rgba(90,200,250,.44),transparent 68%);
+  top:-24vw;left:-10vw;animation:drift1 29s ease-in-out infinite;}
+.mesh .m2{width:52vw;height:52vw;max-width:720px;max-height:720px;
+  background:radial-gradient(circle,rgba(157,140,255,.36),transparent 66%);
+  top:-4vw;right:-14vw;animation:drift2 35s ease-in-out infinite;}
+.mesh .m3{width:46vw;height:46vw;max-width:640px;max-height:640px;
+  background:radial-gradient(circle,rgba(168,228,255,.30),transparent 66%);
+  top:40vw;left:30vw;animation:drift3 41s ease-in-out infinite;}
+/* A fourth, low and to the right. Three blobs all sit in the upper half of a 900px viewport,
+   so the bottom third of every screen stayed flat black while the top breathed. */
+.mesh .m4{width:44vw;height:44vw;max-width:600px;max-height:600px;
+  background:radial-gradient(circle,rgba(90,200,250,.26),transparent 68%);
+  bottom:-16vw;right:6vw;animation:drift4 33s ease-in-out infinite;}
+@keyframes drift4{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-6vw,-3vw) scale(1.1);}}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(6vw,4vw) scale(1.12);}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-5vw,6vw) scale(1.08);}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-4vw,-5vw) scale(1.15);}}
+/* Everything the page actually says rides above the mesh. A fixed positioned layer paints over
+   any NON-positioned content that follows it, so this is not optional decoration — without it
+   the blobs would sit on top of the footer. */
+.nav,.hero,section,.foot,.band{z-index:1;}
+.foot{position:relative;}
 .hero{position:relative;text-align:center;padding:4.6rem 0 0;
   background:
     /* The blue-and-violet double halo was the third template signature on this
@@ -146,6 +182,11 @@ p em, li em{color:#c3cad6;}
    as a flat black rectangle and makes everything on top of it look like it is
    sitting ABOVE something. The mask is the important half: an unmasked repeating
    grid tiles all the way to a hard edge and looks like a texture swatch. */
+.grid-ovl{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 1px,transparent 0);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 0%,transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 0%,transparent 75%);}
 .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);
   background-size:34px 34px;
@@ -372,7 +413,12 @@ section:nth-of-type(even)::before{
     radial-gradient(82% 44% at 82% -4%, rgba(157,140,255,.10), transparent 64%),
     radial-gradient(72% 40% at 12% 104%, rgba(90,200,250,.08), transparent 66%);}
 section > *{position:relative;z-index:1;}
-.band{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+/* The banded sections were opaque, so the drifting mesh behind the page simply vanished
+   wherever one of them sat — measured: identical pixels at scroll 4200 with the mesh on and
+   off. outlier.host solves this with a --glass surface rather than a solid one. Same here:
+   the band is now the panel colour at 78%, which still separates it from the page but lets
+   the light through. */
+.band{background:rgba(11,14,22,.62);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
 /* The seam where the light gets out. A flat 1px --hair rule across the top of a banded section
    is the edge of a box; the same rule brightened in the middle and faded at both ends is the
    edge of something lit. It rides above the section's own border on the same line. */
@@ -536,6 +582,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .js .rv.rvd{transition:border-color .28s,transform .28s,box-shadow .28s,background .24s,color .22s;
   transition-delay:0s;}
 @media(prefers-reduced-motion:reduce){
+  .mesh b{animation:none;}
   .rv{opacity:1;transform:none;transition:none;}
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
 }
@@ -577,6 +624,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <a class="btn btn-primary btn-sm" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download</a>
   </div>
 </header>
+
+<div class="mesh" aria-hidden="true"><b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b></div>
+<div class="grid-ovl" aria-hidden="true"></div>
 
 <div class="hero">
   <div class="wrap">
@@ -1392,6 +1442,22 @@ var CRISP_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_XpmJYHjd7aTlZagklr8ZIgLE
    so re-observing it would only cost work. Anything already on screen at load is revealed
    immediately by the observer's first callback, so the fold is never blank. */
 (function () {
+  /* WIDENING THE REVEAL FROM JS, NOT FROM THE MARKUP. Outlier carries `reveal` on 51 elements;
+     this page had it on 26, so most of it simply appeared. Adding the class here rather than in
+     the HTML is the safer half of the trade: `.js .rv{opacity:0}` only bites once this script has
+     run, so a script that never runs now hides NOTHING, where 25 more hardcoded classes would
+     have been 25 more things depending on the deadline below to become visible again.
+     Anything already inside a revealing block is skipped — nesting two fades reads as a stutter,
+     not as depth. */
+  var EXTRA = '.hero-say .lede, .head .lede, .ba-note, .side-fig figure, .tools-grid span,' +
+              '.caps-in > div, .tier, .faq details, .cmp-wrap, .metric, .shot, .band .visual';
+  var extras = document.querySelectorAll(EXTRA);
+  for (var x = 0; x < extras.length; x++) {
+    var e = extras[x];
+    if (e.classList.contains('rv') || (e.closest && e.closest('.rv'))) continue;
+    e.classList.add('rv');
+    e.classList.add('d' + ((x % 3) + 1));
+  }
   var els = document.querySelectorAll('.rv');
   if (!els.length) return;
   /* .in plays the reveal; .rvd, once it has finished, gives the element its own transition
