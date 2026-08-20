@@ -101,11 +101,13 @@
   <h2>The only times Crisp contacts the internet</h2>
   <p>There are exactly four, and each is listed with what is sent:</p>
   <ul>
-    <li><strong>Licence activation and validation</strong> (<code>api.polar.sh</code>) — when you
+    <li><strong>Licence activation and validation</strong> (<code>live.dodopayments.com</code>, or
+    <code>api.polar.sh</code> for licences bought before 20 August 2026) — when you
     activate Crisp Pro, or when the app re-checks an existing licence. Sent: your licence key, our
-    Polar organisation identifier, and a device label of the form
+    product or organisation identifier, and a device label of the form
     <code>Crisp @ &lt;your Mac's name&gt;</code>. Note that macOS computer names often contain a
-    person's name (for example "Matt's MacBook Pro"); that label is stored by Polar so you can see
+    person's name (for example "Matt's MacBook Pro"); that label is stored by whichever of the two
+    issued your licence, so you can see
     and manage which machines a licence is active on.</li>
     <li><strong>Update checks</strong> (<code>crispvideo.app</code>) — the app periodically fetches
     a small file listing the latest version. Sent: nothing beyond the ordinary web request itself
