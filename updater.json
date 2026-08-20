@@ -1,10 +1,10 @@
 {
-  "version": "1.0.970",
-  "notes": "Crisp can now be asked to finish sooner. Max is the generative restore lane, and what it costs is output pixels \u2014 so it now offers Best detail, or Faster at about 5% less detail, which measured 1.72 times quicker on the same clip. Crisp also tells you when it is running from its disk image and therefore cannot install its own updates, and the disk image now shows you where to drag the app.",
-  "pub_date": "2026-08-19T21:25:29Z",
+  "version": "1.0.973",
+  "notes": "Crisp's Max speed choice now says what it actually costs. It offers a bigger output or a faster, smaller one, and no longer claims a detail percentage it could not support \u2014 measured on this build the two look the same at the same size, and the real difference is the resolution of the file you get. The disk-image warning and the rest of build 970 are unchanged.",
+  "pub_date": "2026-08-20T00:49:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5SUZiSDNBbVd5K2VFYkxzczBEb01XK0NwZFcwNHdaZzN0cys0b1hLeGxUVkpaOGtUVmsrZTIxQmxKTnh0amFVWVUzaGtPUEJVa0w4ckYwZUhMS0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MTc0Njc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphdTAvdDN6R3RrdThaUldNUWwrdWdxaVVQemR1dVBnR29nQVdHQ0M1czg3cFlRUjFrbVkzM055Y2M0UkxjMUszWlBTVHo0OUxJL09rS0Mwci90RGhEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBNQjN5cncyT0NMaTNTeitVZTYxeGtUQjRsVEVlL3hvSGJEWUtBLy9JeWMwTUFCZlZ3TWtHeDQwUkhiL2dCeW5kRGlWbU1NOXpTcDViaFhDQmtKWHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MTg2OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2cy95d2dSNklrYUx1VkE2Y3RjWi9rNUhWdWNVNTIwd3gvalNLemRIdHFnbTJnL3Z5V094NkNYOEhZSDhVbVA3RWwraDlOWWRZVkx2SUI4ZkZ3TkVBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
