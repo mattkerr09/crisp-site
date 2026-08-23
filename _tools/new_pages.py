@@ -36,6 +36,21 @@ SITE = "https://crispvideo.app"
 #: single source; keep it equal to entitlement.PRICE_USD.
 PRICE_USD = 129
 
+#: ⚠️ THE ANALYTICS + PIXEL LINE IS PART OF THE TEMPLATE, NOT AN AFTERTHOUGHT.
+#: Until 2026-08-23 this HEAD carried neither, so every page this tool emitted was
+#: born with no Plausible and no Meta pixel. That was survivable while the pixel
+#: lived on one page by hand. It stopped being survivable the moment
+#: /legal/privacy/ was corrected to read "EVERY page on this site loads" both of
+#: them — a generated page missing them makes the privacy policy false, and it
+#: would do so silently, on a page nobody re-reads after creating.
+#:
+#: Copied byte-for-byte from a shipped page rather than retyped, so the template
+#: cannot drift from what the other 115 carry. The braces are doubled because
+#: HEAD is consumed by str.format(); the fbq('init','…') call contains none, but
+#: the pixel's own IIFE does.
+#:
+#: If the pixel id ever changes, ops/bin/insert-meta-pixel.py rewrites the 115
+#: pages AND this line must move with them. Grep the id, do not trust one place.
 HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +76,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{article_ld}</script>
 <script type="application/ld+json">{faq_ld}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 </head>
 <body>
 <nav><div class="wrap nav-inner">
