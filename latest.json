@@ -1,10 +1,10 @@
 {
-  "version": "1.0.973",
-  "notes": "Crisp's Max speed choice now says what it actually costs. It offers a bigger output or a faster, smaller one, and no longer claims a detail percentage it could not support \u2014 measured on this build the two look the same at the same size, and the real difference is the resolution of the file you get. The disk-image warning and the rest of build 970 are unchanged.",
-  "pub_date": "2026-08-20T00:49:02Z",
+  "version": "1.0.979",
+  "notes": "Crisp now tells you when an update is waiting. If the built-in updater came back empty \u2014 which is what left some installs many builds behind without a word \u2014 Crisp asks its own backend as well, and shows a dismissible banner instead of staying quiet. It also offers to open your Applications folder when you are running it from the downloaded disk image, which is the state that stops it updating itself.",
+  "pub_date": "2026-08-23T21:41:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBNQjN5cncyT0NMaTNTeitVZTYxeGtUQjRsVEVlL3hvSGJEWUtBLy9JeWMwTUFCZlZ3TWtHeDQwUkhiL2dCeW5kRGlWbU1NOXpTcDViaFhDQmtKWHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MTg2OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2cy95d2dSNklrYUx1VkE2Y3RjWi9rNUhWdWNVNTIwd3gvalNLemRIdHFnbTJnL3Z5V094NkNYOEhZSDhVbVA3RWwraDlOWWRZVkx2SUI4ZkZ3TkVBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFjYXJXSmpMZTE3VTBub1psZEE3dVZoRjRwZnVPWVZ3RnZHVjJFNHpLcC9OVEZTcEl2MjNMT1RsNlA4bVVFYVMzeHpkOHFXdTNwWTFadmpyQlJZUFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTIxMTc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVcWRObTNjNDgweHRqY1RYNTdXa2JYTVgxM3NWUDNuUTJkcklsV0xUbjdYby9lMHRiajFkNkZmcEpqOU9nMk81d0FRNS9MZnErUmNBZ05kSTJtMkZDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
