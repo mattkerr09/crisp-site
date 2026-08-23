@@ -35,11 +35,24 @@
 </div></nav>
 
 <section class="wrap" style="padding:5rem 1.5rem 3rem;max-width:760px">
-  <p>Payment confirmed</p>
-  <h1>Thank you. <span class="grad">Your key is on its way.</span></h1>
+  <p id="eyebrow">Payment confirmed</p>
+  <h1 id="headline">Thank you. <span class="grad">Your key is on its way.</span></h1>
+  <p class="lede" id="failed-note" hidden>This payment did not go through, so nothing was
+    charged and no licence was issued. You can try again from the
+    <a href="https://crispvideo.app/#buy">pricing section</a> — and if a card was declined,
+    your bank will usually say why before we can.</p>
 
-  <p class="lede">Your licence key is emailed to you by our payment provider. It looks like
-    <code>CRISP-XXXX-XXXX-XXXX-XXXX</code>.</p>
+  <p class="lede" id="key-intro">Your licence key is emailed to you by our payment provider. It
+    looks like <code>CRISP-XXXX-XXXX-XXXX-XXXX</code>.</p>
+
+  <!-- Dodo appends license_key, payment_id, status and email to the redirect. Showing the key
+       here is not a nicety: redirecting a buyer away from Dodo's own confirmation page, which is
+       where they used to SEE it, and then not showing it would be strictly worse than before. -->
+  <p class="lede" id="key-shown" hidden>Here is your licence key. It has also been emailed to you.</p>
+  <p id="key-value" hidden style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+     font-size:1.15rem;letter-spacing:.04em;background:rgba(255,255,255,.05);
+     border:1px solid var(--hair-lit);border-radius:10px;padding:.9rem 1.1rem;
+     display:inline-block;user-select:all"></p>
 
   <h2 style="margin-top:2.4rem">Unlocking Pro</h2>
   <ol class="lede" style="padding-left:1.2rem">
@@ -63,5 +76,60 @@
 <footer><div class="wrap">
   <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
 </div></footer>
+
+<!-- ⚠️ DELIBERATELY NOT WRAPPED IN meta-pixel:begin/end MARKERS. Those markers are not a label,
+     they are the region insert-meta-pixel.py REPLACES on its next run — marking this block would
+     arm exactly the deletion it must survive. The sibling site nearly lost its Purchase block
+     that way today. Leave it marker-less.
+
+     WHAT THIS DOES. Dodo redirects here with license_key, payment_id, status and email on the
+     query string. Two jobs: show the buyer their key, and tell Meta a sale happened.
+
+     ⚠️ GATED ON status=succeeded. Dodo redirects here for FAILED payments too, and firing
+     Purchase on those teaches the ad account to optimise toward conversions that never happened
+     — worse than no event at all, because the account acts confidently on false data.
+
+     ⚠️ textContent, NEVER innerHTML. license_key arrives from a URL a stranger can craft. This
+     page would otherwise render whatever markup somebody put in that parameter. -->
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var status = (q.get('status') || '').toLowerCase();
+  var key = (q.get('license_key') || '').trim();
+
+  // ⚠️ DODO REDIRECTS HERE FOR FAILED PAYMENTS TOO, AND THIS PAGE SAYS "PAYMENT CONFIRMED".
+  //    Telling somebody their payment succeeded when it did not is the worst sentence on the
+  //    site, and it is the DEFAULT state of this page — the copy was written for the happy path
+  //    because until now nothing could reach it any other way. Correct the page first, then
+  //    decide about the key.
+  var failed = status && status !== 'succeeded';
+  if (failed) {
+    document.getElementById('eyebrow').textContent = 'Payment not completed';
+    document.getElementById('headline').textContent = 'That payment did not go through.';
+    document.getElementById('failed-note').hidden = false;
+    document.getElementById('key-intro').hidden = true;
+  }
+
+  // A key belongs to a completed payment. If the payment failed, showing one — even one Dodo
+  // echoed back — hands over something that will not activate.
+  if (key && !failed) {
+    var el = document.getElementById('key-value');
+    el.textContent = key;                        // never innerHTML — this came off a URL
+    el.hidden = false;
+    document.getElementById('key-shown').hidden = false;
+    document.getElementById('key-intro').hidden = true;
+  }
+
+  // A sale, and only a sale.
+  if (status === 'succeeded' && typeof fbq === 'function') {
+    fbq('track', 'Purchase', {
+      value: 129.00,
+      currency: 'USD',
+      content_name: 'Crisp Pro',
+      content_type: 'product'
+    });
+  }
+})();
+</script>
 </body>
 </html>

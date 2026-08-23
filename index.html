@@ -1626,7 +1626,18 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
    as unavailable instead of quietly doing the wrong thing. An honest "not yet" beats a button
    that takes money nowhere.
    ───────────────────────────────────────────────────────────────────────────────────────── */
-var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ";
+/* ⚠️ THE PARAMETER IS redirect_url, AND DODO'S DOCS WILL TELL YOU return_url.
+   On a static buy link return_url does NOTHING, and it fails in the way that is hardest to
+   notice: the link still returns 200, still opens a real session, still shows $129 and still
+   takes the card. Only the landing differs. Measured on the live checkout — bare link and
+   ?return_url= both mention our URL 0 times in the session payload and are byte-identical;
+   ?redirect_url= mentions it once, as "return_url":"https://crispvideo.app/thank-you/".
+   So verify it in the PAYLOAD, never by the link loading.
+
+   Without this a buyer pays and stays on Dodo. /thank-you/ exists, returns 200, and is
+   unreachable by the only people it is for — no sale countable, and nowhere for a Purchase
+   event to fire, so ads optimise blind to whether they produced a sale. */
+var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F";
 
 (function () {
   var url = (CRISP_CHECKOUT_URL || "").trim();
