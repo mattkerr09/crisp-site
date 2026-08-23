@@ -1638,8 +1638,17 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
      markup now, so the guard has to work the other way round — if there is no checkout to honour
      it, take it off the page. Left below the `if (!url) return` it would never run in exactly the
      case it exists for: no checkout URL, and four payments still promised beside the price. */
-  /* Kept as an explicit switch even though the copy is now static: flipping this to false is how
-     you take instalment claims off the page in one edit if Dodo's methods change. */
+  /* ⚠️ THIS FLAG IS NOT THE WHOLE SWITCH, AND THAT IS THE PRICE OF THE COPY BEING STATIC.
+     Flipping it to false hides the notes for everyone who runs this script — which is almost
+     everyone — but the sentence is in the markup now, so a reader with JavaScript disabled or
+     blocked still sees it. The trade was deliberate: injected copy was invisible to crawlers and
+     to anyone without JS, on a page whose job is to be found. Fail-open is the right default
+     while BNPL is genuinely live at the checkout.
+
+     SO IF INSTALMENTS EVER HAVE TO GO DARK, FLIPPING THIS IS NOT ENOUGH. Delete the
+     `data-crisp-bnpl` paragraphs from the markup in the same change, or a no-JS visitor is left
+     reading a consumer-finance claim the checkout will not honour. Raised by the session that
+     shipped the original JS-gated version, after it verified the dark path in a browser. */
   var CRISP_BNPL_LIVE = true;
   var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
   if (!url || !CRISP_BNPL_LIVE) {
