@@ -558,6 +558,11 @@ td.n{color:var(--grey-dim);}
    a future edit that does add a display cannot silently unhide it. */
 .cost .bnpl-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.55;}
 .cost .bnpl-note[hidden]{display:none;}
+/* The tier card sits outside .cost and would otherwise inherit nothing. Same [hidden] restatement
+   at winning specificity, for the same reason: a future edit that adds a `display` must not be
+   able to reveal instalment copy the checkout cannot honour. */
+.tier .bnpl-note{font-size:.86rem;color:var(--grey);margin:.5rem 0 .9rem;line-height:1.5;}
+.tier .bnpl-note[hidden]{display:none;}
 @media(max-width:640px){
   .cost{padding:1.6rem 1.2rem 1.3rem;}
   .cost-row{grid-template-columns:1fr;gap:.35rem;}
@@ -1221,6 +1226,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="tier pro rv d2">
         <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small></div>
+        <p class="bnpl-note" data-crisp-bnpl>Or four payments of $32.25 with Klarna or Afterpay, two weeks apart &mdash; the last one six weeks after the first, at no extra cost from us. Then it stops, and it is yours.</p>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Watermark-free exports</li>
@@ -1348,7 +1354,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
              end to end — not a monthly plan. An earlier draft said "$32/month for 4
              months", which is a payment schedule no provider offers, printed beside a
              price. It never shipped. -->
-        <p class="bnpl-note" data-crisp-bnpl hidden></p>
+        <p class="bnpl-note" data-crisp-bnpl>Or four payments of $32.25 with Klarna or Afterpay, two weeks apart &mdash; the last one six weeks after the first, at no extra cost from us. Then it stops, and it is yours.</p>
 
       <p class="src" data-checkout-pending>Checkout is not open yet. The $129 purchase goes live
         the moment the Dodo checkout link is dropped into <code>CRISP_CHECKOUT_URL</code> at the
@@ -1624,6 +1630,22 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
 
 (function () {
   var url = (CRISP_CHECKOUT_URL || "").trim();
+
+  /* ⚠️ THE INSTALMENT GUARD RUNS BEFORE THE EARLY RETURN, AND IT NOW HIDES RATHER THAN REVEALS.
+     The copy used to be injected here, which meant it existed only for visitors who ran scripts:
+     not for crawlers, not without JS, and not for the shared launch checklist, which reads the
+     served HTML and had been reporting Crisp as showing no instalment copy at all. It is static
+     markup now, so the guard has to work the other way round — if there is no checkout to honour
+     it, take it off the page. Left below the `if (!url) return` it would never run in exactly the
+     case it exists for: no checkout URL, and four payments still promised beside the price. */
+  /* Kept as an explicit switch even though the copy is now static: flipping this to false is how
+     you take instalment claims off the page in one edit if Dodo's methods change. */
+  var CRISP_BNPL_LIVE = true;
+  var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
+  if (!url || !CRISP_BNPL_LIVE) {
+    for (var b = 0; b < bnpl.length; b++) bnpl[b].hidden = true;
+  }
+
   if (!url) return;   // leave the pending state exactly as authored — it is the truthful one
   /* ── CRISP_BNPL_LIVE ──────────────────────────────────────────────────────
      Set to true ONLY once Klarna or Afterpay has been seen at Dodo's payment
@@ -1638,16 +1660,6 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
      consumer-finance claim we cannot honour, on the page where money changes
      hands. Same rule as the pixel: the copy goes live in the change that makes
      it true, never before. */
-  var CRISP_BNPL_LIVE = true;
-  if (CRISP_BNPL_LIVE) {
-    var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
-    for (var b = 0; b < bnpl.length; b++) {
-      bnpl[b].textContent = 'Or four payments of $32.25 with Klarna or Afterpay, '
-        + 'two weeks apart \u2014 the last one six weeks after the first, at no '
-        + 'extra cost from us. Then it stops, and it is yours.';
-      bnpl[b].hidden = false;
-    }
-  }
 
   var buys = document.querySelectorAll('[data-crisp-checkout]');
   for (var i = 0; i < buys.length; i++) {
