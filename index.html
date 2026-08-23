@@ -1214,7 +1214,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         </ul>
         <!-- THE ONLY PAID CTA ON THIS PAGE. It must never point at the DMG: this button sat
              under a $129 price and downloaded the free, watermarked build. It now goes to #buy,
-             and CRISP_CHECKOUT_URL (foot of this file) repoints it at Polar in one edit. -->
+             and CRISP_CHECKOUT_URL (foot of this file) repoints it in one edit. -->
         <a class="btn btn-primary" data-crisp-checkout href="#buy">Buy Crisp Pro</a>
       </div>
     </div>
@@ -1326,9 +1326,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         money back, no reason needed, to the card you paid with.</p>
 
       <p><a class="btn btn-primary" data-crisp-checkout aria-disabled="true">Buy Crisp Pro — $129</a></p>
+        <!-- INSTALMENTS. Empty until CRISP_BNPL_LIVE is set at the foot of this file.
+             Klarna and Afterpay sell Pay in 4: four payments TWO WEEKS apart, six weeks
+             end to end — not a monthly plan. An earlier draft said "$32/month for 4
+             months", which is a payment schedule no provider offers, printed beside a
+             price. It never shipped. -->
+        <p class="bnpl-note" data-crisp-bnpl hidden></p>
 
       <p class="src" data-checkout-pending>Checkout is not open yet. The $129 purchase goes live
-        the moment the Polar checkout link is dropped into <code>CRISP_CHECKOUT_URL</code> at the
+        the moment the Dodo checkout link is dropped into <code>CRISP_CHECKOUT_URL</code> at the
         foot of this page's source — until then nobody can be charged, and Crisp stays free to
         use with the watermark. If you already hold a key, it activates today.</p>
 
@@ -1601,6 +1607,30 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
 (function () {
   var url = (CRISP_CHECKOUT_URL || "").trim();
   if (!url) return;   // leave the pending state exactly as authored — it is the truthful one
+  /* ── CRISP_BNPL_LIVE ──────────────────────────────────────────────────────
+     Set to true ONLY once Klarna or Afterpay has been seen at Dodo's payment
+     step for this product. Dodo documents Klarna (USD, min $50.01) and Afterpay
+     (USD/GBP, min $50.01), and $129 clears both floors — but that is a fact
+     about Dodo, not about this merchant account. Three sessions have rendered
+     live checkouts here and on Docket and Outlier, and none of them named either
+     provider; the likely cause is that Dodo has not finished verifying the
+     business, so no methods are enabled yet.
+
+     A price page promising instalments the checkout will not offer is a
+     consumer-finance claim we cannot honour, on the page where money changes
+     hands. Same rule as the pixel: the copy goes live in the change that makes
+     it true, never before. */
+  var CRISP_BNPL_LIVE = false;
+  if (CRISP_BNPL_LIVE) {
+    var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
+    for (var b = 0; b < bnpl.length; b++) {
+      bnpl[b].textContent = 'Or four payments of $32.25 with Klarna or Afterpay, '
+        + 'two weeks apart \u2014 the last one six weeks after the first, at no '
+        + 'extra cost from us. Then it stops, and it is yours.';
+      bnpl[b].hidden = false;
+    }
+  }
+
   var buys = document.querySelectorAll('[data-crisp-checkout]');
   for (var i = 0; i < buys.length; i++) {
     buys[i].setAttribute('href', url);
