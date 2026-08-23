@@ -681,6 +681,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
      not receive vendor updates. -->
 <script async src="/sled.js"></script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<!-- Meta pixel. Dark until META_PIXEL_ID is set, and the guard is the FIRST statement
+     so nothing can fire with an empty id. The privacy page discloses this in the same
+     change that turns it on — a page running a tracker its policy does not name is a
+     false statement on a commercial site, and that ordering is not negotiable. -->
+<script>(function(){var META_PIXEL_ID='1734031344415692';if(!META_PIXEL_ID)return;
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',META_PIXEL_ID);fbq('track','PageView');})();</script>
 </head>
 <body>
 

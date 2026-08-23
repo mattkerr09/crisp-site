@@ -71,6 +71,16 @@
     you between sites, and does not build a profile. It is how we know whether anyone read the
     thing we just wrote. If you would rather not be counted, any content blocker stops it, and
     nothing on the site depends on it loading.</li>
+    <li><strong>An advertising pixel, which does set a cookie.</strong> This site loads
+    <code>connect.facebook.net/en_US/fbevents.js</code>, Meta&rsquo;s advertising pixel. It sets a
+    cookie named <code>_fbp</code> and reports to Meta that a page here was viewed, so we can tell
+    whether an advert we paid for actually brought anyone. <strong>Unlike the page counter above,
+    this one does follow you between sites and does contribute to a profile Meta holds about
+    you</strong> &mdash; that is what the product is, and it would be dishonest to describe it any
+    other way. It runs on the marketing site only. <strong>It is not in the app</strong>, and
+    everything said further up this page about Crisp itself is unchanged: the software contains no
+    analytics SDK, no crash reporter and no advertising identifiers. Any content blocker stops the
+    pixel, and nothing on this site depends on it loading.</li>
     <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script
     from <strong>this domain</strong> &mdash; <code>/sled.js</code>, a pinned copy we serve
     ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
