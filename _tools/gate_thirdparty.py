@@ -33,7 +33,59 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 #: Hosts a visitor may contact without having asked for anything.
-ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io"}
+#:
+#: connect.facebook.net was added 2026-08-23, at the same time as the inline
+#: <script> scan below — because until that scan existed this gate could not SEE
+#: it, and had been printing "no third-party host loads for an ordinary visitor"
+#: while Meta's pixel loaded on every visit. Listing it here is not a loosening:
+#: it is the first time the host has been visible to this gate at all, and the
+#: entry is what makes it deliberate rather than invisible.
+#:
+#: The reason, and it does have to survive being read aloud to a customer:
+#: /legal/privacy/ names it explicitly — "An advertising pixel, which does set a
+#: cookie. This site loads connect.facebook.net/en_US/fbevents.js, Meta's
+#: advertising pixel" — and says plainly that a content blocker stops it. The
+#: app still ships no analytics, no crash reporter and no advertising
+#: identifiers; this is the marketing site, and the policy draws that line.
+ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io", "connect.facebook.net"}
+
+#: (host, filename) pairs a SCRIPT may name because it assigns them to an href —
+#: navigation, not a load. The module docstring already exempts anchor hrefs
+#: ("linking to topazlabs.com in a comparison is not loading anything from
+#: them"); a URL the page navigates you to is the same act whether the href was
+#: authored in the markup or set by JS, so it gets the same answer.
+#:
+#: ⚠️ KEYED ON THE `why` AS WELL AS THE HOST, and that is the whole safety of it.
+#: This gate's own history records an exemption keyed on host alone going GREEN
+#: on the exact bug it was written to catch. These entries are consulted ONLY for
+#: a hit whose reason is "url in inline <script>". Add a real
+#: `<script src="https://github.com/…">` and it is reported as `<script src>`,
+#: matches nothing here, and still FAILS. Proven with a planted tag, not assumed.
+#: Every entry here must actually FIRE. A github.com entry was drafted for the
+#: Crisp.dmg release asset and then removed on measurement: that URL turned out
+#: to live only inside a JSON-LD block, which the inert-type rule below already
+#: skips, so the exemption covered nothing. A dead exemption is worse than none —
+#: it reads as a considered decision while silently exempting a case that never
+#: occurs, and the day the host DOES appear for real it is pre-approved. If
+#: github.com ever shows up as a genuine load, this gate should fail loudly and
+#: somebody should decide about it then.
+NAVIGATION_FROM_JS = {
+    ("checkout.dodopayments.com", "index.html"):
+        "CRISP_CHECKOUT_URL — assigned to the Buy button's href, so it is where a "
+        "click SENDS you. Nothing is fetched from Dodo to render this page.",
+}
+
+#: Script blocks whose contents a browser never fetches. `application/ld+json` is
+#: DATA: the parser reads it as structured data and resolves nothing, so the 114
+#: `"@context":"https://schema.org"` strings across this site are not contacts.
+#:
+#: Every deliberate exemption creates a region where a defect and correctness look
+#: identical, so state what is given up: a tracker URL hidden inside a JSON-LD
+#: block would not be reported. That is acceptable ONLY because such a URL cannot
+#: execute or fetch from there — it would be inert text. If this site ever ships a
+#: script that READS its own JSON-LD and acts on a URL in it, this exemption stops
+#: being safe and must go.
+INERT_SCRIPT_TYPES = {"application/ld+json"}
 
 #: Contacts that happen ONLY on an explicit user path, with the reason. These
 #: are printed on every run rather than allowed silently — an exception nobody
@@ -96,6 +148,35 @@ def hosts_in(path: Path) -> set[tuple[str, str]]:
             if h:
                 found.add((h, "url in js"))
 
+    # ── INLINE <script> BODIES ────────────────────────────────────────────────
+    # THE HOLE THAT MADE THIS GATE REPORT GREEN WHILE A TRACKER LOADED.
+    # The Meta pixel builds its own element — `t=b.createElement(e); t.src=v` —
+    # and passes the URL as a bare argument:
+    #
+    #   }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    #
+    # There is no `src=` ATTRIBUTE, so none of the HTML patterns above match, and
+    # it is not a `url()`, so the CSS pattern misses it too. The permissive scan
+    # that WOULD have caught it is three lines up, fenced behind
+    # `path.suffix == ".js"` — and an inline block lives in a .html file, so it
+    # never reaches it. The gate printed "no third-party host loads for an
+    # ordinary visitor" on the very commit that added the pixel.
+    #
+    # That is this repo's own recorded failure mode, one level down: a checker
+    # whose extraction is shaped like the input it expects cannot see input of
+    # another shape. The fix is the standing rule — EXTRACT PERMISSIVELY, JUDGE
+    # STRICTLY. Take every absolute URL in the block, quoted or bare, and let
+    # the allow-lists below do the deciding.
+    if path.suffix == ".html":
+        for blk in re.finditer(r"<script\b([^>]*)>(.*?)</script>", text, re.I | re.S):
+            stype = (re.search(r'type=["\']([^"\']+)', blk.group(1), re.I) or [None, ""])[1].strip().lower()
+            if stype in INERT_SCRIPT_TYPES:
+                continue
+            for u in re.finditer(r"https?://[^\s\"'<>()\\]+", blk.group(2)):
+                h = host(u.group(0))
+                if h:
+                    found.add((h, "url in inline <script>"))
+
     return found
 
 
@@ -108,6 +189,7 @@ def main() -> int:
 
     bad: list[str] = []
     seen_conditional: set[str] = set()
+    seen_navigation: set[tuple[str, str]] = set()
 
     for f in sorted(files):
         for h, why in sorted(hosts_in(f)):
@@ -116,12 +198,21 @@ def main() -> int:
             if h in CONDITIONAL and f.name == CONDITIONAL[h][0]:
                 seen_conditional.add(h)
                 continue
+            # Navigation targets — consulted ONLY for an inline-script hit, so a
+            # real <script src> or <img src> from the same host still fails.
+            if why == "url in inline <script>" and (h, f.name) in NAVIGATION_FROM_JS:
+                seen_navigation.add((h, f.name))
+                continue
             bad.append(f"    {f.relative_to(ROOT)}  {h}  ({why})")
 
     print(f"  scanned {len(files)} file(s); allowed on load: {', '.join(sorted(ALLOWED_ON_LOAD))}")
     for h in sorted(seen_conditional):
         where, why = CONDITIONAL[h]
         print(f"  conditional: {h} (only in {where}) — {why}")
+    # Printed on every run, never allowed silently: an exemption nobody sees
+    # again becomes the next incident.
+    for h, where in sorted(seen_navigation):
+        print(f"  navigation:  {h} (in {where}) — {NAVIGATION_FROM_JS[(h, where)]}")
 
     if bad:
         print(f"\nFAIL: {len(bad)} third-party contact(s) a visitor did not ask for.")
