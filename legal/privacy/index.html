@@ -24,7 +24,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Privacy Policy","description":"Crisp processes your photos and videos entirely on your Mac. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.","datePublished":"2026-07-28","dateModified":"2026-07-28","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/legal/privacy/"}
 </script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -71,7 +71,13 @@
     you between sites, and does not build a profile. It is how we know whether anyone read the
     thing we just wrote. If you would rather not be counted, any content blocker stops it, and
     nothing on the site depends on it loading.</li>
-    <li><strong>An advertising pixel, which does set a cookie.</strong> This site loads
+    <!-- Wording corrected 2026-08-23, with the change that made it true. This read "This site
+         loads …" while the pixel was hand-written into index.html and ran on 1 of 115 pages —
+         a sentence that overstated the tracking on 114 pages and understated it on none, but
+         still not what the site did. The pixel is now on every page, placed by
+         ops/bin/insert-meta-pixel.py, so this now says "Every page" and matches the Plausible
+         bullet above it. The copy moved in the same commit as the coverage. -->
+    <li><strong>An advertising pixel, which does set a cookie.</strong> Every page on this site loads
     <code>connect.facebook.net/en_US/fbevents.js</code>, Meta&rsquo;s advertising pixel. It sets a
     cookie named <code>_fbp</code> and reports to Meta that a page here was viewed, so we can tell
     whether an advert we paid for actually brought anyone. <strong>Unlike the page counter above,

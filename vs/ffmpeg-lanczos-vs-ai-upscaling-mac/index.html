@@ -27,7 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the ffmpeg command to upscale a video?","acceptedAnswer":{"@type":"Answer","text":"ffmpeg -i in.mp4 -vf scale=3840:-2:flags=lanczos -c:a copy out.mp4 — that resizes to 4K width using the Lanczos filter and copies the audio untouched."}},{"@type":"Question","name":"Is Lanczos better than bicubic?","acceptedAnswer":{"@type":"Answer","text":"For upscaling, generally yes — it preserves more edge definition. It also rings slightly on hard edges. Both are interpolation; neither adds detail."}},{"@type":"Question","name":"Is AI upscaling always better?","acceptedAnswer":{"@type":"Answer","text":"No. On clean, sharp source that only needs resizing, Lanczos is faster, free, and does not risk inventing wrong detail. AI wins when the source is genuinely degraded."}}]}
 </script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 </head>
 <body>
 <nav><div class="wrap nav-inner">
