@@ -548,6 +548,16 @@ td.n{color:var(--grey-dim);}
   border:1px solid rgba(255,99,99,.38);color:#ffb9b9;}
 .cost .src{font-size:.78rem;color:var(--grey-dim);margin:1.6rem 0 0;line-height:1.6;}
 .cost .src a{color:var(--grey);}
+/* The instalment note. Sits between the price and the fine print in weight, because it is a
+   reason to buy rather than a disclaimer. Empty and [hidden] until CRISP_BNPL_LIVE is set.
+
+   ⚠️ DELIBERATELY NO `display` PROPERTY. `hidden` is enforced by the UA rule
+   `[hidden]{display:none}`, which ANY class selector outbids — `.cost .bnpl-note{display:block}`
+   would beat it and reveal an empty paragraph under the Buy button on every load, today, while
+   the flag is still false. The [hidden] rule below restates the guard at winning specificity so
+   a future edit that does add a display cannot silently unhide it. */
+.cost .bnpl-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.55;}
+.cost .bnpl-note[hidden]{display:none;}
 @media(max-width:640px){
   .cost{padding:1.6rem 1.2rem 1.3rem;}
   .cost-row{grid-template-columns:1fr;gap:.35rem;}
@@ -1264,7 +1274,7 @@ fbq('init',META_PIXEL_ID);fbq('track','PageView');})();</script>
      ⚠️ DRAFT, NOT REVIEWED BY A LAWYER. The commercial statements below (seller
      identity, what the licence covers, delivery, refund window) were drafted by an
      AI assistant from the source code and the existing /legal/ pages. They have not
-     been checked by a solicitor or against Polar's merchant-of-record onboarding
+     been checked by a solicitor or against Dodo Payments' merchant-of-record onboarding
      requirements, and the seller's street address is still missing — see
      TODO-SELLER-ADDRESS below. Review before this ships.
 
@@ -1320,7 +1330,8 @@ fbq('init',META_PIXEL_ID);fbq('track','PageView');})();</script>
         the version line you buy — not a subscription. It does not expire, there is nothing to
         renew, and it keeps working if you never come back.</p>
 
-      <p><strong>How it reaches you.</strong> By email from Polar, immediately after payment: a
+      <p><strong>How it reaches you.</strong> By email from Dodo Payments, our merchant of record,
+        immediately after payment: a
         licence key that looks like <code>CRISP-XXXX-XXXX-XXXX-XXXX</code>. Paste it into
         <em>Unlock Crisp Pro</em> in the app. The key activates the Mac you paste it into, and
         that activation is stored locally in <code>~/.crisp/</code>, so Pro survives being
@@ -1595,8 +1606,9 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
 
 <script>
 /* ── CRISP_CHECKOUT_URL ─────────────────────────────────────────────────────────────────────
-   THE ONE PLACE THE $129 CHECKOUT LINK LIVES. Paste the Polar checkout URL between the quotes
-   (it looks like https://buy.polar.sh/polar_cl_…) and every paid button on this page — the
+   THE ONE PLACE THE $129 CHECKOUT LINK LIVES. Paste the Dodo checkout URL between the quotes
+   (it looks like https://checkout.dodopayments.com/buy/pdt_…) and every paid button on this
+   page — the
    Crisp Pro tier under Pricing, and the Buy button in #buy — points at it, and the "checkout is
    not open yet" note disappears. That is the entire change. Nothing else needs editing, and no
    other file on the site hardcodes a checkout URL.
