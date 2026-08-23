@@ -1638,7 +1638,7 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
      consumer-finance claim we cannot honour, on the page where money changes
      hands. Same rule as the pixel: the copy goes live in the change that makes
      it true, never before. */
-  var CRISP_BNPL_LIVE = false;
+  var CRISP_BNPL_LIVE = true;
   if (CRISP_BNPL_LIVE) {
     var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
     for (var b = 0; b < bnpl.length; b++) {
