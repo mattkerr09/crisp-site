@@ -1,10 +1,10 @@
 {
-  "version": "1.0.998",
-  "notes": "A licence key bought for one of our other apps could unlock Crisp. Crisp now checks that the key you enter was actually bought for Crisp, and tells you which product it belongs to if it was not.",
-  "pub_date": "2026-08-24T03:58:25Z",
+  "version": "1.0.1001",
+  "notes": "If you enter a licence key that belongs to one of our other apps, Crisp now hands the activation back before telling you \u2014 so trying the wrong key no longer costs you one of the three activations on the app you actually bought.",
+  "pub_date": "2026-08-24T04:05:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdiMFlKMG5XU1BRb3pqbFI0cC9LcUZVUmpadUJVTmFZVzk0QmFZeTI3NFcwQkk4L1JHcm5WaHZuNkV6N1kxdDJsOVM3SDRuSGNWK0pxWUhNNmxnMUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQzNzgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqcDI3M21xNVQrUXRBQTZpUC94N0JETlBrc0xJRWI0YXAvakVUaW1qeTZIdEErdE0vcTBQd29KREhjUE9RNUo2eEZvbmd0RTFVVWdlK0NwRnVOb1dEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUbHgxQ3Z6MjVCRTFBb1FSOHQxVThFVXVmWWNjeUJiaG1YU29ud2tNWm5UUnB0aGwzU3djcWhQTHpqTDlsbjlnRi96RFIxR00zR0Ezc0o5LzRIMndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQ0MjMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozM3lGM0xIZEIyYTF3UUFMMW1OTndwSnZ4TjV3YmhNUWpHeVpPSElDdlFWbnY3dCt5bE1xck1aa3gxVFZtVk80ejZQc0x4akltMlJMOWVCb29VSENCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
