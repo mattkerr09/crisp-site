@@ -1,10 +1,10 @@
 {
-  "version": "1.0.994",
-  "notes": "Asking Crisp for Max quality when you have not unlocked it now tells you the price and the one-time model-pack download together, instead of sending you to fetch 4.6 GB before mentioning that Max is a paid feature.",
-  "pub_date": "2026-08-24T02:54:31Z",
+  "version": "1.0.996",
+  "notes": "The message you see when Max is locked now always states the price and the one-time model-pack download together, and a check that had quietly stopped reading that message is reading it again.",
+  "pub_date": "2026-08-24T03:49:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURsQmpBMkxZclVPaHFCWG5mMDRCc25mL2pFMDV1Z3FvOE5hRGtPekx0bS9PV2ZjOUxXdk1FZjdVZTJTVjN2RlRSMmZZSFk5eG1abWJQeHJNeHFzL1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM5OTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXTjhwbWI1V29uQjQ0cVV5VzV5a0ZwbUh3M1FuVy9ZanEyUm1naDJRZlBXdjNVZWl6RG1NTytUNFlkSk8xUGhPZXh6ZHd0cEd2Y0wyK3EyaGszV09CUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9EWlNuZkpKY0JTSG1KZUJsN1JXNFJJNmhmSEg1SFBxemxLanE2Vyt6cHBhUEcrQjJYaXBZTWhmWEFyelpRMkVOZ1hhY0syUitaa0piQXFIalRiZ3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQzMjMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozR2lyOWRMdjNpalJqMmYyR0JkSXhvMUdWZjNORnJtWDZ2SjdzQWdDNkpWOFkzcFB4anFqRDFHLzJJM2x2WDZ5N3hzYlRvdVljMXJvYm4rOGNISThBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
