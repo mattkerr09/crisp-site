@@ -1,10 +1,10 @@
 {
-  "version": "1.0.979",
-  "notes": "Crisp now tells you when an update is waiting. If the built-in updater came back empty \u2014 which is what left some installs many builds behind without a word \u2014 Crisp asks its own backend as well, and shows a dismissible banner instead of staying quiet. It also offers to open your Applications folder when you are running it from the downloaded disk image, which is the state that stops it updating itself.",
-  "pub_date": "2026-08-23T21:41:10Z",
+  "version": "1.0.985",
+  "notes": "Crisp said a licence covers five Macs. It covers three \u2014 that is what the store issues, so the app was promising two seats it could not deliver. The activation window now says three. Buying with Klarna or Afterpay is also explained beside the price, and the page you land on after paying now checks the payment actually succeeded before it says so.",
+  "pub_date": "2026-08-24T00:45:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFjYXJXSmpMZTE3VTBub1psZEE3dVZoRjRwZnVPWVZ3RnZHVjJFNHpLcC9OVEZTcEl2MjNMT1RsNlA4bVVFYVMzeHpkOHFXdTNwWTFadmpyQlJZUFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTIxMTc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVcWRObTNjNDgweHRqY1RYNTdXa2JYTVgxM3NWUDNuUTJkcklsV0xUbjdYby9lMHRiajFkNkZmcEpqOU9nMk81d0FRNS9MZnErUmNBZ05kSTJtMkZDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yeEwrMW5hQmZFVTFNVC9TK25oZkFRbU9LcFhvVE9EN2NDN0tYN0hrb2tVNGJ5Z3hBMjVndW0wZkNCN0x5NXpGNzdQeHV0NG54L1k0TGxYR1l5dndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTMyMTg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphVjNsT0V1NFpiWUxuazlwekNubFRmNVZuUmpmQUthbjVnZ3MwckwwS3ZzYU01SzRtSWUrZ3prNmxqaVlBYnpCa0ZPNGsrQUo2ajBUcmY5dmpjWHdDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
