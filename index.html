@@ -674,6 +674,24 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .rv{opacity:1;transform:none;transition:none;}
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
 }
+
+/* Subscribe block — footer, deliberately quiet. It must not compete with the download CTA
+   above it; anyone who wants the app should still reach for the button, not the field. */
+.sub-wrap{border-top:1px solid var(--hair);padding:2.6rem 1.5rem 1.4rem;}
+.sub{max-width:520px;margin:0 auto;text-align:center;}
+.sub-label{display:block;font-family:var(--head);font-weight:640;font-size:1.02rem;letter-spacing:-.01em;}
+.sub-why{margin:.5rem 0 1rem;color:var(--grey);font-size:.9rem;line-height:1.6;}
+.sub-row{display:flex;gap:.55rem;justify-content:center;flex-wrap:wrap;}
+.sub-row input{flex:1 1 15rem;min-width:0;padding:.62rem .85rem;border-radius:10px;
+  border:1px solid var(--hair-lit);background:rgba(255,255,255,.04);color:var(--white);
+  font-size:.94rem;}
+.sub-row input:focus{outline:2px solid var(--cyan);outline-offset:1px;}
+.sub-msg{margin:.7rem 0 0;font-size:.86rem;min-height:1.2em;}
+.sub-msg.is-ok{color:var(--grey);}
+.sub-msg.is-bad{color:#ffb4a2;}
+/* Off-screen rather than display:none — a bot reading the DOM still sees a fillable field,
+   which is the entire point, while nobody sighted or using a screen reader ever meets it. */
+.sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 </style>
 <!-- Sled affiliate attribution, SERVED FIRST-PARTY on purpose.
      Sets a ta_ref cookie only when a visitor arrives with ?ref=<code>, so an
@@ -1404,6 +1422,34 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 </section>
 
 <footer>
+  <!-- ⚠️ PLACEMENT IS DELIBERATE. The closing CTA two lines up says "Nothing to sign up for",
+       which is about USING Crisp and stays true — but a signup box directly beneath it would
+       read as a contradiction. It lives in the footer, framed as optional, and the ask is a
+       REASON rather than a newsletter: a one-time licence owner genuinely wants to know when a
+       new restore lane lands, and that doubles as the upgrade nudge.
+       ⚠️ NOTHING FIRES ON PAGE LOAD. The address is posted on submit, once, to our own worker —
+       not a marketing SDK. A third-party tag here would undo the "Nothing uploaded" hero on the
+       highest-value page we have, which is exactly why the worker exists. -->
+  <div class="wrap sub-wrap">
+    <form id="sub-form" class="sub" novalidate>
+      <label class="sub-label" for="sub-email">New restore lanes and model improvements</label>
+      <p class="sub-why">Crisp gets better at the same files over time. We email when a lane ships
+        that changes what your footage can look like &mdash; a few times a year, nothing else.</p>
+      <div class="sub-row">
+        <input id="sub-email" name="email" type="email" inputmode="email" autocomplete="email"
+          placeholder="you@example.com" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary btn-sm" id="sub-go">Keep me posted</button>
+      </div>
+      <!-- Honeypot: a real person never fills this. Hidden from sight AND from screen readers,
+           and tabindex -1 so keyboard users cannot land on it by accident. -->
+      <div class="sub-hp" aria-hidden="true">
+        <label for="sub-company">Company</label>
+        <input id="sub-company" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
   <div class="wrap foot">
     <div>© 2026 Crisp · Built by one person, in the open.</div>
     <div class="links">
@@ -1768,6 +1814,49 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
     if (revealed) return;
     for (var k = 0; k < els.length; k++) show(els[k]);
   }, 2500);
+})();
+</script>
+<script>
+/* Subscribe — posts to our own worker on submit, never on load.
+   ⚠️ EVERY FAILURE MODE MUST KEEP THE FORM AND MUST NOT CLAIM SUCCESS. A handler that treats
+   any SETTLED promise as success will tell someone they subscribed when the write failed —
+   fetch only rejects on a network error, so a 500, or a 200 carrying {ok:false}, both look
+   like success to `.then()`. All three are handled separately below and all three stay
+   retryable. */
+(function () {
+  var f = document.getElementById('sub-form');
+  if (!f) return;
+  var msg = document.getElementById('sub-msg'), go = document.getElementById('sub-go');
+  var ENDPOINT = 'https://kerr-subscribe.kerrco.workers.dev';
+  function say(t, bad) { msg.textContent = t; msg.className = 'sub-msg' + (bad ? ' is-bad' : ' is-ok'); }
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = (document.getElementById('sub-email').value || '').trim();
+    // The honeypot is checked HERE as well as at the worker: a bot that fills it gets the same
+    // reply a person does, so it learns nothing, and we never send the address on.
+    var trap = (document.getElementById('sub-company').value || '').trim();
+    if (!email || email.indexOf('@') < 1) { say('That address looks incomplete.', true); return; }
+    if (trap) { say('Thanks — check your inbox.', false); return; }
+    go.disabled = true; say('Sending…', false);
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'crispvideo.app' })
+    }).then(function (r) {
+      // A 500 is a SETTLED promise. Read the status, then read the body's own verdict.
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        return { ok: r.ok && d && d.ok !== false, d: d };
+      });
+    }).then(function (res) {
+      if (!res.ok) { say('That did not go through. Try again in a moment.', true); go.disabled = false; return; }
+      say('Thanks — you are on the list.', false);
+      f.querySelector('.sub-row').hidden = true;
+    }).catch(function () {
+      // Network failure: offline, DNS, blocked. Keep the form, say so, stay retryable.
+      say('Could not reach us just now — check your connection and try again.', true);
+      go.disabled = false;
+    });
+  });
 })();
 </script>
 </body>
