@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1022",
-  "notes": "The editor now answers to the keyboard the way every video editor does. J, K and L shuttle backward, pause and forward, and tapping again ramps to two and four times speed. I and O set the in and out points at the playhead, so a clip can be trimmed without dragging its edge. Command C, V and D copy, paste and duplicate a clip, and Option with the arrow keys moves one earlier or later. Press the question mark key, or the button beside the timecode, to see all of it \u2014 including the shortcuts that were already there and never announced.",
-  "pub_date": "2026-08-24T21:58:15Z",
+  "version": "1.0.1025",
+  "notes": "Mark the moments you care about. Press M to drop a marker at the playhead, then jump between them with , and . \u2014 no more scrubbing to find that one frame again. Markers belong to the clip, not the timeline, so they stay on the right frame when you reorder, trim, split or duplicate.",
+  "pub_date": "2026-08-24T23:48:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5JWjBncENtNUhmdng3aVlKYUNJSTJObXp4cDJTMVhHdjMzazJtcERDT0FCM1hLWENUdWQzL2RiVVJrVlJQNkZGZDFJRXQ4bHhSNGN5dWc2SFd5NVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjA4NjIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEeFVpOVdFcW1PbTljM1BGU0IyMzRRb2tIUklVaFJLTk4rdFZLNE04Z202MTF6OUtTTFlFYVJOU2VmZzVPSXZzS2FhNmtWUnVCNG9CMGRRN2tHUUZCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR6ZXRYUFRKNVlEdXZrM1cxSVljc2VXWnFsc204OHd4cW5ia1J6UHg0akhvemZpamUzckVNaThJb3ZhY3VuTktkZEJsaFhHOGhscHU1b1NiQ3V5MEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjE0ODAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVSm9LQkxLa3ZlWXVqRlQxRnJ4QklDbGJvYVJkUnl1bjBMZ0czemdXVDg1SGlJQTdUbEdmV2dpdWZVNWQ3dXludlZCTDA4d3QrRzNKTXFCVTVMZEJEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
