@@ -1,10 +1,10 @@
 {
-  "version": "1.0.990",
-  "notes": "If a licence key is refused, Crisp used to tell you to look in a Polar receipt \u2014 a store many customers have never bought from. Every message about your key now just says your receipt, whichever shop you used.",
-  "pub_date": "2026-08-24T02:03:01Z",
+  "version": "1.0.994",
+  "notes": "Asking Crisp for Max quality when you have not unlocked it now tells you the price and the one-time model-pack download together, instead of sending you to fetch 4.6 GB before mentioning that Max is a paid feature.",
+  "pub_date": "2026-08-24T02:54:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUkwNTZ0QkgxRTlsMzFHUXk4M0ZDTFdUa1VZMXpCRzF6cXJHT290UXJBeWNtd3dIbjUvb2dRRzR0eHUrOXBZaEZKQko3VW55aVVYU2U0N21vV0dUclFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM2ODcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovRFdnYkdyNVpoZjFSeXIydjhyK0NZaEJpTWZ4VnpmZ21PRjdualNCZGRMZFoxOFozYjQyZ3JoSzQ4OFBIcFp0NjZ5VHVDeEZmSk5vSzlxMmErZjBBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURsQmpBMkxZclVPaHFCWG5mMDRCc25mL2pFMDV1Z3FvOE5hRGtPekx0bS9PV2ZjOUxXdk1FZjdVZTJTVjN2RlRSMmZZSFk5eG1abWJQeHJNeHFzL1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM5OTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXTjhwbWI1V29uQjQ0cVV5VzV5a0ZwbUh3M1FuVy9ZanEyUm1naDJRZlBXdjNVZWl6RG1NTytUNFlkSk8xUGhPZXh6ZHd0cEd2Y0wyK3EyaGszV09CUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
