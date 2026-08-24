@@ -98,11 +98,25 @@ INERT_SCRIPT_TYPES = {"application/ld+json"}
 #: GREEN on the exact bug it was written to catch. An exemption keyed on host
 #: alone cannot tell "a beacon inside our own pinned script" from "a tracker we
 #: just re-added to the homepage".
+#: The third field is a MARKER THE FILE MUST CONTAIN, and it exists because the file scoping
+#: above is not enough on its own. Scoping to index.html would let the same endpoint be moved
+#: from a submit handler to a load handler and still pass — which is the entire failure this
+#: gate exists to prevent, just relocated. The marker makes the exemption describe the CODE,
+#: not the filename. (I made exactly this mistake in the sibling pytest gate an hour ago: two
+#: of three controls sailed through a page-scoped exemption.)
 CONDITIONAL = {
     "usesled.com": ("sled.js",
                     "api/click beacon, fired strictly inside `if(ref)` — so only "
                     "for visitors who arrived on an affiliate ?ref= link, which "
-                    "is what /legal/privacy/ discloses"),
+                    "is what /legal/privacy/ discloses",
+                    "if(ref)"),
+    "kerr-subscribe.kerrco.workers.dev":
+                   ("index.html",
+                    "the subscribe form's POST, fired only inside a submit handler — a "
+                    "visitor types an address and presses a button, and that press is the "
+                    "only thing that sends it. Nothing leaves the page on load. First-party "
+                    "on purpose: a marketing SDK here would contradict the hero",
+                    "addEventListener('submit'"),
 }
 
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}
@@ -196,8 +210,12 @@ def main() -> int:
             if h in ALLOWED_ON_LOAD:
                 continue
             if h in CONDITIONAL and f.name == CONDITIONAL[h][0]:
-                seen_conditional.add(h)
-                continue
+                # The marker must be PRESENT in this file, or the exemption does not apply.
+                # Without it, moving the same call out of its guard keeps the pass.
+                marker = CONDITIONAL[h][2]
+                if marker in f.read_text(encoding="utf-8", errors="replace"):
+                    seen_conditional.add(h)
+                    continue
             # Navigation targets — consulted ONLY for an inline-script hit, so a
             # real <script src> or <img src> from the same host still fails.
             if why == "url in inline <script>" and (h, f.name) in NAVIGATION_FROM_JS:
@@ -207,7 +225,7 @@ def main() -> int:
 
     print(f"  scanned {len(files)} file(s); allowed on load: {', '.join(sorted(ALLOWED_ON_LOAD))}")
     for h in sorted(seen_conditional):
-        where, why = CONDITIONAL[h]
+        where, why = CONDITIONAL[h][0], CONDITIONAL[h][1]
         print(f"  conditional: {h} (only in {where}) — {why}")
     # Printed on every run, never allowed silently: an exemption nobody sees
     # again becomes the next incident.
