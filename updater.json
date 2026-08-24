@@ -1,10 +1,10 @@
 {
-  "version": "1.0.996",
-  "notes": "The message you see when Max is locked now always states the price and the one-time model-pack download together, and a check that had quietly stopped reading that message is reading it again.",
-  "pub_date": "2026-08-24T03:49:28Z",
+  "version": "1.0.998",
+  "notes": "A licence key bought for one of our other apps could unlock Crisp. Crisp now checks that the key you enter was actually bought for Crisp, and tells you which product it belongs to if it was not.",
+  "pub_date": "2026-08-24T03:58:25Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9EWlNuZkpKY0JTSG1KZUJsN1JXNFJJNmhmSEg1SFBxemxLanE2Vyt6cHBhUEcrQjJYaXBZTWhmWEFyelpRMkVOZ1hhY0syUitaa0piQXFIalRiZ3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQzMjMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozR2lyOWRMdjNpalJqMmYyR0JkSXhvMUdWZjNORnJtWDZ2SjdzQWdDNkpWOFkzcFB4anFqRDFHLzJJM2x2WDZ5N3hzYlRvdVljMXJvYm4rOGNISThBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdiMFlKMG5XU1BRb3pqbFI0cC9LcUZVUmpadUJVTmFZVzk0QmFZeTI3NFcwQkk4L1JHcm5WaHZuNkV6N1kxdDJsOVM3SDRuSGNWK0pxWUhNNmxnMUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQzNzgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqcDI3M21xNVQrUXRBQTZpUC94N0JETlBrc0xJRWI0YXAvakVUaW1qeTZIdEErdE0vcTBQd29KREhjUE9RNUo2eEZvbmd0RTFVVWdlK0NwRnVOb1dEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
