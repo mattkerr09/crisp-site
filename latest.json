@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1012",
-  "notes": "Crisp no longer remembers a Save-to folder it could not use. If the folder you picked has gone \u2014 an external drive unplugged, a folder renamed \u2014 Crisp says so and keeps the last folder that actually worked, instead of replacing it with the one that is missing.",
-  "pub_date": "2026-08-24T16:03:12Z",
+  "version": "1.0.1022",
+  "notes": "The editor now answers to the keyboard the way every video editor does. J, K and L shuttle backward, pause and forward, and tapping again ramps to two and four times speed. I and O set the in and out points at the playhead, so a clip can be trimmed without dragging its edge. Command C, V and D copy, paste and duplicate a clip, and Option with the arrow keys moves one earlier or later. Press the question mark key, or the button beside the timecode, to see all of it \u2014 including the shortcuts that were already there and never announced.",
+  "pub_date": "2026-08-24T21:58:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZLOHZNR1doUjgxa1crMTRSNTZLR1FDOS9jREEvaW5ZczRidythdG9mSHVTL0RwTkdpRWo0c0pISzRtOHVaQ1Vmb1BYLzV3RFlzUEYrZ0pmSUpLZUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTg3Mjc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxTWtaRE41NkMvbFdJOG1JTElDUVJnLzc1a2Vpd3lYUHRXdTV2YTNLLzlIVTNXb0RTeGU3M3BTY1RZcFlseThBTjFZVFg3T0RJaXdZdVd1MlN3QTRBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5JWjBncENtNUhmdng3aVlKYUNJSTJObXp4cDJTMVhHdjMzazJtcERDT0FCM1hLWENUdWQzL2RiVVJrVlJQNkZGZDFJRXQ4bHhSNGN5dWc2SFd5NVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjA4NjIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEeFVpOVdFcW1PbTljM1BGU0IyMzRRb2tIUklVaFJLTk4rdFZLNE04Z202MTF6OUtTTFlFYVJOU2VmZzVPSXZzS2FhNmtWUnVCNG9CMGRRN2tHUUZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
