@@ -1,10 +1,10 @@
 {
-  "version": "1.0.985",
-  "notes": "Crisp said a licence covers five Macs. It covers three \u2014 that is what the store issues, so the app was promising two seats it could not deliver. The activation window now says three. Buying with Klarna or Afterpay is also explained beside the price, and the page you land on after paying now checks the payment actually succeeded before it says so.",
-  "pub_date": "2026-08-24T00:45:17Z",
+  "version": "1.0.988",
+  "notes": "If your licence server had a bad moment, Crisp used to try the other one \u2014 and being told your key is unknown by a store you never bought from reads as 'your key is bad'. A dropped connection or a server hiccup now says so plainly instead of condemning a key that was fine all along.",
+  "pub_date": "2026-08-24T01:23:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9yeEwrMW5hQmZFVTFNVC9TK25oZkFRbU9LcFhvVE9EN2NDN0tYN0hrb2tVNGJ5Z3hBMjVndW0wZkNCN0x5NXpGNzdQeHV0NG54L1k0TGxYR1l5dndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTMyMTg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphVjNsT0V1NFpiWUxuazlwekNubFRmNVZuUmpmQUthbjVnZ3MwckwwS3ZzYU01SzRtSWUrZ3prNmxqaVlBYnpCa0ZPNGsrQUo2ajBUcmY5dmpjWHdDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1Ib3YwT2o1ZkZDY2JyWi96KzlnRXRzbDg4bmJoKy92RnFuTTZZblJQTWExU3liU3BJMUhSWElzYndwT2YxMDE2SS84RnFlWXNmTmRMV25OZ1h6M2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM0NTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyaUplcW80Wm9sNng5ZlAvM3hNc3p5alB4ZmVvR0hZYWZtdjdEVGt2QjBOMWZtcU5tTUNWSmltQzQzNVQza1VHODVpbDhSajZncjhPTXhGTlkwTjRDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
