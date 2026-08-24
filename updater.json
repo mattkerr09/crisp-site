@@ -1,10 +1,10 @@
 {
-  "version": "1.0.988",
-  "notes": "If your licence server had a bad moment, Crisp used to try the other one \u2014 and being told your key is unknown by a store you never bought from reads as 'your key is bad'. A dropped connection or a server hiccup now says so plainly instead of condemning a key that was fine all along.",
-  "pub_date": "2026-08-24T01:23:55Z",
+  "version": "1.0.990",
+  "notes": "If a licence key is refused, Crisp used to tell you to look in a Polar receipt \u2014 a store many customers have never bought from. Every message about your key now just says your receipt, whichever shop you used.",
+  "pub_date": "2026-08-24T02:03:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1Ib3YwT2o1ZkZDY2JyWi96KzlnRXRzbDg4bmJoKy92RnFuTTZZblJQTWExU3liU3BJMUhSWElzYndwT2YxMDE2SS84RnFlWXNmTmRMV25OZ1h6M2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM0NTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyaUplcW80Wm9sNng5ZlAvM3hNc3p5alB4ZmVvR0hZYWZtdjdEVGt2QjBOMWZtcU5tTUNWSmltQzQzNVQza1VHODVpbDhSajZncjhPTXhGTlkwTjRDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUkwNTZ0QkgxRTlsMzFHUXk4M0ZDTFdUa1VZMXpCRzF6cXJHT290UXJBeWNtd3dIbjUvb2dRRzR0eHUrOXBZaEZKQko3VW55aVVYU2U0N21vV0dUclFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTM2ODcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovRFdnYkdyNVpoZjFSeXIydjhyK0NZaEJpTWZ4VnpmZ21PRjdualNCZGRMZFoxOFozYjQyZ3JoSzQ4OFBIcFp0NjZ5VHVDeEZmSk5vSzlxMmErZjBBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
