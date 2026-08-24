@@ -394,6 +394,21 @@ p em, li em{color:#c3cad6;}
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
   box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
 .ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
+/* ⚠️ THE PHONE PANEL IS NOT 1000px WIDE, and that matters more here than anywhere else on the
+   page: it is the panel whose whole job is proving an upscaler works. The file is 704x576, so
+   in the inherited 1000px box a retina browser had to invent 1292 of the 1996 pixels it drew —
+   2.84x interpolation, softening the very thing being demonstrated.
+   Capping at the file's own width halves that to 2.00x and makes it exact on a standard
+   display. It is not capped to 352px (which would be 1:1 on retina) because that shrinks the
+   demo by 65%, and I could NOT measure the perceptual gain cleanly to justify it — three
+   attempts were confounded by the capture pipeline rather than the page. The justification
+   here is resampling arithmetic, not a sharpness figure.
+   ⚠️ A @2x FILE CANNOT HONESTLY EXIST. Max's lane is a fixed 2x of the short side, so the
+   176x144 source restores to 384x288; the 704x576 shipped here is already a presentation
+   upscale applied EQUALLY to both halves. A retina version would mean inventing detail on the
+   panel that exists to prove we do not. data-src-1x and data-src-2x point at the same file for
+   exactly this reason. */
+#ba4{max-width:704px;}
 /* ⚠️ BOTH ADJACENCIES, because only one was covered and the other was visibly broken: a panel
    that follows a CAPTION got its gap, and a panel that follows ANOTHER PANEL got none, so the
    NASA and Max sliders sat flush against each other with no separation at all. */
