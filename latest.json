@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1009",
-  "notes": "When Crisp can't work with a clip, it now says so in plain words. An HDR video \u2014 the format iPhone records by default \u2014 used to be refused with a line about colour formats and a tool you have never heard of, and no way to act on it. It now tells you what the clip is, and which tools still work on it.",
-  "pub_date": "2026-08-24T14:19:26Z",
+  "version": "1.0.1012",
+  "notes": "Crisp no longer remembers a Save-to folder it could not use. If the folder you picked has gone \u2014 an external drive unplugged, a folder renamed \u2014 Crisp says so and keeps the last folder that actually worked, instead of replacing it with the one that is missing.",
+  "pub_date": "2026-08-24T16:03:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM3ZFZrc3BRMXk1WkNTYUVLV25DRXM1YW1WdEdEc3pFZVlkY29oc21DUWMxYzZlMkd6TlBCaFRMREV5TWdiYmlKdlpqa1BRYmswVUFucHkyQlpmSUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTgxMDIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFdmptMEMwY3U4SWlvODVUdjVkSG9XUkZCWGVCSGtrdEgvUVhjSFpKVUV4eEtRbkhxdSttbkdFeVQyWU50cjR0SVJSSzdRTmUwMXd0VDNrRjZ5RmhDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZLOHZNR1doUjgxa1crMTRSNTZLR1FDOS9jREEvaW5ZczRidythdG9mSHVTL0RwTkdpRWo0c0pISzRtOHVaQ1Vmb1BYLzV3RFlzUEYrZ0pmSUpLZUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTg3Mjc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxTWtaRE41NkMvbFdJOG1JTElDUVJnLzc1a2Vpd3lYUHRXdTV2YTNLLzlIVTNXb0RTeGU3M3BTY1RZcFlseThBTjFZVFg3T0RJaXdZdVd1MlN3QTRBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
