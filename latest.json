@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1001",
-  "notes": "If you enter a licence key that belongs to one of our other apps, Crisp now hands the activation back before telling you \u2014 so trying the wrong key no longer costs you one of the three activations on the app you actually bought.",
-  "pub_date": "2026-08-24T04:05:41Z",
+  "version": "1.0.1009",
+  "notes": "When Crisp can't work with a clip, it now says so in plain words. An HDR video \u2014 the format iPhone records by default \u2014 used to be refused with a line about colour formats and a tool you have never heard of, and no way to act on it. It now tells you what the clip is, and which tools still work on it.",
+  "pub_date": "2026-08-24T14:19:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUbHgxQ3Z6MjVCRTFBb1FSOHQxVThFVXVmWWNjeUJiaG1YU29ud2tNWm5UUnB0aGwzU3djcWhQTHpqTDlsbjlnRi96RFIxR00zR0Ezc0o5LzRIMndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTQ0MjMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negozM3lGM0xIZEIyYTF3UUFMMW1OTndwSnZ4TjV3YmhNUWpHeVpPSElDdlFWbnY3dCt5bE1xck1aa3gxVFZtVk80ejZQc0x4akltMlJMOWVCb29VSENCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM3ZFZrc3BRMXk1WkNTYUVLV25DRXM1YW1WdEdEc3pFZVlkY29oc21DUWMxYzZlMkd6TlBCaFRMREV5TWdiYmlKdlpqa1BRYmswVUFucHkyQlpmSUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NTgxMDIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpFdmptMEMwY3U4SWlvODVUdjVkSG9XUkZCWGVCSGtrdEgvUVhjSFpKVUV4eEtRbkhxdSttbkdFeVQyWU50cjR0SVJSSzdRTmUwMXd0VDNrRjZ5RmhDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
