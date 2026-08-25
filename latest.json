@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1063",
-  "notes": "Build a selection without reaching for the mouse. Hold Shift and press the up or down arrow to extend the selection a clip at a time, and press the other way to shrink it back from the end you are moving \u2014 the same way a text field or a file list behaves. Command-A still takes the whole timeline in one press.",
-  "pub_date": "2026-08-25T19:29:47Z",
+  "version": "1.0.1066",
+  "notes": "Press Shift-Z, or click Fit beside the timeline zoom, and the whole cut drops into view at once. On a long timeline that used to mean dragging the zoom slider until it looked about right. If the cut is too long to fit even at the widest setting, Crisp zooms out as far as it goes and tells you so, rather than leaving you wondering whether the button worked.",
+  "pub_date": "2026-08-25T20:57:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIxZVFYRTBtK3BxQXhPV2gzZlBGRlFjVS9YbG9sOVliTFMvV296OFJkRGp0bWFPNGIrdE1VQ3NvN3BXOUFaN2JxQTgwciswaTVacGhYSmUvOUc2b1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njg2MTE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaWjJoUGVPcngzcmNHZ09YTmdnZTI0cktGS0cvQUREMW0xdytuTVNzcG5NdDFiYVVGclF2Qm9ORjQ3Z2lqMlBZVFRMWUhFVnJnNEw0YmlGYmhmYjREQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJicGJlWnRvMWZBY3E4SXJrUUZSSFh6ZnN2SE5STGR5K1prcVg1STBUdnhHOTJwVHZpMm5kcVQrU1UzSlJPZXFETFlHRTV0N3hWTXBPNkxOOStoNGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjkxNDI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negowbVJmbW5idWh3T2kwLzYwUlUvYS9kcXczVXdpK0tOL2E1ZmU5ZkV6WlZZSllEUHQ2dGdoc2M4OFBZZ1hDanYzYUZ2c2JqeXcxOXkxMGJ1cW1RMjlBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
