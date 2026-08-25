@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1057",
-  "notes": "Crisp now tells you how long an enhance will take \u2014 and the number comes from your own Mac. Pick a clip and a preset, and the line under Add to Queue gives you a time, fitted from renders this machine has already finished rather than from a figure measured on somebody else's hardware. Before your first render it says so plainly instead of inventing one. Also fixed: opening Crisp while Crisp was already rendering could stop the render.",
-  "pub_date": "2026-08-25T16:33:32Z",
+  "version": "1.0.1060",
+  "notes": "Select every clip at once with Command-A, and copy, paste and duplicate now act on the whole selection instead of one clip at a time. Pick five clips, copy them, paste them, and all five land together in the order you were looking at \u2014 not the order you happened to click them in. Duplicating or pasting a clip that sits before the one playing no longer jumps the player onto a different clip.",
+  "pub_date": "2026-08-25T18:30:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUo2V3ZWMlcxSmdLUCtQckYzZmVCSVVvaHZjVlRJWWhuQnY4RzhERXdWMkdsU0gxSlMzUHl1UU5VVkpxVW1yNThsR3NVUUs2djlvbFBhZDEveHFzNGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njc1NTEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3dnBhRjhxNmJiVVQwYk5xVGZmYWs5N0ExMTVhN2ZKSnJWeXVKMFJVK3ZYZ3JEQzdmdTJHeG52bUlJMHhibHpHTVpNSyt1WVBoRG83YmhKeE9lL0ZEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9rWkh5Z3M1RmlwOWtLenQ4Q3V0d0Vydmc2SmRGQ1ByZ3VtSzhmakx1dnpYNTZYQ1huS29RQk9nY1hqNXQ2WjZzQnhRNmNONS9peEdDSllGRVZndGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjgyNTU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negppTDRVajBoclI4VUlJVzB5WXgvRnN2YzNoZGpQV05kVTlUbk42bTd2SjBCTHpwVnJPLy9rbTJQRC9ybUptYlRpS2EwQ01na0V2NS9GUXVpOERiWCtCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
