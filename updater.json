@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1053",
-  "notes": "Home and End now jump to the start and end of your cut, the way they do everywhere else.",
-  "pub_date": "2026-08-25T11:45:58Z",
+  "version": "1.0.1057",
+  "notes": "Crisp now tells you how long an enhance will take \u2014 and the number comes from your own Mac. Pick a clip and a preset, and the line under Add to Queue gives you a time, fitted from renders this machine has already finished rather than from a figure measured on somebody else's hardware. Before your first render it says so plainly instead of inventing one. Also fixed: opening Crisp while Crisp was already rendering could stop the render.",
+  "pub_date": "2026-08-25T16:33:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5NWJ4dDBzYzh4UFVpU01JejQvcjA5bWVlbC9HN0NqNHU0TVRSMG9pb3prVG5JclVtYndtK1NWL0htUWljYmlkVVVBVXVSSjBScnVzVEZtempYOFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjU2OTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4YUVXMWNsVDYrd2ZUZ2E4THVQazhEbThyNEM4Ykk4L2pjeTd5OVVuNGU4WEx0WDBOZHFvbngxeXQ2MmRDYTUzeVJqMnNobHRyeVBpWTVHTTd1bzBEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUo2V3ZWMlcxSmdLUCtQckYzZmVCSVVvaHZjVlRJWWhuQnY4RzhERXdWMkdsU0gxSlMzUHl1UU5VVkpxVW1yNThsR3NVUUs2djlvbFBhZDEveHFzNGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njc1NTEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3dnBhRjhxNmJiVVQwYk5xVGZmYWs5N0ExMTVhN2ZKSnJWeXVKMFJVK3ZYZ3JEQzdmdTJHeG52bUlJMHhibHpHTVpNSyt1WVBoRG83YmhKeE9lL0ZEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
