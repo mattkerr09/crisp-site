@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1028",
-  "notes": "Crisp now tells you when it is somewhere it cannot update itself \u2014 including a copy macOS is holding in quarantine \u2014 instead of showing a healthy version number and quietly never updating. And if you keep your apps on an external drive, it no longer warns you by mistake.",
-  "pub_date": "2026-08-25T00:42:01Z",
+  "version": "1.0.1031",
+  "notes": "Before you start a Max restore, Crisp now tells you how long it will actually take \u2014 for your whole timeline, not one clip. Max rebuilds every frame, so a two-minute cut is closer to two days than two minutes, and now you find that out before you press the button instead of an hour later.",
+  "pub_date": "2026-08-25T01:59:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN4QXpLTFlTRWJ3NjZxc2F6Yk0rUmZhTkpQeEpiUFViWml6eUlHcXpjWHRZT2NScHdNc0xSK3FCQjIwOURES0R5Z2N0TGJMRHE0aUtXWHFUOVRpY2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjE3Mzc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIejU3VnRrUDNFM3FqNVNQMEVOR0ovY0pVaUhOSFRmbktLZFNMbk8vakJaOHVpOU83Z2t1ckFsYk41TjJlMjluemovWE1zNWJYOEc4OWNVQ253N0dDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhkVU5lZjgySHBteUpQT0JGOVFEbDBiSkRldjVqbFpMU1BGNG1yNk1iOTBhSDdqYVc0ejBHY1Ezb21jNGZYQlBRRzRaT25ZQll2eHltOEl0OHFiVndBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjIyMjU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negptazhmZnVkUTZRMTZiQWwzenpnRXVqdXhQNnprUDVFVkdDdG4zTWJTM28vQ1JQZ1JNZlJvdENlcElNeXJIa1p0ekRwdFJGZndJcHgzSFM3aURxditDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
