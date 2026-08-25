@@ -281,7 +281,15 @@ p em, li em{color:#c3cad6;}
      21   tasks the server dispatches (audio border compress convert crop fade frame gif grade
           loop montage overlay reframe reverse rotate speed splitscreen stabilize timeline trim
           upscale)
-     16   input formats — 9 video (_VIDEO_EXTS) + 7 image (IMAGE_EXTS)
+     16   input formats — 8 video + 8 image DISTINCT FORMATS, from 19 extensions in the
+            open dialog's filter (app.js: the 'Video & Photo' extensions list). mpg/mpeg are one
+            format, as are jpg/jpeg and tif/tiff, which is why 19 extensions is 16 formats.
+            ⚠️ THE OLD BREAKDOWN HERE SAID "9 video (_VIDEO_EXTS) + 7 image (IMAGE_EXTS)". It
+            still summed to 16 and the headline number was never wrong, but the COMPONENTS had
+            gone stale: IMAGE_EXTS gained heic, heif and avif, so it is 10 extensions now, not 7.
+            The risk was not the number — it was that anyone re-deriving it from this breakdown
+            would "correct" a correct figure. HEIC is the default iPhone photo format and is
+            counted here; if this row is ever rewritten, that is worth naming out loud
      16x  presets.SCALE_PASSES tops out at 16
      0    the number of bytes that leave the machine, which is the whole product
    The accent finally does some work here: the page was near-black, grey, and one blue button,
