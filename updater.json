@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1040",
-  "notes": "When a new version is ready, Crisp now says so in the corner until you install it \u2014 one click, no hunting. It used to mention it once and then go quiet.",
-  "pub_date": "2026-08-25T05:34:07Z",
+  "version": "1.0.1043",
+  "notes": "Select several clips and give them all the same look, speed or mute in one go \u2014 and when they differ, Crisp says Mixed instead of pretending they match.",
+  "pub_date": "2026-08-25T06:54:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUltQjBTQWNBMXFkVm5kTGZWamFWQzIwb28yL0lWUi92RWpVQ3AxNVdpZk9MV0MwR1p5VTNIVGFvMGlWbjd6K0tudWpESXIvSlZzaUFHT2RQZXdNZFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjM0NjEyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnU1NTeklmVnNIVnNySnlKWlM0ZzRDRmx2aFlZOVpVWHRpVzRDYmh5dlA4cEljU1ZrZlg2cG5GNlgyRXZhNmpOL0dtSFV4TmxnUndrL0txWU1qSDNEUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJHZDBCZXZLbGtIdllMTENKaEhqSWpnMUc0TU1TQnFubk1nSFBERFRVdmNrd0psWjZDZHRVZUdXR1VPcTU3MkNHc1lJR255cTRkMVZvTkZOanpuOHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjM5NDAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQaTlZTFd3a0RJZjAwck1sZDJnZjhHV2l0Nlg0SjFrUGlteG9wZDUzTnJJYmY2a00zMFpGMUNZdFRmS3hOU0ZCZ3J6Y0J0alkrWlZOTitldHd1eDJDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
