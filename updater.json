@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1025",
-  "notes": "Mark the moments you care about. Press M to drop a marker at the playhead, then jump between them with , and . \u2014 no more scrubbing to find that one frame again. Markers belong to the clip, not the timeline, so they stay on the right frame when you reorder, trim, split or duplicate.",
-  "pub_date": "2026-08-24T23:48:19Z",
+  "version": "1.0.1028",
+  "notes": "Crisp now tells you when it is somewhere it cannot update itself \u2014 including a copy macOS is holding in quarantine \u2014 instead of showing a healthy version number and quietly never updating. And if you keep your apps on an external drive, it no longer warns you by mistake.",
+  "pub_date": "2026-08-25T00:42:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR6ZXRYUFRKNVlEdXZrM1cxSVljc2VXWnFsc204OHd4cW5ia1J6UHg0akhvemZpamUzckVNaThJb3ZhY3VuTktkZEJsaFhHOGhscHU1b1NiQ3V5MEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjE0ODAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVSm9LQkxLa3ZlWXVqRlQxRnJ4QklDbGJvYVJkUnl1bjBMZ0czemdXVDg1SGlJQTdUbEdmV2dpdWZVNWQ3dXludlZCTDA4d3QrRzNKTXFCVTVMZEJEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN4QXpLTFlTRWJ3NjZxc2F6Yk0rUmZhTkpQeEpiUFViWml6eUlHcXpjWHRZT2NScHdNc0xSK3FCQjIwOURES0R5Z2N0TGJMRHE0aUtXWHFUOVRpY2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjE3Mzc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIejU3VnRrUDNFM3FqNVNQMEVOR0ovY0pVaUhOSFRmbktLZFNMbk8vakJaOHVpOU83Z2t1ckFsYk41TjJlMjluemovWE1zNWJYOEc4OWNVQ253N0dDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
