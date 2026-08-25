@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1043",
-  "notes": "Select several clips and give them all the same look, speed or mute in one go \u2014 and when they differ, Crisp says Mixed instead of pretending they match.",
-  "pub_date": "2026-08-25T06:54:06Z",
+  "version": "1.0.1051",
+  "notes": "Trimming got sharper: the arrow keys now move exactly one frame instead of jumping about three, and [ and ] zoom the timeline in and out without reaching for the mouse.",
+  "pub_date": "2026-08-25T10:23:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJHZDBCZXZLbGtIdllMTENKaEhqSWpnMUc0TU1TQnFubk1nSFBERFRVdmNrd0psWjZDZHRVZUdXR1VPcTU3MkNHc1lJR255cTRkMVZvTkZOanpuOHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjM5NDAyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQaTlZTFd3a0RJZjAwck1sZDJnZjhHV2l0Nlg0SjFrUGlteG9wZDUzTnJJYmY2a00zMFpGMUNZdFRmS3hOU0ZCZ3J6Y0J0alkrWlZOTitldHd1eDJDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdTTVpRa2tKL29kSWFXcmpuRDFkdE9PYXJiTXZJVFc2akFoNG1oRnRnMHdJV1NXOWVmalZEOTBIRDZSc2xHMTRqeVdCSVI0eFR3dkZycGR6TUU1eHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjUxOTcwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqOVB2NGloeUtUQm4yU1pUdTVONGN1TTQzVU52bEc1NkpMa2s1cVhwYjNKaWI3VDV1a2JjTStmRHhIdWV2U1hvMXA4bUpETmNscWZXeVdWUTBmbjVCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
