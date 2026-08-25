@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1066",
-  "notes": "Press Shift-Z, or click Fit beside the timeline zoom, and the whole cut drops into view at once. On a long timeline that used to mean dragging the zoom slider until it looked about right. If the cut is too long to fit even at the widest setting, Crisp zooms out as far as it goes and tells you so, rather than leaving you wondering whether the button worked.",
-  "pub_date": "2026-08-25T20:57:54Z",
+  "version": "1.0.1068",
+  "notes": "The playhead now sticks to your cuts and markers when you drag it, so landing exactly on an edit point no longer takes a steady hand. It feels the same however far you are zoomed in. Hold Option while you drag to scrub freely \u2014 handy when the frame you want sits just inside a cut.",
+  "pub_date": "2026-08-25T23:27:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJicGJlWnRvMWZBY3E4SXJrUUZSSFh6ZnN2SE5STGR5K1prcVg1STBUdnhHOTJwVHZpMm5kcVQrU1UzSlJPZXFETFlHRTV0N3hWTXBPNkxOOStoNGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjkxNDI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negowbVJmbW5idWh3T2kwLzYwUlUvYS9kcXczVXdpK0tOL2E1ZmU5ZkV6WlZZSllEUHQ2dGdoc2M4OFBZZ1hDanYzYUZ2c2JqeXcxOXkxMGJ1cW1RMjlBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNIaVBEeVJRcmpjT00vQms1MkVKekFyVXR1d2kvZ1F6aDQrNStxdmorOG9TQ2k3MUhMbXhjMnlremkzMDRSeVh1eHpTVWtIYXhYNThTRnVqWHBaVFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzAwMzE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZOStZY3J3ajZONEhlNkIwTHZPWWYzWHlpOThKM2NjNHQwd2Q1Tmp2akE3OExYTzdkVzRSMlJDbDNydktmallsZjZET01ING1wcjM0UkozWFZ0bmpBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
