@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1072",
-  "notes": "The timeline zooms much further out \u2014 a two-hour cut now fits in the window, where anything past about four minutes used to hit the end of the slider. Clips also get their own volume now, from a quarter up to four times, alongside mute: footage recorded at different levels no longer forces an all-or-nothing choice.",
-  "pub_date": "2026-08-26T04:20:34Z",
+  "version": "1.0.1074",
+  "notes": "Licence keys bought through the current checkout now activate. Keys from the earlier store keep working exactly as before.",
+  "pub_date": "2026-08-26T06:39:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpCQ1hPdmhrcHpRMUV0dW1MK29YZ2lSNDJESDZVOHZnaW1RQzYrTU9GbkEzcGc5dklndnJBczFKVHV0M3RWTXFoQWgyazVwLzZhT1JOUXVpQTBPVFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzE3ODg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpneUJ6MkdCSjEyV09BZTk0OEFvVWk1YThQNzdIQWQyREpLcHptTU8wYVNWMUZEUEc4Nk83V0VpTVhhNFRuYlJ1WDNteHNBQTEyYnllOHZ2Z3ZQMVlCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9qTjRYVXJJOG1qQmg2S1pqNTM5YU5WbTRiQTdZR251NGovS2ZYeUlIVXIyRklGWnloRm8rUlRZeE5kUjN2Z2Z3QXdzRFBZNEc1VkRrMjlrSTFBbFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzI1MjM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprMHJZOW1yVk5xN0FzK01WY1VPekI0RFRNRGFGSEd0NU9nR25QYUxENWsrYWVSblN4Ymd1TmtsMHlmTXYzZEx5RC8vSVJCczJpTFNJTFRvN2JndjZDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
