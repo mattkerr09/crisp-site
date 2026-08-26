@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1068",
-  "notes": "The playhead now sticks to your cuts and markers when you drag it, so landing exactly on an edit point no longer takes a steady hand. It feels the same however far you are zoomed in. Hold Option while you drag to scrub freely \u2014 handy when the frame you want sits just inside a cut.",
-  "pub_date": "2026-08-25T23:27:49Z",
+  "version": "1.0.1070",
+  "notes": "Undo and redo now tell you what they are about to change \u2014 \"Undo 2 clips removed\" rather than just \"Undo\". The wording comes from comparing the two versions of your project, so it always matches what actually happens.",
+  "pub_date": "2026-08-26T00:32:27Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNIaVBEeVJRcmpjT00vQms1MkVKekFyVXR1d2kvZ1F6aDQrNStxdmorOG9TQ2k3MUhMbXhjMnlremkzMDRSeVh1eHpTVWtIYXhYNThTRnVqWHBaVFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzAwMzE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZOStZY3J3ajZONEhlNkIwTHZPWWYzWHlpOThKM2NjNHQwd2Q1Tmp2akE3OExYTzdkVzRSMlJDbDNydktmallsZjZET01ING1wcjM0UkozWFZ0bmpBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1BSVJWVWI0Y2pyY2Q0ZXkvdW95ajc4bEhScW42NDR3SVNJWjVRUGdtbCtnT0EreDBUS1VTNjNQbVB0d3FEcHRyS3dBTXVyWFFpc2FuSTNnNXkyN3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzA0MjA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjQnNXaFE0bzBCVk9TMHBUenUrd3JvbEUxaXM5TStxT0RadCthejdUY0NIa3A1NVJUdEVNZ05lTmhDbGc1RmlGcm5KSlcxUDdHeVUvQjdXZjhJUFdDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
