@@ -117,6 +117,24 @@ CONDITIONAL = {
                     "only thing that sends it. Nothing leaves the page on load. First-party "
                     "on purpose: a marketing SDK here would contradict the hero",
                     "addEventListener('submit'"),
+
+    # The on-page assistant. Added deliberately, using this gate's own mechanism
+    # rather than by widening ALLOWED_ON_LOAD — the script is FIRST-PARTY
+    # (/assistant.js), so nothing third-party loads for a visitor who never opens
+    # it. The reason has to survive being read aloud to a customer, so here it is
+    # in those words: "It contacts our server only when you type a question and
+    # press send. Nothing is sent when the page loads."
+    #
+    # The marker is the submit handler the fetch lives inside. Move the fetch out
+    # of that handler and this exemption stops applying, which is the point of
+    # requiring one.
+    "kerr-lead-agent.kerrco.workers.dev":
+                   ("assistant.js",
+                    "the assistant's question, fired only inside a submit handler — a "
+                    "visitor types a question and presses send, and that press is the only "
+                    "thing that leaves the page. Nothing on load, nothing for a visitor "
+                    "who never opens it. The widget itself is served first-party",
+                    'form.addEventListener("submit"'),
 }
 
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}
