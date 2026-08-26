@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1074",
-  "notes": "Licence keys bought through the current checkout now activate. Keys from the earlier store keep working exactly as before.",
-  "pub_date": "2026-08-26T06:39:53Z",
+  "version": "1.0.1076",
+  "notes": "Select a few clips and export just those \u2014 the rest of your timeline stays where it is. The button appears next to Export whenever more than one clip is selected, and plain Export still renders the whole cut.",
+  "pub_date": "2026-08-26T21:56:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9qTjRYVXJJOG1qQmg2S1pqNTM5YU5WbTRiQTdZR251NGovS2ZYeUlIVXIyRklGWnloRm8rUlRZeE5kUjN2Z2Z3QXdzRFBZNEc1VkRrMjlrSTFBbFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzI1MjM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprMHJZOW1yVk5xN0FzK01WY1VPekI0RFRNRGFGSEd0NU9nR25QYUxENWsrYWVSblN4Ymd1TmtsMHlmTXYzZEx5RC8vSVJCczJpTFNJTFRvN2JndjZDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlvWThzcTJwUmUzNkZBc1lZRnpZWHI0WWxZQWlKOCtaeTdJVWFwc2JFdzNMRW5ucmlwMGxRUGR4L3h4Z2tpRmU3ZEozQUhIM2ZMVUdkSEQwNW52WlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzgxMzMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiY3pxVnRjZG9KUFFsV2duVllXSTFDZTgvUllsMzBMSjY3YnBxd21wbWxtdUpvVXVFbGJVTUsyYzZLTDJIRHh4VnRWdExBUUpTTENxaTJCelFEME1EUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
