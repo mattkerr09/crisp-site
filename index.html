@@ -1083,24 +1083,30 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          scrolled fully into view for eight seconds: paused true, currentTime 0, readyState 0 —
          matt's "it's the same still" was a precise description of the page, not of the footage
          (the file itself averages 25.2 mean abs diff second to second; it was never static).
-         Muted because it carries no audio track anyway, so nothing is lost and autoplay is
-         allowed; controls stay so it can still be scrubbed. -->
-    <video src="/demo-montage.mp4" width="1280" height="960" controls playsinline muted loop
+         ⚠️ THE REASON FOR `muted` CHANGED WITH THE FOOTAGE. It used to be "there is no audio
+         track anyway, so nothing is lost". This reel is cut from a 1956 musical and DOES carry
+         one, so muted is now a real choice: it is what browsers require before they will let a
+         video autoplay, and an unannounced song on page load is worse than silence. `controls`
+         stay, so anyone who wants the song can turn it on. -->
+    <video src="/demo-montage.mp4" width="640" height="480" controls playsinline muted loop
       preload="none" data-play-in-view
       poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
-      aria-label="A 27-second highlight reel Crisp cut automatically from a 174-second 1940 film."></video>
+      aria-label="A 23-second highlight reel Crisp cut automatically from a 557-second 1956 film."></video>
 
 
 
     <div class="side-fig">
       <div class="sf-text">
       <p class="ba-note"><strong>This is the unedited output.</strong> A different film from the
-        one at the top of the page &mdash; <em>Farewell to Treasure Island</em> (1940), also from
-        the Prelinger Archives, 174 seconds of it &mdash; asked for a 30-second
-        highlights reel. Crisp picked 11 moments in 9.5 seconds of analysis: the fair from the
-        water, both bridges, the tower, the arch, the crowds on the concourse, the pagoda garden,
-        the Gayway at night. Nothing was chosen by hand and nothing was trimmed afterwards. It is
-        upscaled 2&times; for this page, because the source is a 640&times;480 scan.</p>
+        one at the top of the page &mdash; <em>Design for Dreaming</em> (1956), also from the
+        Prelinger Archives, 557 seconds of it &mdash; asked for a 24-second highlights reel.
+        Crisp picked 11 moments: the sleeper, the city at night, the crowd around the cars, the
+        convertible on its turntable, the kitchen, the singer, the dancers, the sports car.
+        Nothing was chosen by hand and nothing was trimmed afterwards.</p>
+      <p class="ba-note">The film opens on a General Motors title card. The reel does not &mdash;
+        it starts on the sleeper, a few seconds later. That is the caption demotion described
+        below doing its job on the first thing it saw, and it is the clearest example of it we
+        have. The source is a 640&times;480 scan and this reel is shown at that size.</p>
       <p class="ba-note">It reads the footage rather than the clock. Motion, audio, where the
       attention falls in frame, and whether the shot is in focus all feed the choice, and a golf
       swing, a game capture and a stadium sport each get a different weighting. Captions and
@@ -1479,8 +1485,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap foot">
     <div>© 2026 Crisp · Built by one person, in the open.</div>
     <div class="links">
-      <a href="/how-to/upscale-video-on-mac/">Guides</a>
-      <a href="/vs/topaz-alternative-mac/">Comparisons</a>
+      <!-- ⚠️ THESE POINTED AT ONE PAGE EACH, NOT AT THE SECTION. "Guides" went to the upscaling
+           guide and "Comparisons" to the Topaz page, so 45 other guides and 23 other comparisons
+           had no route in from anywhere on the site — they existed only for search traffic, and
+           /how-to/ and /vs/ themselves returned 404. They point at the section indexes now. -->
+      <a href="/how-to/">Guides</a>
+      <a href="/vs/">Comparisons</a>
+      <a href="/learn/">Learn</a>
+      <a href="/for/">By use</a>
+      <a href="/best/">Best of</a>
       <a href="https://github.com/mattkerr09/crisp-site/releases">Releases</a>
       <!-- Terms, Privacy and Refunds are also stated beside the price, which is where they
            matter most. Repeating them here is for the visitor who arrives cold from an ad and

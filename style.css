@@ -258,3 +258,15 @@ article > *{position:relative;z-index:1;}
     }
   }
 }
+
+/* Section hub index lists (/how-to/, /vs/, /for/, /best/, /legal/).
+   Two columns once there is room, because a 46-item single column is a scroll rather than a
+   list you can scan. The note after a link is optional and stays on the same line so the
+   scannable thing — the link text — keeps a straight left edge. */
+.hub-list{list-style:none;padding:0;margin:.6rem 0 1.8rem;
+  display:grid;grid-template-columns:1fr;gap:.44rem 2rem;}
+@media (min-width:760px){.hub-list{grid-template-columns:1fr 1fr;}}
+.hub-list li{margin:0;line-height:1.45;}
+.hub-list a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);}
+.hub-list a:hover{border-bottom-color:currentColor;}
+.hub-note{display:block;font-size:.85rem;color:var(--grey-dim);}
