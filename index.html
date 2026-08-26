@@ -1397,11 +1397,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
              price. It never shipped. -->
         <p class="bnpl-note" data-crisp-bnpl>Or four payments of $32.25 with Klarna or Afterpay, two weeks apart &mdash; the last one six weeks after the first, at no extra cost from us. Then it stops, and it is yours.</p>
 
-      <p class="src" data-checkout-pending>Checkout is not open yet. The $129 purchase goes live
-        the moment the Dodo checkout link is dropped into <code>CRISP_CHECKOUT_URL</code> at the
-        foot of this page's source — until then nobody can be charged, and Crisp stays free to
-        use with the watermark. If you already hold a key, it activates today.</p>
-
       <p class="src"><a href="/legal/terms/">Terms</a> ·
         <a href="/legal/privacy/">Privacy</a> ·
         <a href="/legal/refunds/">30-day refunds</a></p>
@@ -1735,7 +1730,29 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
     for (var b = 0; b < bnpl.length; b++) bnpl[b].hidden = true;
   }
 
-  if (!url) return;   // leave the pending state exactly as authored — it is the truthful one
+  /* ⚠️ THE PENDING NOTICE IS INJECTED, NOT STATIC — THE EXACT OPPOSITE OF THE INSTALMENT COPY
+     ABOVE, AND FOR THE OPPOSITE REASON. The BNPL sentence is TRUE while checkout is live, so it
+     belongs in the served HTML where crawlers can read it. This one is FALSE while checkout is
+     live. It sat in the markup after CRISP_CHECKOUT_URL was filled in, so every crawler and answer
+     engine that fetched this page read "Checkout is not open yet ... nobody can be charged" beside
+     two working Buy buttons — and the JS below hid it, which fixed what a VISITOR sees and nothing
+     about what a MACHINE reads. Measured on the live page at the time: the note was
+     display:none/hidden and both buttons carried the real Dodo href, so no human was being turned
+     away; the cost was entirely in the served source. A sentence that is false in the shipping
+     state must not ship in the markup. */
+  if (!url) {
+    var anchor = document.querySelector('[data-crisp-checkout]');
+    var host = anchor && anchor.closest ? anchor.closest('p') : null;
+    if (host && host.parentNode) {
+      var note = document.createElement('p');
+      note.className = 'src';
+      note.setAttribute('data-checkout-pending', '');
+      note.textContent = 'Checkout is not open yet — nobody can be charged, and Crisp stays free '
+        + 'to use with the watermark. If you already hold a key, it activates today.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+    return;   // the pending state is the truthful one here
+  }
   /* ── CRISP_BNPL_LIVE ──────────────────────────────────────────────────────
      Set to true ONLY once Klarna or Afterpay has been seen at Dodo's payment
      step for this product. Dodo documents Klarna (USD, min $50.01) and Afterpay
@@ -1755,8 +1772,10 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
     buys[i].setAttribute('href', url);
     buys[i].removeAttribute('aria-disabled');
   }
+  // Belt and braces: nothing authors this node in the live state any more, but an older cached
+  // copy of this page (or a future edit that reintroduces it) must not leave the claim standing.
   var notes = document.querySelectorAll('[data-checkout-pending]');
-  for (var j = 0; j < notes.length; j++) notes[j].hidden = true;
+  for (var j = 0; j < notes.length; j++) notes[j].remove();
 })();
 </script>
 
