@@ -580,11 +580,19 @@ td.n{color:var(--grey-dim);}
    the flag is still false. The [hidden] rule below restates the guard at winning specificity so
    a future edit that does add a display cannot silently unhide it. */
 .cost .bnpl-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.55;}
+.cost .bnpl-note strong{color:var(--white);font-weight:700;}
 .cost .bnpl-note[hidden]{display:none;}
 /* The tier card sits outside .cost and would otherwise inherit nothing. Same [hidden] restatement
    at winning specificity, for the same reason: a future edit that adds a `display` must not be
    able to reveal instalment copy the checkout cannot honour. */
-.tier .bnpl-note{font-size:.86rem;color:var(--grey);margin:.5rem 0 .9rem;line-height:1.5;}
+.tier .bnpl-note{font-size:.94rem;color:var(--grey);margin:.35rem 0 .9rem;line-height:1.5;}
+/* ⚠️ THE INSTALMENT FIGURE IS A PRICE, NOT A FOOTNOTE. It shipped at .86rem in --grey directly
+   under a 3rem/700 number, which is a 3.5x drop in size and a drop in contrast — near enough to
+   the price to pass a distance check (34px) and still read as small print, which is the thing
+   people skip. Distance was the wrong measurement; hierarchy is the one that decides whether it
+   is seen. The repeated price anchors the alternative to the number it is an alternative TO, so
+   the two are read as one offer rather than a price plus a disclaimer. */
+.tier .bnpl-note strong{color:var(--white);font-weight:700;}
 .tier .bnpl-note[hidden]{display:none;}
 @media(max-width:640px){
   .cost{padding:1.6rem 1.2rem 1.3rem;}
@@ -1267,7 +1275,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="tier pro rv d2">
         <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small></div>
-        <p class="bnpl-note" data-crisp-bnpl>Or four payments of $32.25 with Klarna or Afterpay, two weeks apart &mdash; the last one six weeks after the first, at no extra cost from us. Then it stops, and it is yours.</p>
+        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Watermark-free exports</li>
@@ -1395,7 +1403,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
              end to end — not a monthly plan. An earlier draft said "$32/month for 4
              months", which is a payment schedule no provider offers, printed beside a
              price. It never shipped. -->
-        <p class="bnpl-note" data-crisp-bnpl>Or four payments of $32.25 with Klarna or Afterpay, two weeks apart &mdash; the last one six weeks after the first, at no extra cost from us. Then it stops, and it is yours.</p>
+        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
         <a href="/legal/privacy/">Privacy</a> ·
