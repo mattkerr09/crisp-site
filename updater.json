@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1070",
-  "notes": "Undo and redo now tell you what they are about to change \u2014 \"Undo 2 clips removed\" rather than just \"Undo\". The wording comes from comparing the two versions of your project, so it always matches what actually happens.",
-  "pub_date": "2026-08-26T00:32:27Z",
+  "version": "1.0.1072",
+  "notes": "The timeline zooms much further out \u2014 a two-hour cut now fits in the window, where anything past about four minutes used to hit the end of the slider. Clips also get their own volume now, from a quarter up to four times, alongside mute: footage recorded at different levels no longer forces an all-or-nothing choice.",
+  "pub_date": "2026-08-26T04:20:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1BSVJWVWI0Y2pyY2Q0ZXkvdW95ajc4bEhScW42NDR3SVNJWjVRUGdtbCtnT0EreDBUS1VTNjNQbVB0d3FEcHRyS3dBTXVyWFFpc2FuSTNnNXkyN3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzA0MjA1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjQnNXaFE0bzBCVk9TMHBUenUrd3JvbEUxaXM5TStxT0RadCthejdUY0NIa3A1NVJUdEVNZ05lTmhDbGc1RmlGcm5KSlcxUDdHeVUvQjdXZjhJUFdDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpCQ1hPdmhrcHpRMUV0dW1MK29YZ2lSNDJESDZVOHZnaW1RQzYrTU9GbkEzcGc5dklndnJBczFKVHV0M3RWTXFoQWgyazVwLzZhT1JOUXVpQTBPVFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzE3ODg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpneUJ6MkdCSjEyV09BZTk0OEFvVWk1YThQNzdIQWQyREpLcHptTU8wYVNWMUZEUEc4Nk83V0VpTVhhNFRuYlJ1WDNteHNBQTEyYnllOHZ2Z3ZQMVlCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
