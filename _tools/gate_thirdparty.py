@@ -129,12 +129,13 @@ CONDITIONAL = {
     # of that handler and this exemption stops applying, which is the point of
     # requiring one.
     "kerr-lead-agent.kerrco.workers.dev":
-                   ("assistant.js",
-                    "the assistant's question, fired only inside a submit handler — a "
-                    "visitor types a question and presses send, and that press is the only "
-                    "thing that leaves the page. Nothing on load, nothing for a visitor "
-                    "who never opens it. The widget itself is served first-party",
-                    'form.addEventListener("submit"'),
+                   (("assistant.js", "founding.js"),
+                    "both fired only inside a handler a visitor triggers — the assistant's "
+                    "question on submit, the founding counter on a click asking how many "
+                    "places are left. Nothing on load, nothing at all for a visitor who "
+                    "opens neither. Both widgets are served first-party",
+                    {"assistant.js": 'form.addEventListener("submit"',
+                     "founding.js":  "countBtn.addEventListener('click'"}),
 }
 
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}
@@ -238,8 +239,16 @@ def main() -> int:
             if _spec is not None and f.name in _files:
                 # The marker must be PRESENT in this file, or the exemption does not apply.
                 # Without it, moving the same call out of its guard keeps the pass.
-                marker = CONDITIONAL[h][2]
-                if marker in f.read_text(encoding="utf-8", errors="replace"):
+                # ⚠️ A MARKER PER FILE, not per host. Two files can both hold a
+                # legitimate conditional call and guard it DIFFERENTLY — the
+                # assistant's fetch lives in a submit handler, the founding
+                # counter's in a click handler. One shared marker would have to
+                # be loose enough to match both, which is exactly the weakening
+                # this mechanism exists to prevent. A dict keeps each file's
+                # exemption tied to its own guard.
+                _m = CONDITIONAL[h][2]
+                marker = _m if isinstance(_m, str) else _m.get(f.name)
+                if marker and marker in f.read_text(encoding="utf-8", errors="replace"):
                     seen_conditional.add(h)
                     continue
             # Navigation targets — consulted ONLY for an inline-script hit, so a
