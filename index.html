@@ -1083,36 +1083,41 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          scrolled fully into view for eight seconds: paused true, currentTime 0, readyState 0 —
          matt's "it's the same still" was a precise description of the page, not of the footage
          (the file itself averages 25.2 mean abs diff second to second; it was never static).
-         ⚠️ THE REASON FOR `muted` CHANGED WITH THE FOOTAGE. It used to be "there is no audio
-         track anyway, so nothing is lost". This reel is cut from a 1956 musical and DOES carry
-         one, so muted is now a real choice: it is what browsers require before they will let a
-         video autoplay, and an unannounced song on page load is worse than silence. `controls`
-         stay, so anyone who wants the song can turn it on. -->
-    <video src="/demo-montage.mp4" width="640" height="480" controls playsinline muted loop
+         ⚠️ THE REASON FOR `muted` HAS CHANGED TWICE, SO IT IS WRITTEN DOWN. Originally "there
+         is no audio track anyway"; then, under a 1956 musical that DID carry one, a real choice
+         not to spring a song on the reader. The eight clips behind the current reel are silent
+         and it is encoded with no audio stream at all, so the first reason holds again — but
+         `muted` STAYS regardless, because it is what browsers require before they will let a
+         video autoplay, and the footage may change again. `controls` stay too. -->
+    <video src="/demo-montage.mp4" width="960" height="540" controls playsinline muted loop
       preload="none" data-play-in-view
       poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
-      aria-label="A 23-second highlight reel Crisp cut automatically from a 557-second 1956 film."></video>
+      aria-label="A 28-second highlight reel Crisp cut automatically from eight separate clips totalling 220 seconds."></video>
 
 
 
     <div class="side-fig">
       <div class="sf-text">
-      <p class="ba-note"><strong>This is the unedited output.</strong> A different film from the
-        one at the top of the page &mdash; <em>Design for Dreaming</em> (1956), also from the
-        Prelinger Archives, 557 seconds of it &mdash; asked for a 24-second highlights reel.
-        Crisp picked 11 moments: the sleeper, the city at night, the crowd around the cars, the
-        convertible on its turntable, the kitchen, the singer, the dancers, the sports car.
+      <p class="ba-note"><strong>This is the unedited output.</strong> Not one long film this
+        time but eight unrelated clips, the way a holiday actually arrives off the camera &mdash;
+        drone footage over Manhattan, New Haven and Park City, a Wisconsin waterfall, an Icelandic
+        beach and three Oregon rivers, 220 seconds in all &mdash; handed over at once and asked
+        for a 28-second reel. Crisp watched all eight, chose eight moments and cut them together.
         Nothing was chosen by hand and nothing was trimmed afterwards.</p>
-      <p class="ba-note">The film opens on a General Motors title card. The reel does not &mdash;
-        it starts on the sleeper, a few seconds later. That is the caption demotion described
-        below doing its job on the first thing it saw, and it is the clearest example of it we
-        have. The source is a 640&times;480 scan and this reel is shown at that size.</p>
+      <p class="ba-note">Every shot in it runs 3.5 seconds. That is not a coincidence and not a
+        setting we chose: it is the longest single shot Crisp will hold at this target length, so
+        the reel changes picture eight times in 28 seconds. The clips are public footage from
+        Wikimedia Commons rather than anything we shot &mdash; aerials by Gothamist, Gabriel M. M.
+        Mendes, Everwest and WLUK-TV FOX 11 and a beach by Alexander Grebenkov, all CC&nbsp;BY,
+        plus three public-domain river clips from BLM Oregon &amp; Washington. They arrive as 1080p
+        and 4K; the reel is served at 960&times;540 to keep this page light.</p>
       <p class="ba-note">It reads the footage rather than the clock. Motion, audio, where the
       attention falls in frame, and whether the shot is in focus all feed the choice, and a golf
       swing, a game capture and a stadium sport each get a different weighting. Captions and
       fades are <em>demoted</em>, not banned: the scorer measures how much of a frame is
-      recognised text and marks it down, which is why an early version of this reel opened on
-      four seconds of title card and this one does not. It is not a guarantee, and we would
+      recognised text and marks it down, which is why an earlier reel cut from a 1956 film stopped
+      opening on four seconds of title card once that landed. These eight clips carry no sound at
+      all, so this particular reel was chosen on picture alone. It is not a guarantee, and we would
       rather say so than let you find out &mdash; on a 1936 newsreel we tried afterwards, the
       title card is ornate engraved lettering that barely registers as text, and it made the
       reel. Plain intertitles it handles; decorative ones it can miss.</p>
