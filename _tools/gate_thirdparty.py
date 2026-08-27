@@ -261,7 +261,19 @@ def main() -> int:
         print("to a customer.")
         return 1
 
-    print("\nOK: no third-party host loads for an ordinary visitor.")
+    # ⚠️ SAY WHAT IS TRUE, NOT WHAT WAS TRUE BEFORE THE ALLOWLIST EXISTED. This printed
+    # "no third-party host loads for an ordinary visitor" — the sentence the header comment
+    # above records as the ORIGINAL defect, from back when the gate could not see Meta's pixel.
+    # The pixel is visible and deliberate now, but it still loads on every visit, so the old
+    # sentence is exactly as false as it was then; only the reason changed. Anyone auditing
+    # privacy runs this gate and reads its last line, and that line has to survive being read
+    # aloud next to /legal/privacy/. Name the hosts instead of claiming there are none.
+    third = sorted(h for h in ALLOWED_ON_LOAD if h != "crispvideo.app")
+    if third:
+        print("\nOK: nothing third-party loads for an ordinary visitor except the hosts "
+              "allowed above — " + ", ".join(third) + " — each with a stated reason.")
+    else:
+        print("\nOK: no third-party host loads for an ordinary visitor.")
     return 0
 
 
