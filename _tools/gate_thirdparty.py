@@ -111,7 +111,7 @@ CONDITIONAL = {
                     "is what /legal/privacy/ discloses",
                     "if(ref)"),
     "kerr-subscribe.kerrco.workers.dev":
-                   ("index.html",
+                   (("index.html", "notify.js"),
                     "the subscribe form's POST, fired only inside a submit handler — a "
                     "visitor types an address and presses a button, and that press is the "
                     "only thing that sends it. Nothing leaves the page on load. First-party "
@@ -227,7 +227,15 @@ def main() -> int:
         for h, why in sorted(hosts_in(f)):
             if h in ALLOWED_ON_LOAD:
                 continue
-            if h in CONDITIONAL and f.name == CONDITIONAL[h][0]:
+            # A host may legitimately appear in MORE THAN ONE file — the subscribe
+            # POST is in index.html and in notify.js, both inside submit handlers.
+            # Accepting a tuple keeps the exemption per-FILE rather than
+            # per-host: each named file must still carry the marker, so adding a
+            # second file does not weaken the first.
+            _spec = CONDITIONAL.get(h)
+            _files = () if _spec is None else (
+                (_spec[0],) if isinstance(_spec[0], str) else tuple(_spec[0]))
+            if _spec is not None and f.name in _files:
                 # The marker must be PRESENT in this file, or the exemption does not apply.
                 # Without it, moving the same call out of its guard keeps the pass.
                 marker = CONDITIONAL[h][2]
@@ -243,7 +251,9 @@ def main() -> int:
 
     print(f"  scanned {len(files)} file(s); allowed on load: {', '.join(sorted(ALLOWED_ON_LOAD))}")
     for h in sorted(seen_conditional):
-        where, why = CONDITIONAL[h][0], CONDITIONAL[h][1]
+        _w = CONDITIONAL[h][0]
+        where = _w if isinstance(_w, str) else " and ".join(_w)
+        why = CONDITIONAL[h][1]
         print(f"  conditional: {h} (only in {where}) — {why}")
     # Printed on every run, never allowed silently: an exemption nobody sees
     # again becomes the next incident.
