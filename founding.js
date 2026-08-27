@@ -49,34 +49,47 @@
     '<style>',
     ':host{all:initial;display:block}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
-    '.bar{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;',
-    '  padding:.6rem 2.6rem .6rem 1rem;background:linear-gradient(96deg,#F0B429 0%,#E8A317 100%);',
-    '  color:#1A1206;font-size:.9rem;line-height:1.35;position:relative;',
-    '  box-shadow:0 1px 0 rgba(0,0,0,.18),0 6px 22px -8px rgba(0,0,0,.4)}',
-    '.tag{font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:.76rem;',
-    '  background:#1A1206;color:#F0B429;padding:.22rem .5rem;border-radius:5px;white-space:nowrap}',
-    '.txt{font-weight:600}',
-    '.was{text-decoration:line-through;opacity:.55;margin-right:.25rem}',
-    '.now{font-weight:800}',
-    '.left{font-weight:700;opacity:.85;white-space:nowrap}',
-    '.code{display:inline-flex;align-items:center;gap:.4rem;background:rgba(26,18,6,.1);',
-    '  border:1px dashed rgba(26,18,6,.45);border-radius:7px;padding:.2rem .45rem;font-weight:800;',
-    '  letter-spacing:.06em;font-size:.84rem}',
-    'button.copy{border:0;background:#1A1206;color:#F0B429;border-radius:6px;padding:.3rem .6rem;',
-    '  font-size:.76rem;font-weight:700;cursor:pointer;min-height:32px}',
-    'button.copy:hover{background:#000}',
-    '.x{position:absolute;right:.35rem;top:50%;transform:translateY(-50%);border:0;background:none;',
-    '  cursor:pointer;color:#1A1206;opacity:.6;font-size:1.15rem;line-height:1;',
-    '  min-width:44px;min-height:44px}',
-    '.x:hover{opacity:1}',
-    '@media(max-width:640px){.bar{font-size:.83rem;padding:.55rem 2.4rem .55rem .7rem;gap:.5rem}',
-    '  .left{display:none}}',
+    /* ⚠️ SLIM AND DARK, NOT A MUSTARD SLAB. The first version was a full-width
+       amber ground 60px tall and Matthew's word for it was "big ass musterd
+       color banner", which is fair — a solid saturated fill across the whole
+       viewport competes with the page instead of sitting above it.
+       This is ~38px, near-black, with amber used as an ACCENT on the tag and the
+       new price only. Same information, a tenth of the visual weight. An
+       announcement bar should be noticed once and then ignored, and a loud one
+       gets dismissed for being loud rather than considered. */
+    '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:nowrap;',
+    '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
+    '  font-size:.795rem;line-height:1.3;position:relative;overflow:hidden;',
+    '  border-bottom:1px solid rgba(240,180,41,.22)}',
+    '.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;',
+    '  background:linear-gradient(90deg,transparent,rgba(240,180,41,.5),transparent)}',
+    '.tag{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.66rem;',
+    '  color:#F0B429;white-space:nowrap;flex:none}',
+    '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
+    '.txt{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
+    '.was{text-decoration:line-through;opacity:.42;margin-right:.28rem}',
+    '.now{font-weight:700;color:#F0B429}',
+    '.left{opacity:.62;white-space:nowrap;flex:none}',
+    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
+    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
+    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
+    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
+    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
+    'button.copy:hover{background:rgba(240,180,41,.28)}',
+    '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
+    '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
+    '.x:hover{opacity:.9}',
+    '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
+    '  .left,.dot{display:none}}',
+    '@media(max-width:420px){.was{display:none}}',
     '</style>',
     '<div class="bar" role="region" aria-label="Founding offer">',
-    '  <span class="tag">Founding offer</span>',
+    '  <span class="tag">Founding</span>',
+    '  <span class="dot"></span>',
     '  <span class="txt">50% off',
         (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
     '  </span>',
+    '  <span class="dot"></span>',
     '  <span class="left" data-left></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
@@ -96,17 +109,12 @@
     try { localStorage.setItem(KEY, "1"); } catch (e) {}
   });
 
-  /* ⚠️ NO LIVE COUNT ON CRISP, DELIBERATELY — and this is the one difference
-     between this copy and the shared widget.
-     The shared version fetches the remaining count from kerr-lead-agent so the
-     number cannot be stale or invented. Crisp's own pre-push gate refuses any
-     third-party host in loaded JS, and it is right to: this product is sold on
-     "it never phones home", and a page that opens a connection to our
-     infrastructure to render a scarcity counter is exactly the thing that claim
-     is about. The gate asked for a reason that survives being read aloud to a
-     customer, and "so the discount counter looks urgent" is not one.
-     So the bar shows the offer, the price pair and the code — the whole
-     persuasive core — and simply omits the count here. */
+  /* ⚠️ NO LIVE COUNT ON CRISP, DELIBERATELY. The shared widget reads the
+     remaining count from kerr-lead-agent. Crisp's pre-push gate refuses any
+     third-party host in loaded JS and is right to: this product is sold on "it
+     never phones home", and opening a connection to render a scarcity counter is
+     exactly what that claim is about. "So the counter looks urgent" is not a
+     reason that survives being read aloud to a customer. */
 
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid
