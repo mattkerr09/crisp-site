@@ -23,13 +23,6 @@
   if (!mount || window.__kcWinNotify) return;
   window.__kcWinNotify = true;
 
-  /* ⚠️ FIRST-PARTY ON PURPOSE. This file is served from crispvideo.app, not from
-   * the worker, because this site's pre-push gate refuses any third-party
-   * <script src> that loads for every visitor — and it is right to. The hero
-   * says "Nothing uploaded"; a script fetched from another host on page load
-   * contradicts the product on the axis it is sold on, whoever owns the host.
-   * The only third-party contact is the POST below, inside the submit handler.
-   * Keep in sync with ~/ops/subscribe-worker/widget/notify.js.txt. */
   var API = "https://kerr-subscribe.kerrco.workers.dev";
   var host = location.hostname.replace(/^www\./, "");
   var root = mount.attachShadow ? mount.attachShadow({ mode: "open" }) : mount;

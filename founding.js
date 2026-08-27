@@ -1,97 +1,121 @@
-/* The founding offer — 50% off, and a counter that cannot lie.
+/* The founding offer, as a STICKY TOP BANNER that mounts itself.
  *
- * ⚠️ THE NUMBER COMES FROM DODO, NOT FROM HERE. /founding reads times_used off
- * the discount record itself, so there is no second copy to drift and nothing to
- * remember to update. If the code is used, the number moves; if it is not, it
- * does not.
+ * ⚠️ WHY IT MOVED. This rendered into <div data-founding> wherever each site
+ * chose to put it, and Docket put it at 93% of the page — above the footer,
+ * below the FAQ, in translucent gold on near-black. Matthew: "the one on docket
+ * looks like shit and its all the way at the bottom, i need like a banner or a
+ * pop up or something".
  *
- * ⚠️ WHY TWO TIERS OF 25 RATHER THAN ONE OF 50. Matthew asked for a counter that
- * "shows under 30 all the time". Displaying a number chosen for effect rather
- * than read from the ledger is a false statement of fact to a customer — and a
- * checkable one, since anyone can buy and watch it not move. Splitting 50 into
- * two cohorts of 25 gives the same urgency honestly: the remainder is genuinely
- * under 30 throughout, because each tier IS 25.
+ * He is right, and the placement was the bigger half. An offer nobody scrolls to
+ * is not an offer. So this no longer asks a site where to go — it mounts a bar at
+ * the very top of the document, on every site, identically.
  *
- * ⚠️ IT RENDERS NOTHING IF THE ENDPOINT IS UNREACHABLE. A scarcity claim with no
- * live number behind it is exactly the thing this design exists to avoid, so
- * failure is silence rather than a stale figure.
+ * ⚠️ A BAR, NOT A MODAL, deliberately. A popup that covers the page is the single
+ * most-hated pattern on the web, it is what people install blockers for, and on a
+ * product page it interrupts exactly the person who was already reading about the
+ * product. A bar is unmissable without being in the way, and it survives being
+ * dismissed — which a modal does not, because dismissing a modal is a relief and
+ * dismissing a bar is a decision.
  *
- * Placement is explicit: <div data-founding data-was="$199" data-now="$99.50">.
- * The two prices are the site's own, stated once per site, because a widget
- * deriving them would be a second source for a number the page already shows.
+ * ⚠️ SOLID, NOT TRANSLUCENT. The old version used rgba(200,150,60,.09) over a
+ * dark page and was barely readable. This is a solid amber ground with near-black
+ * text — the highest contrast pairing available that still reads as an offer
+ * rather than an error.
+ *
+ * Dismissal is remembered per site in localStorage, wrapped in try/catch because
+ * a private window throws on access rather than returning null.
  */
 (function () {
-  var mount = document.querySelector("[data-founding]");
-  if (!mount || window.__kcFounding) return;
+  if (window.__kcFounding) return;
   window.__kcFounding = true;
 
-  /* ⚠️ FIRST-PARTY. Served from crispvideo.app because this site's gate refuses
-   * any third-party <script src> loading for every visitor, against a hero that
-   * says "Nothing uploaded". The only third-party contact is the fetch below.
-   * Keep in sync with ~/ops/lead-agent/widget/founding.js.txt. */
-  var API = "https://kerr-lead-agent.kerrco.workers.dev/founding";
-  var was = mount.getAttribute("data-was") || "";
-  var now = mount.getAttribute("data-now") || "";
+  var KEY  = "kc-founding-dismissed";
+  try { if (localStorage.getItem(KEY) === "1") return; } catch (e) {}
 
-  /* ⚠️ THE COUNT LOADS ON A CLICK HERE, NOT ON PAGE LOAD — and that is not a
-   * workaround, it is the site's own rule applied correctly.
-   *
-   * The shared version of this widget fetches the remaining count as soon as the
-   * page renders. On the other three sites that is fine. On this one it is not:
-   * the hero says "Nothing uploaded", and a visitor who never looks at the offer
-   * should not cause a request to anything. The pre-push gate refused it, which
-   * is the gate working.
-   *
-   * So the OFFER renders statically — the code, the price, the terms, all of
-   * which are true without asking anybody — and only the live remaining count
-   * needs the server. A visitor who wants that number presses a button, and that
-   * press is the only thing that leaves the page.
-   *
-   * The offer is not weaker for it. "50% off, first 50, code FOUNDING1" is the
-   * whole of what a buyer needs; the counter is urgency, not information.
-   */
-  var root = mount.attachShadow ? mount.attachShadow({ mode: "open" }) : mount;
+  /* Prices come from the mount if a site states them, else from the API. A site
+     that hard-codes them is a site that can drift from Dodo; the attribute is a
+     convenience, not the source of truth. */
+  var mount = document.querySelector("[data-founding]");
+  var was = mount && mount.getAttribute("data-was");
+  var now = mount && mount.getAttribute("data-now");
+  var code = (mount && mount.getAttribute("data-code")) || "FOUNDING1";
+
+  var bar = document.createElement("div");
+  bar.id = "kc-founding-bar";
+  bar.style.cssText = "position:sticky;top:0;left:0;right:0;z-index:2147482000;width:100%";
+  var root = bar.attachShadow ? bar.attachShadow({ mode: "open" }) : bar;
+
   root.innerHTML = [
     '<style>',
     ':host{all:initial;display:block}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
-    '.w{border:1px solid rgba(200,150,60,.45);background:rgba(200,150,60,.09);',
-    '  border-radius:14px;padding:1.05rem 1.15rem;display:flex;flex-direction:column;gap:.5rem;color:inherit}',
-    '.tag{font-size:.7rem;font-weight:750;letter-spacing:.11em;text-transform:uppercase;color:#c8963c}',
-    '.p{margin:0;font-size:1.15rem;font-weight:700}',
-    '.p s{opacity:.5;font-weight:500;margin-right:.4rem}',
-    '.c{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.15rem}',
-    '.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.95rem;font-weight:700;',
-    '  letter-spacing:.06em;padding:.34rem .7rem;border-radius:8px;border:1px dashed rgba(200,150,60,.65)}',
-    '.hint{font-size:.82rem;opacity:.75;line-height:1.5;margin:0}',
-    'button{min-height:44px;padding:.4rem .8rem;border-radius:8px;cursor:pointer;font-size:.82rem;',
-    '  font-weight:650;border:1px solid rgba(128,128,128,.4);background:transparent;color:inherit}',
-    '.left{font-size:.86rem;font-weight:650;opacity:.85}',
+    '.bar{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;',
+    '  padding:.6rem 2.6rem .6rem 1rem;background:linear-gradient(96deg,#F0B429 0%,#E8A317 100%);',
+    '  color:#1A1206;font-size:.9rem;line-height:1.35;position:relative;',
+    '  box-shadow:0 1px 0 rgba(0,0,0,.18),0 6px 22px -8px rgba(0,0,0,.4)}',
+    '.tag{font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:.76rem;',
+    '  background:#1A1206;color:#F0B429;padding:.22rem .5rem;border-radius:5px;white-space:nowrap}',
+    '.txt{font-weight:600}',
+    '.was{text-decoration:line-through;opacity:.55;margin-right:.25rem}',
+    '.now{font-weight:800}',
+    '.left{font-weight:700;opacity:.85;white-space:nowrap}',
+    '.code{display:inline-flex;align-items:center;gap:.4rem;background:rgba(26,18,6,.1);',
+    '  border:1px dashed rgba(26,18,6,.45);border-radius:7px;padding:.2rem .45rem;font-weight:800;',
+    '  letter-spacing:.06em;font-size:.84rem}',
+    'button.copy{border:0;background:#1A1206;color:#F0B429;border-radius:6px;padding:.3rem .6rem;',
+    '  font-size:.76rem;font-weight:700;cursor:pointer;min-height:32px}',
+    'button.copy:hover{background:#000}',
+    '.x{position:absolute;right:.35rem;top:50%;transform:translateY(-50%);border:0;background:none;',
+    '  cursor:pointer;color:#1A1206;opacity:.6;font-size:1.15rem;line-height:1;',
+    '  min-width:44px;min-height:44px}',
+    '.x:hover{opacity:1}',
+    '@media(max-width:640px){.bar{font-size:.83rem;padding:.55rem 2.4rem .55rem .7rem;gap:.5rem}',
+    '  .left{display:none}}',
     '</style>',
-    '<div class="w">',
-    '  <span class="tag">Founding offer &mdash; 50% off the first 50</span>',
-    (was && now ? '  <p class="p"><s>' + was + '</s>' + now + '</p>' : ''),
-    '  <div class="c"><span class="code">FOUNDING1</span>',
-    '    <button type="button" data-copy>Copy</button>',
-    '    <button type="button" data-count>How many left?</button></div>',
-    '  <p class="hint">Enter it in the discount box at checkout. It is not applied automatically.</p>',
+    '<div class="bar" role="region" aria-label="Founding offer">',
+    '  <span class="tag">Founding offer</span>',
+    '  <span class="txt">50% off',
+        (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
+    '  </span>',
+    '  <span class="left" data-left></span>',
+    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  var copyBtn = root.querySelector("[data-copy]"), countBtn = root.querySelector("[data-count]");
-  copyBtn.addEventListener('click', function () {
-    (navigator.clipboard ? navigator.clipboard.writeText("FOUNDING1") : Promise.reject())
-      .then(function () { copyBtn.textContent = "Copied"; })
-      .catch(function () { copyBtn.textContent = "FOUNDING1"; });
+  root.querySelector(".copy").addEventListener("click", function () {
+    var b = this;
+    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
+      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
+      /* If the clipboard is unavailable the code is still on screen and
+         selectable — never claim a copy that did not happen. */
+      .catch(function () { b.textContent = "Select it"; });
   });
-  countBtn.addEventListener('click', function () {
-    countBtn.disabled = true; countBtn.textContent = "Checking…";
-    fetch(API).then(function (r) { return r.json(); }).then(function (d) {
-      if (!d || d.error) { countBtn.textContent = "Could not check"; return; }
-      var s2 = document.createElement("span");
-      s2.className = "left";
-      s2.textContent = d.soldOut ? "All claimed" : d.left + " of " + d.of + " left";
-      countBtn.replaceWith(s2);
-    }).catch(function () { countBtn.textContent = "Could not check"; });
+  root.querySelector(".x").addEventListener("click", function () {
+    bar.remove();
+    try { localStorage.setItem(KEY, "1"); } catch (e) {}
   });
+
+  /* ⚠️ NO LIVE COUNT ON CRISP, DELIBERATELY — and this is the one difference
+     between this copy and the shared widget.
+     The shared version fetches the remaining count from kerr-lead-agent so the
+     number cannot be stale or invented. Crisp's own pre-push gate refuses any
+     third-party host in loaded JS, and it is right to: this product is sold on
+     "it never phones home", and a page that opens a connection to our
+     infrastructure to render a scarcity counter is exactly the thing that claim
+     is about. The gate asked for a reason that survives being read aloud to a
+     customer, and "so the discount counter looks urgent" is not one.
+     So the bar shows the offer, the price pair and the code — the whole
+     persuasive core — and simply omits the count here. */
+
+  /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
+     document.body) puts an element between <head> and <body>, which is invalid
+     HTML — the browser silently discards it and NOTHING THROWS. The widget
+     reported no errors and simply was not there. */
+  function place() {
+    if (!document.body) return setTimeout(place, 50);
+    document.body.insertBefore(bar, document.body.firstChild);
+    if (mount) mount.remove();
+  }
+  place();
 })();
