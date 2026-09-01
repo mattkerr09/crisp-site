@@ -1046,6 +1046,35 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       look like the left half, that is the gap Max is closing &mdash; but the honest version of
       this claim is that we chose the damage, and real damage is rarely so tidy.</p>
 
+    <div class="ba" id="ba5">
+      <video class="ba-after" width="1068" height="772" poster="/apollo-poster.jpg"
+        data-src-1x="/apollo-after.mp4" data-src-2x="/apollo-after.mp4"
+        muted loop playsinline preload="none"
+        aria-label="After Crisp Enhance: the same 1969 moonwalk broadcast with the video grain cleared and the ladder strut resolved into a clean edge."></video>
+      <video class="ba-before" width="1068" height="772"
+        data-src-1x="/apollo-before.mp4" data-src-2x="/apollo-before.mp4"
+        muted loop playsinline preload="none"
+        aria-label="The archived 534x386 broadcast frame at the same size, thick with video noise."></video>
+      <div class="ba-line"><span class="ba-grip"></span></div>
+      <span class="ba-tag ba-l">1969 broadcast</span><span class="ba-tag ba-r">Crisp Enhance</span>
+      <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
+        aria-label="Reveal more of the broadcast or the enhanced frame">
+    </div>
+
+    <p class="ba-note"><strong>Apollo 11, and here the number goes the other way.</strong> The
+      television broadcast of the first moonwalk, 20 July 1969, from NASA's archive and in the
+      public domain. It is about as unkind a source as exists: a slow-scan camera on the Moon,
+      converted for broadcast, recorded to tape and copied. Crisp's default Enhance took it to
+      1068&times;772 in 18.6 seconds. Against a plain upscale to the same size it scores
+      <strong>0.70&times;</strong> the fine detail &mdash; less, not more &mdash; and we are
+      leaving that number here rather than dropping it, because the honest reading is that the
+      measurement stops working on this footage, not that the restore failed. Most of the
+      high-frequency energy in a 1969 broadcast <em>is</em> noise, and a detail metric cannot tell
+      noise from detail; removing it is the whole job. Drag the handle and watch the grain, not the
+      score. NASA has its own restored version of this broadcast, made by a specialist house in
+      2009 from several different surviving copies &mdash; this is not that, and is not trying to
+      be.</p>
+
     <p class="ba-note"><strong>Past 4&times;, and who it is for.</strong> The upscaling networks are
       trained at 2&times;, 3&times; and 4&times;, so anything larger has to be a chain of real
       passes rather than one bigger number: 8&times; is a 4&times; pass followed by a 2&times;
