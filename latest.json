@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1076",
-  "notes": "Select a few clips and export just those \u2014 the rest of your timeline stays where it is. The button appears next to Export whenever more than one clip is selected, and plain Export still renders the whole cut.",
-  "pub_date": "2026-08-26T21:56:39Z",
+  "version": "1.0.1082",
+  "notes": "Fixes a bug that could stop a valid licence key activating. If Crisp could not reach one of our licence servers it gave up instead of trying the other, and told you to check your internet connection when the connection was fine. It now tries both, and only tells you a key is wrong when both servers say so. If you bought Crisp and could not activate it, this build should work \u2014 and if it does not, email support@crispvideo.app and we will sort it out.",
+  "pub_date": "2026-09-01T14:28:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlvWThzcTJwUmUzNkZBc1lZRnpZWHI0WWxZQWlKOCtaeTdJVWFwc2JFdzNMRW5ucmlwMGxRUGR4L3h4Z2tpRmU3ZEozQUhIM2ZMVUdkSEQwNW52WlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzgxMzMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiY3pxVnRjZG9KUFFsV2duVllXSTFDZTgvUllsMzBMSjY3YnBxd21wbWxtdUpvVXVFbGJVTUsyYzZLTDJIRHh4VnRWdExBUUpTTENxaTJCelFEME1EUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFON3dLQ0tqZy9VUDREODFSWWVBb0pLSVEvVmR2dDNTSkJWU2prMmdLQWVnRU12TStjSDFiWnMyVXdRaVRuZ0FkcjllT0puR09IaHRmNytxYVd0ZEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MjcyNzU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3OFVoSTh3QW9VS0hMMXlMUWJ4TTZPSGdzcTY3SzlVcmV4SEp2N0NXMEU2dUpRNVVZQndFY2cvZ1c2N3Q3QVMydnMwMG9NSWI2blpMUG84WnhYdGhDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
