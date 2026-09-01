@@ -1,7 +1,7 @@
 {
   "version": "1.0.1082",
   "notes": "Fixes a bug that could stop a valid licence key activating. If Crisp could not reach one of our licence servers it gave up instead of trying the other, and told you to check your internet connection when the connection was fine. It now tries both, and only tells you a key is wrong when both servers say so. If you bought Crisp and could not activate it, this build should work \u2014 and if it does not, email support@crispvideo.app and we will sort it out.",
-  "pub_date": "2026-09-01T14:28:30Z",
+  "pub_date": "2026-09-01T14:31:02Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFON3dLQ0tqZy9VUDREODFSWWVBb0pLSVEvVmR2dDNTSkJWU2prMmdLQWVnRU12TStjSDFiWnMyVXdRaVRuZ0FkcjllT0puR09IaHRmNytxYVd0ZEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MjcyNzU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3OFVoSTh3QW9VS0hMMXlMUWJ4TTZPSGdzcTY3SzlVcmV4SEp2N0NXMEU2dUpRNVVZQndFY2cvZ1c2N3Q3QVMydnMwMG9NSWI2blpMUG84WnhYdGhDZz09Cg==",
