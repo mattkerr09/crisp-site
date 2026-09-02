@@ -121,13 +121,33 @@
   }
 
   // A sale, and only a sale.
+  //
+  // eventID IS THE DEDUPE KEY, AND IT COSTS NOTHING TODAY TO GET RIGHT. Meta matches a pixel
+  // event to a server-side (Conversions API) event by eventID; without one it cannot tell they
+  // are the same sale. There is no CAPI here yet and no ad spend, so today this changes
+  // literally nothing — which is exactly why it is worth doing now. The day CAPI is added,
+  // every Crisp purchase would otherwise be counted TWICE, and that is a data-integrity bug
+  // discovered from a number that looks merely good rather than from an error.
+  //
+  // Dodo already puts payment_id on this redirect (see the note above), so the same value can
+  // be sent from both sides, which is the whole trick. If it is missing — a manual visit, a
+  // stripped URL — send the event without it rather than inventing an id, because a fabricated
+  // key would break dedupe more surely than an absent one.
+  //
+  // ⚠️ `value` IS THE LIST PRICE, NOT NECESSARILY WHAT WAS PAID. A founding-offer purchase at
+  // 50% off still reports 129.00, because Dodo's redirect carries license_key, payment_id,
+  // status and email — no amount. Not fixable from this page; it needs the server side that
+  // eventID is here to prepare for.
   if (status === 'succeeded' && typeof fbq === 'function') {
-    fbq('track', 'Purchase', {
+    var pid = (q.get('payment_id') || '').trim();
+    var props = {
       value: 129.00,
       currency: 'USD',
       content_name: 'Crisp Pro',
       content_type: 'product'
-    });
+    };
+    if (pid) fbq('track', 'Purchase', props, { eventID: pid });
+    else fbq('track', 'Purchase', props);
   }
 })();
 </script>
