@@ -33,10 +33,29 @@ MONEY = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)")
 DATED = re.compile(r"Prices?\s+checked\s+\d", re.I)
 
 
+# The descriptions live in <head>, and they are the copy Google actually shows.
+DESCRIPTIONS = re.compile(
+    r'<meta[^>]+(?:name|property)="(?:description|og:description|twitter:description)"[^>]+'
+    r'content="([^"]*)"|"description"\s*:\s*"((?:[^"\\]|\\.)*)"',
+    re.I,
+)
+
+
 def _text(p: Path) -> str:
+    """Body copy PLUS every description, which is where the stale price hid last time.
+
+    Stripping <head> wholesale was this tool's own blind spot, and it is the exact bug the tool
+    exists to catch: HitPaw's dead $349.99 survived in the meta description, og:description,
+    twitter:description and the JSON-LD long after the body was right. A rival price quoted only
+    in a description is the version a searcher reads FIRST, before deciding whether to click.
+    Proven rather than reasoned: a $777 planted in a meta description passed this gate with
+    exit 0 before this change.
+    """
     t = p.read_text(encoding="utf-8", errors="replace")
+    descs = " ".join(m.group(1) or m.group(2) or "" for m in DESCRIPTIONS.finditer(t))
     t = re.sub(r"(?is)<(script|style|head|nav|footer)\b.*?</\1>", " ", t)
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", t)))
+    visible = re.sub(r"<[^>]+>", " ", t)
+    return re.sub(r"\s+", " ", html.unescape(visible + " " + descs))
 
 
 def survey():
