@@ -117,6 +117,35 @@
   resent paying a subscription every month to keep software you used to own, and your work is mostly
   upscaling plus editing on a Mac, $129 once is a straightforward trade.</p>
 
+  <h2>Which preset replaces which model</h2>
+  <p>This is the part switchers actually get stuck on. Topaz hands you a catalogue and expects you
+  to know which network suits your clip. Crisp has four, plus an automatic mode that is the
+  default, and the honest way to describe the difference is that we made the choice narrower on
+  purpose rather than that we made it smarter.</p>
+  <div class="cmp-wrap"><table>
+    <tr><th>Preset</th><th>Network</th><th>Denoise</th><th>The footage it is for</th></tr>
+    <tr><td>Auto</td><td>picked per clip</td><td>picked per clip</td><td>The default. Start here.</td></tr>
+    <tr><td>Enhance</td><td>RealESRGAN general v3</td><td>0.4</td><td>Ordinary live action that is soft or compressed.</td></tr>
+    <tr><td>Low-light cleanup</td><td>RealESRGAN general WDN v3</td><td>0.85</td><td>Dark, grainy, high-ISO. A different network, trained with denoising.</td></tr>
+    <tr><td>Anime / Cartoon</td><td>realesr-animevideov3</td><td>0</td><td>Drawn line art, where photographic models smear the lines.</td></tr>
+    <tr><td>Max quality</td><td>SeedVR2</td><td>0</td><td>Badly degraded footage worth waiting for. Needs 32GB and the Max pack.</td></tr>
+  </table></div>
+
+  <h2>What Auto can and cannot work out</h2>
+  <p>Auto measures the average brightness of the range you are actually rendering, not of the whole
+  file, and combines that with the source resolution to choose the network, the scale and how much
+  cleanup to apply. So a dark clip gets the denoise-trained network and a much stronger setting
+  than a bright one, without you deciding anything.</p>
+  <p>There is one thing it cannot infer, and it is worth knowing before you blame the output.
+  Nothing in a frame's brightness or size says whether the footage was <em>filmed or drawn</em>,
+  and line art needs a different network entirely. If your source is animation, pick Anime
+  yourself. Auto will otherwise treat it as live action and soften exactly the hard edges that
+  make it look like animation.</p>
+  <p>The other case worth overriding is Max. It is genuinely the best result Crisp can produce on
+  badly damaged footage, and it is slow enough that it is a decision rather than a default: budget
+  roughly twenty minutes of processing per second of video. That suits a short clip you are
+  rescuing, not a reel.</p>
+
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/vs/topaz-alternative-mac/">The best Topaz alternative for Mac — offline, one-time, and it edits too</a></li>
