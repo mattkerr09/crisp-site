@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1117",
-  "notes": "Fixes licence activation on most Macs. Crisp was checking the licence server\u2019s identity against a list of trusted authorities that only exists on Macs with developer tools installed, so on everyone else\u2019s Mac activation failed with a message about your internet connection even though the connection was fine. Crisp now brings its own list. The same fix makes the built-in update check and the Max quality download work on those Macs too. If you bought Crisp and could not activate it, this build fixes that \u2014 and if it still does not, email support@crispvideo.app and we will sort it out.",
-  "pub_date": "2026-09-06T15:02:22Z",
+  "version": "1.0.1119",
+  "notes": "Fixes what Crisp tells you when it cannot activate a licence. If our licence server was slow to answer, Crisp used to wait, ask a second server that has never issued a Crisp key, and then tell you it could not decide whether your key was wrong or your connection was \u2014 after about twelve seconds. It now asks the one server that sold you your key, answers in under a second, and if that server is unreachable it says so plainly instead of blaming your key. Crisp is also more careful about retrying: it will only try again where trying again cannot use up one of your activations. If you bought Crisp and cannot activate it, email support@crispvideo.app and we will sort it out.",
+  "pub_date": "2026-09-07T13:47:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxqTGRIMEM0QnNTV2swMHNBM29EWStGVWZ6NlhVMkNtM1Rud2hQQlVsR3BWb0UvVStLN2RuTWJTY3NkUzNETnVSbUtvVFFsckNacldPQ2Z1dU5Td2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NzA2Njg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkVUJXZjVQUnFoTVM3ZUdNMlhGNk8rNnNKQjV6YWl0S1NUTU1qak5BOTZyVWNwNDlvQkk5N1hOejkxc1BOTEtXdE1Ed1ZRM3Z0MlI2SjZpSkhTMGJEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ2ZEpzS3dKcU00QlpJTnFsVENFOStobjFCYUJUSjBUNTJUZ1NPWElWN3FQbWl4LytoV1VuQ2RwanR3RC9kRzBhV0JRYkxVMXJURXFhN3g0UHRsV1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4Nzg4MTkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negorcEJhUW1wQitmb3dCdnhFNFFuUHNXU2FrNW56ZlJuUlZyM2dxMHBTSWhkWnU4aVFiWGd4YWZ3cFZyalhacVgwVll2TUI0WHNkcXJQUlZvOEo0SElEQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
