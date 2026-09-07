@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1126",
-  "notes": "Crisp now fixes combed footage itself. Old tapes, DVD rips and broadcast recordings store each frame as two half-pictures taken a moment apart, which shows up as fine horizontal stripes on anything moving. Until now Crisp spotted that and asked you to fix it in another app first, because an upscaler treats those stripes as detail worth sharpening. It now does the work for you, before anything else runs. Footage that started life on film gets special treatment: Crisp puts the original twenty-four frames a second back rather than blending them, so you get the frames that were actually shot, and the render finishes sooner because there is less to enhance.",
-  "pub_date": "2026-09-07T16:40:54Z",
+  "version": "1.0.1128",
+  "notes": "Fixes what Crisp told you about combed footage. The last update taught Crisp to straighten out old tape and DVD recordings \u2014 the fine horizontal stripes you see on anything moving \u2014 before it enhances anything. What Crisp said on screen had not caught up: it still told you it could not do that and sent you off to another app first, and asking for it in your own words got the same answer and did nothing at all. Crisp now says what it actually does, and it is also clearer about the three cases where you still have to do it yourself: the Max quality setting rebuilds the frames it is handed without straightening them first, so run an ordinary Enhance over that footage and take the result to Max; HDR recordings are left alone; and an edit exported from the timeline is not straightened either, because the clips are scaled to a common size while the edit is put together and the stripes stop being detectable by then, so enhance those clips before you build the edit.",
+  "pub_date": "2026-09-07T21:33:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpITlJWYXJLdml4TDJpNFM4cjVjUEJxa3o4N3V5aVlNekRVRHhTcTQ4WWN5OVRhVUdXMHAzN1MyVGNUZnl4THpxSG1hSktJNmExUHFWSHhnVTJybXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4Nzk4OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprcTZHV1VuYUZrcVpZVlpVbitKYTZiTWZwNEpNa1d6Zm5uMkxUUnlOdC9qckxpd05lVVFNTlJidUFRVUZRaUtPTWxnUmJSN1Y0NlZncThIZVVjU1hEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIzMno5dlJKR011dWxHaXErczE3bDA0dFYxcnR3aVI0d28za1oyOEJzekZkcjdjamZ2U2xnekFRV3RlS2VvT2UyczdKMW8vNHY2TlVCT3ZDci9tSEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODE2NDc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1ZlcwK2l5TzdrNDNzcXY4UWVpQ2JBZ3RXcDFzV3dGb2dLTHRwSXNNVmJtb2ZveWJQZ05YNWFYWTdPMDJXNG9rcFRCK2l3S1FsbGRvSk0yMm9yZzRCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
