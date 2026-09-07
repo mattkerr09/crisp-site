@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1119",
-  "notes": "Fixes what Crisp tells you when it cannot activate a licence. If our licence server was slow to answer, Crisp used to wait, ask a second server that has never issued a Crisp key, and then tell you it could not decide whether your key was wrong or your connection was \u2014 after about twelve seconds. It now asks the one server that sold you your key, answers in under a second, and if that server is unreachable it says so plainly instead of blaming your key. Crisp is also more careful about retrying: it will only try again where trying again cannot use up one of your activations. If you bought Crisp and cannot activate it, email support@crispvideo.app and we will sort it out.",
-  "pub_date": "2026-09-07T13:47:19Z",
+  "version": "1.0.1126",
+  "notes": "Crisp now fixes combed footage itself. Old tapes, DVD rips and broadcast recordings store each frame as two half-pictures taken a moment apart, which shows up as fine horizontal stripes on anything moving. Until now Crisp spotted that and asked you to fix it in another app first, because an upscaler treats those stripes as detail worth sharpening. It now does the work for you, before anything else runs. Footage that started life on film gets special treatment: Crisp puts the original twenty-four frames a second back rather than blending them, so you get the frames that were actually shot, and the render finishes sooner because there is less to enhance.",
+  "pub_date": "2026-09-07T16:40:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ2ZEpzS3dKcU00QlpJTnFsVENFOStobjFCYUJUSjBUNTJUZ1NPWElWN3FQbWl4LytoV1VuQ2RwanR3RC9kRzBhV0JRYkxVMXJURXFhN3g0UHRsV1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4Nzg4MTkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negorcEJhUW1wQitmb3dCdnhFNFFuUHNXU2FrNW56ZlJuUlZyM2dxMHBTSWhkWnU4aVFiWGd4YWZ3cFZyalhacVgwVll2TUI0WHNkcXJQUlZvOEo0SElEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpITlJWYXJLdml4TDJpNFM4cjVjUEJxa3o4N3V5aVlNekRVRHhTcTQ4WWN5OVRhVUdXMHAzN1MyVGNUZnl4THpxSG1hSktJNmExUHFWSHhnVTJybXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4Nzk4OTA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprcTZHV1VuYUZrcVpZVlpVbitKYTZiTWZwNEpNa1d6Zm5uMkxUUnlOdC9qckxpd05lVVFNTlJidUFRVUZRaUtPTWxnUmJSN1Y0NlZncThIZVVjU1hEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
