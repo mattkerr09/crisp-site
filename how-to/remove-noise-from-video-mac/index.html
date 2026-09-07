@@ -118,6 +118,27 @@
   <p>Look at a still frame before you reach for a slider. Fine speckle that shifts every frame
   is grain. Chunky squares that hold still for a moment are compression. Smooth stripes across
   a sky are banding.</p>
+  <h2>What the slider is actually doing at each end</h2>
+  <p>The Denoise slider runs from 0 to 1 and starts at <strong>0.40</strong>. That starting point is
+  not arbitrary, and knowing why makes the rest of this page easier to act on: <strong>0.5 is a
+  threshold, not just a bigger number.</strong></p>
+  <ul>
+    <li><strong>At or below 0.5</strong>, cleaning is done by the restoration model alone. It
+    removes grain by rebuilding detail, which is why it does not smear edges the way a blur does.</li>
+    <li><strong>Above 0.5</strong>, Crisp adds a conventional temporal-and-spatial denoise pass
+    <em>in front of</em> the model, and its strength scales with the slider. This is the setting
+    that genuinely removes heavy noise — and it is also where waxy skin and plastic hair come
+    from, because a conventional denoiser cannot tell fine detail from fine noise.</li>
+  </ul>
+  <p>So the advice below has a number attached to it. Work up from the default and you are staying
+  model-only until you cross 0.5; the first move past that point is the biggest single change you
+  can make to the result, in both directions.</p>
+  <p><strong>Low-light behaves differently on purpose.</strong> It does not simply brighten and
+  leave the denoise where you left it — on genuinely dark footage it raises the denoise floor to
+  0.6, above the threshold, because lifting shadows reveals noise that was hiding in them. On
+  moderately dim footage it uses a gentler 0.3 floor and stays model-only. That is why Low-light on
+  a very dark clip can look softer than you expected: it is not the brightening, it is the floor.</p>
+
   <h2>Don't over-denoise</h2>
   <p>Heavy denoising is the most common way to make footage look worse. Push it too far and skin
   turns waxy, hair becomes a solid mass, and fine texture in fabric or foliage smears into
