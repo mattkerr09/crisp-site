@@ -75,8 +75,17 @@ def main() -> int:
         if "_tools" in page.parts:
             continue
         text = page.read_text()
-        if not PUBLISHED.search(text):
-            skipped += 1                     # no article schema — nothing to date
+        # ⚠️ "HAS A datePublished" WAS THE WRONG GATE, AND IT MADE THIS FIX LOOK COMPLETE WHILE
+        # LEAVING SEVENTEEN STALE DATES IN PLACE. The /best/ and /vs/ pages carry a dateModified
+        # and no datePublished, so the first version skipped them as "no article schema" — and
+        # skipping a page that already publishes a WRONG date is the one thing this tool must
+        # never do. Caught by spot-checking a live page after the first run said it was done.
+        #
+        # So: a page qualifies if it dates itself at all. A page with neither field is genuinely
+        # not making a claim, and gets nothing added — inventing a date for a hub page would be
+        # the decorative-metadata habit this whole exercise is removing.
+        if not PUBLISHED.search(text) and not MODIFIED.search(text):
+            skipped += 1                     # makes no date claim — nothing to correct
             continue
         when = content_changed(page)
         if when is None:
@@ -91,6 +100,8 @@ def main() -> int:
         if cur:
             out = MODIFIED.sub(f'"dateModified":"{when}"', text)
         else:
+            # only reachable when the page has a datePublished to anchor to; a page with neither
+            # was filtered out above.
             out = PUBLISHED.sub(
                 lambda m: f'{m.group(0)},"dateModified":"{when}"', text, count=1)
         page.write_text(out)
