@@ -21,9 +21,11 @@ file byte-identical. Run it after adding or editing pages:
 from __future__ import annotations
 
 import re
-import subprocess
+import subprocess  # noqa: F401 — kept for callers/tests that stub it
 import sys
 from pathlib import Path
+
+import page_dates
 
 SITE = Path(__file__).resolve().parent.parent
 SITEMAP = SITE / "sitemap.xml"
@@ -37,13 +39,18 @@ def page_for(loc: str) -> Path | None:
 
 
 def last_changed(page: Path) -> str | None:
-    """The date of the last commit touching this page, or None if git cannot say.
+    """The date this page's CONTENT last changed, or None if git cannot say.
+
+    ⚠️ IT DELEGATES, AND THAT IS THE POINT. This used to be its own `git log -1`, which is the
+    last commit touching the file FULL STOP. The moment _tools/page_dates.py landed — a commit
+    whose only effect on 60 pages was to correct a dateModified string — that definition would
+    have declared all 60 changed that day, and the sitemap would have told crawlers to re-fetch
+    sixty pages whose visible content had not moved. Two tools with two definitions of "changed"
+    is two answers to one question, and one of them is always wrong.
 
     None is deliberate: an uncommitted page has no honest date, and inventing today's would be
     the exact decorative lastmod this file exists to remove."""
-    out = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short", "--", str(page)],
-                         cwd=SITE, capture_output=True, text=True).stdout.strip()
-    return out or None
+    return page_dates.content_changed(page)
 
 
 def rewrite(text: str) -> tuple[str, list[str]]:
