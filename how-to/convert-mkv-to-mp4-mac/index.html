@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to convert MKV to MP4 on a Mac","description":"MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.","datePublished":"2026-07-23","dateModified":"2026-08-26","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to convert MKV to MP4 on a Mac","description":"MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does converting MKV to MP4 lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not if you copy the streams instead of re-encoding. The video and audio data are moved into a different container untouched, so the result is bit-identical. Re-encoding does lose quality."}},{"@type":"Question","name":"Why won't my MKV play on a Mac?","acceptedAnswer":{"@type":"Answer","text":"QuickTime doesn't support the MKV container. The video inside is often perfectly playable h.264 or HEVC — it's the wrapper macOS objects to, which is why a container swap fixes it in seconds."}},{"@type":"Question","name":"What if the audio doesn't work after converting?","acceptedAnswer":{"@type":"Answer","text":"MKV commonly carries codecs MP4 doesn't allow, chiefly DTS and FLAC. Those need re-encoding to AAC while the video is still copied — you lose a little audio quality and no picture quality."}}]}
@@ -98,6 +98,13 @@
   re-encoding, so you keep the original quality; where the audio can't ride along it re-encodes the
   audio alone and leaves the picture untouched. If the clip also needs cleaning up, that runs in the
   same export instead of being a second lossy generation — and it all happens on your Mac.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="https://crispvideo.app/how-to/convert-mov-to-mp4-mac/">How to convert MOV to MP4 on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/crop-video-mac/">How to crop a video on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/deinterlace-video-mac/">How to deinterlace video on a Mac</a></li>
+  </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
   <p>Background: <a href="https://crispvideo.app/learn/what-is-a-video-codec/">the difference between a codec and a container</a>.</p>
