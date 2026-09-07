@@ -1,3 +1,24 @@
 User-agent: *
 Allow: /
+
+# NOT PAGES, AND THEY WERE BEING OFFERED AS PAGES. GitHub Pages serves this repository
+# verbatim — .nojekyll is present, so the usual "underscore directories are private"
+# convention does not apply here — and every one of these returned 200 to a crawler:
+# ten build scripts in /_tools/, the git pre-push hook, and two working documents.
+#
+# That matters more than tidiness on this site specifically. 59 of its URLs sit in Search
+# Console as "Discovered – currently not indexed": Google knows they exist and has not
+# spent a crawl on them. Offering it .py files to fetch instead is the wrong way round.
+#
+# Disallow only stops the crawl; it does not unpublish. These files carry no secrets
+# (checked), so that is the right trade — the alternative is moving tooling out of the
+# repository that is also the document root, which is a bigger change than the problem.
+Disallow: /_tools/
+Disallow: /.githooks/
+Disallow: /README.md
+Disallow: /STUDY-THE-BAR.md
+
+# NOT listed: /thank-you/. It carries a noindex, and a page Google is forbidden to fetch
+# is a page whose noindex Google can never read.
+
 Sitemap: https://crispvideo.app/sitemap.xml

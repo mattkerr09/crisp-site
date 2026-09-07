@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to deinterlace video on a Mac (2026) — Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta name="description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else, and what you lose either way — plus how Crisp straightens it out for you on the way to an upscale.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/deinterlace-video-mac/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to deinterlace video on a Mac">
-<meta property="og:description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta property="og:description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else, and what you lose either way — plus how Crisp straightens it out for you on the way to an upscale.">
 <meta property="og:url" content="https://crispvideo.app/how-to/deinterlace-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
@@ -18,11 +18,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to deinterlace video on a Mac">
-<meta name="twitter:description" content="Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.">
+<meta name="twitter:description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else, and what you lose either way — plus how Crisp straightens it out for you on the way to an upscale.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to deinterlace video on a Mac","description":"Comb-shaped stripes on moving edges mean interlaced footage. Here is what interlacing actually is, why it must be fixed before anything else, and what you lose either way.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/deinterlace-video-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to deinterlace video on a Mac","description":"Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else, and what you lose either way — plus how Crisp straightens it out for you on the way to an upscale.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/deinterlace-video-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know if my video is interlaced?","acceptedAnswer":{"@type":"Answer","text":"Pause on a frame with fast movement and zoom in. Horizontal comb teeth along moving edges — and only on moving edges — means interlaced. A still shot in the same clip will look perfectly clean, which is why it is easy to miss."}},{"@type":"Question","name":"Does deinterlacing lose quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, unavoidably. You either discard half the vertical detail or interpolate it back, and both are lossy. The alternative is leaving visible combing, which is worse."}},{"@type":"Question","name":"Should I deinterlace before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Before, always. An upscaler treats comb teeth as real detail and sharpens them into permanent artefacts."}}]}
@@ -40,8 +40,10 @@
   <h1>How to deinterlace video on a Mac</h1>
 
   <p class="lede">If moving objects in your footage have horizontal comb teeth along their edges while
-  everything stationary looks fine, the video is interlaced. Deinterlace it before you do anything
-  else to it — every other operation treats those teeth as detail worth preserving.</p>
+  everything stationary looks fine, the video is interlaced. It has to be straightened out before
+  anything else touches it — every other operation treats those teeth as detail worth preserving.
+  Crisp now does that step for you when you enhance or upscale; the rest of this page is what it is
+  doing, and how to do it yourself if you would rather.</p>
 
   <h2>What interlacing is</h2>
   <p>Broadcast television could not transmit enough bandwidth for full frames at a smooth rate, so it
@@ -122,8 +124,28 @@
   less work to do.</p>
 
   <h2>What to deinterlace with</h2>
-  <p>Crisp does <strong>not</strong> deinterlace, so this is one to do before you get here. Two free
-  options, matching the two methods above:</p>
+  <p>If you are using Crisp, nothing. It checks for combing when you enhance or upscale, and
+  straightens it out first, before anything sharpens it. You do not have to spot it, and you do not
+  have to run another app before this one.</p>
+  <p>It also picks between the two fixes above rather than applying one to everything, because the
+  right answer depends on where the footage came from:</p>
+  <ul>
+    <li><strong>Shot on video</strong> — genuinely interlaced, two different instants per frame.
+    Crisp deinterlaces it, the blend-or-discard route, and the frame rate stays where it was.</li>
+    <li><strong>Shot on film</strong> — telecined, whole frames split across fields to fit 24 into
+    30. Crisp reverses the pulldown instead, so you get the frames that were actually photographed
+    back at 24fps rather than blends of two of them.</li>
+  </ul>
+  <p>The line under the progress bar tells you which one it chose — it reads
+  <em>Inverse telecine</em> or <em>Deinterlaced</em> at the end of the route. On a DVD-shaped
+  telecined clip here, 300 frames became 240 and the whole job went from 19.6s to 17.4s: reversing
+  the pulldown removes a fifth of the frames, so everything after it has a fifth less to do. On a
+  very short clip the pre-pass costs more than it saves — a three-second 480×360 file ran about 4%
+  slower — but it is still the version made of real frames.</p>
+  <p><strong>Two exceptions worth knowing.</strong> The <em>Max</em> preset restores the frames it
+  is handed and does not straighten them first, so if you want Max on combed footage, run an
+  ordinary Enhance over it first and take that result to Max. And HDR sources skip the check
+  entirely. For either of those, or if you are not using Crisp at all, the two free tools are:</p>
   <ul>
     <li><strong>HandBrake</strong> — free and open source, with a window. Its <em>Decomb</em> filter
     detects combing per frame and only deinterlaces the frames that actually need it, which is the
@@ -133,7 +155,6 @@
     same idea. For the bob route — field doubling, double the frame rate — use
     <code>-vf yadif=1</code>.</li>
   </ul>
-  <p>Then bring the progressive file here for the denoise and the upscale on export.</p>
 
   <h2>Related</h2>
   <ul>

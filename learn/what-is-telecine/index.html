@@ -92,10 +92,12 @@
   it isn't, and deinterlacing is the safer choice.</p>
 
   <h2>Doing it on a Mac</h2>
-  <p><strong>Crisp does not deinterlace or inverse-telecine.</strong> Both are steps to do first,
-  and the <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing
-  walkthrough</a> covers the tools — including why <code>fieldmatch,decimate</code> is the right
-  one for film that has been through a telecine, and <code>yadif</code> is not.</p>
+  <p><strong>Crisp does both, and tells them apart.</strong> It detects a 3:2 cadence and reverses
+  the pulldown — the <code>fieldmatch,decimate</code> route — rather than deinterlacing film and
+  softening every frame, which is what <code>yadif</code> would do to it. Genuinely interlaced video
+  gets deinterlaced instead. The route line names which one ran. The
+  <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing walkthrough</a> has
+  the detail, including the two cases Crisp leaves alone.</p>
   <p>What Crisp does is notice. On the Max quality lane it reads the source and warns you before
   the render starts, which matters most here: telecined frames look perfect three times in five, so
   this is exactly the file someone checks, sees nothing wrong, and hands to an hour of generative
