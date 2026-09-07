@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified":"2026-08-23","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Video Upscaler Index?","acceptedAnswer":{"@type":"Answer","text":"A published set of objective, reproducible quality measurements for AI video upscaling on Mac — seven metrics computed from raw frames with ffmpeg and pure Python, along with the harness that produced them so anyone can re-run them."}},{"@type":"Question","name":"Why does it only contain Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because those are the only outputs we have actually measured. Publishing a score for a tool we never ran would invalidate the rest of the page. Competitor results will be added when we have real measurements, including results that beat Crisp."}},{"@type":"Question","name":"What is added_flicker and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"It is the output's frame-to-frame instability minus the source's — the shimmer the upscaler introduced. Per-frame upscalers can invent slightly different detail on each frame, so a still looks excellent while the moving clip crawls. It is the axis reviewers describe subjectively and the one this index measures directly."}},{"@type":"Question","name":"How fast is Crisp?","acceptedAnswer":{"@type":"Answer","text":"Between 3.6 and 5.6 frames per second end-to-end on an M1 Ultra Mac Studio across the sources tested, including decode and encode. That is roughly an hour for a ten-minute clip. It runs entirely on your own Mac, which is why it is slower than a cloud service."}}]}
@@ -52,7 +52,7 @@
   <h2>What is actually measured</h2>
   <p>Seven axes, computed on raw decoded frames with ffmpeg and pure Python — no reference
   library, no perceptual model, nothing that requires trusting a black box:</p>
-  <table>
+  <div class="cmp-wrap"><table>
     <thead><tr><th>Metric</th><th>What it means</th><th>Better</th></tr></thead>
     <tbody>
     <tr><td><code>sharpness</code></td><td>Mean variance-of-Laplacian over sampled grayscale frames — how much edge detail survives.</td><td>Higher</td></tr>
@@ -63,7 +63,7 @@
     <tr><td><code>added_flicker</code></td><td><strong>Output flicker minus source flicker.</strong> Shimmer the upscaler <em>introduced</em>.</td><td>Lower</td></tr>
     <tr><td><code>color_drift</code></td><td>Mean per-channel difference against the source.</td><td>Context</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p><code>added_flicker</code> is the one that matters most and the one nobody reports. A
   per-frame upscaler treats every frame independently, so it can invent slightly different
@@ -73,7 +73,7 @@
   <h2>Results — Crisp 0.1.284</h2>
   <p>M1 Ultra Mac Studio, 64GB, macOS 15. Each source processed for its first 3 seconds.
   Throughput is end-to-end frames per second including decode, upscale and encode.</p>
-  <table>
+  <div class="cmp-wrap"><table>
     <thead><tr><th>Source</th><th>Preset</th><th>Output</th><th>sharpness</th><th>levels</th><th>flat_steps</th><th>added_flicker</th><th>fps</th></tr></thead>
     <tbody>
     <tr><td>Compressed 480p web video</td><td>Enhance</td><td>2560&times;1440</td><td>428.5</td><td>223.8</td><td>6.70%</td><td>0.00</td><td>5.3</td></tr>
@@ -83,7 +83,7 @@
     <tr><td>Soft camcorder / DVD-era</td><td>Enhance</td><td>2880&times;1920</td><td>417.0</td><td>218.6</td><td>13.61%</td><td>&minus;0.50</td><td>4.4</td></tr>
     <tr><td>Soft camcorder / DVD-era</td><td>Low-light</td><td>2880&times;1920</td><td>287.5</td><td>191.6</td><td>10.89%</td><td>&minus;0.75</td><td>3.7</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h2>Where Crisp comes off worse</h2>
   <p>Three things in that table are not flattering, and they are the reason it is worth

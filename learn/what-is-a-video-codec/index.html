@@ -42,14 +42,14 @@
   ProRes and several others. So "my MP4 won't play" is rarely about MP4. It's about what's inside it.</p>
 
   <h2>The ones you'll actually encounter</h2>
-  <table>
+  <div class="cmp-wrap"><table>
     <tr><th>Codec</th><th>What it's for</th><th>The catch</th></tr>
     <tr><td>H.264 (AVC)</td><td>The universal default. Plays on essentially everything.</td><td>Least efficient of the modern options, so files are larger for the same quality.</td></tr>
     <tr><td>HEVC (H.265)</td><td>Roughly half the size of H.264 at similar quality. Standard for 4K and for iPhone recording.</td><td>Patchier support on older hardware and some web platforms.</td></tr>
     <tr><td>ProRes</td><td>An editing and mastering codec. Very light to decode, near-lossless.</td><td>Enormous files. It lives in .mov, not .mp4.</td></tr>
     <tr><td>AV1</td><td>Royalty-free, very efficient, increasingly used for streaming delivery.</td><td>Encoding is slow, and hardware support is still arriving.</td></tr>
     <tr><td>VP9</td><td>Mostly a web delivery codec, common in .webm.</td><td>Can't be stream-copied into an .mp4, so conversion means a full re-encode.</td></tr>
-  </table>
+  </table></div>
 
   <h2>Delivery codecs and editing codecs are not the same job</h2>
   <p>H.264, HEVC, AV1 and VP9 are delivery codecs. They're built to make files small, and they achieve

@@ -52,7 +52,7 @@
   damage is physical abrasion rather than signal loss.</p>
 
   <h2>The faults you see, and whether software helps</h2>
-  <table>
+  <div class="cmp-wrap"><table>
     <tr><th>Symptom</th><th>Cause</th><th>Fixable after capture?</th></tr>
     <tr><td>Soft, low-detail picture</td><td>Format limit plus particle decay</td><td>Partly. Upscaling genuinely helps here.</td></tr>
     <tr><td>Grainy speckle</td><td>Analogue noise floor</td><td>Yes, denoise handles it well.</td></tr>
@@ -61,7 +61,7 @@
     <tr><td>Picture tearing at the top</td><td>Tracking misalignment</td><td>No. Re-capture with tracking adjusted.</td></tr>
     <tr><td>Colour bleeding sideways</td><td>Very low chroma bandwidth</td><td>Partly, and never fully.</td></tr>
     <tr><td>Rolling or flagging</td><td>Timebase instability</td><td>No. Needs a timebase corrector at capture.</td></tr>
-  </table>
+  </table></div>
   <p>The pattern is worth internalising. Anything caused by the signal being noisy or low-resolution
   responds to restoration. Anything caused by the signal never being read correctly in the first place
   has to be fixed at the deck, and no amount of processing invents it back.</p>

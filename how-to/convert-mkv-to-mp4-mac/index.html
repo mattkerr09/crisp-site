@@ -55,7 +55,7 @@
   entire reason this question exists.</p>
 
   <h2>When the copy works, and when it doesn't</h2>
-  <table>
+  <div class="cmp-wrap"><table>
     <thead><tr><th>Inside the MKV</th><th>Straight copy to MP4?</th></tr></thead>
     <tbody>
       <tr><td>h.264 video</td><td class="yes">Yes</td></tr>
@@ -67,7 +67,7 @@
       <tr><td>VP9 video</td><td class="no">No — MP4 won't carry it</td></tr>
       <tr><td>SRT / ASS subtitles</td><td>Partly — MP4 subtitle support is limited</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p>When only the audio is the problem, re-encode only the audio:
   <code>-c:v copy -c:a aac -b:a 192k</code>. The picture stays bit-identical and you take a small,
   usually inaudible hit on sound. Re-encoding the video too, which is what a careless tool does, costs

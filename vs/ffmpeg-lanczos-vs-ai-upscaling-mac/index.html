@@ -54,7 +54,7 @@
   will not look like it was shot at 4K, because nothing in the arithmetic could make that happen.</p>
 
   <h2>When free is the right answer</h2>
-  <table>
+  <div class="cmp-wrap"><table>
     <thead><tr><th>Situation</th><th>Use</th><th>Why</th></tr></thead>
     <tbody>
       <tr><td>Clean 1080p → 4K for a delivery spec</td><td class="yes">Lanczos</td><td>Nothing is damaged; you just need the pixel dimensions.</td></tr>
@@ -64,7 +64,7 @@
       <tr><td>Heavily compressed download</td><td>AI</td><td>Blocking is a learnable artefact; Lanczos enlarges the blocks.</td></tr>
       <tr><td>Noisy low-light phone video</td><td>AI</td><td>Denoise plus reconstruction; Lanczos sharpens the noise.</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h2>The case against reaching for AI by default</h2>
   <p>An AI upscaler guesses. On degraded footage that guess is a large improvement. On clean footage
