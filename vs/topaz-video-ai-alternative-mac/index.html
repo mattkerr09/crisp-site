@@ -115,8 +115,13 @@
 
   <h2>The order the passes run in, and why it matters more than the model</h2>
   <p>Enhancement is not one operation, and the sequence changes the result more than most people
-  expect. Crisp runs deinterlace, then denoise, then upscale, then colour, and each of those steps
-  makes the ones after it harder if you take it out of turn.</p>
+  expect. The order that works is deinterlace, then denoise, then upscale, then colour, and each
+  step makes the ones after it harder if you take it out of turn. Crisp handles denoise, upscale
+  and colour; <strong>deinterlacing it does not do</strong>, so tape and broadcast material needs
+  that pass first — see the
+  <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing walkthrough</a>.
+  On the Max quality lane Crisp checks the source and warns you if it still looks combed, before
+  the render rather than after it.</p>
   <p>The expensive mistake is upscaling first. An upscaler has no concept of a video field, so
   handed a frame with <a href="https://crispvideo.app/learn/what-is-interlacing/">interlacing comb
   teeth</a> it reads the comb as fine detail and sharpens it. Sharpened comb is far harder to

@@ -77,10 +77,14 @@
   it survives into finished edits without anyone noticing.</p>
 
   <h2>Doing it on a Mac</h2>
-  <p>Crisp detects interlaced sources and handles the deinterlace pass on-device, before any
-  enhancement runs, so the ordering problem above is taken care of without you having to think about
-  it. Nothing is uploaded, which tends to matter for exactly the sort of irreplaceable family footage
-  that's most likely to be interlaced in the first place.</p>
+  <p><strong>Crisp does not deinterlace.</strong> This is a step to do before you get here, and
+  the <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing walkthrough</a>
+  covers the two free ways to do it. What Crisp does is notice: on the Max quality lane it checks
+  the source and warns you before spending the render, because an hour of generative restoration
+  faithfully reconstructing comb teeth is the most expensive version of this mistake.</p>
+  <p>Once you bring it a progressive file, everything after that runs on your Mac. Nothing is
+  uploaded, which tends to matter for exactly the sort of irreplaceable family footage that is most
+  likely to be interlaced in the first place.</p>
 
   <h2>Interlacing, in detail</h2>
   <h3>Can I just upscale interlaced footage and fix it afterwards?</h3>

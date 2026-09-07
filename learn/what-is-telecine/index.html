@@ -92,10 +92,15 @@
   it isn't, and deinterlacing is the safer choice.</p>
 
   <h2>Doing it on a Mac</h2>
-  <p>Crisp checks for field artefacts in the source and runs its deinterlace pass on-device before
-  any enhancement, so the ordering problem above is handled without you having to think about it.
-  Nothing is uploaded, which tends to matter for exactly the sort of irreplaceable family footage
-  most likely to have come through a telecine in the first place.</p>
+  <p><strong>Crisp does not deinterlace or inverse-telecine.</strong> Both are steps to do first,
+  and the <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing
+  walkthrough</a> covers the tools — including why <code>fieldmatch,decimate</code> is the right
+  one for film that has been through a telecine, and <code>yadif</code> is not.</p>
+  <p>What Crisp does is notice. On the Max quality lane it reads the source and warns you before
+  the render starts, which matters most here: telecined frames look perfect three times in five, so
+  this is exactly the file someone checks, sees nothing wrong, and hands to an hour of generative
+  restoration. Once you bring it a progressive file, everything after that runs on your Mac and
+  nothing is uploaded.</p>
 
   <h2>Telecine, in detail</h2>
   <h3>My file says progressive but it still combs. How?</h3>
