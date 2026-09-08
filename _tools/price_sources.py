@@ -269,10 +269,96 @@ def unsourced_report() -> dict:
             for p in sorted((SITE / "vs").glob("*/index.html")) if unsourced_figures(p)}
 
 
+#: The head's own copies of a page's facts — the ones a crawler reads first.
+_HEAD_DESC = re.compile(
+    r'<meta[^>]*(?:name|property)="(?:description|og:description|twitter:description)"[^>]*>', re.I)
+_LDJSON = re.compile(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', re.S | re.I)
+
+
+def _head_text(raw: str) -> str:
+    bits = []
+    for m in _HEAD_DESC.finditer(raw):
+        c = re.search(r'content="([^"]*)"', m.group(0), re.I)
+        if c:
+            bits.append(html.unescape(c.group(1)))
+    bits += [re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))))
+             for m in _LDJSON.finditer(raw)]
+    return " ".join(bits)
+
+
+def _body_text(raw: str) -> str:
+    body = raw[raw.index("<body"):] if "<body" in raw else raw
+    body = re.sub(r"<(script|style)\b.*?</\1>", " ", body, flags=re.S | re.I)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body)))
+
+
+def head_only_prices() -> list[tuple[str, list[str]]]:
+    """Prices the HEAD carries that the BODY does not — a half-finished correction.
+
+    ⚠️ THE MERGE IN `_text` HIDES THIS BY CONSTRUCTION. Every rule above reads body copy PLUS the
+    descriptions, concatenated, which is right for "is this figure sourced" and blind to "do these
+    two copies of the figure AGREE". Once you join them you cannot see them disagree.
+    Outlier published the shape (outlier-site `5be04264`, `65c1a498`, `a822716b`): prose corrected
+    that morning while the table six lines below still read the old number; a body figure corrected
+    while `meta`, `og:` and JSON-LD kept the old one; titles rewritten while `og:title` and the
+    JSON-LD `headline` still asked the question the new title answers. **The second copy is almost
+    always the one a MACHINE reads**, which is why the first looks fine right up until it does not.
+    Measured 2026-09-08 across all 119 pages: zero. So this is a fence around something already
+    right, and it can go red the first time a correction lands in only one place.
+    """
+    out = []
+    for page in sorted(SITE.rglob("index.html")):
+        if "_tools" in page.parts:
+            continue
+        raw = page.read_text(encoding="utf-8")
+        head = _head_text(raw)
+        if not head.strip():
+            continue
+        body_figs = {m.group(1).rstrip(".,") for m in MONEY.finditer(_body_text(raw))}
+        extra = sorted({m.group(1).rstrip(".,") for m in MONEY.finditer(head)} - body_figs)
+        if extra:
+            out.append((str(page.parent.relative_to(SITE)), extra))
+    return out
+
+
+def _head_only_self_check() -> None:
+    """A stale figure left in a description MUST be reported; the same figure in both must not.
+
+    Same plant and counter-plant discipline as the two checks above, and the same figure in each so
+    that COMPLETENESS is the only variable — a plant that used two different numbers would pass for
+    the wrong reason.
+    """
+    page = next(iter(sorted((SITE / "vs").glob("*/index.html"))), None)
+    if page is None:
+        raise SystemExit("no /vs/ page to self-check against — cannot prove this check works")
+    original = page.read_text(encoding="utf-8")
+    m = re.search(r'(<meta[^>]*name="description"[^>]*content=")([^"]*)(")', original, re.I)
+    if not m:
+        raise SystemExit("no meta description to plant in — cannot prove this check works")
+    stale = original[:m.start(2)] + "Rival Ultra is $91919 lifetime." + original[m.end(2):]
+    try:
+        page.write_text(stale, encoding="utf-8")
+        caught = any("91919" in figs for _, figs in head_only_prices())
+        page.write_text(stale.replace("</body>", "<p>Rival Ultra is $91919 lifetime.</p></body>", 1),
+                        encoding="utf-8")
+        both = any("91919" in figs for _, figs in head_only_prices())
+    finally:
+        page.write_text(original, encoding="utf-8")
+    if not caught:
+        raise SystemExit("a stale $91919 planted in a meta description was NOT reported — this "
+                         "check cannot fail, so its clean output proves nothing")
+    if both:
+        raise SystemExit("$91919 present in BOTH head and body was reported — this check is "
+                         "measuring presence, not disagreement")
+    if page.read_text(encoding="utf-8") != original:
+        raise SystemExit("the self-check did not restore the page it edited")
+
+
 def main():
     _self_check()          # prove the instrument before believing what it reports
     _unsourced_self_check()
     _ours_self_check()
+    _head_only_self_check()
     ours = our_price_errors()
     if ours:
         print(f"{len(ours)} places give Crisp a price that is not Crisp's:")
@@ -282,6 +368,15 @@ def main():
               "other rule here is about rivals.")
         return 1
     print("no page gives Crisp a price that is not $129 (34 attributed, self-check passed)")
+    _ho = head_only_prices()
+    if _ho:
+        print(f"{len(_ho)} page(s) carry a price in <head> that the body does not — a correction "
+              f"that landed in one copy only:")
+        for slug, figs in _ho:
+            print(f"  {slug}: {', '.join('$' + f for f in figs)}")
+        print("\nThe head is what a crawler quotes first. Correct both copies or neither.")
+        return 1
+    print("every page's head and body agree on price")
     if "--sources" in sys.argv:
         n = 0
         for page in sorted((SITE / "vs").glob("*/index.html")):
