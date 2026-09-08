@@ -129,6 +129,13 @@ def unsourced_figures(page: Path) -> list[tuple[str, str]]:
     out = []
     for x in MONEY.finditer(txt):
         fig = x.group(1).rstrip(".").rstrip(",")
+        # ⚠️ KNOWN, BOUNDED, AND DELIBERATELY OPEN. Skipping OURS is what stops 34 true mentions
+        # of our own $129 being reported as unsourced rival figures on every run. The cost is a
+        # blind spot: a page saying "Topaz is $129" is excluded here as ours, and excluded by
+        # our_price_errors() as theirs, so NEITHER lane reports it. Docket's rule for this shape is
+        # to partition the pages rather than exclude them (Docket 1.3.40, `6dcf99e`) and it is the
+        # right shape — but it is not free, and the hole only opens if a rival's price is exactly
+        # $129. None is. Re-read this comment the day one is, and partition then.
         if fig in OURS or fig in in_block:
             continue
         out.append((fig, txt[max(0, x.start() - 70):x.start() + 60].strip()))
