@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1158",
-  "notes": "Ask for more upscale than Crisp has and it now says so. Typing \"upscale it 8x\" planned a 4\u00d7 job and looked exactly like typing \"make it 4x\" \u2014 same plan, same wording, nothing on screen to tell you Crisp does not go above 4\u00d7. It now tells you it planned 4\u00d7 rather than the 8\u00d7 you asked for, and still runs the job. Nothing got slower; nothing else changed for you in this build.",
-  "pub_date": "2026-09-08T12:12:07Z",
+  "version": "1.0.1161",
+  "notes": "Words you ask Crisp to put on screen are no longer run as commands. Asking it to \"write mute it across the bottom\" muted your audio instead of adding the caption; \"overlay the text make it black and white\" graded the clip; \"type slow motion on it\" halved the speed; \"stick upscale it at the bottom\" started a long render. Ten ways of asking for a caption were measured against four command-shaped phrases and half of them did the wrong thing \u2014 all of those now add the caption you asked for. Two phrasings that mention cropping still decline rather than captioning, and say so. Nothing got slower.",
+  "pub_date": "2026-09-08T13:32:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg2Ry9VeS9WM2tUaUc0aDlXeVJGZ21kdTlNSVBGLzBQUHMwdWlodCtBYW5FRXpyREV6SHF6S3ByMWd1V0E1SEQwV3hmQUJZckF0b2JJWjJmd0RIclFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODY5NDE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TlFoVTl0bGNzdnpGK1pVbUg4dW44NXp5V3ByVzhYRHhWRFhxckdQeTlqUEtvd241SWxNWFBtY0lZZVFxYWJXTVZIazlnWmFjZG1iL29iMUoxR0RBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNhd3VMUUlLZElQQ0hxTnBLMlJINVg5YnRNWGYwdDE5aEY0YWpFdWI1ODVCVUREeGdPL1Z0VDE4TFRZQ3pBSDNzQjI5MzVZbEp1dDBKY2NXcGhLOUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODc0Mjg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6TEZ5ajF2RFFCYzBrbklMdkg2bTg1eXBLenFETGtEdy9VOURMaHhhVTF0aGxEUkhYSkcyVXdwdTRRS1UyZk1aaSt4NlBtTEgrVUxyY1o3NVh1ZnlDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
