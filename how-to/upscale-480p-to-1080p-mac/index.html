@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to upscale 480p to 1080p on a Mac","description":"480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to upscale 480p to 1080p on a Mac","description":"480p to 1080p is a realistic 2.25x jump that usually looks genuinely better. 480p to 4K mostly does not. Why the smaller target is the right one, with the numbers.","datePublished":"2026-07-23","dateModified":"2026-09-08","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you really upscale 480p to 1080p?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is the most reliable jump in this whole category. You are asking a model to produce about 5 pixels for every 1 it has, which is well within what current super-resolution does convincingly."}},{"@type":"Question","name":"Should I go straight to 4K instead?","acceptedAnswer":{"@type":"Answer","text":"Usually not. 480p to 4K is 27 pixels invented per real pixel, and past a point the model is composing rather than reconstructing — faces are where it shows."}},{"@type":"Question","name":"Will upscaling fix a blurry 480p video?","acceptedAnswer":{"@type":"Answer","text":"It fixes low resolution and compression damage. It does not fix a focus miss or motion blur, which are optical and permanently gone."}}]}
@@ -44,7 +44,12 @@
   like it was shot on better equipment. 480p to 4K is 27 new pixels per real one, and that is where
   reconstruction turns into invention.</p>
 
-  <h2>Why 1080p is the honest target</h2>
+  <figure>
+<img src="/howto-upscale-480p.jpg" width="912" height="1144" loading="lazy" decoding="async"
+     alt="The same carved detail before and after upscaling: blocking and jagged edges above, cleaner edges below.">
+<figcaption>The same frame and crop, upscaled 3x to 2562x1440. The clip was made for this demonstration.</figcaption>
+</figure>
+<h2>Why 1080p is the honest target</h2>
   <div class="cmp-wrap"><table>
     <thead><tr><th>From 640×480</th><th>Pixels to invent, each real one</th><th>Realistic?</th></tr></thead>
     <tbody>
