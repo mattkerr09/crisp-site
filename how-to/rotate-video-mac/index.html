@@ -89,6 +89,23 @@
     <p style="margin-bottom:0">Phones often record upright but store the video sideways with a little <strong>rotation flag</strong> that says "turn me 90° on playback". Some players honour that flag; others ignore it, which is why the same file looks fine in Photos but sideways in a browser or on another device. Crisp doesn't rely on the flag: it <strong>bakes the rotation into the actual pixels</strong> and clears the flag, so the clip plays the right way up <em>everywhere</em>.</p>
   </div>
 
+  <h2>What each rotation does to the frame — and to the sound</h2>
+  <p>Crisp offers five transforms, and the one thing worth knowing before you pick is which of them change the shape of the frame. A quarter turn swaps width and height; a half turn and the two mirrors leave them exactly as they were.</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Transform</th><th>What it does</th><th>1920×1080 becomes</th></tr></thead>
+    <tbody>
+      <tr><td>Rotate right 90°</td><td>quarter turn clockwise</td><td>1080×1920 (upright)</td></tr>
+      <tr><td>Rotate left 90°</td><td>quarter turn anticlockwise</td><td>1080×1920 (upright)</td></tr>
+      <tr><td>180°</td><td>upside down</td><td>1920×1080 (unchanged)</td></tr>
+      <tr><td>Mirror</td><td>flip left-to-right</td><td>1920×1080 (unchanged)</td></tr>
+      <tr><td>Flip vertical</td><td>flip top-to-bottom</td><td>1920×1080 (unchanged)</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>That matters more than it sounds: a 90° rotate turns a landscape clip into a genuine portrait file, which is what Reels, Shorts and TikTok want, and what a 16:9 timeline will letterbox. If you wanted the picture upright <em>inside</em> a landscape frame instead, rotate and then <a href="https://crispvideo.app/how-to/crop-video-mac/">crop</a>.</p>
+  <p>Your audio is not touched by any of them. A rotate re-encodes the picture — it has to, because the pixels genuinely move — but the sound is <strong>stream-copied straight across</strong>, so it comes out bit-identical and gains no generation loss however many times you rotate the file. The one exception is a source whose audio the output container cannot legally carry — ADPCM inside an .avi, WMA inside a .wmv — where Crisp re-encodes that track to AAC rather than fail the job. Ordinary iPhone, camera and screen-recording footage takes the copy path.</p>
+
   <h2>Crisp vs QuickTime vs iMovie for rotating a clip</h2>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Crisp</th><th>QuickTime</th><th>iMovie</th><th>Online rotators</th></tr></thead>

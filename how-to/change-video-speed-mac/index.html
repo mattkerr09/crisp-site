@@ -91,6 +91,23 @@
   <h2>Speeding up vs slowing down — and smooth slow-mo</h2>
   <p>Speed is one lane that goes both ways. A factor <strong>above 1×</strong> speeds the clip up (great for condensing a long screen-recording or making a time-lapse); a factor <strong>below 1×</strong> slows it down (0.5× is half speed, 0.25× is quarter-speed slow motion). For really smooth slow motion, Crisp can also <strong>interpolate</strong> extra in-between frames so the slowed clip doesn't look choppy — see the dedicated <a href="https://crispvideo.app/how-to/slow-mo-video-mac/">slow-mo guide</a>.</p>
 
+  <h2>The range, and why the voices don't go squeaky</h2>
+  <p>The lane accepts anything from <strong>0.1× to 8×</strong>, with 0.25×, 0.5×, 2× and 4× as one-click presets. Speeding a clip up shortens it by the same factor — a 10-minute screen recording at 4× is 2.5 minutes.</p>
+  <p>The part worth explaining is the audio. Change the playback rate naively and the pitch goes with it: the chipmunk at 2×, the horror-film drone at 0.5×. Crisp pitch-corrects instead, so a sped-up voice still sounds like the person talking, just faster. The filter that does it only accepts a factor between 0.5 and 2 in a single pass, so anything beyond that is applied in stages whose product is the speed you asked for:</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Speed</th><th>Applied as</th><th>Stages</th></tr></thead>
+    <tbody>
+      <tr><td>0.1× (slowest)</td><td>0.5 × 0.5 × 0.5 × 0.8</td><td>4</td></tr>
+      <tr><td>0.25×</td><td>0.5 × 0.5</td><td>2</td></tr>
+      <tr><td>0.5× / 2×</td><td>one pass</td><td>1</td></tr>
+      <tr><td>4×</td><td>2 × 2</td><td>2</td></tr>
+      <tr><td>8× (fastest)</td><td>2 × 2 × 2</td><td>3</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Below 1× this lane slows the clip by <strong>holding each frame longer</strong> — no new frames are invented. That is the right answer for a screen recording or a talking head, and the wrong one for fast motion, where held frames read as judder. For that, the <a href="https://crispvideo.app/how-to/slow-mo-video-mac/">slow-mo lane</a> generates the in-between frames instead.</p>
+
   <h2>Crisp vs iMovie vs QuickTime for changing speed</h2>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Crisp</th><th>QuickTime</th><th>iMovie</th><th>Online tools</th></tr></thead>
