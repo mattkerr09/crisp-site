@@ -33,7 +33,14 @@ from datetime import date
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
-DATE_LINE = re.compile(r'^[-+].*"date(?:Modified|Published)":"[^"]*"')
+# A "date-bearing part" is any line whose only job is to state a date — JSON-LD's fields AND the
+# visible "Updated <Month> <Year>" dateline that `_tools/dateline.py` maintains. Both had to be
+# here: the moment dateline.py corrected 53 visible datelines, this tool read those working-tree
+# diffs as real content changes and wanted to walk 53 dateModified values forward, which is the
+# same self-feeding loop the docstring above describes, arriving through the other tool's edit.
+# Two tools writing dates on one page need ONE definition of what a date line is.
+DATE_LINE = re.compile(r'^[-+].*(?:"date(?:Modified|Published)":"[^"]*"'
+                       r'|Updated [A-Z][a-z]+ \d{4})')
 PUBLISHED = re.compile(r'"datePublished":"([^"]+)"')
 MODIFIED = re.compile(r'"dateModified":"([^"]+)"')
 
