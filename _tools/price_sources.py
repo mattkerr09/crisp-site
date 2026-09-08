@@ -58,6 +58,30 @@ def _text(p: Path) -> str:
     return re.sub(r"\s+", " ", html.unescape(visible + " " + descs))
 
 
+#: ⚠️ A PATTERN TOO NARROW REPORTS ZERO AND READS EXACTLY LIKE A CLEAN SITE.
+#: This gate's whole output is "N pages quote a rival price with no date". If MONEY stopped
+#: matching the way prices are actually written, N would be 0 and the report would be
+#: indistinguishable from success. That is not hypothetical here: this tool's first run said 19
+#: pages, then 8, then 6, because "$129." with a trailing full stop is not the string "$129" —
+#: the parser, not the site, moved the number three times. So the pattern proves itself against
+#: known-good text before the survey is believed.
+_MUST_MATCH = ("$129", "$ 129", "$1,299.99", "costs $299 a year", "$12/month", "$437.99 list")
+_MUST_NOT = ("129 dollars", "£129", "$", "USD 129")
+
+
+def _self_check() -> None:
+    for sample in _MUST_MATCH:
+        if not MONEY.search(sample):
+            raise SystemExit(
+                f"price pattern no longer matches {sample!r} — a clean report would prove "
+                f"nothing, because the pattern has been narrowed past real prices")
+    for sample in _MUST_NOT:
+        if MONEY.search(sample):
+            raise SystemExit(
+                f"price pattern now matches {sample!r}, which is not a price this gate should "
+                f"claim — a widened pattern turns every page into a false positive")
+
+
 def survey():
     """-> {slug: [rival figures]} for /vs/ pages quoting a rival price with no dated block."""
     gaps = {}
@@ -71,6 +95,7 @@ def survey():
 
 
 def main():
+    _self_check()          # prove the instrument before believing what it reports
     gaps = survey()
     if "--baseline" in sys.argv:
         BASELINE.write_text(json.dumps(gaps, indent=2, sort_keys=True) + "\n", encoding="utf-8")
