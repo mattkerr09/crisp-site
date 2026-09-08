@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1168",
-  "notes": "When a render stops making progress, Crisp now says so instead of leaving the bar ticking. A job that has not moved for a while reads \"nothing has moved for 6m 40s\" and the line turns amber, so a render that is stuck looks different from one that is simply slow \u2014 until now they looked identical, and a frozen job could sit at 77% with nothing on screen to tell you. It only speaks up once a job has been still for a while, so ordinary slow stretches stay quiet. Nothing else changes on screen and nothing got slower.",
-  "pub_date": "2026-09-08T18:55:02Z",
+  "version": "1.0.1169",
+  "notes": "If you ask for a GIF of a moment that is past the end of your clip, Crisp now tells you the clip is shorter than that instead of quietly making a GIF of the whole thing. It used to depend on how you phrased it: \"make a gif starting at 40s\" was caught, but \"gif starting 40s\", \"gif of 40s onwards\" and \"a gif of the 40s mark\" were not, and you got a file back for a moment that does not exist. Asking for a GIF of a certain LENGTH still works exactly as before \u2014 a 40-second GIF of a short clip is still the whole clip. Nothing got slower.",
+  "pub_date": "2026-09-08T19:39:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFOblNuc1dmdVNVTFE5WnY5RXZUbUVlS2tYWFdBL3NMZVlralpNeG9EbjhXMzMxVHQ4U3R6dFZ3SnoxS2RvZlpwNzVpOUhta29aaEhaSVhJVmhlM2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODkzNTkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqM1poQXBtcWUwNlh5M2p2akYzalJPTnNJSVN0SG9zdHovcExIYWpHWDUxYmpVNmsybWZBckp4eVlkdytzYWV5SzZJQm9JdnE0ZGpsV2NkSmVZOUhCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhqRXZiTWFGMk5lM2pjZzRMNktFelRtbGVldHpBSWpQSG1Odm1lY2FpcktBSitCcC9LMlBnR1hpczNiREYzN3p2WVFHQmhOTG5DNkllTUhBS2dvOXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODk2MjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorSXByOU9Bck1kVjN5MXBIS2k2L1VKc09uNHA3NEswbWh5YjdLNXJQZXNPVXdCOVYzL3hObjRvSkJVL0Fma28zdy9LQTVwRWhjMmYxbktOeFdTZkhDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
