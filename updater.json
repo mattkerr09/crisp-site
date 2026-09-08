@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1150",
-  "notes": "If a render ever stops making progress, Crisp now stops it and says so, instead of leaving a job that looks busy forever. One got stuck for seven hours in testing before this.",
-  "pub_date": "2026-09-08T10:12:29Z",
+  "version": "1.0.1158",
+  "notes": "Ask for more upscale than Crisp has and it now says so. Typing \"upscale it 8x\" planned a 4\u00d7 job and looked exactly like typing \"make it 4x\" \u2014 same plan, same wording, nothing on screen to tell you Crisp does not go above 4\u00d7. It now tells you it planned 4\u00d7 rather than the 8\u00d7 you asked for, and still runs the job. Nothing got slower; nothing else changed for you in this build.",
+  "pub_date": "2026-09-08T12:12:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUEwWCtueE9jeHo3WjZIYUZScEdoMlhZR09pU21tdXQ1NWFrMmNUbXkwblIxSVlpRzhLOXdFNm5ITHkyZ0ZjK2lOZ09mSzFPM2cxV09zaWl6MUZFelFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODYyMDQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp2bG5uOXpWKzNKMkdKR3h0ak5vSzZKN3ZzY2NYUjhzdzhWV2dJeTJLcUFSTktkU1pRb2t3RnplUjBpUForTWtLd1FJUlBZTXFUcnlMeDE5UFVHVk5Bdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg2Ry9VeS9WM2tUaUc0aDlXeVJGZ21kdTlNSVBGLzBQUHMwdWlodCtBYW5FRXpyREV6SHF6S3ByMWd1V0E1SEQwV3hmQUJZckF0b2JJWjJmd0RIclFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODY5NDE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TlFoVTl0bGNzdnpGK1pVbUg4dW44NXp5V3ByVzhYRHhWRFhxckdQeTlqUEtvd241SWxNWFBtY0lZZVFxYWJXTVZIazlnWmFjZG1iL29iMUoxR0RBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
