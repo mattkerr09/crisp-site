@@ -217,6 +217,46 @@ def _unsourced_self_check() -> None:
         raise SystemExit("the self-check did not restore the page it edited")
 
 
+def _ours_self_check() -> None:
+    """A price planted in Crisp's own name MUST be reported, and by attribution rather than nearness.
+
+    ⚠️ THIS CHECK SHIPPED WITHOUT ONE. Its docstring said it "can go red immediately rather than
+    needing a baseline" — true, and unproven, because with zero offenders it printed nothing at
+    all. A clean run and a blind run were the same silence, which is the exact shape Docket ran
+    into (Docket 1.3.40, `6dcf99e`): one empty response testified that a site was missing eight
+    things, and read like a finding because nothing distinguished "I looked and it was fine" from
+    "I could not look". Its two neighbours here have had a self-check since the day they landed;
+    this one went an hour without.
+    THE PLANT AND THE COUNTER-PLANT USE THE SAME FIGURE so attribution is the only variable: $149
+    in Crisp's name must be caught, and $149 in Topaz's name must not be, because this rule has no
+    opinion about rivals — that is what the other two rules are for. A ±90-character window around
+    the word "Crisp" reported 45 offenders on a site whose real answer is zero.
+    """
+    # NOT the home page: a sibling session edits site/index.html, and a plant that is live for a
+    # few milliseconds is a plant that can be committed by somebody else.
+    page = next(iter(sorted((SITE / "vs").glob("*/index.html"))), None)
+    if page is None:
+        raise SystemExit("no /vs/ page to self-check against — cannot prove this check works")
+    original = page.read_text(encoding="utf-8")
+    try:
+        page.write_text(original.replace("</body>", "<p>Crisp is $149 once.</p></body>", 1),
+                        encoding="utf-8")
+        caught = any(v == "149" for _, v, _ in our_price_errors())
+        page.write_text(original.replace("</body>", "<p>Topaz Video AI is $149 once.</p></body>", 1),
+                        encoding="utf-8")
+        false_alarm = any(v == "149" for _, v, _ in our_price_errors())
+    finally:
+        page.write_text(original, encoding="utf-8")
+    if not caught:
+        raise SystemExit("a planted “Crisp is $149” was NOT reported — this check cannot fail, "
+                         "so its clean output proves nothing")
+    if false_alarm:
+        raise SystemExit("“Topaz Video AI is $149” was reported as OUR price — this check is "
+                         "measuring nearness, not attribution")
+    if page.read_text(encoding="utf-8") != original:
+        raise SystemExit("the self-check did not restore the page it edited")
+
+
 def unsourced_report() -> dict:
     return {p.parent.name: sorted({f for f, _ in unsourced_figures(p)})
             for p in sorted((SITE / "vs").glob("*/index.html")) if unsourced_figures(p)}
@@ -225,6 +265,7 @@ def unsourced_report() -> dict:
 def main():
     _self_check()          # prove the instrument before believing what it reports
     _unsourced_self_check()
+    _ours_self_check()
     ours = our_price_errors()
     if ours:
         print(f"{len(ours)} places give Crisp a price that is not Crisp's:")
@@ -233,6 +274,7 @@ def main():
         print("\nOur own price is the one number on this site nobody double-checks, because every "
               "other rule here is about rivals.")
         return 1
+    print("no page gives Crisp a price that is not $129 (34 attributed, self-check passed)")
     if "--sources" in sys.argv:
         n = 0
         for page in sorted((SITE / "vs").glob("*/index.html")):
