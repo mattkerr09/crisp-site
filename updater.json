@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1174",
-  "notes": "When Crisp cannot land exactly on the resolution you asked for, it now explains what it did instead of calling it \"the nearest\". A 480p clip asked for 1080p rounds up to 3x and says so, because 2x would stop short at 960p. The wording only changed where it was untrue: a step that really is the nearest still says it is.",
-  "pub_date": "2026-09-08T22:46:55Z",
+  "version": "1.0.1175",
+  "notes": "The size Crisp promises on the card is now the size of the file it writes. On clips whose pixels are very slightly non-square \u2014 which is what an ordinary 854x480 16:9 encode is \u2014 the plan said 2558x1440 and the export came out 2562x1440, because the part that describes the job and the part that renders it disagreed about when to treat pixels as square. They now ask the same question of the same code.",
+  "pub_date": "2026-09-08T23:45:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxvK1E5TWozTzVEK3IwNWlKQUtlSDVVMURRTnA3NEVwQVFrTFFGTU41WlAyaklUb1NUK3RueWdydHdHRWI2aHVKd2FxcGJTM3FBSS9TNVJ4dWk5Y3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTA3NDU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkM055T2VrQVF1UHptejRWZ0xUYWExRFRCU3JqL0QwbXhIY0dBTzZJWjRVd1c0Z0I1enRJMzk0ZjhXVmh6bE11QzdnOUNoYjZwNVdiTHlKOUYyMzVBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJkaWswNjNwRTJLZ0dKNXp4RWF1QzB2S3hyZm5oRFBkSkkxcTNQckthRWNMUjB1Y2ZMdDIxdnlmRjFKU2NNMFZyTnZRcTQrTGZXcEE0Q0h5NXB0K2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTEwOTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyQTJXNVIxMVg0dDE0NDQ4eDBRNDllNGJxZXdua1BZNzFSVmVVcTlPcFNLWDF0aVpFTHltVm15M0VmbGNGYjVoNEJVcmoyR2JENXBSTGNPQ3N1cGpBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
