@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1138",
-  "notes": "Two things the timeline editor could not do, although the rest of the app could. Reframing a clip to widescreen was missing: the editor offered vertical, square and portrait, while the setup lane offered those three and 16:9 as well, and asking for it in your own words has always worked. So turning a vertical clip into something for YouTube was possible everywhere except the place you would be standing while editing it. The same had happened to the audio tool, which offered nine of the ten things it can do to a clip's sound but not evening out the loud and quiet parts, even though its close relatives \u2014 normalising, cutting background noise and cutting wind \u2014 were all there. Both are now in the editor. Nothing was broken as such; each control simply looked complete on its own, and only comparing it with the other one showed what was missing.",
-  "pub_date": "2026-09-08T02:48:06Z",
+  "version": "1.0.1140",
+  "notes": "The editor now offers the Portrait and Retouch looks, and Crop now offers 3:4. Crisp could always do all three \u2014 the buttons for them were simply missing, so there was no way to ask.",
+  "pub_date": "2026-09-08T03:55:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg3Z1Ywc1hlM1hLakRObUltTExKSFZLeDlFa2ZrbWJFeVpzOFp5YllHUU13Q0w1L2NtN0lnaEtuTmlIcGt0b1ByV3ZMVWNOcUlodDU1SDF2cjF3UXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODM1MzE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0L0dqYVZnRCtvZm5jY1BJTjg3UVk4MSt2eUk5SERJWG5HLzJKQUo4TE1PcUwyaFpXejVFTnZCbExNMy9ueXQ0M1VRWFZuUTZLQ3JBc0UwSURyNVBCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ITmxVYlR3aXN3T0ZrS2JtemtkSjM2YTBWTUlYaXZiQmt0RHVuUzEvSW5PQXdseGlWcndnN080R0swWHQvUkM1MFJZZFRyMFNsZTF6UHp5NG4vT0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODM5MzcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKL0x5aHlNM1lmSmR6bzRXdzFFNzJhNFAyV2MvbkJKWUpVZmFCdzZBdmVGV0Q5dDJSZElZN3ZXdkpubW5TL2ExeGl0b1hWbkQzL1VJTGprMlV6aHpDQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
