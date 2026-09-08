@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1166",
-  "notes": "Asking Crisp to slow down only part of a clip now slows only that part. If you picked a section and set a speed, Crisp ignored the section and retimed the whole clip \u2014 a longer render than you asked for, and the wrong piece. Trimming works the same way now whether you are slowing a clip down or speeding it up. One thing this build does not change: slow motion still works by playing the frames you have more slowly rather than creating new in-between ones, so a heavily slowed clip can still look stepped. Nothing got slower.",
-  "pub_date": "2026-09-08T17:47:12Z",
+  "version": "1.0.1168",
+  "notes": "When a render stops making progress, Crisp now says so instead of leaving the bar ticking. A job that has not moved for a while reads \"nothing has moved for 6m 40s\" and the line turns amber, so a render that is stuck looks different from one that is simply slow \u2014 until now they looked identical, and a frozen job could sit at 77% with nothing on screen to tell you. It only speaks up once a job has been still for a while, so ordinary slow stretches stay quiet. Nothing else changes on screen and nothing got slower.",
+  "pub_date": "2026-09-08T18:55:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1zUFo4ZEFXeG5NVkVkeFRZTUVMMEtSbVJka1pMVE51V3RpNHVwdmVCM1pqMHhMWXpNRFRBbTM2L2hORnZRN0pRQ1JCL1FEa09NYUVEOXZ3QUJxb1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODg5NDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaTUFVeHRkOXdXM3JINzFuUEZ5K1IrbmEvTnY1NklOeE9hRVlHS2hVZlNsS01RNi9CNFpmNjcweVV2dXRwUktNOXJ1UlU3d3lSbm96WWMwQklmeUVCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFOblNuc1dmdVNVTFE5WnY5RXZUbUVlS2tYWFdBL3NMZVlralpNeG9EbjhXMzMxVHQ4U3R6dFZ3SnoxS2RvZlpwNzVpOUhta29aaEhaSVhJVmhlM2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODkzNTkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqM1poQXBtcWUwNlh5M2p2akYzalJPTnNJSVN0SG9zdHovcExIYWpHWDUxYmpVNmsybWZBckp4eVlkdytzYWV5SzZJQm9JdnE0ZGpsV2NkSmVZOUhCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
