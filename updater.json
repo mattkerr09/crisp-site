@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1169",
-  "notes": "If you ask for a GIF of a moment that is past the end of your clip, Crisp now tells you the clip is shorter than that instead of quietly making a GIF of the whole thing. It used to depend on how you phrased it: \"make a gif starting at 40s\" was caught, but \"gif starting 40s\", \"gif of 40s onwards\" and \"a gif of the 40s mark\" were not, and you got a file back for a moment that does not exist. Asking for a GIF of a certain LENGTH still works exactly as before \u2014 a 40-second GIF of a short clip is still the whole clip. Nothing got slower.",
-  "pub_date": "2026-09-08T19:39:59Z",
+  "version": "1.0.1174",
+  "notes": "When Crisp cannot land exactly on the resolution you asked for, it now explains what it did instead of calling it \"the nearest\". A 480p clip asked for 1080p rounds up to 3x and says so, because 2x would stop short at 960p. The wording only changed where it was untrue: a step that really is the nearest still says it is.",
+  "pub_date": "2026-09-08T22:46:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhqRXZiTWFGMk5lM2pjZzRMNktFelRtbGVldHpBSWpQSG1Odm1lY2FpcktBSitCcC9LMlBnR1hpczNiREYzN3p2WVFHQmhOTG5DNkllTUhBS2dvOXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODk2MjU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorSXByOU9Bck1kVjN5MXBIS2k2L1VKc09uNHA3NEswbWh5YjdLNXJQZXNPVXdCOVYzL3hObjRvSkJVL0Fma28zdy9LQTVwRWhjMmYxbktOeFdTZkhDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxvK1E5TWozTzVEK3IwNWlKQUtlSDVVMURRTnA3NEVwQVFrTFFGTU41WlAyaklUb1NUK3RueWdydHdHRWI2aHVKd2FxcGJTM3FBSS9TNVJ4dWk5Y3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTA3NDU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkM055T2VrQVF1UHptejRWZ0xUYWExRFRCU3JqL0QwbXhIY0dBTzZJWjRVd1c0Z0I1enRJMzk0ZjhXVmh6bE11QzdnOUNoYjZwNVdiTHlKOUYyMzVBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
