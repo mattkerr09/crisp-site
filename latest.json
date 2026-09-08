@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1140",
-  "notes": "The editor now offers the Portrait and Retouch looks, and Crop now offers 3:4. Crisp could always do all three \u2014 the buttons for them were simply missing, so there was no way to ask.",
-  "pub_date": "2026-09-08T03:55:32Z",
+  "version": "1.0.1141",
+  "notes": "Typing a size like \"make it 0.5x\" used to start a full 2x upscale \u2014 the opposite of what you asked for, and the slowest job in the app. Crisp now recognises it as asking for something smaller and points you at Compress instead.",
+  "pub_date": "2026-09-08T05:40:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5ITmxVYlR3aXN3T0ZrS2JtemtkSjM2YTBWTUlYaXZiQmt0RHVuUzEvSW5PQXdseGlWcndnN080R0swWHQvUkM1MFJZZFRyMFNsZTF6UHp5NG4vT0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODM5MzcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKL0x5aHlNM1lmSmR6bzRXdzFFNzJhNFAyV2MvbkJKWUpVZmFCdzZBdmVGV0Q5dDJSZElZN3ZXdkpubW5TL2ExeGl0b1hWbkQzL1VJTGprMlV6aHpDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlYVXZlVnRyUEdVb1lwd0lvdlF4SmsvbUhVSCt0UEt5T3R6KzJab3V2R2JkTC9ud0ZtSlNBUUp6UEJZc21xcEtDeVRaUXFZbGVUcGNTbnhpVGd0d2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODQ1NzE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvVWNIMUgwaTZJQzUreFI0aXdYWlJFVEo4SFBEVVlDTmhoNHV2dDBINW55VWVoQ2xrSWMwSnM1WCtXTmxubFhveFZYY1lLa01VV01BdHA5Q2tSUEtBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
