@@ -88,6 +88,22 @@
     <p style="margin-bottom:0">On a very short clip, a one-second fade in <em>and</em> a one-second fade out could overlap, or swallow the whole thing. Crisp <strong>clamps the fade length automatically</strong>, so each side is limited to a fraction of the clip's length. You always get a clean, non-overlapping fade, whether the clip is ten seconds or one. And the fade-out is anchored to the audio's <em>own</em> end, so if your sound runs a touch longer than the video (a music bed, a voiceover tail), it still fades out properly instead of cutting off early.</p>
   </div>
 
+  <h2>Exactly how long a fade you get</h2>
+  <p>"Clamped to a fraction of the clip" is the honest summary; here is the actual arithmetic, because it is the difference between the number you type and the number you see. A fade is allowed to be <strong>0.1 to 10 seconds</strong>. On top of that, an in-<em>and</em>-out pair is capped at <strong>45% of the clip per side</strong> (so the two can never meet in the middle), and a single-ended fade at <strong>90%</strong>.</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Clip length</th><th>You ask for</th><th>In &amp; out gives</th><th>In only gives</th></tr></thead>
+    <tbody>
+      <tr><td>2 sec</td><td>1 sec</td><td>0.90 sec</td><td>1.00 sec</td></tr>
+      <tr><td>2 sec</td><td>3 sec</td><td>0.90 sec</td><td>1.80 sec</td></tr>
+      <tr><td>6 sec</td><td>3 sec</td><td>2.70 sec</td><td>3.00 sec</td></tr>
+      <tr><td>6 sec</td><td>10 sec</td><td>2.70 sec</td><td>5.40 sec</td></tr>
+      <tr><td>30 sec</td><td>10 sec</td><td>10.0 sec</td><td>10.0 sec</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The card Crisp shows you before it renders is calculated by <em>the same function that renders the fade</em>, so the length on screen is the length applied. That was not always true: the plain-English box once knew about the 10-second maximum but not about the 45% rule, so asking to "fade in and out over 3 seconds" on a six-second clip promised 3 seconds and delivered 2.7. One shared function, not two copies of a rule.</p>
+
   <h2>What Crisp's Fade is — and isn't</h2>
   <p>Crisp's Fade lane does one thing cleanly: it fades your clip <strong>up from black, down to black, or both</strong>, with the audio fading in step and hardware encoding on your Mac. That covers the overwhelming majority of "fade video" searches: the tidy intro, the graceful ending, the top-and-tail before you post.</p>
   <p>What it deliberately doesn't try to be is a timeline NLE. It fades to and from <strong>black</strong> (not an arbitrary colour), it fades the <strong>ends</strong> of the clip (not a fade in the middle), and it's a single-clip effect — a <strong>crossfade</strong> that dissolves one clip into another is a different job (Crisp does clip-to-clip transitions in its Montage feature, not here). If you need a mid-clip dip-to-black with keyframes inside a longer edit, that's a job for Premiere or Final Cut. For a clean fade in/out on a clip, though, Crisp is the fastest, most private way to do it on a Mac.</p>

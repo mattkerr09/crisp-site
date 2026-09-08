@@ -91,7 +91,21 @@
 
   <h2>A note on long and 4K clips — honest limits</h2>
   <p>Reversing isn't like a trim or a crop that streams through the file. To play a clip backwards, every decoded frame has to be held in memory at once, so the real cost is total pixels, resolution × frame rate × length, not just how many seconds long it is. A four-minute 4K clip is short in seconds but enormous in buffered frames.</p>
-  <p>So Crisp puts a sensible cap on it. If a clip is too long, or a 4K source is too big to hold in memory, Crisp <strong>declines it with a friendly message</strong> and asks you to trim it shorter or lower the resolution first — it refuses rather than crash. Reverse and boomerang are short-clip social effects, so short clips are exactly the sweet spot. If you've got a long one, run it through <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Enhance</a> or trim it down first, then reverse the part you actually need.</p>
+  <p>So Crisp puts a real number on it rather than a vague one. The budget is <strong>about 10&nbsp;GiB of buffered frames</strong>, and the arithmetic is width&nbsp;×&nbsp;height&nbsp;×&nbsp;1.5&nbsp;bytes&nbsp;×&nbsp;frames&nbsp;per&nbsp;second&nbsp;×&nbsp;seconds — doubled for a boomerang, which holds the forward and the backward halves at once. At 30&nbsp;fps that works out to:</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Source at 30&nbsp;fps</th><th>Longest reverse</th><th>Longest boomerang</th></tr></thead>
+    <tbody>
+      <tr><td>720×480 (DVD, camcorder)</td><td>11.5 min</td><td>5.8 min</td></tr>
+      <tr><td>1280×720</td><td>4.3 min</td><td>2.2 min</td></tr>
+      <tr><td>1920×1080</td><td>1.9 min</td><td>1.0 min</td></tr>
+      <tr><td>3840×2160 (4K)</td><td>29 sec</td><td>14 sec</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Those are the limits the app itself computes, from the same constants the check is written against — not estimates. Note how badly duration alone would describe them: a four-minute 4K clip is <em>shorter</em> than the DVD clip that sails through, and would buffer roughly 83&nbsp;GB. There is also a flat 30-minute backstop for very small, very long files. Halve the numbers above for 60&nbsp;fps footage, double them for 15.</p>
+
+  <p>Past the budget Crisp <strong>declines it with a friendly message</strong> and asks you to trim it shorter or lower the resolution first — it refuses rather than crash. Reverse and boomerang are short-clip social effects, so short clips are exactly the sweet spot. If you've got a long one, run it through <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Enhance</a> or trim it down first, then reverse the part you actually need.</p>
 
   <h2>What Crisp's Reverse is — and isn't</h2>
   <p>Crisp's Reverse lane does one thing cleanly: it plays your clip <strong>backwards</strong>, or loops it <strong>forward-and-back</strong>, with the audio handled correctly and hardware encoding on your Mac. That covers the overwhelming majority of "reverse video" searches: the rewind gag, the boomerang, the satisfying un-pour.</p>
