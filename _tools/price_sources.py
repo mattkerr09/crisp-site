@@ -82,10 +82,18 @@ def _self_check() -> None:
                 f"claim — a widened pattern turns every page into a false positive")
 
 
-#: The block a page cites, from "Prices checked" onward. 900 characters is deliberate and
-#: measured: the longest real block on the site (HitPaw, which records list AND two discount
-#: tiers for three plans) runs 618, and the next paragraph always starts well before 900.
-_BLOCK_CHARS = 900
+#: ⚠️ THIS WAS A CHARACTER COUNT AND THE COUNT WAS THE BUG. The first version read 900
+#: characters from the phrase "Prices checked", calibrated because the longest real block then
+#: ran 618. Then I wrote a longer block — sourcing three more vendors on one page — and the tool
+#: reported MORE unsourced figures after the fix than before it, because everything past 900
+#: characters fell outside the window and counted as unquoted. A threshold measured against
+#: today's content is a threshold that breaks the moment the content grows, and it breaks
+#: silently in the direction that looks like a regression.
+#: All eleven dated pages wrap the block in <p class="price-receipts">, so the block has a real
+#: boundary and the tool now uses it. The character window survives only as a fallback for a page
+#: that has the phrase and not the class, and is generous rather than tight.
+_BLOCK_FALLBACK_CHARS = 2000
+_RECEIPTS = re.compile(r'<p[^>]+class="[^"]*price-receipts[^"]*"[^>]*>(.*?)</p>', re.S | re.I)
 
 
 def unsourced_figures(page: Path) -> list[tuple[str, str]]:
@@ -113,14 +121,15 @@ def unsourced_figures(page: Path) -> list[tuple[str, str]]:
     m = DATED.search(txt)
     if not m:
         return []                      # no block at all is the survey's job, not this one
-    block = txt[m.start():m.start() + _BLOCK_CHARS]
+    raw = page.read_text(encoding="utf-8", errors="replace")
+    receipts = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", b))
+                        for b in _RECEIPTS.findall(raw))
+    block = receipts if receipts.strip() else txt[m.start():m.start() + _BLOCK_FALLBACK_CHARS]
     in_block = {x.group(1).rstrip(".").rstrip(",") for x in MONEY.finditer(block)}
     out = []
     for x in MONEY.finditer(txt):
         fig = x.group(1).rstrip(".").rstrip(",")
         if fig in OURS or fig in in_block:
-            continue
-        if m.start() <= x.start() < m.start() + _BLOCK_CHARS:
             continue
         out.append((fig, txt[max(0, x.start() - 70):x.start() + 60].strip()))
     seen, uniq = set(), []
