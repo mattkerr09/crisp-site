@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1133",
-  "notes": "Asking for a speed change now works however you happen to write the number. Crisp already understood \"half speed\", \"2x speed\" and \"50% speed\", but \"0.5 speed\", \"play it at 0.4 speed\" and \"set it to 0.75 speed\" got the unhelpful reply that it had not caught an edit in that \u2014 even though the speed being asked for was one it can do perfectly well. That was the parser being fussy about the unit rather than reading the request, and sixteen more ways of putting it now work. Anything from a tenth speed up to eight times faster is available, and asking for more than that is quietly met at the limit rather than refused.",
-  "pub_date": "2026-09-08T00:25:15Z",
+  "version": "1.0.1138",
+  "notes": "Two things the timeline editor could not do, although the rest of the app could. Reframing a clip to widescreen was missing: the editor offered vertical, square and portrait, while the setup lane offered those three and 16:9 as well, and asking for it in your own words has always worked. So turning a vertical clip into something for YouTube was possible everywhere except the place you would be standing while editing it. The same had happened to the audio tool, which offered nine of the ten things it can do to a clip's sound but not evening out the loud and quiet parts, even though its close relatives \u2014 normalising, cutting background noise and cutting wind \u2014 were all there. Both are now in the editor. Nothing was broken as such; each control simply looked complete on its own, and only comparing it with the other one showed what was missing.",
+  "pub_date": "2026-09-08T02:48:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJhL3FOVndMbS9KUWl6TjlBT2xGTW9kL3p0SzFwdFV0S3dHbUdlOVpOd1dBVWpGUFhUc2NQSUtxZXg2WE9tZ0JXaGVVSE9TL1R6Si8yM3hnTEg1QVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODI2Njg4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnbFY5eFExWS96aEsycW90SUhqWHFXVE9rTi9mN0tNRTRycEJoMXlGRStPckJmUmF3UkpKZ25KZllqV1B1R3Q5b3c5Sko0MG9lUk85ZjRxbVhlb1ZEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg3Z1Ywc1hlM1hLakRObUltTExKSFZLeDlFa2ZrbWJFeVpzOFp5YllHUU13Q0w1L2NtN0lnaEtuTmlIcGt0b1ByV3ZMVWNOcUlodDU1SDF2cjF3UXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODM1MzE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0L0dqYVZnRCtvZm5jY1BJTjg3UVk4MSt2eUk5SERJWG5HLzJKQUo4TE1PcUwyaFpXejVFTnZCbExNMy9ueXQ0M1VRWFZuUTZLQ3JBc0UwSURyNVBCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
