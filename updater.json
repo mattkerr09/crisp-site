@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1161",
-  "notes": "Words you ask Crisp to put on screen are no longer run as commands. Asking it to \"write mute it across the bottom\" muted your audio instead of adding the caption; \"overlay the text make it black and white\" graded the clip; \"type slow motion on it\" halved the speed; \"stick upscale it at the bottom\" started a long render. Ten ways of asking for a caption were measured against four command-shaped phrases and half of them did the wrong thing \u2014 all of those now add the caption you asked for. Two phrasings that mention cropping still decline rather than captioning, and say so. Nothing got slower.",
-  "pub_date": "2026-09-08T13:32:59Z",
+  "version": "1.0.1164",
+  "notes": "Naming your export no longer redoes the edit. Typing \"save it as slow motion.mp4\" halved the speed, \"export it as black and white.mp4\" drained the colour, and \"name it sharpened\" started a long upscale \u2014 Crisp was reading the file name you chose as an instruction. Eight ways of naming an output were measured against six effect words and 37 of the 48 changed the footage; none of them do now. Asking for a format still works (\"save it as mp4\", \"export as 1080p\"), and an edit that comes with a name still runs the edit. Nothing got slower.",
+  "pub_date": "2026-09-08T16:04:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNhd3VMUUlLZElQQ0hxTnBLMlJINVg5YnRNWGYwdDE5aEY0YWpFdWI1ODVCVUREeGdPL1Z0VDE4TFRZQ3pBSDNzQjI5MzVZbEp1dDBKY2NXcGhLOUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODc0Mjg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6TEZ5ajF2RFFCYzBrbklMdkg2bTg1eXBLenFETGtEdy9VOURMaHhhVTF0aGxEUkhYSkcyVXdwdTRRS1UyZk1aaSt4NlBtTEgrVUxyY1o3NVh1ZnlDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpjYmZ0T254bThuNlprVlNpU0ViTytVZ3REMTBwRlBlbklPdUNOU2pybmlMOGpJblY1L0ROZm9obndWcUxZMHNCYzhOUUw4ZloxVlcvTXVPSVVSR1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODc4MjQ4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXSG9PVTFaTjJ0Y01VU2FtTThKejhvRy90ZjQ4dFRWKzhnZ1VaUC9maHpKbWVsbXJ4VnFwUDBPcmFUV2Q3cTBaTUhBNXE3bTZaaVVNMEdYeVlUekZEUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
