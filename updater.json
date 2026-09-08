@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1130",
-  "notes": "Old tape and DVD footage no longer comes out of the timeline with stripes sharpened into it. Crisp already straightened combed footage out when you enhanced a single clip, but an edit built on the timeline and exported at a higher resolution did not get the same treatment: the clips are fitted to a common size as the edit is put together, and by the time anything looked for the stripes they were no longer recognisable, so the export sharpened them along with everything else. Crisp now checks each clip and straightens it while the edit is assembled, before any of that happens. One honest limit worth knowing: on the timeline, footage that started life on film is smoothed rather than given its original twenty-four frames a second back, because an edit has to run at one steady rate. Enhance that clip on its own if you want the original frames.",
-  "pub_date": "2026-09-07T23:22:13Z",
+  "version": "1.0.1133",
+  "notes": "Asking for a speed change now works however you happen to write the number. Crisp already understood \"half speed\", \"2x speed\" and \"50% speed\", but \"0.5 speed\", \"play it at 0.4 speed\" and \"set it to 0.75 speed\" got the unhelpful reply that it had not caught an edit in that \u2014 even though the speed being asked for was one it can do perfectly well. That was the parser being fussy about the unit rather than reading the request, and sixteen more ways of putting it now work. Anything from a tenth speed up to eight times faster is available, and asking for more than that is quietly met at the limit rather than refused.",
+  "pub_date": "2026-09-08T00:25:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUp5Mm1NMjhkb0VUT0hLMHMxL285dmNMZjhvNFROcmJ5OTI2WlBIT3JxMGhWZ0k5b0JiZTlkWnZZNE5sUC9jUTUyZ3pYR3VxMnpkOUx1Qmh1K3pKRXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODIyODYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjOEdsM2t4RExYWmJtL0tsdHdZSGNxUURDY0Zrc2MrdmFOMUtlOG9SYnN3akdWUkpoNTRwTGNoTTVVVW14dFVVZlFqZ2VjS2RQUC9LSy9Lc09kV01Edz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJhL3FOVndMbS9KUWl6TjlBT2xGTW9kL3p0SzFwdFV0S3dHbUdlOVpOd1dBVWpGUFhUc2NQSUtxZXg2WE9tZ0JXaGVVSE9TL1R6Si8yM3hnTEg1QVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODI2Njg4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnbFY5eFExWS96aEsycW90SUhqWHFXVE9rTi9mN0tNRTRycEJoMXlGRStPckJmUmF3UkpKZ25KZllqV1B1R3Q5b3c5Sko0MG9lUk85ZjRxbVhlb1ZEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
