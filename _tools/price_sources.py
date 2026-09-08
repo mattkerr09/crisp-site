@@ -82,6 +82,55 @@ def _self_check() -> None:
                 f"claim — a widened pattern turns every page into a false positive")
 
 
+#: The block a page cites, from "Prices checked" onward. 900 characters is deliberate and
+#: measured: the longest real block on the site (HitPaw, which records list AND two discount
+#: tiers for three plans) runs 618, and the next paragraph always starts well before 900.
+_BLOCK_CHARS = 900
+
+
+def unsourced_figures(page: Path) -> list[tuple[str, str]]:
+    """Rival figures on the page that its own dated block does not record.
+
+    WHY THIS EXISTS, AND IT IS NOT THE SAME CHECK AS THE ONE ABOVE. The survey below asks whether
+    a page carries a dated block at all. It cannot ask whether the block covers the figures the
+    page quotes, and those are different questions — Docket found the gap the hard way
+    (docket-site 112afd3c): they published "$184-$428/yr" for a rival, arrived at by taking the
+    monthly price, multiplying by twelve and applying the discount the vendor advertises. Both
+    inputs true, the output false, because that vendor rounds — they charge $180 and $425. A date
+    proves somebody looked. It does not prove the NUMBER was read rather than derived.
+    Crisp shipped the same defect: our VEED row once read "$144 a year", being 12 x $12, where
+    VEED's own annual figure is $147.
+    So: every rival figure on the page must also appear inside the block that cites the vendor's
+    page. A figure that appears only in prose was either derived, or read from somewhere the
+    block does not name — and both are worth a human looking.
+    Returns (figure, surrounding text) so the caller can judge rather than guess. Several honest
+    shapes land here on purpose: an openly-labelled total ("over three years that is $897"), a
+    hedged rounding ("roughly $120/year"), and a table quoting FOUR other vendors under a block
+    that cites only one of them. The last is the one worth fixing, and it is invisible without
+    this check.
+    """
+    txt = _text(page)
+    m = DATED.search(txt)
+    if not m:
+        return []                      # no block at all is the survey's job, not this one
+    block = txt[m.start():m.start() + _BLOCK_CHARS]
+    in_block = {x.group(1).rstrip(".").rstrip(",") for x in MONEY.finditer(block)}
+    out = []
+    for x in MONEY.finditer(txt):
+        fig = x.group(1).rstrip(".").rstrip(",")
+        if fig in OURS or fig in in_block:
+            continue
+        if m.start() <= x.start() < m.start() + _BLOCK_CHARS:
+            continue
+        out.append((fig, txt[max(0, x.start() - 70):x.start() + 60].strip()))
+    seen, uniq = set(), []
+    for fig, ctx in out:
+        if fig not in seen:
+            seen.add(fig)
+            uniq.append((fig, ctx))
+    return uniq
+
+
 def survey():
     """-> {slug: [rival figures]} for /vs/ pages quoting a rival price with no dated block."""
     gaps = {}
@@ -94,12 +143,62 @@ def survey():
     return gaps
 
 
+UNSOURCED_BASELINE = Path(__file__).resolve().parent / "price_unsourced_baseline.json"
+
+
+def _unsourced_self_check() -> None:
+    """A planted figure that the block does not record MUST be reported.
+
+    Same reasoning as _self_check above: this check's clean output and its blind output are the
+    same empty list, so it has to be shown failing before it is believed.
+    """
+    page = next((p for p in sorted((SITE / "vs").glob("*/index.html")) if DATED.search(_text(p))),
+                None)
+    if page is None:
+        raise SystemExit("no dated page to self-check against — cannot prove this check works")
+    original = page.read_text(encoding="utf-8")
+    planted = original.replace("</body>", "<p>Rival Ultra costs $91919 a year.</p></body>", 1)
+    try:
+        page.write_text(planted, encoding="utf-8")
+        caught = any(f == "91919" for f, _ in unsourced_figures(page))
+    finally:
+        page.write_text(original, encoding="utf-8")
+    if not caught:
+        raise SystemExit("a planted unsourced $91919 was NOT reported — this check cannot fail, "
+                         "so its clean output proves nothing")
+    if page.read_text(encoding="utf-8") != original:
+        raise SystemExit("the self-check did not restore the page it edited")
+
+
+def unsourced_report() -> dict:
+    return {p.parent.name: sorted({f for f, _ in unsourced_figures(p)})
+            for p in sorted((SITE / "vs").glob("*/index.html")) if unsourced_figures(p)}
+
+
 def main():
     _self_check()          # prove the instrument before believing what it reports
+    _unsourced_self_check()
+    if "--sources" in sys.argv:
+        n = 0
+        for page in sorted((SITE / "vs").glob("*/index.html")):
+            rows = unsourced_figures(page)
+            if not rows:
+                continue
+            print(f"\n{page.parent.name}")
+            for fig, ctx in rows:
+                n += 1
+                print(f"   ${fig:<10} …{ctx}…")
+        print(f"\n{n} rival figures quoted outside the block that cites their source.")
+        print("Each is one of: derived arithmetic, a rounding, or a vendor the block never names.")
+        return 0
     gaps = survey()
     if "--baseline" in sys.argv:
         BASELINE.write_text(json.dumps(gaps, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        print(f"baseline recorded: {len(gaps)} pages quote a rival price with no checked date")
+        u = unsourced_report()
+        UNSOURCED_BASELINE.write_text(json.dumps(u, indent=2, sort_keys=True) + "\n",
+                                      encoding="utf-8")
+        print(f"baseline recorded: {len(gaps)} pages with no checked date; "
+              f"{sum(len(v) for v in u.values())} figures outside their sourced block")
         return 0
 
     known = json.loads(BASELINE.read_text(encoding="utf-8")) if BASELINE.exists() else {}
@@ -121,6 +220,30 @@ def main():
               f"and says nothing about when that was true")
     for slug, figures in worse:
         print(f"  WORSE   {slug} — new unsourced figures: {', '.join('$' + f for f in figures)}")
+    # Second ratchet: figures the page's own block does not record. Separate baseline, because
+    # this is a different defect from "no block at all" and mixing them would let a fix to one
+    # mask a regression in the other.
+    unsourced = unsourced_report()
+    if "--baseline" not in sys.argv:
+        known_u = (json.loads(UNSOURCED_BASELINE.read_text(encoding="utf-8"))
+                   if UNSOURCED_BASELINE.exists() else {})
+        new_u = []
+        for slug, figs in unsourced.items():
+            extra = sorted(set(figs) - set(known_u.get(slug, [])))
+            if extra:
+                new_u.append((slug, extra))
+        print(f"/vs/ figures quoted outside their own sourced block: "
+              f"{sum(len(v) for v in unsourced.values())} "
+              f"({sum(len(v) for v in known_u.values())} known)")
+        for slug, figs in new_u:
+            print(f"  NEW     {slug} — {', '.join('$' + f for f in figs)} appears on the page but "
+                  f"not in the block that cites the vendor's page")
+        if new_u:
+            print("\nEither read the figure off the vendor's page and record it in the block, or "
+                  "say plainly in the text that it is derived. A date proves somebody looked; it "
+                  "does not prove the number was read rather than computed.")
+            return 1
+
     if new or worse:
         print("\nAdd a “Prices checked <date>” block naming the rival's own pricing page and what "
               "it showed, the way /vs/unifab-alternative-mac/ does.")
