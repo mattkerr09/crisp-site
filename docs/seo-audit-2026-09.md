@@ -32,18 +32,18 @@ rather than apply the how-to lever to them.
 
 | page | family | chars | sim | sim* | inbound |
 |---|---|---|---|---|---|
-| /vs/topaz-alternative-mac/ | vs | 10143 | 0.394 | 0.383 | 5 |
-| /vs/topaz-video-ai-alternative-mac/ | vs | 6721 | 0.383 | 0.296 | 9 |
-| /vs/unifab-alternative-mac/ | vs | 4693 | 0.419 | 0.294 | 4 |
-| /vs/switch-from-topaz-video-ai-to-crisp/ | vs | 6980 | 0.295 | 0.293 | 4 |
+| /vs/topaz-alternative-mac/ | vs | 10989 | 0.407 | 0.383 | 5 |
+| /vs/topaz-video-ai-alternative-mac/ | vs | 7605 | 0.407 | 0.327 | 9 |
+| /vs/switch-from-topaz-video-ai-to-crisp/ | vs | 8573 | 0.327 | 0.319 | 4 |
+| /vs/unifab-alternative-mac/ | vs | 5518 | 0.431 | 0.286 | 5 |
 | /learn/what-is-telecine/ | learn | 6828 | 0.334 | 0.259 | 5 |
+| /vs/aiarty-video-enhancer-alternative-mac/ | vs | 4288 | 0.333 | 0.256 | 4 |
 | /for/genealogists/ | for | 4486 | 0.276 | 0.254 | 7 |
-| /vs/aiarty-video-enhancer-alternative-mac/ | vs | 4264 | 0.330 | 0.250 | 4 |
 | /for/youtubers/ | for | 3779 | 0.258 | 0.247 | 4 |
 | /learn/why-vhs-tapes-degrade/ | learn | 4553 | 0.262 | 0.245 | 8 |
 | /for/musicians/ | for | 4346 | 0.262 | 0.242 | 7 |
 | /for/family-archivists/ | for | 3716 | 0.276 | 0.236 | 4 |
-| /vs/waifu2x-alternative-mac/ | vs | 3994 | 0.235 | 0.235 | 4 |
+| /vs/waifu2x-alternative-mac/ | vs | 3994 | 0.241 | 0.235 | 4 |
 | /learn/what-is-aspect-ratio/ | learn | 4073 | 0.254 | 0.231 | 7 |
 | /how-to/convert-heic-to-jpg-mac/ | how-to | 3457 | 0.256 | 0.219 | 5 |
 | /legal/refunds/ | legal | 2547 | 0.203 | 0.191 | 3 |
@@ -72,7 +72,7 @@ rather than apply the how-to lever to them.
 | /how-to/stabilize-shaky-video-mac/ | how-to | 4157 | 0.380 | 0.365 | 5 |
 | /vs/handbrake-alternative-mac/ | vs | 4426 | 0.374 | 0.362 | 4 |
 | /how-to/make-a-highlight-reel-mac/ | how-to | 4759 | 0.363 | 0.348 | 8 |
-| /vs/imovie-alternative-mac/ | vs | 7658 | 0.394 | 0.332 | 6 |
+| /vs/imovie-alternative-mac/ | vs | 7658 | 0.383 | 0.332 | 6 |
 | /how-to/make-a-photo-slideshow-mac/ | how-to | 3945 | 0.416 | 0.323 | 7 |
 | /how-to/slow-mo-video-mac/ | how-to | 3503 | 0.316 | 0.308 | 9 |
 | /how-to/remove-noise-from-video-mac/ | how-to | 5138 | 0.332 | 0.304 | 11 |
@@ -80,9 +80,9 @@ rather than apply the how-to lever to them.
 | /how-to/add-title-cards-to-a-video-mac/ | how-to | 4168 | 0.416 | 0.269 | 5 |
 | /learn/why-ai-upscaling-cant-fix-focus/ | learn | 4749 | 0.275 | 0.264 | 8 |
 | /best/way-to-restore-old-home-videos/ | best | 4544 | 0.272 | 0.263 | 5 |
-| /vs/avclabs-video-enhancer-alternative-mac/ | vs | 4993 | 0.316 | 0.263 | 4 |
 | /best/free-video-upscaler-mac/ | best | 4195 | 0.307 | 0.259 | 7 |
 | /how-to/edit-hdr-video-mac/ | how-to | 4421 | 0.273 | 0.259 | 5 |
+| /vs/avclabs-video-enhancer-alternative-mac/ | vs | 5015 | 0.319 | 0.259 | 4 |
 | /how-to/restore-old-film-footage-mac/ | how-to | 8140 | 0.258 | 0.255 | 8 |
 | /learn/film-grain-vs-digital-noise/ | learn | 4464 | 0.252 | 0.250 | 7 |
 | /learn/what-is-a-keyframe/ | learn | 4288 | 0.295 | 0.246 | 7 |
@@ -125,31 +125,31 @@ rather than apply the how-to lever to them.
 | /how-to/upscale-a-finished-edit-to-4k-mac/ | how-to | 3848 | 0.323 | 0.320 | 6 |
 | /how-to/upscale-video-on-mac/ | how-to | 3804 | 0.332 | 0.316 | 23 |
 | /how-to/make-video-vertical-mac/ | how-to | 3539 | 0.307 | 0.303 | 23 |
-| /vs/hitpaw-vikpea-alternative-mac/ | vs | 4714 | 0.316 | 0.302 | 4 |
-| /vs/unifab-vs-topaz-vs-crisp/ | vs | 5671 | 0.419 | 0.302 | 4 |
-| /vs/videoproc-alternative-mac/ | vs | 4158 | 0.330 | 0.294 | 5 |
+| /vs/hitpaw-vikpea-alternative-mac/ | vs | 4736 | 0.319 | 0.290 | 4 |
+| /vs/unifab-vs-topaz-vs-crisp/ | vs | 6513 | 0.431 | 0.288 | 4 |
+| /vs/videoproc-alternative-mac/ | vs | 4182 | 0.333 | 0.286 | 5 |
 | /best/video-compressor-for-mac/ | best | 4033 | 0.298 | 0.280 | 5 |
 | /best/video-denoiser-for-mac/ | best | 4955 | 0.307 | 0.280 | 5 |
 | /best/video-stabilizer-for-mac/ | best | 4368 | 0.280 | 0.280 | 5 |
 | /for/churches/ | for | 4847 | 0.294 | 0.277 | 7 |
 | /for/wedding-videographers/ | for | 4855 | 0.314 | 0.277 | 7 |
-| /vs/veed-alternative-mac/ | vs | 4967 | 0.287 | 0.269 | 4 |
+| /vs/veed-alternative-mac/ | vs | 5116 | 0.282 | 0.274 | 4 |
 | /learn/ | learn | 5553 | 0.275 | 0.262 | 22 |
 | /how-to/convert-mkv-to-mp4-mac/ | how-to | 3401 | 0.267 | 0.256 | 5 |
-| /vs/upscayl-alternative-mac/ | vs | 4593 | 0.277 | 0.254 | 7 |
 | /learn/why-phone-video-looks-shaky/ | learn | 4374 | 0.369 | 0.254 | 6 |
 | /for/filmmakers/ | for | 4131 | 0.314 | 0.254 | 7 |
+| /vs/upscayl-alternative-mac/ | vs | 4862 | 0.279 | 0.252 | 7 |
 | /learn/bitrate-vs-resolution/ | learn | 4428 | 0.287 | 0.252 | 6 |
-| /vs/real-esrgan-alternative-mac/ | vs | 3937 | 0.277 | 0.251 | 4 |
-| /vs/final-cut-pro-alternative-mac/ | vs | 4475 | 0.258 | 0.250 | 4 |
 | /learn/why-video-looks-worse-after-uploading/ | learn | 4781 | 0.287 | 0.250 | 5 |
 | /learn/what-is-interlacing/ | learn | 5119 | 0.334 | 0.249 | 8 |
+| /vs/final-cut-pro-alternative-mac/ | vs | 4475 | 0.260 | 0.248 | 4 |
 | /learn/what-is-variable-frame-rate/ | learn | 4416 | 0.251 | 0.246 | 6 |
 | /learn/what-is-rolling-shutter/ | learn | 4479 | 0.369 | 0.239 | 7 |
 | /how-to/fix-blurry-video-mac/ | how-to | 3890 | 0.242 | 0.239 | 6 |
 | /learn/what-is-a-video-codec/ | learn | 4107 | 0.295 | 0.239 | 7 |
+| /vs/real-esrgan-alternative-mac/ | vs | 3937 | 0.279 | 0.238 | 4 |
 | /best/video-converter-for-mac/ | best | 4353 | 0.298 | 0.237 | 5 |
-| /vs/ | vs | 3868 | 0.245 | 0.236 | 25 |
+| /vs/ | vs | 3868 | 0.244 | 0.235 | 25 |
 | /learn/what-is-frame-interpolation/ | learn | 4545 | 0.237 | 0.234 | 6 |
 | /for/product-video/ | for | 4510 | 0.256 | 0.233 | 7 |
 | /how-to/ | how-to | 5926 | 0.239 | 0.232 | 47 |
@@ -166,7 +166,7 @@ rather than apply the how-to lever to them.
 ## What the columns say
 
 - **indexed?** (20): median chars 4416, median sim 0.260, median sim* 0.239, median inbound 4
-- **declined** (41): median chars 4580, median sim 0.316, median sim* 0.269, median inbound 6
+- **declined** (41): median chars 4580, median sim 0.319, median sim* 0.269, median inbound 6
 - **never-fetched** (59): median chars 4475, median sim 0.307, median sim* 0.277, median inbound 6
 
 ## Variables measured and REJECTED — do not re-derive these
@@ -205,7 +205,7 @@ would be spending it against measured evidence.
 | learn | 0.245 (n=3) | 0.240 (n=9) | 0.249 (n=9) |
 | legal | 0.180 (n=3) | — | 0.054 (n=1) |
 | thank-you | 0.000 (n=1) | — | — |
-| vs | 0.293 (n=6) | 0.388 (n=8) | 0.294 (n=11) |
+| vs | 0.303 (n=6) | 0.388 (n=8) | 0.286 (n=11) |
 
 ⚠️ **Read this table before quoting the one above.** Site-wide, `sim` separates
 indexed from not-indexed but does NOT separate *declined* from *never-fetched* — those
