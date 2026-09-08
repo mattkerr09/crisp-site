@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1141",
-  "notes": "Typing a size like \"make it 0.5x\" used to start a full 2x upscale \u2014 the opposite of what you asked for, and the slowest job in the app. Crisp now recognises it as asking for something smaller and points you at Compress instead.",
-  "pub_date": "2026-09-08T05:40:03Z",
+  "version": "1.0.1146",
+  "notes": "Montages can now be made with hard cuts. The setup lane offered four kinds of crossfade and no way to turn them off, even though Crisp could always cut straight between clips \u2014 the editor had the option and the montage screen did not.",
+  "pub_date": "2026-09-08T08:17:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlYVXZlVnRyUEdVb1lwd0lvdlF4SmsvbUhVSCt0UEt5T3R6KzJab3V2R2JkTC9ud0ZtSlNBUUp6UEJZc21xcEtDeVRaUXFZbGVUcGNTbnhpVGd0d2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODQ1NzE0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvVWNIMUgwaTZJQzUreFI0aXdYWlJFVEo4SFBEVVlDTmhoNHV2dDBINW55VWVoQ2xrSWMwSnM1WCtXTmxubFhveFZYY1lLa01VV01BdHA5Q2tSUEtBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtTcXRSaWhSNWFtOENWUTY0My83cFVwTlYrV3lVZzY5M0VNazJVcDlIR0xkMzQ2cnlyUXU1WDVIdlQ2Y1FobFJWbGtreFdhYjhRUUthK3FCdkVkTGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODU1MjIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoM0s0VGtRdFBrYmlQbnZ1S1FlNkw0RE95dGlCaktTTTIxanBwblprTE95NWlLd0xsa2xnNDE2OGVhSy9nZ3Q0TUpIeEpYNzViLzZNQjdRM1p5bHpDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
