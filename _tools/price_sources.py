@@ -140,6 +140,44 @@ def unsourced_figures(page: Path) -> list[tuple[str, str]]:
     return uniq
 
 
+#: Prices ATTRIBUTED to Crisp — "Crisp is $129", "Crisp Pro — $129", "Crisp costs $129".
+#: Attribution, not proximity: a ±90-character window around the word "Crisp" swallows whole
+#: comparison rows and reported 45 false hits on a site where the real answer is zero.
+OURS_ATTRIBUTED = [
+    re.compile(r"Crisp\s+(?:Pro\s+)?(?:is|costs?|at)\s+\$\s?(\d[\d,]*(?:\.\d+)?)", re.I),
+    re.compile(r"Crisp\s+(?:Pro\s+)?[—–-]\s*\$\s?(\d[\d,]*(?:\.\d+)?)", re.I),
+    re.compile(r"Crisp\s+Pro\s+\$\s?(\d[\d,]*(?:\.\d+)?)", re.I),
+]
+
+
+def our_price_errors() -> list[tuple[str, str, str]]:
+    """Every price this site puts in Crisp's own name that is not Crisp's price.
+
+    ⚠️ THE OTHER AXIS. Everything above polices RIVAL figures — is this quoted, is it sourced, is
+    it read rather than computed. Not one of those rules has an opinion about OUR price, so a page
+    could say "Crisp is $149 once" and every gate here would pass it. Outlier found the same shape
+    from the other side (outlier-site `2ae4223b`): their rival-price gate checked table COLUMNS,
+    their own product was a ROW, and three competitors were published at Outlier's price under a
+    gate that reported "clean" — truthfully, because it had no opinion about rows and said so in a
+    sentence that reads like a verdict. **A decision enforced on one axis is enforced by nobody on
+    the other.**
+    Currently 34 attributed prices, all $129, none wrong — so this is a fence around something
+    already right, and it can go red immediately rather than needing a baseline.
+    """
+    out = []
+    for page in sorted(SITE.rglob("index.html")):
+        if "_tools" in page.parts:
+            continue
+        txt = _text(page)
+        for pat in OURS_ATTRIBUTED:
+            for m in pat.finditer(txt):
+                v = m.group(1).rstrip(".").rstrip(",")
+                if v not in OURS:
+                    out.append((str(page.parent.relative_to(SITE)), v,
+                                txt[max(0, m.start() - 60):m.end() + 40].strip()))
+    return out
+
+
 def survey():
     """-> {slug: [rival figures]} for /vs/ pages quoting a rival price with no dated block."""
     gaps = {}
@@ -187,6 +225,14 @@ def unsourced_report() -> dict:
 def main():
     _self_check()          # prove the instrument before believing what it reports
     _unsourced_self_check()
+    ours = our_price_errors()
+    if ours:
+        print(f"{len(ours)} places give Crisp a price that is not Crisp's:")
+        for slug, v, ctx in ours:
+            print(f"  {slug}: ${v} — …{ctx}…")
+        print("\nOur own price is the one number on this site nobody double-checks, because every "
+              "other rule here is about rivals.")
+        return 1
     if "--sources" in sys.argv:
         n = 0
         for page in sorted((SITE / "vs").glob("*/index.html")):
