@@ -95,6 +95,21 @@
     <li><strong>Reframe</strong> — fit the clip to a new aspect (e.g. square or 9:16) with a blurred fill. See <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">make it vertical</a>.</li>
   </ul>
 
+  <h2>How thick each border is, and what it does to the file</h2>
+  <p>The three sizes are proportions, not pixel counts: <strong>3%, 6% and 12% of the frame's shorter side</strong>. That is the whole reason a border looks the same on a phone clip and a 4K one, and why you never have to work out a number yourself.</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Source</th><th>Thin</th><th>Medium</th><th>Thick</th></tr></thead>
+    <tbody>
+      <tr><td>1920×1080</td><td>32px → 1984×1144</td><td>64px → 2048×1208</td><td>130px → 2180×1340</td></tr>
+      <tr><td>1080×1920 (vertical)</td><td>32px → 1144×1984</td><td>64px → 1208×2048</td><td>130px → 1340×2180</td></tr>
+      <tr><td>3840×2160 (4K)</td><td>64px → 3968×2288</td><td>130px → 4100×2420</td><td>258px → 4356×2676</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Read the second column of each row carefully, because it is the thing people are surprised by: a border <strong>grows the canvas</strong>. Your picture is not cropped or shrunk to make room — the frame gets bigger and the original sits in the middle at its full size, so nothing is lost and nothing is softened. If you need the output to stay exactly 1920×1080, add the border and then <a href="https://crispvideo.app/how-to/crop-video-mac/">crop</a> back, or use <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Reframe</a> instead, which fits the picture into a target shape rather than growing the canvas.</p>
+  <p>Every dimension is rounded to an even number, because 4:2:0 video — which is nearly all video — stores colour at half resolution in each direction and cannot have an odd side. And the colour is chosen from a fixed list of seven (white, black, gray, red, blue, pink and yellow) rather than a free text field, so no arbitrary string is ever handed to the renderer.</p>
+
   <h2>Crisp vs iMovie vs online border tools</h2>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>Online tools</th></tr></thead>
