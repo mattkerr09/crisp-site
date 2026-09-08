@@ -90,6 +90,11 @@
   <h2>Stack it for a full film look</h2>
   <p>Grain lives in the same <strong>Color</strong> lane as Crisp's one-tap looks and the vignette, so you can build a complete retro-film treatment in a single pass: a <a href="https://crispvideo.app/how-to/color-grade-video-mac/">moody or warm grade</a>, a soft <a href="https://crispvideo.app/how-to/add-a-vignette-to-video-mac/">vignette</a>, and film grain on top. It's the "shot on something nicer than a phone" combination: all on-device.</p>
 
+  <h2>Why this grain moves, and where it lands in the chain</h2>
+  <p>Most "film grain" you can add to a video is a still texture laid over the picture. Real film grain is different in one specific way: the silver crystals are in a new place on every single frame, which is why film looks alive and a static overlay looks like a dirty lens. Crisp's grain is <strong>temporal</strong> — regenerated per frame — and uniform rather than clumped, which is what keeps it reading as stock rather than as compression noise.</p>
+  <p>The strength slider maps onto a real range: at the bottom the noise amplitude is about 6, at the top about 32, on a scale where the picture itself runs to 255. That is deliberately a narrow band. Grain much past that stops looking like film and starts looking like a bad signal, and it also costs you bitrate — grain is random, and random detail is the most expensive thing you can hand an encoder.</p>
+  <p>Order matters too, and Crisp fixes it for you: grain is applied <strong>before</strong> any vignette, so darkened corners darken the grain in them as well. Add the vignette first and the corners keep bright grain sitting on top of shadow, which is the giveaway that two effects were stacked rather than shot.</p>
+
   <h2>Crisp vs iMovie vs online grain tools</h2>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>Online tools</th></tr></thead>
