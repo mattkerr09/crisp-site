@@ -152,7 +152,27 @@ def main() -> int:
                  f"{statistics.median(p['sim'] for p in g):.3f}, median sim* "
                  f"{statistics.median(p['sim2'] for p in g):.3f}, median inbound "
                  f"{statistics.median(p['in'] for p in g):.0f}")
-    L += ["", "## Per family, which is where the signal actually lives", "",
+    L += ["", "## Variables measured and REJECTED — do not re-derive these", "",
+          "Each was proposed as a lever or looked plausible; each fails to separate the buckets.",
+          "They are recorded because a rejected variable is cheaper to read than to re-measure.", "",
+          "| variable | result |", "|---|---|",
+          "| body length | REJECTED — declined pages are slightly THICKER than indexed ones |",
+          "| inbound internal links | REJECTED — not-indexed pages carry MORE anchors (6 vs 4) |",
+          "| click depth from `/` | REJECTED — uniform; every page is 1 or 2 hops, medians all 2.0 |",
+          "| duplicate titles | REJECTED — 0 duplicates across all pages |",
+          "| duplicate descriptions | REJECTED — was 1 pair (`/learn/` had a leaf's text), now 0 |",
+          "| title/H1 agreement | REJECTED — flat in `learn` (.36/.38/.38); in `vs` the DECLINED "
+          "pages agree most (.45/.72/.46), which points nowhere |",
+          "| sibling similarity | HOLDS IN `how-to` ONLY — see the per-family table below |", "",
+          "Noted, not concluded: declined `vs` titles run ~82 characters against ~70 for both",
+          "other buckets, which is past where Google truncates. n=8, so it is a lead, not a finding.",
+          "",
+          "**What this negative result is worth.** Five of the seven variables above are on-page,",
+          "and none of them explains `learn` or `vs`. That points away from further on-page edits",
+          "in those two families and toward what Bing's own panel already said is the lever no",
+          "setting fixes: links from other domains. Spending another cycle rewriting `learn` pages",
+          "would be spending it against measured evidence.", "",
+          "## Per family, which is where the signal actually lives", "",
           "| family | indexed? sim* | declined sim* | never-fetched sim* |", "|---|---|---|---|"]
     for fam in sorted({p["family"] for p in pages.values()}):
         cells = []

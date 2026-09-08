@@ -40,7 +40,7 @@ rather than apply the how-to lever to them.
 | /for/genealogists/ | for | 4486 | 0.276 | 0.254 | 7 |
 | /vs/aiarty-video-enhancer-alternative-mac/ | vs | 4264 | 0.330 | 0.250 | 4 |
 | /for/youtubers/ | for | 3779 | 0.258 | 0.247 | 4 |
-| /learn/why-vhs-tapes-degrade/ | learn | 4553 | 0.266 | 0.245 | 8 |
+| /learn/why-vhs-tapes-degrade/ | learn | 4553 | 0.262 | 0.245 | 8 |
 | /for/musicians/ | for | 4346 | 0.262 | 0.242 | 7 |
 | /for/family-archivists/ | for | 3716 | 0.276 | 0.236 | 4 |
 | /vs/waifu2x-alternative-mac/ | vs | 3994 | 0.235 | 0.235 | 4 |
@@ -49,7 +49,7 @@ rather than apply the how-to lever to them.
 | /legal/refunds/ | legal | 2547 | 0.203 | 0.191 | 3 |
 | /legal/privacy/ | legal | 7952 | 0.191 | 0.180 | 4 |
 | /legal/terms/ | legal | 4101 | 0.203 | 0.180 | 3 |
-| /index/ | index | 5690 | 0.000 | 0.000 | 0 |
+| /index/ | index | 5690 | 0.000 | 0.000 | 1 |
 | / | (home) | 21884 | 0.000 | 0.000 | 357 |
 | /thank-you/ | thank-you | 948 | 0.000 | 0.000 | 0 |
 
@@ -78,7 +78,7 @@ rather than apply the how-to lever to them.
 | /how-to/remove-noise-from-video-mac/ | how-to | 5138 | 0.332 | 0.304 | 11 |
 | /how-to/split-a-clip-in-video-mac/ | how-to | 3420 | 0.320 | 0.287 | 6 |
 | /how-to/add-title-cards-to-a-video-mac/ | how-to | 4168 | 0.416 | 0.269 | 5 |
-| /learn/why-ai-upscaling-cant-fix-focus/ | learn | 4749 | 0.282 | 0.264 | 8 |
+| /learn/why-ai-upscaling-cant-fix-focus/ | learn | 4749 | 0.275 | 0.264 | 8 |
 | /best/way-to-restore-old-home-videos/ | best | 4544 | 0.272 | 0.263 | 5 |
 | /vs/avclabs-video-enhancer-alternative-mac/ | vs | 4993 | 0.316 | 0.263 | 4 |
 | /best/free-video-upscaler-mac/ | best | 4195 | 0.307 | 0.259 | 7 |
@@ -91,7 +91,7 @@ rather than apply the how-to lever to them.
 | /how-to/upscale-480p-to-1080p-mac/ | how-to | 4103 | 0.267 | 0.242 | 5 |
 | /learn/why-4k-exports-take-so-long/ | learn | 4045 | 0.246 | 0.240 | 7 |
 | /how-to/make-a-split-screen-video-mac/ | how-to | 3919 | 0.277 | 0.239 | 4 |
-| /learn/what-is-ai-video-upscaling/ | learn | 5144 | 0.264 | 0.237 | 5 |
+| /learn/what-is-ai-video-upscaling/ | learn | 5144 | 0.264 | 0.236 | 5 |
 | /vs/ffmpeg-lanczos-vs-ai-upscaling-mac/ | vs | 4119 | 0.238 | 0.233 | 4 |
 | /how-to/deinterlace-video-mac/ | how-to | 7775 | 0.244 | 0.232 | 12 |
 | /learn/what-is-chroma-subsampling/ | learn | 4296 | 0.231 | 0.228 | 7 |
@@ -134,16 +134,16 @@ rather than apply the how-to lever to them.
 | /for/churches/ | for | 4847 | 0.294 | 0.277 | 7 |
 | /for/wedding-videographers/ | for | 4855 | 0.314 | 0.277 | 7 |
 | /vs/veed-alternative-mac/ | vs | 4967 | 0.287 | 0.269 | 4 |
-| /learn/ | learn | 5252 | 0.282 | 0.266 | 22 |
+| /learn/ | learn | 5553 | 0.275 | 0.262 | 22 |
 | /how-to/convert-mkv-to-mp4-mac/ | how-to | 3401 | 0.267 | 0.256 | 5 |
 | /vs/upscayl-alternative-mac/ | vs | 4593 | 0.277 | 0.254 | 7 |
 | /learn/why-phone-video-looks-shaky/ | learn | 4374 | 0.369 | 0.254 | 6 |
 | /for/filmmakers/ | for | 4131 | 0.314 | 0.254 | 7 |
-| /learn/what-is-interlacing/ | learn | 5119 | 0.334 | 0.252 | 8 |
 | /learn/bitrate-vs-resolution/ | learn | 4428 | 0.287 | 0.252 | 6 |
 | /vs/real-esrgan-alternative-mac/ | vs | 3937 | 0.277 | 0.251 | 4 |
 | /vs/final-cut-pro-alternative-mac/ | vs | 4475 | 0.258 | 0.250 | 4 |
 | /learn/why-video-looks-worse-after-uploading/ | learn | 4781 | 0.287 | 0.250 | 5 |
+| /learn/what-is-interlacing/ | learn | 5119 | 0.334 | 0.249 | 8 |
 | /learn/what-is-variable-frame-rate/ | learn | 4416 | 0.251 | 0.246 | 6 |
 | /learn/what-is-rolling-shutter/ | learn | 4479 | 0.369 | 0.239 | 7 |
 | /how-to/fix-blurry-video-mac/ | how-to | 3890 | 0.242 | 0.239 | 6 |
@@ -169,6 +169,30 @@ rather than apply the how-to lever to them.
 - **declined** (41): median chars 4580, median sim 0.316, median sim* 0.269, median inbound 6
 - **never-fetched** (59): median chars 4475, median sim 0.307, median sim* 0.277, median inbound 6
 
+## Variables measured and REJECTED — do not re-derive these
+
+Each was proposed as a lever or looked plausible; each fails to separate the buckets.
+They are recorded because a rejected variable is cheaper to read than to re-measure.
+
+| variable | result |
+|---|---|
+| body length | REJECTED — declined pages are slightly THICKER than indexed ones |
+| inbound internal links | REJECTED — not-indexed pages carry MORE anchors (6 vs 4) |
+| click depth from `/` | REJECTED — uniform; every page is 1 or 2 hops, medians all 2.0 |
+| duplicate titles | REJECTED — 0 duplicates across all pages |
+| duplicate descriptions | REJECTED — was 1 pair (`/learn/` had a leaf's text), now 0 |
+| title/H1 agreement | REJECTED — flat in `learn` (.36/.38/.38); in `vs` the DECLINED pages agree most (.45/.72/.46), which points nowhere |
+| sibling similarity | HOLDS IN `how-to` ONLY — see the per-family table below |
+
+Noted, not concluded: declined `vs` titles run ~82 characters against ~70 for both
+other buckets, which is past where Google truncates. n=8, so it is a lead, not a finding.
+
+**What this negative result is worth.** Five of the seven variables above are on-page,
+and none of them explains `learn` or `vs`. That points away from further on-page edits
+in those two families and toward what Bing's own panel already said is the lever no
+setting fixes: links from other domains. Spending another cycle rewriting `learn` pages
+would be spending it against measured evidence.
+
 ## Per family, which is where the signal actually lives
 
 | family | indexed? sim* | declined sim* | never-fetched sim* |
@@ -178,7 +202,7 @@ rather than apply the how-to lever to them.
 | for | 0.245 (n=4) | — | 0.225 (n=9) |
 | how-to | 0.219 (n=1) | 0.315 (n=22) | 0.388 (n=24) |
 | index | 0.000 (n=1) | — | — |
-| learn | 0.245 (n=3) | 0.240 (n=9) | 0.250 (n=9) |
+| learn | 0.245 (n=3) | 0.240 (n=9) | 0.249 (n=9) |
 | legal | 0.180 (n=3) | — | 0.054 (n=1) |
 | thank-you | 0.000 (n=1) | — | — |
 | vs | 0.293 (n=6) | 0.388 (n=8) | 0.294 (n=11) |
