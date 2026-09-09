@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1208",
-  "notes": "Refusals now give advice the clip in front of them can actually take. Describing a photo used to suggest two video-only edits; asking about the sound on a silent clip suggested four things that all refused; asking for blurred bars on a still offered three shapes a photo cannot be given. And asking to blur part of the frame started a multi-minute 4K upscale \u2014 the opposite of the request \u2014 which it no longer does.",
-  "pub_date": "2026-09-09T21:44:19Z",
+  "version": "1.0.1209",
+  "notes": "Asking for the same edit a different way now gets the same answer. \"Remove the sides\", \"take off the borders\", \"get rid of the black bars\" and \"crop out the matte\" all used to say Crisp had not understood, while \"crop the sides\" and \"remove the borders\" worked \u2014 sixty phrasings in all. And \"cut the top 5 seconds\" now trims the first five, instead of explaining that Crisp cannot crop one edge.",
+  "pub_date": "2026-09-09T22:29:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUNGo5ZUlGR0tuK0ExRUZQeExqWGtlK1RzYnU3dGdMNTZ3U0N0MG1CT1BtYm9oeFRpUGlDZ2M1c3BtQjFZMGYwSnZKYTcxSmJJQ1FnWFpQWWRHU3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTkwMTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuMHZuZ01XMVNzSmlibVlRM3VwMDMvb1VNMWFUby9oaXJGVHhDMXU0c3FlTk5ueERLZGpBYjVJanFFUUFKejd3VTYxKzRoSGFibUUxM2J3MDMvY1dCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUTzFVUTFUZExqdFFselNRSGp1YTdONTIzWERuUkhIeTA2aDhZRW05cGIrOFowTlFCQmlGMXVGRDVLQmUrd0IvMStEMUtnQnZleStoekt3bmw2UGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTkyODMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaTlVPM0hDMXJ4RTNBeW12eHYrWXVsbG9yRnpVM2VOeEo2dzZUbHBFT1N3TE1qdW9rY2tTNWE1UGVLWE91RzllNDQ4SmhpT0pNWGV1QnBPczFOTWJDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
