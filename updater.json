@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1195",
-  "notes": "A caption whose words happen to describe a time now stays a caption. Asking for a caption that says \"from 2 to 6 seconds\" burned in nothing at all \u2014 Crisp read your own words as an instruction about when to show it, took them away, and left an empty caption while reporting success. \"For 5 seconds\" did the same. Putting the timing outside the quotes still works exactly as before: caption it \"Hello\" from 2 to 6 seconds shows Hello between two and six seconds.",
-  "pub_date": "2026-09-09T12:40:34Z",
+  "version": "1.0.1197",
+  "notes": "Warmth now hears how much you asked for \u2014 'a lot warmer' and 'slightly warmer' used to give the same picture.",
+  "pub_date": "2026-09-09T13:23:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1wb3JSNXYyaXd6bnBHVlIvR3lOOTRVN1lWT3ltMnRoVGlrdjhMT2hXSER3SDQxSXE0OXZ0dVE3bUZvdVNLd25ELzBiSjlsV2VnWnQweDZzam80UEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTU3NTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwQmVKcDAzTkR6OE1EbkxKYTdFNnBSV1ZOQzhjNS9Tbk1uZGpjTzhvY1dwWFIrakRYMSthMUdoR2FpZDdPMXlSaGJCQUcwajlORXhxcjdUNUJnRExBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZxZmMvT2tvaGFrRUlFSnVyd21temZTZkxvNzhlRkVRUHBsRUovUnJPZEhCZkl4cUVPVnZpMlJEakRwNitDVlBYaGRlQW8yaU9qU1BJdXRFUVhjSWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTYwMTQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovaE9KK0VrNGRqTjMzbWJrMHo5MUxMbFJ3ODJ0RUI4V0wwUHl0R2VUTWxiZHdWYVNSeWpOT0pCbkdqQWVNL1kxZ0tSSnV2ZUUvN3JXb1pSaGgwYU1DZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
