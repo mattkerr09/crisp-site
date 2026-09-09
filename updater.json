@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1198",
-  "notes": "Crop and zoom now understand the same words as everything else \u2014 'crop it slightly tighter' and 'crop it a bit' used to do nothing at all.",
-  "pub_date": "2026-09-09T14:11:58Z",
+  "version": "1.0.1200",
+  "notes": "Asking to zoom out now gets a real answer \u2014 Crisp explains it crops in from the centre, and points you at the reframe that fits your whole picture instead.",
+  "pub_date": "2026-09-09T15:49:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU2eUYyTDZ4OVRkUG92QTY2T3F0SjFpTnJiTWJpK2NyRGgxTlFCYnluL3RlRUtPNUh4ZVRQK29XTFUrOTAzV25ZejVOV21vbHFkbWJ0NDR2QjJTUUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTYzMDI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSU3hmUTVYRkNqbzlwdDdOMDBDK21FUjdUQi9pUlZ1Z21hMVhaSzFnWmlOKzhoTTdQNTQzSUhUQ0dIWllvcWtaOVUrTkFLMHJTSVlvR2RYNldJTzZEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU80aC9BWEU3WDRsMEFMeGhxQTc2SUxrTjYyZkcxZzIwUlBtRHRlTWdmRVY4cXBhU3U1ektqVGkwc3F1Rm5DclllZXNuT0h4OHVzNXRWTDdnQnVFZFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTY4ODgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYUXIvOVhmcGR3cjFjM2JJZG5UWDROUXlsQ1M2NWVqOHg3SWlkc0h6MmF6ZVVQeHVnczNBTkpZaW84S09xQzhOeUZwdHlsS1RnKzh3c0IwMFd4alBBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
