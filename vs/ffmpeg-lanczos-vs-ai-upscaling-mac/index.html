@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"ffmpeg Lanczos vs AI upscaling","description":"One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"ffmpeg Lanczos vs AI upscaling","description":"One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.","datePublished":"2026-07-23","dateModified":"2026-09-09","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the ffmpeg command to upscale a video?","acceptedAnswer":{"@type":"Answer","text":"ffmpeg -i in.mp4 -vf scale=3840:-2:flags=lanczos -c:a copy out.mp4 — that resizes to 4K width using the Lanczos filter and copies the audio untouched."}},{"@type":"Question","name":"Is Lanczos better than bicubic?","acceptedAnswer":{"@type":"Answer","text":"For upscaling, generally yes — it preserves more edge definition. It also rings slightly on hard edges. Both are interpolation; neither adds detail."}},{"@type":"Question","name":"Is AI upscaling always better?","acceptedAnswer":{"@type":"Answer","text":"No. On clean, sharp source that only needs resizing, Lanczos is faster, free, and does not risk inventing wrong detail. AI wins when the source is genuinely degraded."}}]}
@@ -88,9 +88,12 @@
   rather than in a preview window. If the Lanczos version looks acceptable, you are done and you have
   spent nothing. If it looks like a bigger version of the same bad video — which is exactly what it
   is — then the source is genuinely degraded and reconstruction is the only thing that will help.</p>
-  <p>Zoom in on a flat area while it plays, too. Lanczos will never introduce shimmer, because it makes
-  the same decision on every frame. An AI upscaler can, and comparing the two side by side is the
-  fastest way to find out whether a given tool has that problem on your kind of footage.</p>
+  <p>Zoom in on a flat area while it plays, too. Lanczos will not introduce shimmer of its own, because
+  it makes the same decision on every frame. What it cannot do is remove shimmer that is already there:
+  aliasing in the source passes straight through and comes out enlarged along with everything else, so
+  fine detail that was already crawling still crawls afterwards. An AI upscaler can add shimmer that was
+  never in the source at all, and comparing the two side by side is the fastest way to find out whether a
+  given tool has that problem on your kind of footage.</p>
   <h2>One thing to get right either way</h2>
   <p>Do not upscale twice. Going 480p to 1080p and later 1080p to 4K compounds whatever each pass got
   wrong, and with an AI model it compounds the invented detail as well — the second pass treats the
