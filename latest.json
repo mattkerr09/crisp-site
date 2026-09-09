@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1206",
-  "notes": "Speed changes now use the number you typed \u2014 'speed it up by 3' used to quietly run at 2x instead.",
-  "pub_date": "2026-09-09T20:08:22Z",
+  "version": "1.0.1207",
+  "notes": "Internal: a gate so every message Crisp can show you is checked for advice that leads nowhere.",
+  "pub_date": "2026-09-09T20:48:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl5cnpia0RBMXE0TFpYSHpJMUNJZmc5VENmY1owa0toaWVxYm4rT05sSFZWWndNRi9rQkc3eExMUGc3REs2cU1Yc29pRnhTc2c5ZW9RdmhDbXgzSGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTg0Mzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWMlJlWkpUQkp5QXVSb21YL0dXN0JoWVhyOGR1eW4wcG1wZGx6czkrUXJISVVNb1ZzVHlQQkVXK3E1ZEJJbUVIRVFuMUg0bEVnQ0hWOFlHcXc3MzlDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURVL2l2ZTBnZUNQakJtWTdKTFpjeUZGNFVzTnNsaFZLYzk3d2FQUUU0eTJqMnh4UjRSNFRENkREeHVic0Yrc3ZrZDk3eWgvQ2FSakZlMUJWWjZISHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTg2NzMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxSFh4OFh3bUF0NTE5R0k2emx3YXh2MFFleGZVQ3VnbC9xOVNuM1RaQ1E5Tk9XQzE5NTRGQ2ovaXVhNHArempDMjIvN1JnTDZ1WmZhcDZuWFRPaCtDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
