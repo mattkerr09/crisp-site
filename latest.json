@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1202",
-  "notes": "When Crisp can't do something it now suggests things that actually work on your clip \u2014 it used to offer a shape your video already was, or audio advice on a silent clip.",
-  "pub_date": "2026-09-09T17:30:30Z",
+  "version": "1.0.1203",
+  "notes": "Asking for blurred bars now asks which shape you want instead of cropping the picture off or starting a long upscale.",
+  "pub_date": "2026-09-09T18:07:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU94eEh4REcwT1dQVWpqeGJURFMrOWx6ZWg2K0RKOVd0aXJ0cmdjbmNER0JmN0VJdlNUT1dXUi9OYkRWMUhNOXpFZ1RmYmhEVUxEMExab2pWSHE1OUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTc0OTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGcFFRS0w0SjZ5ZTBrWkl6cXpIdmlpZjdUT1lQSm0rK1dFUTd0VzY3NlF0bDFwOEZGYWZSanQ4dWxrbTZVdVNYMDJLUnNoUlBVOUI4Zm55aFZPazVCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpFS3pZZVdRUnR3K0dZT1NKMjdKWko3dVVvWSt6TllrVmRqR1ZkWkdGMVQ0QnBTdHRIM1JYaVFjSVZ6RXVkWXp1cSt3N1daSk5OQ2NTNnJaTUlmVndzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTc3MTA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5dEIzd0VpR0YrVnl1anlNdVhvWWcrd0hKRFZ2ZmlxaEp5WjlpbnF0ZkJDTDgrWGxIdE1xNkRMVTZaMENFVHRaZGljRlU5eHNDTFV3UEN0bisrUXlBdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
