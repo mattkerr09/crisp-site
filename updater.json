@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1185",
-  "notes": "One-word asks now reach the right lane. \"loop it\" worked and \"loop\" did not; \"stabilize it\" worked and \"steady\" did not \u2014 the shortest way to say a thing was the one Crisp claimed not to understand. \"loop\", \"repeat\", \"steady\", \"stable\" and \"make it steady\" all plan now, while \"the loop is wrong\" and \"a steady shot\" are still left alone, because they describe rather than ask. And \"turn it\" no longer pretends not to understand: turn reaches three different jobs \u2014 \"rotate it 90 degrees\" turns the picture, \"turn it up\" is the volume, \"make it vertical\" changes the shape \u2014 so Crisp names all three instead of guessing one.",
-  "pub_date": "2026-09-09T08:06:21Z",
+  "version": "1.0.1187",
+  "notes": "Numbers written as words now reach the job. \"Fade in over 2 seconds\" always worked; \"fade in over two seconds\" quietly faded for the default length instead. And \"rotate it one hundred and eighty degrees\" turned the clip 90 \u2014 confidently doing the wrong thing rather than asking. Both read the number now, along with minutes, percentages and frames. If you already type digits, nothing changes.",
+  "pub_date": "2026-09-09T09:16:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl4UEhWMFRPMk1NdmpCdGR1bFViQm5tTTR6UGxWQWxxUnJGd3Q0Y0ZDS2gvMzNZOGJENkxpNm5saVkrUzFCL0NTS21ZM2xJdi85YjY5MnY2T0tVN2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQxMDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoveEgyeTBtakxPUGUxNU1nM3BIcWRRNDA1NnZDcGYxWlJwQ2JsN2w0S2l1eW9tTmFKWDlHdGpHS2pGeS84TW5ieFRqYUxlS09BZ0s1c0R4cFd5UGtCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBBaWdPbXRrcEFqRnpHMC9LVlg0Yk5GTkpNc3BXdzRPUW9rbDBzWWZpSXFVM3pGWFJHdWFrY3pocjd1VVBIUFZjODA4SWRMc0dta1A5eHN2eE1HTkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQ1MzAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaLzhWZnFhMDNLbldsdUtyNG9ZaXQ5V0NTL09UQ1l3RUd3M00wY0pkMzRDeEVsTUVjOFA0cjVFTlkzYWk4eXhpMlhPOXhpUXhqZUJ1WlNrS0VjT2FCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
