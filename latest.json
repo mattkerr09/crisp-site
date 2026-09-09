@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1197",
-  "notes": "Warmth now hears how much you asked for \u2014 'a lot warmer' and 'slightly warmer' used to give the same picture.",
-  "pub_date": "2026-09-09T13:33:07Z",
+  "version": "1.0.1198",
+  "notes": "Crop and zoom now understand the same words as everything else \u2014 'crop it slightly tighter' and 'crop it a bit' used to do nothing at all.",
+  "pub_date": "2026-09-09T14:11:58Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZxZmMvT2tvaGFrRUlFSnVyd21temZTZkxvNzhlRkVRUHBsRUovUnJPZEhCZkl4cUVPVnZpMlJEakRwNitDVlBYaGRlQW8yaU9qU1BJdXRFUVhjSWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTYwMTQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovaE9KK0VrNGRqTjMzbWJrMHo5MUxMbFJ3ODJ0RUI4V0wwUHl0R2VUTWxiZHdWYVNSeWpOT0pCbkdqQWVNL1kxZ0tSSnV2ZUUvN3JXb1pSaGgwYU1DZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUU2eUYyTDZ4OVRkUG92QTY2T3F0SjFpTnJiTWJpK2NyRGgxTlFCYnluL3RlRUtPNUh4ZVRQK29XTFUrOTAzV25ZejVOV21vbHFkbWJ0NDR2QjJTUUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTYzMDI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSU3hmUTVYRkNqbzlwdDdOMDBDK21FUjdUQi9pUlZ1Z21hMVhaSzFnWmlOKzhoTTdQNTQzSUhUQ0dIWllvcWtaOVUrTkFLMHJTSVlvR2RYNldJTzZEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
