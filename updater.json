@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1176",
-  "notes": "Cutting a clip out of a long recording no longer decodes everything before it \u2014 Crisp seeks straight to the moment. The deeper into the file it sits, the more this saves: extracting the same half-second from five minutes in went from 502ms to 274ms, and the frames written are identical. Montages and split-screen reels, which cut hundreds of pieces from all over a source, feel it most.",
-  "pub_date": "2026-09-09T01:49:01Z",
+  "version": "1.0.1179",
+  "notes": "Asking for a shape in words now works as well as asking for it in numbers. Typing \"9:16\" always planned a reframe, but \"square it\", \"go vertical\", \"vertical please\" and \"tiktok it\" came back with \"I did not catch an edit in that\" \u2014 for the very same four shapes Crisp already makes. Twenty-three phrasings that should have worked were dead. They work now, and naming your footage still does what you asked: \"upscale my vertical video\" upscales it, it does not reframe it.",
+  "pub_date": "2026-09-09T06:09:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVvS1JKTTVDVGpwR1FPcmsrVE9VT25LNHRFWXpnTkdUalVHL0M2WGRmajYvOHlnbzNic3hVOVgxOGFCVVNod1JPeFMwWk1SdUZCaTREYU9RbWlXeFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTE4Mzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGbWxzS2R2cTc3RllLc2VjK1JtbnYzVkVidzNxMStwVExHWURTckhmcUwwSUF4WDRCT1hqUlc2azVOSEQrSy9WcWxJQzZJYVZ6ejdqZXJlcFUzWDNBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJaYk9xbWdON1l3RDQzOWRSNE9mSFQ5Rkx6dkRraFc5MjV2QXhIUDJzb0RNMXFFRk43SFZLZTUrQVFPaGx1b1F6WE9aMWhnQ1NBSWRMai93citUQlF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTM0MDU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEdSsrSmx6MmxLWUp3eGYvcGNSeDluTnYzYkRIN2VNRXBrYnNUcm00em5rakZrZCsyZjF0OTBuTVFtbjVHQ0ZRdGJvc0lUUitYWXc4VEROTHpYdS9CUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
