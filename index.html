@@ -1271,6 +1271,21 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
                working on macOS 26 (Tahoe) support. Some features may not function as expected."
                We were overstating a rival's requirement, which is the worst direction to err in. -->
           <tr><td>Runs fully offline</td><td class="y">Yes — every lane, generative included</td><td class="n">Mostly — Project Starlight is cloud-only; Starlight Mini runs on-device with 36&nbsp;GB</td><td class="n">Varies by feature</td></tr>
+          <!-- Rows below verified 2026-09-09 against Topaz's CURRENT docs, not the legacy tree.
+               Trap worth remembering: docs.topazlabs.com/video-ai/* is the LEGACY doc set (search
+               returns "Quick Start (Legacy)", "Filters (Legacy)"); current lives at /topaz-video/*.
+               My first pass quoted the legacy pages. Both carried the same wording here, but that
+               was luck, so all three quotes were re-taken from /topaz-video/.
+                 Multi-clip timeline -- "Use the [ ] buttons to select the range of the input video"
+                   plus a Crop button; no timeline mentioned. Topaz DOES hold several files in a
+                   Video Library, but that is a source list, not an arrangement, so "trim and crop
+                   only" is about the EDITS, not about how many files it will accept.
+                 Auto-montage -- the filter set is Enhancement, Grain, Frame Interpolation, SDR to
+                   HDR, Stabilization, Motion Deblur, Denoise. Nothing editorial. This one rests on
+                   an ENUMERATION, which is why it is stronger than an absence.
+                 Audio when interpolating -- verbatim: "Frame interpolation is only applied to the
+                   video. The audio will not be modified by this enhancement and will be removed
+                   from the video." -->
           <tr><td>Multi-clip timeline</td><td class="y">Yes &mdash; arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Varies</td></tr>
@@ -1466,7 +1481,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg rv">Clear answers.</h2></div>
     <div class="faq">
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
-      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models split in two: Topaz says Project Starlight &ldquo;is only available in cloud rendering&rdquo;, while <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is the on-device one, where their docs put the bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 9 September 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. The bigger difference is shape: Topaz's own docs list trim and crop, so it takes a file and hands a file back. Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
+      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models split in two: Topaz says Project Starlight &ldquo;is only available in cloud rendering&rdquo;, while <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is the on-device one, where their docs put the bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 9 September 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio &mdash; where Topaz's <a href="https://docs.topazlabs.com/topaz-video/filters/frame-interpolation" rel="nofollow">frame-interpolation docs</a> say &ldquo;the audio will not be modified by this enhancement and will be removed from the video&rdquo;. The bigger difference is shape: their <a href="https://docs.topazlabs.com/topaz-video/reference-guide/user-interface" rel="nofollow">interface reference</a> documents two edits &mdash; the &ldquo;[ ]&rdquo; buttons that &ldquo;select the range of the input video&rdquo; and a Crop button &mdash; with no timeline for arranging clips, so it takes a file and hands a file back (both read 9 September 2026). Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
       <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
            _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
            1080p output on an M1 Ultra, from a floor of 21.0 s per output megapixel per frame.
