@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1187",
-  "notes": "Numbers written as words now reach the job. \"Fade in over 2 seconds\" always worked; \"fade in over two seconds\" quietly faded for the default length instead. And \"rotate it one hundred and eighty degrees\" turned the clip 90 \u2014 confidently doing the wrong thing rather than asking. Both read the number now, along with minutes, percentages and frames. If you already type digits, nothing changes.",
-  "pub_date": "2026-09-09T09:16:19Z",
+  "version": "1.0.1189",
+  "notes": "Numbers spelled out above a hundred now survive the sentence. \"Rotate it one hundred and eighty degrees\" turned the clip 90 instead \u2014 Crisp read the \"and\" in the number as if you had asked for two separate things, kept the first half, and quietly used its default angle. \"Trim it to one hundred and twenty seconds\" and \"between two and six seconds\" broke the same way. Asking for two things at once still works exactly as before: \"mute it and make it vertical\" is still two edits.",
+  "pub_date": "2026-09-09T10:04:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBBaWdPbXRrcEFqRnpHMC9LVlg0Yk5GTkpNc3BXdzRPUW9rbDBzWWZpSXFVM3pGWFJHdWFrY3pocjd1VVBIUFZjODA4SWRMc0dta1A5eHN2eE1HTkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQ1MzAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaLzhWZnFhMDNLbldsdUtyNG9ZaXQ5V0NTL09UQ1l3RUd3M00wY0pkMzRDeEVsTUVjOFA0cjVFTlkzYWk4eXhpMlhPOXhpUXhqZUJ1WlNrS0VjT2FCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5QMlpvK2MyNUxwWklhNDhKdlM2c092Qm9wcU9LQ0lJc0JxZWZkMGxKSHR1QmNvTHQ3N1IrT1BLNlhxUG1zelpURjEwLzQ1eWxDYmxVZm9VL0JjelFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQ4MTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKUmVXQ1F2V1ZKV1daOVA1ZlhPUEVtUndFcnFUNUJEQkJDM2RJWG9JUXFqSHdJdktkQ29MLzc1RmprZ2w0SFp1TU9BT0hXL0QyS2Q3RU5YTXdqYUtCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
