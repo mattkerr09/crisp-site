@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1182",
-  "notes": "Asking for a second edit with the word \"after\" now works whichever way you write it. \"Make it vertical after muting it\" always did both jobs, but \"make it vertical after mute it\" quietly did only the reframe and threw the mute away without saying so \u2014 and the card gave no hint that half the request had gone missing. Crisp reads the plain form now, including \"after that mute it\". Naming a moment rather than an edit still means what it always did: \"trim it after the intro\" and \"keep everything after 10 seconds\" are untouched.",
-  "pub_date": "2026-09-09T06:58:03Z",
+  "version": "1.0.1185",
+  "notes": "One-word asks now reach the right lane. \"loop it\" worked and \"loop\" did not; \"stabilize it\" worked and \"steady\" did not \u2014 the shortest way to say a thing was the one Crisp claimed not to understand. \"loop\", \"repeat\", \"steady\", \"stable\" and \"make it steady\" all plan now, while \"the loop is wrong\" and \"a steady shot\" are still left alone, because they describe rather than ask. And \"turn it\" no longer pretends not to understand: turn reaches three different jobs \u2014 \"rotate it 90 degrees\" turns the picture, \"turn it up\" is the volume, \"make it vertical\" changes the shape \u2014 so Crisp names all three instead of guessing one.",
+  "pub_date": "2026-09-09T08:06:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF1bkg3NW0zbG5kQ0YyM1Y1bXdCUnpYSnJnckxTSktZWEZ5bTNtRkNNSTlEdk1tWHVzcXZjNDNkejAwOVNBWjUya0VpbldyWWlpOEdIKzRjN3ZyWUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTM2OTk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpldE8rRE5wUTN4Tm5ndkVJbWJIaTJ0ejlaUDEzekVDeEFvNXNJdzZhUjhudE1MNDVINEsvem5MZE5SdXpiK0h6ZXV5WFFBSVhaclovMVlMMG9FVzdCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl4UEhWMFRPMk1NdmpCdGR1bFViQm5tTTR6UGxWQWxxUnJGd3Q0Y0ZDS2gvMzNZOGJENkxpNm5saVkrUzFCL0NTS21ZM2xJdi85YjY5MnY2T0tVN2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQxMDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoveEgyeTBtakxPUGUxNU1nM3BIcWRRNDA1NnZDcGYxWlJwQ2JsN2w0S2l1eW9tTmFKWDlHdGpHS2pGeS84TW5ieFRqYUxlS09BZ0s1c0R4cFd5UGtCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
