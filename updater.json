@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1191",
-  "notes": "Time ranges written in words now work. \"Trim between 2 and 6 seconds\" was fine, but \"trim between two and six seconds\" came back with nothing at all \u2014 Crisp read the second number and not the first, and then could not make sense of what was left. \"Trim from two to six seconds\" had the same gap. Spelled-out numbers that contain the word \"and\", like \"one hundred and eighty degrees\", keep working exactly as they did.",
-  "pub_date": "2026-09-09T10:52:10Z",
+  "version": "1.0.1193",
+  "notes": "Captions can say \"50% off\" again. Asking for a caption whose text contained the word \"off\" was answered with a note about Crisp being unable to remove a caption already burned into the picture \u2014 which is not what you asked, and not what you wanted. It happened to \"half off\", \"kick off\" and \"turn it off\" too, while longer captions like \"buy now 50% off\" were fine, so it looked random. Your caption text is now left alone entirely: it goes into the picture as you typed it. Asking Crisp to remove a watermark or caption still gets the same honest answer as before.",
+  "pub_date": "2026-09-09T11:59:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9UaWwzZmxPb0FYWWdiTm8vQUcrRGFlWUJwMjhlQlBCU2o0U25jeDdsZ1VvU2hMY0p3ekg5V0NGcFc4MEFHOTFjLzh4dFFtcVdwbXlSOUhlNGY5WndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTUxMDAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3WjE4TUtQT0cydlFCRko5TVhyWmx6VGZjV0ZQWm1xUE9WVkc0ZFpSUSt1TzMzZ3dtT1UyM0ovUnJmYzAwenRxcnZxR2tmaytLNW44M01rbkpuM1dEdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVVd2lsK2FtVk1mU0s2dGxJNjNYWWxOLzc1M3JGUlBqNm1FeXlFeVJNS2Z1ZTNpdTBITEtHMStLdEptTVJMVTN6alNyREZWcEs2eW82N3lsTUpFYlFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTU1MDg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1Qnc0SGNRUjJ1bHc4aDVHZGJncGZYNUgzeEQyWlFQV2szM3Jramk1d0poY0xiQmJmTTAvQjJuZ1lYREdzcTh1MWRVODFCUXpvU0dJRTBJQlQ1V0hBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
