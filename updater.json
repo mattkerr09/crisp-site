@@ -1,7 +1,7 @@
 {
   "version": "1.0.1209",
   "notes": "Asking for the same edit a different way now gets the same answer. \"Remove the sides\", \"take off the borders\", \"get rid of the black bars\" and \"crop out the matte\" all used to say Crisp had not understood, while \"crop the sides\" and \"remove the borders\" worked \u2014 sixty phrasings in all. And \"cut the top 5 seconds\" now trims the first five, instead of explaining that Crisp cannot crop one edge.",
-  "pub_date": "2026-09-09T22:29:43Z",
+  "pub_date": "2026-09-09T22:36:35Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUTzFVUTFUZExqdFFselNRSGp1YTdONTIzWERuUkhIeTA2aDhZRW05cGIrOFowTlFCQmlGMXVGRDVLQmUrd0IvMStEMUtnQnZleStoekt3bmw2UGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTkyODMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaTlVPM0hDMXJ4RTNBeW12eHYrWXVsbG9yRnpVM2VOeEo2dzZUbHBFT1N3TE1qdW9rY2tTNWE1UGVLWE91RzllNDQ4SmhpT0pNWGV1QnBPczFOTWJDdz09Cg==",
