@@ -54,7 +54,7 @@
   pricing implies.</p>
 
   <h2>What breaks when you point it at video</h2>
-  <p>Real-ESRGAN is image-first. Its repository does ship a video script (<code>inference_realesrgan_video.py</code>) and an anime-video model, so "no video at all" would be wrong &mdash; but the models upscale frames independently, and the pipeline you end up building around them looks like this:</p>
+  <p>Real-ESRGAN is image-first. Its repository does ship a video script (<code>inference_realesrgan_video.py</code>) and an anime-video model (<a href="https://github.com/xinntao/Real-ESRGAN" rel="nofollow">its own repository</a>, read 8 September 2026), so "no video at all" would be wrong &mdash; but the models upscale frames independently, and the pipeline you end up building around them looks like this:</p>
   <ol>
     <li>Explode the video into PNG frames with ffmpeg. A five-minute 30fps clip is 9,000 files and
     can easily be 40GB of disk.</li>
