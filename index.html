@@ -1260,10 +1260,17 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
                assume this note covered it. -->
           <tr><td>Cost after 5 years</td><td class="y">$129</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
           <tr><td>How you pay</td><td class="y">Once — it's yours</td><td class="n">Subscription only, for new licences since Oct 2025</td><td class="n">Subscription or lifetime licence</td></tr>
-          <!-- "Best model is cloud" was wrong and the FAQ already said so: Starlight runs
-               on-device, it just needs macOS 26 or 36 GB depending on the variant. The table
-               kept the old line for a month after the FAQ was corrected. -->
-          <tr><td>Runs fully offline</td><td class="y">Yes — every lane, generative included</td><td class="n">Mostly — Starlight needs macOS&nbsp;26 or 36&nbsp;GB to stay local</td><td class="n">Varies by feature</td></tr>
+          <!-- Corrected 2026-09-09. This row has now been wrong in BOTH directions. It first
+               said "best model is cloud"; a later pass over-corrected that to "runs on-device,
+               just needs macOS 26 or 36 GB". Both halves were true of DIFFERENT products, and
+               the macOS half was inverted. Topaz, verbatim: Project Starlight "is only available
+               in cloud rendering" (topazlabs.com/starlight); Starlight Mini is the on-device one,
+               where "The recommendation for Mac is to have a minimum 36GB of RAM" and "All Apple
+               Silicon should be supported". macOS 26 is NOT a requirement — their system
+               requirements list macOS 15 for the Starlight series and note "We are actively
+               working on macOS 26 (Tahoe) support. Some features may not function as expected."
+               We were overstating a rival's requirement, which is the worst direction to err in. -->
+          <tr><td>Runs fully offline</td><td class="y">Yes — every lane, generative included</td><td class="n">Mostly — Project Starlight is cloud-only; Starlight Mini runs on-device with 36&nbsp;GB</td><td class="n">Varies by feature</td></tr>
           <tr><td>Multi-clip timeline</td><td class="y">Yes &mdash; arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Varies</td></tr>
@@ -1459,7 +1466,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg rv">Clear answers.</h2></div>
     <div class="faq">
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
-      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models need either macOS&nbsp;26 or 36&nbsp;GB of memory depending on the variant. Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. The bigger difference is shape: Topaz's own docs list trim and crop, so it takes a file and hands a file back. Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
+      <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models split in two: Topaz says Project Starlight &ldquo;is only available in cloud rendering&rdquo;, while <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is the on-device one, where their docs put the bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 9 September 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. The bigger difference is shape: Topaz's own docs list trim and crop, so it takes a file and hands a file back. Crisp puts the upscale inside an edit &mdash; arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
       <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
            _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
            1080p output on an M1 Ultra, from a floor of 21.0 s per output megapixel per frame.
