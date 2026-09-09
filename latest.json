@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1175",
-  "notes": "The size Crisp promises on the card is now the size of the file it writes. On clips whose pixels are very slightly non-square \u2014 which is what an ordinary 854x480 16:9 encode is \u2014 the plan said 2558x1440 and the export came out 2562x1440, because the part that describes the job and the part that renders it disagreed about when to treat pixels as square. They now ask the same question of the same code.",
-  "pub_date": "2026-09-08T23:45:07Z",
+  "version": "1.0.1176",
+  "notes": "Cutting a clip out of a long recording no longer decodes everything before it \u2014 Crisp seeks straight to the moment. The deeper into the file it sits, the more this saves: extracting the same half-second from five minutes in went from 502ms to 274ms, and the frames written are identical. Montages and split-screen reels, which cut hundreds of pieces from all over a source, feel it most.",
+  "pub_date": "2026-09-09T01:49:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJkaWswNjNwRTJLZ0dKNXp4RWF1QzB2S3hyZm5oRFBkSkkxcTNQckthRWNMUjB1Y2ZMdDIxdnlmRjFKU2NNMFZyTnZRcTQrTGZXcEE0Q0h5NXB0K2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTEwOTU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyQTJXNVIxMVg0dDE0NDQ4eDBRNDllNGJxZXdua1BZNzFSVmVVcTlPcFNLWDF0aVpFTHltVm15M0VmbGNGYjVoNEJVcmoyR2JENXBSTGNPQ3N1cGpBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVvS1JKTTVDVGpwR1FPcmsrVE9VT25LNHRFWXpnTkdUalVHL0M2WGRmajYvOHlnbzNic3hVOVgxOGFCVVNod1JPeFMwWk1SdUZCaTREYU9RbWlXeFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTE4Mzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGbWxzS2R2cTc3RllLc2VjK1JtbnYzVkVidzNxMStwVExHWURTckhmcUwwSUF4WDRCT1hqUlc2azVOSEQrSy9WcWxJQzZJYVZ6ejdqZXJlcFUzWDNBZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
