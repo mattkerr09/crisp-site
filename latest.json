@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1207",
-  "notes": "Internal: a gate so every message Crisp can show you is checked for advice that leads nowhere.",
-  "pub_date": "2026-09-09T20:48:53Z",
+  "version": "1.0.1208",
+  "notes": "Refusals now give advice the clip in front of them can actually take. Describing a photo used to suggest two video-only edits; asking about the sound on a silent clip suggested four things that all refused; asking for blurred bars on a still offered three shapes a photo cannot be given. And asking to blur part of the frame started a multi-minute 4K upscale \u2014 the opposite of the request \u2014 which it no longer does.",
+  "pub_date": "2026-09-09T21:44:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURVL2l2ZTBnZUNQakJtWTdKTFpjeUZGNFVzTnNsaFZLYzk3d2FQUUU0eTJqMnh4UjRSNFRENkREeHVic0Yrc3ZrZDk3eWgvQ2FSakZlMUJWWjZISHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTg2NzMwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxSFh4OFh3bUF0NTE5R0k2emx3YXh2MFFleGZVQ3VnbC9xOVNuM1RaQ1E5Tk9XQzE5NTRGQ2ovaXVhNHArempDMjIvN1JnTDZ1WmZhcDZuWFRPaCtDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNUNGo5ZUlGR0tuK0ExRUZQeExqWGtlK1RzYnU3dGdMNTZ3U0N0MG1CT1BtYm9oeFRpUGlDZ2M1c3BtQjFZMGYwSnZKYTcxSmJJQ1FnWFpQWWRHU3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTkwMTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuMHZuZ01XMVNzSmlibVlRM3VwMDMvb1VNMWFUby9oaXJGVHhDMXU0c3FlTk5ueERLZGpBYjVJanFFUUFKejd3VTYxKzRoSGFibUUxM2J3MDMvY1dCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
