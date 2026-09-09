@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1189",
-  "notes": "Numbers spelled out above a hundred now survive the sentence. \"Rotate it one hundred and eighty degrees\" turned the clip 90 instead \u2014 Crisp read the \"and\" in the number as if you had asked for two separate things, kept the first half, and quietly used its default angle. \"Trim it to one hundred and twenty seconds\" and \"between two and six seconds\" broke the same way. Asking for two things at once still works exactly as before: \"mute it and make it vertical\" is still two edits.",
-  "pub_date": "2026-09-09T10:04:04Z",
+  "version": "1.0.1191",
+  "notes": "Time ranges written in words now work. \"Trim between 2 and 6 seconds\" was fine, but \"trim between two and six seconds\" came back with nothing at all \u2014 Crisp read the second number and not the first, and then could not make sense of what was left. \"Trim from two to six seconds\" had the same gap. Spelled-out numbers that contain the word \"and\", like \"one hundred and eighty degrees\", keep working exactly as they did.",
+  "pub_date": "2026-09-09T10:52:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5QMlpvK2MyNUxwWklhNDhKdlM2c092Qm9wcU9LQ0lJc0JxZWZkMGxKSHR1QmNvTHQ3N1IrT1BLNlhxUG1zelpURjEwLzQ1eWxDYmxVZm9VL0JjelFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTQ4MTY0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKUmVXQ1F2V1ZKV1daOVA1ZlhPUEVtUndFcnFUNUJEQkJDM2RJWG9JUXFqSHdJdktkQ29MLzc1RmprZ2w0SFp1TU9BT0hXL0QyS2Q3RU5YTXdqYUtCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9UaWwzZmxPb0FYWWdiTm8vQUcrRGFlWUJwMjhlQlBCU2o0U25jeDdsZ1VvU2hMY0p3ekg5V0NGcFc4MEFHOTFjLzh4dFFtcVdwbXlSOUhlNGY5WndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTUxMDAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3WjE4TUtQT0cydlFCRko5TVhyWmx6VGZjV0ZQWm1xUE9WVkc0ZFpSUSt1TzMzZ3dtT1UyM0ovUnJmYzAwenRxcnZxR2tmaytLNW44M01rbkpuM1dEdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
