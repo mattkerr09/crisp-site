@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1204",
-  "notes": "Asking to keep the whole picture in frame now asks which shape you want, instead of saying it didn't understand.",
-  "pub_date": "2026-09-09T18:45:50Z",
+  "version": "1.0.1206",
+  "notes": "Speed changes now use the number you typed \u2014 'speed it up by 3' used to quietly run at 2x instead.",
+  "pub_date": "2026-09-09T20:08:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ3N2sySHBhZmhWTm5qU096Tlp5T1EycjlXUXZZNlpKT2ZxckNzcGIwNFpGcjEwZTYwT1dvZks3SmFyZDUyTWFoVllCVjBRYkJnMWkrdmlvRlJCNUFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTc5NDIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6S2JpYjlvWmJLNkppWXp1bzA4alptMExWSjVUNjlnQ3pGVUNyYXhZS0ZGSERHYVcxZkR0Q29pMnllb0pvalJpakc3c0YyMFR0TER4bDh3d1RBUjlCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl5cnpia0RBMXE0TFpYSHpJMUNJZmc5VENmY1owa0toaWVxYm4rT05sSFZWWndNRi9rQkc3eExMUGc3REs2cU1Yc29pRnhTc2c5ZW9RdmhDbXgzSGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTg0Mzk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWMlJlWkpUQkp5QXVSb21YL0dXN0JoWVhyOGR1eW4wcG1wZGx6czkrUXJISVVNb1ZzVHlQQkVXK3E1ZEJJbUVIRVFuMUg0bEVnQ0hWOFlHcXc3MzlDdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
