@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1179",
-  "notes": "Asking for a shape in words now works as well as asking for it in numbers. Typing \"9:16\" always planned a reframe, but \"square it\", \"go vertical\", \"vertical please\" and \"tiktok it\" came back with \"I did not catch an edit in that\" \u2014 for the very same four shapes Crisp already makes. Twenty-three phrasings that should have worked were dead. They work now, and naming your footage still does what you asked: \"upscale my vertical video\" upscales it, it does not reframe it.",
-  "pub_date": "2026-09-09T06:09:02Z",
+  "version": "1.0.1182",
+  "notes": "Asking for a second edit with the word \"after\" now works whichever way you write it. \"Make it vertical after muting it\" always did both jobs, but \"make it vertical after mute it\" quietly did only the reframe and threw the mute away without saying so \u2014 and the card gave no hint that half the request had gone missing. Crisp reads the plain form now, including \"after that mute it\". Naming a moment rather than an edit still means what it always did: \"trim it after the intro\" and \"keep everything after 10 seconds\" are untouched.",
+  "pub_date": "2026-09-09T06:58:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJaYk9xbWdON1l3RDQzOWRSNE9mSFQ5Rkx6dkRraFc5MjV2QXhIUDJzb0RNMXFFRk43SFZLZTUrQVFPaGx1b1F6WE9aMWhnQ1NBSWRMai93citUQlF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTM0MDU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEdSsrSmx6MmxLWUp3eGYvcGNSeDluTnYzYkRIN2VNRXBrYnNUcm00em5rakZrZCsyZjF0OTBuTVFtbjVHQ0ZRdGJvc0lUUitYWXc4VEROTHpYdS9CUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF1bkg3NW0zbG5kQ0YyM1Y1bXdCUnpYSnJnckxTSktZWEZ5bTNtRkNNSTlEdk1tWHVzcXZjNDNkejAwOVNBWjUya0VpbldyWWlpOEdIKzRjN3ZyWUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTM2OTk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpldE8rRE5wUTN4Tm5ndkVJbWJIaTJ0ejlaUDEzekVDeEFvNXNJdzZhUjhudE1MNDVINEsvem5MZE5SdXpiK0h6ZXV5WFFBSVhaclovMVlMMG9FVzdCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
