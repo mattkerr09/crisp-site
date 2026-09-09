@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1193",
-  "notes": "Captions can say \"50% off\" again. Asking for a caption whose text contained the word \"off\" was answered with a note about Crisp being unable to remove a caption already burned into the picture \u2014 which is not what you asked, and not what you wanted. It happened to \"half off\", \"kick off\" and \"turn it off\" too, while longer captions like \"buy now 50% off\" were fine, so it looked random. Your caption text is now left alone entirely: it goes into the picture as you typed it. Asking Crisp to remove a watermark or caption still gets the same honest answer as before.",
-  "pub_date": "2026-09-09T11:59:38Z",
+  "version": "1.0.1195",
+  "notes": "A caption whose words happen to describe a time now stays a caption. Asking for a caption that says \"from 2 to 6 seconds\" burned in nothing at all \u2014 Crisp read your own words as an instruction about when to show it, took them away, and left an empty caption while reporting success. \"For 5 seconds\" did the same. Putting the timing outside the quotes still works exactly as before: caption it \"Hello\" from 2 to 6 seconds shows Hello between two and six seconds.",
+  "pub_date": "2026-09-09T12:40:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVVd2lsK2FtVk1mU0s2dGxJNjNYWWxOLzc1M3JGUlBqNm1FeXlFeVJNS2Z1ZTNpdTBITEtHMStLdEptTVJMVTN6alNyREZWcEs2eW82N3lsTUpFYlFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTU1MDg0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1Qnc0SGNRUjJ1bHc4aDVHZGJncGZYNUgzeEQyWlFQV2szM3Jramk1d0poY0xiQmJmTTAvQjJuZ1lYREdzcTh1MWRVODFCUXpvU0dJRTBJQlQ1V0hBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1wb3JSNXYyaXd6bnBHVlIvR3lOOTRVN1lWT3ltMnRoVGlrdjhMT2hXSER3SDQxSXE0OXZ0dVE3bUZvdVNLd25ELzBiSjlsV2VnWnQweDZzam80UEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTU3NTI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwQmVKcDAzTkR6OE1EbkxKYTdFNnBSV1ZOQzhjNS9Tbk1uZGpjTzhvY1dwWFIrakRYMSthMUdoR2FpZDdPMXlSaGJCQUcwajlORXhxcjdUNUJnRExBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
