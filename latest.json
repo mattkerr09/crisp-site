@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1201",
-  "notes": "Asking to letterbox a video no longer crops it \u2014 Crisp now explains it can take black bars off but not add them, instead of doing the opposite of what you asked.",
-  "pub_date": "2026-09-09T16:24:41Z",
+  "version": "1.0.1202",
+  "notes": "When Crisp can't do something it now suggests things that actually work on your clip \u2014 it used to offer a shape your video already was, or audio advice on a silent clip.",
+  "pub_date": "2026-09-09T17:30:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ6YlNLRGg4MlVXZGtaMlE3SlhlYjVoYU9HQ3QrRE5Va25Ya1NoL3lYamZMK1dpRlA4dnE1QkZwbG81V3VCd29TSjY1NmQwUHdmT1VhN0ZpMlB5VVFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTcwOTg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3UUgxZm1yTVZQUU1hMy9pTFlZL04vQ0RoSnR4bWo1c3NKOUh1OW8yb3M3K0JUaTJCbDBQUnI4Tm1peG5OMnZQTXF3VHdpTzJKVDNDbTdoRTlSRGlEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU94eEh4REcwT1dQVWpqeGJURFMrOWx6ZWg2K0RKOVd0aXJ0cmdjbmNER0JmN0VJdlNUT1dXUi9OYkRWMUhNOXpFZ1RmYmhEVUxEMExab2pWSHE1OUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTc0OTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGcFFRS0w0SjZ5ZTBrWkl6cXpIdmlpZjdUT1lQSm0rK1dFUTd0VzY3NlF0bDFwOEZGYWZSanQ4dWxrbTZVdVNYMDJLUnNoUlBVOUI4Zm55aFZPazVCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
