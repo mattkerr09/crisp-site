@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"A practical <span class=&quot;grad&quot;>waifu2x alternative</span> for Mac","description":"waifu2x is free and open source, and genuinely good on anime and stills. Here is where it falls short on real video, and when a $129 offline Mac app is the better tool.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/waifu2x-alternative-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"A practical <span class=&quot;grad&quot;>waifu2x alternative</span> for Mac","description":"waifu2x is free and open source, and genuinely good on anime and stills. Here is where it falls short on real video, and when a $129 offline Mac app is the better tool.","datePublished":"2026-07-23","dateModified":"2026-09-09","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/waifu2x-alternative-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is waifu2x still good in 2026?","acceptedAnswer":{"@type":"Answer","text":"For anime, illustrations and still images, yes — it is free, offline and hard to beat on that material. It was never designed for real-world video, which is where it struggles with temporal stability."}}]}
@@ -88,8 +88,11 @@
 
   <h2>Real-ESRGAN is the middle ground</h2>
   <p>Worth knowing: Real-ESRGAN handles photographic material far better than waifu2x and is also
-  free. It has the same two practical catches — command-line only, and no temporal awareness — so
-  it solves the detail problem while leaving the shimmer and the workflow untouched.</p>
+  free. The catch that matters is the same one — no awareness of neighbouring frames — so it solves
+  the detail problem and leaves the shimmer exactly where it was. The command line is no longer the
+  only way in: <a href="/vs/upscayl-alternative-mac/">Upscayl</a> wraps the same ncnn build in a
+  desktop app, and Crisp bundles that same build too. But those front-ends are image tools, so the
+  video workflow — frames out, frames back, audio and timing by hand — is still yours to do.</p>
 
   <h2>Judging an upscale properly</h2>
   <p>Whichever tool you land on, test it the same way. Take your worst clip, not a clean one: the
