@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1200",
-  "notes": "Asking to zoom out now gets a real answer \u2014 Crisp explains it crops in from the centre, and points you at the reframe that fits your whole picture instead.",
-  "pub_date": "2026-09-09T15:49:26Z",
+  "version": "1.0.1201",
+  "notes": "Asking to letterbox a video no longer crops it \u2014 Crisp now explains it can take black bars off but not add them, instead of doing the opposite of what you asked.",
+  "pub_date": "2026-09-09T16:24:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU80aC9BWEU3WDRsMEFMeGhxQTc2SUxrTjYyZkcxZzIwUlBtRHRlTWdmRVY4cXBhU3U1ektqVGkwc3F1Rm5DclllZXNuT0h4OHVzNXRWTDdnQnVFZFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTY4ODgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYUXIvOVhmcGR3cjFjM2JJZG5UWDROUXlsQ1M2NWVqOHg3SWlkc0h6MmF6ZVVQeHVnczNBTkpZaW84S09xQzhOeUZwdHlsS1RnKzh3c0IwMFd4alBBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ6YlNLRGg4MlVXZGtaMlE3SlhlYjVoYU9HQ3QrRE5Va25Ya1NoL3lYamZMK1dpRlA4dnE1QkZwbG81V3VCd29TSjY1NmQwUHdmT1VhN0ZpMlB5VVFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTcwOTg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3UUgxZm1yTVZQUU1hMy9pTFlZL04vQ0RoSnR4bWo1c3NKOUh1OW8yb3M3K0JUaTJCbDBQUnI4Tm1peG5OMnZQTXF3VHdpTzJKVDNDbTdoRTlSRGlEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
