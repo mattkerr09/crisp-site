@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1210",
-  "notes": "Telling Crisp the footage already looks good no longer starts a render. \"The video is crisp\", \"it looks clean\" and eighteen other ways of paying the clip a compliment used to begin a multi-minute 4K upscale; they now say Crisp read it as a description and ask what you would like changed. Complaints still get fixed \u2014 \"the video is blurry\" upscales exactly as before.",
-  "pub_date": "2026-09-09T23:32:01Z",
+  "version": "1.0.1211",
+  "notes": "If Crisp's automatic update check hits an error \u2014 a dropped connection, a bad response \u2014 it now asks Crisp's own engine instead of giving up silently until the next check six hours later. That quiet failure is how an install can sit many builds behind while the app says nothing. Clicking Check for updates yourself behaves exactly as before.",
+  "pub_date": "2026-09-10T00:22:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFEcHp2OHN6azI5WlF0dFNPZEkrVTNYUXJaamlLK1lodis4YnVEb1NVdnhoaVJMbDJ1WEVVakdNQlgzOGpOMUdIYjBwbWJkN2Vzd3hIQUhZaFMrZWdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTk2NjE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXQmgwMEVOOXpSU3dyOW5OdWM0d2tOYXBCdTZMK1l3WTFUdW9XT0tpc2VpclRDOHJDUWJCWm9PN1FHRjhWMnpOb2VtTWlhaVN3OGVvZ1JhMFZQSnpCUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1FV21oZWRGUHdFTGV5K01VYjdIb0NGM3UwUCtrUVNxb0ozL3kzay9BL1RRZ0JnNEdLM1ZaNFd1K0tDQXdjenBwLzFtZDhkQnhOUGR2eENra1l2NEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4OTk5NTc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0Uys3d2M1QjNUcGJlV0dlNnJKVTJoaFlRL3p1bVgybTExQTRueU02WVJuczlyMGpzT2EwbnJHM1FmR3pTMXIrVWpLeElNQ0NlODFCV0xZWDM2U2ZCQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
