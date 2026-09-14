@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1212",
-  "notes": "Asking for a quality without the -er now works. \"Make it bright\", \"make it loud\", \"make it fast\", \"make it sharp\" and five more used to say Crisp had not understood, while \"make it brighter\", \"make it louder\" and \"make it faster\" worked \u2014 and \"make it dark\" and \"make it warm\" always had. Telling Crisp the footage already looks good still starts nothing.",
-  "pub_date": "2026-09-14T16:46:10Z",
+  "version": "1.0.1214",
+  "notes": "Asking Crisp to soften or blur the picture now gets a straight answer instead of a render that sharpens it. \"Make it soft\", \"soft focus\", \"blur it slightly\" and eight more used to start a multi-minute enhance \u2014 the opposite of the request. Crisp says what it can do instead: smooth skin, or smooth motion. Saying your footage looks soft still gets it sharpened, as before.",
+  "pub_date": "2026-09-14T17:57:55Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJPeDZBa0NaZFRCRTh2RUg0LzluQ1Q5SXJ4SEZYdFkzUE5SZ3hnK1dXc2h6NHhvOVVNTDUvL2ZmcG8yekNGOVZZcHNBN1hoeFNvNUFydk9HSXhiVEF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDA0MjYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpvUnRzZGpudDRYU1dHMDdMVkttOVhXanBRNUlFczhUdzdrZ0d4OE9QdnRpNmtUZkRsT0FSaXBtcGI4WU9adHptWHE2dWRtWUtwODZnVWVDdWdEZ1dCQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5MjVHeGdvMDEzSE4wdHQzMXR0UDhwTWZIUVVJUWk4aDlRZ0dFNTFMNmxCVmdTMjIxS0pzT1BEYUZIZ1NUTUM2NlhEZnl0bWxoSnBNdlNZbUVIZHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDA4NTM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyRTNSQ25xQWRtZ2pMWkZlLzlDVDdjYUNUWVRkMjM0cUtBcmtnVkRvVDhaampxT05mWXNzeFZMRXUxV2dmaTd0SE44US9yYSt3aUdSWU5HRW9qaGdBUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
