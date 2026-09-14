@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1214",
-  "notes": "Asking Crisp to soften or blur the picture now gets a straight answer instead of a render that sharpens it. \"Make it soft\", \"soft focus\", \"blur it slightly\" and eight more used to start a multi-minute enhance \u2014 the opposite of the request. Crisp says what it can do instead: smooth skin, or smooth motion. Saying your footage looks soft still gets it sharpened, as before.",
-  "pub_date": "2026-09-14T17:57:55Z",
+  "version": "1.0.1215",
+  "notes": "\"Take the colour out\" now does what \"make it black and white\" does. Thirteen ways of asking for the same thing \u2014 remove, strip, drain, lose or kill the colour \u2014 used to say Crisp had not understood. Asking to remove a colour cast or a green tint still means correcting the colour, not draining it, and is untouched.",
+  "pub_date": "2026-09-14T21:49:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5MjVHeGdvMDEzSE4wdHQzMXR0UDhwTWZIUVVJUWk4aDlRZ0dFNTFMNmxCVmdTMjIxS0pzT1BEYUZIZ1NUTUM2NlhEZnl0bWxoSnBNdlNZbUVIZHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDA4NTM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyRTNSQ25xQWRtZ2pMWkZlLzlDVDdjYUNUWVRkMjM0cUtBcmtnVkRvVDhaampxT05mWXNzeFZMRXUxV2dmaTd0SE44US9yYSt3aUdSWU5HRW9qaGdBUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNpb3dvMTNkSDlsc0JCRmpGcFB1U0NYaUJtOGYwOWVWdWxxb0FFcFBjNGd1S01YNmRDYk0wbm1TZ2tLWGU0dXhUWlQ4THVUejZ5ZjE4dEVaL0JiRndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDIyMzkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZR2RuWTNnU3p1c3dYd1htaEpLRm5Qc1VPSHhaZEViVWVFZXN5NWRoTmlmcmVNekh5emwwRW1sTTZFUEY5eG5zakhaN2MrWkRtQlBUS1VuVVorR3FCUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
