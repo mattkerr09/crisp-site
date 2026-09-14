@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1216",
-  "notes": "Colour casts get a straighter answer. A yellow cast is now corrected like an orange one; \"punch up the colour\" and \"turn up the saturation\" work like \"boost the colour\". Asking to fix the white balance without saying which way now asks warmer or cooler instead of guessing. And a green or magenta cast is refused honestly \u2014 Crisp corrects blue to orange and has no green control, so nudging the warmth would change the picture without fixing what you asked about.",
-  "pub_date": "2026-09-14T22:36:32Z",
+  "version": "1.0.1217",
+  "notes": "Talking about the sound no longer starts a picture render. \"Make the audio brighter\" used to run a colour grade and \"the audio is dark\" used to start a 4K upscale \u2014 forty phrasings in all. Crisp now says plainly that those are picture controls, that it has no EQ, and what it can do to sound instead. Asking to make the video louder still adjusts its soundtrack, exactly as before.",
+  "pub_date": "2026-09-14T23:26:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJIRTk4SmNmVE5pTkRSc0FPWnMycXZMYkN6RHJ1WHlFMUxwVnVubWJBOGxDVC9LUEJYVkpLKzVnUU5JTVp0UHR5OWx3UHZrcjJ4dHJ5TS91ZUxzTFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDI1MjA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpodWZjaXluaytJYzJOV0NJaDNQbFo1YzRBcXJuZUpGaTlNMGM2ajdRakovY2lqTW9GeVpjUlg0SlY2S0dnSm9ZSDdTbXdXM2xzNDhVRk90Y3pRTXJEQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURUSzVvenpjNUZwaVY1RCtWTGMvWHB3aFlvOGR0ZFl2NTNCaHk4eFpEd3pzbHlaVkVLSitDMDVJRTVXdytWUlJ5NFk1Y1g3RGJLVVduaWlscGRlY2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDI4MjA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqZG5FeVFoT3g0bGRueEF1RDJwVnNVMlBqcVh6ZktZOTd0cStVNGZpeGFhSkN6MzRTTmw2Q2ttaUJxNGNjUGd5bUVvbzlyV0J6bm1MTHJneXd1OTVDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
