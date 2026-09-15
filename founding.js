@@ -30,7 +30,17 @@
   window.__kcFounding = true;
 
   var KEY  = "kc-founding-dismissed";
-  try { if (localStorage.getItem(KEY) === "1") return; } catch (e) {}
+  /* A dismissal used to last forever ("1"), which hid the offer from every
+     returning visitor for good — including Matthew, who dismissed it and then
+     reported the bar missing from crispvideo.app (2026-09-15). The shared widget
+     was fixed the same day; this vendored copy is a FORK and did not inherit it,
+     which is the standing cost of forking and the reason this comment names it.
+     It now lasts seven days: the value is the dismissal time, and an old "1"
+     counts as expired. */
+  try {
+    var when = Number(localStorage.getItem(KEY));
+    if (when && Date.now() - when < 7 * 24 * 60 * 60 * 1000) return;
+  } catch (e) {}
 
   /* Prices come from the mount if a site states them, else from the API. A site
      that hard-codes them is a site that can drift from Dodo; the attribute is a
@@ -70,6 +80,8 @@
     '.was{text-decoration:line-through;opacity:.42;margin-right:.28rem}',
     '.now{font-weight:700;color:#F0B429}',
     '.left{opacity:.62;white-space:nowrap;flex:none}',
+    '.ask{border:0;background:none;font:inherit;color:inherit;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px;opacity:.9}',
+    '.ask:hover{opacity:1}',
     '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
     '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
     '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
@@ -90,7 +102,7 @@
         (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
     '  </span>',
     '  <span class="dot"></span>',
-    '  <span class="left" data-left></span>',
+    '  <span class="left" data-left><button class="ask" type="button">How many left?</button></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
@@ -106,15 +118,58 @@
   });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
-    try { localStorage.setItem(KEY, "1"); } catch (e) {}
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
-  /* ⚠️ NO LIVE COUNT ON CRISP, DELIBERATELY. The shared widget reads the
-     remaining count from kerr-lead-agent. Crisp's pre-push gate refuses any
-     third-party host in loaded JS and is right to: this product is sold on "it
-     never phones home", and opening a connection to render a scarcity counter is
-     exactly what that claim is about. "So the counter looks urgent" is not a
-     reason that survives being read aloud to a customer. */
+  /* THE COUNT, AND WHY IT IS BEHIND A CLICK.
+   *
+   * The previous version of this file showed NO count at all, with a reason worth
+   * keeping: this product is sold on "it never phones home", and opening a
+   * connection on load to render a scarcity counter is exactly what that claim is
+   * about. "So the counter looks urgent" does not survive being read aloud to a
+   * customer. That reasoning is right about LOAD and it is preserved exactly —
+   * nothing here is contacted for a visitor who does not click.
+   *
+   * ⚠️ BUT REMOVING THE FETCH LEFT A DEAD EXEMPTION, AND THE GATE SAYS SO ITSELF.
+   * `_tools/gate_thirdparty.py` carries a CONDITIONAL entry for this host scoped to
+   * this file, keyed to the marker `countBtn.addEventListener('click'`, and prints
+   * on every run that the founding counter fires "on a click asking how many places
+   * are left". With the fetch gone that sentence was FALSE — the gate was asserting
+   * behaviour to an auditor that no longer existed. That gate's own docstring calls
+   * this out: "A dead exemption is worse than none — it reads as a considered
+   * decision while silently exempting a case that never occurs, and the day the host
+   * DOES appear for real it is pre-approved."
+   *
+   * So the sanctioned design is restored rather than the exemption deleted: the
+   * visitor asks, and the asking is the only thing that sends anything.
+   *
+   * ⛔ AND THE NUMBER IS NEVER GUESSED. It is whatever the worker that reads Dodo
+   * says. If the request fails, or the payload is not the shape this was written
+   * against, the bar says so rather than falling back to a flattering number — a
+   * scarcity count invented on an error is the one failure mode worth refusing
+   * outright.
+   *
+   * ⚠️ THE FIELD NAMES ARE left/of, NOT remaining/tier_size. Checked against the
+   * live response on 2026-09-15, not from memory:
+   * {"left":22,"of":25,"code":"FOUNDING1","claimed":3,"total":50,"soldOut":false}
+   */
+  var countBtn = root.querySelector(".ask");
+  countBtn.addEventListener('click', function () {
+    var slot = root.querySelector("[data-left]");
+    countBtn.disabled = true;
+    countBtn.textContent = "Checking\u2026";
+    fetch("https://kerr-lead-agent.kerrco.workers.dev/founding", { method: "GET" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || typeof d.left !== "number") throw new Error("shape");
+        if (d.soldOut || d.left <= 0) { slot.textContent = "claimed"; return; }
+        slot.textContent = d.left + " of " + (d.of || 25) + " left";
+      })
+      .catch(function () {
+        /* No number here, on purpose. */
+        slot.textContent = "couldn\u2019t check";
+      });
+  });
 
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid
