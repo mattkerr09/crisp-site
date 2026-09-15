@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x, and the 4x job finishes faster than the 2x one. The numbers, the cost in seconds, and why the two scales are different models.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x">
+<meta property="og:description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x, and the 4x job finishes faster than the 2x one. The numbers, the cost in seconds, and why the two scales are different models.">
+<meta property="og:url" content="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x">
+<meta name="twitter:description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x, and the 4x job finishes faster than the 2x one. The numbers, the cost in seconds, and why the two scales are different models.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x","description":"Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x, and the 4x job finishes faster than the 2x one. The numbers, the cost in seconds, and why the two scales are different models.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-09-15","dateModified":"2026-09-15"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling get worse at 4x than at 2x?","acceptedAnswer":{"@type":"Answer","text":"Not in the way the question assumes. Measured against a surviving 1280x720 original, the AI route trailed a plain lanczos resize by 23.4 VMAF points at 2x and by 1.2 VMAF points at 4x. The gap closed as the scale factor rose. Part of that is the job getting harder for both routes and part of it is that the two scales run different models: at 2x with denoise below 0.5 the job goes to 2x-ParimgCompact, and at 4x it goes to RealESRGAN_General_x4_v3. This measurement cannot separate those two causes, because Crisp's router does not offer the combinations that would isolate them."}},{"@type":"Question","name":"Why is the 4x upscale faster than the 2x upscale in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because they are not the same model. On 60 frames of the same source clip, the 4x route (RealESRGAN_General_x4_v3) took 2.78 s and the 2x route (2x-ParimgCompact) took 3.89 s, so the 4x job finished about 28 percent sooner despite producing four times as many output pixels per input pixel. The denoise value and the scale factor together select the model, and the two selected models have different costs."}},{"@type":"Question","name":"How much slower is AI upscaling than a plain resize?","acceptedAnswer":{"@type":"Answer","text":"On 60 frames of a 1280x720 clip, a lanczos resize took 0.44 s at both scale factors. The AI routes took 2.78 s at 4x and 3.89 s at 2x, which is 6.3 and 8.8 times the wall clock, or roughly 46 and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean source the resize also scored closer to the original on both metrics."}}]}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "AI upscaling vs a plain resize", "item": "https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/"}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; AI upscaling vs a plain resize</div>
+  <h1>AI upscaling doesn't fall off at 4×, it catches up</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-09-15 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">"Where does AI upscaling stop being
+  worth the wait?" assumes the model leads on small jobs and falls apart on big ones. Measured against
+  a surviving original, it is the other way round. At <strong>2×</strong> the AI route trails a plain
+  lanczos resize by <strong>23.4 VMAF points</strong>. At <strong>4×</strong> it trails by
+  <strong>1.2</strong>. The gap closes as the scale factor rises. The cost is
+  <strong>2.78 s</strong> at 4× and <strong>3.89 s</strong> at 2× per 60 frames, against
+  <strong>0.44 s</strong> for the resize — six to nine times the wall clock. And the 4× job is the
+  <em>faster</em> of the two AI routes, because the two scales run different models.</p></div>
+
+  <h2>The measurement</h2>
+  <p>Crisp 1.0.1223, measured 2026-09-15, on a photographic archival boxing clip whose native
+  1280×720 original we still hold. That original is the ground truth. Two low-resolution inputs were
+  made from it — 320×180 and 640×360 — so that a 4× model and a 2× model each land back on exactly
+  1280×720 with no extra resample anywhere in the chain. Each route was then scored against the
+  surviving original. 60 frames per route.</p>
+  <p>The scorers are the bundled ffmpeg's <span class="prompt">psnr</span> filter and libvmaf,
+  Netflix's perceptual metric, which is compiled into the same ffmpeg and runs on the machine with no
+  network call. The vacuity control on this clip — the truth scored against itself — returns PSNR
+  <span class="prompt">inf</span> and VMAF 99.62, so the instrument can show near-perfection and a low
+  score is a real difference rather than a broken comparison.</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Route</th><th>Model</th><th>Seconds / 60 frames</th><th>PSNR (dB)</th><th>VMAF</th></tr></thead>
+    <tbody>
+      <tr><td>4× AI enhance</td><td><strong>RealESRGAN_General_x4_v3</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
+      <tr><td>4× lanczos</td><td>—</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
+      <tr><td>2× AI enhance</td><td><strong>2x-ParimgCompact</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
+      <tr><td>2× lanczos</td><td>—</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The resize leads on both metrics at both scales. That is the unflattering half and it is stated
+  first. What changes with the scale factor is the <em>size</em> of the deficit: 7.4 dB and 23.4 VMAF
+  points at 2×, and 6.9 dB and 1.2 VMAF points at 4×. On the perceptual metric the AI route goes from
+  losing by a landslide to losing by about a point.</p>
+
+  <h2>Read the gap, not the score</h2>
+  <p>The two scale factors do not start from the same file. 4× starts from 320×180, which holds a
+  quarter of the pixels that 640×360 holds, so it is a strictly harder reconstruction and every route
+  scores lower on it. Comparing 86.93 against 75.59 across the two rows would be comparing two
+  different jobs. What is comparable is each AI route against the lanczos route measured on the
+  <em>same</em> starting file, because that pair shares the input, the output geometry and the truth.
+  That is why this page talks in gaps rather than scores.</p>
+  <p>Read that way the result is clean. On the easy job the model is far behind a resize. On the hard
+  job it is nearly level. The harder the reconstruction, the more the model justifies the seconds it
+  costs — which is the opposite of the falls-off-a-cliff story the question expects.</p>
+
+  <h2>The two scales are two different models</h2>
+  <p>This is the mechanism, and it is worth naming exactly because it also explains the wall clock.
+  Inside the app, <span class="prompt">presets.resolve_model_for_scale</span> picks the model from the
+  <em>denoise</em> value and the requested scale — not from a model name you choose. The
+  <span class="prompt">enhance</span> preset carries denoise 0.4, so with denoise left alone:</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Denoise value</th><th>Scale</th><th>Model that runs</th></tr></thead>
+    <tbody>
+      <tr><td>below 0.5</td><td>2×</td><td><strong>2x-ParimgCompact</strong></td></tr>
+      <tr><td>below 0.5</td><td>any other, including 4×</td><td><strong>RealESRGAN_General_x4_v3</strong></td></tr>
+      <tr><td>0.5 or above</td><td>any</td><td><strong>RealESRGAN_General_WDN_x4_v3</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>2x-ParimgCompact is not Real-ESRGAN.</strong> It is a compact super-resolution network,
+  and calling it Real-ESRGAN would be false. Only the other two routes in that table are Real-ESRGAN
+  models. So the 2× and 4× rows above are not one model tested at two settings; they are two
+  different networks, and both the speed and the quality difference follow from that.</p>
+  <p>It also means this measurement cannot cleanly separate "the scale factor got harder" from "the
+  model changed". Some of the closing gap is each route struggling with a quarter as many input
+  pixels, and some of it is a different network doing the work. The two are confounded, and the
+  confound is the product's own routing rather than a flaw in the test: at denoise below 0.5 the
+  router will not give you the detail network at 2× at all. There is no combination to run that would
+  isolate the cause.</p>
+  <p>What can be said from the same harness is how much of the 2× deficit belongs to the model rather
+  than the scale. On this identical geometry, raising denoise to 0.5 or above at 2× routes to
+  RealESRGAN_General_WDN_x4_v3, which scored 36.33 dB and VMAF 96.83 — turning a 23.4-point VMAF
+  deficit into a 2.2-point one. Most of the 2× gap in the table above is the default model, not the
+  scale factor. That routing is covered in full in
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">what the denoise setting
+  does</a>.</p>
+
+  <h2>The counter-intuitive part: 4× finishes first</h2>
+  <p>The 4× job produces four times the output pixels per input pixel and still finishes sooner:
+  <strong>2.78 s against 3.89 s</strong> on 60 frames, about 28 percent quicker. Per frame that is
+  roughly 46 ms at 4× and 65 ms at 2×. Nothing about scale factors explains that. Different models
+  explain it: the compact 2× network is not cheaper than the 4× detail network on this machine, on
+  this clip, at these geometries.</p>
+  <p>Against the resize, the cost is plain. Lanczos ran 60 frames in <strong>0.44 s</strong> at both
+  scales, about 7 ms per frame. The AI routes are therefore <strong>6.3× slower at 4× and 8.8× slower
+  at 2×</strong>. Six to nine times the wall clock is the price of the model, and on a clean source
+  the model does not buy fidelity with it.</p>
+
+  <h2>What PSNR and VMAF actually measure</h2>
+  <p>PSNR measures agreement with the original, decibel by decibel. It punishes detail that is
+  plausible but different from what was there — and plausible-but-different detail is precisely what a
+  generative upscaler produces. The model does not recover the eyelash that was thrown away by the
+  downscale. It produces an eyelash, and a convincing one can sit several decibels from the real one.
+  SSIM behaves the same way on structure.</p>
+  <p>VMAF is the perceptual one, built to predict what a viewer would report, which is why it carries
+  the headline on this page. But it is still scored against the original rather than judging the frame
+  on its own merits. <strong>Nothing here says a lanczos resize looks better.</strong> These numbers
+  answer one question — which route lands closest to the surviving original — and they do not answer
+  which version you would rather watch. That is a judgement to make with your own footage, at full
+  size, in motion.</p>
+  <p>One more honest note on the 2× row: on the same clip a plain nearest-neighbour stretch scored
+  36.61 dB and VMAF 98.38, above the compact model on both. A measurement that puts a generative
+  network below pixel duplication on fidelity is a measurement of fidelity, not of preference, and it
+  is worth carrying that distinction into how you read the whole table.</p>
+
+  <h2>The method bias, stated rather than buried</h2>
+  <p>The low-resolution inputs were made by lanczos-downscaling the truth. A lanczos upscale therefore
+  partially inverts the exact operation that degraded the file. That is structurally favourable to
+  lanczos, and it is not how real low-resolution footage comes into existence. Anyone reading a
+  resize-versus-model comparison should know that before reading the numbers, including ours.</p>
+  <p>So the harness was also pointed at the degraded case a real clip actually is: crf 40 plus noise,
+  on the photographic source. The ranking did not flip. Lanczos scored 26.56 dB and VMAF 31.13,
+  2x-ParimgCompact 24.85 and 17.91, RealESRGAN_General_WDN_x4_v3 25.10 and 27.43. Heavy degradation
+  narrowed the compact model's VMAF deficit from 23.4 points to 13.2 without reversing the order. The
+  result survives its own hardest control, which is the reason it is being published rather than
+  softened.</p>
+  <p>The scale-factor comparison at the top of this page is one clip. It is the photographic one,
+  which is the content class these models were trained on and the one to lead with, but it is one
+  clip, and a single source is a coincidence until a second agrees with it.</p>
+
+  <h2>The published comparison people cite is a different question</h2>
+  <p>If you have read anything on this topic you have probably met the figure from Meta's At Scale
+  talk: better than a 13 percent VMAF improvement over lanczos. That is a real published result and
+  this page does not dispute it.</p>
+  <p>It is about a different kind of model. That number is for <strong>basicVSR++, a temporal
+  model</strong> — it looks at neighbouring frames and pools information across them, so detail that
+  is present in frame 41 can be used to reconstruct frame 40. The routes measured here are
+  frame-by-frame: each frame is reconstructed from itself alone, with no access to its neighbours.
+  Those are two different architectures answering two different questions, tested on different
+  content with different harnesses. A frame-by-frame model landing 1.2 VMAF points behind lanczos at
+  4× is not evidence against a temporal model landing 13 percent ahead of it. If anything it marks out
+  where the remaining headroom is, and it is the most interesting open question on this page.</p>
+
+  <h2>What to do with this</h2>
+  <p>If your source is clean and you want more pixels, a plain high-quality resize was closer to the
+  original at both scale factors, and it costs 0.44 s where the model costs 2.78 to 3.89 s per 60
+  frames. On that job the wait buys you a different frame, not a more accurate one.</p>
+  <p>If you are pushing a small source a long way — the 4× case — the fidelity argument against the
+  model mostly evaporates: 1.2 VMAF points on this clip. That is where the seconds are defensible.</p>
+  <p>And if the source is noisy or archival rather than merely small, the lever that matters is not
+  the scale factor. It is the denoise value, because that is what selects the model.</p>
+
+  <h2>4× versus 2× in detail</h2>
+  <h3>Does AI upscaling get worse at 4× than at 2×?</h3>
+  <p>Not in the way the question assumes. Measured against a surviving 1280×720 original, the AI route
+  trailed a plain lanczos resize by 23.4 VMAF points at 2× and by 1.2 VMAF points at 4×. The gap
+  closed as the scale factor rose. Part of that is the job getting harder for both routes and part of
+  it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to
+  2x-ParimgCompact, and at 4× it goes to RealESRGAN_General_x4_v3. This measurement cannot separate
+  those two causes, because Crisp's router does not offer the combinations that would isolate them.</p>
+  <h3>Why is the 4× upscale faster than the 2× upscale in Crisp?</h3>
+  <p>Because they are not the same model. On 60 frames of the same source clip, the 4× route
+  (RealESRGAN_General_x4_v3) took 2.78 s and the 2× route (2x-ParimgCompact) took 3.89 s, so the 4×
+  job finished about 28 percent sooner despite producing four times as many output pixels per input
+  pixel. The denoise value and the scale factor together select the model, and the two selected models
+  have different costs.</p>
+  <h3>How much slower is AI upscaling than a plain resize?</h3>
+  <p>On 60 frames of a 1280×720 clip, a lanczos resize took 0.44 s at both scale factors. The AI
+  routes took 2.78 s at 4× and 3.89 s at 2×, which is 6.3 and 8.8 times the wall clock, or roughly 46
+  and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean
+  source the resize also scored closer to the original on both metrics.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">What is AI video upscaling?</a></li>
+    <li><a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">Why AI upscaling can't fix focus</a></li>
+    <li><a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">Why 4K exports take so long</a></li>
+  </ul>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
