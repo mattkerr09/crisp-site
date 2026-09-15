@@ -37,6 +37,17 @@
   <h1>What is a video codec?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">A codec is the method used to
+  compress and decompress video. A container, such as <strong>.mp4</strong> or <strong>.mov</strong>,
+  is the file wrapper that holds the compressed video, the audio and the metadata, and either
+  container can hold H.264, HEVC, ProRes and several others, so "my MP4 won't play" is almost always
+  about the codec inside rather than the container. H.264 plays on essentially everything, HEVC is
+  roughly half the size at similar quality but has patchier support on older hardware and some web
+  platforms, and ProRes is an editing codec with enormous files that lives in .mov rather than .mp4.
+  If the codec inside your file is already valid for the container you want, converting is a stream
+  copy that takes seconds and is mathematically lossless; if it is not, everything has to be decoded
+  and re-encoded, which is slower and costs a compression generation.</p></div>
+
   <p>A codec is the method used to compress and decompress video. A container is the file wrapper that
   holds the compressed video, the audio, and the metadata. They're different things, and almost every
   confusing playback problem comes from treating them as the same thing.</p>

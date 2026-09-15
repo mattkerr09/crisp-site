@@ -37,6 +37,15 @@
   <h1>What is HDR video?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">HDR video looks washed out when the
+  software showing it does not interpret the HDR tagging: it reads the brightness numbers as if they
+  were ordinary values, and the picture comes out flat, desaturated and slightly milky. Nothing is
+  damaged — the file stores brightness using a transfer curve designed for HDR displays, most often PQ
+  or HLG, and it is being interpreted with the wrong assumption. The fix is tone mapping, which fits
+  the wider brightness range into a narrower one by compressing the highlights gradually instead of
+  clipping them flat. Crisp detects HDR sources from their colour metadata and runs a proper tone map
+  on-device when the output needs standard range, so there is no setting to get wrong.</p></div>
+
   <p>HDR video stores a wider range of brightness than traditional video, and a wider range of colour
   with it. Where standard video assumes a display that peaks around 100 nits, HDR formats carry
   information for displays reaching ten times that or more, so a sunlit window can be genuinely bright
