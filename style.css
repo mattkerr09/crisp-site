@@ -270,3 +270,22 @@ article > *{position:relative;z-index:1;}
 .hub-list a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);}
 .hub-list a:hover{border-bottom-color:currentColor;}
 .hub-note{display:block;font-size:.85rem;color:var(--grey-dim);}
+
+/* THE QUICK-ANSWER BOX — 80 pages shipped `class="quick"` and nothing styled it.
+   The anatomy pass added the element to every page and never added a rule, so the one
+   block a reader is most likely to read rendered as a bare bold word and a paragraph,
+   with no box, no separation and nothing marking it as the answer. Found by a writer
+   who grepped for the selector instead of trusting that a shipped class is a styled one.
+   Matches the .box idiom above (hair border, --r-sm, --panel-2) with a cyan edge and a
+   label, so it reads as an answer rather than another paragraph. */
+.quick{margin:0 0 1.9rem;padding:1.15rem 1.35rem;border:1px solid var(--hair);
+  border-left:3px solid var(--cyan);border-radius:var(--r-sm);background:var(--panel-2);}
+.quick>strong{display:block;margin:0 0 .5rem;font-family:var(--head);font-size:.78rem;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--cyan);font-weight:600;}
+.quick .lede{margin:0;color:var(--white);}
+/* ⛔ NO .hero-say OVERRIDE HERE, DELIBERATELY. I wrote one — the home page's block sits in
+   the hero and a second box would be a panel inside a panel — and it was DEAD CODE: index.html
+   does not load this stylesheet at all. It carries its own 52KB embedded <style> (which styles
+   .hero-say and has no .quick rule), so nothing in this file can ever reach the hero. Removed
+   rather than shipped, on the same rule as _tools/gate_exemptions_live.py: a rule that describes
+   nothing reads as a considered decision and pre-approves the case for the day it applies. */
