@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1217",
-  "notes": "Talking about the sound no longer starts a picture render. \"Make the audio brighter\" used to run a colour grade and \"the audio is dark\" used to start a 4K upscale \u2014 forty phrasings in all. Crisp now says plainly that those are picture controls, that it has no EQ, and what it can do to sound instead. Asking to make the video louder still adjusts its soundtrack, exactly as before.",
-  "pub_date": "2026-09-14T23:26:10Z",
+  "version": "1.0.1218",
+  "notes": "Two follow-ups to the last release. On a clip with no soundtrack, asking about the audio now says so plainly instead of suggesting five things that cannot be done. And \"make the audio clear\" now cleans up the sound, the way \"make the audio clearer\" already did, rather than starting a picture upscale.",
+  "pub_date": "2026-09-15T00:07:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURUSzVvenpjNUZwaVY1RCtWTGMvWHB3aFlvOGR0ZFl2NTNCaHk4eFpEd3pzbHlaVkVLSitDMDVJRTVXdytWUlJ5NFk1Y1g3RGJLVVduaWlscGRlY2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDI4MjA0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqZG5FeVFoT3g0bGRueEF1RDJwVnNVMlBqcVh6ZktZOTd0cStVNGZpeGFhSkN6MzRTTmw2Q2ttaUJxNGNjUGd5bUVvbzlyV0J6bm1MTHJneXd1OTVDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlSWVM1aU9lS2QxOC9sVzJyaDNvU3JxNkJXcmRXZy8rRHhvREUyekJidXhydnRUZkNFSmkxQUpDR0l1QlhlNnpQdjJ2ekxYZnZOK0hMMXlxbHJNTUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDMwNzI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2YUl3Mmg5REp3cnZFYTNjcUdNcTlvTU1rd2hRRDlUNy9tWlVPRWdGK0pTL005ZVhhVHpMbkJERmlGd2tSL1VKRXVadFN4UWJDR3BrUDYwZGZXRmdDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
