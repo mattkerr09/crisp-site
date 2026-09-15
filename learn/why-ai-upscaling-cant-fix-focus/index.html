@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why AI upscaling can't rescue a shot that missed focus","description":"Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can any tool fix out-of-focus video?","acceptedAnswer":{"@type":"Answer","text":"Nothing recovers the original detail, because it was never recorded. Tools that claim otherwise are generating plausible detail rather than restoring real detail. That can look acceptable on unfamiliar subjects and tends to look wrong on faces you know."}},{"@type":"Question","name":"Why does the sharpened version look strange rather than just sharp?","acceptedAnswer":{"@type":"Answer","text":"Because the fine detail is invented. Your eye is very good at faces specifically, so small errors in the arrangement of features read as uncanny even when you can't articulate what changed. On landscapes or textures the same invention usually passes unnoticed."}},{"@type":"Question","name":"Is a slightly soft shot worth upscaling at all?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks."}},{"@type":"Question","name":"Does shooting at a higher resolution protect against this?","acceptedAnswer":{"@type":"Answer","text":"It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can any tool fix out-of-focus video?","acceptedAnswer":{"@type":"Answer","text":"Nothing recovers the original detail, because it was never recorded. Tools that claim otherwise are generating plausible detail rather than restoring real detail. That can look acceptable on unfamiliar subjects and tends to look wrong on faces you know."}},{"@type":"Question","name":"Why does the sharpened version look strange rather than just sharp?","acceptedAnswer":{"@type":"Answer","text":"Because the fine detail is invented. Your eye is very good at faces specifically, so small errors in the arrangement of features read as uncanny even when you can't articulate what changed. On landscapes or textures the same invention usually passes unnoticed."}},{"@type":"Question","name":"Is a slightly soft shot worth upscaling at all?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks."}},{"@type":"Question","name":"Does shooting at a higher resolution protect against this?","acceptedAnswer":{"@type":"Answer","text":"It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards."}},{"@type":"Question","name":"Does Crisp check whether a shot is in focus before upscaling it?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp refuses several things it genuinely cannot do — softening or defocusing a picture, blurring a face, sharpening without enlarging — and its stabiliser measures your clip and declines when deshaking would make it worse. There is no equivalent check for focus anywhere in the engine. The upscale will run, take the render time and produce a file. Deciding whether the invented detail is acceptable on that particular shot is left to you."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Focus and upscaling", "item": "https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/"}]}</script>
 </head>
@@ -36,6 +36,13 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Focus and upscaling</div>
   <h1>Why AI upscaling can't rescue a shot that missed focus</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">It can't, and the reason is
+  physical: an out-of-focus lens never records the detail, so there is nothing in the file to
+  restore. An upscaler predicts detail from detail that survived; where none survived it invents
+  plausible texture, which is not the texture that was there. Resolution, compression damage and
+  noise do respond. Focus doesn't. Crisp will still run the job — it has no focus measurement — so
+  the check is yours.</p></div>
 
   <p>People try this constantly, and it's worth explaining why it disappoints. You have a shot that
   matters, it's slightly out of focus, and an AI upscaler seems like exactly the tool. You run it, the
@@ -84,9 +91,65 @@
   is actually focus at all. A dirty lens, a cheap filter, heavy denoising applied in-camera or a bad
   transfer all produce something that resembles soft focus and some of those do respond to
   restoration.</p>
-  <p>Crisp will run any of this on-device, and it will not tell you a soft shot came back sharp when
-  it didn't. That honesty is the useful part: knowing which of your footage is worth the render time
-  saves more than a faster renderer would.</p>
+  <p>Crisp will run any of this on-device. What it will not do is claim a result it did not get:
+  nothing in the app reports that a soft shot came back sharp. Knowing which of your footage is
+  worth the render time saves more than a faster renderer would.</p>
+
+  <h2>What Crisp does when it can't do the thing you asked</h2>
+  <p>The house pattern in Crisp, when a request cannot be honoured, is to say so in words rather
+  than run something that looks like work. Three of those refusals sit in
+  <span class="prompt">intent.py</span>. Ask it to soften or defocus a picture and it answers
+  <em>"Crisp sharpens and cleans footage up; it has no way to soften or defocus a picture"</em>
+  rather than falling into the enhance lane, which would have sharpened — the opposite of the ask,
+  at full GPU cost. Ask it to blur or pixelate a face and it says it has no blur or pixelate tool.
+  Ask it to sharpen without enlarging and it says there is no such mode:
+  <em>"Crisp sharpens by running the frames back through the upscaler, so it always enlarges —
+  there’s no same-size sharpen."</em></p>
+  <p>The stabiliser goes one step further and measures before it decides.
+  <span class="prompt">stabilize.py::_would_help</span> samples several windows of your clip, runs
+  ffmpeg's <span class="prompt">deshake</span> against a plain re-encode, and compares frame-to-frame
+  motion. If stabilising would not improve <em>this</em> clip it declines outright:
+  <em>"Stabilising wouldn’t improve this clip — Crisp measured the motion and its stabiliser would
+  add wobble rather than take it out."</em> That refusal exists because the measurement was
+  unflattering. Against a plain re-encode control, deshake made a tripod shot 92% wobblier, a
+  locked-off shot from a moving car 128% wobblier, and a deliberate pan 24% worse because it fights
+  the move. Violent hand-held jitter, at 39% better, was the only case that improved. Rather than
+  guess what "shaky" means, the code measures the question the button actually asks. The same
+  reasoning is why <a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">shaky phone
+  video</a> is not one problem but several.</p>
+  <p><strong>There is no equivalent for focus, and that is the honest gap on this page.</strong>
+  Crisp does not measure focus anywhere in the engine. It will not stop you upscaling a shot that
+  missed it, and it has no pre-flight that says this one won't come back. It will queue the job,
+  spend the render time, and hand you a file. The judgement about whether the result is your
+  subject's face or a plausible stranger's is still made by looking at it.</p>
+
+  <h2>The number this page does not have</h2>
+  <p>We have no measurement of focus recovery, ours or anyone's, and we are not going to borrow one
+  that measured something else. Crisp's published metrics — the PSNR, SSIM and VMAF numbers on
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">the denoise page</a> — score
+  resolution loss and added noise against a clean original. None of those clips was defocused. Using
+  them here would be dressing one experiment up as another.</p>
+  <p>The one sharpness-like figure the codebase ever computed is a cautionary tale in its own right.
+  A mean absolute Laplacian was used to compare two restore output sizes, and the claim it produced
+  was pulled back out of the app because the measure is size-dependent: it scores the smaller image
+  as sharper whatever its actual quality, which made the faster, smaller render come out 16.6%
+  "better" when the two were compared at equal size. A sharpness proxy that confident and that wrong
+  is worth remembering the next time a product quotes you a focus-recovery percentage.</p>
+
+  <h2>Turning the denoise dial up will not do it either</h2>
+  <p>A reasonable guess is that the restoration settings must have something in them for this. They
+  do not. In Crisp the denoise value routes the job to a different upscaling model, and above 0.5 it
+  additionally adds an <span class="prompt">hqdn3d</span> temporal and spatial pre-pass that runs
+  before the upscale. At 0.5 and below there is no separate filter at all, and the Enhance preset
+  carries 0.4, so the ordinary job is model-only.</p>
+  <p>What that pre-pass removes is noise, and noise is a signal sitting on top of real detail.
+  Defocus is the absence of the detail. There is nothing for a denoiser to lift away here, and at
+  strength it costs you what fine texture did survive — the engine's own comments record exactly
+  that, a flat 0.6 denoise floor having over-denoised moderately dim footage into detail loss until
+  it was split into two tiers. If you want the full routing table, it is on
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">the denoise page</a>, along
+  with the cells where <a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">a
+  model beats a plain resize</a> and the cells where it doesn't.</p>
 
   <h2>Soft footage, in detail</h2>
   <h3>Can any tool fix out-of-focus video?</h3>
@@ -97,8 +160,12 @@
   <p>Often yes, if the softness is mild and the resolution is genuinely low. Upscaling addresses resolution, not focus, and a low-resolution in-focus shot has real structure to work from. Just don't expect the upscale to change how sharply focused it looks.</p>
   <h3>Does shooting at a higher resolution protect against this?</h3>
   <p>It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards.</p>
+  <h3>Does Crisp check whether a shot is in focus before upscaling it?</h3>
+  <p>No. Crisp refuses several things it genuinely cannot do — softening or defocusing a picture, blurring a face, sharpening without enlarging — and its stabiliser measures your clip and declines when deshaking would make it worse. There is no equivalent check for focus anywhere in the engine. The upscale will run, take the render time and produce a file. Deciding whether the invented detail is acceptable on that particular shot is left to you.</p>
   <h2>Related</h2>
   <ul>
+    <li><a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">What the denoise setting does</a></li>
+    <li><a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">When AI upscaling beats a plain resize</a></li>
     <li><a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">Why phone video looks shaky</a></li>
     <li><a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">Why VHS tapes degrade</a></li>
     <li><a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">Why your video looks worse after you upload it</a></li>
