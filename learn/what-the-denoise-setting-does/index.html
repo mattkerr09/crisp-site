@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What the denoise setting does in Crisp: it swaps the model","description":"Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-09-15","dateModified":"2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I denoise before or after upscaling in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Neither, because Crisp does not offer that choice. The denoise value selects which upscaling model runs, so there is no separate denoise pass whose position in the chain you could move. The decision you actually have is which model to route to: below 0.5 at 2x you get 2x-ParimgCompact, at 0.5 and above you get RealESRGAN_General_WDN_x4_v3."}},{"@type":"Question","name":"What denoise value should I set?","acceptedAnswer":{"@type":"Answer","text":"If the source is noisy, grainy or otherwise damaged, set 0.5 or above so the job routes to RealESRGAN_General_WDN_x4_v3. In our measurement that model scored higher than the 2x-ParimgCompact default in all nine clip-and-noise cells, on both PSNR and VMAF, by 0.6 to 4.1 dB and 12.6 to 29.5 VMAF points. If the source is already clean, a plain resize landed closer to the original than any model route we measured."}},{"@type":"Question","name":"Is the AI upscale worth running on a clean source?","acceptedAnswer":{"@type":"Answer","text":"On fidelity, no. On our clean cells a lanczos resize led every model route, by 14.0 dB on the Apollo clip. As noise rises that reverses on PSNR: at heavy noise RealESRGAN_General_WDN_x4_v3 led lanczos by 6.1 dB on Apollo, 3.4 dB on boxing and 7.1 dB on the colour demo. VMAF still favoured lanczos in every cell, so these numbers measure closeness to the original and not which version you would rather watch."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I denoise before or after upscaling in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Neither, because Crisp does not offer that choice. The denoise value selects which upscaling model runs, so there is no separate denoise pass whose position in the chain you could move. The decision you actually have is which model to route to: below 0.5 at 2x you get 2x-ParimgCompact, at 0.5 and above you get RealESRGAN_General_WDN_x4_v3."}},{"@type":"Question","name":"What denoise value should I set?","acceptedAnswer":{"@type":"Answer","text":"If the source is noisy, grainy or otherwise damaged, set 0.5 or above so the job routes to RealESRGAN_General_WDN_x4_v3. In our measurement that model scored higher than the 2x-ParimgCompact default in all nine clip-and-noise cells on PSNR and VMAF, by 0.6 to 4.1 dB and 12.6 to 29.5 VMAF points. On SSIM it leads in seven of the nine: the compact net edges ahead on the Apollo clip at clean and at heavy noise. If the source is already clean, a plain resize landed closer to the original than any model route we measured."}},{"@type":"Question","name":"Is the AI upscale worth running on a clean source?","acceptedAnswer":{"@type":"Answer","text":"On fidelity, no. On our clean cells a lanczos resize led every model route, by 14.0 dB on the Apollo clip. As noise rises that reverses on PSNR: at heavy noise RealESRGAN_General_WDN_x4_v3 led lanczos by 6.1 dB on Apollo, 3.4 dB on boxing and 7.1 dB on the colour demo. VMAF still favoured lanczos in every cell, so these numbers measure closeness to the original and not which version you would rather watch."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "The denoise setting", "item": "https://crispvideo.app/learn/what-the-denoise-setting-does/"}]}</script>
 </head>
@@ -111,27 +111,27 @@
   narrowed the gaps without reversing them on that clip.</p>
 
   <h2>The numbers</h2>
-  <p>PSNR in decibels, then VMAF, against the clean truth. Higher is closer to the original on both.</p>
+  <p>PSNR in decibels, then SSIM, then VMAF, against the clean truth. Higher is closer to the original on all three. The three do not agree, which is the point of showing all of them.</p>
 
   <div class="cmp-wrap"><table>
     <thead><tr><th>Clip</th><th>Noise</th><th>2x-ParimgCompact (default)</th><th>RealESRGAN_General_WDN_x4_v3</th><th>lanczos</th></tr></thead>
     <tbody>
-      <tr><td>boxing (near-mono archival)</td><td>clean</td><td>33.35 / 75.59</td><td>36.33 / 96.83</td><td>40.77 / 98.99</td></tr>
-      <tr><td>boxing</td><td>light</td><td>33.15 / 70.30</td><td>36.38 / 95.92</td><td>37.90 / 98.51</td></tr>
-      <tr><td>boxing</td><td>heavy</td><td>30.18 / 55.58</td><td>34.24 / 84.83</td><td>30.84 / 91.82</td></tr>
-      <tr><td>demo (colour)</td><td>clean</td><td>39.37 / 66.43</td><td>42.35 / 79.05</td><td>48.01 / 90.86</td></tr>
-      <tr><td>demo</td><td>light</td><td>40.10 / 57.63</td><td>43.60 / 77.90</td><td>40.16 / 86.12</td></tr>
-      <tr><td>demo</td><td>heavy</td><td>34.91 / 33.97</td><td>38.23 / 63.45</td><td>31.17 / 71.96</td></tr>
-      <tr><td>apollo (archival)</td><td>clean</td><td>32.07 / 52.03</td><td>32.69 / 65.54</td><td>46.66 / 90.50</td></tr>
-      <tr><td>apollo</td><td>light</td><td>39.68 / 66.53</td><td>42.11 / 83.32</td><td>40.00 / 88.53</td></tr>
-      <tr><td>apollo</td><td>heavy</td><td>35.34 / 53.90</td><td>37.24 / 74.27</td><td>31.12 / 77.93</td></tr>
+      <tr><td>boxing (colour, but low-saturation)</td><td>clean</td><td>33.35 / 0.9566 / 75.59</td><td>36.33 / 0.9628 / 96.83</td><td>40.77 / 0.9798 / 98.99</td></tr>
+      <tr><td>boxing</td><td>light</td><td>33.15 / 0.9486 / 70.30</td><td>36.38 / 0.9606 / 95.92</td><td>37.90 / 0.9423 / 98.51</td></tr>
+      <tr><td>boxing</td><td>heavy</td><td>30.18 / 0.8792 / 55.58</td><td>34.24 / 0.9225 / 84.83</td><td>30.84 / 0.6886 / 91.82</td></tr>
+      <tr><td>demo (colour)</td><td>clean</td><td>39.37 / 0.9832 / 66.43</td><td>42.35 / 0.9844 / 79.05</td><td>48.01 / 0.9918 / 90.86</td></tr>
+      <tr><td>demo</td><td>light</td><td>40.10 / 0.9812 / 57.63</td><td>43.60 / 0.9854 / 77.90</td><td>40.16 / 0.9275 / 86.12</td></tr>
+      <tr><td>demo</td><td>heavy</td><td>34.91 / 0.9271 / 33.97</td><td>38.23 / 0.9451 / 63.45</td><td>31.17 / 0.6090 / 71.96</td></tr>
+      <tr><td>apollo (archival)</td><td>clean</td><td>32.07 / 0.9775 / 52.03</td><td>32.69 / 0.9767 / 65.54</td><td>46.66 / 0.9869 / 90.50</td></tr>
+      <tr><td>apollo</td><td>light</td><td>39.68 / 0.9768 / 66.53</td><td>42.11 / 0.9803 / 83.32</td><td>40.00 / 0.9214 / 88.53</td></tr>
+      <tr><td>apollo</td><td>heavy</td><td>35.34 / 0.9446 / 53.90</td><td>37.24 / 0.9339 / 74.27</td><td>31.12 / 0.5942 / 77.93</td></tr>
     </tbody>
   </table></div>
 
   <h2>Finding one: the default is the weaker of the two models</h2>
   <p><strong>RealESRGAN_General_WDN_x4_v3 beats 2x-ParimgCompact in 9 of 9 cells, on both
   metrics.</strong> The margin runs from 0.6 dB to 4.1 dB on PSNR and from 12.6 to 29.5 points on
-  VMAF. Every clip, every noise level, both scorers, one direction.</p>
+  VMAF. Every clip, every noise level, both scorers, one direction. <strong>SSIM, measured afterwards, does not agree in two cells:</strong> on the Apollo clip the compact net edges ahead at clean (0.9775 against 0.9767) and at heavy noise (0.9446 against 0.9339), so on SSIM the count is seven of nine rather than nine of nine. The direction still holds everywhere else, but it is not unanimous across all three scorers and we are not going to write it as though it were.</p>
   <p>Since <span class="prompt">enhance</span> carries denoise 0.4, the default path at 2× is the
   route that lost every cell. That is an unflattering thing to publish about our own default and it
   is what the measurement says.</p>
@@ -156,11 +156,7 @@
   </ul>
   <p>The model earns its cost exactly where the source is damaged, which is what it is for. On a
   clean file it is an expensive way to get further from the original.</p>
-  <p>One qualification that cuts against us, and it is not a small one: <strong>VMAF still favours
-  lanczos in every one of the nine cells.</strong> The crossover is a PSNR crossover. The perceptual
-  metric never crosses. The honest summary is that on a clean source a resize is closer to the truth,
-  on a damaged one the model is closer by up to 7.1 dB, and the perceptual scorer prefers the resize
-  throughout.</p>
+  <p>One qualification that cuts against us, and it is not a small one: <strong>VMAF still favours lanczos in every one of the nine cells.</strong> But the three scorers do not agree with each other, and saying so is the only honest way to report this. PSNR has the model overtaking at heavy noise. SSIM has it overtaking a step earlier, at light noise, and then winning heavy by a wide margin — lanczos falls to 0.6886, 0.6090 and 0.5942 on the three clips while the model route holds 0.9225, 0.9451 and 0.9339. VMAF never crosses at all. Counted plainly: across the nine cells lanczos wins all nine on VMAF, three on SSIM, and four on PSNR. <strong>No single number settles this, and a page that quoted one of them would be choosing its answer rather than reporting one.</strong> What we can say without picking a favourite: on a clean source a plain resize is closest to the original on all three measures; once there is real noise it depends which question you ask, and only the perceptual scorer still prefers the resize.</p>
 
   <h2>What these metrics do and do not say</h2>
   <p>PSNR and SSIM measure agreement with the original file, pixel by pixel and structure by
