@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is rolling shutter?","description":"Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is rolling shutter the same as motion blur?","acceptedAnswer":{"@type":"Answer","text":"No. Motion blur is smearing within a single exposure and affects the whole frame equally. Rolling shutter is geometric distortion caused by different rows being captured at different times, so it leans and wobbles rather than smearing."}},{"@type":"Question","name":"Does a faster shutter speed help?","acceptedAnswer":{"@type":"Answer","text":"Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see."}},{"@type":"Question","name":"Why do propellers and helicopter blades look so strange?","acceptedAnswer":{"@type":"Answer","text":"They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves."}},{"@type":"Question","name":"Will Crisp's stabilizer make it worse?","acceptedAnswer":{"@type":"Answer","text":"It will not add skew, but it can make existing skew more noticeable by removing the shake that was disguising it. If a clip is mostly rolling shutter rather than shake, stabilizing costs you a small crop for little visible gain."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is rolling shutter the same as motion blur?","acceptedAnswer":{"@type":"Answer","text":"No. Motion blur is smearing within a single exposure and affects the whole frame equally. Rolling shutter is geometric distortion caused by different rows being captured at different times, so it leans and wobbles rather than smearing."}},{"@type":"Question","name":"Does a faster shutter speed help?","acceptedAnswer":{"@type":"Answer","text":"Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see."}},{"@type":"Question","name":"Why do propellers and helicopter blades look so strange?","acceptedAnswer":{"@type":"Answer","text":"They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves."}},{"@type":"Question","name":"Can Crisp fix rolling shutter?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp has no rolling shutter correction of any kind. Its stabilize lane runs one filter chain, ffmpeg's deshake followed by setsar and a pixel format conversion, and deshake counter-shifts the whole frame by a single offset. There is no per-row term anywhere in it, and the words rolling shutter do not appear in Crisp's engine at all."}},{"@type":"Question","name":"Will Crisp's stabilizer make it worse?","acceptedAnswer":{"@type":"Answer","text":"It will not add skew, but it can make existing skew more obvious by removing the shake that was disguising it, and on the footage that skews worst it measurably adds motion. Scored against a plain re-encode control at 0.1.608, Crisp's stabilizer increased frame-to-frame motion on a deliberate pan by 24 percent and on a locked camera in a moving car by 128 percent. It helped in one of the five cases tested, violent handheld jitter, at minus 39 percent. Crisp measures your specific clip before it runs, and refuses the job if no sampled window improves."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Rolling shutter", "item": "https://crispvideo.app/learn/what-is-rolling-shutter/"}]}</script>
 </head>
@@ -37,6 +37,8 @@
   <h1>What is rolling shutter?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Rolling shutter happens when a sensor reads its rows one after another rather than all at once. The bottom of the frame is a later moment than the top, so a fast pan leans verticals and vibration turns the picture to jelly. That is geometry inside each frame, not motion between frames, which is why stabilization cannot undo it. <strong>Crisp has no rolling shutter correction of any kind</strong>, and holding a skewed frame still can make the warp easier to see. The fixes are at the camera.</p></div>
+
   <p>Pan quickly past a lamp post and it leans. Film out of a car window and the buildings tilt.
   Shoot a spinning propeller and it turns into something from a dream. That is rolling shutter, and
   once you know the cause you can predict exactly when it will bite.</p>
@@ -49,6 +51,12 @@
   nothing moved during the readout, no problem. If the camera or the subject moved, each row
   captured the scene from a marginally different position, and straight vertical lines come out
   slanted.</p>
+  <p>The same mechanism produces the effects that look like nothing else. A flash or a flickering
+  light that fires partway through a readout illuminates only the rows that were being sampled at the
+  time, so the frame comes back with a bright band across it. A propeller or a helicopter blade
+  travels a long way during one readout, so the tip and the root are recorded in positions the blade
+  never occupied simultaneously, and the result is a blade that appears bent, detached or wrapped
+  around itself. None of these are faults in the lens or the encoder. They are all the same clock.</p>
 
   <h2>Why the effect scales the way it does</h2>
   <p>The distortion is proportional to how far the scene travels across the sensor during one
@@ -60,6 +68,10 @@
   so it distorts more at the same shutter speed.</p>
   <p>Shutter speed itself is not the cause, which surprises people. A fast shutter freezes motion
   within each row but does nothing about the delay between the first row and the last.</p>
+  <p>One quick test tells you which problem you have. Pause on a single frame. Camera shake looks
+  fine frozen and bad in motion, because the geometry inside each frame is correct and only the
+  frame's position is wrong. Rolling shutter is visible in the still, because the distortion is
+  inside the frame.</p>
 
   <h2>Can it be fixed afterwards?</h2>
   <p>Not in Crisp, and it is worth explaining why rather than just saying no.</p>
@@ -72,6 +84,48 @@
   <p>So stabilizing skewed footage gives you steady, still-skewed footage. Worse, removing the shake
   can make the skew more visible, because the shake was masking it.</p>
 
+  <h2>What Crisp's stabilizer actually is, and what it measured</h2>
+  <p>We would rather show you the code than assert it. Crisp's stabilize lane builds exactly one
+  filter chain: ffmpeg's single-pass <span class="prompt">deshake</span>, then
+  <span class="prompt">setsar=1</span>, then a pixel-format conversion for the chosen codec — plus a
+  tone-map step in front of it when the source is HDR, which is a colour operation and not a
+  geometric one. <span class="prompt">deshake</span> estimates per-frame motion and counter-shifts
+  the whole frame, filling the edges it exposes by mirroring what is next to them rather than cropping
+  hard. There is no per-row term anywhere in that chain, and there is nothing else in the lane. The
+  phrase "rolling shutter" does not appear in Crisp's engine at all, and neither does any of the
+  machinery a correction would need.</p>
+  <p>There is also a measurement here that is not flattering to the filter, and it belongs on this
+  page because the footage it punishes hardest is precisely the footage that skews. Scored at version
+  0.1.608 against a plain re-encode control, and repeated on a centre crop to rule out edge-mirroring
+  artefacts, <span class="prompt">deshake</span> <em>increased</em> frame-to-frame motion on four of
+  the five cases tested:</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Footage</th><th>Frame-to-frame motion after stabilizing</th></tr></thead>
+    <tbody>
+      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong> — worse</td></tr>
+      <tr><td>Tripod, static scene</td><td><strong>+92%</strong> — worse</td></tr>
+      <tr><td>Deliberate pan</td><td><strong>+24%</strong> — worse; it fights the move</td></tr>
+      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong> — worse</td></tr>
+      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong> — better</td></tr>
+    </tbody>
+  </table></div>
+  <p>One case in five. Look at the two rows at the top: a locked camera in a moving car and a
+  deliberate pan are the two classic ways to produce rolling shutter, and they are also the two the
+  stabilizer handled worst. So the temptation to reach for the stabilizer when a clip leans is
+  exactly backwards.</p>
+  <p>Because of that measurement, Crisp checks your specific clip before it agrees to run. It samples
+  up to three windows of 1.5 seconds, taken about 15%, 50% and 80% of the way through, renders each
+  one twice — once plain, once through the stabilizer — and compares the mean frame-to-frame
+  difference. If any one window drops below 95% of its unstabilized value, the job runs. If none of
+  them do, the job is refused before a frame is rendered, with this message:
+  <em>"Stabilising wouldn't improve this clip — Crisp measured the motion and its stabiliser would
+  add wobble rather than take it out. It only helps footage with real camera shake, so a tripod shot,
+  a smooth pan, or a locked-off camera is already as steady as it gets."</em> Several windows are
+  sampled rather than one because shake is rarely spread evenly, and any single window that improves
+  is enough to go ahead.</p>
+  <p>That refusal is the closest thing to a rolling-shutter feature Crisp has, and it is not one. It
+  is a check that stops you paying a full re-encode for a wobblier file.</p>
+
   <h2>What to do instead</h2>
   <p>Almost all of the fix happens at the camera. Pan slower, and if you need a fast whip, embrace it
   as a transition rather than something viewers will study. Use a wider lens and step closer. Isolate
@@ -79,8 +133,18 @@
   in-body or in-app stabilization, because correcting during capture is far more effective than
   correcting after.</p>
   <p>In the edit, the honest options are to cut around the worst of it, slow the shot down so the
-  distortion reads as motion blur, or crop in on a region where the skew is less obvious. None of
-  those are glamorous, and all of them beat a render that cannot deliver.</p>
+  distortion reads as motion blur rather than as bent geometry, or crop into a region where the skew
+  is less obvious. Crisp can do the last two — its speed lane retimes anywhere from 0.1× to 8×, and
+  its crop lane offers a centre crop as well as a fixed aspect ratio — but be clear about what you are
+  buying: those are ways to make the distortion less noticeable, not ways to remove it. None of them
+  are glamorous, and all of them beat a render that cannot deliver.</p>
+  <p>The one thing not to do is reach for an upscale. Resolution is orthogonal to this: a skewed frame
+  upscaled is a larger skewed frame, and a model that invents plausible detail will happily invent it
+  along the bent lines. It is the same limit that means
+  <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">AI upscaling cannot fix
+  focus</a> — the information you want was never sampled, and
+  <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">what an upscaler does</a> is
+  reconstruct, not retrieve.</p>
 
   <h2>Rolling shutter, in detail</h2>
   <h3>Is rolling shutter the same as motion blur?</h3>
@@ -89,13 +153,30 @@
   <p>Not with rolling shutter. A fast shutter freezes motion within each row, but the delay between the top row and the bottom row is unchanged, so the skew stays. It will reduce motion blur, which sometimes makes the skew easier to see.</p>
   <h3>Why do propellers and helicopter blades look so strange?</h3>
   <p>They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves.</p>
+  <h3>Can Crisp fix rolling shutter?</h3>
+  <p>No. Crisp has no rolling shutter correction of any kind. Its stabilize lane runs one filter
+  chain — ffmpeg's <span class="prompt">deshake</span>, then <span class="prompt">setsar=1</span>,
+  then a pixel-format conversion — and <span class="prompt">deshake</span> counter-shifts the whole
+  frame by a single offset. There is no per-row term anywhere in it, and the words "rolling shutter"
+  do not appear in Crisp's engine at all. If that is your footage, no setting in the app addresses it,
+  and you should know that before you buy anything.</p>
   <h3>Will Crisp's stabilizer make it worse?</h3>
-  <p>It will not add skew, but it can make existing skew more noticeable by removing the shake that was disguising it. If a clip is mostly rolling shutter rather than shake, stabilizing costs you a small crop for little visible gain.</p>
+  <p>It will not add skew, but it can make existing skew more obvious by removing the shake that was
+  disguising it — and on the footage that skews worst it measurably adds motion. At 0.1.608, against a
+  plain re-encode control, it increased frame-to-frame motion on a deliberate pan by 24% and on a
+  locked camera in a moving car by 128%. It helped in one of the five cases tested: violent handheld
+  jitter, at −39%. Crisp measures your specific clip first and refuses the job outright if no sampled
+  window improves, so in most rolling-shutter cases it will decline rather than hand you a wobblier
+  file. Note that when it does run, it fills the exposed edges by mirroring rather than cropping hard,
+  so the cost is a mirrored border, not a lost frame edge.</p>
+
   <h2>Related</h2>
   <ul>
+    <li><a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">Why phone video looks shaky — shake vs skew, and which one is fixable</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-telecine/">What is telecine?</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">What is variable frame rate?</a></li>
     <li><a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">Why upscaling to 4K takes so long</a></li>
+    <li><a href="https://crispvideo.app/index/">The Video Upscaler Index</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
