@@ -37,6 +37,13 @@
   <h1>What is a keyframe?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">A keyframe — an <strong>I-frame</strong> —
+  is a video frame stored as a complete picture, with no reference to any other frame. Everything
+  between keyframes is <strong>interframe compression</strong>: frames that record only what changed.
+  One keyframe plus the dependent frames that follow it is a <strong>GOP</strong>, or group of
+  pictures. That structure is why seeking and scrubbing feel sticky, why a stream-copy cut can only
+  start at a keyframe, and why ProRes, where every frame is a keyframe, scrubs instantly.</p></div>
+
   <p>Open a video file and you might assume it contains a sequence of pictures. It mostly doesn't. A
   small fraction of the frames are complete images, and the rest are descriptions of how the previous
   frame changed.</p>
@@ -48,7 +55,29 @@
   the encoder stores it once and then records only what moved.</p>
   <p>The saving is not marginal. A typical delivery file might place a keyframe every two to ten
   seconds, and the frames in between can be a small fraction of the size. That is most of why a
-  ten minute video is not gigabytes.</p>
+  ten minute video is not gigabytes. It is also why
+  <a href="https://crispvideo.app/learn/bitrate-vs-resolution/">bitrate and resolution</a> are not the
+  same lever: the bits a keyframe consumes are bits the frames after it do not get.</p>
+
+  <h2>I-frames, P-frames and the GOP</h2>
+  <p>Three frame types do the work. An <strong>I-frame</strong> is intra-coded — the complete picture,
+  decodable on its own. A <strong>P-frame</strong> is predicted from frames before it. A
+  <strong>B-frame</strong> is predicted bi-directionally, from frames both before and after it, which
+  is why it compresses best and why the order frames are stored in a file is not the order they are
+  displayed in.</p>
+  <p>A keyframe plus everything that depends on it is a <strong>group of pictures</strong>, or GOP.
+  The GOP is the real unit of independence: it is the smallest span of the file a decoder can
+  reconstruct without reading anything earlier. Where GOP boundaries land is an encoder decision, made
+  two ways at once — at a fixed interval, which is what an encoder's keyframe-interval setting
+  controls, and at scene changes, where predicting from the previous shot would be worthless anyway.
+  This is why keyframe spacing on a real file is uneven rather than metronomic, and why a cut that
+  snapped to a keyframe can miss by a few frames on one file and by two seconds on another.</p>
+  <p>One further distinction explains cuts that look right and play wrong. An <em>open</em> GOP lets
+  its leading frames reference the GOP before it, so it is not genuinely self-contained; a
+  <em>closed</em> GOP does not. In H.264 the keyframe that truly resets the decoder is an IDR frame,
+  and a plain I-frame need not be one. A tool that starts a stream copy at an I-frame that is not an
+  IDR can hand you a first second of garbled picture that cleans itself up — the file is not corrupt,
+  it is being decoded without the references it was written to expect.</p>
 
   <h2>The three consequences you actually feel</h2>
   <p><strong>Scrubbing feels sticky on some files.</strong> To display an arbitrary frame, the decoder
@@ -61,7 +90,9 @@
   few seconds and why the result is sometimes shorter or longer than you asked for.</p>
   <p><strong>Some operations are instant and some are not.</strong> Anything that can be done by
   copying compressed data straight across is fast and lossless. Anything that has to decode and
-  re-encode costs time and a generation of quality.</p>
+  re-encode costs time and a generation of quality — and, on a long or high-resolution file,
+  <a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">most of the wall-clock time of the
+  export</a>.</p>
 
   <h2>Editing codecs make a different trade</h2>
   <p>ProRes and similar intermediate codecs store every frame independently, which is to say every
@@ -69,16 +100,47 @@
   you place them. You pay in file size, often by a factor of ten or more.</p>
   <p>That trade is the whole reason both kinds of codec exist. Delivery codecs optimise for the
   viewer who watches start to finish. Editing codecs optimise for the editor who jumps around.</p>
+  <p>Crisp's export menu carries the editing side of that trade explicitly: ProRes 422 LT, ProRes 422
+  and ProRes 422 HQ are all offered, each labelled "editing" in the list. Because the ProRes family
+  can only live in a QuickTime container, choosing one also fixes the wrapper — Crisp rewrites the
+  output extension to <span class="prompt">.mov</span> rather than writing a file the muxer would
+  reject. If the next thing that happens to a file is an edit rather than an upload, that is the
+  choice this whole page is about.</p>
 
   <h2>What this means in practice</h2>
   <p>If scrubbing is painful on a long file, the codec is usually the reason rather than your machine.
   Transcoding to an intermediate before a heavy edit is a real fix, not a superstition.</p>
   <p>If a trim landed in the wrong place, the tool almost certainly took the fast stream-copy path.
-  Crisp uses that path for container conversion, where it is genuinely lossless and finishes in
-  seconds, and re-encodes when the codec cannot survive the change. Frame-accurate trimming in the
-  timeline re-encodes, which is slower and lands exactly where you asked.</p>
-  <p>And if you are re-exporting the same file repeatedly, remember that each re-encode is a
-  generation of loss. Keep the master.</p>
+  And if you are re-exporting the same file repeatedly, remember that each re-encode is a generation
+  of loss. Keep the master.</p>
+
+  <h3>Which Crisp operations copy, and which re-encode</h3>
+  <p>Crisp picks a side per operation rather than globally, and the choice is always the same
+  question: can this be done by moving compressed data, or does it need decoding?</p>
+  <p><a href="https://crispvideo.app/how-to/convert-mov-to-mp4-mac/">Converting the container</a> takes
+  the copy path. Crisp stream-copies the video into the new wrapper when the source codec is one that
+  muxes cleanly into both MP4 and MOV — H.264, HEVC, MPEG-4, AV1 or MJPEG — and re-encodes only when
+  the codec cannot live in the target container, such as VP9 or Theora into MP4. The job reports which
+  of the two it did, as a strategy of <span class="prompt">copied</span> or
+  <span class="prompt">re-encoded</span>, so "lossless" is a claim you can check rather than take on
+  trust.</p>
+  <p><a href="https://crispvideo.app/how-to/trim-video-mac/">Trimming</a> does the opposite, on
+  purpose. Crisp's trim seeks and re-encodes rather than stream-copying, for the reason the module
+  itself records: a stream copy would snap to the nearest keyframe and drift. You pay one encode to
+  get the in-point you actually asked for instead of the nearest keyframe to it. The timeline works
+  the same way — clips are trimmed inside the filter graph, which means decoding, which means the cut
+  lands on the frame you chose.</p>
+  <p>Grabbing a still frame splits the difference, and the split is instructive. Crisp does a fast
+  keyframe-anchored seek to a few seconds before the frame you asked for, then an accurate seek for
+  the remainder — cheap positioning first, exact positioning only over the short distance that
+  actually needs decoding.</p>
+  <p>That hybrid exists because the naive alternative gets more expensive the further into a file you
+  reach. Measured on a 300-second source while building Crisp's montage assembler, cutting the same
+  0.467-second segment with a decode-everything filter cost 273.9 ms at five seconds in and 502.3 ms
+  at 295 seconds in. Switching the single-segment case to a keyframe-anchored input seek made it a
+  flat 274 ms wherever the cut sat. The cost of reaching a frame is the cost of the frames before it,
+  back to the last keyframe — or, if you ask for it the wrong way, back to the start of the
+  file.</p>
 
   <h2>Keyframes, in detail</h2>
   <h3>Why does my video scrub smoothly in one app and badly in another?</h3>

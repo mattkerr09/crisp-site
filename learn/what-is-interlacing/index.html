@@ -37,6 +37,15 @@
   <h1>What is interlacing?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Interlacing sends half a picture
+  at a time: one <strong>field</strong> carries the odd-numbered lines, the next
+  carries the even ones, captured a fraction of a second apart. That is what the "i" in
+  <strong>1080i</strong> and <strong>480i</strong> means, and 1080p does not do it. A modern display
+  shows both fields at once, so anything that moved between them appears twice, one line apart — the
+  <strong>combing</strong> on moving edges. <strong>Deinterlacing</strong>
+  rebuilds whole frames from those field pairs, and it has to happen before anything sharpens the
+  picture.</p></div>
+
   <p>If moving objects in a clip have fine horizontal stripes along their edges while everything
   standing still looks perfectly normal, you're looking at interlacing. It isn't damage, and it isn't
   a bad transfer. It's the footage working exactly as designed, on a kind of display that no longer
@@ -78,15 +87,55 @@
   is unmistakable frame by frame, and almost invisible at normal speed on some displays, which is how
   it survives into finished edits without anyone noticing.</p>
 
+  <h2>The mechanical check, and the two ways a file lies about it</h2>
+  <p>The eyeball test needs a shot with real motion in it. The mechanical version is ffmpeg's
+  <span class="prompt">idet</span> filter, which classifies the frames themselves:
+  <span class="prompt">ffmpeg -i in.mp4 -vf idet -f null -</span>. The last "Multi frame detection"
+  line is the verdict — TFF and BFF counts against Progressive. That is the same line Crisp reads:
+  <span class="prompt">probe.interlacing()</span> parses it and answers "unknown" rather than
+  guessing when it cannot classify at least eight frames.</p>
+  <p><strong>The container flag is not the answer.</strong> Measured on the 1936 newsreel restored
+  for this site: the original MPEG-2 honestly reported <span class="prompt">field_order=tt</span>,
+  but once the clip had been cut and re-encoded — the state most footage reaches you in — the
+  container claimed <em>progressive</em> while every frame was still combed. Looking at the pictures
+  instead, idet read 96 of 96 frames interlaced on the file that lied, and 82 of 82 progressive on
+  the same clip after inverse telecine. Re-encoding falsifies the flag. It does not hide the combing
+  from a detector that reads frames.</p>
+  <p><strong>A resize does hide it.</strong> Vertical scaling interpolates the two woven fields into
+  each other, so the teeth soften into a ghost. On that same clip the 640&times;480 frames read
+  interlaced and the identical frames scaled to 1280&times;720 read progressive — the damage still
+  plainly there, still visible as smearing, the detector simply blind to it. That is also why combed
+  footage tends to look like motion blur rather than comb teeth by the time it has become a
+  web-sized video. <strong>Run the check on the original, before anything has been scaled.</strong></p>
+
   <h2>Doing it on a Mac</h2>
   <p><strong>Crisp straightens this out for you.</strong> When you enhance or upscale, it checks the
   source for combing and fixes it before anything sharpens it — and it picks the right fix rather
-  than one fix for everything, because footage shot on film needs the pulldown reversed instead. The
+  than one fix for everything, because footage that
+  <a href="https://crispvideo.app/learn/what-is-telecine/">started on film</a> needs the pulldown
+  reversed instead. The
   <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing walkthrough</a> covers
   what it is choosing between, and how to do it by hand if you would rather. The exception is the
   Max quality lane, which restores the frames it is handed: there Crisp warns you before spending
   the render, because an hour of generative restoration faithfully reconstructing comb teeth is the
   most expensive version of this mistake.</p>
+  <p>It does not guess between the two fixes, because guessing wrong is destructive in one
+  direction: reversing a pulldown on genuinely interlaced video drops one real frame in five that
+  nobody ever duplicated. So the frame rate narrows the choice first — a 3:2 pulldown can only exist
+  near 30fps, and 25fps PAL material is interlaced but never telecined — and then the
+  inverse-telecine answer is rendered on a short sample and handed back to the detector before the
+  real render commits to it. If that sample does not come back clean, the job falls back to the
+  deinterlace, which is always safe. Whichever route ran is named on the job's route line, so you
+  are told which of your frames changed rather than finding out later.</p>
+  <p>Two other lanes are exceptions, and Crisp says so instead of skipping the step silently.
+  <a href="https://crispvideo.app/learn/what-is-hdr-video/">HDR</a> sources do not get the automatic
+  fix at all; there the app points you at HandBrake's Decomb, or ffmpeg's
+  <span class="prompt">fieldmatch,decimate</span> for film, and you straighten it before you bring
+  it back. A timeline export does straighten each clip as it assembles the edit, but with the
+  deinterlace rather than the pulldown reversal — a concatenated edit forces one common frame rate,
+  and dropping every fifth frame of one clip would fight it. So film that went through a telecine is
+  blended on that lane rather than restored, and the single-clip enhance is the one that gives the
+  photographed frames back.</p>
   <p>Once you bring it a progressive file, everything after that runs on your Mac. Nothing is
   uploaded, which tends to matter for exactly the sort of irreplaceable family footage that is most
   likely to be interlaced in the first place.</p>
