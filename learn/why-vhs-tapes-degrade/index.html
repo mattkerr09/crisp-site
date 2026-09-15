@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why VHS tapes degrade","description":"Magnetic tape loses signal whether you play it or not. What is actually failing, which faults respond to restoration, and why the capture matters more than the software.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are my tapes still playable after 30 years?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, if they were stored somewhere cool and dry. Heat and humidity are what kill tapes, not age alone. The picture will be softer and noisier than it was, and that part responds well to restoration."}},{"@type":"Question","name":"Should I digitise now or wait for better software?","acceptedAnswer":{"@type":"Answer","text":"Now. The tape is degrading whether or not you use it, and software improves far faster than tape survives. Capture at the best quality you can manage today and restore the digital file whenever you like."}},{"@type":"Question","name":"Why does my capture look worse than the tape did on the old TV?","acceptedAnswer":{"@type":"Answer","text":"A CRT was hiding a lot. Its softness and the way it drew interlaced fields flattered analogue video, and a modern flat panel shows every fault sharply. The tape has not necessarily got worse; the display got more honest."}},{"@type":"Question","name":"Can Crisp fix tracking lines and dropouts?","acceptedAnswer":{"@type":"Answer","text":"No. Those are places where the signal was never read correctly, so there is nothing in the file to recover. They have to be addressed at capture, with a properly aligned deck and ideally a timebase corrector."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are my tapes still playable after 30 years?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, if they were stored somewhere cool and dry. Heat and humidity are what kill tapes, not age alone. The picture will be softer and noisier than it was, and that part responds well to restoration."}},{"@type":"Question","name":"Should I digitise now or wait for better software?","acceptedAnswer":{"@type":"Answer","text":"Now. The tape is degrading whether or not you use it, and software improves far faster than tape survives. Capture at the best quality you can manage today and restore the digital file whenever you like."}},{"@type":"Question","name":"Why does my capture look worse than the tape did on the old TV?","acceptedAnswer":{"@type":"Answer","text":"A CRT was hiding a lot. Its softness and the way it drew interlaced fields flattered analogue video, and a modern flat panel shows every fault sharply. The tape has not necessarily got worse; the display got more honest."}},{"@type":"Question","name":"Can Crisp fix tracking lines and dropouts?","acceptedAnswer":{"@type":"Answer","text":"No. Those are places where the signal was never read correctly, so there is nothing in the file to recover. They have to be addressed at capture, with a properly aligned deck and ideally a timebase corrector."}},{"@type":"Question","name":"Does Crisp deinterlace a VHS capture automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes, on the ordinary upscale path, and before anything sharpens the frames. Crisp detects combing from the picture rather than the container flag, then straightens genuinely interlaced video with bwdif and inverse-telecines film transfers with fieldmatch and decimate. It never guesses between the two: it renders a short sample, runs the detector again, and only commits to inverse telecine if the combing has actually gone. The exceptions are HDR sources and the Max preset, and the app tells you when you have hit one."}},{"@type":"Question","name":"Can Crisp remove scratches and dirt from a film transfer?","acceptedAnswer":{"@type":"Answer","text":"Dirt yes, scratches no. Single-frame dust and specks are voted away by comparing each frame against its neighbours, measured at 95.0, 100.5 and 100.6 per cent of planted dirt, while a blotch held for three frames correctly survives. A long vertical scratch sits in the same place frame after frame, so the same trick smears the picture instead of healing it. Crisp refuses that ask by name rather than pretending."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "VHS degradation", "item": "https://crispvideo.app/learn/why-vhs-tapes-degrade/"}]}</script>
 </head>
@@ -36,6 +36,14 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; VHS degradation</div>
   <h1>Why VHS tapes degrade</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">A VHS tape holds the picture as the
+  magnetic alignment of particles glued to a plastic ribbon, and that alignment decays whether or not
+  you ever play the tape. Three things fail: the magnetic signal weakens, the binder holding the oxide
+  on can absorb moisture and turn sticky, and every playback abrades the coating. Faults that are
+  <em>noise</em> or <em>low resolution</em> respond to restoration. Faults where the signal was never
+  read correctly — dropouts, tracking tears, timebase roll — do not, because nothing in the file holds
+  the missing picture.</p></div>
 
   <p>A VHS tape is a strip of plastic coated in magnetic particles, and the picture exists as the
   alignment of those particles. Everything that goes wrong follows from that being a physical
@@ -52,6 +60,24 @@
   <p>Then there is mechanical wear. Every playback drags the tape across the heads. Tapes that were
   watched to death in the nineties have visibly worse pictures than tapes that sat in a box, and that
   damage is physical abrasion rather than signal loss.</p>
+
+  <h2>Three more mechanisms worth knowing by name</h2>
+  <p><strong>Print-through.</strong> A tape sits wound tightly on itself for decades, and each layer
+  is a magnet pressed against the layer above and below. Over time a strong signal faintly copies
+  itself into its neighbours. On audio it is famously audible as a pre-echo; on video it contributes
+  to the general muddying of a tape that has never been touched. Rewinding and re-spooling a tape
+  occasionally redistributes the contact points, which is one of the few things that genuinely helps
+  storage rather than only slowing the decline.</p>
+  <p><strong>Generational loss.</strong> Analogue copying is not copying. Every tape-to-tape dub
+  re-records the previous tape's noise as though it were picture, then adds its own. A third-generation
+  wedding video looks the way it does because three separate noise floors are stacked in it, and none
+  of them can be separated out afterwards. If you have both an original and a dub, capture the original
+  even if the dub is more convenient.</p>
+  <p><strong>Head clog.</strong> Shed oxide packs into the gap in the playback head, and the picture
+  collapses into snow or a frozen band, often mid-playback and often only on one tape. This is the fault
+  most often blamed on a dead tape when the deck is at fault. If a tape plays badly, try it in another
+  machine before writing it off — and clean the heads, because a clogged head keeps shedding onto every
+  tape you feed it afterwards.</p>
 
   <h2>The faults you see, and whether software helps</h2>
   <div class="cmp-wrap"><table>
@@ -79,11 +105,79 @@
 
   <h2>Then the software order</h2>
   <p>Deinterlace, denoise, upscale, colour. Interlacing first is not a preference: an upscaler reads
-  comb teeth as fine detail and sharpens them into something far harder to remove. Denoise before
-  upscaling for the same reason, since magnified noise is a much bigger problem than the original.</p>
+  comb teeth as fine detail and sharpens them into something far harder to remove. In a tool with a
+  separate denoise filter, that filter belongs before the upscale for the same reason, since magnified
+  noise is a much bigger problem than the original. Crisp does not have one to place: its denoise value
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">selects which upscaling model
+  runs</a>, so the ordering question does not arise here.</p>
   <p>Crisp runs that chain on-device, which for family tapes tends to matter more than it sounds. The
   usual alternative involves uploading footage of your family to a service, and these are the tapes
   people are least willing to hand over.</p>
+
+  <h2>What Crisp actually does to a tape capture</h2>
+  <p>Worth being exact about, because a page like this is read by people hoping to be told their tapes
+  can be saved. Four things happen automatically, and each has a limit.</p>
+
+  <h3>It straightens the combing, and it refuses to guess how</h3>
+  <p>VHS is an interlaced format, so a capture arrives with two different moments woven into every
+  frame. On the ordinary upscale path Crisp detects that and fixes it in a whole-file pre-pass, before
+  anything sharpens the picture. The two fixes are not interchangeable and picking wrong destroys
+  frames: genuinely interlaced camcorder video is rebuilt field-pair by field-pair with
+  <span class="prompt">bwdif</span>, which throws nothing away, while <a href="https://crispvideo.app/learn/what-is-telecine/">film
+  that went through a telecine</a> gets its original frames back with
+  <span class="prompt">fieldmatch,decimate</span> — measured on a 3:2 fixture, 120 frames become
+  exactly 96 at SSIM 0.9969 against the true original.</p>
+  <p>Inverse-telecining genuinely interlaced video would drop one real frame in five, so Crisp proves
+  the answer instead of assuming it. It renders a short sample with the inverse telecine applied, runs
+  the comb detector on the result, and commits only if the combing has actually gone. Anything else
+  falls back to <span class="prompt">bwdif</span>, which is always safe. Most tape is the second case.</p>
+  <p>Two detection traps are worth knowing if you are checking a file yourself. The container flag is
+  not evidence: on one measured source the original MPEG-2 honestly reported interlaced fields, and the
+  moment it was cut and re-encoded the container claimed progressive while all 96 sampled frames were
+  still combed. And the detector goes blind after a vertical resize — the same frames read
+  <em>interlaced</em> at 640×480 and <em>progressive</em> at 1280×720, because scaling smears the woven
+  fields into each other. Run the check on the original capture, at its own size. More on the format
+  itself in <a href="https://crispvideo.app/learn/what-is-interlacing/">what interlacing is</a>, and the
+  step-by-step in <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">how to deinterlace on
+  a Mac</a>.</p>
+
+  <h3>It upscales — which means it invents, not recovers</h3>
+  <p>This is the line worth being blunt about. An AI upscaler does not retrieve detail the tape lost.
+  It produces plausible detail in its place. It does not find the eyelash that decayed off the oxide;
+  it draws a convincing eyelash. For a soft, noisy tape capture that is usually a good trade, because
+  the alternative is a soft, noisy tape capture. But it is not recovery, and anyone who tells you a
+  model restored what the tape forgot is describing something that cannot happen. Our own measurements
+  of where a model beats a plain resize, including the cells where it loses, are on
+  <a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">when AI upscaling beats
+  a plain resize</a>.</p>
+
+  <h3>It holds black-and-white footage black and white</h3>
+  <p>If your tape carries a black-and-white transfer, this one matters. The general upscaling model is
+  trained on colour photographs and tints neutral greyscale warm. Measured on 50 frames of 1945
+  archival film, the source's mean per-pixel RGB spread was 1.84 and its red-minus-blue difference
+  −0.31 — neutral. After a 2× enhance the same frames measured spread 7.87 and red-minus-blue +6.06,
+  every frame of the fifty moving the same way. Crisp detects a monochrome source and zeroes the chroma
+  at encode time so the result comes back grey rather than sepia.</p>
+
+  <h3>It lifts single-frame dirt, and it will not pretend about scratches</h3>
+  <p>This one belongs to film transfers more than to tape itself, but a lot of tapes are transfers of
+  8mm or 16mm. Dust and specks that appear in one frame and not its neighbours are voted away by
+  comparing each frame against the frames either side. Measured against planted dirt on real film
+  frames, that cleared the single-frame specks at 95.0%, 100.5% and 100.6% of the planted amount — and,
+  importantly, a blotch held in a fixed spot for three frames correctly <em>survived</em>. That control
+  is what makes the result worth quoting: a filter that merely blurred would have "cleaned" the
+  sustained dirt too.</p>
+  <p>Long vertical scratches are not removed, and Crisp says so rather than trying. A scratch sits in
+  the same place frame after frame, so the neighbour-voting trick smears the picture instead of healing
+  it. Ask the app to remove scratches and it answers that it can lift the single-frame dust, dirt and
+  specks off a film transfer but not the long vertical scratches, and tells you which words do work.
+  Unattended scratch removal is not a thing Crisp ships, and it is not a thing it is about to.</p>
+
+  <h3>Two exceptions the app will tell you about</h3>
+  <p>The automatic comb fix does not run on HDR sources, and it does not run on the Max preset — Max
+  restores the frames it is handed, so it would rebuild comb teeth in high fidelity over about an hour.
+  Crisp checks for combing before those jobs start and says so, rather than letting you find out at the
+  end: run an ordinary enhance first, which does straighten it, and bring that result back to Max.</p>
 
   <h2>Tape damage, in detail</h2>
   <h3>Are my tapes still playable after 30 years?</h3>
@@ -94,11 +188,17 @@
   <p>A CRT was hiding a lot. Its softness and the way it drew interlaced fields flattered analogue video, and a modern flat panel shows every fault sharply. The tape has not necessarily got worse; the display got more honest.</p>
   <h3>Can Crisp fix tracking lines and dropouts?</h3>
   <p>No. Those are places where the signal was never read correctly, so there is nothing in the file to recover. They have to be addressed at capture, with a properly aligned deck and ideally a timebase corrector.</p>
+  <h3>Does Crisp deinterlace a VHS capture automatically?</h3>
+  <p>Yes, on the ordinary upscale path, and before anything sharpens the frames. Crisp detects combing from the picture rather than the container flag, then straightens genuinely interlaced video with <span class="prompt">bwdif</span> and inverse-telecines film transfers with <span class="prompt">fieldmatch,decimate</span>. It never guesses between the two: it renders a short sample, runs the detector again, and only commits to inverse telecine if the combing has actually gone. The exceptions are HDR sources and the Max preset, and the app tells you when you have hit one.</p>
+  <h3>Can Crisp remove scratches and dirt from a film transfer?</h3>
+  <p>Dirt yes, scratches no. Single-frame dust and specks are voted away by comparing each frame against its neighbours, measured at 95.0%, 100.5% and 100.6% of planted dirt, while a blotch held for three frames correctly survives. A long vertical scratch sits in the same place frame after frame, so the same trick smears the picture instead of healing it. Crisp refuses that ask by name rather than pretending.</p>
+
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">Why your video looks worse after you upload it</a></li>
     <li><a href="https://crispvideo.app/learn/bitrate-vs-resolution/">Bitrate vs resolution</a></li>
     <li><a href="https://crispvideo.app/learn/film-grain-vs-digital-noise/">Film grain and digital noise are not the same thing</a></li>
+    <li><a href="https://crispvideo.app/how-to/restore-old-home-videos-mac/">How to restore old home videos on a Mac</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
