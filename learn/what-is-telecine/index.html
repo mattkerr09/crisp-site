@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is telecine?","description":"Footage your file calls progressive can still show comb teeth every few frames. That's telecine: 24fps film stretched to 60i by repeating fields. Here's how to spot it and why the metadata lies.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-09-07","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My file says progressive but it still combs. How?","acceptedAnswer":{"@type":"Answer","text":"Because the combing is in the pixels, not in the flags. Telecined film is interlaced when it's first laid down to video, but the moment that video is re-encoded (a DVD rip, an export, a transcode of any kind) every frame becomes a whole frame, and the file is honestly labelled progressive. The mixed fields are still there, baked into the picture. The flag describes the container, not what you can see."}},{"@type":"Question","name":"How do I tell telecine from ordinary interlacing?","acceptedAnswer":{"@type":"Answer","text":"Count the dirty frames. Interlaced video combs on every frame that contains movement. Telecined film combs in a repeating pattern: with 3:2 pulldown, two frames out of every five are mixed and three are clean. Step through ten frames of a moving shot one at a time. If you see a clean-clean-clean-dirty-dirty rhythm, it's telecine."}},{"@type":"Question","name":"Why does detection stop working after I resize?","acceptedAnswer":{"@type":"Answer","text":"Comb teeth are a single-pixel-row structure. Any scaling blends adjacent rows, so the teeth turn into soft grey banding that no detector recognises and no filter can cleanly undo. Check the original file, at its original size, before anything in your pipeline touches the resolution."}},{"@type":"Question","name":"Is deinterlacing a telecined file the wrong thing to do?","acceptedAnswer":{"@type":"Answer","text":"It's the safe thing to do, and it isn't the ideal thing. Deinterlacing gives you sixty whole frames per second, but the extra ones are reconstructed from a film that only ever had twenty-four, so motion can look slightly soft. Recovering the original twenty-four frames instead is called inverse telecine, and it's a different operation. Either way it has to happen before any enhancement runs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My file says progressive but it still combs. How?","acceptedAnswer":{"@type":"Answer","text":"Because the combing is in the pixels, not in the flags. Telecined film is interlaced when it's first laid down to video, but the moment that video is re-encoded (a DVD rip, an export, a transcode of any kind) every frame becomes a whole frame, and the file is honestly labelled progressive. The mixed fields are still there, baked into the picture. The flag describes the container, not what you can see. Frame-level detection still reads it correctly: on the file that lied, ffmpeg's idet called 96 of 96 frames interlaced."}},{"@type":"Question","name":"How do I tell telecine from ordinary interlacing?","acceptedAnswer":{"@type":"Answer","text":"Count the dirty frames. Interlaced video combs on every frame that contains movement. Telecined film combs in a repeating pattern: with 3:2 pulldown, two frames out of every five are mixed and three are clean. Step through ten frames of a moving shot one at a time. If you see a clean-clean-clean-dirty-dirty rhythm, it's telecine."}},{"@type":"Question","name":"Why does detection stop working after I resize?","acceptedAnswer":{"@type":"Answer","text":"Comb teeth are a single-pixel-row structure. Any vertical scaling interpolates the two woven fields into each other, so the teeth turn into soft grey banding that no detector recognises and no filter can cleanly undo. Measured on one clip: the same frames read interlaced at 640x480 and progressive at 1280x720, while the defect was still plainly visible as smearing. Check the original file, at its original size, before anything in your pipeline touches the resolution."}},{"@type":"Question","name":"Is deinterlacing a telecined file the wrong thing to do?","acceptedAnswer":{"@type":"Answer","text":"It's the safe thing to do, and it isn't the ideal thing. Deinterlacing gives you sixty whole frames per second, but the extra ones are reconstructed from a film that only ever had twenty-four, so motion can look slightly soft. Recovering the original twenty-four frames instead is called inverse telecine, and it's a different operation. Either way it has to happen before any enhancement runs."}},{"@type":"Question","name":"Does Crisp inverse-telecine my file, or just deinterlace it?","acceptedAnswer":{"@type":"Answer","text":"It decides per file, and it proves the answer before it uses it. A 3:2 cadence can only exist near 30fps, so Crisp only considers inverse telecine when the source runs between 29.0 and 30.5 frames a second. Even then a frame count is not proof: decimate drops one frame in every five by design, so genuinely interlaced 30fps video returns exactly the same 0.800 ratio a real pulldown does. So Crisp renders a short sample through fieldmatch,decimate and asks the detector whether the combing is gone. If it is, the job runs as an inverse telecine. If not, it falls back to bwdif deinterlacing, which is always safe. The route line on the finished job names which one ran."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Telecine", "item": "https://crispvideo.app/learn/what-is-telecine/"}]}</script>
 </head>
@@ -36,6 +36,13 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Telecine</div>
   <h1>What is telecine?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-09-07 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Telecine is how twenty-four-frame
+  film was put onto thirty-frame American video: <strong>3:2 pulldown</strong> splits each film
+  frame into fields and repeats some of them, so four film frames become five video frames. Three of
+  those five are clean and two are mixtures of two different film frames — which is why telecined
+  footage combs in a <strong>rhythm</strong> rather than continuously, and why a file can be honestly
+  labelled <em>progressive</em> and still show teeth on every fourth and fifth frame.</p></div>
 
   <p>You have an old film transfer. A DVD rip, a converted tape, something off a disc a relative
   burned. Every few frames, moving objects break into horizontal comb teeth. So you check the file,
@@ -62,16 +69,36 @@
   picture content. The flag describes how the file is stored, not what was photographed, and once
   those two disagree no amount of reading metadata will tell you what you're looking at. You have to
   look at the picture.</p>
+  <p>We measured exactly this on one piece of footage while building Crisp's detector. The original
+  MPEG-2 honestly reports <code>field_order=tt</code>. Cut and re-encoded — the state most files
+  reach anybody in — the container claims <em>progressive</em> while every frame is still combed.
+  <strong>Reading the frames instead of the flag still gets it right: ffmpeg's <code>idet</code>
+  called 96 of 96 frames interlaced on the file that lied</strong>, and 82 of 82 progressive on the
+  same clip after an inverse telecine had actually fixed it. The detector was never fooled. Only the
+  metadata was.</p>
 
   <h2>How to actually check</h2>
   <p>Open the file, find a shot with steady horizontal movement, and step through ten frames one at
   a time. Interlaced video combs on every frame with motion in it. Telecined film gives you a
   repeating pattern: roughly three clean frames, then two dirty ones, over and over. That rhythm is
   the signature, and it's visible to the eye at a glance once you know to look for it.</p>
-  <p>Do this on the original file, at its original size. Comb teeth are one pixel row tall. Scale
-  the video, up or down, and neighbouring rows blend together, so the teeth soften into faint grey
-  banding that automatic detection no longer recognises and no filter can cleanly reverse. Every
-  check worth running has to happen before anything touches the resolution.</p>
+  <p>Do this on the original file, at its original size — and the reason is worth stating precisely,
+  because it is a different failure from the one above. Comb teeth are a one-pixel-row structure. A
+  <em>vertical resize</em> interpolates the two woven fields into each other, so the teeth become a
+  soft ghost. <strong>Measured: the same frames read <em>interlaced</em> at 640×480 and
+  <em>progressive</em> at 1280×720</strong>, while the defect was still plainly there as smearing.
+  That is also why combed footage usually arrives on the web looking like motion blur rather than
+  like comb teeth.</p>
+  <p>So there are two distinct traps, and it is worth keeping them apart:</p>
+  <ul>
+    <li><strong>Re-encoding falsifies the container flag.</strong> The label says progressive; the
+    pixels are still combed. Frame-level detection is unaffected and still answers correctly.</li>
+    <li><strong>A vertical resize blinds the detector itself.</strong> Nothing in the file is
+    labelled wrongly — the evidence has genuinely been smeared away, and no filter can cleanly put
+    it back.</li>
+  </ul>
+  <p>"Run the check on the original" is the right advice, but it is advice about the second trap,
+  not the first. Re-encoding alone does not blind a frame-level detector. The scale does.</p>
 
   <h2>Why it matters before you enhance anything</h2>
   <p>For the same reason interlacing does, only more quietly. An upscaler has no idea what a field
@@ -89,32 +116,75 @@
   only ever had twenty-four, so the invented frames are blends and motion can look a little soft.</p>
   <p>Inverse telecine instead throws away the repeated fields and reassembles the original
   twenty-four frames exactly as they were shot. When the pulldown pattern is clean it's lossless,
-  which is a rare thing to be able to say about any video operation. When the pattern has been
-  disturbed, by an edit made after the transfer or by a variable frame rate somewhere in the chain,
-  it isn't, and deinterlacing is the safer choice.</p>
+  which is a rare thing to be able to say about any video operation. Measured on a 3:2 fixture,
+  120 frames come out as exactly 96, at SSIM 0.9969 against the true original. When the pattern has
+  been disturbed, by an edit made after the transfer or by
+  <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">a variable frame rate</a>
+  somewhere in the chain, it isn't, and deinterlacing is the safer choice.</p>
+  <p>Pointing the two operations the wrong way round is not a cosmetic mistake. Inverse-telecining
+  genuinely interlaced video drops one frame in five that nobody ever duplicated — real motion,
+  gone, and nothing gets it back.</p>
 
   <h2>Doing it on a Mac</h2>
   <p><strong>Crisp does both, and tells them apart.</strong> It detects a 3:2 cadence and reverses
   the pulldown — the <code>fieldmatch,decimate</code> route — rather than deinterlacing film and
-  softening every frame, which is what <code>yadif</code> would do to it. Genuinely interlaced video
-  gets deinterlaced instead. The route line names which one ran. The
+  softening every frame, which is what its <code>bwdif</code> fallback would do to it. Genuinely
+  interlaced video gets that fallback instead. The route line on the finished job names which one
+  ran: <code>Inverse telecine</code> or <code>Deinterlaced</code>. The
   <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing walkthrough</a> has
   the detail, including the two cases Crisp leaves alone.</p>
-  <p>What Crisp does is notice. On the Max quality lane it reads the source and warns you before
-  the render starts, which matters most here: telecined frames look perfect three times in five, so
-  this is exactly the file someone checks, sees nothing wrong, and hands to an hour of generative
-  restoration. Once you bring it a progressive file, everything after that runs on your Mac and
-  nothing is uploaded.</p>
+
+  <h3>How it decides, and why it doesn't guess</h3>
+  <p>Choosing wrong destroys frames, so the decision is narrowed and then checked:</p>
+  <ul>
+    <li><strong>Frame rate narrows it.</strong> A 3:2 pulldown can only exist near thirty frames a
+    second, so inverse telecine is only considered between <strong>29.0 and 30.5 fps</strong>.</li>
+    <li><strong>A frame count proves nothing on its own.</strong> <code>decimate</code> removes the
+    most similar frame in every group of five whether or not anything duplicated it — measured,
+    genuinely interlaced 30fps video yields exactly <strong>0.800</strong>, identical to a true
+    pulldown. The ratio survives only as a sanity bound.</li>
+    <li><strong>So the answer gets rendered and re-examined.</strong> Crisp runs a short sample
+    through <code>fieldmatch,decimate</code> and asks the detector whether the combing is actually
+    gone. On telecined film the matching fields exist and the sample comes out clean. On genuinely
+    interlaced video there is no matching field, the sample is still combed, and Crisp refuses the
+    inverse telecine and deinterlaces instead.</li>
+  </ul>
+  <p>The test deliberately asks "is the comb gone", not "does it say progressive" — a detector
+  returns <em>unknown</em> on smooth content it can't classify either way, and demanding the word
+  <em>progressive</em> made this reject real telecine on a synthetic 3:2 fixture.</p>
+
+  <h3>What it costs, including the case where it loses</h3>
+  <p>The pre-pass runs on the whole file before frames are extracted, and it is cheap: 0.24s on a
+  four-second clip. On a DVD-shaped clip an inverse telecine took 300 frames down to 240 and the job
+  from 19.6s to 17.4s, because there are 20% fewer frames to upscale. It is not free, though, and on
+  a three-second clip the same work came out about <strong>4% slower</strong> — the fixed cost of
+  the extra encode outweighs the saving when there is barely any render to save. On long jobs the
+  trade is heavily in your favour; on very short ones it is slightly against you.</p>
+
+  <h3>Where it doesn't run</h3>
+  <p>Two lanes skip the pre-pass, and Crisp says so rather than reassuring you falsely. The Max
+  restore lane returns into the generative path before the field fix, so a combed source there would
+  be rebuilt in high fidelity over about an hour — Crisp warns before the render starts and tells you
+  to run an ordinary Enhance first, then bring that result back. HDR sources skip the fix on every
+  lane. A third case is narrower than it looks: <a href="https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/">the
+  timeline export</a> does straighten each clip as it assembles the edit, but with the
+  deinterlacing filter rather than the inverse telecine, because the concat forces a common frame
+  rate. Measured on the rendered output, comb energy fell from 4.728 to 3.059, about 35% less — so
+  telecined film in an edit is blended there, not restored to its original twenty-four frames. If
+  that matters for your footage, upscale the source on its own first.</p>
+  <p>Everything above runs on your Mac. Nothing is uploaded.</p>
 
   <h2>Telecine, in detail</h2>
   <h3>My file says progressive but it still combs. How?</h3>
-  <p>Because the combing is in the pixels, not in the flags. Telecined film is interlaced when it&#x27;s first laid down to video, but the moment that video is re-encoded (a DVD rip, an export, a transcode of any kind) every frame becomes a whole frame, and the file is honestly labelled progressive. The mixed fields are still there, baked into the picture. The flag describes the container, not what you can see.</p>
+  <p>Because the combing is in the pixels, not in the flags. Telecined film is interlaced when it&#x27;s first laid down to video, but the moment that video is re-encoded (a DVD rip, an export, a transcode of any kind) every frame becomes a whole frame, and the file is honestly labelled progressive. The mixed fields are still there, baked into the picture. The flag describes the container, not what you can see. Frame-level detection still reads it correctly: on the file that lied, ffmpeg&#x27;s <code>idet</code> called 96 of 96 frames interlaced.</p>
   <h3>How do I tell telecine from ordinary interlacing?</h3>
   <p>Count the dirty frames. Interlaced video combs on every frame that contains movement. Telecined film combs in a repeating pattern: with 3:2 pulldown, two frames out of every five are mixed and three are clean. Step through ten frames of a moving shot one at a time. If you see a clean-clean-clean-dirty-dirty rhythm, it&#x27;s telecine.</p>
   <h3>Why does detection stop working after I resize?</h3>
-  <p>Comb teeth are a single-pixel-row structure. Any scaling blends adjacent rows, so the teeth turn into soft grey banding that no detector recognises and no filter can cleanly undo. Check the original file, at its original size, before anything in your pipeline touches the resolution.</p>
+  <p>Comb teeth are a single-pixel-row structure. Any vertical scaling interpolates the two woven fields into each other, so the teeth turn into soft grey banding that no detector recognises and no filter can cleanly undo. Measured on one clip: the same frames read <em>interlaced</em> at 640×480 and <em>progressive</em> at 1280×720, while the defect was still plainly visible as smearing. Check the original file, at its original size, before anything in your pipeline touches the resolution.</p>
   <h3>Is deinterlacing a telecined file the wrong thing to do?</h3>
   <p>It&#x27;s the safe thing to do, and it isn&#x27;t the ideal thing. Deinterlacing gives you sixty whole frames per second, but the extra ones are reconstructed from a film that only ever had twenty-four, so motion can look slightly soft. Recovering the original twenty-four frames instead is called inverse telecine, and it&#x27;s a different operation. Either way it has to happen before any enhancement runs.</p>
+  <h3>Does Crisp inverse-telecine my file, or just deinterlace it?</h3>
+  <p>It decides per file, and it proves the answer before it uses it. A 3:2 cadence can only exist near 30fps, so Crisp only considers inverse telecine when the source runs between 29.0 and 30.5 frames a second. Even then a frame count is not proof: <code>decimate</code> drops one frame in every five by design, so genuinely interlaced 30fps video returns exactly the same 0.800 ratio a real pulldown does. So Crisp renders a short sample through <code>fieldmatch,decimate</code> and asks the detector whether the combing is gone. If it is, the job runs as an inverse telecine. If not, it falls back to <code>bwdif</code> deinterlacing, which is always safe. The route line on the finished job names which one ran.</p>
 
   <h2>Related</h2>
   <ul>
