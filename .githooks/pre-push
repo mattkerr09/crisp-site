@@ -70,3 +70,14 @@ PY
 # A comment above the tag argued the privacy claim was "scoped to the APP, not
 # this website", which is how it survived review. Hence a gate.
 python3 "$(dirname "$0")/../_tools/gate_thirdparty.py" || exit 1
+
+# ...and every exemption THAT gate grants must still describe real code.
+#
+# The gate above carries per-file exemptions, each keyed to a marker, and it
+# PRINTS the reason for each one on every run. On 2026-09-15 founding.js stopped
+# making the call its exemption excused, and the gate went on printing that the
+# call happens — asserting deleted behaviour to anyone auditing privacy, and
+# pre-approving that host for the day it came back. That gate's own docstring
+# names this ("a dead exemption is worse than none") and instruction alone did
+# not hold it, which is the same reason the gate above exists at all.
+python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py" || exit 1
