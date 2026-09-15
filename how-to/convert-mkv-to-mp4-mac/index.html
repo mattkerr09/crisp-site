@@ -22,12 +22,13 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to convert MKV to MP4 on a Mac","description":"MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to convert MKV to MP4 on a Mac","description":"MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.","datePublished":"2026-07-23","dateModified": "2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does converting MKV to MP4 lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not if you copy the streams instead of re-encoding. The video and audio data are moved into a different container untouched, so the result is bit-identical. Re-encoding does lose quality."}},{"@type":"Question","name":"Why won't my MKV play on a Mac?","acceptedAnswer":{"@type":"Answer","text":"QuickTime doesn't support the MKV container. The video inside is often perfectly playable h.264 or HEVC — it's the wrapper macOS objects to, which is why a container swap fixes it in seconds."}},{"@type":"Question","name":"What if the audio doesn't work after converting?","acceptedAnswer":{"@type":"Answer","text":"MKV commonly carries codecs MP4 doesn't allow, chiefly DTS and FLAC. Those need re-encoding to AAC while the video is still copied — you lose a little audio quality and no picture quality."}}]}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "How-to", "item": "https://crispvideo.app/how-to/"}, {"@type": "ListItem", "position": 3, "name": "MKV to MP4", "item": "https://crispvideo.app/how-to/convert-mkv-to-mp4-mac/"}]}</script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -38,12 +39,13 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; MKV to MP4</div>
   <h1>How to convert MKV to MP4 on a Mac</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
 
-  <p class="lede">Most of the time this is a container swap, not a conversion: the video and audio
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Most of the time this is a container swap, not a conversion: the video and audio
   are copied across untouched and the whole thing takes seconds regardless of file size. Nothing is
   re-encoded and nothing is lost. The command is
   <code>ffmpeg -i in.mkv -c copy out.mp4</code>, and if that works for you the rest of this page is
-  optional reading.</p>
+  optional reading.</p></div>
 
   <h2>What a container actually is</h2>
   <p>MKV and MP4 are boxes, not formats. The picture inside is h.264, HEVC, AV1 or similar, and the

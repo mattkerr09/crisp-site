@@ -22,12 +22,13 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified":"2026-09-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified": "2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Video Upscaler Index?","acceptedAnswer":{"@type":"Answer","text":"A published set of objective, reproducible quality measurements for AI video upscaling on Mac — seven metrics computed from raw frames with ffmpeg and pure Python, along with the harness that produced them so anyone can re-run them."}},{"@type":"Question","name":"Why does it only contain Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because those are the only outputs we have actually measured. Publishing a score for a tool we never ran would invalidate the rest of the page. Competitor results will be added when we have real measurements, including results that beat Crisp."}},{"@type":"Question","name":"What is added_flicker and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"It is the output's frame-to-frame instability minus the source's — the shimmer the upscaler introduced. Per-frame upscalers can invent slightly different detail on each frame, so a still looks excellent while the moving clip crawls. It is the axis reviewers describe subjectively and the one this index measures directly."}},{"@type":"Question","name":"How fast is Crisp?","acceptedAnswer":{"@type":"Answer","text":"Between 3.6 and 5.6 frames per second end-to-end on an M1 Ultra Mac Studio across the sources tested, including decode and encode. That is roughly an hour for a ten-minute clip. It runs entirely on your own Mac, which is why it is slower than a cloud service."}}]}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Index", "item": "https://crispvideo.app/index/"}]}</script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -38,6 +39,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> → Index</div>
   <h1>The Video Upscaler Index</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
 
   <p><strong>Nobody in this category publishes reproducible numbers.</strong> Every upscaler
   review, including the ones that rank first for the term, is a pair of screenshots and an
