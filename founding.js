@@ -25,6 +25,27 @@
  * Dismissal is remembered per site in localStorage, wrapped in try/catch because
  * a private window throws on access rather than returning null.
  */
+/* ⛔ THIS FILE IS A DELIBERATE FORK of the shared widget served by kerr-lead-agent.
+ * It is NOT drift and must not be "fixed" by loading the worker's script or copying it
+ * verbatim — both fail this site's own pre-push gate. The worker's tag is a third-party
+ * <script src> the per-file exemption does not cover, and the worker's copy fetches the
+ * count ON LOAD, which is a third-party request on every page view of a site whose hero
+ * says "Nothing uploaded". PORT changes into this file; never adopt the file.
+ *
+ * ⚠️ THE COST OF A FORK IS THAT IT IS SILENT, AND IT WAS PAID ONCE ALREADY. The shared
+ * widget's seven-day dismissal fix landed upstream on 2026-09-15 and this copy did not
+ * inherit it, so a dismissal here still lasted forever — which is how a bar that had been
+ * live since a1f3647 was reported as "there are no promo bars on crisp". Nothing was
+ * broken, nothing failed a gate, and no check could see it.
+ *
+ * So the fork records WHICH upstream revision it was last reconciled against. When the
+ * line below stops matching sha256(~/ops/lead-agent/widget/founding.js.txt), upstream has
+ * moved and somebody must decide whether this file needs the change. ~/ops/bin/drift.py
+ * checks it. Update this line ONLY after actually reading the upstream diff — bumping it
+ * to silence the check is the one way to make this worse than having no check.
+ *
+ * upstream-reviewed: 92ec58509867e51cd38a75551fb74daf5e38cecccf5291783bfc9875bf4bca87  (2026-09-15)
+ */
 (function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
