@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1221",
-  "notes": "Asking to split a clip now says where splitting lives. \"Split the clip\", \"split it in two\" and nine more used to get \"I didn't catch an edit\" and a suggestion to TRIM \u2014 which throws the second half away. Crisp splits on the timeline: playhead, then S.",
-  "pub_date": "2026-09-15T02:45:19Z",
+  "version": "1.0.1222",
+  "notes": "Asking to trim to a fraction now works. \"Trim it to half\", \"make it half as long\", \"trim it to a third\" and seven more used to reach nothing, even though Crisp already understood \"keep the first half\". And \"cut it in half\" now asks which you meant \u2014 half kept, or two pieces \u2014 instead of guessing.",
+  "pub_date": "2026-09-15T03:27:21Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVyd1NWZ3pMME53dXpJWlBmNTM4NmthRmR6cWNydTZvYzNkOTlPYlFZb1U3SS9qN2g3OCs1NXhLUHZlSFUwTEVJMkZndkdZSHZBRnc2QWVOTVpacmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQwMjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqa1Zvb21qa25sLzJXbVRKdmhNS1lBTkJPL09xbjhRRisyZ2JnVkw1YTBua3J5dEpCb1lpeTE4aEZBZjJ1bDhtTmpHdWVuOFBjYkhocFhGK29vR0FBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZlYU1RWmd5OExZUUpoVW5SRE9nVGp6bGtFRjIzQ24ydGVBSFowMzV1ZHdpUmFFWG95ajE1YitUSityd3cvVU1JcXBlU0M4SDlKNzVYcjBibDF5dEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQyNjg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6by9nNk44TmdkeFZtT0UyVjE5L3d5cXl6bmFSUzc5RHVuQ2FyTS95WkxIdjgxMVBjSnJBNklYNHo0ckcyT1BsNUtWTVp4S09sU0l0bVFLM0h5VnJDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
