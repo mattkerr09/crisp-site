@@ -107,8 +107,7 @@
   <p>Deinterlace, denoise, upscale, colour. Interlacing first is not a preference: an upscaler reads
   comb teeth as fine detail and sharpens them into something far harder to remove. In a tool with a
   separate denoise filter, that filter belongs before the upscale for the same reason, since magnified
-  noise is a much bigger problem than the original. Crisp does not have one to place: its denoise value
-  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">selects which upscaling model
+  noise is a much bigger problem than the original. Crisp places it for you: its denoise value selects which upscaling model runs, and above 0.5 it also adds an hqdn3d pre-pass that runs before the upscale — the order this section recommends. Below 0.5 there is no separate pass at all.app/learn/what-the-denoise-setting-does/">selects which upscaling model
   runs</a>, so the ordering question does not arise here.</p>
   <p>Crisp runs that chain on-device, which for family tapes tends to matter more than it sounds. The
   usual alternative involves uploading footage of your family to a service, and these are the tapes
