@@ -49,11 +49,16 @@
   var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
   /* ⚠️ THE FALLBACK IS THE DANGEROUS HALF, NOT THE ATTRIBUTE. Until 2026-09-15 the mount
-     carried NO data-code at all, so the bar printed "FOUNDING1" through this default and
-     nobody had typed that code anywhere on the site. FOUNDING1 is being expired in Dodo now
-     that each app has its own code, which would have turned this silent path into a bar
+     carried NO data-code at all, so the bar printed the OLD SHARED CODE through this default
+     and nobody had typed that code anywhere on the site. That shared code is being expired in
+     Dodo now that each app has its own, which would have turned this silent path into a bar
      offering a code the checkout rejects. Both halves are set, so a missing attribute cannot
-     resurrect a dead code. */
+     resurrect a dead code.
+
+     ⛔ AND THE RETIRED CODE IS NOT SPELLED OUT HERE, DELIBERATELY. A grep for a promo code
+     should find the code the site OFFERS, not a comment reminiscing about one it withdrew —
+     this file's own history includes a checker that harvested quoted strings out of comments
+     and reported them as live claims. Naming it here would make every future audit ambiguous. */
   var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
 
   var bar = document.createElement("div");
