@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1219",
-  "notes": "A photo has no soundtrack. Asking about the audio on a still \u2014 \"clean up the audio\", \"the music is dark\", \"remove the wind noise\" \u2014 used to start an upscale or a colour grade on the picture. Thirty phrasings; all of them now say so instead.",
-  "pub_date": "2026-09-15T00:48:47Z",
+  "version": "1.0.1220",
+  "notes": "Asking for a look no longer does the opposite. \"Make it look grainy\" was starting an upscale \u2014 which removes grain \u2014 instead of adding it, and \"make it look warm\" did nothing at all. Both now match their shorter phrasings exactly.",
+  "pub_date": "2026-09-15T02:07:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI4RDlnU2cyem5jMmZSYUhEVVFrc0UraU1PbHQwNTIwUGpjM1dwWU11Q0NTRSt4c1lVNUt4bjFqRFQyUld1MGV6RVNEVjRubFVxWEh1anZMR01WeGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDMzMTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPdDN5TVM4ZklEQ0RqQjlINytIU0U4ZVhFUWRMTUVDYjRVUWd0alJ0dWxyNkFRMStnRG92dDU2aVQ2OEt4emxmYlliMzIxeDRqQTN4cnM5S0RpNmJCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh5eG5ldytqSmhyVkd5YnpTNCtOSnJJSmFOT0ZidmZkZ2lvdGNKTXp4WHJMN29CUmhTdTdKaTRNM0M1cmp4NkF2alhpeW42MzdFekFPd05uSFFISVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDM3ODk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzZUx0cFNNYkxBSnhjMkFmSFBCWURpTkhVTVlMMzhmWm9YUnJ3Qy9veTJkSmRva00yYnc0M1ZVVVRwQWlacEVPdnFGMDJWbVU5SXRNTzV2NXM2eU5CQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
