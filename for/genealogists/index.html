@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Crisp for genealogists and family historians","description":"Boxes of tape and cine film, one copy of everything, and relatives who will not be there next year. What to do first, and what no software can recover.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I restore before or after digitising everything?","acceptedAnswer":{"@type":"Answer","text":"Digitise everything first, without exception. The tape is degrading on a clock and software only improves. A complete set of raw captures is far more valuable than a handful of beautifully restored clips and a box you never got to."}},{"@type":"Question","name":"How much should I denoise old film?","acceptedAnswer":{"@type":"Answer","text":"Less than feels right. Grain is part of the image, and heavy denoising produces the waxy, plastic faces that give an over-processed archive away. Remove enough that it reads cleanly and stop there."}},{"@type":"Question","name":"Can Crisp fix tracking lines and dropouts?","acceptedAnswer":{"@type":"Answer","text":"No. Those are places where the signal was never read, so there is nothing in the file to work from. They need a properly aligned deck and ideally a timebase corrector at capture time."}},{"@type":"Question","name":"Is upscaling a face reliable for identification?","acceptedAnswer":{"@type":"Answer","text":"Be careful here. An upscaler predicts plausible detail rather than recovering real detail, so a sharpened face is partly invented. For identification purposes the soft original is more honest evidence than the crisp reconstruction."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I restore before or after digitising everything?","acceptedAnswer":{"@type":"Answer","text":"Digitise everything first, without exception. The tape is degrading on a clock and software only improves. A complete set of raw captures is far more valuable than a handful of beautifully restored clips and a box you never got to."}},{"@type":"Question","name":"How much should I denoise old film?","acceptedAnswer":{"@type":"Answer","text":"Less than feels right. Grain is part of the image, and heavy denoising produces the waxy, plastic faces that give an over-processed archive away. Remove enough that it reads cleanly and stop there."}},{"@type":"Question","name":"Can Crisp fix tracking lines and dropouts?","acceptedAnswer":{"@type":"Answer","text":"No. Those are places where the signal was never read, so there is nothing in the file to work from. They need a properly aligned deck and ideally a timebase corrector at capture time."}},{"@type":"Question","name":"Is upscaling a face reliable for identification?","acceptedAnswer":{"@type":"Answer","text":"Be careful here. An upscaler predicts plausible detail rather than recovering real detail, so a sharpened face is partly invented. For identification purposes the soft original is more honest evidence than the crisp reconstruction."}},{"@type":"Question","name":"Can Crisp clean the dust and scratches off 8mm film?","acceptedAnswer":{"@type":"Answer","text":"The dust, yes. Specks and dirt that appear on a single frame are removed by comparing each frame against its neighbours, measured at 95 to 100 per cent of planted dirt, while a blotch held for three frames correctly survives. Scratches, no. A scratch persists across many frames, so there is nothing clean to compare it against, and Crisp declines the request rather than smearing the picture."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Genealogists", "item": "https://crispvideo.app/for/genealogists/"}]}</script>
 </head>
@@ -37,13 +37,21 @@
   <h1>Crisp for genealogists and family historians</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp is the restoration pass on
+  family footage you have already digitised, run entirely on your own Mac. It straightens the
+  combing on tape and telecined film before anything enhances the frames, lifts the single-frame
+  dust off a cine transfer, evens out the brightness flicker, and keeps a black-and-white source
+  black and white. It does not capture from tape, catalogue anything, transcribe the commentary you
+  record, or remove long scratches — and it never uploads a frame of it.</p></div>
+
   <p>Family history work has a deadline nobody sets. The tapes are decaying, the people who can
   identify who is in them are getting older, and there is exactly one copy of most of it.</p>
   <p>That changes the priorities. Restoration quality matters less than getting everything captured
   and identified while it is still possible.</p>
 
   <h2>Capture first, restore later</h2>
-  <p>This is the single most useful thing to know. Magnetic tape loses signal whether or not anyone
+  <p>This is the single most useful thing to know. <a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">Magnetic
+  tape loses signal</a> whether or not anyone
   plays it, and every playback wears it slightly. Software gets better every year; a tape from 1987
   does not.</p>
   <p>So capture the whole collection at the best quality you can manage now, even if you have no time
@@ -67,6 +75,51 @@
   <p>Be conservative with denoising on old film. Grain is part of how film looks, and stripping it out
   gives faces the waxy appearance that makes an over-restored archive obvious. You can always run a
   second pass; you cannot put the texture back.</p>
+  <p>Crisp does the <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing step
+  itself</a>, as a pre-pass before anything enhances the frames, and it reads the answer off the
+  pictures rather than off the file's own flag. That flag stops being true the moment a tape rip has
+  been cut and re-encoded, which is the state most transfers reach you in: measured on one newsreel,
+  the original MPEG-2 honestly reported interlaced fields, and the re-encoded copy claimed to be
+  progressive while every frame was still combed.</p>
+  <p>It also keeps the two cases apart, which matters because they are not interchangeable.
+  Genuinely interlaced video — a camcorder, a tape transfer — has two different moments woven into
+  each frame, so a whole frame is rebuilt from each field pair and nothing is discarded. Film that
+  went through a <a href="https://crispvideo.app/learn/what-is-telecine/">telecine</a> has 24 real
+  frames spread across 30 by repeating fields, so the duplicates are removed and the original frames
+  put back: measured on a 3:2 fixture, 120 frames became exactly 96 at SSIM 0.9969 against the true
+  original. Applying the wrong one to the other throws away a real frame in five, so Crisp checks the
+  telecine answer on a sample before the render commits to it.</p>
+  <p>A shelf rather than a single clip is a
+  <a href="https://crispvideo.app/how-to/batch-upscale-videos-mac/">batch</a> job: point it at a
+  folder and it works through videos and photos unattended, skipping anything it has already done, so
+  an evening's queue can run overnight. Batch is one of the paid capabilities rather than part of the
+  free tier.</p>
+
+  <h2>Cine film: dust, flicker and black-and-white</h2>
+  <p>Reels of 8mm and 16mm arrive with a different set of faults from tape, and three of them are
+  handled by <a href="https://crispvideo.app/how-to/restore-old-film-footage-mac/">ordinary filter
+  passes</a> rather than by a model — no weights, no extra render time, and they work alongside every
+  upscale preset.</p>
+  <p>Single-frame dust is the one worth knowing about. A speck of dirt sitting on one frame and not
+  on its neighbours can be voted away by comparing each pixel across a short window of frames.
+  Measured on dirt planted over real film frames, that removes 95 to 100 per cent of it — and a
+  blotch held in the same place for three frames correctly survives. That second result is the one
+  that makes the first trustworthy: a filter that merely blurred would have "cleaned" the sustained
+  dirt too. Ask for it in plain English — "remove the dust", "get the specks off this" — and it goes
+  on the plan before you confirm it.</p>
+  <p>Brightness flicker, the exposure pulse that makes old film breathe, is evened against a moving
+  average: measured at an 87.6 per cent reduction in frame-to-frame brightness jitter, while a
+  deliberate fade-in came through intact. Keeping the fades somebody meant is the part that matters,
+  because flattening them would ruin footage that was never broken.</p>
+  <p>And a source with no colour does not acquire any. Crisp checks for that itself, sampling three
+  windows spread through the clip rather than only the opening, so a black-and-white title sequence
+  in front of colour footage is not mistaken for a monochrome reel — any colour found anywhere vetoes
+  the whole clip.</p>
+  <p>Scratches are the exception, and Crisp says so instead of trying. A scratch persists across many
+  frames, so the cross-frame comparison has nothing clean to vote with and smears the picture rather
+  than healing it. Ask for scratch removal and the app declines and offers the dust pass instead,
+  which is a better answer than a plausible-looking export you would have to spot the damage in
+  later.</p>
 
   <h2>What cannot be recovered</h2>
   <p>Worth knowing before you spend a weekend on it. Tracking tears, dropouts where the signal was
@@ -95,12 +148,16 @@
   <p>No. Those are places where the signal was never read, so there is nothing in the file to work from. They need a properly aligned deck and ideally a timebase corrector at capture time.</p>
   <h3>Is upscaling a face reliable for identification?</h3>
   <p>Be careful here. An upscaler predicts plausible detail rather than recovering real detail, so a sharpened face is partly invented. For identification purposes the soft original is more honest evidence than the crisp reconstruction.</p>
+  <h3>Can Crisp clean the dust and scratches off 8mm film?</h3>
+  <p>The dust, yes. Specks and dirt that appear on a single frame are removed by comparing each frame against its neighbours, measured at 95 to 100 per cent of planted dirt, while a blotch held for three frames correctly survives. Scratches, no. A scratch persists across many frames, so there is nothing clean to compare it against, and Crisp declines the request rather than smearing the picture.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/for/musicians/">Crisp for musicians</a></li>
     <li><a href="https://crispvideo.app/for/podcasters/">Crisp for video podcasters</a></li>
     <li><a href="https://crispvideo.app/for/product-video/">Crisp for product and e-commerce video</a></li>
   </ul>
+
+  <p>See also: <a href="https://crispvideo.app/for/family-archivists/">restoring old home videos on a Mac</a>, which covers the general tape workflow this page assumes.</p>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
 </div></article>

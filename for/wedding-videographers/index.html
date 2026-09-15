@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Crisp for wedding videographers","description":"Reception footage shot at ISO 12800, a second camera that does not match, and client media you would rather not upload anywhere. What Crisp handles and what it does not.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp match two cameras automatically?","acceptedAnswer":{"@type":"Answer","text":"It normalises the technical side, frame rate, colour range and HDR, so both clips are in the same space before you grade. Matching the creative look of two different sensors is still a grading decision, and it is much easier once the technical differences are gone."}},{"@type":"Question","name":"Will it fix noisy reception footage?","acceptedAnswer":{"@type":"Answer","text":"Yes, that is one of the things on-device denoising genuinely does well, and doing it before grading rather than after makes a real difference. It cannot recover detail that was never captured in the very darkest areas."}},{"@type":"Question","name":"Is client footage uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs on your Mac. There is no upload endpoint, no account and no cloud processing step, which for wedding work tends to be the deciding factor rather than a nice-to-have."}},{"@type":"Question","name":"Can it replace Premiere or Resolve for a full wedding film?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not try to. It has a timeline for assembling and cutting down, but a full film with multicam sync and audio work belongs in an NLE. Crisp is for the repair and finishing passes around that."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp match two cameras automatically?","acceptedAnswer":{"@type":"Answer","text":"It normalises the technical side, frame rate, colour range and HDR, so both clips are in the same space before you grade. Matching the creative look of two different sensors is still a grading decision, and it is much easier once the technical differences are gone."}},{"@type":"Question","name":"Will it fix noisy reception footage?","acceptedAnswer":{"@type":"Answer","text":"Yes, that is one of the things on-device denoising genuinely does well, and doing it before grading rather than after makes a real difference. It cannot recover detail that was never captured in the very darkest areas."}},{"@type":"Question","name":"Can Crisp subtitle the vows and the speeches?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp burns in a caption you type, and it has no speech recognition of any kind — ask it for subtitles and it says so rather than producing something. If the couple wants the speeches subtitled, the transcript has to come from a transcription tool first."}},{"@type":"Question","name":"Can it cut a teaser out of a full ceremony recording?","acceptedAnswer":{"@type":"Answer","text":"Yes. Auto-Montage takes a target length anywhere from 5 seconds to 5 minutes and three styles: Highlights picks the strongest moments, Condense keeps the recording in order and trims the dead air out of it, and Music cuts to a track you supply. Whatever it chose can be adjusted afterwards on the timeline."}},{"@type":"Question","name":"Is client footage uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs on your Mac. There is no upload endpoint, no account and no cloud processing step, which for wedding work tends to be the deciding factor rather than a nice-to-have."}},{"@type":"Question","name":"Can it replace Premiere or Resolve for a full wedding film?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not try to. It has a timeline for assembling and cutting down, but a full film with multicam sync and audio work belongs in an NLE. Crisp is for the repair and finishing passes around that."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Wedding videographers", "item": "https://crispvideo.app/for/wedding-videographers/"}]}</script>
 </head>
@@ -37,6 +37,13 @@
   <h1>Crisp for wedding videographers</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp is an offline Mac app for the
+  repair and finishing passes around a wedding edit, not for the edit itself. It denoises dark
+  reception footage, brings a second shooter's clips and a guest's phone video onto one timeline at
+  one frame rate, cuts a teaser with Auto-Montage, reframes to 9:16 for socials, burns in captions
+  you type, and upscales the couple's parents' tapes. Nothing is uploaded, there is no account, and
+  it is $129 once rather than a subscription.</p></div>
+
   <p>Wedding work has a shape no other genre quite shares. You get one take of everything, the light
   goes from a bright ceremony to a dark reception in a single day, half the footage comes from a
   camera you were not operating, and the client is emotionally invested in every frame in a way a
@@ -45,11 +52,19 @@
   <h2>The reception is where the footage falls apart</h2>
   <p>By the evening you are shooting at whatever ISO keeps the shutter usable, and that means noise.
   Not a little grain, but the coloured speckle in the shadows that compression then turns into
-  blotches. Denoising before you grade rather than after makes a visible difference, because a grade
-  applied to noisy footage amplifies the noise along with everything else.</p>
+  blotches. <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">Denoising</a> before
+  you grade rather than after makes a visible difference, because a grade applied to noisy footage
+  amplifies the noise along with everything else.</p>
+  <p>In Crisp the denoise control decides which model runs, routing to the cleaning net rather than the detail net as you turn it up — and past halfway it also runs a noise-reduction pass before the upscale. The
+  Low-light cleanup preset is that choice already made: a stronger denoise and a shadow lift ahead of
+  the upscale, so a dark dance floor is one preset rather than a sequence to remember.</p>
   <p>The other reception problem is handheld movement. Dancing shots, walking shots, anything grabbed
-  quickly. Stabilization helps genuinely with shake, and it is worth knowing it cannot help with
-  rolling shutter skew, which is what the wobble on fast pans usually is.</p>
+  quickly. <a href="https://crispvideo.app/how-to/stabilize-shaky-video-mac/">Stabilization</a> helps
+  genuinely with shake, and it is worth knowing it cannot help with
+  <a href="https://crispvideo.app/learn/what-is-rolling-shutter/">rolling shutter</a> skew, which is
+  what the wobble on fast pans usually is. Crisp samples the clip in front of it and measures whether
+  stabilising would actually steady it, and declines when the answer is no — so a tripod ceremony
+  shot or a smooth pan comes back untouched instead of coming back worse.</p>
 
   <h2>Two cameras that do not match</h2>
   <p>A second shooter, a locked-off camera at the back, and a phone clip someone sent you afterwards.
@@ -58,17 +73,66 @@
   range first, then grade. The alternative is a grade that looks right on the A camera and wrong every
   time you cut away, which is the sort of thing that is invisible while you work and obvious to a
   viewer.</p>
-  <p>Phone footage is the frequent offender because it is often variable frame rate and often HDR.
-  Both are handled on the way in rather than left for you to notice at the export stage.</p>
+  <p>That normalising is what Crisp does on the way into a montage or a timeline, without being asked.
+  Every segment is scaled onto one common canvas, resampled to one constant frame rate, and converted
+  into a single known colour space rather than merely re-tagged — the usual cause of an old SD clip
+  going pale in the middle of a film — with any HDR or 10-bit clip tonemapped to SDR so it does not
+  sit washed-out beside the others.</p>
+  <p>Phone footage is the frequent offender because it is often
+  <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">variable frame rate</a> and
+  often HDR. Both are handled on the way in rather than left for you to notice at the export stage; a
+  variable-rate source is detected from its own timing and forced to a constant rate, which is what
+  keeps audio from drifting out of sync across a cut.</p>
+
+  <h2>The teaser, and the edit behind it</h2>
+  <p>The short cut is usually the piece the couple shares first, and it is the one that eats an evening
+  you would rather spend on the film.
+  <a href="https://crispvideo.app/how-to/make-a-highlight-reel-mac/">Auto-Montage</a> takes a long
+  recording and a target length — anywhere from five seconds to five minutes — in three styles:
+  Highlights picks the strongest moments, Condense keeps the recording in order and trims the dead air
+  out of it, and Music cuts to a track you supply. Layouts run from a straight sequential reel to
+  split-screen and a four-up grid.</p>
+  <p>When the automatic cut is not the one you wanted, there is a real timeline underneath it. Drag
+  clips in, drag their edges to trim, drag the middle to reorder, repeat a clip, drop a photo in as a
+  title card with a Ken Burns move or held still. Captions burn in from text you type.
+  <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Reframing to 9:16</a>, 1:1 or 4:5
+  fits the whole frame inside the new shape and fills the bars with a blurred copy of the picture
+  rather than black, so a horizontal first dance becomes a vertical cutdown without cropping the
+  couple out of it.</p>
+  <p>A timeline, captions you type and an auto-montage is a combination no other Mac upscaler we have
+  read ships at all, and it is why the teaser, the socials cut and the cleanup pass stay in one app
+  rather than three.</p>
 
   <h2>The delivery problem nobody warns you about</h2>
-  <p>You grade a film carefully, export it, and the couple watches it on a platform that re-encodes
-  everything you sent. Gradients band, the dress goes blotchy in the highlights, and the grain you
-  added reads as noise.</p>
+  <p>You grade a film carefully, export it, and the couple watches it on a platform that
+  <a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">re-encodes everything
+  you sent</a>. Gradients band, the dress goes blotchy in the highlights, and the grain you added
+  reads as noise.</p>
   <p>The practical countermeasures are to clean the footage before delivery so the encoder spends its
   budget on faces rather than noise, and to deliver at a higher resolution than strictly needed,
   because platforms allocate bitrate by resolution. A 1080p film uploaded as 4K frequently survives
   better than the same film uploaded at 1080p.</p>
+  <p>When the file has to get smaller rather than better — a gallery with an upload ceiling, a
+  preview a couple wants to show their parents tonight — Crisp's compress lane targets a fraction of
+  the source's own bitrate and leaves the dimensions and frame rate alone, so the clip looks like
+  itself at a fraction of the size. It writes MP4 and MOV, and nothing else.</p>
+
+  <h2>The couple's parents' tapes</h2>
+  <p>Wedding clients hand you a shoebox more often than you would expect: a VHS of the bride's
+  parents' wedding, a camcorder tape of a childhood birthday, something a relative wants cut into the
+  film. That material
+  <a href="https://crispvideo.app/how-to/restore-old-home-videos-mac/">responds well</a>, because its
+  faults are the recoverable kind — low resolution, analogue noise, interlacing.</p>
+  <p>Almost all of it is interlaced, and sharpening combing rather than removing it makes the artefact
+  far harder to get rid of afterwards. So an upscale in Crisp straightens the combing first, working
+  out what to straighten by reading the frames themselves rather than trusting the file's flag, which
+  stops being true the moment a tape rip has been cut and re-encoded. It also tells video that was
+  shot interlaced apart from film that went through a telecine, because the fixes are not
+  interchangeable and the wrong one throws away real frames: it proves the inverse telecine on a
+  sample before committing to it and falls back to a plain deinterlace otherwise.</p>
+  <p>It lifts single-frame dust and specks off a film transfer too. It will not take out the long
+  vertical scratches, and it says so rather than smearing the picture trying — a scratch sits in the
+  same place frame after frame, which is what makes it unfixable unattended.</p>
 
   <h2>Client media and where it goes</h2>
   <p>This is the part that matters more in this genre than most. Wedding footage is intimate, it
@@ -76,23 +140,40 @@
   processed. Crisp runs everything on your Mac, with no upload, no account and no cloud step, which
   makes that an easy question to answer rather than an awkward one.</p>
   <p>It also means an overnight batch costs electricity rather than per-minute cloud billing, which
-  matters when a wedding is three hundred gigabytes of source.</p>
+  matters when a wedding is three hundred gigabytes of source. Batch runs unattended over videos and
+  photos both, and you watch its progress in Jobs rather than sitting with it.</p>
 
   <h2>Where Crisp is the wrong tool</h2>
   <p>It is not an NLE. If you are cutting a full film with multicam sync, audio sweetening, music
-  licensing and a client review round, that lives in Resolve or Premiere and should. Crisp is a
+  licensing and a client review round, that lives in Resolve or Premiere and should. Crisp's timeline
+  is a single track of ordered clips — it has no multicam sync at all, and it cannot align a separate
+  audio recorder's file to the picture, so dual-system sound belongs upstream of it. Crisp is a
   finishing and repair tool: cleaning up the footage that needs help, fixing the clips that do not
   match, making the vertical cutdowns for socials, and handling the archive job on the couple's
   parents' old tapes.</p>
+  <p>It has no speech recognition, either, so it cannot subtitle the vows or the speeches. It burns in
+  a caption you type — ask it for subtitles and it tells you that plainly instead of routing you into
+  something that does not work. And it has no blur or pixelate tool, so a guest who does not want to
+  be on camera has to be handled with a cut rather than a mask.</p>
   <p>It also cannot rescue a shot that missed focus, recover a blown highlight on a white dress, or
   fix a ceremony where the audio was never recorded. Nothing can, and knowing that before you promise
   a fix is worth more than any feature.</p>
+
+  <h2>What it costs and what it runs on</h2>
+  <p>macOS 12 or later on Apple Silicon, which is a lower floor than most of this category asks for,
+  and a 78 MB download. It is free to try with a small watermark on exports; $129 once removes the
+  watermark and unlocks batch and the Max-quality restore lane. That is a one-time payment, not a
+  subscription, and there is no account to make either way.</p>
 
   <h2>Wedding work, in detail</h2>
   <h3>Can Crisp match two cameras automatically?</h3>
   <p>It normalises the technical side, frame rate, colour range and HDR, so both clips are in the same space before you grade. Matching the creative look of two different sensors is still a grading decision, and it is much easier once the technical differences are gone.</p>
   <h3>Will it fix noisy reception footage?</h3>
   <p>Yes, that is one of the things on-device denoising genuinely does well, and doing it before grading rather than after makes a real difference. It cannot recover detail that was never captured in the very darkest areas.</p>
+  <h3>Can Crisp subtitle the vows and the speeches?</h3>
+  <p>No. Crisp burns in <a href="https://crispvideo.app/how-to/add-captions-to-video-mac/">a caption you type</a>, and it has no speech recognition of any kind — ask it for subtitles and it says so rather than producing something. If the couple wants the speeches subtitled, the transcript has to come from a transcription tool first.</p>
+  <h3>Can it cut a teaser out of a full ceremony recording?</h3>
+  <p>Yes. Auto-Montage takes a target length anywhere from 5 seconds to 5 minutes and three styles: Highlights picks the strongest moments, Condense keeps the recording in order and trims the dead air out of it, and Music cuts to a track you supply. Whatever it chose can be adjusted afterwards on the timeline.</p>
   <h3>Is client footage uploaded anywhere?</h3>
   <p>No. Everything runs on your Mac. There is no upload endpoint, no account and no cloud processing step, which for wedding work tends to be the deciding factor rather than a nice-to-have.</p>
   <h3>Can it replace Premiere or Resolve for a full wedding film?</h3>

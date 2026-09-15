@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bitrate vs resolution","description":"Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a bigger file always better?","acceptedAnswer":{"@type":"Answer","text":"Up to a point, and then it stops mattering. Past the bitrate a scene actually needs, extra bits describe information the encoder has already captured perfectly well, and you're only making the file harder to store and slower to upload. The point of diminishing returns depends entirely on how difficult the footage is."}},{"@type":"Question","name":"Should I export at a higher resolution than I shot?","acceptedAnswer":{"@type":"Answer","text":"For upload, often yes, because platforms allocate bitrate by resolution. For archival or local playback, no. You aren't adding real information, and you're making every future operation on the file slower."}},{"@type":"Question","name":"What is variable bitrate, and should I use it?","acceptedAnswer":{"@type":"Answer","text":"Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate."}},{"@type":"Question","name":"Why does my footage look worse after editing even though I didn't change anything?","acceptedAnswer":{"@type":"Answer","text":"Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a bigger file always better?","acceptedAnswer":{"@type":"Answer","text":"Up to a point, and then it stops mattering. Past the bitrate a scene actually needs, extra bits describe information the encoder has already captured perfectly well, and you're only making the file harder to store and slower to upload. The point of diminishing returns depends entirely on how difficult the footage is."}},{"@type":"Question","name":"Should I export at a higher resolution than I shot?","acceptedAnswer":{"@type":"Answer","text":"For upload, often yes, because platforms allocate bitrate by resolution. For archival or local playback, no. You aren't adding real information, and you're making every future operation on the file slower."}},{"@type":"Question","name":"What is variable bitrate, and should I use it?","acceptedAnswer":{"@type":"Answer","text":"Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate."}},{"@type":"Question","name":"Why does my footage look worse after editing even though I didn't change anything?","acceptedAnswer":{"@type":"Answer","text":"Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits."}},{"@type":"Question","name":"Will upscaling a low-bitrate video to 4K fix it?","acceptedAnswer":{"@type":"Answer","text":"No, and we measured how far off it is. Rebuilding our own 720p demo clip from a bitrate-starved copy (crf 40 plus noise), the best of three routes reached 26.56 dB PSNR and 31.13 VMAF against the surviving original, where the same routes from a clean 360p copy of the same clip reached 40.77 and 98.99. All three routes lost heavily and the ranking between them did not change. Upscaling adds pixels; the information the encoder discarded is not in any of them."}},{"@type":"Question","name":"What bitrate does Crisp export at?","acceptedAnswer":{"@type":"Answer","text":"It is derived from the output frame size — roughly 4.5 Mbps per megapixel plus 3, clamped between 8 and 100 Mbps, which lands near 8 Mbps at 720p, 12 at 1080p, 20 at 1440p and 40 at 4K. Every lane that does not add information is then capped at 1.2x whatever rate your source already had, so a small web clip is not re-encoded far above its own rate. The compress tool works the other way round, targeting roughly 30, 50 or 70 percent of your file's own bitrate depending on the level you pick."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Bitrate vs resolution", "item": "https://crispvideo.app/learn/bitrate-vs-resolution/"}]}</script>
 </head>
@@ -36,6 +36,13 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Bitrate vs resolution</div>
   <h1>Bitrate vs resolution</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Resolution is the container.
+  Bitrate is what is actually in it. Resolution counts the pixels; bitrate is how many bits per
+  second describe them, and a 4K file starved of bitrate looks worse than a well-fed 1080p one on
+  the same screen. Upscaling raises the first number and cannot restore what the second threw away:
+  on our own clip, rebuilt from a bitrate-starved copy, every route we measured scored far worse
+  than it did from a clean copy — and the order they finished in did not change.</p></div>
 
   <p>Two numbers decide how a video looks, and most people only pay attention to one of them.
   Resolution is the pixel count: 1920x1080, 3840x2160. Bitrate is how many bits per second the file
@@ -74,12 +81,115 @@
   them. There, going up in resolution can buy you a bigger budget than you would otherwise qualify for,
   which is a quirk of how the platforms work rather than anything about the format.</p>
 
+  <h2>We measured what a starved source costs, on our own clip</h2>
+  <p>The claim above is easy to assert and awkward to demonstrate, so we measured it. Crisp 1.0.1223,
+  2026-09-15, on <span class="prompt">boxing-before.mp4</span> — our own published demo clip, native
+  1280x720. That native file is the ground truth, which is what makes this a measurement rather than
+  an opinion: we can score a rebuilt frame against the frame it was rebuilt from.</p>
+  <p>We made the same clip small in two different ways, then brought both back to 720p by three
+  routes and scored the results against the surviving original with the bundled ffmpeg's
+  <span class="prompt">psnr</span> filter and libvmaf, Netflix's perceptual metric, which is compiled
+  into that same ffmpeg and needs no network call. The harness scores 60 frames per clip. The two
+  low-resolution inputs:</p>
+  <ul>
+    <li><strong>A clean 640x360</strong>, made by lanczos-downscaling the truth. Fewer pixels, no
+    compression damage. Resolution reduced, information mostly intact.</li>
+    <li><strong>A bitrate-starved copy</strong>, built the way a real file gets damaged:
+    <span class="prompt">crf 40</span> plus added noise. Information destroyed.</li>
+  </ul>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Route back to 720p</th><th>From the clean 360p<br>PSNR dB / VMAF</th><th>From the starved copy<br>PSNR dB / VMAF</th></tr></thead>
+    <tbody>
+      <tr><td>lanczos resize (no model)</td><td>40.77 / 98.99</td><td>26.56 / 31.13</td></tr>
+      <tr><td>2x-ParimgCompact — Crisp's model at 2x with denoise under 0.5</td><td>33.35 / 75.59</td><td>24.85 / 17.91</td></tr>
+      <tr><td>RealESRGAN_General_WDN_x4_v3 — the route denoise 0.5 and above takes</td><td>36.33 / 96.83</td><td>25.10 / 27.43</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Higher is closer to the original on both scales. Two things in that table are the whole point of
+  this page.</p>
+  <p><strong>First, starving the source costs every route enormously.</strong> The plain resize falls
+  14.2 dB and 67.9 VMAF points. The compact model falls 8.5 dB and 57.7 points. The denoised model
+  falls 11.2 dB and 69.4 points. Nothing in the second column is close to the first. The pixels were
+  put back in all six cases; the information was not, because it was not there to put back.</p>
+  <p><strong>Second, the ranking does not flip.</strong> Same order on both metrics in both columns:
+  resize, then the denoised model, then the compact one. Damage narrowed the gaps — the compact
+  route's VMAF deficit against the resize goes from 23.4 points to 13.2 — but it reordered nothing.
+  A starved source does not turn out to be the case where a model finally wins; it is the case where
+  everything does worse.</p>
+  <p>This is the unflattering half of our own measurement and we would rather publish it than the
+  other half. If you came here hoping an upscaler would undo a bad export, the number to take away is
+  26.56 dB — what the <em>best</em> of the three routes managed from a file whose bits had already
+  been thrown away.</p>
+
+  <h2>What these numbers do and do not say</h2>
+  <p>PSNR measures agreement with the original file pixel by pixel. VMAF is the perceptual one of the
+  pair, built to predict what a viewer would report, but it is still scored against the original
+  rather than judging the frame on its own. Neither answers "which one would you rather watch." They
+  answer "which one landed closest to the file that used to exist," which is the question a page
+  about lost information should be asking, and the only one we can answer without putting our own
+  taste in the result.</p>
+  <p>That distinction matters most for the model routes. A generative upscaler does not recover the
+  eyelash the encoder discarded; it produces an eyelash, and a convincing one can sit several
+  decibels away from the real one. Fidelity metrics punish plausible-but-different detail, which is
+  exactly what these models make.</p>
+  <p>Three metrics give three answers, and we will not quote one of them as though it were the
+  verdict. Across a wider grid of nine clip-and-noise cells from the same harness, a plain lanczos
+  resize wins <strong>all nine on VMAF, four of nine on PSNR, and three of nine on SSIM</strong>.
+  Picking a favourite metric there would let anyone write whichever conclusion they arrived with.
+  What survives all three is the thing this page is about: on a clean source a plain resize is
+  closest to the original on every measure, and no route recovers discarded bits on any of them.</p>
+  <p>Two more limits, stated rather than buried. The clean 360p was made by lanczos-downscaling the
+  truth, so a lanczos upscale partially inverts the exact operation that degraded it — structurally
+  favourable to the resize, and not how real low-resolution footage comes into existence. The
+  starved column exists precisely because it is not vulnerable to that, and it is where the resize's
+  scores collapse hardest. And scale and model cannot be separated in Crisp: the model that runs is
+  chosen by the denoise value and the scale factor together, so nothing here should be read as
+  attributing to resolution what the model may have caused. Every row above is the same 2x geometry
+  on the same clip.</p>
+  <p>Finally, an omission we are not going to paper over: <strong>this page publishes no timing
+  figures.</strong> The runs were timed, but the machine they ran on was never recorded, and a
+  seconds-per-clip number without the hardware beside it is not a fact anyone can use. It will go in
+  when it is measured on a named machine.</p>
+
   <h2>What to do with a file that's already starved</h2>
   <p>You can't recover information the encoder discarded. What you can do is stop making it worse and
-  clean up what's visible. Compression artefacts respond reasonably well to targeted denoising, and an
-  AI upscaler that has been trained on compressed footage will reconstruct plausible texture where
-  blocking removed it. Crisp does both on-device, and it's worth doing before any re-encode rather than
-  after, since a second compression pass will otherwise preserve the artefacts as if they were detail.</p>
+  clean up what's visible. An upscaler trained on compressed footage will reconstruct plausible
+  texture where blocking removed it, and in Crisp the denoise value is what decides which model does
+  that work: below 0.5 at 2x the job goes to <span class="prompt">2x-ParimgCompact</span>, and at 0.5
+  and above it goes to <span class="prompt">RealESRGAN_General_WDN_x4_v3</span>, with a
+  temporal-and-spatial filter pre-pass running before the model above 0.5 as well. All of it runs on
+  your Mac. Do it before any re-encode rather than after, since a second compression pass will
+  otherwise preserve the artefacts as if they were detail. The
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">denoise setting page</a> has
+  the full routing table and the measurements behind it.</p>
+  <p>Set your expectations from the second column of that table, though. Cleaning up a starved file
+  makes it more pleasant to look at. It does not make it the file you would have had if you had
+  exported it properly the first time.</p>
+
+  <h2>What Crisp itself does with bitrate</h2>
+  <p>Because this is the thing the page is about, it is worth saying what our own app does with the
+  number rather than leaving it implied.</p>
+  <p><strong>Exports are budgeted from the output dimensions.</strong> Crisp derives the target rate
+  from the frame size on a continuous curve — roughly 4.5 Mbps per megapixel plus 3, clamped between
+  8 and 100 Mbps. That lands near 8 Mbps at 720p, 12 at 1080p, 20 at 1440p and 40 at 4K, which is
+  the same shape as the working ranges in the table above. It replaced a bucketed ladder that put
+  quality cliffs at the 1080p and 1440p boundaries.</p>
+  <p><strong>But the budget is capped to the source.</strong> A curve derived from dimensions alone
+  will happily spend 8 Mbps re-wrapping a 600 kbps web clip, buying detail the source never had and
+  handing you a bigger file for nothing. So every lane that does not add information — trim, crop,
+  rotate, speed, fade, loop, border, stabilize, reframe, grade, caption, split-screen — is capped at
+  1.2x the rate the file already has. This was not a theory: before the cap existed, a 640x360 clip
+  at 599 kbps came back at 1.5x its original size, and longer fixtures at 4 to 7x.</p>
+  <p><strong>And the compress tool targets a fraction of your file's own rate</strong>, not a
+  resolution ideal: roughly 30% of it for the smallest level, 50% for the middle one and 70% for the
+  lightest, with a floor that scales with the frame size rather than a flat number. If it cannot save
+  you at least about a tenth of the file it refuses in plain words — <em>"this clip is already small
+  — there's little left to compress"</em> — instead of handing back a "compressed" file that is
+  bigger than the one you started with. That behaviour is the same idea as this whole page: bits, not
+  pixels, are the thing being spent. There is a walkthrough at
+  <a href="https://crispvideo.app/how-to/compress-video-on-mac/">how to compress a video on a Mac</a>.</p>
 
   <h2>Bitrate questions</h2>
   <h3>Is a bigger file always better?</h3>
@@ -90,11 +200,17 @@
   <p>Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate.</p>
   <h3>Why does my footage look worse after editing even though I didn't change anything?</h3>
   <p>Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits.</p>
+  <h3>Will upscaling a low-bitrate video to 4K fix it?</h3>
+  <p>No, and we measured how far off it is. Rebuilding our own 720p demo clip from a bitrate-starved copy (crf 40 plus noise), the best of three routes reached 26.56 dB PSNR and 31.13 VMAF against the surviving original, where the same routes from a clean 360p copy of the same clip reached 40.77 and 98.99. All three routes lost heavily and the ranking between them did not change. Upscaling adds pixels; the information the encoder discarded is not in any of them.</p>
+  <h3>What bitrate does Crisp export at?</h3>
+  <p>It is derived from the output frame size — roughly 4.5 Mbps per megapixel plus 3, clamped between 8 and 100 Mbps, which lands near 8 Mbps at 720p, 12 at 1080p, 20 at 1440p and 40 at 4K. Every lane that does not add information is then capped at 1.2x whatever rate your source already had, so a small web clip is not re-encoded far above its own rate. The compress tool works the other way round, targeting roughly 30, 50 or 70 percent of your file's own bitrate depending on the level you pick.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/film-grain-vs-digital-noise/">Film grain and digital noise are not the same thing</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-a-keyframe/">What is a keyframe?</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-a-video-codec/">What is a video codec?</a></li>
+    <li><a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">When AI upscaling beats a plain resize</a></li>
+    <li><a href="https://crispvideo.app/index/">The Video Upscaler Index</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
