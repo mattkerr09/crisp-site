@@ -1457,7 +1457,7 @@ PAGES = [
   <h2>Then the restoration, in order</h2>
   <p>Deinterlace, denoise, upscale, colour. That sequence matters more than any individual setting.
   Nearly all tape and broadcast material is interlaced, and an upscaler reads the comb pattern as fine
-  detail and sharpens it into something much harder to remove. Denoise before upscaling for the same
+  detail and sharpens it into something much harder to remove. Let the upscale handle the noise for the same
   reason: magnified noise is a worse problem than the original.</p>
   <p>Be conservative with denoising on old film. Grain is part of how film looks, and stripping it out
   gives faces the waxy appearance that makes an over-restored archive obvious. You can always run a
