@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1222",
-  "notes": "Asking to trim to a fraction now works. \"Trim it to half\", \"make it half as long\", \"trim it to a third\" and seven more used to reach nothing, even though Crisp already understood \"keep the first half\". And \"cut it in half\" now asks which you meant \u2014 half kept, or two pieces \u2014 instead of guessing.",
-  "pub_date": "2026-09-15T03:27:21Z",
+  "version": "1.0.1223",
+  "notes": "Both halves of a two-adjective request now run. \"Make it bright and sharp\" used to brighten and quietly drop the sharpen; \"make the audio loud and clear\" kept only one; and \"make it old and grainy\" started an upscale that removes grain instead of adding it.",
+  "pub_date": "2026-09-15T04:10:58Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZlYU1RWmd5OExZUUpoVW5SRE9nVGp6bGtFRjIzQ24ydGVBSFowMzV1ZHdpUmFFWG95ajE1YitUSityd3cvVU1JcXBlU0M4SDlKNzVYcjBibDF5dEE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQyNjg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6by9nNk44TmdkeFZtT0UyVjE5L3d5cXl6bmFSUzc5RHVuQ2FyTS95WkxIdjgxMVBjSnJBNklYNHo0ckcyT1BsNUtWTVp4S09sU0l0bVFLM0h5VnJDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oMlBia3YrWU5vQlhWaFNvZzhCOHhlcEZ1dDZHN0IwU1hsVEQ1bXZQSkJwNkxjS3Vvb2JGS3lUY0hhYTZ2N3ZKQjhkRkZqb3o0WWdIODdIajJZU1F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQ1MzI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyNTZuRnM2OW8vVHgrYW85eENJekNWOHZVeHBQTks2amJSWFdSUmM5aGNjS0YrdW9tS1o1VlR6blFjUGxyZjk5bzl0bVBrMkVJRGFpUExMZFVRVVNCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
