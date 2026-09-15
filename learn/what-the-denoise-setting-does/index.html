@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the denoise setting does in Crisp: it swaps the model — Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/learn/what-the-denoise-setting-does/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What the denoise setting does in Crisp: it swaps the model">
+<meta property="og:description" content="Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.">
+<meta property="og:url" content="https://crispvideo.app/learn/what-the-denoise-setting-does/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What the denoise setting does in Crisp: it swaps the model">
+<meta name="twitter:description" content="Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What the denoise setting does in Crisp: it swaps the model","description":"Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-09-15","dateModified":"2026-09-15"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I denoise before or after upscaling in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Neither, because Crisp does not offer that choice. The denoise value selects which upscaling model runs, so there is no separate denoise pass whose position in the chain you could move. The decision you actually have is which model to route to: below 0.5 at 2x you get 2x-ParimgCompact, at 0.5 and above you get RealESRGAN_General_WDN_x4_v3."}},{"@type":"Question","name":"What denoise value should I set?","acceptedAnswer":{"@type":"Answer","text":"If the source is noisy, grainy or otherwise damaged, set 0.5 or above so the job routes to RealESRGAN_General_WDN_x4_v3. In our measurement that model scored higher than the 2x-ParimgCompact default in all nine clip-and-noise cells, on both PSNR and VMAF, by 0.6 to 4.1 dB and 12.6 to 29.5 VMAF points. If the source is already clean, a plain resize landed closer to the original than any model route we measured."}},{"@type":"Question","name":"Is the AI upscale worth running on a clean source?","acceptedAnswer":{"@type":"Answer","text":"On fidelity, no. On our clean cells a lanczos resize led every model route, by 14.0 dB on the Apollo clip. As noise rises that reverses on PSNR: at heavy noise RealESRGAN_General_WDN_x4_v3 led lanczos by 6.1 dB on Apollo, 3.4 dB on boxing and 7.1 dB on the colour demo. VMAF still favoured lanczos in every cell, so these numbers measure closeness to the original and not which version you would rather watch."}}]}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "The denoise setting", "item": "https://crispvideo.app/learn/what-the-denoise-setting-does/"}]}</script>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; The denoise setting</div>
+  <h1>What the denoise setting does: it swaps the model</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-09-15 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">In Crisp the denoise value does not run a
+  filter over your frames. It picks which upscaling model handles the job. Below 0.5 at 2× you get
+  <strong>2x-ParimgCompact</strong>; at 0.5 and above you get
+  <strong>RealESRGAN_General_WDN_x4_v3</strong>; below 0.5 at any other scale you get
+  <strong>RealESRGAN_General_x4_v3</strong>. Because there is no separate denoise pass, there is no
+  "denoise before or after upscaling" decision to make here. That question belongs to other tools.</p></div>
+
+  <h2>What the dial actually routes to</h2>
+  <p>Inside the app, <span class="prompt">presets.resolve_model_for_scale</span> reads the denoise
+  value and the requested scale factor, and returns a model. Three rules cover every case:</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Denoise value</th><th>Scale</th><th>Model that runs</th></tr></thead>
+    <tbody>
+      <tr><td>below 0.5</td><td>2×</td><td><strong>2x-ParimgCompact</strong></td></tr>
+      <tr><td>0.5 or above</td><td>any</td><td><strong>RealESRGAN_General_WDN_x4_v3</strong></td></tr>
+      <tr><td>below 0.5</td><td>any other</td><td><strong>RealESRGAN_General_x4_v3</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The <span class="prompt">enhance</span> preset carries denoise 0.4. So
+  <span class="prompt">crisp upscale --preset enhance --scale 2</span>, the most obvious command in
+  the app and the one most people will run first, quietly selects <strong>2x-ParimgCompact</strong>.
+  That is a compact super-resolution network. It is not Real-ESRGAN, and naming it that would be
+  false. Only the other two routes are Real-ESRGAN models.</p>
+  <p>This matters more than a naming quibble, because the difference between those routes is worth
+  several decibels, and the default sits on the losing side of it. The rest of this page is the
+  measurement that establishes that.</p>
+
+  <h2>The question Crisp cannot be asked</h2>
+  <p>Search for advice on denoising and upscaling and you will find a long argument about order:
+  clean the noise first so the model does not sharpen grain into texture, or upscale first so the
+  denoiser has more pixels to work with. It is a real argument about tools that have a separable
+  denoise filter.</p>
+  <p>Crisp does not. There is no filter pass to place before or after anything. Turning the dial
+  changes which network reconstructs the frame, and each of those networks handles noise internally
+  as part of reconstructing. If you came here looking for an ordering control, the honest answer is
+  that it does not exist and is not missing. The decision available to you is which model to route
+  to, which is a different decision with a different right answer.</p>
+
+  <h2>How this was measured</h2>
+  <p>Crisp 1.0.1223, measured 2026-09-15. Three clips whose native resolution we still hold: an
+  archival boxing clip that is nearly monochrome, a colour demo clip, and an Apollo archival clip.
+  Each was halved so that a 2× model lands back on exactly native resolution with no extra resample
+  in the chain. The Apollo clip is 1068×772 native, so it was run at 534×386 for that reason.</p>
+  <p>Each clip was scored at three noise levels — clean, light and heavy — against the clean
+  original. The scorers are the bundled ffmpeg's <span class="prompt">psnr</span> and
+  <span class="prompt">ssim</span> filters plus libvmaf, Netflix's perceptual metric, which is
+  compiled into the same ffmpeg and runs on the machine with no network call. The harness scores 60
+  frames per clip.</p>
+  <p>Vacuity control on all three clips: the truth scored against itself returned VMAF 99.62, 98.32
+  and 98.03. All three passed, which means the instrument can show near-perfection and a low score is
+  therefore a real difference rather than a broken comparison.</p>
+  <p>One instrument fault is worth recording because it nearly became a published number. The Apollo
+  clip first returned 0.00 in all nine of its cells while its vacuity control passed at 98.03. The
+  cause was a size mismatch: the round trip produced 1280×720 against a 1068×772 truth, ffmpeg
+  errored, and the harness printed that failure as a score of zero. A zero reads as a terrible
+  result. It was a failed measurement. The harness now prints the word rather than a number, and the
+  clip was re-run at the geometry above.</p>
+
+  <h2>The method bias, stated rather than buried</h2>
+  <p>The low-resolution input was made by lanczos-downscaling the truth. A lanczos upscale therefore
+  partially inverts the exact operation that degraded the file, which is structurally favourable to
+  it and is not how real low-resolution footage comes into existence. Anyone reading a
+  lanczos-versus-model comparison should know that before reading the numbers.</p>
+  <p>The noise levels are the control for it. Noise is not something the downscale put there and not
+  something a lanczos upscale can undo, so as noise rises the advantage the method hands lanczos
+  falls away. That is also, as it turns out, where the result changes.</p>
+  <p>A separate control built the degraded case a real clip actually is, crf 40 plus noise, on the
+  photographic source. The ranking did not flip there: lanczos 26.56 dB and VMAF 31.13,
+  2x-ParimgCompact 24.85 and 17.91, RealESRGAN_General_WDN_x4_v3 25.10 and 27.43. Degradation
+  narrowed the gaps without reversing them on that clip.</p>
+
+  <h2>The numbers</h2>
+  <p>PSNR in decibels, then VMAF, against the clean truth. Higher is closer to the original on both.</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Clip</th><th>Noise</th><th>2x-ParimgCompact (default)</th><th>RealESRGAN_General_WDN_x4_v3</th><th>lanczos</th></tr></thead>
+    <tbody>
+      <tr><td>boxing (near-mono archival)</td><td>clean</td><td>33.35 / 75.59</td><td>36.33 / 96.83</td><td>40.77 / 98.99</td></tr>
+      <tr><td>boxing</td><td>light</td><td>33.15 / 70.30</td><td>36.38 / 95.92</td><td>37.90 / 98.51</td></tr>
+      <tr><td>boxing</td><td>heavy</td><td>30.18 / 55.58</td><td>34.24 / 84.83</td><td>30.84 / 91.82</td></tr>
+      <tr><td>demo (colour)</td><td>clean</td><td>39.37 / 66.43</td><td>42.35 / 79.05</td><td>48.01 / 90.86</td></tr>
+      <tr><td>demo</td><td>light</td><td>40.10 / 57.63</td><td>43.60 / 77.90</td><td>40.16 / 86.12</td></tr>
+      <tr><td>demo</td><td>heavy</td><td>34.91 / 33.97</td><td>38.23 / 63.45</td><td>31.17 / 71.96</td></tr>
+      <tr><td>apollo (archival)</td><td>clean</td><td>32.07 / 52.03</td><td>32.69 / 65.54</td><td>46.66 / 90.50</td></tr>
+      <tr><td>apollo</td><td>light</td><td>39.68 / 66.53</td><td>42.11 / 83.32</td><td>40.00 / 88.53</td></tr>
+      <tr><td>apollo</td><td>heavy</td><td>35.34 / 53.90</td><td>37.24 / 74.27</td><td>31.12 / 77.93</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Finding one: the default is the weaker of the two models</h2>
+  <p><strong>RealESRGAN_General_WDN_x4_v3 beats 2x-ParimgCompact in 9 of 9 cells, on both
+  metrics.</strong> The margin runs from 0.6 dB to 4.1 dB on PSNR and from 12.6 to 29.5 points on
+  VMAF. Every clip, every noise level, both scorers, one direction.</p>
+  <p>Since <span class="prompt">enhance</span> carries denoise 0.4, the default path at 2× is the
+  route that lost every cell. That is an unflattering thing to publish about our own default and it
+  is what the measurement says.</p>
+  <p>It is not yet a verdict on the default, and this page will not pretend otherwise. Fidelity and
+  apparent sharpness are different properties. A compact network tuned to look crisp on a screen can
+  produce a frame a viewer prefers while scoring below a softer one, and that is a plausible reason
+  for the choice. Settling it needs perceptual crops shown side by side, which have not been done.
+  The question is filed, not answered.</p>
+
+  <h2>Finding two: the crossover, which is the useful half</h2>
+  <p>On clean sources a plain lanczos resize wins easily. On the Apollo clip it leads the best model
+  route by 14.0 dB. If your footage is already clean and you only want more pixels, no model in this
+  test got you closer to the original than a resize did.</p>
+  <p>As real noise arrives that reverses on PSNR. At light noise the model route is already ahead on
+  two of the three clips: Apollo 42.11 against lanczos 40.00, and the colour demo 43.60 against
+  40.16, while boxing still favours lanczos at 37.90 against 36.38. At heavy noise the model leads
+  all three:</p>
+  <ul>
+    <li>apollo, heavy noise: RealESRGAN_General_WDN_x4_v3 ahead by <strong>6.1 dB</strong></li>
+    <li>boxing, heavy noise: ahead by <strong>3.4 dB</strong></li>
+    <li>demo, heavy noise: ahead by <strong>7.1 dB</strong></li>
+  </ul>
+  <p>The model earns its cost exactly where the source is damaged, which is what it is for. On a
+  clean file it is an expensive way to get further from the original.</p>
+  <p>One qualification that cuts against us, and it is not a small one: <strong>VMAF still favours
+  lanczos in every one of the nine cells.</strong> The crossover is a PSNR crossover. The perceptual
+  metric never crosses. The honest summary is that on a clean source a resize is closer to the truth,
+  on a damaged one the model is closer by up to 7.1 dB, and the perceptual scorer prefers the resize
+  throughout.</p>
+
+  <h2>What these metrics do and do not say</h2>
+  <p>PSNR and SSIM measure agreement with the original file, pixel by pixel and structure by
+  structure. They punish detail that is plausible but different from the original, and
+  plausible-but-different detail is precisely what a generative upscaler produces. It does not recover
+  the eyelash that was thrown away at encode time. It produces an eyelash, and a convincing one can
+  sit several decibels away from the real one. VMAF is the perceptual metric of the three, built to
+  predict what a viewer would report, but it is also scored against the original rather than judging
+  the frame on its own.</p>
+  <p>So these numbers answer one question: which route lands closest to the surviving original. They
+  do not answer which version you would rather watch, and nothing on this page should be read as a
+  claim that one route looks better than another. That is a judgement to make with your own footage
+  in front of you, at full size, in motion.</p>
+
+  <h2>What to do with this</h2>
+  <p>If your source is clean and you only need more resolution, a plain high-quality resize is the
+  closest thing to the original in every cell measured, and a model run buys you nothing on fidelity.</p>
+  <p>If your source is noisy, grainy, or archival, set denoise to 0.5 or above so the job routes to
+  RealESRGAN_General_WDN_x4_v3. That is the route that led on PSNR at heavy noise on all three clips,
+  and it outscored the compact default everywhere including the clean cells.</p>
+  <p>And do not go hunting for an ordering control. Crisp runs on your Mac, one model per job, and
+  the dial that looks like a filter strength is the model selector.</p>
+
+  <h2>The denoise dial in detail</h2>
+  <h3>Should I denoise before or after upscaling in Crisp?</h3>
+  <p>Neither, because Crisp does not offer that choice. The denoise value selects which upscaling
+  model runs, so there is no separate denoise pass whose position in the chain you could move. The
+  decision you actually have is which model to route to: below 0.5 at 2× you get 2x-ParimgCompact, at
+  0.5 and above you get RealESRGAN_General_WDN_x4_v3.</p>
+  <h3>What denoise value should I set?</h3>
+  <p>If the source is noisy, grainy or otherwise damaged, set 0.5 or above so the job routes to
+  RealESRGAN_General_WDN_x4_v3. In our measurement that model scored higher than the
+  2x-ParimgCompact default in all nine clip-and-noise cells, on both PSNR and VMAF, by 0.6 to 4.1 dB
+  and 12.6 to 29.5 VMAF points. If the source is already clean, a plain resize landed closer to the
+  original than any model route we measured.</p>
+  <h3>Is the AI upscale worth running on a clean source?</h3>
+  <p>On fidelity, no. On our clean cells a lanczos resize led every model route, by 14.0 dB on the
+  Apollo clip. As noise rises that reverses on PSNR: at heavy noise RealESRGAN_General_WDN_x4_v3 led
+  lanczos by 6.1 dB on Apollo, 3.4 dB on boxing and 7.1 dB on the colour demo. VMAF still favoured
+  lanczos in every cell, so these numbers measure closeness to the original and not which version you
+  would rather watch.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="https://crispvideo.app/learn/film-grain-vs-digital-noise/">Film grain vs digital noise</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">What is AI video upscaling?</a></li>
+    <li><a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">Why AI upscaling can't fix focus</a></li>
+  </ul>
+
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs on your Mac.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+</div></footer>
+</body>
+</html>
