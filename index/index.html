@@ -125,7 +125,7 @@ scripts/eval.py compare crisp_out.mp4 other_out.mp4 --ref SOURCE.mp4</code></pre
   own home footage cannot. Synthetic degradation is not the same as real degradation, and these
   numbers should be read as an A/B instrument rather than as an absolute score. And every metric
   here is content-dependent: comparing <code>sharpness</code> across two different sources tells
-  you about the sources, not the upscalers. Only same-source comparisons mean anything.</p>
+  you about the sources, not the upscalers. Only same-source comparisons mean anything — and that is not only about content: <code>sharpness</code> is <strong>size-dependent</strong>, because variance-of-Laplacian scores a smaller image as sharper whatever its quality. Same-source rows here share an output resolution, which is what makes them comparable. We know that hazard first-hand: a Laplacian-based “fine detail” figure was pulled from the app’s own UI after it scored a lower-resolution render 16.6% <em>better</em> once the two were compared at equal size.</p>
 
   <h2>What this is for</h2>
   <p>Two things. It keeps us honest — a quality change that improves the picture in someone's
