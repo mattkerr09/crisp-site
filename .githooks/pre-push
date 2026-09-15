@@ -87,3 +87,51 @@ python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py" || exit 1
 # parser keeps the LAST, so the stale date won and crawlers read it while the correct value
 # sat in the same object being ignored. Valid JSON, valid-looking file, wrong structured data.
 python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py" || exit 1
+
+# ...and every claim the site makes about the ENGINE must still be true of the engine.
+#
+# THIS IS THE GATE TODAY'S NEAR-MISS ASKED FOR. On 2026-09-15 four how-to pages were
+# rewritten and pushed, and the check that reads site copy against engine constants lives in
+# the CRISP suite — which a site push never ran. It was only seen hours later, in a full
+# 22-minute suite run done for an unrelated reason. That time the page turned out to be right
+# and the test wrong, but nothing about the sequence depended on which way it went: a genuinely
+# false price, speed range, volume range or capability claim would have shipped exactly the
+# same way, and the site's own gates would all have passed it.
+#
+# The site is its own git repo, so "the suite will catch it" is false here — there is no push
+# path from this repo into that suite. 68 tests, ~3 s, so there is no cost argument either.
+#
+# Selected by what they read rather than by name (every one of them resolves ROOT/"site"), so a
+# new site-vs-engine test is covered the day it is written and cannot be forgotten by this list.
+#
+# Blocking when it cannot look, not skipping: this file already argues that case for the
+# version gate ("a gate that cannot see its subject must never report success"), and a silent
+# skip here is precisely how the checks got bypassed in the first place. --no-verify if you
+# genuinely mean it.
+CRISP_ROOT="$(cd "$(dirname "$0")/../.." 2>/dev/null && pwd)"
+if [ ! -d "$CRISP_ROOT/tests" ]; then
+  echo "pre-push BLOCKED: no crisp tests/ above this repo ($CRISP_ROOT)."
+  echo "  The site-vs-engine claim checks live there and this gate will not pass blind."
+  exit 1
+fi
+if [ ! -x /opt/homebrew/bin/pytest ]; then
+  echo "pre-push BLOCKED: /opt/homebrew/bin/pytest is missing, so the site-vs-engine"
+  echo "  claim checks cannot run. Install it or push with --no-verify deliberately."
+  exit 1
+fi
+SITE_TESTS=$(grep -rl 'SITE = ROOT / "site"' "$CRISP_ROOT/tests" 2>/dev/null)
+if [ -z "$SITE_TESTS" ]; then
+  echo "pre-push BLOCKED: found no site-vs-engine tests to run."
+  echo "  They are selected by the literal 'SITE = ROOT / \"site\"'. If that line was"
+  echo "  reworded, fix this selector — do not leave the gate matching nothing."
+  exit 1
+fi
+# shellcheck disable=SC2086
+/opt/homebrew/bin/pytest -q $SITE_TESTS > /tmp/crisp_site_gate.$$ 2>&1 || {
+  echo "pre-push BLOCKED: the site contradicts the engine."
+  tail -25 /tmp/crisp_site_gate.$$
+  rm -f /tmp/crisp_site_gate.$$
+  exit 1
+}
+echo "pre-push: site-vs-engine claims ok ($(echo "$SITE_TESTS" | wc -l | tr -d ' ') files)"
+rm -f /tmp/crisp_site_gate.$$
