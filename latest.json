@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1220",
-  "notes": "Asking for a look no longer does the opposite. \"Make it look grainy\" was starting an upscale \u2014 which removes grain \u2014 instead of adding it, and \"make it look warm\" did nothing at all. Both now match their shorter phrasings exactly.",
-  "pub_date": "2026-09-15T02:07:07Z",
+  "version": "1.0.1221",
+  "notes": "Asking to split a clip now says where splitting lives. \"Split the clip\", \"split it in two\" and nine more used to get \"I didn't catch an edit\" and a suggestion to TRIM \u2014 which throws the second half away. Crisp splits on the timeline: playhead, then S.",
+  "pub_date": "2026-09-15T02:45:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh5eG5ldytqSmhyVkd5YnpTNCtOSnJJSmFOT0ZidmZkZ2lvdGNKTXp4WHJMN29CUmhTdTdKaTRNM0M1cmp4NkF2alhpeW42MzdFekFPd05uSFFISVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDM3ODk3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzZUx0cFNNYkxBSnhjMkFmSFBCWURpTkhVTVlMMzhmWm9YUnJ3Qy9veTJkSmRva00yYnc0M1ZVVVRwQWlacEVPdnFGMDJWbVU5SXRNTzV2NXM2eU5CQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVyd1NWZ3pMME53dXpJWlBmNTM4NmthRmR6cWNydTZvYzNkOTlPYlFZb1U3SS9qN2g3OCs1NXhLUHZlSFUwTEVJMkZndkdZSHZBRnc2QWVOTVpacmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQwMjA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqa1Zvb21qa25sLzJXbVRKdmhNS1lBTkJPL09xbjhRRisyZ2JnVkw1YTBua3J5dEpCb1lpeTE4aEZBZjJ1bDhtTmpHdWVuOFBjYkhocFhGK29vR0FBQT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
