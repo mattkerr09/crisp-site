@@ -102,7 +102,7 @@
         (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
     '  </span>',
     '  <span class="dot"></span>',
-    '  <span class="left" data-left><button class="ask" type="button">How many left?</button></span>',
+    '  <span class="left" data-left></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
@@ -121,56 +121,26 @@
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
-  /* THE COUNT, AND WHY IT IS BEHIND A CLICK.
+  /* ⛔ NO SEAT COUNT ON THIS BAR — HELD 2026-09-15, PENDING MATTHEW.
    *
-   * The previous version of this file showed NO count at all, with a reason worth
-   * keeping: this product is sold on "it never phones home", and opening a
-   * connection on load to render a scarcity counter is exactly what that claim is
-   * about. "So the counter looks urgent" does not survive being read aloud to a
-   * customer. That reasoning is right about LOAD and it is preserved exactly —
-   * nothing here is contacted for a visitor who does not click.
+   * A click-to-fetch counter shipped here and was removed the same day, deliberately, and this
+   * comment is the reason so nobody re-adds it as an obvious missing feature.
    *
-   * ⚠️ BUT REMOVING THE FETCH LEFT A DEAD EXEMPTION, AND THE GATE SAYS SO ITSELF.
-   * `_tools/gate_thirdparty.py` carries a CONDITIONAL entry for this host scoped to
-   * this file, keyed to the marker `countBtn.addEventListener('click'`, and prints
-   * on every run that the founding counter fires "on a click asking how many places
-   * are left". With the fetch gone that sentence was FALSE — the gate was asserting
-   * behaviour to an auditor that no longer existed. That gate's own docstring calls
-   * this out: "A dead exemption is worse than none — it reads as a considered
-   * decision while silently exempting a case that never occurs, and the day the host
-   * DOES appear for real it is pre-approved."
+   * outlier.host promises, in its own words and live right now, "No seat cap". This bar was
+   * offering "22 of 25 left", which asserts a cap of 25. Two sibling products cannot tell a
+   * customer opposite things about the same founding offer, and the one that promises no cap is
+   * the one already published.
    *
-   * So the sanctioned design is restored rather than the exemption deleted: the
-   * visitor asks, and the asking is the only thing that sends anything.
+   * ⚠️ AND THE NUMBER WAS NOT CRISP'S. Measured: the worker returns an IDENTICAL payload for
+   * every product — ?product=crisp, ?product=docket and ?product=outlier all answer
+   * {"left":22,"of":25,"claimed":3}. It is ONE SHARED POOL across all three products, so
+   * printing it on Crisp implies a Crisp-specific cap that does not exist. The brief that asked
+   * for this said "24 of 25" from Crisp's single Dodo sale; the pool had counted three sales
+   * across three products. That is the whole question now with Matthew: shared pool or
+   * per-product, seat cap or price-only.
    *
-   * ⛔ AND THE NUMBER IS NEVER GUESSED. It is whatever the worker that reads Dodo
-   * says. If the request fails, or the payload is not the shape this was written
-   * against, the bar says so rather than falling back to a flattering number — a
-   * scarcity count invented on an error is the one failure mode worth refusing
-   * outright.
-   *
-   * ⚠️ THE FIELD NAMES ARE left/of, NOT remaining/tier_size. Checked against the
-   * live response on 2026-09-15, not from memory:
-   * {"left":22,"of":25,"code":"FOUNDING1","claimed":3,"total":50,"soldOut":false}
+   * Until he answers, the bar carries the offer and no count — which is true under either answer.
    */
-  var countBtn = root.querySelector(".ask");
-  countBtn.addEventListener('click', function () {
-    var slot = root.querySelector("[data-left]");
-    countBtn.disabled = true;
-    countBtn.textContent = "Checking\u2026";
-    fetch("https://kerr-lead-agent.kerrco.workers.dev/founding", { method: "GET" })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (!d || typeof d.left !== "number") throw new Error("shape");
-        if (d.soldOut || d.left <= 0) { slot.textContent = "claimed"; return; }
-        slot.textContent = d.left + " of " + (d.of || 25) + " left";
-      })
-      .catch(function () {
-        /* No number here, on purpose. */
-        slot.textContent = "couldn\u2019t check";
-      });
-  });
-
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid
      HTML — the browser silently discards it and NOTHING THROWS. The widget
