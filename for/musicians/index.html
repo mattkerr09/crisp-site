@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Crisp for musicians","description":"Dark venue footage shot on phones, three angles of the same set that do not match, and a release deadline. The realistic version of what can be fixed.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp fix audio recorded on a phone at a gig?","acceptedAnswer":{"@type":"Answer","text":"It can level and clean it up, and it cannot make it sound like a proper recording. A phone microphone in front of a PA is clipping and compressing before the file even exists. Use a board feed or a recorder and keep the phone audio for sync."}},{"@type":"Question","name":"Can it separate the music from the crowd noise?","acceptedAnswer":{"@type":"Answer","text":"No, and it says so rather than trying. Stem separation is a different class of tool. Crisp handles overall level, background noise reduction and wind, not pulling one source out of a mix."}},{"@type":"Question","name":"Why does my multi-angle cut drift out of sync?","acceptedAnswer":{"@type":"Answer","text":"Almost always variable frame rate on the phone footage. The clip declares one rate and was recorded at a changing one, so video and audio drift apart as it plays. Converting to a constant frame rate before editing fixes it."}},{"@type":"Question","name":"Is old tape footage of a show worth restoring?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. The faults on old live footage are the recoverable kind, low resolution, analogue noise and interlacing, and the results are often dramatic. Deinterlace before upscaling or the upscaler will sharpen the comb artefacts."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp fix audio recorded on a phone at a gig?","acceptedAnswer":{"@type":"Answer","text":"It can level and clean it up, and it cannot make it sound like a proper recording. A phone microphone in front of a PA is clipping and compressing before the file even exists. Use a board feed or a recorder and keep the phone audio for sync."}},{"@type":"Question","name":"Can it separate the music from the crowd noise?","acceptedAnswer":{"@type":"Answer","text":"No, and it says so rather than trying. Stem separation is a different class of tool. Crisp handles overall level, background noise reduction and wind, not pulling one source out of a mix."}},{"@type":"Question","name":"Can Crisp cut my video to my own mix?","acceptedAnswer":{"@type":"Answer","text":"Yes. Auto-Montage has a Music mode: hand it a track and it finds the beats in that track, cuts the footage into beat-length chunks, keeps the most active ones and lays your file over the result in place of the original audio. It replaces the whole soundtrack rather than mixing under it, and the track starts at zero, so it is a montage tool rather than a way to line a mix up with a performance already on camera."}},{"@type":"Question","name":"Can Crisp sync my camera footage to a separate audio recorder?","acceptedAnswer":{"@type":"Answer","text":"No. You can drop a finished audio file over a montage or a timeline render, which replaces the source audio, but it always lands at the start and there is no offset or nudge control to slide it into alignment. Syncing a board feed or a field recorder to picture belongs in an NLE or a DAW."}},{"@type":"Question","name":"Why does my multi-angle cut drift out of sync?","acceptedAnswer":{"@type":"Answer","text":"Almost always variable frame rate on the phone footage. The clip declares one rate and was recorded at a changing one, so video and audio drift apart as it plays. Converting to a constant frame rate before editing fixes it, and Crisp's own timeline and montage passes force every segment to a constant rate taken from the source for exactly this reason."}},{"@type":"Question","name":"Is old tape footage of a show worth restoring?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. The faults on old live footage are the recoverable kind, low resolution, analogue noise and interlacing, and the results are often dramatic. Deinterlace before upscaling or the upscaler will sharpen the comb artefacts."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Musicians", "item": "https://crispvideo.app/for/musicians/"}]}</script>
 </head>
@@ -37,6 +37,12 @@
   <h1>Crisp for musicians</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp cleans up and cuts music
+  footage on your own Mac: it denoises dark venue video before brightening it, upscales old show
+  tapes, cuts an auto-montage to the beat of a track you supply, reframes a clip to 9:16 for
+  socials, and burns in captions you type. It has no multicam sync and no speech recognition, so a
+  synced multi-angle cut and lyric subtitles both belong elsewhere.</p></div>
+
   <p>Almost all music footage arrives with the same two problems: it was shot in a dark room, and it
   came from several phones held by people who were not thinking about your edit.</p>
   <p>Both are more fixable than they look, within limits worth knowing in advance.</p>
@@ -48,45 +54,126 @@
   bakes amplified noise into the picture before anything has a chance to remove it. Stage lighting also
   tends to produce heavily saturated colour that clips in one channel, most often red, and that part
   is genuinely unrecoverable rather than a grading challenge.</p>
+  <p>The Low-light cleanup preset is that order as a single choice rather than a sequence to
+  remember. It sets the
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">denoise dial</a> to 0.85,
+  which does two things at once: it selects the denoised model rather than the detail model, and
+  because it sits above 0.5 it also runs a temporal and spatial
+  <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">denoise pass before</a> the
+  upscale. Below 0.5 the dial only swaps the model and there is no separate pass, so ordering is not
+  a question you can ask at that end of the range — above it, Crisp denoises first and you cannot
+  move it. The lift is a separate grade you run afterwards — the <em>bright</em> look is the one that
+  raises exposure and opens the shadows without pulling the contrast back down on top of it.</p>
 
   <h2>Several phones, one show</h2>
   <p>Audience footage is a gift and a nuisance. Different phones, different colour rendering,
-  different frame rates, and often variable frame rate, which is why a multi-angle cut can drift out
-  of sync with the audio partway through even when it started aligned.</p>
+  different frame rates, and often
+  <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">variable frame rate</a>, which
+  is why a multi-angle cut can drift out of sync with the audio partway through even when it started
+  aligned.</p>
   <p>Normalise everything to a constant frame rate and the same colour range before you cut. The sync
-  problem largely disappears, and the grade you apply to one angle stops looking wrong on the next.</p>
+  problem largely disappears, and the grade you apply to one angle stops looking wrong on the next.
+  Crisp's own timeline and montage passes do this to every segment they assemble — each one is forced
+  to a constant rate taken from the source, precisely because a variable-rate phone clip otherwise
+  drifts across the cuts.</p>
+  <p>What Crisp will not do is sync the angles for you. The timeline is a single track of ordered
+  clips with in and out points, up to 64 of them, so you can lay three phones' worth of footage end to
+  end and trim each one, but there is no multicam mode, no waveform alignment and no angle switcher.
+  A genuine multi-camera live cut is an NLE job and always will be here.</p>
   <p>Use the board mix or a dedicated recorder for the audio and treat the phone audio as a sync
   reference only. No amount of processing turns a phone microphone in front of a PA into a usable
-  music recording, and this is the single most common way a live video gets abandoned.</p>
+  music recording, and this is the single most common way a live video gets abandoned. Crisp can put a
+  finished audio file over a montage or a timeline render, but it replaces the soundtrack outright and
+  lands at zero — there is no offset, delay or nudge control anywhere in it, so lining a recorder up
+  with picture is not something it can do.</p>
+
+  <h2>Cutting a reel to the track</h2>
+  <p>Auto-Montage has three modes, and Music is the one built for this. Hand it a song and it reads
+  the beats out of that file, tiles the footage into beat-length chunks so the cuts land on them,
+  keeps the most active chunks up to the length you asked for, and plays them in order.</p>
+  <p>Two details are worth knowing because they decide whether it reads as a beat-cut edit. The beat
+  detection listens to the 30–150 Hz band rather than the whole mix, which is where a kick lives: on a
+  128-beat test track, the band-limited detector found exactly 128 beats and sat 3.7 ms out, where
+  measuring the full mix found 174 and sat 130 ms out, because a melody note starting mid-beat raises
+  a broadband envelope exactly like a kick does. And Music mode is allowed up to 768 segments, against
+  64 for the other modes, because the number of cuts a beat-cut reel needs scales with the tempo and
+  not with taste — a three-minute track at 128 BPM asks for around 384 of them. Cut positions are
+  rounded against the running total rather than segment by segment, so the error stays inside half a
+  frame instead of compounding down the reel.</p>
+  <p>The honest scope: Music mode picks on motion, minus title cards and black, so it finds the
+  moments where something visibly happens rather than the bar you care about musically. It hard-cuts
+  rather than dissolving. And it replaces the source audio with your track entirely, looping it if the
+  reel runs longer and ending when the pictures do. That makes it a
+  <a href="https://crispvideo.app/how-to/make-a-highlight-reel-mac/">first pass</a>, not a finished
+  edit — which is why anything it chose can be dragged, trimmed and reordered on the timeline
+  afterwards, with per-clip speed, volume and looks applied on top.</p>
 
   <h2>Short-form is the actual distribution</h2>
   <p>The full show video matters less than the thirty-second clips cut from it. That means vertical
   versions, and it means picking the moments where something visibly happens rather than the moments
   that sounded best.</p>
-  <p>Shoot wide enough that a vertical crop still has the performer in it, keep the full-frame master,
-  and generate the cutdowns from it. An auto-montage cut to the music is a reasonable starting point
-  for a highlights reel, and it is a starting point rather than a finished edit.</p>
+  <p>There are two ways to get there and they behave differently. Reframe fits the
+  <em>whole</em> frame inside <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">9:16,
+  1:1, 4:5 or 16:9</a> and fills the bars with a blurred, zoomed copy of the same picture, so nothing
+  is lost and the band stays in shot. Crop to a ratio instead trims the overflowing edges so the
+  subject fills the frame, which is better looking and only works if the performer is near the centre.
+  Shoot with that in mind, keep the full-frame master, and generate the cutdowns from it.</p>
 
   <h2>Old footage from before phones were good</h2>
   <p>Plenty of bands have a box of tapes from a decade when video was terrible. That material responds
   well to restoration, because the faults are exactly the recoverable kind: low resolution, analogue
   noise, and interlacing. Deinterlace first, then denoise, then upscale, and it is worth the render
   time on the one show that mattered.</p>
+  <p>Crisp reads the combing off the frames rather than trusting the file's own flag, which stops
+  being true the moment a tape rip has been cut and re-encoded, and
+  <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">straightens it</a> before it
+  upscales. The choice matters more than it sounds: video shot interlaced needs a deinterlace that
+  reconstructs a frame from each field pair, while film that went through a telecine needs an inverse
+  telecine that puts the original frames back. Run the second on genuinely interlaced video and it
+  drops one frame in five that nobody duplicated. Crisp checks the inverse-telecine answer on a sample
+  and confirms the frame count came out at the four-in-five a clean pulldown gives before committing
+  to it, and falls back to the always-safe path otherwise.</p>
+
+  <h2>Captions, and what they are not</h2>
+  <p>Crisp burns in <a href="https://crispvideo.app/how-to/add-captions-to-video-mac/">a caption you
+  type</a> — a song title, a venue and date, a line of on-screen text — positioned to a preset and
+  optionally limited to a time range so it appears and leaves when you want. That is the whole of it.
+  There is no speech recognition of any kind: ask for subtitles, a transcript or closed captions and
+  it answers that it can burn in a caption you type but cannot listen to the audio and write subtitles
+  for you. Lyric captions are therefore a typing job, one line and one time range at a time, or a job
+  for something else.</p>
 
   <h2>Where Crisp is the wrong tool</h2>
   <p>It does not touch your music. There is no mixing, mastering, pitch correction or stem separation,
-  and it deliberately refuses to pretend it can isolate the music from a mixed soundtrack. It is not
-  a multicam NLE either, so genuine multi-angle synced editing belongs in Resolve or Premiere.</p>
+  and it deliberately refuses to pretend it can isolate the music from a mixed soundtrack — asked to
+  pull the vocals up or the backing track down, it answers that it works on the whole soundtrack and
+  offers what it does have instead. It is not a multicam NLE either, so genuine multi-angle synced
+  editing belongs in Resolve or Premiere.</p>
+  <p>Be careful with the levelling pass on a performance. It answers to "make the quiet parts louder"
+  and "level the dialogue", and it is a compressor with makeup gain and a limiter rather than a
+  selective boost: measured on a quiet-then-loud clip it lifted the quiet passage by around 16 dB, but
+  the loud half came up too and the gap between them only narrowed from 22 dB to 19.5 dB. On a spoken
+  introduction that is exactly right. On a song, where the dynamics are the point, it will flatten the
+  thing you wrote. <a href="https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/">Reach
+  for it</a> on talking, and reach for the overall-loudness pass — the one "level the audio" and "even
+  out the volume" actually run — when you just need the video to sit at a sane level.</p>
   <p>And it cannot make a phone recording of a PA sound like a board mix. That one is worth accepting
   early, because it decides whether the shoot is worth doing at all.</p>
- 
+  <p>What it is for: the cleanup, the reel, the vertical cutdowns and the archive, on your own
+  machine, with nothing uploaded and no account. It runs on macOS 12 and later, and it is a single
+  $129 payment rather than a subscription.</p>
+
   <h2>Music footage, in detail</h2>
   <h3>Can Crisp fix audio recorded on a phone at a gig?</h3>
   <p>It can level and clean it up, and it cannot make it sound like a proper recording. A phone microphone in front of a PA is clipping and compressing before the file even exists. Use a board feed or a recorder and keep the phone audio for sync.</p>
   <h3>Can it separate the music from the crowd noise?</h3>
   <p>No, and it says so rather than trying. Stem separation is a different class of tool. Crisp handles overall level, background noise reduction and wind, not pulling one source out of a mix.</p>
+  <h3>Can Crisp cut my video to my own mix?</h3>
+  <p>Yes. Auto-Montage has a Music mode: hand it a track and it finds the beats in that track, cuts the footage into beat-length chunks, keeps the most active ones and lays your file over the result in place of the original audio. It replaces the whole soundtrack rather than mixing under it, and the track starts at zero, so it is a montage tool rather than a way to line a mix up with a performance already on camera.</p>
+  <h3>Can Crisp sync my camera footage to a separate audio recorder?</h3>
+  <p>No. You can drop a finished audio file over a montage or a timeline render, which replaces the source audio, but it always lands at the start and there is no offset or nudge control to slide it into alignment. Syncing a board feed or a field recorder to picture belongs in an NLE or a DAW.</p>
   <h3>Why does my multi-angle cut drift out of sync?</h3>
-  <p>Almost always variable frame rate on the phone footage. The clip declares one rate and was recorded at a changing one, so video and audio drift apart as it plays. Converting to a constant frame rate before editing fixes it.</p>
+  <p>Almost always variable frame rate on the phone footage. The clip declares one rate and was recorded at a changing one, so video and audio drift apart as it plays. Converting to a constant frame rate before editing fixes it, and Crisp's own timeline and montage passes force every segment to a constant rate taken from the source for exactly this reason.</p>
   <h3>Is old tape footage of a show worth restoring?</h3>
   <p>Usually yes. The faults on old live footage are the recoverable kind, low resolution, analogue noise and interlacing, and the results are often dramatic. Deinterlace before upscaling or the upscaler will sharpen the comb artefacts.</p>
   <h2>Related</h2>

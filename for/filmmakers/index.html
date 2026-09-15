@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Crisp for independent filmmakers","description":"A finishing and repair tool that sits beside your NLE rather than replacing it. Where it earns its place on a low-budget shoot, and where it does not.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp replace Resolve or Premiere?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not try. There is a timeline for assembling and cutting down, but no multicam sync, no audio post, no conform and no colour-managed grading pipeline. It is a repair and finishing tool that sits beside an NLE."}},{"@type":"Question","name":"Does it support LUTs?","acceptedAnswer":{"@type":"Answer","text":"No. It applies its own looks rather than importing .cube files, so if your grade depends on a specific LUT chain that work belongs in your NLE."}},{"@type":"Question","name":"Is upscaled archive footage good enough to intercut with modern camera footage?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if the source is genuinely low-resolution rather than soft or damaged, and if you match grain and colour afterwards. Upscaled material that is too clean sits oddly next to real footage, so adding a little grain back usually helps it blend."}},{"@type":"Question","name":"Can it pull a press still from an exact frame?","acceptedAnswer":{"@type":"Answer","text":"Yes, at full resolution and at the exact timestamp, which is different from screenshotting a player. A screenshot gives you the display-scaled image with player colour management applied, which is not the frame you shot."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp replace Resolve or Premiere?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not try. There is a timeline for assembling and cutting down, but no multicam sync, no audio post, no conform and no colour-managed grading pipeline. It is a repair and finishing tool that sits beside an NLE."}},{"@type":"Question","name":"Can Crisp export ProRes?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Export panel's Format picker offers ProRes 422 LT, ProRes 422 and ProRes 422 HQ alongside H.264, HEVC, 10-bit HEVC and AV1. ProRes can only live in a QuickTime container, so Crisp forces the output to .mov when you pick one, whatever extension you typed. Those files are much larger than the HEVC default, which is the point of them."}},{"@type":"Question","name":"Does it support LUTs?","acceptedAnswer":{"@type":"Answer","text":"No. It applies its own looks rather than importing .cube files, so if your grade depends on a specific LUT chain that work belongs in your NLE."}},{"@type":"Question","name":"Is upscaled archive footage good enough to intercut with modern camera footage?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if the source is genuinely low-resolution rather than soft or damaged, and if you match grain and colour afterwards. Upscaled material that is too clean sits oddly next to real footage, so adding a little grain back usually helps it blend."}},{"@type":"Question","name":"Can it pull a press still from an exact frame?","acceptedAnswer":{"@type":"Answer","text":"Yes, at full resolution and at the exact timestamp, which is different from screenshotting a player. A screenshot gives you the display-scaled image with player colour management applied, which is not the frame you shot."}},{"@type":"Question","name":"Can I apply a look to just one shot, or to part of a shot?","acceptedAnswer":{"@type":"Answer","text":"An edit applies to a whole clip. If you want a change to start partway through, split the clip at that point and apply it to the piece — the app says so rather than running a full-clip change and calling it a partial one. There is no masking or tracking, so a region of the frame cannot be treated separately at all."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Filmmakers", "item": "https://crispvideo.app/for/filmmakers/"}]}</script>
 </head>
@@ -37,6 +37,13 @@
   <h1>Crisp for independent filmmakers</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp is a repair and finishing
+  tool that sits beside Resolve, Premiere or Final Cut rather than replacing them. On your own Mac
+  it denoises and stabilises shots you cannot reshoot, deinterlaces and upscales archive material,
+  cuts trailers and vertical versions, and writes a ProRes 422 master for the edit. It upscales by
+  inventing plausible detail rather than recovering what was shot, so test it on your own footage
+  before you plan around it.</p></div>
+
   <p>Let's be direct about scope. If you are cutting a film, that happens in Resolve, Premiere or Final
   Cut, and it should. Crisp is not an NLE and pretending otherwise would waste your time.</p>
   <p>Where it earns a place is the unglamorous work around the edit, the shots that need rescuing and
@@ -46,36 +53,115 @@
   <p>Every low-budget production has a few. The location is gone, the actor has left, the light was
   never coming back. The shot is noisy, or soft, or shaky, and it has to be in the film.</p>
   <p>Denoising and stabilization are genuinely useful here, with an important caveat: they work on
-  faults of degradation, not faults of capture. Sensor noise, yes. Camera shake, yes. Missed focus,
-  no. Rolling shutter skew, no. Knowing which category a problem falls into before you start the
-  render saves hours you do not have.</p>
+  faults of degradation, not faults of capture. Sensor noise, yes. Camera shake, yes.
+  <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">Missed focus</a>, no.
+  <a href="https://crispvideo.app/learn/what-is-rolling-shutter/">Rolling shutter skew</a>, no. Knowing
+  which category a problem falls into before you start the render saves hours you do not have.</p>
+  <p>Two things are worth knowing before you queue a rescue. The
+  <a href="https://crispvideo.app/how-to/stabilize-shaky-video-mac/">stabilizer</a> samples the motion
+  in a few places in the clip, runs the filter on those samples, and compares: if it would not remove
+  a meaningful share of the frame-to-frame movement, it declines the job rather than spending an hour
+  and handing back a mirrored-edge version of the same wobble. And the denoise dial is not a slider
+  over one process — below the halfway mark it only chooses which upscaling model runs, and above it
+  a real temporal-and-spatial denoise pass is added <em>before</em> the upscale. You cannot reorder
+  those two; if you want denoising after the enlargement, that is an NLE job.</p>
 
   <h2>Archival and stock material</h2>
   <p>Period footage, home video inserts, public-domain archive, a clip from a source that only exists
-  at 480p. This is where upscaling earns its keep, because the fault is genuinely low resolution
-  rather than something invented.</p>
+  at 480p. This is where <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">upscaling</a>
+  earns its keep, because the fault is genuinely low resolution rather than something invented.</p>
+  <p>Be clear-eyed about the mechanism, because you will notice it before your audience does: an AI
+  upscaler does not recover the detail the lens never resolved. It predicts plausible detail and draws
+  it in. On a wide shot of a crowd or a textured wall that reads as a genuine improvement; on a face
+  in close-up it can come back subtly, distractingly wrong. Run a ten-second test on your own worst
+  shot before you build a schedule around it.</p>
   <p>The rule is the same as everywhere: deinterlace first if it is broadcast or tape material, then
   denoise, then upscale. Interlaced material sharpened by an upscaler is much harder to fix than it
-  was originally.</p>
+  was originally. Crisp handles that first step itself, and it distinguishes the two cases that get
+  confused: genuinely <a href="https://crispvideo.app/learn/what-is-interlacing/">interlaced</a> video
+  gets a real deinterlace, while film that went through a
+  <a href="https://crispvideo.app/learn/what-is-telecine/">telecine</a> gets an inverse telecine that
+  puts the original frames back — measured on a 3:2 fixture, 120 frames came out as exactly 96 at an
+  SSIM of 0.9969 against the true original. It never guesses between them: the inverse-telecine answer
+  is tested on a sample and the frame count checked before the real render commits to it, because
+  running the wrong one on genuinely interlaced video throws away one frame in five that nobody
+  duplicated. See <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlacing on a
+  Mac</a> for the detail.</p>
 
   <h2>Deliverables nobody budgets for</h2>
   <p>Once the film is done there is a second job: the trailer, the vertical cutdowns for socials, the
   festival submission at a specific resolution, the compressed screener that has to be small enough to
   email, and the stills for the press kit. None of that is creative work, all of it takes time, and
   most of it is mechanical enough to describe in a sentence rather than build in a timeline.</p>
+  <p>Auto-Montage is the fastest route to a first assembly of a trailer or a sizzle. It runs in three
+  modes — Highlights picks the strongest moments, Smart condense keeps the material in order and cuts
+  the dead air out of it, and Music cuts to a track you supply — and whatever it chose lands on a real
+  timeline afterwards, where clips can be trimmed at the edges, reordered, repeated and interleaved
+  with stills used as title cards. Up to 64 clips, with cut, dissolve, wipe, slide and circle
+  transitions.</p>
+  <p><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">The vertical version</a> is worth
+  understanding before you promise one. Crisp reframes by fitting the whole frame inside the target
+  aspect — 9:16, 4:5, 1:1 or 16:9 — and filling the empty area with a blurred, zoomed copy of the same
+  frame. It is the social-platform look, and it is not a crop: nothing is reframed around your subject,
+  because there is no subject tracking behind it. If the vertical cut needs to actually recompose the
+  shot, that is a pan-and-scan job for your NLE.</p>
   <p>Pulling a full-resolution still from an exact frame is worth mentioning specifically, because
   screenshotting the player gives you the display-scaled version with the wrong colour, and press kits
-  need the real frame.</p>
+  need the real frame. Crisp writes it as lossless PNG or JPG at the timestamp you set, at the clip's
+  true display orientation, and tonemaps an HDR source down to SDR so the still is not washed out.</p>
+
+  <h2>Getting it out in a format the edit can use</h2>
+  <p>The Export panel carries its own Format block rather than hiding codecs inside an advanced
+  drawer, and the list is the one a finishing chain needs: ProRes 422 LT, ProRes 422 and ProRes 422 HQ
+  for editing, plus H.264, HEVC, 10-bit HEVC and AV1 for delivery. ProRes is only standard inside a
+  QuickTime file, so choosing it forces the output to .mov whatever extension you typed — the app
+  locks the container picker to match rather than writing a non-standard file. Expect the files to be
+  large; that is what they are for.</p>
+  <p>The setting persists across every export until you change it, which is the behaviour you want
+  when a batch of archive clips all has to arrive as ProRes, and the behaviour to remember when the
+  next quick trim comes out at eighty times the size you expected.</p>
+  <p>Going the other way, for the screener nobody budgeted for,
+  <a href="https://crispvideo.app/how-to/compress-video-on-mac/">compression</a> works as a quality
+  ladder rather than a target-size solver: three levels, each aiming at a fraction of the source's own
+  bitrate, with the frame size and frame rate left alone. It will not promise you a specific megabyte
+  count, and it says so rather than guessing.</p>
+
+  <h2>Looks, grain and what the grade actually is</h2>
+  <p>The <a href="https://crispvideo.app/how-to/color-grade-video-mac/">grade</a> is a deterministic
+  filter chain, not a colour-managed pipeline. It offers named looks — cinematic, warm, cool, vibrant,
+  moody, bright, black and white, sepia, matte — over a small set of controls: exposure, contrast,
+  saturation, vibrance, shadows, highlights, warmth, sharpen and a vignette. Warmth is a single
+  blue-to-orange temperature axis; there is no green-to-magenta control, so a fluorescent cast is not
+  something this will correct. There is no LUT import, no node graph, and no scopes.</p>
+  <p><a href="https://crispvideo.app/how-to/add-film-grain-to-video-mac/">Film grain</a> is worth
+  singling out because it is the one that makes upscaled archive material sit next to camera footage.
+  It adds temporal noise that shifts every frame, which is the opposite of what the denoiser does and
+  exactly what an over-cleaned 480p insert needs before it will cut against a modern shot.</p>
 
   <h2>Client and unreleased material</h2>
   <p>Everything runs on your machine. For work under embargo, under NDA, or simply not yet announced,
-  that removes a conversation rather than starting one. It also means an overnight batch costs
-  electricity rather than per-minute cloud billing, which matters at the scale a feature generates.</p>
+  that removes a conversation rather than starting one. It also means an overnight
+  <a href="https://crispvideo.app/how-to/batch-upscale-videos-mac/">batch</a> costs
+  electricity rather than per-minute cloud billing, which matters at the scale a feature generates.
+  It installs on macOS 12 and later, which is a lower floor than most tools in this category ask for,
+  and it is a single $129 payment rather than a subscription.</p>
 
   <h2>Where Crisp is the wrong tool</h2>
-  <p>No multicam sync, no audio post, no conform, no colour-managed grading pipeline, no LUT import,
-  no motion graphics, no round-tripping with your NLE. It does not replace any part of a professional
-  finishing chain, and a film that needs those things needs the tools that do them.</p>
+  <p>No multicam sync and no dual-system audio sync — the timeline is a single track of ordered clips,
+  so anything cut from two cameras belongs in an NLE. No conform, no round-trip: there is no EDL, AAF
+  or XML interchange in either direction, so what comes back is a rendered file, not a sequence. No
+  LUT import and no colour-managed grading pipeline. No motion graphics.</p>
+  <p>No speech recognition of any kind, which means no subtitles, no transcript and no captions
+  generated from audio; Crisp burns in
+  <a href="https://crispvideo.app/how-to/add-captions-to-video-mac/">a caption you type</a> and nothing
+  more. No blur or pixelate, so a face or a plate that has to come out needs an editor with a mask and
+  a tracker. And no audio mix: levelling, loudness normalisation and steady-noise removal are there,
+  but stems, sync and a real mix are not.</p>
+  <p>One more boundary that surprises people who think in terms of layers: an edit applies to a whole
+  clip. If you want a change to start partway through, you
+  <a href="https://crispvideo.app/how-to/split-a-clip-in-video-mac/">split the clip</a> at that point
+  and apply it to the piece. A region of the <em>frame</em> cannot be treated separately at all, and
+  the app says so rather than running a full-frame change and naming it the one you asked for.</p>
   <p>It also cannot invent a shot you did not get. The most valuable thing it offers a low-budget
   production is an honest answer about which problems are fixable, delivered before you spend the
   night rendering one that is not.</p>
@@ -83,17 +169,23 @@
   <h2>Film work, in detail</h2>
   <h3>Can Crisp replace Resolve or Premiere?</h3>
   <p>No, and it does not try. There is a timeline for assembling and cutting down, but no multicam sync, no audio post, no conform and no colour-managed grading pipeline. It is a repair and finishing tool that sits beside an NLE.</p>
+  <h3>Can Crisp export ProRes?</h3>
+  <p>Yes. The Export panel's Format picker offers ProRes 422 LT, ProRes 422 and ProRes 422 HQ alongside H.264, HEVC, 10-bit HEVC and AV1. ProRes can only live in a QuickTime container, so Crisp forces the output to .mov when you pick one, whatever extension you typed. Those files are much larger than the HEVC default, which is the point of them.</p>
   <h3>Does it support LUTs?</h3>
   <p>No. It applies its own looks rather than importing .cube files, so if your grade depends on a specific LUT chain that work belongs in your NLE.</p>
   <h3>Is upscaled archive footage good enough to intercut with modern camera footage?</h3>
   <p>Often yes, if the source is genuinely low-resolution rather than soft or damaged, and if you match grain and colour afterwards. Upscaled material that is too clean sits oddly next to real footage, so adding a little grain back usually helps it blend.</p>
   <h3>Can it pull a press still from an exact frame?</h3>
   <p>Yes, at full resolution and at the exact timestamp, which is different from screenshotting a player. A screenshot gives you the display-scaled image with player colour management applied, which is not the frame you shot.</p>
+  <h3>Can I apply a look to just one shot, or to part of a shot?</h3>
+  <p>An edit applies to a whole clip. If you want a change to start partway through, split the clip at that point and apply it to the piece — the app says so rather than running a full-clip change and calling it a partial one. There is no masking or tracking, so a region of the frame cannot be treated separately at all.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/for/gamers/">Crisp for gamers and streamers</a></li>
     <li><a href="https://crispvideo.app/for/genealogists/">Crisp for genealogists and family historians</a></li>
     <li><a href="https://crispvideo.app/for/musicians/">Crisp for musicians</a></li>
+    <li><a href="https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/">Upscaling a finished edit to 4K</a></li>
+    <li><a href="https://crispvideo.app/how-to/restore-old-film-footage-mac/">Restoring old film footage on a Mac</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
