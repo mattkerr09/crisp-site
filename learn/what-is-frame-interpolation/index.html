@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is frame interpolation?","description":"Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does interpolation add real detail?","acceptedAnswer":{"@type":"Answer","text":"No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it."}},{"@type":"Question","name":"What multiplier should I use?","acceptedAnswer":{"@type":"Answer","text":"Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first."}},{"@type":"Question","name":"Will it fix a video that stutters?","acceptedAnswer":{"@type":"Answer","text":"It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause."}},{"@type":"Question","name":"Can I interpolate and upscale in the same pass?","acceptedAnswer":{"@type":"Answer","text":"In Crisp, yes for the standard lanes, and the two are handled as separate stages internally so neither compromises the other. The generative Max restore lane is the exception and doesn't combine with interpolation."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does interpolation add real detail?","acceptedAnswer":{"@type":"Answer","text":"No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it."}},{"@type":"Question","name":"What multiplier should I use?","acceptedAnswer":{"@type":"Answer","text":"Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first. Crisp's Smooth motion control offers Off, 2x and 3x; its API and command line accept 1, 2, 3 or 4 and reject anything else rather than rounding it."}},{"@type":"Question","name":"Will it fix a video that stutters?","acceptedAnswer":{"@type":"Answer","text":"It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause."}},{"@type":"Question","name":"Does Crisp interpolate before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"After. Crisp runs the upscaler over a segment's frames first, and hands the already-upscaled frames to the interpolator. The order is fixed in the pipeline and is not a setting. It is the expensive order: the motion model is estimating over frames at output resolution, and Crisp's own disk-space check budgets working space for one plus the multiplier of output-sized frame sets per segment."}},{"@type":"Question","name":"Can I interpolate and upscale in the same pass?","acceptedAnswer":{"@type":"Answer","text":"Yes on the standard presets, as two stages in a fixed order: upscale first, then interpolate the upscaled frames. The generative Max restore lane is the exception. It refuses the combination with its own message telling you to turn Smooth motion off or use a standard preset, the job endpoint rejects the pair, and the app hides the Smooth motion control while Max is selected."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Frame interpolation", "item": "https://crispvideo.app/learn/what-is-frame-interpolation/"}]}</script>
 </head>
@@ -36,6 +36,14 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Frame interpolation</div>
   <h1>What is frame interpolation?</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Frame interpolation invents frames
+  that were never shot: a model looks at two real frames, works out how everything moved between
+  them, and builds the picture in between. One new frame in every gap takes 30fps to 60. It adds
+  smoothness, never detail. In Crisp it runs <strong>after</strong> the upscale, on the
+  already-upscaled frames, using <strong>rife-v4.6</strong> through
+  <span class="prompt">rife-ncnn-vulkan</span>, and the original audio is stream-copied so nothing
+  drifts.</p></div>
 
   <p>Frame interpolation creates frames that were never captured. Given two consecutive frames, the
   model works out how things moved between them and generates one or more intermediate pictures. Do
@@ -71,7 +79,8 @@
   The motion is genuinely smoother. It just reads as cheaper.</p>
   <p>So the honest rule is that interpolation belongs on footage where smoothness is a virtue.
   Gameplay capture, sports, action cameras, drone shots, screen recordings and anything you intend to
-  slow down all benefit. Narrative and cinematic work usually shouldn't be touched.</p>
+  <a href="https://crispvideo.app/how-to/slow-mo-video-mac/">slow down</a> all benefit. Narrative and
+  cinematic work usually shouldn't be touched.</p>
 
   <h2>Doing it on a Mac</h2>
   <p>Crisp runs interpolation on-device. You can either pick a multiplier from the Smooth motion
@@ -79,16 +88,68 @@
   afterwards. Because it runs locally there's no per-minute billing, which matters here more than
   usual: interpolation is one of the most compute-heavy things you can ask of a clip, and it's exactly
   the operation cloud services price aggressively.</p>
+  <p>The work is done by <span class="prompt">rife-ncnn-vulkan</span>, running the
+  <strong>rife-v4.6</strong> model. That is a Vulkan compute program executed on the Mac's GPU through
+  Metal. There is one model, not a menu of them: the older <span class="prompt">rife-anime</span>
+  (v1.8) refuses a custom frame count outright — it answers
+  <em>"only rife-v4 model support custom numframe and timestep"</em> and produces nothing — so
+  every job goes through v4.6.</p>
+  <p>Only one GPU process runs at a time. The interpolator takes the same engine-wide lock the
+  <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">upscaler</a> takes, because both
+  are ncnn/Vulkan programs allocating Metal memory, and two of them running at once is how a render
+  used to die mid-job.</p>
+
+  <h2>Where it runs in the chain: after the upscale, not before</h2>
+  <p>This is the detail that decides what a smooth-motion job costs, and it is worth being exact
+  about. Crisp works a clip in segments. For each segment it decodes the frames, runs the upscaling
+  model over them, and only then hands the <em>upscaled</em> frames to the interpolator. The encoder
+  reads the interpolated directory.</p>
+  <p>So the motion model is not estimating over your source frames. It is estimating over frames at
+  output resolution. A 2× upscale followed by 2× smooth motion means the interpolator is working on
+  pictures with four times the pixels of the source, and producing twice as many of them. That is the
+  expensive order, and it is not a setting — there is no control that runs interpolation first.</p>
+  <p>The clearest evidence of the cost is Crisp's own refusal. Before a job starts, it checks whether
+  the working disk can hold a segment, and when smooth motion is on it budgets output-resolution
+  frames at one plus the multiplier — a 2× smooth-motion job reserves room for three full sets of
+  output-sized PNGs per segment, on top of the raw decoded set. If the disk can't take it, Crisp says
+  so up front instead of spending the GPU time and failing at the write. The same arithmetic is why
+  smooth motion makes an already slow job much slower; see
+  <a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">why 4K exports take so long</a>.</p>
+  <p>Two smaller behaviours fall out of the same place in the pipeline. A segment with fewer than two
+  frames is encoded untouched, because a single frame has no pair to interpolate between. And the
+  output frame rate for each segment is derived from the number of frames the model <em>actually</em>
+  emitted, not the number requested — if fewer come back, the rate is scaled to match, so the picture
+  keeps its real duration and the stream-copied audio is never truncated to fit.</p>
+
+  <h2>What the multiplier can be</h2>
+  <p>The Smooth motion control offers three choices: Off, 2× fps (the 30→60 case), and 3× fps. The
+  API and the command line accept 1, 2, 3 or 4, and reject anything else with a plain message rather
+  than quietly rounding — ask for 1.5 and you are told the value must be 1, 2, 3 or 4, instead of
+  silently getting a different multiplier than you asked for.</p>
+  <p>Typed requests land on the same whole numbers, and Crisp names the rate you will actually get.
+  Because it can only multiply, a 24fps clip asked for 60fps lands on 48, and the plan card says so
+  rather than letting you discover it in the export. Ask for a rate your clip already meets or
+  exceeds and it declines instead of interpolating: a 120fps file asked for 60fps is told Crisp can
+  add frames to make motion smoother but cannot reduce a frame rate. That refusal is worth knowing
+  about if your source is
+  <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">variable frame rate</a>, where
+  the reported rate and the real one can disagree.</p>
+  <p>One preset opts out entirely. The Max restore lane is generative and cannot also interpolate, so
+  the app hides the Smooth motion control while Max is selected, the job endpoint rejects the pair,
+  and the engine refuses with a message that tells you to turn Smooth motion off or use a standard
+  preset. It is stated rather than silently dropped, which is the behaviour we want everywhere.</p>
 
   <h2>Smoother motion, in detail</h2>
   <h3>Does interpolation add real detail?</h3>
   <p>No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it.</p>
   <h3>What multiplier should I use?</h3>
-  <p>Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first.</p>
+  <p>Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first. Crisp's Smooth motion control offers Off, 2× and 3×; its API and command line accept 1, 2, 3 or 4 and reject anything else rather than rounding it.</p>
   <h3>Will it fix a video that stutters?</h3>
   <p>It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause.</p>
+  <h3>Does Crisp interpolate before or after upscaling?</h3>
+  <p>After. Crisp runs the upscaler over a segment's frames first, and hands the already-upscaled frames to the interpolator. The order is fixed in the pipeline and is not a setting. It is the expensive order: the motion model is estimating over frames at output resolution, and Crisp's own disk-space check budgets working space for one plus the multiplier of output-sized frame sets per segment.</p>
   <h3>Can I interpolate and upscale in the same pass?</h3>
-  <p>In Crisp, yes for the standard lanes, and the two are handled as separate stages internally so neither compromises the other. The generative Max restore lane is the exception and doesn't combine with interpolation.</p>
+  <p>Yes on the standard presets, as two stages in a fixed order: upscale first, then interpolate the upscaled frames. The generative Max restore lane is the exception. It refuses the combination with its own message telling you to turn Smooth motion off or use a standard preset, the job endpoint rejects the pair, and the app hides the Smooth motion control while Max is selected.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/what-is-hdr-video/">What is HDR video?</a></li>

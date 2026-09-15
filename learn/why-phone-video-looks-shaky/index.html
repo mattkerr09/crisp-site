@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why phone video looks shaky","description":"Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can stabilization fix rolling shutter?","acceptedAnswer":{"@type":"Answer","text":"Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation."}},{"@type":"Question","name":"Does stabilizing crop my video?","acceptedAnswer":{"@type":"Answer","text":"Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage."}},{"@type":"Question","name":"Should I stabilize before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order."}},{"@type":"Question","name":"Why does my footage look worse after stabilizing?","acceptedAnswer":{"@type":"Answer","text":"Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can stabilization fix rolling shutter?","acceptedAnswer":{"@type":"Answer","text":"Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation. Crisp has no rolling shutter correction of any kind."}},{"@type":"Question","name":"Does stabilizing crop my video?","acceptedAnswer":{"@type":"Answer","text":"Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage."}},{"@type":"Question","name":"Should I stabilize before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order."}},{"@type":"Question","name":"Why does my footage look worse after stabilizing?","acceptedAnswer":{"@type":"Answer","text":"Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it."}},{"@type":"Question","name":"Why did Crisp refuse to stabilize my clip?","acceptedAnswer":{"@type":"Answer","text":"Because it measured the clip first and found that stabilizing would make it worse. Crisp samples up to three 1.5-second windows, renders each one twice — once plain, once through the stabilizer — and compares frame-to-frame motion. Unless at least one window drops below 95 percent of its unstabilized motion, the job is refused before any rendering starts. On a tripod shot, a locked-off camera or a deliberate pan, the stabilizer measurably adds motion rather than removing it."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Shaky phone video", "item": "https://crispvideo.app/learn/why-phone-video-looks-shaky/"}]}</script>
 </head>
@@ -36,6 +36,14 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Shaky phone video</div>
   <h1>Why phone video looks shaky</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Two different faults look like the
+  same shakiness. One is <strong>handshake</strong> — your hands move and the whole frame moves with
+  them — and stabilization fixes that well. The other is
+  <strong><a href="https://crispvideo.app/learn/what-is-rolling-shutter/">rolling shutter</a></strong>:
+  the sensor reads out row by row, so a fast pan leans the verticals and vibration turns the picture
+  to jelly. Stabilization cannot undo that, and <strong>Crisp has no rolling shutter correction at
+  all</strong> — holding the frame still can even make the warp easier to see.</p></div>
 
   <p>Two things make handheld footage unpleasant, and people tend to lump them together. One is
   ordinary camera shake. The other is rolling shutter, and it is a different problem with a different
@@ -60,7 +68,10 @@
   <p>That works genuinely well on shake, and it costs you a little framing. What it cannot do is undo
   rolling shutter, because the distortion isn't a whole-frame offset. Different rows of the same frame
   need different corrections, which is a fundamentally harder operation and one Crisp does not
-  attempt. Stabilizing skewed footage produces steady, still-skewed footage.</p>
+  attempt. Stabilizing skewed footage produces steady, still-skewed footage — and because the shake
+  was partly masking the warp, a steady wobble can read as more obviously wrong than a shaky one did.
+  If that is your footage, the honest answer is that no setting in Crisp addresses it and you should
+  know that before you buy anything.</p>
 
   <h2>What to do about each</h2>
   <div class="cmp-wrap"><table>
@@ -75,21 +86,71 @@
   stabilization if it has it, since correcting during capture beats correcting afterwards. And shoot a
   little wider than you need, so stabilization has room to crop into without losing your framing.</p>
 
+  <h2>What Crisp measures before it agrees to stabilize</h2>
+  <p>Crisp's stabilizer is ffmpeg's single-pass <span class="prompt">deshake</span> filter, which
+  estimates per-frame motion, counter-shifts each frame, and fills the exposed edges by mirroring.
+  Before any of that runs, Crisp measures whether it would help. It samples up to three windows of
+  1.5 seconds, taken about 15%, 50% and 80% of the way through the clip, and renders each window
+  twice — once plain, once through the stabilizer — scoring the mean frame-to-frame difference of
+  both. If any one window's motion falls below 95% of its unstabilized value, the job runs. If none
+  of them do, the job is refused before a single frame is rendered, with this message:
+  <em>"Stabilising wouldn't improve this clip — Crisp measured the motion and its stabiliser would
+  add wobble rather than take it out. It only helps footage with real camera shake, so a tripod shot,
+  a smooth pan, or a locked-off camera is already as steady as it gets."</em></p>
+  <p>That refusal exists because of a measurement that is not flattering to the filter. Scored
+  against a plain re-encode control, <span class="prompt">deshake</span> <em>increased</em>
+  frame-to-frame motion on most of the footage tested:</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Footage</th><th>Frame-to-frame motion after stabilizing</th></tr></thead>
+    <tbody>
+      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong> — worse</td></tr>
+      <tr><td>Tripod, static scene</td><td><strong>+92%</strong> — worse</td></tr>
+      <tr><td>Deliberate pan</td><td><strong>+24%</strong> — worse; it fights the move</td></tr>
+      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong> — worse</td></tr>
+      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong> — better</td></tr>
+    </tbody>
+  </table></div>
+  <p>One case in five. That is the whole argument for measuring first: without the check, asking a
+  general-purpose stabilizer to steady a tripod shot returns a visibly wobblier clip after a full
+  re-encode, under a progress card that said it was removing shake. Several windows are sampled
+  rather than one because shake is rarely spread evenly through a clip — a walk that is smooth for
+  ten seconds and jolts for two is still worth stabilizing, so any single window that improves is
+  enough to go ahead. On a clip shorter than about two and a quarter seconds there is only room for
+  one window, taken from the start.</p>
+  <p>The check itself had to be corrected once, which is worth recording. An early version measured a
+  64-pixel-wide version of the frame to save time, and motion estimation had nothing to work with at
+  that size: a violently shaky clip scored 33.46 before and 33.44 after, so the app reported that
+  stabilizing would not help footage that plainly needed it. Measuring a centre crop at native pixel
+  scale instead fixed it and is still cheap — 0.26 seconds against 1.78 on a 1080p clip, with the
+  same verdict on every clip tested. The crop is centred on purpose, because shake moves the whole
+  frame equally while the mirrored edges are the one part of the picture that is not representative.</p>
+
   <h2>Doing it on a Mac</h2>
-  <p>Crisp stabilizes on-device using frame-to-frame motion estimation, keeps the audio in sync, and
-  saves the result alongside the original rather than overwriting it. You can ask for it in plain
-  English, and if the clip turns out to be steady enough already that stabilizing would cost framing
-  for no visible gain, it will tell you rather than burning the render time.</p>
+  <p>Crisp stabilizes on-device using frame-to-frame motion estimation, keeps the audio in sync by
+  stream-copying it untouched, and writes the result as a new file next to the original rather than
+  overwriting it — and if that name is already taken it adds a numeric suffix rather than clobbering
+  what is there. You can ask for it in plain English: "the footage is shaky", "the camera was
+  wobbly", "my hands were shaking" and "steady this" all reach the same job. Asking <em>why</em> it
+  is shaky does not — a question is treated as a question, and so is a negation like "don't stabilize
+  it", so neither one quietly starts a render.</p>
+  <p>Two limits to know before you queue a phone clip. Stabilizing re-encodes the video, so it is not
+  a lossless operation and it is worth doing before an <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">AI
+  upscale</a> rather than after. And if the clip is HDR — which recent iPhones record by default —
+  the stabilize pass tone-maps it to SDR BT.709 on the way through, so the steady copy comes back
+  SDR; on a build whose ffmpeg cannot tone-map at all, Crisp refuses the clip instead and asks you to
+  convert to SDR first.</p>
 
   <h2>Shaky footage questions</h2>
   <h3>Can stabilization fix rolling shutter?</h3>
-  <p>Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation.</p>
+  <p>Not in Crisp, and not with the approach most tools use. Stabilization shifts whole frames to cancel movement. Rolling shutter distorts different rows of the same frame by different amounts, so cancelling it needs a per-row correction, which is a different and much harder operation. Crisp has no rolling shutter correction of any kind.</p>
   <h3>Does stabilizing crop my video?</h3>
   <p>Usually a little, because shifting a frame to cancel movement exposes empty edges that have to come from somewhere. Crisp fills those edges by mirroring rather than cropping hard, but framing still tightens slightly on very shaky footage.</p>
   <h3>Should I stabilize before or after upscaling?</h3>
   <p>Stabilize first. Upscaling magnifies everything including the shake, and a stabilizer works better on the smaller frame anyway. It is also much faster in that order.</p>
   <h3>Why does my footage look worse after stabilizing?</h3>
   <p>Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it.</p>
+  <h3>Why did Crisp refuse to stabilize my clip?</h3>
+  <p>Because it measured the clip first and found that stabilizing would make it worse. Crisp samples up to three 1.5-second windows, renders each one twice — once plain, once through the stabilizer — and compares frame-to-frame motion. Unless at least one window drops below 95% of its unstabilized motion, the job is refused before any rendering starts. On a tripod shot, a locked-off camera or a deliberate pan, the stabilizer measurably adds motion rather than removing it.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">Why VHS tapes degrade</a></li>
