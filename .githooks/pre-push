@@ -81,3 +81,9 @@ python3 "$(dirname "$0")/../_tools/gate_thirdparty.py" || exit 1
 # names this ("a dead exemption is worse than none") and instruction alone did
 # not hold it, which is the same reason the gate above exists at all.
 python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py" || exit 1
+
+# ...and no JSON-LD block may declare a key twice. page_dates.py appended a second
+# dateModified to 16 pages because its regex could not see the one already there; a JSON
+# parser keeps the LAST, so the stale date won and crawlers read it while the correct value
+# sat in the same object being ignored. Valid JSON, valid-looking file, wrong structured data.
+python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py" || exit 1

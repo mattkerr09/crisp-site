@@ -42,7 +42,20 @@ SITE = Path(__file__).resolve().parent.parent
 DATE_LINE = re.compile(r'^[-+].*(?:"date(?:Modified|Published)":"[^"]*"'
                        r'|Updated [A-Z][a-z]+ \d{4})')
 PUBLISHED = re.compile(r'"datePublished":"([^"]+)"')
-MODIFIED = re.compile(r'"dateModified":"([^"]+)"')
+# ⚠️ \s* IS LOAD-BEARING, AND ITS ABSENCE COST THE SITE ITS FRESHNESS SIGNAL.
+# This read r'"dateModified":"([^"]+)"' — no space after the colon. 94 of 122 pages carry
+# '"dateModified": "…"' WITH a space, so this pattern matched nothing on them, the substitution
+# below was a no-op, and the insertion fallback then concluded the key was ABSENT and added a
+# second one. The result on 16 pages was a JSON-LD block with dateModified declared TWICE:
+#
+#     "dateModified":"2026-09-15","dateModified": "2026-09-07"
+#
+# That is not cosmetic. A JSON parser keeps the LAST key, so the freshly computed date was
+# silently discarded and crawlers read the STALE one — measured on the live site:
+# best/free-video-upscaler-mac parsed to 2026-09-07. The tool whose entire job is to keep this
+# field honest was reporting success while making the field wrong, and a grep for the correct
+# value stayed green because the correct value WAS in the file. It just never won.
+MODIFIED = re.compile(r'"dateModified":\s*"([^"]+)"')
 
 
 def _git(*args: str) -> str:
