@@ -128,22 +128,22 @@ CONDITIONAL = {
     # The marker is the submit handler the fetch lives inside. Move the fetch out
     # of that handler and this exemption stops applying, which is the point of
     # requiring one.
-    # ⚠️ founding.js WAS LISTED HERE AND IS NOT ANY MORE, 2026-09-15. It carried a
-    # click-to-fetch seat counter; the counter was held pending a decision about whether the
-    # founding offer has a seat cap at all (outlier.host promises "No seat cap"), so the call is
-    # gone and the exemption with it. Removed rather than left in place: a dead exemption reads
-    # as a considered decision while excusing a case that never occurs, and pre-approves this
-    # host in this file for the day it returns. That is not hypothetical here — this exact entry
-    # went dead once already today, printed a reason for deleted behaviour, and is why
-    # _tools/gate_exemptions_live.py exists. If the counter comes back, add the file AND its
-    # marker back together.
+    # ⚠️ founding.js LEFT THIS TABLE AND CAME BACK ON THE SAME DAY (2026-09-15), WITH ITS
+    # MARKER BOTH TIMES. It was removed when the seat counter was held pending Matthew's
+    # decision on whether the offer has a cap at all; he decided each app gets its own 25 seats
+    # and its own code, the worker went per-site, and the counter returned. Recorded because the
+    # round trip is the whole lesson of this mechanism: the entry went DEAD earlier that day and
+    # kept printing a reason for behaviour that had been deleted, which is why
+    # _tools/gate_exemptions_live.py now exists and why the file and its marker are only ever
+    # added or removed TOGETHER. Never re-add a file here without a marker that actually matches.
     "kerr-lead-agent.kerrco.workers.dev":
-                   ("assistant.js",
-                    "the assistant's question, fired only inside a submit handler — a visitor "
-                    "types a question and presses send, and that press is the only thing that "
-                    "sends anything. Nothing on load, nothing at all for a visitor who never "
-                    "opens it. Served first-party from /assistant.js",
-                    'form.addEventListener("submit"'),
+                   (("assistant.js", "founding.js"),
+                    "both fired only inside a handler a visitor triggers — the assistant's "
+                    "question on submit, the founding counter on a click asking how many of "
+                    "Crisp's own 25 seats are left. Nothing on load, nothing at all for a "
+                    "visitor who opens neither. Both widgets are served first-party",
+                    {"assistant.js": 'form.addEventListener("submit"',
+                     "founding.js":  "countBtn.addEventListener('click'"}),
 }
 
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}

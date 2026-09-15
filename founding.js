@@ -48,7 +48,13 @@
   var mount = document.querySelector("[data-founding]");
   var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDING1";
+  /* ⚠️ THE FALLBACK IS THE DANGEROUS HALF, NOT THE ATTRIBUTE. Until 2026-09-15 the mount
+     carried NO data-code at all, so the bar printed "FOUNDING1" through this default and
+     nobody had typed that code anywhere on the site. FOUNDING1 is being expired in Dodo now
+     that each app has its own code, which would have turned this silent path into a bar
+     offering a code the checkout rejects. Both halves are set, so a missing attribute cannot
+     resurrect a dead code. */
+  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -102,7 +108,7 @@
         (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
     '  </span>',
     '  <span class="dot"></span>',
-    '  <span class="left" data-left></span>',
+    '  <span class="left" data-left><button class="ask" type="button">How many left?</button></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
@@ -121,26 +127,42 @@
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
-  /* ⛔ NO SEAT COUNT ON THIS BAR — HELD 2026-09-15, PENDING MATTHEW.
+  /* THE COUNT, BEHIND A CLICK. Held on 2026-09-15 and released the same day.
    *
-   * A click-to-fetch counter shipped here and was removed the same day, deliberately, and this
-   * comment is the reason so nobody re-adds it as an obvious missing feature.
+   * ⚠️ WHY IT WAS HELD, AND WHY THE OBJECTION IS GONE. The count was removed because the
+   * worker returned ONE SHARED POOL — ?product=crisp, docket and outlier all answered the
+   * same {"left":22,"of":25} — so printing it here asserted a Crisp-specific cap that did
+   * not exist, while outlier.host promised "No seat cap". Matthew then decided each app gets
+   * its OWN 25 seats and its own code, and the worker now answers PER SITE:
+   *   ?site=crispvideo.app -> {"code":"FOUNDINGCRISP","left":24,"of":25,"claimed":1}
+   * That is Crisp's own number, so the reason for the hold no longer applies.
    *
-   * outlier.host promises, in its own words and live right now, "No seat cap". This bar was
-   * offering "22 of 25 left", which asserts a cap of 25. Two sibling products cannot tell a
-   * customer opposite things about the same founding offer, and the one that promises no cap is
-   * the one already published.
+   * ⛔ NOTHING ON LOAD. The visitor asks; the asking is the only thing that sends anything.
+   * gate_thirdparty.py enforces this by marker and will fail the push if this call ever moves
+   * out of the click handler.
    *
-   * ⚠️ AND THE NUMBER WAS NOT CRISP'S. Measured: the worker returns an IDENTICAL payload for
-   * every product — ?product=crisp, ?product=docket and ?product=outlier all answer
-   * {"left":22,"of":25,"claimed":3}. It is ONE SHARED POOL across all three products, so
-   * printing it on Crisp implies a Crisp-specific cap that does not exist. The brief that asked
-   * for this said "24 of 25" from Crisp's single Dodo sale; the pool had counted three sales
-   * across three products. That is the whole question now with Matthew: shared pool or
-   * per-product, seat cap or price-only.
+   * ⚠️ ?site= IS EXPLICIT ON PURPOSE. The worker can read the Origin header, but the BARE
+   * endpoint now answers {"error":"no founding offer for this site"} — so an omitted site is
+   * not a smaller number, it is no number at all. Being explicit makes that impossible.
    *
-   * Until he answers, the bar carries the offer and no count — which is true under either answer.
+   * ⛔ AND THE NUMBER IS NEVER GUESSED. On a failed request, an unexpected shape, or the
+   * error payload above, the bar says it could not check rather than inventing a count.
    */
+  var countBtn = root.querySelector(".ask");
+  countBtn.addEventListener('click', function () {
+    var slot = root.querySelector("[data-left]");
+    countBtn.disabled = true;
+    countBtn.textContent = "Checking\u2026";
+    fetch("https://kerr-lead-agent.kerrco.workers.dev/founding?site=crispvideo.app",
+          { method: "GET" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || typeof d.left !== "number") throw new Error("shape");
+        if (d.soldOut || d.left <= 0) { slot.textContent = "claimed"; return; }
+        slot.textContent = d.left + " of " + (d.of || 25) + " left";
+      })
+      .catch(function () { slot.textContent = "couldn\u2019t check"; });
+  });
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid
      HTML — the browser silently discards it and NOTHING THROWS. The widget
