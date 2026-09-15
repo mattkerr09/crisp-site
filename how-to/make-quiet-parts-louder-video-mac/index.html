@@ -3,43 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to make the quiet parts of a video louder on a Mac (2026) — free, offline | Crisp</title>
+<title>"Make the quiet parts louder" runs a compressor — so the loud parts get louder too | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Make the quiet talking in a video louder without the loud parts blasting, on a Mac, in one tap — 100% offline. Levels the loud and quiet so dialogue is audible. No account, no upload. Just type &quot;boost the quiet parts&quot;.">
+<meta name="description" content="Asking for the quiet parts to be louder runs a dynamic-range compressor with a 6× makeup gain, not a selective boost. Measured: quiet +15.98 dB, loud +10.85 dB, the gap only closing 21.93 → 16.80 dB. Plus why &quot;level the audio&quot; and &quot;level the dialogue&quot; run two different filters.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to make the quiet parts of a video louder on a Mac — free">
-<meta property="og:description" content="Level the loud and quiet in a video's audio on your Mac so quiet talking is audible — 100% offline, video untouched, no upload.">
+<meta property="og:title" content="&quot;Make the quiet parts louder&quot; runs a compressor — so the loud parts get louder too">
+<meta property="og:description" content="Measured on a test clip: quiet passages +15.98 dB, loud passages +10.85 dB, loud↔quiet gap 21.93 → 16.80 dB. It is not a selective boost, and the word you type picks a different filter.">
 <meta property="og:url" content="https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Make the quiet parts of a video louder on a Mac">
-<meta name="twitter:description" content="Even out loud and quiet in a video's audio on your Mac — offline, video untouched, no upload.">
+<meta name="twitter:title" content="Lifting the quiet parts lifts the loud parts too — measured">
+<meta name="twitter:description" content="Quiet +15.98 dB, loud +10.85 dB, gap 21.93 → 16.80 dB. What a &quot;make the quiet parts louder&quot; button actually runs.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","datePublished": "2026-07-07", "dateModified": "2026-09-15", "@type":"HowTo","name":"How to make the quiet parts of a video louder on a Mac","description":"Even out the loud and quiet in a video's audio on a Mac so quiet talking is audible without the loud parts blasting, 100% offline: drop in the clip, select the clip and use <strong>Audio</strong> in the Tools panel, then choose Level, and Crisp levels the dynamics on-device. The video is untouched. No account, no upload.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
-{"@type":"HowToStep","position":1,"name":"Open Crisp and drop in your video","text":"Download the free Crisp app for Mac, open it, and drag your video onto the window. Everything runs on-device — nothing is uploaded."},
-{"@type":"HowToStep","position":2,"name":"select the clip and use <strong>Audio</strong> in the Tools panel, Level","text":"In Crisp, select the clip on your timeline and use <strong>Audio</strong> in the Tools panel. Or just type “<strong>make the quiet parts louder</strong>” in the prompt bar — Crisp maps plain English to the same tool."},
-{"@type":"HowToStep","position":3,"name":"Press it","text":"Crisp compresses the dynamic range — taming the loud peaks and lifting the quiet passages — so quiet talking becomes audible, with a limiter so nothing clips. The picture is stream-copied untouched."},
-{"@type":"HowToStep","position":4,"name":"Save","text":"The leveled clip is saved beside your original — no re-render of the video."}
-]}
+{"@context":"https://schema.org","@type":"Article","headline":"\"Make the quiet parts louder\" runs a compressor — so the loud parts get louder too","description":"A \"make the quiet parts louder\" control is a dynamic-range compressor with makeup gain, not a selective boost. Measured on a test clip the quiet passages rose 15.98 dB, the loud passages rose 10.85 dB, and the loud↔quiet gap closed only from 21.93 dB to 16.80 dB. Also: why \"level the audio\" and \"level the dialogue\" route to two different filters.","datePublished":"2026-07-07","dateModified":"2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/"}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How do I make the quiet parts of a video louder on a Mac?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp. Drop your clip in, select the clip and use <strong>Audio</strong> in the Tools panel, then choose Level (or type \"boost the quiet parts\"), and press it. Crisp levels the loud and quiet on your Mac — quiet talking comes up while the loud parts are tamed — with no account, no upload."}},
-{"@type":"Question","name":"What's the difference between Level and Normalize?","acceptedAnswer":{"@type":"Answer","text":"Normalize sets one overall loudness for the whole clip but leaves the dynamics as they are — if a clip has quiet talking and loud bits, both move together. Level narrows the gap: it lifts the quiet passages and tames the loud ones, so quiet dialogue becomes audible without the loud parts blasting. Use Level when the problem is quiet-vs-loud within the same clip."}},
-{"@type":"Question","name":"Will it make the loud parts distort or clip?","acceptedAnswer":{"@type":"Answer","text":"No. Level uses a compressor to tame the peaks plus a brick-wall limiter, so the makeup gain that lifts the quiet parts never pushes the loud parts into clipping."}},
-{"@type":"Question","name":"Does it change the video?","acceptedAnswer":{"@type":"Answer","text":"No. Level only touches the audio; the picture is stream-copied untouched, so there's no quality loss on the video and it's fast."}},
-{"@type":"Question","name":"Is my video uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp levels the audio entirely on your Mac — nothing is uploaded, so there's no queue, no size cap, and your footage never leaves the device."}}
-]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does making the quiet parts louder leave the loud parts alone?", "acceptedAnswer": {"@type": "Answer", "text": "No. The makeup gain applies to the whole track. Measured: quiet +15.98 dB, loud +10.85 dB, and the gap between them closed by 5.13 dB. That gap closing is the real effect, and it is smaller than most people expect."}}, {"@type": "Question", "name": "What is the difference between Level audio and Normalize?", "acceptedAnswer": {"@type": "Answer", "text": "Two different filters. Level audio is a compressor plus limiter and narrows the loud↔quiet distance inside a clip. Normalize is EBU R128 loudness normalisation to −16 LUFS and sets where the clip sits, leaving that distance roughly as it was (measured: gap 21.93 → 21.60 dB)."}}, {"@type": "Question", "name": "Why does \"level the audio\" not do the same thing as \"level the dialogue\"?", "acceptedAnswer": {"@type": "Answer", "text": "Because the noun routes the request, not the verb. \"Audio\", \"sound\", \"volume\" and \"levels\" go to Normalize; \"dialogue\", \"speech\", \"voices\" and \"dynamics\" go to Level audio."}}, {"@type": "Question", "name": "Does levelling the audio re-encode the video?", "acceptedAnswer": {"@type": "Answer", "text": "No — the video stream is copied, so the picture is untouched and no quality is lost on it. Only the audio is re-encoded, to AAC at 256 kbps."}}, {"@type": "Question", "name": "Can it raise the dialogue and leave the music where it is?", "acceptedAnswer": {"@type": "Answer", "text": "No. Crisp works on the whole soundtrack and says so when asked; there is no stem separation in the build."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "How-to", "item": "https://crispvideo.app/how-to/"}, {"@type": "ListItem", "position": 3, "name": "Level loud & quiet on Mac", "item": "https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "How-to", "item": "https://crispvideo.app/how-to/"}, {"@type": "ListItem", "position": 3, "name": "Lifting the quiet parts lifts the loud parts too", "item": "https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/"}]}</script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -48,110 +35,190 @@
 </div></nav>
 
 <article><div class="wrap">
-  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Level loud &amp; quiet on Mac</div>
-  <h1>How to make the <span class="grad">quiet parts</span> of a video louder on a Mac</h1>
-  <div class="quick"><strong>Quick answer</strong><p class="lede">You know the clip: <strong>the quiet talking is impossible to hear, but the moment something loud happens it blasts you out of your seat</strong>. Riding the volume knob is miserable. Here's how to <strong>even out the loud and quiet</strong> in a video on a Mac in one tap, <strong>100% offline</strong>: the picture is untouched, and there's no account, no upload.</p></div>
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Lifting the quiet parts lifts the loud parts too</div>
+  <h1>"Make the quiet parts louder" runs a compressor — so the <span class="grad">loud parts get louder too</span></h1>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp's <strong>Level audio</strong> does not find the quiet passages and lift only those. It runs a dynamic-range compressor with a <strong>6× makeup gain</strong> and a lookahead limiter, and the makeup gain applies to the whole track. Measured on a test clip: quiet passages <strong>+15.98 dB</strong>, loud passages <strong>+10.85 dB</strong>, and the loud↔quiet gap closed only from <strong>21.93 dB to 16.80 dB</strong>. Everything gets louder; the quiet parts just gain more.</p></div>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-07-07 · last updated 2026-09-15</div>
 
-  <h2>The fastest way: just ask</h2>
-  <p>Crisp has a plain-English box ("Or just tell Crisp what to do…"). Drop your video in and type it:</p>
-  <ul>
-    <li><strong>boost the quiet parts</strong> — lift the quiet talking</li>
-    <li><strong>even out the loud and quiet</strong> — level the dynamics</li>
-    <li><strong>the quiet parts are too quiet</strong> — same fix</li>
-    <li><strong>level the dialogue</strong> — make speech consistent</li>
-  </ul>
-  <p>Crisp reads the request, switches to the Audio lane's Level mode, and you just press the button.</p>
+  <h2>The measurement</h2>
+  <p>How the numbers were produced, so you can disagree with them: a 12-second test file — pink
+  noise band-limited to 180–3800 Hz, roughly the speech band, in alternating 1.5-second quiet and
+  loud blocks — through Crisp's audio lane in <code>levelize</code> mode, measured block by block
+  with ffmpeg's <code>volumedetect</code>. A synthetic signal rather than a recording of a room,
+  on purpose: it isolates the level behaviour. Figures are means across the four quiet and four
+  loud blocks.</p>
 
-  <h2>Step by step: the Audio lane</h2>
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th></th><th>Quiet blocks</th><th>Loud blocks</th><th>Gap</th></tr></thead>
+    <tbody>
+      <tr><td>Before</td><td>−43.08 dB</td><td>−21.15 dB</td><td>21.93 dB</td></tr>
+      <tr><td>After <strong>Level audio</strong></td><td>−27.10 dB</td><td>−10.30 dB</td><td>16.80 dB</td></tr>
+      <tr><td>Change</td><td class="yes">+15.98 dB</td><td>+10.85 dB</td><td>−5.13 dB</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The quiet talking did come up, by about 16 dB, which is why anyone presses this button. But
+  the loud parts finished <strong>10.85 dB louder than they started</strong>, and the distance
+  between loud and quiet — the thing actually bothering you — closed by 5.13 dB out of 21.93. If
+  the problem is a door slam blowing your ears off, this does not fix it. It makes the slam
+  louder too, just more slowly.</p>
+
+  <h2>Why the loud parts rise: the filter, term by term</h2>
+  <p>The whole operation is one ffmpeg filter chain, and it is short enough to read
+  (<code>backend/crisp_engine/audio.py</code>):</p>
+  <div class="box">
+    <p style="margin-top:0"><code>acompressor=threshold=-22dB:ratio=4:attack=20:release=300:makeup=6,alimiter=limit=0.95</code></p>
+    <ul style="margin-bottom:0">
+      <li><strong><code>makeup=6</code> is a linear multiplier, not decibels.</strong> 6× is
+      +15.56 dB, and it is applied to every sample in the track. Checked by running the same
+      compressor with <code>ratio=1</code> so no compression happens at all: −43.0 dB became
+      −27.4 dB. That +15.6 dB is the entire "lift".</li>
+      <li><strong><code>threshold=-22dB:ratio=4</code> only touches audio above −22 dBFS.</strong>
+      The quiet blocks sit at −43 dB, far below it, so they receive the full makeup gain and
+      nothing else. The loud blocks cross the threshold and take 4:1 gain reduction, which claws
+      back about 5 dB — which is precisely the gap that closed.</li>
+      <li><strong><code>alimiter=limit=0.95</code></strong> is a lookahead limiter on the end, so
+      the makeup gain has somewhere to land instead of running off the top.</li>
+    </ul>
+  </div>
+  <p>That is why "boost only the quiet bits" is not something a compressor can do. It narrows the
+  distance by holding the <em>loud</em> down; the sensation of the quiet parts being lifted is the
+  makeup gain afterwards, and makeup gain is not selective. Nothing in the chain knows which
+  passage is dialogue and which is a slammed door.</p>
+
+  <h2>The word you type picks a different filter</h2>
+  <p>Crisp's plain-English box maps a request onto one of eleven audio modes. Two of them sound
+  like the same English sentence and are not the same operation at all. Run against the shipped
+  parser, not read off a list:</p>
+
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>What you type</th><th>What runs</th></tr></thead>
+    <tbody>
+      <tr><td>"level the audio"</td><td>Normalize</td></tr>
+      <tr><td>"level the volume"</td><td>Normalize</td></tr>
+      <tr><td>"level the sound"</td><td>Normalize</td></tr>
+      <tr><td>"even out the volume"</td><td>Normalize</td></tr>
+      <tr><td>"even out the audio"</td><td>Normalize</td></tr>
+      <tr><td>"level the dialogue"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"even out the dialogue"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"even out the speech"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"level the voices"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"level the dynamics"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"make the quiet parts louder"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"even out the loud and quiet"</td><td class="yes">Level audio</td></tr>
+      <tr><td>"the quiet parts are too quiet"</td><td class="yes">Level audio</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="muted">The verb does not decide — the noun does. "Level" or "even out" plus
+  <em>audio / sound / volume / levels</em> goes to Normalize. The same verb plus
+  <em>dialogue / speech / voices / dynamics</em> goes to Level audio.</p>
+
+  <p>And <a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize</a> is a
+  genuinely different operation, not a milder one: <code>loudnorm=I=-16:TP=-1.5:LRA=11</code>,
+  EBU R128 loudness normalisation to −16 LUFS. On the same test file it moved the quiet blocks
+  +5.65 dB and the loud blocks +5.32 dB and left the gap at 21.60 dB — where it started. It
+  decides <em>where the clip sits</em>; it does not change the distance between its loud and
+  quiet parts.</p>
+
+  <p>So: whole clip too quiet, or several clips that need to match each other → Normalize.
+  Quiet talking and loud bangs <em>inside</em> one clip → Level audio. And if you phrase the
+  second request with the word "audio" in it, you will get the first one.</p>
+
+  <h2>What it costs</h2>
+  <ul>
+    <li><strong>The noise floor comes up with everything else.</strong> In the test, the quiet
+    blocks <em>were</em> the noise, and they rose 15.98 dB. Room hum, air conditioning and tape
+    hiss live in the quiet passages by definition, so they take the same +16 dB the dialogue
+    does. Clean first, level second:
+    <a href="https://crispvideo.app/how-to/remove-background-noise-video-mac/">Denoise</a> for
+    steady hiss and hum,
+    <a href="https://crispvideo.app/how-to/remove-wind-noise-from-video-mac/">Cut wind</a> for
+    buffeting on the mic.</li>
+    <li><strong>The output lands at the ceiling.</strong> Measured on the levelled file, the
+    loudest sample reads 0.0 dBFS. It sits right at full scale, so there is no headroom left for
+    anything you stack on top of it afterwards.</li>
+    <li><strong>You cannot dial it back.</strong> Those filter values are fixed; there is no
+    strength slider for this mode. Heavy compression flattens a performance, so if a levelled
+    clip sounds lifeless, the remedy is not to level more gently — it is to lift the whole clip
+    instead.</li>
+  </ul>
+
+  <h2>What it will not do</h2>
+  <ul>
+    <li><strong>It cannot lift the voice and leave the music.</strong> Ask, and Crisp refuses in
+    its own words rather than doing something else quietly: <em>"Crisp works on the whole
+    soundtrack — it can't split the music from the voices. It can mute it, even out the loudness,
+    reduce background noise, or save the audio on its own."</em> There is no stem separation in
+    the build, so every audio mode acts on the mixed soundtrack.</li>
+    <li><strong>It works a clip at a time.</strong> Crisp changes a whole clip at a time, so to
+    level one stretch of a recording you split the clip where the change should start (press S,
+    or right-click → Split here) and apply it to that piece.</li>
+    <li><strong>It refuses silence instead of re-encoding it.</strong> A track that peaks below
+    −80 dBFS gets <em>"This clip's audio track is silent — there's nothing to even out."</em> A
+    file with no audio track at all gets <em>"This clip has no audio track — there's nothing to
+    adjust."</em> Both checks run before any work starts.</li>
+  </ul>
+
+  <h2>Running it on a Mac</h2>
   <ol class="steps">
     <li>
-      <h3>Open Crisp and drop in your video</h3>
-      <p>Get the free <a href="https://crispvideo.app/#download">Crisp app for Mac</a> and drag your clip onto the window. Nothing is uploaded: the whole job runs on your Mac.</p>
+      <h3>Drop the clip into Crisp</h3>
+      <p>Get <a href="https://crispvideo.app/#download">Crisp for Mac</a> and drag your video
+      onto the window. The whole job runs on your Mac — nothing is uploaded.</p>
     </li>
     <li>
-      <h3>select the clip and use <strong>Audio</strong> in the Tools panel, then Level</h3>
-      <p>In Crisp, select the clip on your timeline and use <strong>Audio</strong> in the Tools panel. Or just type “<strong>make the quiet parts louder</strong>” in the prompt bar — Crisp maps plain English to the same tool.</p>
+      <h3>Select the clip, then <strong>Audio</strong> in the Tools panel → <strong>Level audio</strong></h3>
+      <p>Or type <strong>"make the quiet parts louder"</strong> in the prompt bar, which reaches
+      the same mode. <strong>"Level the audio"</strong> does not — see the table above.</p>
     </li>
     <li>
-      <h3>Press it</h3>
-      <p>Crisp <strong>compresses the dynamic range</strong> — taming the loud peaks and lifting the quiet passages — so quiet talking becomes audible, with a limiter so nothing clips. The <strong>picture is stream-copied untouched</strong>.</p>
-    </li>
-    <li>
-      <h3>Save</h3>
-      <p>The leveled clip lands beside your original — with the video never re-rendered.</p>
+      <h3>Press it, then check the loud parts, not the quiet ones</h3>
+      <p>The video stream is copied with <code>-c:v copy</code>, so the picture is byte-for-byte
+      untouched; only the audio is re-encoded, to AAC at 256 kbps. Every audio track in the file
+      is processed, not only the first — a screen recording with separate mic and system-audio
+      tracks keeps both, and both get levelled. If the loud moments are now too loud, that is
+      expected: they rose too. Lower the whole clip afterwards, or use
+      <a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize</a> instead if
+      what you wanted was one consistent overall loudness.</p>
     </li>
   </ol>
 
-  <div class="box">
-    <h3 style="margin-top:0">Lifts the quiet, tames the loud — no clipping</h3>
-    <p style="margin-bottom:0">Level runs a <strong>compressor</strong> that pulls the loud peaks down, then adds makeup gain so the whole thing, especially the quiet passages, comes up, and a <strong>brick-wall limiter</strong> catches anything that would clip. The result: the loud↔quiet gap <strong>narrows</strong>, so quiet dialogue is audible without the loud moments blasting. Want one consistent overall loudness instead? Use <a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize</a>.</p>
-  </div>
-
-  <h2>Level vs Normalize: which one?</h2>
-  <p>Both live in the Audio lane and both make audio "better," but they solve different problems:</p>
-  <ul>
-    <li><strong>Level</strong> — the loud and quiet <em>within</em> a clip are all over the place (quiet talking, loud bangs). Level narrows that gap. That's this guide.</li>
-    <li><strong>Normalize</strong> — the whole clip is just too quiet or too loud <em>overall</em>, or you're matching several clips to one loudness. Use <a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize</a>.</li>
-    <li><strong>Steady hiss/hum</strong> — background noise, not dynamics. Use <a href="https://crispvideo.app/how-to/remove-background-noise-video-mac/">Denoise</a>.</li>
-  </ul>
-
-  <h2>Crisp vs iMovie vs online tools</h2>
-  <div class="cmp-wrap"><table class="cmp">
-    <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>Online audio tools</th></tr></thead>
-    <tbody>
-      <tr><td>One-tap "even out loud &amp; quiet"</td><td class="yes">Yes (Level)</td><td class="no">Manual clip-by-clip volume</td><td class="yes">Varies</td></tr>
-      <tr><td>Lifts quiet without clipping loud</td><td class="yes">Yes (limiter)</td><td class="no">Easy to clip</td><td class="no">Varies</td></tr>
-      <tr><td>Plain-English request</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
-      <tr><td>Video not re-encoded</td><td class="yes">Yes (audio only)</td><td class="no">Re-renders</td><td class="no">Varies</td></tr>
-      <tr><td>100% offline, nothing uploaded</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Uploads your clip</td></tr>
-    </tbody>
-  </table></div>
-  <p class="muted">iMovie makes you set volume clip by clip and it's easy to clip the loud parts; online tools upload your footage. Crisp levels the dynamics in one tap, keeps it local, and won't clip.</p>
-
-  <h2>Why offline matters for audio</h2>
-  <ul>
-    <li><strong>Your footage stays yours.</strong> The "fix video audio online" tools upload your clip first. Crisp does it entirely on your Mac.</li>
-    <li><strong>Video untouched.</strong> Only the audio is processed — no quality loss on the picture, and it's fast.</li>
-    <li><strong>No queue, no size cap.</strong> It works on the whole file locally.</li>
-    <li><strong>Stack it.</strong> Level, then Normalize the overall loudness — all on-device.</li>
-  </ul>
-
   <div class="cta">
-    <h2>Even out the audio — offline</h2>
-    <p>Free to try on your Mac. One tap to make quiet talking audible without the loud parts blasting: no account, no upload, nothing leaves your device.</p>
+    <h2>Level a clip and measure it yourself</h2>
+    <p>Crisp runs entirely on your Mac — no account, no upload, no queue. Free to try; free
+    exports carry a "Made with Crisp" watermark.</p>
     <a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a>
     <p class="muted" style="margin-top:.8rem;margin-bottom:0">Apple Silicon · macOS 12+ · Notarized</p>
   </div>
 
-  <h2>About evening out the levels</h2>
-  <h3>How do I make the quiet parts of a video louder on a Mac?</h3>
-  <p>Use Crisp: drop your clip in, select the clip and use <strong>Audio</strong> in the Tools panel, then choose Level (or type "boost the quiet parts"), and press it. It levels the loud and quiet on your Mac: no account, no upload.</p>
-  <h3>What's the difference between Level and Normalize?</h3>
-  <p>Normalize sets one overall loudness and leaves the dynamics alone; Level narrows the loud↔quiet gap so quiet dialogue is audible without the loud parts blasting.</p>
-  <h3>Will the loud parts clip?</h3>
-  <p>No — Level uses a compressor plus a brick-wall limiter, so the makeup gain that lifts the quiet parts never pushes the loud parts into clipping.</p>
-  <h3>Does it change the video?</h3>
-  <p>No — only the audio is processed; the picture is stream-copied, so there's no quality loss and it's fast.</p>
-  <h3>Related guides</h3>
-  <p><a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize the loudness</a> · <a href="https://crispvideo.app/how-to/remove-background-noise-video-mac/">Remove background noise</a> · <a href="https://crispvideo.app/how-to/extract-audio-from-video-mac/">Extract the audio</a></p>
+  <h2>Questions people actually ask</h2>
+  <h3>Does making the quiet parts louder leave the loud parts alone?</h3>
+  <p>No. The makeup gain applies to the whole track. Measured: quiet +15.98 dB, loud +10.85 dB,
+  and the gap between them closed by 5.13 dB. That gap closing is the real effect, and it is
+  smaller than most people expect.</p>
+  <h3>What is the difference between Level audio and Normalize?</h3>
+  <p>Two different filters. Level audio is a compressor plus limiter and narrows the loud↔quiet
+  distance inside a clip. Normalize is EBU R128 loudness normalisation to −16 LUFS and sets where
+  the clip sits, leaving that distance roughly as it was (measured: gap 21.93 → 21.60 dB).</p>
+  <h3>Why does "level the audio" not do the same thing as "level the dialogue"?</h3>
+  <p>Because the noun routes the request, not the verb. "Audio", "sound", "volume" and "levels"
+  go to Normalize; "dialogue", "speech", "voices" and "dynamics" go to Level audio.</p>
+  <h3>Does levelling the audio re-encode the video?</h3>
+  <p>No — the video stream is copied, so the picture is untouched and no quality is lost on it.
+  Only the audio is re-encoded, to AAC at 256 kbps.</p>
+  <h3>Can it raise the dialogue and leave the music where it is?</h3>
+  <p>No. Crisp works on the whole soundtrack and says so when asked; there is no stem separation
+  in the build.</p>
 
-
-  <h2>This is compression, and it has a cost</h2>
-  <p>Making quiet passages louder without touching the loud ones means reducing the distance
-  between them — compression. Used gently it makes dialogue intelligible on a phone speaker.
-  Used heavily it flattens the performance, so a whisper and a shout carry the same weight and
-  the result sounds lifeless and fatiguing.</p>
-  <p>It also raises the noise floor. Every dB of gain on a quiet section lifts the room hum and
-  hiss with it, which is why cleaning noise first and lifting levels second gives a better
-  result than doing it the other way round.</p>
-  <p>See also: <a href="https://crispvideo.app/for/teachers/">levelling a lecture recording</a>.</p>
-  <p>See also: <a href="https://crispvideo.app/for/churches/">levelling a service recording</a>.</p>
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">How to make a video vertical (9:16) on a Mac</a></li>
-    <li><a href="https://crispvideo.app/how-to/mute-video-mac/">How to mute a video on a Mac</a></li>
-    <li><a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">How to normalize audio in a video on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/normalize-audio-video-mac/">Normalize the loudness of a video on a Mac</a> — the other half of this page</li>
+    <li><a href="https://crispvideo.app/how-to/remove-background-noise-video-mac/">Remove background noise</a> — do this before you level, not after</li>
+    <li><a href="https://crispvideo.app/how-to/extract-audio-from-video-mac/">Extract the audio as an MP3</a></li>
+    <li><a href="https://crispvideo.app/how-to/mute-video-mac/">Mute a video</a></li>
+    <li><a href="https://crispvideo.app/for/teachers/">Levelling a lecture recording</a></li>
+    <li><a href="https://crispvideo.app/for/churches/">Levelling a service recording</a></li>
   </ul>
 
 </div></article>

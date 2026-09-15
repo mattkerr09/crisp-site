@@ -3,42 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to slow down a video (slow-mo) on a Mac — free, offline | Crisp</title>
+<title>Slow motion lowers the frame rate — it doesn't add frames | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Make a slow-motion video on a Mac — 0.5× or 0.25× — with pitch-corrected audio, no subscription, entirely offline. Crisp retimes the clip on-device; for buttery slow-mo, upscale the frame rate first.">
+<meta name="description" content="Measured in Crisp's Speed lane on a Mac: a 30fps clip at 0.5× comes out as the same 60 frames at 15fps, at 0.25× as 7.5fps. Why quarter speed judders, what the audio does, and the separate pass that actually adds frames.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to slow down a video (slow-mo) on a Mac — free">
-<meta property="og:description" content="0.5× / 0.25× slow motion on your Mac, pitch-corrected audio, no subscription, offline.">
+<meta property="og:title" content="Slow motion lowers the frame rate — it doesn't add frames">
+<meta property="og:description" content="A 30fps clip slowed to 0.5× keeps all 60 frames and plays them at 15fps. Measured, with the arithmetic that explains the judder.">
 <meta property="og:url" content="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to slow down a video (slow-mo) on a Mac">
-<meta name="twitter:description" content="0.5×/0.25× slow motion on your Mac — pitch-corrected audio, offline.">
+<meta name="twitter:title" content="Slow motion lowers the frame rate — it doesn't add frames">
+<meta name="twitter:description" content="0.5× on a 30fps clip = the same 60 frames at 15fps. Measured, with the judder arithmetic.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","datePublished": "2026-07-04", "dateModified": "2026-09-15", "@type":"HowTo","name":"How to slow down a video (slow-mo) on a Mac","description":"Make a slow-motion video on a Mac with Crisp — 0.5× or 0.25×, pitch-corrected audio, offline.","totalTime":"PT2M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
-{"@type":"HowToStep","position":1,"name":"Open Crisp and choose Speed","text":"Download the free Crisp app for Mac and open it. Click the Speed tab in the Tools panel."},
-{"@type":"HowToStep","position":2,"name":"Pick a slow-mo speed","text":"Choose 0.5× (half speed, twice as long) or 0.25× (super slow-mo, four times as long)."},
-{"@type":"HowToStep","position":3,"name":"Drop in your clip","text":"Drag your video onto the window. Crisp retimes it and pitch-corrects the audio so voices don't sound deep."},
-{"@type":"HowToStep","position":4,"name":"Export","text":"Crisp renders the slow-motion clip on-device and saves it beside your original — one-time."}
-]}
+{"@context":"https://schema.org","@type":"Article",
+"headline":"Slowing a clip down lowers its frame rate — it doesn't add frames",
+"description":"Crisp's Speed lane rescales timestamps and keeps every frame: a 30fps clip at 0.5× is the same 60 frames at 15fps. Adding frames is a separate pass (Smooth motion, RIFE) that raises the rate without slowing the clip.",
+"datePublished":"2026-07-04","dateModified":"2026-09-15",
+"author":{"@type":"Organization","name":"Crisp"},
+"publisher":{"@type":"Organization","name":"Crisp"},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://crispvideo.app/how-to/slow-mo-video-mac/"}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How do I make a slow-motion video on a Mac?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp's Speed lane. Pick 0.5× or 0.25×, drop your clip in, and it retimes the video and pitch-corrects the audio on-device. Export is works entirely offline."}},
-{"@type":"Question","name":"Does slowing a video down make it look choppy?","acceptedAnswer":{"@type":"Answer","text":"Slowing below the source frame rate repeats frames, which can look slightly stuttery. For buttery slow motion, run Crisp's Enhance lane with Smooth motion first — it interpolates extra frames — then slow the clip down."}},
-{"@type":"Question","name":"Can I make a slow-mo video for free no subscription?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisp's Speed lane is in the free tier and never adds a watermark. Everything runs on your Mac, so nothing is uploaded."}},
-{"@type":"Question","name":"Can Crisp also speed a video up?","acceptedAnswer":{"@type":"Answer","text":"Yes — the same Speed lane does 2× (fast) and 4× (timelapse) as well as 0.5× and 0.25× slow motion, with the audio kept in tune."}}
-]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does slowing a video down duplicate frames or create new ones?", "acceptedAnswer": {"@type": "Answer", "text": "Neither, in the Speed lane. Crisp rescales the presentation timestamps and writes out the frames it was given. A 2-second 30fps clip has 60 frames; at 0.5× the output still has 60 frames over about 4 seconds, so the file reads 15fps. At 0.25×, the same 60 frames read 7.5fps."}}, {"@type": "Question", "name": "Why does quarter-speed slow motion judder?", "acceptedAnswer": {"@type": "Answer", "text": "Output frame rate is source rate times speed. A 30fps source at 0.25× plays 7.5 unique frames a second, and at the 0.1× floor, 3. Nothing was generated to fill the gap, so each frame is held four to ten times longer than it was shot to be."}}, {"@type": "Question", "name": "Does the audio drop in pitch when a clip is slowed down?", "acceptedAnswer": {"@type": "Answer", "text": "No. Crisp stretches the audio with a chain of ffmpeg atempo stages, which changes tempo and leaves pitch alone. Measured on a 440 Hz test tone slowed to 0.25×: the output tone is still 440 Hz over four times the length. The same helper runs behind per-clip speed on the timeline."}}, {"@type": "Question", "name": "How do I get smooth slow motion instead of juddery slow motion?", "acceptedAnswer": {"@type": "Answer", "text": "Run two passes, in order. First Enhance with Smooth motion, which uses RIFE (rife-v4.6) to add in-between frames and raises the frame rate over the same duration. Then run the Speed lane on that result. One job never does both — the request box plans only the slow-down if you ask for both in one sentence."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "How-to", "item": "https://crispvideo.app/how-to/"}, {"@type": "ListItem", "position": 3, "name": "How to slow-mo a video on Mac", "item": "https://crispvideo.app/how-to/slow-mo-video-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "How-to", "item": "https://crispvideo.app/how-to/"}, {"@type": "ListItem", "position": 3, "name": "Slow motion lowers the frame rate", "item": "https://crispvideo.app/how-to/slow-mo-video-mac/"}]}</script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -47,93 +41,158 @@
 </div></nav>
 
 <article><div class="wrap">
-  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; How to slow-mo a video on Mac</div>
-  <h1>How to <span class="grad">slow down a video</span> on a Mac</h1>
-  <div class="quick"><strong>Quick answer</strong><p class="lede">Want a dramatic slow-motion clip from footage you already shot? Here's how to slow a video down on a Mac in about a minute — <strong>0.5× or 0.25×</strong>, with the audio kept in tune, entirely offline.</p></div>
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Slow motion lowers the frame rate</div>
+  <h1>Slowing a clip down <span class="grad">lowers its frame rate</span> — it doesn't add frames</h1>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Slowing a clip in Crisp's Speed lane rescales the timestamps and writes out exactly the frames it was handed. A 2-second 30fps clip holds 60 frames; at <strong>0.5×</strong> the output is still 60 frames, now about 4 seconds long and tagged <strong>15fps</strong>. At 0.25× those same 60 frames read 7.5fps. Nothing is invented, which is where the judder comes from. Adding frames is a different pass entirely.</p></div>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-07-04 · last updated 2026-09-15</div>
 
-  <h2>The short version</h2>
-  <ol class="steps">
-    <li>
-      <h3>Open Crisp → Speed</h3>
-      <p>Grab the free <a href="https://crispvideo.app/#download">Crisp app for Mac</a> and open it. Click the <strong>Speed</strong> tab in the Tools panel.</p>
-    </li>
-    <li>
-      <h3>Pick a slow-mo speed</h3>
-      <p><strong>0.5×</strong> plays at half speed (twice as long); <strong>0.25×</strong> is super slow-mo (four times as long). Fast-forward and timelapse (2× / 4×) are right there too.</p>
-    </li>
-    <li>
-      <h3>Drop in your clip</h3>
-      <p>Drag your video onto the window. Crisp retimes it and <strong>pitch-corrects the audio</strong>, so slowed-down voices don't drop into a deep drone.</p>
-    </li>
-    <li>
-      <h3>Export</h3>
-      <p>Crisp renders the slow-motion clip on your Mac and saves it beside the original — one-time.</p>
-    </li>
-  </ol>
-
-  <div class="box">
-    <h3 style="margin-top:0">Want buttery-smooth slow motion?</h3>
-    <p style="margin-bottom:0">Slowing a clip below its native frame rate repeats frames, which can look a touch stuttery. For silky slow motion, first run <strong>Enhance</strong> with <strong>Smooth motion</strong> on, Crisp interpolates extra frames to a higher frame rate, then switch to <strong>Speed</strong> and slow it down. Two on-device passes, still offline.</p>
-  </div>
-
-  <h2>Speeds at a glance</h2>
+  <h2>What the Speed lane actually does to the file</h2>
+  <p>Picking a slow-mo speed does not touch the pictures. Crisp rescales every frame's
+  presentation timestamp so the same pictures are spread over a longer stretch of time, stretches
+  the audio to match, and re-encodes. On every slow-mo setting tested, the frame count coming out
+  equalled the frame count going in.</p>
+  <p>Here is the same 2-second, 1920×1080, 30fps test clip run through the Speed lane at four
+  settings, with the output measured with <code>ffprobe</code> rather than predicted:</p>
   <div class="cmp-wrap"><table class="cmp">
-    <thead><tr><th>Speed</th><th>Effect</th></tr></thead>
+    <thead><tr><th>Speed</th><th>Frames in → out</th><th>Output duration</th><th>Output frame rate</th></tr></thead>
     <tbody>
-      <tr><td>0.25×</td><td>Super slow-mo · 4× longer</td></tr>
-      <tr><td>0.5×</td><td>Slow motion · 2× longer</td></tr>
-      <tr><td>2×</td><td>Fast · half the length</td></tr>
-      <tr><td>4×</td><td>Timelapse · quarter the length</td></tr>
+      <tr><td>0.75×</td><td>60 → 60</td><td>2.67 s</td><td>22.5 fps</td></tr>
+      <tr><td>0.5×</td><td>60 → 60</td><td>3.97 s</td><td>15 fps</td></tr>
+      <tr><td>0.25×</td><td>60 → 60</td><td>7.90 s</td><td>7.5 fps</td></tr>
+      <tr><td>0.1×</td><td>60 → 60</td><td>19.70 s</td><td>3 fps</td></tr>
     </tbody>
   </table></div>
+  <p>The rule underneath the table is one line of arithmetic: <strong>output frame rate = source
+  frame rate × speed.</strong> That single relationship answers most of what people want to know
+  before they commit to a render.</p>
 
-  <h2>Why do it on-device?</h2>
-  <ul>
-    <li><strong>Private &amp; offline.</strong> Your footage never leaves your Mac — no upload, no cloud.</li>
-    <li><strong>No account, no subscription.</strong> Free to try; own it once.</li>
-    <li><strong>Audio stays in tune.</strong> Crisp pitch-corrects, so slow-mo speech sounds natural.</li>
-  </ul>
+  <h2>Why 0.5× usually looks fine and 0.25× usually doesn't</h2>
+  <p>At half speed a 30fps clip lands on 15 unique frames per second. That is thin, but each
+  frame still carries recognisable motion between it and the next one. At quarter speed the same
+  footage lands on 7.5, and at Crisp's slowest setting — 0.1×, the engine's floor — on 3. There is
+  no filling-in step, so each frame simply sits on screen four or ten times longer than the camera
+  intended it to. What reads as "stuttery slow motion" is that held frame.</p>
+  <p>This is also why footage shot at a high rate slows so much better. A clip recorded at 120fps
+  has four times the frames to spend, so 0.25× still delivers 30 unique frames per second — the
+  same rate the 30fps clip had before anyone touched it. If you know in advance that a shot will
+  be slowed, the cheapest fix is at the camera, not in the app.</p>
+  <p>The speed range Crisp accepts is <strong>0.1× to 8×</strong>. The four cards in the app cover
+  0.25×, 0.5×, 2× and 4×; the numbers in between are reachable through the request box.</p>
+
+  <h2>What happens to the audio: the pitch stays put</h2>
+  <p>Stretching audio the naive way drops its pitch, which is what turns a slowed voice into a
+  drone. Crisp does not do that. It stretches the track with a chain of ffmpeg <code>atempo</code>
+  stages, a filter that changes tempo and leaves pitch alone. <code>atempo</code> only accepts a
+  factor between 0.5 and 2.0 per stage, so anything outside that is decomposed — 0.25× becomes
+  <code>atempo=0.5,atempo=0.5</code>, and the 0.1× floor becomes four stages whose product is 0.1.</p>
+  <p>Checked rather than assumed: a 440 Hz sine tone, two seconds long, run through the Speed lane
+  at 0.25×. The output is eight seconds long and its dominant frequency is still 440 Hz. The same
+  helper is reused by the timeline's per-clip speed property, so a slowed clip inside an edit keeps
+  its pitch too.</p>
+  <p>Two smaller things the lane does while it is in there. Only the video and first audio stream
+  are carried across — a subtitle or data track is dropped, because its timestamps were not
+  retimed. And if you set trim points on the same job, the trim is applied to the input first and
+  the retime second, which is the order the sentence "take this piece, then slow it down" implies.
+  See <a href="https://crispvideo.app/how-to/trim-video-mac/">trimming a video</a> for that side of it.</p>
+
+  <h2>The pass that does add frames is a different lane</h2>
+  <p>Crisp can invent in-between frames. That is <strong>Smooth motion</strong>, in the Enhance
+  lane, and it runs RIFE (model <code>rife-v4.6</code>) over the frames. The important part, and
+  the part that surprises people: <strong>Smooth motion does not slow anything down.</strong> It
+  produces 2× or 3× the frames and plays them at 2× or 3× the frame rate, so the clip's duration is
+  unchanged and the original audio still lines up. A 30fps clip comes back as a 30fps-long, 60fps
+  clip.</p>
+  <p>So smooth slow motion is two passes, in this order:</p>
+  <ol class="steps">
+    <li>
+      <h3>Enhance, with Smooth motion on</h3>
+      <p>Pick 2× fps (30→60) or 3× fps. RIFE generates the in-between frames. Duration does not
+      change. Background reading: <a href="https://crispvideo.app/learn/what-is-frame-interpolation/">what frame interpolation actually does</a>.</p>
+    </li>
+    <li>
+      <h3>Then the Speed lane, on the result</h3>
+      <p>Slowing a 60fps file to 0.5× lands on 30fps — the rate you started with, but over twice
+      the time, with every frame distinct instead of held.</p>
+    </li>
+  </ol>
+  <div class="box">
+    <h3 style="margin-top:0">Two constraints worth knowing before you start</h3>
+    <p>Smooth motion lives inside the <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">upscale lane</a>, and the smallest
+    scale that lane offers is 2×. There is no "interpolate without enlarging" setting, so the
+    intermediate file comes back both smoother and considerably bigger. Separately, the
+    <strong>Max quality</strong> preset refuses Smooth motion outright and says so rather than
+    quietly skipping it — use a standard preset for this.</p>
+    <p style="margin-bottom:0">Interpolation also runs <em>after</em> the upscale inside that
+    pass, not before: the frames RIFE reads are the enlarged ones.</p>
+  </div>
+
+  <h2>Asking for it in words</h2>
+  <p>The request box reads a multiplier or a percentage and hands the number straight to the lane.
+  Verified against the parser:</p>
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>What you type</th><th>What Crisp plans</th></tr></thead>
+    <tbody>
+      <tr><td>slow it down</td><td>0.5×</td></tr>
+      <tr><td>slow it down a bit</td><td>0.75×</td></tr>
+      <tr><td>slow it way down</td><td>0.25×</td></tr>
+      <tr><td>slow it down 3x</td><td>0.333×</td></tr>
+      <tr><td>slow it to 10%</td><td>0.1×, with a note that this is as slow as Crisp goes</td></tr>
+      <tr><td>slow the middle down</td><td>Refused — see below</td></tr>
+    </tbody>
+  </table></div>
+  <p>Two refusals are worth calling out, because both are the app being honest rather than
+  failing. Asking to slow part of a clip is declined with an instruction: Crisp changes a whole
+  clip at a time, so <a href="https://crispvideo.app/how-to/split-a-clip-in-video-mac/">split the clip</a> where the change should start
+  and apply the speed to that piece. And asking for both things in one sentence — "slow it down and
+  smooth the motion" — plans only the slow-down. One job runs one lane. Run Smooth motion first as
+  its own job, then the Speed lane on what comes out.</p>
+
+  <h2>Inside a multi-clip edit</h2>
+  <p>On the timeline, speed is a per-clip property rather than a separate render. Set a clip to
+  0.25×, 0.5×, 1.5×, 2× or 4× and it is baked in at export, reversibly — you can change your mind
+  without re-rendering a new source file. The per-clip range the exporter validates is the same
+  0.1×–8× the standalone lane uses, and it runs the same pitch-preserving audio chain. Muting a
+  clip disables its volume control, since a muted segment skips the audio branch entirely; if you
+  want the slowed clip silent under music, <a href="https://crispvideo.app/how-to/mute-video-mac/">muting it</a> is the clean route.</p>
+  <p>One thing to check before any of this: if your source is variable-frame-rate, the "source
+  frame rate" in the arithmetic above is an average rather than a fact. <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">Variable frame rate and
+  why it breaks edits</a> covers what to do about it. If you only want a plain speed change with
+  none of this detail, <a href="https://crispvideo.app/how-to/change-video-speed-mac/">changing video speed</a> is the shorter page.</p>
 
   <div class="cta">
-    <h2>Make your first slow-mo clip free</h2>
-    <p>Free to try on your Mac. No account, no subscription — nothing leaves your device.</p>
+    <h2>Try it on your own clip</h2>
+    <p>Free to try on your Mac, and nothing is uploaded — the render runs on your machine. Free
+    video exports carry a small "Made with Crisp" mark; a one-time $129 removes it and unlocks Max
+    quality and batch.</p>
     <a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a>
     <p class="muted" style="margin-top:.8rem;margin-bottom:0">Apple Silicon · macOS 12+ · Notarized</p>
   </div>
 
-  <h2>Slow motion questions</h2>
-  <h3>How do I slow down a video on a Mac?</h3>
-  <p>Open Crisp, choose the Speed lane, pick 0.5× or 0.25×, and drop your clip in. It retimes the video and pitch-corrects the audio on-device.</p>
-  <h3>Is it free?</h3>
-  <p>Yes — the Speed lane is in the free tier. Free exports carry a small “Made with Crisp” mark; a one-time $129 removes it.</p>
-  <h3>Related guides</h3>
-  <p><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">How to make a video vertical</a> · <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">How to upscale video on a Mac</a> · <a href="https://crispvideo.app/vs/inshot-alternative-mac/">InShot alternative for Mac</a></p>
+  <h2>Questions people ask about this</h2>
+  <h3>Does slowing a video down duplicate frames or create new ones?</h3>
+  <p>Neither, in the Speed lane. Crisp rescales the presentation timestamps and writes out the
+  frames it was given. A 2-second 30fps clip has 60 frames; at 0.5× the output still has 60 frames
+  over about 4 seconds, so the file reads 15fps. At 0.25×, the same 60 frames read 7.5fps.</p>
+  <h3>Why does quarter-speed slow motion judder?</h3>
+  <p>Output frame rate is source rate times speed. A 30fps source at 0.25× plays 7.5 unique frames
+  a second, and at the 0.1× floor, 3. Nothing was generated to fill the gap, so each frame is held
+  four to ten times longer than it was shot to be.</p>
+  <h3>Does the audio drop in pitch?</h3>
+  <p>No. The track is stretched with <code>atempo</code> stages, which change tempo and leave pitch
+  alone. Measured on a 440 Hz tone at 0.25×: eight seconds long, still 440 Hz.</p>
+  <h3>How do I get smooth slow motion rather than juddery slow motion?</h3>
+  <p>Two passes in order — Enhance with Smooth motion (RIFE adds the in-between frames at the same
+  duration), then the Speed lane on that output. A single job will not do both.</p>
+  <h3>Does the audio drop in pitch when a clip is slowed down?</h3>
+  <p>No. Crisp stretches the audio with a chain of ffmpeg atempo stages, which changes tempo and leaves pitch alone. Measured on a 440 Hz test tone slowed to 0.25×: the output tone is still 440 Hz over four times the length. The same helper runs behind per-clip speed on the timeline.</p>
+  <h3>How do I get smooth slow motion instead of juddery slow motion?</h3>
+  <p>Run two passes, in order. First Enhance with Smooth motion, which uses RIFE (rife-v4.6) to add in-between frames and raises the frame rate over the same duration. Then run the Speed lane on that result. One job never does both — the request box plans only the slow-down if you ask for both in one sentence.</p>
 
-  <h2>Why slow motion looks bad when the footage wasn't shot for it</h2>
-  <p>A clip recorded at 30fps and slowed to a quarter speed has to show four times as many
-  frames as were captured. Something has to fill the gap. The cheap answer is to hold each
-  frame longer, which is what makes slowed footage look juddery rather than smooth.</p>
-  <p>This is why footage shot at 120 or 240fps slows beautifully and normal 30fps footage
-  doesn't. If you know in advance that a shot will be slowed, record it at the highest frame
-  rate your camera offers — an iPhone will do 240fps at 1080p, and that's four seconds of
-  usable slow motion for every second you shoot.</p>
-  <h2>Getting the audio right</h2>
-  <p>Slowed audio drops in pitch and usually sounds wrong. For most slow-motion shots the
-  cleanest choice is to mute the clip and let music or the surrounding scene's audio carry it.
-  Mute the slowed clip rather than trying to correct the pitch.</p>
-
-
-  <h2>How slow is too slow</h2>
-  <p>Half speed reads as deliberate and almost always works. Quarter speed is where 30fps
-  footage starts to fall apart unless the shot is very steady. Below that you need high-frame-rate
-  source or the result looks like a stutter rather than an effect.</p>
-  <p>Background: <a href="https://crispvideo.app/learn/what-is-frame-interpolation/">how frame interpolation works</a>.</p>
   <h2>Related</h2>
   <ul>
+    <li><a href="https://crispvideo.app/how-to/change-video-speed-mac/">How to change video speed on a Mac</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-frame-interpolation/">What is frame interpolation?</a></li>
     <li><a href="https://crispvideo.app/how-to/split-a-clip-in-video-mac/">How to split a clip in a video on a Mac</a></li>
-    <li><a href="https://crispvideo.app/how-to/stabilize-shaky-video-mac/">How to stabilize a shaky video on a Mac</a></li>
-    <li><a href="https://crispvideo.app/how-to/trim-video-mac/">How to trim a video on a Mac</a></li>
   </ul>
 
 </div></article>
