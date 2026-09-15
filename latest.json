@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1218",
-  "notes": "Two follow-ups to the last release. On a clip with no soundtrack, asking about the audio now says so plainly instead of suggesting five things that cannot be done. And \"make the audio clear\" now cleans up the sound, the way \"make the audio clearer\" already did, rather than starting a picture upscale.",
-  "pub_date": "2026-09-15T00:07:57Z",
+  "version": "1.0.1219",
+  "notes": "A photo has no soundtrack. Asking about the audio on a still \u2014 \"clean up the audio\", \"the music is dark\", \"remove the wind noise\" \u2014 used to start an upscale or a colour grade on the picture. Thirty phrasings; all of them now say so instead.",
+  "pub_date": "2026-09-15T00:48:47Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlSWVM1aU9lS2QxOC9sVzJyaDNvU3JxNkJXcmRXZy8rRHhvREUyekJidXhydnRUZkNFSmkxQUpDR0l1QlhlNnpQdjJ2ekxYZnZOK0hMMXlxbHJNTUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDMwNzI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego2YUl3Mmg5REp3cnZFYTNjcUdNcTlvTU1rd2hRRDlUNy9tWlVPRWdGK0pTL005ZVhhVHpMbkJERmlGd2tSL1VKRXVadFN4UWJDR3BrUDYwZGZXRmdDZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI4RDlnU2cyem5jMmZSYUhEVVFrc0UraU1PbHQwNTIwUGpjM1dwWU11Q0NTRSt4c1lVNUt4bjFqRFQyUld1MGV6RVNEVjRubFVxWEh1anZMR01WeGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDMzMTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPdDN5TVM4ZklEQ0RqQjlINytIU0U4ZVhFUWRMTUVDYjRVUWd0alJ0dWxyNkFRMStnRG92dDU2aVQ2OEt4emxmYlliMzIxeDRqQTN4cnM5S0RpNmJCdz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
