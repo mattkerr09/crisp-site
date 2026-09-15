@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Crisp for teachers and educators","description":"Lecture recordings that are too big to share, screen captures where the text went soft, and student footage that should not be uploaded to a third party.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp generate captions from the audio?","acceptedAnswer":{"@type":"Answer","text":"No. It burns in typed captions you provide, but it does not transcribe speech. If you need accessibility captions, use a transcription service or your institution's system and bring the text across."}},{"@type":"Question","name":"How much can I compress a lecture recording?","acceptedAnswer":{"@type":"Answer","text":"More than you would expect. Slides and a mostly static presenter compress extremely well, so an order-of-magnitude reduction with no visible difference is common. Footage with lots of movement will not shrink nearly as far."}},{"@type":"Question","name":"Why is the text in my screen recording blurry?","acceptedAnswer":{"@type":"Answer","text":"Chroma subsampling. Video stores colour at a quarter the resolution of brightness, and text is defined by a colour edge. Recording at a higher resolution gives the colour channel more samples and helps more than raising the bitrate."}},{"@type":"Question","name":"Is student footage safe?","acceptedAnswer":{"@type":"Answer","text":"It never leaves the machine. There is no upload endpoint and no account, so the answer to an institutional question about third-party processing is simply that there isn't any."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Crisp generate captions from the audio?","acceptedAnswer":{"@type":"Answer","text":"No. It burns in typed captions you provide, but it does not transcribe speech. If you need accessibility captions, use a transcription service or your institution's system and bring the text across."}},{"@type":"Question","name":"How much can I compress a lecture recording?","acceptedAnswer":{"@type":"Answer","text":"Crisp has three levels, and each targets a fraction of the source file's own bitrate — roughly 70, 50 and 30 per cent. So the hard setting is about a third the size, not a tenth. Slides and a mostly static presenter hold up better than moving footage at the same setting, because there is less changing between frames for the encoder to spend bits on."}},{"@type":"Question","name":"Can I compress a lecture to fit a specific upload limit?","acceptedAnswer":{"@type":"Answer","text":"No, and Crisp says so rather than guessing. Ask it to get a file under 25 MB and it answers that it compresses by quality rather than aiming at a file size, so it cannot promise that number. There is no two-pass target-size mode behind it. Run the hard setting, read the finished size in the Jobs panel, and trim the recording further if it is still too big."}},{"@type":"Question","name":"Can Crisp blur a student's face?","acceptedAnswer":{"@type":"Answer","text":"No. There is no blur or pixelate tool in it at all, and it refuses the request outright rather than running something adjacent. Crisp sharpens and cleans footage up rather than obscuring parts of it. If a face has to be hidden, that belongs in an editor with a mask and a tracker."}},{"@type":"Question","name":"Why is the text in my screen recording blurry?","acceptedAnswer":{"@type":"Answer","text":"Chroma subsampling. Video stores colour at a quarter the resolution of brightness, and text is defined by a colour edge. Recording at a higher resolution gives the colour channel more samples and helps more than raising the bitrate."}},{"@type":"Question","name":"Is student footage safe?","acceptedAnswer":{"@type":"Answer","text":"It never leaves the machine. There is no upload endpoint and no account, so the answer to an institutional question about third-party processing is simply that there isn't any."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Teachers", "item": "https://crispvideo.app/for/teachers/"}]}</script>
 </head>
@@ -37,6 +37,12 @@
   <h1>Crisp for teachers and educators</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
 
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp cleans up teaching video you
+  have already recorded, entirely on your own Mac. It trims an hour down to the twelve minutes that
+  matter, compresses a lecture so it will upload, brings a quiet question up until it is audible, and
+  upscales soft footage. It has no speech recognition, so it cannot caption a recording for you, and
+  no blur tool, so it cannot hide a student's face.</p></div>
+
   <p>Teaching video has an unusual constraint: most of the tooling assumes you are making something
   polished for an audience of strangers, when what you actually need is something clear, quick to
   produce, and safe to share within an institution.</p>
@@ -47,14 +53,54 @@
   costs far less quality than people expect on screen-heavy content, because a static slide compresses
   extremely well.</p>
   <p><strong>The text in the screen recording is soft.</strong> This is usually not a resolution
-  problem. Video stores colour at a quarter the detail of brightness, so coloured text on a
-  contrasting background is the worst case for the format. Recording at a higher resolution helps more
-  than raising the bitrate does.</p>
-  <p><strong>The recording is an hour of which twelve minutes matter.</strong> Trimming before you do
-  anything else is the single biggest time saver, both for you and for the student watching.</p>
+  problem. Video stores colour at a quarter the detail of brightness —
+  <a href="https://crispvideo.app/learn/what-is-chroma-subsampling/">chroma subsampling</a> — so
+  coloured text on a contrasting background is the worst case for the format. Recording at a higher
+  resolution helps more than raising the bitrate does.</p>
+  <p><strong>The recording is an hour of which twelve minutes matter.</strong>
+  <a href="https://crispvideo.app/how-to/trim-video-mac/">Trimming</a> before you do
+  anything else is the single biggest time saver, both for you and for the student watching. Crisp's
+  trim re-encodes rather than stream-copying, so the cut lands on the frame you asked for instead of
+  snapping to the nearest keyframe a second or two away.</p>
   <p><strong>The audio is quiet in places.</strong> A lapel microphone that drifted, or a question from
   the back of the room. Levelling the quiet parts up rather than turning everything up is what makes
   a recording listenable on a laptop speaker.</p>
+
+  <h2>Getting a lecture under the upload limit</h2>
+  <p><a href="https://crispvideo.app/how-to/compress-video-on-mac/">Compression</a> is a quality
+  ladder, not a size solver. Crisp offers three levels — light, medium and hard — and each targets a
+  fraction of the source file's own bitrate: roughly 70, 50 and 30 per cent of it. The frame size and
+  frame rate are left alone, so the recording still fills the same window; it is the bits per second
+  that come down, re-encoded as HEVC through Apple's VideoToolbox. So the hard setting is about a
+  third the size, not a tenth. Lecture capture holds up better than the average clip at the same
+  setting, because a slide and a presenter who mostly stands still give the encoder little that
+  changes between frames.</p>
+  <p>The more useful thing is what Crisp refuses to do. Ask it to get the file under 25 MB for an LMS
+  and it declines rather than guessing — its own words are that it compresses by quality "rather than
+  aiming at a file size, so it can't promise 25MB" — and points you at the hard setting and the size
+  the Jobs panel reports when the render finishes. There is no two-pass bitrate solver behind it, and
+  the same answer comes back for "make it 50 per cent smaller". If you have a semester of recordings
+  rather than one, <a href="https://crispvideo.app/how-to/batch-upscale-videos-mac/">batch</a> runs a
+  folder unattended and skips what it has already done; batch is a paid capability rather than part of
+  the free tier.</p>
+
+  <h2>The audio, which is what students actually complain about</h2>
+  <p>Picture quality is forgiven; audio that cannot be followed is not. Two controls get confused
+  here, and for a lecture they do different jobs. <em>Normalise</em> sets one overall loudness target
+  and leaves the gap between your voice at the whiteboard and your voice at the lectern where it was.
+  <a href="https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/">Levelling</a> narrows that
+  gap itself. On a synthetic quiet-then-loud clip, the levelling pass lifted the quiet passage by 16 dB
+  and brought the loud-to-quiet gap from 22 dB down to 19.5 dB without clipping. Both halves get
+  louder — it is a compressor with makeup gain and a limiter, not a selective boost — but the quiet
+  half gains more, which is what decides whether a question from the back row survives a laptop
+  speaker.</p>
+  <p>The phrasing matters, because the two answer to different sentences. "Make the quiet parts
+  louder", "even out the loud and quiet" and "level the dialogue" all reach the levelling pass; "level
+  the audio" and "even out the volume" reach the overall-loudness one. If the problem is a gap rather
+  than a general lack of volume, ask for the quiet parts by name. Steady room noise — a projector fan,
+  air handling, the hum of a full lab — is a
+  <a href="https://crispvideo.app/how-to/remove-background-noise-video-mac/">separate pass</a> again,
+  for when the recording is loud enough but tiring to listen to.</p>
 
   <h2>Student footage and where it goes</h2>
   <p>This is the constraint that rules out most convenient tools. Footage containing identifiable
@@ -62,20 +108,48 @@
   processed" needs to be simple enough to put in an email to a head of department.</p>
   <p>Crisp processes everything on the machine. No upload, no account, nothing transmitted. That is a
   short answer to a question that otherwise involves reading somebody's terms of service.</p>
+  <p>But the answer stops there, and the next question usually has a worse answer.</p>
+
+  <h2>Two limits to settle before you plan around them</h2>
+  <p><strong>Crisp cannot blur or pixelate a face.</strong> This is the one to read carefully, because
+  obscuring the one student whose parents did not return the consent form is a genuine classroom need
+  and Crisp has no tool for it. Asking is not ambiguous — the app answers that it "has no blur or
+  pixelate tool", that it sharpens and cleans up footage rather than obscuring parts of it, and that
+  it cannot hide a face or a plate for you. It refuses instead of running something adjacent. If a
+  face has to come out, that job belongs in an editor that has a mask and a tracker.</p>
+  <p><strong>Crisp cannot caption a recording.</strong> It burns in
+  <a href="https://crispvideo.app/how-to/add-captions-to-video-mac/">a caption you type</a> — a title,
+  a name, a line of on-screen text, positioned and optionally windowed to a time range. It has no
+  speech recognition of any kind. Ask for subtitles, a transcript or closed captions and it says so
+  outright: it can burn in a caption you type, but it cannot listen to the audio and write subtitles
+  for you. Accessibility captioning is a legal obligation in most institutions rather than a nicety,
+  so treat this as a hard boundary and plan the transcript through a transcription service or your
+  institution's system, bringing the text across afterwards.</p>
 
   <h2>A workflow that fits a prep period</h2>
-  <p>Trim to what matters. Compress for the platform you are actually using. Level the audio. Export.
-  Four steps, all of which can be asked for in plain English rather than found in a menu, which
-  matters when the tool is used once a fortnight rather than daily.</p>
-  <p>For lecture capture specifically, the compression step is the one worth learning. Slides and
-  talking heads compress dramatically better than general footage, so you can often cut the file size
-  by an order of magnitude with no visible difference on the screen a student will watch it on.</p>
+  <p>Trim to what matters. Compress until it uploads. Bring the quiet parts up. Export. Four steps,
+  all of which can be asked for in plain English rather than found in a menu, which matters when the
+  tool is used once a fortnight rather than daily. The request box is a router over the operations
+  Crisp actually has: it reads the sentence, lists the steps it proposes on a card, and waits for you
+  to press Run it before anything renders. Ask for something outside that set and it says so on the
+  same card rather than running the nearest thing it knows.</p>
+  <p>When an hour needs to become a five-minute recap rather than a trim, Auto-Montage is the faster
+  route. <a href="https://crispvideo.app/how-to/make-a-highlight-reel-mac/">Smart condense</a> keeps
+  the recording in order and cuts the dead air out of it, Highlights picks the strongest moments, and
+  Music cuts to a track you supply; the target length is clamped between five seconds and five
+  minutes. Anything it chose can then be adjusted on the timeline — clips dragged in, trimmed at the
+  edges, reordered, with a photo dropped in as a title slide.</p>
 
   <h2>Where Crisp is the wrong tool</h2>
   <p>It does not record your screen, so you still want whatever capture tool you already use. It does
   not generate captions from speech, so accessibility captioning needs a dedicated service or your
-  institution's system, and that is worth checking before you plan around it. And it is not a course
-  authoring tool, so quizzes, chaptering and LMS packaging live elsewhere.</p>
+  institution's system, and that is worth checking before you plan around it. It has no multicam
+  sync — the timeline is a single track of ordered clips — so a room camera and a document camera cut
+  together belong in an NLE. And it is not a course authoring tool, so quizzes, chaptering and LMS
+  packaging live elsewhere.</p>
+  <p>It runs on macOS 12 and later, a lower floor than most Mac tools in this category ask for, and it
+  is a single $129 payment rather than a subscription — the difference between one purchase order and
+  a recurring one, which is often the part a department cares about more than any feature.</p>
   <p>What it does is take the raw recording you already have and make it smaller, shorter, clearer and
   easier to listen to, without any of it leaving your Mac.</p>
 
@@ -83,7 +157,11 @@
   <h3>Can Crisp generate captions from the audio?</h3>
   <p>No. It burns in typed captions you provide, but it does not transcribe speech. If you need accessibility captions, use a transcription service or your institution's system and bring the text across.</p>
   <h3>How much can I compress a lecture recording?</h3>
-  <p>More than you would expect. Slides and a mostly static presenter compress extremely well, so an order-of-magnitude reduction with no visible difference is common. Footage with lots of movement will not shrink nearly as far.</p>
+  <p>Crisp has three levels, and each targets a fraction of the source file's own bitrate — roughly 70, 50 and 30 per cent. So the hard setting is about a third the size, not a tenth. Slides and a mostly static presenter hold up better than moving footage at the same setting, because there is less changing between frames for the encoder to spend bits on.</p>
+  <h3>Can I compress a lecture to fit a specific upload limit?</h3>
+  <p>No, and Crisp says so rather than guessing. Ask it to get a file under 25 MB and it answers that it compresses by quality rather than aiming at a file size, so it cannot promise that number. There is no two-pass target-size mode behind it. Run the hard setting, read the finished size in the Jobs panel, and trim the recording further if it is still too big.</p>
+  <h3>Can Crisp blur a student's face?</h3>
+  <p>No. There is no blur or pixelate tool in it at all, and it refuses the request outright rather than running something adjacent. Crisp sharpens and cleans footage up rather than obscuring parts of it. If a face has to be hidden, that belongs in an editor with a mask and a tracker.</p>
   <h3>Why is the text in my screen recording blurry?</h3>
   <p>Chroma subsampling. Video stores colour at a quarter the resolution of brightness, and text is defined by a colour edge. Recording at a higher resolution gives the colour channel more samples and helps more than raising the bitrate.</p>
   <h3>Is student footage safe?</h3>
