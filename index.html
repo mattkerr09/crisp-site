@@ -795,7 +795,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="hero-say">
     <div class="quick"><strong>Quick answer</strong><p class="lede"><strong>$129 once</strong><span data-crisp-bnpl> &mdash; or four payments of
       $32.25, two weeks apart</span> &mdash; <strong>and Crisp is yours.</strong> It restores and
-      upscales video on your Mac, with a real timeline, auto-montage cut to the beat and a
+      upscales video <strong>offline on your Mac</strong>, with a real timeline, auto-montage cut to the beat and a
       generative restore lane. <strong>Nothing is uploaded</strong>, and there is no subscription,
       no account and no renewal.</p></div>
     <div class="cta">
@@ -1298,6 +1298,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="kicker">Pricing</p>
       <h2 class="h-lg rv">One price. <span class="grad">Yours forever.</span></h2>
       <p class="lede">No subscription, no credits, no cloud bill. Buy it once and it stays bought.</p>
+      <!-- ⚠️ WHAT THIS LINE DELIBERATELY DOES NOT SAY: how many Macs one licence covers. The
+           number is not in this repo — activation spends a seat at the payment provider and the
+           count lives in that product's configuration, not in the code. Our own terms say "Macs
+           you own or control", with no figure. Until the real number is known, stating one here
+           would be inventing it, and repeating the unbounded phrase would advertise a promise the
+           seat limit may not honour. Commercial use IS in the terms verbatim, so that half ships.
+           ⚠️ AND "nothing is metered" IS NOT "no limits". Batch is paid-only (entitlement.py:
+           "batch": paid) and the free tier carries the export mark. Those are FEATURE gates. A
+           meter is a credit, a render minute, a monthly quota or a per-export fee, and there is
+           none of those at either tier — which is the claim, and all of it is the claim. -->
+      <p class="src">Personal <strong>and commercial</strong> work are both covered &mdash; it is in
+        <a href="/legal/terms/">the licence terms</a>. And <strong>nothing is metered</strong>: no
+        credits, no render minutes, no monthly cap, no per-export fee. The only difference the
+        licence makes is the export mark, the generative lane and batch.</p>
     </div>
     <div class="tiers">
       <div class="tier rv d1">
