@@ -39,7 +39,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; AVCLabs</div>
   <h1>An AVCLabs Video Enhancer AI alternative for Mac</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-16</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">AVCLabs Video Enhancer AI is a capable, feature-broad enhancer sold either as a subscription at roughly $120/year or as a $299.90 perpetual licence, with a product line that spans desktop software and
   browser-based tools. Crisp is $129 once, always on-device. The decision usually comes down to two
@@ -98,6 +98,28 @@
   a timeline in the same app — trim, split, reorder, stills, per-clip looks — with the upscale
   applied once at export to the finished sequence. On a project where you'll discard half the
   footage, that ordering saves real GPU hours as well as clicks.</p>
+
+  <h2>What it actually costs to run</h2>
+  <p>System requirements are usually the least interesting part of a comparison, but here they say
+  something real about how the two tools are built. AVCLabs&rsquo; own requirements page asks for
+  <strong>8&nbsp;GB of RAM as a minimum and 16&nbsp;GB or higher recommended</strong>, plus
+  <strong>20&nbsp;GB or higher</strong> of free disk space
+  (<a href="https://www.avclabs.com/user-guide/video-enhancer/system-requirements.html">AVCLabs
+  system requirements</a>, read 16 September 2026).</p>
+  <p>We measured Crisp doing the job those requirements are for. Upscaling 1080p to 4K
+  (3840&times;2160), sampling the memory used by Crisp and every process it starts, the peak was
+  <strong>1.05&nbsp;GB</strong>. It streams frames rather than holding the clip in memory, so that
+  figure is set by the model and a few frames of buffer, not by how long your video is.</p>
+  <p class="muted">Two honest caveats, because these are not the same kind of number. Theirs is a
+  <em>stated requirement</em> and ours is a <em>measured peak</em> &mdash; a vendor&rsquo;s minimum
+  is a safety margin, not a claim about what their software uses, and AVCLabs may well run in less
+  than they ask for. And ours is one clip on one Mac: a longer video will not raise that peak much,
+  because of the streaming, but a different machine will give a different number. What the
+  comparison does tell you is that Crisp is not built around needing a large machine.</p>
+  <p class="quick">One more sourced detail from the same page, offered without a conclusion: the
+  Mac GPUs AVCLabs lists as supported are the M1, M1&nbsp;Pro, M1&nbsp;Max, M2, M2&nbsp;Pro and
+  M2&nbsp;Max. Later Apple silicon is not named there. That is what the page says as of the date
+  above &mdash; not evidence that newer chips fail, and worth checking with them if you have one.</p>
 
   <h2>The straight answer</h2>
   <ul>
