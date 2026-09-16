@@ -39,7 +39,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; ffmpeg (Lanczos)</div>
   <h1>ffmpeg Lanczos vs AI upscaling</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-16</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">One command, no install beyond ffmpeg, no cost:
   <code>ffmpeg -i in.mp4 -vf scale=3840:-2:flags=lanczos -c:a copy out.mp4</code>. It will upscale
@@ -77,6 +77,44 @@
   minutes per minute of footage on a good machine. If you are resizing because a client asked for 4K
   deliverables and the source is already sharp, spending an hour of GPU time to arrive somewhere
   slightly worse is a bad trade.</p>
+
+  <h2>What the gap actually measures</h2>
+  <p>Everything above is the argument people make. Here is the measurement, on one clip, so you can
+  see the size of the difference instead of taking our word for it — including the axis where
+  Lanczos wins.</p>
+  <p>The source is a deliberately degraded clip generated from a fixed recipe: a detailed moving
+  synthetic source, downscaled to 320&times;180, given mild noise, then encoded at a low H.264
+  bitrate so compression artefacts are real. No randomness and no wall-clock, so the same input
+  comes back every time. Both sides upscale it to 1280&times;720 and are scored on decoded frames.</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Measured on the same clip</th><th>Lanczos</th><th>Crisp</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td>Detail (variance of Laplacian)</td><td>328.5</td><td class="yes">521.7</td><td>59% more edge detail. Lanczos resamples what is there; it cannot add what is missing.</td></tr>
+      <tr><td>Banding (share of flat pixels on a hard step)</td><td>26.97%</td><td class="yes">12.75%</td><td>Less than half the staircase in gradients.</td></tr>
+      <tr><td>Residual grain</td><td>0.54</td><td class="yes">0.47</td><td>Modest. Do not choose a tool on this.</td></tr>
+      <tr><td>Frame-to-frame flicker</td><td>1.0</td><td>1.0</td><td>Identical. Neither was steadier than the other.</td></tr>
+      <tr><td>Shimmer introduced vs the source</td><td>&minus;0.5</td><td>&minus;0.5</td><td>Identical, and negative both ways: neither added shimmer on this clip.</td></tr>
+      <tr><td>Colour accuracy vs the source</td><td class="yes">0.361</td><td>3.017</td><td>Lanczos is 8.4&times; truer. The model shifts colour; the arithmetic does not.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The last row is the one worth sitting with. If your reason for upscaling is a delivery spec and
+  the grade is already signed off, an AI pass will move your colour and Lanczos will not. That is a
+  real argument for the free option and we would rather you knew it than found it in a review.</p>
+  <p>The flicker rows matter for the opposite reason: they say nothing. It is common to read that AI
+  upscalers introduce shimmer, and on this clip neither tool did. That is one clip and one preset,
+  not a law — which is the honest size of the claim.</p>
+  <h2>If you run this yourself, match the bitrate</h2>
+  <p>A warning that cost us a wrong answer before we caught it. Our first run encoded the Lanczos
+  output at high quality and left Crisp&rsquo;s own encoder settings alone, so one side came out at
+  4.6&nbsp;Mbps and the other at 1.0. On that pair Crisp looked clearly steadier on both flicker
+  rows. Matched to the same bitrate, the two are exactly tied, and the entire apparent advantage
+  turned out to be the encoder rather than the upscaler.</p>
+  <p>So if you compare two upscalers on your own footage, give both outputs the same bitrate before
+  you judge anything, or you will be measuring your encoder and attributing it to the model. The
+  numbers above are all at a matched 1.0&nbsp;Mbps.</p>
+  <p class="quick">Scope, plainly: one synthetic degraded clip, one preset, one 4&times; scale, on an
+  M1 Ultra. These are valid as a comparison between two tools on the same source, not as universal
+  constants &mdash; your footage will produce different absolute numbers.</p>
 
   <h2>What an app adds over the command</h2>
   <p>Mostly: knowing which of these to do, and not having to remember <code>-2</code> means "keep the
