@@ -51,7 +51,7 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Restore old film on Mac</div>
   <h1>How to <span class="grad">restore old film</span> footage on a Mac</h1>
   <div class="quick"><strong>Quick answer</strong><p class="lede">Scanned reels and old tape captures arrive with two problems that have nothing to do with resolution: <strong>dirt that flashes for a single frame</strong>, and a <strong>brightness flicker</strong> that makes the whole picture breathe. Here's how to fix both on your Mac, <strong>100% offline</strong> — and, just as important, what a program like this honestly <em>can't</em> fix.</p></div>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-07 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-07 · last updated 2026-09-16</div>
 
   <h2>What's actually wrong with old footage</h2>
   <p>It helps to separate the faults, because they need completely different treatment:</p>
@@ -96,7 +96,7 @@
   <table class="cmp">
     <thead><tr><th>Test</th><th>Result</th><th>Why this one</th></tr></thead>
     <tbody>
-      <tr><td>Dirt present in a <strong>single frame</strong></td><td>Cleared</td><td>The defect we're targeting.</td></tr>
+      <tr><td>Dirt present in a <strong>single frame</strong></td><td><strong>95&ndash;100% removed</strong></td><td>The defect we're targeting. Measured twice: on real film frames, and again on a synthetic clip with specks planted at known coordinates so the removal could be counted rather than judged.</td></tr>
       <tr><td>A mark deliberately held for <strong>three frames</strong></td><td><strong>Survives</strong></td><td>The control. A filter that removed this too would also erase small real things — a bird, a spark, a distant light.</td></tr>
       <tr><td>Frame-to-frame brightness jitter</td><td>Cut by ~88%</td><td>The flicker you actually see.</td></tr>
       <tr><td>A deliberate <strong>fade</strong> in the same clip</td><td><strong>Survives</strong></td><td>The control. Intentional brightness changes must be left alone.</td></tr>
@@ -105,6 +105,23 @@
   </table>
   </div>
   <p class="muted">The two "survives" rows are the point. Anyone can delete detail; the difficulty is removing dirt while leaving the picture intact, so we test the opposite case every time.</p>
+
+  <h2>What the dust pass costs, and when not to use it</h2>
+  <p>The rows above say what it removes. This is the other half, which restoration tools rarely
+  publish: what it does to footage that was <em>not</em> dirty.</p>
+  <p>The dust pass works by comparing each frame with its neighbours and taking the middle value,
+  so a speck that appears in one frame and not the ones either side gets outvoted. That is also
+  its cost &mdash; anything that legitimately changes fast between frames is, briefly, in the same
+  position as a speck. We ran the pass over a clean, undamaged, deliberately high-motion clip and
+  measured what came back: <strong>about 5% less fine detail</strong> (1045 &rarr; 998 on the same
+  edge-detail measure used elsewhere on this site), with the loss concentrated at fast-moving
+  edges. Brightness stability and banding were unchanged.</p>
+  <p>So the honest instruction is: <strong>run it on footage that actually has dust, and leave it
+  off otherwise.</strong> On a dusty 8mm reel, removing every speck is worth 5% of edge detail many
+  times over. On a clean transfer it is a small, pointless trade, and Crisp does not apply it
+  unless you ask for it. That is also why it is a separate choice rather than part of a general
+  &ldquo;restore&rdquo; button &mdash; a tool that silently ran it on everything would be quietly
+  costing people detail on clips that never needed it.</p>
 
   <h2 id="scratches">What this <em>won't</em> do: persistent vertical scratches</h2>
   <p>Crisp does not remove long vertical scratches, and we'd rather say so than sell you a disappointment.</p>
