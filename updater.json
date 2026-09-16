@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1239",
-  "notes": "A security fix worth taking. Crisp runs a small local helper so the editor can play your clips; until this build that helper would hand any file in your home folder to anything on your Mac that asked it over the loopback address \u2014 including a web page open in your browser. It could not read the contents back, but it could learn which files you have. It now answers only Crisp itself, and only for video and audio files you have actually opened. Nothing about your footage ever left your Mac, before or after. Also: asking to level only part of a clip now says Crisp works on the whole clip instead of quietly levelling all of it, \"slow it down to a third\" slows to a third rather than a half, and levelled audio no longer pins at full scale.",
-  "pub_date": "2026-09-16T02:31:28Z",
+  "version": "1.0.1252",
+  "notes": "Four fixes to how Crisp reads what you type. Ask for the volume, the brightness or the speed whichever way round you say it \u2014 \"turn up the volume\" and \"turn the volume up\" both land now, and so do the audio, the sound and the levels, not just the word volume. Asking to reduce sharpness used to plan a render that changed nothing and then tell you it had reduced it; Crisp now says plainly that it cannot soften a picture. Speeding up and slowing down answer the same set of phrasings in both directions. And a password or licence key that lands in a crash report is redacted in every shape it can arrive in.",
+  "pub_date": "2026-09-16T06:45:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU50M3FyMWkyZVhoaUdOWDJmcXRJSW5ha01xakpLZHBwTkNmT04vRCtROGQ3b1NqSTFEV2RzNUtWcTYwZDB4ZWhkM3VlNWkyMVA4THB0dU5ob1grMmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTI1NzU0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIdlgvdEFwZ29iSnRMUCszVGFKWGZjS0I0SUpwRVVGaDBzeHFkMHBTWG84N0JvbDQ2czZIMWkxMzRNeHEydDhqN1hVNkN6MnhHdkRGczl5NUtEbnVBdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8vMk9Xc2FPaUl1djQrYjRtMVhVNzUrQUp2N1EwTi9JNHpFY2FTNktXbjhVTzhpS3JwWnlRTXFCWDh4MjlhelNDRnltV1hRbzR5TXlIeUk0YjFEQ3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTQwOTkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5MWs5TWRNTHZpSU5CS3VsNE1Gb0NRUDNsRlg5MjdQdEs2MnZtVXBzTDhLdXYvbFplTlI2UXNVR1B0SUMvOW1Tc2oySFFqaVRKdWNRWFN0ZkRWSnBEZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
