@@ -13,7 +13,7 @@
      600 weight would compete for bandwidth with the clip that IS the hero. -->
 <link rel="preload" href="/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/clashdisplay-500.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Restore and upscale video to 4K on your Mac, fully offline. A real timeline editor, auto-montage cut to the beat, and a generative restore lane — one-time $129, no subscription, nothing uploaded.">
+<meta name="description" content="$129 once — or four payments of $32.25 — and Crisp is yours. Restore and upscale video to 4K on your Mac: a real timeline editor, auto-montage cut to the beat, a generative restore lane. Nothing uploaded, no subscription.">
 <link rel="canonical" href="https://crispvideo.app/">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
@@ -793,9 +793,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="updated">Crisp · built in Grand Rapids · published 2026-06-29 · last updated 2026-09-15</div>
       </div>
       <div class="hero-say">
-    <div class="quick"><strong>Quick answer</strong><p class="lede">Crisp <strong>restores and upscales video on-device</strong> — then lets you
-      actually edit it. A real timeline, auto-montage cut to the beat, and a generative restore
-      lane. <strong>No cloud. No account. No subscription.</strong></p></div>
+    <div class="quick"><strong>Quick answer</strong><p class="lede"><strong>$129 once</strong><span data-crisp-bnpl> &mdash; or four payments of
+      $32.25, two weeks apart</span> &mdash; <strong>and Crisp is yours.</strong> It restores and
+      upscales video on your Mac, with a real timeline, auto-montage cut to the beat and a
+      generative restore lane. <strong>Nothing is uploaded</strong>, and there is no subscription,
+      no account and no renewal.</p></div>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
@@ -1800,7 +1802,14 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
 
      SO IF INSTALMENTS EVER HAVE TO GO DARK, FLIPPING THIS IS NOT ENOUGH. Delete the
      `data-crisp-bnpl` paragraphs from the markup in the same change, or a no-JS visitor is left
-     reading a consumer-finance claim the checkout will not honour. Raised by the session that
+     reading a consumer-finance claim the checkout will not honour.
+
+     AND IT IS NO LONGER JUST THE PARAGRAPHS. The hero lede carries an INLINE
+     `data-crisp-bnpl` span, which this loop hides correctly — but the META DESCRIPTION also
+     names the four payments and NO script can gate a meta tag. So going dark means: flip this
+     flag, delete the two `bnpl-note` paragraphs, delete the inline span in the lede, and rewrite
+     the meta description at the top of this file. Four places, not one. Listing them here because
+     the previous version of this comment said "paragraphs" and was already incomplete. Raised by the session that
      shipped the original JS-gated version, after it verified the dark path in a browser. */
   var CRISP_BNPL_LIVE = true;
   var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
