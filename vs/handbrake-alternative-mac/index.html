@@ -45,7 +45,7 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; HandBrake alternative for Mac</div>
   <h1>The best <span class="grad">HandBrake alternative for Mac</span> — one-click compress &amp; convert</h1>
   <div class="quick"><strong>Quick answer</strong><p class="lede">HandBrake is powerful and free, but its window is a <strong>wall of tabs, presets, filters and bitrate sliders</strong> just to shrink or convert one clip. If you'd rather <strong>compress a video</strong> or <strong>convert MOV↔MP4</strong> in a single click, in plain English, and get <strong>AI upscaling and auto-editing</strong> HandBrake doesn't have — here's the simpler Mac alternative that runs 100% offline.</p></div>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-08 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-08 · last updated 2026-09-16</div>
 
   <h2>Why look for a HandBrake alternative</h2>
   <p>HandBrake is a superb transcoder if you know exactly what you want — RF values, encoder presets, tunes, filters, audio passthrough. But most people don't open a video tool to configure an x265 preset; they open it to <em>make this file smaller so it'll send</em> or <em>turn this MOV into an MP4 that'll actually play</em>. HandBrake makes those simple jobs feel like a control panel. It does have a real filter set &mdash; deinterlace, detelecine, denoise (NLMeans, with a tune for VHS tape), deblock, sharpen, crop and scale &mdash; but no AI upscaling, no editor, and nothing that takes a plain-English instruction (<a href="https://handbrake.fr/docs/en/latest/technical/filters-summary.html" rel="nofollow">HandBrake's own filter documentation</a>, read 8 September 2026). So people go looking for something that does the common job in one click and covers the rest of the workflow too.</p>
@@ -76,6 +76,41 @@
     <li><strong>It does far more than transcode.</strong> AI upscaling and restoration to 4K, reframing to 9:16 / 1:1 / 4:5, auto-montage, trim, captions, colour, stabilize — 20 lanes in one app.</li>
     <li><strong>Native, offline, one-time.</strong> Runs entirely on your Mac (Apple Silicon), nothing uploaded, no subscription.</li>
   </ul>
+
+  <h2>The upscaling question, measured</h2>
+  <p>HandBrake can resize a video to larger dimensions, so the obvious question is whether that is
+  the same thing as upscaling. It is not, and HandBrake says so first: its own documentation on
+  resizing states that <strong>&ldquo;upscaling is NOT recommended&rdquo;</strong> and puts it
+  behind an <em>Allow upscaling</em> checkbox you have to tick
+  (<a href="https://handbrake.fr/docs/en/latest/advanced/resizing-video.html">HandBrake
+  documentation</a>, read 16 September 2026). That is the honest answer from the tool itself, and
+  the rest of this section is just the size of the difference.</p>
+  <p>A resampler computes each new pixel from the ones around it. It can do that well or badly, but
+  it has nothing to work from except the pixels already present, so it cannot put back detail the
+  source never recorded. We measured both common choices against Crisp on the same clip &mdash; a
+  deliberately degraded 320&times;180 source from a fixed recipe, every output at 1280&times;720 and
+  the same 1.0&nbsp;Mbps, scored on decoded frames.</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Upscaled to 720p</th><th>Detail</th><th>Colour accuracy</th></tr></thead>
+    <tbody>
+      <tr><td>Bicubic resample</td><td>289.1</td><td class="yes">0.325</td></tr>
+      <tr><td>Lanczos resample</td><td>328.5</td><td class="yes">0.361</td></tr>
+      <tr><td>Crisp</td><td class="yes">521.7</td><td>3.017</td></tr>
+    </tbody>
+  </table></div>
+  <p>We are deliberately not telling you which resampler HandBrake uses. Its documentation does not
+  say, and we would rather leave a gap than assert something we cannot source. It does not change
+  the answer: the whole resampler family lands between 289 and 329, and reconstruction lands at 522
+  &mdash; <strong>59% to 80% more detail whichever one is running underneath.</strong></p>
+  <p class="muted">The colour column is the part that goes against us, and it belongs here rather
+  than in a footnote. Resampling is roughly eight times truer to the source colour, because
+  arithmetic on neighbouring pixels has no opinion about what the image should look like and a
+  model does. If your grade is already signed off and you only need different pixel dimensions,
+  that is a real argument for doing it in HandBrake and leaving the colour alone.</p>
+  <p class="quick">Scope: one synthetic degraded clip, one preset, one 4&times; scale, on an M1
+  Ultra. Valid as a comparison between methods on the same source, not as universal constants. If
+  you run it yourself, give every output the same bitrate first &mdash; our own first attempt did
+  not, and the encoder difference alone was enough to produce a result we would have published.</p>
 
   <div class="box">
     <h3 style="margin-top:0">Just need a smaller file, or an MP4?</h3>
