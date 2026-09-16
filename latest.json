@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1223",
-  "notes": "Both halves of a two-adjective request now run. \"Make it bright and sharp\" used to brighten and quietly drop the sharpen; \"make the audio loud and clear\" kept only one; and \"make it old and grainy\" started an upscale that removes grain instead of adding it.",
-  "pub_date": "2026-09-15T04:10:58Z",
+  "version": "1.0.1236",
+  "notes": "Ask for the quiet parts to come up the way you'd actually say it. \"Raise the quiet parts\", \"level the speech\", \"bring up the quiet bits\" and \"make just the quiet parts louder\" all reach the levelling tool now \u2014 before, most of them reached nothing, and a couple quietly applied a flat volume boost that lifted the loud parts just as much. Levelled audio no longer pins at full scale. \"Slow it down to a third\" slows to a third instead of a half. And if you ask to change only part of a clip, Crisp now says it works on the whole clip and how to split it, instead of silently changing all of it and reporting success.",
+  "pub_date": "2026-09-16T00:35:05Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oMlBia3YrWU5vQlhWaFNvZzhCOHhlcEZ1dDZHN0IwU1hsVEQ1bXZQSkJwNkxjS3Vvb2JGS3lUY0hhYTZ2N3ZKQjhkRkZqb3o0WWdIODdIajJZU1F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDQ1MzI4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyNTZuRnM2OW8vVHgrYW85eENJekNWOHZVeHBQTks2amJSWFdSUmM5aGNjS0YrdW9tS1o1VlR6blFjUGxyZjk5bzl0bVBrMkVJRGFpUExMZFVRVVNCZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUl3d05sbEJpeUxYSzQ0RTlZUDdocHNBODFrckFKK0ZaUU8zeURWenVTc21oQXM2UVVUZkFwUEc5S3BzNjRXWjYxbDFjY0phakhwYkFjcWRYaWgwQmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTE4Njk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp1WFg4RG9XbFp5WWlKbmtueC9KMW96S2dCNlA1SXNpUUtKdTVUUkFxV0VKd3pVSXViVWFUZWMyZWdkOHlET29ZR25mdko4SjRRUEt2VzFyMXkyNFNDZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
