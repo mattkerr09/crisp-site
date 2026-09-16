@@ -134,4 +134,25 @@ fi
   exit 1
 }
 echo "pre-push: site-vs-engine claims ok ($(echo "$SITE_TESTS" | wc -l | tr -d ' ') files)"
+
+# ── SIXTH GATE: the price this site advertises must be the price the till charges ───────────
+# The five gates above compare this site to ITSELF and to the engine. None of them has ever
+# looked at the checkout. So the site, the app and the tests could agree perfectly on $129 while
+# Dodo charged something else, and every gate stayed green — the customer would be the one to
+# find out, with their own money.
+#
+# ⚠️ SKIPPED, NOT FAILED, WITHOUT NETWORK. A deploy from a train is not evidence of a wrong
+# price, and a gate that blocks every offline push is a gate someone removes.
+if [ -x "$CRISP_ROOT/scripts/verify_checkout.py" ]; then
+  if python3 - <<'NETCHK' >/dev/null 2>&1
+import socket,sys
+try: socket.create_connection(("checkout.dodopayments.com",443),timeout=6).close()
+except Exception: sys.exit(1)
+NETCHK
+  then
+    python3 "$CRISP_ROOT/scripts/verify_checkout.py" || exit 1
+  else
+    echo "pre-push: checkout unreachable — price-vs-till check SKIPPED (not a pass)"
+  fi
+fi
 rm -f /tmp/crisp_site_gate.$$
