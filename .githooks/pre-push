@@ -28,7 +28,61 @@
 #
 # Bypass with --no-verify if you genuinely mean it.
 
-python3 - <<'PY' || exit 1
+
+# ── HOW THIS FILE REPORTS, AND WHY IT CHANGED (2026-09-16) ──────────────────────────────────
+# Every gate below used to end in `|| exit 1`. That is SAFE — a failure blocks the push — but it
+# is not INFORMATIVE: the hook stops at the first failure, so gates 2..6 never run and never say
+# anything. You fix one, push again, meet the next. On a repo where the push IS the deploy that is
+# the difference between one round trip and five.
+#
+# The prompt for this was a sibling product: its CI ran many gates inside one `set -e` step, and
+# after the first failure every later gate was skipped ALL DAY while the run reported only the one
+# failure. Same shape, milder here because this hook has no `set -e` and each gate already carried
+# its own explicit exit.
+#
+# ⚠️ FOUR OUTCOMES, AND THE DIFFERENCE BETWEEN THE LAST TWO IS THE WHOLE POINT:
+#     PASS     ran, and agreed
+#     FAIL     ran, and disagreed                            -> blocks the push
+#     BLOCKED  could not see its subject, so it proved nothing -> blocks the push
+#     SKIPPED  a declared precondition is absent BY DESIGN     -> does not block
+#
+# ⛔⛔ BLOCKED IS NOT A SKIP, AND THIS FILE ALREADY LEARNED THAT THE HARD WAY. The header above
+# records the version gate passing silently because `__file__` was "<stdin>" inside a heredoc, so
+# it took a "not my layout" branch while the drift it existed to catch was present. A gate that
+# cannot see its subject must never report success. What changes today is only WHEN it says so:
+# it records BLOCKED and the run continues, instead of dying and hiding the other five. The push
+# still fails at the end.
+#
+# The single SKIPPED is the checkout gate, and it is a deliberate, declared condition (no route to
+# the till), because a deploy from a train is not evidence of a wrong price.
+
+_REPORT=$(mktemp -t crisp_gates)
+_BAD=0
+trap 'rm -f "$_REPORT" "$_REPORT".out' EXIT INT TERM
+
+# record <PASS|FAIL|BLOCKED|SKIPPED> <name> [note]
+record() {
+  _rst=$1; _rnm=$2; shift 2
+  printf '  %-8s %-26s %s\n' "$_rst" "$_rnm" "$*" >> "$_REPORT"
+  case "$_rst" in FAIL|BLOCKED) _BAD=1 ;; esac
+}
+
+# run_gate <name> <command...>  — runs it, records its OWN exit, prints output only on failure.
+run_gate() {
+  _nm=$1; shift
+  "$@" > "$_REPORT".out 2>&1
+  _rc=$?                      # named, not $? read later: one added line between would silently
+  if [ "$_rc" -eq 0 ]; then   # change which command's status this is
+    record PASS "$_nm" "$(tail -1 "$_REPORT".out)"
+  else
+    record FAIL "$_nm" "exit $_rc"
+    echo "── $_nm ─────────────────────────────────────"
+    tail -25 "$_REPORT".out
+  fi
+}
+
+# ── GATE 1: the version the site advertises ────────────────────────────────────────────────
+python3 - <<'PY' > "$_REPORT".out 2>&1
 import json, pathlib, re, sys
 
 root = pathlib.Path.cwd()
@@ -38,7 +92,7 @@ missing = [p.name for p in (latest, index) if not p.is_file()]
 if missing:
     print(f"pre-push BLOCKED: cannot find {', '.join(missing)} in {root}.")
     print("  This gate compares them and it will not pass when it cannot look.")
-    sys.exit(1)
+    sys.exit(3)   # 3 = BLIND, not merely failing
 
 shipped = json.loads(latest.read_text()).get("version", "")
 m = re.search(r'"softwareVersion":\s*"([^"]*)"', index.read_text())
@@ -46,12 +100,12 @@ if not m:
     print("pre-push BLOCKED: index.html has no softwareVersion field, so the "
           "gate cannot check it. Restore the field or remove this hook "
           "deliberately — do not leave it blind.")
-    sys.exit(1)
+    sys.exit(3)   # 3 = BLIND
 
 advertised = m.group(1)
 if not shipped:
     print("pre-push BLOCKED: latest.json has no version.")
-    sys.exit(1)
+    sys.exit(3)   # 3 = BLIND
 
 if advertised != shipped:
     print(f"pre-push BLOCKED: index.html advertises {advertised}, "
@@ -63,13 +117,19 @@ if advertised != shipped:
 
 print(f"pre-push: version sync ok ({shipped})")
 PY
+_rc=$?
+case $_rc in
+  0) record PASS    "version-sync"      "$(tail -1 "$_REPORT".out)" ;;
+  3) record BLOCKED "version-sync"      "could not see its subject"; cat "$_REPORT".out ;;
+  *) record FAIL    "version-sync"      "exit $_rc";                 cat "$_REPORT".out ;;
+esac
 
 # No third-party host may load for a visitor who did not ask for one. On
 # 2026-08-17 the homepage fired three cross-origin scripts — two Plausible
 # installs and usesled.com — directly above a hero reading "Nothing uploaded".
 # A comment above the tag argued the privacy claim was "scoped to the APP, not
 # this website", which is how it survived review. Hence a gate.
-python3 "$(dirname "$0")/../_tools/gate_thirdparty.py" || exit 1
+run_gate "third-party-hosts" python3 "$(dirname "$0")/../_tools/gate_thirdparty.py"
 
 # ...and every exemption THAT gate grants must still describe real code.
 #
@@ -80,13 +140,13 @@ python3 "$(dirname "$0")/../_tools/gate_thirdparty.py" || exit 1
 # pre-approving that host for the day it came back. That gate's own docstring
 # names this ("a dead exemption is worse than none") and instruction alone did
 # not hold it, which is the same reason the gate above exists at all.
-python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py" || exit 1
+run_gate "exemptions-live" python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py"
 
 # ...and no JSON-LD block may declare a key twice. page_dates.py appended a second
 # dateModified to 16 pages because its regex could not see the one already there; a JSON
 # parser keeps the LAST, so the stale date won and crawlers read it while the correct value
 # sat in the same object being ignored. Valid JSON, valid-looking file, wrong structured data.
-python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py" || exit 1
+run_gate "jsonld-dup-keys" python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py"
 
 # ...and every claim the site makes about the ENGINE must still be true of the engine.
 #
@@ -109,31 +169,22 @@ python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py" || exit 1
 # skip here is precisely how the checks got bypassed in the first place. --no-verify if you
 # genuinely mean it.
 CRISP_ROOT="$(cd "$(dirname "$0")/../.." 2>/dev/null && pwd)"
+SITE_TESTS=""
 if [ ! -d "$CRISP_ROOT/tests" ]; then
-  echo "pre-push BLOCKED: no crisp tests/ above this repo ($CRISP_ROOT)."
-  echo "  The site-vs-engine claim checks live there and this gate will not pass blind."
-  exit 1
+  record BLOCKED "site-vs-engine" "no crisp tests/ above this repo ($CRISP_ROOT)"
+elif [ ! -x /opt/homebrew/bin/pytest ]; then
+  record BLOCKED "site-vs-engine" "/opt/homebrew/bin/pytest is missing"
+else
+  SITE_TESTS=$(grep -rl 'SITE = ROOT / "site"' "$CRISP_ROOT/tests" 2>/dev/null)
+  if [ -z "$SITE_TESTS" ]; then
+    # ⚠️ The selector is the literal `SITE = ROOT / "site"`. If that line is ever reworded this
+    # matches nothing, which is a gate quietly testing zero files — BLOCKED, never a pass.
+    record BLOCKED "site-vs-engine" "selector matched no files; fix it, do not leave it blind"
+  else
+    # shellcheck disable=SC2086
+    run_gate "site-vs-engine" /opt/homebrew/bin/pytest -q $SITE_TESTS
+  fi
 fi
-if [ ! -x /opt/homebrew/bin/pytest ]; then
-  echo "pre-push BLOCKED: /opt/homebrew/bin/pytest is missing, so the site-vs-engine"
-  echo "  claim checks cannot run. Install it or push with --no-verify deliberately."
-  exit 1
-fi
-SITE_TESTS=$(grep -rl 'SITE = ROOT / "site"' "$CRISP_ROOT/tests" 2>/dev/null)
-if [ -z "$SITE_TESTS" ]; then
-  echo "pre-push BLOCKED: found no site-vs-engine tests to run."
-  echo "  They are selected by the literal 'SITE = ROOT / \"site\"'. If that line was"
-  echo "  reworded, fix this selector — do not leave the gate matching nothing."
-  exit 1
-fi
-# shellcheck disable=SC2086
-/opt/homebrew/bin/pytest -q $SITE_TESTS > /tmp/crisp_site_gate.$$ 2>&1 || {
-  echo "pre-push BLOCKED: the site contradicts the engine."
-  tail -25 /tmp/crisp_site_gate.$$
-  rm -f /tmp/crisp_site_gate.$$
-  exit 1
-}
-echo "pre-push: site-vs-engine claims ok ($(echo "$SITE_TESTS" | wc -l | tr -d ' ') files)"
 
 # ── SIXTH GATE: the price this site advertises must be the price the till charges ───────────
 # The five gates above compare this site to ITSELF and to the engine. None of them has ever
@@ -150,9 +201,25 @@ try: socket.create_connection(("checkout.dodopayments.com",443),timeout=6).close
 except Exception: sys.exit(1)
 NETCHK
   then
-    python3 "$CRISP_ROOT/scripts/verify_checkout.py" || exit 1
+    run_gate "price-vs-till" python3 "$CRISP_ROOT/scripts/verify_checkout.py"
   else
-    echo "pre-push: checkout unreachable — price-vs-till check SKIPPED (not a pass)"
+    record SKIPPED "price-vs-till" "no route to the till — NOT a pass, and deliberately not a block"
   fi
+else
+  record BLOCKED "price-vs-till" "scripts/verify_checkout.py is not executable here"
 fi
-rm -f /tmp/crisp_site_gate.$$
+
+# ── THE SUMMARY IS THE POINT OF ALL OF THE ABOVE ───────────────────────────────────────────
+# Every gate ran and every gate said something, so one push tells you the whole state instead of
+# the first thing that happened to break.
+echo
+echo "pre-push gates:"
+cat "$_REPORT"
+if [ "$_BAD" -ne 0 ]; then
+  echo
+  echo "PUSH BLOCKED. A BLOCKED gate counts exactly like a FAIL: it did not prove anything, and"
+  echo "this hook's whole history is a gate that could not see its subject reporting success."
+  echo "Push with --no-verify only if you genuinely mean it."
+  exit 1
+fi
+echo "pre-push: all gates satisfied."
