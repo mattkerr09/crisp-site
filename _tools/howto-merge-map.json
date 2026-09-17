@@ -1,0 +1,105 @@
+{
+  "written": "2026-09-17",
+  "execute_not_before": "2026-09-21",
+  "why_not_now": "39 of the 47 how-tos are experiment arms or adjacent to them, with reads landing 2026-09-21 and 2026-09-22. Merging before the reads destroys them. This map exists so 09-21 is a one-step job.",
+  "mechanism": "GitHub Pages cannot issue a 301. Each folded page KEEPS its URL and gets <link rel=\"canonical\"> to its target, with its unique material moved into the target as a section. Nothing is deleted, so no URL 404s and no inbound link breaks.",
+  "requires": "A new pre-registration before execution, per the CEO's order.",
+  "counts": {
+    "pages_now": 47,
+    "pages_after": 33,
+    "folded": 14
+  },
+  "clusters": [
+    {
+      "target": "/how-to/convert-mov-to-mp4-mac/",
+      "fold": [
+        "/how-to/convert-mkv-to-mp4-mac/",
+        "/how-to/convert-heic-to-jpg-mac/"
+      ],
+      "answer": "Open the Convert lane, pick the output format, press Convert.",
+      "arms": 0,
+      "note": "Three pages, one lane, one answer. The only difference is the format name in the dropdown. MOV->MP4 is the head term and keeps the URL."
+    },
+    {
+      "target": "/how-to/upscale-video-on-mac/",
+      "fold": [
+        "/how-to/upscale-480p-to-1080p-mac/",
+        "/how-to/upscale-a-finished-edit-to-4k-mac/",
+        "/how-to/batch-upscale-videos-mac/",
+        "/how-to/fix-blurry-video-mac/"
+      ],
+      "answer": "Drop the file in, pick the target resolution, press Upscale.",
+      "arms": 2,
+      "note": "ARMS: upscale-480p-to-1080p and batch-upscale are in howto-image-experiment. Their resolution pairs and the batch note become sections of the head page."
+    },
+    {
+      "target": "/how-to/remove-background-noise-video-mac/",
+      "fold": [
+        "/how-to/remove-wind-noise-from-video-mac/"
+      ],
+      "answer": "Audio denoise. Same control, same lane.",
+      "arms": 2,
+      "note": "BOTH are arms. Wind is one case of background noise; the page already says so. Do NOT fold the VIDEO noise page (/how-to/remove-noise-from-video-mac/) in here — that is grain, a different lane, and merging them would be the category error this map exists to avoid."
+    },
+    {
+      "target": "/how-to/restore-old-film-footage-mac/",
+      "fold": [
+        "/how-to/restore-old-home-videos-mac/"
+      ],
+      "answer": "Same restore lane; film vs tape differs only in the source description.",
+      "arms": 2
+    },
+    {
+      "target": "/how-to/make-quiet-parts-louder-video-mac/",
+      "fold": [
+        "/how-to/normalize-audio-video-mac/"
+      ],
+      "answer": "Loudness. The compressor explanation on the target covers both.",
+      "arms": 2
+    },
+    {
+      "target": "/how-to/color-grade-video-mac/",
+      "fold": [
+        "/how-to/add-a-matte-look-to-video-mac/",
+        "/how-to/add-a-vignette-to-video-mac/",
+        "/how-to/add-a-border-to-video-mac/"
+      ],
+      "answer": "Pick a look and apply it on-device.",
+      "arms": 0,
+      "note": "These are the three noise pages. Each is a single cosmetic effect with the same three steps and a different preset name; none ranks, and together they are the clearest example of the one-shape repetition the outside crawl flagged."
+    },
+    {
+      "target": "/how-to/trim-video-mac/",
+      "fold": [
+        "/how-to/split-a-clip-in-video-mac/"
+      ],
+      "answer": "Set in/out or split at the playhead — the same cut lane.",
+      "arms": 1
+    },
+    {
+      "target": "/how-to/crop-video-mac/",
+      "fold": [
+        "/how-to/make-video-vertical-mac/"
+      ],
+      "answer": "Reframe to an aspect ratio; 9:16 is one preset.",
+      "arms": 1,
+      "note": "The target already opens by distinguishing crop from reframe, which is exactly what the vertical page needs to say."
+    }
+  ],
+  "deliberately_not_merged": [
+    {
+      "pages": [
+        "/how-to/add-watermark-to-video-mac/",
+        "/how-to/remove-watermark-from-video-mac/"
+      ],
+      "why": "Opposite intents. A reader searching to remove one does not want the page about adding one."
+    },
+    {
+      "pages": [
+        "/how-to/remove-noise-from-video-mac/",
+        "/how-to/remove-background-noise-video-mac/"
+      ],
+      "why": "Video grain and audio hiss are different lanes with different controls. The names look alike; the answers do not."
+    }
+  ]
+}
