@@ -32,6 +32,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+import content_hash
+
 SITE = Path(__file__).resolve().parent.parent
 # A "date-bearing part" is any line whose only job is to state a date — JSON-LD's fields AND the
 # visible "Updated <Month> <Year>" dateline that `_tools/dateline.py` maintains. Both had to be
@@ -63,29 +65,48 @@ def _git(*args: str) -> str:
 
 
 def content_changed(page: Path) -> str | None:
-    """The date this page's CONTENT last changed, ignoring date-only commits.
+    """The date this page's CONTENT last changed, judged by a hash of what a reader sees.
 
     Returns None when git knows nothing about the file — an uncommitted page has no honest
-    answer, and inventing today's is the decorative date this tool exists to remove."""
+    answer, and inventing today's is the decorative date this tool exists to remove.
+
+    ⚠️ WHY THIS STOPPED BEING A DIFF-LINE TEST (2026-09-17). The old version asked "does this
+    commit touch any line that is not a date line?", which is true of EVERY template change. On
+    2026-09-15 commit 0fdc72e added a BreadcrumbList block and a byline to 110 pages; all 110
+    dates moved to that day and IndexNow correctly resent 120 URLs. Measured against that commit
+    with the hash below: 81 of the 110 had a real content change (the quick answer), and
+    **29 moved for nothing**. A diff line cannot tell you which region of the page it landed in.
+    A hash of the extracted content can, so the question is now asked of the content itself.
+
+    The walk is: compare the working tree to the newest commit, then each commit to the one
+    before it, newest first, and stop at the first pair whose content hash differs. That commit
+    is when the content last moved. If no pair differs, the content has never changed since the
+    file was created, and the creation date is the honest answer."""
     rel = str(page.relative_to(SITE))
+    log = [l.partition(" ") for l in
+           _git("log", "--format=%H %ad", "--date=short", "--", rel).splitlines()]
+    if not log:
+        return None
+
+    def at(sha: str) -> str | None:
+        blob = _git("show", f"{sha}:{rel}")
+        return content_hash.hash_of(blob) if blob else None
+
+    # Dirty is not the same as changed: only a content edit in the working tree counts as today.
     if _git("status", "--porcelain", "--", rel).strip():
-        # ⚠️ DIRTY IS NOT THE SAME AS CHANGED, and treating it as such made this tool
-        # non-idempotent: its own edit left every page dirty, so a second run saw "changing right
-        # now" and walked all 40 dates forward to today. The working-tree diff gets the same
-        # date-only test as a commit does — only a real edit counts.
-        wt = [l for l in _git("diff", "--unified=0", "--", rel).splitlines()
-              if l[:1] in "+-" and not l.startswith(("+++", "---"))]
-        if any(not DATE_LINE.match(l) for l in wt):
-            return date.today().isoformat()
-    log = _git("log", "--format=%H %ad", "--date=short", "--", rel).splitlines()
-    for line in log:
-        sha, _, when = line.partition(" ")
-        diff = _git("show", "--format=", "--unified=0", sha, "--", rel).splitlines()
-        touched = [l for l in diff
-                   if l[:1] in "+-" and not l.startswith(("+++", "---"))]
-        if any(not DATE_LINE.match(l) for l in touched):
-            return when                      # a real content change
-    return log[0].split(" ")[1] if log else None
+        try:
+            if content_hash.hash_of(page.read_text(encoding="utf-8")) != at(log[0][0]):
+                return date.today().isoformat()
+        except OSError:
+            pass
+
+    newer = at(log[0][0])
+    for i in range(1, len(log)):
+        older = at(log[i][0])
+        if older != newer:
+            return log[i - 1][2]             # content moved at the newer of the pair
+        newer = older
+    return log[-1][2]                        # never changed since it was created
 
 
 def main() -> int:

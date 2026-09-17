@@ -32,6 +32,17 @@ SITEMAP = SITE / "sitemap.xml"
 PREFIX = "https://crispvideo.app/"
 
 
+#: Pages under a live pre-registration, whose crawl signal must not move before the 2026-09-21
+#: and 2026-09-22 reads. Derived into _tools/frozen_arms.txt from the JSON pre-registrations in
+#: ~/ops/search — regenerate with a LOOSE `/how-to/[a-z0-9-]+/` regex over every *prereg*.json
+#: and *experiment*.json, because a stricter one keyed on "page"/"url" fields returns ZERO for
+#: rejected-pages-rewrite-preregistration.json, which stores a bare array of paths.
+#: ⚠️ TEMPORARY. After 2026-09-23 empty the file and delete this exclusion — a permanent skip
+#: list is a permanent lie in the sitemap.
+FROZEN = {l.strip() for l in (Path(__file__).parent / "frozen_arms.txt").read_text().splitlines()
+          if l.strip() and not l.startswith("#")} if (Path(__file__).parent / "frozen_arms.txt").is_file() else set()
+
+
 def page_for(loc: str) -> Path | None:
     rel = loc[len(PREFIX):] if loc.startswith(PREFIX) else loc
     p = SITE / rel / "index.html" if rel else SITE / "index.html"
@@ -55,9 +66,14 @@ def last_changed(page: Path) -> str | None:
 
 def rewrite(text: str) -> tuple[str, list[str]]:
     changed: list[str] = []
+    skipped: list[str] = []
 
     def one(m: re.Match) -> str:
         loc = m.group("loc")
+        rel = loc[len(PREFIX):] if loc.startswith(PREFIX) else loc
+        if ("/" + rel.lstrip("/")) in FROZEN:
+            skipped.append(loc)
+            return m.group(0)            # a frozen arm keeps the date it had
         page = page_for(loc)
         if page is None:
             return m.group(0)
@@ -75,7 +91,10 @@ def rewrite(text: str) -> tuple[str, list[str]]:
         r"<url><loc>(?P<loc>[^<]+)</loc>"
         r"(?:<lastmod>(?P<lastmod>[^<]*)</lastmod>)?"
         r"(?P<rest>.*?)</url>")
-    return pattern.sub(one, text), changed
+    out = pattern.sub(one, text)
+    if skipped:
+        print(f"  ({len(skipped)} frozen arm(s) left untouched — see _tools/frozen_arms.txt)")
+    return out, changed
 
 
 def main() -> int:

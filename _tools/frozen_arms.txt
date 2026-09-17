@@ -1,0 +1,30 @@
+# Pages under a live pre-registration. DERIVED, not typed — regenerate with the block in
+# _tools/sitemap_dates.py's docstring. Reads land 2026-09-21 and 2026-09-22; after
+# 2026-09-23 this file should be empty and the exclusion removed.
+#
+# ⚠️ Derived with a LOOSE path regex on purpose. A stricter one keyed on "page"/"url"
+# fields reported ZERO pages for rejected-pages-rewrite-preregistration.json, which stores a
+# plain array of paths — and that zero nearly excluded a real arm from the frozen set.
+/how-to/add-captions-to-video-mac/
+/how-to/add-film-grain-to-video-mac/
+/how-to/add-sameas-schema/
+/how-to/add-title-cards-to-a-video-mac/
+/how-to/batch-upscale-videos-mac/
+/how-to/crop-video-mac/
+/how-to/deinterlace-video-mac/
+/how-to/edit-hdr-video-mac/
+/how-to/loop-video-mac/
+/how-to/make-a-highlight-reel-mac/
+/how-to/make-a-photo-slideshow-mac/
+/how-to/make-a-split-screen-video-mac/
+/how-to/make-quiet-parts-louder-video-mac/
+/how-to/normalize-audio-video-mac/
+/how-to/remove-background-noise-video-mac/
+/how-to/remove-noise-from-video-mac/
+/how-to/remove-wind-noise-from-video-mac/
+/how-to/restore-old-film-footage-mac/
+/how-to/restore-old-home-videos-mac/
+/how-to/slow-mo-video-mac/
+/how-to/split-a-clip-in-video-mac/
+/how-to/stabilize-shaky-video-mac/
+/how-to/upscale-480p-to-1080p-mac/
