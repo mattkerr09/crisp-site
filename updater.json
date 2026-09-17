@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1252",
-  "notes": "Four fixes to how Crisp reads what you type. Ask for the volume, the brightness or the speed whichever way round you say it \u2014 \"turn up the volume\" and \"turn the volume up\" both land now, and so do the audio, the sound and the levels, not just the word volume. Asking to reduce sharpness used to plan a render that changed nothing and then tell you it had reduced it; Crisp now says plainly that it cannot soften a picture. Speeding up and slowing down answer the same set of phrasings in both directions. And a password or licence key that lands in a crash report is redacted in every shape it can arrive in.",
-  "pub_date": "2026-09-16T06:45:22Z",
+  "version": "1.0.1283",
+  "notes": "Crisp looks new. The whole app has been rebuilt on a deeper, calmer dark palette so panels, the preview and the timeline read as separate surfaces instead of one flat grey sheet, with crisper corners and quieter edges. Nothing moved, so everything is where you left it.\n\nMoving your licence between Macs now tells the truth. Deactivate used to report a seat as released when it had never asked, so a seat could look free while it was still held.\n\nA licence saved by an earlier version keeps working on this one.\n\nTrimming is safer: a start or end time that is not a real number is refused up front instead of producing an odd clip.\n\nIf a render from a previous session is still running when Crisp starts, it now says so rather than leaving it quietly alive.",
+  "pub_date": "2026-09-17T21:38:10Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8vMk9Xc2FPaUl1djQrYjRtMVhVNzUrQUp2N1EwTi9JNHpFY2FTNktXbjhVTzhpS3JwWnlRTXFCWDh4MjlhelNDRnltV1hRbzR5TXlIeUk0YjFEQ3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTQwOTkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5MWs5TWRNTHZpSU5CS3VsNE1Gb0NRUDNsRlg5MjdQdEs2MnZtVXBzTDhLdXYvbFplTlI2UXNVR1B0SUMvOW1Tc2oySFFqaVRKdWNRWFN0ZkRWSnBEZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNzeDJJb1ZXYUlXK0h0Ly9uV2p1T2xmbzN2OUNrRi90bVExdkxaeGJEaVFnaXpwVDMwbVp2dWIvcm9KRGRPdE1PQUx4dzk4cWhMS1p4MHVnZzdCeHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NjgwODk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphbFhDOERoSUJWTkFCNlFHTEhlZ0dmbTlpc0x6WXU1TFZkTU5qSmtBVGxaYkV3eW9INytHeUJEdW5QRWFKSklTVUpwb2xScmRQWVVSZGhUdkhDYXJDUT09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
     }
   }
