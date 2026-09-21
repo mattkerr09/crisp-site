@@ -811,9 +811,16 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          the same click. Pricing is already in the nav, and the pricing section is four
          screens down the same page — nothing was made harder to find.
          The requirement line is Screen Studio's move: state the OS floor under the button so
-         nobody downloads 78 MB to find out it will not open. macOS 12.0 is the shipping
-         bundle's own LSMinimumSystemVersion, not a guess, and it already agrees with the
-         JSON-LD `operatingSystem` further down this file. -->
+         nobody downloads 78 MB to find out it will not open.
+         ⚠️ CORRECTED 2026-09-21, AND THE OLD REASONING IS THE LESSON. This said "macOS 12.0 is
+         the shipping bundle's own LSMinimumSystemVersion, not a guess". That was true and it was
+         the WRONG LAYER. LSMinimumSystemVersion is what the bundle DECLARES; what the app needs
+         is what its Mach-O files require, and `vtool -show-build` on the installed 1.0.1307 finds
+         79 of them at minos 26.0 — including Python.framework itself, which the sidecar cannot
+         start without. So the app would launch on macOS 12 and then do nothing, which is worse
+         than refusing to open. The number here now comes from the binaries. Lowering the real
+         floor is a separate job (Matthew's to-do 42); this line only stops the site promising
+         something the artifact does not deliver. -->
     <!-- ⚠️ "Free to use" ON ITS OWN IS THE TRAP THE CATEGORY KEEPS FALLING INTO. SuperResolution
          spent its whole launch thread defending the word against people who found the in-app
          purchase after downloading. The app itself now says so before a render — the export
@@ -822,7 +829,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          about it at the end. This is the same sentence one step earlier, on the button they press
          first, so nobody downloads 78 MB to discover the term. -->
     <p class="fine">Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports ·
-      78&nbsp;MB · macOS 12 or later · Apple Silicon</p>
+      78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon</p>
       </div>
     </div>
     <div class="trust">
@@ -1721,7 +1728,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       "alternateName": "Crisp for Mac",
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "Video Editor and AI Upscaler",
-      "operatingSystem": "macOS 12.0 or later",
+      "operatingSystem": "macOS 26.0 or later",
       "processorRequirements": "Apple Silicon (M1 or later)",
       "softwareVersion": "1.0.1307", "fileSize": "78 MB",
       "url": "https://crispvideo.app/",
