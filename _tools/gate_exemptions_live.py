@@ -65,7 +65,7 @@ def main() -> int:
             if p is None:
                 dead.append(f"    {host}  ->  {fname}: THE FILE NO LONGER EXISTS")
                 continue
-            flagged = any(h == host for h, _ in g.hosts_in(p))
+            flagged = any(h == host for h, _, _ in g.hosts_in(p))
             marker = markers if isinstance(markers, str) else markers.get(fname)
             has_marker = bool(marker) and marker in p.read_text(encoding="utf-8", errors="replace")
             if not flagged:
@@ -80,7 +80,7 @@ def main() -> int:
     for (host, fname), why in g.NAVIGATION_FROM_JS.items():
         checked += 1
         p = _find(fname)
-        hits = [w for h, w in g.hosts_in(p) if h == host] if p else []
+        hits = [w for h, w, _ in g.hosts_in(p) if h == host] if p else []
         if "url in inline <script>" in hits:
             print(f"  live: {host}  ({fname}, navigation)")
         else:

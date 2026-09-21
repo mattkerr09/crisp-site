@@ -26,7 +26,7 @@
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Legal", "item": "https://crispvideo.app/legal/"}, {"@type": "ListItem", "position": 3, "name": "Legal", "item": "https://crispvideo.app/legal/privacy/"}]}</script>
-</head>
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
   <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
@@ -89,9 +89,9 @@
     everything said further up this page about Crisp itself is unchanged: the software contains no
     analytics SDK, no crash reporter and no advertising identifiers. Any content blocker stops the
     pixel, and nothing on this site depends on it loading.</li>
-    <li><strong>One cookie, for affiliate credit.</strong> The site loads a 778-byte script
-    from <strong>this domain</strong> &mdash; <code>/sled.js</code>, a pinned copy we serve
-    ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
+    <li><strong>A cookie, for affiliate credit, on the homepage.</strong> The homepage &mdash; and
+    only the homepage &mdash; loads a 778-byte script from <strong>this domain</strong> &mdash;
+    <code>/sled.js</code>, a pinned copy we serve ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
     referral code in a cookie named <code>ta_ref</code> for <strong>90 days</strong> and tells
     <code>usesled.com</code> that the click happened, which means Sled sees your IP address on
     that one request. <strong>If you did not arrive on a referral link, nothing is sent to
@@ -101,6 +101,25 @@
     Its only purpose is to pay the person who referred you if you later buy Crisp Pro. The cookie
     holds a referral code, not an identity, and it is set by this website &mdash; never by the
     app.</li>
+    <li><strong>Affiliate referrals, on every page.</strong> If you arrive from an affiliate or
+    partner link, the link&rsquo;s referral code is kept in your browser&rsquo;s local storage on
+    this site (key <code>kc_aff</code>) for <strong>30 days</strong> and is attached to the
+    checkout link if you buy, so the partner who referred you is credited. This is first-party: it
+    is stored only by this site, <strong>is not a cookie</strong>, is not sent to any third party
+    by this site, and is not read by any other site. Clearing your browser&rsquo;s site data
+    removes it. The script that does this is <code>snippet.js</code>, loaded from
+    <code>kerr-affiliate-hub.kerrco.workers.dev</code>; fetching it is the only request it makes,
+    and it sets no cookie and sends nothing anywhere. Dodo Payments, our merchant of record named
+    further down this page, receives the code as order metadata when a purchase is made.
+    <br><br>
+    Two things worth stating plainly, because this page has been wrong before by omission. This is
+    a <strong>second</strong> affiliate mechanism alongside the <code>ta_ref</code> cookie above,
+    and the two are not the same: that one is a cookie on the homepage kept for 90 days, this one
+    is local storage on <strong>all 124 pages</strong> kept for 30. An affiliate&rsquo;s link can
+    point at any page here, so a referral that lands on a comparison or how-to page is only seen
+    by this one. And a referral code is a tracker in the plain sense of the word &mdash; it
+    records where you came from so someone can be paid &mdash; so nothing on this site says we do
+    not track you.</li>
     <li><strong>Privacy-friendly site analytics.</strong> This page said
     &ldquo;no site analytics &hellip; there is no Plausible&rdquo; until 17 August 2026, and that
     was <strong>wrong</strong> &mdash; Plausible has been on all 114 pages of this site. It is

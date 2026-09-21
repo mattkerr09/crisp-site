@@ -49,6 +49,42 @@ ROOT = Path(__file__).resolve().parent.parent
 #: identifiers; this is the marketing site, and the policy draws that line.
 ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io", "connect.facebook.net"}
 
+#: (host, PATH) pairs a visitor may load — and nothing else from that host.
+#:
+#: ⚠️ WHY EXACT AND NOT A HOST. This gate's own table above records a host-only
+#: exemption going GREEN on the exact bug it was written to catch. A worker host
+#: that may serve one 4.9 KB script must not thereby be allowed to serve a
+#: beacon from the same origin tomorrow: /snippet.js is exempt, /anything-else
+#: from the same host still fails. That is the whole point of carrying the path.
+ALLOWED_ON_LOAD_EXACT = {
+    ("kerr-affiliate-hub.kerrco.workers.dev", "/snippet.js"): (
+        # The reason has to survive being read aloud to a customer, so here it is
+        # in those words: "If you arrive from a partner's link, the referral code
+        # is kept in your browser on this site and attached to the checkout link
+        # if you buy, so the partner gets credited. It is not a cookie, and this
+        # site sends it nowhere."
+        #
+        # Verified before the exemption was written, rather than taken from the
+        # order that requested it:
+        #   * the served file is SHA-256 identical to ops/affiliate-hub/snippet.js
+        #     (88762a01f5705d9607c5eeec7f8d77735af1c83de2b3e1157c676f8b0b547986);
+        #   * grepping that source for fetch( / XMLHttpRequest / document.cookie /
+        #     navigator.sendBeacon returns NOTHING, and the same pattern with
+        #     localStorage added returns 4 — so the empty result is a real
+        #     absence and not a broken pattern;
+        #   * /legal/privacy/ names it, in the section listing what the site
+        #     stores, in the same commit that added the tag.
+        #
+        # ⚠️ IT IS SERVED WITHOUT SRI ON PURPOSE (the hub updates the file in
+        # place and a stale integrity hash would silently kill it), so the hash
+        # above is EVIDENCE OF WHAT WAS AUDITED, not an enforcement mechanism.
+        # If that file changes, this exemption is describing something nobody
+        # has read. Re-audit it rather than trusting this comment.
+        "affiliate referral capture; first-party storage only, no cookie, no "
+        "network call; named in /legal/privacy/"
+    ),
+}
+
 #: (host, filename) pairs a SCRIPT may name because it assigns them to an href —
 #: navigation, not a load. The module docstring already exempts anchor hrefs
 #: ("linking to topazlabs.com in a comparison is not loading anything from
@@ -149,45 +185,60 @@ CONDITIONAL = {
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}
 
 
-def hosts_in(path: Path) -> set[tuple[str, str]]:
-    """(host, why) pairs this file would cause a browser to contact."""
+def hosts_in(path: Path) -> set[tuple[str, str, str]]:
+    """(host, why, url-path) triples this file would cause a browser to contact.
+
+    The PATH is carried because an exemption keyed on host alone is this gate's
+    own recorded failure: one went green on the exact bug it was written to
+    catch. A host that may serve one file may not thereby serve every file.
+    """
     try:
         text = path.read_text(encoding="utf-8", errors="replace")
     except OSError:
         return set()
-    found: set[tuple[str, str]] = set()
+    found: set[tuple[str, str, str]] = set()
 
     def host(u: str) -> str:
         m = re.match(r"https?://([^/\"'\s]+)", u)
         return m.group(1).lower() if m else ""
 
+    def urlpath(u: str) -> str:
+        """The path a browser would request, query and fragment stripped.
+
+        "" when there is none, so a bare host reads as "/" nowhere and cannot
+        accidentally match an exact-path exemption.
+        """
+        m = re.match(r"https?://[^/\"'\s]+([^\s\"'<>()\\]*)", u)
+        raw = m.group(1) if m else ""
+        return raw.split("?")[0].split("#")[0]
+
     if path.suffix == ".html":
         for tag, attr in (("script", "src"), ("img", "src"), ("iframe", "src"),
                           ("source", "src"), ("video", "src"), ("audio", "src")):
             for m in re.finditer(rf"<{tag}\b[^>]*\b{attr}=[\"']([^\"']+)", text, re.I):
-                h = host(m.group(1))
+                h, up = host(m.group(1)), urlpath(m.group(1))
                 if h:
-                    found.add((h, f"<{tag} {attr}>"))
+                    found.add((h, f"<{tag} {attr}>", up))
         for m in re.finditer(r"<link\b[^>]*>", text, re.I):
             tag = m.group(0)
             rel = (re.search(r'rel=["\']([^"\']+)', tag, re.I) or [None, ""])[1].lower()
             if not any(r in FETCHING_REL for r in rel.split()):
                 continue
             href = (re.search(r'href=["\']([^"\']+)', tag, re.I) or [None, ""])[1]
-            h = host(href)
+            h, up = host(href), urlpath(href)
             if h:
-                found.add((h, f"<link rel={rel}>"))
+                found.add((h, f"<link rel={rel}>", up))
 
     for m in re.finditer(r"url\(\s*[\"']?(https?://[^)\"']+)", text, re.I):
-        h = host(m.group(1))
+        h, up = host(m.group(1)), urlpath(m.group(1))
         if h:
-            found.add((h, "css url()"))
+            found.add((h, "css url()", up))
 
     if path.suffix == ".js":
         for m in re.finditer(r"[\"'](https?://[^\"'\s]+)[\"']", text):
-            h = host(m.group(1))
+            h, up = host(m.group(1)), urlpath(m.group(1))
             if h:
-                found.add((h, "url in js"))
+                found.add((h, "url in js", up))
 
     # ── INLINE <script> BODIES ────────────────────────────────────────────────
     # THE HOLE THAT MADE THIS GATE REPORT GREEN WHILE A TRACKER LOADED.
@@ -214,9 +265,9 @@ def hosts_in(path: Path) -> set[tuple[str, str]]:
             if stype in INERT_SCRIPT_TYPES:
                 continue
             for u in re.finditer(r"https?://[^\s\"'<>()\\]+", blk.group(2)):
-                h = host(u.group(0))
+                h, up = host(u.group(0)), urlpath(u.group(0))
                 if h:
-                    found.add((h, "url in inline <script>"))
+                    found.add((h, "url in inline <script>", up))
 
     return found
 
@@ -230,10 +281,16 @@ def main() -> int:
 
     bad: list[str] = []
     seen_conditional: set[str] = set()
+    seen_exact: set[tuple[str, str]] = set()
     seen_navigation: set[tuple[str, str]] = set()
 
     for f in sorted(files):
-        for h, why in sorted(hosts_in(f)):
+        for h, why, upath in sorted(hosts_in(f)):
+            # EXACT (host, path) first: narrower than ALLOWED_ON_LOAD, and the
+            # only thing that lets a host serve one file without serving all.
+            if (h, upath) in ALLOWED_ON_LOAD_EXACT:
+                seen_exact.add((h, upath))
+                continue
             if h in ALLOWED_ON_LOAD:
                 continue
             # A host may legitimately appear in MORE THAN ONE file — the subscribe
@@ -276,6 +333,12 @@ def main() -> int:
     # again becomes the next incident.
     for h, where in sorted(seen_navigation):
         print(f"  navigation:  {h} (in {where}) — {NAVIGATION_FROM_JS[(h, where)]}")
+    # Exact (host, path) exemptions, printed for the same reason as the two
+    # above: a host that loads on EVERY visit and is never named in this gate's
+    # output is invisible, and invisible is how the Meta pixel loaded for weeks
+    # while the last line said nothing third-party loaded at all.
+    for h, up in sorted(seen_exact):
+        print(f"  exact:       {h}{up} (this path only) — {ALLOWED_ON_LOAD_EXACT[(h, up)]}")
 
     if bad:
         print(f"\nFAIL: {len(bad)} third-party contact(s) a visitor did not ask for.")
@@ -295,7 +358,14 @@ def main() -> int:
     # sentence is exactly as false as it was then; only the reason changed. Anyone auditing
     # privacy runs this gate and reads its last line, and that line has to survive being read
     # aloud next to /legal/privacy/. Name the hosts instead of claiming there are none.
+    # ⚠️ AND THE EXACT-PATH EXEMPTIONS BELONG IN THIS SENTENCE TOO. The affiliate
+    # snippet loads from a third-party host on EVERY page for EVERY visitor. Listing
+    # only ALLOWED_ON_LOAD here would have printed "nothing third-party loads except
+    # connect.facebook.net, plausible.io" on a run where a third host loaded 124 times
+    # — the same false last line this comment was written about, one mechanism later.
+    # A narrower exemption is not a quieter one.
     third = sorted(h for h in ALLOWED_ON_LOAD if h != "crispvideo.app")
+    third += sorted(f"{h}{up}" for h, up in seen_exact)
     if third:
         print("\nOK: nothing third-party loads for an ordinary visitor except the hosts "
               "allowed above — " + ", ".join(third) + " — each with a stated reason.")
