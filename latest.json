@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1303",
-  "notes": "Asking for a fraction of something now changes that thing, not the length of your video. \u201cMake it a quarter of the volume\u201d used to cut the clip down to a quarter of its running time and say so as though you had asked for it \u2014 and the same happened for speed, brightness, size and every other word in that position. Only a fraction of the clip, the video, its length or its duration shortens anything now. Anything else is handled by the part of Crisp that owns it, or asked about, rather than guessed at with a cut you cannot undo.",
-  "pub_date": "2026-09-21T20:53:50Z",
+  "version": "1.0.1307",
+  "notes": "Asking for the shake to go now steadies the clip, whichever way you say it. \u201cSmooth the shakiness out\u201d worked, but \u201csmooth the jitter out\u201d, \u201ctake the shake out of it\u201d and \u201cget the wobble out\u201d quietly started a full upscale instead \u2014 minutes of work on something you had not asked for. Every ordinary way of saying it now reaches the stabiliser: take it out, get it out, smooth it out or iron it out, and shake, shakiness, wobble or jitter. Forty-eight phrasings were checked, not the one that was reported.",
+  "pub_date": "2026-09-21T23:13:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdGdFpuVjZXTHIyYkUxSDRWWlhKaEZKNHFrQ3ZWQTU2OUFzUngzSUxMR2lNUkdsWVgyU2ZCTXdsS0dCa2gwLzJTRlhmc3hJb2tCdFZtSmx1WnpodHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDIzODIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjWEI5ZEFZZ2t6R1NRS3dURUZaK3NoeEI2Y3FsN2phajdEb1RwNm1va3lZeHNTTjdiWHN0Mzk3WW93SytrUmcrYWJHRmo3aHBpemN0K3ptU0NjVGhCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBaTnk0UVFyc080dXp3SzJuKy9yUGZWN09rVUVyaWsxYXY5WCtKVThkUkNVWVlIRVk2bGJXeURuT2xwZFZETnpsSzFnanFxak40Rm9CRC9DeDZZa1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDMyMDg4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmVFR4RDBPWHFCdHlNTVVOTTNDYzF0c2FkUmhzTTVWd0Jjd2R0RUVLbks5TGR0ZjVrUXB3N0VJZGxvd1NjWllhVFFrNW5vTG5uR3k0eVBkN0psdlBBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1307.app.tar.gz"
     }
   }
 }
