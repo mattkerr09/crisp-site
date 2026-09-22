@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1329",
-  "notes": "However you word a complaint, Crisp now hears the same thing. \"The video feels washed out\" used to take colour away \u2014 the opposite of what you meant \u2014 while \"the video looks washed out\" added it back, and \"it feels shaky\" reached nothing at all while \"it is shaky\" stabilised. Saying a clip feels, seems, appears or was some way now works exactly like saying it looks that way. Asking for a look on purpose still applies it: \"give it a faded look\" still takes the colour down.",
-  "pub_date": "2026-09-22T17:55:49Z",
+  "version": "1.0.1331",
+  "notes": "Say the colours look desaturated and Crisp puts the colour back, the same way it already answers washed out or muted. It used to stop and ask you what you meant.",
+  "pub_date": "2026-09-22T19:53:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5YMVBiQWdzR29FNVRVc1NDZld4NEMzenVWNHl3dUpKc2VpS0RLVXJySVh2bzB2NlZOMEhVTEkyZkphb2xtY1lGV3pKVGxTRlBGNDlYY3dEeWhWeFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDk5Mzg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negptblF3Y1ViNkM3cjRCTmpiSVVSZVBjdnJubURvbUptS3I5VHV5eFVMZ2Zkb3ZqVGVnSVUzRURYekZVdWR3NmwweTlKaTh1M0hQMGhTTlFpRk9UZW5DZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1329.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk1SHEvdlVBb2hxN1RaWTU2bnYrNEFQTHFCTURzSUw1a3QrMzF0RGU3a3N1SkdCeHQvbkpxemRsdzJlNWUxM0RSTGd0VkpQbXA4NHBYZS8vRExDNHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTA2MTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSQ3ZpNUkvUC93d1FuUUxBb0RveExxNDBjbFQ2bHRiUUd2Tm85T2lzcDJKOTc4WUpUOGVRZjlCcWg3eWNaRkZ0OUJnSkxvQS9QOWZZSEdkUkttRHZBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1331.app.tar.gz"
     }
   }
 }
