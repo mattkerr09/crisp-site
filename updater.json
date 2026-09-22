@@ -1,7 +1,7 @@
 {
   "version": "1.0.1320",
   "notes": "Telling Crisp what is wrong with a clip no longer makes it worse. \"The video looks compressed\" used to plan another round of compression, \"it came out rotated\" used to rotate it again, and \"the audio sounds condensed\" used to cut your video down into a highlight reel \u2014 each of them confidently, as though it had understood. Crisp now recognises when you are describing a problem rather than asking for one, and asks what you would like done instead. Colour complaints it can actually fix still get fixed: \"it looks washed out\" still adds saturation, and \"it looks contrasty\" now takes contrast down the way \"it is too contrasty\" always did, instead of adding more.",
-  "pub_date": "2026-09-22T06:03:26Z",
+  "pub_date": "2026-09-22T06:11:26Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV3WkJvWWlSRWplTXllaEZqeFFKWWpTdWZzQ2RTRGFzQUZ4bmM0bW5Xei9EaTVLTXhlUEZOU1hIWFV1VTFjR0c3VVMrQUlPVyt5eVNCeHBGSjNQblEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDU2ODk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5b1dlWVJQM2llY2FyVldUUEtCZGRiNGQ0MjhlajlHaFA1bVlNMWIxZkVoZ1o1dzZZZ0Nka09OWndaUG9BdnRmYWhORW9hL1BaR2lrMWsvRU9HeGNEZz09Cg==",
