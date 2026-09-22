@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1333",
-  "notes": "Tell Crisp your video is too big to text and it offers to compress it. Before, it replied about burned-in logos. Asking for a smaller file so it fits in an email works too.",
-  "pub_date": "2026-09-22T22:20:12Z",
+  "version": "1.0.1334",
+  "notes": "Ask Crisp to turn the music down and it now says plainly that it works on the whole soundtrack and cannot separate music from voices. Before, some ways of asking quietly lowered the voices too.",
+  "pub_date": "2026-09-22T23:52:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURMbFNvVWk1ZGhSTWNYSUE2RVZtaVRSMGUzTVRvNENvWEswZWhIV1grcllneEV5TGhVVnRNSlVJNjNoMm9oR2tnY3lzMEFBb1RIaTlCNmtuanBnS0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTE1MTkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOTzRROWd3dng3U0RCMCtvUkFObkxWRUFDOHRvSXVSN3dzUVNma3FqQWNWK1lJUTBHQ3c0ODFiWmtjVGIyUmJNUlczczJkMmQ4MlRlWE1pVW5XSFpEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1333.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpudlpQUUNzYTlmWW9JOXpmY1JGbHFQdkxnK0ZyQ3ZzWmFuV3VsMm0xTWVyR0JqOGdZRk9RcDRIWEZnSUdjTHd5TDlHZ2tOaFo3d0wxSU1MZkQ3U2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTIwNzAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5NnRlYlNEUTdwNFYxb1ltanI1RDRwTUx2czUrdVlHZC9aMGtwblhZVk5PaUg5UXpXLytMWVdiTmM0bCtkOCtpdzFOMjRmOWd6SUo1T2pmK0pBZk5DZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1334.app.tar.gz"
     }
   }
 }
