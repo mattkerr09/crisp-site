@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1323",
-  "notes": "Two more ways of saying things now land where you meant. Calling a clip flattering \u2014 \"it looks flattering\", \"she looks flattering in this shot\" \u2014 used to be read as a request for more contrast, and Crisp quietly planned a colour change over a compliment; praise is left alone now. And \"make me a music clip\" cuts a montage to the beat, the same as \"make me a music video\", which worked all along.",
-  "pub_date": "2026-09-22T07:46:35Z",
+  "version": "1.0.1324",
+  "notes": "Asking Crisp to get rid of something no longer makes it. \"Delete the highlight reel\", \"remove the montage\" and \"get rid of the music video\" each used to plan the very thing you asked to be rid of \u2014 and building a montage cuts your timeline down, so it was a confident plan to undo your edit. Asking for one still works exactly as before: \"cut out the boring bits\", \"remove the dead air\" and \"make a highlight reel\" all do what they say.",
+  "pub_date": "2026-09-22T09:15:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUMxRFl0Tm50R3NsVVRDUWtOWHlvOXZObHk3T01yQVcwZnErMGRmZERHTGpWUnBSWjJBWFF0NUpjZE9sNkxkYlhKeXJ2MmNBbHBQaFplT2IzN3NvbGc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDYyNTA2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUOHVENXpJbDZTVzNxcWtvc3hRZWxodnM0ZUNsQmkyaTIzRXpZQ2h6SXQzcE1tTFY0VXpvQjBzSU1vdmcyMDNIMllBQTM5WWV5cjhYWGc2dzg3UlNEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1323.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU02SUFsZ1puS0FEbVVzYWx2S0RrV2hCNjAxQnhQRGdYU2lqT0pRczRqeUpZc3VHT21SUVRLdlBsa1FKWkVCNTMyUml2YW9oVysvUGNwYWFFeWJDWndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDY4MzAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCUDdtYWVDU1NKUEpxdkc4bkp3dWh3QytKb3hNZS9KL1lpNHp1Z1hleVdWRFQwaEc4blZ6TTQ3S3hVYk5jSlBSc2NmeE10NWlHN2t4SG0zWFBnb2JBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1324.app.tar.gz"
     }
   }
 }
