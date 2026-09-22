@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1332",
-  "notes": "Ask for subs or cc and Crisp now tells you plainly that it cannot write subtitles from the audio. Before, \"add subs for instagram\" cropped your video to a square instead.",
-  "pub_date": "2026-09-22T21:13:28Z",
+  "version": "1.0.1333",
+  "notes": "Tell Crisp your video is too big to text and it offers to compress it. Before, it replied about burned-in logos. Asking for a smaller file so it fits in an email works too.",
+  "pub_date": "2026-09-22T22:20:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlaNlVoYjhkYTJvS2hvZUZ5WXFFaGE5b3J4SDdiS3RzR2lDSGhGSGhEM3UxNFdlYlhUTUR5eUNLMFFNWnFDK3hnZkd4V21XVGgwVGRTSko5QUhwVmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTExMjI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1SzR1bTFPRjFGN3QyaitoNDhldlRRKzR6aU01TElwbUJsT01ZSHp5ZWhoVHFYVTQrMUhhWjF6ekV1dlRFYWNLUzQrQW9zMjFGY3d2YlRmM25WTWtEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1332.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURMbFNvVWk1ZGhSTWNYSUE2RVZtaVRSMGUzTVRvNENvWEswZWhIV1grcllneEV5TGhVVnRNSlVJNjNoMm9oR2tnY3lzMEFBb1RIaTlCNmtuanBnS0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTE1MTkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOTzRROWd3dng3U0RCMCtvUkFObkxWRUFDOHRvSXVSN3dzUVNma3FqQWNWK1lJUTBHQ3c0ODFiWmtjVGIyUmJNUlczczJkMmQ4MlRlWE1pVW5XSFpEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1333.app.tar.gz"
     }
   }
 }
