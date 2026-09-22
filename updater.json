@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1326",
-  "notes": "Saying the colour looks wrong now fixes the colour. \"The colours look faded\", \"the picture looks dull\" and \"it looks lifeless\" used to reach nothing at all \u2014 the same complaint written the other way round, \"faded colours\", had always worked, which is a distinction no one should have to know. Asking for the look on purpose still applies it: \"give it a faded look\" and \"make it muted\" take the colour down, exactly as before.",
-  "pub_date": "2026-09-22T12:42:50Z",
+  "version": "1.0.1327",
+  "notes": "Saying it about more than one thing now works. \"The colours look flat\", \"the shadows look flat\" and \"the midtones look flat\" used to reach nothing, while the same sentence about one thing \u2014 \"the video looks flat\" \u2014 had always worked. Asking for a flat look on purpose still gives you one: \"make it look flat\" and \"keep it looking flat\" take the contrast down rather than up.",
+  "pub_date": "2026-09-22T14:28:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9NV3BwRmdQN2tQd0tQUXBDL0JmT0FnaUZzTGFQQmc1UHpHRmd2aFVyY21sRUZvOTVuaTBaR3BEMjdNTklYS0lqcndiU2JOUkZqYU1qNU1MMExnTUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDgwNjM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorVUJNSjRJWTVSQnBSV21CaEo4MVVTYk5iNEUrNTdxazk3OGtqcG9tbzdLMWhXYXI2RWhYVVdGZXVXMC9JZEt6eGtYb0ZHejM4bFlmVm55L016b1BBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1326.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNtMFd2VHVFZE91WWRWOTJhSmJXb2lGencwamlIRUM0T3BxVTE3UWxvMTFBckhuU09SZTFqOHlpdVdLaXIya1FKZVN4cUZ0SFgyOWlWQzdwaWpNK2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDg2OTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5QmJlR2RLa3RySzd0Tkl4Wko1bWlobGpST09EUVNBNkNjNUFVRVFacHd5Z1ErMVJJaVIzWnEwQUprVVU3TGNMNUxiNzJnK0xYV0lsUFM4TDA3MWZCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1327.app.tar.gz"
     }
   }
 }
