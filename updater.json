@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1325",
-  "notes": "More of the ways people ask for the sound to change now work. \"Ramp up the volume\", \"knock up the audio\", \"wind the sound down\" and a couple of dozen other phrasings used to reach nothing at all, while the same words in a different order worked fine \u2014 some verbs had been wired for louder but not quieter, or the other way round. They all work now, in both directions and either word order, and asking about the picture still changes the picture: \"turn the brightness up\" is still a colour change, not a volume one.",
-  "pub_date": "2026-09-22T11:13:20Z",
+  "version": "1.0.1326",
+  "notes": "Saying the colour looks wrong now fixes the colour. \"The colours look faded\", \"the picture looks dull\" and \"it looks lifeless\" used to reach nothing at all \u2014 the same complaint written the other way round, \"faded colours\", had always worked, which is a distinction no one should have to know. Asking for the look on purpose still applies it: \"give it a faded look\" and \"make it muted\" take the colour down, exactly as before.",
+  "pub_date": "2026-09-22T12:42:50Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZGUzV2ckVwdE1jM0plZXltTlNHbjl6cTlZQlhmUlhVb0lhYndYSWljdGNzSFgyaythdDVuV0JHcFpnT0ZaejFOejlUZ1pzTzQ1dkxLd3FSb2VPbUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDc1MjM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRTmZNcXlxb3h0SzhkbWIxVlQ0UTBMOEhvRjZ0YnhsZit1TVNrdXVoVy91dHF5T2lYaVVvSjNGVXZmWnk4aDl6QjYxaWsrVXc2TTdMUGdwdm9mdjRBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1325.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9NV3BwRmdQN2tQd0tQUXBDL0JmT0FnaUZzTGFQQmc1UHpHRmd2aFVyY21sRUZvOTVuaTBaR3BEMjdNTklYS0lqcndiU2JOUkZqYU1qNU1MMExnTUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDgwNjM5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorVUJNSjRJWTVSQnBSV21CaEo4MVVTYk5iNEUrNTdxazk3OGtqcG9tbzdLMWhXYXI2RWhYVVdGZXVXMC9JZEt6eGtYb0ZHejM4bFlmVm55L016b1BBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1326.app.tar.gz"
     }
   }
 }
