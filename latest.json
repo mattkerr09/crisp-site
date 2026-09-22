@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1331",
-  "notes": "Say the colours look desaturated and Crisp puts the colour back, the same way it already answers washed out or muted. It used to stop and ask you what you meant.",
-  "pub_date": "2026-09-22T19:53:48Z",
+  "version": "1.0.1332",
+  "notes": "Ask for subs or cc and Crisp now tells you plainly that it cannot write subtitles from the audio. Before, \"add subs for instagram\" cropped your video to a square instead.",
+  "pub_date": "2026-09-22T21:13:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk1SHEvdlVBb2hxN1RaWTU2bnYrNEFQTHFCTURzSUw1a3QrMzF0RGU3a3N1SkdCeHQvbkpxemRsdzJlNWUxM0RSTGd0VkpQbXA4NHBYZS8vRExDNHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTA2MTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpSQ3ZpNUkvUC93d1FuUUxBb0RveExxNDBjbFQ2bHRiUUd2Tm85T2lzcDJKOTc4WUpUOGVRZjlCcWg3eWNaRkZ0OUJnSkxvQS9QOWZZSEdkUkttRHZBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1331.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlaNlVoYjhkYTJvS2hvZUZ5WXFFaGE5b3J4SDdiS3RzR2lDSGhGSGhEM3UxNFdlYlhUTUR5eUNLMFFNWnFDK3hnZkd4V21XVGgwVGRTSko5QUhwVmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTExMjI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1SzR1bTFPRjFGN3QyaitoNDhldlRRKzR6aU01TElwbUJsT01ZSHp5ZWhoVHFYVTQrMUhhWjF6ekV1dlRFYWNLUzQrQW9zMjFGY3d2YlRmM25WTWtEdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1332.app.tar.gz"
     }
   }
 }
