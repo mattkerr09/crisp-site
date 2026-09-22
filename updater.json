@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1328",
-  "notes": "Telling Crisp the contrast is wrong now works whichever way you say it. \"The colours are contrasty\", \"the shadows seem contrasty\" and \"it feels contrasty\" used to do the opposite of what you asked \u2014 adding contrast to a clip you had just said had too much \u2014 while \"the video is contrasty\" had always been right. Saying a clip looks flat now adds contrast from any phrasing too, and asking for a flat look on purpose still gives you one.",
-  "pub_date": "2026-09-22T16:10:48Z",
+  "version": "1.0.1329",
+  "notes": "However you word a complaint, Crisp now hears the same thing. \"The video feels washed out\" used to take colour away \u2014 the opposite of what you meant \u2014 while \"the video looks washed out\" added it back, and \"it feels shaky\" reached nothing at all while \"it is shaky\" stabilised. Saying a clip feels, seems, appears or was some way now works exactly like saying it looks that way. Asking for a look on purpose still applies it: \"give it a faded look\" still takes the colour down.",
+  "pub_date": "2026-09-22T17:55:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoRStvOGhnTVlMbmJ5cTdyanpta2lXQ0VsRldMSjZIb3ZJYmxWMGx6U3Q1NVA5eDM4YzQ4Q1NSQk54dSszTDdIQWxxT0ZSQVk3VUY4TGNIOVpFRmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDkzMTIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpGVlQ5QmUxcUpSUmNleUVjblJaUDhPN3RUT2krN1pVdUl5RUMrbDdUckxwYVdwRW1xcVRhRDQ4RjhMcWU1KzZ0bjJnbDV5K0ZWdE5PNGVVdEoyYk5CQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1328.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5YMVBiQWdzR29FNVRVc1NDZld4NEMzenVWNHl3dUpKc2VpS0RLVXJySVh2bzB2NlZOMEhVTEkyZkphb2xtY1lGV3pKVGxTRlBGNDlYY3dEeWhWeFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDk5Mzg3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negptblF3Y1ViNkM3cjRCTmpiSVVSZVBjdnJubURvbUptS3I5VHV5eFVMZ2Zkb3ZqVGVnSVUzRURYekZVdWR3NmwweTlKaTh1M0hQMGhTTlFpRk9UZW5DZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1329.app.tar.gz"
     }
   }
 }
