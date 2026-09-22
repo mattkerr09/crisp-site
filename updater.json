@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1324",
-  "notes": "Asking Crisp to get rid of something no longer makes it. \"Delete the highlight reel\", \"remove the montage\" and \"get rid of the music video\" each used to plan the very thing you asked to be rid of \u2014 and building a montage cuts your timeline down, so it was a confident plan to undo your edit. Asking for one still works exactly as before: \"cut out the boring bits\", \"remove the dead air\" and \"make a highlight reel\" all do what they say.",
-  "pub_date": "2026-09-22T09:15:38Z",
+  "version": "1.0.1325",
+  "notes": "More of the ways people ask for the sound to change now work. \"Ramp up the volume\", \"knock up the audio\", \"wind the sound down\" and a couple of dozen other phrasings used to reach nothing at all, while the same words in a different order worked fine \u2014 some verbs had been wired for louder but not quieter, or the other way round. They all work now, in both directions and either word order, and asking about the picture still changes the picture: \"turn the brightness up\" is still a colour change, not a volume one.",
+  "pub_date": "2026-09-22T11:13:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU02SUFsZ1puS0FEbVVzYWx2S0RrV2hCNjAxQnhQRGdYU2lqT0pRczRqeUpZc3VHT21SUVRLdlBsa1FKWkVCNTMyUml2YW9oVysvUGNwYWFFeWJDWndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDY4MzAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCUDdtYWVDU1NKUEpxdkc4bkp3dWh3QytKb3hNZS9KL1lpNHp1Z1hleVdWRFQwaEc4blZ6TTQ3S3hVYk5jSlBSc2NmeE10NWlHN2t4SG0zWFBnb2JBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1324.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZGUzV2ckVwdE1jM0plZXltTlNHbjl6cTlZQlhmUlhVb0lhYndYSWljdGNzSFgyaythdDVuV0JHcFpnT0ZaejFOejlUZ1pzTzQ1dkxLd3FSb2VPbUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDc1MjM3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRTmZNcXlxb3h0SzhkbWIxVlQ0UTBMOEhvRjZ0YnhsZit1TVNrdXVoVy91dHF5T2lYaVVvSjNGVXZmWnk4aDl6QjYxaWsrVXc2TTdMUGdwdm9mdjRBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1325.app.tar.gz"
     }
   }
 }
