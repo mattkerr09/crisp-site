@@ -1,7 +1,7 @@
 {
   "version": "1.0.1316",
   "notes": "Crisp understands a lot more of the ways people actually ask for things. \"Zoom into the centre\", \"crop to the face\" and \"punch in on the subject\" now crop the way you meant \u2014 before, only \"zoom in on the centre\" worked, and asking to zoom in on the middle told you to split your clip instead. \"Ease out at the end\" fades the same as \"fade out\". \"Make it fit a phone screen\" reframes to a tall 9:16, the same as naming Instagram or TikTok. And \"get the size down\" finally gets an answer instead of silence \u2014 as does \"make the quality down\", which used to start a full 4K upscale, the opposite of what you asked for.",
-  "pub_date": "2026-09-22T04:08:47Z",
+  "pub_date": "2026-09-22T04:23:55Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJxeGdCTUl0cGdaeHR3WjNFS3dhVVdSOUhlOHVNQnQwMDBtRWZlSTB4K093dUZZaG81V0o4a2NITmZnYkg1L1kwNTBxcHUwMHYvWGZIWld1WGpYZndnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMDQ5OTkwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0bStPNzFmR05vUXREZU5tMGh4aWozUndwNUJnbHRnNzFLdmp2R0s0enN4SzhKRDRQMHRIQXNuNTRUZFpuU0p3ZEdvZWNCSU1qSXN2NUZNVnBTME9DQT09Cg==",
