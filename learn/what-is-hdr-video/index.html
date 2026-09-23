@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What is HDR video, and why does it look washed out? — Crisp</title>
+<title>iPhone HDR video looks washed out when an app ignores its colour tags</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Your iPhone records HDR by default. Open that file somewhere that does not understand it and the colours go grey and flat. What HDR actually stores, and why tone mapping matters.">
+<meta name="description" content="Measured: read as ordinary video, an iPhone-style HDR frame tops out at 74% white and loses an eighth of its colour; an HDR10 frame keeps half its colour. Why, and what fixes it on a Mac.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/what-is-hdr-video/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is HDR video?">
-<meta property="og:description" content="Your iPhone records HDR by default. Open that file somewhere that does not understand it and the colours go grey and flat. What HDR actually stores, and why tone mapping matters.">
+<meta property="og:title" content="iPhone HDR video looks washed out when an app ignores its colour tags">
+<meta property="og:description" content="Measured: read as ordinary video, an iPhone-style HDR frame tops out at 74% white and loses an eighth of its colour; an HDR10 frame keeps half its colour. Why, and what fixes it on a Mac.">
 <meta property="og:url" content="https://crispvideo.app/learn/what-is-hdr-video/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is HDR video?">
-<meta name="twitter:description" content="Your iPhone records HDR by default. Open that file somewhere that does not understand it and the colours go grey and flat. What HDR actually stores, and why tone mapping matters.">
+<meta name="twitter:title" content="iPhone HDR video looks washed out when an app ignores its colour tags">
+<meta name="twitter:description" content="Measured: read as ordinary video, an iPhone-style HDR frame tops out at 74% white and loses an eighth of its colour; an HDR10 frame keeps half its colour. Why, and what fixes it on a Mac.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is HDR video?","description":"Your iPhone records HDR by default. Open that file somewhere that does not understand it and the colours go grey and flat. What HDR actually stores, and why tone mapping matters.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified": "2026-09-15"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my iPhone video look grey on my computer?","acceptedAnswer":{"@type":"Answer","text":"It is HDR, and whatever you are viewing it in is not interpreting the HDR tagging. The file is fine. Converting it to standard range with a proper tone map gives you a version that looks right everywhere."}},{"@type":"Question","name":"Should I turn HDR off on my phone?","acceptedAnswer":{"@type":"Answer","text":"If most of your footage ends up on social platforms or gets shared widely, turning it off removes a whole class of problem. If you are shooting things with genuinely wide brightness range and you control delivery, keeping it is worth the extra care."}},{"@type":"Question","name":"Does converting HDR to SDR lose quality?","acceptedAnswer":{"@type":"Answer","text":"It loses range, unavoidably, because you are fitting a wider brightness scale into a narrower one. Done with a proper tone map the result looks natural and the loss is mostly in highlight detail you could not have displayed anyway."}},{"@type":"Question","name":"Can I mix HDR and standard clips in one edit?","acceptedAnswer":{"@type":"Answer","text":"You can, but you should not without converting first. The two ranges grade completely differently, so adjustments that look right on one clip will be wrong on the next. Normalise everything to one range before you start."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"iPhone HDR video looks washed out when an app ignores its colour tags","description":"Measured: read as ordinary video, an iPhone-style HDR frame tops out at 74% white and loses an eighth of its colour; an HDR10 frame keeps half its colour. Why, and what fixes it on a Mac.","image":"https://crispvideo.app/learn-hdr-washed-out.jpg","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified":"2026-09-23"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my iPhone video look grey on my computer?","acceptedAnswer":{"@type":"Answer","text":"It is HDR, and the app showing it is not reading the file's HDR tags, so it treats the numbers as ordinary video. Whites come out grey and colour goes flat. The file is not damaged: open it in an app that reads HDR, such as Photos or QuickTime Player, or convert it to standard range with a proper tone map."}},{"@type":"Question","name":"Is my HDR video damaged if it looks washed out?","acceptedAnswer":{"@type":"Answer","text":"No. Read correctly, the same file returns the original picture. In our measurement the correctly read frame matched the original to within about 1% (RMSE 0.011 on a 0 to 1 scale). The grey look is produced entirely by how the file is read."}},{"@type":"Question","name":"How do I stop my iPhone recording HDR?","acceptedAnswer":{"@type":"Answer","text":"Go to Settings, then Camera, then Record Video, and turn off HDR Video. New clips are recorded in standard range. Clips you already recorded stay HDR and need converting."}},{"@type":"Question","name":"Does converting HDR to SDR lose quality?","acceptedAnswer":{"@type":"Answer","text":"It loses range, because a wider brightness scale is being fitted into a narrower one. Highlights brighter than standard white get compressed. Everything up to standard white comes back intact: in our test the tone-mapped frame matched the original to within about 1%."}},{"@type":"Question","name":"Can I mix HDR and standard clips in one edit?","acceptedAnswer":{"@type":"Answer","text":"Not safely without converting first. The two are stored on different scales, so a grade that looks right on one clip is wrong on the next. Put everything in one range before you start."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "HDR video", "item": "https://crispvideo.app/learn/what-is-hdr-video/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
@@ -32,80 +32,158 @@
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 
+<!-- REWRITTEN 2026-09-23 under ~/ops/search/rejected-pages-rewrite-preregistration.json (decision
+     and question recorded first, ops 52284c5). Every number on this page comes from one measurement
+     run with the ffmpeg 8.1.2 bundled in Crisp 1.0.1353; every Crisp behaviour was measured on the
+     INSTALLED 1.0.1353 through its own job API. Max is deliberately left unclaimed: not measured. -->
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; HDR video</div>
-  <h1>What is HDR video?</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+  <h1>iPhone HDR video looks washed out when an app ignores its colour tags</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-23</div>
 
-  <div class="quick"><strong>Quick answer</strong><p class="lede">HDR video looks washed out when the
-  software showing it does not interpret the HDR tagging: it reads the brightness numbers as if they
-  were ordinary values, and the picture comes out flat, desaturated and slightly milky. Nothing is
-  damaged — the file stores brightness using a transfer curve designed for HDR displays, most often PQ
-  or HLG, and it is being interpreted with the wrong assumption. The fix is tone mapping, which fits
-  the wider brightness range into a narrower one by compressing the highlights gradually instead of
-  clipping them flat. Crisp detects HDR sources from their colour metadata and runs a proper tone map
-  on-device when the output needs standard range, so there is no setting to get wrong.</p></div>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">It looks washed out because the app
+  showing it is ignoring the file's HDR tags and reading the numbers as ordinary video. We measured it:
+  a frame stored the way an iPhone stores HDR and read as ordinary video tops out at 74% white and
+  loses about an eighth of its colour. Stored as HDR10, it keeps half its colour. The file itself is
+  fine. Open it in an app that reads HDR, or convert it to standard range with a proper tone map.</p></div>
 
-  <p>HDR video stores a wider range of brightness than traditional video, and a wider range of colour
-  with it. Where standard video assumes a display that peaks around 100 nits, HDR formats carry
-  information for displays reaching ten times that or more, so a sunlit window can be genuinely bright
-  while the shadows beside it stay detailed rather than crushed to black.</p>
-  <p>If you own a recent iPhone, you are almost certainly shooting it already, and possibly without
-  having chosen to.</p>
+  <figure>
+<img src="/learn-hdr-washed-out.jpg" width="1110" height="296" loading="lazy" decoding="async"
+     alt="The same canal scene three times: vivid and correct on the left, slightly greyer in the middle, and flat, dim and desaturated on the right.">
+<figcaption>One frame, three readings. Left: the HDR file read with its tags honoured. Middle: the
+same frame stored as HLG, the iPhone's curve, read as ordinary video. Right: stored as HDR10 (PQ) and
+read as ordinary video. Frame from the phone demo on our home page, itself derived from a CC0 clip on
+Wikimedia Commons.</figcaption>
+</figure>
 
-  <h2>Why it looks washed out somewhere else</h2>
-  <p>This is the complaint that brings most people to the topic. Footage looks vivid on the phone,
-  then grey and flat once it is somewhere else.</p>
-  <p>The file stores brightness using a transfer curve designed for HDR displays, most often PQ or
-  HLG. Software that understands the tagging maps those values onto whatever display you have.
-  Software that does not simply reads the numbers as if they were ordinary values, and the result is
-  flat, desaturated and slightly milky. Nothing is damaged. It is being interpreted with the wrong
-  assumption.</p>
-  <p>The same thing happens on upload. A platform that strips or ignores the HDR metadata serves
-  everyone the washed-out interpretation, which is why a clip can look fine in your editor and wrong
-  in the feed.</p>
+  <h2>What an HDR file actually stores</h2>
+  <p>Ordinary video, usually called SDR, is built around a display whose white is about 100 nits.
+  HDR stores a much wider range, so a sunlit window can be genuinely bright while the room around it
+  keeps its detail. Doing that takes three changes, and the file carries a label, or tag, for each:</p>
+  <ul>
+    <li><strong>A different brightness curve.</strong> HDR uses either HLG (hybrid log-gamma) or PQ
+    (the curve behind HDR10) in place of the standard gamma curve.</li>
+    <li><strong>Wider colour.</strong> HDR uses BT.2020 primaries instead of the BT.709 primaries
+    ordinary HD uses. The same red is written with smaller numbers, because the scale reaches further.
+    Our <a href="https://crispvideo.app/learn/what-is-color-space/">colour space explainer</a> covers
+    this in more depth.</li>
+    <li><strong>More precision.</strong> 10 bits per sample instead of 8, so the longer scale does not
+    band.</li>
+  </ul>
+  <p>Apple says supported iPhones record video in Dolby Vision HDR, controlled by the camera's HDR
+  Video setting. Apple's developer documentation says what that means inside the file, starting
+  with the iPhone 12: 10-bit HEVC with the HLG curve and BT.2020 colour, plus Dolby Vision
+  metadata on top. An app that ignores the Dolby Vision part can still play it as plain
+  HLG.</p>
 
-  <h2>Tone mapping is the honest answer</h2>
-  <p>Converting HDR to standard range properly is called tone mapping, and it is not a simple scale.
-  You are fitting a wide brightness range into a narrower one, so something has to give. A good tone
-  map compresses the highlights gradually, keeps mid-tones roughly where the eye expects them, and
-  preserves colour relationships while it does so.</p>
-  <p>A bad conversion clips the highlights flat, which throws away exactly the detail HDR was
-  capturing, or lifts everything uniformly, which produces the grey look people are trying to escape.</p>
-  <p>Crisp detects HDR sources from their colour metadata and runs a proper tone map on-device when
-  the output needs standard range. There is no setting to get wrong, which matters because the failure
-  mode here is silent: nothing errors, the colours are just quietly incorrect.</p>
+  <h2>What we measured</h2>
+  <p>We don't have real iPhone HDR footage we can publish, so we built the test from a clip we can
+  show. We took one frame of the phone demo on our home page, an ordinary SDR frame, and stored it the
+  way an HDR phone stores video: 10-bit HEVC, BT.2020 colour and the HLG curve, lossless, so
+  compression isn't a variable. We did it a second time with the PQ curve, which is what HDR10 files
+  use. Then we read each file two ways. First with its tags honoured, using the same tone map Crisp
+  ships. Then with its tags ignored, reading the numbers as ordinary BT.709 video. Every step used the
+  ffmpeg 8.1.2 that ships inside Crisp 1.0.1353.</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Reading</th><th>Whites</th><th>Average brightness</th><th>Colour</th><th>Contrast</th></tr></thead>
+    <tbody>
+      <tr><td>Original SDR frame</td><td>0.975</td><td>0.444</td><td>0.322</td><td>0.215</td></tr>
+      <tr><td>HDR file, tags honoured</td><td>0.975</td><td>0.439</td><td>0.329</td><td>0.213</td></tr>
+      <tr><td>HLG (iPhone), tags ignored</td><td>0.737</td><td>0.381</td><td>0.288</td><td>0.173</td></tr>
+      <tr><td>PQ (HDR10), tags ignored</td><td>0.569</td><td>0.364</td><td>0.169</td><td>0.111</td></tr>
+    </tbody>
+  </table></div>
+  <p>All four columns are on a 0 to 1 scale. Whites is the 99th-percentile brightness. Colour is
+  average saturation. Contrast is how widely brightness is spread (its standard deviation). The first
+  two rows are the check that the test is fair: read properly, the HDR file gives back the original
+  to within 1.1% (RMSE 0.011). So nothing in the file is lost. The washed-out look in the last two
+  rows is produced entirely by the reading.</p>
+  <p>One limit you should know about. Because the frame started as SDR, it has nothing brighter than
+  ordinary white. Real HDR footage has highlights above that: sun on water, a lamp, a window. This
+  test shows the part of the complaint that affects the whole picture, the grey whites and the flat
+  colour. It doesn't show how a given app handles those extra highlights.</p>
 
-  <h2>When to keep HDR and when to convert</h2>
-  <p>Keep it when your delivery target genuinely supports it end to end, and when the footage has a
-  brightness range worth preserving. A sunset, a stage with hard lighting, a window in an interior
-  shot.</p>
-  <p>Convert when the destination is uncertain. Anything going to a general audience, an older
-  machine, a projector, or a platform whose handling you have not tested is safer delivered in
-  standard range where you controlled the conversion, rather than left to whatever the viewer's
-  software decides.</p>
-  <p>Mixing HDR and non-HDR clips on one timeline is the other common trap. Convert everything to a
-  single range before you start editing, or the grade you apply to one clip will be wrong on the
-  next.</p>
+  <h2>Why HLG fails gently and HDR10 fails badly</h2>
+  <p>HLG was designed for broadcast, where some viewers would have HDR sets and some would not, so the
+  lower part of its curve behaves much like ordinary video. Read without its tag, an iPhone clip still
+  looks roughly right. Its whites land at about three quarters brightness, because HLG puts standard
+  white at 75% of its scale, and it loses about 12% of its colour, because BT.2020 numbers read as
+  BT.709 come out less saturated. That's the mildly grey, slightly dull look people describe as
+  washed out.</p>
+  <p>PQ has no such fallback. It encodes absolute brightness up to 10,000 nits, so ordinary white sits
+  a little under 60% of the way up its scale. Read as ordinary video, whites come out at 57%, blacks
+  lift from 0.065 to 0.091, and colour and contrast both roughly halve. HDR10 files, common from
+  games, screen recorders and some cameras, look far worse in the wrong app than iPhone clips do.</p>
+
+  <h2>Where it goes wrong on a Mac</h2>
+  <p>Apple's own Photos and QuickTime Player read HDR tags. The problems start when the clip leaves
+  them:</p>
+  <ul>
+    <li>An editor or player that doesn't read HDR tags, or one working on a standard-range timeline
+    that never converts what it imports.</li>
+    <li>An upload to a site that strips the tags or re-encodes without them. That's the same
+    mechanism as <a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">why
+    video looks worse after uploading</a>, applied to colour instead of detail.</li>
+    <li>A file sent to a device or app that has no HDR support at all.</li>
+    <li>A conversion that re-encodes the picture but drops the tags, so the next app has nothing to
+    read.</li>
+  </ul>
+
+  <h2>How to fix it</h2>
+  <p>Pick the one that matches where the clip is going:</p>
+  <ul>
+    <li><strong>Watching it yourself:</strong> open it in Photos or QuickTime Player, which read the
+    tags.</li>
+    <li><strong>Sending it somewhere you don't control:</strong> convert it to SDR with a proper tone
+    map, so you decide how it looks rather than the viewer's software.</li>
+    <li><strong>Stopping it at the source:</strong> on the iPhone, go to Settings › Camera › Record
+    Video and turn off HDR Video. Clips you've already recorded stay HDR.</li>
+    <li><strong>Editing:</strong> put every clip in one range before you start. HDR and SDR are stored
+    on different scales, so a grade that suits one is wrong on the other.</li>
+  </ul>
+
+  <h2>What Crisp does with an HDR clip</h2>
+  <p>We measured this on the installed app, version 1.0.1353, with an HLG clip and an HDR10 clip.</p>
+  <ul>
+    <li><strong>Enhance and the editing tools convert to SDR.</strong> Enhance, speed, rotate,
+    reframe, crop and fade tone-mapped both clips to standard range and saved them labelled as
+    BT.709, so the next app reads them correctly. Compress did the same with the HLG clip (it
+    declined the tiny HDR10 test clip as already too small to shrink). There's no setting to get
+    wrong, and it happens without a prompt. Before 1.0.1353 (23 September 2026), Enhance produced
+    the same SDR picture but left its curve and colour labels blank.</li>
+    <li><strong>Convert keeps HDR as it is.</strong> Converting MP4 to MOV rewraps the file without
+    re-encoding the picture. The video data came out byte-for-byte identical to the source, so HDR
+    passes through untouched.</li>
+    <li><strong>Max hasn't been checked with HDR yet.</strong> For Max, the generative restore,
+    convert the clip to SDR first.</li>
+  </ul>
+  <p>Converting to SDR is the right default when you don't know where a clip will be watched. It's
+  the wrong one if you're delivering HDR on purpose. Of the lanes we measured, Convert is the one
+  that keeps it.</p>
 
   <h2>HDR questions</h2>
   <h3>Why does my iPhone video look grey on my computer?</h3>
-  <p>It is HDR, and whatever you are viewing it in is not interpreting the HDR tagging. The file is fine. Converting it to standard range with a proper tone map gives you a version that looks right everywhere.</p>
-  <h3>Should I turn HDR off on my phone?</h3>
-  <p>If most of your footage ends up on social platforms or gets shared widely, turning it off removes a whole class of problem. If you are shooting things with genuinely wide brightness range and you control delivery, keeping it is worth the extra care.</p>
+  <p>It is HDR, and the app showing it is not reading the file's HDR tags, so it treats the numbers as ordinary video. Whites come out grey and colour goes flat. The file is not damaged: open it in an app that reads HDR, such as Photos or QuickTime Player, or convert it to standard range with a proper tone map.</p>
+  <h3>Is my HDR video damaged if it looks washed out?</h3>
+  <p>No. Read correctly, the same file returns the original picture. In our measurement the correctly read frame matched the original to within about 1% (RMSE 0.011 on a 0 to 1 scale). The grey look is produced entirely by how the file is read.</p>
+  <h3>How do I stop my iPhone recording HDR?</h3>
+  <p>Go to Settings, then Camera, then Record Video, and turn off HDR Video. New clips are recorded in standard range. Clips you already recorded stay HDR and need converting.</p>
   <h3>Does converting HDR to SDR lose quality?</h3>
-  <p>It loses range, unavoidably, because you are fitting a wider brightness scale into a narrower one. Done with a proper tone map the result looks natural and the loss is mostly in highlight detail you could not have displayed anyway.</p>
+  <p>It loses range, because a wider brightness scale is being fitted into a narrower one. Highlights brighter than standard white get compressed. Everything up to standard white comes back intact: in our test the tone-mapped frame matched the original to within about 1%.</p>
   <h3>Can I mix HDR and standard clips in one edit?</h3>
-  <p>You can, but you should not without converting first. The two ranges grade completely differently, so adjustments that look right on one clip will be wrong on the next. Normalise everything to one range before you start.</p>
+  <p>Not safely without converting first. The two are stored on different scales, so a grade that looks right on one clip is wrong on the next. Put everything in one range before you start.</p>
+
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/learn/what-is-interlacing/">What is interlacing?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-offline-video-editing/">What is offline video editing?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-rolling-shutter/">What is rolling shutter?</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-color-space/">What is a colour space?</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-a-video-codec/">What is a video codec?</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">What is variable frame rate?</a></li>
+    <li><a href="https://crispvideo.app/learn/bitrate-vs-resolution/">Bitrate vs resolution</a></li>
+    <li><a href="https://crispvideo.app/how-to/color-grade-video-mac/">How to colour grade video on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/convert-mov-to-mp4-mac/">How to convert MOV to MP4 on a Mac</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
-  <p>Background: <a href="https://crispvideo.app/learn/what-is-color-space/">colour spaces, and why footage shifts</a>.</p>
 </div></article>
 
 <footer><div class="wrap">
