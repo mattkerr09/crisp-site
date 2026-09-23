@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1361",
-  "notes": "Asking Crisp to keep a clip at its own size, like \"same resolution\", \"native resolution\" or \"at its original resolution\", no longer starts an upscale. And telling it a clip looks grey, drab or colourless now brings the colour up, the same as saying it looks dull already did.",
-  "pub_date": "2026-09-23T18:39:50Z",
+  "version": "1.0.1362",
+  "notes": "Enhance at 2\u00d7 now corrects colour in small batches of frames, so a long 4K job needs about 5 GB less free disk space while it runs, and a nearly full disk can no longer leave one part of a video with a colour tint.",
+  "pub_date": "2026-09-23T19:39:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ1bS82bm91RDJ3ZDl2VTd4d2Q4VVc3U094eS9BRzlYRU94dVVVczRYbGx3ZTJRZjRlRWx6MWl5cjIvVzgzYmNZbm5XQ2xHL0JMaXFQbXprU3lmSkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTg4Mzc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuRHdlNmtJLzcvY2hMZzA3YVZtY0tRSml4WkY2ancrZXFrSUZPU3FnYlprTDErZmhrYXFGeXBWRUlqcDc3dlFXRVd2TlY4NUhFdmRwTlExbEtUM3pCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1361.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUR2VHIrUXE5VTJUNjMyd284WSs3bDNCZW41WG9EVWlBbEY5a1Z0dG5QM3dIQUJDQnlXVXFFd0prTmJiQW5TQTFETU51TGxPOVZzYVByS2RiV0s2alF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTkxNzcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJU3JDMXhpTnc2NWRvY3JSSTZGNllXUHp3TVgvUlI0UE85SWxwYXcwQ3QyUEl6RGpWemwwano2NmVabkhYeWw1R1ZnK002Zkc5OUxuNGVUeFlqR21CQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1362.app.tar.gz"
     }
   }
 }
