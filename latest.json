@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1341",
-  "notes": "Ask Crisp to \"trim the sides\", \"trim the edges\" or \"trim the borders\" and it now crops the picture, the same as \"cut the sides\" always did, instead of explaining that trimming needs a number of seconds. \"Crop off the sides\" works too.",
-  "pub_date": "2026-09-23T06:51:23Z",
+  "version": "1.0.1342",
+  "notes": "Say \"save as ProRes and upscale it to 4K\" and Crisp now does the upscale, instead of answering about file names and quietly dropping it. Naming a format first works the same as naming it last.",
+  "pub_date": "2026-09-23T07:28:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBCdm1qZ2Zyc2RkVm96dnI5WWtadWxyTFpaeHh2bWJMMU1nWkdGN3NVTjZvbFQ5VWRVZjZCZXJUU3ZxZHRGNVhTei9LY3pXSGFTanJiUjZPYlhCTUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTQ2MDE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzd3lwWkx0bE9tdE9qd1p1WmRPa0kyMmY1TlY4dWQ3K1IxQU5TOTArdStPY2s2NldPT0lZZ0tMQzJmaktTVE9vZCsxZFlhTlR1TW5iVUlyNi9vazVCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1341.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUE5UkVCL0lYQXV6WWc0YXVEUnd1aXZvMWNaTmFhdko4ak85dHhEWnB0MnBTK1BUcnFhb1NqdGd2ckJLd1UxQ3VUdjZueXhKVEZkTFFmNlRQUjl1QndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTQ4MjU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorUDlEaU9pSStYOU82YTZaUjJrVEh2c1d2dzlVVXowQkdKV2NPa2JOdE80MkVXd2lEcFhYVHBUeTRoZjRVUXpNWjloOVJ5TUZNMis5ZDFYaUpNY0dBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1342.app.tar.gz"
     }
   }
 }
