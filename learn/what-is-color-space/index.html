@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What is a colour space? Rec.709, Rec.2020 and why colours shift — Crisp</title>
+<title>BT.601 vs BT.709: read with the wrong one, greens and cyans shift most</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta name="description" content="Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/what-is-color-space/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is a colour space?">
-<meta property="og:description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta property="og:title" content="BT.601 vs BT.709: read with the wrong one, greens and cyans shift most">
+<meta property="og:description" content="Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.">
 <meta property="og:url" content="https://crispvideo.app/learn/what-is-color-space/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is a colour space?">
-<meta name="twitter:description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
+<meta name="twitter:title" content="BT.601 vs BT.709: read with the wrong one, greens and cyans shift most">
+<meta name="twitter:description" content="Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a colour space?","description":"A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified":"2026-09-23"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my footage look washed out before I have touched it?","acceptedAnswer":{"@type":"Answer","text":"Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes."}},{"@type":"Question","name":"What is the difference between converting and relabelling?","acceptedAnswer":{"@type":"Answer","text":"Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else."}},{"@type":"Question","name":"Should I edit in Rec.2020?","acceptedAnswer":{"@type":"Answer","text":"Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway."}},{"@type":"Question","name":"Why do the same colours look different in my editor and my browser?","acceptedAnswer":{"@type":"Answer","text":"Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "BT.601 vs BT.709: read with the wrong one, greens and cyans shift most", "description": "Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.", "author": {"@type": "Organization", "name": "Crisp"}, "publisher": {"@type": "Organization", "name": "Crisp"}, "datePublished": "2026-08-11", "dateModified": "2026-09-23", "image": "https://crispvideo.app/learn-colour-space-matrix.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do my greens look different after converting a video?", "acceptedAnswer": {"@type": "Answer", "text": "Most often the video was decoded with the other matrix, BT.601 instead of BT.709 or the reverse. Greys don't change, but saturated greens and cyans move the most: in our test pure green lost 15% of its level. Check that the converted file carries a colour tag, and that the tool converted the pixels rather than just changing the label."}}, {"@type": "Question", "name": "How do I know which colour space my video uses?", "acceptedAnswer": {"@type": "Answer", "text": "A media inspector such as MediaInfo, or ffprobe, lists the colour matrix, primaries and transfer. If they say \"unknown\", the file has no tag and every player will guess, usually from the picture height."}}, {"@type": "Question", "name": "Why does my footage look washed out before I have touched it?", "acceptedAnswer": {"@type": "Answer", "text": "Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being shown by something that ignores its tags. Both look similar and have completely different fixes."}}, {"@type": "Question", "name": "What is the difference between converting and relabelling?", "acceptedAnswer": {"@type": "Answer", "text": "Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players read unchanged numbers with a different recipe and the colours shift. Relabelling is the right fix for a mis-tagged file and wrong for everything else."}}, {"@type": "Question", "name": "Should I edit in Rec.2020?", "acceptedAnswer": {"@type": "Answer", "text": "Only if your whole chain supports it end to end and the footage has colour worth keeping. Otherwise you carry the complexity for a range your delivery will discard anyway."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Colour space", "item": "https://crispvideo.app/learn/what-is-color-space/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
@@ -32,81 +32,156 @@
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 
+<!-- REWRITTEN 2026-09-23 under ~/ops/search/rejected-pages-rewrite-preregistration.json (question and
+     measurement recorded first, ops fc26dba). Every number here comes from one measurement run with the
+     ffmpeg 8.1.2 inside Crisp 1.0.1353: ops search/measurements/crisp-colour-space-readings-2026-09-23.json
+     (cbdd9fe). Crisp behaviour is stated only as measured on the installed app. -->
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Colour space</div>
-  <h1>What is a colour space?</h1>
+  <h1>BT.601 vs BT.709: read with the wrong one, greens and cyans shift most</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-23</div>
 
-  <p>A video file contains numbers. The number 200 in the red channel means nothing on its own. A
-  colour space is the agreement that turns those numbers into actual colours: which red is the reddest
-  red, how brightness maps to the values, and what white looks like.</p>
-  <p>When everything in the chain shares the agreement, colour just works. When something loses track
-  of it, you get footage that looks flat, oversaturated, or subtly green, and nothing in the picture
-  tells you why.</p>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Your colours look wrong because
+  the video was decoded with a different colour standard from the one it was made with. SD video uses
+  BT.601, HD uses BT.709, and a file that doesn't say which gets a guess. We measured the mix-up. On
+  ordinary footage the average shift is small, near the edge of what you can see. On strong colours it
+  isn't: pure green loses 15% of its level, and green and cyan move about six times the
+  just-visible amount. Confusing Rec.709 with Rec.2020 is worse still.</p></div>
 
-  <h2>The ones you will meet</h2>
-  <p><strong>Rec.709</strong> is the standard for ordinary HD video, and it is what most footage and
-  most displays assume. If nothing is tagged and nothing is unusual, it is almost certainly this.</p>
-  <p><strong>sRGB</strong> is its close cousin from the computer world. The primaries match Rec.709,
-  the brightness curve differs slightly, which is why exported video can look a shade off next to the
-  same frame in an image editor.</p>
-  <p><strong>Rec.2020</strong> is the much wider space used for HDR and 4K delivery. It can describe
-  colours Rec.709 simply cannot reach.</p>
-  <p><strong>Log formats</strong> such as S-Log or C-Log are not really display spaces at all. They
-  store a wide dynamic range in a deliberately flat, washed-out looking curve, expecting you to grade
-  them afterwards. Footage that looks grey and lifeless straight out of a camera is usually log, not
-  broken.</p>
+  <h2>What a colour space actually is</h2>
+  <p>A video file doesn't store colours. It stores numbers, and the number 200 in a channel means
+  nothing on its own. A colour space is the agreement that turns those numbers back into colour. For
+  video it has three parts, and a well-made file carries a tag for each:</p>
+  <ul>
+    <li><strong>The matrix.</strong> Video stores brightness and two colour-difference signals
+    (YCbCr), not red, green and blue. The matrix is the recipe for turning them back into RGB.
+    BT.601 is the SD recipe and BT.709 the HD one, and they weight green differently: 0.587 in
+    BT.601, 0.715 in BT.709.</li>
+    <li><strong>The primaries.</strong> Which red is the reddest red, and the same for green and
+    blue. Rec.709 (and sRGB, which shares its primaries) covers ordinary HD. Rec.2020 reaches much
+    further and is used for HDR.</li>
+    <li><strong>The transfer curve.</strong> How the numbers map to brightness. Our
+    <a href="https://crispvideo.app/learn/what-is-hdr-video/">HDR explainer</a> covers what goes
+    wrong when that part is misread.</li>
+  </ul>
+  <p>Log formats such as S-Log or C-Log sit apart from these. They store a wide range in a
+  deliberately flat curve and expect you to grade them. Footage that looks grey straight out of a
+  camera is usually log, not broken.</p>
 
-  <h2>Why colours shift</h2>
-  <p>Three failures cause nearly all of it.</p>
-  <p><strong>Missing tags.</strong> The file never recorded which space it used, so the player guesses,
-  and different players guess differently. This is why a clip can look right in one app and wrong in
-  another with no edit in between.</p>
-  <!-- CORRECTED 2026-09-23. This said Rec.2020 read as Rec.709 "comes out oversaturated; the
-       reverse comes out dull" - backwards, and it contradicted the next paragraph. Measured with the
-       ffmpeg 8.1.2 inside Crisp 1.0.1353 on one frame of the home-page phone demo: BT.2020 numbers
-       read as BT.709 keep 77% of the saturation; BT.709 numbers read as BT.2020 reach 152%.
-       Record: ops search/measurements/crisp-colour-space-readings-2026-09-23.json. -->
-  <p><strong>Wrong interpretation.</strong> The tag exists but something ignores it. Rec.2020 content
-  read as Rec.709 comes out dull: Rec.2020 writes the same colour with smaller numbers, so read on the
-  narrower scale everything looks less saturated (in our test, 77% of the original saturation). The
-  reverse, ordinary Rec.709 video treated as Rec.2020, comes out oversaturated (152%).</p>
-  <p><strong>Missing conversion.</strong> Wide-gamut content sent to a standard display without a
-  proper conversion looks flat and grey, because the numbers are being read against the wrong
-  reference. That is the same failure as untagged HDR.</p>
+  <h2>The BT.601 and BT.709 mix-up, measured</h2>
+  <figure>
+<picture>
+<source media="(max-width: 600px)" srcset="/learn-colour-space-matrix-tall.jpg" width="600" height="807">
+<img src="/learn-colour-space-matrix.jpg" width="1110" height="157" loading="lazy" decoding="async"
+     alt="Three sets of colour bars. The first is correct. In the second the green is darker and the red has turned orange. In the third the green and cyan are brighter and more neon.">
+</picture>
+<figcaption>Standard 75% colour bars. First: decoded with the matrix they were made with. Second: SD
+(BT.601) bars decoded as HD (BT.709). Third: HD bars decoded as SD.</figcaption>
+</figure>
+  <p>We stored the same picture with one matrix and decoded it with the other, in both directions,
+  using ffmpeg 8.1.2 (the version inside Crisp). We measured the result against the correct decode
+  in ΔE76, the standard distance between two colours. About 2.3 is the smallest difference most
+  people can see. On colour bars, SD video decoded as HD moved each colour this far:</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Bar</th><th>Should be (RGB)</th><th>Came out</th><th>ΔE76</th></tr></thead>
+    <tbody>
+      <tr><td>Cyan</td><td>0, 190, 190</td><td>0, 171, 192</td><td>14.9</td></tr>
+      <tr><td>Green</td><td>0, 190, 0</td><td>0, 161, 0</td><td>14.7</td></tr>
+      <tr><td>Yellow</td><td>191, 190, 0</td><td>194, 179, 0</td><td>7.7</td></tr>
+      <tr><td>Red</td><td>191, 0, 0</td><td>208, 18, 0</td><td>6.2</td></tr>
+      <tr><td>Magenta</td><td>191, 0, 192</td><td>205, 30, 197</td><td>5.3</td></tr>
+      <tr><td>Blue</td><td>0, 0, 191</td><td>0, 12, 200</td><td>2.8</td></tr>
+      <tr><td>White / grey</td><td>191, 191, 191</td><td>191, 191, 191</td><td>0.0</td></tr>
+    </tbody>
+  </table></div>
+  <p>Decoded with the right matrix, every bar stayed within 0.4. Greys never move, because the two
+  recipes agree about anything without colour. That's why this mistake is easy to miss: skies, skin
+  and walls barely change. On a real scene, a canal with trees and water from the demo on our home
+  page, the average shift was only 1.8 (SD read as HD) and 2.2 (HD read as SD). But reading HD as
+  SD moved 6.3% of the frame by more than 5 (1.4% the other way). Those were the strongly coloured
+  pixels, 2.4 times as colourful as the frame's average, and 97% of them were the yellow-greens of
+  the trees.</p>
+
+  <h2>How a player decides which one to use</h2>
+  <p>It reads the file's tag first. If there isn't one, most players guess from the picture size:
+  an SD-sized picture gets BT.601 and an HD-sized one BT.709. The guess is right far more often than
+  not, which is why untagged files usually look fine.</p>
+  <p>Trouble starts when something doesn't guess. ffmpeg's own converter, which a great deal of video
+  software is built on, uses BT.601 for an untagged file whatever its size. So an untagged HD clip,
+  such as many screen recordings and older exports, can look right in your player and come out with
+  shifted greens in a still or a GIF made from it. The same can happen when an SD clip is upscaled to
+  HD but keeps its SD numbers without saying so: a player sees an HD frame and picks the HD recipe.</p>
+
+  <h2>Rec.709 and Rec.2020 read wrong</h2>
+  <figure>
+<picture>
+<source media="(max-width: 600px)" srcset="/learn-colour-space-gamut-tall.jpg" width="600" height="1497">
+<img src="/learn-colour-space-gamut.jpg" width="1110" height="296" loading="lazy" decoding="async"
+     alt="The same canal scene three times: correct first, visibly duller second, and oversaturated third.">
+</picture>
+<figcaption>First: read correctly. Second: Rec.2020 numbers read as Rec.709. Third: ordinary Rec.709
+numbers read as Rec.2020. Frame from the phone demo on our home page, itself derived from a CC0 clip on
+Wikimedia Commons.</figcaption>
+</figure>
+  <p>Mixing up the primaries does far more damage than mixing up the matrix. Rec.2020 writes the same
+  colour with smaller numbers, because its scale reaches further. Read on the narrower Rec.709 scale,
+  everything looks dull: the frame kept 77% of its saturation, the average shift was 4.2, and 36% of
+  pixels moved by more than 5. The reverse, ordinary video treated as Rec.2020, came out
+  oversaturated at 152%, with an average shift of 6.5 and 60% of pixels moved by more than 5.</p>
+  <p>For the record, the correct conversion isn't perfect either. Rec.709 to Rec.2020 and back
+  measured an average shift of 1.9, just under the 2.3 you can see.</p>
+
+  <h2>Converting is not relabelling</h2>
+  <p>Converting maps the actual pixel values from one space to another, so the colours stay the same.
+  Relabelling only changes the tag, so every player reads the unchanged numbers with a new recipe.
+  Every wrong reading on this page is a relabelling in effect. Relabelling is the right fix for a file
+  that was tagged wrongly, and the wrong one for everything else.</p>
+
+  <h2>What Crisp does</h2>
+  <p>Measured on the installed app:</p>
+  <ul>
+    <li><strong>Enhance reads the tag, or guesses the way players do.</strong> An untagged clip 576
+    lines tall or less is read as BT.601, and anything taller as BT.709. The upscaled file is saved
+    with the BT.709 matrix and says so in its tags.</li>
+    <li><strong>An SD clip keeps its own primaries.</strong> A clip tagged with the SD primaries
+    (SMPTE 170M) keeps that tag after upscaling, rather than being stamped as something it isn't.</li>
+    <li><strong>Stills, GIFs, previews and thumbnails match the clip from 1.0.1357.</strong>
+    Before that, they were the case the section above describes. An untagged HD clip came out with
+    green (0, 190, 0) turned into (15, 223, 5) in a PNG still, a GIF and the Compare view. Every JPG
+    still and bin thumbnail of an HD clip had the same shift, tagged or not, because a JPEG is always
+    decoded as BT.601. We found it while measuring this page.</li>
+  </ul>
 
   <h2>The practical rules</h2>
-  <p>Normalise before you edit. Mixing spaces on one timeline means a grade that looks right on one
-  clip is wrong on the next, and you will chase that inconsistency for hours before spotting the
-  cause.</p>
-  <p>Convert deliberately rather than by accident. A real conversion maps colours between the two
-  spaces; simply relabelling a file changes what players think without changing the data, which is a
-  different operation with a different result.</p>
-  <p>Check on more than one screen. A colour problem that only exists on your display is a calibration
-  issue, not a file issue, and the fix is in a different place entirely.</p>
-  <p>Crisp reads the colour metadata on the way in and tone maps HDR sources properly when the output
-  needs standard range, which removes the commonest version of this problem without asking you to
-  understand any of the above.</p>
+  <p>Put every clip in one colour space before you edit. Otherwise a grade that looks right on one
+  clip is wrong on the next. Convert on purpose, never by relabelling. And check a colour problem on
+  a second screen before chasing it in the file: a fault on only one display is calibration, not
+  video.</p>
 
   <h2>Colour space questions</h2>
+  <h3>Why do my greens look different after converting a video?</h3>
+  <p>Most often the video was decoded with the other matrix, BT.601 instead of BT.709 or the reverse. Greys don't change, but saturated greens and cyans move the most: in our test pure green lost 15% of its level. Check that the converted file carries a colour tag, and that the tool converted the pixels rather than just changing the label.</p>
+  <h3>How do I know which colour space my video uses?</h3>
+  <p>A media inspector such as MediaInfo, or ffprobe, lists the colour matrix, primaries and transfer. If they say "unknown", the file has no tag and every player will guess, usually from the picture height.</p>
   <h3>Why does my footage look washed out before I have touched it?</h3>
-  <p>Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes.</p>
+  <p>Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being shown by something that ignores its tags. Both look similar and have completely different fixes.</p>
   <h3>What is the difference between converting and relabelling?</h3>
-  <p>Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else.</p>
+  <p>Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players read unchanged numbers with a different recipe and the colours shift. Relabelling is the right fix for a mis-tagged file and wrong for everything else.</p>
   <h3>Should I edit in Rec.2020?</h3>
-  <p>Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway.</p>
-  <h3>Why do the same colours look different in my editor and my browser?</h3>
-  <p>Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file.</p>
+  <p>Only if your whole chain supports it end to end and the footage has colour worth keeping. Otherwise you carry the complexity for a range your delivery will discard anyway.</p>
+
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/learn/what-is-frame-interpolation/">What is frame interpolation?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-hdr-video/">What is HDR video?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-interlacing/">What is interlacing?</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-hdr-video/">Why iPhone HDR video looks washed out</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-chroma-subsampling/">What is chroma subsampling?</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-a-video-codec/">What is a video codec?</a></li>
+    <li><a href="https://crispvideo.app/learn/why-video-looks-worse-after-uploading/">Why video looks worse after uploading</a></li>
+    <li><a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">Why VHS tapes degrade</a></li>
+    <li><a href="https://crispvideo.app/how-to/color-grade-video-mac/">How to colour grade video on a Mac</a></li>
   </ul>
 
   <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
 </div></article>
-
 <footer><div class="wrap">
   <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
 </div></footer>
