@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1334",
-  "notes": "Ask Crisp to turn the music down and it now says plainly that it works on the whole soundtrack and cannot separate music from voices. Before, some ways of asking quietly lowered the voices too.",
-  "pub_date": "2026-09-22T23:52:02Z",
+  "version": "1.0.1336",
+  "notes": "Ask Crisp to fade out the vocals and it no longer fades your picture to black. Saying the music is too loud now gets a plain explanation instead of quietly turning everything down, including the voice you were trying to hear.",
+  "pub_date": "2026-09-23T01:23:27Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpudlpQUUNzYTlmWW9JOXpmY1JGbHFQdkxnK0ZyQ3ZzWmFuV3VsMm0xTWVyR0JqOGdZRk9RcDRIWEZnSUdjTHd5TDlHZ2tOaFo3d0wxSU1MZkQ3U2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTIwNzAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5NnRlYlNEUTdwNFYxb1ltanI1RDRwTUx2czUrdVlHZC9aMGtwblhZVk5PaUg5UXpXLytMWVdiTmM0bCtkOCtpdzFOMjRmOWd6SUo1T2pmK0pBZk5DZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1334.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhRdlVZbGpKd0VoOGl0V1pqcWx4YWdaZFNMUFBscjFsck5mamRNTzZCUzdVRVlTRDVyZ3JiWkswNWhtSmJFK3ZUdSt6cktOVUFUT2pyM1pEK1NpS2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTI2MDg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYbU9Lb2hJb2lIV2hYZ3ZPaGEyWllIMWJObDh6a0lCVkNxMVA3ejFUQTFQbUxNTUJTazFiMVRYc0wzNXA5cm9wNW1DTFFJQWhrVzB0RFpIN3JPMDNCUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1336.app.tar.gz"
     }
   }
 }
