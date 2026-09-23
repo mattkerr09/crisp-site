@@ -3,30 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What is AI video upscaling? A plain explanation (2026) — Crisp</title>
+<title>AI video upscaling redraws detail a resize can&#x27;t, and it&#x27;s a guess every time</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta name="description" content="Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail; a heavier AI model restored up to 96%, by drawing it.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is AI video upscaling?">
-<meta property="og:description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta property="og:title" content="AI video upscaling redraws detail a resize can&#x27;t, and it&#x27;s a guess every time">
+<meta property="og:description" content="Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail; a heavier AI model restored up to 96%, by drawing it.">
 <meta property="og:url" content="https://crispvideo.app/learn/what-is-ai-video-upscaling/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is AI video upscaling?">
-<meta name="twitter:description" content="AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.">
+<meta name="twitter:title" content="AI video upscaling redraws detail a resize can&#x27;t, and it&#x27;s a guess every time">
+<meta name="twitter:description" content="Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail; a heavier AI model restored up to 96%, by drawing it.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"What is AI video upscaling?","description":"AI video upscaling reconstructs detail that was never in the file, using a model trained on real footage — unlike traditional scaling, which only stretches the pixels you already have. What it can and can't recover.","datePublished":"2026-07-23","dateModified": "2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/learn/what-is-ai-video-upscaling/"}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling add detail that wasn't there?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the honest description of it. The model predicts what the missing pixels most likely looked like based on millions of examples of real footage. It is plausible reconstruction, not recovery, which is why upscaled video should never be treated as evidence."}},{"@type":"Question","name":"Is AI upscaling better than just exporting at a higher resolution?","acceptedAnswer":{"@type":"Answer","text":"Exporting at a higher resolution does nothing on its own — it stretches the same pixels over a larger grid. Traditional scaling (bicubic, Lanczos) interpolates between known pixels and cannot invent edge detail. An AI model can, because it has seen what real edges look like."}},{"@type":"Question","name":"How much can you upscale before it looks fake?","acceptedAnswer":{"@type":"Answer","text":"2x is reliable on most footage. 4x works when the source is clean. Beyond that the model is inventing more than it is reconstructing, and faces are where people notice first."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI video upscaling redraws detail a resize can't, and it's a guess every time", "description": "Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail; a heavier AI model restored up to 96%, by drawing it.", "image": "https://crispvideo.app/learn-ai-upscaling-crop.jpg", "author": {"@type": "Organization", "name": "Crisp"}, "publisher": {"@type": "Organization", "name": "Crisp"}, "datePublished": "2026-07-23", "dateModified": "2026-09-23"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is AI video upscaling?", "acceptedAnswer": {"@type": "Answer", "text": "Raising a video's resolution with a neural network that redraws fine detail, instead of only spreading the existing pixels further as a normal resize does. The network is trained on pairs of sharp and degraded images, so it produces the most likely sharp version of each frame."}}, {"@type": "Question", "name": "Is AI upscaling better than a normal resize?", "acceptedAnswer": {"@type": "Answer", "text": "It restores more detail and is less exact. In our test a heavier AI model restored up to 96% of the original's fine detail, against at most 64% for a Lanczos resize, but the resize matched the original's pixels and colours more closely. For a sharp source going to a larger screen, a resize is often enough."}}, {"@type": "Question", "name": "Does AI upscaling recover the real detail?", "acceptedAnswer": {"@type": "Answer", "text": "No. It draws detail that is plausible for what the frame shows, not detail that was recorded. In our test it redrew a dotted ring as a solid one. Never use upscaled footage as evidence of what something looked like."}}, {"@type": "Question", "name": "Can AI upscaling fix a blurry video?", "acceptedAnswer": {"@type": "Answer", "text": "Not if the blur is from focus or motion. That information is gone from every frame, and the model sharpens the blur rather than removing it. Low resolution and compression damage are what it fixes."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "AI video upscaling", "item": "https://crispvideo.app/learn/what-is-ai-video-upscaling/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
@@ -36,99 +32,166 @@
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 
+<!-- REWRITTEN 2026-09-23 under ~/ops/search/rejected-pages-rewrite-preregistration.json (question and
+     measurement recorded first, ops 4f03fec). Numbers: ops search/measurements/crisp-ai-upscaling-groundtruth-2026-09-23.json,
+     run through the upscaler and models inside Crisp (dev tree at 1.0.1359). -->
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; AI video upscaling</div>
-  <h1>What is AI video upscaling?</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
+  <h1>AI video upscaling redraws detail a resize can't, and it's a guess every time</h1>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-23</div>
 
-  <div class="quick"><strong>Quick answer</strong><p class="lede">AI video upscaling increases a video's resolution by <em>reconstructing</em> detail
-  that was never stored in the file, using a neural network trained on millions of real
-  high-resolution frames. Traditional scaling can only stretch the pixels you already have. That
-  difference — inventing plausible detail versus interpolating existing detail — is the whole
-  subject.</p></div>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">AI video upscaling raises a video's
+  resolution by redrawing the fine detail a smaller frame can't hold, using a neural network trained
+  on pairs of sharp and degraded images. A plain resize only spreads the existing pixels further. We
+  measured the difference by halving real frames and upscaling them back. A plain resize kept the
+  exact pixels and colours best but restored under two thirds of the fine detail. A heavier AI model
+  restored up to 96% of it, by drawing detail that looks right rather than detail that was there.</p></div>
+
+  <figure>
+<picture>
+<source media="(max-width: 600px)" srcset="/learn-ai-upscaling-crop-tall.jpg" width="480" height="1116">
+<img src="/learn-ai-upscaling-crop.jpg" width="972" height="552" loading="lazy" decoding="async"
+     alt="Four crops of the same overhead shot of a building: the sharp original, a soft plain resize, a similarly soft fast AI model, and a much sharper heavier AI model.">
+</picture>
+<figcaption>The same crop, four ways. First: the original frame. Second: that frame halved, then enlarged
+back with a plain Lanczos resize. Third: enlarged with a fast 2× AI model. Fourth: enlarged with a heavier
+detail model. The fourth is by far the sharpest, but look at the blue ring in the middle: it came back
+solid where the original is dotted. That is detail drawn, not recovered. From the aerial montage on our
+home page (CC BY footage from Wikimedia Commons, credited there).</figcaption>
+</figure>
 
   <h2>The problem it solves</h2>
-  <p>A 480p frame is 640×480, about 307,000 pixels. A 4K frame is 3840×2160, about 8.3 million. Going
-  from one to the other means producing 27 pixels for every 1 you started with. There is no
-  arithmetic that recovers information which was thrown away at capture or at encode time: the
-  question is only what you put in the empty space.</p>
-  <p>Traditional scalers answer with a local average. Bicubic looks at the neighbouring pixels and
-  fades between them; Lanczos does something more sophisticated with a windowed sinc filter, but the
-  principle is the same. Both produce a soft, slightly blurry result, because a blur is the safest
-  guess when you know nothing about what the image contains.</p>
+  <p>A 480p frame is 640×480, about 307,000 pixels. A 4K frame is about 8.3 million. Going from one to
+  the other means producing 27 pixels for every 1 you started with, and no arithmetic recovers
+  information that was thrown away when the video was shot or compressed. The only question is what
+  goes in the empty space.</p>
+  <p>A traditional scaler fills it with a weighted average of the neighbouring pixels. Bicubic and
+  Lanczos differ in the weighting, not the idea, and the result is soft, because a blur is the safest
+  guess when you know nothing about what the picture contains.</p>
 
   <h2>What the model does differently</h2>
-  <p>A super-resolution model has been shown enormous numbers of image pairs: a high-quality frame,
-  and a degraded version of that frame. Over training it learns the mapping. It learns what a real
-  eyelash looks like at full resolution when it has been reduced to three grey pixels. It learns that
-  a hard vertical edge in a low-res frame was probably a hard vertical edge and not a gradient.</p>
-  <p>So when it meets your footage it is not averaging. It is pattern-matching against everything it
-  has seen and producing the most likely high-resolution frame. That is why the output has crisp
-  edges and readable texture where bicubic gives you a smooth smear.</p>
-  <p>It is also why the output is a guess. A well-trained model guesses well enough that the result
-  looks like a better camera was used. It is still a guess, and that matters in exactly one context:
-  never use upscaled footage as evidence of what something actually looked like. Licence plates and
-  faces are the classic trap: the model will happily produce a sharp, confident, wrong plate.</p>
+  <p>A super-resolution model is trained on enormous numbers of image pairs: a sharp frame and a
+  degraded copy of it. It learns what a real brick edge, an eyelash or a line of text looks like at
+  full resolution once it has been reduced to a few grey pixels. Shown your footage, it doesn't
+  average. It produces the most likely sharp frame, given everything it has seen.</p>
+  <p>That is why the result has crisp edges and texture where a resize gives a smooth smear. It is
+  also why it is a guess. Never treat upscaled footage as evidence of what something looked like:
+  a model will happily draw a sharp, confident, wrong licence plate.</p>
 
-  <h2>The four things it genuinely fixes</h2>
+  <h2>What we measured</h2>
+  <p>To score a guess you need the right answer, so we made one. We took four frames: three from real
+  aerial footage and a card of text and hard-edged colour. We halved each, then enlarged it back 2×
+  four ways: a plain Lanczos resize, a fast 2× AI model, a heavier detail model, and that detail model's
+  denoising version (what Crisp's Denoise 0.50 setting selects). Each result was
+  scored against the original frame. Everything ran on unencoded frames, so no video compression
+  favours either side.</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Frame</th><th>Method</th><th>Fine detail restored</th><th>SSIM</th><th>PSNR</th><th>Colour shift (ΔE)</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">Overhead architecture</td><td>Lanczos resize</td><td>45%</td><td>0.907</td><td>27.8 dB</td><td>0.1</td></tr>
+      <tr><td>Fast 2× model</td><td>58%</td><td>0.855</td><td>25.7 dB</td><td>1.6</td></tr>
+      <tr><td>Detail model</td><td>96%</td><td>0.893</td><td>25.0 dB</td><td>0.7</td></tr>
+      <tr><td>Detail model, denoise version (Denoise 0.50)</td><td>86%</td><td>0.901</td><td>26.4 dB</td><td>0.9</td></tr>
+      <tr><td rowspan="4">Snowy town at dusk</td><td>Lanczos resize</td><td>47%</td><td>0.916</td><td>29.9 dB</td><td>0.1</td></tr>
+      <tr><td>Fast 2× model</td><td>59%</td><td>0.853</td><td>26.4 dB</td><td>2.8</td></tr>
+      <tr><td>Detail model</td><td>95%</td><td>0.886</td><td>27.0 dB</td><td>1.4</td></tr>
+      <tr><td>Detail model, denoise version (Denoise 0.50)</td><td>87%</td><td>0.888</td><td>28.1 dB</td><td>0.9</td></tr>
+      <tr><td rowspan="4">Forest river</td><td>Lanczos resize</td><td>31%</td><td>0.824</td><td>24.6 dB</td><td>0.1</td></tr>
+      <tr><td>Fast 2× model</td><td>36%</td><td>0.694</td><td>22.6 dB</td><td>1.2</td></tr>
+      <tr><td>Detail model</td><td>47%</td><td>0.789</td><td>23.6 dB</td><td>2.4</td></tr>
+      <tr><td>Detail model, denoise version (Denoise 0.50)</td><td>52%</td><td>0.760</td><td>23.5 dB</td><td>1.9</td></tr>
+      <tr><td rowspan="4">Text and graphics</td><td>Lanczos resize</td><td>64%</td><td>0.939</td><td>20.7 dB</td><td>0.3</td></tr>
+      <tr><td>Fast 2× model</td><td>63%</td><td>0.882</td><td>19.8 dB</td><td>2.3</td></tr>
+      <tr><td>Detail model</td><td>70%</td><td>0.945</td><td>20.6 dB</td><td>0.8</td></tr>
+      <tr><td>Detail model, denoise version (Denoise 0.50)</td><td>67%</td><td>0.947</td><td>20.8 dB</td><td>0.8</td></tr>
+    </tbody>
+  </table></div>
+  <p>How to read it. "Fine detail restored" compares the edge energy of the result with the original's.
+  SSIM (structural similarity, 1.0 is identical) and PSNR (higher is closer) measure how exactly the
+  pixels match. Colour shift is blurred ΔE76, where about 2.3 is the smallest difference people see.</p>
+
+  <h2>Why the numbers disagree</h2>
+  <p>The plain resize has the highest PSNR on three of the four frames and the highest SSIM on three,
+  and it barely touches colour.
+  It is the most faithful because it invents nothing. It is also the softest, restoring 31% to 64% of
+  the fine detail.</p>
+  <p>The detail model restored far more, 95% to 96% on two of the aerial scenes, and beat the resize
+  on SSIM for the text card. It scores lower on PSNR anyway, because PSNR punishes detail that is
+  plausible but not exactly where the original had it. The dotted ring drawn solid in the figure is
+  that trade, visible.</p>
+  <p>The fast model is the honest disappointment: it restored only a little more detail than the
+  resize, and on the text card slightly less. Speed is what it buys. On a Mac Studio it took roughly
+  half the time per 4K frame that the detail model did.</p>
+  <p>Scope, plainly: four frames, 2× only, one machine. These compare methods on the same frames. They
+  aren't constants for your footage.</p>
+
+  <h2>What it genuinely fixes</h2>
   <div class="cmp-wrap"><table>
     <thead><tr><th>Problem</th><th>Fixable?</th><th>Why</th></tr></thead>
     <tbody>
       <tr><td>Low resolution</td><td>Yes</td><td>The core case. Detail is missing but structure survives.</td></tr>
-      <tr><td>Compression damage</td><td>Mostly</td><td>Blocking and banding are learnable artefacts with consistent shapes.</td></tr>
-      <tr><td>Sensor noise / grain</td><td>Yes, with care</td><td>Denoise first or the model sharpens the noise into detail.</td></tr>
-      <tr><td>Out-of-focus or motion blur</td><td class="no">No</td><td>The information is gone from every frame, not just compressed.</td></tr>
+      <tr><td>Compression damage</td><td>Mostly</td><td>Blocking and banding have consistent shapes a model can learn.</td></tr>
+      <tr><td>Sensor noise and grain</td><td>With care</td><td>Denoise first, or the model sharpens the noise into texture.</td></tr>
+      <tr><td>Out-of-focus or motion blur</td><td>No</td><td>The information is gone from every frame. See <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">why AI upscaling can't fix focus</a>.</td></tr>
     </tbody>
   </table></div>
-  <p>That last row is the one nobody wants to hear. If the camera missed focus, no upscaler recovers
-  it: the model will sharpen the blur into a slightly crunchier blur. Same for motion blur from a
-  slow shutter. Those are optical events, not encoding losses.</p>
 
-  <h2>Frames are not photos, and that's the hard part</h2>
-  <p>Upscaling one photo is a solved problem. Upscaling 1,500 consecutive frames is not, because each
-  frame gets processed independently and the model's guesses differ slightly between them. A texture
-  that the model renders one way on frame 200 and slightly differently on frame 201 produces
-  <strong>shimmer</strong> — a crawling, boiling quality in flat areas that is instantly obvious in
-  motion and completely invisible in a screenshot comparison.</p>
-  <p>This is why upscaler reviews built on still-frame comparisons are close to useless, and why
-  temporal stability is the axis that separates good tools from demo-quality ones. Crisp's own
-  evaluation harness measures it directly as an <code>added_flicker</code> score, comparing
-  frame-to-frame variation in the output against the same measure in the source, so a tool that
-  introduces shimmer cannot hide behind a nice still.</p>
+  <h2>Frames are not photos</h2>
+  <p>Upscaling one photo is a solved problem. Upscaling 1,500 frames in a row is not, because each
+  frame is processed on its own and the model's guesses differ slightly from one to the next. A texture
+  drawn one way on frame 200 and slightly differently on frame 201 shimmers: a crawling quality in flat
+  areas, obvious in motion and invisible in a still. So judge any upscaler playing at full size, never
+  on a paused frame.</p>
 
-  <h2>Cloud or on-device</h2>
-  <p>Super-resolution models are small by modern standards — a few hundred megabytes — and run well on
-  Apple Silicon's GPU. There is no technical reason a Mac needs to send footage to a server for this,
-  and two good reasons not to: an hour of 4K is a slow upload, and client footage often shouldn't
-  leave the building at all. Crisp runs the whole pipeline locally for both reasons.</p>
-  <p>The trade is real, though: cloud services can throw far larger models at a frame than a laptop
-  can. For a difficult restoration, a heavy cloud model may simply produce a better frame. Local wins
-  on privacy, on cost, and on anything you'd rather not queue for.</p>
+  <h2>What Crisp does</h2>
+  <p>Crisp ships both kinds of model and picks one per job. Enhance at 2× uses the fast 2× model,
+  and at 4× it uses the detail model. "Enhance to 4K" on a 1080p clip is a 2× job, so it uses the fast
+  model too. Asking for stronger noise reduction switches to a denoising
+  version of the detail model. From Crisp 1.0.1359 (23 September 2026) the fast model's output takes
+  its colour from your original, because on its own it shifted colour visibly; the colour shifts in
+  the table above were measured with that fix in place. Everything runs on your Mac.</p>
+  <h3>Getting the detail model at 2× today</h3>
+  <p>You can, with one setting. In Advanced, set <strong>Denoise to 0.50</strong>. At exactly 0.50 a 2×
+  job switches from the fast model to the denoising version of the detail model, with no extra noise
+  filter; above 0.50 Crisp also adds a noise pre-pass, which smooths detail away. In the table that
+  setting restored 86% to 87% of the fine detail on the two aerial scenes, against 58% to 59% for the
+  default, with better SSIM and PSNR than the default on all four frames. It costs time: about 1.2 seconds
+  a 4K frame against about 0.8 on a Mac Studio, roughly half as long again.</p>
 
-  <h2>What to actually do with a bad clip</h2>
-  <ol>
-    <li>Work out which problem you have. Pause on a still frame and zoom in: soft everywhere and no
-    hard edges anywhere is focus, which is unfixable. Visible square blocks in dark or fast-moving
-    areas is compression, which is fixable.</li>
-    <li>Deal with noise as part of the upscale, not as a separate pass afterwards. Upscaling noise makes the model treat grain as texture
-    and amplify it.</li>
-    <li>Pick 2x before 4x. If the source is 1080p, 2x to 4K is the same operation and less risky than
-    pushing a 480p file straight to 4K.</li>
-    <li>Judge the result in motion, at full size. Not on a paused frame, not in a small preview
-    window — shimmer only appears when it plays.</li>
-  </ol>
+  <h2>What to do with a bad clip</h2>
+  <ul>
+    <li><strong>Work out which problem you have.</strong> Pause and zoom in. Soft everywhere, with no
+    hard edges anywhere, is focus, which can't be fixed. Square blocks in dark or fast-moving areas are
+    compression, which can.</li>
+    <li><strong>Deal with noise as part of the upscale.</strong> Upscaling noise teaches the model to
+    treat grain as texture and amplify it.</li>
+    <li><strong>Compare against a plain resize.</strong> If a Lanczos resize looks acceptable for where
+    the video is going, it is free and the most faithful. See <a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">when AI upscaling beats a plain resize</a>.</li>
+    <li><strong>Judge in motion, at full size.</strong> Shimmer only shows when it plays.</li>
+  </ul>
+
+  <h2>AI upscaling questions</h2>
+  <h3>What is AI video upscaling?</h3>
+  <p>Raising a video's resolution with a neural network that redraws fine detail, instead of only spreading the existing pixels further as a normal resize does. The network is trained on pairs of sharp and degraded images, so it produces the most likely sharp version of each frame.</p>
+  <h3>Is AI upscaling better than a normal resize?</h3>
+  <p>It restores more detail and is less exact. In our test a heavier AI model restored up to 96% of the original's fine detail, against at most 64% for a Lanczos resize, but the resize matched the original's pixels and colours more closely. For a sharp source going to a larger screen, a resize is often enough.</p>
+  <h3>Does AI upscaling recover the real detail?</h3>
+  <p>No. It draws detail that is plausible for what the frame shows, not detail that was recorded. In our test it redrew a dotted ring as a solid one. Never use upscaled footage as evidence of what something looked like.</p>
+  <h3>Can AI upscaling fix a blurry video?</h3>
+  <p>Not if the blur is from focus or motion. That information is gone from every frame, and the model sharpens the blur rather than removing it. Low resolution and compression damage are what it fixes.</p>
 
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/learn/what-is-aspect-ratio/">What is aspect ratio?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-chroma-subsampling/">What is chroma subsampling?</a></li>
-    <li><a href="https://crispvideo.app/learn/what-is-color-space/">What is a colour space?</a></li>
     <li><a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">When AI upscaling beats a plain resize</a></li>
+    <li><a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">Why AI upscaling can't fix focus</a></li>
+    <li><a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">What the denoise setting does</a></li>
+    <li><a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">Why 4K exports take so long</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-color-space/">BT.601 vs BT.709: why colours shift</a></li>
+    <li><a href="https://crispvideo.app/vs/ffmpeg-lanczos-vs-ai-upscaling-mac/">ffmpeg Lanczos vs AI upscaling</a></li>
   </ul>
 
-  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a></p>
+  <p><a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a> Free to try, one-time $129 to remove the watermark. Runs entirely on your Mac.</p>
 </div></article>
-
 <footer><div class="wrap">
   <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
 </div></footer>
