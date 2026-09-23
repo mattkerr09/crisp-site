@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1340",
-  "notes": "Say \"drop music behind it\" and Crisp points you at the music track instead of explaining something you did not ask about. Splitting a phrasal verb around its object now gets the same clear answer as the plain order.",
-  "pub_date": "2026-09-23T05:50:19Z",
+  "version": "1.0.1341",
+  "notes": "Ask Crisp to \"trim the sides\", \"trim the edges\" or \"trim the borders\" and it now crops the picture, the same as \"cut the sides\" always did, instead of explaining that trimming needs a number of seconds. \"Crop off the sides\" works too.",
+  "pub_date": "2026-09-23T06:51:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdDTTNKakNCcnhXZWw4cDI0WG8wL3ovTHlURkI1SzdCRkdqNlgzU09NUUhQcFhSS0hPN2F3SmpFQ2VuWEZUWGJTYm4rVkpNVXhOanlvUWVKbG9MZFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTQyMzA2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsRm5xQms3dGV6RG94Y2FmNU9IcWFSQ2YxYUxQVk1Pc3ZsUk1KZnduandlMEl4NDc4QlY1Q2x6aDhNUzZwSEhmSHUxOG14TmZ0NUJrZDBZNm9EdzVBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1340.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBCdm1qZ2Zyc2RkVm96dnI5WWtadWxyTFpaeHh2bWJMMU1nWkdGN3NVTjZvbFQ5VWRVZjZCZXJUU3ZxZHRGNVhTei9LY3pXSGFTanJiUjZPYlhCTUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTQ2MDE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzd3lwWkx0bE9tdE9qd1p1WmRPa0kyMmY1TlY4dWQ3K1IxQU5TOTArdStPY2s2NldPT0lZZ0tMQzJmaktTVE9vZCsxZFlhTlR1TW5iVUlyNi9vazVCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1341.app.tar.gz"
     }
   }
 }
