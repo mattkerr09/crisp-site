@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1366",
-  "notes": "Asking for softer colours or softer contrast now softens them instead of being turned down. \"Less colour\" works, and \"make it grey\" asks whether you mean black and white or just less colourful. Asking to compress a clip to a smaller size such as 1080p now says plainly that the picture keeps its size and only the file gets smaller.",
-  "pub_date": "2026-09-23T21:53:31Z",
+  "version": "1.0.1367",
+  "notes": "Asking for a look now gives you that look everywhere: \"make it dark\" darkens instead of brightening, \"make it grainier\" adds film grain, \"make it look contrasty\" adds contrast, and \"make it less vivid\" tones the colour down. Asking to make a cinematic or moody look weaker now explains that Crisp can add a look but not take one out, and \"less warm\" and \"make it look cold\" now cool the colours.",
+  "pub_date": "2026-09-23T22:47:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5VajJ5NENpR3NVZ0l2WWE0bHlDQ28ybVhCNW9yTmR0TmFnUzV0YU1OVWZjMnE1Mlo0RFdXTDVDR1NCZ2E4bVNxamZYYXh6Qy83bE9mdVFrVExXUGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjAwMDAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEcm5HOWxZdlBZQUZFVktNa2ZEc2FnVE1CdU15b05pcXRTejcyQVIxQUV5RitKbVowckdzVDZ1ZDRObGNMQ25UMGhsVldlNzV5SEluZXFnUlNGT09Cdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1366.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFyODdpK010YWp3R0pTaGZNNmJJbjNESjNtS0tISjY5RnR2cW96cGFRalNNaEptblNrQkZtWW9neFpZODJLS2FNZUFCVWwvMXBIOWFqOW9FcDFvN2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjAzMDk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOWGgzK09ZSmxFOGoyQnRSei80bnduN1h6cGpRbFJKVkQwVlNFTG5rTnVTL3FaZ3FYam12aE5ZZUNCOUpQYnV2NlgwVmc0eURBdFY3bndCd25tWTdCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1367.app.tar.gz"
     }
   }
 }
