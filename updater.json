@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1342",
-  "notes": "Say \"save as ProRes and upscale it to 4K\" and Crisp now does the upscale, instead of answering about file names and quietly dropping it. Naming a format first works the same as naming it last.",
-  "pub_date": "2026-09-23T07:28:57Z",
+  "version": "1.0.1343",
+  "notes": "Say \"level the horizon\" and Crisp now explains what it can do about a tilted shot, instead of answering about the soundtrack. \"Fix the horizon\" and \"the horizon is not level\" get the same answer as \"straighten it\".",
+  "pub_date": "2026-09-23T08:06:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUE5UkVCL0lYQXV6WWc0YXVEUnd1aXZvMWNaTmFhdko4ak85dHhEWnB0MnBTK1BUcnFhb1NqdGd2ckJLd1UxQ3VUdjZueXhKVEZkTFFmNlRQUjl1QndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTQ4MjU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorUDlEaU9pSStYOU82YTZaUjJrVEh2c1d2dzlVVXowQkdKV2NPa2JOdE80MkVXd2lEcFhYVHBUeTRoZjRVUXpNWjloOVJ5TUZNMis5ZDFYaUpNY0dBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1342.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlJem9GY2pFbDVBNzdVWVM0dVNzUUFLOFdxbi83R0hzSlBqWXN3aVJqYTUxVVIwdGZ5cWxhYk1LV2g3TEpvN3lLRjF6aGxBZFJBQklaNk9UQVNZbXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTUwNTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqaHdscG9vNVRkQlJSMTRvenptVlBWc0JYMFhPNkZBOVVzNW1DQjM1VEh2UGhsQnhKQUxmZEhVRVR2aVdaOVcza2pVNUo3bXp0c2laMGdsaXhXcTdBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1343.app.tar.gz"
     }
   }
 }
