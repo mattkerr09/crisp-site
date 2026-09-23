@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1343",
-  "notes": "Say \"level the horizon\" and Crisp now explains what it can do about a tilted shot, instead of answering about the soundtrack. \"Fix the horizon\" and \"the horizon is not level\" get the same answer as \"straighten it\".",
-  "pub_date": "2026-09-23T08:06:38Z",
+  "version": "1.0.1347",
+  "notes": "Say \"keep it the same resolution\" and Crisp leaves it alone instead of starting an upscale. The website download is republished through a swap that keeps the previous build available if an upload is interrupted, and that can no longer be blocked by a half-finished earlier publish.",
+  "pub_date": "2026-09-23T09:53:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlJem9GY2pFbDVBNzdVWVM0dVNzUUFLOFdxbi83R0hzSlBqWXN3aVJqYTUxVVIwdGZ5cWxhYk1LV2g3TEpvN3lLRjF6aGxBZFJBQklaNk9UQVNZbXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTUwNTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqaHdscG9vNVRkQlJSMTRvenptVlBWc0JYMFhPNkZBOVVzNW1DQjM1VEh2UGhsQnhKQUxmZEhVRVR2aVdaOVcza2pVNUo3bXp0c2laMGdsaXhXcTdBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1343.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUs4Vnhab2ZLNmUrY0h0MkNZWlZ6WWNnUTVhRFd1K045OUdBNlFOZHhwUzVQR2dpZXZOWFo1VEZnS251eHV4eWtuV0V3MnIwTk51eHIvLytEMW5kQkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTU2OTA5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTNDMreFB5N1RjczNpL1ptRm96MGYwS2FscE9KUEtIb3dhdSszR2JTRU93YWY4M3RRSUYwSjhrODMzNTNONWFLckVnbXRNUUpVRlJpb09YeDNsUXRCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1347.app.tar.gz"
     }
   }
 }
