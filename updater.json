@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1365",
-  "notes": "Asking for a look now gets that look: \"make it look muted\", \"faded\" or \"washed out\" takes colour out instead of adding it, and \"mute the colours\" no longer mutes the sound. Asking for the same resolution as another clip now tells you this clip's size and asks what you want, instead of guessing an upscale, and \"same resolution as before\" leaves the size alone. The colour step in Enhance at 2\u00d7 is faster again.",
-  "pub_date": "2026-09-23T20:56:06Z",
+  "version": "1.0.1366",
+  "notes": "Asking for softer colours or softer contrast now softens them instead of being turned down. \"Less colour\" works, and \"make it grey\" asks whether you mean black and white or just less colourful. Asking to compress a clip to a smaller size such as 1080p now says plainly that the picture keeps its size and only the file gets smaller.",
+  "pub_date": "2026-09-23T21:53:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlSMzBZUGEzOUhXZXV0VmpsWFpuWlZDL2hiaGFGNWVWWis0OExFdVAxOE9zZlE2Zml4MktZNEVQUDZSYnA3b25CMndqOXhrL2tldDk3cFlWNHY5b0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTk2NDc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6dklsSTBBWGNLTGJKZWp3akpxd2JIZSsrdi9ybkRYWXhSSUdWRWZHT0RWTWNXOUJ2amZHQlY2Qk5qa3Jla0M3ZmNqRXB2dFBKRm1YNlpya214V0xEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1365.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5VajJ5NENpR3NVZ0l2WWE0bHlDQ28ybVhCNW9yTmR0TmFnUzV0YU1OVWZjMnE1Mlo0RFdXTDVDR1NCZ2E4bVNxamZYYXh6Qy83bE9mdVFrVExXUGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjAwMDAxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEcm5HOWxZdlBZQUZFVktNa2ZEc2FnVE1CdU15b05pcXRTejcyQVIxQUV5RitKbVowckdzVDZ1ZDRObGNMQ25UMGhsVldlNzV5SEluZXFnUlNGT09Cdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1366.app.tar.gz"
     }
   }
 }
