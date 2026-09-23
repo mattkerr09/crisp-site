@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1350",
-  "notes": "Ask to \"upscale it to 100%\" and Crisp now tells you that is the size you already have, instead of starting an upscale; \"to 50%\" points you at compression. Asking to upscale with no size named still picks the best settings automatically, as before.",
-  "pub_date": "2026-09-23T12:10:39Z",
+  "version": "1.0.1353",
+  "notes": "Upscaled videos now carry the colour information players need to show them correctly. Before this, every upscale left two colour tags blank, which some players (including QuickTime) can show with a brightness shift. HDR clips upscaled in Crisp are converted to standard colour and now labelled as such.",
+  "pub_date": "2026-09-23T13:47:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhTM0FiNjJSMGg4SHQ0Wlp3U2FJOVdZUVJRRWkzeGxnWEgza1k4OHhaenVGejliUTRZTVRrT1BQMGFvMjZWMGdoR2lYeEJ3SE9VKzJZcG9QbEFkTnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTY1MTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRRjBLTlRPRElwYmd5d1hZNTFkc0VvZUFLelkxU2o5SmZyeFB6azJ2clRwc3dyRWhGRHo3dlFEQ05DYVBpSHFxY1R6RGZMMlBWOE5KTTFQWmVZZ0hDZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1350.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1kVXdaa1I3Ync0Wk9GemIwYWQvVlNlTjRYR2ZwTUU2ZFB3d0JZTC9vODBpenczZDlZR3h5ZlR2MTA5dlJBNUlraW9KV2xWNjE4bHYzZ3dZS1FkOWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTcwODY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqNFVtcGFYWVhqRFA4eXYzMmlqKzJWYk84Q082bnFKMUZqaTJUVUpGSGd5L1VCdU80Qms5KzZkeVQ0R25GU05uZW1WSXJ5M05RZDMwM0VoWWtKd0JBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1353.app.tar.gz"
     }
   }
 }
