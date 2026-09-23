@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","datePublished": "2026-07-05", "dateModified":"2026-09-21", "@type":"HowTo","name":"How to edit HDR video on a Mac without washed-out colors","description":"Edit iPhone HDR (Dolby Vision / HLG / HDR10) video on a Mac with correct colors — Crisp tone-maps automatically while trimming, reframing, changing speed, grading or making a montage.","totalTime":"PT2M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
+{"@context":"https://schema.org","datePublished": "2026-07-05", "dateModified":"2026-09-23", "@type":"HowTo","name":"How to edit HDR video on a Mac without washed-out colors","description":"Edit iPhone HDR (Dolby Vision / HLG / HDR10) video on a Mac with correct colors — Crisp tone-maps automatically while trimming, reframing, changing speed, grading or making a montage.","totalTime":"PT2M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
 {"@type":"HowToStep","position":1,"name":"Open Crisp","text":"Download the free Crisp app for Mac and open it. Everything runs on-device — no upload."},
 {"@type":"HowToStep","position":2,"name":"Drop in your HDR clip","text":"Drag your iPhone HDR (Dolby Vision / HLG / HDR10) video onto the window. Crisp detects HDR automatically — no settings to configure."},
 {"@type":"HowToStep","position":3,"name":"Edit like any other clip","text":"Trim, reframe to 9:16, change speed, apply a color look, or make a montage. Crisp tone-maps the HDR to standard colors correctly during the edit."},
@@ -50,7 +50,7 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Edit HDR video on Mac</div>
   <h1>How to edit <span class="grad">HDR video</span> on a Mac — without washed-out colors</h1>
   <div class="quick"><strong>Quick answer</strong><p class="lede">Ever trimmed an iPhone clip and got back a <strong>grey, washed-out</strong> version with blown highlights? That's the HDR problem: iPhones record <strong>Dolby Vision / HLG</strong> by default, and most free editors mangle it. Here's how to edit HDR video on a Mac with <strong>correct colors</strong>, entirely offline.</p></div>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-05 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-05 · last updated 2026-09-23</div>
 
   <h2>Why HDR video comes out grey</h2>
   <p>HDR video stores brightness and color in a wider range (bt2020, PQ/HLG transfer) than standard video. When an editor squeezes those pixels into a normal file <em>without tone mapping</em> — and then mislabels the color metadata — every player interprets them wrong. The result is the classic washed-out look: flat contrast, grey blacks, blown-out skies. It's not your footage; it's the tool.</p>
@@ -115,7 +115,7 @@
   <h3>Which HDR formats does it handle?</h3>
   <p>The common camera ones: <strong>HLG</strong> (what iPhones record by default), <strong>HDR10/PQ</strong> (smpte2084), and bt2020 10-bit sources. Detection is automatic from the file's own colour metadata, so there's nothing to set — if the clip says it's HDR, Crisp treats it as HDR.</p>
   <h3>Can I upscale an HDR clip?</h3>
-  <p>Not yet in one step. The AI upscale lanes (Enhance and Max) need an SDR source today, so convert the clip first — trim, reframe or colour it in Crisp, export, then upscale that file. The editing lanes above all take HDR directly.</p>
+  <p>Yes, with Enhance. It tone-maps an HDR clip down to standard SDR (bt709) as it upscales, the same way the editing lanes do, and from Crisp 1.0.1353 (23 September 2026) it labels the upscaled file as bt709 so players know how to show it. Max, the generative restore, has not been checked with HDR sources yet, so for Max convert the clip first — trim, reframe or colour it in Crisp, export, then run Max on that file. The editing lanes above all take HDR directly.</p>
   <h3>Related guides</h3>
   <p><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Make a video vertical</a> · <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">Remove noise from video</a> · <a href="https://crispvideo.app/vs/capcut-alternative-mac/">CapCut alternative for Mac</a></p>
   <p>Background: <a href="https://crispvideo.app/learn/what-is-hdr-video/">what HDR actually stores</a>.</p>
