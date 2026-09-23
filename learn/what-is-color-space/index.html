@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a colour space?","description":"A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified":"2026-09-07"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is a colour space?","description":"A file does not store colours, it stores numbers. A colour space is the agreement about what those numbers mean, and when that agreement is missing your footage comes out wrong.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10","dateModified":"2026-09-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my footage look washed out before I have touched it?","acceptedAnswer":{"@type":"Answer","text":"Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being displayed by something that is ignoring the tagging. Both look similar and have completely different fixes."}},{"@type":"Question","name":"What is the difference between converting and relabelling?","acceptedAnswer":{"@type":"Answer","text":"Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players reinterpret unchanged data and the colours shift. Relabelling is occasionally the right fix for a mis-tagged file and is wrong for everything else."}},{"@type":"Question","name":"Should I edit in Rec.2020?","acceptedAnswer":{"@type":"Answer","text":"Only if your whole chain supports it end to end and the footage has colour worth preserving. Otherwise you are carrying complexity for a range your delivery target will discard anyway."}},{"@type":"Question","name":"Why do the same colours look different in my editor and my browser?","acceptedAnswer":{"@type":"Answer","text":"Usually the slight curve difference between Rec.709 and sRGB, plus whether each application is colour-managed. It is a display-side disagreement rather than something wrong with the file."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Colour space", "item": "https://crispvideo.app/learn/what-is-color-space/"}]}</script>
@@ -35,7 +35,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Colour space</div>
   <h1>What is a colour space?</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-11 · last updated 2026-09-23</div>
 
   <p>A video file contains numbers. The number 200 in the red channel means nothing on its own. A
   colour space is the agreement that turns those numbers into actual colours: which red is the reddest
@@ -62,8 +62,15 @@
   <p><strong>Missing tags.</strong> The file never recorded which space it used, so the player guesses,
   and different players guess differently. This is why a clip can look right in one app and wrong in
   another with no edit in between.</p>
+  <!-- CORRECTED 2026-09-23. This said Rec.2020 read as Rec.709 "comes out oversaturated; the
+       reverse comes out dull" - backwards, and it contradicted the next paragraph. Measured with the
+       ffmpeg 8.1.2 inside Crisp 1.0.1353 on one frame of the home-page phone demo: BT.2020 numbers
+       read as BT.709 keep 77% of the saturation; BT.709 numbers read as BT.2020 reach 152%.
+       Record: ops search/measurements/crisp-colour-space-readings-2026-09-23.json. -->
   <p><strong>Wrong interpretation.</strong> The tag exists but something ignores it. Rec.2020 content
-  read as Rec.709 comes out oversaturated; the reverse comes out dull.</p>
+  read as Rec.709 comes out dull: Rec.2020 writes the same colour with smaller numbers, so read on the
+  narrower scale everything looks less saturated (in our test, 77% of the original saturation). The
+  reverse, ordinary Rec.709 video treated as Rec.2020, comes out oversaturated (152%).</p>
   <p><strong>Missing conversion.</strong> Wide-gamut content sent to a standard display without a
   proper conversion looks flat and grey, because the numbers are being read against the wrong
   reference. That is the same failure as untagged HDR.</p>
