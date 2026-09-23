@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1348",
-  "notes": "Ask to \"upscale it to 200%\" and Crisp now upscales by 2x, the same as \"2x\", instead of quietly falling back to Auto and picking its own size. Percentages about the volume or the speed are untouched.",
-  "pub_date": "2026-09-23T11:03:57Z",
+  "version": "1.0.1350",
+  "notes": "Ask to \"upscale it to 100%\" and Crisp now tells you that is the size you already have, instead of starting an upscale; \"to 50%\" points you at compression. Asking to upscale with no size named still picks the best settings automatically, as before.",
+  "pub_date": "2026-09-23T12:10:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY1dGpaWmdjbXRmclEwSnRYYThuNUxKWVRKcFMrdHBEWnVOVlh1Qzl3SDhXQkMvMEpKb3RHS2ViNTJUSDQyQ2lLZnE0bGlHVUtMTnR0MWdhdmJRVVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTYxMTExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEbWZlK3VhajB3dE1KbHVXczUvYWN2blpqYzlBM3dZcDFsZkhkU3NNM1Qxcyt2OGhubm5HK0hiRTJuKzJ6UmdWKzR5cFlianB0S1A2NXlRYzNjWEpDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1348.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhTM0FiNjJSMGg4SHQ0Wlp3U2FJOVdZUVJRRWkzeGxnWEgza1k4OHhaenVGejliUTRZTVRrT1BQMGFvMjZWMGdoR2lYeEJ3SE9VKzJZcG9QbEFkTnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTY1MTIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpRRjBLTlRPRElwYmd5d1hZNTFkc0VvZUFLelkxU2o5SmZyeFB6azJ2clRwc3dyRWhGRHo3dlFEQ05DYVBpSHFxY1R6RGZMMlBWOE5KTTFQWmVZZ0hDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1350.app.tar.gz"
     }
   }
 }
