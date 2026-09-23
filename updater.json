@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1367",
-  "notes": "Asking for a look now gives you that look everywhere: \"make it dark\" darkens instead of brightening, \"make it grainier\" adds film grain, \"make it look contrasty\" adds contrast, and \"make it less vivid\" tones the colour down. Asking to make a cinematic or moody look weaker now explains that Crisp can add a look but not take one out, and \"less warm\" and \"make it look cold\" now cool the colours.",
-  "pub_date": "2026-09-23T22:47:53Z",
+  "version": "1.0.1368",
+  "notes": "Telling Crisp a clip looks too compressed no longer compresses it again: it now explains that compression blocks can't be taken out, and points you to Enhance for a soft or noisy picture. Saying a clip sounds echoey no longer adds more echo.",
+  "pub_date": "2026-09-23T23:47:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFyODdpK010YWp3R0pTaGZNNmJJbjNESjNtS0tISjY5RnR2cW96cGFRalNNaEptblNrQkZtWW9neFpZODJLS2FNZUFCVWwvMXBIOWFqOW9FcDFvN2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjAzMDk5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpOWGgzK09ZSmxFOGoyQnRSei80bnduN1h6cGpRbFJKVkQwVlNFTG5rTnVTL3FaZ3FYam12aE5ZZUNCOUpQYnV2NlgwVmc0eURBdFY3bndCd25tWTdCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1367.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4dHFvTVRUcG1rczVoeGYrdjFhQm5XSnpieDFFNUYzZkFjRHVObmswRWFPYllTbExsNjNlcDJVZXV6Yk9uK2xDQU9vUWN3V3p2Q0hnWmhJb3JlNmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjA2Njc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaa0hIQVlteFFKQWo3NE15WXBpVTNEOEtzYTh5VHd3SDQ2dG9BOW1sR201aXRTY2VadEM4RUt5eForQ2FXZllsNzFaWmo5N1ZoWmlDVzg1UDJrcjZBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1368.app.tar.gz"
     }
   }
 }
