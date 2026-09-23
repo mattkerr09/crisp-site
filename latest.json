@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1357",
-  "notes": "Stills, GIFs and thumbnails now keep a clip's true colours. A frame saved as JPG from an HD video used to come out with greens and cyans noticeably too bright, and the thumbnails in your media bin had the same shift. Clips that carry no colour information, which is common for screen recordings and older exports, showed it in PNG stills, GIFs and the Compare view too. All of these now match the clip.",
-  "pub_date": "2026-09-23T15:39:10Z",
+  "version": "1.0.1359",
+  "notes": "Enhance at 2\u00d7 now keeps your clip's true colours. The 2\u00d7 model used to give colourful footage a teal-green cast (water and snow were the easiest place to see it). Crisp now keeps all of the model's sharpness and takes the colour from your original, so what comes out matches what went in.",
+  "pub_date": "2026-09-23T17:09:31Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU40TjAxZDBlc0EzVFhmNE9TYWJqSEF6QllpcDkyeVlGYVNxaER3aE1xQlN5NXlhSFh2cUp5OWVmeEwxdXkyYWM4bHVqYW54SDA5U2V3WDB3ODc4c1FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTc3NjE4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPcm5pVDEzQTZiZVYySTkrcTYzbG5sbFJWUzUzMERMaDJGUWZJd1dPUGhuSGdYbmhrN3VzN0VxclE3bSszQ3NXRnNHM2VPdGVhdWRFUHo1SVIzU1lEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1357.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdNOWZSMUFTZVJzdDVBK0tVNWtFUjlzeHVsSzd0SUl2aU5IZWwwSDdiOGVUZmUxTjFjSmthSnJ3UlRncm5YS0RWMlpOUDI2MTd5cVh4R3RXd3JvY0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTgyODUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJR3FyUmVlek44YWpMK1dwVFlMejZwNmo0Nk52c3hIcEZPZ2FZL05VNyt5UUE0OEE2ckVlTlIxQTFyZkk5NkY3bDJFZ3BVeHd3WXpPb2RyOWUvSUREQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1359.app.tar.gz"
     }
   }
 }
