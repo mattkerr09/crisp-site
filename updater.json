@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1337",
-  "notes": "Crisp answers several times faster when it cannot understand a sentence, and when you ask it to upscale without naming a size.",
-  "pub_date": "2026-09-23T02:28:32Z",
+  "version": "1.0.1338",
+  "notes": "Ask for a montage without music and Crisp no longer adds a music bed anyway.",
+  "pub_date": "2026-09-23T03:38:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU10dVdKb0FsT1NrZjg1Tk04ZWxIQ2dzWGk1M1duVGtCYkZzNmJ0aStENGd2L1hNSnA1QjZ5L1hYaTRneUZTQjEwaTJGUVRhQjRRanJPNkVLWWt5MFFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTMwMDk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovcmMvbWNlVGtlWFVMVXd1MjZMd09rNW83VXczT3l6N1MwTldaL3R3cDNlcEJla2t5UmZJczB2ZllxY3JwM0pFQng1c0ZwSTJESXlwUXh5MGZiQjlBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1337.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk0QmdsckZFNmd2dDJOc0N1eUNPczBlb25DZXppVUpCaVZlMm9Qa2VnSU9YaklFTzBqcDdHYUZyeGN1UmZ0YjlxUFZBejByVTJqZis5Wjl3SkNzVVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTM0MzIyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpWWEN6VElYNGtaOXNSNXNJUEVDVjhDZjFVUk1qT2wzcys5cldWMURLUlV0ZjRycXVXbHlTdGxQem5FdUgxZ05SSU5jcm9vVVUyKzVwdmJ4TXRYQnpCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1338.app.tar.gz"
     }
   }
 }
