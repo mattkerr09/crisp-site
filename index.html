@@ -13,7 +13,7 @@
      600 weight would compete for bandwidth with the clip that IS the hero. -->
 <link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/clashdisplay-500.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Crisp Video restores, denoises and upscales old, low-res video to 4K offline on your Mac, with a real timeline editor. Free with a small mark; Pro $129 once.">
+<meta name="description" content="Crisp Video restores, denoises and upscales old, low-res video to 4K offline on your Mac, with a real timeline editor. Free with a small mark; Pro $129 once, or four payments of $32.25.">
 <link rel="canonical" href="https://crispvideo.app/">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
@@ -807,7 +807,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your Mac.</span></h1>
       </div>
       <div class="hero-say">
-    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free with a small mark; Pro <strong>$129 once</strong>, <strong>$64.50</strong> for founding buyers.</p>
+    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free with a small mark; Pro <strong>$129 once</strong><span data-crisp-bnpl> (or four payments of $32.25, two weeks apart)</span>, <strong>$64.50</strong> for founding buyers.</p>
     <div class="cta">
       <a class="btn btn-primary" data-track="hero" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
@@ -1423,6 +1423,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="tier pro rv d2">
         <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small></div>
+        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
         <p class="founding-note">Founding price: <strong>$64.50</strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
@@ -1546,6 +1547,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         money back, no reason needed, to the card you paid with.</p>
 
       <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro — $129</a></p>
+        <!-- INSTALMENTS. Empty until CRISP_BNPL_LIVE is set at the foot of this file.
+             Klarna and Afterpay sell Pay in 4: four payments TWO WEEKS apart, six weeks
+             end to end — not a monthly plan. An earlier draft said "$32/month for 4
+             months", which is a payment schedule no provider offers, printed beside a
+             price. It never shipped. -->
+        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
         <p class="founding-note">Founding price: <strong>$64.50</strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
@@ -1922,15 +1929,13 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
      the meta description at the top of this file. Four places, not one. Listing them here because
      the previous version of this comment said "paragraphs" and was already incomplete. Raised by the session that
      shipped the original JS-gated version, after it verified the dark path in a browser. */
-  /* 2026-09-24: OFF, and every copy removed (meta description, hero span, both price-card notes,
-     three /best/ pages) — CEO order: keep the claim only if Dodo's docs or API prove it is offered
-     for THIS account, and neither can (Dodo documents Klarna/Afterpay in general; no endpoint says
-     what this merchant has enabled). ⚠️ The evidence is NOT "it isn't offered": the outside checks
-     only ever saw checkout step one, and Matthew confirmed it at step TWO on a screenshot
-     (2026-08-26, see tests/test_the_instalment_copy_says_only_what_is_true.py). It is unproven,
-     not disproven. Turn back on only in the change that restores the copy, after a human has
-     seen the provider at checkout again. */
-  var CRISP_BNPL_LIVE = false;
+  /* 2026-09-24 23:04Z: ON again, on Matthew's word ("put these back, the bnpl options are offered
+     after putting in your info" — ops launch/MATTHEW-ORDERS-2026-09-07.md, 47d187e). Klarna and
+     Afterpay appear at Dodo's PAYMENT step, after the buyer's details, which is why every
+     outside check of step one saw neither (his own sighting, 2026-08-26, is the same fact). It
+     was off for a few hours that evening (0df8186) and every copy came back in the change that
+     turned it on. */
+  var CRISP_BNPL_LIVE = true;
   var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
   if (!url || !CRISP_BNPL_LIVE) {
     for (var b = 0; b < bnpl.length; b++) bnpl[b].hidden = true;
