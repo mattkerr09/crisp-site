@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1368",
-  "notes": "Telling Crisp a clip looks too compressed no longer compresses it again: it now explains that compression blocks can't be taken out, and points you to Enhance for a soft or noisy picture. Saying a clip sounds echoey no longer adds more echo.",
-  "pub_date": "2026-09-23T23:47:37Z",
+  "version": "1.0.1369",
+  "notes": "\"Not so contrasty\", \"not so warm\" and \"it shouldn't be so vivid\" now tone those down instead of doing the opposite, and \"not saturated enough\" adds colour. Saying \"don't make it warm\", \"don't make it sharper\", \"don't make it dark\" and similar now leaves the clip alone instead of making that change.",
+  "pub_date": "2026-09-24T00:39:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUk4dHFvTVRUcG1rczVoeGYrdjFhQm5XSnpieDFFNUYzZkFjRHVObmswRWFPYllTbExsNjNlcDJVZXV6Yk9uK2xDQU9vUWN3V3p2Q0hnWmhJb3JlNmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjA2Njc5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaa0hIQVlteFFKQWo3NE15WXBpVTNEOEtzYTh5VHd3SDQ2dG9BOW1sR201aXRTY2VadEM4RUt5eForQ2FXZllsNzFaWmo5N1ZoWmlDVzg1UDJrcjZBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1368.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpTdmRvMk9BdFRJeUhFb2FpYWRFcFRSUzZHbEZnTnhVUzNEZmo1T2dCblBWRXZvYmwyZ2FNQjZ0NlNPTHNmTXhBalVvbWp1a3ZwNnNySkNTSWtLWHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjA5OTc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negprSlVQZ3N1V09zakczZ1dQajhBeG9QOU0vY09oU3pTNmliUFZkejJza3RLamhBYTlYRHQvL1Fldm5TZ0lLcHdUUlJzTzc3b2EyTjF1RmNDMWJSaHRBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1369.app.tar.gz"
     }
   }
 }
