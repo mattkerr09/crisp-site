@@ -13,16 +13,16 @@
 <meta property="og:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
 <meta property="og:url" content="https://crispvideo.app/index/">
 <meta property="og:site_name" content="Crisp">
-<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Video Upscaler Index">
 <meta name="twitter:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
-<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified": "2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Video Upscaler Index","description":"Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.","datePublished":"2026-07-23","dateModified": "2026-09-15","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/index/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Video Upscaler Index?","acceptedAnswer":{"@type":"Answer","text":"A published set of objective, reproducible quality measurements for AI video upscaling on Mac — seven metrics computed from raw frames with ffmpeg and pure Python, along with the harness that produced them so anyone can re-run them."}},{"@type":"Question","name":"Why does it only contain Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because those are the only outputs we have actually measured. Publishing a score for a tool we never ran would invalidate the rest of the page. Competitor results will be added when we have real measurements, including results that beat Crisp."}},{"@type":"Question","name":"What is added_flicker and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"It is the output's frame-to-frame instability minus the source's — the shimmer the upscaler introduced. Per-frame upscalers can invent slightly different detail on each frame, so a still looks excellent while the moving clip crawls. It is the axis reviewers describe subjectively and the one this index measures directly."}},{"@type":"Question","name":"How fast is Crisp?","acceptedAnswer":{"@type":"Answer","text":"Between 3.6 and 5.6 frames per second end-to-end on an M1 Ultra Mac Studio across the sources tested, including decode and encode. That is roughly an hour for a ten-minute clip. It runs entirely on your own Mac, which is why it is slower than a cloud service."}}]}
@@ -32,7 +32,7 @@
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
-  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 

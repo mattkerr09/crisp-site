@@ -66,13 +66,13 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{site}/{slug}/">
 <meta property="og:site_name" content="Crisp">
-<meta property="og:image" content="{site}/og.png">
+<meta property="og:image" content="{site}/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{ogtitle}">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="{site}/og.png">
+<meta name="twitter:image" content="{site}/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{article_ld}</script>
 <script type="application/ld+json">{faq_ld}</script>

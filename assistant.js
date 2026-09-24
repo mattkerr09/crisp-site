@@ -69,11 +69,15 @@
     '.kcw-note{padding:0 1rem .8rem;font-size:.72rem;color:#6b6152;line-height:1.5}',
     '[hidden]{display:none!important}',
     '@media (prefers-reduced-motion:reduce){.kcw-btn{transition:none}}',
+    /* ON A PHONE THE PILL COVERED "Download for Mac" (375px, CEO audit 2026-09-24). Icon-only there,
+       and hidden while the hero's buttons are on screen (see the observer below), so no CTA is
+       ever under it. The button keeps its accessible name through aria-label. */
+    '@media (max-width:600px){.kcw-btn{width:48px;height:48px;padding:0;justify-content:center}.kcw-lbl{display:none}}',
     '</style>',
-    '<button class="kcw-btn" part="button" aria-haspopup="dialog">',
+    '<button class="kcw-btn" part="button" aria-haspopup="dialog" aria-label="Ask a question">',
     '  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">',
     '    <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-4.2-.9L3 20.5l1.6-4.4A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>',
-    '  </svg> Ask a question</button>',
+    '  </svg><span class="kcw-lbl"> Ask a question</span></button>',
     '<div class="kcw-panel" role="dialog" aria-label="Ask a question" hidden>',
     '  <div class="kcw-head"><span>Ask a question</span><button class="kcw-x" aria-label="Close">&times;</button></div>',
     '  <div class="kcw-log"></div>',
@@ -100,6 +104,17 @@
     if (v) { input.focus(); if (!turns.length) say("assistant", "Ask me anything about the product, the price, or the licence."); }
   }
   btn.addEventListener("click", function () { open(true); });
+
+  /* Hidden on a phone while the hero's buttons are visible — the one place the button sat on a CTA.
+     The panel is never hidden by this: only the closed button, and only while it could cover. */
+  var heroCta = document.querySelector(".hero .cta");
+  if (heroCta && window.IntersectionObserver && window.matchMedia) {
+    var narrow = window.matchMedia("(max-width:600px)");
+    new IntersectionObserver(function (es) {
+      var hide = narrow.matches && es[0].isIntersecting && panel.hidden;
+      host.style.visibility = hide ? "hidden" : "";
+    }).observe(heroCta);
+  }
   close.addEventListener("click", function () { open(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) open(false); });
 

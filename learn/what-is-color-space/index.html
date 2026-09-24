@@ -13,13 +13,13 @@
 <meta property="og:description" content="Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.">
 <meta property="og:url" content="https://crispvideo.app/learn/what-is-color-space/">
 <meta property="og:site_name" content="Crisp">
-<meta property="og:image" content="https://crispvideo.app/og.png">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BT.601 vs BT.709: read with the wrong one, greens and cyans shift most">
 <meta name="twitter:description" content="Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.">
-<meta name="twitter:image" content="https://crispvideo.app/og.png">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "BT.601 vs BT.709: read with the wrong one, greens and cyans shift most", "description": "Measured: SD video decoded as HD moves pure green 15% and cyan and green about six times the visible threshold; Rec.2020 read as Rec.709 keeps 77% of its colour. Why, and how to check.", "author": {"@type": "Organization", "name": "Crisp"}, "publisher": {"@type": "Organization", "name": "Crisp"}, "datePublished": "2026-08-11", "dateModified": "2026-09-23", "image": "https://crispvideo.app/learn-colour-space-matrix.jpg"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do my greens look different after converting a video?", "acceptedAnswer": {"@type": "Answer", "text": "Most often the video was decoded with the other matrix, BT.601 instead of BT.709 or the reverse. Greys don't change, but saturated greens and cyans move the most: in our test pure green lost 15% of its level. Check that the converted file carries a colour tag, and that the tool converted the pixels rather than just changing the label."}}, {"@type": "Question", "name": "How do I know which colour space my video uses?", "acceptedAnswer": {"@type": "Answer", "text": "A media inspector such as MediaInfo, or ffprobe, lists the colour matrix, primaries and transfer. If they say \"unknown\", the file has no tag and every player will guess, usually from the picture height."}}, {"@type": "Question", "name": "Why does my footage look washed out before I have touched it?", "acceptedAnswer": {"@type": "Answer", "text": "Two likely causes. It is log footage, which is meant to look flat and expects grading, or it is HDR being shown by something that ignores its tags. Both look similar and have completely different fixes."}}, {"@type": "Question", "name": "What is the difference between converting and relabelling?", "acceptedAnswer": {"@type": "Answer", "text": "Converting maps the actual pixel values from one space to another so the colours stay the same. Relabelling changes only the tag, so players read unchanged numbers with a different recipe and the colours shift. Relabelling is the right fix for a mis-tagged file and wrong for everything else."}}, {"@type": "Question", "name": "Should I edit in Rec.2020?", "acceptedAnswer": {"@type": "Answer", "text": "Only if your whole chain supports it end to end and the footage has colour worth keeping. Otherwise you carry the complexity for a range your delivery will discard anyway."}}]}</script>
@@ -28,7 +28,7 @@
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
-  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 

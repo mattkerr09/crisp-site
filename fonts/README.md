@@ -5,8 +5,10 @@ asserts it, and a font CDN would break that as surely as an analytics tag would.
 
 | file | family | weights | licence |
 |---|---|---|---|
-| `dmsans-var.woff2` | DM Sans | variable 400–700 | SIL Open Font License 1.1 |
-| `dmsans-var-italic.woff2` | DM Sans italic | variable 400–700 | SIL Open Font License 1.1 |
+| `dmsans-latin.woff2` | DM Sans, basic Latin (U+0000-00FF …) | variable 400–700 | SIL Open Font License 1.1 |
+| `dmsans-latin-italic.woff2` | DM Sans italic, basic Latin | variable | SIL Open Font License 1.1 |
+| `dmsans-var.woff2` | DM Sans, latin-EXT only (U+0100-02BA …) | variable 400–700 | SIL Open Font License 1.1 |
+| `dmsans-var-italic.woff2` | DM Sans italic, latin-EXT only | variable | SIL Open Font License 1.1 |
 | `clashdisplay-500.woff2` | Clash Display | 500 | ITF Free Font Licence (Fontshare) |
 | `clashdisplay-600.woff2` | Clash Display | 600 | ITF Free Font Licence (Fontshare) |
 
@@ -44,3 +46,14 @@ Re-run it if the file list changes:
 ```
 python3 /tmp/fontcost2.py     # or rebuild from the recipe above
 ```
+
+## ⚠️ Correction, 2026-09-24 — the numbers above measured a font that was barely used
+
+Until 2026-09-24 only the two `dmsans-var*` files shipped, and they are Google's **latin-ext**
+subset: 149 glyphs, no a–z (outlier-site serves the same bytes as `a18ee4a68c.woff2` beside the
+latin file `fc88c23021.woff2`, and the copy took the wrong one). So every line of body text rendered
+in the system fallback except capital **A**, NBSP and accented letters — two typefaces inside one
+word — and the "no layout shift at all" row above is true only because almost nothing swapped.
+The latin files are now `dmsans-latin*.woff2`, split from the ext files by `unicode-range` in both
+`@font-face` blocks (index.html and style.css), and the homepage preloads the latin one. Re-measure
+FCP/CLS before quoting the table again.
