@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1377",
-  "notes": "Asking Crisp to undo something no longer does it: \u201cundo the black and white\u201d, \u201cremove the sepia\u201d or \u201cget rid of the slow motion\u201d used to apply that very effect. Now Crisp points you to Undo (\u21b6 beside \u201cDo it\u201d) and \u201cRevert to original\u201d. It also answers \u201cis it 4K?\u201d, tells you a photo\u2019s size instead of starting an upscale, and understands \u201cnever mind\u201d, \u201cone more time\u201d, \u201cequalise the loudness\u201d and \u201cno subtitles\u201d.",
-  "pub_date": "2026-09-24T08:35:36Z",
+  "version": "1.0.1378",
+  "notes": "Crisp no longer mistakes a description for a request: \u201cmake the slow motion clip brighter\u201d brightens it instead of slowing it down, and \u201cbrighten the black and white photo\u201d brightens it instead of converting it. \u201cCompress it to 4K\u201d now compresses instead of starting an upscale. A photo is never upscaled because of a question you asked about it.",
+  "pub_date": "2026-09-24T09:55:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJEUUo1YThObnhhODRZaTQ2UHg5U3Jtc1F6UGVRby81c1lrYmFVelZvaG9DN0JxbDlmb3hDbkIxWUNtRm5tUHRWTm56T2VSMHdkc05mYkFjTkUxWndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjM4Njc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsTnFBZjFhY0RFR3V0bkhiYzBOU1ZkdGFqTVE5Qno4MjlQUTdpN2VsdngyN1ZFdjcwS3JhVHVTamxzVGs1bnAwbmhPTFlYdFVyM1QzcWFvOFdFUU5DQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1377.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1PT2ZCQ1NEZ3NFME1aWWtWU1o3eElqZXRKN0R0UHYyVTNnc3BLTkU0UERUdUg1aGh3ZFQzV1g0NEdDbDJTTnZEc2R4TXFxVndXNCt1WVpHQ2ozdmdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjQxNjQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjWDNSVGM1aCs4UFRuaEhLU3IrRW1XSUlVZy9CNDZ3WGo3K2hUblQ3VXN4clJsVlJHOG5LY0NFQkQrZjhrOTBja29RUHdFcG95REV0TTFnWGR0QkdDUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1378.app.tar.gz"
     }
   }
 }
