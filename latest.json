@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1380",
-  "notes": "Crisp now answers \u201cupload it to YouTube\u201d or \u201cshare it\u201d honestly: it never sends your video anywhere, and it shows you where the finished file is. \u201cAdd text to it\u201d asks what the text should say instead of writing the words \u201cto it\u201d on your video. \u201cCut the first part\u201d, \u201ccut the middle\u201d and \u201cstretch it\u201d get clear answers too.",
-  "pub_date": "2026-09-24T12:19:28Z",
+  "version": "1.0.1381",
+  "notes": "\u201cMake it fill the frame\u201d no longer saves a still picture; Crisp explains how to watch full screen or crop to fill. \u201cRemove the crowd noise\u201d or \u201cthe traffic noise is loud\u201d now cleans up the sound instead of starting a video upscale, and \u201cmute the crowd noise\u201d no longer silences everything. \u201cSlow down the end\u201d, \u201cmake it 30 seconds long\u201d, \u201chalve the speed\u201d and audio-sync questions get clear answers.",
+  "pub_date": "2026-09-24T13:43:33Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURsL0Y3dGMzbUhqQTBITW53Vmszc1JSaGxJbVRGcjlrc3NOL01yVWhEZUg5UGRjZmVLMTVjYjlDT1FBV1NHSjdBZjArMk1QYnB6QURZbHF3c2lVMVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjUxOTY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1QWFjZTY4dllSbVZlUHlQYmxhTTU3L2E2ZmxLaDBPNW85WDhyaEVIbU5ET2FUbVoraUZraW5keTFqZC9ReXZrSzY0MlI2VVRHTVAxZ2pFWTZ1K1hEQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1380.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxYV0h2eUk5QzR1QmFNdDZlZEV5OUlzUVkxQUNrRHU1S2pNY280U0g4dVdUY0ZvVmhyVmJyWTBoQUs5QkNtS01NSWJTVHRMSWxiWWIrZlBGSWIxV0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjU3MDI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXQUV2WllkOTlveGNWTzRFV1hJcGVFKzRodkJVb1dGVUlqRXNnZEx1TkQ2WEZxTTZPcGI3aGFad2xuNFJpbHR1REdvdGRZZU04TkxJVzRhVUxrTjdDUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1381.app.tar.gz"
     }
   }
 }
