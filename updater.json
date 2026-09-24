@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1376",
-  "notes": "Crisp now answers the first questions people ask: whether your video is uploaded (it never leaves your Mac), where your finished file is saved, how to export, and what it can do \u2014 with examples that work on the clip you have open.",
-  "pub_date": "2026-09-24T07:11:45Z",
+  "version": "1.0.1377",
+  "notes": "Asking Crisp to undo something no longer does it: \u201cundo the black and white\u201d, \u201cremove the sepia\u201d or \u201cget rid of the slow motion\u201d used to apply that very effect. Now Crisp points you to Undo (\u21b6 beside \u201cDo it\u201d) and \u201cRevert to original\u201d. It also answers \u201cis it 4K?\u201d, tells you a photo\u2019s size instead of starting an upscale, and understands \u201cnever mind\u201d, \u201cone more time\u201d, \u201cequalise the loudness\u201d and \u201cno subtitles\u201d.",
+  "pub_date": "2026-09-24T08:35:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURqTnhyOVI5RjJ5L3d2eEJHWURET1ozR1pLQjIxcWlOY1RBajFRSmZQbmJXWk5iVXZCeWE4ZGkwaFU1T2FZdWxjdVF0NmhzY1dSRm9rV3AzSmJTUmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjMzNjI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovMWdpWW5wdjdWZFJKL2lIVW5kK09Rb0FkS1BRVnlQYVAvWWt4QlFpY0V4SFhReksxLzJYREJrNXNPcmduNHpUa045QldKSk56M1lUOGUwL2QyanZCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1376.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJEUUo1YThObnhhODRZaTQ2UHg5U3Jtc1F6UGVRby81c1lrYmFVelZvaG9DN0JxbDlmb3hDbkIxWUNtRm5tUHRWTm56T2VSMHdkc05mYkFjTkUxWndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjM4Njc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpsTnFBZjFhY0RFR3V0bkhiYzBOU1ZkdGFqTVE5Qno4MjlQUTdpN2VsdngyN1ZFdjcwS3JhVHVTamxzVGs1bnAwbmhPTFlYdFVyM1QzcWFvOFdFUU5DQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1377.app.tar.gz"
     }
   }
 }
