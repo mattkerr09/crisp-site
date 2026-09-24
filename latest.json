@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1371",
-  "notes": "Telling Crisp not to make a clip crisper, clearer, smoother, faster or louder now leaves it alone instead of doing exactly that. Asking for it less crisp or less smooth now explains honestly what Crisp can and can't take back out, \"make it noisy\" adds film grain, and \"make it faster, not slower\" speeds it up.",
-  "pub_date": "2026-09-24T02:43:30Z",
+  "version": "1.0.1372",
+  "notes": "Talking to Crisp by name, like \"hey Crisp\" or \"what can Crisp do\", no longer starts an upscale. Asking for a shaky or handheld look now explains that Crisp can steady footage but can't add shake, instead of stabilising it, and \"don't zoom in\" now leaves the framing alone.",
+  "pub_date": "2026-09-24T03:36:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVBbU5oM2Urd2tPY1htRXVPVEZaTFJsU01pbHNMVWF2S1RnNUw3a3BmZzNkdGlySDUyT2ZOMTlFYzRIb2RlMXdDbUY1Tml3NmlaS1lZVUx2ZUdMaXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjE3MzI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuNVBNOGFYWkV3d3NieFJUVlg5U1hVVlpzcmRKYnJDSU5MS2FrbFF6V21UOXpvVVJiSllSTDh0TGJXbkhaV2JURnJsVVA5OWkxUXBPd0dlRkxIWnZBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1371.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5MY2o3blZoNVhZK1h2SFpWOEF1RlhiNnRTTURVakxkZ3BIQWozV0NBRWV4c0k0TVMrbG8rK0xkUEJjLyt2UVpPZndvZk9HYUVqM0t3MHNpMVZYZFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjIwNjU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnVHVhK3hVZmRnQVRna1VYRDVFS1pSUXdCR0NjSlhjOVdJWU9zeUNsdVltc0F1Z3EyU1F4TVNFYnk1SHhvY0tVRm9kMk1SaS9oZkpkSjV5S3BPL01Ddz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1372.app.tar.gz"
     }
   }
 }
