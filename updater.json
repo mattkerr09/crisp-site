@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1378",
-  "notes": "Crisp no longer mistakes a description for a request: \u201cmake the slow motion clip brighter\u201d brightens it instead of slowing it down, and \u201cbrighten the black and white photo\u201d brightens it instead of converting it. \u201cCompress it to 4K\u201d now compresses instead of starting an upscale. A photo is never upscaled because of a question you asked about it.",
-  "pub_date": "2026-09-24T09:55:44Z",
+  "version": "1.0.1379",
+  "notes": "\u201cMake it for YouTube\u201d now keeps a landscape video widescreen instead of turning it vertical. Asking to mute, loop or brighten \u201cthe upscaled clip\u201d no longer starts a second upscale. \u201cRemove the silent parts\u201d no longer mutes the whole video; Crisp explains what it can do instead. \u201cMake it shorter\u201d, \u201cmake it moodier\u201d and \u201cmake it longer\u201d are understood.",
+  "pub_date": "2026-09-24T11:19:51Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1PT2ZCQ1NEZ3NFME1aWWtWU1o3eElqZXRKN0R0UHYyVTNnc3BLTkU0UERUdUg1aGh3ZFQzV1g0NEdDbDJTTnZEc2R4TXFxVndXNCt1WVpHQ2ozdmdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjQxNjQ5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpjWDNSVGM1aCs4UFRuaEhLU3IrRW1XSUlVZy9CNDZ3WGo3K2hUblQ3VXN4clJsVlJHOG5LY0NFQkQrZjhrOTBja29RUHdFcG95REV0TTFnWGR0QkdDUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1378.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdvNU1Bek5rd2U2SzJVQkMrZ3MvMCt2MktFWlVZMGo5ZzhPYVcrRkdrU1BxWUppNFZwZ3RhOUo5bWNGVFVxUVh6OHBmaWorU0MyQWh1UWNsZHp3bkFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjQ4NDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6SDNudTdWM2UrYlZHaUNxUEpDVUp4ZEdIZFpLNlpRUjdvR3lHYk1YYXZnbEkxalQyRmNYdUNyOUVLNmxDNEJPaHZJZ2pkSEczaHhOV1VkcUxUNTBDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1379.app.tar.gz"
     }
   }
 }
