@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1374",
-  "notes": "Telling Crisp an upscale is slow now points you to the Jobs panel instead of starting another one. Asking for more bass or less treble now explains that Crisp works on the whole soundtrack and has no EQ, and what it can do instead.",
-  "pub_date": "2026-09-24T05:28:17Z",
+  "version": "1.0.1375",
+  "notes": "Asking what Crisp costs, or whether it's free, now gets a straight answer about what's included and what the one-time unlock adds. Asking to remove Crisp's watermark by name now explains how, instead of adding a logo.",
+  "pub_date": "2026-09-24T06:17:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlqZk5ibGdQT0kvV3hQajNIWjhnS3MwNzJwVmcwUUNvTWhRNlE0WnYySzNqUXJzMDRta29GOGZqOGQrYkkrNUlKWklnN3ZWWUllMHVFS1hRd3FQZlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjI3MzQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyL0l2MW53T040Rkhib011L1JVUXFudEhrTWZSazRvdDJtMHRxRVRzWmZGeVhQYnQ0SEIzOW10WlFGM2hjTlkxbUowMFRuTmxweUppM3RzeVZlMmRCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1374.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9oSFdvSTlDVFRqMWJ0WVQ3MnlKb1kvMkFhY0J3OCt3dUxiemFGN1paQmtubXNXdW5CM3MybUVabHl5VDkzRWtGQ1VOd3RlSXh1SWZjUHdHRGVvZndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjMwMjg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1cXhycWpYejJyUjdYa1F6aXh5eTBpZTlDbkh6dnZJWkMyQmZpZlhid3BxSjV1SnNTUzhSS3pRU2FGSmJUMnlWTm94Nmp3b3lUSkRtZWlMeXl5Y0xDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1375.app.tar.gz"
     }
   }
 }
