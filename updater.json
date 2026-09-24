@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1370",
-  "notes": "Saying there's \"not enough\" of something now adds more of it: \"not enough saturation\", \"not enough contrast\" and \"not bright enough\" work, as do \"it needs more light\", \"not enough volume\" and \"it's not warm enough\". \"It needs more grain\" now adds film grain instead of removing it, and \"it's not dark enough\" darkens instead of brightening.",
-  "pub_date": "2026-09-24T01:36:13Z",
+  "version": "1.0.1371",
+  "notes": "Telling Crisp not to make a clip crisper, clearer, smoother, faster or louder now leaves it alone instead of doing exactly that. Asking for it less crisp or less smooth now explains honestly what Crisp can and can't take back out, \"make it noisy\" adds film grain, and \"make it faster, not slower\" speeds it up.",
+  "pub_date": "2026-09-24T02:43:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUEzdENXaXRjUzQzMjFCaFBFcEpjeFpNWVRxUWl0VzIwOHBiZEtRc3VUYWNJdFRJWG1BTWFjWEJ5TTFlU09WN1hQSUZNWDl1L3BMb1E3MnR1aXlvRVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjEzMjk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpnZEJTRm1KRTdHTGtaYTlJM2lNd2RBaU5NZG5SSDhQdUxmZDFWaWJuWUROVnQ0dXpkQjQ5Y1BKTXZVRTZEUFF2K09OendlRFlQNEx4cW9Sb3RmQnJCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1370.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVBbU5oM2Urd2tPY1htRXVPVEZaTFJsU01pbHNMVWF2S1RnNUw3a3BmZzNkdGlySDUyT2ZOMTlFYzRIb2RlMXdDbUY1Tml3NmlaS1lZVUx2ZUdMaXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjE3MzI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuNVBNOGFYWkV3d3NieFJUVlg5U1hVVlpzcmRKYnJDSU5MS2FrbFF6V21UOXpvVVJiSllSTDh0TGJXbkhaV2JURnJsVVA5OWkxUXBPd0dlRkxIWnZBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1371.app.tar.gz"
     }
   }
 }
