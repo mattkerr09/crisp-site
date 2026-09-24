@@ -72,7 +72,7 @@
     /* ON A PHONE THE PILL COVERED "Download for Mac" (375px, CEO audit 2026-09-24). Icon-only there,
        and hidden while the hero's buttons are on screen (see the observer below), so no CTA is
        ever under it. The button keeps its accessible name through aria-label. */
-    '@media (max-width:600px){.kcw-btn{width:48px;height:48px;padding:0;justify-content:center}.kcw-lbl{display:none}}',
+    '@media (max-width:640px){.kcw-btn{width:48px;height:48px;padding:0;justify-content:center}.kcw-lbl{display:none}}',
     '</style>',
     '<button class="kcw-btn" part="button" aria-haspopup="dialog" aria-label="Ask a question">',
     '  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">',
@@ -109,7 +109,7 @@
      The panel is never hidden by this: only the closed button, and only while it could cover. */
   var heroCta = document.querySelector(".hero .cta");
   if (heroCta && window.IntersectionObserver && window.matchMedia) {
-    var narrow = window.matchMedia("(max-width:600px)");
+    var narrow = window.matchMedia("(max-width:640px)");
     new IntersectionObserver(function (es) {
       var hide = narrow.matches && es[0].isIntersecting && panel.hidden;
       host.style.visibility = hide ? "hidden" : "";
