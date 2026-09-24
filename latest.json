@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1379",
-  "notes": "\u201cMake it for YouTube\u201d now keeps a landscape video widescreen instead of turning it vertical. Asking to mute, loop or brighten \u201cthe upscaled clip\u201d no longer starts a second upscale. \u201cRemove the silent parts\u201d no longer mutes the whole video; Crisp explains what it can do instead. \u201cMake it shorter\u201d, \u201cmake it moodier\u201d and \u201cmake it longer\u201d are understood.",
-  "pub_date": "2026-09-24T11:19:51Z",
+  "version": "1.0.1380",
+  "notes": "Crisp now answers \u201cupload it to YouTube\u201d or \u201cshare it\u201d honestly: it never sends your video anywhere, and it shows you where the finished file is. \u201cAdd text to it\u201d asks what the text should say instead of writing the words \u201cto it\u201d on your video. \u201cCut the first part\u201d, \u201ccut the middle\u201d and \u201cstretch it\u201d get clear answers too.",
+  "pub_date": "2026-09-24T12:19:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdvNU1Bek5rd2U2SzJVQkMrZ3MvMCt2MktFWlVZMGo5ZzhPYVcrRkdrU1BxWUppNFZwZ3RhOUo5bWNGVFVxUVh6OHBmaWorU0MyQWh1UWNsZHp3bkFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjQ4NDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6SDNudTdWM2UrYlZHaUNxUEpDVUp4ZEdIZFpLNlpRUjdvR3lHYk1YYXZnbEkxalQyRmNYdUNyOUVLNmxDNEJPaHZJZ2pkSEczaHhOV1VkcUxUNTBDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1379.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURsL0Y3dGMzbUhqQTBITW53Vmszc1JSaGxJbVRGcjlrc3NOL01yVWhEZUg5UGRjZmVLMTVjYjlDT1FBV1NHSjdBZjArMk1QYnB6QURZbHF3c2lVMVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjUxOTY5CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1QWFjZTY4dllSbVZlUHlQYmxhTTU3L2E2ZmxLaDBPNW85WDhyaEVIbU5ET2FUbVoraUZraW5keTFqZC9ReXZrSzY0MlI2VVRHTVAxZ2pFWTZ1K1hEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1380.app.tar.gz"
     }
   }
 }
