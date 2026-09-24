@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1375",
-  "notes": "Asking what Crisp costs, or whether it's free, now gets a straight answer about what's included and what the one-time unlock adds. Asking to remove Crisp's watermark by name now explains how, instead of adding a logo.",
-  "pub_date": "2026-09-24T06:17:09Z",
+  "version": "1.0.1376",
+  "notes": "Crisp now answers the first questions people ask: whether your video is uploaded (it never leaves your Mac), where your finished file is saved, how to export, and what it can do \u2014 with examples that work on the clip you have open.",
+  "pub_date": "2026-09-24T07:11:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9oSFdvSTlDVFRqMWJ0WVQ3MnlKb1kvMkFhY0J3OCt3dUxiemFGN1paQmtubXNXdW5CM3MybUVabHl5VDkzRWtGQ1VOd3RlSXh1SWZjUHdHRGVvZndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjMwMjg1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1cXhycWpYejJyUjdYa1F6aXh5eTBpZTlDbkh6dnZJWkMyQmZpZlhid3BxSjV1SnNTUzhSS3pRU2FGSmJUMnlWTm94Nmp3b3lUSkRtZWlMeXl5Y0xDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1375.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURqTnhyOVI5RjJ5L3d2eEJHWURET1ozR1pLQjIxcWlOY1RBajFRSmZQbmJXWk5iVXZCeWE4ZGkwaFU1T2FZdWxjdVF0NmhzY1dSRm9rV3AzSmJTUmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjMzNjI0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negovMWdpWW5wdjdWZFJKL2lIVW5kK09Rb0FkS1BRVnlQYVAvWWt4QlFpY0V4SFhReksxLzJYREJrNXNPcmduNHpUa045QldKSk56M1lUOGUwL2QyanZCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1376.app.tar.gz"
     }
   }
 }
