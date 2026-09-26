@@ -120,6 +120,14 @@
     by this one. And a referral code is a tracker in the plain sense of the word &mdash; it
     records where you came from so someone can be paid &mdash; so nothing on this site says we do
     not track you.</li>
+    <li><strong>The founding-offer bar, on most pages.</strong> Most pages show a bar with the
+    founding price; it is drawn by <code>/founding.js</code>, which this domain serves. If you close
+    the bar, the time you closed it is kept in your browser&rsquo;s local storage on this site so it
+    stays closed. That <strong>is not a cookie</strong> and is not sent anywhere. If you press
+    &ldquo;How many left?&rdquo;, your browser asks <code>kerr-lead-agent.kerrco.workers.dev</code>,
+    a small server of ours hosted on Cloudflare, how many founding places remain; like any web
+    request, that one carries your IP address. <strong>Nothing is sent unless you press the
+    button.</strong></li>
     <li><strong>Privacy-friendly site analytics.</strong> This page said
     &ldquo;no site analytics &hellip; there is no Plausible&rdquo; until 17 August 2026, and that
     was <strong>wrong</strong> &mdash; Plausible has been on all 114 pages of this site. It is
