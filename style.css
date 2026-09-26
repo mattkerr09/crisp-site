@@ -48,7 +48,9 @@
 }
 
 *{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+/* An in-page link lands where it did before the founding bar existed: the bar's height,
+   published by /founding.js, is added above it; with no bar this is 0. */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--kc-founding-h,0px);}
 body{
   margin:0;background:var(--black);color:var(--white);font-family:var(--sans);
   font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
@@ -71,8 +73,11 @@ a:hover{text-decoration:underline;text-underline-offset:3px;}
 .wrap{width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;}
 
 /* ---- nav (shared with the homepage's shape) ---- */
+/* `top` sits BELOW the founding bar, which is also sticky at the top of the page. At top:0 the
+   two stuck at the same place once scrolled and the bar covered the nav's Download button.
+   /founding.js publishes the bar's height as --kc-founding-h; with no bar it falls back to 0. */
 nav{
-  position:sticky;top:0;z-index:80;background:rgba(0,0,0,.6);
+  position:sticky;top:var(--kc-founding-h,0px);z-index:80;background:rgba(0,0,0,.6);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);
 }

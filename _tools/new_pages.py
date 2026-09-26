@@ -96,16 +96,43 @@ HEAD = """<!DOCTYPE html>
 <footer><div class="wrap">
   <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="{site}/">crispvideo.app</a></p>
 </div></footer>
-</body>
+{founding}</body>
 </html>
 """
+
+#: ⚠️ THE FOUNDING BAR IS PART OF THE TEMPLATE TOO, for the reason the analytics line above
+#: gives: a page this tool emits without it is a page nobody re-reads after creating. Matthew's
+#: order (CEO chat 2026-09-25, "make the discount banner go across all pages of every website")
+#: put the bar on every page except /thank-you/ (a buyer who has just paid) and the three
+#: canonical-merge pages.
+#:
+#: READ FROM THE HOME PAGE, NOT RETYPED HERE. The mount carries the code and both prices, and
+#: PRICE_USD exists above because a price retyped into a generator outlives every sweep of the
+#: pages. So the one mount on / is the source and this copies it byte for byte. A home page with
+#: no bar at all means the offer is off, and a new page gets none; a bar this pattern cannot read
+#: stops the run instead, because guessing is how a page gets born without it.
+_FOUNDING = re.compile(r'<div data-founding\b[^>]*></div>\n<script src="/founding\.js" defer></script>')
+
+
+def founding_block(root: Path = Path(__file__).resolve().parent.parent) -> str:
+    home = (root / "index.html").read_text(encoding="utf-8")
+    m = _FOUNDING.search(home)
+    if m:
+        return m.group(0) + "\n"
+    # Tags, not words: the home page's own comments mention /founding.js.
+    if re.search(r'<[^>]+\bdata-founding\b|<script[^>]+src="/founding\.js"', home):
+        raise SystemExit("index.html mounts the founding bar in a shape _FOUNDING cannot read — "
+                         "fix the pattern; do not emit pages without the bar")
+    return ""
 
 
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
-def build(page):
+def build(page, founding=None):
+    if founding is None:
+        founding = founding_block()
     faq_html = "\n".join(
         f"  <h3>{q}</h3>\n  <p>{a}</p>" for q, a in page["faq"])
     article_ld = ('{"@context":"https://schema.org","@type":"Article","headline":"%s",'
@@ -119,13 +146,14 @@ def build(page):
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,
-                       article_ld=article_ld, faq_ld=faq_ld)
+                       article_ld=article_ld, faq_ld=faq_ld, founding=founding)
 
 
 def main():
     from pages_learn import PAGES
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     apply = "--apply" in sys.argv
+    founding = founding_block(root)
     for page in PAGES:
         out = root / page["slug"] / "index.html"
         words = len(re.sub(r"<[^>]+>", " ", page["body"] + " ".join(a for _, a in page["faq"])).split())
@@ -133,7 +161,7 @@ def main():
         print(f"  {status:12s} {page['slug']:46s} {words:5d}w")
         if apply and not out.exists():
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(build(page), encoding="utf-8")
+            out.write_text(build(page, founding), encoding="utf-8")
     print("REPORT ONLY — pass --apply" if not apply else "APPLIED")
 
 
