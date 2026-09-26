@@ -1630,4 +1630,54 @@ PAGES = [
    "No. There is no upload, no account and no cloud step, which for recordings involving children and funerals is usually the deciding factor rather than a bonus."),
  ],
 },
+{
+ # LEVER 1 of ~/ops/search/RANK-AND-CLICK-2026-09-25.md: our own name. Search Console, 90 days:
+ # "crisp mac" 112 impressions at position 7.7 and no clicks; "crisp macos" and "crisp for mac"
+ # the same. Every sentence below is the site's own wording, lifted from the home page's hero,
+ # download section, price card and FAQ, or from /for/wedding-videographers/ for the OS line.
+ # The price is the {price} token, never typed; the structured data is the home page's own
+ # SoftwareApplication node ("ld": "software"). Deliberately NOT here: the 78 MB size and the
+ # version (drift.py and the pre-push hook read the home page only, so a copy would rot where
+ # nothing looks), and the Pay-in-4 line (the home page shows it only behind CRISP_BNPL_LIVE).
+ "slug": "download",
+ "section": "Get Crisp",
+ "crumb": "Download for Mac",
+ "title": "Download Crisp for Mac",
+ "h1": "Download Crisp for Mac",
+ "desc": "Download Crisp for Mac. Free to use, with a small “Made with Crisp” mark on exports; Pro is ${price} once. Needs macOS 26 (Tahoe) or later on Apple Silicon.",
+ "ld": "software",
+ "cta_href": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg",
+ "faq_heading": "Before you download",
+ "body": """
+  <p class="lede">Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports. Pro is the same app
+  with the mark removed &mdash; there is no second installer, no trial clock, and no account.</p>
+
+  <div class="cta">
+    <a class="btn" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a>
+    <p class="muted" style="margin-top:.8rem;margin-bottom:0">macOS 26 (Tahoe) or later &middot; Apple Silicon &middot; Notarized by Apple</p>
+  </div>
+
+  <h2>Crisp Pro &mdash; ${price}, once</h2>
+  <p><strong>What the ${price} unlocks.</strong> Video exports without the &ldquo;Made with Crisp&rdquo;
+  mark, the Max Quality generative restore lane, and batch processing. It is a licence for the
+  version line you buy &mdash; not a subscription. It does not expire, there is nothing to renew, and
+  it keeps working if you never come back.</p>
+  <p><a href="https://crispvideo.app/#buy">Buy Crisp Pro &mdash; ${price}</a></p>
+
+  <h2>If it isn't right</h2>
+  <p>Ask within 30 days of purchase and you get your money back, no reason needed, to the card you
+  paid with.</p>
+  <p><a href="https://crispvideo.app/legal/terms/">Terms</a> &middot;
+  <a href="https://crispvideo.app/legal/privacy/">Privacy</a> &middot;
+  <a href="https://crispvideo.app/legal/refunds/">30-day refunds</a></p>
+""",
+ "faq": [
+  ("What does it cost?",
+   "No subscription, ever. The Crisp editor and 4K upscaler are <strong>free</strong> (exports carry a small “Made with Crisp” mark). <strong>Crisp Pro is a one-time ${price}</strong> — it removes the watermark and unlocks Max Quality + batch. No monthly bill, no credits, no cloud."),
+  ("What does Crisp need to run?",
+   "macOS 26 (Tahoe) or later on Apple Silicon."),
+  ("Can I get my money back?",
+   "Ask within 30 days of purchase and you get your money back, no reason needed, to the card you paid with."),
+ ],
+},
 ]

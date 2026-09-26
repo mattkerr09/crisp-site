@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crisp Video — offline AI video enhancer &amp; 4K upscaler for Mac</title>
+<title>Crisp for Mac — offline AI video enhancer &amp; 4K upscaler</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <!-- The two faces the first screen actually needs. They are declared in the inline <style> below,
      so the browser would find them at parse time anyway; preloading starts the fetch a beat
@@ -18,14 +18,14 @@
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://crispvideo.app/">
-<meta property="og:title" content="Crisp Video — offline AI video enhancer &amp; 4K upscaler for Mac">
+<meta property="og:title" content="Crisp for Mac — offline AI video enhancer &amp; 4K upscaler">
 <meta property="og:site_name" content="Crisp Video">
 <meta property="og:description" content="Restore and upscale video to 4K on your Mac, fully offline. Timeline editor, auto-montage, generative restore. One-time $129, no subscription.">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Crisp Video — offline AI video enhancer &amp; 4K upscaler for Mac">
+<meta name="twitter:title" content="Crisp for Mac — offline AI video enhancer &amp; 4K upscaler">
 <meta name="twitter:description" content="Restore, denoise and upscale old video to 4K on your Mac, fully offline. Free with a small mark; Pro $129 once.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 
@@ -118,6 +118,12 @@ a{color:inherit;text-decoration:none;}
 .h-xl{font-family:var(--head);font-size:clamp(2.3rem,4.05vw,3.45rem);line-height:1.07;
   letter-spacing:-.015em;font-weight:500;margin:0;}
 .h-xl .setup{color:#6f7681;}
+/* THE H1 LEADS WITH THE NAME PEOPLE SEARCH FOR. Search Console, 90 days to 2026-09-23: "crisp mac"
+   had 112 impressions at position 7.7 and no clicks, and "crisp macos" and "crisp for mac" the same.
+   The promise underneath is unchanged; the name is set as the kicker the section heads already
+   use, so it reads as a label above the headline rather than a third line of it. */
+.h-xl .h1-brand{display:block;margin:0 0 .85rem;font-family:var(--sans);font-size:.8rem;
+  font-weight:700;line-height:1.4;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);}
 .h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.1;letter-spacing:-.012em;font-weight:600;margin:0 0 .9rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
 /* EMPHASIS THAT ACTUALLY EMPHASISES. There was no `strong` rule anywhere on this site, so every
@@ -808,7 +814,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
       Notarized by Apple
     </div>
-    <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your Mac.</span></h1>
+    <h1 class="h-xl"><span class="h1-brand">Crisp for Mac</span> <span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your Mac.</span></h1>
       </div>
       <div class="hero-say">
     <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free with a small mark; Pro <strong>$129 once</strong><span data-crisp-bnpl> (or four payments of $32.25, two weeks apart)</span>, <strong>$64.50</strong> for founding buyers.</p>
@@ -1675,6 +1681,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <a href="/learn/">Learn</a>
       <a href="/for/">By use</a>
       <a href="/best/">Best of</a>
+      <a href="/download/">Download</a>
       <a href="https://github.com/mattkerr09/crisp-site/releases">Releases</a>
       <!-- Terms, Privacy and Refunds are also stated beside the price, which is where they
            matter most. Repeating them here is for the visitor who arrives cold from an ad and
@@ -1717,7 +1724,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   "@context": "https://schema.org",
   "@graph": [
     {
-      "datePublished": "2026-06-29", "dateModified":"2026-09-24", "@type": "Organization",
+      "datePublished": "2026-06-29", "dateModified":"2026-09-26", "@type": "Organization",
       "@id": "https://crispvideo.app/#org",
       "name": "Crisp Video",
       "url": "https://crispvideo.app/",
@@ -1744,8 +1751,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     {
       "@type": "SoftwareApplication",
       "@id": "https://crispvideo.app/#app",
-      "name": "Crisp Video",
-      "alternateName": ["Crisp", "Crisp for Mac"],
+      "name": "Crisp",
+      "alternateName": ["Crisp Video", "Crisp for Mac"],
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "Video Editor and AI Upscaler",
       "operatingSystem": "macOS 26.0 or later",

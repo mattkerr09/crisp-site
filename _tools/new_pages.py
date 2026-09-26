@@ -21,6 +21,7 @@ feature Crisp does not have.
 five articles deliberately do NOT share one skeleton — that sameness across pages is the tell,
 not the prose.
 """
+import json
 import re
 import sys
 from pathlib import Path
@@ -51,6 +52,12 @@ PRICE_USD = 129
 #:
 #: If the pixel id ever changes, ops/bin/insert-meta-pixel.py rewrites the 115
 #: pages AND this line must move with them. Grep the id, do not trust one place.
+#:
+#: ⚠️ THE AFFILIATE SNIPPET LINE BELOW IT IS THE SAME LESSON, LEARNED LATE. /legal/privacy/
+#: says "Affiliate referrals, on every page" and names snippet.js, and all 124 shipped HTML
+#: files carry it — but this HEAD did not, so the next page this tool wrote would have made
+#: that sentence false exactly the way the pixel once did. Copied byte for byte from a
+#: shipped page (2026-09-26), markers included.
 HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +84,7 @@ HEAD = """<!DOCTYPE html>
 <script type="application/ld+json">{article_ld}</script>
 <script type="application/ld+json">{faq_ld}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end -->
 </head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -90,7 +98,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try, one-time ${price} to remove the watermark. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{cta_href}">Download Crisp for Mac</a> Free to try, one-time ${price} to remove the watermark. Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -126,26 +134,66 @@ def founding_block(root: Path = Path(__file__).resolve().parent.parent) -> str:
     return ""
 
 
+#: A page that IS the product rather than an article about it (/download/) carries the home
+#: page's SoftwareApplication node in place of an Article. READ FROM index.html, NOT RETYPED:
+#: that node is the one the pre-push hook reads and the one crawlers already hold for
+#: https://crispvideo.app/#app, so a second hand-written copy would be a second place for the
+#: name, the OS floor or the download link to drift. softwareVersion and fileSize are left out
+#: on purpose: the version gate and drift.py's size check both read the home page only, so a
+#: copy here would rot where nothing looks. The offer must agree with PRICE_USD or nothing is
+#: written.
+_SOFTWARE_KEYS = ("@id", "name", "alternateName", "applicationCategory", "applicationSubCategory",
+                  "operatingSystem", "processorRequirements", "url", "downloadUrl", "offers")
+
+
+def software_ld(root: Path = Path(__file__).resolve().parent.parent) -> str:
+    home = (root / "index.html").read_text(encoding="utf-8")
+    for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', home, re.S):
+        data = json.loads(raw)
+        for node in data.get("@graph", [data]):
+            if node.get("@type") == "SoftwareApplication":
+                price = node.get("offers", {}).get("price")
+                if price != str(PRICE_USD):
+                    raise SystemExit(f"index.html offers {price!r} and PRICE_USD is {PRICE_USD}; "
+                                     "settle the price before generating a page that quotes it")
+                out = {"@context": "https://schema.org", "@type": "SoftwareApplication"}
+                out.update((k, node[k]) for k in _SOFTWARE_KEYS if k in node)
+                return json.dumps(out, ensure_ascii=False)
+    raise SystemExit("index.html has no SoftwareApplication node to copy")
+
+
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
-def build(page, founding=None):
+def build(page, founding=None, root=None):
+    root = root or Path(__file__).resolve().parent.parent
     if founding is None:
-        founding = founding_block()
+        founding = founding_block(root)
+    # "{price}" is the one token a page's prose may carry, and it is how a page quotes Crisp's
+    # price without retyping it. Prose is literal HTML and never goes through str.format() (brace
+    # collisions), so this is a plain replace of that exact token and nothing else.
+    def priced(s):
+        return s.replace("{price}", str(PRICE_USD))
+    faq = [(q, priced(a)) for q, a in page["faq"]]
     faq_html = "\n".join(
-        f"  <h3>{q}</h3>\n  <p>{a}</p>" for q, a in page["faq"])
-    article_ld = ('{"@context":"https://schema.org","@type":"Article","headline":"%s",'
-                  '"description":"%s","author":{"@type":"Organization","name":"Crisp"},'
-                  '"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}'
-                  % (esc(page["h1"]), esc(page["desc"])))
+        f"  <h3>{q}</h3>\n  <p>{a}</p>" for q, a in faq)
+    if page.get("ld") == "software":
+        article_ld = software_ld(root)
+    else:
+        article_ld = ('{"@context":"https://schema.org","@type":"Article","headline":"%s",'
+                      '"description":"%s","author":{"@type":"Organization","name":"Crisp"},'
+                      '"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}'
+                      % (esc(page["h1"]), esc(priced(page["desc"]))))
     qs = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}'
-                  % (esc(q), esc(re.sub(r"<[^>]+>", "", a))) for q, a in page["faq"])
+                  % (esc(q), esc(re.sub(r"<[^>]+>", "", a))) for q, a in faq)
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}' % qs
-    return HEAD.format(site=SITE, price=PRICE_USD, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    return HEAD.format(site=SITE, price=PRICE_USD, slug=page["slug"], title=page["title"],
+                       desc=esc(priced(page["desc"])),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
-                       body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,
+                       body=priced(page["body"]), faq_heading=page["faq_heading"], faq_html=faq_html,
+                       cta_href=page.get("cta_href", SITE + "/#download"),
                        article_ld=article_ld, faq_ld=faq_ld, founding=founding)
 
 
@@ -161,7 +209,7 @@ def main():
         print(f"  {status:12s} {page['slug']:46s} {words:5d}w")
         if apply and not out.exists():
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(build(page, founding), encoding="utf-8")
+            out.write_text(build(page, founding, root), encoding="utf-8")
     print("REPORT ONLY — pass --apply" if not apply else "APPLIED")
 
 
