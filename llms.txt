@@ -1,0 +1,38 @@
+# Crisp
+
+> Crisp (also called Crisp Video, or Crisp for Mac) restores, denoises and
+> upscales old, low-res video to 4K offline on your Mac, with a real timeline
+> editor. Free with a small "Made with Crisp" mark on exports; Pro is $129
+> once, with no subscription. Your photos and videos are processed entirely on
+> your Mac: no uploads, no analytics, no telemetry.
+
+Crisp needs macOS 26 (Tahoe) or later on Apple Silicon. One licence covers up
+to 3 Macs at a time; deactivate one to move it to another. Refunds: 30 days,
+no reason needed.
+
+What it cannot do: nothing recovers the original detail, because it was never
+recorded. What AI upscaling adds is plausible detail, not the original's; the
+Learn pages explain what it can and cannot fix.
+
+## Get Crisp
+
+- [Download Crisp for Mac](https://crispvideo.app/download/): Free to use, with a small "Made with Crisp" mark on exports; Pro is $129 once. Needs macOS 26 (Tahoe) or later on Apple Silicon.
+- [Pricing](https://crispvideo.app/#pricing): Free, or Pro for $129 once.
+- [Refund policy](https://crispvideo.app/legal/refunds/): 30-day refunds, no reason needed. How to request one, and your statutory rights in the UK and EU.
+
+## Guides and comparisons
+
+- [How-to guides for video on a Mac](https://crispvideo.app/how-to/): Step-by-step guides for fixing, converting, cutting and finishing video on a Mac. Every one is done offline, on your own machine.
+- [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): Honest comparisons between Crisp and the editors, upscalers and command-line tools people usually weigh it against, including where the other one wins.
+- [The best Mac video tools, compared](https://crispvideo.app/best/): Roundups of the best video upscalers, compressors, converters, denoisers and stabilizers for Mac, including the free ones.
+- [Who uses Crisp](https://crispvideo.app/for/): How Crisp is used by wedding videographers, family archivists, YouTubers, teachers, churches and others, with the settings each one tends to need.
+- [Learn: video restoration explained](https://crispvideo.app/learn/): Plain-English explainers on the video terms that decide how your footage turns out, including what AI upscaling can and cannot fix.
+
+## Data
+
+- [The Video Upscaler Index](https://crispvideo.app/index/): Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full, including where Crisp comes off worse.
+
+## Privacy and terms
+
+- [Privacy Policy](https://crispvideo.app/legal/privacy/): Crisp processes your photos and videos entirely on your Mac. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.
+- [Terms of Use](https://crispvideo.app/legal/terms/): The terms governing your use of Crisp, including licence, warranties, and limitation of liability.
