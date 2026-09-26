@@ -45,6 +45,14 @@
  * to silence the check is the one way to make this worse than having no check.
  *
  * upstream-reviewed: 92ec58509867e51cd38a75551fb74daf5e38cecccf5291783bfc9875bf4bca87  (2026-09-15)
+ *
+ * ⚠️ 2026-09-26, AND WHY THE LINE ABOVE WAS NOT BUMPED. Upstream is now 5050305a979c (ops
+ * 2b57346). The whole diff since the reviewed revision (ops 107a99c) is two hunks, both read:
+ *   - the phone rule (@media max-width:480px drops the tag) — PORTED below, by order;
+ *   - the count now reads "first 25 buyers" until 10 or fewer are left (ops 3c55a91) — NOT
+ *     ported. Here the count only appears when a visitor clicks "How many left?", so whether a
+ *     question should be answered with the cap instead of the number is a decision, not a port.
+ * The marker stays on the old revision so drift.py keeps asking until someone makes it.
  */
 (function () {
   if (window.__kcFounding) return;
@@ -126,6 +134,11 @@
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .left,.dot{display:none}}',
     '@media(max-width:420px){.was{display:none}}',
+    /* PORTED from the shared widget (ops 2b57346, 2026-09-24, CEO): at 375px the ellipsis ate the
+       one number that matters, the price, because the tag and the code chip took the width. The
+       code chip already says FOUNDING (here FOUNDINGCRISP, longer still), so the tag goes on
+       phones and the price shows in full. */
+    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}}',
     '</style>',
     '<div class="bar" role="region" aria-label="Founding offer">',
     '  <span class="tag">Founding</span>',
@@ -148,8 +161,20 @@
          selectable — never claim a copy that did not happen. */
       .catch(function () { b.textContent = "Select it"; });
   });
+  /* ⚠️ THE SITE'S OWN HEADER IS STICKY AT top:0 TOO, and this bar sat on top of it. Measured on
+     / at 375 and 1280 (2026-09-26): once the page scrolled, both stuck at 0, this z-index won,
+     and the bar covered the top 42px of the 57px header, Download button included — a hit-test
+     at the button's centre returned this bar. So the bar publishes its own height as
+     --kc-founding-h, the header uses it as its `top` (style.css `nav`, index.html `.nav`), and
+     a dismissal takes it away again. A page without the bar gets 0 from the var() fallback. */
+  var de = document.documentElement;
+  function syncHeight() {
+    if (bar.isConnected) de.style.setProperty("--kc-founding-h", bar.getBoundingClientRect().height + "px");
+    else de.style.removeProperty("--kc-founding-h");
+  }
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
+    syncHeight();
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
@@ -197,6 +222,11 @@
     if (!document.body) return setTimeout(place, 50);
     document.body.insertBefore(bar, document.body.firstChild);
     if (mount) mount.remove();
+    syncHeight();
+    /* The bar's height moves with its breakpoints (42px on a phone, 43 on a desktop) and with
+       text zoom, so it is re-read whenever it changes rather than measured once. */
+    if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(bar);
+    else window.addEventListener("resize", syncHeight);
   }
   place();
 })();
