@@ -39,6 +39,7 @@ BASE = "https://crispvideo.app"
 
 HOWTOS = [
     "/how-to/restore-old-film-footage-mac/",
+    "/how-to/fix-pixelated-video-mac/",   # Bing 4,367 exact (90d, read 2026-09-28)
     "/how-to/upscale-video-on-mac/",
     "/how-to/fix-blurry-video-mac/",
     "/how-to/upscale-480p-to-1080p-mac/",
@@ -51,7 +52,7 @@ HOWTOS = [
 ]
 COMPARISONS = ["/vs/topaz-alternative-mac/", "/vs/switch-from-topaz-video-ai-to-crisp/", "/vs/unifab-alternative-mac/",
                "/vs/aiarty-video-enhancer-alternative-mac/"]
-LEARN = ["/learn/what-is-ai-video-upscaling/", "/learn/why-topaz-ended-perpetual-licences/",
+LEARN = ["/learn/is-topaz-video-ai-free/", "/learn/what-is-ai-video-upscaling/", "/learn/why-topaz-ended-perpetual-licences/",
          "/learn/why-vhs-tapes-degrade/", "/learn/what-is-interlacing/"]
 FOR = ["/for/family-archivists/", "/for/youtubers/", "/for/filmmakers/"]
 
