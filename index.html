@@ -391,7 +391,8 @@ p em, li em{color:#c3cad6;}
     height:auto;}
   .hero .ba video{height:auto;object-fit:fill;}
 }
-.trust span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
+/* direct children only: the price's split is a span too, and a flex gap would open between them */
+.trust > span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
 .trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
 
 /* product shot */
@@ -855,7 +856,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> 100% offline</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Nothing uploaded</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One-time $129<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> <span>One-time $129<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></span></span>
     </div>
     <!-- ⚠️ THIS SLOT USED TO HOLD A SCREENSHOT OF AN EMPTY APP — a timeline reading "Your
          timeline is empty", which is the least persuasive thing that could sit above the fold
