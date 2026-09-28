@@ -1,0 +1,3 @@
+# Python bytecode from importing _tools/ in the crisp tests — never site content (it would be served: .nojekyll)
+__pycache__/
+*.pyc
