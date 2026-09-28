@@ -1,0 +1,52 @@
+# Crisp Video
+
+> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac, then lets you edit it on a real timeline. Free with a small “Made with Crisp” mark; Pro is $129 once, not a subscription. macOS 26.0 or later, Apple Silicon (M1 or later).
+
+## Product and pricing
+- [Crisp Video](https://crispvideo.app/): what it does, real before/after clips, and the free download
+- [Pricing](https://crispvideo.app/#pricing): Free — the full editor and the standard enhancement lanes, exports carry a small “Made with Crisp” mark. Pro — $129 once, every 1.x update included; removes the mark and adds the generative Max lane and batch processing
+- [Founding price](https://crispvideo.app/#buy): $64.50 for the first 25 buyers (50% off) — at checkout choose “Have a discount code?” and enter FOUNDINGCRISP
+- [Pay in four](https://crispvideo.app/#buy): Klarna or Afterpay at checkout in the US — $129 as 4 payments of $32.25, two weeks apart (founding: 4 × $16.13)
+- [System requirements](https://crispvideo.app/#download): macOS 26.0 or later; Apple Silicon (M1 or later)
+- [Licence terms](https://crispvideo.app/legal/terms/): one Pro licence runs on up to 3 Macs at a time
+- [Refunds](https://crispvideo.app/legal/refunds/): email within 30 days of purchase for a refund, no reason needed
+- [Download for Mac](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg): the current release, 1.0.1381
+- [FAQ](https://crispvideo.app/#faq): memory, speed, the Max lane, privacy, licensing
+
+## Comparisons
+- [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): every comparison, with sources and dates
+- [The best Topaz alternative for Mac (2026) — offline, one-time, and it edits too](https://crispvideo.app/vs/topaz-alternative-mac/): $129 once, or four payments of $32.25 — and Crisp Video is yours, the offline own-it Topaz alternative for Mac: AI upscaling & restore that runs 100% on-device, plus a full auto-editor Topaz doesn't have.
+- [Switching from Topaz Video AI to Crisp (2026) — $129 once vs $299/year](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; the app is now called Topaz Video and costs $299/yr.
+- [UniFab alternative for Mac — $129 once vs $319 (2026)](https://crispvideo.app/vs/unifab-alternative-mac/): UniFab bundles 16 AI tools for $319.99 lifetime and is built around Windows.
+- [Aiarty Video Enhancer vs Crisp on Mac (2026) — $165 vs $129](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Crisp is $129 once.
+
+## Learn
+- [Learn: video restoration explained](https://crispvideo.app/learn/): how video restoration and upscaling actually work
+- [AI video upscaling redraws detail a resize can't, and it's a guess every time](https://crispvideo.app/learn/what-is-ai-video-upscaling/): Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail; a heavier AI model restored up to 96%, by drawing it.
+- [Why Topaz ended perpetual licences (and what it costs now)](https://crispvideo.app/learn/why-topaz-ended-perpetual-licences/): Topaz Labs stopped selling perpetual licences on 3 October 2025.
+- [Why VHS tapes degrade, and what can still be recovered](https://crispvideo.app/learn/why-vhs-tapes-degrade/): Magnetic tape loses signal whether you play it or not.
+- [What is interlacing, and why does old video have comb teeth?](https://crispvideo.app/learn/what-is-interlacing/): Those horizontal comb teeth on moving objects in old footage are interlacing.
+
+## How-to guides
+- [How-to guides for video on a Mac](https://crispvideo.app/how-to/): every guide, by task
+- [How to restore old film footage on a Mac (2026) — remove dust and flicker, offline](https://crispvideo.app/how-to/restore-old-film-footage-mac/): Clean up an old film or video transfer on a Mac — remove single-frame dust and blotches, steady the brightness flicker, and upscale.
+- [How to upscale video on a Mac (2026) — free, offline, no cloud](https://crispvideo.app/how-to/upscale-video-on-mac/): A step-by-step guide to upscaling video to 4K on a Mac — 100% offline, no subscription, no account.
+- [How to fix blurry video on a Mac (2026) — what works and what can't](https://crispvideo.app/how-to/fix-blurry-video-mac/): Blurry video has four different causes and only some are fixable.
+- [How to upscale 480p to 1080p on a Mac (2026)](https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/): 480p to 1080p is a realistic 2.25x jump that usually looks genuinely better.
+- [How to upscale a finished edit to 4K on a Mac (2026) — offline, one export](https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/): Edit your video on a timeline and upscale the whole finished cut to 4K in one export with Crisp — Enhance or generative SeedVR2 Max, 100% offline.
+- [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batching is mostly about not discovering a mistake 200 files in.
+- [How to stabilize a shaky video on a Mac (2026) — steady handheld footage, free](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky, handheld video on a Mac — Crisp tracks the motion and counter-shifts each frame to steady it, 100% offline.
+- [Removing wind noise from video on a Mac: the rumble drops 13 dB, the voice stays](https://crispvideo.app/how-to/remove-wind-noise-from-video-mac/): Measured on Crisp's Wind mode: the low rumble that is 85% of wind noise falls 12.9 dB while the voice moves 0.2 dB.
+- [How to compress a video on a Mac (2026) — free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload — one tap, 100% offline, nothing uploaded.
+- [How to convert MOV to MP4 on a Mac (2026) — free, offline, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert a MOV (or AVI/MKV/WebM) to MP4 on a Mac in one tap, 100% offline — no upload, no subscription.
+
+## Who it is for
+- [Who uses Crisp — by trade and purpose](https://crispvideo.app/for/): by kind of work
+- [Restoring old home videos on a Mac (2026) — VHS, camcorder, 8mm](https://crispvideo.app/for/family-archivists/): How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing, and why your footage should never be uploaded.
+- [Upscaling old YouTube uploads to 4K on a Mac (2026)](https://crispvideo.app/for/youtubers/): Your back catalogue is 1080p and looks soft beside 4K competitors.
+- [Crisp for independent filmmakers on a Mac](https://crispvideo.app/for/filmmakers/): A finishing and repair tool that sits beside your NLE rather than replacing it.
+
+## Legal
+- [Terms of Use](https://crispvideo.app/legal/terms/): The terms governing your use of Crisp, including licence, warranties, and limitation of liability.
+- [Privacy Policy](https://crispvideo.app/legal/privacy/): Crisp processes your photos and videos entirely on your Mac.
+- [Refund Policy](https://crispvideo.app/legal/refunds/): 30-day refunds, no reason needed.

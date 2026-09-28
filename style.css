@@ -301,3 +301,9 @@ article > *{position:relative;z-index:1;}
 /* The four-payment price beside a price (Matthew, 2026-09-28): it may wrap to the next line on a
    phone, but as one unit — never "or 4" on one line and "× $32.25" on the next. */
 .split{white-space:nowrap;}
+
+/* More from Kerr & Company — every page, every site (CEO order 2026-09-26) */
+.kco{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--hair);font-size:.84rem;color:var(--grey-dim);}
+.kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
+.kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
+.kco-list a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}

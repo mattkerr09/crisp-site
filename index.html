@@ -5,6 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Crisp Video — offline AI video enhancer &amp; 4K upscaler for Mac</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <!-- The two faces the first screen actually needs. They are declared in the inline <style> below,
@@ -666,6 +667,12 @@ details p{margin:.9rem 0 0;color:var(--grey);font-size:.94rem;}
 .final .lede{max-width:50ch;margin:1.2rem auto 2.4rem;}
 
 footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);font-size:.88rem;}
+/* More from Kerr & Company — every page, every site */
+.kco{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--hair);font-size:.84rem;color:var(--grey-dim);}
+.kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
+.kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
+.kco-list a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}
+
 .foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;}
 .foot a{color:var(--grey);}
 .foot a:hover{color:var(--white);}
@@ -1693,28 +1700,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <a href="mailto:support@crispvideo.app">support@crispvideo.app</a>
     </div>
   </div>
-  <!-- Cross-sell, placed in the footer rather than the buying flow on purpose.
-       crispvideo.app mentioned Crisp 90 times and nothing else in the portfolio;
-       docketseo.app had the same problem, while adplaybook.app already links all
-       three siblings. These were the two highest-intent pages and the two dead
-       ends.
-
-       Outlier leads because it is the only honest match: a Crisp buyer has
-       already decided they want work done on their own machine with nothing
-       uploaded, and that is Outlier's entire pitch. The other two are named
-       plainly and NOT sold — a video creator has no use for an SEO crawler, and
-       pretending otherwise is how a footer becomes an advert. -->
+  <!-- "More from Kerr & Company" — the same block, same wording, on every page of every Kerr & Company site
+       (CEO order 2026-09-26, Matthew's AI-search visibility pass). It replaced this page's longer
+       "Also built by the same person" cross-sell so the homepage does not carry two. Plain followed links.
+       _tools/sitewide_chrome.py applies it; tests/test_every_page_carries_the_sitewide_chrome.py gates it. -->
   <div class="wrap foot foot-sibling">
-    <div>
-      <strong>Also built by the same person.</strong>
-      If you bought Crisp because it runs on your Mac and uploads nothing,
-      <a href="https://outlier.host/">Outlier</a> is the same idea for AI —
-      local models, no account, no usage caps.
-      There are two others, and they are for different jobs rather than the same one:
-      <a href="https://docketseo.app/">Docket</a> audits a site's SEO, and
-      <a href="https://adplaybook.app/">AdPlaybook</a> writes ad campaigns and
-      traces every claim back to a source.
-    </div>
+    <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li></ul></div>
   </div>
 </footer>
 
