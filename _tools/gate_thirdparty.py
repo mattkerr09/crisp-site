@@ -146,6 +146,17 @@ CONDITIONAL = {
                     "for visitors who arrived on an affiliate ?ref= link, which "
                     "is what /legal/privacy/ discloses",
                     "if(ref)"),
+    # THE AMOUNT A BUYER PAID (2026-09-28). The thank-you page asks Kerr & Company's own hub what the
+    # payment it just returned from actually cost, so Meta and Plausible count $64.50 for a founding sale
+    # rather than a flat $129. Read aloud: "After you buy, this page asks our server how much that payment
+    # was, using only its payment id, so the sale is counted at the price you paid. Nothing about you is
+    # sent or returned." Only inside the succeeded-payment branch — the marker is that guard.
+    "kerr-affiliate-hub.kerrco.workers.dev":
+                   ("thank-you/index.html",
+                    "the thank-you page's /paid lookup — the amount of the payment it just returned from, "
+                    "asked by payment id only, inside the succeeded-payment branch; nothing about the buyer "
+                    "is sent or returned",
+                    "if (status === 'succeeded' && pid && typeof fetch === 'function')"),
     "kerr-subscribe.kerrco.workers.dev":
                    (("index.html", "notify.js"),
                     "the subscribe form's POST, fired only inside a submit handler — a "
@@ -302,7 +313,9 @@ def main() -> int:
             _spec = CONDITIONAL.get(h)
             _files = () if _spec is None else (
                 (_spec[0],) if isinstance(_spec[0], str) else tuple(_spec[0]))
-            if _spec is not None and f.name in _files:
+            # A spec may name a bare filename or a SITE-RELATIVE PATH (thank-you/index.html): a basename alone
+            # is ambiguous for pages, which are all index.html, and must not reach the homepage.
+            if _spec is not None and (f.name in _files or f.relative_to(ROOT).as_posix() in _files):
                 # The marker must be PRESENT in this file, or the exemption does not apply.
                 # Without it, moving the same call out of its guard keeps the pass.
                 # ⚠️ A MARKER PER FILE, not per host. Two files can both hold a

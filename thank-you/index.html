@@ -163,16 +163,41 @@
   // 50% off still reports 129.00, because Dodo's redirect carries license_key, payment_id,
   // status and email — no amount. Not fixable from this page; it needs the server side that
   // eventID is here to prepare for.
-  if (status === 'succeeded' && typeof fbq === 'function') {
-    var pid = (ret.payment_id || '').trim();
+  // ⚠️ THE AMOUNT ACTUALLY PAID, NOT A FLAT $129 (CEO revenue pass, 2026-09-28). Dodo's redirect carries no
+  // amount, so a founding purchase at $64.50 used to report 129.00. Our own hub now answers, for a succeeded
+  // payment of the last 72 hours, {"amount","currency","app"} and NOTHING about the buyer — asked with the
+  // payment id only, and only here, after a succeeded payment. A 404, an error or no answer in 4 s keeps
+  // the list price; either way Purchase fires ONCE (a late answer cannot send a second one).
+  window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
+  var pid = (ret.payment_id || '').trim();
+  var fired = false;
+  function purchase(value) {
+    if (fired) return;
+    fired = true;
     var props = {
-      value: 129.00,
+      value: value,
       currency: 'USD',
       content_name: 'Crisp Pro',
       content_type: 'product'
     };
-    if (pid) fbq('track', 'Purchase', props, { eventID: pid });
-    else fbq('track', 'Purchase', props);
+    if (typeof fbq === 'function') {
+      if (pid) fbq('track', 'Purchase', props, { eventID: pid });
+      else fbq('track', 'Purchase', props);
+    }
+    window.plausible('Purchase', { revenue: { currency: 'USD', amount: value } });
+  }
+  if (status === 'succeeded' && pid && typeof fetch === 'function') {
+    var late = setTimeout(function () { purchase(129.00); }, 4000);
+    fetch('https://kerr-affiliate-hub.kerrco.workers.dev/paid?payment_id=' + encodeURIComponent(pid))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        clearTimeout(late);
+        var amt = d && d.app === 'crisp' && d.currency === 'USD' ? Number(d.amount) : NaN;
+        purchase(amt > 0 && amt <= 129 ? amt : 129.00);
+      })
+      .catch(function () { clearTimeout(late); purchase(129.00); });
+  } else if (status === 'succeeded') {
+    purchase(129.00);
   }
 })();
 </script>

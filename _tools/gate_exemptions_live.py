@@ -49,6 +49,9 @@ _spec.loader.exec_module(g)
 
 
 def _find(name: str) -> Path | None:
+    # a site-relative path is exact (every page is an index.html); a bare name is the first match
+    if "/" in name:
+        return (ROOT / name) if (ROOT / name).is_file() else None
     return next((q for q in ROOT.rglob(name) if "_tools" not in q.parts), None)
 
 

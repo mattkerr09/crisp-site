@@ -102,6 +102,12 @@
     Its only purpose is to pay the person who referred you if you later buy Crisp Pro. The cookie
     holds a referral code, not an identity, and it is set by this website &mdash; never by the
     app.</li>
+    <li><strong>The amount you paid, on the thank-you page only.</strong> After a successful purchase,
+    the thank-you page asks our own server (<code>kerr-affiliate-hub.kerrco.workers.dev</code>) how much
+    that payment was, sending only the payment&rsquo;s id, so the sale is counted in our analytics at the
+    price you actually paid rather than the list price. Nothing about you is sent or returned — the answer is
+    the amount, the currency and the product — and the licence key and email on the address you were
+    returned to are removed from it before any analytics script loads.</li>
     <li><strong>Affiliate referrals, on every page.</strong> If you arrive from an affiliate or
     partner link, the link&rsquo;s referral code is kept in your browser&rsquo;s local storage on
     this site (key <code>kc_aff</code>) for <strong>30 days</strong> and is attached to the
