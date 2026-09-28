@@ -1,9 +1,16 @@
-"""Site-wide chrome every page carries: Bing's site verification tag and the "More from Kerr & Company" footer.
+"""Site-wide chrome every page carries: Bing's site verification tag, the "More from Kerr & Company" footer, and
+the founding-offer bar.
 
 CEO order, 2026-09-26 (on Matthew's "AI-search visibility fixes, all site-side"):
   · <meta name="msvalidate.01" …> in EVERY page head — the Kerr & Company Bing account's code, the one that
     already verifies all 8 sites;
   · a footer block "More from Kerr & Company" on every page, plain followed links, wording exactly as ordered.
+
+CEO order, 2026-09-28 (Matthew: "make the discount banner go across all pages of every website, not just the
+home pages"): the founding bar on EVERY page — the homepage's own mount tag, copied verbatim so the offer is
+stated in one place — EXCEPT /thank-you/ (a buyer who has just paid must not be offered a discount) and pages
+that canonicalise to another URL (merge stubs). Experiment arms get it too: identical site-wide chrome on
+treatment and control does not bias the read.
 
 Idempotent: run it after adding or regenerating pages and it only adds what is missing. new_pages.py carries
 both in its template, and tests/test_every_page_carries_the_sitewide_chrome.py fails any page without them.
@@ -37,6 +44,25 @@ KCO = ('<div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company<
 HOME_SIBLING = re.compile(r'  <div class="wrap foot foot-sibling">\n.*?\n  </div>\n(?=</footer>)', re.S)
 
 
+def founding_tag() -> str:
+    """The homepage's founding mount + script, verbatim — the single place the offer's figures are written."""
+    home = (SITE / "index.html").read_text()
+    m = re.search(r'<div data-founding[^>]*></div>\n<script src="/founding\.js" defer></script>', home)
+    assert m, "homepage: the founding mount moved — update founding_tag()"
+    return m.group(0)
+
+
+def wants_founding(p: Path, s: str) -> bool:
+    if p == SITE / "index.html" or p.name != "index.html" or p.parent.name == "thank-you":
+        return False
+    try:
+        rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
+    except ValueError:          # a page outside the site tree (the gate's own fixture): judge it on its canonical alone
+        return "rel=\"canonical\"" not in s
+    m = re.search(r'<link rel="canonical" href="https://crispvideo\.app(/[^"]*)"', s)
+    return not (m and m.group(1) != rel)     # a merge stub points elsewhere: no offer on it
+
+
 def pages() -> list[Path]:
     return sorted(p for p in SITE.rglob("*.html") if ".git" not in p.parts and "_tools" not in p.parts)
 
@@ -60,6 +86,9 @@ def apply(p: Path) -> bool:
             assert s.count("</footer>") == 1, f"{p}: expected one </footer>"
             s, n = re.subn(r"</div>(\s*)</footer>", lambda m: "  " + KCO + "\n</div>" + m.group(1) + "</footer>", s)
             assert n == 1, f"{p}: footer does not end in </div></footer>"
+    if wants_founding(p, s) and "/founding.js" not in s:
+        assert s.count("</body>") == 1, f"{p}: expected one </body>"
+        s = s.replace("</body>", founding_tag() + "\n</body>")
     if s != o:
         p.write_text(s)
         return True
@@ -74,6 +103,10 @@ def missing(p: Path) -> list[str]:
         out.append("msvalidate")
     if has_footer(s) and s.count("data-kco") != 1:
         out.append("kco footer")
+    if wants_founding(p, s) and s.count(founding_tag()) != 1:
+        out.append("founding bar")
+    if not wants_founding(p, s) and p != SITE / "index.html" and "/founding.js" in s:
+        out.append("founding bar where it must not be")
     return out
 
 

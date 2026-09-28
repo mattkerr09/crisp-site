@@ -136,6 +136,10 @@ def main():
         if apply and not out.exists():
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(build(page), encoding="utf-8")
+            # the site-wide chrome that is written in ONE place (the founding bar is the homepage's own mount,
+            # copied): a new page gets exactly what every other page carries
+            import sitewide_chrome
+            sitewide_chrome.apply(out.resolve())
     print("REPORT ONLY — pass --apply" if not apply else "APPLIED")
 
 

@@ -93,7 +93,7 @@
 
   <h2>A note on long and 4K clips — honest limits</h2>
   <p>Reversing isn't like a trim or a crop that streams through the file. To play a clip backwards, every decoded frame has to be held in memory at once, so the real cost is total pixels, resolution × frame rate × length, not just how many seconds long it is. A four-minute 4K clip is short in seconds but enormous in buffered frames.</p>
-  <p>So Crisp puts a real number on it rather than a vague one. The budget is <strong>about 10&nbsp;GiB of buffered frames</strong>, and the arithmetic is width&nbsp;×&nbsp;height&nbsp;×&nbsp;1.5&nbsp;bytes&nbsp;×&nbsp;frames&nbsp;per&nbsp;second&nbsp;×&nbsp;seconds — doubled for a boomerang, which holds the forward and the backward halves at once. At 30&nbsp;fps that works out to:</p>
+  <p>So Crisp puts a real number on it rather than a vague one. The budget is <strong>about 10&nbsp;GiB of buffered frames</strong>, and the arithmetic is width × height × 1.5&nbsp;bytes × frames&nbsp;per&nbsp;second × seconds — doubled for a boomerang, which holds the forward and the backward halves at once. At 30&nbsp;fps that works out to:</p>
 
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th>Source at 30&nbsp;fps</th><th>Longest reverse</th><th>Longest boomerang</th></tr></thead>
@@ -169,5 +169,7 @@
   <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
   <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li></ul></div>
 </div></footer>
+<div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
+<script src="/founding.js" defer></script>
 </body>
 </html>

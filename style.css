@@ -307,3 +307,10 @@ article > *{position:relative;z-index:1;}
 .kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
 .kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
 .kco-list a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}
+
+/* A hostname or path in <code> is one unbreakable word: "connect.facebook.net/en_US/fbevents.js" made
+   /legal/privacy/ 433px wide on a 375px phone (the whole page zoomed out). Let it break anywhere. */
+code{overflow-wrap:anywhere;}
+/* ...and a command line in <pre> keeps its layout but scrolls inside its own box: /index/, the deinterlace and
+   reverse how-tos were 471-717px wide on a 375px phone (the whole page zoomed out). */
+pre{max-width:100%;overflow-x:auto;}
