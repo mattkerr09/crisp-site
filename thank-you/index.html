@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* ⛔ SCRUB THE URL BEFORE ANY TRACKER CAN READ IT (2026-09-28, CEO revenue audit #2, URGENT).
+   Dodo redirects a buyer here with license_key, email, payment_id and status on the URL, and every
+   tracker below reads the page URL as it loads: Meta's PageView sent all four as `dl=` (reproduced
+   locally with test values before this fix), and Plausible records the path and query. So this runs
+   FIRST — before Plausible, the Meta pixel and the affiliate snippet — keeps the four in memory for
+   the page script at the foot, and rewrites the address bar without them. Nothing is stored. */
+(function () {
+  try {
+    var params = new URLSearchParams(location.search), keep = {}, any = false;
+    ['license_key', 'email', 'payment_id', 'status'].forEach(function (k) {
+      if (params.has(k)) { keep[k] = params.get(k); params.delete(k); any = true; }
+    });
+    window.__crispReturn = keep;
+    if (any) {
+      var rest = params.toString();
+      history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+    }
+  } catch (e) { window.__crispReturn = {}; }
+})();
+</script>
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Thanks — your Crisp Pro key is on its way</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -96,9 +117,10 @@
      page would otherwise render whatever markup somebody put in that parameter. -->
 <script>
 (function () {
-  var q = new URLSearchParams(location.search);
-  var status = (q.get('status') || '').toLowerCase();
-  var key = (q.get('license_key') || '').trim();
+  // Read from the copy the head scrub kept — the URL no longer carries them (see the top of <head>).
+  var ret = window.__crispReturn || {};
+  var status = (ret.status || '').toLowerCase();
+  var key = (ret.license_key || '').trim();
 
   // ⚠️ DODO REDIRECTS HERE FOR FAILED PAYMENTS TOO, AND THIS PAGE SAYS "PAYMENT CONFIRMED".
   //    Telling somebody their payment succeeded when it did not is the worst sentence on the
@@ -142,7 +164,7 @@
   // status and email — no amount. Not fixable from this page; it needs the server side that
   // eventID is here to prepare for.
   if (status === 'succeeded' && typeof fbq === 'function') {
-    var pid = (q.get('payment_id') || '').trim();
+    var pid = (ret.payment_id || '').trim();
     var props = {
       value: 129.00,
       currency: 'USD',
