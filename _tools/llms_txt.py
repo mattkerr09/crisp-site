@@ -88,7 +88,7 @@ def facts() -> dict:
         "macs": int(one(r"up to (\d+) Macs at a time", read("/legal/terms/"), "Macs per licence")),
         "refund_days": int(one(r"within (\d+) days of purchase", read("/legal/refunds/"), "refund window")),
         "version": json.loads((SITE / "latest.json").read_text())["version"],
-        "dmg": one(r'data-track="hero" href="([^"]+Crisp\.dmg)"', home, "the download link"),
+        "dmg": dmg_target(one(r'data-track="hero" href="([^"]+Crisp\.dmg)"', home, "the download link")),
         "updates": one(r"(every \d+\.x update included)", home, "the update promise"),
     }
     if f["was"] != price:
@@ -98,6 +98,23 @@ def facts() -> dict:
         f["bnpl_providers"] = "Klarna or Afterpay" if "Klarna or Afterpay" in note else one(r"with (\w+ or \w+)", note, "providers")
         f["bnpl_where"] = "in the US" if "in the US" in note else ""
     return f
+
+
+#: The hub's counting download route (CEO, 2026-09-28): counts people, not robots, stores no IP or user agent,
+#: then 302s to the file. It accepts crisp-site release URLs only; `to=` stays LAST and UNENCODED so the href
+#: still ends in Crisp.dmg — track.js's Plausible "Download" event and verify_ship.sh both key on that.
+DL_BASE = "https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp"
+DMG = "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg"
+
+
+def dmg_target(href: str) -> str:
+    """The file a download link serves: the href itself, or a hub link's `to=`."""
+    m = re.search(r"[?&]to=(https://[^&]+Crisp\.dmg)$", href)
+    return m.group(1) if m else href
+
+
+def dl_url(src: str) -> str:
+    return f"{DL_BASE}?src={src}&to={DMG}"
 
 
 def quarter(d: Decimal) -> Decimal:

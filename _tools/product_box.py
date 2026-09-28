@@ -50,8 +50,9 @@ def arms() -> set[str]:
     return {m.group(1) for m in re.finditer(r"^crispvideo\.app \| (/\S+/) \|", ARMS_FILE.read_text(), re.M)}
 
 
-def box(where: str) -> str:
+def box(where: str, page: str = "") -> str:
     f = llms_txt.facts()
+    src = (page.strip("/").replace("/", "-") + "-" if page.strip("/") else "") + f"pbox-{where}"
     p, now = f["price"], f["now"]
     q = llms_txt.quarter
     m = llms_txt.money
@@ -62,11 +63,15 @@ def box(where: str) -> str:
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers — '
             f'enter <strong>{f["code"]}</strong> at checkout.</p>'
-            f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{f["dmg"]}">Download free for Mac</a> '
+            f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}">Download free for Mac</a> '
             f'<a class="btn btn-ghost" data-track="pbox-{where}-pro" href="/#buy">See Pro pricing</a></p>'
             f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
+
+
+def page_of(p: Path) -> str:
+    return "/" + p.parent.relative_to(SITE).as_posix() + "/"
 
 
 def targets() -> list[Path]:
@@ -92,27 +97,27 @@ def apply(p: Path) -> bool:
     orig = s = p.read_text()
     if "data-pbox=" in s:
         # regenerate IN PLACE — a re-run must not move a box or leave its indent behind
-        s = BOX.sub(lambda m: box(m.group(1)), s)
+        s = BOX.sub(lambda m: box(m.group(1), page_of(p)), s)
     else:
         if wants_top(p):
             m = re.search(r'<div class="quick">.*?</div>\n', s, re.S)
             if m:
-                s = s[:m.end()] + "      " + box("top") + s[m.end():]
+                s = s[:m.end()] + "      " + box("top", page_of(p)) + s[m.end():]
             else:
                 art = s.find("<article")
                 h2 = s.find("<h2", art if art >= 0 else 0)
                 assert h2 > 0, f"{p}: no Quick answer and no <h2> to place the top box before"
-                s = s[:h2] + box("top") + "  " + s[h2:]
+                s = s[:h2] + box("top", page_of(p)) + "  " + s[h2:]
         m = OLD_END_CTA.search(s)
         if m:
-            s = s[:m.start()] + "  " + box("end") + s[m.end():]
+            s = s[:m.start()] + "  " + box("end", page_of(p)) + s[m.end():]
         else:
             rel = re.search(r'\n\s*<h2>Related', s)
             at = rel.start() + 1 if rel else s.rfind("</article>")
             if not rel and s[:at].endswith("</div>"):
                 at -= len("</div>")          # inside the content column (.wrap), not after it
             assert at > 0, f"{p}: nowhere to place the end box"
-            s = s[:at] + "  " + box("end") + s[at:]
+            s = s[:at] + "  " + box("end", page_of(p)) + s[at:]
     if s != orig:
         p.write_text(s)
         return True
@@ -127,7 +132,7 @@ def missing(p: Path) -> list[str]:
     if s.count('data-pbox="end"') != 1:
         out.append("end box")
     for b in BOX.finditer(s):
-        if b.group(0).rstrip("\n") != box(b.group(1)).rstrip("\n"):
+        if b.group(0).rstrip("\n") != box(b.group(1), page_of(p)).rstrip("\n"):
             out.append(f"stale {b.group(1)} box")
     return out
 
