@@ -163,6 +163,15 @@
   // 50% off still reports 129.00, because Dodo's redirect carries license_key, payment_id,
   // status and email — no amount. Not fixable from this page; it needs the server side that
   // eventID is here to prepare for.
+})();
+</script>
+<script>
+/* The Purchase event — its own block on purpose: it reads the amount paid from our hub and hands it to
+   analytics only. It touches NO part of the page (tests/test_the_site_shows_nothing_it_cannot_back.py
+   checks exactly that), so no figure a visitor sees ever comes from a runtime read. */
+(function () {
+  var ret = window.__crispReturn || {};
+  var status = (ret.status || '').toLowerCase();
   // ⚠️ THE AMOUNT ACTUALLY PAID, NOT A FLAT $129 (CEO revenue pass, 2026-09-28). Dodo's redirect carries no
   // amount, so a founding purchase at $64.50 used to report 129.00. Our own hub now answers, for a succeeded
   // payment of the last 72 hours, {"amount","currency","app"} and NOTHING about the buyer — asked with the
