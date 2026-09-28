@@ -314,3 +314,22 @@ code{overflow-wrap:anywhere;}
 /* ...and a command line in <pre> keeps its layout but scrolls inside its own box: /index/, the deinterlace and
    reverse how-tos were 471-717px wide on a 375px phone (the whole page zoomed out). */
 pre{max-width:100%;overflow-x:auto;}
+
+/* ---- the in-article product box (2026-09-28: every guide gets a real next step right after the answer and
+   again at the end — _tools/product_box.py writes it from the site's own facts) ---- */
+.pbox{margin:2rem 0;padding:1.3rem 1.4rem 1.15rem;border:1px solid var(--hair-lit);border-radius:var(--r);
+  background:radial-gradient(520px 240px at 12% -30%,rgba(90,200,250,.12),transparent 70%),linear-gradient(180deg,var(--card),var(--panel-2));}
+.pbox p{margin:0 0 .5rem;}
+.pbox-name{color:var(--grey);font-size:.95rem;}
+.pbox-name strong{color:var(--white);}
+.pbox-price{color:var(--grey);font-size:.95rem;line-height:1.25;}
+/* the price is the big number; its four-payment split sits on its baseline in the same typeface, weight 600,
+   about 45% of its size, full-strength colour (Matthew: the same-size version "looks bad") */
+.pbox-amt{font-family:var(--head);font-size:2rem;font-weight:600;color:var(--white);letter-spacing:-.02em;}
+.pbox-split{font-family:var(--head);font-size:.9rem;font-weight:600;color:var(--white);white-space:nowrap;}
+.pbox-found{font-size:.9rem;color:var(--grey);}
+.pbox-found strong{color:var(--white);}
+.pbox .pbox-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:.95rem 0 .75rem;}
+.btn-ghost{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.btn-ghost:hover{background:rgba(255,255,255,.07);box-shadow:none;}
+.pbox .pbox-fine{font-size:.8rem;color:var(--grey-dim);margin:0;}

@@ -44,6 +44,10 @@ KCO = ('<div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company<
 HOME_SIBLING = re.compile(r'  <div class="wrap foot foot-sibling">\n.*?\n  </div>\n(?=</footer>)', re.S)
 
 
+#: Plausible custom events ("Download" on every Crisp.dmg link, "Buy" on every checkout link) — first-party
+TRACK = '<script src="/track.js" defer></script>'
+
+
 def founding_tag() -> str:
     """The homepage's founding mount + script, verbatim — the single place the offer's figures are written."""
     home = (SITE / "index.html").read_text()
@@ -86,6 +90,9 @@ def apply(p: Path) -> bool:
             assert s.count("</footer>") == 1, f"{p}: expected one </footer>"
             s, n = re.subn(r"</div>(\s*)</footer>", lambda m: "  " + KCO + "\n</div>" + m.group(1) + "</footer>", s)
             assert n == 1, f"{p}: footer does not end in </div></footer>"
+    # the Download/Buy events, on every page with a body (moved out of the homepage 2026-09-28)
+    if "</body>" in s and TRACK not in s:
+        s = s.replace("</body>", TRACK + "\n</body>")
     if wants_founding(p, s) and "/founding.js" not in s:
         assert s.count("</body>") == 1, f"{p}: expected one </body>"
         s = s.replace("</body>", founding_tag() + "\n</body>")
@@ -103,6 +110,8 @@ def missing(p: Path) -> list[str]:
         out.append("msvalidate")
     if has_footer(s) and s.count("data-kco") != 1:
         out.append("kco footer")
+    if "</body>" in s and s.count(TRACK) != 1:
+        out.append("track.js")
     if wants_founding(p, s) and s.count(founding_tag()) != 1:
         out.append("founding bar")
     if not wants_founding(p, s) and p != SITE / "index.html" and "/founding.js" in s:

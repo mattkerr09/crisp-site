@@ -2118,32 +2118,7 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
 })();
 </script>
 <script src="/assistant.js" defer></script>
-<script>
-/* PLAUSIBLE CUSTOM EVENTS (2026-09-24). "Download" on every Crisp.dmg link and "Buy" on every
-   checkout link, each with the button that was pressed (data-track, else its text). The GOALS
-   are configured in Plausible's dashboard, which is Matthew's; this only sends the events.
-   A Buy click leaves the page, so it waits for Plausible's callback (600 ms at most) before
-   following the link — a modified click (new tab) is never intercepted. */
-window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
-document.addEventListener("click", function (e) {
-  var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
-  if (!a) return;
-  var href = a.getAttribute("href") || "";
-  var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
-  if (/\/Crisp\.dmg$/.test(href)) {
-    window.plausible("Download", { props: { button: name } });
-  } else if (/^https:\/\/checkout\.dodopayments\.com\//.test(href)) {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || e.button !== 0) {
-      window.plausible("Buy", { props: { button: name } });
-      return;
-    }
-    e.preventDefault();
-    var done = false, go = function () { if (!done) { done = true; window.location.href = href; } };
-    setTimeout(go, 600);
-    window.plausible("Buy", { props: { button: name }, callback: go });
-  }
-}, true);
-</script>
+<script src="/track.js" defer></script>
 
 <div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
 <script src="/founding.js" defer></script>

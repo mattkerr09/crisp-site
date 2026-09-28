@@ -140,6 +140,10 @@ def main():
             # copied): a new page gets exactly what every other page carries
             import sitewide_chrome
             sitewide_chrome.apply(out.resolve())
+            # ...and the in-article product box, after the answer and at the end
+            import product_box
+            if out.resolve() in product_box.targets():
+                product_box.apply(out.resolve())
     print("REPORT ONLY — pass --apply" if not apply else "APPLIED")
 
 
