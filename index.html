@@ -760,6 +760,27 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 /* Off-screen rather than display:none — a bot reading the DOM still sees a fillable field,
    which is the entire point, while nobody sighted or using a screen reader ever meets it. */
 .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+/* The older-Mac ask, beside each requirement line. Quiet on purpose: it is for the reader the line
+   above just turned away, and must not compete with the download button for everyone else.
+   16px in the field, because iOS Safari zooms the whole page into any input set smaller. */
+.oldmac{margin:.9rem 0 0;text-align:left;}
+.oldmac-ask{display:block;margin:0 0 .5rem;font-size:.88rem;line-height:1.5;color:var(--grey);}
+.oldmac-row{display:flex;gap:.5rem;flex-wrap:wrap;max-width:26rem;}
+.oldmac-row input{flex:1 1 12rem;min-width:0;min-height:40px;padding:.45rem .75rem;border-radius:10px;
+  border:1px solid var(--hair-lit);background:rgba(255,255,255,.04);color:var(--white);font-size:1rem;}
+.oldmac-row input:focus{outline:2px solid var(--cyan);outline-offset:1px;}
+.oldmac-row .btn{flex:none;min-height:40px;}
+.oldmac-msg{margin:.45rem 0 0;font-size:.84rem;line-height:1.45;}
+.oldmac-msg:empty{margin:0;}
+.oldmac-msg.is-ok{color:var(--grey);}
+.oldmac-msg.is-bad{color:#ffb4a2;}
+.oldmac-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.step .step-dl{margin-top:.9rem;}
+.step .step-req{margin-top:.7rem;font-size:.84rem;color:var(--grey-dim);}
+@media (max-width:860px){
+  .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
+}
 </style>
 <!-- Sled affiliate attribution, SERVED FIRST-PARTY on purpose.
      Sets a ta_ref cookie only when a visitor arrives with ?ref=<code>, so an
@@ -864,6 +885,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <p class="fine">Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports ·
       78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon<span data-crisp-bnpl><br>Pay in 4 with
       Klarna or Afterpay in the US: four payments two weeks apart, at no extra cost from us</span></p>
+    <!-- THE OLDER-MAC LIST (CEO, 2026-09-28). The line above turns away everyone below macOS 26;
+         this keeps them instead of losing them. Its own list (source crispvideo.app-older-mac), a
+         separate consent from the footer newsletter. CAPTURE ONLY: nothing is sent to it without
+         Matthew's own yes. The handler is the older-Mac block at the foot of this file. -->
+    <form class="oldmac" data-oldmac="hero" novalidate>
+      <label class="oldmac-ask" for="oldmac-hero-email">On an older Mac? Leave your email and we&rsquo;ll tell you the day Crisp runs on it.</label>
+      <div class="oldmac-row">
+        <input id="oldmac-hero-email" name="email" type="email" inputmode="email" autocomplete="email"
+          placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-ghost btn-sm">Tell me</button>
+      </div>
+      <div class="oldmac-hp" aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="oldmac-msg" role="status" aria-live="polite"></p>
+    </form>
       </div>
     </div>
     <div class="trust">
@@ -1523,9 +1558,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <div class="steps">
       <div class="step rv d1"><div class="n">1</div><h3>Download and use it free</h3>
-        <p>78&nbsp;MB, Apple Silicon, notarized by Apple. The full editor, 4K upscale and
-          montage, one file at a time. Video exports carry a small “Made with Crisp” mark.</p>
-        <p><a class="btn btn-ghost btn-sm" data-track="download-section" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-download-section&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
+        <p>The full editor, 4K upscale and montage, one file at a time. Video exports carry a
+          small “Made with Crisp” mark.</p>
+        <p class="step-dl"><a class="btn btn-ghost btn-sm" data-track="download-section" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-download-section&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
+        <p class="step-req">78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon · notarized by Apple</p>
+        <form class="oldmac" data-oldmac="download" novalidate>
+      <label class="oldmac-ask" for="oldmac-dl-email">On an older Mac? Leave your email and we&rsquo;ll tell you the day Crisp runs on it.</label>
+      <div class="oldmac-row">
+        <input id="oldmac-dl-email" name="email" type="email" inputmode="email" autocomplete="email"
+          placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-ghost btn-sm">Tell me</button>
+      </div>
+      <div class="oldmac-hp" aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="oldmac-msg" role="status" aria-live="polite"></p>
+    </form>
       </div>
       <div class="step rv d2"><div class="n">2</div><h3>Buy a licence key — $129</h3>
         <p>One payment in US dollars through Dodo Payments<span data-crisp-bnpl> &mdash; or four, two weeks apart, with Klarna or Afterpay in the US</span>. Your key is emailed to you by Dodo once
@@ -2113,6 +2159,44 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
       // Network failure: offline, DNS, blocked. Keep the form, say so, stay retryable.
       say('Could not reach us just now — check your connection and try again.', true);
       go.disabled = false;
+    });
+  });
+})();
+</script>
+<script>
+/* The older-Mac list — posts to our own worker on submit, never on load, the same way the footer form does.
+   ⚠️ ITS OWN LIST. source 'crispvideo.app-older-mac' keeps it separable from the footer newsletter and the
+   Windows list: someone who asked to hear the day Crisp runs on their Mac asked for that and nothing else.
+   ⛔ CAPTURE ONLY: nothing may be sent to this list without Matthew's own yes (CEO, 2026-09-28).
+   Same three failure modes as the footer form, all retryable, none claiming success. */
+(function () {
+  var forms = document.querySelectorAll('form[data-oldmac]');
+  if (!forms.length) return;
+  var ENDPOINT = 'https://kerr-subscribe.kerrco.workers.dev';
+  Array.prototype.forEach.call(forms, function (f) {
+    var input = f.querySelector('input[type="email"]'), go = f.querySelector('button'),
+        msg = f.querySelector('.oldmac-msg'), trap = f.querySelector('.oldmac-hp input');
+    function say(t, bad) { msg.textContent = t; msg.className = 'oldmac-msg' + (bad ? ' is-bad' : ' is-ok'); }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (input.value || '').trim();
+      if (!email || email.indexOf('@') < 1) { say('That address looks incomplete.', true); input.focus(); return; }
+      if (trap && trap.value) { say('Done.', false); return; }
+      go.disabled = true; say('Saving…', false);
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'crispvideo.app-older-mac' })
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (d) { return r.ok && !!d && d.ok === true; });
+      }).then(function (ok) {
+        if (!ok) { say('That did not save. Try again in a moment.', true); go.disabled = false; return; }
+        f.querySelector('.oldmac-row').hidden = true;
+        say('Done — we’ll tell you the day Crisp runs on your Mac, and nothing else.', false);
+      }).catch(function () {
+        say('Could not reach us just now — check your connection and try again.', true);
+        go.disabled = false;
+      });
     });
   });
 })();
