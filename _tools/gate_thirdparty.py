@@ -172,14 +172,15 @@ CONDITIONAL = {
     # kept printing a reason for behaviour that had been deleted, which is why
     # _tools/gate_exemptions_live.py now exists and why the file and its marker are only ever
     # added or removed TOGETHER. Never re-add a file here without a marker that actually matches.
+    # ⛔ AND founding.js LEFT IT FOR GOOD ON 2026-09-28: Matthew ordered every seat count off every
+    # site ("it still says 24/25, get that tf off"), so the counter and its one request are gone
+    # and the file makes no network call at all. File and marker left together, as above.
     "kerr-lead-agent.kerrco.workers.dev":
-                   (("assistant.js", "founding.js"),
-                    "both fired only inside a handler a visitor triggers — the assistant's "
-                    "question on submit, the founding counter on a click asking how many of "
-                    "Crisp's own 25 seats are left. Nothing on load, nothing at all for a "
-                    "visitor who opens neither. Both widgets are served first-party",
-                    {"assistant.js": 'form.addEventListener("submit"',
-                     "founding.js":  "countBtn.addEventListener('click'"}),
+                   (("assistant.js",),
+                    "fires only inside a handler a visitor triggers — the assistant's question "
+                    "on submit. Nothing on load, nothing at all for a visitor who never asks. "
+                    "The widget is served first-party",
+                    {"assistant.js": 'form.addEventListener("submit"'}),
 }
 
 FETCHING_REL = {"stylesheet", "preload", "prefetch", "preconnect", "dns-prefetch", "icon", "apple-touch-icon"}

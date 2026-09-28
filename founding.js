@@ -69,6 +69,12 @@
   var mount = document.querySelector("[data-founding]");
   var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
+  /* 2026-09-28, Matthew: the pay-in-four price goes RIGHT NEXT TO the price, in the same font —
+     "$64.50 · or 4 × $16.13". It rides inside .now so it cannot be styled apart from the price.
+     From the mount, like the prices: a site whose checkout does not offer pay-in-four simply omits
+     data-now-split (the instalment gates fail a page that keeps it while CRISP_BNPL_LIVE is false). */
+  var split = mount && mount.getAttribute("data-now-split");
+  var first = mount && mount.getAttribute("data-first");
   /* ⚠️ THE FALLBACK IS THE DANGEROUS HALF, NOT THE ATTRIBUTE. Until 2026-09-15 the mount
      carried NO data-code at all, so the bar printed the OLD SHARED CODE through this default
      and nobody had typed that code anywhere on the site. That shared code is being expired in
@@ -111,9 +117,6 @@
     '.txt{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
     '.was{text-decoration:line-through;opacity:.42;margin-right:.28rem}',
     '.now{font-weight:700;color:#F0B429}',
-    '.left{opacity:.62;white-space:nowrap;flex:none}',
-    '.ask{border:0;background:none;font:inherit;color:inherit;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px;opacity:.9}',
-    '.ask:hover{opacity:1}',
     '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
     '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
     '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
@@ -124,17 +127,23 @@
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
-    '  .left,.dot{display:none}}',
+    '  .dot{display:none}}',
     '@media(max-width:420px){.was{display:none}}',
+    /* The shared bar's phone rule (upstream 2b57346): the tag goes, the code tightens. And
+       because the price now carries its four-payment split, on a phone the line WRAPS rather
+       than ellipsising — a price cut off mid-figure is worse than a two-line bar. */
+    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
     '<div class="bar" role="region" aria-label="Founding offer">',
     '  <span class="tag">Founding</span>',
     '  <span class="dot"></span>',
     '  <span class="txt">50% off',
-        (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now + '</span>' : ''),
+        (first ? ' for the first ' + first + ' buyers' : ''),
+        (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now +
+                      (split ? ' · or 4 × ' + split : '') + '</span>' : ''),
     '  </span>',
     '  <span class="dot"></span>',
-    '  <span class="left" data-left><button class="ask" type="button">How many left?</button></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
@@ -150,53 +159,35 @@
   });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
+    publishHeight();
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
-  /* THE COUNT, BEHIND A CLICK. Held on 2026-09-15 and released the same day.
-   *
-   * ⚠️ WHY IT WAS HELD, AND WHY THE OBJECTION IS GONE. The count was removed because the
-   * worker returned ONE SHARED POOL — ?product=crisp, docket and outlier all answered the
-   * same {"left":22,"of":25} — so printing it here asserted a Crisp-specific cap that did
-   * not exist, while outlier.host promised "No seat cap". Matthew then decided each app gets
-   * its OWN 25 seats and its own code, and the worker now answers PER SITE:
-   *   ?site=crispvideo.app -> {"code":"FOUNDINGCRISP","left":24,"of":25,"claimed":1}
-   * That is Crisp's own number, so the reason for the hold no longer applies.
-   *
-   * ⛔ NOTHING ON LOAD. The visitor asks; the asking is the only thing that sends anything.
-   * gate_thirdparty.py enforces this by marker and will fail the push if this call ever moves
-   * out of the click handler.
-   *
-   * ⚠️ ?site= IS EXPLICIT ON PURPOSE. The worker can read the Origin header, but the BARE
-   * endpoint now answers {"error":"no founding offer for this site"} — so an omitted site is
-   * not a smaller number, it is no number at all. Being explicit makes that impossible.
-   *
-   * ⛔ AND THE NUMBER IS NEVER GUESSED. On a failed request, an unexpected shape, or the
-   * error payload above, the bar says it could not check rather than inventing a count.
-   */
-  var countBtn = root.querySelector(".ask");
-  countBtn.addEventListener('click', function () {
-    var slot = root.querySelector("[data-left]");
-    countBtn.disabled = true;
-    countBtn.textContent = "Checking\u2026";
-    fetch("https://kerr-lead-agent.kerrco.workers.dev/founding?site=crispvideo.app",
-          { method: "GET" })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (!d || typeof d.left !== "number") throw new Error("shape");
-        if (d.soldOut || d.left <= 0) { slot.textContent = "claimed"; return; }
-        slot.textContent = d.left + " of " + (d.of || 25) + " left";
-      })
-      .catch(function () { slot.textContent = "couldn\u2019t check"; });
-  });
+  /* ⛔ NO SEAT COUNT, EVER (Matthew, 2026-09-28: "it still says 24/25, get that tf off, and do this
+     for every site"). The count button and its call to the lead-agent worker's founding endpoint
+     are gone, and with them the only network request this file made — so it also left
+     gate_thirdparty.py's exemption table in the same change. The bar states the cap ("for the
+     first 25 buyers") and nothing else about seats. Do not bring back a count, a remaining
+     number or a "claimed" state without Matthew asking for it. */
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid
      HTML — the browser silently discards it and NOTHING THROWS. The widget
      reported no errors and simply was not there. */
+  /* ⚠️ THE BAR AND THE SITE'S STICKY NAV BOTH WANT top:0. They did from the start — the bar
+     covered the top of the nav once you scrolled — and on 2026-09-28 the four-payment price made the
+     bar wrap to two lines on a phone, where it then hid the whole nav, Download button included.
+     The bar publishes its height as --kc-bar-h and the nav sticks BELOW it (top:var(--kc-bar-h,0px)
+     in index.html and style.css). Re-measured on resize; back to 0 when dismissed. */
+  function publishHeight() {
+    try { document.documentElement.style.setProperty("--kc-bar-h", (bar.isConnected ? bar.offsetHeight : 0) + "px"); } catch (e) {}
+  }
   function place() {
     if (!document.body) return setTimeout(place, 50);
     document.body.insertBefore(bar, document.body.firstChild);
     if (mount) mount.remove();
+    publishHeight();
+    window.addEventListener("resize", publishHeight);
+    if (window.ResizeObserver) new ResizeObserver(publishHeight).observe(bar);
   }
   place();
 })();

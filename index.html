@@ -145,7 +145,7 @@ p em, li em{color:#c3cad6;}
 .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 1rem;}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:80;background:rgba(0,0,0,.6);
+.nav{position:sticky;top:var(--kc-bar-h,0px);z-index:80;background:rgba(0,0,0,.6);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);}
 .nav-in{display:flex;align-items:center;gap:2rem;height:56px;}
@@ -626,12 +626,17 @@ td.n{color:var(--grey-dim);}
 .tier.pro:hover{box-shadow:0 0 0 1px rgba(90,200,250,.2),0 46px 100px -44px rgba(90,200,250,.66);}
 .tier .name{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--grey-dim);}
 .tier.pro .name{color:var(--cyan);}
-.tier .price{font-size:3rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1;}
+/* 2.4rem, down from 3rem (2026-09-28): the Pro price now carries its four-payment split in the SAME
+   font, and "$129 once · or 4 × $32.25" at 3rem is 406px against a 347px card at 1280 — it wrapped. */
+.tier .price{font-size:2.4rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1.1;}
 .tier .price.grad-price{background:var(--grad);-webkit-background-clip:text;background-clip:text;
   color:transparent;width:fit-content;}
 /* The "once" after the price must NOT inherit the transparent fill, or it disappears. */
 .tier .price.grad-price small{-webkit-text-fill-color:var(--grey-dim);color:var(--grey-dim);}
 .tier .price small{font-size:.94rem;font-weight:500;color:var(--grey-dim);letter-spacing:0;}
+/* the four-payment price, in the price's own font (Matthew, 2026-09-28): it may wrap to its own
+   line on a narrow card or a phone, but never break inside "· or 4 × $32.25" */
+.split{white-space:nowrap;}
 .tier .blurb{color:var(--grey);font-size:.94rem;margin:0 0 1.5rem;}
 .tier ul{list-style:none;padding:0;margin:0 0 1.9rem;display:grid;gap:.65rem;}
 .tier li{display:flex;gap:.6rem;align-items:flex-start;font-size:.94rem;color:var(--grey);}
@@ -807,7 +812,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your Mac.</span></h1>
       </div>
       <div class="hero-say">
-    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free with a small mark; Pro <strong>$129 once</strong><span data-crisp-bnpl> (or four payments of $32.25, two weeks apart)</span>, <strong>$64.50</strong> for founding buyers.</p>
+    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free with a small mark; Pro <strong>$129 once<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></strong>, <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for founding buyers.</p>
     <div class="cta">
       <a class="btn btn-primary" data-track="hero" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
@@ -842,14 +847,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          about it at the end. This is the same sentence one step earlier, on the button they press
          first, so nobody downloads 78 MB to discover the term. -->
     <p class="fine">Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports ·
-      78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon</p>
+      78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon<span data-crisp-bnpl><br>Pay in 4 with
+      Klarna or Afterpay in the US: four payments two weeks apart, at no extra cost from us</span></p>
       </div>
     </div>
     <div class="trust">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> 100% offline</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Nothing uploaded</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One-time $129</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> One-time $129<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></span>
     </div>
     <!-- ⚠️ THIS SLOT USED TO HOLD A SCREENSHOT OF AN EMPTY APP — a timeline reading "Your
          timeline is empty", which is the least persuasive thing that could sit above the fold
@@ -1248,7 +1254,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="cmp-wrap"><table>
         <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc Converter AI</th></tr></thead>
         <tbody>
-          <tr><td>Price</td><td class="y">$129 one-time</td><td class="n">$299/yr — or $59/mo</td><td class="n">Subscription or licence</td></tr>
+          <tr><td>Price</td><td class="y">$129 one-time<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></td><td class="n">$299/yr — or $59/mo</td><td class="n">Subscription or licence</td></tr>
           <tr><td>Who makes it</td><td class="y">Kerr &amp; Company, independent</td><td>Adobe — it completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 24 Sep 2026)</td><td>Digiarty Software</td></tr>
           <!-- VideoProc's 5-year cost read "Recurring" and its keep-working cell read
                "Varies". Both were wrong, and both were wrong in our favour. VideoProc sells a
@@ -1323,7 +1329,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Aiarty Video Enhancer</th><th>AVCLabs Video Enhancer AI</th><th>HitPaw VikPea</th></tr></thead>
         <tbody>
           <tr><td>One-time price</td>
-              <td class="y">$129</td>
+              <td class="y"><span class="split">$129 · or 4 × $32.25</span></td>
               <td class="n">$235 list — $165 on offer</td>
               <td class="n">$299.90 list — $149.90 on offer</td>
               <td class="n">$437.99 list — $284.69 on offer</td></tr>
@@ -1422,9 +1428,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <a class="btn btn-ghost" data-track="pricing-free" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free</a>
       </div>
       <div class="tier pro rv d2">
-        <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small></div>
-        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
-        <p class="founding-note">Founding price: <strong>$64.50</strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
+        <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small><span class="split" data-crisp-bnpl> · or 4 × $32.25</span></div>
+        <p class="bnpl-note" data-crisp-bnpl>With Klarna or Afterpay in the US: <strong>$129 as 4 payments of $32.25</strong>, two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
+        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Watermark-free exports</li>
@@ -1441,7 +1447,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <div class="cost">
       <h3>What it costs to still be using it in five years</h3>
-      <p class="sub">Crisp is <strong>$129 once</strong>. Topaz Video is <strong>$299 a year, every
+      <p class="sub">Crisp is <strong><span class="split">$129 once · or 4 × $32.25</span></strong>. Topaz Video is <strong>$299 a year, every
         year</strong>, and since October 2025 new licences are subscription-only.</p>
 
       <div class="cost-row"><div class="yr">Year 1</div><div class="cost-bars">
@@ -1506,8 +1512,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           montage, one file at a time. Video exports carry a small “Made with Crisp” mark.</p>
         <p><a class="btn btn-ghost btn-sm" data-track="download-section" href="https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
       </div>
-      <div class="step rv d2"><div class="n">2</div><h3>Buy a licence key — $129</h3>
-        <p>One payment, in US dollars, through Dodo Payments. Your key is emailed to you by Dodo once
+      <div class="step rv d2"><div class="n">2</div><h3>Buy a licence key — <span class="split">$129 · or 4 × $32.25</span></h3>
+        <p>One payment in US dollars through Dodo Payments<span data-crisp-bnpl> &mdash; or four, two weeks apart, with Klarna or Afterpay in the US</span>. Your key is emailed to you by Dodo once
           the payment clears. Nothing else is shipped and nothing else is installed.</p>
       </div>
       <div class="step rv d3"><div class="n">3</div><h3>Paste it into Crisp</h3>
@@ -1518,7 +1524,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
 
     <div class="cost" id="buy">
-      <h3>Crisp Pro — $129, once</h3>
+      <h3>Crisp Pro — $129 once<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></h3>
       <p class="sub">Sold by Kerr &amp; Company LLC, Grand Rapids, Michigan, USA, through Dodo Payments,
         our merchant of record. Dodo takes the payment and handles sales tax and VAT; Crisp
         never sees or stores your card details.</p>
@@ -1546,14 +1552,14 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p><strong>If it isn't right.</strong> Ask within 30 days of purchase and you get your
         money back, no reason needed, to the card you paid with.</p>
 
-      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro — $129</a></p>
+      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F"><span>Buy Crisp Pro — $129<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></span></a></p>
         <!-- INSTALMENTS. Empty until CRISP_BNPL_LIVE is set at the foot of this file.
              Klarna and Afterpay sell Pay in 4: four payments TWO WEEKS apart, six weeks
              end to end — not a monthly plan. An earlier draft said "$32/month for 4
              months", which is a payment schedule no provider offers, printed beside a
              price. It never shipped. -->
-        <p class="bnpl-note" data-crisp-bnpl><strong>$129 once, or 4 payments of $32.25</strong> with Klarna or Afterpay &mdash; two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
-        <p class="founding-note">Founding price: <strong>$64.50</strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
+        <p class="bnpl-note" data-crisp-bnpl>With Klarna or Afterpay in the US: <strong>$129 as 4 payments of $32.25</strong>, two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
+        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
         <a href="/legal/privacy/">Privacy</a> ·
@@ -2140,7 +2146,7 @@ document.addEventListener("click", function (e) {
 }, true);
 </script>
 
-<div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" style="max-width:520px;margin:1.25rem auto 0"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
 <script src="/founding.js" defer></script>
 
 <div data-win-notify style="max-width:520px;margin:1.25rem auto 0"></div>

@@ -72,7 +72,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px;}
 
 /* ---- nav (shared with the homepage's shape) ---- */
 nav{
-  position:sticky;top:0;z-index:80;background:rgba(0,0,0,.6);
+  position:sticky;top:var(--kc-bar-h,0px);z-index:80;background:rgba(0,0,0,.6);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);
 }
@@ -297,3 +297,7 @@ article > *{position:relative;z-index:1;}
    .hero-say and has no .quick rule), so nothing in this file can ever reach the hero. Removed
    rather than shipped, on the same rule as _tools/gate_exemptions_live.py: a rule that describes
    nothing reads as a considered decision and pre-approves the case for the day it applies. */
+
+/* The four-payment price beside a price (Matthew, 2026-09-28): it may wrap to the next line on a
+   phone, but as one unit — never "or 4" on one line and "× $32.25" on the next. */
+.split{white-space:nowrap;}
