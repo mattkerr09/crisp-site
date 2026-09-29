@@ -29,7 +29,10 @@
 
   root.innerHTML = [
     '<style>',
-    ':host{all:initial;display:block}',
+    /* ⚠️ `all:initial` RESETS COLOUR TO BLACK, and this page is dark: the whole box read as near-black on
+       near-black (measured 2026-09-29 in WebKit at the foot of crispvideo.app). Inherit the page's own
+       text colour after the reset, so the widget reads on any theme it is mounted in. */
+    ':host{all:initial;display:block;color:inherit}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
     '.w{display:flex;flex-direction:column;gap:.6rem;padding:1.1rem 1.2rem;border-radius:14px;',
     '  border:1px solid rgba(128,128,128,.28);background:rgba(128,128,128,.06)}',
