@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1407",
-  "notes": "The title bar now shows the version you downloaded, 1.0 and the build number, the same one the website and the updater name, instead of \u201cv0.1.0\u201d.",
-  "pub_date": "2026-09-29T04:19:38Z",
+  "version": "1.0.1410",
+  "notes": "If your clip is already 4K, Enhance now asks before it runs: Crisp\u2019s upscaler at least doubles, so a 4K clip would become an 8K file that is far bigger, much slower to make, and looks the same on a 4K screen. Keep it as it is, or choose Make it 8K.",
+  "pub_date": "2026-09-29T05:53:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU53cWJFNmMxdjVSbzBOVmJUM3p6WTUyVFc3MkRMK29vUGhDTmNqUDZkWExQRFE3Z0hQYjlWL2RqWXlHcFNhOElzdDNMR2cyajJnMHZSSGR5V1lVL2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjU1MTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZbWk4VWJjNXlXMUVwMUdDYWU1UGVPL0R5OHNVM0dqM1l2enN5MFBzZDRwMHFHNm8yeitoc2FWTW9yb0Fod01TNlB3ckE5NndtbFJFdDE1RUJIMjNBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1407.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9FOFZXMkFGZkFwWDdlNmNxV0t4aEtDZlJJbGE0enNzM0l5MEFtL2VqazgyRnRFbTNoaFYzTWhFYmZ0ZEhJampVdzlXb0FmaC91L0lnZ3Izc2dLOEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjYwODY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXaE5PSlRXZWcvMnlPcGZzSTNJdVZEM3FIaWZlUTFIL0psa243WkN3Qk5Jd2JnQ0Q1RlBDWUtaQS9KY2xTRFJEUWNsajU4clJWQ3RpREFpUTNON09BQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1410.app.tar.gz"
     }
   }
 }
