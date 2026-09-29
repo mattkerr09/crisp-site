@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1400",
-  "notes": "New to Crisp? When the editor is empty it now offers \u201cTry it on a sample clip\u201d: one click restores a short clip that ships inside the app, reduced on purpose to old camera-phone quality, and opens the before and after \u2014 all on your Mac, nothing uploaded. Asking Crisp to colourise black-and-white footage now gets a plain answer: it can\u2019t, and it says what it can do instead \u2014 restore it, upscale it or give it a sepia tone. \u201cBlack and white to colour\u201d no longer turns a clip black and white.",
-  "pub_date": "2026-09-29T01:56:16Z",
+  "version": "1.0.1404",
+  "notes": "Fixes windows that opened out of sight: since mid-September, Unlock Crisp Pro, the before-and-after comparison and the keyboard-shortcuts window opened below the bottom edge of the app window, where nobody could see them, so pressing Unlock Pro or Compare seemed to do nothing. They open over the app again.",
+  "pub_date": "2026-09-29T03:24:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFnY2Q4RGJiWCtUUExSMU9ZTWRlekExcGhTV0FhWWNSaVZiWm4ycTdxTjFPTkhtOXdsQzVSSDcvbDF0YkxCMzBBanRsNTkyWDJ2SnpNSGtVUFBWWGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjQ2NTczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYNUpqdnBMd3ozR2tmR0ZZbHdRMTF6cDViZCtROTZaTHh4M2F4MDNQQ0tjdTVjMGNocHVWWlN1TVo2TEhDamdBN2t5ekRabjNlMGM3cGI5RERWS0JBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1400.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU93SWFCQU80WW45M0Y4QTk5TDM2RHR4Uks2d3I5dzlDT0pGYjUwUjhvckZlSEttL1ZPcXNVenNFZ2htMU5tSmMwd0NCbVFSNmt1MEZjMmRzR0ZITVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjUxOTM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTUjhWckVYa0g5VHBDRzhLbmJ3bCtSQU1PaEh1WFY4UFBGby9nSjdXYVJPbWxNV1VBMkErTlQvVWEzQ0NrUjZaaEplZ0FsT09QOFMzN1N6ZXdOMndCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1404.app.tar.gz"
     }
   }
 }
