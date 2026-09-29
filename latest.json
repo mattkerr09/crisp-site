@@ -1,7 +1,7 @@
 {
   "version": "1.0.1410",
   "notes": "If your clip is already 4K, Enhance now asks before it runs: Crisp\u2019s upscaler at least doubles, so a 4K clip would become an 8K file that is far bigger, much slower to make, and looks the same on a 4K screen. Keep it as it is, or choose Make it 8K.",
-  "pub_date": "2026-09-29T05:53:37Z",
+  "pub_date": "2026-09-29T06:03:43Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9FOFZXMkFGZkFwWDdlNmNxV0t4aEtDZlJJbGE0enNzM0l5MEFtL2VqazgyRnRFbTNoaFYzTWhFYmZ0ZEhJampVdzlXb0FmaC91L0lnZ3Izc2dLOEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjYwODY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXaE5PSlRXZWcvMnlPcGZzSTNJdVZEM3FIaWZlUTFIL0psa243WkN3Qk5Jd2JnQ0Q1RlBDWUtaQS9KY2xTRFJEUWNsajU4clJWQ3RpREFpUTNON09BQT09Cg==",
