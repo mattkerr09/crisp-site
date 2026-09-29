@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1404",
-  "notes": "Fixes windows that opened out of sight: since mid-September, Unlock Crisp Pro, the before-and-after comparison and the keyboard-shortcuts window opened below the bottom edge of the app window, where nobody could see them, so pressing Unlock Pro or Compare seemed to do nothing. They open over the app again.",
-  "pub_date": "2026-09-29T03:24:30Z",
+  "version": "1.0.1407",
+  "notes": "The title bar now shows the version you downloaded, 1.0 and the build number, the same one the website and the updater name, instead of \u201cv0.1.0\u201d.",
+  "pub_date": "2026-09-29T04:19:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU93SWFCQU80WW45M0Y4QTk5TDM2RHR4Uks2d3I5dzlDT0pGYjUwUjhvckZlSEttL1ZPcXNVenNFZ2htMU5tSmMwd0NCbVFSNmt1MEZjMmRzR0ZITVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjUxOTM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTUjhWckVYa0g5VHBDRzhLbmJ3bCtSQU1PaEh1WFY4UFBGby9nSjdXYVJPbWxNV1VBMkErTlQvVWEzQ0NrUjZaaEplZ0FsT09QOFMzN1N6ZXdOMndCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1404.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU53cWJFNmMxdjVSbzBOVmJUM3p6WTUyVFc3MkRMK29vUGhDTmNqUDZkWExQRFE3Z0hQYjlWL2RqWXlHcFNhOElzdDNMR2cyajJnMHZSSGR5V1lVL2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjU1MTQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZbWk4VWJjNXlXMUVwMUdDYWU1UGVPL0R5OHNVM0dqM1l2enN5MFBzZDRwMHFHNm8yeitoc2FWTW9yb0Fod01TNlB3ckE5NndtbFJFdDE1RUJIMjNBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1407.app.tar.gz"
     }
   }
 }

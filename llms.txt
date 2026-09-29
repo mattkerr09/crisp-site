@@ -10,7 +10,7 @@
 - [System requirements](https://crispvideo.app/#download): macOS 26.0 or later; Apple Silicon (M1 or later)
 - [Licence terms](https://crispvideo.app/legal/terms/): one Pro licence runs on up to 3 Macs at a time
 - [Refunds](https://crispvideo.app/legal/refunds/): email within 30 days of purchase for a refund, no reason needed
-- [Download for Mac](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg): the current release, 1.0.1404
+- [Download for Mac](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg): the current release, 1.0.1407
 - [FAQ](https://crispvideo.app/#faq): memory, speed, the Max lane, privacy, licensing
 
 ## Comparisons
