@@ -34,6 +34,9 @@ SIBLINGS = [
     ("Docket SEO", "https://docketseo.app/", "website audits that rank what to fix first"),
     ("AdPlaybook", "https://adplaybook.app/", "ad copy within every platform's limits"),
     ("Built by Kerr", "https://builtbykerr.com/", "websites and local SEO for Grand Rapids businesses"),
+    # CEO order, 2026-09-29: the company Dodo shows buyers (the DODOPAY_KERRANDCOMPANY card-statement line)
+    # was linked from no product page. Same words Outlier carries. The name is HTML (the & is escaped).
+    ("Kerr &amp; Company Holdings", "https://kerrandcompanyholdings.com/", "the company behind these apps"),
 ]
 KCO = ('<div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list">'
        + "".join(f'<li><a href="{u}">{n}</a>: {d}</li>' for n, u, d in SIBLINGS)
@@ -46,6 +49,26 @@ HOME_SIBLING = re.compile(r'  <div class="wrap foot foot-sibling">\n.*?\n  </div
 
 #: Plausible custom events ("Download" on every Crisp.dmg link, "Buy" on every checkout link) — first-party
 TRACK = '<script src="/track.js" defer></script>'
+
+
+KCO_BLOCK = re.compile(r'<div class="kco" data-kco>.*?</ul></div>', re.S)
+ARMS_FILE = Path.home() / "ops" / "search" / "ARMS.md"
+
+
+def arms() -> set[str]:
+    """The arms of a running experiment (~/ops/search/ARMS.md): their copy and links do not change mid-read, so an
+    existing footer on an arm is left exactly as it is. Refuses to guess if the file is missing."""
+    if not ARMS_FILE.is_file():
+        raise SystemExit("sitewide_chrome: ~/ops/search/ARMS.md is missing — refusing to guess which pages are arms")
+    return {m.group(1) for m in re.finditer(r"^crispvideo\.app \| (/\S+/) \|", ARMS_FILE.read_text(), re.M)}
+
+
+def is_arm(p: Path) -> bool:
+    try:
+        rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
+    except ValueError:
+        return False
+    return p.name == "index.html" and rel in arms()
 
 
 def founding_tag() -> str:
@@ -81,6 +104,10 @@ def apply(p: Path) -> bool:
         m = re.search(r'<meta name="viewport"[^>]*>\n?', s)
         assert m, f"{p}: no viewport meta to anchor the verification tag"
         s = s[:m.end()] + ("" if m.group(0).endswith("\n") else "\n") + MSVALIDATE + "\n" + s[m.end():]
+    # A footer whose block predates a wording change is regenerated in place — except on an experiment arm.
+    if "data-kco" in s and KCO not in s and not is_arm(p):
+        s, n = KCO_BLOCK.subn(KCO, s)
+        assert n == 1, f"{p}: expected one kco block to refresh, found {n}"
     if has_footer(s) and "data-kco" not in s:
         if p == SITE / "index.html":
             assert HOME_SIBLING.search(s), "homepage: the sibling block moved — update HOME_SIBLING"
@@ -110,6 +137,8 @@ def missing(p: Path) -> list[str]:
         out.append("msvalidate")
     if has_footer(s) and s.count("data-kco") != 1:
         out.append("kco footer")
+    elif has_footer(s) and KCO not in s and not is_arm(p):
+        out.append("stale kco footer")
     if "</body>" in s and s.count(TRACK) != 1:
         out.append("track.js")
     if wants_founding(p, s) and s.count(founding_tag()) != 1:
