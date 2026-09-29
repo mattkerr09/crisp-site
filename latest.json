@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1396",
-  "notes": "Buying Pro is now one step from anywhere Crisp says a feature is part of Pro: the Max quality and batch messages open the unlock window, which leads with the price \u2014 $129 once, or four payments of $32.25 with Klarna or Afterpay in the US \u2014 and the founding price of $64.50 for the first 25 buyers, applied at checkout. When a free export finishes, the result panel says the file carries the \u201cMade with Crisp\u201d mark and offers to remove it. On a Mac with less than 48 GB of memory, the window says up front that Max quality works on photos and single frames. Activation problems now point to support@crispvideo.app.",
-  "pub_date": "2026-09-29T00:38:53Z",
+  "version": "1.0.1400",
+  "notes": "New to Crisp? When the editor is empty it now offers \u201cTry it on a sample clip\u201d: one click restores a short clip that ships inside the app, reduced on purpose to old camera-phone quality, and opens the before and after \u2014 all on your Mac, nothing uploaded. Asking Crisp to colourise black-and-white footage now gets a plain answer: it can\u2019t, and it says what it can do instead \u2014 restore it, upscale it or give it a sepia tone. \u201cBlack and white to colour\u201d no longer turns a clip black and white.",
+  "pub_date": "2026-09-29T01:56:16Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUw1Q1JjRm5sMnJ0b3AySXA0RDNHT3dyZEoxbjFMeFA1ZDdzRjVBOEkxRTd1akJ2S1JqS2ovcDloWW5RM0dhQlNlVU5Pc1ludEcxRmtXdk00eFluQ0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjQwNjIwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIeE9MVmRhNzVJMmlSZFN2UmxvTjQvMEF5ZjVtTnVxT2NZMkNVYjQ0amgzek5aUGdKbHZRVS81VHNLZzlkT2h4UDhFUERyNXNRdG5ZT3p2R3JEVGJDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1396.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFnY2Q4RGJiWCtUUExSMU9ZTWRlekExcGhTV0FhWWNSaVZiWm4ycTdxTjFPTkhtOXdsQzVSSDcvbDF0YkxCMzBBanRsNTkyWDJ2SnpNSGtVUFBWWGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjQ2NTczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpYNUpqdnBMd3ozR2tmR0ZZbHdRMTF6cDViZCtROTZaTHh4M2F4MDNQQ0tjdTVjMGNocHVWWlN1TVo2TEhDamdBN2t5ekRabjNlMGM3cGI5RERWS0JBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1400.app.tar.gz"
     }
   }
 }
