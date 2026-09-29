@@ -35,8 +35,9 @@ SIBLINGS = [
     ("AdPlaybook", "https://adplaybook.app/", "ad copy within every platform's limits"),
     ("Built by Kerr", "https://builtbykerr.com/", "websites and local SEO for Grand Rapids businesses"),
     # CEO order, 2026-09-29: the company Dodo shows buyers (the DODOPAY_KERRANDCOMPANY card-statement line)
-    # was linked from no product page. Same words Outlier carries. The name is HTML (the & is escaped).
-    ("Kerr &amp; Company Holdings", "https://kerrandcompanyholdings.com/", "the company behind these apps"),
+    # was linked from no product page. The LEGAL name, as the privacy page and the terms state it (the CEO's
+    # correction the same day: "Holdings" is only in the domain). The name is HTML (the & is escaped).
+    ("Kerr &amp; Company LLC", "https://kerrandcompanyholdings.com/", "the company behind these apps"),
 ]
 KCO = ('<div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list">'
        + "".join(f'<li><a href="{u}">{n}</a>: {d}</li>' for n, u, d in SIBLINGS)
