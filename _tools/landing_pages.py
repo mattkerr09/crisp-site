@@ -1,0 +1,168 @@
+"""The addresses people guess — /pricing/, /download/ and any 404 — lead somewhere that sells.
+
+CEO order, 2026-10-01, before the Product Hunt launch: crispvideo.app/pricing/ and /download/ answered 404,
+and the 404 page offered one "Back to Crisp" button, no price, no Download, no Buy. A visitor, or an AI
+assistant citing crispvideo.app/pricing, landed on a dead end. Outlier fixed the same thing on 09-29.
+
+  /pricing/ and /download/  small real pages: noindex (they are doors, not search results), a self canonical,
+                            one heading and one box — the price with its four-payment split, the founding
+                            line, Download through the hub's /dl/crisp and Buy through its /buy/crisp (which
+                            applies the founding code), the requirements and the refund window.
+  404.html                  keeps its line and gains the same box (src=404).
+
+EVERY FIGURE IS READ, NOT TYPED: llms_txt.facts() (the reader llms.txt and the in-article boxes use) for the
+price, the founding offer, pay-in-four, macOS, chip and refund window; llms_txt.dl_url for the download; the
+homepage's own CRISP_BUY_VIA for Buy. The analytics/pixel line comes from new_pages.HEAD and the referral
+snippet from 404.html's head, so neither is typed twice. Not in the sitemap (noindex) — the page-finding test
+exempts both with this reason. product_box.py skips noindex pages.
+
+    python3 _tools/landing_pages.py          # write the two pages and refresh the 404 box
+    python3 _tools/landing_pages.py --check  # exit 1 if any of the three differs from what this would write
+"""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import llms_txt  # noqa: E402
+import sitewide_chrome  # noqa: E402
+
+SITE = Path(__file__).resolve().parents[1]
+BOX = re.compile(r'<aside class="pbox" data-landing-box>.*?</aside>\n?', re.S)
+
+
+def buy_base() -> str:
+    m = re.search(r'var CRISP_BUY_VIA = "([^"]+)";', (SITE / "index.html").read_text())
+    if not m:
+        raise SystemExit("landing_pages: the homepage no longer declares CRISP_BUY_VIA — read the Buy link from there")
+    return m.group(1)
+
+
+def box(src: str, buy_first: bool) -> str:
+    f = llms_txt.facts()
+    m, q = llms_txt.money, llms_txt.quarter
+    p, now = f["price"], f["now"]
+    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if f["bnpl"] else ""
+    nsplit = f" · or 4 × {m(q(now))}" if f["bnpl"] else ""
+    dl = (f'<a class="btn{"" if not buy_first else " btn-ghost"}" data-track="{src}" '
+          f'href="{llms_txt.dl_url(src)}">Download free for Mac</a>')
+    buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
+           f'href="{buy_base()}?src={src}">Buy Crisp Pro</a>')
+    return (f'<aside class="pbox" data-landing-box>'
+            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
+            f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
+            f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers — '
+            f'the Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
+            f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
+            f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
+            f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
+            f'</aside>\n')
+
+
+def _analytics_line() -> str:
+    import new_pages
+    line = next(l for l in new_pages.HEAD.splitlines() if "plausible.io/js/script.js" in l)
+    return line.replace("{{", "{").replace("}}", "}")
+
+
+def _referral_line() -> str:
+    m = re.search(r"<!-- affiliate-hub:begin -->.*?<!-- affiliate-hub:end -->", (SITE / "404.html").read_text())
+    if not m:
+        raise SystemExit("landing_pages: 404.html lost the referral snippet line it is read from")
+    return m.group(0)
+
+
+def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_first: bool) -> str:
+    url = f"{llms_txt.BASE}/{slug}/"
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>{title}</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="{desc}">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="{url}">
+<link rel="stylesheet" href="/style.css">
+{_analytics_line()}
+{_referral_line()}</head>
+<body>
+<!-- Generated by _tools/landing_pages.py — edit that, not this file. A door for an address people guess
+     ({url}): noindex, so it never competes with the homepage in search. -->
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="{llms_txt.BASE}/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
+  <a class="btn" href="{llms_txt.BASE}/#download">Download for Mac</a>
+</div></nav>
+
+<article><div class="wrap">
+  <h1>{h1}</h1>
+  <p class="lede">{lede}</p>
+  {box(src, buy_first)}  <p>Everything Pro adds, the licence terms and the answers to the usual questions are on the <a href="{llms_txt.BASE}/#buy">home page</a>.</p>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="{llms_txt.BASE}/">crispvideo.app</a></p>
+  {sitewide_chrome.KCO}
+</div></footer>
+{sitewide_chrome.TRACK}
+{sitewide_chrome.founding_tag()}
+</body>
+</html>
+"""
+
+
+def pages() -> dict[Path, str]:
+    f = llms_txt.facts()
+    m = llms_txt.money
+    return {
+        SITE / "pricing" / "index.html": page(
+            "pricing", f"Crisp pricing — free to try, Pro {m(f['price'])} once",
+            f"Crisp Video is free to use with a small mark. Pro is {m(f['price'])} once, not a subscription.",
+            "Crisp pricing",
+            f"Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports. Pro is a one-time "
+            f"{m(f['price'])}, {f['updates']}: it removes the mark and adds the Max restore lane and batch processing.",
+            "pricing-page", True),
+        SITE / "download" / "index.html": page(
+            "download", "Download Crisp for Mac",
+            f"Download Crisp Video for Mac: {f['os']}, {f['chip']}. Free to use with a small mark.",
+            "Download Crisp for Mac",
+            f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use with a small "
+            f"&ldquo;Made with Crisp&rdquo; mark; Pro removes it.",
+            "download-page", False),
+    }
+
+
+def page404(s: str) -> str:
+    b = box("404", False)
+    if "data-landing-box" in s:
+        return BOX.sub(lambda _m: b, s, count=1)
+    a = '<a class="btn" href="/">Back to Crisp</a>'
+    assert s.count(a) == 1, "404.html: the Back to Crisp button moved"
+    return s.replace(a, b + '<p><a class="btn btn-ghost" href="/">Back to Crisp</a></p>')
+
+
+def main(argv: list[str]) -> int:
+    check = "--check" in argv
+    want = pages()
+    p404 = SITE / "404.html"
+    want[p404] = page404(p404.read_text())
+    stale = [str(p.relative_to(SITE)) for p, s in want.items() if not p.is_file() or p.read_text() != s]
+    if check:
+        print(f"landing pages: {'stale ' + ', '.join(stale) if stale else 'current'}")
+        return 1 if stale else 0
+    for p, s in want.items():
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(s)
+    for p in want:                 # the chrome is in the template already, so this changes nothing — and
+        sitewide_chrome.apply(p)   # if sitewide_chrome ever grows a new piece, --check then reports stale
+    print(f"wrote {', '.join(str(p.relative_to(SITE)) for p in want)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

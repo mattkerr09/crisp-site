@@ -85,6 +85,10 @@ def targets() -> list[Path]:
         m = re.search(r'<link rel="canonical" href="https://crispvideo\.app(/[^"]*)"', s)
         if (m and m.group(1) != rel) or rel in a:
             continue
+        # a noindex page is a door, not an article: /pricing/ and /download/ carry their own box
+        # (_tools/landing_pages.py) and must not get two more (2026-10-01)
+        if re.search(r'<meta name="robots" content="noindex', s):
+            continue
         out.append(p)
     return out
 
