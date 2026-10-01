@@ -12,7 +12,8 @@ document.addEventListener("click", function (e) {
   var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
   if (/\/Crisp\.dmg$/.test(href)) {
     window.plausible("Download", { props: { button: name } });
-  } else if (/^https:\/\/checkout\.dodopayments\.com\//.test(href)) {
+  // ...and the hub's /buy/<app>, which opens the same Dodo checkout with the founding code applied (2026-10-01)
+  } else if (/^https:\/\/(checkout\.dodopayments\.com\/|kerr-affiliate-hub\.kerrco\.workers\.dev\/buy\/)/.test(href)) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || e.button !== 0) {
       window.plausible("Buy", { props: { button: name } });
       return;

@@ -1506,7 +1506,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="tier pro rv d2">
         <div class="name">Crisp Pro</div><div class="price grad-price">$129 <small>once</small><span class="split tier-split" data-crisp-bnpl><span class="sep"> · </span>or 4 × $32.25</span></div>
         <p class="bnpl-note" data-crisp-bnpl>With Klarna or Afterpay in the US: <strong>$129 as 4 payments of $32.25</strong>, two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
-        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
+        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
         <p class="blurb">Everything in Free, without the mark — plus the generative lane and batch.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Watermark-free exports</li>
@@ -1646,7 +1646,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
              months", which is a payment schedule no provider offers, printed beside a
              price. It never shipped. -->
         <p class="bnpl-note" data-crisp-bnpl>With Klarna or Afterpay in the US: <strong>$129 as 4 payments of $32.25</strong>, two weeks apart, the last one six weeks after the first, at no extra cost from us. <strong>Then it stops and it is yours, forever</strong> &mdash; no subscription, no renewal.</p>
-        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. At checkout, click &lsquo;Have a discount code?&rsquo; and enter <strong>FOUNDINGCRISP</strong>.</p>
+        <p class="founding-note">Founding price: <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for the first 25 buyers. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
         <a href="/legal/privacy/">Privacy</a> ·
@@ -1977,6 +1977,15 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
    unreachable by the only people it is for — no sale countable, and nowhere for a Purchase
    event to fire, so ads optimise blind to whether they produced a sale. */
 var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F";
+/* ── CRISP_BUY_VIA (2026-10-01, the Product Hunt rehearsal) ──────────────────────────────────────────
+   The buttons go through the hub's /buy/crisp, which opens a Dodo checkout SESSION with FOUNDINGCRISP
+   already applied — measured in a browser that day: "$129.00 $64.50 … Yay! You're saving 50%!", total
+   $64.50. Through the plain link above, a founding buyer had to find "Have a discount code?" and type it,
+   and the rehearsal of Saturday's visitor path found exactly that on the site's own Buy button.
+   CRISP_CHECKOUT_URL stays the Dodo link: it is the no-JavaScript href in the markup, the processor the
+   tests and scripts/build_crisp.sh's ship gate read (that gate keys on "dodopayments"), and the hub's own
+   fallback when it cannot open a session — so nobody is ever stranded. ?src= names the button pressed. */
+var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 
 (function () {
   var url = (CRISP_CHECKOUT_URL || "").trim();
@@ -2056,8 +2065,10 @@ var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dus
      it true, never before. */
 
   var buys = document.querySelectorAll('[data-crisp-checkout]');
+  var via = (typeof CRISP_BUY_VIA === 'string' ? CRISP_BUY_VIA : '').trim();
   for (var i = 0; i < buys.length; i++) {
-    buys[i].setAttribute('href', url);
+    var src = 'home-' + (buys[i].getAttribute('data-track') || 'buy').replace(/[^a-z0-9-]/gi, '');
+    buys[i].setAttribute('href', via ? via + '?src=' + encodeURIComponent(src) : url);
     buys[i].removeAttribute('aria-disabled');
   }
   // Belt and braces: nothing authors this node in the live state any more, but an older cached

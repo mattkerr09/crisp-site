@@ -82,7 +82,8 @@ def main() -> int:
 
     for (host, fname), why in g.NAVIGATION_FROM_JS.items():
         checked += 1
-        p = _find(fname)
+        # navigation entries name a SITE-RELATIVE path: "index.html" is the homepage, not the first match
+        p = (ROOT / fname) if (ROOT / fname).is_file() else _find(fname)
         hits = [w for h, w, _ in g.hosts_in(p) if h == host] if p else []
         if "url in inline <script>" in hits:
             print(f"  live: {host}  ({fname}, navigation)")

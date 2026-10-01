@@ -105,10 +105,17 @@ ALLOWED_ON_LOAD_EXACT = {
 #: occurs, and the day the host DOES appear for real it is pre-approved. If
 #: github.com ever shows up as a genuine load, this gate should fail loudly and
 #: somebody should decide about it then.
+#: Keyed by the SITE-RELATIVE path ("index.html" is the homepage, never every page that is an index.html):
+#: keyed by basename, the hub entry below would also excuse the hub on thank-you/index.html, where it is
+#: a real /paid fetch that must keep passing its own CONDITIONAL marker (2026-10-01).
 NAVIGATION_FROM_JS = {
     ("checkout.dodopayments.com", "index.html"):
         "CRISP_CHECKOUT_URL — assigned to the Buy button's href, so it is where a "
         "click SENDS you. Nothing is fetched from Dodo to render this page.",
+    ("kerr-affiliate-hub.kerrco.workers.dev", "index.html"):
+        "CRISP_BUY_VIA — the Buy buttons' href, the hub's /buy/crisp, which opens the same Dodo "
+        "checkout with the founding code applied. It is where a click SENDS you; nothing is "
+        "fetched from the hub to render this page.",
 }
 
 #: Script blocks whose contents a browser never fetches. `application/ld+json` is
@@ -332,8 +339,9 @@ def main() -> int:
                     continue
             # Navigation targets — consulted ONLY for an inline-script hit, so a
             # real <script src> or <img src> from the same host still fails.
-            if why == "url in inline <script>" and (h, f.name) in NAVIGATION_FROM_JS:
-                seen_navigation.add((h, f.name))
+            _rel = f.relative_to(ROOT).as_posix()
+            if why == "url in inline <script>" and (h, _rel) in NAVIGATION_FROM_JS:
+                seen_navigation.add((h, _rel))
                 continue
             bad.append(f"    {f.relative_to(ROOT)}  {h}  ({why})")
 
