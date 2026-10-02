@@ -784,6 +784,13 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .oldmac-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 .step .step-dl{margin-top:.9rem;}
 .step .step-req{margin-top:.7rem;font-size:.84rem;color:var(--grey-dim);}
+/* "On your phone?" — a visitor on a phone can't install a Mac app, so the download buttons are
+   a dead end there; this line hands them the link to open later on their Mac (Outlier's pattern,
+   2026-10-02). Hidden on a desktop: the media query is a narrow screen OR a touch-only pointer. */
+.phone-link{display:none;margin:.75rem 0 0;font-size:.9rem;color:var(--grey);}
+.phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+@media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}
 @media (max-width:860px){
   .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
   .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
@@ -863,6 +870,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </a>
       <a class="btn btn-ghost" href="#ba4">See a phone clip restored</a>
     </div>
+    <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
     <!-- TWO actions since 2026-09-24, on Matthew's order: the second is the PROOF (the phone-clip
          before/after, #ba4), not a softer copy of the download. The note below argued for one
          action; it is kept for its history. ONE action in the hero, deliberately. "See pricing" used to sit here as a ghost
@@ -1587,6 +1595,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <p>The full editor, 4K upscale and montage, one file at a time. Video exports carry a
           small “Made with Crisp” mark.</p>
         <p class="step-dl"><a class="btn btn-ghost btn-sm" data-track="download-section" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-download-section&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download for Mac</a></p>
+        <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
         <p class="step-req">78&nbsp;MB · macOS 26 (Tahoe) or later · Apple Silicon · notarized by Apple</p>
         <form class="oldmac" data-oldmac="download" novalidate>
       <label class="oldmac-ask" for="oldmac-dl-email">On an older Mac? Leave your email and we&rsquo;ll tell you the day Crisp runs on it.</label>
@@ -2273,5 +2282,24 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 
 <div data-win-notify style="max-width:552px;margin:1.25rem auto 0;padding:0 16px 88px;box-sizing:border-box"></div>
 <script src="/notify.js" defer></script>
+<script>
+/* The phone line's button: the share sheet on a phone, a mailto: everywhere else. kcCarry() carries
+   where the visitor came from (the hub snippet's kc_aff — ?ref=producthunt is stored as landing_source)
+   onto the link they send themselves, so the Mac visit still counts for Product Hunt. Same as outlier.host. */
+function kcCarry(url){try{var s=JSON.parse(localStorage.getItem('kc_aff')||'null');var v=(s&&s.exp>Date.now()&&s.v)||{};var q=[];var r=v.ref||v.landing_source;if(r)q.push('ref='+encodeURIComponent(r));['via','rekomi_ref','affonso_referral','awc','cjevent','irclickid'].forEach(function(k){if(v[k])q.push(k+'='+encodeURIComponent(v[k]));});return q.length?url+'&'+q.join('&'):url;}catch(e){return url;}}
+document.querySelectorAll('[data-send-mac-link]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var url = kcCarry('https://crispvideo.app/?utm_source=phone-share&utm_medium=share');
+    var text = 'Crisp Video for Mac is free, with the full editor, 4K upscaling and a small “Made with Crisp” mark on video exports. Open this on your Mac to download it.';
+    if (window.plausible) { try { window.plausible('Send Mac Link'); } catch (e) {} }
+    if (navigator.share) {
+      navigator.share({ title: 'Crisp Video for Mac', text: text, url: url }).catch(function () {});
+    } else {
+      location.href = 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') +
+        '&body=' + encodeURIComponent(text + '\n\n' + url);
+    }
+  });
+});
+</script>
 </body>
 </html>
