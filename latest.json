@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1410",
-  "notes": "If your clip is already 4K, Enhance now asks before it runs: Crisp\u2019s upscaler at least doubles, so a 4K clip would become an 8K file that is far bigger, much slower to make, and looks the same on a 4K screen. Keep it as it is, or choose Make it 8K.",
-  "pub_date": "2026-09-29T06:03:43Z",
+  "version": "1.0.1435",
+  "notes": "Crisp now does what you ask, in the direction you ask. \u201cReduce the warmth\u201d cools the picture, \u201cboost the highlights\u201d grades them, \u201cincrease the grain\u201d adds grain, and \u201clower the resolution\u201d, \u201cdownscale it\u201d or \u201cmake it 720p\u201d really bring the picture down a size and shrink the file with it. Telling Crisp not to do something \u2014 \u201cdon\u2019t remove the audio\u201d \u2014 is always a no. \u201cRemove the compression artifacts\u201d or \u201cit looks blocky\u201d cleans up blocky video before Enhance. New bass and treble controls: say \u201cmore bass\u201d or \u201cless treble\u201d, or pick them from the Audio menu. Cancel now stops a render even when the GPU has stopped responding, Enhance at 4\u00d7 keeps your clip\u2019s colours, and editing an HD clip that had no colour labels no longer shifts its colours. Asking to remove a watermark gets a straight answer, and \u201cTry again\u201d on a Pro-only job opens the unlock window.",
+  "pub_date": "2026-10-02T23:10:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9FOFZXMkFGZkFwWDdlNmNxV0t4aEtDZlJJbGE0enNzM0l5MEFtL2VqazgyRnRFbTNoaFYzTWhFYmZ0ZEhJampVdzlXb0FmaC91L0lnZ3Izc2dLOEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjYwODY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXaE5PSlRXZWcvMnlPcGZzSTNJdVZEM3FIaWZlUTFIL0psa243WkN3Qk5Jd2JnQ0Q1RlBDWUtaQS9KY2xTRFJEUWNsajU4clJWQ3RpREFpUTNON09BQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1410.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUljRUplajV3NmhUZ2Q1NFhnNXR1elQ3QWsvN2ZvcktpVUwvNi9NQ0swRnRwQ25lbXg5SjRsVnVTa2VLVWZWd0NWMmVUdG9uN0JuRFRZQmVXcHUwS0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwOTgyMTE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3UTY1blo2a3dVaDVBNXk4ZkZjUXFDRGdDNVFsUWs4aE1uc0VzSXFxOFNtc3pVY3lyMThiNmlXdnQ2bWxzUGxYQVRJVTR2cUgrOTNrSi9MQzRkUjlEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1435.app.tar.gz"
     }
   }
 }
