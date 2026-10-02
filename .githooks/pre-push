@@ -28,6 +28,10 @@
 #
 # Bypass with --no-verify if you genuinely mean it.
 
+# The refs being pushed, read ONCE here (git hands them on stdin) — the price gate below asks whether this
+# push is a RELEASE (it moves latest.json), and nothing later may consume stdin first.
+PUSH_REFS="$(cat)"
+
 
 # ── HOW THIS FILE REPORTS, AND WHY IT CHANGED (2026-09-16) ──────────────────────────────────
 # Every gate below used to end in `|| exit 1`. That is SAFE — a failure blocks the push — but it
@@ -194,7 +198,25 @@ fi
 #
 # ⚠️ SKIPPED, NOT FAILED, WITHOUT NETWORK. A deploy from a train is not evidence of a wrong
 # price, and a gate that blocks every offline push is a gate someone removes.
-if [ -x "$CRISP_ROOT/scripts/verify_checkout.py" ]; then
+#
+# ⚠️ ONCE PER RELEASE, NOT ON EVERY PUSH (CEO 2026-10-02). verify_checkout.py LOADS the live checkout
+# page, and a load can mint a real Dodo checkout session — so every site push added a robot abandoned
+# checkout to the launch funnel, under a Chrome user agent no filter could tell from a visitor. A
+# RELEASE push is the one that moves latest.json (publish_release.sh), and that is when the till is
+# read; verify_checkout.py now also says who it is (" kerr-ops/1.0"). CRISP_CHECK_TILL=1 forces it.
+_RELEASE_PUSH=0
+_ZERO=0000000000000000000000000000000000000000
+for _pr in $(printf '%s\n' "$PUSH_REFS" | awk 'NF>=4 {print $2":"$4}'); do
+  _l=${_pr%%:*}; _r=${_pr##*:}
+  [ "$_l" = "$_ZERO" ] && continue
+  if [ "$_r" = "$_ZERO" ]; then _base=$(git merge-base "$_l" origin/main 2>/dev/null); else _base=$_r; fi
+  if [ -n "$_base" ] && git diff --name-only "$_base" "$_l" -- latest.json 2>/dev/null | grep -q .; then
+    _RELEASE_PUSH=1
+  fi
+done
+if [ "$_RELEASE_PUSH" != 1 ] && [ "${CRISP_CHECK_TILL:-0}" != 1 ]; then
+  record SKIPPED "price-vs-till" "not a release push (latest.json unchanged) — the till is read once per release; CRISP_CHECK_TILL=1 forces it"
+elif [ -x "$CRISP_ROOT/scripts/verify_checkout.py" ]; then
   if python3 - <<'NETCHK' >/dev/null 2>&1
 import socket,sys
 try: socket.create_connection(("checkout.dodopayments.com",443),timeout=6).close()
