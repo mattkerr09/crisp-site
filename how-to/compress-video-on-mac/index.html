@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"How do I compress a video on a Mac for free?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp. Drop your clip in, select the clip and type it in the prompt bar (or type \"shrink the file size\"), choose a level, and press it. Crisp shrinks the file entirely on your Mac — no account, no upload."}},
-{"@type":"Question","name":"Does compressing change the video's size on screen?","acceptedAnswer":{"@type":"Answer","text":"No — the dimensions (resolution) stay the same. Crisp shrinks the FILE size by re-encoding at a lower bitrate with HEVC, so the picture looks the same but the file is much smaller. That's different from resizing/downscaling, which changes the pixels."}},
+{"@type":"Question","name":"Does compressing change the video's size on screen?","acceptedAnswer":{"@type":"Answer","text":"Only if you ask. By default the dimensions (resolution) stay the same: Crisp shrinks the FILE size by re-encoding at a lower bitrate with HEVC, so the picture looks the same but the file is much smaller. Name a smaller size — “make it 720p” — and it brings the picture down to that size too, which shrinks the file much further."}},
 {"@type":"Question","name":"How small will the file get?","acceptedAnswer":{"@type":"Answer","text":"It depends on the level and the source. Small file targets about 30% of the clip's own bitrate, Balanced about 50%, Best quality about 70%. On a typical over-bitrated clip that's roughly a third to two-thirds of the original size. Because it targets the SOURCE's own rate, the output is genuinely smaller — and an already-efficient clip is left alone rather than grown."}},
 {"@type":"Question","name":"Is my video uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Crisp compresses entirely on your Mac, so there's no upload, no queue, no size cap, and your footage never leaves the device — unlike the \"compress video online\" tools."}},
-{"@type":"Question","name":"Will it work for emailing a video that's too big?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's the main use. Pick Small file to get well under common email/upload limits while keeping the resolution. If it's still too big, trim it shorter too."}}
+{"@type":"Question","name":"Will it work for emailing a video that's too big?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's the main use. Pick Small file to get well under common email/upload limits while keeping the resolution. If it's still too big, say “make it 720p” to bring the picture down too, or trim it shorter."}}
 ]}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
@@ -86,15 +86,15 @@
   </ol>
 
   <div class="box">
-    <h3 style="margin-top:0">Smaller file, same resolution — and never bigger</h3>
-    <p style="margin-bottom:0">Compressing is <strong>not</strong> the same as resizing. Crisp keeps the pixels (a 1080p clip stays 1080p) and just lowers the <strong>bitrate</strong>, so the file shrinks while the picture looks the same at a glance. The three levels target roughly <strong>30% / 50% / 70%</strong> of the clip's current bitrate, and because it measures the <em>source</em>, the output is genuinely smaller. An <strong>already-efficient clip is left alone</strong>, so “compress” never accidentally grows a file. Still too big for email? <a href="https://crispvideo.app/how-to/trim-video-mac/">Trim it shorter</a> too.</p>
+    <h3 style="margin-top:0">Smaller file, same resolution unless you name one — and never bigger</h3>
+    <p style="margin-bottom:0">Compressing is <strong>not</strong> the same as resizing. Crisp keeps the pixels (a 1080p clip stays 1080p) and just lowers the <strong>bitrate</strong>, so the file shrinks while the picture looks the same at a glance. The three levels target roughly <strong>30% / 50% / 70%</strong> of the clip's current bitrate, and because it measures the <em>source</em>, the output is genuinely smaller. An <strong>already-efficient clip is left alone</strong>, so “compress” never accidentally grows a file. Still too big for email? Name a smaller size — “make it 720p” — and Crisp brings the picture down to it and cuts the bitrate with it, or <a href="https://crispvideo.app/how-to/trim-video-mac/">trim it shorter</a>.</p>
   </div>
 
   <h2>Compress vs resize (downscale)</h2>
   <p>Two different ways to make a video "smaller" — pick by what you actually need:</p>
   <ul>
     <li><strong>Compress</strong> — shrink the <em>file size</em>, keep the resolution. For emailing/uploading a clip that's too big. That's this guide.</li>
-    <li><strong>Resize / downscale</strong> — actually make the <em>picture</em> smaller (e.g. 4K → 1080p). Use <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Reframe</a> for aspect changes.</li>
+    <li><strong>Resize / downscale</strong> — actually make the <em>picture</em> smaller (e.g. 4K → 1080p). Say “make it 1080p” (or 720p, 540p, 480p, 360p): Crisp brings the picture down to that size and shrinks the file with it. Use <a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Reframe</a> for aspect changes.</li>
   </ul>
 
   <h2>Crisp vs iMovie vs online compressors</h2>
@@ -102,14 +102,14 @@
     <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>Online compressors</th></tr></thead>
     <tbody>
       <tr><td>One-tap "make the file smaller"</td><td class="yes">Yes (3 levels)</td><td class="no">No direct file-size control</td><td class="yes">Yes</td></tr>
-      <tr><td>Keeps the resolution</td><td class="yes">Yes</td><td class="yes">Depends on export</td><td class="no">Often downscales</td></tr>
+      <tr><td>Keeps the resolution</td><td class="yes">Yes, unless you name a smaller one</td><td class="yes">Depends on export</td><td class="no">Often downscales</td></tr>
       <tr><td>Plain-English request</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
       <tr><td>100% offline, nothing uploaded</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Uploads your clip</td></tr>
       <tr><td>Won't inflate an already-small clip</td><td class="yes">Yes (refuses)</td><td class="no">—</td><td class="no">—</td></tr>
       <tr><td>Price</td><td class="yes">Free tier + one-time <span class="split">$129 · or 4 × $32.25</span></td><td class="yes">Free</td><td class="no">Free + upsell / size caps</td></tr>
     </tbody>
   </table></div>
-  <p class="muted">iMovie's "Share" export gives quality presets but no direct file-size target; online tools upload your footage and often downscale it. Crisp targets the file size, keeps the resolution, and stays local.</p>
+  <p class="muted">iMovie's "Share" export gives quality presets but no direct file-size target; online tools upload your footage and often downscale it. Crisp targets the file size, keeps the resolution unless you name a smaller one, and stays local.</p>
 
   <h2>Why offline matters for compressing</h2>
   <ul>
@@ -130,7 +130,7 @@
   <h3>How do I compress a video on a Mac for free?</h3>
   <p>Use Crisp: drop your clip in, select the clip and type it in the prompt bar (or type "shrink the file size"), choose a level, and press it. It shrinks the file on your Mac: no account, no upload.</p>
   <h3>Does it change the resolution?</h3>
-  <p>No — the dimensions stay the same. Crisp lowers the bitrate (HEVC), so the file is smaller but the picture looks the same. That's different from resizing.</p>
+  <p>Only if you ask. By default the dimensions stay the same: Crisp lowers the bitrate (HEVC), so the file is smaller but the picture looks the same. Name a smaller size — “make it 720p” — and it brings the picture down to that size too, which shrinks the file much further.</p>
   <h3>How small will it get?</h3>
   <p>Small file ≈ 30% of the clip's bitrate, Balanced ≈ 50%, Best quality ≈ 70% — so roughly a third to two-thirds of the original on typical footage. Already-small clips are left alone.</p>
   <h3>Is my video uploaded anywhere?</h3>
