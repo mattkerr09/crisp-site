@@ -154,7 +154,8 @@ def build() -> str:
         f"small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and adds the "
         f"generative Max lane and batch processing",
         f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
-        f"({100 - int(now * 100 / p)}% off) — at checkout choose “Have a discount code?” and enter {f['code']}",
+        f"({100 - int(now * 100 / p)}% off) — the Buy button applies {f['code']} at checkout; if it ever "
+        f"doesn't, choose “Have a discount code?” and enter it",
     ]
     if f["bnpl"]:
         out.append(f"- [Pay in four]({BASE}/#buy): {f['bnpl_providers']} at checkout{' ' + f['bnpl_where'] if f['bnpl_where'] else ''}"

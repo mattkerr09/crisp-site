@@ -62,7 +62,9 @@ def box(where: str, page: str = "") -> str:
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers — '
-            f'enter <strong>{f["code"]}</strong> at checkout.</p>'
+            # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
+            # applies the code (since 10-01) — so say that, not "enter it" (CEO, 2026-10-02).
+            f'the Buy button on the pricing section applies <strong>{f["code"]}</strong> at checkout.</p>'
             f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}">Download free for Mac</a> '
             f'<a class="btn btn-ghost" data-track="pbox-{where}-pro" href="/#buy">See Pro pricing</a></p>'
             f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '

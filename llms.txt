@@ -5,7 +5,7 @@
 ## Product and pricing
 - [Crisp Video](https://crispvideo.app/): what it does, real before/after clips, and the free download
 - [Pricing](https://crispvideo.app/#pricing): Free — the full editor and the standard enhancement lanes, exports carry a small “Made with Crisp” mark. Pro — $129 once, every 1.x update included; removes the mark and adds the generative Max lane and batch processing
-- [Founding price](https://crispvideo.app/#buy): $64.50 for the first 25 buyers (50% off) — at checkout choose “Have a discount code?” and enter FOUNDINGCRISP
+- [Founding price](https://crispvideo.app/#buy): $64.50 for the first 25 buyers (50% off) — the Buy button applies FOUNDINGCRISP at checkout; if it ever doesn't, choose “Have a discount code?” and enter it
 - [Pay in four](https://crispvideo.app/#buy): Klarna or Afterpay at checkout in the US — $129 as 4 payments of $32.25, two weeks apart (founding: 4 × $16.13)
 - [System requirements](https://crispvideo.app/#download): macOS 26.0 or later; Apple Silicon (M1 or later)
 - [Licence terms](https://crispvideo.app/legal/terms/): one Pro licence runs on up to 3 Macs at a time
