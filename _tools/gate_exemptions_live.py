@@ -85,10 +85,11 @@ def main() -> int:
         # navigation entries name a SITE-RELATIVE path: "index.html" is the homepage, not the first match
         p = (ROOT / fname) if (ROOT / fname).is_file() else _find(fname)
         hits = [w for h, w, _ in g.hosts_in(p) if h == host] if p else []
-        if "url in inline <script>" in hits:
+        # the same two reasons gate_thirdparty consults navigation entries for (inline script, or a same-origin .js file)
+        if "url in inline <script>" in hits or "url in js" in hits:
             print(f"  live: {host}  ({fname}, navigation)")
         else:
-            dead.append(f"    {host}  ->  {fname}: no inline-<script> hit, so this navigation "
+            dead.append(f"    {host}  ->  {fname}: no inline-<script> or .js hit, so this navigation "
                         f"exemption is consulted for nothing (hits: {hits or 'none'})")
 
     # A table that reads as empty must FAIL. A gate that cannot see its subject
