@@ -116,6 +116,11 @@ NAVIGATION_FROM_JS = {
         "CRISP_BUY_VIA — the Buy buttons' href, the hub's /buy/crisp, which opens the same Dodo "
         "checkout with the founding code applied. It is where a click SENDS you; nothing is "
         "fetched from the hub to render this page.",
+    # A same-origin .js FILE assigning an href is the same act as an inline script doing it (CEO 2026-10-03,
+    # launch day): founding.js puts the Product Hunt launch link on an <a> the visitor may click.
+    ("www.producthunt.com", "founding.js"):
+        "founding.js — the launch-day line's <a href>, Crisp's Product Hunt launch page. It is where a "
+        "click SENDS you; the bar fetches nothing from Product Hunt.",
 }
 
 #: Script blocks whose contents a browser never fetches. `application/ld+json` is
@@ -340,7 +345,7 @@ def main() -> int:
             # Navigation targets — consulted ONLY for an inline-script hit, so a
             # real <script src> or <img src> from the same host still fails.
             _rel = f.relative_to(ROOT).as_posix()
-            if why == "url in inline <script>" and (h, _rel) in NAVIGATION_FROM_JS:
+            if why in ("url in inline <script>", "url in js") and (h, _rel) in NAVIGATION_FROM_JS:
                 seen_navigation.add((h, _rel))
                 continue
             bad.append(f"    {f.relative_to(ROOT)}  {h}  ({why})")
