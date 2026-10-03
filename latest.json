@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1435",
-  "notes": "Crisp now does what you ask, in the direction you ask. \u201cReduce the warmth\u201d cools the picture, \u201cboost the highlights\u201d grades them, \u201cincrease the grain\u201d adds grain, and \u201clower the resolution\u201d, \u201cdownscale it\u201d or \u201cmake it 720p\u201d really bring the picture down a size and shrink the file with it. Telling Crisp not to do something \u2014 \u201cdon\u2019t remove the audio\u201d \u2014 is always a no. \u201cRemove the compression artifacts\u201d or \u201cit looks blocky\u201d cleans up blocky video before Enhance. New bass and treble controls: say \u201cmore bass\u201d or \u201cless treble\u201d, or pick them from the Audio menu. Cancel now stops a render even when the GPU has stopped responding, Enhance at 4\u00d7 keeps your clip\u2019s colours, and editing an HD clip that had no colour labels no longer shifts its colours. Asking to remove a watermark gets a straight answer, and \u201cTry again\u201d on a Pro-only job opens the unlock window.",
-  "pub_date": "2026-10-02T23:10:18Z",
+  "version": "1.0.1440",
+  "notes": "When something you ask for needs Crisp Pro \u2014 Max quality, or a second job while one is running \u2014 Crisp now always opens the unlock window with Buy, never a message you can\u2019t act on. Photos are sized from their own size: \u201cmake it 4K\u201d on a 1080p photo makes it 4K, not 8K; \u201cmake it 1080p\u201d on a small photo really reaches 1080p; and a photo that\u2019s already the size you ask for is told so instead of being upscaled again.",
+  "pub_date": "2026-10-03T00:16:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUljRUplajV3NmhUZ2Q1NFhnNXR1elQ3QWsvN2ZvcktpVUwvNi9NQ0swRnRwQ25lbXg5SjRsVnVTa2VLVWZWd0NWMmVUdG9uN0JuRFRZQmVXcHUwS0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwOTgyMTE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3UTY1blo2a3dVaDVBNXk4ZkZjUXFDRGdDNVFsUWs4aE1uc0VzSXFxOFNtc3pVY3lyMThiNmlXdnQ2bWxzUGxYQVRJVTR2cUgrOTNrSi9MQzRkUjlEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1435.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5NaDcwMXZYb3R4RS9JUlNqK2F4SDNqVG13eHlHakRWNWtEMmM3QnlEaTYrc2gxQ0VsL3BsWVIwZm93R3dtSitPb2NYa0pER1FtcmR6WVpwM3NvSlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwOTg2MTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwekhQcTJadExsZnl4NnU1MHpsOElKVXU0VHZpRGNGaTB5ZHhoN0tmZ0hsUSt4Q0pKaklWNFViditxTS9sTkp6U3F1ZkZzQ0RRQWlEczdod1lWaklBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1440.app.tar.gz"
     }
   }
 }
