@@ -44,7 +44,7 @@
  * checks it. Update this line ONLY after actually reading the upstream diff — bumping it
  * to silence the check is the one way to make this worse than having no check.
  *
- * upstream-reviewed: 92ec58509867e51cd38a75551fb74daf5e38cecccf5291783bfc9875bf4bca87  (2026-09-15)
+ * upstream-reviewed: 7fc630b5a9396bfb4f85d8500de5a5ee75d38eb4be96115c5e2cd710f633b5ea  (2026-10-03, Product Hunt line ported; the count fetch and BNPL text stay forked)
  */
 (function () {
   if (window.__kcFounding) return;
@@ -87,6 +87,14 @@
      this file's own history includes a checker that harvested quoted strings out of comments
      and reported them as live claims. Naming it here would make every future audit ambiguous. */
   var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
+  /* Ported from upstream (CEO, 2026-10-03 07:1xZ, launch day): on Crisp's Product Hunt launch day the bar carries one line
+     pointing at the launch. Product Hunt allows a site banner and forbids asking for upvotes, so it asks for feedback only.
+     The window is the launch day, 00:01 to 00:01 Pacific; outside it nothing changes. The link is a plain <a>: it makes no
+     request on load, so this file stays free of third-party requests. The /posts/ address redirects to the launch (read
+     live 07:06Z: 308 to /products/crisp-7?launch=crisp-8, then 200). */
+  var PH = { url: "https://www.producthunt.com/posts/crisp-8", from: "2026-10-03T07:01:00Z", to: "2026-10-04T07:01:00Z" };
+  var phNow = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+  var phLive = phNow >= Date.parse(PH.from) && phNow < Date.parse(PH.to);
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -134,7 +142,12 @@
        than ellipsising — a price cut off mid-figure is worse than a two-line bar. */
     '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
+    '.ph{display:block;text-align:center;padding:.3rem 2.2rem .3rem .9rem;background:#1C1408;color:#EDE6D6;',
+    '  font-size:.75rem;line-height:1.3;border-bottom:1px solid rgba(240,180,41,.18);text-decoration:none}',
+    '.ph b{color:#F0B429;font-weight:700}',
+    '.ph:hover{background:#261B0B}',
     '</style>',
+    (phLive ? '<a class="ph" href="' + PH.url + '" target="_blank" rel="noopener">We\u2019re live on <b>Product Hunt</b> today. We\u2019d love your feedback \u2192</a>' : ''),
     '<div class="bar" role="region" aria-label="Founding offer">',
     '  <span class="tag">Founding</span>',
     '  <span class="dot"></span>',
