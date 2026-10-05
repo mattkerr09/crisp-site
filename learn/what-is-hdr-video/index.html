@@ -36,7 +36,7 @@
 <!-- REWRITTEN 2026-09-23 under ~/ops/search/rejected-pages-rewrite-preregistration.json (decision
      and question recorded first, ops 52284c5). Every number on this page comes from one measurement
      run with the ffmpeg 8.1.2 bundled in Crisp 1.0.1353; every Crisp behaviour was measured on the
-     INSTALLED 1.0.1353 through its own job API. Max is deliberately left unclaimed: not measured. -->
+     INSTALLED 1.0.1353 through its own job API. Max on HDR measured 2026-10-05 on 1.0.1440 (HLG + PQ in, SDR bt709 8-bit out, ΔE within 0.1 of Enhance) — ops research/crisp-b11-max-hdr-2026-10-05. -->
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; HDR video</div>
   <h1>iPhone HDR video looks washed out when an app ignores its colour tags</h1>
@@ -159,8 +159,9 @@ Wikimedia Commons.</figcaption>
     <li><strong>Convert keeps HDR as it is.</strong> Converting MP4 to MOV rewraps the file without
     re-encoding the picture. The video data came out byte-for-byte identical to the source, so HDR
     passes through untouched.</li>
-    <li><strong>Max hasn't been checked with HDR yet.</strong> For Max, the generative restore,
-    convert the clip to SDR first.</li>
+    <li><strong>Max takes HDR too, and writes SDR.</strong> Max, the generative restore, tone-maps an HLG or PQ
+    clip to standard-range 8-bit bt709 before it restores it — the same output as Enhance (measured on
+    Crisp 1.0.1440). It does not make an HDR file.</li>
   </ul>
   <p>Converting to SDR is the right default when you don't know where a clip will be watched. It's
   the wrong one if you're delivering HDR on purpose. Of the lanes we measured, Convert is the one
