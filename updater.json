@@ -1,6 +1,6 @@
 {
   "version": "1.0.1440",
-  "notes": "When something you ask for needs Crisp Pro \u2014 Max quality, or a second job while one is running \u2014 Crisp now always opens the unlock window with Buy, never a message you can\u2019t act on. Photos are sized from their own size: \u201cmake it 4K\u201d on a 1080p photo makes it 4K, not 8K; \u201cmake it 1080p\u201d on a small photo really reaches 1080p; and a photo that\u2019s already the size you ask for is told so instead of being upscaled again.",
+  "notes": "If something you ask for needs Crisp Pro, such as Max quality or a second job while one is running, Crisp now opens the window with the Buy button. Before, it could show a message you couldn\u2019t click. Photos are now sized from their own size. \u201cMake it 4K\u201d on a 1080p photo makes it 4K, not 8K. \u201cMake it 1080p\u201d on a small photo now reaches 1080p. If a photo is already the size you ask for, Crisp says so instead of upscaling it again.",
   "pub_date": "2026-10-03T00:16:28Z",
   "platforms": {
     "darwin-aarch64": {

@@ -89,7 +89,10 @@ def facts() -> dict:
         "refund_days": int(one(r"within (\d+) days of purchase", read("/legal/refunds/"), "refund window")),
         "version": json.loads((SITE / "latest.json").read_text())["version"],
         "dmg": dmg_target(one(r'data-track="hero" href="([^"]+Crisp\.dmg)"', home, "the download link")),
-        "updates": one(r"(every \d+\.x update included)", home, "the update promise"),
+        # The homepage now writes it as a sentence ("Pay once. Every 1.x update is included."); llms.txt keeps
+        # its clause form, read from the page either way.
+        "updates": one(r"([Ee]very \d+\.x update (?:is )?included)", home, "the update promise")
+                   .replace(" is included", " included").replace("Every", "every", 1),
     }
     if f["was"] != price:
         raise SystemExit(f"llms_txt: the founding bar's full price {f['was']} is not PRICE_USD {price}")
