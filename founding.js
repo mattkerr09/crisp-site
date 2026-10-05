@@ -44,7 +44,7 @@
  * checks it. Update this line ONLY after actually reading the upstream diff — bumping it
  * to silence the check is the one way to make this worse than having no check.
  *
- * upstream-reviewed: 7fc630b5a9396bfb4f85d8500de5a5ee75d38eb4be96115c5e2cd710f633b5ea  (2026-10-03, Product Hunt line ported; the count fetch and BNPL text stay forked)
+ * upstream-reviewed: 7c188606ec8456cf7631c944fd1cc5112796ab55b68384c547b7b91555122528  (2026-10-05, the bar's " — " before the price became ": " (ops c84316f9); the count fetch and BNPL text stay forked)
  */
 (function () {
   if (window.__kcFounding) return;
@@ -153,7 +153,7 @@
     '  <span class="dot"></span>',
     '  <span class="txt">50% off',
         (first ? ' for the first ' + first + ' buyers' : ''),
-        (was && now ? ' — <span class="was">' + was + '</span><span class="now">' + now +
+        (was && now ? ': <span class="was">' + was + '</span><span class="now">' + now +
                       (split ? ' · or 4 × ' + split : '') + '</span>' : ''),
     '  </span>',
     '  <span class="dot"></span>',
