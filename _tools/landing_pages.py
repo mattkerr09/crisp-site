@@ -106,7 +106,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 </div></article>
 
 <footer><div class="wrap">
-  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="{llms_txt.BASE}/">crispvideo.app</a></p>
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="{llms_txt.BASE}/">crispvideo.app</a></p>
   {sitewide_chrome.KCO}
 </div></footer>
 {sitewide_chrome.TRACK}

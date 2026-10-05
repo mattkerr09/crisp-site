@@ -95,7 +95,7 @@ HEAD = """<!DOCTYPE html>
 </div></article>
 
 <footer><div class="wrap">
-  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong> &mdash; offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="{site}/">crispvideo.app</a></p>
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="{site}/">crispvideo.app</a></p>
   <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company LLC</a>: the company behind these apps</li></ul></div>
 </div></footer>
 </body>
