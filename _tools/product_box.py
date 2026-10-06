@@ -50,6 +50,10 @@ def arms() -> set[str]:
     return {m.group(1) for m in re.finditer(r"^crispvideo\.app \| (/\S+/) \|", ARMS_FILE.read_text(), re.M)}
 
 
+#: the hub's counting Buy route (opens the Dodo checkout with the founding code applied; src = the page)
+BUY = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp"
+
+
 def box(where: str, page: str = "") -> str:
     f = llms_txt.facts()
     src = (page.strip("/").replace("/", "-") + "-" if page.strip("/") else "") + f"pbox-{where}"
@@ -65,9 +69,14 @@ def box(where: str, page: str = "") -> str:
             # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
             # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
             # not a dash (content standard, 2026-10-05).
-            f'The Buy button on the pricing section applies <strong>{f["code"]}</strong> at checkout.</p>'
+            f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>'
             f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}">Download free for Mac</a> '
-            f'<a class="btn btn-ghost" data-track="pbox-{where}-pro" href="/#buy">See Pro pricing</a></p>'
+            # BUY BESIDE THE FREE DOWNLOAD (content standard, 2026-10-05). The box used to send Pro to the
+            # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout
+            # with the founding code applied and counts it under this page's src, as /dl does for downloads.
+            f'<a class="btn btn-ghost" data-track="pbox-{where}-buy" href="{BUY}?src={src}" rel="nofollow">Buy Pro</a></p>'
+            # a phone visitor cannot install a Mac app: one line to send the link to themselves (track.js)
+            f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>'
             f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')

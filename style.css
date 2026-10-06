@@ -333,3 +333,10 @@ pre{max-width:100%;overflow-x:auto;}
 .btn-ghost{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .btn-ghost:hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .pbox .pbox-fine{font-size:.8rem;color:var(--grey-dim);margin:0;}
+/* "On your phone?" in the product box (content standard, 2026-10-05): shown only on a narrow screen or a
+   touch-only pointer, like the homepage's; track.js wires the button. */
+.phone-link{display:none;margin:0 0 .6rem;font-size:.88rem;color:var(--grey);}
+.phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+.pbox .pbox-phone{margin:-.2rem 0 .7rem;}
+@media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}

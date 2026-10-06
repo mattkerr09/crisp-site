@@ -24,3 +24,23 @@ document.addEventListener("click", function (e) {
     window.plausible("Buy", { props: { button: name }, callback: go });
   }
 }, true);
+
+/* "On your phone? Send the Mac link to yourself" in the product box on every guide (content standard,
+   2026-10-05). The homepage wires its own two buttons inline, so this binds only inside .pbox. The link is
+   this page, tagged phone-share, carrying where the visitor came from (the hub snippet's kc_aff: ?ref=producthunt
+   is kept as landing_source) so the Mac visit still counts for its source. Share sheet, else an email to self. */
+(function () {
+  function kcCarry(url) { try { var s = JSON.parse(localStorage.getItem('kc_aff') || 'null'); var v = (s && s.exp > Date.now() && s.v) || {}; var q = []; var r = v.ref || v.landing_source; if (r) q.push('ref=' + encodeURIComponent(r)); ['via', 'rekomi_ref', 'affonso_referral', 'awc', 'cjevent', 'irclickid'].forEach(function (k) { if (v[k]) q.push(k + '=' + encodeURIComponent(v[k])); }); return q.length ? url + '&' + q.join('&') : url; } catch (e) { return url; } }
+  function bind() {
+    document.querySelectorAll('.pbox [data-send-mac-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var url = kcCarry(location.origin + location.pathname + '?utm_source=phone-share&utm_medium=share');
+        var text = 'Crisp Video for Mac is free, with the full editor, 4K upscaling and a small “Made with Crisp” mark on video exports. Open this on your Mac to download it.';
+        try { window.plausible('Send Mac Link'); } catch (e) {}
+        if (navigator.share) { navigator.share({ title: 'Crisp Video for Mac', text: text, url: url }).catch(function () {}); }
+        else { location.href = 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') + '&body=' + encodeURIComponent(text + '\n\n' + url); }
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind); else bind();
+})();
