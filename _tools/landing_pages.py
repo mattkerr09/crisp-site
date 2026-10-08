@@ -53,8 +53,8 @@ def box(src: str, buy_first: bool) -> str:
     return (f'<aside class="pbox" data-landing-box>'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
-            f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers — '
-            f'the Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
+            f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
+            f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
             f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
@@ -121,7 +121,7 @@ def pages() -> dict[Path, str]:
     m = llms_txt.money
     return {
         SITE / "pricing" / "index.html": page(
-            "pricing", f"Crisp pricing — free to try, Pro {m(f['price'])} once",
+            "pricing", f"Crisp pricing: free to try, Pro {m(f['price'])} once",
             f"Crisp Video is free to use with a small mark. Pro is {m(f['price'])} once, not a subscription.",
             "Crisp pricing",
             f"Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports. Pro is a one-time "

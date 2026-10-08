@@ -128,6 +128,9 @@ def choose(text: str, k: int, block: str, pair_with: int | None) -> str:
         return ". "
     if rw[0].lower().strip(",") in ("and", "so", "or", "but", "which", "then", "while", "because", "though", "although", "yet", "nor", "whereas", "unless", "until", "where", "when"):
         return ", "
+    if (re.fullmatch(r"h[1-6]|a|title|summary|button", block or "") and len(rw) <= 4
+            and re.fullmatch(r"offline|properly|measured|in .+|without .+", right.strip())):
+        return ", "      # "Trim your first clip, offline": a tail that says HOW reads as one phrase, not a label
     if len(lw) <= 5 and LABELISH.match(block or "") and sent_start < 0:
         return ": "
     if len(lw) <= 3 and sent_start < 0 and block in ("p", "figcaption", "body", "div"):
@@ -212,6 +215,8 @@ def attrs(raw: str) -> tuple[str, int]:
         k = v.count(DASH) + v.count("&mdash;")
         n += k
         def one(m):
+            if re.fullmatch(r"\s*Crisp(?: Video)?\s*", v[m.end():]):
+                return " | "          # the brand suffix keeps the site's title separator
             nxt = v[m.end():].split(" ", 1)[0].lower()
             return ", " if nxt in ("and", "so", "or", "but", "which", "then", "while", "because", "though", "although", "yet", "nor", "whereas", "unless", "until", "where", "when") else ": "
         return re.sub(r"\s*(?:\u2014|&mdash;)\s*", one, v)
