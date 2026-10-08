@@ -260,6 +260,13 @@ def remaining(raw: str) -> list[str]:
         v = html.unescape(m.group(1))
         if DASH in v and "“" not in v:
             out.append("attr: " + v[:70])
+    # A comment is invisible in a browser, but a ">" inside it ends a regex tag-strip (<[^>]+>) early and every word
+    # after it reads as page text to scrapers and to our own QC (CEO 10-08: "$299.90 -> $149.90" exposed a dash).
+    for m in re.finditer(r"<!--(.*?)-->", raw, re.S):
+        c = m.group(1)
+        if ">" in c and DASH in c.split(">", 1)[1]:
+            k = c.find(">")
+            out.append("comment exposed by its '>': " + " ".join(c[max(0, k - 30):k + 40].split()))
     return out
 
 
