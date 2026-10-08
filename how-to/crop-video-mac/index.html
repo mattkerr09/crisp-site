@@ -6,7 +6,7 @@
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Crop cuts the edges off; Reframe shrinks the picture to fit | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Crop a 1920×1080 clip to 9:16 in Crisp and you get 608×1080 — the centre rectangle. Ask to make it vertical and Reframe returns 1080×1920 with the whole shot inside a blurred fill. The verb you type picks which one runs.">
+<meta name="description" content="Crop a 1920×1080 clip to 9:16 in Crisp and you get 608×1080. The centre rectangle. Ask to make it vertical and Reframe returns 1080×1920 with the whole shot inside a blurred fill. The verb you type picks which one runs.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/crop-video-mac/">
 <meta property="og:type" content="article">
@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","datePublished": "2026-07-06", "dateModified":"2026-09-28", "@type":"Article","headline":"Crop cuts the edges off; Reframe shrinks the picture to fit","description":"Crisp has two lanes that change the shape of a frame. Crop takes a centre rectangle out of the source at its own resolution and discards the rest. Reframe fits the whole picture onto a fixed 1080-based canvas and fills the space with a blurred copy of the frame. The verb you type decides which one runs.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"mainEntityOfPage":"https://crispvideo.app/how-to/crop-video-mac/"}
+{"@context":"https://schema.org","datePublished": "2026-07-06", "dateModified":"2026-10-08", "@type":"Article","headline":"Crop cuts the edges off; Reframe shrinks the picture to fit","description":"Crisp has two lanes that change the shape of a frame. Crop takes a centre rectangle out of the source at its own resolution and discards the rest. Reframe fits the whole picture onto a fixed 1080-based canvas and fills the space with a blurred copy of the frame. The verb you type decides which one runs.","author":{"@type":"Organization","name":"Crisp"},"publisher":{"@type":"Organization","name":"Crisp"},"mainEntityOfPage":"https://crispvideo.app/how-to/crop-video-mac/"}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I crop to 9:16 or reframe to 9:16?", "acceptedAnswer": {"@type": "Answer", "text": "Crop if the subject is in the middle and you want it to fill the screen: you keep the source's resolution and lose the edges. Reframe if anything near the edges matters."}}, {"@type": "Question", "name": "Why is my 9:16 crop only 608 pixels wide?", "acceptedAnswer": {"@type": "Answer", "text": "Crop does not resize. It takes the largest 9:16 rectangle that fits your frame — on a 1920×1080 clip, 608×1080 — and encodes that. For a 1080-wide vertical file use Reframe, or crop first and upscale the result."}}, {"@type": "Question", "name": "Can Crisp crop one edge, or crop off-centre?", "acceptedAnswer": {"@type": "Answer", "text": "No, and it tells you instead of doing something else. Crop works from the centre, to an aspect ratio, or off black bars — \"crop the top off\" and \"crop just the left half\" both get that explanation and the alternatives."}}, {"@type": "Question", "name": "Does cropping re-encode the audio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every audio stream is mapped and stream-copied, so a two-track screen recording comes out with both tracks; Crisp retries once at 256 kbps AAC only if the container cannot carry the source codec. The picture is re-encoded, because a crop changes every frame."}}, {"@type": "Question", "name": "Can I crop just part of a clip, or one clip on the timeline?", "acceptedAnswer": {"@type": "Answer", "text": "Crisp applies an edit to a whole clip — split it first if the change should start partway through. On the timeline the Editor's per-clip tools include Reframe, which bakes a new file for the selected clip and can be reverted, but there is no per-clip Crop."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
@@ -31,20 +31,21 @@
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
-  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Crop or Reframe</div>
   <h1>Crop cuts the edges off. <span class="grad">Reframe</span> shrinks the picture to fit.</h1>
-  <div class="quick"><strong>Quick answer</strong><p class="lede">Both change the shape of your frame; only one of them loses picture. Crop a 1920×1080 clip to 9:16 and Crisp returns <strong>608×1080</strong> — the centre rectangle, with 68% of the width discarded. Ask instead to make it vertical and Reframe returns <strong>1080×1920</strong>, the whole shot intact at 1080×608 with a blurred copy of itself filling the space above and below. Crop keeps resolution and loses picture. Reframe keeps picture and loses resolution.</p></div>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-06 · last updated 2026-09-15</div>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Both change the shape of your frame; only one of them loses picture. Crop a 1920×1080 clip to 9:16 and Crisp returns <strong>608×1080</strong>. The centre rectangle, with 68% of the width discarded. Ask instead to make it vertical and Reframe returns <strong>1080×1920</strong>, the whole shot intact at 1080×608 with a blurred copy of itself filling the space above and below. Crop keeps resolution and loses picture. Reframe keeps picture and loses resolution.</p></div>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-crop-video-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-crop-video-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-06 · last updated 2026-10-08</div>
 
-  <p>One word covers both jobs — cutting a subject out of a wide shot, and getting a landscape clip to play full-screen on a phone — so most people never learn there is a choice. Crisp keeps them apart.</p>
+  <p>One word covers both jobs (cutting a subject out of a wide shot, and getting a landscape clip to play full-screen on a phone) so most people never learn there is a choice. Crisp keeps them apart.</p>
 
   <h2>The same clip, both ways</h2>
-  <p>These are the outputs of both lanes on the same sources. Crisp prints the result dimensions back when a job finishes — <em>Crop to 9:16 · 608×1080</em>, <em>Reframe · 9:16 (1080×1920)</em> — so you can check this on your own footage in one pass.</p>
+  <p>These are the outputs of both lanes on the same sources. Crisp prints the result dimensions back when a job finishes: <em>Crop to 9:16 · 608×1080</em>, <em>Reframe · 9:16 (1080×1920)</em>. You can check this on your own footage in one pass.</p>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th>Source</th><th>What you ask</th><th>Output file</th><th>What is in it</th></tr></thead>
     <tbody>
@@ -54,10 +55,10 @@
       <tr><td>2880×2160</td><td>"make it widescreen"</td><td>1920×1080</td><td>the whole frame, redrawn at 1440×1080, blurred fill down each side.</td></tr>
     </tbody>
   </table></div>
-  <p class="muted">Read the last two rows together: from one source, for one requested shape, Crop hands back a 2880-pixel-wide file and Reframe a 1920-pixel-wide one. Neither is the better answer — they answer different questions.</p>
+  <p class="muted">Read the last two rows together: from one source, for one requested shape, Crop hands back a 2880-pixel-wide file and Reframe a 1920-pixel-wide one. Neither is the better answer. They answer different questions.</p>
 
   <h2>The verb decides, not the ratio you name</h2>
-  <p>This is the part that surprises people. Both lanes accept 9:16, so naming the ratio does not pick one — the <strong>verb</strong> does:</p>
+  <p>This is the part that surprises people. Both lanes accept 9:16, so naming the ratio does not pick one. The <strong>verb</strong> does:</p>
   <ul>
     <li><strong>"crop it to 9:16"</strong> → Crop. The plan reads <em>Crop to 9:16</em>.</li>
     <li><strong>"make it vertical"</strong> → Reframe. The plan reads <em>Reframe to 9:16 (fit the whole frame + blurred fill)</em>.</li>
@@ -67,25 +68,25 @@
   <p>Crisp shows the plan before it runs, so the distinction is visible while you can still change it. If the line says "fit the whole frame + blurred fill" and you wanted the subject to fill the screen, that is the cue to say "crop it to" instead.</p>
 
   <h2>Which one you actually want</h2>
-  <p><strong>Crop</strong>, when the thing you care about sits near the middle and you want it to fill the screen: a talking head in a wide shot, a whiteboard, a product on a table. You keep the source's own resolution — nothing is enlarged or resampled — and you pay in picture, because everything outside the rectangle is gone for good.</p>
-  <p><strong>Reframe</strong>, when the edges carry something: a second person, a scoreboard, a caption already burned into the footage, a gesture that leaves frame. You keep every pixel of the shot and pay in size — the picture is redrawn smaller inside the new shape, with a blurred, zoomed copy of the same frame behind it instead of flat black.</p>
-  <p>A tiebreaker that works: if you cannot say out loud what you are willing to lose from the edges, you want Reframe. And if you simply want to sit closer to the middle without changing shape at all, there is a third Crop mode for that — "crop in a bit" is 1.1×, "zoom in 2x" is 2×, "a lot tighter" is 1.6×, up to a 3× ceiling.</p>
+  <p><strong>Crop</strong>, when the thing you care about sits near the middle and you want it to fill the screen: a talking head in a wide shot, a whiteboard, a product on a table. You keep the source's own resolution (nothing is enlarged or resampled) and you pay in picture, because everything outside the rectangle is gone for good.</p>
+  <p><strong>Reframe</strong>, when the edges carry something: a second person, a scoreboard, a caption already burned into the footage, a gesture that leaves frame. You keep every pixel of the shot and pay in size. The picture is redrawn smaller inside the new shape, with a blurred, zoomed copy of the same frame behind it instead of flat black.</p>
+  <p>A tiebreaker that works: if you cannot say out loud what you are willing to lose from the edges, you want Reframe. And if you simply want to sit closer to the middle without changing shape at all, there is a third Crop mode for that: "crop in a bit" is 1.1×, "zoom in 2x" is 2×, "a lot tighter" is 1.6×, up to a 3× ceiling.</p>
 
   <h2>Reframe always lands on a 1080 canvas</h2>
-  <p>Reframe has four fixed canvases — 1080×1920 vertical, 1080×1080 square, 1080×1350 portrait, 1920×1080 widescreen — and the output is that canvas every time, whatever you feed it. The picture is rescaled to fit: up from a small source and <em>down</em> from a large one, which is why the 2880×2160 clip above came back 1920×1080. That is not a setting you can raise.</p>
-  <p>Crop does the opposite and never resizes at all. The output is the crop rectangle, which is why a 9:16 crop of a 1080p clip is 608 pixels wide — under the 1080 vertical platforms prefer. Neither lane runs the AI upscaler. If you want a tight crop <em>and</em> a full-size vertical file, crop first, then run <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">the upscaler</a> over the result as a second pass.</p>
+  <p>Reframe has four fixed canvases (1080×1920 vertical, 1080×1080 square, 1080×1350 portrait, 1920×1080 widescreen) and the output is that canvas every time, whatever you feed it. The picture is rescaled to fit: up from a small source and <em>down</em> from a large one, which is why the 2880×2160 clip above came back 1920×1080. That is not a setting you can raise.</p>
+  <p>Crop does the opposite and never resizes at all. The output is the crop rectangle, which is why a 9:16 crop of a 1080p clip is 608 pixels wide, under the 1080 vertical platforms prefer. Neither lane runs the AI upscaler. If you want a tight crop <em>and</em> a full-size vertical file, crop first, then run <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">the upscaler</a> over the result as a second pass.</p>
 
   <h2>Crop takes six shapes; Reframe takes four</h2>
   <p>Crop: <strong>1:1, 4:5, 9:16, 16:9, 4:3</strong> and <strong>3:4</strong>. Reframe: <strong>9:16, 1:1, 4:5</strong> and <strong>16:9</strong>. The two extra shapes are the archival ones, which is why "make it 4:3" gets a real answer rather than a shrug:</p>
   <div class="box">
     <h3 style="margin-top:0">What Crisp says when you ask for 4:3</h3>
-    <p style="margin-bottom:0">Crisp reframes to four shapes — vertical (9:16), square (1:1), portrait (4:5) and widescreen (16:9) — so it can't pad out to 4:3. It can CROP to 4:3 though: say <strong>“crop it to 4:3”</strong>, which trims the edges instead of adding bars.</p>
+    <p style="margin-bottom:0">Crisp reframes to four shapes: vertical (9:16), square (1:1), portrait (4:5) and widescreen (16:9). It can't pad out to 4:3. It can CROP to 4:3 though: say <strong>“crop it to 4:3”</strong>, which trims the edges instead of adding bars.</p>
   </div>
-  <p>Ask for a shape neither lane has — "make it 21:9", "make it cinemascope", "make it 2.35:1" — and Crisp reads the number and names both lists rather than pretending not to understand. Ask for the shape your clip already is and it says so, instead of re-encoding the same picture.</p>
+  <p>Ask for a shape neither lane has ("make it 21:9", "make it cinemascope", "make it 2.35:1") and Crisp reads the number and names both lists rather than pretending not to understand. Ask for the shape your clip already is and it says so, instead of re-encoding the same picture.</p>
 
   <h2>Black bars are a third thing entirely</h2>
-  <p>Removing letterbox is not a ratio crop and has its own mode. A detection pass samples from about 10% into the clip — far enough in that a fade-from-black intro cannot fool it — finds the content rectangle inside the bars and crops to exactly that. On a 1920×1080 file carrying an 816-pixel-tall picture the result is 1920×816 taken from y=132: the bars, and only the bars. If the frame is already full, Crisp says so and does nothing.</p>
-  <p>The mirror image goes the other way. Blurred bars are not damage to remove, they are the Reframe look — so "blurred bars on the sides" is answered with a question: <em>"Blurred bars come from fitting the whole picture into a new shape — which shape? 'make it vertical' for TikTok or 'make it square'."</em></p>
+  <p>Removing letterbox is not a ratio crop and has its own mode. A detection pass samples from about 10% into the clip (far enough in that a fade-from-black intro cannot fool it) finds the content rectangle inside the bars and crops to exactly that. On a 1920×1080 file carrying an 816-pixel-tall picture the result is 1920×816 taken from y=132: the bars, and only the bars. If the frame is already full, Crisp says so and does nothing.</p>
+  <p>The mirror image goes the other way. Blurred bars are not damage to remove, they are the Reframe look (so "blurred bars on the sides" is answered with a question: <em>"Blurred bars come from fitting the whole picture into a new shape) which shape? 'make it vertical' for TikTok or 'make it square'."</em></p>
 
   <h2>What neither lane will do</h2>
   <ul>
@@ -94,12 +95,12 @@
     <li><strong>Zoom out.</strong> Nothing exists outside the frame; Crisp says so, then points at Reframe.</li>
     <li><strong>Part of a clip.</strong> "Crisp changes a whole clip at a time… Split the clip where you want the change to start (press S, or right-click → Split here), then apply it to that piece."</li>
     <li><strong>Part of the frame.</strong> No mask, no region tool: an edit reaches the whole picture, or you crop in from the centre first.</li>
-    <li><strong>Photos.</strong> Both lanes are video-only — "Crop is for videos — pick a video clip."</li>
+    <li><strong>Photos.</strong> Both lanes are video-only. Crisp says “Crop is for videos — pick a video clip.”</li>
     <li><strong>Two edits in one sentence.</strong> Pair a crop with a bigger job and the plan you get back will not contain both. Ask for one change per pass, and read the plan before you run it.</li>
   </ul>
 
   <h2>Running it</h2>
-  <p>Drag the clip onto the <a href="https://crispvideo.app/#download">free Crisp app for Mac</a> and type what you want, or pick the lane by hand — Crop has three modes (<strong>Black bars</strong>, <strong>To ratio</strong>, <strong>Crop in</strong>), Reframe has its four canvases. The plan names the lane and the shape before anything runs. Crisp hardware-encodes through VideoToolbox, stream-copies the audio, and writes the result beside your original atomically, so it appears finished or not at all. Free covers one file at a time; batch, Max quality and no watermark are a one-time <span class="split">$129 · or 4 × $32.25</span>.</p>
+  <p>Drag the clip onto the <a href="https://crispvideo.app/#download">free Crisp app for Mac</a> and type what you want, or pick the lane by hand: Crop has three modes (<strong>Black bars</strong>, <strong>To ratio</strong>, <strong>Crop in</strong>), Reframe has its four canvases. The plan names the lane and the shape before anything runs. Crisp hardware-encodes through VideoToolbox, stream-copies the audio, and writes the result beside your original atomically, so it appears finished or not at all. Free covers one file at a time; batch, Max quality and no watermark are a one-time <span class="split">$129 · or 4 × $32.25</span>.</p>
 
   <div class="cta">
     <h2>Try it on a clip you know</h2>
@@ -112,29 +113,30 @@
   <h3>Should I crop to 9:16 or reframe to 9:16?</h3>
   <p>Crop if the subject is in the middle and you want it to fill the screen: you keep the source's resolution and lose the edges. Reframe if anything near the edges matters.</p>
   <h3>Why is my 9:16 crop only 608 pixels wide?</h3>
-  <p>Crop does not resize. It takes the largest 9:16 rectangle that fits your frame — on a 1920×1080 clip, 608×1080 — and encodes that. For a 1080-wide vertical file use Reframe, or crop first and upscale the result.</p>
+  <p>Crop does not resize. It takes the largest 9:16 rectangle that fits your frame (on a 1920×1080 clip, 608×1080) and encodes that. For a 1080-wide vertical file use Reframe, or crop first and upscale the result.</p>
   <h3>Can Crisp crop one edge, or crop off-centre?</h3>
-  <p>No, and it tells you instead of doing something else. Crop works from the centre, to an aspect ratio, or off black bars — "crop the top off" and "crop just the left half" both get that explanation and the alternatives.</p>
+  <p>No, and it tells you instead of doing something else. Crop works from the centre, to an aspect ratio, or off black bars: "crop the top off" and "crop just the left half" both get that explanation and the alternatives.</p>
   <h3>Does cropping re-encode the audio?</h3>
   <p>No. Every audio stream is mapped and stream-copied, so a two-track screen recording comes out with both tracks; Crisp retries once at 256 kbps AAC only if the container cannot carry the source codec. The picture is re-encoded, because a crop changes every frame.</p>
   <h3>Can I crop just part of a clip, or one clip on the timeline?</h3>
-  <p>Crisp applies an edit to a whole clip — split it first if the change should start partway through. On the timeline the Editor's per-clip tools include Reframe, which bakes a new file for the selected clip and can be reverted, but there is no per-clip Crop.</p>
+  <p>Crisp applies an edit to a whole clip: split it first if the change should start partway through. On the timeline the Editor's per-clip tools include Reframe, which bakes a new file for the selected clip and can be reverted, but there is no per-clip Crop.</p>
 
   <h3>Related guides</h3>
   <p><a href="https://crispvideo.app/how-to/make-video-vertical-mac/">Make a video vertical</a> · <a href="https://crispvideo.app/how-to/add-a-border-to-video-mac/">Add a border</a> · <a href="https://crispvideo.app/how-to/trim-video-mac/">Trim a video</a> · <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Upscale a video</a></p>
   <p>Background: <a href="https://crispvideo.app/learn/what-is-aspect-ratio/">what changing the frame shape costs</a>.</p>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-crop-video-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-crop-video-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/how-to/deinterlace-video-mac/">How to deinterlace video on a Mac</a></li>
-    <li><a href="https://crispvideo.app/how-to/edit-hdr-video-mac/">How to edit HDR video on a Mac — without washed-out colors</a></li>
+    <li><a href="https://crispvideo.app/how-to/edit-hdr-video-mac/">How to edit HDR video on a Mac, without washed-out colors</a></li>
     <li><a href="https://crispvideo.app/how-to/extract-audio-from-video-mac/">How to extract audio from a video on a Mac</a></li>
   </ul>
 
 </div></article>
 
 <footer><div class="wrap">
-  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
-  <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li></ul></div>
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+  <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company LLC</a>: the company behind these apps</li></ul></div>
 </div></footer>
 <div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
 <script src="/founding.js" defer></script>

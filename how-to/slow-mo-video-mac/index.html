@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Slow motion lowers the frame rate — it doesn't add frames | Crisp</title>
+<title>Slow motion lowers the frame rate: it doesn't add frames | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Measured in Crisp's Speed lane on a Mac: a 30fps clip at 0.5× comes out as the same 60 frames at 15fps, at 0.25× as 7.5fps. Why quarter speed judders, what the audio does, and the separate pass that actually adds frames.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Slow motion lowers the frame rate — it doesn't add frames">
+<meta property="og:title" content="Slow motion lowers the frame rate: it doesn't add frames">
 <meta property="og:description" content="A 30fps clip slowed to 0.5× keeps all 60 frames and plays them at 15fps. Measured, with the arithmetic that explains the judder.">
 <meta property="og:url" content="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:site_name" content="Crisp">
@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Slow motion lowers the frame rate — it doesn't add frames">
+<meta name="twitter:title" content="Slow motion lowers the frame rate: it doesn't add frames">
 <meta name="twitter:description" content="0.5× on a 30fps clip = the same 60 frames at 15fps. Measured, with the judder arithmetic.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
@@ -26,7 +26,7 @@
 {"@context":"https://schema.org","@type":"Article",
 "headline":"Slowing a clip down lowers its frame rate — it doesn't add frames",
 "description":"Crisp's Speed lane rescales timestamps and keeps every frame: a 30fps clip at 0.5× is the same 60 frames at 15fps. Adding frames is a separate pass (Smooth motion, RIFE) that raises the rate without slowing the clip.",
-"datePublished":"2026-07-04","dateModified":"2026-09-28",
+"datePublished":"2026-07-04","dateModified":"2026-10-08",
 "author":{"@type":"Organization","name":"Crisp"},
 "publisher":{"@type":"Organization","name":"Crisp"},
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://crispvideo.app/how-to/slow-mo-video-mac/"}}
@@ -37,15 +37,16 @@
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
-  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp</a>
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
   <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
 </div></nav>
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Slow motion lowers the frame rate</div>
-  <h1>Slowing a clip down <span class="grad">lowers its frame rate</span> — it doesn't add frames</h1>
+  <h1>Slowing a clip down <span class="grad">lowers its frame rate</span>. It doesn't add frames</h1>
   <div class="quick"><strong>Quick answer</strong><p class="lede">Slowing a clip in Crisp's Speed lane rescales the timestamps and writes out exactly the frames it was handed. A 2-second 30fps clip holds 60 frames; at <strong>0.5×</strong> the output is still 60 frames, now about 4 seconds long and tagged <strong>15fps</strong>. At 0.25× those same 60 frames read 7.5fps. Nothing is invented, which is where the judder comes from. Adding frames is a different pass entirely.</p></div>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-04 · last updated 2026-09-15</div>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-slow-mo-video-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-slow-mo-video-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-04 · last updated 2026-10-08</div>
 
   <h2>What the Speed lane actually does to the file</h2>
   <p>Picking a slow-mo speed does not touch the pictures. Crisp rescales every frame's
@@ -70,11 +71,11 @@
   <h2>Why 0.5× usually looks fine and 0.25× usually doesn't</h2>
   <p>At half speed a 30fps clip lands on 15 unique frames per second. That is thin, but each
   frame still carries recognisable motion between it and the next one. At quarter speed the same
-  footage lands on 7.5, and at Crisp's slowest setting — 0.1×, the engine's floor — on 3. There is
+  footage lands on 7.5, and at Crisp's slowest setting (0.1×, the engine's floor) on 3. There is
   no filling-in step, so each frame simply sits on screen four or ten times longer than the camera
   intended it to. What reads as "stuttery slow motion" is that held frame.</p>
   <p>This is also why footage shot at a high rate slows so much better. A clip recorded at 120fps
-  has four times the frames to spend, so 0.25× still delivers 30 unique frames per second — the
+  has four times the frames to spend, so 0.25× still delivers 30 unique frames per second. The
   same rate the 30fps clip had before anyone touched it. If you know in advance that a shot will
   be slowed, the cheapest fix is at the camera, not in the app.</p>
   <p>The speed range Crisp accepts is <strong>0.1× to 8×</strong>. The four cards in the app cover
@@ -84,14 +85,14 @@
   <p>Stretching audio the naive way drops its pitch, which is what turns a slowed voice into a
   drone. Crisp does not do that. It stretches the track with a chain of ffmpeg <code>atempo</code>
   stages, a filter that changes tempo and leaves pitch alone. <code>atempo</code> only accepts a
-  factor between 0.5 and 2.0 per stage, so anything outside that is decomposed — 0.25× becomes
+  factor between 0.5 and 2.0 per stage, so anything outside that is decomposed: 0.25× becomes
   <code>atempo=0.5,atempo=0.5</code>, and the 0.1× floor becomes four stages whose product is 0.1.</p>
   <p>Checked rather than assumed: a 440 Hz sine tone, two seconds long, run through the Speed lane
   at 0.25×. The output is eight seconds long and its dominant frequency is still 440 Hz. The same
   helper is reused by the timeline's per-clip speed property, so a slowed clip inside an edit keeps
   its pitch too.</p>
   <p>Two smaller things the lane does while it is in there. Only the video and first audio stream
-  are carried across — a subtitle or data track is dropped, because its timestamps were not
+  are carried across: a subtitle or data track is dropped, because its timestamps were not
   retimed. And if you set trim points on the same job, the trim is applied to the input first and
   the retime second, which is the order the sentence "take this piece, then slow it down" implies.
   See <a href="https://crispvideo.app/how-to/trim-video-mac/">trimming a video</a> for that side of it.</p>
@@ -112,7 +113,7 @@
     </li>
     <li>
       <h3>Then the Speed lane, on the result</h3>
-      <p>Slowing a 60fps file to 0.5× lands on 30fps — the rate you started with, but over twice
+      <p>Slowing a 60fps file to 0.5× lands on 30fps. The rate you started with, but over twice
       the time, with every frame distinct instead of held.</p>
     </li>
   </ol>
@@ -122,7 +123,7 @@
     scale that lane offers is 2×. There is no "interpolate without enlarging" setting, so the
     intermediate file comes back both smoother and considerably bigger. Separately, the
     <strong>Max quality</strong> preset refuses Smooth motion outright and says so rather than
-    quietly skipping it — use a standard preset for this.</p>
+    quietly skipping it, use a standard preset for this.</p>
     <p style="margin-bottom:0">Interpolation also runs <em>after</em> the upscale inside that
     pass, not before: the frames RIFE reads are the enlarged ones.</p>
   </div>
@@ -138,19 +139,19 @@
       <tr><td>slow it way down</td><td>0.25×</td></tr>
       <tr><td>slow it down 3x</td><td>0.333×</td></tr>
       <tr><td>slow it to 10%</td><td>0.1×, with a note that this is as slow as Crisp goes</td></tr>
-      <tr><td>slow the middle down</td><td>Refused — see below</td></tr>
+      <tr><td>slow the middle down</td><td>Refused: see below</td></tr>
     </tbody>
   </table></div>
   <p>Two refusals are worth calling out, because both are the app being honest rather than
   failing. Asking to slow part of a clip is declined with an instruction: Crisp changes a whole
   clip at a time, so <a href="https://crispvideo.app/how-to/split-a-clip-in-video-mac/">split the clip</a> where the change should start
-  and apply the speed to that piece. And asking for both things in one sentence — "slow it down and
-  smooth the motion" — plans only the slow-down. One job runs one lane. Run Smooth motion first as
+  and apply the speed to that piece. And asking for both things in one sentence ("slow it down and
+  smooth the motion") plans only the slow-down. One job runs one lane. Run Smooth motion first as
   its own job, then the Speed lane on what comes out.</p>
 
   <h2>Inside a multi-clip edit</h2>
   <p>On the timeline, speed is a per-clip property rather than a separate render. Set a clip to
-  0.25×, 0.5×, 1.5×, 2× or 4× and it is baked in at export, reversibly — you can change your mind
+  0.25×, 0.5×, 1.5×, 2× or 4× and it is baked in at export, reversibly. You can change your mind
   without re-rendering a new source file. The per-clip range the exporter validates is the same
   0.1×–8× the standalone lane uses, and it runs the same pitch-preserving audio chain. Muting a
   clip disables its volume control, since a muted segment skips the audio branch entirely; if you
@@ -162,7 +163,7 @@
 
   <div class="cta">
     <h2>Try it on your own clip</h2>
-    <p>Free to try on your Mac, and nothing is uploaded — the render runs on your machine. Free
+    <p>Free to try on your Mac, and nothing is uploaded. The render runs on your machine. Free
     video exports carry a small "Made with Crisp" mark; a one-time <span class="split">$129 · or 4 × $32.25</span> removes it and unlocks Max
     quality and batch.</p>
     <a class="btn" href="https://crispvideo.app/#download">Download Crisp for Mac</a>
@@ -182,12 +183,13 @@
   <p>No. The track is stretched with <code>atempo</code> stages, which change tempo and leave pitch
   alone. Measured on a 440 Hz tone at 0.25×: eight seconds long, still 440 Hz.</p>
   <h3>How do I get smooth slow motion rather than juddery slow motion?</h3>
-  <p>Two passes in order — Enhance with Smooth motion (RIFE adds the in-between frames at the same
+  <p>Two passes in order: Enhance with Smooth motion (RIFE adds the in-between frames at the same
   duration), then the Speed lane on that output. A single job will not do both.</p>
   <h3>Does the audio drop in pitch when a clip is slowed down?</h3>
   <p>No. Crisp stretches the audio with a chain of ffmpeg atempo stages, which changes tempo and leaves pitch alone. Measured on a 440 Hz test tone slowed to 0.25×: the output tone is still 440 Hz over four times the length. The same helper runs behind per-clip speed on the timeline.</p>
   <h3>How do I get smooth slow motion instead of juddery slow motion?</h3>
-  <p>Run two passes, in order. First Enhance with Smooth motion, which uses RIFE (rife-v4.6) to add in-between frames and raises the frame rate over the same duration. Then run the Speed lane on that result. One job never does both — the request box plans only the slow-down if you ask for both in one sentence.</p>
+  <p>Run two passes, in order. First Enhance with Smooth motion, which uses RIFE (rife-v4.6) to add in-between frames and raises the frame rate over the same duration. Then run the Speed lane on that result. One job never does both. The request box plans only the slow-down if you ask for both in one sentence.</p>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-slow-mo-video-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-slow-mo-video-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <h2>Related</h2>
   <ul>
@@ -199,8 +201,8 @@
 </div></article>
 
 <footer><div class="wrap">
-  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong> — offline AI video &amp; photo upscaler + auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
-  <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li></ul></div>
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a></p>
+  <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company LLC</a>: the company behind these apps</li></ul></div>
 </div></footer>
 <div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
 <script src="/founding.js" defer></script>
