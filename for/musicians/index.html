@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Crisp for musicians — live footage and music video on a Mac</title>
+<title>Crisp for musicians: live footage and music video on a Mac</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Dark venue footage shot on phones, three angles of the same set that do not match, and a release deadline. The realistic version of what can be fixed.">
 <meta name="theme-color" content="#060810">
@@ -63,8 +63,8 @@
   because it sits above 0.5 it also runs a temporal and spatial
   <a href="https://crispvideo.app/how-to/remove-noise-from-video-mac/">denoise pass before</a> the
   upscale. Below 0.5 the dial only swaps the model and there is no separate pass, so ordering is not
-  a question you can ask at that end of the range — above it, Crisp denoises first and you cannot
-  move it. The lift is a separate grade you run afterwards — the <em>bright</em> look is the one that
+  a question you can ask at that end of the range: above it, Crisp denoises first and you cannot
+  move it. The lift is a separate grade you run afterwards. The <em>bright</em> look is the one that
   raises exposure and opens the shadows without pulling the contrast back down on top of it.</p>
 
   <h2>Several phones, one show</h2>
@@ -75,7 +75,7 @@
   aligned.</p>
   <p>Normalise everything to a constant frame rate and the same colour range before you cut. The sync
   problem largely disappears, and the grade you apply to one angle stops looking wrong on the next.
-  Crisp's own timeline and montage passes do this to every segment they assemble — each one is forced
+  Crisp's own timeline and montage passes do this to every segment they assemble. Each one is forced
   to a constant rate taken from the source, precisely because a variable-rate phone clip otherwise
   drifts across the cuts.</p>
   <p>What Crisp will not do is sync the angles for you. The timeline is a single track of ordered
@@ -86,7 +86,7 @@
   reference only. No amount of processing turns a phone microphone in front of a PA into a usable
   music recording, and this is the single most common way a live video gets abandoned. Crisp can put a
   finished audio file over a montage or a timeline render, but it replaces the soundtrack outright and
-  lands at zero — there is no offset, delay or nudge control anywhere in it, so lining a recorder up
+  lands at zero. There is no offset, delay or nudge control anywhere in it, so lining a recorder up
   with picture is not something it can do.</p>
 
   <h2>Cutting a reel to the track</h2>
@@ -99,7 +99,7 @@
   measuring the full mix found 174 and sat 130 ms out, because a melody note starting mid-beat raises
   a broadband envelope exactly like a kick does. And Music mode is allowed up to 768 segments, against
   64 for the other modes, because the number of cuts a beat-cut reel needs scales with the tempo and
-  not with taste — a three-minute track at 128 BPM asks for around 384 of them. Cut positions are
+  not with taste: a three-minute track at 128 BPM asks for around 384 of them. Cut positions are
   rounded against the running total rather than segment by segment, so the error stays inside half a
   frame instead of compounding down the reel.</p>
   <p>The honest scope: Music mode picks on motion, minus title cards and black, so it finds the
@@ -107,7 +107,7 @@
   rather than dissolving. And it replaces the source audio with your track entirely, looping it if the
   reel runs longer and ending when the pictures do. That makes it a
   <a href="https://crispvideo.app/how-to/make-a-highlight-reel-mac/">first pass</a>, not a finished
-  edit — which is why anything it chose can be dragged, trimmed and reordered on the timeline
+  edit, which is why anything it chose can be dragged, trimmed and reordered on the timeline
   afterwards, with per-clip speed, volume and looks applied on top.</p>
 
   <h2>Short-form is the actual distribution</h2>
@@ -138,7 +138,7 @@
 
   <h2>Captions, and what they are not</h2>
   <p>Crisp burns in <a href="https://crispvideo.app/how-to/add-captions-to-video-mac/">a caption you
-  type</a> — a song title, a venue and date, a line of on-screen text — positioned to a preset and
+  type</a> (a song title, a venue and date, a line of on-screen text) positioned to a preset and
   optionally limited to a time range so it appears and leaves when you want. That is the whole of it.
   There is no speech recognition of any kind: ask for subtitles, a transcript or closed captions and
   it answers that it can burn in a caption you type but cannot listen to the audio and write subtitles
@@ -147,7 +147,7 @@
 
   <h2>Where Crisp is the wrong tool</h2>
   <p>It does not touch your music. There is no mixing, mastering, pitch correction or stem separation,
-  and it deliberately refuses to pretend it can isolate the music from a mixed soundtrack — asked to
+  and it deliberately refuses to pretend it can isolate the music from a mixed soundtrack: asked to
   pull the vocals up or the backing track down, it answers that it works on the whole soundtrack and
   offers what it does have instead. It is not a multicam NLE either, so genuine multi-angle synced
   editing belongs in Resolve or Premiere.</p>
@@ -157,8 +157,8 @@
   the loud half came up too and the gap between them only narrowed from 22 dB to 19.5 dB. On a spoken
   introduction that is exactly right. On a song, where the dynamics are the point, it will flatten the
   thing you wrote. <a href="https://crispvideo.app/how-to/make-quiet-parts-louder-video-mac/">Reach
-  for it</a> on talking, and reach for the overall-loudness pass — the one "level the audio" and "even
-  out the volume" actually run — when you just need the video to sit at a sane level.</p>
+  for it</a> on talking, and reach for the overall-loudness pass (the one "level the audio" and "even
+  out the volume" actually run) when you just need the video to sit at a sane level.</p>
   <p>And it cannot make a phone recording of a PA sound like a board mix. That one is worth accepting
   early, because it decides whether the shoot is worth doing at all.</p>
   <p>What it is for: the cleanup, the reel, the vertical cutdowns and the archive, on your own

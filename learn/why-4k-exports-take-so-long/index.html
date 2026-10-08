@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Why AI upscaling to 4K takes so long — Crisp</title>
+<title>Why AI upscaling to 4K takes so long: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
 <meta name="theme-color" content="#060810">
@@ -39,7 +39,7 @@
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Because a 4K frame is about 8.3
-  million pixels — four times a 1080p frame — and Crisp pushes <em>every single frame</em> through an
+  million pixels (four times a 1080p frame) and Crisp pushes <em>every single frame</em> through an
   upscaling model on its own. A ten minute clip at 30fps is eighteen thousand frames; one real render
   we have on record decoded to 66,120. The cost is per frame, not per file, so the total is roughly
   frame count × per-frame work. Trimming before you upscale is the one lever that removes frames
@@ -65,7 +65,7 @@
   render we have on record took a 36.7-minute source and decoded it to <strong>66,120 frames</strong>.
   That figure is just length times frame rate, and it multiplies everything else.</p>
   <p>Is the per-frame cost the whole cost, or is there a fixed setup fee a long job would amortise? On
-  Crisp's Max lane we timed three run lengths — <strong>5 frames in 85.3 s, 10 in 206.9 s, 60 in
+  Crisp's Max lane we timed three run lengths: <strong>5 frames in 85.3 s, 10 in 206.9 s, 60 in
   1348 s</strong>. Fit a line through those and the fixed cost comes out negative: the per-frame term
   explains all of it. <strong>We did not record which machine those runs were made on</strong>, so read
   them as a shape rather than a speed to expect. Max is also a far slower engine than the ordinary
@@ -79,22 +79,22 @@
   <p>Decoding, the colour chain and writing frames out are real costs, though smaller. At 4K the model
   is producing roughly eight million pixels per frame and the encoder is compressing eight million per
   frame, four times a 1080p export of the same length. Pixel count scales with <em>area</em>, so
-  doubling each dimension quadruples the work — the most counter-intuitive thing about the maths, and
+  doubling each dimension quadruples the work. The most counter-intuitive thing about the maths, and
   the reason "just a bit bigger" never is.</p>
   <p>Memory matters more than people expect. Large frames and large models compete for one pool, and
   when it is tight the work is broken into tiles and reassembled, costing time and a little quality at
   the seams. Crisp does not guess a tile size: it uses the binary's own automatic behaviour unless a
   measured profile exists for your machine, because a value that helps a 64GB Mac Studio can starve a
   16GB Air.</p>
-  <p>And the bundled networks are natively 2×, 3× and 4× only. Beyond that Crisp composes real passes —
-  8× is a 4× pass then a 2× pass — so each pass runs the whole model over every frame again, the second
+  <p>And the bundled networks are natively 2×, 3× and 4× only. Beyond that Crisp composes real passes (
+  8× is a 4× pass then a 2× pass) so each pass runs the whole model over every frame again, the second
   on images the first already enlarged.</p>
 
   <h2>A bigger scale factor does not always mean a longer wait</h2>
   <p>We timed four routes over 60 frames of the same 720p clip, rebuilt two ways: from 320×180 at 4×,
   and from 640×360 at 2×. Both land back on exactly 1280×720. <strong>These seconds are for 60 frames
-  at very small sizes and we have not recorded the machine they were measured on</strong> — read the
-  ratios, not the absolute times.</p>
+  at very small sizes and we have not recorded the machine they were measured on</strong> (read the
+  ratios, not the absolute times).</p>
 
   <div class="cmp-wrap"><table>
     <thead><tr><th>Route</th><th>Seconds (60 frames)</th><th>PSNR</th><th>VMAF</th></tr></thead>
@@ -111,12 +111,12 @@
   models: Crisp picks the model from the denoise value and the scale together, and it will not run the
   detail net at 2× or the compact net at 4×, so scale and model cannot be separated without a code
   change. What the pair does establish is that here the scale factor was <em>not</em> what decided the
-  wall clock — worth knowing, because it is the assumption everyone starts from.
+  wall clock: worth knowing, because it is the assumption everyone starts from.
   <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">The denoise dial is the control
   that swaps the model</a>, and it is a bigger lever than it looks.</p>
   <p>The quality columns are there because "how long" is only half the question. Against a plain
   lanczos resize the AI route cost six to nine times the wall clock here, and at 2× it also scored 23.4
-  VMAF points <em>below</em> that resize — at 4× it was within 1.2. Unflattering about our own default,
+  VMAF points <em>below</em> that resize, at 4× it was within 1.2. Unflattering about our own default,
   and what the measurement says: the harder the reconstruction, the more the model earns its cost.</p>
 
   <h2>What genuinely makes it faster</h2>
@@ -130,7 +130,7 @@
   3840×2160 and not the 7680×4320 the raw factor would give.</p>
   <p><strong>Do not stack lanes you do not need.</strong> Smooth motion runs frame interpolation
   <em>after</em> the upscale, on the already-enlarged frames, so doubling the frame rate means
-  generating roughly as many new 4K frames as you started with — a second model over a bigger picture,
+  generating roughly as many new 4K frames as you started with: a second model over a bigger picture,
   on top of the part that was already long.</p>
   <p><strong>Let it run unattended.</strong> Because everything is on-device there is no per-minute
   billing and no upload, so a long job overnight costs nothing but electricity. That changes the
@@ -161,8 +161,8 @@
   tends to read pessimistically.</p>
   <h3>Can I use my Mac while it runs?</h3>
   <p>Yes, though heavy GPU work will compete with the render and slow both. Inside Crisp only one GPU
-  job runs at a time — deliberately, because two simultaneous GPU processes is a crash rather than a
-  slowdown — so clicking Preview during a render waits for it or tells you the app is busy. Because
+  job runs at a time (deliberately, because two simultaneous GPU processes is a crash rather than a
+  slowdown) so clicking Preview during a render waits for it or tells you the app is busy. Because
   nothing is uploaded, leaving a long job running overnight costs nothing beyond power.</p>
 
   <h2>Related</h2>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>How to convert MKV to MP4 on a Mac without re-encoding (2026) — Crisp</title>
+<title>How to convert MKV to MP4 on a Mac without re-encoding (2026): Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="MKV to MP4 is usually a container swap that takes seconds and loses nothing. Here is when it works, when it doesn't, and why the free ffmpeg command is often the right answer.">
 <meta name="theme-color" content="#060810">
@@ -51,8 +51,8 @@
 
   <h2>What a container actually is</h2>
   <p>MKV and MP4 are boxes, not formats. The picture inside is h.264, HEVC, AV1 or similar, and the
-  sound is AAC, AC3, DTS or FLAC. The box decides how those streams are labelled and interleaved —
-  it does not decide how they look. That is why the conversion is usually free: you are relabelling,
+  sound is AAC, AC3, DTS or FLAC. The box decides how those streams are labelled and interleaved.
+  It does not decide how they look. That is why the conversion is usually free: you are relabelling,
   not re-compressing.</p>
   <p>QuickTime and most Apple software simply do not open the MKV box, even when the h.264 inside is
   something they play perfectly. That mismatch, playable content in an unsupported wrapper, is the
@@ -65,11 +65,11 @@
       <tr><td>h.264 video</td><td class="yes">Yes</td></tr>
       <tr><td>HEVC / h.265 video</td><td class="yes">Yes</td></tr>
       <tr><td>AAC or AC3 audio</td><td class="yes">Yes</td></tr>
-      <tr><td>AV1 video</td><td>Usually — support is recent but real</td></tr>
-      <tr><td>DTS audio</td><td class="no">No — re-encode the audio only</td></tr>
-      <tr><td>FLAC audio</td><td class="no">No — re-encode the audio only</td></tr>
-      <tr><td>VP9 video</td><td class="no">No — MP4 won't carry it</td></tr>
-      <tr><td>SRT / ASS subtitles</td><td>Partly — MP4 subtitle support is limited</td></tr>
+      <tr><td>AV1 video</td><td>Usually. Support is recent but real</td></tr>
+      <tr><td>DTS audio</td><td class="no">No. Re-encode the audio only</td></tr>
+      <tr><td>FLAC audio</td><td class="no">No. Re-encode the audio only</td></tr>
+      <tr><td>VP9 video</td><td class="no">No. MP4 won't carry it</td></tr>
+      <tr><td>SRT / ASS subtitles</td><td>Partly. MP4 subtitle support is limited</td></tr>
     </tbody>
   </table></div>
   <p>When only the audio is the problem, re-encode only the audio:
@@ -78,7 +78,7 @@
   you real picture quality and an hour of your afternoon for no reason.</p>
 
   <h2>The subtitle catch</h2>
-  <p>MKV is popular partly because it handles subtitles well — multiple tracks, styled ASS, and image
+  <p>MKV is popular partly because it handles subtitles well: multiple tracks, styled ASS, and image
   subtitles ripped from discs. MP4's subtitle support is much narrower. Copy an MKV with styled
   subtitles into MP4 and they may arrive stripped of formatting, converted to plain text, or missing
   entirely.</p>
@@ -89,7 +89,7 @@
   <ol>
     <li><strong>ffmpeg</strong>, if you have it: <code>ffmpeg -i in.mkv -c copy out.mp4</code>. Free,
     seconds, lossless. The correct answer for a one-off.</li>
-    <li><strong>HandBrake</strong>, which is free and excellent — but note that HandBrake always
+    <li><strong>HandBrake</strong>, which is free and excellent, but note that HandBrake always
     re-encodes. That is what it is for. Use it when you also want to compress; do not use it for a
     pure container swap.</li>
     <li><strong>A general video app</strong>, when the conversion is part of something larger: the
@@ -101,7 +101,7 @@
   <p>Drop the MKV in and export as MP4. Where the streams are compatible it copies them rather than
   re-encoding, so you keep the original quality; where the audio can't ride along it re-encodes the
   audio alone and leaves the picture untouched. If the clip also needs cleaning up, that runs in the
-  same export instead of being a second lossy generation — and it all happens on your Mac.</p>
+  same export instead of being a second lossy generation, and it all happens on your Mac.</p>
 
   <h2>Related</h2>
   <ul>

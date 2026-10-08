@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>What the denoise setting does in Crisp: it swaps the model — Crisp</title>
+<title>What the denoise setting does in Crisp: it swaps the model: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Crisp's denoise value does not run a filter over your frames. It selects which upscaling model does the job. Measured on three clips at three noise levels, with the numbers.">
 <meta name="theme-color" content="#060810">
@@ -85,7 +85,7 @@
   archival boxing clip that is nearly monochrome, a colour demo clip, and an Apollo archival clip.
   Each was halved so that a 2× model lands back on exactly native resolution with no extra resample
   in the chain. The Apollo clip is 1068×772 native, so it was run at 534×386 for that reason.</p>
-  <p>Each clip was scored at three noise levels — clean, light and heavy — against the clean
+  <p>Each clip was scored at three noise levels (clean, light and heavy) against the clean
   original. The scorers are the bundled ffmpeg's <span class="prompt">psnr</span> and
   <span class="prompt">ssim</span> filters plus libvmaf, Netflix's perceptual metric, which is
   compiled into the same ffmpeg and runs on the machine with no network call. The harness scores 60
@@ -159,7 +159,7 @@
   </ul>
   <p>The model earns its cost exactly where the source is damaged, which is what it is for. On a
   clean file it is an expensive way to get further from the original.</p>
-  <p>One qualification that cuts against us, and it is not a small one: <strong>VMAF still favours lanczos in every one of the nine cells.</strong> But the three scorers do not agree with each other, and saying so is the only honest way to report this. PSNR has the model overtaking at heavy noise. SSIM has it overtaking a step earlier, at light noise, and then winning heavy by a wide margin — lanczos falls to 0.6886, 0.6090 and 0.5942 on the three clips while the model route holds 0.9225, 0.9451 and 0.9339. VMAF never crosses at all. Counted plainly: across the nine cells lanczos wins all nine on VMAF, three on SSIM, and four on PSNR. <strong>No single number settles this, and a page that quoted one of them would be choosing its answer rather than reporting one.</strong> What we can say without picking a favourite: on a clean source a plain resize is closest to the original on all three measures; once there is real noise it depends which question you ask, and only the perceptual scorer still prefers the resize.</p>
+  <p>One qualification that cuts against us, and it is not a small one: <strong>VMAF still favours lanczos in every one of the nine cells.</strong> But the three scorers do not agree with each other, and saying so is the only honest way to report this. PSNR has the model overtaking at heavy noise. SSIM has it overtaking a step earlier, at light noise, and then winning heavy by a wide margin: lanczos falls to 0.6886, 0.6090 and 0.5942 on the three clips while the model route holds 0.9225, 0.9451 and 0.9339. VMAF never crosses at all. Counted plainly: across the nine cells lanczos wins all nine on VMAF, three on SSIM, and four on PSNR. <strong>No single number settles this, and a page that quoted one of them would be choosing its answer rather than reporting one.</strong> What we can say without picking a favourite: on a clean source a plain resize is closest to the original on all three measures; once there is real noise it depends which question you ask, and only the perceptual scorer still prefers the resize.</p>
 
   <h2>What these metrics do and do not say</h2>
   <p>PSNR and SSIM measure agreement with the original file, pixel by pixel and structure by
@@ -185,7 +185,7 @@
 
   <h2>The denoise dial in detail</h2>
   <h3>Should I denoise before or after upscaling in Crisp?</h3>
-  <p>Above 0.5, before — and Crisp makes that choice for you. The denoise value selects which upscaling model runs, and above 0.5 it also adds an hqdn3d temporal+spatial pre-pass that runs BEFORE the upscale. At 0.5 and below there is no separate pass at all, so the only thing that changes is the model: below 0.5 at 2× you get 2x-ParimgCompact, at 0.5 and above you get RealESRGAN_General_WDN_x4_v3. Note the thresholds differ by a hair — the model routes at 0.5 and above, the filter only above 0.5.</p>
+  <p>Above 0.5, before, and Crisp makes that choice for you. The denoise value selects which upscaling model runs, and above 0.5 it also adds an hqdn3d temporal+spatial pre-pass that runs BEFORE the upscale. At 0.5 and below there is no separate pass at all, so the only thing that changes is the model: below 0.5 at 2× you get 2x-ParimgCompact, at 0.5 and above you get RealESRGAN_General_WDN_x4_v3. Note the thresholds differ by a hair. The model routes at 0.5 and above, the filter only above 0.5.</p>
   <h3>What denoise value should I set?</h3>
   <p>If the source is noisy, grainy or otherwise damaged, set 0.5 or above so the job routes to
   RealESRGAN_General_WDN_x4_v3. In our measurement that model scored higher than the

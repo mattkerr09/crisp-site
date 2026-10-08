@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Why VHS tapes degrade, and what can still be recovered — Crisp</title>
+<title>Why VHS tapes degrade, and what can still be recovered: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Magnetic tape loses signal whether you play it or not. What is actually failing, which faults respond to restoration, and why the capture matters more than the software.">
 <meta name="theme-color" content="#060810">
@@ -43,7 +43,7 @@
   you ever play the tape. Three things fail: the magnetic signal weakens, the binder holding the oxide
   on can absorb moisture and turn sticky, and every playback abrades the coating. Faults that are
   <em>noise</em> or <em>low resolution</em> respond to restoration. Faults where the signal was never
-  read correctly — dropouts, tracking tears, timebase roll — do not, because nothing in the file holds
+  read correctly (dropouts, tracking tears, timebase roll) do not, because nothing in the file holds
   the missing picture.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-why-vhs-tapes-degrade-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-why-vhs-tapes-degrade-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
@@ -78,7 +78,7 @@
   <p><strong>Head clog.</strong> Shed oxide packs into the gap in the playback head, and the picture
   collapses into snow or a frozen band, often mid-playback and often only on one tape. This is the fault
   most often blamed on a dead tape when the deck is at fault. If a tape plays badly, try it in another
-  machine before writing it off — and clean the heads, because a clogged head keeps shedding onto every
+  machine before writing it off, and clean the heads, because a clogged head keeps shedding onto every
   tape you feed it afterwards.</p>
 
   <h2>The faults you see, and whether software helps</h2>
@@ -109,7 +109,7 @@
   <p>Deinterlace, denoise, upscale, colour. Interlacing first is not a preference: an upscaler reads
   comb teeth as fine detail and sharpens them into something far harder to remove. In a tool with a
   separate denoise filter, that filter belongs before the upscale for the same reason, since magnified
-  noise is a much bigger problem than the original. Crisp places it for you: its denoise value selects which upscaling model runs, and above 0.5 it also adds an hqdn3d pre-pass that runs before the upscale — the order this section recommends. Below 0.5 there is no separate pass at all.app/learn/what-the-denoise-setting-does/">selects which upscaling model
+  noise is a much bigger problem than the original. Crisp places it for you: its denoise value selects which upscaling model runs, and above 0.5 it also adds an hqdn3d pre-pass that runs before the upscale. The order this section recommends. Below 0.5 there is no separate pass at all.app/learn/what-the-denoise-setting-does/">selects which upscaling model
   runs</a>, so the ordering question does not arise here.</p>
   <p>Crisp runs that chain on-device, which for family tapes tends to matter more than it sounds. The
   usual alternative involves uploading footage of your family to a service, and these are the tapes
@@ -126,7 +126,7 @@
   frames: genuinely interlaced camcorder video is rebuilt field-pair by field-pair with
   <span class="prompt">bwdif</span>, which throws nothing away, while <a href="https://crispvideo.app/learn/what-is-telecine/">film
   that went through a telecine</a> gets its original frames back with
-  <span class="prompt">fieldmatch,decimate</span> — measured on a 3:2 fixture, 120 frames become
+  <span class="prompt">fieldmatch,decimate</span>, measured on a 3:2 fixture, 120 frames become
   exactly 96 at SSIM 0.9969 against the true original.</p>
   <p>Inverse-telecining genuinely interlaced video would drop one real frame in five, so Crisp proves
   the answer instead of assuming it. It renders a short sample with the inverse telecine applied, runs
@@ -135,14 +135,14 @@
   <p>Two detection traps are worth knowing if you are checking a file yourself. The container flag is
   not evidence: on one measured source the original MPEG-2 honestly reported interlaced fields, and the
   moment it was cut and re-encoded the container claimed progressive while all 96 sampled frames were
-  still combed. And the detector goes blind after a vertical resize — the same frames read
+  still combed. And the detector goes blind after a vertical resize. The same frames read
   <em>interlaced</em> at 640×480 and <em>progressive</em> at 1280×720, because scaling smears the woven
   fields into each other. Run the check on the original capture, at its own size. More on the format
   itself in <a href="https://crispvideo.app/learn/what-is-interlacing/">what interlacing is</a>, and the
   step-by-step in <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">how to deinterlace on
   a Mac</a>.</p>
 
-  <h3>It upscales — which means it invents, not recovers</h3>
+  <h3>It upscales, which means it invents, not recovers</h3>
   <p>This is the line worth being blunt about. An AI upscaler does not retrieve detail the tape lost.
   It produces plausible detail in its place. It does not find the eyelash that decayed off the oxide;
   it draws a convincing eyelash. For a soft, noisy tape capture that is usually a good trade, because
@@ -156,7 +156,7 @@
   <p>If your tape carries a black-and-white transfer, this one matters. The general upscaling model is
   trained on colour photographs and tints neutral greyscale warm. Measured on 50 frames of 1945
   archival film, the source's mean per-pixel RGB spread was 1.84 and its red-minus-blue difference
-  −0.31 — neutral. After a 2× enhance the same frames measured spread 7.87 and red-minus-blue +6.06,
+  −0.31, neutral. After a 2× enhance the same frames measured spread 7.87 and red-minus-blue +6.06,
   every frame of the fifty moving the same way. Crisp detects a monochrome source and zeroes the chroma
   at encode time so the result comes back grey rather than sepia.</p>
 
@@ -164,7 +164,7 @@
   <p>This one belongs to film transfers more than to tape itself, but a lot of tapes are transfers of
   8mm or 16mm. Dust and specks that appear in one frame and not its neighbours are voted away by
   comparing each frame against the frames either side. Measured against planted dirt on real film
-  frames, that cleared the single-frame specks at 95.0%, 100.5% and 100.6% of the planted amount — and,
+  frames, that cleared the single-frame specks at 95.0%, 100.5% and 100.6% of the planted amount, and,
   importantly, a blotch held in a fixed spot for three frames correctly <em>survived</em>. That control
   is what makes the result worth quoting: a filter that merely blurred would have "cleaned" the
   sustained dirt too.</p>
@@ -175,7 +175,7 @@
   Unattended scratch removal is not a thing Crisp ships, and it is not a thing it is about to.</p>
 
   <h3>Two exceptions the app will tell you about</h3>
-  <p>The automatic comb fix does not run on HDR sources, and it does not run on the Max preset — Max
+  <p>The automatic comb fix does not run on HDR sources, and it does not run on the Max preset: Max
   restores the frames it is handed, so it would rebuild comb teeth in high fidelity over about an hour.
   Crisp checks for combing before those jobs start and says so, rather than letting you find out at the
   end: run an ordinary enhance first, which does straighten it, and bring that result back to Max.</p>

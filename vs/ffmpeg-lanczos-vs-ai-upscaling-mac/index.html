@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>ffmpeg Lanczos vs AI upscaling — when the free one is enough (2026) — Crisp</title>
+<title>ffmpeg Lanczos vs AI upscaling, when the free one is enough (2026): Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="One ffmpeg command upscales any video for free. It is often the right answer. Here is exactly when Lanczos is enough, when it isn't, and why 'AI' is not automatically better.">
 <meta name="theme-color" content="#060810">
@@ -82,7 +82,7 @@
 
   <h2>What the gap actually measures</h2>
   <p>Everything above is the argument people make. Here is the measurement, on one clip, so you can
-  see the size of the difference instead of taking our word for it — including the axis where
+  see the size of the difference instead of taking our word for it, including the axis where
   Lanczos wins.</p>
   <p>The source is a deliberately degraded clip generated from a fixed recipe: a detailed moving
   synthetic source, downscaled to 320&times;180, given mild noise, then encoded at a low H.264
@@ -104,7 +104,7 @@
   real argument for the free option and we would rather you knew it than found it in a review.</p>
   <p>The flicker rows matter for the opposite reason: they say nothing. It is common to read that AI
   upscalers introduce shimmer, and on this clip neither tool did. That is one clip and one preset,
-  not a law — which is the honest size of the claim.</p>
+  not a law, which is the honest size of the claim.</p>
   <h2>If you run this yourself, match the bitrate</h2>
   <p>A warning that cost us a wrong answer before we caught it. Our first run encoded the Lanczos
   output at high quality and left Crisp&rsquo;s own encoder settings alone, so one side came out at
@@ -116,7 +116,7 @@
   numbers above are all at a matched 1.0&nbsp;Mbps.</p>
   <p class="quick">Scope, plainly: one synthetic degraded clip, one preset, one 4&times; scale, on an
   M1 Ultra. These are valid as a comparison between two tools on the same source, not as universal
-  constants &mdash; your footage will produce different absolute numbers.</p>
+  constants, your footage will produce different absolute numbers.</p>
 
   <h2>What an app adds over the command</h2>
   <p>Mostly: knowing which of these to do, and not having to remember <code>-2</code> means "keep the
@@ -128,8 +128,8 @@
   <h2>The test that settles it for your footage</h2>
   <p>Take thirty seconds of your worst clip and run it both ways, then watch them back at full screen
   rather than in a preview window. If the Lanczos version looks acceptable, you are done and you have
-  spent nothing. If it looks like a bigger version of the same bad video — which is exactly what it
-  is — then the source is genuinely degraded and reconstruction is the only thing that will help.</p>
+  spent nothing. If it looks like a bigger version of the same bad video (which is exactly what it
+  is) then the source is genuinely degraded and reconstruction is the only thing that will help.</p>
   <p>Zoom in on a flat area while it plays, too. Lanczos will not introduce shimmer of its own, because
   it makes the same decision on every frame. What it cannot do is remove shimmer that is already there:
   aliasing in the source passes straight through and comes out enlarged along with everything else, so
@@ -138,16 +138,16 @@
   given tool has that problem on your kind of footage.</p>
   <h2>One thing to get right either way</h2>
   <p>Do not upscale twice. Going 480p to 1080p and later 1080p to 4K compounds whatever each pass got
-  wrong, and with an AI model it compounds the invented detail as well — the second pass treats the
+  wrong, and with an AI model it compounds the invented detail as well. The second pass treats the
   first pass's guesses as real source material. Decide the final resolution and get there in one
   operation.</p>
 
 
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/vs/filmora-alternative-mac/">The best Filmora alternative for Mac — one-time, no subscription, AI upscale</a></li>
+    <li><a href="https://crispvideo.app/vs/filmora-alternative-mac/">The best Filmora alternative for Mac, one-time, no subscription, AI upscale</a></li>
     <li><a href="https://crispvideo.app/vs/final-cut-pro-alternative-mac/">A simpler Final Cut Pro alternative for Mac</a></li>
-    <li><a href="https://crispvideo.app/vs/handbrake-alternative-mac/">The best HandBrake alternative for Mac — one-click compress &amp; convert</a></li>
+    <li><a href="https://crispvideo.app/vs/handbrake-alternative-mac/">The best HandBrake alternative for Mac, one-click compress &amp; convert</a></li>
     <li><a href="https://crispvideo.app/index/">The Video Upscaler Index</a></li>
     <li><a href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">When AI upscaling beats a plain resize</a></li>
   </ul>

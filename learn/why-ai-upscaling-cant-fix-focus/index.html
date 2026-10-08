@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Why AI upscaling can't fix out-of-focus video — Crisp</title>
+<title>Why AI upscaling can't fix out-of-focus video: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Upscalers reconstruct detail from detail that survived. A soft-focus shot has none to work from, so what comes back is invention. What actually responds to restoration, and what doesn't.">
 <meta name="theme-color" content="#060810">
@@ -42,7 +42,7 @@
   physical: an out-of-focus lens never records the detail, so there is nothing in the file to
   restore. An upscaler predicts detail from detail that survived; where none survived it invents
   plausible texture, which is not the texture that was there. Resolution, compression damage and
-  noise do respond. Focus doesn't. Crisp will still run the job — it has no focus measurement — so
+  noise do respond. Focus doesn't. Crisp will still run the job (it has no focus measurement) so
   the check is yours.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-why-ai-upscaling-cant-fix-focus-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-why-ai-upscaling-cant-fix-focus-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
@@ -102,16 +102,16 @@
   than run something that looks like work. Three of those refusals sit in
   <span class="prompt">intent.py</span>. Ask it to soften or defocus a picture and it answers
   <em>"Crisp sharpens and cleans footage up; it has no way to soften or defocus a picture"</em>
-  rather than falling into the enhance lane, which would have sharpened — the opposite of the ask,
+  rather than falling into the enhance lane, which would have sharpened. The opposite of the ask,
   at full GPU cost. Ask it to blur or pixelate a face and it says it has no blur or pixelate tool.
   Ask it to sharpen without enlarging and it says there is no such mode:
-  <em>"Crisp sharpens by running the frames back through the upscaler, so it always enlarges —
+  <em>"Crisp sharpens by running the frames back through the upscaler, so it always enlarges,
   there’s no same-size sharpen."</em></p>
   <p>The stabiliser goes one step further and measures before it decides.
   <span class="prompt">stabilize.py::_would_help</span> samples several windows of your clip, runs
   ffmpeg's <span class="prompt">deshake</span> against a plain re-encode, and compares frame-to-frame
   motion. If stabilising would not improve <em>this</em> clip it declines outright:
-  <em>"Stabilising wouldn’t improve this clip — Crisp measured the motion and its stabiliser would
+  <em>"Stabilising wouldn’t improve this clip. Crisp measured the motion and its stabiliser would
   add wobble rather than take it out."</em> That refusal exists because the measurement was
   unflattering. Against a plain re-encode control, deshake made a tripod shot 92% wobblier, a
   locked-off shot from a moving car 128% wobblier, and a deliberate pan 24% worse because it fights
@@ -127,8 +127,8 @@
 
   <h2>The number this page does not have</h2>
   <p>We have no measurement of focus recovery, ours or anyone's, and we are not going to borrow one
-  that measured something else. Crisp's published metrics — the PSNR, SSIM and VMAF numbers on
-  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">the denoise page</a> — score
+  that measured something else. Crisp's published metrics (the PSNR, SSIM and VMAF numbers on
+  <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">the denoise page</a>) score
   resolution loss and added noise against a clean original. None of those clips was defocused. Using
   them here would be dressing one experiment up as another.</p>
   <p>The one sharpness-like figure the codebase ever computed is a cautionary tale in its own right.
@@ -146,7 +146,7 @@
   carries 0.4, so the ordinary job is model-only.</p>
   <p>What that pre-pass removes is noise, and noise is a signal sitting on top of real detail.
   Defocus is the absence of the detail. There is nothing for a denoiser to lift away here, and at
-  strength it costs you what fine texture did survive — the engine's own comments record exactly
+  strength it costs you what fine texture did survive. The engine's own comments record exactly
   that, a flat 0.6 denoise floor having over-denoised moderately dim footage into detail loss until
   it was split into two tiers. If you want the full routing table, it is on
   <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">the denoise page</a>, along
@@ -163,7 +163,7 @@
   <h3>Does shooting at a higher resolution protect against this?</h3>
   <p>It protects against resolution problems, not focus problems. A 4K shot that missed focus contains four times as many pixels of the same blur. Nail focus first; resolution is the easier thing to fix afterwards.</p>
   <h3>Does Crisp check whether a shot is in focus before upscaling it?</h3>
-  <p>No. Crisp refuses several things it genuinely cannot do — softening or defocusing a picture, blurring a face, sharpening without enlarging — and its stabiliser measures your clip and declines when deshaking would make it worse. There is no equivalent check for focus anywhere in the engine. The upscale will run, take the render time and produce a file. Deciding whether the invented detail is acceptable on that particular shot is left to you.</p>
+  <p>No. Crisp refuses several things it genuinely cannot do (softening or defocusing a picture, blurring a face, sharpening without enlarging) and its stabiliser measures your clip and declines when deshaking would make it worse. There is no equivalent check for focus anywhere in the engine. The upscale will run, take the render time and produce a file. Deciding whether the invented detail is acceptable on that particular shot is left to you.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">What the denoise setting does</a></li>

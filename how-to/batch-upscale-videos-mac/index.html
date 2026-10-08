@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>How to batch upscale videos on a Mac (2026) — Crisp</title>
+<title>How to batch upscale videos on a Mac (2026): Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Batching is mostly about not discovering a mistake 200 files in. Test on one clip, watch for filename collisions, and know why it takes as long as it does.">
 <meta name="theme-color" content="#060810">
@@ -70,18 +70,18 @@
   <p>Practical consequence: budget minutes per minute of footage. Forty clips of two minutes each is
   an overnight job, not a coffee break, and that is normal rather than a sign something is wrong.</p>
 
-  <h2>Test one file first — properly</h2>
+  <h2>Test one file first: properly</h2>
   <p>Pick the <em>worst</em> clip in the set, not a representative one. The batch's settings have to
   survive the hardest input, and a setting tuned on clean footage will do something ugly to the noisy
   clip at position 143.</p>
   <p>Then check it the way it will be watched: full size, playing, not paused. Upscalers process
   frames independently, so their guesses vary slightly between consecutive frames, and in flat areas
-  that reads as a fine crawling shimmer. It is invisible in a still and obvious in motion — and if
+  that reads as a fine crawling shimmer. It is invisible in a still and obvious in motion, and if
   it is there, it is in all 200 files.</p>
 
   <h2>A batch that survives the night</h2>
   <ol>
-    <li><strong>Output to a different folder than the sources.</strong> Not only for tidiness — it
+    <li><strong>Output to a different folder than the sources.</strong> Not only for tidiness. It
     makes it impossible for a bug or a mistyped setting to write over an original.</li>
     <li><strong>Check free disk space first.</strong> Upscaled output is much larger than the input,
     and a batch that fills the disk at file 180 can leave a truncated file that looks complete.</li>
@@ -89,13 +89,13 @@
     wastes the whole night.</li>
     <li><strong>Don't run other GPU work.</strong> Games, other video tools, and anything doing local
     AI all want the same memory.</li>
-    <li><strong>Spot-check three files at the end</strong> — the first, one from the middle, and the
+    <li><strong>Spot-check three files at the end</strong>. The first, one from the middle, and the
     last. Failures cluster at the end, where disk and thermal problems show up.</li>
   </ol>
 
   <h2>When not to batch at all</h2>
-  <p>If the clips differ meaningfully — some noisy, some clean, some interlaced off tape, some
-  modern — one setting will be wrong for most of them. Group them by problem and run several small
+  <p>If the clips differ meaningfully (some noisy, some clean, some interlaced off tape, some
+  modern) one setting will be wrong for most of them. Group them by problem and run several small
   batches instead. It is more clicking and a much better result.</p>
   <p>And if the footage is already sharp and only needs to be a different size, skip the AI entirely.
   A plain Lanczos resize is seconds per file rather than minutes, does not invent anything, and for
@@ -105,7 +105,7 @@
   <p>Drop a folder's worth of files in, set the preset once, and they queue. Output names are
   uniquified against both what is on disk and what is already queued, so the same-basename case
   cannot silently overwrite. It runs on your Mac, so a large overnight batch costs nothing but
-  electricity — no per-minute cloud billing and no upload.</p>
+  electricity, no per-minute cloud billing and no upload.</p>
 
   <h2>Related</h2>
   <ul>

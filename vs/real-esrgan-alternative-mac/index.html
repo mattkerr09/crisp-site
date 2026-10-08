@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Real-ESRGAN on Mac: the free CLI vs a $129 app (2026) — Crisp</title>
+<title>Real-ESRGAN on Mac: the free CLI vs a $129 app (2026): Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Real-ESRGAN on Mac — and when to use an app instead">
+<meta property="og:title" content="Real-ESRGAN on Mac, and when to use an app instead">
 <meta property="og:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
 <meta property="og:url" content="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
 <meta property="og:site_name" content="Crisp">
@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Real-ESRGAN on Mac — and when to use an app instead">
+<meta name="twitter:title" content="Real-ESRGAN on Mac, and when to use an app instead">
 <meta name="twitter:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself, and when that trade is worth it.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
@@ -39,7 +39,7 @@
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; Real-ESRGAN</div>
-  <h1>Real-ESRGAN on Mac — and when to use an app instead</h1>
+  <h1>Real-ESRGAN on Mac, and when to use an app instead</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Real-ESRGAN is free, open source, runs on Apple Silicon, and produces genuinely good
@@ -51,14 +51,14 @@
   <h2>What you get for free</h2>
   <p>The <code>realesrgan-ncnn-vulkan</code> binary takes an image and gives back a larger one. It is
   a single self-contained download, it needs no Python environment, and it uses the GPU. For stills
-  it is close to a complete answer — batch a folder of photos through it and the results will hold up
+  it is close to a complete answer: batch a folder of photos through it and the results will hold up
   against most paid photo upscalers.</p>
   <p>It is also the model underneath a surprising number of commercial products. Several tools in this
   category are, at their core, a licence-checked interface over an open model. That is not a scandal, the interface is real work, but it does mean the gap between free and paid is smaller than
   pricing implies.</p>
 
   <h2>What breaks when you point it at video</h2>
-  <p>Real-ESRGAN is image-first. Its repository does ship a video script (<code>inference_realesrgan_video.py</code>) and an anime-video model (<a href="https://github.com/xinntao/Real-ESRGAN" rel="nofollow">its own repository</a>, read 8 September 2026), so "no video at all" would be wrong &mdash; but the models upscale frames independently, and the pipeline you end up building around them looks like this:</p>
+  <p>Real-ESRGAN is image-first. Its repository does ship a video script (<code>inference_realesrgan_video.py</code>) and an anime-video model (<a href="https://github.com/xinntao/Real-ESRGAN" rel="nofollow">its own repository</a>, read 8 September 2026), so "no video at all" would be wrong, but the models upscale frames independently, and the pipeline you end up building around them looks like this:</p>
   <ol>
     <li>Explode the video into PNG frames with ffmpeg. A five-minute 30fps clip is 9,000 files and
     can easily be 40GB of disk.</li>
@@ -67,7 +67,7 @@
     <li>Mux the original audio back in without letting the durations drift apart.</li>
   </ol>
   <p>Each step has a way to go wrong that costs you the whole run. Frame rate is the classic one:
-  reassemble a 29.97fps source at 30fps and the audio drifts progressively out of sync — imperceptible
+  reassemble a 29.97fps source at 30fps and the audio drifts progressively out of sync, imperceptible
   at the start, half a second out by the end. Variable-frame-rate footage, which is what phones
   record, makes this worse, because there is no single correct number to use.</p>
   <p>Then there is memory. Upscaling a 4K frame to 8K needs a large contiguous allocation, and the
@@ -77,7 +77,7 @@
 
   <h2>And the one it cannot solve at all</h2>
   <p>Frames are upscaled independently, so the model's guesses vary slightly between consecutive
-  frames. In flat areas — a wall, sky, a jacket — that variation reads as a crawling shimmer. It is
+  frames. In flat areas (a wall, sky, a jacket) that variation reads as a crawling shimmer. It is
   invisible in a still comparison and obvious the moment it plays, which is why screenshot-based
   reviews of upscalers are close to worthless.</p>
   <p>You cannot fix that with a shell script, because the fix lives in how frames are processed
@@ -101,7 +101,7 @@
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/">Switching from Topaz Video AI to Crisp</a></li>
-    <li><a href="https://crispvideo.app/vs/topaz-alternative-mac/">The best Topaz alternative for Mac — offline, one-time, and it edits too</a></li>
+    <li><a href="https://crispvideo.app/vs/topaz-alternative-mac/">The best Topaz alternative for Mac, offline, one-time, and it edits too</a></li>
     <li><a href="https://crispvideo.app/vs/topaz-video-ai-alternative-mac/">The best offline Topaz Video AI alternative for Mac</a></li>
   </ul>
 

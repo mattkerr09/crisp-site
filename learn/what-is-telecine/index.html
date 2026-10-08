@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>What is telecine, and why does &lsquo;progressive&rsquo; footage still comb? &mdash; Crisp</title>
+<title>What is telecine, and why does &lsquo;progressive&rsquo; footage still comb?: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Footage your file calls progressive can still show comb teeth every few frames. That&#x27;s telecine: 24fps film stretched to 60i by repeating fields. Here&#x27;s how to spot it and why the metadata lies.">
 <meta name="theme-color" content="#060810">
@@ -41,7 +41,7 @@
   <div class="quick"><strong>Quick answer</strong><p class="lede">Telecine is how twenty-four-frame
   film was put onto thirty-frame American video: <strong>3:2 pulldown</strong> splits each film
   frame into fields and repeats some of them, so four film frames become five video frames. Three of
-  those five are clean and two are mixtures of two different film frames — which is why telecined
+  those five are clean and two are mixtures of two different film frames, which is why telecined
   footage combs in a <strong>rhythm</strong> rather than continuously, and why a file can be honestly
   labelled <em>progressive</em> and still show teeth on every fourth and fifth frame.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-telecine-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-telecine-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
@@ -72,8 +72,8 @@
   those two disagree no amount of reading metadata will tell you what you're looking at. You have to
   look at the picture.</p>
   <p>We measured exactly this on one piece of footage while building Crisp's detector. The original
-  MPEG-2 honestly reports <code>field_order=tt</code>. Cut and re-encoded — the state most files
-  reach anybody in — the container claims <em>progressive</em> while every frame is still combed.
+  MPEG-2 honestly reports <code>field_order=tt</code>. Cut and re-encoded (the state most files
+  reach anybody in) the container claims <em>progressive</em> while every frame is still combed.
   <strong>Reading the frames instead of the flag still gets it right: ffmpeg's <code>idet</code>
   called 96 of 96 frames interlaced on the file that lied</strong>, and 82 of 82 progressive on the
   same clip after an inverse telecine had actually fixed it. The detector was never fooled. Only the
@@ -84,7 +84,7 @@
   a time. Interlaced video combs on every frame with motion in it. Telecined film gives you a
   repeating pattern: roughly three clean frames, then two dirty ones, over and over. That rhythm is
   the signature, and it's visible to the eye at a glance once you know to look for it.</p>
-  <p>Do this on the original file, at its original size — and the reason is worth stating precisely,
+  <p>Do this on the original file, at its original size, and the reason is worth stating precisely,
   because it is a different failure from the one above. Comb teeth are a one-pixel-row structure. A
   <em>vertical resize</em> interpolates the two woven fields into each other, so the teeth become a
   soft ghost. <strong>Measured: the same frames read <em>interlaced</em> at 640×480 and
@@ -96,7 +96,7 @@
     <li><strong>Re-encoding falsifies the container flag.</strong> The label says progressive; the
     pixels are still combed. Frame-level detection is unaffected and still answers correctly.</li>
     <li><strong>A vertical resize blinds the detector itself.</strong> Nothing in the file is
-    labelled wrongly — the evidence has genuinely been smeared away, and no filter can cleanly put
+    labelled wrongly. The evidence has genuinely been smeared away, and no filter can cleanly put
     it back.</li>
   </ul>
   <p>"Run the check on the original" is the right advice, but it is advice about the second trap,
@@ -124,12 +124,12 @@
   <a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">a variable frame rate</a>
   somewhere in the chain, it isn't, and deinterlacing is the safer choice.</p>
   <p>Pointing the two operations the wrong way round is not a cosmetic mistake. Inverse-telecining
-  genuinely interlaced video drops one frame in five that nobody ever duplicated — real motion,
+  genuinely interlaced video drops one frame in five that nobody ever duplicated: real motion,
   gone, and nothing gets it back.</p>
 
   <h2>Doing it on a Mac</h2>
   <p><strong>Crisp does both, and tells them apart.</strong> It detects a 3:2 cadence and reverses
-  the pulldown — the <code>fieldmatch,decimate</code> route — rather than deinterlacing film and
+  the pulldown (the <code>fieldmatch,decimate</code> route) rather than deinterlacing film and
   softening every frame, which is what its <code>bwdif</code> fallback would do to it. Genuinely
   interlaced video gets that fallback instead. The route line on the finished job names which one
   ran: <code>Inverse telecine</code> or <code>Deinterlaced</code>. The
@@ -142,7 +142,7 @@
     <li><strong>Frame rate narrows it.</strong> A 3:2 pulldown can only exist near thirty frames a
     second, so inverse telecine is only considered between <strong>29.0 and 30.5 fps</strong>.</li>
     <li><strong>A frame count proves nothing on its own.</strong> <code>decimate</code> removes the
-    most similar frame in every group of five whether or not anything duplicated it — measured,
+    most similar frame in every group of five whether or not anything duplicated it: measured,
     genuinely interlaced 30fps video yields exactly <strong>0.800</strong>, identical to a true
     pulldown. The ratio survives only as a sanity bound.</li>
     <li><strong>So the answer gets rendered and re-examined.</strong> Crisp runs a short sample
@@ -151,7 +151,7 @@
     interlaced video there is no matching field, the sample is still combed, and Crisp refuses the
     inverse telecine and deinterlaces instead.</li>
   </ul>
-  <p>The test deliberately asks "is the comb gone", not "does it say progressive" — a detector
+  <p>The test deliberately asks "is the comb gone", not "does it say progressive": a detector
   returns <em>unknown</em> on smooth content it can't classify either way, and demanding the word
   <em>progressive</em> made this reject real telecine on a synthetic 3:2 fixture.</p>
 
@@ -159,19 +159,19 @@
   <p>The pre-pass runs on the whole file before frames are extracted, and it is cheap: 0.24s on a
   four-second clip. On a DVD-shaped clip an inverse telecine took 300 frames down to 240 and the job
   from 19.6s to 17.4s, because there are 20% fewer frames to upscale. It is not free, though, and on
-  a three-second clip the same work came out about <strong>4% slower</strong> — the fixed cost of
+  a three-second clip the same work came out about <strong>4% slower</strong>. The fixed cost of
   the extra encode outweighs the saving when there is barely any render to save. On long jobs the
   trade is heavily in your favour; on very short ones it is slightly against you.</p>
 
   <h3>Where it doesn't run</h3>
   <p>Two lanes skip the pre-pass, and Crisp says so rather than reassuring you falsely. The Max
   restore lane returns into the generative path before the field fix, so a combed source there would
-  be rebuilt in high fidelity over about an hour — Crisp warns before the render starts and tells you
+  be rebuilt in high fidelity over about an hour. Crisp warns before the render starts and tells you
   to run an ordinary Enhance first, then bring that result back. HDR sources skip the fix on every
   lane. A third case is narrower than it looks: <a href="https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/">the
   timeline export</a> does straighten each clip as it assembles the edit, but with the
   deinterlacing filter rather than the inverse telecine, because the concat forces a common frame
-  rate. Measured on the rendered output, comb energy fell from 4.728 to 3.059, about 35% less — so
+  rate. Measured on the rendered output, comb energy fell from 4.728 to 3.059, about 35% less, so
   telecined film in an edit is blended there, not restored to its original twenty-four frames. If
   that matters for your footage, upscale the source on its own first.</p>
   <p>Everything above runs on your Mac. Nothing is uploaded.</p>

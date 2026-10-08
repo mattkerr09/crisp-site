@@ -151,6 +151,9 @@ run_gate "exemptions-live" python3 "$(dirname "$0")/../_tools/gate_exemptions_li
 # parser keeps the LAST, so the stale date won and crawlers read it while the correct value
 # sat in the same object being ignored. Valid JSON, valid-looking file, wrong structured data.
 run_gate "jsonld-dup-keys" python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py"
+# CONTENT STANDARD rule 11 (2026-10-07): no em-dash a visitor can see on an unlocked page (titles, meta, copy, alt);
+# quotes and the experiment arms in ~/ops/search/ARMS.md are exempt. _tools/no_em_dash.py --apply rewrites them.
+run_gate "no-em-dash" python3 "$(dirname "$0")/../_tools/no_em_dash.py" --check
 
 # ...and every claim the site makes about the ENGINE must still be true of the engine.
 #

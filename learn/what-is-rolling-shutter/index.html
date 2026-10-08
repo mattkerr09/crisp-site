@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>What is rolling shutter, and can it be fixed? — Crisp</title>
+<title>What is rolling shutter, and can it be fixed?: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Leaning lamp posts, wobbling propellers and a world that tilts when you pan. Where the distortion comes from, and the honest answer about fixing it afterwards.">
 <meta name="theme-color" content="#060810">
@@ -89,7 +89,7 @@
   <h2>What Crisp's stabilizer actually is, and what it measured</h2>
   <p>We would rather show you the code than assert it. Crisp's stabilize lane builds exactly one
   filter chain: ffmpeg's single-pass <span class="prompt">deshake</span>, then
-  <span class="prompt">setsar=1</span>, then a pixel-format conversion for the chosen codec — plus a
+  <span class="prompt">setsar=1</span>, then a pixel-format conversion for the chosen codec, plus a
   tone-map step in front of it when the source is HDR, which is a colour operation and not a
   geometric one. <span class="prompt">deshake</span> estimates per-frame motion and counter-shifts
   the whole frame, filling the edges it exposes by mirroring what is next to them rather than cropping
@@ -104,11 +104,11 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Footage</th><th>Frame-to-frame motion after stabilizing</th></tr></thead>
     <tbody>
-      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong> — worse</td></tr>
-      <tr><td>Tripod, static scene</td><td><strong>+92%</strong> — worse</td></tr>
-      <tr><td>Deliberate pan</td><td><strong>+24%</strong> — worse; it fights the move</td></tr>
-      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong> — worse</td></tr>
-      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong> — better</td></tr>
+      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong>: worse</td></tr>
+      <tr><td>Tripod, static scene</td><td><strong>+92%</strong>: worse</td></tr>
+      <tr><td>Deliberate pan</td><td><strong>+24%</strong>: worse; it fights the move</td></tr>
+      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong>: worse</td></tr>
+      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong>: better</td></tr>
     </tbody>
   </table></div>
   <p>One case in five. Look at the two rows at the top: a locked camera in a moving car and a
@@ -117,10 +117,10 @@
   exactly backwards.</p>
   <p>Because of that measurement, Crisp checks your specific clip before it agrees to run. It samples
   up to three windows of 1.5 seconds, taken about 15%, 50% and 80% of the way through, renders each
-  one twice — once plain, once through the stabilizer — and compares the mean frame-to-frame
+  one twice (once plain, once through the stabilizer) and compares the mean frame-to-frame
   difference. If any one window drops below 95% of its unstabilized value, the job runs. If none of
   them do, the job is refused before a frame is rendered, with this message:
-  <em>"Stabilising wouldn't improve this clip — Crisp measured the motion and its stabiliser would
+  <em>"Stabilising wouldn't improve this clip. Crisp measured the motion and its stabiliser would
   add wobble rather than take it out. It only helps footage with real camera shake, so a tripod shot,
   a smooth pan, or a locked-off camera is already as steady as it gets."</em> Several windows are
   sampled rather than one because shake is rarely spread evenly, and any single window that improves
@@ -136,15 +136,15 @@
   correcting after.</p>
   <p>In the edit, the honest options are to cut around the worst of it, slow the shot down so the
   distortion reads as motion blur rather than as bent geometry, or crop into a region where the skew
-  is less obvious. Crisp can do the last two — its speed lane retimes anywhere from 0.1× to 8×, and
-  its crop lane offers a centre crop as well as a fixed aspect ratio — but be clear about what you are
+  is less obvious. Crisp can do the last two (its speed lane retimes anywhere from 0.1× to 8×, and
+  its crop lane offers a centre crop as well as a fixed aspect ratio) but be clear about what you are
   buying: those are ways to make the distortion less noticeable, not ways to remove it. None of them
   are glamorous, and all of them beat a render that cannot deliver.</p>
   <p>The one thing not to do is reach for an upscale. Resolution is orthogonal to this: a skewed frame
   upscaled is a larger skewed frame, and a model that invents plausible detail will happily invent it
   along the bent lines. It is the same limit that means
   <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">AI upscaling cannot fix
-  focus</a> — the information you want was never sampled, and
+  focus</a>. The information you want was never sampled, and
   <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">what an upscaler does</a> is
   reconstruct, not retrieve.</p>
 
@@ -157,14 +157,14 @@
   <p>They are moving fast enough to travel a long way during a single readout, so different parts of the blade are recorded at meaningfully different positions. The result can be blades that appear detached or bent into curves.</p>
   <h3>Can Crisp fix rolling shutter?</h3>
   <p>No. Crisp has no rolling shutter correction of any kind. Its stabilize lane runs one filter
-  chain — ffmpeg's <span class="prompt">deshake</span>, then <span class="prompt">setsar=1</span>,
-  then a pixel-format conversion — and <span class="prompt">deshake</span> counter-shifts the whole
+  chain (ffmpeg's <span class="prompt">deshake</span>, then <span class="prompt">setsar=1</span>,
+  then a pixel-format conversion) and <span class="prompt">deshake</span> counter-shifts the whole
   frame by a single offset. There is no per-row term anywhere in it, and the words "rolling shutter"
   do not appear in Crisp's engine at all. If that is your footage, no setting in the app addresses it,
   and you should know that before you buy anything.</p>
   <h3>Will Crisp's stabilizer make it worse?</h3>
   <p>It will not add skew, but it can make existing skew more obvious by removing the shake that was
-  disguising it — and on the footage that skews worst it measurably adds motion. At 0.1.608, against a
+  disguising it, and on the footage that skews worst it measurably adds motion. At 0.1.608, against a
   plain re-encode control, it increased frame-to-frame motion on a deliberate pan by 24% and on a
   locked camera in a moving car by 128%. It helped in one of the five cases tested: violent handheld
   jitter, at −39%. Crisp measures your specific clip first and refuses the job outright if no sampled
@@ -174,7 +174,7 @@
 
   <h2>Related</h2>
   <ul>
-    <li><a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">Why phone video looks shaky — shake vs skew, and which one is fixable</a></li>
+    <li><a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">Why phone video looks shaky: shake vs skew, and which one is fixable</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-telecine/">What is telecine?</a></li>
     <li><a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">What is variable frame rate?</a></li>
     <li><a href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">Why upscaling to 4K takes so long</a></li>

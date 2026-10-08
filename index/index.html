@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>The Video Upscaler Index — objective, reproducible AI upscaling benchmarks for Mac</title>
+<title>The Video Upscaler Index: objective, reproducible AI upscaling benchmarks for Mac</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta name="description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full, including where Crisp comes off worse.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/index/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Video Upscaler Index">
-<meta property="og:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta property="og:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full, including where Crisp comes off worse.">
 <meta property="og:url" content="https://crispvideo.app/index/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Video Upscaler Index">
-<meta name="twitter:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full — including where Crisp comes off worse.">
+<meta name="twitter:description" content="Objective, reproducible quality measurements for AI video upscaling on Mac: seven metrics computed from raw frames, the harness that produced them, and the results in full, including where Crisp comes off worse.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
@@ -54,14 +54,14 @@
 
   <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=index-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=index-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
   <h2>What is actually measured</h2>
-  <p>Seven axes, computed on raw decoded frames with ffmpeg and pure Python — no reference
+  <p>Seven axes, computed on raw decoded frames with ffmpeg and pure Python: no reference
   library, no perceptual model, nothing that requires trusting a black box:</p>
   <div class="cmp-wrap"><table>
     <thead><tr><th>Metric</th><th>What it means</th><th>Better</th></tr></thead>
     <tbody>
-    <tr><td><code>sharpness</code></td><td>Mean variance-of-Laplacian over sampled grayscale frames — how much edge detail survives.</td><td>Higher</td></tr>
+    <tr><td><code>sharpness</code></td><td>Mean variance-of-Laplacian over sampled grayscale frames, how much edge detail survives.</td><td>Higher</td></tr>
     <tr><td><code>levels</code></td><td>Distinct luma levels used, out of 256. A gradient that collapses to fewer levels is banding.</td><td>Higher</td></tr>
-    <tr><td><code>flat_steps</code></td><td>Share of near-flat-region pixels sitting on a hard step — banding you can see in skies and walls.</td><td>Lower</td></tr>
+    <tr><td><code>flat_steps</code></td><td>Share of near-flat-region pixels sitting on a hard step: banding you can see in skies and walls.</td><td>Lower</td></tr>
     <tr><td><code>noise</code></td><td>Residual grain estimate on the output.</td><td>Context</td></tr>
     <tr><td><code>temporal</code></td><td>Median frame-to-frame luma change: the flicker floor.</td><td>Lower</td></tr>
     <tr><td><code>added_flicker</code></td><td><strong>Output flicker minus source flicker.</strong> Shimmer the upscaler <em>introduced</em>.</td><td>Lower</td></tr>
@@ -74,7 +74,7 @@
   detail on each one, and a still frame looks superb while the moving clip crawls. That
   temporal stability is Topaz's most-cited advantage. It is measurable, so we measure it.</p>
 
-  <h2>Results — Crisp 0.1.284</h2>
+  <h2>Results: Crisp 0.1.284</h2>
   <p>M1 Ultra Mac Studio, 64GB, macOS 15. Each source processed for its first 3 seconds.
   Throughput is end-to-end frames per second including decode, upscale and encode.</p>
   <div class="cmp-wrap"><table>
@@ -93,7 +93,7 @@
   <p>Three things in that table are not flattering, and they are the reason it is worth
   reading.</p>
   <p><strong>Low-light on already-noisy footage adds shimmer.</strong> On the dark, noisy phone
-  clip the Low-light preset scores <code>+0.25</code> added flicker — it introduced temporal
+  clip the Low-light preset scores <code>+0.25</code> added flicker. It introduced temporal
   instability that was not in the source. It buys real detail for that (sharpness 230.6 against
   Enhance's 161.9), so it is a trade rather than a defect, but if your clip is noisy <em>and</em>
   you care more about steadiness than detail, Enhance is the better choice on this evidence.</p>
@@ -108,11 +108,11 @@
   <h2>Why there are no competitor columns</h2>
   <p>Because we have not run the competitors. Publishing a number for a tool we did not measure
   would make everything else here worthless.</p>
-  <p>The harness is built for head-to-head comparison — <code>eval.py compare</code> takes two
+  <p>The harness is built for head-to-head comparison: <code>eval.py compare</code> takes two
   outputs of the same source and marks the per-axis winner plus their mutual SSIM. What it needs
   is the other half: the same clip processed by Topaz Video AI, Aiarty, UniFab, HitPaw, AVCLabs,
   or plain ffmpeg Lanczos. If you have a licence for one of those and are willing to run one
-  clip through it, send us the output and the source, and the result goes up here unchanged —
+  clip through it, send us the output and the source, and the result goes up here unchanged,
   including if it beats Crisp. That is the whole point of keeping the method public.</p>
 
   <h2>Reproducing this</h2>
@@ -121,16 +121,16 @@
   <pre><code>scripts/eval.py run SOURCE.mp4 --preset enhance --trim-end 3
 scripts/eval.py score OUTPUT.mp4 --ref SOURCE.mp4
 scripts/eval.py compare crisp_out.mp4 other_out.mp4 --ref SOURCE.mp4</code></pre>
-  <p>Two honest caveats about the run above. The sources are <strong>synthesised</strong> —
+  <p>Two honest caveats about the run above. The sources are <strong>synthesised</strong> (
   ffmpeg test patterns degraded to imitate a compressed web video, a dark noisy phone clip and a
-  soft camcorder transfer — because they can be regenerated byte-for-byte by anyone, where our
+  soft camcorder transfer) because they can be regenerated byte-for-byte by anyone, where our
   own home footage cannot. Synthetic degradation is not the same as real degradation, and these
   numbers should be read as an A/B instrument rather than as an absolute score. And every metric
   here is content-dependent: comparing <code>sharpness</code> across two different sources tells
-  you about the sources, not the upscalers. Only same-source comparisons mean anything — and that is not only about content: <code>sharpness</code> is <strong>size-dependent</strong>, because variance-of-Laplacian scores a smaller image as sharper whatever its quality. Same-source rows here share an output resolution, which is what makes them comparable. We know that hazard first-hand: a Laplacian-based “fine detail” figure was pulled from the app’s own UI after it scored a lower-resolution render 16.6% <em>better</em> once the two were compared at equal size.</p>
+  you about the sources, not the upscalers. Only same-source comparisons mean anything, and that is not only about content: <code>sharpness</code> is <strong>size-dependent</strong>, because variance-of-Laplacian scores a smaller image as sharper whatever its quality. Same-source rows here share an output resolution, which is what makes them comparable. We know that hazard first-hand: a Laplacian-based “fine detail” figure was pulled from the app’s own UI after it scored a lower-resolution render 16.6% <em>better</em> once the two were compared at equal size.</p>
 
   <h2>What this is for</h2>
-  <p>Two things. It keeps us honest — a quality change that improves the picture in someone's
+  <p>Two things. It keeps us honest: a quality change that improves the picture in someone's
   opinion but moves <code>added_flicker</code> the wrong way is a regression, and we can see
   that before shipping it rather than after. And it gives anyone comparing upscalers something
   better than screenshots to argue with.</p>

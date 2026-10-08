@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x — Crisp</title>
+<title>AI upscaling doesn't fall off at 4x, it catches up: 23.4 VMAF points behind at 2x, 1.2 at 4x: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x, and the 4x job finishes faster than the 2x one. The numbers, the cost in seconds, and why the two scales are different models.">
 <meta name="theme-color" content="#060810">
@@ -44,19 +44,19 @@
   lanczos resize by <strong>23.4 VMAF points</strong>. At <strong>4×</strong> it trails by
   <strong>1.2</strong>. The gap closes as the scale factor rises. The cost is
   <strong>2.78 s</strong> at 4× and <strong>3.89 s</strong> at 2× per 60 frames, against
-  <strong>0.44 s</strong> for the resize — six to nine times the wall clock. And the 4× job is the
+  <strong>0.44 s</strong> for the resize, six to nine times the wall clock. And the 4× job is the
   <em>faster</em> of the two AI routes, because the two scales run different models.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <h2>The measurement</h2>
   <p>Crisp 1.0.1223, measured 2026-09-15, on a photographic archival boxing clip whose native
   1280×720 original we still hold. That original is the ground truth. Two low-resolution inputs were
-  made from it — 320×180 and 640×360 — so that a 4× model and a 2× model each land back on exactly
+  made from it (320×180 and 640×360) so that a 4× model and a 2× model each land back on exactly
   1280×720 with no extra resample anywhere in the chain. Each route was then scored against the
   surviving original. 60 frames per route.</p>
   <p>The scorers are the bundled ffmpeg's <span class="prompt">psnr</span> filter and libvmaf,
   Netflix's perceptual metric, which is compiled into the same ffmpeg and runs on the machine with no
-  network call. The vacuity control on this clip — the truth scored against itself — returns PSNR
+  network call. The vacuity control on this clip (the truth scored against itself) returns PSNR
   <span class="prompt">inf</span> and VMAF 99.62, so the instrument can show near-perfection and a low
   score is a real difference rather than a broken comparison.</p>
 
@@ -64,9 +64,9 @@
     <thead><tr><th>Route</th><th>Model</th><th>Seconds / 60 frames</th><th>PSNR (dB)</th><th>VMAF</th></tr></thead>
     <tbody>
       <tr><td>4× AI enhance</td><td><strong>RealESRGAN_General_x4_v3</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
-      <tr><td>4× lanczos</td><td>—</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
+      <tr><td>4× lanczos</td><td>.</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
       <tr><td>2× AI enhance</td><td><strong>2x-ParimgCompact</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
-      <tr><td>2× lanczos</td><td>—</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
+      <tr><td>2× lanczos</td><td>.</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
     </tbody>
   </table></div>
 
@@ -84,12 +84,12 @@
   That is why this page talks in gaps rather than scores.</p>
   <p>Read that way the result is clean. On the easy job the model is far behind a resize. On the hard
   job it is nearly level. The harder the reconstruction, the more the model justifies the seconds it
-  costs — which is the opposite of the falls-off-a-cliff story the question expects.</p>
+  costs, which is the opposite of the falls-off-a-cliff story the question expects.</p>
 
   <h2>The two scales are two different models</h2>
   <p>This is the mechanism, and it is worth naming exactly because it also explains the wall clock.
   Inside the app, <span class="prompt">presets.resolve_model_for_scale</span> picks the model from the
-  <em>denoise</em> value and the requested scale — not from a model name you choose. The
+  <em>denoise</em> value and the requested scale, not from a model name you choose. The
   <span class="prompt">enhance</span> preset carries denoise 0.4, so with denoise left alone:</p>
 
   <div class="cmp-wrap"><table>
@@ -113,7 +113,7 @@
   isolate the cause.</p>
   <p>What can be said from the same harness is how much of the 2× deficit belongs to the model rather
   than the scale. On this identical geometry, raising denoise to 0.5 or above at 2× routes to
-  RealESRGAN_General_WDN_x4_v3, which scored 36.33 dB and VMAF 96.83 — turning a 23.4-point VMAF
+  RealESRGAN_General_WDN_x4_v3, which scored 36.33 dB and VMAF 96.83: turning a 23.4-point VMAF
   deficit into a 2.2-point one. Most of the 2× gap in the table above is the default model, not the
   scale factor. That routing is covered in full in
   <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">what the denoise setting
@@ -132,14 +132,14 @@
 
   <h2>What PSNR and VMAF actually measure</h2>
   <p>PSNR measures agreement with the original, decibel by decibel. It punishes detail that is
-  plausible but different from what was there — and plausible-but-different detail is precisely what a
+  plausible but different from what was there, and plausible-but-different detail is precisely what a
   generative upscaler produces. The model does not recover the eyelash that was thrown away by the
   downscale. It produces an eyelash, and a convincing one can sit several decibels from the real one.
   SSIM behaves the same way on structure.</p>
   <p>VMAF is the perceptual one, built to predict what a viewer would report, which is why it carries
   the headline on this page. But it is still scored against the original rather than judging the frame
   on its own merits. <strong>Nothing here says a lanczos resize looks better.</strong> These numbers
-  answer one question — which route lands closest to the surviving original — and they do not answer
+  answer one question (which route lands closest to the surviving original) and they do not answer
   which version you would rather watch. That is a judgement to make with your own footage, at full
   size, in motion.</p>
   <p>One more honest note on the 2× row: on the same clip a plain nearest-neighbour stretch scored
@@ -167,7 +167,7 @@
   talk: better than a 13 percent VMAF improvement over lanczos. That is a real published result and
   this page does not dispute it.</p>
   <p>It is about a different kind of model. That number is for <strong>basicVSR++, a temporal
-  model</strong> — it looks at neighbouring frames and pools information across them, so detail that
+  model</strong>. It looks at neighbouring frames and pools information across them, so detail that
   is present in frame 41 can be used to reconstruct frame 40. The routes measured here are
   frame-by-frame: each frame is reconstructed from itself alone, with no access to its neighbours.
   Those are two different architectures answering two different questions, tested on different
@@ -179,7 +179,7 @@
   <p>If your source is clean and you want more pixels, a plain high-quality resize was closer to the
   original at both scale factors, and it costs 0.44 s where the model costs 2.78 to 3.89 s per 60
   frames. On that job the wait buys you a different frame, not a more accurate one.</p>
-  <p>If you are pushing a small source a long way — the 4× case — the fidelity argument against the
+  <p>If you are pushing a small source a long way (the 4× case) the fidelity argument against the
   model mostly evaporates: 1.2 VMAF points on this clip. That is where the seconds are defensible.</p>
   <p>And if the source is noisy or archival rather than merely small, the lever that matters is not
   the scale factor. It is the denoise value, because that is what selects the model.</p>

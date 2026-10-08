@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Why phone video looks shaky, and what stabilization can fix — Crisp</title>
+<title>Why phone video looks shaky, and what stabilization can fix: Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Handheld wobble and rolling shutter skew look similar and are different problems. Only one of them is fixable after the fact, and knowing which is which saves a lot of wasted rendering.">
 <meta name="theme-color" content="#060810">
@@ -39,12 +39,12 @@
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Two different faults look like the
-  same shakiness. One is <strong>handshake</strong> — your hands move and the whole frame moves with
-  them — and stabilization fixes that well. The other is
+  same shakiness. One is <strong>handshake</strong> (your hands move and the whole frame moves with
+  them) and stabilization fixes that well. The other is
   <strong><a href="https://crispvideo.app/learn/what-is-rolling-shutter/">rolling shutter</a></strong>:
   the sensor reads out row by row, so a fast pan leans the verticals and vibration turns the picture
   to jelly. Stabilization cannot undo that, and <strong>Crisp has no rolling shutter correction at
-  all</strong> — holding the frame still can even make the warp easier to see.</p></div>
+  all</strong>: holding the frame still can even make the warp easier to see.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-why-phone-video-looks-shaky-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-why-phone-video-looks-shaky-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <p>Two things make handheld footage unpleasant, and people tend to lump them together. One is
@@ -70,7 +70,7 @@
   <p>That works genuinely well on shake, and it costs you a little framing. What it cannot do is undo
   rolling shutter, because the distortion isn't a whole-frame offset. Different rows of the same frame
   need different corrections, which is a fundamentally harder operation and one Crisp does not
-  attempt. Stabilizing skewed footage produces steady, still-skewed footage — and because the shake
+  attempt. Stabilizing skewed footage produces steady, still-skewed footage, and because the shake
   was partly masking the warp, a steady wobble can read as more obviously wrong than a shaky one did.
   If that is your footage, the honest answer is that no setting in Crisp addresses it and you should
   know that before you buy anything.</p>
@@ -93,10 +93,10 @@
   estimates per-frame motion, counter-shifts each frame, and fills the exposed edges by mirroring.
   Before any of that runs, Crisp measures whether it would help. It samples up to three windows of
   1.5 seconds, taken about 15%, 50% and 80% of the way through the clip, and renders each window
-  twice — once plain, once through the stabilizer — scoring the mean frame-to-frame difference of
+  twice (once plain, once through the stabilizer) scoring the mean frame-to-frame difference of
   both. If any one window's motion falls below 95% of its unstabilized value, the job runs. If none
   of them do, the job is refused before a single frame is rendered, with this message:
-  <em>"Stabilising wouldn't improve this clip — Crisp measured the motion and its stabiliser would
+  <em>"Stabilising wouldn't improve this clip. Crisp measured the motion and its stabiliser would
   add wobble rather than take it out. It only helps footage with real camera shake, so a tripod shot,
   a smooth pan, or a locked-off camera is already as steady as it gets."</em></p>
   <p>That refusal exists because of a measurement that is not flattering to the filter. Scored
@@ -105,17 +105,17 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Footage</th><th>Frame-to-frame motion after stabilizing</th></tr></thead>
     <tbody>
-      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong> — worse</td></tr>
-      <tr><td>Tripod, static scene</td><td><strong>+92%</strong> — worse</td></tr>
-      <tr><td>Deliberate pan</td><td><strong>+24%</strong> — worse; it fights the move</td></tr>
-      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong> — worse</td></tr>
-      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong> — better</td></tr>
+      <tr><td>Locked camera, moving car</td><td><strong>+128%</strong>: worse</td></tr>
+      <tr><td>Tripod, static scene</td><td><strong>+92%</strong>: worse</td></tr>
+      <tr><td>Deliberate pan</td><td><strong>+24%</strong>: worse; it fights the move</td></tr>
+      <tr><td>Gentle handheld drift</td><td><strong>+21%</strong>: worse</td></tr>
+      <tr><td>Violent handheld jitter</td><td><strong>−39%</strong>: better</td></tr>
     </tbody>
   </table></div>
   <p>One case in five. That is the whole argument for measuring first: without the check, asking a
   general-purpose stabilizer to steady a tripod shot returns a visibly wobblier clip after a full
   re-encode, under a progress card that said it was removing shake. Several windows are sampled
-  rather than one because shake is rarely spread evenly through a clip — a walk that is smooth for
+  rather than one because shake is rarely spread evenly through a clip: a walk that is smooth for
   ten seconds and jolts for two is still worth stabilizing, so any single window that improves is
   enough to go ahead. On a clip shorter than about two and a quarter seconds there is only room for
   one window, taken from the start.</p>
@@ -123,21 +123,21 @@
   64-pixel-wide version of the frame to save time, and motion estimation had nothing to work with at
   that size: a violently shaky clip scored 33.46 before and 33.44 after, so the app reported that
   stabilizing would not help footage that plainly needed it. Measuring a centre crop at native pixel
-  scale instead fixed it and is still cheap — 0.26 seconds against 1.78 on a 1080p clip, with the
+  scale instead fixed it and is still cheap: 0.26 seconds against 1.78 on a 1080p clip, with the
   same verdict on every clip tested. The crop is centred on purpose, because shake moves the whole
   frame equally while the mirrored edges are the one part of the picture that is not representative.</p>
 
   <h2>Doing it on a Mac</h2>
   <p>Crisp stabilizes on-device using frame-to-frame motion estimation, keeps the audio in sync by
   stream-copying it untouched, and writes the result as a new file next to the original rather than
-  overwriting it — and if that name is already taken it adds a numeric suffix rather than clobbering
+  overwriting it, and if that name is already taken it adds a numeric suffix rather than clobbering
   what is there. You can ask for it in plain English: "the footage is shaky", "the camera was
   wobbly", "my hands were shaking" and "steady this" all reach the same job. Asking <em>why</em> it
-  is shaky does not — a question is treated as a question, and so is a negation like "don't stabilize
+  is shaky does not: a question is treated as a question, and so is a negation like "don't stabilize
   it", so neither one quietly starts a render.</p>
   <p>Two limits to know before you queue a phone clip. Stabilizing re-encodes the video, so it is not
   a lossless operation and it is worth doing before an <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">AI
-  upscale</a> rather than after. And if the clip is HDR — which recent iPhones record by default —
+  upscale</a> rather than after. And if the clip is HDR (which recent iPhones record by default)
   the stabilize pass tone-maps it to SDR BT.709 on the way through, so the steady copy comes back
   SDR; on a build whose ffmpeg cannot tone-map at all, Crisp refuses the clip instead and asks you to
   convert to SDR first.</p>
@@ -152,7 +152,7 @@
   <h3>Why does my footage look worse after stabilizing?</h3>
   <p>Usually one of two things. Either the clip was steady enough that you have paid a crop for nothing, or the motion was mostly rolling shutter, which stabilization cannot address and can make more obvious by removing the shake that was masking it.</p>
   <h3>Why did Crisp refuse to stabilize my clip?</h3>
-  <p>Because it measured the clip first and found that stabilizing would make it worse. Crisp samples up to three 1.5-second windows, renders each one twice — once plain, once through the stabilizer — and compares frame-to-frame motion. Unless at least one window drops below 95% of its unstabilized motion, the job is refused before any rendering starts. On a tripod shot, a locked-off camera or a deliberate pan, the stabilizer measurably adds motion rather than removing it.</p>
+  <p>Because it measured the clip first and found that stabilizing would make it worse. Crisp samples up to three 1.5-second windows, renders each one twice (once plain, once through the stabilizer) and compares frame-to-frame motion. Unless at least one window drops below 95% of its unstabilized motion, the job is refused before any rendering starts. On a tripod shot, a locked-off camera or a deliberate pan, the stabilizer measurably adds motion rather than removing it.</p>
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">Why VHS tapes degrade</a></li>

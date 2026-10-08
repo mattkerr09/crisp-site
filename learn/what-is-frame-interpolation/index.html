@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>What is frame interpolation? Smooth motion explained (2026) — Crisp</title>
+<title>What is frame interpolation? Smooth motion explained (2026): Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly, and when smoother motion is the wrong choice.">
 <meta name="theme-color" content="#060810">
@@ -93,8 +93,8 @@
   <p>The work is done by <span class="prompt">rife-ncnn-vulkan</span>, running the
   <strong>rife-v4.6</strong> model. That is a Vulkan compute program executed on the Mac's GPU through
   Metal. There is one model, not a menu of them: the older <span class="prompt">rife-anime</span>
-  (v1.8) refuses a custom frame count outright — it answers
-  <em>"only rife-v4 model support custom numframe and timestep"</em> and produces nothing — so
+  (v1.8) refuses a custom frame count outright (it answers
+  <em>"only rife-v4 model support custom numframe and timestep"</em> and produces nothing) so
   every job goes through v4.6.</p>
   <p>Only one GPU process runs at a time. The interpolator takes the same engine-wide lock the
   <a href="https://crispvideo.app/learn/what-is-ai-video-upscaling/">upscaler</a> takes, because both
@@ -109,10 +109,10 @@
   <p>So the motion model is not estimating over your source frames. It is estimating over frames at
   output resolution. A 2× upscale followed by 2× smooth motion means the interpolator is working on
   pictures with four times the pixels of the source, and producing twice as many of them. That is the
-  expensive order, and it is not a setting — there is no control that runs interpolation first.</p>
+  expensive order, and it is not a setting. There is no control that runs interpolation first.</p>
   <p>The clearest evidence of the cost is Crisp's own refusal. Before a job starts, it checks whether
   the working disk can hold a segment, and when smooth motion is on it budgets output-resolution
-  frames at one plus the multiplier — a 2× smooth-motion job reserves room for three full sets of
+  frames at one plus the multiplier: a 2× smooth-motion job reserves room for three full sets of
   output-sized PNGs per segment, on top of the raw decoded set. If the disk can't take it, Crisp says
   so up front instead of spending the GPU time and failing at the write. The same arithmetic is why
   smooth motion makes an already slow job much slower; see
@@ -120,13 +120,13 @@
   <p>Two smaller behaviours fall out of the same place in the pipeline. A segment with fewer than two
   frames is encoded untouched, because a single frame has no pair to interpolate between. And the
   output frame rate for each segment is derived from the number of frames the model <em>actually</em>
-  emitted, not the number requested — if fewer come back, the rate is scaled to match, so the picture
+  emitted, not the number requested: if fewer come back, the rate is scaled to match, so the picture
   keeps its real duration and the stream-copied audio is never truncated to fit.</p>
 
   <h2>What the multiplier can be</h2>
   <p>The Smooth motion control offers three choices: Off, 2× fps (the 30→60 case), and 3× fps. The
   API and the command line accept 1, 2, 3 or 4, and reject anything else with a plain message rather
-  than quietly rounding — ask for 1.5 and you are told the value must be 1, 2, 3 or 4, instead of
+  than quietly rounding: ask for 1.5 and you are told the value must be 1, 2, 3 or 4, instead of
   silently getting a different multiplier than you asked for.</p>
   <p>Typed requests land on the same whole numbers, and Crisp names the rate you will actually get.
   Because it can only multiply, a 24fps clip asked for 60fps lands on 48, and the plan card says so
