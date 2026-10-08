@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1447",
-  "notes": "On a free copy, Convert no longer calls its result lossless, and the Audio tool's note says the picture is re-encoded once for the mark in every mode, not just the first.",
-  "pub_date": "2026-10-08T21:57:13Z",
+  "version": "1.0.1449",
+  "notes": "Messages in the app now read in plain sentences, with no dashes: the errors, the replies to your requests, the window's own text and the toasts say the same things in simpler punctuation.",
+  "pub_date": "2026-10-08T23:26:06Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUthN212dlV1c21tZ0V4Zzl4K2ZrQzZ5dXYxam5jKzBaOTFPcXVNQlpwQmtOT3lXeWk5WXRIdmxNWm14TytDdDY0bGhrbitDZ0labFFKUWs2QTVIMndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDk2MTQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDNHBjRjBldS96VzZXV0htNXUrQm9oV0J6Y2thL2lyWTJmdmVqSTNGMXc5SHNQNjdUVTdsd2t1cmpCSExkdHdQOFF1dGcvbGxxUVdhMTdqYzZiTVlDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1447.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJNSFErblhZdE13WTRsZ2JXQkxQVDFEUW82NVIrZWU4UWRXZTNTTmNPY0R0WmRNRHovcGFYWHNPV2lONitTRjdNU3J5YXJDWnREREtLV1lQTG1uSEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTAxMzQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUQ3V2dFBrM3ZSakpzSG4rNUhPVXdRQVNlNi9wcGFuU3IyRFd0cE1WSTJtOEQ3K2NwSjczMU41NDYrT0ZjbEt6aDV2aThkaCtIb3hCSTNsZUpOVk5DQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1449.app.tar.gz"
     }
   }
 }
