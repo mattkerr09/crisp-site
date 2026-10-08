@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1442",
-  "notes": "The unlock window and the watermark notes now say plainly what Crisp Pro removes and adds, and that it costs $129 once. The Buy Pro buttons under an export now go straight to checkout.",
-  "pub_date": "2026-10-05T21:38:07Z",
+  "version": "1.0.1445",
+  "notes": "When a tool finishes, its name on the clip and in the message is no longer cut off in the middle of a word.",
+  "pub_date": "2026-10-08T01:22:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUErV1UvcTYwdGZuekd0T3RBT2V5MmgvejhldFMxLzMvb21BdmYycVdndmh0Y1p6SC9HeUJ2QXRieUwrUTJrRFFhaEg5eVh2ZXh2TFMvaEVIOVlneFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjM1ODczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6S25YZnc2bmhSTzZPdGJLODdzUFh3b3lGY1J5ZkpLdFRtU2NDQVFGNU53ME1IWEhKQmtFVFZaVjQvWWF2NTNYV1VlTEtaWTRtVVQ0Y1k1NWZQcUNDUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1442.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUgvZ1Y1ZDZ0anZxOGxNbURMR1dPZmg5RDJSaXNCUVpoNW5YL1FFZFZNMVorbHViOWN1SXFvM3BNS0E4WkFRdWdVaVJmWDE4NjY3T1ZxaXVpUjlncXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDIyMDc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6K29ka2RabHY3aTZTdnNKWWdZKytQYTk5U250TVdXVVFhRDdrRlNPY0JqWkFoYjVRb2poUTE0N3V2eHh0MW9uMEpRajlISDBXRlVoREtLbFFvZnBBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1445.app.tar.gz"
     }
   }
 }
