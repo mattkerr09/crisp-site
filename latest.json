@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1445",
-  "notes": "When a tool finishes, its name on the clip and in the message is no longer cut off in the middle of a word.",
-  "pub_date": "2026-10-08T01:22:52Z",
+  "version": "1.0.1447",
+  "notes": "On a free copy, Convert no longer calls its result lossless, and the Audio tool's note says the picture is re-encoded once for the mark in every mode, not just the first.",
+  "pub_date": "2026-10-08T21:57:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUgvZ1Y1ZDZ0anZxOGxNbURMR1dPZmg5RDJSaXNCUVpoNW5YL1FFZFZNMVorbHViOWN1SXFvM3BNS0E4WkFRdWdVaVJmWDE4NjY3T1ZxaXVpUjlncXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDIyMDc4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp6K29ka2RabHY3aTZTdnNKWWdZKytQYTk5U250TVdXVVFhRDdrRlNPY0JqWkFoYjVRb2poUTE0N3V2eHh0MW9uMEpRajlISDBXRlVoREtLbFFvZnBBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1445.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUthN212dlV1c21tZ0V4Zzl4K2ZrQzZ5dXYxam5jKzBaOTFPcXVNQlpwQmtOT3lXeWk5WXRIdmxNWm14TytDdDY0bGhrbitDZ0labFFKUWs2QTVIMndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDk2MTQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpDNHBjRjBldS96VzZXV0htNXUrQm9oV0J6Y2thL2lyWTJmdmVqSTNGMXc5SHNQNjdUVTdsd2t1cmpCSExkdHdQOFF1dGcvbGxxUVdhMTdqYzZiTVlDdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1447.app.tar.gz"
     }
   }
 }
