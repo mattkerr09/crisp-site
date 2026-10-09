@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1449",
-  "notes": "Messages in the app now read in plain sentences, with no dashes: the errors, the replies to your requests, the window's own text and the toasts say the same things in simpler punctuation.",
-  "pub_date": "2026-10-08T23:26:06Z",
+  "version": "1.0.1451",
+  "notes": "Enhance is faster. The first time you run it, Crisp spends a few seconds finding the quickest settings for your Mac and remembers them. On our test Mac, a 1080p video to 4K takes nearly 40% less time from the second run on.",
+  "pub_date": "2026-10-09T14:47:16Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJNSFErblhZdE13WTRsZ2JXQkxQVDFEUW82NVIrZWU4UWRXZTNTTmNPY0R0WmRNRHovcGFYWHNPV2lONitTRjdNU3J5YXJDWnREREtLV1lQTG1uSEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTAxMzQ3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUQ3V2dFBrM3ZSakpzSG4rNUhPVXdRQVNlNi9wcGFuU3IyRFd0cE1WSTJtOEQ3K2NwSjczMU41NDYrT0ZjbEt6aDV2aThkaCtIb3hCSTNsZUpOVk5DQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1449.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURZMUEwWHplVXorOGhoRGFaU2l2bk1yWkFEdy80OEI4RUo5RjQ4ekxKbjltUEpXOUhQajgxWkxVUHcwSVlTbXJVb1JDN2hwSzZhUlprNTZmWmhSYnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTU2ODE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUcll1STI5bXBEb2RONHVXQ2ZxaWlrNFVDYjkxYmw5TnVvNXozUTltamhHaTVwcStmVlIxUEVwUmovaHBmU29UNkRsYlkxUXhEMHBKOGJPbFd6YVNBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1451.app.tar.gz"
     }
   }
 }
