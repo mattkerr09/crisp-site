@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1451",
-  "notes": "Enhance is faster. The first time you run it, Crisp spends a few seconds finding the quickest settings for your Mac and remembers them. On our test Mac, a 1080p video to 4K takes nearly 40% less time from the second run on.",
-  "pub_date": "2026-10-09T14:47:16Z",
+  "version": "1.0.1455",
+  "notes": "Enhance is faster again. It now runs on your Mac's graphics chip through Apple's Core ML, and it prepares the next part of a long video while it works on the current one. On our test Mac, a 720p video to 4K takes about half the time it took in version 1.0.1445.",
+  "pub_date": "2026-10-09T16:36:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURZMUEwWHplVXorOGhoRGFaU2l2bk1yWkFEdy80OEI4RUo5RjQ4ekxKbjltUEpXOUhQajgxWkxVUHcwSVlTbXJVb1JDN2hwSzZhUlprNTZmWmhSYnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTU2ODE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUcll1STI5bXBEb2RONHVXQ2ZxaWlrNFVDYjkxYmw5TnVvNXozUTltamhHaTVwcStmVlIxUEVwUmovaHBmU29UNkRsYlkxUXhEMHBKOGJPbFd6YVNBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1451.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVNcVU0dHp0RXY1RW1HemFRaE9WR3NlV21tVWwwc2tVRVpmejdFWW04dlFiOWlWWXZoMnB5bmkyR3l3RTc2TnZWMUpraTBaU3V6Q2xYUUlDNGJ6VVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTYzMTk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNbERLcVBkS094aTN3OW5tS2dtSXpaR2xjby93T0xmVEw4aU8xYjd1RnR2azl4QVo1YVJ5c0ovbGhRcG0rcmZBVzVCWUhhU1JuVDJLQUZlcnlsQlNDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1455.app.tar.gz"
     }
   }
 }
