@@ -1,7 +1,7 @@
 {
   "version": "1.0.1455",
-  "notes": "Enhance is faster again. It now runs on your Mac's graphics chip through Apple's Core ML, and it prepares the next part of a long video while it works on the current one. On our test Mac, a 720p video to 4K takes about half the time it took in version 1.0.1445.",
-  "pub_date": "2026-10-09T16:36:12Z",
+  "notes": "Enhance is faster again. It now runs on your Mac's graphics chip through Apple's Core ML, and on a long video it prepares the next part as it finishes the current one. On our test Mac, a 720p video to 4K takes about half the time it took in version 1.0.1445.",
+  "pub_date": "2026-10-09T16:51:10Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVNcVU0dHp0RXY1RW1HemFRaE9WR3NlV21tVWwwc2tVRVpmejdFWW04dlFiOWlWWXZoMnB5bmkyR3l3RTc2TnZWMUpraTBaU3V6Q2xYUUlDNGJ6VVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTYzMTk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNbERLcVBkS094aTN3OW5tS2dtSXpaR2xjby93T0xmVEw4aU8xYjd1RnR2azl4QVo1YVJ5c0ovbGhRcG0rcmZBVzVCWUhhU1JuVDJLQUZlcnlsQlNDQT09Cg==",
