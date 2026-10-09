@@ -33,6 +33,9 @@ import sys
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import sitewide_chrome  # noqa: E402
+
 SITE = Path(__file__).resolve().parents[1]
 ENGINE = SITE.parent / "backend" / "crisp_engine" / "entitlement.py"
 BASE = "https://crispvideo.app"
@@ -192,6 +195,10 @@ def build() -> str:
         link("/legal/terms/"),
         link("/legal/privacy/"),
         link("/legal/refunds/"),
+        "",
+        # The footer's "More from Kerr & Company" list, read from the one place it is written (sitewide_chrome).
+        "## More from Kerr & Company",
+        *[f"- [{html.unescape(n)}]({u}): {d}" for n, u, d in sitewide_chrome.SIBLINGS],
         "",
     ]
     return "\n".join(out)

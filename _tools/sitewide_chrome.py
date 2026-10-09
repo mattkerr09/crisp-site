@@ -33,6 +33,8 @@ SIBLINGS = [
     ("Outlier", "https://outlier.host/", "private, offline AI for your Mac"),
     ("Docket SEO", "https://docketseo.app/", "website audits that rank what to fix first"),
     ("AdPlaybook", "https://adplaybook.app/", "ad copy within every platform's limits"),
+    # CEO order, 2026-10-09 (Matthew): "BookBreaker is ours now", wording exactly as ordered.
+    ("BookBreaker", "https://bookbreaker.bet/", "free arbitrage and +EV betting app for Mac"),
     ("Built by Kerr", "https://builtbykerr.com/", "websites and local SEO for Grand Rapids businesses"),
     # CEO order, 2026-09-29: the company Dodo shows buyers (the DODOPAY_KERRANDCOMPANY card-statement line)
     # was linked from no product page. The LEGAL name, as the privacy page and the terms state it (the CEO's

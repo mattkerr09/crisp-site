@@ -795,6 +795,59 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
   .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
 }
+
+/* ---------- FUTURISTIC TOUCHES (Matthew, 2026-10-09: "look how bookbreaker looks and then just add that to our other sites";
+   the brief is ~/ops/launch/FUTURISTIC-TOUCHES.md, the reference bookbreaker.bet). Not a redesign: Crisp keeps its own
+   colours, type, copy and links. It already had the frosted nav, the gradient on "On your Mac." and lifting cards; this
+   adds what it lacked. All CSS, all of it off under prefers-reduced-motion, and nothing changes layout. ---------- */
+
+/* 1. A real glow behind the hero: Crisp's cyan bleeding down from the top, a faint violet off to the side. */
+.hero{background:
+  radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.19),transparent 70%),
+  radial-gradient(35% 42% at 86% 8%,rgba(157,140,255,.10),transparent 70%);}
+
+/* 2. A slow drifting dot field behind the headline, three layers, masked so it fades out before the edges. It replaces
+   the static 34px dot grid. Tiny (1px) and at .6, so no text sits on anything a reader has to read through. */
+.hero::before{inset:auto;left:0;right:0;top:-4rem;width:auto;height:40rem;   /* inside the page width: no sideways scroll */
+  background-image:
+    radial-gradient(rgba(255,255,255,.75) 1px,transparent 1.5px),
+    radial-gradient(rgba(90,200,250,.7) 1px,transparent 1.5px),
+    radial-gradient(rgba(157,140,255,.55) .8px,transparent 1.3px);
+  background-size:140px 140px,210px 210px,330px 330px;
+  background-position:0 0,70px 95px,160px 40px;
+  -webkit-mask-image:radial-gradient(55% 62% at 50% 34%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(55% 62% at 50% 34%,#000 0%,transparent 78%);
+  opacity:.6;animation:crisp-drift 90s linear infinite;}
+@keyframes crisp-drift{to{background-position:140px 140px,280px 305px,490px 370px}}
+@media (min-width:861px){            /* the headline sits in the left column here, so the field centres on it */
+  .hero::before{-webkit-mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);
+    mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);}
+}
+
+/* 3. The primary button glows: a vertical gradient in Crisp's cyan, a 1px highlight on the top edge, a coloured shadow.
+   Its dark label stays 12.4:1 on the lightest stop and 10.0:1 on the darkest. */
+.btn-primary{background:linear-gradient(180deg,#8cdcfd 0%,#5ac8fa 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 34px -10px rgba(90,200,250,.85);}
+.btn-primary:hover{background:linear-gradient(180deg,#a2e3fe 0%,#6dcffb 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 44px -12px rgba(90,200,250,.95);}
+
+/* 4. Cards that lift also glow: a cyan hairline ring and a soft coloured shadow under them on hover. */
+.card:hover{box-shadow:0 0 0 1px rgba(90,200,250,.14),0 30px 80px -30px rgba(90,200,250,.45);}
+
+/* 5. The app itself on a 3D stage: the demo window starts tilted back and settles flat as it scrolls into view, with a
+   cyan glow under it. Browsers without scroll-driven animations get the glow and a flat window; phones and anyone
+   with reduced motion always get it flat. Nothing about the video or its controls changes. */
+.demo-frame{box-shadow:0 0 0 1px rgba(90,200,250,.18),0 40px 120px -30px rgba(90,200,250,.45),0 30px 60px -20px #000;}
+@media (min-width:761px) and (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .demo{perspective:1600px;}
+    .demo-frame{transform-origin:50% 0;animation:crisp-stage linear both;
+      animation-timeline:view();animation-range:entry 0% cover 45%;}
+    @keyframes crisp-stage{from{transform:rotateX(14deg) scale(.98)}to{transform:none}}
+  }
+}
+
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none;}}
 </style>
 <!-- Sled affiliate attribution, SERVED FIRST-PARTY on purpose.
      Sets a ta_ref cookie only when a visitor arrives with ?ref=CODE, so an
@@ -1791,7 +1844,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
        "Also built by the same person" cross-sell so the homepage does not carry two. Plain followed links.
        _tools/sitewide_chrome.py applies it; tests/test_every_page_carries_the_sitewide_chrome.py gates it. -->
   <div class="wrap foot foot-sibling">
-    <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company LLC</a>: the company behind these apps</li></ul></div>
+    <div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list"><li><a href="https://outlier.host/">Outlier</a>: private, offline AI for your Mac</li><li><a href="https://docketseo.app/">Docket SEO</a>: website audits that rank what to fix first</li><li><a href="https://adplaybook.app/">AdPlaybook</a>: ad copy within every platform's limits</li><li><a href="https://bookbreaker.bet/">BookBreaker</a>: free arbitrage and +EV betting app for Mac</li><li><a href="https://builtbykerr.com/">Built by Kerr</a>: websites and local SEO for Grand Rapids businesses</li><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company LLC</a>: the company behind these apps</li></ul></div>
   </div>
 </footer>
 

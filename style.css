@@ -340,3 +340,11 @@ pre{max-width:100%;overflow-x:auto;}
   text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 .pbox .pbox-phone{margin:-.2rem 0 .7rem;}
 @media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}
+
+/* ---- FUTURISTIC TOUCHES (Matthew, 2026-10-09; ~/ops/launch/FUTURISTIC-TOUCHES.md) ----
+   The guide pages already have the frosted nav, the glowing gradient button and the lifting call-to-action box. What
+   they lacked is the light: the same cyan glow the home page now has, bleeding down from the top behind the title, with
+   a faint violet off to the side. Behind everything, no motion, and it fades out well before the body copy. */
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:34rem;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.14),transparent 70%),
+             radial-gradient(35% 40% at 86% 6%,rgba(157,140,255,.07),transparent 70%);}
