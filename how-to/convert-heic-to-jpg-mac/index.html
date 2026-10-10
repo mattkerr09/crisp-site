@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to convert HEIC to JPG on a Mac","description":"HEIC is Apple's default photo format and half the web still can't read it. Three ways to convert, when each is right, and the quality question nobody mentions.","datePublished":"2026-07-23","dateModified":"2026-10-07","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-heic-to-jpg-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to convert HEIC to JPG on a Mac","description":"HEIC is Apple's default photo format and half the web still can't read it. Three ways to convert, when each is right, and the quality question nobody mentions.","datePublished":"2026-07-23","dateModified":"2026-10-10","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/convert-heic-to-jpg-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why are my iPhone photos HEIC?","acceptedAnswer":{"@type":"Answer","text":"Apple made HEIC the default in iOS 11 because it stores roughly the same quality in about half the file size. Everything Apple reads it natively; a lot of the rest of the world still doesn't."}},{"@type":"Question","name":"Does converting HEIC to JPG lose quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, a little, and unavoidably — both are lossy, so you are re-encoding an already-compressed image. At high JPG quality the loss is invisible. Keep the HEIC original if the photo matters."}},{"@type":"Question","name":"Can I stop my iPhone making HEIC files?","acceptedAnswer":{"@type":"Answer","text":"Settings → Camera → Formats → Most Compatible switches to JPEG at capture. You get bigger files for the same quality, which is the trade you are making."}}]}
@@ -40,7 +40,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; HEIC to JPG</div>
   <h1>How to convert HEIC to JPG on a Mac</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-10</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">The fastest way needs nothing installed: select the files in Finder, right-click,
   Quick Actions → Convert Image, pick JPEG. That covers most cases. The rest of this page is about
@@ -93,12 +93,13 @@
   <h2>When the photo needs more than a format change</h2>
   <p>Old iPhone photos are often small by modern standards, a 2016 iPhone shot is 12MP but was
   processed by a 2016 pipeline, and it shows on a 5K display. If you're converting anyway, that is
-  the moment to also upscale and clean it, because doing both in one pass avoids a second generation
-  of compression loss.</p>
-  <p>Crisp handles HEIC directly: drop it in, and the export writes a standard JPG or PNG with the
-  upscale and any cleanup applied in the same operation. It runs on your Mac, which for a photo
-  library is the sane default: family photos have no business being uploaded to a converter site to
-  save you a right-click.</p>
+  the moment to also upscale and clean it. Convert at the highest quality setting, and keep the HEIC
+  original, because the upscale then works from a JPG and every extra JPG generation costs a little.</p>
+  <p>As of version 1.0.1455, Crisp cannot upscale an iPhone HEIC directly: those files fail in its
+  photo lane. Convert the photo to JPG first with the Quick Action above, then drop the JPG into Crisp
+  and it writes the enlarged, cleaned-up photo next to the original. It runs on your Mac, which for a
+  photo library is the sane default: family photos have no business being uploaded to a converter site
+  to save you a right-click.</p>
 
   <h2>Related</h2>
   <ul>
