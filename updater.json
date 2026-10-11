@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1455",
-  "notes": "Enhance is faster again. It now runs on your Mac's graphics chip through Apple's Core ML, and on a long video it prepares the next part as it finishes the current one. On our test Mac, a 720p video to 4K takes about 40% less time than it did in version 1.0.1445.",
-  "pub_date": "2026-10-09T16:51:10Z",
+  "version": "1.0.1458",
+  "notes": "Photos from an iPhone now upscale. A HEIC photo, the format iPhones save in, failed with an error in version 1.0.1455. It now opens, comes out the right way up, and shows its picture in the media panel. Other photos and videos behave as before.",
+  "pub_date": "2026-10-11T00:25:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVNcVU0dHp0RXY1RW1HemFRaE9WR3NlV21tVWwwc2tVRVpmejdFWW04dlFiOWlWWXZoMnB5bmkyR3l3RTc2TnZWMUpraTBaU3V6Q2xYUUlDNGJ6VVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTYzMTk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNbERLcVBkS094aTN3OW5tS2dtSXpaR2xjby93T0xmVEw4aU8xYjd1RnR2azl4QVo1YVJ5c0ovbGhRcG0rcmZBVzVCWUhhU1JuVDJLQUZlcnlsQlNDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1455.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV1NGQ1eU55dmhhdTAxZk9iU2VvR2RNK3NQTm9NTVhGK1dHRGs3Z0tHUXRFdE5jWmcxeHpnc3pPdHBpUS80ZHdqZ1ZzZkFncC9jRHBkYW5SZkwrcVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjc3Nzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphWGVweExFL3hJSklBelJkK1dXSk5JSy9ISllCTkkxaitVbzdpZ2plWkdmbnJJL0RaSnVDVGJ4SjVHV0dweDNvWjNWRzFlclVjam1mTDUyR2l6akZBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1458.app.tar.gz"
     }
   }
 }
