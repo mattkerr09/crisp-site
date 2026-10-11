@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1458",
-  "notes": "Photos from an iPhone now upscale. A HEIC photo, the format iPhones save in, failed with an error in version 1.0.1455. It now opens, comes out the right way up, and shows its picture in the media panel. Other photos and videos behave as before.",
-  "pub_date": "2026-10-11T00:25:17Z",
+  "version": "1.0.1460",
+  "notes": "Asking Crisp to fix the grain or remove the noise now does what it says. The strength it plans is used on photos and on video; before, the Auto preset dropped it and the picture came out as if you had asked for nothing.",
+  "pub_date": "2026-10-11T05:57:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUV1NGQ1eU55dmhhdTAxZk9iU2VvR2RNK3NQTm9NTVhGK1dHRGs3Z0tHUXRFdE5jWmcxeHpnc3pPdHBpUS80ZHdqZ1ZzZkFncC9jRHBkYW5SZkwrcVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjc3Nzk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negphWGVweExFL3hJSklBelJkK1dXSk5JSy9ISllCTkkxaitVbzdpZ2plWkdmbnJJL0RaSnVDVGJ4SjVHV0dweDNvWjNWRzFlclVjam1mTDUyR2l6akZBQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1458.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9EWFNudEltbGJxdkw0QndEREFpTDZzWHRZTFFiUWdZM3Y5ZmRXK2ZjbU8xQ2xmWHlBdnVHU1lJdjN5OGwyWk9BZFF3cEJhcHZzaEs3UzRXM1QzREE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjk3ODU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpja2JwRXd2TGFnbjlyNXZwUHpEWnkzTlF0RlJla1dxUWhHTTJZQnRzYWJhMDJ0ditlek5LOFQrK1ZvMWZTUCtYdXpqWVBFWWdoNHVjWEdIQldmRzZBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1460.app.tar.gz"
     }
   }
 }
