@@ -1,6 +1,6 @@
 {
   "version": "1.0.1469",
-  "notes": "Upscaling now really runs on your Mac's GPU through Core ML. Since 1.0.1455 a start-up step quietly switched that faster path off, so the speed-ups in the last few versions never reached the app. They do now: on our test Mac a 1-minute 1080p video reached 4K in 5 minutes 7 seconds, down from 10 minutes 21 seconds in 1.0.1466. The picture matches the previous version to within a fraction of a level.",
+  "notes": "Upscaling now really runs on your Mac's GPU through Core ML. Since 1.0.1455 a start-up step quietly switched that faster path off, so the speed-ups in the last few versions never reached the app. They do now: on our test Mac a 1-minute 1080p video reached 4K in 5 minutes 17 seconds, down from 10 minutes 21 seconds in 1.0.1466. The picture matches the previous version to within a fraction of a level.",
   "pub_date": "2026-10-13T10:46:44Z",
   "platforms": {
     "darwin-aarch64": {
