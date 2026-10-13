@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1466",
-  "notes": "Upscaling at 4\u00d7 is much faster. On our test Mac the upscaling step now runs 2.4 times faster on 720p video and 2.2 times faster on 1080p, and 2\u00d7 and Auto gain about 5% on top of last version's speed-up. The picture is exactly the same.",
-  "pub_date": "2026-10-13T08:59:29Z",
+  "version": "1.0.1469",
+  "notes": "Upscaling now really runs on your Mac's GPU through Core ML. Since 1.0.1455 a start-up step quietly switched that faster path off, so the speed-ups in the last few versions never reached the app. They do now: on our test Mac a 1-minute 1080p video reached 4K in 5 minutes 7 seconds, down from 10 minutes 21 seconds in 1.0.1466. The picture matches the previous version to within a fraction of a level.",
+  "pub_date": "2026-10-13T10:46:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU80WFhVYkZieDNwdUs4d2Q1UlpvdE9sYlpHMkdDMzdCMmRxMDRrbnlXUXd3U1FINlRIL3FRSzFhUURLODFDbE9WUEpjU2U4UGdHcUpMN0tGZjNoTUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODgxNTQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpramoxenVaTjJyQ2VOVzcwemJzWnNMcXZoQ3hLWnFJbkxweWV1ekhPWGFCSHZCQ2NwTGhvSXF1WVlvcW9JUXdHNWt0SWYrVmJReEdEb00zMnpEREdCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1466.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1uSENMWjYvUm4wV0tLZkhwRTRDYm9MSEp6RW02LzUyOXVwZjBFemduL01YR2NxTzFPQWdTNk91WndkVG0rZjBSd3pybktyeGh0ei9KaFJpUHFTNFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODg3OTkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1dmxuWkRHTXJxSnFvQklpYlFFVmNmaWtzaTMvYXM4L2V2MkRVZDNjVTl6Z0QyU25NZDBnMWRLOTJqdWY4bGM1eUpzNFAxSEdhRzBDelZsdXd0aE1EUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1469.app.tar.gz"
     }
   }
 }
