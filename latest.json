@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1460",
-  "notes": "Asking Crisp to fix the grain or remove the noise now does what it says. The strength it plans is used on photos and on video; before, the Auto preset dropped it and the picture came out as if you had asked for nothing.",
-  "pub_date": "2026-10-11T05:57:56Z",
+  "version": "1.0.1462",
+  "notes": "Enhance is faster. On our test Mac a 30-second 1080p video now upscales to 4K in about 3 minutes 34 seconds instead of 4 minutes 50, and the same speed-up applies to every enhance setting, including noise removal. The picture is the same as before.",
+  "pub_date": "2026-10-13T05:05:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9EWFNudEltbGJxdkw0QndEREFpTDZzWHRZTFFiUWdZM3Y5ZmRXK2ZjbU8xQ2xmWHlBdnVHU1lJdjN5OGwyWk9BZFF3cEJhcHZzaEs3UzRXM1QzREE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjk3ODU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpja2JwRXd2TGFnbjlyNXZwUHpEWnkzTlF0RlJla1dxUWhHTTJZQnRzYWJhMDJ0ditlek5LOFQrK1ZvMWZTUCtYdXpqWVBFWWdoNHVjWEdIQldmRzZBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1460.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFwMlVlMFk3WHlTUHlYNU1idkt1L0pHdFNZaW5iNFJTZmxzZmE1Rm1BS2RxRWFJWGY3cXJ2dmJERW8xdi9LZ1NWSWFJUjhwanpwZ1R0TUtZOVArK1FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY3MzYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCSkoxTmU1aTRKZWJQSHZpTjFnajFOcmF5QnBLOE5UZzZHY1hHaExieTl5VjJ2ZTVvL0FRdFZQdDUrc2hvRlJRbmozWFhMRUExckZUK21YMFZ6aDFEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1462.app.tar.gz"
     }
   }
 }
