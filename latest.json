@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1472",
-  "notes": "Short clips finish sooner. Crisp now starts upscaling once the first 10 seconds of a clip are ready, instead of waiting for all of it. On our test Mac a 30-second 1080p video reached 4K in 2 minutes 42 seconds, down from 3 minutes 8 seconds. The picture is the same. Clips that use a denoise, low-light or film-repair option are processed exactly as before.",
-  "pub_date": "2026-10-13T13:36:38Z",
+  "version": "1.0.1477",
+  "notes": "Free exports now stop at 60 seconds and still carry the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark. The editor, the full preview and the sample clip stay free. When a free export is cut short, Crisp shows your own before and after frame, the price and the 30-day refund. After you buy, the unlock window now says what to do next: click Unlock Pro, paste your key, click Activate.",
+  "pub_date": "2026-10-13T16:13:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtwOFM5WFFpc01ZUmdMNU52NlhLZmRyU2l4bk8vcGY3RWtPOG44bkZhMThOcjBVc1BXMy8xN3RuaS95MTlVZEJvQVVzM1JYd3dJQlFucmsvZkJkV1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODk4MjI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXVW9zMXMzU2lGMmZFenB1SGVwRXliamJzRXlpdVNQZFM4d05HTUx1clRzcldBNFViTmxsSHJQakNWV212VGFGMzF4Y3NOZ2VEdkU2V2o3ZFFGT05BUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1472.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYvRHRDT2ZBcjBPbWZqdUYvN252bW1FVWtQSm5IUFUvY2lrMHB5a1A2NjY3SlJMb1Z5K1YxWDJ1MVMxbHBqYUcwTUplcHdieGRWNEFsZG1YcmU5L1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTA3NjMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpReTFuYTZaMWcxYnpzQTlJcXJXSThlblUweW1FenVqQlphZXZnT3ZYc3FGdkxiczY0bEZtR0NXMlV3UzNwWS9OR0k0elV2WVVrZVBRejdrT1U4T25BZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1477.app.tar.gz"
     }
   }
 }
