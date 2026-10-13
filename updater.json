@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1477",
-  "notes": "Free exports now stop at 60 seconds and still carry the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark. The editor, the full preview and the sample clip stay free. When a free export is cut short, Crisp shows your own before and after frame, the price and the 30-day refund. After you buy, the unlock window now says what to do next: click Unlock Pro, paste your key, click Activate.",
-  "pub_date": "2026-10-13T16:13:44Z",
+  "version": "1.0.1479",
+  "notes": "When a free export is cut at 60 seconds, the window that offers Pro now shows the true length of your video. On a 64-second clip it said 60.6 seconds. Nothing else changed.",
+  "pub_date": "2026-10-13T17:08:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYvRHRDT2ZBcjBPbWZqdUYvN252bW1FVWtQSm5IUFUvY2lrMHB5a1A2NjY3SlJMb1Z5K1YxWDJ1MVMxbHBqYUcwTUplcHdieGRWNEFsZG1YcmU5L1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTA3NjMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpReTFuYTZaMWcxYnpzQTlJcXJXSThlblUweW1FenVqQlphZXZnT3ZYc3FGdkxiczY0bEZtR0NXMlV3UzNwWS9OR0k0elV2WVVrZVBRejdrT1U4T25BZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1477.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURPVCs1QmNEaW8xL2Z3VGpoVHhIei85SVFKNFhlWmY4YldoNTR3YVFGWTlGQlhRd3ZHVFVRN2k2N3VBeFNmUU5vZ1F6czIrbElQKzBYV05aV3ZEOFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTEwNzQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuWTlVT0lNOHZPUkdlb2o5dHBHUlZEOVN1NkhqMmhCSkFONC90WWg2QzM3bUgxYlJTY0drQmZhUitVaGFWeFNYRzlFVHRCbTlDVXpNMUdxUDcxd0NCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1479.app.tar.gz"
     }
   }
 }
