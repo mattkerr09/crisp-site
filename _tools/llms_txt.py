@@ -75,6 +75,18 @@ def money(d: Decimal) -> str:
     return f"${d:.2f}".replace(".00", "") if d == d.to_integral() else f"${d:.2f}"
 
 
+#: WHICH FREE EXPORTS ARE CAPPED (CEO decision 2026-10-13; the engine's list is freetier.CAPPED_TASKS, tests/test_the_site_states_the_free_export_cap.py
+#: holds the two together): the AI enhancement work Pro is sold for stops at the cap; every utility tool (Convert, Mute, Compress, Loop,
+#: Rotate, Split, GIF ...) runs its full length, still with the mark. ONE sentence, read by the product box, the pricing and download
+#: pages, the new-page template and llms.txt, so no page can claim the cap covers a tool it does not.
+CAPPED_LANES = "upscaling, restoring and colour exports"
+
+
+def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
+    return (f"{CAPPED_LANES} up to {cap} seconds, everything else at full length, "
+            f"all with a small {open_q}Made with Crisp{close_q} mark")
+
+
 def facts() -> dict:
     home = read("/")
     price = Decimal(one(r"(?m)^PRICE_USD\s*=\s*(\d+)\s*$", ENGINE.read_text(), "PRICE_USD"))
@@ -153,13 +165,13 @@ def build() -> str:
         "# Crisp Video",
         "",
         f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac, then lets you "
-        f"edit it on a real timeline. Free for exports up to {f['cap']} seconds, with a small “Made with Crisp” mark; Pro is {money(p)} once, "
+        f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}; Pro is {money(p)} once, "
         f"not a subscription. {f['os']}, {f['chip']}.",
         "",
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
-        f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; exports stop at "
-        f"{f['cap']} seconds and carry a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
+        f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; "
+        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every export carries a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
         f"generative Max lane and batch processing",
         f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
         f"({100 - int(now * 100 / p)}% off) — the Buy button applies {f['code']} at checkout; if it ever "

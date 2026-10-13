@@ -94,7 +94,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: exports up to {cap} seconds, with a small mark. Pro removes both for <span class="split">${price} once · or 4 × ${split}</span>. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: enhanced exports up to {cap} seconds, everything else at full length, with a small mark. Pro removes the mark and the limit for <span class="split">${price} once · or 4 × ${split}</span>. Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
