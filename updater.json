@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1479",
-  "notes": "When a free export is cut at 60 seconds, the window that offers Pro now shows the true length of your video. On a 64-second clip it said 60.6 seconds. Nothing else changed.",
-  "pub_date": "2026-10-13T17:08:57Z",
+  "version": "1.0.1481",
+  "notes": "Free exports of upscaling, restoring and colour work now stop at 60 seconds and carry the small \u201cMade with Crisp\u201d mark. Convert, Mute, Compress, Loop, Rotate, Split, GIF and the other tools run at full length, also with the mark. Pro, $129 once, removes the limit and the mark. The editor, the full preview and the sample clip stay free. When an export is cut at 60 seconds, Crisp shows your own before and after, the full length of your video, the price and the 30-day refund. After you buy, the unlock window says what to do next: click Unlock Pro, paste your key, click Activate.",
+  "pub_date": "2026-10-13T18:17:43Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURPVCs1QmNEaW8xL2Z3VGpoVHhIei85SVFKNFhlWmY4YldoNTR3YVFGWTlGQlhRd3ZHVFVRN2k2N3VBeFNmUU5vZ1F6czIrbElQKzBYV05aV3ZEOFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTEwNzQ0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpuWTlVT0lNOHZPUkdlb2o5dHBHUlZEOVN1NkhqMmhCSkFONC90WWg2QzM3bUgxYlJTY0drQmZhUitVaGFWeFNYRzlFVHRCbTlDVXpNMUdxUDcxd0NCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1479.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUs5MUxZM3pPbWl6clBIUE9Scmt1L3A5RFVDLzZhZ1AzYnA4OXVtd1ZReWR6c05Md1hlRkhFb2NwS0dDSHBLdGQ4L25UV1pEQkhhOHUyRVVPSFNsVmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTE0OTY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVQ3ZDL09pKzlCOWloK2U3aW1CejlHYXJ5NFdOZEpKNkNjK0lCUXZSbVVDTmk4ZmNpbklySk8wMVV2RTNWMkR0TGplQU5mVnJsSGdvNlRXbDVVTlBCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1481.app.tar.gz"
     }
   }
 }
