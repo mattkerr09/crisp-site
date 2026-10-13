@@ -1,5 +1,8 @@
-"""Site-wide chrome every page carries: Bing's site verification tag, the "More from Kerr & Company" footer, and
+"""Site-wide chrome every page carries: Bing's site verification tag, the "Made by Kerr & Company" footer link, and
 the founding-offer bar.
+
+CEO order, 2026-10-13 (Bing): the footer block is now ONE link, to the company, and nothing links to a sister site (see
+SIBLINGS below for why). Earlier orders in this docstring describe the block as it used to be.
 
 CEO order, 2026-09-26 (on Matthew's "AI-search visibility fixes, all site-side"):
   · <meta name="msvalidate.01" …> in EVERY page head — the Kerr & Company Bing account's code, the one that
@@ -28,21 +31,16 @@ SITE = Path(__file__).resolve().parents[1]
 
 MSVALIDATE = '<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />'
 
-#: Wording exactly as ordered. Plain links: no rel, no target — followed, same tab.
-SIBLINGS = [
-    ("Outlier", "https://outlier.host/", "private, offline AI for your Mac"),
-    ("Docket SEO", "https://docketseo.app/", "website audits that rank what to fix first"),
-    ("AdPlaybook", "https://adplaybook.app/", "ad copy within every platform's limits"),
-    # CEO order, 2026-10-09 (Matthew): "BookBreaker is ours now", wording exactly as ordered.
-    ("BookBreaker", "https://bookbreaker.bet/", "free arbitrage and +EV betting app for Mac"),
-    ("Built by Kerr", "https://builtbykerr.com/", "websites and local SEO for Grand Rapids businesses"),
-    # CEO order, 2026-09-29: the company Dodo shows buyers (the DODOPAY_KERRANDCOMPANY card-statement line)
-    # was linked from no product page. The LEGAL name, as the privacy page and the terms state it (the CEO's
-    # correction the same day: "Holdings" is only in the domain). The name is HTML (the & is escaped).
-    ("Kerr &amp; Company LLC", "https://kerrandcompanyholdings.com/", "the company behind these apps"),
-]
-KCO = ('<div class="kco" data-kco><p class="kco-h">More from Kerr &amp; Company</p><ul class="kco-list">'
-       + "".join(f'<li><a href="{u}">{n}</a>: {d}</li>' for n, u, d in SIBLINGS)
+#: CEO order, 2026-10-13 (Matthew: "fix bing ... make sure we dont make the same mistakes that made us stop getting sales"):
+#: ONE off-site link in the footer, to the company, and no link to any sister site from any page. outlier.host's Bing
+#: impressions went from 45-89 a day to 8 and then to 0 within a day of a block of links to every sibling domain going
+#: onto 171 of its pages: Bing reads sitewide links between commonly owned sites as a link scheme, and Bing feeds ChatGPT
+#: search, where the early buyers came from. This file used to list five sister sites and the company on every page.
+#: The sister sites may still be NAMED in plain text; they are not linked. _tools/gate_sibling_links.py fails the push, and
+#: tests/test_no_page_links_to_a_sibling_domain_outside_about.py fails the build, on any link to one outside /about/.
+SIBLINGS = [("Made by Kerr &amp; Company", "https://kerrandcompanyholdings.com/")]
+KCO = ('<div class="kco" data-kco><ul class="kco-list">'
+       + "".join(f'<li><a href="{u}">{n}</a></li>' for n, u in SIBLINGS)
        + "</ul></div>")
 
 #: The homepage's older, longer cross-sell ("Also built by the same person") is REPLACED by the standard block,

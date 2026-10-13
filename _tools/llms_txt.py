@@ -196,9 +196,10 @@ def build() -> str:
         link("/legal/privacy/"),
         link("/legal/refunds/"),
         "",
-        # The footer's "More from Kerr & Company" list, read from the one place it is written (sitewide_chrome).
-        "## More from Kerr & Company",
-        *[f"- [{html.unescape(n)}]({u}): {d}" for n, u, d in sitewide_chrome.SIBLINGS],
+        # The footer's one company link, read from the one place it is written (sitewide_chrome). No sister-site links:
+        # see sitewide_chrome.SIBLINGS (Bing reads sitewide links between commonly owned sites as a link scheme).
+        "## Company",
+        *[f"- [{html.unescape(n)}]({u})" for n, u in sitewide_chrome.SIBLINGS],
         "",
     ]
     return "\n".join(out)
