@@ -56,7 +56,7 @@ def box(src: str, buy_first: bool) -> str:
             f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
             f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
-            f'<p class="pbox-fine">Free to use with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
+            f'<p class="pbox-fine">Free to use: exports up to {f["cap"]} seconds, with a small &ldquo;Made with Crisp&rdquo; mark · {f["os"]} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
 
@@ -122,17 +122,17 @@ def pages() -> dict[Path, str]:
     return {
         SITE / "pricing" / "index.html": page(
             "pricing", f"Crisp pricing: free to try, Pro {m(f['price'])} once",
-            f"Crisp Video is free to use with a small mark. Pro is {m(f['price'])} once, not a subscription.",
+            f"Crisp Video is free to use: exports up to {f['cap']} seconds, with a small mark. Pro is {m(f['price'])} once, not a subscription.",
             "Crisp pricing",
-            f"Free to use, with a small &ldquo;Made with Crisp&rdquo; mark on exports. Pro is a one-time "
-            f"{m(f['price'])}, {f['updates']}: it removes the mark and adds the Max restore lane and batch processing.",
+            f"Free to use: the full editor and the full preview, with exports up to {f['cap']} seconds and a small &ldquo;Made with Crisp&rdquo; mark. Pro is a one-time "
+            f"{m(f['price'])}, {f['updates']}: it removes the mark and the {f['cap']}-second limit and adds the Max restore lane and batch processing.",
             "pricing-page", True),
         SITE / "download" / "index.html": page(
             "download", "Download Crisp for Mac",
-            f"Download Crisp Video for Mac: {f['os']}, {f['chip']}. Free to use with a small mark.",
+            f"Download Crisp Video for Mac: {f['os']}, {f['chip']}. Free to use: exports up to {f['cap']} seconds, with a small mark.",
             "Download Crisp for Mac",
-            f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use with a small "
-            f"&ldquo;Made with Crisp&rdquo; mark; Pro removes it.",
+            f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use: exports up to {f['cap']} seconds, with a small "
+            f"&ldquo;Made with Crisp&rdquo; mark; Pro removes both.",
             "download-page", False),
     }
 

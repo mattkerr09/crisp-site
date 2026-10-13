@@ -88,6 +88,8 @@ def facts() -> dict:
         "bnpl": one(r"var\s+CRISP_BNPL_LIVE\s*=\s*(true|false)\s*;", home, "CRISP_BNPL_LIVE") == "true",
         "os": one(r'"operatingSystem":\s*"([^"]+)"', home, "operatingSystem"),
         "chip": one(r'"processorRequirements":\s*"([^"]+)"', home, "processorRequirements"),
+        # The free-tier export cap, read from the engine like the price (entitlement.FREE_EXPORT_CAP_SECONDS): the site cannot drift from it.
+        "cap": int(one(r"(?m)^FREE_EXPORT_CAP_SECONDS\s*=\s*(\d+)", ENGINE.read_text(), "FREE_EXPORT_CAP_SECONDS")),
         "macs": int(one(r"up to (\d+) Macs at a time", read("/legal/terms/"), "Macs per licence")),
         "refund_days": int(one(r"within (\d+) days of purchase", read("/legal/refunds/"), "refund window")),
         "version": json.loads((SITE / "latest.json").read_text())["version"],
@@ -151,13 +153,13 @@ def build() -> str:
         "# Crisp Video",
         "",
         f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac, then lets you "
-        f"edit it on a real timeline. Free with a small “Made with Crisp” mark; Pro is {money(p)} once, "
+        f"edit it on a real timeline. Free for exports up to {f['cap']} seconds, with a small “Made with Crisp” mark; Pro is {money(p)} once, "
         f"not a subscription. {f['os']}, {f['chip']}.",
         "",
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
-        f"- [Pricing]({BASE}/#pricing): Free — the full editor and the standard enhancement lanes, exports carry a "
-        f"small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and adds the "
+        f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; exports stop at "
+        f"{f['cap']} seconds and carry a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
         f"generative Max lane and batch processing",
         f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
         f"({100 - int(now * 100 / p)}% off) — the Buy button applies {f['code']} at checkout; if it ever "

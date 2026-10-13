@@ -35,6 +35,9 @@ SITE = "https://crispvideo.app"
 #: entitlement.PRICE_USD. One declared constant per repo is the achievable
 #: single source; keep it equal to entitlement.PRICE_USD.
 PRICE_USD = 129
+#: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
+#: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
+FREE_EXPORT_CAP_SECONDS = 60
 
 #: ⚠️ THE ANALYTICS + PIXEL LINE IS PART OF THE TEMPLATE, NOT AN AFTERTHOUGHT.
 #: Until 2026-08-23 this HEAD carried neither, so every page this tool emitted was
@@ -91,7 +94,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try. Pro removes the watermark for <span class="split">${price} once · or 4 × ${split}</span>. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: exports up to {cap} seconds, with a small mark. Pro removes both for <span class="split">${price} once · or 4 × ${split}</span>. Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -117,7 +120,7 @@ def build(page):
     qs = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}'
                   % (esc(q), esc(re.sub(r"<[^>]+>", "", a))) for q, a in page["faq"])
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}' % qs
-    return HEAD.format(site=SITE, price=PRICE_USD, split=f"{PRICE_USD / 4:.2f}", slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    return HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, split=f"{PRICE_USD / 4:.2f}", slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,

@@ -35,7 +35,7 @@ document.addEventListener("click", function (e) {
     document.querySelectorAll('.pbox [data-send-mac-link]').forEach(function (b) {
       b.addEventListener('click', function () {
         var url = kcCarry(location.origin + location.pathname + '?utm_source=phone-share&utm_medium=share');
-        var text = 'Crisp Video for Mac is free, with the full editor, 4K upscaling and a small “Made with Crisp” mark on video exports. Open this on your Mac to download it.';
+        var text = 'Crisp Video for Mac is free, with the full editor, 4K upscaling and exports up to 60 seconds with a small “Made with Crisp” mark. Open this on your Mac to download it.';
         try { window.plausible('Send Mac Link'); } catch (e) {}
         if (navigator.share) { navigator.share({ title: 'Crisp Video for Mac', text: text, url: url }).catch(function () {}); }
         else { location.href = 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') + '&body=' + encodeURIComponent(text + '\n\n' + url); }
