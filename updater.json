@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1469",
-  "notes": "Upscaling now really runs on your Mac's GPU through Core ML. Since 1.0.1455 a start-up step quietly switched that faster path off, so the speed-ups in the last few versions never reached the app. They do now: on our test Mac a 1-minute 1080p video reached 4K in 5 minutes 17 seconds, down from 10 minutes 21 seconds in 1.0.1466. The picture matches the previous version to within a fraction of a level.",
-  "pub_date": "2026-10-13T10:46:44Z",
+  "version": "1.0.1472",
+  "notes": "Short clips finish sooner. Crisp now starts upscaling once the first 10 seconds of a clip are ready, instead of waiting for all of it. On our test Mac a 30-second 1080p video reached 4K in 2 minutes 42 seconds, down from 3 minutes 8 seconds. The picture is the same. Clips that use a denoise, low-light or film-repair option are processed exactly as before.",
+  "pub_date": "2026-10-13T13:36:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1uSENMWjYvUm4wV0tLZkhwRTRDYm9MSEp6RW02LzUyOXVwZjBFemduL01YR2NxTzFPQWdTNk91WndkVG0rZjBSd3pybktyeGh0ei9KaFJpUHFTNFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODg3OTkzCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1dmxuWkRHTXJxSnFvQklpYlFFVmNmaWtzaTMvYXM4L2V2MkRVZDNjVTl6Z0QyU25NZDBnMWRLOTJqdWY4bGM1eUpzNFAxSEdhRzBDelZsdXd0aE1EUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1469.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtwOFM5WFFpc01ZUmdMNU52NlhLZmRyU2l4bk8vcGY3RWtPOG44bkZhMThOcjBVc1BXMy8xN3RuaS95MTlVZEJvQVVzM1JYd3dJQlFucmsvZkJkV1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODk4MjI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpXVW9zMXMzU2lGMmZFenB1SGVwRXliamJzRXlpdVNQZFM4d05HTUx1clRzcldBNFViTmxsSHJQakNWV212VGFGMzF4Y3NOZ2VEdkU2V2o3ZFFGT05BUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1472.app.tar.gz"
     }
   }
 }
