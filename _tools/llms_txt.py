@@ -199,7 +199,7 @@ def build() -> str:
         # The footer's one company link, read from the one place it is written (sitewide_chrome). No sister-site links:
         # see sitewide_chrome.SIBLINGS (Bing reads sitewide links between commonly owned sites as a link scheme).
         "## Company",
-        *[f"- [{html.unescape(n)}]({u})" for n, u in sitewide_chrome.SIBLINGS],
+        *[f"- [{html.unescape(n)}]({u}): the company behind Crisp" for n, u in sitewide_chrome.SIBLINGS],
         "",
     ]
     return "\n".join(out)
