@@ -6,12 +6,12 @@
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Why AI upscaling to 4K takes so long | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta name="description" content="A ten minute clip can take an hour or more. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/why-4k-exports-take-so-long/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Why upscaling to 4K takes so long">
-<meta property="og:description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta property="og:description" content="A ten minute clip can take an hour or more. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
 <meta property="og:url" content="https://crispvideo.app/learn/why-4k-exports-take-so-long/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
@@ -19,11 +19,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Why upscaling to 4K takes so long">
-<meta name="twitter:description" content="A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
+<meta name="twitter:description" content="A ten minute clip can take an hour or more. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why upscaling to 4K takes so long","description":"A ten minute clip can take hours. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-10-07"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it normal for a ten minute clip to take over an hour?", "acceptedAnswer": {"@type": "Answer", "text": "For AI upscaling to 4K, yes. Crisp decodes the clip to individual frames and runs the model over each one, and a ten minute clip at 30fps is eighteen thousand frames. The cost is per frame rather than per file, so the total scales with length and with output resolution, and there is no shortcut that preserves the quality."}}, {"@type": "Question", "name": "Does a faster Mac help?", "acceptedAnswer": {"@type": "Answer", "text": "It should, because the upscaler is an ncnn/Vulkan binary that runs on your Mac's GPU through Metal, so GPU speed is what most of the wall clock is waiting on. Memory matters too, since tight memory forces the frame to be processed in tiles. We have not run the same clip across several Macs, so we cannot honestly give you a ratio between two machines."}}, {"@type": "Question", "name": "Why is the first frame slower than the rest?", "acceptedAnswer": {"@type": "Answer", "text": "Before any frame can be processed, Vulkan has to initialise, shaders have to compile and the model has to be paged in. Crisp pays that cold start at launch rather than on your first job. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds tends to read pessimistically."}}, {"@type": "Question", "name": "Can I use my Mac while it runs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though heavy GPU work will compete with the render and slow both. Inside Crisp only one GPU job runs at a time — deliberately, because two simultaneous GPU processes is a crash rather than a slowdown — so clicking Preview during a render waits for it or tells you the app is busy. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why upscaling to 4K takes so long","description":"A ten minute clip can take an hour or more. Here is where that time actually goes, why it is not a bug, and the levers that genuinely shorten it.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-10-13"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it normal for a ten minute clip to take over an hour?", "acceptedAnswer": {"@type": "Answer", "text": "At the default settings on a fast Mac, close to it. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, a one-minute 1080p clip took 5 minutes 17 seconds to reach 4K. A ten minute clip has ten times the frames and the cost is per frame rather than per file, so expect close to an hour (we timed one minute, not ten). A larger output size or a higher Denoise setting costs more, and there is no shortcut that preserves the quality."}}, {"@type": "Question", "name": "Does a faster Mac help?", "acceptedAnswer": {"@type": "Answer", "text": "It should, because the upscaler runs on your Mac's GPU, so GPU speed is what most of the wall clock is waiting on. Memory matters too: a frame larger than about four megapixels going in (past 1440p) takes a slower route that works in tiles. We have not run the same clip across several Macs, so we cannot honestly give you a ratio between two machines."}}, {"@type": "Question", "name": "Why is the first frame slower than the rest?", "acceptedAnswer": {"@type": "Answer", "text": "Before the first frame comes out, the clip has to be analysed and decoded to frames, and the model has to be loaded and set up for the clip's frame size. On an M1 Ultra the model's part of that was about 0.8 seconds (6 frames took 1.7 seconds, 60 frames took 9.8), and analysing and decoding a 30 second 1080p clip took 19 seconds before the upscaling stage began. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds tends to read pessimistically."}}, {"@type": "Question", "name": "Can I use my Mac while it runs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though heavy GPU work will compete with the render and slow both. Inside Crisp only one GPU job runs at a time — deliberately, because two simultaneous GPU processes is a crash rather than a slowdown — so clicking Preview during a render waits for it or tells you the app is busy. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Why exports take so long", "item": "https://crispvideo.app/learn/why-4k-exports-take-so-long/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
@@ -36,7 +36,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Why exports take so long</div>
   <h1>Why upscaling to 4K takes so long</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-10-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Because a 4K frame is about 8.3
   million pixels (four times a 1080p frame) and Crisp pushes <em>every single frame</em> through an
@@ -54,13 +54,12 @@
   <p>A normal video export re-encodes frames, which modern hardware does in dedicated silicon at
   extraordinary speed. AI upscaling is a different kind of pipeline. Inside Crisp a render goes
   <span class="prompt">probe → extract → upscale → encode → concat → mux</span>: the extract step
-  decodes your video into numbered still images on disk, and the upscale step runs the model binary
-  over that directory. The progress bar you watch is the count of output files that exist so far.</p>
+  decodes your video into numbered still images on disk, and the upscale step runs the model over that folder of frames. The progress bar you watch is the count of output files that exist so far.</p>
   <p>So a ten minute clip is not one job. At 30fps it is eighteen thousand of them, each a full
   network pass over a whole image. The model has no memory of the previous frame and gets no discount
   for the frame being similar to it.</p>
 
-  <h2>The arithmetic, and the number we will not print</h2>
+  <h2>The arithmetic, and one measured number</h2>
   <p>A ten minute clip at 30fps is eighteen thousand frames. Longer sources get worse fast: one real
   render we have on record took a 36.7-minute source and decoded it to <strong>66,120 frames</strong>.
   That figure is just length times frame rate, and it multiplies everything else.</p>
@@ -70,10 +69,7 @@
   explains all of it. <strong>We did not record which machine those runs were made on</strong>, so read
   them as a shape rather than a speed to expect. Max is also a far slower engine than the ordinary
   Enhance path; the point here is the linearity, not the rate.</p>
-  <p>That is also why this page gives you no minutes-per-hour figure. Crisp's own estimator carries the
-  reason in its source: seconds per frame varies by output resolution and by machine <em>by more than an
-  order of magnitude</em>, so a baked-in number would be wrong for most people. The Max lane projects
-  from the rate it observes on your own footage instead.</p>
+  <p>That is also why this page gives you one measured figure and not a rule. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, minutes of processing per minute of video: 5.9 for 1080p at 2×, 5.3 for 720p to 4K on Auto, 10.5 for 1080p with Denoise 0.6, and 5.9 for 720p at 4×. Seconds per frame varies by output resolution and by machine <em>by more than an order of magnitude</em> (Crisp's own estimator says so in its source), so a different Mac will not match those. The Max lane projects from the rate it observes on your own footage instead.</p>
 
   <h2>Where the rest of the time goes</h2>
   <p>Decoding, the colour chain and writing frames out are real costs, though smaller. At 4K the model
@@ -83,9 +79,7 @@
   the reason "just a bit bigger" never is.</p>
   <p>Memory matters more than people expect. Large frames and large models compete for one pool, and
   when it is tight the work is broken into tiles and reassembled, costing time and a little quality at
-  the seams. Crisp does not guess a tile size: it uses the binary's own automatic behaviour unless a
-  measured profile exists for your machine, because a value that helps a 64GB Mac Studio can starve a
-  16GB Air.</p>
+  the seams. In Crisp that applies to very large frames, past about four megapixels going in: ordinary HD and smaller frames go through the GPU in one piece. For the tiled route Crisp does not guess a tile size: it uses the upscaler's own automatic behaviour unless a measured profile exists for your machine, because a value that helps a 64GB Mac Studio can starve a 16GB Air.</p>
   <p>And the bundled networks are natively 2×, 3× and 4× only. Beyond that Crisp composes real passes (
   8× is a 4× pass then a 2× pass) so each pass runs the whole model over every frame again, the second
   on images the first already enlarged.</p>
@@ -139,26 +133,15 @@
   <h2>What does not help</h2>
   <p>Closing other applications rarely makes a measurable difference unless you were genuinely short of
   memory, and a higher bitrate affects file size rather than the inference that dominates the time. Nor
-  does running a cheap job first to "warm things up": Crisp already pays that cost at launch, so that
-  Vulkan initialisation, shader compilation and paging the model in happen off the critical path. No
-  frame is ever cached, so a second run of the same clip costs the same as the first.</p>
+  does running a cheap job first to "warm things up": the start cost is under a second a job on the Mac we timed. No frame is ever cached, so a second run of the same clip costs the same as the first.</p>
 
   <h2>Render time, in detail</h2>
   <h3>Is it normal for a ten minute clip to take over an hour?</h3>
-  <p>For AI upscaling to 4K, yes. Crisp decodes the clip to individual frames and runs the model over
-  each one, and a ten minute clip at 30fps is eighteen thousand frames. The cost is per frame rather
-  than per file, so the total scales with length and with output resolution, and there is no shortcut
-  that preserves the quality.</p>
+  <p>At the default settings on a fast Mac, close to it. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, a one-minute 1080p clip took 5 minutes 17 seconds to reach 4K. A ten minute clip has ten times the frames and the cost is per frame rather than per file, so expect close to an hour (we timed one minute, not ten). A larger output size or a higher Denoise setting costs more, and there is no shortcut that preserves the quality.</p>
   <h3>Does a faster Mac help?</h3>
-  <p>It should, because the upscaler is an ncnn/Vulkan binary that runs on your Mac's GPU through
-  Metal, so GPU speed is what most of the wall clock is waiting on. Memory matters too, since tight
-  memory forces the frame to be processed in tiles. We have not run the same clip across several Macs,
-  so we cannot honestly give you a ratio between two machines.</p>
+  <p>It should, because the upscaler runs on your Mac's GPU, so GPU speed is what most of the wall clock is waiting on. Memory matters too: a frame larger than about four megapixels going in (past 1440p) takes a slower route that works in tiles. We have not run the same clip across several Macs, so we cannot honestly give you a ratio between two machines.</p>
   <h3>Why is the first frame slower than the rest?</h3>
-  <p>Before any frame can be processed, Vulkan has to initialise, shaders have to compile and the model
-  has to be paged in. Crisp pays that cold start at launch rather than on your first job. After that the
-  per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds
-  tends to read pessimistically.</p>
+  <p>Before the first frame comes out, the clip has to be analysed and decoded to frames, and the model has to be loaded and set up for the clip's frame size. On an M1 Ultra the model's part of that was about 0.8 seconds (6 frames took 1.7 seconds, 60 frames took 9.8), and analysing and decoding a 30 second 1080p clip took 19 seconds before the upscaling stage began. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds tends to read pessimistically.</p>
   <h3>Can I use my Mac while it runs?</h3>
   <p>Yes, though heavy GPU work will compete with the render and slow both. Inside Crisp only one GPU
   job runs at a time (deliberately, because two simultaneous GPU processes is a crash rather than a
