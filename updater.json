@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1462",
-  "notes": "Enhance is faster. On our test Mac a 30-second 1080p video now upscales to 4K in about 3 minutes 34 seconds instead of 4 minutes 50, and the same speed-up applies to every enhance setting, including noise removal. The picture is the same as before.",
-  "pub_date": "2026-10-13T05:05:13Z",
+  "version": "1.0.1464",
+  "notes": "Enhance is faster again. On our test Mac a 1-minute 1080p video now upscales to 4K in about 5 minutes 20 seconds, down from 6 minutes 10 seconds in the last version and 8 minutes 40 seconds the version before. The picture is exactly the same.",
+  "pub_date": "2026-10-13T07:38:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFwMlVlMFk3WHlTUHlYNU1idkt1L0pHdFNZaW5iNFJTZmxzZmE1Rm1BS2RxRWFJWGY3cXJ2dmJERW8xdi9LZ1NWSWFJUjhwanpwZ1R0TUtZOVArK1FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY3MzYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCSkoxTmU1aTRKZWJQSHZpTjFnajFOcmF5QnBLOE5UZzZHY1hHaExieTl5VjJ2ZTVvL0FRdFZQdDUrc2hvRlJRbmozWFhMRUExckZUK21YMFZ6aDFEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1462.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURiNG5Nd2luZm5kbHlOcmJJN1dRTGlPSHdma2pheVFTYS9hdzd1YXpISkpnOTEzUWNiSVBaelc2QTl1VEJjazcwN2NuQURIM3NRM3pWa0svZ0NiWHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODc2NDM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMemRzYTFSOGdGYlVSdmU3OXM4eHVTTjBGSlF4Mk5RbkFYQkFwc3JDSVRlWHNhb2szMTg0Mjk3RE1PQ0pXU3Y4VTBwcWU3Y0FMUm1ZK052NUovZDBCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1464.app.tar.gz"
     }
   }
 }
