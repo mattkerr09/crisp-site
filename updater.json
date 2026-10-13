@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1487",
-  "notes": "Crisp now recovers if its fast graphics path stumbles once: it uses the standard path for a few minutes, then switches back, instead of staying on the slower one until you quit. If Crisp updates itself while it is open, tools you had not used yet, such as colour grading and the Max pack, keep working until you relaunch. Free exports of upscaling, restoring and colour work still stop at 60 seconds; Convert, Mute, Compress, Loop and the other tools run at full length, all with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
-  "pub_date": "2026-10-13T20:24:51Z",
+  "version": "1.0.1490",
+  "notes": "New: More detail, about twice as slow. Tick it when you take 1080p video to 4K and want sharper edges and a cleaner picture: it runs the larger model and takes about 1.7 times as long. A strong denoise (0.5 or higher) already uses that model on HD video, and the Denoise slider now says so. Free exports of upscaling, restoring and colour work still stop at 60 seconds; Convert, Mute, Compress, Loop and the other tools run at full length, all with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
+  "pub_date": "2026-10-13T22:11:47Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtXa2RyOThDMStBcnhyQXMwcjhBR2lKeVVCbmJWS0ZzNHdnbWdHTVdiWVB0YTYrbUZxTkpWdlUzSnhwYm1Yb1pQOEQrV20ydnQ4cDJLcWRQcWVSTHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTIyNTQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3dWZzQXhaWW1OK2E2TmNvbnF4eS9rN0RGbXlKeFFORVNkU0xLd2NNUkhFemt0MXM0Uys3WFNPemdTY1YzUExOaEVEOCtCVzBteVVvbjlyWHc5T01Ddz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1487.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU8vK0NrUGRnZGVUbnlmejNRYVorSFhEYkZxTW9nWStqbHpUZkYzbmNSRnFZMitER1k0N2lSWEdydGx4WFZNWm56Qmwrc2k3alFuRVhiQTFieHB6NXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTI5MDIzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmYlYwQ0JhWkJvc3BIN3FvUDlaMkFqVzNmdDRjY05iQ3VXRDBvcWxmY29pcWN1V2htaE9YMjhha0prWWJaR3JVODYvN2hCcWpoNEZnbklsVnpOQVJEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1490.app.tar.gz"
     }
   }
 }
