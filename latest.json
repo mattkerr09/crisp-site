@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1481",
-  "notes": "Free exports of upscaling, restoring and colour work now stop at 60 seconds and carry the small \u201cMade with Crisp\u201d mark. Convert, Mute, Compress, Loop, Rotate, Split, GIF and the other tools run at full length, also with the mark. Pro, $129 once, removes the limit and the mark. The editor, the full preview and the sample clip stay free. When an export is cut at 60 seconds, Crisp shows your own before and after, the full length of your video, the price and the 30-day refund. After you buy, the unlock window says what to do next: click Unlock Pro, paste your key, click Activate.",
-  "pub_date": "2026-10-13T18:17:43Z",
+  "version": "1.0.1487",
+  "notes": "Crisp now recovers if its fast graphics path stumbles once: it uses the standard path for a few minutes, then switches back, instead of staying on the slower one until you quit. If Crisp updates itself while it is open, tools you had not used yet, such as colour grading and the Max pack, keep working until you relaunch. Free exports of upscaling, restoring and colour work still stop at 60 seconds; Convert, Mute, Compress, Loop and the other tools run at full length, all with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
+  "pub_date": "2026-10-13T20:24:51Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUs5MUxZM3pPbWl6clBIUE9Scmt1L3A5RFVDLzZhZ1AzYnA4OXVtd1ZReWR6c05Md1hlRkhFb2NwS0dDSHBLdGQ4L25UV1pEQkhhOHUyRVVPSFNsVmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTE0OTY3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVQ3ZDL09pKzlCOWloK2U3aW1CejlHYXJ5NFdOZEpKNkNjK0lCUXZSbVVDTmk4ZmNpbklySk8wMVV2RTNWMkR0TGplQU5mVnJsSGdvNlRXbDVVTlBCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1481.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtXa2RyOThDMStBcnhyQXMwcjhBR2lKeVVCbmJWS0ZzNHdnbWdHTVdiWVB0YTYrbUZxTkpWdlUzSnhwYm1Yb1pQOEQrV20ydnQ4cDJLcWRQcWVSTHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTIyNTQwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3dWZzQXhaWW1OK2E2TmNvbnF4eS9rN0RGbXlKeFFORVNkU0xLd2NNUkhFemt0MXM0Uys3WFNPemdTY1YzUExOaEVEOCtCVzBteVVvbjlyWHc5T01Ddz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1487.app.tar.gz"
     }
   }
 }
