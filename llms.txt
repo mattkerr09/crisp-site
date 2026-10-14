@@ -54,4 +54,5 @@
 - [Refund Policy](https://crispvideo.app/legal/refunds/): 30-day refunds, no reason needed.
 
 ## Company
+- [About Crisp, made by Matthew Kerr in Grand Rapids](https://crispvideo.app/about/): Crisp is made by Matthew Kerr at Kerr & Company LLC in Grand Rapids, Michigan.
 - [Made by Kerr & Company](https://kerrandcompanyholdings.com/): the company behind Crisp

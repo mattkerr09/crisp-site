@@ -98,7 +98,7 @@ HEAD = """<!DOCTYPE html>
 </div></article>
 
 <footer><div class="wrap">
-  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="{site}/">crispvideo.app</a></p>
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="{site}/">crispvideo.app</a> &middot; <a href="{site}/about/">About</a></p>
   <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
 </div></footer>
 </body>
