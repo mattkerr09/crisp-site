@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1495",
-  "notes": "More detail, about twice as slow now appears where the editor can reach it: in the Enhance tool, and under Upscale on export for a finished edit. The last update added it in a part of the window that stays hidden, so you could not see it, and that was our mistake. It runs the larger model for 2\u00d7 jobs such as 1080p to 4K, with sharper edges and a cleaner picture, and takes about 1.7 times as long. Free exports of upscaling, restoring and colour work still stop at 60 seconds; Convert, Mute, Compress, Loop and the other tools run at full length, all with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
-  "pub_date": "2026-10-14T05:42:10Z",
+  "version": "1.0.1497",
+  "notes": "You can now choose which 60 seconds you get free. Trim the clip to the part you want and export it with Upscale on export, and that part comes out whole. The upgrade window and the editor's export hint now say so. Free exports of upscaling, restoring and colour work still stop at 60 seconds; Convert, Mute, Compress, Loop and the other tools run at full length, all with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
+  "pub_date": "2026-10-14T22:43:16Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNBbjJ5STBGeVJVR1RYbTVuK0VmRFhLbE10UFJVMzlJK1dwM1JLYkxyODFZSWcyTU54RXJGUTBOc0dWa3VGejFtTHMwQUhSYjR2N3FzZmU4aVBSVWdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTU2MDk4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpTSEFYN21paTYrbWpET0lueE9GelFZMFlkVStBMlVHN3YxQllqUk0rei8wVDJtaEVPRUpjVUJBcE5id2l6TWZaUExOUmwyNW05aHRRWUN0QTI3bEZBQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1495.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBIbXlzTjl1UXdyZDhBMjRobmZCM0lMeENkNnpxNUQvQ2hkVHhzQjNHdGlNRUJzeEJ0UC9sUHlCcXpPVzExVEUvN0JicUVnM3IxZkthOVFsMS9yWEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMDE3MDQ1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZMkNSQ3JpU0J5NzV2emp4SjBlYlM3NUEyMlE4Z2ZQRTI4WnFxVkd0TjFKQTc4WEo2UFpsZVFETjBtWWxMTXpPMHZJRE1WL0ZGcWFHZW9BN1RHZjhEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1497.app.tar.gz"
     }
   }
 }
