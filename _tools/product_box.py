@@ -70,7 +70,7 @@ def box(where: str, page: str = "") -> str:
             # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
             # not a dash (content standard, 2026-10-05).
             f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>'
-            f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}">Download free for Mac</a> '
+            f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
             # BUY BESIDE THE FREE DOWNLOAD (content standard, 2026-10-05). The box used to send Pro to the
             # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout
             # with the founding code applied and counts it under this page's src, as /dl does for downloads.

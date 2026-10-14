@@ -47,9 +47,9 @@ def box(src: str, buy_first: bool) -> str:
     split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if f["bnpl"] else ""
     nsplit = f" · or 4 × {m(q(now))}" if f["bnpl"] else ""
     dl = (f'<a class="btn{"" if not buy_first else " btn-ghost"}" data-track="{src}" '
-          f'href="{llms_txt.dl_url(src)}">Download free for Mac</a>')
+          f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
-           f'href="{buy_base()}?src={src}">Buy Crisp Pro</a>')
+           f'href="{buy_base()}?src={src}" rel="nofollow">Buy Crisp Pro</a>')
     return (f'<aside class="pbox" data-landing-box>'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
