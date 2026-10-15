@@ -28,7 +28,9 @@ SITE = Path(__file__).resolve().parent.parent
 BASELINE = Path(__file__).resolve().parent / "price_sources_baseline.json"
 
 # Crisp's own price is not a rival's price and needs no external source.
-OURS = {"129", "129.00", "0"}
+# ...nor are the figures the same till derives from it: the 4-payment instalment (129 / 4), the founding price (half of 129, then
+# a quarter of the founding price) that every page's product box carries. 24 pages went "NEW" on these three alone on 2026-10-15.
+OURS = {"129", "129.00", "0", "64.50", "64.5", "32.25", "16.13"}
 MONEY = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)")
 DATED = re.compile(r"Prices?\s+checked\s+\d", re.I)
 
