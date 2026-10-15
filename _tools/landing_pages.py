@@ -133,7 +133,7 @@ def pages() -> dict[Path, str]:
             f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. Pro is {m(f['price'])} once, not a subscription.",
             "Crisp pricing",
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
-            f"runs at full length; every free export carries a small &ldquo;Made with Crisp&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it and export with Upscale on export. Pro is a one-time "
+            f"runs at full length; every free export carries a small &ldquo;Made with Crisp&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. Pro is a one-time "
             f"{m(f['price'])}, {f['updates']}: it removes the mark and the {f['cap']}-second limit and adds the Max restore lane and batch processing. "
             f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier, for ${BUNDLE_FOUNDING_USD} once</a> '
             f"while founding prices last (until {BUNDLE_FOUNDING_ENDS}, or sooner if the founding places run out), then ${BUNDLE_USD}.",
