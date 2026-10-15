@@ -160,6 +160,11 @@ run_gate "no-em-dash" python3 "$(dirname "$0")/../_tools/no_em_dash.py" --check
 # The footer carries ONE link, to the company. Only /about/ may name the others as links.
 run_gate "sibling-links" python3 "$(dirname "$0")/../_tools/gate_sibling_links.py"
 
+# ...and no "read <date>" / "checked <date>" on a /vs/ or /learn/ page may be older than 45 days (2026-10-15). Those pages quote other
+# companies' prices and policies, which move unannounced; a date proves somebody looked once, and nothing made anyone look again.
+# The gate prints the stale pages. An urgent push that cannot wait for a re-read: CRISP_ALLOW_STALE_READS=1 git push (loud, not silent).
+run_gate "read-dates" python3 "$(dirname "$0")/../_tools/gate_read_dates.py"
+
 # ...and every claim the site makes about the ENGINE must still be true of the engine.
 #
 # THIS IS THE GATE TODAY'S NEAR-MISS ASKED FOR. On 2026-09-15 four how-to pages were
