@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>AI upscaling vs resize: 23.4 VMAF behind at 2x, 1.2 at 4x</title>
+<title>AI upscaling vs resize and ffmpeg Lanczos, measured</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x.">
+<meta name="description" content="AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI upscaling vs resize: 23.4 VMAF behind at 2x, 1.2 at 4x">
-<meta property="og:description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x.">
+<meta property="og:title" content="AI upscaling vs a plain resize and ffmpeg Lanczos">
+<meta property="og:description" content="AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.">
 <meta property="og:url" content="https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI upscaling vs resize: 23.4 VMAF behind at 2x, 1.2 at 4x">
-<meta name="twitter:description" content="Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x.">
+<meta name="twitter:title" content="AI upscaling vs a plain resize and ffmpeg Lanczos">
+<meta name="twitter:description" content="AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling vs resize: 23.4 VMAF behind at 2x, 1.2 at 4x","description":"Measured on a 1280x720 truth clip: Crisp's AI route trails a plain lanczos resize by 23.4 VMAF points at 2x and by only 1.2 at 4x.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-09-15","dateModified":"2026-10-16"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say","description":"AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-09-15","dateModified":"2026-10-17"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling get worse at 4x than at 2x?","acceptedAnswer":{"@type":"Answer","text":"Not in the way the question assumes. Measured against a surviving 1280x720 original, the AI route trailed a plain lanczos resize by 23.4 VMAF points at 2x and by 1.2 VMAF points at 4x. The gap closed as the scale factor rose. Part of that is the job getting harder for both routes and part of it is that the two scales run different models: at 2x with denoise below 0.5 the job goes to 2x-ParimgCompact, and at 4x it goes to RealESRGAN_General_x4_v3. This measurement cannot separate those two causes, because Crisp's router does not offer the combinations that would isolate them."}},{"@type":"Question","name":"Why is the 4x upscale faster than the 2x upscale in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because they are not the same model. On 60 frames of the same source clip, the 4x route (RealESRGAN_General_x4_v3) took 2.78 s and the 2x route (2x-ParimgCompact) took 3.89 s, so the 4x job finished about 28 percent sooner despite producing four times as many output pixels per input pixel. The denoise value and the scale factor together select the model, and the two selected models have different costs."}},{"@type":"Question","name":"How much slower is AI upscaling than a plain resize?","acceptedAnswer":{"@type":"Answer","text":"On 60 frames of a 1280x720 clip, a lanczos resize took 0.44 s at both scale factors. The AI routes took 2.78 s at 4x and 3.89 s at 2x, which is 6.3 and 8.8 times the wall clock, or roughly 46 and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean source the resize also scored closer to the original on both metrics."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "AI upscaling vs a plain resize", "item": "https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/"}]}</script>
@@ -35,7 +35,7 @@
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; AI upscaling vs a plain resize</div>
-  <h1>AI upscaling doesn't fall off at 4×, it catches up</h1>
+  <h1>AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-09-15 · last updated 2026-09-15</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">"Where does AI upscaling stop being
@@ -203,6 +203,22 @@
   routes took 2.78 s at 4× and 3.89 s at 2×, which is 6.3 and 8.8 times the wall clock, or roughly 46
   and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean
   source the resize also scored closer to the original on both metrics.</p>
+
+    <h2 id="lanczos">ffmpeg Lanczos: when the free resize is the right answer</h2>
+  <p>Lanczos is a resampling filter, a windowed sinc function that computes each new pixel from a weighted neighbourhood of the old ones. It preserves edges better than bilinear or bicubic, which is why it is the standard recommendation for enlargement, and it produces slight ringing next to hard edges, a faint halo that is the known cost of its sharpness. What it does not do, at all, is add information: a 480p source resized to 4K holds exactly the detail of the 480p source spread over more pixels. It will look bigger and slightly soft, and it will not look like it was shot at 4K.</p>
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Situation</th><th>Use</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Clean 1080p to 4K for a delivery spec</td><td>Lanczos</td><td>Nothing is damaged; you just need the pixel dimensions.</td></tr>
+      <tr><td>Matching resolutions in a timeline</td><td>Lanczos</td><td>Fast, predictable, no invented detail to mismatch.</td></tr>
+      <tr><td>A batch of 500 files, deadline tonight</td><td>Lanczos</td><td>Seconds per file against minutes per file.</td></tr>
+      <tr><td>Old 480p footage you want to actually watch</td><td>AI</td><td>Detail is missing; interpolation cannot invent it.</td></tr>
+      <tr><td>A heavily compressed download</td><td>AI</td><td>Blocking is a learnable artefact; Lanczos enlarges the blocks.</td></tr>
+      <tr><td>Noisy low-light phone video</td><td>AI</td><td>Denoise plus reconstruction; Lanczos sharpens the noise.</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>The gap, measured on one clip, including the axis where Lanczos wins.</strong> The source is a deliberately degraded clip from a fixed recipe: a detailed moving synthetic source, downscaled to 320 by 180, given mild noise, then encoded at a low H.264 bitrate so the compression artefacts are real. No randomness and no wall-clock, so the same input comes back every time. Both sides upscale it to 1280 by 720 at a matched 1.0 Mbps and are scored on decoded frames. Detail (variance of the Laplacian): Lanczos 328.5, Crisp 521.7, 59% more edge detail. Banding (share of flat pixels on a hard step): 26.97% against 12.75%, less than half the staircase in gradients. Residual grain: 0.54 against 0.47, modest. Do not choose a tool on that last row.</p>
+  <p><strong>If you run this yourself, match the bitrate.</strong> Our first run encoded the Lanczos output at high quality and left Crisp&rsquo;s encoder settings alone, so one side came out at 4.6 Mbps and the other at 1.0. On that pair Crisp looked clearly steadier on both flicker rows. Matched to the same bitrate, the two are exactly tied: the whole apparent advantage was the encoder, not the upscaler. Scope, plainly: one synthetic degraded clip, one preset, one 4x scale, on an M1 Ultra, valid as a comparison between two tools on the same source and not as universal constants. <strong>The test that settles it for your footage:</strong> take thirty seconds of your worst clip, run it both ways and watch them back at full screen. If the Lanczos version looks acceptable, you are done and have spent nothing; if it looks like a bigger version of the same bad video, the source is genuinely degraded and reconstruction is the only thing that will help. Zoom into a flat area while it plays: Lanczos will not add shimmer of its own, but it cannot remove shimmer already in the source, and an AI upscaler can add shimmer that was never there.</p>
 
   <h2>Related</h2>
   <ul>

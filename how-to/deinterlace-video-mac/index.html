@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>How to deinterlace video on a Mac (2026) | Crisp</title>
+<title>Deinterlace video on a Mac, and what interlacing is</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else.">
+<meta name="description" content="Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/deinterlace-video-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to deinterlace video on a Mac">
-<meta property="og:description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else.">
+<meta property="og:title" content="How to deinterlace video on a Mac, and what interlacing is">
+<meta property="og:description" content="Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.">
 <meta property="og:url" content="https://crispvideo.app/how-to/deinterlace-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to deinterlace video on a Mac">
-<meta name="twitter:description" content="Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else.">
+<meta name="twitter:title" content="How to deinterlace video on a Mac, and what interlacing is">
+<meta name="twitter:description" content="Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to deinterlace video on a Mac","description":"Comb-shaped stripes on moving edges mean interlaced footage. What interlacing is, why it has to be fixed before anything else, and what you lose either way — plus how Crisp straightens it out for you on the way to an upscale.","datePublished":"2026-07-23","dateModified":"2026-10-13","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/deinterlace-video-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to deinterlace video on a Mac, and what interlacing is","description":"Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.","datePublished":"2026-07-23","dateModified":"2026-10-17","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/deinterlace-video-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know if my video is interlaced?","acceptedAnswer":{"@type":"Answer","text":"Pause on a frame with fast movement and zoom in. Horizontal comb teeth along moving edges — and only on moving edges — means interlaced. A still shot in the same clip will look perfectly clean, which is why it is easy to miss."}},{"@type":"Question","name":"Does deinterlacing lose quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, unavoidably. You either discard half the vertical detail or interpolate it back, and both are lossy. The alternative is leaving visible combing, which is worse."}},{"@type":"Question","name":"Should I deinterlace before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Before, always. An upscaler treats comb teeth as real detail and sharpens them into permanent artefacts."}}]}
@@ -39,7 +39,7 @@
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Deinterlace</div>
-  <h1>How to deinterlace video on a Mac</h1>
+  <h1>How to <span class="grad">deinterlace video</span> on a Mac, and what interlacing is</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-08</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">If moving objects in your footage have horizontal comb teeth along their edges while
@@ -165,6 +165,11 @@
     <code>-vf yadif=1</code>.</li>
   </ul>
 
+    <h2 id="tell-it-apart">Telling interlacing apart, and checking it mechanically</h2>
+  <p><strong>Tell it from look-alikes.</strong> Comb teeth only appear on movement, and they are perfectly horizontal and evenly spaced. Rolling shutter skew leans vertical edges over but does not stripe them. Compression blocking shows up as square patches, usually in dark or busy areas, and does not care whether anything moved. Ghosting from a bad tape transfer smears rather than combs. If you are unsure, step through a few frames one at a time on a shot with fast motion: interlacing is unmistakable frame by frame and almost invisible at normal speed on some displays, which is how it survives into finished edits unnoticed.</p>
+  <p><strong>The mechanical check, and the two ways a file lies about it.</strong> The eyeball test needs a shot with real motion in it. The mechanical version is ffmpeg&rsquo;s idet filter, which classifies the frames themselves: <code>ffmpeg -i in.mp4 -vf idet -f null -</code>. The last &ldquo;Multi frame detection&rdquo; line is the verdict, with TFF and BFF counts against Progressive. That is the same line Crisp reads, and it answers &ldquo;unknown&rdquo; rather than guessing when it cannot classify at least eight frames. The container flag is not the answer. Measured on the 1936 newsreel restored for this site, the original MPEG-2 honestly reported field_order=tt, but once the clip had been cut and re-encoded (the state most footage reaches you in) the container claimed progressive while every frame was still combed: idet read 96 of 96 frames interlaced on the file that lied, and 82 of 82 progressive on the same clip after inverse telecine. Re-encoding falsifies the flag; it does not hide the combing from a detector that reads frames.</p>
+  <p><strong>In Crisp.</strong> When you enhance or upscale, Crisp checks the source for combing and fixes it before anything sharpens it, and it picks the right fix rather than one fix for everything: footage that started on film needs the pulldown reversed instead. The exception is the Max quality lane, which restores the frames it is handed, so Crisp warns you before spending the render: an hour of generative restoration faithfully reconstructing comb teeth is the most expensive version of this mistake. It does not guess between the two fixes, because guessing wrong is destructive in one direction: reversing a pulldown on genuinely interlaced video drops one real frame in five that nobody ever duplicated. So the frame rate narrows the choice first (a 3:2 pulldown can only exist near 30 fps, and 25 fps PAL material is interlaced but never telecined).</p>
+
   <h2>Related</h2>
   <ul>
     <li><a href="https://crispvideo.app/how-to/edit-hdr-video-mac/">How to edit HDR video on a Mac, without washed-out colors</a></li>
@@ -176,7 +181,7 @@
 
   <h3>Related guides</h3>
   <p><a href="https://crispvideo.app/how-to/restore-old-film-footage-mac/">Restore old film footage</a> · <a href="https://crispvideo.app/how-to/fix-pixelated-video-mac/#blurry">Fix blurry video</a> · <a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Upscale a video</a></p>
-  <p>Background: <a href="https://crispvideo.app/learn/what-is-interlacing/">what interlacing actually is</a>.</p>
+  <p>Background: <a href="https://crispvideo.app/how-to/deinterlace-video-mac/#tell-it-apart">what interlacing actually is</a>.</p>
   <p>Background: <a href="https://crispvideo.app/learn/why-vhs-tapes-degrade/">why tape captures come out interlaced</a>.</p>
 </div></article>
 

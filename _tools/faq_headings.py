@@ -22,7 +22,6 @@ from pathlib import Path
 
 HEADINGS = {
     # ── vs/ : someone arriving from another tool ───────────────────────────────────────────
-    "vs/handbrake-alternative-mac":           "Coming from HandBrake",
     "vs/inshot-alternative-mac":              "Switching from InShot",
     "vs/topaz-alternative-mac":               "Switching from Topaz",
     "vs/topaz-video-ai-alternative-mac":      "Switching from Topaz Video AI",

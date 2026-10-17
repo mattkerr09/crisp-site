@@ -23,20 +23,19 @@
 ## Learn
 - [Learn: video restoration explained](https://crispvideo.app/learn/): how video restoration and upscaling actually work
 - [Is Topaz Video AI free? What it costs and free options](https://crispvideo.app/learn/is-topaz-video-ai-free/): No: Topaz Video, formerly Video AI, is a subscription ($299 a year or $59 a month) and its pricing page lists no free plan.
-- [What is AI video upscaling? It redraws detail as a guess](https://crispvideo.app/learn/what-is-ai-video-upscaling/): Measured on real frames halved and upscaled back: a plain resize kept pixels and colour most exactly but restored at most 64% of the fine detail.
+- [What is AI video upscaling? What a video enhancer does](https://crispvideo.app/learn/what-is-ai-video-upscaling/): What AI video upscaling is, and what a video enhancer really does: three separate jobs (bigger, cleaner, sharper), measured on two real clips.
 - [Why Topaz ended perpetual licences (and what it costs now)](https://crispvideo.app/learn/why-topaz-ended-perpetual-licences/): Topaz Labs stopped selling perpetual licences on 3 October 2025.
 - [Why VHS tapes degrade, and what can still be recovered](https://crispvideo.app/learn/why-vhs-tapes-degrade/): Magnetic tape loses signal whether you play it or not.
-- [What is interlacing, and why does old video have comb teeth?](https://crispvideo.app/learn/what-is-interlacing/): Those horizontal comb teeth on moving objects in old footage are interlacing.
 
 ## How-to guides
 - [How-to guides for video on a Mac](https://crispvideo.app/how-to/): every guide, by task
 - [How to restore old film footage on a Mac: dust, flicker](https://crispvideo.app/how-to/restore-old-film-footage-mac/): Clean up an old film or video transfer on a Mac: remove single-frame dust and blotches, steady the brightness flicker, and upscale.
 - [Fix blurry or pixelated video on a Mac: what works](https://crispvideo.app/how-to/fix-pixelated-video-mac/): Blurry or pixelated video is missing detail, so no setting turns it off.
-- [How to upscale video on a Mac: free, offline, no cloud](https://crispvideo.app/how-to/upscale-video-on-mac/): A step-by-step guide to upscaling video to 4K on a Mac: 100% offline, no subscription, no account.
-- [How to upscale 480p to 1080p on a Mac (2026)](https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/): 480p to 1080p is a realistic 2.25x jump that usually looks genuinely better.
+- [Upscale video on a Mac, 480p to 1080p or 4K: free](https://crispvideo.app/how-to/upscale-video-on-mac/): Upscale video on a Mac, from 480p to 1080p or 4K: free, offline, no upload.
 - [How to upscale a finished edit to 4K on a Mac: offline](https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/): Edit your video on a timeline and upscale the whole finished cut to 4K in one export with Crisp, Enhance or generative SeedVR2 Max, 100% offline.
 - [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batching is mostly about not discovering a mistake 200 files in.
-- [How to stabilize a shaky video on a Mac (2026): free](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky, handheld video on a Mac.
+- [Stabilize shaky video on a Mac: the best free option](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky video on a Mac and pick the best stabilizer: what software can and cannot fix, what it costs in framing, jello, and the free ffmpeg option.
+- [Deinterlace video on a Mac, and what interlacing is](https://crispvideo.app/how-to/deinterlace-video-mac/): Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.
 - [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, nothing uploaded.
 - [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert a MOV (or AVI/MKV/WebM) to MP4 on a Mac in one tap, 100% offline, no upload, no subscription.
 
