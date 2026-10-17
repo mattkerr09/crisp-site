@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Film grain vs digital noise: how to tell them apart | Crisp</title>
+<title>Film grain vs digital noise, and how to add film grain</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove.">
+<meta name="description" content="Film grain is physical and people pay to add it; digital noise is sensor error people pay to remove. How to tell them apart, and how to add film grain.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/film-grain-vs-digital-noise/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Film grain and digital noise are not the same thing">
-<meta property="og:description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove.">
+<meta property="og:title" content="Film grain vs digital noise, and how to add grain">
+<meta property="og:description" content="Film grain is physical and people pay to add it; digital noise is sensor error people pay to remove. How to tell them apart, and how to add film grain.">
 <meta property="og:url" content="https://crispvideo.app/learn/film-grain-vs-digital-noise/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Film grain and digital noise are not the same thing">
-<meta name="twitter:description" content="One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove.">
+<meta name="twitter:title" content="Film grain vs digital noise, and how to add grain">
+<meta name="twitter:description" content="Film grain is physical and people pay to add it; digital noise is sensor error people pay to remove. How to tell them apart, and how to add film grain.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Film grain and digital noise are not the same thing","description":"One is a physical property of film stock that people pay to add. The other is sensor error that people pay to remove.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-10-17"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Film grain vs digital noise, and how to add grain","description":"Film grain is physical and people pay to add it; digital noise is sensor error people pay to remove. How to tell them apart, and how to add film grain.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-10-17"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I remove grain from old film footage?","acceptedAnswer":{"@type":"Answer","text":"Usually only a little. Grain is part of how film footage looks, and aggressive denoising produces the waxy appearance that makes a restoration obvious. Remove enough that the picture reads cleanly and stop there."}},{"@type":"Question","name":"How do I tell noise from grain quickly?","acceptedAnswer":{"@type":"Answer","text":"Look at the shadows for coloured speckle. Red and green blotches in dark areas are chroma noise and mean digital. Neutral speckle spread evenly across bright and dark areas is more likely to be grain."}},{"@type":"Question","name":"Does adding grain make my video look more cinematic?","acceptedAnswer":{"@type":"Answer","text":"In moderation it can, mostly because it breaks up banding and softens the clinical look of clean digital footage. Overdone it just looks noisy, and it costs real bitrate on any platform that re-encodes."}},{"@type":"Question","name":"Should grain go on before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"After. An upscaler reconstructs what it reads as detail, and grain applied first gets magnified and reinterpreted. Grade, upscale, then add grain last."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Grain vs noise", "item": "https://crispvideo.app/learn/film-grain-vs-digital-noise/"}]}</script>
@@ -35,7 +35,7 @@
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Grain vs noise</div>
-  <h1>Film grain and digital noise are not the same thing</h1>
+  <h1>Film grain vs digital noise, and how to add grain</h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-09-15</div>
 
   <p>Both look like a fine speckle over the picture. They come from completely different places, they

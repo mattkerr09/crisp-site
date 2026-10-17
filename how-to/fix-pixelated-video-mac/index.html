@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Fix pixelated video on a Mac: what an upscaler recovers</title>
+<title>Fix blurry or pixelated video on a Mac: what works</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Pixelated video is missing detail, so no setting turns the blocks off. How to tell which kind you have, find the best copy.">
+<meta name="description" content="Blurry or pixelated video is missing detail, so no setting turns it off. How to tell which kind you have, find the best copy, and rebuild what is recoverable.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/fix-pixelated-video-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to fix pixelated video">
-<meta property="og:description" content="Pixelated video is missing detail, so no setting turns the blocks off. How to tell which kind you have, find the best copy.">
+<meta property="og:title" content="How to fix blurry or pixelated video">
+<meta property="og:description" content="Blurry or pixelated video is missing detail, so no setting turns it off. How to tell which kind you have, find the best copy, and rebuild what is recoverable.">
 <meta property="og:url" content="https://crispvideo.app/how-to/fix-pixelated-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to fix pixelated video">
-<meta name="twitter:description" content="Pixelated video is missing detail, so no setting turns the blocks off. How to tell which kind you have, find the best copy.">
+<meta name="twitter:title" content="How to fix blurry or pixelated video">
+<meta name="twitter:description" content="Blurry or pixelated video is missing detail, so no setting turns it off. How to tell which kind you have, find the best copy, and rebuild what is recoverable.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to fix pixelated video", "description": "Pixelated video is missing detail, so no setting turns the blocks off. How to tell which kind you have, find the best copy.", "author": {"@type": "Organization", "name": "Crisp Video"}, "publisher": {"@type": "Organization", "name": "Crisp Video"}, "datePublished": "2026-09-28", "dateModified":"2026-10-17", "mainEntityOfPage": "https://crispvideo.app/how-to/fix-pixelated-video-mac/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to fix blurry or pixelated video", "description": "Blurry or pixelated video is missing detail, so no setting turns it off. How to tell which kind you have, find the best copy, and rebuild what is recoverable.", "author": {"@type": "Organization", "name": "Crisp Video"}, "publisher": {"@type": "Organization", "name": "Crisp Video"}, "datePublished": "2026-09-28", "dateModified":"2026-10-17", "mainEntityOfPage": "https://crispvideo.app/how-to/fix-pixelated-video-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you unpixelate a video?", "acceptedAnswer": {"@type": "Answer", "text": "Not literally — the original pixels are gone. An AI upscaler redraws plausible detail where the blocks were. On a deliberately pixelated 176×144 test clip, Crisp's Max lane held 1.93× the fine detail of a plain upscale."}}, {"@type": "Question", "name": "Is there a free way to fix pixelated video on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Crisp's Enhance lane is free, with a small &ldquo;Made with Crisp&rdquo; mark on video exports. Pro removes the mark and adds the Max lane for $129 once, or 4 × $32.25."}}, {"@type": "Question", "name": "Why does my video only look pixelated when things move?", "acceptedAnswer": {"@type": "Answer", "text": "That is compression rather than resolution. The encoder had too few bits for the parts of the frame that changed, so it spent them in blocks. Start from the least-compressed copy you have before upscaling."}}, {"@type": "Question", "name": "Does fixing pixelation make the file bigger?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes. An upscaled video has more pixels, and keeping the rebuilt detail takes more data than the blocky original did."}}]}
@@ -39,7 +39,7 @@
 
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Fix pixelated video</div>
-  <h1>How to fix <span class="grad">pixelated video</span></h1>
+  <h1>How to fix <span class="grad">blurry or pixelated video</span></h1>
   <div class="updated">Crisp · built in Grand Rapids · published 2026-09-28 · last updated 2026-09-28</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Pixelated video is missing detail, so there

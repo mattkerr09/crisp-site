@@ -31,7 +31,7 @@
 ## How-to guides
 - [How-to guides for video on a Mac](https://crispvideo.app/how-to/): every guide, by task
 - [How to restore old film footage on a Mac: dust, flicker](https://crispvideo.app/how-to/restore-old-film-footage-mac/): Clean up an old film or video transfer on a Mac: remove single-frame dust and blotches, steady the brightness flicker, and upscale.
-- [Fix pixelated video on a Mac: what an upscaler recovers](https://crispvideo.app/how-to/fix-pixelated-video-mac/): Pixelated video is missing detail, so no setting turns the blocks off.
+- [Fix blurry or pixelated video on a Mac: what works](https://crispvideo.app/how-to/fix-pixelated-video-mac/): Blurry or pixelated video is missing detail, so no setting turns it off.
 - [How to upscale video on a Mac: free, offline, no cloud](https://crispvideo.app/how-to/upscale-video-on-mac/): A step-by-step guide to upscaling video to 4K on a Mac: 100% offline, no subscription, no account.
 - [How to upscale 480p to 1080p on a Mac (2026)](https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/): 480p to 1080p is a realistic 2.25x jump that usually looks genuinely better.
 - [How to upscale a finished edit to 4K on a Mac: offline](https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/): Edit your video on a timeline and upscale the whole finished cut to 4K in one export with Crisp, Enhance or generative SeedVR2 Max, 100% offline.
