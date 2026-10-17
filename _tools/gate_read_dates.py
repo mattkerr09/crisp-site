@@ -66,7 +66,9 @@ def problems(html: str, today: date, max_days: int) -> list[str]:
 
 
 def pages() -> list[Path]:
-    return sorted(p for s in SECTIONS for p in (SITE / s).glob("*/index.html"))
+    # the sections' own pages, plus the hub pages that now carry dated vendor reads (the /vs/ hub holds the merged editor comparisons)
+    hubs = [SITE / "vs" / "index.html"]
+    return sorted([p for s in SECTIONS for p in (SITE / s).glob("*/index.html")] + [h for h in hubs if h.exists()])
 
 
 def selftest() -> int:

@@ -22,15 +22,8 @@ from pathlib import Path
 
 HEADINGS = {
     # ── vs/ : someone arriving from another tool ───────────────────────────────────────────
-    "vs/adobe-premiere-alternative-mac":      "Switching from Premiere",
-    "vs/capcut-alternative-mac":              "Switching from CapCut",
-    "vs/clipchamp-alternative-mac":           "Switching from Clipchamp",
-    "vs/davinci-resolve-alternative-mac":     "Switching from DaVinci Resolve",
-    "vs/filmora-alternative-mac":             "Switching from Filmora",
     "vs/handbrake-alternative-mac":           "Coming from HandBrake",
-    "vs/imovie-alternative-mac":              "Switching from iMovie",
     "vs/inshot-alternative-mac":              "Switching from InShot",
-    "vs/kapwing-alternative-mac":             "Switching from Kapwing",
     "vs/topaz-alternative-mac":               "Switching from Topaz",
     "vs/topaz-video-ai-alternative-mac":      "Switching from Topaz Video AI",
 

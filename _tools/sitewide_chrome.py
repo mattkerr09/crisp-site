@@ -92,7 +92,10 @@ def wants_founding(p: Path, s: str) -> bool:
 
 
 def pages() -> list[Path]:
-    return sorted(p for p in SITE.rglob("*.html") if ".git" not in p.parts and "_tools" not in p.parts)
+    # a redirect stub (instant meta refresh: how a merged page is retired on GitHub Pages) is not a page that carries the chrome
+    stub = re.compile(r'<meta\s+http-equiv="refresh"\s+content="0;\s*url=', re.I)
+    return sorted(p for p in SITE.rglob("*.html") if ".git" not in p.parts and "_tools" not in p.parts
+                  and not stub.search(p.read_text(errors="replace")))
 
 
 def has_footer(s: str) -> bool:
