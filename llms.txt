@@ -40,7 +40,7 @@
 - [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert a MOV (or AVI/MKV/WebM) to MP4 on a Mac in one tap, 100% offline, no upload, no subscription.
 
 ## Who it is for
-- [Who uses Crisp: by trade and purpose](https://crispvideo.app/for/): by kind of work
+- [Mac video software for weddings, churches, teachers & more](https://crispvideo.app/for/): by kind of work
 - [Restore old home videos on a Mac: VHS, camcorder, 8mm](https://crispvideo.app/for/family-archivists/): How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing.
 - [Upscaling old YouTube uploads to 4K on a Mac (2026)](https://crispvideo.app/for/youtubers/): Your back catalogue is 1080p and looks soft beside 4K competitors.
 - [Crisp for independent filmmakers on a Mac](https://crispvideo.app/for/filmmakers/): A finishing and repair tool that sits beside your NLE rather than replacing it.
