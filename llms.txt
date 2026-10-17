@@ -33,12 +33,10 @@
 - [How to restore old film footage on a Mac: dust, flicker](https://crispvideo.app/how-to/restore-old-film-footage-mac/): Clean up an old film or video transfer on a Mac: remove single-frame dust and blotches, steady the brightness flicker, and upscale.
 - [Fix pixelated video on a Mac: what an upscaler recovers](https://crispvideo.app/how-to/fix-pixelated-video-mac/): Pixelated video is missing detail, so no setting turns the blocks off.
 - [How to upscale video on a Mac: free, offline, no cloud](https://crispvideo.app/how-to/upscale-video-on-mac/): A step-by-step guide to upscaling video to 4K on a Mac: 100% offline, no subscription, no account.
-- [How to fix blurry video on a Mac: what works, what can't](https://crispvideo.app/how-to/fix-blurry-video-mac/): Blurry video has four different causes and only some are fixable.
 - [How to upscale 480p to 1080p on a Mac (2026)](https://crispvideo.app/how-to/upscale-480p-to-1080p-mac/): 480p to 1080p is a realistic 2.25x jump that usually looks genuinely better.
 - [How to upscale a finished edit to 4K on a Mac: offline](https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/): Edit your video on a timeline and upscale the whole finished cut to 4K in one export with Crisp, Enhance or generative SeedVR2 Max, 100% offline.
 - [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batching is mostly about not discovering a mistake 200 files in.
 - [How to stabilize a shaky video on a Mac (2026): free](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky, handheld video on a Mac.
-- [Removing wind noise from video on a Mac: rumble drops 13 dB](https://crispvideo.app/how-to/remove-wind-noise-from-video-mac/): Measured on Crisp's Wind mode: the low rumble that is 85% of wind noise falls 12.9 dB while the voice moves 0.2 dB.
 - [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, nothing uploaded.
 - [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert a MOV (or AVI/MKV/WebM) to MP4 on a Mac in one tap, 100% offline, no upload, no subscription.
 
