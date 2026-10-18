@@ -6,12 +6,12 @@
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>How to batch upscale videos on a Mac (2026) | Crisp</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Batching is mostly about not discovering a mistake 200 files in. Test on one clip, watch for filename collisions, and know why it takes as long as it does.">
+<meta name="description" content="Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does. Batch is part of Pro.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/batch-upscale-videos-mac/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to batch upscale videos on a Mac">
-<meta property="og:description" content="Batching is mostly about not discovering a mistake 200 files in. Test on one clip, watch for filename collisions, and know why it takes as long as it does.">
+<meta property="og:description" content="Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does. Batch is part of Pro.">
 <meta property="og:url" content="https://crispvideo.app/how-to/batch-upscale-videos-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
@@ -19,11 +19,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to batch upscale videos on a Mac">
-<meta name="twitter:description" content="Batching is mostly about not discovering a mistake 200 files in. Test on one clip, watch for filename collisions, and know why it takes as long as it does.">
+<meta name="twitter:description" content="Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does. Batch is part of Pro.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to batch upscale videos on a Mac","description":"Batching is mostly about not discovering a mistake 200 files in. Test on one clip, watch for filename collisions, and know why it takes as long as it does.","datePublished":"2026-07-23","dateModified":"2026-10-13","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/batch-upscale-videos-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to batch upscale videos on a Mac","description":"Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does. Batch is part of Pro.","datePublished":"2026-07-23","dateModified":"2026-10-18","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/batch-upscale-videos-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does batch upscaling take?","acceptedAnswer":{"@type":"Answer","text":"Roughly the sum of the individual jobs — upscaling is GPU-bound and runs one file at a time, so there is no batch discount. Budget minutes per minute of footage, not seconds."}},{"@type":"Question","name":"Can I use my Mac while it batches?","acceptedAnswer":{"@type":"Answer","text":"Light work yes, anything GPU-heavy no. The upscaler wants the GPU, and a game or another video tool competing for it will slow both and can exhaust memory."}},{"@type":"Question","name":"What happens if two files have the same name?","acceptedAnswer":{"@type":"Answer","text":"In a well-behaved tool, the second output gets a suffix. It is worth checking, because camera files reuse names across folders constantly — DJI_0001.MP4 exists on every card."}}]}
@@ -40,9 +40,7 @@
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Batch upscale</div>
   <h1>How to batch upscale videos on a Mac</h1>
 
-  <p class="lede">The technical part of batching is easy; every tool here does it. The part that
-  actually costs people an evening is running 200 files with the wrong setting and finding out at
-  the end. Test on one clip, check it properly, then queue the rest.</p>
+  <p class="lede"><strong>To batch upscale videos on a Mac, test on one clip, check it properly, then queue the rest.</strong> The technical part of batching is easy; every tool here does it. The part that actually costs people an evening is running 200 files with the wrong setting and finding out at the end.</p>
   <p><strong>Batch is part of the one-time $129 Crisp Pro unlock.</strong> Processing one file at a time is free; queueing several at once is Pro.</p>
 
   <figure>

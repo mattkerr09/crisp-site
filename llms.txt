@@ -15,7 +15,7 @@
 
 ## Comparisons
 - [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): every comparison, with sources and dates
-- [Best Topaz alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): $129 once, or four payments of $32.25, and Crisp Video is yours, the offline own-it Topaz alternative for Mac: AI upscaling & restore that runs 100% on-device.
+- [Best Topaz alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): The best Topaz alternative for Mac: AI upscaling and restore that runs 100% on-device, no subscription, with an editor built in.
 - [Switch from Topaz Video AI to Crisp: $129 vs $299/year](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; the app is now called Topaz Video and costs $299/yr.
 - [UniFab alternative for Mac: $129 once vs $319 (2026)](https://crispvideo.app/vs/unifab-alternative-mac/): UniFab bundles 16 AI tools for $319.99 lifetime and is built around Windows.
 - [Aiarty Video Enhancer vs Crisp on Mac (2026): $165 vs $129](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Crisp is $129 once.
@@ -33,7 +33,7 @@
 - [Fix blurry or pixelated video on a Mac: what works](https://crispvideo.app/how-to/fix-pixelated-video-mac/): Fix pixelated or blurry video on a Mac: it is missing detail, so no setting turns it off.
 - [Upscale video on a Mac, 480p to 1080p or 4K: free](https://crispvideo.app/how-to/upscale-video-on-mac/): Upscale video on a Mac, from 480p to 1080p or 4K: free, offline, no upload.
 - [How to upscale a finished edit to 4K on a Mac: offline](https://crispvideo.app/how-to/upscale-a-finished-edit-to-4k-mac/): Edit your video on a timeline and upscale the whole finished cut to 4K in one export with Crisp, Enhance or generative SeedVR2 Max, 100% offline.
-- [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batching is mostly about not discovering a mistake 200 files in.
+- [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does.
 - [Stabilize shaky video on a Mac: the best free option](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky video on a Mac and pick the best stabilizer: what software can and cannot fix, what it costs in framing, jello, and the free ffmpeg option.
 - [Deinterlace video on a Mac, and what interlacing is](https://crispvideo.app/how-to/deinterlace-video-mac/): Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.
 - [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, nothing uploaded.
