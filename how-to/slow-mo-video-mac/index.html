@@ -6,12 +6,12 @@
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Slow motion video on a Mac: it lowers the frame rate</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Measured in Crisp's Speed lane on a Mac: a 30fps clip at 0.5× comes out as the same 60 frames at 15fps, at 0.25× as 7.5fps. Why quarter speed judders.">
+<meta name="description" content="Slow motion video on a Mac in Crisp: a 30fps clip at 0.5× keeps the same 60 frames at 15fps, at 0.25× 7.5fps. Why quarter speed judders, and what adds frames.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Slow motion lowers the frame rate: it doesn't add frames">
-<meta property="og:description" content="A 30fps clip slowed to 0.5× keeps all 60 frames and plays them at 15fps. Measured, with the arithmetic that explains the judder.">
+<meta property="og:description" content="Slow motion video on a Mac in Crisp: a 30fps clip at 0.5× keeps the same 60 frames at 15fps, at 0.25× 7.5fps. Why quarter speed judders, and what adds frames.">
 <meta property="og:url" content="https://crispvideo.app/how-to/slow-mo-video-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png">
@@ -19,14 +19,14 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slow motion lowers the frame rate: it doesn't add frames">
-<meta name="twitter:description" content="0.5× on a 30fps clip = the same 60 frames at 15fps. Measured, with the judder arithmetic.">
+<meta name="twitter:description" content="Slow motion video on a Mac in Crisp: a 30fps clip at 0.5× keeps the same 60 frames at 15fps, at 0.25× 7.5fps. Why quarter speed judders, and what adds frames.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article",
 "headline":"Slowing a clip down lowers its frame rate — it doesn't add frames",
 "description":"Crisp's Speed lane rescales timestamps and keeps every frame: a 30fps clip at 0.5× is the same 60 frames at 15fps. Adding frames is a separate pass (Smooth motion, RIFE) that raises the rate without slowing the clip.",
-"datePublished":"2026-07-04","dateModified":"2026-10-16",
+"datePublished":"2026-07-04","dateModified":"2026-10-18",
 "author":{"@type":"Organization","name":"Crisp"},
 "publisher":{"@type":"Organization","name":"Crisp"},
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://crispvideo.app/how-to/slow-mo-video-mac/"}}
@@ -44,9 +44,9 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Slow motion lowers the frame rate</div>
   <h1>Slowing a clip down <span class="grad">lowers its frame rate</span>. It doesn't add frames</h1>
-  <div class="quick"><strong>Quick answer</strong><p class="lede">Slowing a clip in Crisp's Speed lane rescales the timestamps and writes out exactly the frames it was handed. A 2-second 30fps clip holds 60 frames; at <strong>0.5×</strong> the output is still 60 frames, now about 4 seconds long and tagged <strong>15fps</strong>. At 0.25× those same 60 frames read 7.5fps. Nothing is invented, which is where the judder comes from. Adding frames is a different pass entirely.</p></div>
+  <div class="quick"><strong>Quick answer</strong><p class="lede"><strong>To make slow motion video on a Mac in Crisp, the Speed lane rescales the timestamps and writes out exactly the frames it was handed.</strong> A 2-second 30fps clip holds 60 frames; at <strong>0.5×</strong> the output is still 60 frames, now about 4 seconds long and tagged <strong>15fps</strong>. At 0.25× those same 60 frames read 7.5fps. Nothing is invented, which is where the judder comes from. Adding frames is a different pass entirely.</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-slow-mo-video-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-slow-mo-video-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-04 · last updated 2026-10-08</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-04 · last updated 2026-10-18</div>
 
   <h2>What the Speed lane actually does to the file</h2>
   <p>Picking a slow-mo speed does not touch the pictures. Crisp rescales every frame's
