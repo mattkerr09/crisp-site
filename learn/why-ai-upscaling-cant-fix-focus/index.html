@@ -104,9 +104,10 @@
   <em>"Crisp sharpens and cleans footage up; it has no way to soften or defocus a picture"</em>
   rather than falling into the enhance lane, which would have sharpened. The opposite of the ask,
   at full GPU cost. Ask it to blur or pixelate a face and it says it has no blur or pixelate tool.
-  Ask it to sharpen without enlarging and it says there is no such mode:
-  <em>"Crisp sharpens by running the frames back through the upscaler, so it always enlarges,
-  there’s no same-size sharpen."</em></p>
+  Ask it to clean a clip up without enlarging it and it says why not:
+  <em>"Crisp cleans up by running the frames back through the upscaler, so it always enlarges."</em>
+  Ask it to sharpen without enlarging and it does the one thing it can at that size, a light sharpen,
+  and tells you the stronger sharpen only comes with an upscale.</p>
   <p>The stabiliser goes one step further and measures before it decides.
   <span class="prompt">stabilize.py::_would_help</span> samples several windows of your clip, runs
   ffmpeg's <span class="prompt">deshake</span> against a plain re-encode, and compares frame-to-frame
