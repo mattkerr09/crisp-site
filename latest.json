@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1533",
-  "notes": "Percentages on a look now set the amount. \u201cMake it 20% brighter\u201d is brighter than \u201cmake it 10% brighter\u201d, where before both got the same small lift, and \u201c30% more contrast\u201d or \u201c20% less saturated\u201d do exactly that. \u201cMake it twice as big\u201d upscales 2\u00d7, where before Crisp said it didn\u2019t understand. And \u201ccompress it as much as possible\u201d or \u201cmake the file as small as you can\u201d now make the smallest file, instead of the middle setting.",
-  "pub_date": "2026-10-19T11:47:27Z",
+  "version": "1.0.1538",
+  "notes": "Percentages now work in either order: \u201cbrighter by 20%\u201d and \u201cturn the brightness up 20%\u201d do the same as \u201c20% brighter\u201d, and \u201cup the contrast\u201d or \u201cbump the contrast\u201d now raise it. Typing \u201cadd a title: Our Wedding\u201d or \u201ctitle it Our Wedding\u201d puts those words on screen, where before the caption came up empty. And questions about your clip get real answers: \u201chow many seconds is it\u201d, \u201cis it vertical\u201d, \u201cis it HDR\u201d and \u201chow big is the file\u201d now tell you the length, shape, format and file size.",
+  "pub_date": "2026-10-19T13:56:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY5VXBGdzZOdEJWS1BaeTBqVHhyWVJLOEpRRk9HWkxIY3Y2RlFJU215ckppSTBLMUd2VzhPeFZUcEx5TWZHZ0o4NnBubHM1SUhPdksyN1dWUFRMbkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDEwMDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpybEQxd3VRSzBrMytNenJMbVVBYUNnNFBqZEhkU1d3SkpjZTdsS2VCeWtSMnBoYkdhUjJXU1NrcXdkT1U3V1JOU0VSNVpmYXYxcXUxMUlLb0VPUEVEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1533.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUN5WjVpTGtxS0EybHdrRjZzY29HL25aWmhCNDczd1MrSk54RnJMb3JpZ3VjVjBuTDBQRGRSS21CZEhlUWlPM1orWHY0eFRndHY3dXZPaVdBT1ZDWVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDE3ODU2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmaEErS3MrUCs0T0RscURNMXNwR1lBTjJLQk1ad2pib1UzU1BoMEpSV05jNTdxRzQvc05XWW1jYWg1T29ab2NKdXZqME14R0JSdUx6Rm42L3JZN1ZBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1538.app.tar.gz"
     }
   }
 }
