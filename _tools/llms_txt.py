@@ -55,7 +55,7 @@ COMPARISONS = ["/vs/topaz-alternative-mac/", "/vs/switch-from-topaz-video-ai-to-
                "/vs/aiarty-video-enhancer-alternative-mac/"]
 LEARN = ["/learn/is-topaz-video-ai-free/", "/learn/what-is-ai-video-upscaling/", "/learn/why-topaz-ended-perpetual-licences/",
          "/learn/why-vhs-tapes-degrade/"]
-FOR = ["/for/family-archivists/", "/for/youtubers/", "/for/filmmakers/"]
+FOR = ["/for/family-archivists/", "/for/youtubers/"]
 
 
 def read(rel: str) -> str:

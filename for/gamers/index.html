@@ -1,113 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Upscale and clean up game capture footage on a Mac</title>
-<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Game capture looks blocky after compression. Why it happens, what upscaling can fix, and how to clean up gameplay footage offline on a Mac without a subscription.">
-<meta name="theme-color" content="#060810">
-<link rel="canonical" href="https://crispvideo.app/for/gamers/">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Crisp for gamers and streamers">
-<meta property="og:description" content="Game capture looks blocky after compression. Why it happens, what upscaling can fix, and how to clean up gameplay footage offline on a Mac without a subscription.">
-<meta property="og:url" content="https://crispvideo.app/for/gamers/">
-<meta property="og:site_name" content="Crisp">
-<meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Crisp for gamers and streamers">
-<meta name="twitter:description" content="Game capture looks blocky after compression. Why it happens, what upscaling can fix, and how to clean up gameplay footage offline on a Mac without a subscription.">
-<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
-<link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Crisp for gamers and streamers","description":"Game capture looks blocky after compression. Why it happens, what upscaling can fix, and how to clean up gameplay footage offline on a Mac without a subscription.","datePublished":"2026-07-23","dateModified":"2026-10-16","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/for/gamers/"}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my gameplay footage look blocky?","acceptedAnswer":{"@type":"Answer","text":"High-motion game footage needs far more bitrate than most capture presets allow. The blocking is compression damage from capture, not a resolution problem, which is why upscaling alone only partly helps."}}]}
-</script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "By use", "item": "https://crispvideo.app/for/"}, {"@type": "ListItem", "position": 3, "name": "Gaming", "item": "https://crispvideo.app/for/gamers/"}]}</script>
-<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#060810">
+  <link rel="stylesheet" href="/style.css">
+  <title>Moved: Crisp for gamers and streamers | Crisp</title>
+  <meta name="description" content="This page moved: Crisp for gamers and streamers is now a section of the Who Crisp is for page.">
+  <link rel="canonical" href="https://crispvideo.app/for/">
+  <meta http-equiv="refresh" content="0; url=https://crispvideo.app/for/#gamers">
+</head>
 <body>
-<nav><div class="wrap nav-inner">
-  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
-  <a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>
-</div></nav>
-
-<article><div class="wrap">
-  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/for/">By use</a> &rsaquo; Gaming</div>
-  <h1>Crisp for <span class="grad">gamers and streamers</span></h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-16</div>
-
-  <div class="quick"><strong>Quick answer</strong><p class="lede">Game capture has a specific failure mode: it looks fine while you play and blocky
-  once it's been through a capture encoder and then a platform encoder. Understanding which of
-  those did the damage tells you whether upscaling will actually help.</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-gamers-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-gamers-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
-  <h2>Blocking is a bitrate problem, not a resolution one</h2>
-  <p>Games are the hardest thing to compress. Particle effects, foliage, smoke, fast camera motion
-  and screen-wide lighting changes mean almost every pixel changes every frame, and a capture preset
-  tuned for talking-head footage runs out of bitrate immediately. The result is the mushy squares
-  you see in dark areas and explosions.</p>
-  <p>That damage is baked in at capture. An upscaler can reduce how obvious it looks, but it cannot
-  recover what the encoder threw away, so the highest-value fix is capturing at a higher bitrate
-  next time, not processing afterwards.</p>
-  <h2>Where upscaling genuinely helps</h2>
-  <p>Older footage captured at 720p or 1080p, going to a 4K timeline, benefits clearly: especially
-  UI text and HUD elements, which are high-contrast and reconstruct well. Compilations built from
-  years of clips also gain from a single upscale pass at the end, because it evens out the mismatch
-  between old and recent captures.</p>
-  <h2>Upload at 4K even from 1080p source</h2>
-  <p>YouTube assigns more bitrate to 4K uploads. For high-motion gameplay, the exact content that
-  suffers most from compression, upscaling a 1080p capture to 4K before upload often produces a
-  visibly cleaner result on the viewer's end, even for someone watching in a window. It's a real
-  effect and it's most pronounced on precisely this kind of footage.</p>
-  <h2>Capture settings worth changing first</h2>
-  <ul>
-    <li>Raise the bitrate well above the default; storage is cheaper than lost detail.</li>
-    <li>Capture at your monitor's native resolution rather than downscaling on the fly.</li>
-    <li>Prefer a hardware encoder so the game keeps its frames.</li>
-    <li>Keep the original capture until the edit is finished and exported.</li>
-  </ul>
-  <h2>Doing the edit locally</h2>
-  <p>Compilation edits are mostly trimming, ordering and one consistent look, then an upscale on
-  the finished cut. Crisp does that in one app on-device for <span class="split">$129 once · or 4 × $32.25</span>, with no monthly cost attached
-  to a hobby, and no uploading multi-gigabyte capture files to a browser tool before you can start.</p>
-
-  <h2>Frame rate is part of the look</h2>
-  <p>Gameplay captured at 60fps and delivered at 30 loses a lot of what makes it feel responsive.
-  If the platform supports 60fps, deliver 60: for fast games it does more for perceived quality
-  than a resolution bump, because motion clarity is what viewers actually register.</p>
-  <p>Where this collides with upscaling is render time: 4K at 60fps is twice the frames of 4K at
-  30. On a long compilation that's the difference between a coffee break and an overnight job, so
-  decide the target before you start rather than re-rendering.</p>
-  <h2>Dark games are the hardest case</h2>
-  <p>Horror games, night maps and anything with heavy shadow suffer most from compression, because
-  encoders allocate the least data to dark areas and banding shows up brutally in near-black
-  gradients. Lifting the shadows slightly before export gives the encoder more to work with and
-  usually looks better on the viewer's screen than a technically accurate but crushed image.</p>
-  <p>Avoid heavy denoising on dark gameplay footage. It smears the fine detail in textures that the
-  compression has already thinned out, and the combination looks worse than either alone.</p>
-
-
-  <h2>Related</h2>
-  <ul>
-    <li><a href="https://crispvideo.app/for/genealogists/">Crisp for genealogists and family historians</a></li>
-    <li><a href="https://crispvideo.app/for/musicians/">Crisp for musicians</a></li>
-    <li><a href="https://crispvideo.app/for/#podcasters">Crisp for video podcasters</a></li>
-  </ul>
-
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-gamers-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-gamers-pbox-end" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 26.0 or later · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
-</div></article>
-
-<footer><div class="wrap">
-  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="https://crispvideo.app/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">About</a></p>
-  <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
-</div></footer>
-<div data-founding data-code="FOUNDINGCRISP" data-was="$129" data-now="$64.50" data-now-split="$16.13" data-first="25" style="max-width:520px;margin:1.25rem auto 0"></div>
-<script src="/founding.js" defer></script>
-<script src="/track.js" defer></script>
+  <main>
+    <h1>This page has moved</h1>
+    <p>Crisp for gamers and streamers is now a section of <a href="https://crispvideo.app/for/#gamers">Who Crisp is for</a>. <a href="https://crispvideo.app/about/">About Crisp</a></p>
+  </main>
 </body>
 </html>
