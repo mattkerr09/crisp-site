@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1501",
-  "notes": "Enhance now works on the part of a clip you trimmed, not the whole file. Before, trimming a clip to its last 30 seconds and pressing Enhance still enhanced it from the start, so you waited for footage you had already cut, and a free copy stopped at the first 60 seconds of the file instead of the part you picked. Now Crisp cuts your range first and enhances just that piece. Revert still brings back the original clip with its trim, and a clip you haven't trimmed runs exactly as before. The upgrade window now names both ways to choose your own free 60 seconds: Enhance on a trimmed clip, or Upscale on export. Free exports of upscaling, restoring and colour work still stop at 60 seconds, with the small \u201cMade with Crisp\u201d mark. Pro, $129 once, removes the limit and the mark.",
-  "pub_date": "2026-10-15T06:44:21Z",
+  "version": "1.0.1512",
+  "notes": "You can now type \u201cupscale it with more detail\u201d and Crisp turns on More detail, the larger model that takes about twice as long on a 2\u00d7 job such as 1080p to 4K. It now works on photos too. When it would change nothing (a 4\u00d7 upscale, Max, the Anime model), Crisp tells you instead of promising it.",
+  "pub_date": "2026-10-19T04:54:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU05T2dvRzhxK1FOVUlLb1Fka2dYeGdEcjRlc1QwelpraElkSGdna2d1Ri9iNFVQa0gwa1k5c1NHQjhXUjlUNklFT2ZLS0JHQ1YxVERYby8yOGZMNmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMDQ2MjI1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpZNDdmQWlIT1JuSUMvNC9vQ3FLOXB5eEd3RmpJQmlxa2xIRVRmS3dvSTA0a2ZvSXhubEZ4Y1l5VDJsS0JzWC9xU1VEeFVsMzJNOXpMNVlrRjQxcFVBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1501.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVByZnRpa0dZaWRkVXc2czNvc2ZNZDJ3QTl6UHREZnVUUTUrUWQ0ZjF1ejBORXhBM1hkVHdBM1BJVzFBTVBiZGZnZUhnMkZMVk1PaEV2Slc3bU9JT2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzg1MTUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3QTBHZmthK1VTcFI1bW9pRHVKRDVnVCtQUXdxaERCd0ZKcUl2aVFtUzVuMkZsYlZYNmxZWTJyNDlTeTY2N0tBQUpBdDB4VXYxQ1JuQzdFL2ZxcDRBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1512.app.tar.gz"
     }
   }
 }
