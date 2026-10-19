@@ -37,13 +37,12 @@
 - [Stabilize shaky video on a Mac: the best free option](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky video on a Mac and pick the best stabilizer: what software can and cannot fix, what it costs in framing, jello, and the free ffmpeg option.
 - [Deinterlace video on a Mac, and what interlacing is](https://crispvideo.app/how-to/deinterlace-video-mac/): Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.
 - [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, nothing uploaded.
-- [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert a MOV (or AVI/MKV/WebM) to MP4 on a Mac in one tap, 100% offline, no upload, no subscription.
+- [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert MOV to MP4 on a Mac in one tap, 100% offline, usually losslessly with Pro.
 
 ## Who it is for
 - [Mac video software for weddings, churches, teachers & more](https://crispvideo.app/for/): by kind of work
 - [Restore old home videos on a Mac: VHS, camcorder, 8mm](https://crispvideo.app/for/family-archivists/): How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing.
 - [Upscale old YouTube videos to 4K on a Mac (2026)](https://crispvideo.app/for/youtubers/): Upscale old YouTube videos to 4K on a Mac, offline: why 4K uploads survive YouTube's encoder better, whether re-uploading is worth it, and when it is not.
-- [Crisp for independent filmmakers on a Mac](https://crispvideo.app/for/filmmakers/): A finishing and repair tool that sits beside your NLE rather than replacing it.
 
 ## Legal
 - [Terms of Use](https://crispvideo.app/legal/terms/): The terms governing your use of Crisp, including licence, warranties, and limitation of liability.
