@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1527",
-  "notes": "\u201cRotate it 90 degrees counterclockwise\u201d now turns the way you asked; before, putting the number first made it turn clockwise. \u201cFade in and out 3 seconds\u201d fades for 3 seconds instead of 1, and you can set a volume as a level, like \u201cset the volume to 80%\u201d or \u201cturn it down to 30%\u201d. \u201cDouble the frame rate\u201d smooths the motion without also enlarging the video to 4K, and \u201ctriple the frame rate\u201d or \u201cmake it 90fps\u201d now gets 3\u00d7 smoothing. Asking to fade only the music now explains that Crisp fades the picture and sound together, instead of saying it didn\u2019t understand.",
-  "pub_date": "2026-10-19T09:58:14Z",
+  "version": "1.0.1533",
+  "notes": "Percentages on a look now set the amount. \u201cMake it 20% brighter\u201d is brighter than \u201cmake it 10% brighter\u201d, where before both got the same small lift, and \u201c30% more contrast\u201d or \u201c20% less saturated\u201d do exactly that. \u201cMake it twice as big\u201d upscales 2\u00d7, where before Crisp said it didn\u2019t understand. And \u201ccompress it as much as possible\u201d or \u201cmake the file as small as you can\u201d now make the smallest file, instead of the middle setting.",
+  "pub_date": "2026-10-19T11:47:27Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU81R2hLdHQveHJNYWdBWmFobnFWekdGL2pPRGtEKzhQUHZXQVgrbWlUREkveG11eUlROEFqOGNtSHJEN1g3SkJPN2JzVk9tVjM1M1hlZTB2TlM2bFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDAzNTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJaHZXd3luaVd2UFF2SU9lR3FNMDVsNDRDQjFSTGE4MXI3NGFUL3ZuL0ZNQWhsa3pSSUU1aDgzc3FTZXduUWNSWFNHeDc4V205NFRNQkFuUmttK1JBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1527.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUY5VXBGdzZOdEJWS1BaeTBqVHhyWVJLOEpRRk9HWkxIY3Y2RlFJU215ckppSTBLMUd2VzhPeFZUcEx5TWZHZ0o4NnBubHM1SUhPdksyN1dWUFRMbkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDEwMDU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpybEQxd3VRSzBrMytNenJMbVVBYUNnNFBqZEhkU1d3SkpjZTdsS2VCeWtSMnBoYkdhUjJXU1NrcXdkT1U3V1JOU0VSNVpmYXYxcXUxMUlLb0VPUEVEdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1533.app.tar.gz"
     }
   }
 }
