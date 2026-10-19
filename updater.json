@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1516",
-  "notes": "When you tell Crisp what you don\u2019t want, it now listens. \u201cSharpen it without upscaling\u201d or \u201csharpen it but keep the resolution\u201d gives you a light sharpen at the same size, where before it either enlarged the video or said it couldn\u2019t. \u201cUpscale it without more detail\u201d runs a plain upscale, \u201cdon\u2019t crop it, add more detail\u201d does the upscale you asked for instead of asking what you want, and \u201csharpen it and upscale it\u201d keeps the sharpen.",
-  "pub_date": "2026-10-19T06:30:47Z",
+  "version": "1.0.1519",
+  "notes": "Saying what you don\u2019t want on its own, like \u201cno clarity\u201d or \u201cI don\u2019t want more detail\u201d, now gets a plain \u201cUnderstood\u201d instead of an upscale you didn\u2019t ask for. And \u201cupscale it, no clarity\u201d runs the plain upscale without a confusing \u201cI didn\u2019t catch an edit\u201d on its card.",
+  "pub_date": "2026-10-19T07:29:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhrcUlnMjZKS2pVWVlLZlhrb3R4aFBkZHNLbFY3VTAxRndKWVVJUkdSZUZXazhIcUQzdUdHSVFkRnFtVUxNb2lSbVF1NlVNRG1lYUZyeU5kQ0h4T1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzkxMDM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5MGxzNWt4bVZyeVl3V3pFSkppVGN5OGxQL3dDQXF3L1NpaDRoQzZVVHp1WG9WUjA1L1YzajVGNkYvSVVuWktyQ3BEMENVWGo5MW5oNndJMGpGMHpEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1516.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJvSURxdnNWR0FzMUlNQndnWnRRSUFuRkQxalpKaGVIS3oxWnV3K3kxZGhRTitCM21xM0NGNmdHTjBsa21OQzI5YWJBZFdUazNXV3crQjFWZWZMZ1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzk0NTg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmR1pJcnBsNWFPTEo3Mk1tVldpU2lUa2VVdEJZQU4vVHI5WFNPd2JoNlZtRHp4VjI1elhPUVZyZjJRRXVwaUZpVjVBS2VSbEh6QXQvVXNuaEJDMHdCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1519.app.tar.gz"
     }
   }
 }
