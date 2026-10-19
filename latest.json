@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1519",
-  "notes": "Saying what you don\u2019t want on its own, like \u201cno clarity\u201d or \u201cI don\u2019t want more detail\u201d, now gets a plain \u201cUnderstood\u201d instead of an upscale you didn\u2019t ask for. And \u201cupscale it, no clarity\u201d runs the plain upscale without a confusing \u201cI didn\u2019t catch an edit\u201d on its card.",
-  "pub_date": "2026-10-19T07:29:44Z",
+  "version": "1.0.1521",
+  "notes": "Amounts now do what you typed. \u201cSpeed it up 10%\u201d plays at 1.1\u00d7, where before it doubled the speed, and \u201cslow it down 30 percent\u201d plays at 0.7\u00d7. \u201cCut out the first and last 2 seconds\u201d trims both ends instead of just one, \u201ctrim 2 seconds off each end\u201d and \u201ckeep seconds 10 to 15\u201d work, and describing a clip (\u201cthe clip is only 10 to 15 seconds\u201d) no longer starts a trim.",
+  "pub_date": "2026-10-19T08:29:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJvSURxdnNWR0FzMUlNQndnWnRRSUFuRkQxalpKaGVIS3oxWnV3K3kxZGhRTitCM21xM0NGNmdHTjBsa21OQzI5YWJBZFdUazNXV3crQjFWZWZMZ1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzk0NTg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmR1pJcnBsNWFPTEo3Mk1tVldpU2lUa2VVdEJZQU4vVHI5WFNPd2JoNlZtRHp4VjI1elhPUVZyZjJRRXVwaUZpVjVBS2VSbEh6QXQvVXNuaEJDMHdCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1519.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg0clBJaFVNYU9YNWZPVzBabXNPN0RBWG50RVVwbWJ5NGZoTFM0RFJnNmpNSERhQzRySFNJODRoWkptaEVocGZreUlmalB6amdHUkhOS2JkTWlzblFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzk4MjUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0QjREZzFqd0ZWbjJUSTlYdzhobElqVk1FRDN0d1MrYVBYcWRzMG1UV2dIWjl5VnpoT09oSVFrMk9WMTNZRzZBeEZ0UGMyeU96QTR0bU1WeWMwMDZEdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1521.app.tar.gz"
     }
   }
 }
