@@ -58,6 +58,11 @@ PUBLISHED = re.compile(r'"datePublished":"([^"]+)"')
 # field honest was reporting success while making the field wrong, and a grep for the correct
 # value stayed green because the correct value WAS in the file. It just never won.
 MODIFIED = re.compile(r'"dateModified":\s*"([^"]+)"')
+# The byline a reader sees: "Crisp · built in Grand Rapids · published X · last updated Y". This tool wrote only the
+# JSON-LD field, so on 2026-10-19 64 of the 91 pages carrying a byline showed a "last updated" older than their own
+# dateModified (most still said 2026-09-15). The same date now goes to both. Safe from the walk-forward loop above:
+# content_hash.BYLINE strips this line before hashing, so writing it is never read as a content change.
+BYLINE_UPDATED = re.compile(r'(<div class="updated">[^<]*?last updated )(\d{4}-\d{2}-\d{2})')
 
 
 def _git(*args: str) -> str:
@@ -132,19 +137,28 @@ def main() -> int:
         if when is None:
             continue
         cur = MODIFIED.search(text)
-        if cur and cur.group(1) == when:
+        vis = BYLINE_UPDATED.search(text)
+        field_ok = bool(cur and cur.group(1) == when)
+        byline_ok = not vis or vis.group(2) == when
+        if field_ok and byline_ok:
             continue
         wrong.append(f"{page.parent.relative_to(SITE)}: "
-                     f"{cur.group(1) if cur else '(none)'} -> {when}")
+                     f"{cur.group(1) if cur else '(none)'} -> {when}"
+                     + ("" if byline_ok else f" (byline said {vis.group(2)})"))
         if check:
             continue
-        if cur:
-            out = MODIFIED.sub(f'"dateModified":"{when}"', text)
+        out = text
+        if field_ok:
+            pass
+        elif cur:
+            out = MODIFIED.sub(f'"dateModified":"{when}"', out)
         else:
             # only reachable when the page has a datePublished to anchor to; a page with neither
             # was filtered out above.
             out = PUBLISHED.sub(
-                lambda m: f'{m.group(0)},"dateModified":"{when}"', text, count=1)
+                lambda m: f'{m.group(0)},"dateModified":"{when}"', out, count=1)
+        if not byline_ok:
+            out = BYLINE_UPDATED.sub(lambda m: m.group(1) + when, out, count=1)
         page.write_text(out)
         fixed.append(page)
     if check:
