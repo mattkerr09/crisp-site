@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1512",
-  "notes": "You can now type \u201cupscale it with more detail\u201d and Crisp turns on More detail, the larger model that takes about twice as long on a 2\u00d7 job such as 1080p to 4K. It now works on photos too. When it would change nothing (a 4\u00d7 upscale, Max, the Anime model), Crisp tells you instead of promising it.",
-  "pub_date": "2026-10-19T05:03:40Z",
+  "version": "1.0.1516",
+  "notes": "When you tell Crisp what you don\u2019t want, it now listens. \u201cSharpen it without upscaling\u201d or \u201csharpen it but keep the resolution\u201d gives you a light sharpen at the same size, where before it either enlarged the video or said it couldn\u2019t. \u201cUpscale it without more detail\u201d runs a plain upscale, \u201cdon\u2019t crop it, add more detail\u201d does the upscale you asked for instead of asking what you want, and \u201csharpen it and upscale it\u201d keeps the sharpen.",
+  "pub_date": "2026-10-19T06:30:47Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVByZnRpa0dZaWRkVXc2czNvc2ZNZDJ3QTl6UHREZnVUUTUrUWQ0ZjF1ejBORXhBM1hkVHdBM1BJVzFBTVBiZGZnZUhnMkZMVk1PaEV2Slc3bU9JT2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzg1MTUyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3QTBHZmthK1VTcFI1bW9pRHVKRDVnVCtQUXdxaERCd0ZKcUl2aVFtUzVuMkZsYlZYNmxZWTJyNDlTeTY2N0tBQUpBdDB4VXYxQ1JuQzdFL2ZxcDRBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1512.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhrcUlnMjZKS2pVWVlLZlhrb3R4aFBkZHNLbFY3VTAxRndKWVVJUkdSZUZXazhIcUQzdUdHSVFkRnFtVUxNb2lSbVF1NlVNRG1lYUZyeU5kQ0h4T1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzkxMDM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5MGxzNWt4bVZyeVl3V3pFSkppVGN5OGxQL3dDQXF3L1NpaDRoQzZVVHp1WG9WUjA1L1YzajVGNkYvSVVuWktyQ3BEMENVWGo5MW5oNndJMGpGMHpEdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1516.app.tar.gz"
     }
   }
 }
