@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1521",
-  "notes": "Amounts now do what you typed. \u201cSpeed it up 10%\u201d plays at 1.1\u00d7, where before it doubled the speed, and \u201cslow it down 30 percent\u201d plays at 0.7\u00d7. \u201cCut out the first and last 2 seconds\u201d trims both ends instead of just one, \u201ctrim 2 seconds off each end\u201d and \u201ckeep seconds 10 to 15\u201d work, and describing a clip (\u201cthe clip is only 10 to 15 seconds\u201d) no longer starts a trim.",
-  "pub_date": "2026-10-19T08:29:32Z",
+  "version": "1.0.1527",
+  "notes": "\u201cRotate it 90 degrees counterclockwise\u201d now turns the way you asked; before, putting the number first made it turn clockwise. \u201cFade in and out 3 seconds\u201d fades for 3 seconds instead of 1, and you can set a volume as a level, like \u201cset the volume to 80%\u201d or \u201cturn it down to 30%\u201d. \u201cDouble the frame rate\u201d smooths the motion without also enlarging the video to 4K, and \u201ctriple the frame rate\u201d or \u201cmake it 90fps\u201d now gets 3\u00d7 smoothing. Asking to fade only the music now explains that Crisp fades the picture and sound together, instead of saying it didn\u2019t understand.",
+  "pub_date": "2026-10-19T09:58:14Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUg0clBJaFVNYU9YNWZPVzBabXNPN0RBWG50RVVwbWJ5NGZoTFM0RFJnNmpNSERhQzRySFNJODRoWkptaEVocGZreUlmalB6amdHUkhOS2JkTWlzblFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzk4MjUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego0QjREZzFqd0ZWbjJUSTlYdzhobElqVk1FRDN0d1MrYVBYcWRzMG1UV2dIWjl5VnpoT09oSVFrMk9WMTNZRzZBeEZ0UGMyeU96QTR0bU1WeWMwMDZEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1521.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU81R2hLdHQveHJNYWdBWmFobnFWekdGL2pPRGtEKzhQUHZXQVgrbWlUREkveG11eUlROEFqOGNtSHJEN1g3SkJPN2JzVk9tVjM1M1hlZTB2TlM2bFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDAzNTMyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJaHZXd3luaVd2UFF2SU9lR3FNMDVsNDRDQjFSTGE4MXI3NGFUL3ZuL0ZNQWhsa3pSSUU1aDgzc3FTZXduUWNSWFNHeDc4V205NFRNQkFuUmttK1JBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1527.app.tar.gz"
     }
   }
 }
