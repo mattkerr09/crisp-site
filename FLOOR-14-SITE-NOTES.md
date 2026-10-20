@@ -14,6 +14,6 @@ vs ncnn 4.97 s, 1.48x wall / 1.55x engine fps; earlier 1080p->4K figures 1.5x). 
 BEFORE MERGING (at ship time, after the runner proves the install on macos-14):
 - About 95 other pages still say "macOS 26": sweep them (`grep -rl 'macOS 26' --include=index.html .`), plus
   ~/ops/facts.tsv crisp-min-macos and the llms.txt / JSON-LD copies; the comparison pages' "Crisp requires macOS 26" rows.
-- Re-run page_dates.py, sitemap_dates.py, llms_txt.py, the pre-push gates and the crisp site-reading tests
+- DONE on the branch 2026-10-20: the sweep (222 lines in 94 files + 3 /for/ sentences) and llms.txt. At merge: re-run page_dates.py, sitemap_dates.py, llms_txt.py, the pre-push gates and the crisp site-reading tests
   (test_the_os_we_promise_is_the_os_the_binaries_accept and the floor tests read these lines).
 - If Core ML models are reconverted for macOS 14 (scripts/make_coreml_models.py --min-macos 14), the 1.5x line goes.
