@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to restore old home videos on a Mac","description":"VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise as part of the upscale.","datePublished":"2026-07-23","dateModified":"2026-10-13","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/restore-old-home-videos-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to restore old home videos on a Mac","description":"VHS transfers and old camcorder footage have four separate problems, and the order you fix them in decides the result. Denoise as part of the upscale.","datePublished":"2026-07-23","dateModified":"2026-10-19","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/restore-old-home-videos-mac/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What order should I restore old video in?","acceptedAnswer":{"@type":"Answer","text":"Deinterlace, then denoise, then upscale, then colour. Every one of those steps makes the next one harder if you do it out of order — upscaling before denoising in particular turns tape noise into permanent fake texture."}},{"@type":"Question","name":"Can you fix VHS tracking lines?","acceptedAnswer":{"@type":"Answer","text":"Not in software, and not really. Tracking damage means the signal was never read correctly. Re-capture the tape with tracking adjusted on the deck — the fix lives in the capture, not the file."}},{"@type":"Question","name":"Is it worth digitising old tapes now?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it gets less worth it every year. Magnetic tape sheds oxide and VHS decks are no longer manufactured. The tape is the deadline, not the software."}}]}
@@ -40,7 +40,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Restore old home video</div>
   <h1>How to restore old home videos on a Mac</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-13</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-19</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Do it in this order: deinterlace, denoise, upscale, then colour. Every step makes
   the next one harder if you take it out of turn, and the single most common mistake, upscaling
@@ -79,7 +79,7 @@
   file says, so a 480p capture already contains more pixels than the tape held information for.
   Going to 1080p is realistic. Going to 4K is mostly the model inventing three quarters of the frame,
   and faces are where that shows first.</p>
-  <p>Judge the result in motion, at full size. Frames are upscaled independently, so a model's guesses
+  <p>Judge the result in motion, at full size. With Enhance, frames are upscaled one at a time, so a model's guesses
   vary slightly between them, and in flat areas (walls, sky, a car door) that reads as a crawling
   shimmer that a still comparison cannot show you.</p>
 
@@ -106,6 +106,13 @@
   applied on export, so the ordering above happens by construction rather than by discipline. It runs
   entirely on your Mac, which for family footage is the point: nobody's childhood needs to be
   uploaded to a server to be cleaned up.</p>
+  <p>Faces get no special treatment. Crisp has no face model, so nothing
+  swaps a face out: Enhance cleans and sharpens a face exactly as much as the room around it, and
+  your dad at the barbecue still looks like your dad. What it cannot do is add detail to a face that
+  was a few pixels wide or out of focus. That stays soft. If you try Max, the generative lane, on a
+  precious clip, compare the faces with Enhance at full size, because Max rebuilds detail and can
+  change them a little. <a href="https://crispvideo.app/for/family-archivists/#faces">One face through
+  both lanes</a>.</p>
 
   <h2>Related</h2>
   <ul>

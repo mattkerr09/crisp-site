@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Restoring old home videos on a Mac","description":"How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing.","datePublished":"2026-07-23","dateModified":"2026-10-16","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/for/family-archivists/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Restoring old home videos on a Mac","description":"How to restore old home video on a Mac: what AI upscaling can and cannot recover from VHS and camcorder transfers, deinterlacing.","datePublished":"2026-07-23","dateModified":"2026-10-19","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/for/family-archivists/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can AI really restore old VHS footage?","acceptedAnswer":{"@type":"Answer","text":"It can meaningfully improve sharpness and reduce noise, and it cannot invent detail the tape never recorded. Expect a clearly better version of your footage, not a modern-camera version of it."}}]}
@@ -40,7 +40,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/for/">By use</a> &rsaquo; Family archives</div>
   <h1>Restoring <span class="grad">old home videos</span> on a Mac</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-16</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-19</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Home video is the one category where upscaling genuinely earns its reputation.
   The footage is soft, noisy, interlaced and irreplaceable, and unlike a modern phone clip, there
@@ -64,7 +64,7 @@
   restoration looks worse than the original.</p>
 
   <h2>What AI can and cannot recover</h2>
-  <p>It genuinely helps with: soft focus from a cheap lens, tape noise and colour speckle, mild
+  <p>It genuinely helps with: mild softness from a cheap lens, tape noise and colour speckle, mild
   compression damage from an old digitisation, and the general lack of sharpness that makes VHS
   look like VHS.</p>
   <p>It cannot recover: a face that was six pixels wide, text on a sign that was never legible, or
@@ -72,11 +72,31 @@
   detail, which on a stranger's footage is fine, and on your grandmother's face is not. If a
   result looks impressively sharp but subtly wrong, trust that instinct and dial the strength back.</p>
 
-  <h2>Be conservative with faces</h2>
+  <h2 id="faces">Be conservative with faces</h2>
   <p>Faces are the whole reason you're doing this, and they're where aggressive processing does the
   most damage. Over-sharpened skin goes waxy and the person stops looking like themselves. Always
   compare a still of a face before and after at full zoom, and prefer the gentler result: you're
   preserving a memory, not producing a demo reel.</p>
+  <p>Here is what Crisp does to a face. It has no face model, and nothing in the restore looks for
+  a face to redraw it. The face goes through the same general model as the wallpaper behind it.
+  With Enhance, the default, the noise, grain and compression blocks come off at a real 2&times; or
+  4&times;, and the face is still the one the camera recorded. Your
+  grandmother still looks like your grandmother.</p>
+  <figure style="margin:1.5rem 0">
+<img src="/ww2-face-crop.jpg" width="826" height="310" loading="lazy" decoding="async"
+     alt="The same crop of a man's face in profile from 1945 black-and-white film, three ways. Left: the original scan, grainy and blocky, with dark stubble on his jaw. Middle: Crisp's Enhance, grain and blocks gone, the same face and the same stubble, slightly softer. Right: Crisp's Max, much sharper, with a brighter, more defined eye and the stubble on his jaw almost gone.">
+<figcaption>One frame of <em>San Pietro</em> (1945), U.S. Army Signal Corps, public domain, cut from
+  the two comparison clips on our <a href="https://crispvideo.app/how-to/restore-old-film-footage-mac/">old film guide</a>
+  at their own pixels; nothing was re-rendered. Left: the scan, enlarged the way a video player
+  would. Middle: Enhance at 2&times;, with the old-film repairs on. Right: Max at 2&times;.</figcaption>
+</figure>
+  <p>Two limits. A face that was tiny, blurred or out of focus on the tape stays soft, because the
+  detail was never recorded and Enhance only works with what is there
+  (<a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">why upscaling can't fix focus</a>).
+  And Max, the slow generative lane in Pro, rebuilds detail across the whole frame, faces included.
+  The right-hand crop shows the cost: the eye is sharper, and the stubble the film recorded is
+  mostly gone. Use Max for clothes, rooms and the birthday cake. On a face you know, compare it
+  with Enhance before you keep it.</p>
 
   <h2>Your family footage should not be uploaded</h2>
   <p>Most online upscalers require handing your files to a server. For holiday footage of your
