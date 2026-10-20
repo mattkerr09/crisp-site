@@ -151,6 +151,18 @@ run_gate "exemptions-live" python3 "$(dirname "$0")/../_tools/gate_exemptions_li
 # parser keeps the LAST, so the stale date won and crawlers read it while the correct value
 # sat in the same object being ignored. Valid JSON, valid-looking file, wrong structured data.
 run_gate "jsonld-dup-keys" python3 "$(dirname "$0")/../_tools/gate_jsonld_duplicate_keys.py"
+# ...and structured data may only say what the page says (Google: markup must describe content the reader can see). On
+# 2026-10-19, 166 of 346 FAQPage questions were not on their pages (paraphrases, whole FAQ blocks on 22 pages that show
+# no FAQ, one block copied from another page), 23 Article/HowTo headlines were not the H1 and 8 datePublished values
+# disagreed with the byline. Every FAQ question and answer must be visible, every headline must be the H1, every date the
+# byline's. It runs its own self-test first and BLOCKS (exit 3) if it cannot fail. Fix FAQs with _tools/faq_jsonld.py
+# --write (the visible FAQ is the source). NOTE lines (one question, different answers, each shown on its own page) do
+# not block, and are printed below even on a pass.
+run_gate "schema-matches-page" python3 "$(dirname "$0")/../_tools/schema_matches_page.py" --check
+if tail -1 "$_REPORT" | grep -q '^  PASS     schema-matches-page' && grep -q '^  NOTE ' "$_REPORT".out 2>/dev/null; then
+  echo "── schema-matches-page: one FAQ question answered differently on different pages (each shown on its own page) ─────"
+  grep '^  NOTE ' "$_REPORT".out | head -20
+fi
 # CONTENT STANDARD rule 11 (2026-10-07): no em-dash a visitor can see on an unlocked page (titles, meta, copy, alt);
 # quotes and the experiment arms in ~/ops/search/ARMS.md are exempt. _tools/no_em_dash.py --apply rewrites them.
 run_gate "no-em-dash" python3 "$(dirname "$0")/../_tools/no_em_dash.py" --check
@@ -160,10 +172,17 @@ run_gate "no-em-dash" python3 "$(dirname "$0")/../_tools/no_em_dash.py" --check
 # The footer carries ONE link, to the company. Only /about/ may name the others as links.
 run_gate "sibling-links" python3 "$(dirname "$0")/../_tools/gate_sibling_links.py"
 
-# ...and no "read <date>" / "checked <date>" on a /vs/ or /learn/ page may be older than 45 days (2026-10-15). Those pages quote other
-# companies' prices and policies, which move unannounced; a date proves somebody looked once, and nothing made anyone look again.
-# The gate prints the stale pages. An urgent push that cannot wait for a re-read: CRISP_ALLOW_STALE_READS=1 git push (loud, not silent).
+# ...and every competitor PRICE or FEATURE claim on every public page carries a checked-on date no older than 45 days (2026-10-15 for
+# /vs/ and /learn/; every page, every claim set, 2026-10-19). Other companies' prices, plans and features move unannounced; a date
+# proves somebody looked once, and nothing made anyone look again. FAILS past 45 days, on a future date, and on an undated claim
+# that is not in _tools/claim_dates_baseline.json (the claims already undated when the rule landed, each awaiting a re-read).
+# WARNS past 30 days: those lines are printed below even when the gate passes, because a warning nobody sees is not one.
+# An urgent push that cannot wait for a re-read: CRISP_ALLOW_STALE_READS=1 git push (loud, not silent).
 run_gate "read-dates" python3 "$(dirname "$0")/../_tools/gate_read_dates.py"
+if tail -1 "$_REPORT" | grep -q '^  PASS     read-dates' && grep -q '^  WARN ' "$_REPORT".out 2>/dev/null; then
+  echo "── read-dates: claim sets read more than 30 days ago (re-read before day 45) ─────"
+  grep '^  WARN ' "$_REPORT".out | head -40
+fi
 
 # ...and every claim the site makes about the ENGINE must still be true of the engine.
 #

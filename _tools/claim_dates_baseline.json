@@ -1,0 +1,1969 @@
+{
+ "written": "2026-10-19",
+ "why": "Competitor claims that carried no checked-on date when the claim-date rule landed (CEO, 2026-10-19). Each needs a re-read of the vendor's own page and then a date on our page; delete its entry once it is dated. A claim that is not listed here and has no date FAILS the push. Re-record with --baseline only deliberately, and say why in the commit.",
+ "undated": {
+  "best/video-converter-for-mac": [
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "QuickTime will not open MKV, even when the video inside is ordinary H.264 that it plays happily from an MP4."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "PRICE",
+    "text": "HandBrake is free, open-source, cross-platform and extraordinarily deep."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "No settings panel, no upload, all on your Mac, with no account or internet needed, as with HandBrake."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "No: HandBrake has far deeper encoder control (RF tuning, subtitles, chapters, large batch queues)."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "For the everyday compress and convert jobs, plus upscaling and editing HandBrake cannot do, Crisp covers more of the real workflow."
+   }
+  ],
+  "for": [
+   {
+    "vendors": [
+     "Descript"
+    ],
+    "kind": "FEATURE",
+    "text": "Descript is also genuinely better at transcript-driven editing, which for interview shows is a real advantage, though it is a subscription and not offline."
+   },
+   {
+    "vendors": [
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "It is not an NLE: a full film with multicam sync, audio sweetening and a client review round belongs in Resolve or Premiere, its timeline is a single track of ordered clips, and it cannot align a separate audio recorder’s file to the picture."
+   }
+  ],
+  "for/youtubers": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Topaz moved to $299 a year in October 2025, which is a meaningful line item for a channel that isn't yet earning."
+   }
+  ],
+  "how-to/add-a-border-to-video-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap solid border | No direct border | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Whole picture kept (no crop) | . | Often crops"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie has no direct \"add a border\" control (you'd fake it with a background clip); online tools upload your footage and often crop."
+   }
+  ],
+  "how-to/add-a-matte-look-to-video-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap matte look | Manual sliders | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Matte + vignette + grain in one pass | Fiddly | Rarely"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie can fake a matte look by hand with its colour sliders; online LUT tools upload your footage first."
+   }
+  ],
+  "how-to/add-captions-to-video-mac": [
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Type text on a video | Yes. Title templates | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request (\"add a caption saying…\") | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Exact show/hide timing in seconds | Drag clip lengths | Yes. Timeline | Yes. Timeline"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Auto-captions from speech | No | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, no account | Yes | Account; cloud features | Sign-in + subscription"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "iPhone HDR handled automatically | Mixed results | Often washed out | Manual color setup"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Learning curve | Timeline basics | Timeline basics | Steep"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + Pro upsell | ~$23/month"
+   },
+   {
+    "vendors": [
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "For quick on-screen text, the timeline apps are overkill; for spoken-word transcription, CapCut/Premiere have a feature Crisp deliberately doesn't."
+   },
+   {
+    "vendors": [
+     "Canva"
+    ],
+    "kind": "FEATURE",
+    "text": "Make the card in whatever you like (Preview, Keynote, Canva, even a screenshot), export it as a PNG or JPEG and drop it on the timeline."
+   }
+  ],
+  "how-to/add-watermark-to-video-mac": [
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "PRICE",
+    "text": "Add a logo watermark | Picture-in-picture hack | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "FEATURE",
+    "text": "Transparent PNG respected | Yes | Yes | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "FEATURE",
+    "text": "Keeps the audio | Yes | Yes | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "PRICE",
+    "text": "Adds NO watermark of its own | Yes | Often on free tier | Usually"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Cloud features | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell | Free + upsell"
+   }
+  ],
+  "how-to/color-grade-video-mac": [
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap cinematic look | Manual sliders | Manual / LUTs | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Works on video AND photos | Video + images | Separate tools | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "HDR handled | . | Yes | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Yes | Often watermarked"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Paid / steep | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "DaVinci Resolve",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Premiere and DaVinci give you full control but a real learning curve; iMovie has sliders plus automatic colour, white-balance and skin-tone correction; online filters upload your footage."
+   }
+  ],
+  "how-to/compress-video-on-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap \"make the file smaller\" | No direct file-size control | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Keeps the resolution | Depends on export | Often downscales"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Won't inflate an already-small clip | . | ."
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell / size caps"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie's \"Share\" export gives quality presets but no direct file-size target; online tools upload your footage and often downscale it."
+   }
+  ],
+  "how-to/convert-mkv-to-mp4-mac": [
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "QuickTime and most Apple software simply do not open the MKV box, even when the h.264 inside is something they play perfectly."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "PRICE",
+    "text": "HandBrake, which is free and excellent, but note that HandBrake always re-encodes."
+   }
+  ],
+  "how-to/convert-mov-to-mp4-mac": [
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap MOV → MP4 | Yes | Settings-heavy"
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "Lossless (copies the video) | Re-encodes | Always re-encodes"
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Uploads your clip | Yes"
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free + size caps | Free"
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "Online converters upload your footage and always re-encode (slower, quality loss); Handbrake is powerful but re-encodes everything and buries you in settings."
+   }
+  ],
+  "how-to/deinterlace-video-mac": [
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "PRICE",
+    "text": "HandBrake: free and open source, with a window."
+   },
+   {
+    "vendors": [
+     "HandBrake"
+    ],
+    "kind": "FEATURE",
+    "text": "Its Decomb filter detects combing per frame and only deinterlaces the frames that actually need it, which is the \"blend or discard\" route: same frame rate, slightly softer."
+   }
+  ],
+  "how-to/edit-hdr-video-mac": [
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "The output is properly converted and properly tagged, so it looks right in QuickTime, on the web, and on every phone: no grey cast, no blown highlights."
+   }
+  ],
+  "how-to/extract-audio-from-video-mac": [
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "Save audio as MP3 | Yes | No (M4A export only, fiddly)"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English (\"extract the audio\") | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Uploads your video | Yes"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "No account, no ads | Ads, sign-ups, size caps | Yes"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "Batch several videos | One at a time | One at a time"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free + upsell | Free"
+   }
+  ],
+  "how-to/fade-video-mac": [
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Fade in / out (picture + audio) | Yes. Fade handles | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request (\"fade it in and out\") | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Auto-clamped length on short clips | Manual | Manual | Manual"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, no account | Yes | Account; cloud features | Sign-in + subscription"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Watermark on some exports | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Learning curve | Timeline basics | Timeline basics | Steep"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + Pro upsell | ~$23/month"
+   }
+  ],
+  "how-to/loop-video-mac": [
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Export a looped FILE (not just loop playback) | Playback only | Copy-paste clips | Yes"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Pick an exact repeat count | No | Manual | Varies"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Fast / lossless | . | Re-encodes | Varies"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "QuickTime only loops during playback (it doesn't save a looped file); iMovie means copy-pasting the clip over and over; online loopers upload your footage."
+   }
+  ],
+  "how-to/make-a-gif-on-mac": [
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "Optimised palette (sharp, small) | Varies, often huge | Yes"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English (\"make it a gif\") | No | No"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "Boomerang built-in | Sometimes | Manual"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Uploads your clip | Yes"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "No account | Watermarks, sign-ups | Subscription"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free + upsell | ~$23/month"
+   },
+   {
+    "vendors": [
+     "Photoshop"
+    ],
+    "kind": "FEATURE",
+    "text": "The web \"video to GIF\" sites upload your footage, cap the length, and stamp a watermark; Photoshop is overkill and a subscription."
+   }
+  ],
+  "how-to/make-a-photo-slideshow-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Ken Burns zoom by default | Manual per clip | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Mix photos + video on one timeline | Yes | Rarely"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Add music that loops to fit | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Export in 4K (AI upscale) | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your photos"
+   }
+  ],
+  "how-to/mute-video-mac": [
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Mute a clip (drop the audio) | Yes. Detach/mute | No mute-and-save | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Make it louder / quieter (0.1×–4.0×) | Yes. Volume bar | Playback only | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Keeps the video lossless (no re-compress) | Re-exports the video | . | Re-exports the video"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request (\"mute it\") | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, no account | Yes | Yes | Sign-in + subscription"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Learning curve | Timeline basics | Simple | Steep"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "QuickTime",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free | ~$23/month"
+   }
+  ],
+  "how-to/normalize-audio-video-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap loudness normalize | Manual \"normalize clip volume\" | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Video not re-encoded | Re-renders | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie has a basic \"normalize clip volume\" buried in the audio inspector and re-renders the whole project; online tools upload your footage."
+   }
+  ],
+  "how-to/remove-background-noise-video-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap audio noise reduction | \"Reduce background noise\" slider | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Video not re-encoded | Re-renders | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie's noise slider re-renders the whole project; online tools upload your footage."
+   }
+  ],
+  "how-to/reverse-video-mac": [
+   {
+    "vendors": [
+     "Final Cut Pro",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "There's no speed-ramping, no keyframe control, no multi-track timeline: if you need to reverse only the middle three seconds with an ease-in and a ramp, that's a job for Premiere or Final Cut."
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Reverse a clip (audio reversed too) | Yes. Clip setting | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Boomerang / ping-pong | Manual duplicate + reverse | Yes. Template | Manual"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request (\"reverse it\") | No | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, no account | Yes | Account; cloud features | Sign-in + subscription"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Watermark on some exports | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "Learning curve | Timeline basics | Timeline basics | Steep"
+   },
+   {
+    "vendors": [
+     "iMovie",
+     "CapCut",
+     "Premiere Pro"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + Pro upsell | ~$23/month"
+   }
+  ],
+  "how-to/rotate-video-mac": [
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Rotate 90° / 180° / mirror | 90° only | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English (\"my video is sideways\") | No | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Bakes rotation into the pixels | Metadata only* | Yes | Yes"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Rotate + enhance in one step | No | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Yes | Often watermarked"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free | Free + upsell"
+   }
+  ],
+  "how-to/stabilize-shaky-video-mac": [
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-tap stabilize | Yes (\"Stabilize shaky clip\") | Yes"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Keeps the full frame (mirror, not crop) | Crops in | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Audio kept in sync | Yes | Varies"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "iMovie's stabilizer zooms in to hide the edges (you lose frame); online tools upload your footage and often watermark it."
+   }
+  ],
+  "how-to/trim-video-mac": [
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Frame-accurate cut | Keyframe-snapped | Yes | Varies"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English request | No | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Keep the last N / after a point | Manual drag | Manual | Manual"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Trim + enhance in one step | No | No | No"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "No watermark | Yes | Yes | Often watermarked"
+   },
+   {
+    "vendors": [
+     "QuickTime",
+     "iMovie"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free | Free | Free + upsell"
+   },
+   {
+    "vendors": [
+     "QuickTime"
+    ],
+    "kind": "FEATURE",
+    "text": "QuickTime's built-in trim is a stream copy, so it snaps to keyframes; online trimmers upload your footage to someone's server."
+   }
+  ],
+  "how-to/upscale-a-finished-edit-to-4k-mac": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "All 100% offline: no Topaz cloud, no subscription."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Most tools make you choose: edit in one app, then upscale in another (usually a paid, cloud one like Topaz)."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Both run on-device; Topaz's full-quality Starlight models render in the cloud on a Mac; a smaller local Starlight Mini does run on Apple Silicon."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "No exporting a cut, re-importing into Topaz, paying per-minute in the cloud."
+   },
+   {
+    "vendors": [
+     "Topaz",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Edit on a timeline | No. Trim and crop on one clip, no timeline | Yes"
+   },
+   {
+    "vendors": [
+     "Topaz",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Upscale to 4K | Yes | No"
+   },
+   {
+    "vendors": [
+     "Topaz",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "Edit then upscale in one export | Separate app | No upscaler"
+   },
+   {
+    "vendors": [
+     "Topaz",
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "100% offline | Flagship is cloud | Yes"
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Nothing is uploaded, unlike Topaz cloud."
+   }
+  ],
+  "learn": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "No. $299 A year or $59 a month, and no free plan on its pricing page."
+   },
+   {
+    "vendors": [
+     "Adobe"
+    ],
+    "kind": "PRICE",
+    "text": "What changed, including Adobe's purchase, and the free and one-time options on a Mac."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Topaz Labs stopped selling perpetual licences on 3 October 2025."
+   }
+  ],
+  "learn/is-topaz-video-ai-free": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Topaz used to sell a perpetual licence."
+   },
+   {
+    "vendors": [
+     "Adobe"
+    ],
+    "kind": "PRICE",
+    "text": "Adobe says the apps carry on as standalone products; what that means for pricing later is not something anyone outside the two companies can know yet."
+   },
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "PRICE",
+    "text": "Open-source image upscalers such as Real-ESRGAN, and free apps built on it, cost nothing and work well on single images."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Topaz has a deeper catalogue of models and more control over each one, a Windows version, and a long record in professional restoration work."
+   }
+  ],
+  "learn/what-the-denoise-setting-does": [
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "FEATURE",
+    "text": "Only the other two routes are Real-ESRGAN models."
+   }
+  ],
+  "learn/when-ai-upscaling-beats-a-plain-resize": [
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "FEATURE",
+    "text": "Only the other two routes in that table are Real-ESRGAN models."
+   }
+  ],
+  "vs/aiarty-video-enhancer-alternative-mac": [
+   {
+    "vendors": [
+     "Topaz",
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Aiarty Video Enhancer became a popular answer to Topaz going subscription-only: $165 for a lifetime licence covering three machines, running locally."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Topaz ended perpetual licences in October 2025 and moved to $299 a year."
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Aiarty ships several models tuned for different damage (compression artefacts, low resolution, soft focus) and lets you pick per clip."
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Aiarty's batch queue is included; in Crisp it's part of the $129 unlock."
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "It doesn't edit it."
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Timeline editing | No"
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Model choice per clip | Yes"
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Runs offline | Yes"
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Platform | Mac + Windows"
+   },
+   {
+    "vendors": [
+     "Aiarty"
+    ],
+    "kind": "FEATURE",
+    "text": "Archivist restoring damaged footage with per-clip control, on Windows and Mac: Aiarty."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "With Topaz at $299 a year, stopping payment means losing access to new models entirely."
+   }
+  ],
+  "vs/avclabs-video-enhancer-alternative-mac": [
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "AVCLabs Video Enhancer AI is a capable, feature-broad enhancer sold either as a subscription at roughly $120/year or as a $299.90 perpetual licence, with a product line that spans desktop software and browser-based tools."
+   },
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "Colourise B&W | Yes"
+   },
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "Face refinement model | Dedicated"
+   },
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "Processing | Local and cloud, depending on product"
+   },
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "Multi-clip timeline | No. Trim, crop and colour on a single clip"
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "That is the structural argument, and it is the same one that made Topaz's move to $299/year in October 2025 so unpopular."
+   },
+   {
+    "vendors": [
+     "AVCLabs"
+    ],
+    "kind": "FEATURE",
+    "text": "Theirs is a stated requirement and ours is a measured peak: a vendor’s minimum is a safety margin, not a claim about what their software uses, and AVCLabs may well run in less than they ask for."
+   }
+  ],
+  "vs/hitpaw-vikpea-alternative-mac": [
+   {
+    "vendors": [
+     "HitPaw"
+    ],
+    "kind": "FEATURE",
+    "text": "Model choice | Several, clearly labelled"
+   },
+   {
+    "vendors": [
+     "HitPaw"
+    ],
+    "kind": "FEATURE",
+    "text": "Processing | Mixed local / cloud by feature"
+   },
+   {
+    "vendors": [
+     "HitPaw"
+    ],
+    "kind": "FEATURE",
+    "text": "Multi-clip timeline | AI editing tools, no timeline"
+   },
+   {
+    "vendors": [
+     "HitPaw"
+    ],
+    "kind": "FEATURE",
+    "text": "HitPaw's wider product line mixes local and cloud tools, and mixed is the hard case, because you have to know which is which."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Both of these are one-time purchases, and after Topaz moved to $299/year in October 2025 that is worth stating as a shared virtue rather than a differentiator."
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "PRICE",
+    "text": "If most of your footage is animation, take HitPaw's dedicated model seriously, and take waifu2x seriously too since it is free and was built for exactly this."
+   }
+  ],
+  "vs": [
+   {
+    "vendors": [
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "It is a professional multi-track editor and it earns its place: complex timelines, keyframed motion graphics, colour scopes and grading, multicam, deep audio mixing and team workflows inside Creative Cloud."
+   },
+   {
+    "vendors": [
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "It is a Creative Cloud subscription, with a steep learning curve."
+   },
+   {
+    "vendors": [
+     "Premiere Pro"
+    ],
+    "kind": "FEATURE",
+    "text": "It covers the quick jobs that do not need a timeline: trimming, making a clip vertical, compressing, and cleaning up old footage, with AI upscaling built in and running on your Mac, for $129 once."
+   },
+   {
+    "vendors": [
+     "Filmora"
+    ],
+    "kind": "FEATURE",
+    "text": "It has a proper multi-track timeline, a deep library of transitions, effects, titles, stickers and templates, keyframing and stock media: everything for a polished multi-clip project with motion graphics."
+   },
+   {
+    "vendors": [
+     "Filmora"
+    ],
+    "kind": "PRICE",
+    "text": "Its best features sit behind a subscription or a paid unlock, and its free version watermarks exports (our September read)."
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "It is free, polished and genuinely good at telling a story from several clips: arranging scenes on a timeline, trailer templates and themes, titles and transitions, green screen, and the hand-off between Photos, iCloud and an iPhone."
+   },
+   {
+    "vendors": [
+     "iMovie"
+    ],
+    "kind": "FEATURE",
+    "text": "One-clip jobs: cut it down, add a hook line, make it vertical (Mac iMovie projects are 16:9, so a true 9:16 export needs workarounds), and rescue a dark or noisy iPhone clip with the on-device upscaler and denoiser."
+   }
+  ],
+  "vs/inshot-alternative-mac": [
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "InShot is a great phone editor, but it's mobile-only, it watermarks your free exports, and its best tools sit behind an InShot Pro subscription."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Platform | Mobile only (iOS / Android)"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "PRICE",
+    "text": "Pricing | Free w/ ads → Pro subscription"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "PRICE",
+    "text": "Watermark on exports | Yes on the free tier"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Reframe to 9:16 / 1:1 / 4:5 (blurred fill) | Yes"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Auto-montage & highlight reels | Manual only"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "AI upscale · denoise · restore | No"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Edit → upscale finished cut to 4K | No upscaler"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Works 100% offline / private | Partly (ads & some cloud)"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Timeline editor · trim · split · per-clip looks | Yes"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Photos as timeline stills (Ken Burns) | Limited"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Stickers, text styles, effects library | Large creative library"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Edit on your phone on the go | Yes"
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "PRICE",
+    "text": "It has a manual timeline, a huge library of stickers, text styles, transitions, filters, trending templates and licensed music, and it lives in your pocket so you can cut a clip on the bus."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "That may be exactly enough: InShot is a good editor and a lot of finished video has been cut on it."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "The offline desktop editor InShot never shipped."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "InShot has no equivalent."
+   },
+   {
+    "vendors": [
+     "CapCut",
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Crisp fits the whole frame (no awkward cropping) and fills the bars with a blurred copy of the same footage, the polished InShot/CapCut look, then exports on your Mac, offline."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "Crisp is a real native Mac app that covers InShot's most-used jobs (reframe for Reels/TikTok, auto-montage) offline."
+   },
+   {
+    "vendors": [
+     "InShot"
+    ],
+    "kind": "FEATURE",
+    "text": "For a big pocket library of stickers, captions and trending templates edited on your phone, InShot still has more, we're honest about that."
+   }
+  ],
+  "vs/real-esrgan-alternative-mac": [
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "FEATURE",
+    "text": "Real-ESRGAN is free, open source, runs on Apple Silicon, and produces genuinely good upscales."
+   },
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "PRICE",
+    "text": "It costs nothing and it is a genuinely good model."
+   }
+  ],
+  "vs/topaz-alternative-mac": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "This isn't a \"Crisp beats Topaz\" pitch."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "This is the big one Topaz has no answer for."
+   },
+   {
+    "vendors": [
+     "Topaz",
+     "Real-ESRGAN"
+    ],
+    "kind": "FEATURE",
+    "text": "Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is Real-ESRGAN (ncnn/Vulkan), running 2×–16× on-device, with the large steps reserved for small sources."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "It is Crisp's answer to Topaz's Starlight, minus the cloud."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Honest limits: this is one upscaler with a handful of models, not Topaz's deep model catalogue, and it enhances and restores footage you already have."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Topaz is enhance-only."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "What it won't do is replace Topaz's deep pro restoration pipeline: on the hardest archival work, or when you want per-artifact sliders, Topaz's broader lineup wins."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Pick Crisp for own-it, offline, simple, and edit-too; pick Topaz for the deepest control and the highest ceiling."
+   }
+  ],
+  "vs/topaz-video-ai-alternative-mac": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Topaz is enhance-only."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "For a large catalogue of specialised pro models and plugin pipelines, Topaz still has more, we're honest about that."
+   }
+  ],
+  "vs/upscayl-alternative-mac": [
+   {
+    "vendors": [
+     "Upscayl",
+     "Real-ESRGAN"
+    ],
+    "kind": "PRICE",
+    "text": "It runs the same Real-ESRGAN engine and handles the audio, timing, colour and ordering work around it; for photos alone, Upscayl is free and excellent, and you should use it."
+   },
+   {
+    "vendors": [
+     "Upscayl",
+     "Real-ESRGAN"
+    ],
+    "kind": "PRICE",
+    "text": "Crisp bundles upscayl-bin, the same ncnn build of Real-ESRGAN that Upscayl is built around, redistributed under its BSD-3-Clause and MIT licences and credited in Crisp's NOTICES file."
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free, open source"
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "FEATURE",
+    "text": "Photos | Yes, its whole purpose"
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "FEATURE",
+    "text": "Video | No"
+   },
+   {
+    "vendors": [
+     "Upscayl",
+     "Real-ESRGAN"
+    ],
+    "kind": "FEATURE",
+    "text": "Upscaling engine | Real-ESRGAN (ncnn)"
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "FEATURE",
+    "text": "Editing | No"
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "FEATURE",
+    "text": "Plain-English requests | No"
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "FEATURE",
+    "text": "Runs offline | Yes"
+   },
+   {
+    "vendors": [
+     "Real-ESRGAN"
+    ],
+    "kind": "PRICE",
+    "text": "Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its BSD-3-Clause and MIT licences, credited in Crisp's NOTICES file."
+   },
+   {
+    "vendors": [
+     "Upscayl"
+    ],
+    "kind": "PRICE",
+    "text": "For photos alone, Upscayl is free and does the job."
+   }
+  ],
+  "vs/videoproc-alternative-mac": [
+   {
+    "vendors": [
+     "VideoProc"
+    ],
+    "kind": "FEATURE",
+    "text": "Runs offline | Yes"
+   },
+   {
+    "vendors": [
+     "VideoProc"
+    ],
+    "kind": "FEATURE",
+    "text": "Timeline editing | Minimal"
+   },
+   {
+    "vendors": [
+     "VideoProc"
+    ],
+    "kind": "FEATURE",
+    "text": "Format matrix | Very broad"
+   },
+   {
+    "vendors": [
+     "VideoProc"
+    ],
+    "kind": "FEATURE",
+    "text": "DVD ripping | Yes"
+   },
+   {
+    "vendors": [
+     "VideoProc"
+    ],
+    "kind": "FEATURE",
+    "text": "Frame interpolation | Yes"
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "PRICE",
+    "text": "Topaz ended perpetual licences in October 2025 and moved to $299/year, which sent a lot of people looking for one-time options."
+   }
+  ],
+  "vs/waifu2x-alternative-mac": [
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "waifu2x is free, open source, offline, and on anime or illustration it still holds up."
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "This is the bigger one. waifu2x processes each frame independently, with no knowledge of the frames on either side."
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "PRICE",
+    "text": "Price | Free"
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "Anime / illustration | Excellent"
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "Real-world video | Weak"
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "Temporal stability | Frame-independent"
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "Handles audio + container | No. Manual"
+   },
+   {
+    "vendors": [
+     "waifu2x"
+    ],
+    "kind": "FEATURE",
+    "text": "Editing | None"
+   },
+   {
+    "vendors": [
+     "Real-ESRGAN",
+     "waifu2x"
+    ],
+    "kind": "PRICE",
+    "text": "Worth knowing: Real-ESRGAN handles photographic material far better than waifu2x and is also free."
+   }
+  ]
+ }
+}

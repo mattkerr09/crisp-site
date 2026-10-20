@@ -23,7 +23,11 @@ not the prose.
 """
 import re
 import sys
+from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import faq_jsonld  # noqa: E402  (the FAQ schema is built from the FAQ the page shows, by the tool the gate trusts)
 
 SITE = "https://crispvideo.app"
 #: The price, declared once. This generator said $19 through TWO portfolio-wide
@@ -113,18 +117,26 @@ def esc(s):
 def build(page):
     faq_html = "\n".join(
         f"  <h3>{q}</h3>\n  <p>{a}</p>" for q, a in page["faq"])
+    # ⚠️ datePublished WAS THE LITERAL "2026-08-10" FOR EVERY PAGE THIS EVER WROTE. The pages were committed after
+    # midnight, on 2026-08-11, so seven of them carried a datePublished one day before the byline under their H1
+    # (_tools/schema_matches_page.py, 2026-10-19). A page is published the day it is written; say that day.
     article_ld = ('{"@context":"https://schema.org","@type":"Article","headline":"%s",'
                   '"description":"%s","author":{"@type":"Organization","name":"Crisp"},'
-                  '"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-08-10"}'
-                  % (esc(page["h1"]), esc(page["desc"])))
-    qs = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}'
-                  % (esc(q), esc(re.sub(r"<[^>]+>", "", a))) for q, a in page["faq"])
-    faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}' % qs
-    return HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, split=f"{PRICE_USD / 4:.2f}", slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+                  '"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"%s"}'
+                  % (esc(page["h1"]), esc(page["desc"]), date.today().isoformat()))
+    # A placeholder only: faq_jsonld.rebuild() below replaces mainEntity with the questions and answers the page SHOWS,
+    # so the schema can never be a second, drifting copy of the FAQ (166 of 346 schema questions had drifted).
+    faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}'
+    html = HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, split=f"{PRICE_USD / 4:.2f}", slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,
                        article_ld=article_ld, faq_ld=faq_ld)
+    built, info = faq_jsonld.rebuild(html)
+    if [faq_jsonld.norm(q) for q, _ in info["new"]] != [faq_jsonld.norm(q) for q, _ in page["faq"]]:
+        raise ValueError(f"{page['slug']}: the FAQ the page shows is not the FAQ it was given "
+                         f"({[q for q, _ in info['new']]} vs {[q for q, _ in page['faq']]}); refusing to write it")
+    return built
 
 
 def main():

@@ -23,7 +23,19 @@ rot:
   INCLUDED   <title>, the `<article>` body, and JSON-LD that describes the PAGE
   EXCLUDED   <nav>, <footer>, everything else outside <article>, analytics/pixel scripts,
              BreadcrumbList blocks, the `<div class="updated">` byline, and every
-             datePublished/dateModified value wherever it appears
+             datePublished/dateModified value wherever it appears; and JSON-LD that RESTATES the
+             article: FAQPage blocks, Article "headline" and HowTo "name" (2026-10-19, below)
+
+⚠️ SCHEMA THAT RESTATES THE PAGE IS NOT CONTENT (2026-10-19). FAQPage is now BUILT from the
+visible FAQ (_tools/faq_jsonld.py) and a headline or HowTo name must EQUAL the H1
+(_tools/schema_matches_page.py, a pre-push gate), so both are copies of text this hash already
+reads inside <article>, exactly as BreadcrumbList is a copy of the nav. Counting them made a
+schema-only fix look like an edit: rebuilding 67 FAQ blocks and 23 headlines from their pages
+would have moved 44 pages' dateModified, and the "last updated" a reader sees, to that day with
+nothing on the page changed. Excluded, it moves none, and the only page whose date changes is
+vs/aiarty-video-enhancer-alternative-mac (2026-10-16 -> 2026-10-15): its 10-16 commit 91bebad
+touched only the JSON-LD headline's stray span markup. A real FAQ or H1 edit still counts,
+because the article text it restates is still hashed.
 
 ⚠️ THE DATE FIELDS MUST BE EXCLUDED OR THIS FEEDS ITSELF. Writing a date is a commit; if the date
 were part of the hash, tomorrow's run would see yesterday's date-write as a content change and
@@ -38,6 +50,7 @@ one element that looks most like content.
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 
 # The byline directly under <h1>: "Crisp · built in Grand Rapids · published X · last updated Y".
@@ -49,6 +62,27 @@ DATEFIELD = re.compile(r'"date(?:Modified|Published)"\s*:\s*"[^"]*"', re.I)
 ARTICLE = re.compile(r'<article\b[^>]*>(.*?)</article>', re.S | re.I)
 TITLE = re.compile(r'<title\b[^>]*>(.*?)</title>', re.S | re.I)
 TAGS = re.compile(r'<[^>]+>')
+# Schema that restates the article (see the docstring): a whole FAQPage block, a headline, a HowTo's own name.
+FAQ_BLOCK = re.compile(r'^\s*\{[^{]*?"@type"\s*:\s*"FAQPage"', re.S)
+HEADLINE = re.compile(r'"headline"\s*:\s*"(?:[^"\\]|\\.)*"')
+NAME = re.compile(r'"name"\s*:\s*"((?:[^"\\]|\\.)*)"')
+
+
+def _restated_removed(block: str) -> str | None:
+    """The block without what it restates from the article; None when the whole block is a restatement."""
+    if FAQ_BLOCK.match(block) and '"@graph"' not in block:
+        return None
+    block = HEADLINE.sub('"headline":""', block)
+    if '"HowTo"' in block:
+        try:
+            name = json.loads(block).get("name")
+        except (ValueError, AttributeError):
+            name = None
+        for m in NAME.finditer(block) if isinstance(name, str) else ():
+            if json.loads('"' + m.group(1) + '"') == name:     # the HowTo's own name, not a step's
+                block = block[:m.start()] + '"name":""' + block[m.end():]
+                break
+    return block
 
 
 def content_of(html: str) -> str:
@@ -62,6 +96,9 @@ def content_of(html: str) -> str:
     for block in LDJSON.findall(html):
         if '"BreadcrumbList"' in block or "'BreadcrumbList'" in block:
             continue                      # navigation restated as schema; not page content
+        block = _restated_removed(block)
+        if block is None:
+            continue                      # the visible FAQ restated as schema; the article text counts
         parts.append(DATEFIELD.sub("", block))
 
     body = ARTICLE.search(html)
