@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1604",
-  "notes": "Denoise strength, dust removal and steadier brightness are now in the editor's Tools panel, and a new Black bars tool removes letterbox bars. Before, you could only reach them by typing.",
-  "pub_date": "2026-10-21T21:28:53Z",
+  "version": "1.0.1606",
+  "notes": "A Tips button beside the prompt bar lists things you can type, such as \u201cloop it 3 times\u201d or \u201cmake it 60 fps\u201d, for the jobs that have no button yet.",
+  "pub_date": "2026-10-21T23:47:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJyMzRGSWt6cG1udHBjR3JoSCtxb0k0Q216VmNjL1BFcVJXZUxYUGxUTkduRExmR3AxLzJLZ25jVGRJQTlqNTZpRXFUT3ROWGlRM1hGbUo0UHJlbkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjE3NDM0CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1VW9odTNxUjNTK1N5VUJoNjhsSklPMlFlQmw2WDRLK3NkT2E2R21ZeDAxcHVLZlRKVmh4Yjg4VjNhUGxvOVlMRENFS1Y1dlVmT3NZN1dHK3pkOG1CUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1604.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9XampSVFpVazUrdUxVQWhXVzlaMTNrd2kvNGlXaGVWaE43ckhPem11M0JTSEFiTzZqekJtTFRsb01BbTFvWXdWUG9LYWRDWTAxSk55OXFGL0RabHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI1OTYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoyekdNbk1USm90OE5jUzBKa3VBZHU5S1R1UG5rWkhob004ZWFWcEFzbExWbTd6UEpoN3ZTUDVEL0hINGdHd0VzV1hxWllpTUxVbnM2Mjd2VkxOMkdCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1606.app.tar.gz"
     }
   }
 }
