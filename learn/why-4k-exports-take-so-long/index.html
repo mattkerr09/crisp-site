@@ -80,9 +80,9 @@
   <p>Memory matters more than people expect. Large frames and large models compete for one pool, and
   when it is tight the work is broken into tiles and reassembled, costing time and a little quality at
   the seams. In Crisp that applies to very large frames, past about four megapixels going in: ordinary HD and smaller frames go through the GPU in one piece. For the tiled route Crisp does not guess a tile size: it uses the upscaler's own automatic behaviour unless a measured profile exists for your machine, because a value that helps a 64GB Mac Studio can starve a 16GB Air.</p>
-  <p>And the bundled networks are natively 2×, 3× and 4× only. Beyond that Crisp composes real passes (
+  <p>And the bundled networks are natively 2×, 3× and 4× only. Beyond that an upscaler has to compose real passes (
   8× is a 4× pass then a 2× pass) so each pass runs the whole model over every frame again, the second
-  on images the first already enlarged.</p>
+  on images the first already enlarged. (Crisp itself goes up to 4× today.)</p>
 
   <h2>A bigger scale factor does not always mean a longer wait</h2>
   <p>We timed four routes over 60 frames of the same 720p clip, rebuilt two ways: from 320×180 at 4×,
