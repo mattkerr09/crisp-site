@@ -19,7 +19,8 @@ python3 the runner has. Exit 0 only when every check passed; DIR/summary.json sa
 ⚠️ A RUNNER IS A VM, AND TWO THINGS A REAL MAC HAS MAY BE MISSING THERE. They are classified, never passed silently:
   - no Vulkan/Metal device for ncnn: the upscale fails with "gpu" and the run fails, saying the upscale was NOT PROVEN
     on this runner (not that Crisp is broken on macOS 14);
-  - no VideoToolbox encoder: the free export is retried once with libx264 (an encoder the bundled ffmpeg carries),
+  - no VideoToolbox encoder: the free export and the upscale are retried once with av1 (SVT-AV1 in software: a codec
+    the engine's API accepts, unlike a raw libx264, which it answers 400 'unsupported codec'),
     and the summary says the default encoder was unavailable, so a pass never hides which encoder made it.
 A fresh HOME makes it a new free copy and keeps the runner's (or this Mac's) real profile out of it.
 """
@@ -70,8 +71,19 @@ def compress_body(src: str, out: str, codec: str | None = None) -> dict:
     return {**b, "codec": codec} if codec else b
 
 
-def upscale_body(src: str, out: str) -> dict:
-    return {"task": "upscale", "input": src, "output": out, "preset": "enhance", "scale": 2}
+def upscale_body(src: str, out: str, codec: str | None = None) -> dict:
+    b = {"task": "upscale", "input": src, "output": out, "preset": "enhance", "scale": 2}
+    return {**b, "codec": codec} if codec else b
+
+
+#: The software encoder to retry with on a runner whose VM has no VideoToolbox (GitHub's macos-14 image, 2026-10-21):
+#: one of the engine API's own codec names (ffmpeg_io.VIDEO_CODECS), so the retry reaches ffmpeg instead of a 400.
+SOFTWARE_CODEC = "av1"
+
+
+def same_build(got, want) -> bool:
+    """/health reports the build NUMBER (1580); the plist and the manifest say 1.0.1580. Compare the number."""
+    return str(got).split(".")[-1] == str(want).split(".")[-1]
 
 
 def near(got: float | None, want: float, tol: float = 0.35) -> bool:
@@ -225,7 +237,7 @@ def main(argv: list[str] | None = None) -> int:
         got = (h.get("build") or {}).get("number")
         check("the engine starts and answers /health", True, f"build {got}, coreml {h.get('coreml')}")
         if want:
-            check("…and it is the build the app names", str(got) == str(want), f"/health {got}, expected {want}", "other")
+            check("…and it is the build the app names", same_build(got, want), f"/health {got}, expected {want}", "other")
 
         # the clips, made by the APP'S ffmpeg: loading it at all is part of the floor proof
         clip, tiny = work / "clip.mp4", work / "tiny.mp4"
@@ -245,8 +257,8 @@ def main(argv: list[str] | None = None) -> int:
             enc = "default"
             # retry ONLY on the job's own error text: the log names the encoder on every healthy render too
             if st.get("status") != "done" and classify(str(st.get("error") or "")) == "encoder":
-                st, _ = eng.job(make(str(src), str(work / name), "libx264"))
-                enc = "libx264 (the default VideoToolbox encoder is unavailable on this runner)"
+                st, _ = eng.job(make(str(src), str(work / name), SOFTWARE_CODEC))
+                enc = f"{SOFTWARE_CODEC} (software; the default VideoToolbox encoder is unavailable on this runner)"
             outp = (st.get("result") or {}).get("output") or str(work / name)
             meta = probe(ffprobe, outp) if os.path.exists(outp) else {}
             ok = st.get("status") == "done" and near(meta.get("duration"), want_dur)
@@ -262,12 +274,18 @@ def main(argv: list[str] | None = None) -> int:
         # NCNN UPSCALE
         # polled every 50 ms: 30 frames this small can finish on a fast GPU before a slower poll ever sees the binary
         st, seen = eng.job(upscale_body(str(tiny), str(work / "upscaled.mp4")), poll_s=0.05)
+        up_enc = "default"
+        if st.get("status") != "done" and classify(f"{st.get('error')} {eng.log_text()[-4000:]}") == "encoder":
+            st, seen2 = eng.job(upscale_body(str(tiny), str(work / "upscaled.mp4"), SOFTWARE_CODEC), poll_s=0.05)
+            seen = seen | seen2
+            up_enc = f"{SOFTWARE_CODEC} (software; no VideoToolbox on this runner)"
         outp = (st.get("result") or {}).get("output") or str(work / "upscaled.mp4")
         meta = probe(ffprobe, outp) if os.path.exists(outp) else {}
         text = eng.log_text()
         ok = st.get("status") == "done" and (meta.get("width"), meta.get("height")) == (320, 180)
         why = classify(f"{st.get('error')} {text[-4000:]}")
-        detail = f"{st.get('status')} · {meta} · upscaler processes seen: {sorted(seen & {'upscayl-bin', 'crisp-vision'})}"
+        detail = (f"{st.get('status')} · {meta} · encoder {up_enc} · "
+                  f"upscaler processes seen: {sorted(seen & {'upscayl-bin', 'crisp-vision'})}")
         if not ok and why == "gpu":
             detail += " · NOT PROVEN on this runner: ncnn found no GPU device (a VM limit, not a macOS-floor result)"
         check("ncnn upscale 160x90 -> 320x180", ok, detail, why)
