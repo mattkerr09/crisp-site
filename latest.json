@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1590",
-  "notes": "An upscale saved as AV1 now finishes, where before it stopped with an encoding error. The founding price in the unlock window now disappears by itself when the offer ends on 25 November.",
-  "pub_date": "2026-10-21T12:52:03Z",
+  "version": "1.0.1592",
+  "notes": "On old tape and SD footage Crisp now uses its detail model by default; the fast model could draw letter-like marks on heavy grain. It takes about 1.7 times as long, so if you want speed, ask for \u201cthe fast model\u201d.",
+  "pub_date": "2026-10-21T15:02:13Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ1KzkySGt4RVRQY09VQWFzOEZiWTEvM2lOaEREV3hYOXlLNFc3NTJKNjBRWGdDTlg1NlpoUUlvUytVUWE5VlJTS2N0RHdXUE5jSEpOMzl1Mi9sdmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTg2NzU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negowRXJjZXdkR2UxMWRKaFl5RW56MUxpZm5PQU9SMDZGSnEyZlBjRWVsQ0RPRE9LTjBhRjk4NkR4VHNSaWJWZ0ZJcG03c3BXd09pcjEzR3ZsaUJ4ZkhEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1590.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQrWkdKVmNFNVN6UG0zZHJTOVp2UVZaNHhpaHZDUy8wQkN5bjR1b3k3bTA5NkFXNE1XZ0lZUUl4Q3hrTkRwWnVCbzZKN1dvTTZ0dmtvUUNHeWc5eUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTk0NTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVSWR4VkVFRzc2TjQxc2NzUkovSnhBZ09kUUozYStaWVNGemsyWkV5ZWVQQUxKSWFjdWFzcWF5akJMeDNXMG1FUjRCUmVPTjF2UExvVkdGaVFSRTBDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1592.app.tar.gz"
     }
   }
 }
