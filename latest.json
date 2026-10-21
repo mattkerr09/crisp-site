@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1596",
-  "notes": "The audio Format menu is now in the editor's Save as row (it was only reachable by typing before).",
-  "pub_date": "2026-10-21T17:28:49Z",
+  "version": "1.0.1600",
+  "notes": "8\u00d7 and 16\u00d7 upscaling is now in the editor: pick a Scale in the Enhance tool, or type \u201cupscale it 16x\u201d. Sizes your clip can\u2019t be written at are greyed out, and a 4K clip now stops at the 3\u00d7 this Mac can encode.",
+  "pub_date": "2026-10-21T18:49:36Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVMaTVMeHZnU0haUFVBNmJMUHdKRStwejNwVGZCcE5iOW92dFZtSnpNTzZkQnBqczFwRXRBYjhXYndBMnNTVTNiWkxGWXVOSmI2bnlaN0xCcWVUVlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjAzMjgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4ejN3RXRYVENXVm9DZjlha2xMMy9kbUxTQTFjRGV3dHh6bVZVMzBzMXdEN1AyTWJvSjArQ2h4ajZDYWpSejFQU0NVMmhzN0NTWGdlbjJ2TXI4R2dCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1596.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUozVDlENk40QnVtTkNhZUZFZlZ1Tmh4RTlVcStrZXlqWE9HUk43Um96RkFzZ1gzQ2RSaXQyVGtORnY4K09OMXhYc3YzcENBNEJPUXZQUnhSTDBNTVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA4MTMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCb3NGK2w1ZTdoQzVDMm1nOVJJOVdpU3ZwT0J0ZXV2UzVpUGhIa3RwcWNlQnhHWmNJWlpodUdQQzhXT2FFVjlzbHFSWmNadHRHWFpjTXhtZ1B6ODlBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1600.app.tar.gz"
     }
   }
 }
