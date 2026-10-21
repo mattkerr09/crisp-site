@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1567",
-  "notes": "\u201cThe first 5 seconds should go\u201d now removes those 5 seconds, where before it kept only them. Asking for the audio as a WAV, FLAC, AIFF, Apple Lossless, Opus, OGG or WMA file now gives you that file instead of an MP3, and the audio Format menu lists them all. \u201cZoom in 2x\u201d now crops instead of upscaling, \u201csped it up 2x\u201d changes the speed, and \u201cmake a black and white gif\u201d makes the GIF in black and white. And a \u201cplease\u201d beside your request no longer gets \u201cI didn\u2019t catch an edit\u201d.",
-  "pub_date": "2026-10-21T01:32:43Z",
+  "version": "1.0.1580",
+  "notes": "Crisp now opens on macOS 14 Sonoma and macOS 15 Sequoia, not only macOS 26, on any Apple Silicon Mac. On macOS 14 it upscales with a different engine, so an upscale takes about 1.5 times as long there; on macOS 15 or later it runs at full speed.",
+  "pub_date": "2026-10-21T10:45:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJXNncwV1hBZXE0dFJtS0NFRHNJVWJRbnhadDNPNjJ6clY1eWZXb2ZacTRaVkVmZDFlbmNYWm5QemYwUU5WTDAzM0pyUGtmeERPdGFETUl5KzdVQkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQ1ODMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUanZXU2J1czJ0ZjJYb1ZleWlKVlRHY1pKVWorOC93aHFuU2xQaXAzNnFJNmVmVFFMSVNPbTBSL2FrbEZvWVkxN25KVmpvQmxGRThjaU15Nzkxc1BCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1567.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhOVXJTQVBzZHNIbDBJZUh1RG5vVFFJK25WT2VFQktKZ21XeHBnZ2RtYU9LWDlTRlBrYks5SGhqMHRMWmhNZ0YyVXhvYVZ4TE8xeWlONVBTakhSY2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTc4MzA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4SUVVend3Z3ZxNjdQVDNBMGdXTm13Lzd2TkEvc21NSmhNUnN0amZZM3p4T0xXQzBMa01UUzVNeHVQM2M1d2RiZldSY2hmOE5jQ3dVQjJTMGhXZGVEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1580.app.tar.gz"
     }
   }
 }
