@@ -79,6 +79,10 @@ def upscale_body(src: str, out: str, codec: str | None = None) -> dict:
 #: The software encoder to retry with on a runner whose VM has no VideoToolbox (GitHub's macos-14 image, 2026-10-21):
 #: one of the engine API's own codec names (ffmpeg_io.VIDEO_CODECS), so the retry reaches ffmpeg instead of a 400.
 SOFTWARE_CODEC = "av1"
+#: The upscale's retry uses software ProRes instead: an AV1 UPSCALE fails on every Crisp up to 1.0.1580, because the
+#: upscale encodes into .mov intermediates and ffmpeg refuses AV1 in MOV ("av1 only supported in MP4 and AVIF"). That
+#: is a pre-existing engine bug (queued to fix), not a macOS-floor result; ProRes needs no VideoToolbox and lives in MOV.
+SOFTWARE_UPSCALE_CODEC = "prores_lt"
 
 
 def same_build(got, want) -> bool:
@@ -276,10 +280,10 @@ def main(argv: list[str] | None = None) -> int:
         st, seen = eng.job(upscale_body(str(tiny), str(work / "upscaled.mp4")), poll_s=0.05)
         up_enc = "default"
         if st.get("status") != "done" and classify(f"{st.get('error')} {eng.log_text()[-4000:]}") == "encoder":
-            st, seen2 = eng.job(upscale_body(str(tiny), str(work / "upscaled.mp4"), SOFTWARE_CODEC), poll_s=0.05)
+            st, seen2 = eng.job(upscale_body(str(tiny), str(work / "upscaled.mov"), SOFTWARE_UPSCALE_CODEC), poll_s=0.05)
             seen = seen | seen2
-            up_enc = f"{SOFTWARE_CODEC} (software; no VideoToolbox on this runner)"
-        outp = (st.get("result") or {}).get("output") or str(work / "upscaled.mp4")
+            up_enc = f"{SOFTWARE_UPSCALE_CODEC} (software; no VideoToolbox on this runner)"
+        outp = (st.get("result") or {}).get("output") or str(work / ("upscaled.mov" if up_enc != "default" else "upscaled.mp4"))
         meta = probe(ffprobe, outp) if os.path.exists(outp) else {}
         text = eng.log_text()
         ok = st.get("status") == "done" and (meta.get("width"), meta.get("height")) == (320, 180)

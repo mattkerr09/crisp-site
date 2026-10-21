@@ -117,6 +117,7 @@ jobs:
             ${{ runner.temp }}/customer-path/*.txt
             ${{ runner.temp }}/customer-path/engine.log
             ${{ runner.temp }}/customer-path/work/*.mp4
+            ${{ runner.temp }}/customer-path/work/*.mov
           if-no-files-found: warn
 
       - name: Verdict
