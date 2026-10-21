@@ -285,7 +285,9 @@ def main(argv: list[str] | None = None) -> int:
         ok = st.get("status") == "done" and (meta.get("width"), meta.get("height")) == (320, 180)
         why = classify(f"{st.get('error')} {text[-4000:]}")
         detail = (f"{st.get('status')} · {meta} · encoder {up_enc} · "
-                  f"upscaler processes seen: {sorted(seen & {'upscayl-bin', 'crisp-vision'})}")
+                  f"upscaler processes seen: {sorted(seen & {'upscayl-bin', 'crisp-vision'})}"
+                  + (f" · job error: {str(st.get('error'))[:900]}" if st.get("error") else ""))
+        (out / "upscale-job.json").write_text(json.dumps(st, indent=2, default=str))
         if not ok and why == "gpu":
             detail += " · NOT PROVEN on this runner: ncnn found no GPU device (a VM limit, not a macOS-floor result)"
         check("ncnn upscale 160x90 -> 320x180", ok, detail, why)
