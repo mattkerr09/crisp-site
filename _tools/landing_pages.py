@@ -58,11 +58,12 @@ def box(src: str, buy_first: bool) -> str:
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
            f'href="{buy_base()}?src={src}" rel="nofollow">Buy Crisp Pro</a>')
+    found = (f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
+             f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-landing-box>'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
-            f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
-            f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
+            f'{found}'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
             f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'

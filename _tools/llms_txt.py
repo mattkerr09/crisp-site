@@ -85,6 +85,13 @@ def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
             f"all with a small {open_q}Made with Crisp{close_q} mark")
 
 
+def founding_live(f: dict, when=None) -> bool:
+    """True until the founding offer's end (the mount's data-ends, UTC). A generator run after it writes no founding line."""
+    import datetime as _dt
+    end = _dt.datetime.fromisoformat(f["ends"].replace("Z", "+00:00"))
+    return (when or _dt.datetime.now(_dt.timezone.utc)) < end
+
+
 def speed_note(os_line: str, link: bool = True) -> str:
     """The plain note a box adds while the declared floor is below macOS 15: there Crisp upscales with ncnn, not Core ML
     (its Core ML models need macOS 15), so an upscale takes about 1.5 times as long (measured on an M1 Ultra, 10-19).
@@ -106,6 +113,8 @@ def facts() -> dict:
         "now": Decimal(one(r'data-now="\$([\d.]+)"', mount, "data-now")),
         "code": one(r'data-code="([A-Z0-9]+)"', mount, "data-code"),
         "first": int(one(r'data-first="(\d+)"', mount, "data-first")),
+        # When FOUNDINGCRISP expires in Dodo (CEO, 2026-10-21). The generators drop every founding line from then on.
+        "ends": one(r'data-ends="([0-9T:\-]+Z)"', mount, "data-ends"),
         "bnpl": one(r"var\s+CRISP_BNPL_LIVE\s*=\s*(true|false)\s*;", home, "CRISP_BNPL_LIVE") == "true",
         "os": one(r'"operatingSystem":\s*"([^"]+)"', home, "operatingSystem"),
         "chip": one(r'"processorRequirements":\s*"([^"]+)"', home, "processorRequirements"),
@@ -182,14 +191,15 @@ def build() -> str:
         f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; "
         f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every export carries a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
         f"generative Max lane and batch processing",
-        f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
-        f"({100 - int(now * 100 / p)}% off) — the Buy button applies {f['code']} at checkout; if it ever "
-        f"doesn't, choose “Have a discount code?” and enter it",
     ]
+    if founding_live(f):
+        out.append(f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
+                   f"({100 - int(now * 100 / p)}% off, until {f['ends'][:10]} UTC) — the Buy button applies {f['code']} "
+                   f"at checkout; if it ever doesn't, choose “Have a discount code?” and enter it")
     if f["bnpl"]:
         out.append(f"- [Pay in four]({BASE}/#buy): {f['bnpl_providers']} at checkout{' ' + f['bnpl_where'] if f['bnpl_where'] else ''}"
-                   f" — {money(p)} as 4 payments of {money(quarter(p))}, two weeks apart "
-                   f"(founding: 4 × {money(quarter(now))})")
+                   f" — {money(p)} as 4 payments of {money(quarter(p))}, two weeks apart"
+                   + (f" (founding: 4 × {money(quarter(now))})" if founding_live(f) else ""))
     out += [
         f"- [System requirements]({BASE}/#download): {f['os']}; {f['chip']}",
         f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} Macs at a time",

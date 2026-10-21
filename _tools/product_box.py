@@ -62,14 +62,15 @@ def box(where: str, page: str = "") -> str:
     m = llms_txt.money
     split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if f["bnpl"] else ""
     nsplit = f" · or 4 × {m(q(now))}" if f["bnpl"] else ""
+    # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
+    # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
+    # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).
+    found = (f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
+             f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
-            f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
-            # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
-            # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
-            # not a dash (content standard, 2026-10-05).
-            f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>'
+            f'{found}'
             f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
             # BUY BESIDE THE FREE DOWNLOAD (content standard, 2026-10-05). The box used to send Pro to the
             # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout

@@ -179,6 +179,10 @@ run_gate "sibling-links" python3 "$(dirname "$0")/../_tools/gate_sibling_links.p
 # WARNS past 30 days: those lines are printed below even when the gate passes, because a warning nobody sees is not one.
 # An urgent push that cannot wait for a re-read: CRISP_ALLOW_STALE_READS=1 git push (loud, not silent).
 run_gate "read-dates" python3 "$(dirname "$0")/../_tools/gate_read_dates.py"
+# founding: FOUNDINGCRISP ends 2026-11-25T01:26Z (and when its 24 places are used, per ~/ops/launch/founding-crisp.json).
+# After that no page may SHIP the founding price, the code or a founding line: founding.js hides them on the day, and this
+# refuses the next deploy until the generators have rewritten them out (CEO, 2026-10-21).
+run_gate "founding" python3 "$(dirname "$0")/../_tools/gate_founding.py"
 if tail -1 "$_REPORT" | grep -q '^  PASS     read-dates' && grep -q '^  WARN ' "$_REPORT".out 2>/dev/null; then
   echo "── read-dates: claim sets read more than 30 days ago (re-read before day 45) ─────"
   grep '^  WARN ' "$_REPORT".out | head -40

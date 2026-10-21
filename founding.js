@@ -49,6 +49,23 @@
 (function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
+  /* THE OFFER ENDS ON A DATE (CEO, 2026-10-21): FOUNDINGCRISP expires in Dodo at the mount's data-ends. From that moment
+     the bar does not mount and every static founding line on the page (.pbox-found, .founding-note, [data-founding-copy])
+     is hidden, with no deploy needed. Checked BEFORE the dismissal below, so a visitor who dismissed the bar still loses
+     the stale lines. The push gate (_tools/gate_founding.py) then refuses any deploy that still ships them. */
+  (function () {
+    var m = document.querySelector("[data-founding]");
+    var ends = m && m.getAttribute("data-ends");
+    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+    if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
+    window.__kcFoundingEnded = true;
+    var hide = function () {
+      var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+      for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hide); else hide();
+  })();
+  if (window.__kcFoundingEnded) return;
 
   var KEY  = "kc-founding-dismissed";
   /* A dismissal used to last forever ("1"), which hid the offer from every
