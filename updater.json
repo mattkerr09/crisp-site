@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1600",
-  "notes": "8\u00d7 and 16\u00d7 upscaling is now in the editor: pick a Scale in the Enhance tool, or type \u201cupscale it 16x\u201d. Sizes your clip can\u2019t be written at are greyed out, and a 4K clip now stops at the 3\u00d7 this Mac can encode.",
-  "pub_date": "2026-10-21T18:49:36Z",
+  "version": "1.0.1602",
+  "notes": "You can now choose where Crisp saves your files: Save to, in the Export panel or the Tools panel. After each export Crisp shows the folder it saved to.",
+  "pub_date": "2026-10-21T19:56:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUozVDlENk40QnVtTkNhZUZFZlZ1Tmh4RTlVcStrZXlqWE9HUk43Um96RkFzZ1gzQ2RSaXQyVGtORnY4K09OMXhYc3YzcENBNEJPUXZQUnhSTDBNTVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA4MTMzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCb3NGK2w1ZTdoQzVDMm1nOVJJOVdpU3ZwT0J0ZXV2UzVpUGhIa3RwcWNlQnhHWmNJWlpodUdQQzhXT2FFVjlzbHFSWmNadHRHWFpjTXhtZ1B6ODlBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1600.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9oUCtpeUFJdDhQdTd3VldyYS9UWHZ1dkhVcVFOSXFIRWFWaVpOMzBTWDRtT3FXRUFESDMzWldQTEE1V0pid0RaK2ZMRlBRNDJiWFhNc0ZnU0g3VEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjEyMDczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzQWxTQU9Rb3RGMU4vVW9uU3V0NlZ3enMyK3hpbjQvdUxnREFLdEd0akhwOW5hUWJhWTNHOWN4SUw4OUFVTXRQWVVycVdOQ0JNeWZ1aXdlZjAxMGZCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1602.app.tar.gz"
     }
   }
 }
