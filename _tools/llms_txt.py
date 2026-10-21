@@ -85,6 +85,17 @@ def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
             f"all with a small {open_q}Made with Crisp{close_q} mark")
 
 
+def speed_note(os_line: str, link: bool = True) -> str:
+    """The plain note a box adds while the declared floor is below macOS 15: there Crisp upscales with ncnn, not Core ML
+    (its Core ML models need macOS 15), so an upscale takes about 1.5 times as long (measured on an M1 Ultra, 10-19).
+    Read from the floor, never typed: a floor of 15 or later returns nothing."""
+    m = re.search(r"macOS\s+(\d+)", os_line or "")
+    if not m or int(m.group(1)) >= 15:
+        return ""
+    text = f"slower upscaling on macOS {m.group(1)}"
+    return f' (<a href="/download/#macos-speed">{text}</a>)' if link else f" ({text})"
+
+
 def facts() -> dict:
     home = read("/")
     price = Decimal(one(r"(?m)^PRICE_USD\s*=\s*(\d+)\s*$", ENGINE.read_text(), "PRICE_USD"))

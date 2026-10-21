@@ -77,7 +77,7 @@ def box(where: str, page: str = "") -> str:
             f'<a class="btn btn-ghost" data-track="pbox-{where}-buy" href="{BUY}?src={src}" rel="nofollow">Buy Pro</a></p>'
             # a phone visitor cannot install a Mac app: one line to send the link to themselves (track.js)
             f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>'
-            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]} · '
+            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
 

@@ -64,7 +64,7 @@ def box(src: str, buy_first: bool) -> str:
             f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
             f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
-            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]} · '
+            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
 
@@ -82,7 +82,27 @@ def _referral_line() -> str:
     return m.group(0)
 
 
-def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_first: bool) -> str:
+def macos_speed_section(os_line: str) -> str:
+    """The download page says plainly what changes below macOS 15 (CEO, 2026-10-20). Empty when the floor is 15+."""
+    m = re.search(r"macOS\s+(\d+)", os_line or "")
+    if not m or int(m.group(1)) >= 15:
+        return ""
+    v = m.group(1)
+    return (f'''  <h2 id="macos-speed">How fast it runs on your macOS</h2>
+  <p>Crisp is built for macOS {v} and tested on macOS {v} and 26. Which upscaler it uses depends on your macOS:</p>
+  <ul>
+    <li><strong>macOS 15 Sequoia or later:</strong> Core ML, on your Mac's GPU. Full speed.</li>
+    <li><strong>macOS {v}:</strong> a different upscaler, Crisp's ncnn engine, also on your Mac's GPU. Upscaling takes
+      about 1.5 times as long.</li>
+  </ul>
+  <p>The picture comes out the same either way; only the wait changes.</p>
+  <p class="muted">Measured on a Mac Studio (M1 Ultra) in October 2026: a 3-second clip doubled to 720p took 3.4 seconds with
+    Core ML and 5.0 seconds with the ncnn upscaler that macOS {v} uses. That is the macOS {v} upscaler timed on a newer
+    macOS; it has not yet been timed on a Mac running macOS {v} itself.</p>
+''')
+
+
+def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_first: bool, extra: str = "") -> str:
     url = f"{llms_txt.BASE}/{slug}/"
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -110,7 +130,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 <article><div class="wrap">
   <h1>{h1}</h1>
   <p class="lede">{lede}</p>
-  {box(src, buy_first)}  <p>Everything Pro adds, the licence terms and the answers to the usual questions are on the <a href="{llms_txt.BASE}/#buy">home page</a>.</p>
+  {box(src, buy_first)}{extra}  <p>Everything Pro adds, the licence terms and the answers to the usual questions are on the <a href="{llms_txt.BASE}/#buy">home page</a>.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -143,7 +163,7 @@ def pages() -> dict[Path, str]:
             f"Download Crisp Video for Mac: {f['os']}, {f['chip']}. Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length.",
             "Download Crisp for Mac",
             f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use: {llms_txt.free_tier(f['cap'], '&ldquo;', '&rdquo;')}; Pro removes the mark and the limit.",
-            "download-page", False),
+            "download-page", False, macos_speed_section(f["os"])),
     }
 
 
