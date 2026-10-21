@@ -1,5 +1,5 @@
 {
- "written": "2026-10-19",
+ "written": "2026-10-21",
  "why": "Competitor claims that carried no checked-on date when the claim-date rule landed (CEO, 2026-10-19). Each needs a re-read of the vendor's own page and then a date on our page; delete its entry once it is dated. A claim that is not listed here and has no date FAILS the push. Re-record with --baseline only deliberately, and say why in the commit.",
  "undated": {
   "best/video-converter-for-mac": [
@@ -1447,34 +1447,6 @@
   "vs/hitpaw-vikpea-alternative-mac": [
    {
     "vendors": [
-     "HitPaw"
-    ],
-    "kind": "FEATURE",
-    "text": "Model choice | Several, clearly labelled"
-   },
-   {
-    "vendors": [
-     "HitPaw"
-    ],
-    "kind": "FEATURE",
-    "text": "Processing | Mixed local / cloud by feature"
-   },
-   {
-    "vendors": [
-     "HitPaw"
-    ],
-    "kind": "FEATURE",
-    "text": "Multi-clip timeline | AI editing tools, no timeline"
-   },
-   {
-    "vendors": [
-     "HitPaw"
-    ],
-    "kind": "FEATURE",
-    "text": "HitPaw's wider product line mixes local and cloud tools, and mixed is the hard case, because you have to know which is which."
-   },
-   {
-    "vendors": [
      "Topaz"
     ],
     "kind": "PRICE",
@@ -1719,7 +1691,7 @@
      "Real-ESRGAN"
     ],
     "kind": "FEATURE",
-    "text": "Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is Real-ESRGAN (ncnn/Vulkan), running 2×–16× on-device, with the large steps reserved for small sources."
+    "text": "Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is Real-ESRGAN (ncnn/Vulkan), running 2×–4× on-device."
    },
    {
     "vendors": [
