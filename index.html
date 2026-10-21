@@ -1039,14 +1039,14 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 
   <!-- Read off the shipped app: 21 dispatched tasks, 9 video + 7 image input extensions. Nothing here is rounded up.
-       The upscale figure is what the EDITOR reaches: 4x (2026-10-21). The engine chains to 16x, but no control or prompt in the
-       shipped app reached 8x or 16x, so the claim came down until a boot read-back proves them on screen
-       (~/ops/launch/distribution/crisp/site-8x-16x-held-2026-10-21.md). -->
+       The upscale figure is what the EDITOR reaches (tests/test_every_figure_and_tile_on_the_home_page_has_a_consumer.py measures
+       the prompt bar): 16x since 1.0.1597, the Enhance tool's Scale menu and "upscale it 16x" (scripts/scale_visible_readback.mjs,
+       in live_gate). It said 4x for a few hours on 2026-10-21, when the app could not yet reach 8x or 16x. -->
   <section class="caps" aria-label="What Crisp handles">
     <div class="caps-in">
       <div><div class="cap-n">21</div><p class="cap-l">tools, one window: restore, edit,<br>montage, convert</p></div>
       <div><div class="cap-n">16</div><p class="cap-l">video &amp; photo formats in,<br>ProRes / H.265 / AV1 out</p></div>
-      <div><div class="cap-n">4&times;</div><p class="cap-l">upscale, and a generative<br>restore lane past that</p></div>
+      <div><div class="cap-n">16&times;</div><p class="cap-l">upscale, and a generative<br>restore lane past that</p></div>
       <div><div class="cap-n">0</div><p class="cap-l">bytes uploaded. Every frame<br>stays on your Mac</p></div>
     </div>
   </section>
@@ -1063,7 +1063,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
            list: audio border compress convert crop fade frame gif grade loop montage overlay
            reframe reverse rotate speed splitscreen stabilize timeline trim upscale. -->
       <div class="tools-grid">
-        <span><b>Upscale</b>to 4K, 2–4×</span>
+        <span><b>Upscale</b>to 4K, 2–16×</span>
         <span><b>Restore</b>generative Max lane</span>
         <span><b>Montage</b>cut to the beat</span>
         <span><b>Timeline</b>a real editor</span>
@@ -1104,7 +1104,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="visual"><div class="metric">
         <div class="big">4K</div>
-        <div class="small">from 1080p and below, 2× to 4×</div>
+        <div class="small">from 1080p and below, 2× to 16×. It greys out what your clip cannot encode</div>
       </div></div>
     </div>
 
@@ -1199,12 +1199,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <img class="ba-before" src="/demo-still-before.jpg" width="1704" height="896" loading="lazy" decoding="async"
         alt="The 426x224 source at the same size: a muddy smear of light.">
       <div class="ba-line"><span class="ba-grip"></span></div>
-      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp</span>
+      <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp 16&times;</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then upscaled 16&times; to 6816&times;3584 by Crisp&rsquo;s engine and shown here at 1704&times;896. (The app itself goes up to 4&times; today; 8&times; and 16&times; come back to it in the next release.) That is a much kinder test than real archival film, because the detail was there to begin with. Against a plain resize to the same delivered size it scores 3.42&times; the fine detail, where the archival clip above manages 1.50&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
+    <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then upscaled 16&times; to 6816&times;3584 and shown here at 1704&times;896. That is a much kinder test than real archival film, because the detail was there to begin with. Against a plain resize to the same delivered size it scores 3.42&times; the fine detail, where the archival clip above manages 1.50&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
 
     <div class="ba" id="ba4">
       <video class="ba-after" width="704" height="576" poster="/phone-poster.jpg"
@@ -1232,6 +1232,26 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       source has more to give back than a decent scan does. If your old phone videos and photos
       look like the left half, that is the gap Max is closing. But the honest version of
       this claim is that we chose the damage, and real damage is rarely so tidy.</p>
+
+<p class="ba-note"><strong>Past 4&times;, and who it is for.</strong> The upscaling networks are
+      trained at 2&times;, 3&times; and 4&times;, so anything larger has to be a chain of real
+      passes rather than one bigger number: 8&times; is a 4&times; pass followed by a 2&times;
+      pass, and 16&times; is 4&times; twice. Each pass gets the network built for it, which is why
+      8&times; is not simply 16&times; stopped early. On the same 160&times;120 crop, 4&times; takes
+      0.6 seconds, 8&times; takes 1.0, and 16&times; takes 1.5.</p>
+
+    <p class="ba-note">Side by side, 4&times;, 8&times; and 16&times; of the same crop look nearly
+      identical, so there is no panel of them here. The extra passes buy pixel dimensions, not
+      visibly more detail. 16&times; is for when you need the size, and past 8&times; the
+      picture stops changing much.</p>
+
+    <p class="ba-note"><strong>These are for small sources, and Crisp will tell you so.</strong>
+      The big multipliers exist for the footage that needs them: tape captures, old camcorder
+      files, 480p archive scans. A 640&times;480 clip at 16&times; is a 10240&times;7680 file and
+      encodes fine. A 1080p clip at 8&times; would be 15360&times;8640, which is past what the Mac
+      video encoder will write at all, so Crisp greys those out against the clip you
+      actually loaded and shows the finished size next to the picker, rather than letting you find
+      out after the render.</p>
 
 
 

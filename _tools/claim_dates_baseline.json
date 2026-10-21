@@ -1691,7 +1691,7 @@
      "Real-ESRGAN"
     ],
     "kind": "FEATURE",
-    "text": "Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is Real-ESRGAN (ncnn/Vulkan), running 2×–4× on-device."
+    "text": "Being concrete about the enhancement side, since it's the fair comparison to Topaz: Crisp's standard upscaler is Real-ESRGAN (ncnn/Vulkan), running 2×–16× on-device, with the large steps reserved for small sources."
    },
    {
     "vendors": [
