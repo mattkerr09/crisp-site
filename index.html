@@ -266,6 +266,10 @@ p em, li em{color:#c3cad6;}
    62px headline in a 1.06fr column can push the grid wider than the page between 861px and about
    1000px, where the two columns are live but narrow. min-width:0 lets it wrap instead. */
 .hero-head{min-width:0;}
+/* The one line under the H1 (FUTURE-VIBE-BRIEF, 2026-10-21): the feeling, not a second headline. Ice, not white, so the H1 stays
+   the loudest thing on the screen; balanced so it never ends on one word. */
+.hero-future{font-family:var(--head);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.4;color:var(--ice);
+  margin:1rem 0 0;max-width:36ch;text-wrap:balance;}
 .hero-say{padding-bottom:.35rem;min-width:0;}
 .hero-say .lede{max-width:46ch;margin:0 0 1.6rem;}
 .hero-top .cta{justify-content:flex-start;}
@@ -276,6 +280,7 @@ p em, li em{color:#c3cad6;}
   .hero-top{grid-template-columns:1fr;text-align:center;gap:0;}
   .hero-say .lede{max-width:58ch;margin:1.3rem auto 2rem;}
   .hero-top .cta{justify-content:center;}
+  .hero-future{margin:1rem auto 0;}
 }
 .hero .lede{max-width:58ch;margin:1.3rem auto 2rem;}
 /* each bold price in the lede is "$129 once · or 4 × $32.25" / "$64.50 · or 4 × $16.13" — one unit, which
@@ -913,6 +918,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       Notarized by Apple
     </div>
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your Mac.</span></h1>
+    <!-- Under the H1, never replacing it (FUTURE-VIBE-BRIEF, 2026-10-21). Only what is true today: Crisp works on video FILES (so
+         "videos", not "tapes", which need a transfer first), on the Mac at your desk, and the video is never uploaded (the "Nothing
+         uploaded" tick below says the same). "Sharp enough for the TV you'll own in 2036" was the brief's example and is left out:
+         nobody can measure it. -->
+    <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk, with nothing uploaded.</p>
       </div>
       <div class="hero-say">
     <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, with a small mark; Pro <strong>$129 once<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></strong><span data-founding-copy>, <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for founding buyers</span>.</p>
