@@ -1,7 +1,7 @@
 {
   "version": "1.0.1580",
   "notes": "Crisp now opens on macOS 14 Sonoma and macOS 15 Sequoia, not only macOS 26, on any Apple Silicon Mac. On macOS 14 it upscales with a different engine, so an upscale takes about 1.5 times as long there; on macOS 15 or later it runs at full speed.",
-  "pub_date": "2026-10-21T10:45:15Z",
+  "pub_date": "2026-10-21T10:55:40Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhOVXJTQVBzZHNIbDBJZUh1RG5vVFFJK25WT2VFQktKZ21XeHBnZ2RtYU9LWDlTRlBrYks5SGhqMHRMWmhNZ0YyVXhvYVZ4TE8xeWlONVBTakhSY2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTc4MzA3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4SUVVend3Z3ZxNjdQVDNBMGdXTm13Lzd2TkEvc21NSmhNUnN0amZZM3p4T0xXQzBMa01UUzVNeHVQM2M1d2RiZldSY2hmOE5jQ3dVQjJTMGhXZGVEUT09Cg==",
