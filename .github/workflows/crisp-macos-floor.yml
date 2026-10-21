@@ -1,0 +1,128 @@
+# The customer path on the oldest macOS we declare, on real Apple Silicon: download the PUBLIC release DMG, install
+# it the way a buyer does, start its engine, GET /health, one free export (trim + compress) and one ncnn upscale.
+#
+# WHY A RUNNER. The build box runs macOS 26, and a machine cannot detect a floor it is standing on: every suite and
+# every read-back this product has had ran above the hidden floor that kept 1.0.1252..1.0.1540 off older Macs.
+# GitHub's arm64 macOS runners are macos-14 and macos-15 (macos-13 is Intel, and Crisp is Apple Silicon only), so 14
+# is the lowest floor the real customer path can be PROVEN on. That is the requirement line's "tested on 14".
+#
+# ⚠️ WHAT A RUNNER CANNOT SAY. It is a VM: no real GPU, so no speed figure from here means anything (the per-macOS
+# speed line is measured on a real Mac), and ncnn may find no Vulkan device at all. scripts/ci_customer_path.py
+# classifies that as "gpu" and reports the upscale NOT PROVEN on the runner, instead of either failing Crisp or
+# passing it. A missing VideoToolbox encoder is retried once on libx264 and reported as such.
+#
+# ⚠️ IT TESTS WHAT CUSTOMERS DOWNLOAD, NOT THIS CHECKOUT: the DMG comes from the public release URL the site's
+# Download button uses, and the build it contains must be the one the live updater manifest names. The repo is
+# checked out only for the driver script and the floor gate.
+#
+# Manual only (workflow_dispatch). It lives in this PUBLIC repo (macOS runners are free here; the app repo is private and
+# bills them at 10x). The scripts under .github/ci/crisp-floor/ are copies of the app repo's, in its layout, and its
+# tauri.conf.json is the declared floor at the build being tested.
+name: crisp-macos-floor
+
+on:
+  workflow_dispatch:
+    inputs:
+      dmg_url:
+        description: "The DMG to test (default: the live Download button's)"
+        required: false
+        default: "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg"
+      expect_build:
+        description: "The build the DMG must hold, e.g. 1.0.1570 (default: the live updater manifest's)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  customer-path:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    env:
+      DMG_URL: ${{ inputs.dmg_url }}
+      EXPECT_BUILD: ${{ inputs.expect_build }}
+      MANIFEST_URL: https://crispvideo.app/updater.json
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: What this runner actually is
+        run: |
+          set -euo pipefail
+          # (the runner context is not available in job-level env, so the evidence dir is set here)
+          echo "OUT=$RUNNER_TEMP/customer-path" >> "$GITHUB_ENV"
+          echo "macOS         : $(sw_vers -productVersion) ($(sw_vers -buildVersion))"
+          echo "uname -m      : $(uname -m)"
+          echo "cpu           : $(sysctl -n machdep.cpu.brand_string 2>/dev/null || echo '(not reported)')"
+          echo "memory        : $(( $(sysctl -n hw.memsize) / 1073741824 )) GB"
+          test "$(uname -m)" = "arm64" || { echo "::error::not Apple Silicon: Crisp is arm64 only, this run proves nothing"; exit 1; }
+
+      - name: Download the public release DMG, with provenance
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT"
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/Crisp.dmg" "$DMG_URL"
+          echo "PROVENANCE  url=$DMG_URL"
+          echo "PROVENANCE  sha256=$(shasum -a 256 "$RUNNER_TEMP/Crisp.dmg" | cut -d' ' -f1)  bytes=$(stat -f%z "$RUNNER_TEMP/Crisp.dmg")"
+          if [ -n "$EXPECT_BUILD" ]; then
+            LIVE="$EXPECT_BUILD"; echo "expected build (a candidate, not yet live): $LIVE"
+          else
+            LIVE=$(curl -fsSL --retry 3 "$MANIFEST_URL" | python3 -c 'import sys,json;print(json.load(sys.stdin)["version"])')
+            echo "live manifest version: $LIVE"
+          fi
+          echo "LIVE=$LIVE" >> "$GITHUB_ENV"
+
+      - name: Install it the way a buyer does (mount, copy to /Applications)
+        run: |
+          set -euo pipefail
+          MNT="$RUNNER_TEMP/crisp-dmg"
+          mkdir -p "$MNT"
+          hdiutil attach -nobrowse -readonly -mountpoint "$MNT" "$RUNNER_TEMP/Crisp.dmg"
+          test -d "$MNT/Crisp.app" || { echo "::error::no Crisp.app in the DMG"; ls -la "$MNT"; exit 1; }
+          rm -rf /Applications/Crisp.app
+          cp -R "$MNT/Crisp.app" /Applications/
+          hdiutil detach "$MNT" -quiet
+          BUILT=$(defaults read /Applications/Crisp.app/Contents/Info.plist CFBundleVersion)
+          echo "installed build: $BUILT · LSMinimumSystemVersion $(defaults read /Applications/Crisp.app/Contents/Info.plist LSMinimumSystemVersion)"
+          test "$BUILT" = "$LIVE" || { echo "::error::the DMG holds $BUILT but the live manifest names $LIVE"; exit 1; }
+          # Gatekeeper's verdict on the bundle a browser download would be checked against (signature + notarization)
+          spctl --assess --type execute -vv /Applications/Crisp.app 2>&1 | tee "$OUT/gatekeeper.txt"
+
+      - name: The floor the bundle declares, and the floor its binaries need
+        id: floor
+        continue-on-error: true      # recorded, and enforced in the verdict below, so the engine run still shows HOW it fails
+        run: |
+          set -euo pipefail
+          bash .github/ci/crisp-floor/scripts/macos_floor.sh --full /Applications/Crisp.app | tee "$OUT/highest-minos.txt"
+          python3 .github/ci/crisp-floor/scripts/check_macos_floor.py /Applications/Crisp.app 2>&1 | tee "$OUT/floor-gate.txt"
+
+      - name: Engine, /health, a free export (trim + compress), an ncnn upscale
+        id: path
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          python3 .github/ci/crisp-floor/scripts/ci_customer_path.py --app /Applications/Crisp.app --out "$OUT" --port 8841 --expect-build "$LIVE"
+
+      - name: Keep the evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: customer-path-${{ matrix.os }}
+          path: |
+            ${{ runner.temp }}/customer-path/*.json
+            ${{ runner.temp }}/customer-path/*.txt
+            ${{ runner.temp }}/customer-path/engine.log
+            ${{ runner.temp }}/customer-path/work/*.mp4
+          if-no-files-found: warn
+
+      - name: Verdict
+        if: always()
+        run: |
+          echo "macOS $(sw_vers -productVersion): floor gate ${{ steps.floor.outcome }}, customer path ${{ steps.path.outcome }}"
+          test -f "$OUT/summary.json" && python3 -c 'import json,sys;[print(("PASS " if c["ok"] else "FAIL ")+c["name"]+("" if c["ok"] else "  ["+c["why"]+"] "+c["detail"][:300])) for c in json.load(open(sys.argv[1]))["checks"]]' "$OUT/summary.json" || true
+          test "${{ steps.floor.outcome }}" = "success" || { echo "::error::the bundle needs a newer macOS than it declares (floor-gate.txt)"; exit 1; }
+          test "${{ steps.path.outcome }}" = "success" || { echo "::error::the customer path failed on this macOS (summary.json, engine.log)"; exit 1; }
