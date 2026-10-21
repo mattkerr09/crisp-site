@@ -11,9 +11,12 @@ This gate is the third: a push is refused when
   * the offer has ended (now >= data-ends, or the places are used) and any page's VISIBLE text still carries the
     founding price, the code or a founding line (static HTML must be regenerated, not merely hidden by script).
 
-Dodo's own count lives in Dodo, not here: the places used and the limit are read from an ops file the CEO's Dodo reads
-keep current, ~/ops/launch/founding-crisp.json {"code": ..., "limit": 24, "used": N, "read": "<ISO date>"}. Missing, it
-is reported, not guessed: the date switch still holds.
+Dodo's count is read LIVE from the lead-agent worker, which reads Dodo (CEO, 2026-10-21):
+  GET https://kerr-lead-agent.kerrco.workers.dev/founding?site=crispvideo.app  (Origin: https://crispvideo.app)
+  -> {"code", "left", "of"/"total", "claimed", "soldOut", "expired", "endsAt"}
+The site's data-first must equal the worker's total (the CAP: "the first 25 buyers"; the 24 Dodo shows is the places
+LEFT, since one was claimed), data-ends must equal endsAt, and soldOut or expired means no founding copy may ship. Only if
+the worker is unreachable does it fall back to ~/ops/launch/founding-crisp.json, and it says so.
 
     python3 _tools/gate_founding.py                 # exit 1 on a problem
     python3 _tools/gate_founding.py --today 2026-11-26
@@ -29,10 +32,38 @@ import os
 import re
 import sys
 import tempfile
+import urllib.request
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
 STATE = Path(os.path.expanduser("~/ops/launch/founding-crisp.json"))
+WORKER = "https://kerr-lead-agent.kerrco.workers.dev/founding?site=crispvideo.app"
+
+
+def live_count() -> tuple[dict | None, str]:
+    """The live founding count from the worker, normalised; (None, why) when it cannot be read."""
+    try:
+        req = urllib.request.Request(WORKER, headers={"Origin": "https://crispvideo.app", "User-Agent": "crisp-site-gate"})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            d = json.load(r)
+        total = d.get("total", d.get("of"))
+        if total is None or d.get("endsAt") is None:
+            return None, f"the worker answered without total/endsAt: {str(d)[:120]}"
+        return {"source": "worker", "total": int(total), "left": d.get("left"), "sold_out": bool(d.get("soldOut")),
+                "expired": bool(d.get("expired")), "ends": d.get("endsAt"), "code": d.get("code")}, ""
+    except Exception as e:  # noqa: BLE001 — unreachable is a reported fallback, never a silent pass
+        return None, f"{type(e).__name__}: {str(e)[:120]}"
+
+
+def json_count() -> dict | None:
+    if not STATE.exists():
+        return None
+    j = json.loads(STATE.read_text())
+    used, limit = j.get("used"), j.get("limit")
+    return {"source": f"{STATE} (read {j.get('read', '?')})", "total": limit,
+            "left": (limit - used) if isinstance(limit, int) and isinstance(used, int) else None,
+            "sold_out": isinstance(limit, int) and isinstance(used, int) and used >= limit,
+            "expired": False, "ends": j.get("ends"), "code": j.get("code")}
 _DROP = re.compile(r"<!--.*?-->|<script.*?</script>|<style.*?</style>|<head.*?</head>", re.S | re.I)
 
 
@@ -66,14 +97,19 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
         return bad, notes
     used_up = False
     if state:
-        if str(state.get("limit")) != str(first):
-            bad.append(f"the site says the first {first} buyers, Dodo's limit is {state.get('limit')} "
-                       f"(read {state.get('read', '?')})")
-        if state.get("used") is not None and state.get("limit") is not None and int(state["used"]) >= int(state["limit"]):
+        src = state.get("source", "?")
+        if state.get("total") is not None and str(state["total"]) != str(first):
+            bad.append(f"the site says the first {first} buyers, the live cap is {state['total']} ({src})")
+        if state.get("ends") and state["ends"] != ends:
+            bad.append(f"the site's data-ends is {ends}, the code ends {state['ends']} ({src})")
+        if state.get("code") and code and state["code"] != code:
+            bad.append(f"the site offers {code}, the live code is {state['code']} ({src})")
+        if state.get("sold_out") or state.get("expired"):
             used_up = True
-            notes.append(f"Dodo: {state['used']} of {state['limit']} founding places used (read {state.get('read', '?')})")
+        notes.append(f"live count from {src}: {state.get('left')} of {state.get('total')} left"
+                     + (", SOLD OUT" if state.get("sold_out") else "") + (", EXPIRED" if state.get("expired") else ""))
     else:
-        notes.append(f"no {STATE} (Dodo's used/limit count): only the date switch is checked")
+        notes.append("no live count (worker unreachable and no ops JSON): only the date switch is checked")
     ended = now >= end
     if not (ended or used_up):
         days = (end - now).total_seconds() / 86400
@@ -98,10 +134,12 @@ def selftest() -> bool:
                       'data-ends="2026-11-25T01:26:00Z"></div>')
         (site / "index.html").write_text(f"<html><body>{mount_html}<p>Founding price $64.50 for the first 24 buyers.</p>"
                                          "<!-- Founding price in a comment does not count --></body></html>")
-        before = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {"limit": 24, "used": 3})[0]
-        after = problems(site, dt.datetime(2026, 11, 26, tzinfo=dt.timezone.utc), {"limit": 24, "used": 3})[0]
-        sold = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {"limit": 24, "used": 24})[0]
-        wrong = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {"limit": 25, "used": 0})[0]
+        live = {"source": "test", "total": 24, "left": 21, "sold_out": False, "expired": False,
+                "ends": "2026-11-25T01:26:00Z", "code": "CODEX"}
+        before = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), live)[0]
+        after = problems(site, dt.datetime(2026, 11, 26, tzinfo=dt.timezone.utc), live)[0]
+        sold = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {**live, "left": 0, "sold_out": True})[0]
+        wrong = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {**live, "total": 25})[0]
         no_end_mount = mount_html.replace(' data-ends="2026-11-25T01:26:00Z"', "")
         (site / "index.html").write_text("<html><body>" + no_end_mount + "</body></html>")
         no_end = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), None)[0]
@@ -124,7 +162,11 @@ def main(argv: list[str]) -> int:
         now = dt.datetime.fromisoformat(a.today if "T" in a.today else a.today + "T00:00:00+00:00")
         if now.tzinfo is None:
             now = now.replace(tzinfo=dt.timezone.utc)
-    state = json.loads(STATE.read_text()) if STATE.exists() else None
+    state, why = live_count()
+    if state is None:
+        state = json_count()
+        print(f"  note  the live count could not be read ({why}); FALLING BACK to "
+              + (state["source"] if state else "no count at all"))
     bad, notes = problems(SITE, now, state)
     for n in notes:
         print(f"  note  {n}")
