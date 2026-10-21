@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1592",
-  "notes": "On old tape and SD footage Crisp now uses its detail model by default; the fast model could draw letter-like marks on heavy grain. It takes about 1.7 times as long, so if you want speed, ask for \u201cthe fast model\u201d.",
-  "pub_date": "2026-10-21T15:02:13Z",
+  "version": "1.0.1596",
+  "notes": "The audio Format menu is now in the editor's Save as row (it was only reachable by typing before).",
+  "pub_date": "2026-10-21T17:28:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQrWkdKVmNFNVN6UG0zZHJTOVp2UVZaNHhpaHZDUy8wQkN5bjR1b3k3bTA5NkFXNE1XZ0lZUUl4Q3hrTkRwWnVCbzZKN1dvTTZ0dmtvUUNHeWc5eUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTk0NTYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVSWR4VkVFRzc2TjQxc2NzUkovSnhBZ09kUUozYStaWVNGemsyWkV5ZWVQQUxKSWFjdWFzcWF5akJMeDNXMG1FUjRCUmVPTjF2UExvVkdGaVFSRTBDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1592.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVMaTVMeHZnU0haUFVBNmJMUHdKRStwejNwVGZCcE5iOW92dFZtSnpNTzZkQnBqczFwRXRBYjhXYndBMnNTVTNiWkxGWXVOSmI2bnlaN0xCcWVUVlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjAzMjgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego4ejN3RXRYVENXVm9DZjlha2xMMy9kbUxTQTFjRGV3dHh6bVZVMzBzMXdEN1AyTWJvSjArQ2h4ajZDYWpSejFQU0NVMmhzN0NTWGdlbjJ2TXI4R2dCUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1596.app.tar.gz"
     }
   }
 }
