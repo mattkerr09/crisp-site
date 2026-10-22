@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1608",
-  "notes": "A video you drop into an empty project now goes straight onto the timeline, ready to edit or to type to (it used to wait in Media). Rotate, Reframe and Black bars no longer appear for a photo, where they could only fail.",
-  "pub_date": "2026-10-22T01:47:38Z",
+  "version": "1.0.1610",
+  "notes": "Your first enhance now opens Before / After on your own footage, and every finished tool says which file it saved and where. Export is one click away from anywhere (Export\u2026 in the top bar). The first screen's text is easier to read in light mode.",
+  "pub_date": "2026-10-22T03:56:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUliY0VvQjJGVTdtbE5Od0cvbUlpcGZoRU51Y0JuUXBhNXVKQytiTWYwVEVmbkRkUGx5L3JzNisxVnJpeHNYc05OcktKYkVlTFhYeHBuU1ZFZmwvaGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjMzMDYxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpaZGpMUzdUbm5tUVIweUkwN2VhWWR4UWlZYzRPWXdXYXE0WHgvSVNWcHFPakdVQTBkaG4yVXdnOXBrUVdoZ1RDYVNCTWM2YWFndFowVGwvcW1HOE1BZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1608.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURMSkR5VXc1NVZ2NzdZdGNDditHUGpQZ3cyc29Eb2pES1VBU1VtY2hBSHo2QTl2ajMvMno5SWJaT3YxME9vbit5YWxwdFNBaDBkelQzSFdTVnBDbWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQwNzkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negovcDNieUZVU2hjN2ZWZ3p4YVBhQnRHK1lReko2UkxoSEVqYng5a1czY3dCaTFYbXNzVjBuVHhtSW1CVURWQ05XWGV3SjZKSFZxNG94K2ZmaG1kT01Edz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1610.app.tar.gz"
     }
   }
 }
