@@ -97,7 +97,7 @@
   the retime second, which is the order the sentence "take this piece, then slow it down" implies.
   See <a href="https://crispvideo.app/how-to/trim-video-mac/">trimming a video</a> for that side of it.</p>
 
-  <h2>The pass that does add frames is a different lane</h2>
+  <h2>The pass that does add frames is a different job</h2>
   <p>Crisp can invent in-between frames. That is <strong>Smooth motion</strong>, in the Enhance
   lane, and it runs RIFE (model <code>rife-v4.6</code>) over the frames. The important part, and
   the part that surprises people: <strong>Smooth motion does not slow anything down.</strong> It
@@ -107,13 +107,13 @@
   <p>So smooth slow motion is two passes, in this order:</p>
   <ol class="steps">
     <li>
-      <h3>Enhance, with Smooth motion on</h3>
-      <p>Pick 2× fps (30→60) or 3× fps. RIFE generates the in-between frames. Duration does not
+      <h3>Ask for smooth motion</h3>
+      <p>Type “make it 60 fps” (2×, 30→60) or “triple the frame rate” (3×) and press <strong>Do it</strong>. RIFE generates the in-between frames. Duration does not
       change. Background reading: <a href="https://crispvideo.app/learn/what-is-frame-interpolation/">what frame interpolation actually does</a>.</p>
     </li>
     <li>
-      <h3>Then the Speed lane, on the result</h3>
-      <p>Slowing a 60fps file to 0.5× lands on 30fps. The rate you started with, but over twice
+      <h3>Then slow the result down</h3>
+      <p>Type “slow it down to 0.5x”, or set Speed to 0.5× under This clip and export. Slowing a 60fps file to 0.5× lands on 30fps. The rate you started with, but over twice
       the time, with every frame distinct instead of held.</p>
     </li>
   </ol>

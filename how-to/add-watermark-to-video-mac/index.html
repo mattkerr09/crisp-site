@@ -22,21 +22,13 @@
 <meta name="twitter:description" content="Add a logo watermark to a video on your Mac: offline, any corner, audio kept, no upload of its own.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","datePublished": "2026-07-06", "dateModified":"2026-10-21", "@type":"HowTo","name":"How to add a watermark to a video on a Mac","description":"Add a logo watermark to a video on a Mac, 100% offline: drop in your clip, select the clip and use <strong>Logo</strong> in the Tools panel, choose your logo image, set a corner and size, and Crisp burns it in on-device with the audio kept. No account, no upload of its own.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Crisp for Mac"}],"step":[
-{"@type":"HowToStep","position":1,"name":"Open Crisp and drop in your video","text":"Download the free Crisp app for Mac, open it, and drag your video onto the window. Everything runs on-device — nothing is uploaded."},
-{"@type":"HowToStep","position":2,"name":"Open the Logo tool","text":"In Crisp, select the clip on your timeline and use <strong>Logo</strong> in the Tools panel. Or just type “<strong>add my logo as a watermark</strong>” in the prompt bar — Crisp maps plain English to the same tool. It's for video clips."},
-{"@type":"HowToStep","position":3,"name":"Choose your logo image","text":"Click Choose an image and pick your logo. A PNG with transparency looks best, so only the mark shows and not a box around it."},
-{"@type":"HowToStep","position":4,"name":"Set the corner and size","text":"Pick a position (any corner, an edge, or centre) and a size from 5 to 40 percent of the video width. The logo is scaled to that size on every clip regardless of the file's own resolution."},
-{"@type":"HowToStep","position":5,"name":"Press Watermark","text":"Crisp burns the logo into the video on-device with hardware encoding, keeps the audio untouched, and saves the result beside your original."}
-]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "datePublished": "2026-07-06", "dateModified": "2026-10-21", "@type": "HowTo", "name": "How to add a watermark to a video on a Mac", "description": "Add a logo watermark to a video on a Mac, 100% offline: drop in your clip, select the clip and use <strong>Logo</strong> in the Tools panel, choose your logo image, set a corner and size, and Crisp burns it in on-device with the audio kept. No account, no upload of its own.", "totalTime": "PT1M", "tool": [{"@type": "HowToTool", "name": "Crisp for Mac"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Open Crisp and drop in your video", "text": "Download the free Crisp app for Mac, open it, and drag your video onto the window. Everything runs on-device — nothing is uploaded."}, {"@type": "HowToStep", "position": 2, "name": "Open the Logo tool", "text": "In Crisp, select the clip on your timeline and find Logo in the Tools panel. It's for video clips."}, {"@type": "HowToStep", "position": 3, "name": "Choose your logo image", "text": "Click Choose image… and pick your logo. A PNG with transparency looks best, so only the mark shows and not a box around it."}, {"@type": "HowToStep", "position": 4, "name": "Set the position", "text": "Pick a position: bottom right, bottom left, top right, top left or centre. The logo is sized at 18% of the video width on every clip, whatever the file's own resolution."}, {"@type": "HowToStep", "position": 5, "name": "Press Apply", "text": "Crisp burns the logo into the video on-device with hardware encoding, keeps the audio untouched, puts the result on your timeline and saves it beside your original."}]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How do I add a watermark to a video on a Mac for free?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp: drop your clip in, select the clip and use Logo in the Tools panel (or type \"add my logo\"), choose your logo image, set a corner and size, and press Watermark. It burns the logo in and keeps the audio, entirely on your Mac, with no account, no upload."}},
+{"@type":"Question","name":"How do I add a watermark to a video on a Mac for free?","acceptedAnswer":{"@type":"Answer","text":"Use Crisp: drop your clip in, select the clip, use Logo in the Tools panel, choose your logo image and a corner, and press Apply. It burns the logo in and keeps the audio, entirely on your Mac, with no account, no upload."}},
 {"@type":"Question","name":"Can I choose where the watermark goes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bottom right, bottom left, top right, top left or centre, at 18% of the video width. Placement uses the real rotation-aware frame, so a portrait phone clip never gets a logo wider than the picture."}},
 {"@type":"Question","name":"Will the logo keep its transparency?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisp respects a PNG's alpha channel, so only the mark is drawn: no opaque box behind it. Export your logo as a transparent PNG for the cleanest look."}},
-{"@type":"Question","name":"Can I add a text watermark instead of a logo?","acceptedAnswer":{"@type":"Answer","text":"For text (a name, handle, or © line) use the Captions lane, which burns in styled text you can place and time. The Watermark lane is for a logo image."}},
+{"@type":"Question","name":"Can I add a text watermark instead of a logo?","acceptedAnswer":{"@type":"Answer","text":"For text (a name, handle, or © line) use the Caption tool, which burns in styled text you can place and time. The Logo tool is for a logo image."}},
 {"@type":"Question","name":"Does watermarking re-compress the video?","acceptedAnswer":{"@type":"Answer","text":"It re-encodes the picture, but Crisp hardware-encodes at high quality on Apple Silicon and writes the file locally and atomically, so the loss is negligible and you can check the result immediately."}}
 ]}
 </script>
@@ -57,36 +49,36 @@
   <div class="updated">Crisp · built in Grand Rapids · published 2026-07-06 · last updated 2026-10-21</div>
 
   <h2>The fastest way: just ask</h2>
-  <p>Crisp has a plain-English box ("Or just tell Crisp what to do…"). Drop your video in and type what you want:</p>
+  <p>Crisp has a plain-English box above the preview (“Tell Crisp what to do with the selected clip…”). Drop your video in and type what you want:</p>
   <ul>
-    <li><strong>add my logo</strong>: opens the Watermark lane, top-right by default</li>
+    <li><strong>add my logo</strong>: top-right by default</li>
     <li><strong>add a watermark</strong>: same thing, in words</li>
-    <li><strong>watermark this</strong>: ready for you to pick the logo</li>
+    <li><strong>watermark this</strong>: the same, in two words</li>
     <li><strong>put my logo in the corner</strong>, corner placement</li>
   </ul>
-  <p>Crisp reads the request, switches to the Watermark lane and sets a sensible corner. You just choose your logo image and press the button.</p>
+  <p>Pick your logo once with <strong>Choose image…</strong> in the Logo tool. After that, press <strong>Do it</strong> and Crisp burns it into the clip on your timeline, in the corner you named (top right if you didn't). Ask before a logo is picked and Crisp says so and points you at that button.</p>
 
-  <h2>The manual way: the Watermark lane</h2>
+  <h2>The manual way: the Logo tool</h2>
   <ol class="steps">
     <li>
       <h3>Open Crisp and drop in your video</h3>
       <p>Get the free <a href="https://crispvideo.app/#download">Crisp app for Mac</a> and drag your clip onto the window. Nothing is uploaded: the whole job runs on your Mac.</p>
     </li>
     <li>
-      <h3>Ask for Watermark</h3>
-      <p>In Crisp, select the clip on your timeline and use <strong>Logo</strong> in the Tools panel. Or just type “<strong>add my logo as a watermark</strong>” in the prompt bar. Crisp maps plain English to the same tool.</p>
+      <h3>Open the Logo tool</h3>
+      <p>In Crisp, select the clip on your timeline and find <strong>Logo</strong> in the Tools panel.</p>
     </li>
     <li>
       <h3>Choose your logo image</h3>
-      <p>Click <strong>Choose an image…</strong> and pick your logo. <strong>A PNG with transparency looks best</strong>, so only the mark shows and there's no box around it.</p>
+      <p>Click <strong>Choose image…</strong> and pick your logo. <strong>A PNG with transparency looks best</strong>, so only the mark shows and there's no box around it.</p>
     </li>
     <li>
-      <h3>Set the position and size</h3>
-      <p>Pick a <strong>position</strong> (bottom right, bottom left, top right, top left or centre) and press <strong>Apply</strong>. Crisp sizes the logo at 18% of the video width on <em>every</em> clip regardless of the file's own resolution, so a 200 px logo and a 2000 px logo land identically.</p>
+      <h3>Set the position</h3>
+      <p>Pick a <strong>position</strong>: bottom right, bottom left, top right, top left or centre. Crisp sizes the logo at 18% of the video width on <em>every</em> clip regardless of the file's own resolution, so a 200 px logo and a 2000 px logo land identically.</p>
     </li>
     <li>
-      <h3>Press Watermark</h3>
-      <p>Crisp burns the logo in on-device with <strong>hardware encoding</strong>, keeps the <strong>audio untouched</strong>, and saves the result beside your original: one-time. Staged several clips? Crisp Pro watermarks each one in the same batch (batch is part of the one-time $129 Pro unlock; one file at a time is free).</p>
+      <h3>Press Apply</h3>
+      <p>Crisp burns the logo in on-device with <strong>hardware encoding</strong>, keeps the <strong>audio untouched</strong>, puts the result on your timeline and saves it beside your original. Several clips? Apply it to each one; the logo you picked stays picked.</p>
     </li>
   </ol>
 
@@ -112,7 +104,7 @@
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Crisp</th><th>iMovie</th><th>CapCut</th><th>Online watermarkers</th></tr></thead>
     <tbody>
-      <tr><td>Add a logo watermark</td><td class="yes">Yes. One lane</td><td class="no">Picture-in-picture hack</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+      <tr><td>Add a logo watermark</td><td class="yes">Yes. One tool</td><td class="no">Picture-in-picture hack</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
       <tr><td>Plain-English request</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
       <tr><td>Transparent PNG respected</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Varies</td></tr>
       <tr><td>Keeps the audio</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Varies</td></tr>
@@ -140,13 +132,13 @@
 
   <h2>Watermarks, in detail</h2>
   <h3>How do I add a watermark to a video on a Mac for free?</h3>
-  <p>Use Crisp: drop your clip in, select the clip and use <strong>Logo</strong> in the Tools panel (or type "add my logo"), choose your logo image, set a corner and size, and press Watermark. It burns the logo in and keeps the audio, entirely on your Mac, with no account, no upload.</p>
+  <p>Use Crisp: drop your clip in, select the clip, use <strong>Logo</strong> in the Tools panel, choose your logo image and a corner, and press Apply. It burns the logo in and keeps the audio, entirely on your Mac, with no account, no upload.</p>
   <h3>Can I choose where the watermark goes?</h3>
   <p>Yes. Bottom right, bottom left, top right, top left or centre, at 18% of the video width. Placement uses the real rotation-aware frame, so a portrait phone clip never gets a logo wider than the picture.</p>
   <h3>Will the logo keep its transparency?</h3>
   <p>Yes. Crisp respects a PNG's alpha channel, so only the mark is drawn: no opaque box behind it. Export your logo as a transparent PNG for the cleanest look.</p>
   <h3>Can I add a text watermark instead of a logo?</h3>
-  <p>For text (a name, handle, or © line) use the Captions lane, which burns in styled text you can place and time. The Watermark lane is for a logo image.</p>
+  <p>For text (a name, handle, or © line) use the Caption tool, which burns in styled text you can place and time. The Logo tool is for a logo image.</p>
   <h3>Does watermarking re-compress the video?</h3>
   <p>It re-encodes the picture, but Crisp hardware-encodes at high quality on Apple Silicon and writes the file locally and atomically, so the loss is negligible and you can check the result immediately.</p>
   <h3>Related guides</h3>
