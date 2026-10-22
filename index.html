@@ -1233,6 +1233,33 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       look like the left half, that is the gap Max is closing. But the honest version of
       this claim is that we chose the damage, and real damage is rarely so tidy.</p>
 
+    <div class="ba" id="ba5">
+      <video class="ba-after" width="1280" height="960" poster="/tape-poster.jpg"
+        data-src-1x="/tape-after.mp4" data-src-2x="/tape-after.mp4"
+        muted loop playsinline preload="none"
+        aria-label="After Crisp on Auto: the same tape with the comb lines gone from the moving rocks and the grain calmed, with no new detail."></video>
+      <video class="ba-before" width="1280" height="960"
+        data-src-1x="/tape-before.mp4" data-src-2x="/tape-before.mp4"
+        muted loop playsinline preload="none"
+        aria-label="A 640x480 interlaced tape at the same size: comb lines on every moving edge and coarse grain over the whole frame."></video>
+      <div class="ba-line"><span class="ba-grip"></span></div>
+      <span class="ba-tag ba-l">Tape</span><span class="ba-tag ba-r">Crisp Auto</span>
+      <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
+        aria-label="Reveal more of the tape or the restored frame">
+    </div>
+
+    <p class="ba-note"><strong>A typical tape, on the default.</strong> The clips above were picked
+      to show what Crisp can do. This one shows what most old tapes get: a heavily blurred
+      640&times;480 tape, interlaced, run through <strong>Auto</strong>, the default setting and the
+      one the free version uses, on Crisp 1.0.1613 (rendered as a Pro copy, so without the small
+      mark the free version adds; the picture is the same). Imagery: NASA/JPL. What changes is the
+      tape: the comb lines on every moving edge are gone, the grain is calmer and the edges hold
+      still. What does not change is the detail. The camera never recorded the texture of those
+      rocks and Crisp does not invent it, so the right half is a cleaner tape, not a sharper
+      photograph. The whole 20-second clip took about 45 seconds on a 64&nbsp;GB M1 Ultra, and on
+      a long clip Crisp shows you a few seconds of the result first, with the time the whole clip
+      will take on your Mac, before you commit to it.</p>
+
 <p class="ba-note"><strong>Past 4&times;, and who it is for.</strong> The upscaling networks are
       trained at 2&times;, 3&times; and 4&times;, so anything larger has to be a chain of real
       passes rather than one bigger number: 8&times; is a 4&times; pass followed by a 2&times;
