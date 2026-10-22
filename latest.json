@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1613",
-  "notes": "On a clip longer than 30 seconds, your first Enhance restores a 10-second stretch first and shows Before / After in seconds, then offers the whole clip with its time on this Mac. Before / After now always compares the same moment, and time estimates for Auto now learn from your renders.",
-  "pub_date": "2026-10-22T06:24:50Z",
+  "version": "1.0.1616",
+  "notes": "The first-look preview on a long clip is now 6 seconds, so Before / After is on screen sooner, and while it renders Crisp says how long is left. A new project opens on a short Start here (drop a video, Enhance, Export), with project settings one click away.",
+  "pub_date": "2026-10-22T09:43:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVZdDhFNm1vdFJkQWRmVUcxeGh1ZGd1RXRITFpwWStycTNPaC9PeThvK3dlSjE4TXNmQVJreGZaTVdBTzJ5d0w3RldJVWo1MkZFOWtEdkExK3VCUkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQ5ODg2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3bWxqWjRNSXNJWnNpUkZVT1VIeTZ3dk1vanA0bVduTURMN0dSZk1VL010cy9Jc29vVkFrSEtmeXcyb0g0Y3VRckNpYlNhVWkzcS9hSzhXS3Nyb3VEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1613.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ6ZXBPRUxjTkhsZHNIeGNuNFI1dkx0SXNXbXZIcnFuengwK2hmcXpCZWVzaEJMVU9sV2ExdG15YW9lTlpqUVJIejNEOVRxNG95dWREZ3RQeDB2ckFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjYxNzU1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmai9FbXhtaUxhTEU1QjZpczM4OTMrQmhNT1VYUWJvQ2xWdFBzZzllU3ZwanYzeXNLTjFlRnJraHBEbnJ1bkhjT2I1OExJbXNrUkg1NDA2aWpuQXhBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1616.app.tar.gz"
     }
   }
 }
