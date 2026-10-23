@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1620",
-  "notes": "Pro: put your logo on every clip in a project in one go, with Apply to every clip in the Logo tool or by typing \u201cwatermark all of these\u201d. The free version does one clip at a time.",
-  "pub_date": "2026-10-22T17:49:12Z",
+  "version": "1.0.1623",
+  "notes": "HD clips now show Before / After in a few seconds. The first Enhance restores one frame the same way as the video, so you can judge the result before you render the whole clip, and the time for the whole clip appears once Crisp has measured a second of it on your Mac. SD and interlaced tape still get the 6-second video preview.",
+  "pub_date": "2026-10-23T10:33:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxLUlIzdXp4ZXFFT0t4ek1RcUtWN0NlcS9mQ3JkNGIyYlR5ck5zK0kxMUp1Tk10VEdTL3JKdktJcjRBUlI4dWNiL0RDaEllZHZHL2FMYjh2RFdHd3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkwOTM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqQURvejJzUWtOZWpncUozVm5ZWjFBdDljdUZaRStSUGxKeHR6bUpXdUxTcHVnN056RUIwRkpBQzhHL0JjY2swTzFJNFB1UVNEWjV3Z01VZ3FzRE9DZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1620.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZ1eksyMlBnc0NLYTdDdHovQ3M5a2NqQ1FSckZ4bzRwNVpRM2FGNVhmL2w1UUhTM2xhQWNydmpvQTRnTlZHOGFOa0E4MWJ5cnUyWVQyRXROK1hvakFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMDczCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqRGpLcHlFdkJOSGtCcXdmM0pkQWtPVjJyVUdVYjY1NG05OTI1RFhuYWhnMlVqVEtYSVk5eEZJWU5UVml6Uyt1MjhXT3lENEMrT3o4RTBzWlUyZ0REdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1623.app.tar.gz"
     }
   }
 }
