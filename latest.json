@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1627",
-  "notes": "On the free version, pressing Stop and starting the next file now just works, instead of asking you to upgrade. The same goes for starting a job while Crisp is still timing an HD clip's preview.",
-  "pub_date": "2026-10-23T17:33:24Z",
+  "version": "1.0.1630",
+  "notes": "Old tapes and camcorder files enhance properly in every format: .mpg, .vob, .mod, .ts, .m2ts and MiniDV .dv are straightened when they are interlaced, trims and previews of them no longer fail, and MiniDV files no longer ask for impossible amounts of disk space. Dark HD clips show the short video preview, so the preview is lit the way your finished video will be.",
+  "pub_date": "2026-10-24T14:12:19Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBPSE1yL3JiSVRHaE8zMGtIS0lTdTI5cEd2MGcyMWRZM0xXWjJGVSsyd0ZCVjNjZklTcTVhc2dRVVNaZkxLZWZ1czRCaWlNYWxxQlc4UVArWGdqWVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzc2MjcxCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego1TW56WXlac3VHNzFzcGpmYW5qL2d2YWZPclBJWVp2cmxEZlRrcE9DVHhzZ0tlL01lMGFYZHFnUnVuQmlFdENBekI0ZU5VYnU1Y3JZVFpIVmhWSjZDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1627.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU00NEpseE50SHhmbEU1ZjMremNKcThnaGJENndlNm1kWURpbEtESVA3SmlHY3dZWGt5WEpMMVZvc21iZ3VyZ25NSmJiZmhyYWpFRnROd002eEtUVHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyODUwNzEwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQdTJ0OUg1WW1VWFRQUitnc243blFHSTBrS3d1WThGNFh0SkxlUVQzNHM3OEdwVHJ6L3hybFh2d05wYWYwTGtGMDZwUlB3NW5TeDhRR3ZMZHJmemdDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1630.app.tar.gz"
     }
   }
 }
