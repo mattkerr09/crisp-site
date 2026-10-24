@@ -304,9 +304,12 @@ p em, li em{color:#c3cad6;}
      21   tasks the server dispatches (audio border compress convert crop fade frame gif grade
           loop montage overlay reframe reverse rotate speed splitscreen stabilize timeline trim
           upscale)
-     16   input formats — 8 video + 8 image DISTINCT FORMATS, from 19 extensions in the
-            open dialog's filter (app.js: the 'Video & Photo' extensions list). mpg/mpeg are one
-            format, as are jpg/jpeg and tif/tiff, which is why 19 extensions is 16 formats.
+     28   input formats — 20 video + 8 image DISTINCT FORMATS, from 33 extensions in the
+            open dialog's filter (app.js: VIDEO_EXTS + IMAGE_EXTS, which the import uses too). mpg/mpeg
+            are one format, as are jpg/jpeg, tif/tiff, mts/m2ts and dv/dif, which is why 33 extensions
+            is 28 formats. Was 16 until 2026-10-24, when the editor began taking tape and camcorder
+            files (.vob .vro .mod .tod .mts .m2t .dv .dif .mpeg4), each one rendered by the engine
+            (tests/test_the_first_enhance_works_in_every_tape_container.py).
             ⚠️ THE OLD BREAKDOWN HERE SAID "9 video (_VIDEO_EXTS) + 7 image (IMAGE_EXTS)". It
             still summed to 16 and the headline number was never wrong, but the COMPONENTS had
             gone stale: IMAGE_EXTS gained heic, heif and avif, so it is 10 extensions now, not 7.
@@ -1045,7 +1048,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <section class="caps" aria-label="What Crisp handles">
     <div class="caps-in">
       <div><div class="cap-n">21</div><p class="cap-l">tools, one window: restore, edit,<br>montage, convert</p></div>
-      <div><div class="cap-n">16</div><p class="cap-l">video &amp; photo formats in,<br>ProRes / H.265 / AV1 out</p></div>
+      <div><div class="cap-n">28</div><p class="cap-l">video &amp; photo formats in,<br>ProRes / H.265 / AV1 out</p></div>
       <div><div class="cap-n">16&times;</div><p class="cap-l">upscale, and a generative<br>restore lane past that</p></div>
       <div><div class="cap-n">0</div><p class="cap-l">bytes uploaded. Every frame<br>stays on your Mac</p></div>
     </div>
