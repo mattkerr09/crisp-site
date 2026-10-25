@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1636",
-  "notes": "Tapes that open on black, a blue screen or a title card are now straightened properly. Crisp used to look only at the first two seconds to decide whether a video was interlaced, so a tape with a dark opening kept its comb lines all the way through. It now checks the whole clip.",
-  "pub_date": "2026-10-25T03:35:29Z",
+  "version": "1.0.1639",
+  "notes": "Previews and trims of long interlaced tapes start much sooner. Crisp used to straighten the whole tape before rendering even a short preview or a trimmed section; now it straightens only the part it is rendering. On a 10-minute tape a one-second render went from about 20 seconds to about 6.",
+  "pub_date": "2026-10-25T10:56:25Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU0wcXFqaFJNT1V1T3A2cEZvTEN1SzM4NmR2c1kvSlk5MHZxUjN2MERrMERNeVh2Tzh5TTVBQUlNTnJIS0JnYWZSYmhwZGpaWmVuVThHcmNaY3pQMndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyODk4NTgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5NnVqUGlaS1c5ZVFKeVlGV2xibG9KQm1WbEdGdWk0T01hMXlSK3ROMjlxeDRoRGlyMkJ1cGEzTFFCRlJPaTJtT0REQWNtN01xTjA4ampYQmJkWVpEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1636.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUrSmRMQ1pTTmdNS21lQmkwMGVHYWdKWnVrdm1mZi95TlM4VklrSVA4Ky9zTXFpQ29ySFU2aisvLzdBVWd6ejVpbG4yYXdLY3dqdlZ4bXp1Vm9oVXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTI1NDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqR2dSMmgzUlF1OFkwSWlGa1FtT1FjWGQwT1RSdGNidWpuU3hSNS9pb01nLy9oaGtEZTFSZ3VYVzVNMGx0a2czUGpwQzBOMzVnb1lMSS9nU2dlMGlDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1639.app.tar.gz"
     }
   }
 }
