@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1634",
-  "notes": "Old tapes now show Before / After in a few seconds too. The first Enhance on SD and interlaced footage restores one frame the same way as the video, straightening interlaced lines first, and the time for the whole clip appears once Crisp has measured a second of it on your Mac. You can also drop DVD .vob, camcorder .mod, .tod and AVCHD .mts, and MiniDV .dv files straight into the editor. HD previews are back to about three seconds.",
-  "pub_date": "2026-10-24T21:04:28Z",
+  "version": "1.0.1636",
+  "notes": "Tapes that open on black, a blue screen or a title card are now straightened properly. Crisp used to look only at the first two seconds to decide whether a video was interlaced, so a tape with a dark opening kept its comb lines all the way through. It now checks the whole clip.",
+  "pub_date": "2026-10-25T03:35:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtlSWlNMUVKMzZnZ2g2ZXQ2N3hxY1ZENWFWQWRHYU4ydEVHTUF3eFZHTk9ZMXRvV0hwWktDTWJVVURiOHIrZUhkNUdrb2Q0SHgxQWF1Q1dVL2x3WXdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyODc1MzAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpURmFTWlJmbTBmZ1pWN3QxTDliQk9pWEdGanFkcHhtTlFnM3hsZGtsKzdqZHhubXAybVBYQVZCU3ExNXFpemlFRXlSTlFyNm1kcGhsa1VTOGNiZmlBQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1634.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU0wcXFqaFJNT1V1T3A2cEZvTEN1SzM4NmR2c1kvSlk5MHZxUjN2MERrMERNeVh2Tzh5TTVBQUlNTnJIS0JnYWZSYmhwZGpaWmVuVThHcmNaY3pQMndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyODk4NTgyCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5NnVqUGlaS1c5ZVFKeVlGV2xibG9KQm1WbEdGdWk0T01hMXlSK3ROMjlxeDRoRGlyMkJ1cGEzTFFCRlJPaTJtT0REQWNtN01xTjA4ampYQmJkWVpEZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1636.app.tar.gz"
     }
   }
 }
