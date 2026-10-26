@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1641",
-  "notes": "The time Crisp quotes for the whole clip is more accurate. It used to count the final finishing step once for every second of video; now it counts it once. On a 40-second tape the quote went from about 120 seconds to about 95, against a real 87.",
-  "pub_date": "2026-10-26T16:46:56Z",
+  "version": "1.0.1643",
+  "notes": "The quick preview of a dark clip now looks the way the finished video will. Crisp used to decide whether to brighten a clip from the few seconds it previewed, so a mostly dark clip with one bright stretch could preview without the low-light lift the whole clip then got. It now decides from the whole clip.",
+  "pub_date": "2026-10-26T23:14:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoMmhTS0ZIL29tSG0raEY2bkNjT1R1YkRoVXJLNTd4YktPcXBqcGJpazQ1TXB4ak90RjBQTlFJbE0zZ3dGdE9FQTQwYWRjT1ZGYWl6NmRSZFhNaHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDMyODIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3elNIYmdyYWs2VW1YQW9ZM3hoSkdKTGRBVFZ2VnNreEhCK2I4WWFGTWRkR2ZOY2k4RlYvSjZTVUppWFFxT3BDY0lxellhOFMvTjNMZGhFOTl3V3dDUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1641.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNmZklLQ0FKNWtHbEIzakVMWmp0R3VhWmk0L2hTRVJBa21La1pyUm5Xa3pzRSsrMG54T21IV2R6aGl1NDU3dEo5dDBVbS9NLzE1amlOSVZqeGdwa1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDU1OTI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNcXFNZjJRNXZ3akpzenZjSzc5bW4ycjZKNWJOVmVrTVZJdEVDN3lMLzRta1NCYXl1V0wwREV5YWwrMkI5cTRSNHVCdjVqcXJCaTBRSEpqa3kzVlBDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1643.app.tar.gz"
     }
   }
 }
