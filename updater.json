@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1639",
-  "notes": "Previews and trims of long interlaced tapes start much sooner. Crisp used to straighten the whole tape before rendering even a short preview or a trimmed section; now it straightens only the part it is rendering. On a 10-minute tape a one-second render went from about 20 seconds to about 6.",
-  "pub_date": "2026-10-25T10:56:25Z",
+  "version": "1.0.1641",
+  "notes": "The time Crisp quotes for the whole clip is more accurate. It used to count the final finishing step once for every second of video; now it counts it once. On a 40-second tape the quote went from about 120 seconds to about 95, against a real 87.",
+  "pub_date": "2026-10-26T16:46:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUUrSmRMQ1pTTmdNS21lQmkwMGVHYWdKWnVrdm1mZi95TlM4VklrSVA4Ky9zTXFpQ29ySFU2aisvLzdBVWd6ejVpbG4yYXdLY3dqdlZ4bXp1Vm9oVXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTI1NDQxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqR2dSMmgzUlF1OFkwSWlGa1FtT1FjWGQwT1RSdGNidWpuU3hSNS9pb01nLy9oaGtEZTFSZ3VYVzVNMGx0a2czUGpwQzBOMzVnb1lMSS9nU2dlMGlDZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1639.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoMmhTS0ZIL29tSG0raEY2bkNjT1R1YkRoVXJLNTd4YktPcXBqcGJpazQ1TXB4ak90RjBQTlFJbE0zZ3dGdE9FQTQwYWRjT1ZGYWl6NmRSZFhNaHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDMyODIxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3elNIYmdyYWs2VW1YQW9ZM3hoSkdKTGRBVFZ2VnNreEhCK2I4WWFGTWRkR2ZOY2k4RlYvSjZTVUppWFFxT3BDY0lxellhOFMvTjNMZGhFOTl3V3dDUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1641.app.tar.gz"
     }
   }
 }
