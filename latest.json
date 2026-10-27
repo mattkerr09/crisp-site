@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1649",
-  "notes": "While the founding offer lasts, every price in Crisp now shows the founding price you actually pay, $64.50, including the Buy button after an export and the export hints. Once the offer ends, they all show the regular price again.",
-  "pub_date": "2026-10-27T12:58:37Z",
+  "version": "1.0.1659",
+  "notes": "Old tapes, DVDs and camcorder files now play in the editor, and every clip fits the player. While a clip renders, its timeline clip and the Jobs button show how far along it is and about how long is left.",
+  "pub_date": "2026-10-27T22:11:48Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFhUnI0NW9nKzBPK1pxZlNIRlNxZWpDNys4NG05djFNYVZHSnZrZnovRkhDSm90WWlVVFk4bExlTkRsdEJKRGI5TGNWQlRLWVNOUDZxMUxxREE5eEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTA1NTU5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVUW93NXk1TGZaSnM4UGxYa0k1aFYzMFRBSW5oT3BFZ3FRZ0pYZFBUaFY1N3Rsb1IvV2ltWEUxWFVvY2xKeE01T3ZNYVhEK3dZNHBkZDlDejJIeVdDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1649.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlScVRVUGtBckp5Sm5EcmpXV1VmNVdyYjlPSzk1S2VVVm9CRGc2Y0NMSzFkTUgyRk1QamZHZ29jb2RZcGxzSCsrNTh3YkdaTWVPb0ljMzBsaFJFOXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTM4NTA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUSWJwVFBIT2N0R3RIcUI4SmxVTFg3TVNXZXAwdTdSNitPWXlWVy9jK2RxT2QyVVp2U3RXMDd1WDBwMm1KcjhYVEhSZ2JlYnRvTkt0Q2VtUGZDOVdCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1659.app.tar.gz"
     }
   }
 }
