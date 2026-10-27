@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1643",
-  "notes": "The quick preview of a dark clip now looks the way the finished video will. Crisp used to decide whether to brighten a clip from the few seconds it previewed, so a mostly dark clip with one bright stretch could preview without the low-light lift the whole clip then got. It now decides from the whole clip.",
-  "pub_date": "2026-10-26T23:14:52Z",
+  "version": "1.0.1647",
+  "notes": "While the founding offer lasts, the Unlock Pro window now leads with the founding price: $64.50, or 4 payments of $16.13, applied for you at checkout. Once the offer ends it shows the regular price again.",
+  "pub_date": "2026-10-27T06:41:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNmZklLQ0FKNWtHbEIzakVMWmp0R3VhWmk0L2hTRVJBa21La1pyUm5Xa3pzRSsrMG54T21IV2R6aGl1NDU3dEo5dDBVbS9NLzE1amlOSVZqeGdwa1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDU1OTI5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpNcXFNZjJRNXZ3akpzenZjSzc5bW4ycjZKNWJOVmVrTVZJdEVDN3lMLzRta1NCYXl1V0wwREV5YWwrMkI5cTRSNHVCdjVqcXJCaTBRSEpqa3kzVlBDZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1643.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYwcjlNOWlMRHVCNXdURTRUSUVjOVA5V3pSdjljWDRJeHZyZnJVdzJWNkpnTmxYRDQzMi9vbkdPSVZRUEZ0NUV5UmJVWTJXVnBUbld1Zzk1QnNRZkE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDgyOTU4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEMGU5NzBYZTcyOHFydGtIaWwzSUtsbUpPNTNzV1FoUHJ5OEhnMm9oZUh3TEZHS09WRmoyWm91bFh2NStxMlI0b096eXQ5MjE4VGs2YWxxOCsyVytBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1647.app.tar.gz"
     }
   }
 }
