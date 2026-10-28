@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1669",
-  "notes": "Crisp now asks for the disk space a render really needs, so a nearly full Mac can still enhance a 40-second phone clip. When a clip truly won't fit, it says how much space to free, and offers what will fit.",
-  "pub_date": "2026-10-28T18:24:53Z",
+  "version": "1.0.1711",
+  "notes": "Crisp now leaves a little more room on your disk before a long render of dark, detailed footage, so a clip like that can't fill the disk partway through. The licence window also says plainly what a key covers: any three of your computers.",
+  "pub_date": "2026-10-28T23:40:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUt2ZDFmTXFmMlEyblpYQWVlREk4YkgwcGlBR09EQkg1MVB2dW15MXpiYjJRQmovb3VERW1zN1huamVtOUlWT0FYcUloeVRwMXFVemgxRDZiWHYyK0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjExNDExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negorZmp3QmJNbW1kQXQyNFhBcGo3bE1jdWlWNUErbmcycVNvSmtWclM5TzM3TWUyWmE4Y2lVVDRQako5TGo4amNKMUF6dDR6QjBmNXZkZjV5ODUydjhCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1669.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVWMkFGa0E0cVVGdHFEUUJROHhoajcvR2k2OUhoSGRaWGdWazhKSUNBb2FwK3NVdlBTRGtpY0ZMSnRJck01dTFWODFJeXV5R0dlME1vY1ZZdVNYUFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjMwMTU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPY0NUcUxZU3d1MjJrYVAxWjYrMDN1ekdrdXZFaEVJb2hlK29PVHU0VlZ0NTZSVWVrWGtWVWhyOGF4L2tLTHhiRUV4ZkhrSjVNZ1UxbDdITERzRWVDdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1711.app.tar.gz"
     }
   }
 }
