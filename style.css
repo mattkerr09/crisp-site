@@ -340,6 +340,16 @@ pre{max-width:100%;overflow-x:auto;}
   text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 .pbox .pbox-phone{margin:-.2rem 0 .7rem;}
 @media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}
+/* The box track.js builds under the send button once it has been pressed (2026-10-28): what happened, the link as plain
+   text to press and hold, and Copy / Email it / Text it. 44px buttons, Apple's minimum touch target. */
+.sendlink{margin:.2rem 0 .8rem;max-width:26rem;font-size:.88rem;line-height:1.5;color:var(--grey);scroll-margin:1rem 0 6rem;}
+.sendlink p{margin:0 0 .6rem;}
+.sendlink [hidden]{display:none;}
+.sendlink-msg{color:var(--white);}
+.sendlink-url{padding:.6rem .8rem;border:1px solid var(--hair-lit);border-radius:10px;background:rgba(255,255,255,.04);
+  color:var(--white);word-break:break-all;-webkit-user-select:all;user-select:all;cursor:text;}
+.sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
+.sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.88rem;font-family:inherit;cursor:pointer;}
 
 /* ---- FUTURISTIC TOUCHES (Matthew, 2026-10-09; ~/ops/launch/FUTURISTIC-TOUCHES.md) ----
    The guide pages already have the frosted nav, the glowing gradient button and the lifting call-to-action box. What

@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */</script>
+<script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */
+/* .handheld: a phone or tablet, which cannot install a Mac app, so the hero leads with sending the link (2026-10-28).
+   iPadOS Safari reports a Mac, so a "Mac" with a touch screen is a tablet; a real Mac reports 0 touch points and never matches. */
+(function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld'); })(navigator);</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -803,6 +806,35 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
   .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
 }
+/* PHONE AND TABLET: SEND THE LINK FIRST (2026-10-28). ChatGPT sent 80 visitors from 10-15 to 10-28 and 24 of them were on
+   a phone (19 iOS, 5 Android), where the first screen's only action was "Download free for Mac", which a phone cannot use.
+   The "On your phone?" line sat under it, below the first screen (measured: y=839 on a 393x659 iPhone viewport) as a text
+   link 23px tall, and in 30 days its tag (utm_source=phone-share) brought nobody back. So on a phone or tablet the hero now
+   says what Crisp is and leads with sending the link, right under the headline, and the download becomes the second,
+   quieter button. .handheld is set before paint by the first script in <head>; a Mac never gets it, at any window width,
+   so nothing here changes anything on a Mac. */
+.send-first{display:none;}
+.handheld .send-first{display:block;margin:1.5rem 0 0;}
+.send-say{margin:0 0 .9rem;font-size:1.02rem;line-height:1.5;color:var(--white);text-wrap:balance;}
+.handheld .hero .phone-link{display:none;}
+.handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
+/* The box the send-mac-link script builds under a send button once it has been pressed: what happened, the link as plain
+   text to press and hold, and the other ways to send it. 44px buttons, Apple's minimum touch target. */
+.sendlink{margin:.9rem 0 0;max-width:26rem;font-size:.9rem;line-height:1.5;color:var(--grey);text-align:left;
+  scroll-margin:1rem 0 6rem;}   /* the script scrolls it into view; 6rem keeps it clear of the chat button */
+.sendlink p{margin:0 0 .6rem;}
+.sendlink [hidden]{display:none;}
+.sendlink-msg{color:var(--white);}
+.sendlink-url{padding:.6rem .8rem;border:1px solid var(--hair-lit);border-radius:10px;background:rgba(255,255,255,.04);
+  color:var(--white);word-break:break-all;-webkit-user-select:all;user-select:all;cursor:text;}
+.sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
+.sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.9rem;}
+.send-first .btn,.sendlink .btn{font-family:inherit;cursor:pointer;}   /* a <button> does not inherit the face by itself */
+@media (max-width:860px){
+  .hero .sendlink{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero .sendlink-ways{justify-content:center;}
+}
 
 /* ---------- FUTURISTIC TOUCHES (Matthew, 2026-10-09: "look how bookbreaker looks and then just add that to our other sites";
    the brief is ~/ops/launch/FUTURISTIC-TOUCHES.md, the reference bookbreaker.bet). Not a redesign: Crisp keeps its own
@@ -926,6 +958,15 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          uploaded" tick below says the same). "Sharp enough for the TV you'll own in 2036" was the brief's example and is left out:
          nobody can measure it. -->
     <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk, with nothing uploaded.</p>
+    <!-- Shown only on a phone or tablet (.handheld, see the head script and the CSS): sending the link is the hero's first
+         action there, the download its second. The script at the foot of this file wires it. -->
+    <div class="send-first">
+      <p class="send-say">Crisp is a Mac app. Send yourself the link for later.</p>
+      <button type="button" class="btn btn-primary" data-send-mac-link="hero-send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/></svg>
+        Send me the link
+      </button>
+    </div>
       </div>
       <div class="hero-say">
     <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, with a small mark; Pro <strong>$129 once<span class="split" data-crisp-bnpl> · or 4 × $32.25</span></strong><span data-founding-copy>, <strong>$64.50<span class="split" data-crisp-bnpl> · or 4 × $16.13</span></strong> for founding buyers</span>.</p>
@@ -2426,23 +2467,123 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 <div data-win-notify style="max-width:552px;margin:1.25rem auto 0;padding:0 16px 88px;box-sizing:border-box"></div>
 <script src="/notify.js" defer></script>
 <script>
-/* The phone line's button: the share sheet on a phone, a mailto: everywhere else. kcCarry() carries
-   where the visitor came from (the hub snippet's kc_aff — ?ref=producthunt is stored as landing_source)
-   onto the link they send themselves, so the Mac visit still counts for Product Hunt. Same as outlier.host. */
-function kcCarry(url){try{var s=JSON.parse(localStorage.getItem('kc_aff')||'null');var v=(s&&s.exp>Date.now()&&s.v)||{};var q=[];var r=v.ref||v.landing_source;if(r)q.push('ref='+encodeURIComponent(r));['via','rekomi_ref','affonso_referral','awc','cjevent','irclickid'].forEach(function(k){if(v[k])q.push(k+'='+encodeURIComponent(v[k]));});return q.length?url+'&'+q.join('&'):url;}catch(e){return url;}}
-document.querySelectorAll('[data-send-mac-link]').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var url = kcCarry('https://crispvideo.app/?utm_source=phone-share&utm_medium=share');
-    var text = 'Crisp Video for Mac is free, with the full editor and 4K upscaling up to 60 seconds, everything else at full length, with a small “Made with Crisp” mark. Open this on your Mac to download it.';
-    if (window.plausible) { try { window.plausible('Send Mac Link'); } catch (e) {} }
-    if (navigator.share) {
-      navigator.share({ title: 'Crisp Video for Mac', text: text, url: url }).catch(function () {});
-    } else {
-      location.href = 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') +
-        '&body=' + encodeURIComponent(text + '\n\n' + url);
+/* send-mac-link:begin. THE SAME BLOCK is inline at the foot of index.html (so the homepage's phone action never waits on
+   another file, or on a blocker that refuses anything named track.js) and in track.js (every guide's product box); a test
+   in the Crisp suite keeps the two byte-identical, and whichever runs first is the only one that binds.
+
+   "Send the Mac link to yourself" (rebuilt 2026-10-28). Crisp is a Mac app, so a visitor on a phone or tablet has to get
+   the link to their Mac, and every path here ends with them holding it, whatever the browser:
+   1. the share sheet where there is one (Safari on iPhone and iPad, Chrome on Android, and the in-app browsers built on
+      them), then one line saying what to do next;
+   2. no share sheet: the link is copied at once, and the box under the button says "copied" only if the copy really worked;
+   3. a share sheet that fails or is closed, or a copy that does not work: the same box shows the link as plain text to
+      press and hold, a Copy button, and Email it / Text it links.
+   NOTHING HERE NAVIGATES ON ITS OWN. The old fallback set location.href to a mailto:, and an in-app browser whose app does
+   not hand mailto: on (a WKWebView, an Android WebView) did nothing at all, or replaced the page with an error; a share that
+   failed or was closed also ended in nothing. Mail and Messages are now links the visitor taps, beside the copy and the text.
+   kcCarry() keeps where the visitor came from (the hub snippet's kc_aff: ?ref=producthunt is stored as landing_source) on
+   the link, so the Mac visit it leads to still counts for that source. */
+(function () {
+  if (window.crispSendLinkBound) return;
+  window.crispSendLinkBound = true;
+  var TITLE = 'Crisp Video for Mac';
+  var TEXT = 'Crisp Video for Mac is free, with the full editor and 4K upscaling up to 60 seconds, everything else at full length, with a small “Made with Crisp” mark. Open this on your Mac to download it.';
+  var SAY = {
+    shared: 'Done. When you’re at your Mac, open the link to download Crisp.',
+    copied: 'Link copied. Paste it into a note or a message to yourself, then open it on your Mac.',
+    other: 'Here’s the link. Copy it, or email or text it to yourself:',
+    nocopy: 'Press and hold the link to copy it, or email or text it to yourself:'
+  };
+  function kcCarry(url) { try { var s = JSON.parse(localStorage.getItem('kc_aff') || 'null'); var v = (s && s.exp > Date.now() && s.v) || {}; var q = []; var r = v.ref || v.landing_source; if (r) q.push('ref=' + encodeURIComponent(r)); ['via', 'rekomi_ref', 'affonso_referral', 'awc', 'cjevent', 'irclickid'].forEach(function (k) { if (v[k]) q.push(k + '=' + encodeURIComponent(v[k])); }); return q.length ? url + '&' + q.join('&') : url; } catch (e) { return url; } }
+  function ev(name, props) { try { if (window.plausible) window.plausible(name, { props: props }); } catch (e) {} }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+  /* done(true) only when a copy is known to have happened. navigator.clipboard first; then the textarea + execCommand that
+     older browsers and some in-app ones still need (16px so iOS does not zoom, fixed at the top so nothing scrolls). */
+  function copy(t, done) {
+    function legacy() {
+      var ok = false, ta = null;
+      try {
+        ta = el('textarea'); ta.value = t; ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;';
+        document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, t.length);
+        ok = document.execCommand('copy') === true;
+      } catch (e) {}
+      try { if (ta && ta.parentNode) ta.parentNode.removeChild(ta); } catch (e) {}
+      done(ok);
     }
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(t).then(function () { done(true); }, legacy);
+        return;
+      }
+    } catch (e) {}
+    legacy();
+  }
+  /* The box under the button: built on first use, after the paragraph the button sits in (or after the button itself). */
+  function box(b, url) {
+    var host = (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
+    if (!s || s.className !== 'sendlink') {
+      s = el('div', 'sendlink');
+      s.setAttribute('role', 'group');
+      s.setAttribute('aria-label', 'Your link for later');
+      var msg = s.appendChild(el('p', 'sendlink-msg'));
+      msg.setAttribute('role', 'status');
+      var u = s.appendChild(el('p', 'sendlink-url'));
+      u.addEventListener('click', function () {   // one tap selects the whole link, ready for Copy
+        try { var r = document.createRange(); r.selectNodeContents(u); var g = window.getSelection(); g.removeAllRanges(); g.addRange(r); } catch (e) {}
+      });
+      var w = s.appendChild(el('p', 'sendlink-ways'));
+      var c = w.appendChild(el('button', 'btn btn-ghost', 'Copy link'));
+      c.type = 'button';
+      c.addEventListener('click', function () {
+        copy(s.getAttribute('data-url'), function (ok) {
+          msg.textContent = ok ? 'Link copied. Paste it into a note or a message to yourself.' : 'This browser would not copy it. Press and hold the link to copy it.';
+          ev('Send Mac Link Result', { result: ok ? 'copy' : 'copy-failed' });
+        });
+      });
+      w.appendChild(el('a', 'btn btn-ghost', 'Email it')).addEventListener('click', function () { ev('Send Mac Link Result', { result: 'email' }); });
+      w.appendChild(el('a', 'btn btn-ghost', 'Text it')).addEventListener('click', function () { ev('Send Mac Link Result', { result: 'text' }); });
+      host.parentNode.insertBefore(s, host.nextSibling);
+    }
+    s.setAttribute('data-url', url);
+    s.querySelector('.sendlink-url').textContent = url;
+    var links = s.querySelectorAll('.sendlink-ways a');
+    links[0].setAttribute('href', 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') + '&body=' + encodeURIComponent(TEXT + '\n\n' + url));
+    links[1].setAttribute('href', 'sms:?&body=' + encodeURIComponent(TEXT + ' ' + url));
+    return s;
+  }
+  function show(b, url, result) {
+    try {
+      var s = box(b, url), full = result !== 'shared';
+      s.querySelector('.sendlink-msg').textContent = SAY[result === 'shared' ? 'shared' : result === 'copied' ? 'copied' : result === 'copy-failed' ? 'nocopy' : 'other'];
+      s.querySelector('.sendlink-url').hidden = !full;
+      s.querySelector('.sendlink-ways').hidden = !full;
+      if (s.scrollIntoView) s.scrollIntoView({ block: 'nearest' });   // on a phone the box lands under the fold otherwise
+    } catch (e) {}
+    ev('Send Mac Link Result', { result: result });
+  }
+  function send(b) {
+    var where = b.getAttribute('data-send-mac-link') || (!b.closest ? 'page' : b.closest('.pbox') ? 'guide' : b.closest('.hero') ? 'hero-line' : 'page');
+    var url = kcCarry('https://crispvideo.app' + location.pathname + '?utm_source=phone-share&utm_medium=share');
+    var data = { title: TITLE, text: TEXT, url: url };
+    ev('Send Mac Link', { where: where });
+    var can = typeof navigator.share === 'function';
+    try { if (can && typeof navigator.canShare === 'function' && !navigator.canShare(data)) can = false; } catch (e) {}
+    if (can) {
+      var p;
+      try { p = navigator.share(data); } catch (e) { p = Promise.reject(e); }
+      Promise.resolve(p).then(function () { show(b, url, 'shared'); },
+        function (e) { show(b, url, e && e.name === 'AbortError' ? 'cancelled' : 'share-failed'); });
+      return;
+    }
+    copy(url, function (ok) { show(b, url, ok ? 'copied' : 'copy-failed'); });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('[data-send-mac-link]') : null;
+    if (b) send(b);
   });
-});
+})();
+/* send-mac-link:end */
 </script>
 </body>
 </html>
