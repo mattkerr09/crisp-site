@@ -79,7 +79,9 @@ document.addEventListener("click", function (e) {
   }
   /* The box under the button: built on first use, after the paragraph the button sits in (or after the button itself). */
   function box(b, url) {
-    var host = (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
+    // a button elsewhere (the top bar's) names the send button whose box it opens, so the box lands in the page, not the bar
+    var to = b.getAttribute('data-send-box'), named = to ? document.querySelector('[data-send-mac-link="' + to + '"]') : null;
+    var host = named || (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
     if (!s || s.className !== 'sendlink') {
       s = el('div', 'sendlink');
       s.setAttribute('role', 'group');

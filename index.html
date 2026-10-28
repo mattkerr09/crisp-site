@@ -822,7 +822,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 /* The box the send-mac-link script builds under a send button once it has been pressed: what happened, the link as plain
    text to press and hold, and the other ways to send it. 44px buttons, Apple's minimum touch target. */
 .sendlink{margin:.9rem 0 0;max-width:26rem;font-size:.9rem;line-height:1.5;color:var(--grey);text-align:left;
-  scroll-margin:1rem 0 6rem;}   /* the script scrolls it into view; 6rem keeps it clear of the chat button */
+  scroll-margin:calc(var(--kc-bar-h,0px) + 72px) 0 6rem;}   /* the script scrolls it into view: clear of the sticky bars above, the chat button below */
 .sendlink p{margin:0 0 .6rem;}
 .sendlink [hidden]{display:none;}
 .sendlink-msg{color:var(--white);}
@@ -830,7 +830,20 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   color:var(--white);word-break:break-all;-webkit-user-select:all;user-select:all;cursor:text;}
 .sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
 .sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.9rem;}
-.send-first .btn,.sendlink .btn{font-family:inherit;cursor:pointer;}   /* a <button> does not inherit the face by itself */
+.send-first .btn,.sendlink .btn{font-family:inherit;line-height:inherit;cursor:pointer;}   /* a <button> inherits neither the face nor the
+   line height by itself; without the second the hero's Send button stood 46px tall beside 53px links */
+/* THE TOP BAR ON A PHONE OR TABLET (2026-10-28, second change). The bar is sticky, so its bright "Download" asked every
+   phone visitor, on every screen of the page, for a download a phone cannot do. Under .handheld it gives way to a quiet
+   "Get it for your Mac" that runs the same send flow as the hero's button and opens the hero's box (data-send-box).
+   A Mac or a PC never gets .handheld, so its bar is unchanged. */
+.nav-send{display:none;}
+.handheld .nav-in a[data-track="nav"]{display:none;}
+.handheld .nav-send{display:inline-flex;font-family:inherit;line-height:inherit;cursor:pointer;}   /* as tall as the Download it replaces */
+@media (max-width:820px){.handheld .nav-send{margin-left:auto;}}   /* the links are hidden here, so it sits at the right */
+/* One line beside the brand down to a 320px phone (measured): a little tighter below 375px, tighter again below 340px. */
+.handheld .nav-send{white-space:nowrap;}
+@media (max-width:374px){.handheld .nav-in{gap:1rem;}.handheld .nav-send{padding:.5rem .85rem;font-size:.82rem;}}
+@media (max-width:339px){.handheld .nav-send{padding:.45rem .7rem;font-size:.76rem;}}
 @media (max-width:860px){
   .hero .sendlink{margin-left:auto;margin-right:auto;text-align:center;}
   .hero .sendlink-ways{justify-content:center;}
@@ -930,6 +943,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <a href="#compare">Compare</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-primary btn-sm" data-track="nav" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-nav&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download</a>
+    <button type="button" class="btn btn-ghost btn-sm nav-send" data-send-mac-link="nav" data-send-box="hero-send">Get it for your Mac</button>
   </div>
 </header>
 
@@ -2521,7 +2535,9 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   }
   /* The box under the button: built on first use, after the paragraph the button sits in (or after the button itself). */
   function box(b, url) {
-    var host = (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
+    // a button elsewhere (the top bar's) names the send button whose box it opens, so the box lands in the page, not the bar
+    var to = b.getAttribute('data-send-box'), named = to ? document.querySelector('[data-send-mac-link="' + to + '"]') : null;
+    var host = named || (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
     if (!s || s.className !== 'sendlink') {
       s = el('div', 'sendlink');
       s.setAttribute('role', 'group');
