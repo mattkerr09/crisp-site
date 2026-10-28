@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1665",
-  "notes": "Drop in a long video and Crisp offers to make a highlight montage of it, right under the clip's name. A finished montage can take the original's place on the timeline in one click, so nobody exports twelve minutes by accident.",
-  "pub_date": "2026-10-28T07:45:57Z",
+  "version": "1.0.1669",
+  "notes": "Crisp now asks for the disk space a render really needs, so a nearly full Mac can still enhance a 40-second phone clip. When a clip truly won't fit, it says how much space to free, and offers what will fit.",
+  "pub_date": "2026-10-28T18:24:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpCRSttWkhYWXpYT09Oc2RxdnZqWHJBcXRkUmRMSDJKZ2gzUkVCeGxFSjV0L29HN1Y3d05qNndxWHJ6YTZ5NUJKWldKK3BpTmlKbmVZSkRiRnBnUVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTczMTk0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negplNFdtUHh0ZHZJdkI1OSttVlNONXA3eFpLL3pEWDM4OE9CdXlsaXNMa0ZNdlh4eUJrVXNwUkhXUGJjREkxRzg1emNSTzUzcjVBci9LQnZMS2xpSkREQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1665.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUt2ZDFmTXFmMlEyblpYQWVlREk4YkgwcGlBR09EQkg1MVB2dW15MXpiYjJRQmovb3VERW1zN1huamVtOUlWT0FYcUloeVRwMXFVemgxRDZiWHYyK0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjExNDExCWZpbGU6Q3Jpc3AuYXBwLnRhci5negorZmp3QmJNbW1kQXQyNFhBcGo3bE1jdWlWNUErbmcycVNvSmtWclM5TzM3TWUyWmE4Y2lVVDRQako5TGo4amNKMUF6dDR6QjBmNXZkZjV5ODUydjhCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1669.app.tar.gz"
     }
   }
 }
