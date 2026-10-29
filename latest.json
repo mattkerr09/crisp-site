@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1711",
-  "notes": "Crisp now leaves a little more room on your disk before a long render of dark, detailed footage, so a clip like that can't fill the disk partway through. The licence window also says plainly what a key covers: any three of your computers.",
-  "pub_date": "2026-10-28T23:40:41Z",
+  "version": "1.0.1716",
+  "notes": "On 1080p video, Auto now asks before it renders the whole clip: 1440p or 4K, with how long each takes on your Mac. 1440p takes about half the time and stays sharp at phone and laptop size, and 4K is always one click away.",
+  "pub_date": "2026-10-29T03:37:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVWMkFGa0E0cVVGdHFEUUJROHhoajcvR2k2OUhoSGRaWGdWazhKSUNBb2FwK3NVdlBTRGtpY0ZMSnRJck01dTFWODFJeXV5R0dlME1vY1ZZdVNYUFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjMwMTU3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPY0NUcUxZU3d1MjJrYVAxWjYrMDN1ekdrdXZFaEVJb2hlK29PVHU0VlZ0NTZSVWVrWGtWVWhyOGF4L2tLTHhiRUV4ZkhrSjVNZ1UxbDdITERzRWVDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1711.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdTNWNXdjE2L21OUm8wOWV6dlkvdmQ5Wmc2NWtpZm9aTjFHa0RiVlNHTVY2a2pQQ21XTE9jNzZuWDdJREJSMkx4ZmtjN2hiZWVXMmdkMjhwNVpaR2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjQ0NDk2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpEbzBvMGtwemFPNWN1Vm9zdWNKeDVBTm5wazhoazgra1JJL0s1aVp5QThHd0lFNk9lSFB6eEtESVc0SXJ3SVY0blpTYTdLREJCVVZhNjR3cytyRTZDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1716.app.tar.gz"
     }
   }
 }
