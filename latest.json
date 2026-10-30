@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1721",
-  "notes": "On 1080p video, typed requests like \"make it sharper and less noisy\" and the Enhance and Low-light presets now ask 1440p or 4K too, with how long each takes on your Mac. And \"upscale to 1440p\" on 1080p video now makes exactly that.",
-  "pub_date": "2026-10-30T05:30:40Z",
+  "version": "1.0.1723",
+  "notes": "Enhancing a whole clip longer than about 15 seconds now shows you its start while the rest renders: as soon as the first part (10 or 20 seconds) is done, a line at the bottom of the editor says so, and Watch plays it with its sound.",
+  "pub_date": "2026-10-30T12:30:35Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJNK0NMdFNMeHFONnllaDdrcytUZUVGOWQ2Zy9lUndXN29JWHhaVElQa093L3JoakVIMlpvUFA3UUhhUlE0S3Z3Q1JnRXU1T3VGeDZGaEhJM1BKTGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzM3ODQ2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp3NGVUb2diREo4Q3dQcnZoSzlWQmdwckVrNWovSnR4STA0Tm9CcGFmTUEvSEVzbDdoR1ErWWJ1Z2dNM1pqbjlMTHhUZDc4S3d5YkwvS2ZCY2t1WHhEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1721.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZvSjRZUnlVTUU3VDIrb3R1TVFZWXh0enJkTUp2UkhocjJGQm1ua2dDTVRBRG5zcXErK3JNbm9jT1BSOVp2eThTa2U2WVpwYVhJNGxvem5sMnNNVEFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzYzMDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwNGhRT3QxWlJ2bEZlbGlpSWptMlh3RThJMG1QQkV4OWhkOUxYU01TdDBIaWM3UzNyNFp3Y3JHeXE0dElmSWNLUTVzSDhMQThTWHJ6RGhaSlZvR1lCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1723.app.tar.gz"
     }
   }
 }
