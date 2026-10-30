@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1723",
-  "notes": "Enhancing a whole clip longer than about 15 seconds now shows you its start while the rest renders: as soon as the first part (10 or 20 seconds) is done, a line at the bottom of the editor says so, and Watch plays it with its sound.",
-  "pub_date": "2026-10-30T12:30:35Z",
+  "version": "1.0.1727",
+  "notes": "When a montage is done, its message now gives the montage\u2019s own length; it gave how long the montage took to make. And when you add a montage from Media, the advised answer (put it in its original\u2019s place) is now the highlighted button that Return takes.",
+  "pub_date": "2026-10-30T16:23:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZvSjRZUnlVTUU3VDIrb3R1TVFZWXh0enJkTUp2UkhocjJGQm1ua2dDTVRBRG5zcXErK3JNbm9jT1BSOVp2eThTa2U2WVpwYVhJNGxvem5sMnNNVEFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzYzMDkyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwNGhRT3QxWlJ2bEZlbGlpSWptMlh3RThJMG1QQkV4OWhkOUxYU01TdDBIaWM3UzNyNFp3Y3JHeXE0dElmSWNLUTVzSDhMQThTWHJ6RGhaSlZvR1lCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1723.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxyMW9mZlY4NkVNOVpaeFVKbGE0ckt4TXFHVGxKWmQzVHZUeTdiTWhibWpWRVJPSXNacyt4NDU3VUlIS2tjZE5DVmVNMm92N3BEWkJwdDIrVjh1bEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzc3MDI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negorYzBML1N3aW1HR2krdWhINENOTW5tdURadUZpTU9URG1TL0k5d1pLMUNINDd2UVFwaVFXL0tmSGlRSEk5OGczeVlYVFRUS04xZ21GUmhpTHdTVFhCUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1727.app.tar.gz"
     }
   }
 }
