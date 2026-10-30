@@ -135,7 +135,8 @@
   <p>Grabbing a still frame splits the difference, and the split is instructive. Crisp does a fast
   keyframe-anchored seek to a few seconds before the frame you asked for, then an accurate seek for
   the remainder: cheap positioning first, exact positioning only over the short distance that
-  actually needs decoding.</p>
+  actually needs decoding. It is the seek behind Crisp's
+  <a href="https://crispvideo.app/how-to/screenshot-from-video-mac/">screenshot from a video on a Mac</a>: the exact frame you name, at full resolution.</p>
   <p>That hybrid exists because the naive alternative gets more expensive the further into a file you
   reach. Measured on a 300-second source while building Crisp's montage assembler, cutting the same
   0.467-second segment with a decode-everything filter cost 273.9 ms at five seconds in and 502.3 ms
