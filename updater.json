@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1740",
-  "notes": "Typing \u201cit\u2019s choppy\u201d or \u201cmake it smooth\u201d now turns on Smooth motion. Asking for nicer or smoother sound no longer starts a video upscale, and \u201cmake my music video brighter\u201d brightens it instead of building a music montage.",
-  "pub_date": "2026-10-31T10:08:52Z",
+  "version": "1.0.1742",
+  "notes": "Typing \u201ctrim the silence at the end\u201d no longer mutes your clip; Crisp explains how to cut silent parts instead. \u201cEnd it at 1:00\u201d now trims to that point, as \u201cstart it at 0:30\u201d already did.",
+  "pub_date": "2026-10-31T16:31:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtJTFpzTy85bmYrZXJpTmpmcFhkRkpmd1lrVVBoL1V6QnlheWdNV2xSZzZnR3NSN281V0wveXhWNUlVTlpLRnFZVVQ1MU4ySnpmSUJtd0dQSFlIbGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDQwOTc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxYXBxRFg4K1lZcm83Mk5zNXhsb0Jpd05CK25yTlVyeSsvWUdpVWk0b3lVSTQydm1xVGgyNjJlVlZOL0tUMmdXcW9GVi9QMmVpcGVkVHFKNmpYdW5DZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1740.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUErMGZld0JWSEdJUzI3UnhVK3VoS1BBL0RQUmlmanVDK3kxa2MvQXhpRllrdFJLZTFNNUg2dG9SRVFFUVFIS2FDbjNSWjRaQmsyY21zc2NZOHJGdVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDYzODc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzd0hyT1EvOEpiQ3dhbmVleVFVbVprU3dvUzBKejN3ZXhCMlNoQmpjdEZ3UUlQYVhtZFhwbkZERS9OMTI2RlpIZjgyaFFVU1BmUmdMZ3BPMUxIeTlDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1742.app.tar.gz"
     }
   }
 }
