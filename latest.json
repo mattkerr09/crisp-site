@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1732",
-  "notes": "Typing \u201cgive me the smallest file\u201d, \u201cexport a small file\u201d or \u201csmallest file possible\u201d now compresses the clip; before, Crisp found no edit in it.",
-  "pub_date": "2026-10-31T01:34:54Z",
+  "version": "1.0.1735",
+  "notes": "Typing \u201cmake it upload faster\u201d now makes a smaller file instead of speeding up the video, and \u201cit\u2019s too long for TikTok\u201d shortens the clip instead of cropping it. \u201cSave space\u201d and \u201creduce mb\u201d compress the clip too, and \u201ca smaller version\u201d asks whether you mean the file or the picture.",
+  "pub_date": "2026-10-31T05:31:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIxZUZaTnhNdzlrU2JZOFA1TUxPNThTcElUa2pDNnRoN2NYTU1nT2FGTXFDM3dCaXA4VWRIM2tYRjN5Tm1HMlpmWFFlNnFmeExoRnlWcHR3UGgzaUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDEwMDgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBRE95LzNSanRXYi9TYkREUUY4NTRPR044NmJEOGppdFZ3dDlCZUFEck11RThTeXpCeGhrQ3pNMFhXYTFsbTUzSGtma2hxbittcTgycHg1djN6OExBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1732.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9LelRJVzhsbFV3S3kwSXI5aklCa3IzaC9valdPUmpOWXRleWNTVGcrSm52Y2xUV2VlU3pKRURHemxXRGRVRDhWZytMdG9GMm10WmxQdWMvZTBtUEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDI0MDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negptZmdWTzRQa002NUtkVFpxK2dwS1lmNi9hQSt1ZE5UR1N2SUdQRm5wUHVmTW92cEtxWXFuY3pnQ3pBZWwwUFU1UE00bUs5ZXR4TTRvMXNlZFJ1a09EZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1735.app.tar.gz"
     }
   }
 }
