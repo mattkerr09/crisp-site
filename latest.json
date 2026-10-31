@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1729",
-  "notes": "While you watch the first seconds of a render, the offer to remove the \u201cMade with Crisp\u201d mark now waits beneath the player instead of covering its controls.",
-  "pub_date": "2026-10-30T20:15:30Z",
+  "version": "1.0.1732",
+  "notes": "Typing \u201cgive me the smallest file\u201d, \u201cexport a small file\u201d or \u201csmallest file possible\u201d now compresses the clip; before, Crisp found no edit in it.",
+  "pub_date": "2026-10-31T01:34:54Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVlZ3p4azFlckVOdEhYTXZ4NWxBa2QzaGk2Qi9HSG01ei9oNllkdW1mRmR0NEs4SXlQWitWSEF3a1RDbWRzRUE5NStPQ1c3S2EyZWpEQ0U4VHM1SHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzkwODM1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpLaHJhakEvOGRVa0E1NXlxMGM3UUpJSCs0Nks4b01VeXc1K3M2TDNJQXgzUTF1K3JnblE1d1lVemJzNkVJcTFFSmFybFBLVEJSYklnV1E1WkZETDFCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1729.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIxZUZaTnhNdzlrU2JZOFA1TUxPNThTcElUa2pDNnRoN2NYTU1nT2FGTXFDM3dCaXA4VWRIM2tYRjN5Tm1HMlpmWFFlNnFmeExoRnlWcHR3UGgzaUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDEwMDgzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpBRE95LzNSanRXYi9TYkREUUY4NTRPR044NmJEOGppdFZ3dDlCZUFEck11RThTeXpCeGhrQ3pNMFhXYTFsbTUzSGtma2hxbittcTgycHg1djN6OExBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1732.app.tar.gz"
     }
   }
 }
