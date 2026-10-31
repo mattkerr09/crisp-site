@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1735",
-  "notes": "Typing \u201cmake it upload faster\u201d now makes a smaller file instead of speeding up the video, and \u201cit\u2019s too long for TikTok\u201d shortens the clip instead of cropping it. \u201cSave space\u201d and \u201creduce mb\u201d compress the clip too, and \u201ca smaller version\u201d asks whether you mean the file or the picture.",
-  "pub_date": "2026-10-31T05:31:40Z",
+  "version": "1.0.1740",
+  "notes": "Typing \u201cit\u2019s choppy\u201d or \u201cmake it smooth\u201d now turns on Smooth motion. Asking for nicer or smoother sound no longer starts a video upscale, and \u201cmake my music video brighter\u201d brightens it instead of building a music montage.",
+  "pub_date": "2026-10-31T10:08:52Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9LelRJVzhsbFV3S3kwSXI5aklCa3IzaC9valdPUmpOWXRleWNTVGcrSm52Y2xUV2VlU3pKRURHemxXRGRVRDhWZytMdG9GMm10WmxQdWMvZTBtUEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDI0MDk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negptZmdWTzRQa002NUtkVFpxK2dwS1lmNi9hQSt1ZE5UR1N2SUdQRm5wUHVmTW92cEtxWXFuY3pnQ3pBZWwwUFU1UE00bUs5ZXR4TTRvMXNlZFJ1a09EZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1735.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtJTFpzTy85bmYrZXJpTmpmcFhkRkpmd1lrVVBoL1V6QnlheWdNV2xSZzZnR3NSN281V0wveXhWNUlVTlpLRnFZVVQ1MU4ySnpmSUJtd0dQSFlIbGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDQwOTc3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpxYXBxRFg4K1lZcm83Mk5zNXhsb0Jpd05CK25yTlVyeSsvWUdpVWk0b3lVSTQydm1xVGgyNjJlVlZOL0tUMmdXcW9GVi9QMmVpcGVkVHFKNmpYdW5DZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1740.app.tar.gz"
     }
   }
 }
