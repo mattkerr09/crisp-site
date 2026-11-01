@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1749",
-  "notes": "AV1 videos, common in YouTube downloads, now upscale on M1 and M2 Macs; before, they stopped after a second with an encoding error. Mentioning a VHS tape in a request no longer adds an orange colour grade, and \u201cno slow motion, just upscale\u201d no longer slows the clip down. Clips opened from iCloud Drive, Dropbox or other folders outside Movies and Desktop now play in the editor instead of staying black. Right-click \u201cSplit here\u201d now splits the clip, a free export cut at 60 seconds shows 1:00, and stopping an export says it was stopped. If you press Activate twice, you can still release that Mac later, and a release that can\u2019t reach the license server can now be finished from the licence window.",
-  "pub_date": "2026-11-01T20:19:20Z",
+  "version": "1.0.1769",
+  "notes": "\u201cMake it 4K but faster\u201d keeps the upscale instead of playing your video at double speed, \u201cmake it 4K without sound\u201d now does both, and \u201cupscale by 2\u201d upscales 2\u00d7. Plain requests like \u201cfix my old tape\u201d, \u201cuse the fast model\u201d and \u201cenlarge it\u201d now work. On portrait phone videos, \u201cmake it 4K\u201d and \u201cmake it 1080p\u201d give the size you asked for, and \u201cthis reel is grainy\u201d cleans up your film reel instead of cutting it into highlights. Transparent PNGs keep their transparency when upscaled, looping a tape file makes a video QuickTime opens, a short 4:3 clip no longer letterboxes a widescreen edit, and the Export panel no longer offers AV1 in a MOV file. A license key pasted in lower case or with \u201cLicense key:\u201d in front now activates, and the price in the app always matches the unlock window.",
+  "pub_date": "2026-11-01T23:41:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44SDMrMEpHbmQrM3l4Zk14WDUxbk0xY3dnYTFpYjNHaFFOenhYUVFaajEyd0N0dGZaemc1anU1b0srZk9BMTJySzUzbENlM3FzT29iNjByR2JlbEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTYzODM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUbkJXamVhNlE1UTBDSEVwbGRJQ1dyY3RyUnhrWjk1TUFldUh5cDN2OE9qRXBaT0VTMjQ0TnI4N3hwU2tmMjBhMXdkVGRjQ0F0OEY1MzIwOVdteXRBQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1749.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9iWVZINEZiU3hkTDJ1WmV4THJWdzB6d3dybTMrN3RxejNldVRxbzBUT09SLzY0ZTE2QXZRdHVaU2tNeDZjTFFlZjlSSUdPUTlSTU1SZnZ6TXpSQ1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTc1ODUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0cWFhRmNJQXQxcUpkL0pJdTFreVZ0bTVwdC8rOFVqVkJDVk9jMnBUM2JTR0tpVk1PS0hxRWFYMTBkcHpXQ2g4dlAyOUJvZHVGQ3JmUnBFRGZrOGFDdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1769.app.tar.gz"
     }
   }
 }
