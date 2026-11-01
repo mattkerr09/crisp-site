@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Privacy Policy","description":"Crisp processes your photos and videos entirely on your Mac. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.","datePublished":"2026-07-28","dateModified":"2026-10-21","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/legal/privacy/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Privacy Policy","description":"Crisp processes your photos and videos entirely on your Mac. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.","datePublished":"2026-07-28","dateModified":"2026-11-01","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/legal/privacy/"}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Legal", "item": "https://crispvideo.app/legal/"}, {"@type": "ListItem", "position": 3, "name": "Legal", "item": "https://crispvideo.app/legal/privacy/"}]}</script>
@@ -42,7 +42,7 @@
   <div class="quick"><strong>Quick answer</strong><p class="lede"><strong>Crisp processes your photos and videos entirely on your Mac. They are
   never uploaded, and there is no analytics or telemetry of any kind in the app.</strong></p></div>
   <p>Crisp is published by <strong>Kerr &amp; Company LLC</strong>, a Michigan limited liability company, which is the data controller for any personal information described below.</p>
-  <p>Last updated: 13 August 2026. This page describes what the software actually does (it was
+  <p>Last updated: 1 November 2026. This page describes what the software actually does (it was
   written against the shipping code, not from a template) and, since 13 August, what this
   website does too.</p>
 
@@ -156,7 +156,7 @@
         Every email has an unsubscribe link, and asking us to delete the address removes the row.</p>
 
 <h2>The only times Crisp contacts the internet</h2>
-  <p>There are exactly four, and each is listed with what is sent:</p>
+  <p>There are exactly five, and each is listed with what is sent:</p>
   <ul>
     <li><strong>Licence activation and validation</strong> (<code>live.dodopayments.com</code>, or
     <code>api.polar.sh</code> for licences bought before 20 August 2026), when you
@@ -173,9 +173,14 @@
     update.</li>
     <li><strong>Downloading the optional Max pack</strong> (<code>huggingface.co</code>), only if
     you choose to install it. Sent: nothing about you or your files.</li>
+    <li><strong>The founding-price count</strong> (<code>kerr-lead-agent.kerrco.workers.dev</code>), on a copy that
+    isn&rsquo;t Pro, when you open the unlock window or the app is about to quote the Pro price: how many founding-price
+    places are left, so the price you see is the one checkout charges. Sent: nothing beyond the ordinary web request
+    itself.</li>
   </ul>
   <p>If you never activate a licence and decline updates, Crisp makes no outbound connections at
-  all beyond the update check, which you can block at the firewall without affecting editing.</p>
+  all beyond the update check and the founding-price count, which you can block at the firewall without affecting
+  editing.</p>
 
   <h2>What is stored on your Mac</h2>
   <p>Your licence key and activation record are stored in Crisp's application-support folder so
