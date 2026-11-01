@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1742",
-  "notes": "Typing \u201ctrim the silence at the end\u201d no longer mutes your clip; Crisp explains how to cut silent parts instead. \u201cEnd it at 1:00\u201d now trims to that point, as \u201cstart it at 0:30\u201d already did.",
-  "pub_date": "2026-10-31T16:31:37Z",
+  "version": "1.0.1749",
+  "notes": "AV1 videos, common in YouTube downloads, now upscale on M1 and M2 Macs; before, they stopped after a second with an encoding error. Mentioning a VHS tape in a request no longer adds an orange colour grade, and \u201cno slow motion, just upscale\u201d no longer slows the clip down. Clips opened from iCloud Drive, Dropbox or other folders outside Movies and Desktop now play in the editor instead of staying black. Right-click \u201cSplit here\u201d now splits the clip, a free export cut at 60 seconds shows 1:00, and stopping an export says it was stopped. If you press Activate twice, you can still release that Mac later, and a release that can\u2019t reach the license server can now be finished from the licence window.",
+  "pub_date": "2026-11-01T20:19:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUErMGZld0JWSEdJUzI3UnhVK3VoS1BBL0RQUmlmanVDK3kxa2MvQXhpRllrdFJLZTFNNUg2dG9SRVFFUVFIS2FDbjNSWjRaQmsyY21zc2NZOHJGdVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDYzODc2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpzd0hyT1EvOEpiQ3dhbmVleVFVbVprU3dvUzBKejN3ZXhCMlNoQmpjdEZ3UUlQYVhtZFhwbkZERS9OMTI2RlpIZjgyaFFVU1BmUmdMZ3BPMUxIeTlDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1742.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU44SDMrMEpHbmQrM3l4Zk14WDUxbk0xY3dnYTFpYjNHaFFOenhYUVFaajEyd0N0dGZaemc1anU1b0srZk9BMTJySzUzbENlM3FzT29iNjByR2JlbEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTYzODM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUbkJXamVhNlE1UTBDSEVwbGRJQ1dyY3RyUnhrWjk1TUFldUh5cDN2OE9qRXBaT0VTMjQ0TnI4N3hwU2tmMjBhMXdkVGRjQ0F0OEY1MzIwOVdteXRBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1749.app.tar.gz"
     }
   }
 }
