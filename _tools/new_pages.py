@@ -41,7 +41,7 @@ SITE = "https://crispvideo.app"
 PRICE_USD = 29   # 2026-11-02, Matthew's video-game price (was 129)
 #: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
 #: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
-FREE_EXPORT_CAP_SECONDS = 60
+FREE_EXPORT_CAP_SECONDS = 15
 
 #: ⚠️ THE ANALYTICS + PIXEL LINE IS PART OF THE TEMPLATE, NOT AN AFTERTHOUGHT.
 #: Until 2026-08-23 this HEAD carried neither, so every page this tool emitted was
