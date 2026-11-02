@@ -67,6 +67,42 @@
   })();
   if (window.__kcFoundingEnded) return;
 
+  /* THE TRUE END DATE, BESIDE THE PRICE (CEO, 2026-11-02, Matthew: convert more page views into downloads and sales). The
+     offer really ends at the mount's data-ends, which the push gate holds equal to the lead agent's endsAt
+     (_tools/gate_founding.py: "data-ends must equal endsAt"), so the date shown is the checkout's own. Shown in the
+     visitor's own date: 01:26 UTC on the 25th is the evening of the 24th in the US, and a fixed "25 November" would
+     overstate it there by hours. No date when the attribute is missing or unreadable: every line reads as before. A true
+     date is honest urgency; still no seat count beyond the cap. Here, BEFORE the bar's dismissal check, so a visitor who
+     dismissed the bar still sees the date in the page's own price lines. */
+  var untilTxt = "";
+  (function () {
+    var mt = document.querySelector("[data-founding]");
+    var e = mt && mt.getAttribute("data-ends");
+    var t = e ? Date.parse(e) : NaN;
+    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+    if (isNaN(t) || t <= n) return;
+    try { untilTxt = "until " + new Date(t).toLocaleDateString(undefined, { month: "long", day: "numeric" }); } catch (x) {}
+  })();
+  /* ...and in the page's own founding lines (the product box and the pricing notes), after "first N buyers". A line that does
+     not read that way is left exactly as it is, and nothing here can stop the bar. */
+  if (untilTxt) {
+    var dateLines = function () {
+      try {
+        if (!document.createTreeWalker || typeof NodeFilter === "undefined") return;
+        var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+        for (var i = 0; i < els.length; i++) {
+          if ((els[i].textContent || "").indexOf(untilTxt) !== -1) continue;
+          var w = document.createTreeWalker(els[i], NodeFilter.SHOW_TEXT, null);
+          for (var tn = w.nextNode(); tn; tn = w.nextNode()) {
+            var m = /(first \d+ buyers)(?=[.,;:]|\s|$)/.exec(tn.nodeValue);
+            if (m) { tn.nodeValue = tn.nodeValue.replace(m[1], m[1] + ", " + untilTxt); break; }
+          }
+        }
+      } catch (x) {}
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", dateLines); else dateLines();
+  }
+
   var KEY  = "kc-founding-dismissed";
   /* A dismissal used to last forever ("1"), which hid the offer from every
      returning visitor for good — including Matthew, who dismissed it and then
@@ -170,6 +206,7 @@
     '  <span class="dot"></span>',
     '  <span class="txt">50% off',
         (first ? ' for the first ' + first + ' buyers' : ''),
+        (untilTxt ? ', ' + untilTxt : ''),
         (was && now ? ': <span class="was">' + was + '</span><span class="now">' + now +
                       (split ? ' · or 4 × ' + split : '') + '</span>' : ''),
     '  </span>',
