@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1780",
-  "notes": "Upscaling to 4K now uses far less memory: on our test Mac a 40-second 4K render peaked at about 3 GB instead of 10 GB, with the same picture and the same speed. That leaves more room for your other apps while Crisp works, especially on Macs with 8 or 16 GB.",
-  "pub_date": "2026-11-02T05:34:24Z",
+  "version": "1.0.1783",
+  "notes": "Auto no longer brightens dark scenes that already have bright highlights, such as night scenes with lights, stage footage or a lamp-lit room, so they keep the look they were shot with. Footage that is genuinely underexposed is still brightened as before.",
+  "pub_date": "2026-11-02T10:28:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx1VWtkVlRCbnI1cG11MUxCZlNMaGJsbFpXd0xHMEtTbXpYMWR3c1NlRDZXNi9mSXJWN3d5ZlVYWk1Oc0Urbkt3byt5ek5uYlUxcndvOG5ZWlk4SWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTk3MjAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkSGlyVEp1dFdvc3FwWmZzNUltUm84K3RoRTduMENubGJHbjJLc3JjejhNV01oY0RJdVo0dnl6TkZuTlZ6SDB0UWdNOWh3a3U1L29EbXd6d2hpbWdCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1780.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtlQ0loOEgwWWxqY2pLY2w4U2pNOU5wRDBYY0VkNUdzNXhrY0lva2dTQUVDbk04bmNDRkdXaERlaUx0T2pUd1ZpL2laeDZNcFhjRjhoVllZbURrdWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjE0OTA4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpoZnh1ak01alVzWFkwZG1JL3hIZDh2akpYVEhiQ09GakcxREZnd3JocTNTNGIySXVITkxTeFdrVi90K1RGb2pDMnhFNVArU2NhS01EV3Y0L0dKbU9BZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1783.app.tar.gz"
     }
   }
 }
