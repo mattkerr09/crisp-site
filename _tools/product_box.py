@@ -60,8 +60,8 @@ def box(where: str, page: str = "") -> str:
     p, now = f["price"], f["now"]
     q = llms_txt.quarter
     m = llms_txt.money
-    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if f["bnpl"] else ""
-    nsplit = f" · or 4 × {m(q(now))}" if f["bnpl"] else ""
+    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if llms_txt.bnpl_on(f, p) else ""
+    nsplit = f" · or 4 × {m(q(now))}" if llms_txt.bnpl_on(f, now) else ""     # none under the $50.01 floor
     # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
     # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
     # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).

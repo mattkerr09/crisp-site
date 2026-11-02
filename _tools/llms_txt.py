@@ -105,7 +105,8 @@ def speed_note(os_line: str, link: bool = True) -> str:
 
 def facts() -> dict:
     home = read("/")
-    price = Decimal(one(r"(?m)^PRICE_USD\s*=\s*(\d+)\s*$", ENGINE.read_text(), "PRICE_USD"))
+    # `PRICE_USD = 129` or, since the 2026-11-02 halving, `PRICE_USD = Decimal("64.50")`: the engine's own exact figure either way
+    price = Decimal(one(r"(?m)^PRICE_USD\s*=\s*(?:Decimal\([\"'])?(\d+(?:\.\d+)?)[\"']?\)?\s*$", ENGINE.read_text(), "PRICE_USD"))
     mount = one(r"(<div data-founding[^>]*>)", home, "the founding mount")
     f = {
         "price": price,
@@ -159,6 +160,15 @@ def quarter(d: Decimal) -> Decimal:
     return (d / 4).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
 
+#: PAY IN FOUR HAS A FLOOR (2026-11-02, prices halved). Dodo shows Klarna / Afterpay only on a payment above $50.01, so the
+#: $64.50 price has it and the $32.25 founding price does not. Every generator asks this one question before it prints a split.
+BNPL_FLOOR = Decimal("50.01")
+
+
+def bnpl_on(f: dict, amount: Decimal) -> bool:
+    return bool(f["bnpl"]) and Decimal(amount) > BNPL_FLOOR
+
+
 def page_meta(rel: str) -> tuple[str, str]:
     s = read(rel)
     canon = one(r'<link rel="canonical" href="([^"]+)"', s, f"{rel} canonical")
@@ -196,10 +206,12 @@ def build() -> str:
         out.append(f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
                    f"({100 - int(now * 100 / p)}% off, until {f['ends'][:10]} UTC) — the Buy button applies {f['code']} "
                    f"at checkout; if it ever doesn't, choose “Have a discount code?” and enter it")
-    if f["bnpl"]:
+    if bnpl_on(f, p):
         out.append(f"- [Pay in four]({BASE}/#buy): {f['bnpl_providers']} at checkout{' ' + f['bnpl_where'] if f['bnpl_where'] else ''}"
                    f" — {money(p)} as 4 payments of {money(quarter(p))}, two weeks apart"
-                   + (f" (founding: 4 × {money(quarter(now))})" if founding_live(f) else ""))
+                   + (f" (founding: 4 × {money(quarter(now))})" if founding_live(f) and bnpl_on(f, now) else "")
+                   + (f" (not on the {money(now)} founding price, which is under the {money(BNPL_FLOOR)} minimum)"
+                      if founding_live(f) and not bnpl_on(f, now) else ""))
     out += [
         f"- [System requirements]({BASE}/#download): {f['os']}; {f['chip']}",
         f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} Macs at a time",

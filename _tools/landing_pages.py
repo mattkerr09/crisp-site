@@ -52,8 +52,8 @@ def box(src: str, buy_first: bool) -> str:
     f = llms_txt.facts()
     m, q = llms_txt.money, llms_txt.quarter
     p, now = f["price"], f["now"]
-    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if f["bnpl"] else ""
-    nsplit = f" · or 4 × {m(q(now))}" if f["bnpl"] else ""
+    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if llms_txt.bnpl_on(f, p) else ""
+    nsplit = f" · or 4 × {m(q(now))}" if llms_txt.bnpl_on(f, now) else ""     # none under the $50.01 floor
     dl = (f'<a class="btn{"" if not buy_first else " btn-ghost"}" data-track="{src}" '
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
