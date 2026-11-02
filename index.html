@@ -273,6 +273,10 @@ p em, li em{color:#c3cad6;}
    the loudest thing on the screen; balanced so it never ends on one word. */
 .hero-future{font-family:var(--head);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.4;color:var(--ice);
   margin:1rem 0 0;max-width:36ch;text-wrap:balance;}
+/* The maker, and one number he measured (CEO, 2026-11-02, WHAT-WORKS: pages with a named person and their own measured
+   numbers earn; 0% of Crisp's showed a person). Grey body type, so the H1 and the ice line stay the loud things. */
+.hero-maker{margin:1.2rem 0 0;max-width:42ch;font-size:.93rem;line-height:1.55;color:var(--grey);text-wrap:pretty;}
+.hero-maker strong{white-space:nowrap;}
 .hero-say{padding-bottom:.35rem;min-width:0;}
 .hero-say .lede{max-width:46ch;margin:0 0 1.6rem;}
 .hero-top .cta{justify-content:flex-start;}
@@ -284,6 +288,7 @@ p em, li em{color:#c3cad6;}
   .hero-say .lede{max-width:58ch;margin:1.3rem auto 2rem;}
   .hero-top .cta{justify-content:center;}
   .hero-future{margin:1rem auto 0;}
+  .hero-maker{margin:.9rem auto 0;}
 }
 .hero .lede{max-width:58ch;margin:1.3rem auto 2rem;}
 /* each bold price in the lede is "$129 once · or 4 × $32.25" / "$64.50 · or 4 × $16.13" — one unit, which
@@ -972,6 +977,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
          uploaded" tick below says the same). "Sharp enough for the TV you'll own in 2036" was the brief's example and is left out:
          nobody can measure it. -->
     <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk, with nothing uploaded.</p>
+    <!-- Measured 2026-11-02 on the installed 1.0.1777, free engine, Auto, whole clip, median of 3 quiet runs:
+         ~/ops/research/crisp-speed-2026-11-01/PREREGISTRATION.md, metric 1b (206.3 s). Re-measure before changing it. -->
+    <p class="hero-maker">I&rsquo;m Matt Kerr, and I make Crisp in Grand Rapids. On my M1 Ultra it takes a 40-second
+      1080p phone clip to 4K in <strong>3&nbsp;min 26&nbsp;s</strong>.</p>
     <!-- Shown only on a phone or tablet (.handheld, see the head script and the CSS): sending the link is the hero's first
          action there, the download its second. The script at the foot of this file wires it. -->
     <div class="send-first">
