@@ -38,7 +38,7 @@ SITE = "https://crispvideo.app"
 #: This site repo is nested and gitignored by the app repo, so it cannot import
 #: entitlement.PRICE_USD. One declared constant per repo is the achievable
 #: single source; keep it equal to entitlement.PRICE_USD.
-PRICE_USD = 129
+PRICE_USD = 29   # 2026-11-02, Matthew's video-game price (was 129)
 #: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
 #: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
 FREE_EXPORT_CAP_SECONDS = 60
@@ -98,7 +98,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: enhanced exports up to {cap} seconds, everything else at full length, with a small mark. Pro removes the mark and the limit for <span class="split">${price} once · or 4 × ${split}</span>. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: enhanced exports up to {cap} seconds, everything else at full length, with a small mark. Pro removes the mark and the limit for ${price} once. Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -127,7 +127,7 @@ def build(page):
     # A placeholder only: faq_jsonld.rebuild() below replaces mainEntity with the questions and answers the page SHOWS,
     # so the schema can never be a second, drifting copy of the FAQ (166 of 346 schema questions had drifted).
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}'
-    html = HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, split=f"{PRICE_USD / 4:.2f}", slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    html = HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,

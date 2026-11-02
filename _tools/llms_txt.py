@@ -85,6 +85,24 @@ def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
             f"all with a small {open_q}Made with Crisp{close_q} mark")
 
 
+def offer_last_day(f: dict) -> str:
+    """The offer's last day where it ends latest in the US (Pacific): FOUNDINGCRISP ends 2026-12-01T07:59:59Z, the last second
+    of 30 November in California. Said as "through November" when that is a month's last day, else "until 30 November". Read
+    from data-ends, never typed; anywhere east of California the offer in fact runs a few hours longer, never shorter."""
+    import datetime as _dt
+    from zoneinfo import ZoneInfo
+    end = _dt.datetime.fromisoformat(f["ends"].replace("Z", "+00:00")).astimezone(ZoneInfo("America/Los_Angeles"))
+    last = (end - _dt.timedelta(seconds=1)).date() if (end.hour, end.minute) == (0, 0) else end.date()
+    if (last + _dt.timedelta(days=1)).day == 1:
+        return f"through {last.strftime('%B')}"
+    return f"until {last.day} {last.strftime('%B')}"
+
+
+def offer_who(f: dict) -> str:
+    """Who gets the founding price, in the one phrase every generator uses: the cap while there is one, else everyone and when."""
+    return f"for the first {f['first']} buyers" if f["first"] else f"for everyone {offer_last_day(f)}"
+
+
 def founding_live(f: dict, when=None) -> bool:
     """True until the founding offer's end (the mount's data-ends, UTC). A generator run after it writes no founding line."""
     import datetime as _dt
@@ -110,10 +128,14 @@ def facts() -> dict:
     mount = one(r"(<div data-founding[^>]*>)", home, "the founding mount")
     f = {
         "price": price,
-        "was": Decimal(one(r'data-was="\$([\d.]+)"', mount, "data-was")),
+        # THE PRICE AFTER THE OFFER (2026-11-02): data-then, said as a future price ("then $29"). The struck-through data-was is
+        # gone: Crisp has never charged $29, and "50% off" a price nobody has paid is not a saving (CEO: no "% off" against an
+        # uncharged price). An older mount's data-was is still read, so a revert cannot silently drop the full-price check.
+        "then": Decimal(one(r'data-(?:then|was)="\$([\d.]+)"', mount, "data-then")),
         "now": Decimal(one(r'data-now="\$([\d.]+)"', mount, "data-now")),
         "code": one(r'data-code="([A-Z0-9]+)"', mount, "data-code"),
-        "first": int(one(r'data-first="(\d+)"', mount, "data-first")),
+        # A capped offer names its cap (data-first); since 2026-11-02 FOUNDINGCRISP is for everyone, so there is none.
+        "first": int(m.group(1)) if (m := re.search(r'data-first="(\d+)"', mount)) else None,
         # When FOUNDINGCRISP expires in Dodo (CEO, 2026-10-21). The generators drop every founding line from then on.
         "ends": one(r'data-ends="([0-9T:\-]+Z)"', mount, "data-ends"),
         "bnpl": one(r"var\s+CRISP_BNPL_LIVE\s*=\s*(true|false)\s*;", home, "CRISP_BNPL_LIVE") == "true",
@@ -130,8 +152,8 @@ def facts() -> dict:
         "updates": one(r"([Ee]very \d+\.x update (?:is )?included)", home, "the update promise")
                    .replace(" is included", " included").replace("Every", "every", 1),
     }
-    if f["was"] != price:
-        raise SystemExit(f"llms_txt: the founding bar's full price {f['was']} is not PRICE_USD {price}")
+    if f["then"] != price:
+        raise SystemExit(f"llms_txt: the founding bar's full price {f['then']} is not PRICE_USD {price}")
     if f["bnpl"]:
         note = one(r'<p class="bnpl-note" data-crisp-bnpl>(.*?)</p>', home, "the instalment note")
         f["bnpl_providers"] = "Klarna or Afterpay" if "Klarna or Afterpay" in note else one(r"with (\w+ or \w+)", note, "providers")
@@ -203,8 +225,8 @@ def build() -> str:
         f"generative Max lane and batch processing",
     ]
     if founding_live(f):
-        out.append(f"- [Founding price]({BASE}/#buy): {money(now)} for the first {f['first']} buyers "
-                   f"({100 - int(now * 100 / p)}% off, until {f['ends'][:10]} UTC) — the Buy button applies {f['code']} "
+        out.append(f"- [Black Friday founding price]({BASE}/#buy): {money(now)} {offer_who(f)}, then {money(p)} "
+                   f"(the offer ends {f['ends'][:10]} {f['ends'][11:16]} UTC) — the Buy button applies {f['code']} "
                    f"at checkout; if it ever doesn't, choose “Have a discount code?” and enter it")
     if bnpl_on(f, p):
         out.append(f"- [Pay in four]({BASE}/#buy): {f['bnpl_providers']} at checkout{' ' + f['bnpl_where'] if f['bnpl_where'] else ''}"

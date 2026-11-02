@@ -65,7 +65,7 @@ def box(where: str, page: str = "") -> str:
     # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
     # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
     # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).
-    found = (f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
+    found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
              f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'

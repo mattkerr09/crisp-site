@@ -193,17 +193,17 @@
     window.plausible('Purchase', { revenue: { currency: 'USD', amount: value } });
   }
   if (status === 'succeeded' && pid && typeof fetch === 'function') {
-    var late = setTimeout(function () { purchase(64.50); }, 4000);
+    var late = setTimeout(function () { purchase(29); }, 4000);
     fetch('https://kerr-affiliate-hub.kerrco.workers.dev/paid?payment_id=' + encodeURIComponent(pid))
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         clearTimeout(late);
         var amt = d && d.app === 'crisp' && d.currency === 'USD' ? Number(d.amount) : NaN;
-        purchase(amt > 0 && amt <= 64.50 ? amt : 64.50);   // the full price since 2026-11-02 (it was 129)
+        purchase(amt > 0 && amt <= 29 ? amt : 29);   // the full price since 2026-11-02 (it was 129)
       })
-      .catch(function () { clearTimeout(late); purchase(64.50); });
+      .catch(function () { clearTimeout(late); purchase(29); });
   } else if (status === 'succeeded') {
-    purchase(64.50);
+    purchase(29);
   }
 })();
 </script>

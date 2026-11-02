@@ -22,6 +22,7 @@ exempts both with this reason. product_box.py skips noindex pages.
 from __future__ import annotations
 
 import re
+from decimal import Decimal
 import sys
 from pathlib import Path
 
@@ -40,12 +41,13 @@ def buy_base() -> str:
     return m.group(1)
 
 
-#: THE THREE-APP BUNDLE (Matthew approved 2026-10-14; the numbers and dates are ~/ops/launch/BUNDLE-2026-10-14.md): Crisp + Docket SEO + Outlier for
-#: $299 once while the founding offer lasts (FOUNDINGBUNDLE expires 2026-11-25T01:26:53Z, or earlier when the founding uses run out), then $399
-#: (ALLTHREE); bought separately $129 + $349 + $249 = $727. Names only, no sister-site URL: the link goes to the hub (RULES 52).
+#: THE THREE-APP BUNDLE (Matthew approved 2026-10-14; re-priced 2026-11-02 with the video-game prices, read in the CEO's
+#: REVENUE-AUDIT-CHECKLIST entry of 18:24Z): Crisp + Docket SEO + Outlier for $49.50 once through November (FOUNDINGBUNDLE, for
+#: everyone, expires 2026-12-01T07:59:59Z), then $99 (ALLTHREE); bought separately $29 + $59 + $49 = $137. Names only, no
+#: sister-site URL: the link goes to the hub (RULES 52).
 BUNDLE_URL = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle"
-BUNDLE_FOUNDING_USD, BUNDLE_USD = 299, 399
-BUNDLE_FOUNDING_ENDS = "25 November 2026 UTC"
+BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("49.50"), Decimal("99")
+BUNDLE_FOUNDING_ENDS = "2026-12-01T07:59:59Z"
 
 
 def box(src: str, buy_first: bool) -> str:
@@ -58,7 +60,7 @@ def box(src: str, buy_first: bool) -> str:
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
            f'href="{buy_base()}?src={src}" rel="nofollow">Buy Crisp Pro</a>')
-    found = (f'<p class="pbox-found">Founding price <strong>{m(now)}{nsplit}</strong> for the first {f["first"]} buyers. '
+    found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
              f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-landing-box>'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
@@ -156,8 +158,8 @@ def pages() -> dict[Path, str]:
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
             f"runs at full length; every free export carries a small &ldquo;Made with Crisp&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. Pro is a one-time "
             f"{m(f['price'])}, {f['updates']}: it removes the mark and the {f['cap']}-second limit and adds the Max restore lane and batch processing. "
-            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier, for ${BUNDLE_FOUNDING_USD} once</a> '
-            f"while founding prices last (until {BUNDLE_FOUNDING_ENDS}, or sooner if the founding places run out), then ${BUNDLE_USD}.",
+            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier, for {llms_txt.money(BUNDLE_FOUNDING_USD)} once</a> '
+            f"{llms_txt.offer_last_day({'ends': BUNDLE_FOUNDING_ENDS})}, our Black Friday price, then {llms_txt.money(BUNDLE_USD)}.",
             "pricing-page", True),
         SITE / "download" / "index.html": page(
             "download", "Download Crisp for Mac",

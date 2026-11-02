@@ -70,8 +70,8 @@
   /* THE TRUE END DATE, BESIDE THE PRICE (CEO, 2026-11-02, Matthew: convert more page views into downloads and sales). The
      offer really ends at the mount's data-ends, which the push gate holds equal to the lead agent's endsAt
      (_tools/gate_founding.py: "data-ends must equal endsAt"), so the date shown is the checkout's own. Shown in the
-     visitor's own date: 01:26 UTC on the 25th is the evening of the 24th in the US, and a fixed "25 November" would
-     overstate it there by hours. No date when the attribute is missing or unreadable: every line reads as before. A true
+     visitor's own date: the offer ends at 07:59 UTC on 1 December, the last minute of 30 November in California, so one
+     fixed date would be wrong somewhere by hours. No date when the attribute is missing or unreadable: every line reads as before. A true
      date is honest urgency; still no seat count beyond the cap. Here, BEFORE the bar's dismissal check, so a visitor who
      dismissed the bar still sees the date in the page's own price lines. */
   var untilTxt = "";
@@ -81,7 +81,12 @@
     var t = e ? Date.parse(e) : NaN;
     var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
     if (isNaN(t) || t <= n) return;
-    try { untilTxt = "until " + new Date(t).toLocaleDateString(undefined, { month: "long", day: "numeric" }); } catch (x) {}
+    /* An end in the small hours names the day before (2026-11-02): 07:59 UTC on 1 December is 2:59 a.m. in New York, and
+       "until December 1" there would promise a day the offer does not give. Before noon, the visitor's time: the day before. */
+    try {
+      var end = new Date(t), day = end.getHours() < 12 ? new Date(t - 12 * 3600e3) : end;
+      untilTxt = "until " + day.toLocaleDateString(undefined, { month: "long", day: "numeric" });
+    } catch (x) {}
   })();
   /* ...and in the page's own founding lines (the product box and the pricing notes), after "first N buyers". A line that does
      not read that way is left exactly as it is, and nothing here can stop the bar. */
@@ -122,6 +127,11 @@
   var mount = document.querySelector("[data-founding]");
   var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
+  /* THE PRICE AFTER THE OFFER, AS A FUTURE PRICE (2026-11-02, Crisp $29 and $14.50 through November for everyone). Crisp has
+     never charged $29, so the bar must not strike it through or call $14.50 "50% off" it (CEO: no "% off" against an
+     uncharged price). A mount with data-then says "Crisp Pro $14.50, until <date>, then $29" instead; data-was keeps the
+     old struck form only for a mount that still carries it. */
+  var then = mount && mount.getAttribute("data-then");
   /* 2026-09-28, Matthew: the pay-in-four price goes RIGHT NEXT TO the price, in the same font —
      "$64.50 · or 4 × $16.13". It rides inside .now so it cannot be styled apart from the price.
      From the mount, like the prices: a site whose checkout does not offer pay-in-four simply omits
@@ -201,14 +211,15 @@
     '.ph:hover{background:#261B0B}',
     '</style>',
     (phLive ? '<a class="ph" href="' + PH.url + '" target="_blank" rel="noopener">We\u2019re live on <b>Product Hunt</b> today. We\u2019d love your feedback \u2192</a>' : ''),
-    '<div class="bar" role="region" aria-label="Founding offer">',
-    '  <span class="tag">Founding</span>',
+    '<div class="bar" role="region" aria-label="' + (then ? 'Black Friday offer' : 'Founding offer') + '">',
+    '  <span class="tag">' + (then ? 'Black Friday' : 'Founding') + '</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">50% off',
-        (first ? ' for the first ' + first + ' buyers' : ''),
-        (untilTxt ? ', ' + untilTxt : ''),
+    (then && now
+      ? '  <span class="txt">Crisp Pro <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
+        (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ', ' + untilTxt : '') + ', then ' + then
+      : '  <span class="txt">50% off' + (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ', ' + untilTxt : '') +
         (was && now ? ': <span class="was">' + was + '</span><span class="now">' + now +
-                      (split ? ' · or 4 × ' + split : '') + '</span>' : ''),
+                      (split ? ' · or 4 × ' + split : '') + '</span>' : '')),
     '  </span>',
     '  <span class="dot"></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
@@ -233,8 +244,8 @@
   /* ⛔ NO SEAT COUNT, EVER (Matthew, 2026-09-28: "it still says 24/25, get that tf off, and do this
      for every site"). The count button and its call to the lead-agent worker's founding endpoint
      are gone, and with them the only network request this file made — so it also left
-     gate_thirdparty.py's exemption table in the same change. The bar states the cap ("for the
-     first 25 buyers") and nothing else about seats. Do not bring back a count, a remaining
+     gate_thirdparty.py's exemption table in the same change. The bar states the cap, when the
+     offer has one (data-first), and nothing else about seats. Do not bring back a count, a remaining
      number or a "claimed" state without Matthew asking for it. */
   /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
      document.body) puts an element between <head> and <body>, which is invalid

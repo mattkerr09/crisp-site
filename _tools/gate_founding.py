@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """No founding price ships once the founding offer has ended (CEO, 2026-10-21).
 
-FOUNDINGCRISP in Dodo: 50% off, limit 24, expires 2026-11-25T01:26Z. The home page's founding mount is the single place
-the offer is written (data-code, data-now, data-first, data-ends); the product boxes, the landing pages, llms.txt and
+FOUNDINGCRISP in Dodo: 50% off, for everyone (no limit since 2026-11-02, Matthew's Black Friday month), expires
+2026-12-01T07:59:59Z. The home page's founding mount is the single place the offer is written (data-code, data-now,
+data-then, data-ends, and data-first only while the offer has a cap); the product boxes, the landing pages, llms.txt and
 every page's mount copy are generated from it. Two switches turn it off:
   * founding.js hides every founding line and does not mount the bar from data-ends on, with no deploy;
   * the generators (llms_txt.founding_live) write no founding line when they run after data-ends.
@@ -13,8 +14,9 @@ This gate is the third: a push is refused when
 
 Dodo's count is read LIVE from the lead-agent worker, which reads Dodo (CEO, 2026-10-21):
   GET https://kerr-lead-agent.kerrco.workers.dev/founding?site=crispvideo.app  (Origin: https://crispvideo.app)
-  -> {"code", "left", "of"/"total", "claimed", "soldOut", "expired", "endsAt"}
-The site's data-first must equal the worker's total (the CAP: "the first 25 buyers"; the 24 Dodo shows is the places
+  -> {"code", "left", "of"/"total", "claimed", "soldOut", "expired", "endsAt", "unlimited"}
+An unlimited offer (total null, unlimited true) must carry no data-first at all: a page saying "the first 25 buyers" of an
+offer open to everyone understates it. A capped one: the site's data-first must equal the worker's total (the CAP: "the first 25 buyers"; the 24 Dodo shows is the places
 LEFT, since one was claimed), data-ends must equal endsAt, and soldOut or expired means no founding copy may ship. Only if
 the worker is unreachable does it fall back to ~/ops/launch/founding-crisp.json, and it says so.
 
@@ -47,10 +49,12 @@ def live_count() -> tuple[dict | None, str]:
         with urllib.request.urlopen(req, timeout=12) as r:
             d = json.load(r)
         total = d.get("total", d.get("of"))
-        if total is None or d.get("endsAt") is None:
+        unlimited = d.get("unlimited") is True
+        if (total is None and not unlimited) or d.get("endsAt") is None:
             return None, f"the worker answered without total/endsAt: {str(d)[:120]}"
-        return {"source": "worker", "total": int(total), "left": d.get("left"), "sold_out": bool(d.get("soldOut")),
-                "expired": bool(d.get("expired")), "ends": d.get("endsAt"), "code": d.get("code")}, ""
+        return {"source": "worker", "total": None if unlimited else int(total), "unlimited": unlimited, "left": d.get("left"),
+                "sold_out": bool(d.get("soldOut")), "expired": bool(d.get("expired")), "ends": d.get("endsAt"),
+                "code": d.get("code")}, ""
     except Exception as e:  # noqa: BLE001 — unreachable is a reported fallback, never a silent pass
         return None, f"{type(e).__name__}: {str(e)[:120]}"
 
@@ -98,6 +102,8 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
     used_up = False
     if state:
         src = state.get("source", "?")
+        if state.get("unlimited") and first is not None:
+            bad.append(f"the site says the first {first} buyers, but the live offer is for everyone ({src}): drop data-first")
         if state.get("total") is not None and str(state["total"]) != str(first):
             bad.append(f"the site says the first {first} buyers, the live cap is {state['total']} ({src})")
         if state.get("ends") and state["ends"] != ends:
@@ -106,7 +112,8 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
             bad.append(f"the site offers {code}, the live code is {state['code']} ({src})")
         if state.get("sold_out") or state.get("expired"):
             used_up = True
-        notes.append(f"live count from {src}: {state.get('left')} of {state.get('total')} left"
+        notes.append((f"live from {src}: for everyone, no cap" if state.get("unlimited") else
+                      f"live count from {src}: {state.get('left')} of {state.get('total')} left")
                      + (", SOLD OUT" if state.get("sold_out") else "") + (", EXPIRED" if state.get("expired") else ""))
     else:
         notes.append("no live count (worker unreachable and no ops JSON): only the date switch is checked")
@@ -118,7 +125,8 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
                          f"ships the founding line")
         return bad, notes
     why = f"ended {ends}" if ended else "all places used"
-    needles = [n for n in (code, price and f"{price}", "Founding price", "founding buyers", "founding price") if n]
+    needles = [n for n in (code, price and f"{price}", "Founding price", "founding buyers", "founding price",
+                           "Black Friday price") if n]
     for p in pages(site):
         text = visible(p)
         hit = [n for n in needles if n in text]
@@ -176,7 +184,8 @@ def main(argv: list[str]) -> int:
             print(f"  ✗ {b}")
         return 1
     m = mount(SITE)
-    print(f"founding: {m.get('code')} {m.get('now')} for the first {m.get('first')} buyers, live until {m.get('ends')}; "
+    who = f"for the first {m.get('first')} buyers" if m.get("first") else "for everyone"
+    print(f"founding: {m.get('code')} {m.get('now')} {who}, then {m.get('then') or m.get('was')}, live until {m.get('ends')}; "
           f"no stale founding copy")
     return 0
 
