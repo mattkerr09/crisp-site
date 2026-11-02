@@ -47,6 +47,9 @@ def visible(html: str) -> str:
     m = re.search(r"<body[^>]*>(.*)</body>", html, re.S)
     body = m.group(1) if m else html
     body = re.sub(r"<(script|style)\b.*?</\1>", "", body, flags=re.S | re.I)
+    # The byline line under the H1 is a date-and-author line, not content (content_hash.py drops it for the same reason):
+    # naming the author in it (_tools/byline.py, 2026-11-02) must not read as the page being revisited.
+    body = re.sub(r'<div class="updated">.*?</div>', " ", body, flags=re.S | re.I)
     text = re.sub(r"<[^>]+>", " ", body)
     text = DATELINE.sub("", text)
     return re.sub(r"\s+", " ", text).strip()

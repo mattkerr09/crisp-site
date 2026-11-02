@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>What is variable frame rate (VFR) and why it breaks edits</title>
+<title>Variable frame rate (VFR): why audio drifts out of sync</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one.">
+<meta name="description" content="Screen recordings and phone clips often change frame rate mid-file. Editors assume one rate, so sync is fine at the start and drifts by the end. The fix.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/learn/what-is-variable-frame-rate/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is variable frame rate?">
-<meta property="og:description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one.">
+<meta property="og:title" content="Variable frame rate (VFR): why audio drifts out of sync">
+<meta property="og:description" content="Screen recordings and phone clips often change frame rate mid-file. Editors assume one rate, so sync is fine at the start and drifts by the end. The fix.">
 <meta property="og:url" content="https://crispvideo.app/learn/what-is-variable-frame-rate/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is variable frame rate?">
-<meta name="twitter:description" content="Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one.">
+<meta name="twitter:title" content="Variable frame rate (VFR): why audio drifts out of sync">
+<meta name="twitter:description" content="Screen recordings and phone clips often change frame rate mid-file. Editors assume one rate, so sync is fine at the start and drifts by the end. The fix.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is variable frame rate?","description":"Screen recordings and phone footage often store frames at an inconsistent rate. Editors assume a constant one.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-10-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is variable frame rate?","description":"Screen recordings and phone clips often change frame rate mid-file. Editors assume one rate, so sync is fine at the start and drifts by the end. The fix.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-02"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is my audio in sync at the start and drifting by the end?","acceptedAnswer":{"@type":"Answer","text":"That pattern is nearly always variable frame rate. A fixed offset would be wrong from the first frame. Progressive drift means video and audio are being laid out against different clocks, and the gap accumulates as the clip plays."}},{"@type":"Question","name":"Does converting to constant frame rate lose quality?","acceptedAnswer":{"@type":"Answer","text":"The frames themselves aren't re-encoded by the resampling itself, so the picture is unchanged. What changes is spacing, which means some frames get duplicated or dropped. On footage that was genuinely varying a lot you can occasionally see a small hitch where a frame was repeated."}},{"@type":"Question","name":"Which sources are usually variable?","acceptedAnswer":{"@type":"Answer","text":"Screen recorders almost always, phone footage frequently once light drops, and game capture tools very often. Dedicated cameras generally record constant frame rate, which is why footage from a proper camera tends to behave in an editor."}},{"@type":"Question","name":"Can I just tell my editor the real frame rate?","acceptedAnswer":{"@type":"Answer","text":"No, because there isn't one. The rate genuinely changed during the recording, so no single number describes the file. That's what makes conversion rather than reinterpretation the only reliable fix."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Variable frame rate", "item": "https://crispvideo.app/learn/what-is-variable-frame-rate/"}]}</script>
@@ -36,13 +36,19 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Variable frame rate</div>
   <h1>What is variable frame rate?</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-10-21</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-08-10 · last updated 2026-11-02</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Variable frame rate means the gap between frames
+  changes during the recording. Screen recorders and phones do it on purpose, to save space or to gather more light.
+  Editors assume one fixed rate, so the picture slides against the sound: sync is right at the start and drifts by the
+  end. The fix is to convert the clip to a constant frame rate before you edit it, which Crisp does every time it
+  decodes a clip.</p></div>
+  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$64.50</span> once<span class="pbox-split"> · or 4 × $16.13</span></p><p class="pbox-found">Founding price <strong>$32.25</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-variable-frame-rate-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-variable-frame-rate-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <p>Most video stores frames at a fixed interval. Thirty frames per second means a frame every
   thirty-third of a second, forever, and everything downstream can rely on that. Variable frame rate
   breaks the assumption: the gap between frames changes during the recording.</p>
 
-  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$64.50</span> once<span class="pbox-split"> · or 4 × $16.13</span></p><p class="pbox-found">Founding price <strong>$32.25</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-variable-frame-rate-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-variable-frame-rate-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
   <h2>Why anything records this way</h2>
   <p>It's usually a sensible decision made for good reasons. Screen recorders capture a new frame when
   something on screen changes, so a static document produces almost no frames and a scrolling page
