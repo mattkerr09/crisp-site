@@ -230,6 +230,13 @@ footer a{color:var(--grey);}
    55cf220 after it measured 3.90:1). */
 .price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
 
+/* App screenshots in an article. <figure> had no rule, so the browser's 40px side margins applied: at 375px the
+   screenshot of the app, the one picture on the page that proves the claim, rendered about 255px wide inside a 330px
+   column, with its caption at full body size (measured 2026-11-02). Full column width, a caption that reads as one. */
+article figure{margin:1.8rem 0 2.2rem;}
+article figure img{border-radius:var(--r-sm);}
+article figcaption{margin-top:.7rem;font-size:.86rem;line-height:1.55;color:var(--grey-dim);}
+
 /* LIT FROM BEHIND, on the 113 pages that share this stylesheet. index.html lights each
    <section>; these pages have no sections — they are one <article> — so the light goes on the
    article instead: two soft washes, cyan high on the left and violet lower on the right, with

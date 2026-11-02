@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Real-ESRGAN on Mac: the free CLI vs a $129 app (2026)</title>
+<title>Real-ESRGAN on Mac (2026): free for photos, hard on video</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself.">
+<meta name="description" content="Real-ESRGAN runs free on Apple Silicon and is excellent on stills. On video you build the frame, audio and memory plumbing yourself. Here is the trade.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Real-ESRGAN on Mac, and when to use an app instead">
-<meta property="og:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself.">
+<meta property="og:title" content="Real-ESRGAN on Mac (2026): free for photos, hard on video">
+<meta property="og:description" content="Real-ESRGAN runs free on Apple Silicon and is excellent on stills. On video you build the frame, audio and memory plumbing yourself. Here is the trade.">
 <meta property="og:url" content="https://crispvideo.app/vs/real-esrgan-alternative-mac/">
 <meta property="og:site_name" content="Crisp">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Real-ESRGAN on Mac, and when to use an app instead">
-<meta name="twitter:description" content="Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself.">
+<meta name="twitter:title" content="Real-ESRGAN on Mac (2026): free for photos, hard on video">
+<meta name="twitter:description" content="Real-ESRGAN runs free on Apple Silicon and is excellent on stills. On video you build the frame, audio and memory plumbing yourself. Here is the trade.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Real-ESRGAN on Mac, and when to use an app instead","description":"Real-ESRGAN is the open-source model sitting underneath a lot of paid upscalers. It is free and it works. Here is exactly what you give up by running it yourself.","datePublished":"2026-07-23","dateModified":"2026-10-21","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/real-esrgan-alternative-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Real-ESRGAN on Mac, and when to use an app instead","description":"Real-ESRGAN runs free on Apple Silicon and is excellent on stills. On video you build the frame, audio and memory plumbing yourself. Here is the trade.","datePublished":"2026-07-23","dateModified":"2026-11-02","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/real-esrgan-alternative-mac/"}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Compared", "item": "https://crispvideo.app/vs/"}, {"@type": "ListItem", "position": 3, "name": "Real-ESRGAN", "item": "https://crispvideo.app/vs/real-esrgan-alternative-mac/"}]}</script>
@@ -37,13 +37,20 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; Real-ESRGAN</div>
   <h1>Real-ESRGAN on Mac, and when to use an app instead</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-10-21</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-07-23 · last updated 2026-11-02</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Real-ESRGAN is free, open source, runs on Apple Silicon, and produces genuinely good
   upscales. If you are comfortable in a terminal you can get most of the way to a paid tool's output
-  at zero cost, and anyone telling you otherwise is selling something. What you are actually paying
-  $129 for is video handling, memory management, and not writing the pipeline yourself.</p></div>
+  at zero cost, and anyone telling you otherwise is selling something. What an app adds is the
+  video plumbing and the memory management: on my M1 Ultra, Crisp took a 40-second 1080p phone clip to 4K in
+  3&nbsp;min&nbsp;26&nbsp;s with peak memory of about 10&nbsp;GB (Crisp 1.0.1777, 2 November 2026).</p></div>
       <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p><p class="pbox-price"><span class="pbox-amt">$129</span> once<span class="pbox-split"> · or 4 × $32.25</span></p><p class="pbox-found">Founding price <strong>$64.50 · or 4 × $16.13</strong> for the first 25 buyers. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-real-esrgan-alternative-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-real-esrgan-alternative-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 60 seconds, everything else at full length, all with a small &ldquo;Made with Crisp&rdquo; mark · macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+
+  <figure>
+<img src="/howto-upscale-video-mac.jpg" width="1200" height="838" decoding="async" loading="lazy"
+     alt="Crisp's Before/After window: a soft 1950s film shot of a pagoda roof on the left, the same frame after upscaling to 4K on the right.">
+<figcaption>The same family of model inside an app: Crisp 1.0.1442 upscaling a 4.4-second film clip to 3840×2160 on Auto. The line under the file name reads RealESRGAN_General_WDN_x4_v3. The free copy adds the small “Made with Crisp” mark.</figcaption>
+</figure>
 
   <h2>What you get for free</h2>
   <p>The <code>realesrgan-ncnn-vulkan</code> binary takes an image and gives back a larger one. It is
