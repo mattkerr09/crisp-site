@@ -30,7 +30,20 @@ BASELINE = Path(__file__).resolve().parent / "price_sources_baseline.json"
 # Crisp's own price is not a rival's price and needs no external source.
 # ...nor are the figures the same till derives from it: the 4-payment instalment (129 / 4), the founding price (half of 129, then
 # a quarter of the founding price) that every page's product box carries. 24 pages went "NEW" on these three alone on 2026-10-15.
-OURS = {"129", "129.00", "0", "64.50", "64.5", "32.25", "16.13"}
+def _ours() -> set:
+    """Crisp's own figures, DERIVED from the engine's price (llms_txt.facts, which reads entitlement.PRICE_USD and the founding
+    mount and refuses a mismatch): the price, the founding price, and their four-payment quarters. Typed, this set kept $129
+    as "ours" after the 2026-11-02 halving, so a stale "Crisp is $129" would have passed."""
+    import llms_txt
+    f = llms_txt.facts()
+    figs = {f["price"], f["now"], llms_txt.quarter(f["price"]), llms_txt.quarter(f["now"])}
+    out = {"0"}
+    for d in figs:
+        out |= {f"{d:.2f}", f"{d.normalize()}", f"{d:.2f}".rstrip("0").rstrip(".")}
+    return out
+
+
+OURS = _ours()
 MONEY = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)")
 DATED = re.compile(r"Prices?\s+checked\s+\d", re.I)
 
@@ -369,7 +382,7 @@ def main():
         print("\nOur own price is the one number on this site nobody double-checks, because every "
               "other rule here is about rivals.")
         return 1
-    print("no page gives Crisp a price that is not $129 (34 attributed, self-check passed)")
+    print(f"no page gives Crisp a price that is not one of its own ({', '.join(sorted(OURS - {'0'}))}; self-check passed)")
     _ho = head_only_prices()
     if _ho:
         print(f"{len(_ho)} page(s) carry a price in <head> that the body does not — a correction "

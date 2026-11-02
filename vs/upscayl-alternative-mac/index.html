@@ -14,16 +14,16 @@
 <meta property="og:description" content="Upscayl alternative for Mac: Crisp bundles the same Real-ESRGAN engine and adds what video needs (audio, timing, colour). For photos alone, use Upscayl.">
 <meta property="og:url" content="https://crispvideo.app/vs/upscayl-alternative-mac/">
 <meta property="og:site_name" content="Crisp">
-<meta property="og:image" content="https://crispvideo.app/og.png?v=20260924">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Upscayl alternative for Mac: same engine, made for video">
 <meta name="twitter:description" content="Upscayl alternative for Mac: Crisp bundles the same Real-ESRGAN engine and adds what video needs (audio, timing, colour). For photos alone, use Upscayl.">
-<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20260924">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"An Upscayl alternative for Mac: the same engine, doing a different job","description":"Upscayl alternative for Mac: Crisp bundles the same Real-ESRGAN engine and adds what video needs (audio, timing, colour). For photos alone, use Upscayl.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-02"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Crisp really use the same upscaler as Upscayl?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its licence, the AGPL-3.0, with its source linked in Crisp's NOTICES file. On a single image at the same model and scale you should expect the same output."}},{"@type":"Question","name":"Then why would I pay for Crisp?","acceptedAnswer":{"@type":"Answer","text":"For video, and for everything around the model: audio kept in sync, variable frame rate normalised, interlacing handled before it gets sharpened, HDR tone mapped, the ordering of restoration steps handled for you, and a timeline to actually cut with. For photos alone, Upscayl is free and does the job."}},{"@type":"Question","name":"Can Upscayl do video if I extract the frames myself?","acceptedAnswer":{"@type":"Answer","text":"You can upscale the frames, yes. You then have to reassemble them with the original audio, preserve the timing of a variable-rate source, and handle interlacing and colour yourself. It's doable and it is a real afternoon of work per clip."}},{"@type":"Question","name":"Is Crisp just a wrapper around Upscayl?","acceptedAnswer":{"@type":"Answer","text":"For the standard upscale lane it uses that engine, and says so. The rest of the app is its own: the timeline editor, the plain-English layer, stabilization, grading, captions, the montage builder, and the generative Max restore lane, which is a different model entirely."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Crisp really use the same upscaler as Upscayl?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its licence, the AGPL-3.0 (read on GitHub, 2 November 2026), with its source linked in Crisp's NOTICES file. On a single image at the same model and scale you should expect the same output."}},{"@type":"Question","name":"Then why would I pay for Crisp?","acceptedAnswer":{"@type":"Answer","text":"For video, and for everything around the model: audio kept in sync, variable frame rate normalised, interlacing handled before it gets sharpened, HDR tone mapped, the ordering of restoration steps handled for you, and a timeline to actually cut with. For photos alone, Upscayl is free and does the job."}},{"@type":"Question","name":"Can Upscayl do video if I extract the frames myself?","acceptedAnswer":{"@type":"Answer","text":"You can upscale the frames, yes. You then have to reassemble them with the original audio, preserve the timing of a variable-rate source, and handle interlacing and colour yourself. It's doable and it is a real afternoon of work per clip."}},{"@type":"Question","name":"Is Crisp just a wrapper around Upscayl?","acceptedAnswer":{"@type":"Answer","text":"For the standard upscale lane it uses that engine, and says so. The rest of the app is its own: the timeline editor, the plain-English layer, stabilization, grading, captions, the montage builder, and the generative Max restore lane, which is a different model entirely."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Compared", "item": "https://crispvideo.app/vs/"}, {"@type": "ListItem", "position": 3, "name": "Upscayl", "item": "https://crispvideo.app/vs/upscayl-alternative-mac/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
@@ -41,7 +41,7 @@
   <p><strong>Crisp is an Upscayl alternative for Mac when the job is video.</strong> It runs the same Real-ESRGAN engine and handles the audio, timing, colour and ordering work around it; for photos alone, Upscayl is free and excellent, and you should use it.</p>
 
   <p>Let's start with the part most comparison pages would bury. Crisp bundles <code>upscayl-bin</code>,
-  the same ncnn build of Real-ESRGAN that Upscayl is built around, redistributed under its licence, the AGPL-3.0,
+  the same ncnn build of Real-ESRGAN that Upscayl is built around, redistributed under its licence, the AGPL-3.0 (read on GitHub, 2 November 2026),
   with <a href="https://github.com/upscayl/upscayl-ncnn">its source</a> linked in Crisp's NOTICES file. On a single photo, at the same
   model and the same scale, you should expect the same result. There is no secret sauce and claiming
   one would be easy to disprove.</p>
@@ -77,7 +77,7 @@
   <h2>The comparison that's actually useful</h2>
   <div class="cmp-wrap"><table>
     <tr><th></th><th>Upscayl</th><th>Crisp</th></tr>
-    <tr><td>Price</td><td>Free, open source</td><td>Free with a watermark; <span class="split">$129 once · or 4 × $32.25</span> to remove it</td></tr>
+    <tr><td>Price</td><td>Free, open source</td><td>Free with a watermark; <span class="split">$64.50 once · or 4 × $16.13</span> to remove it</td></tr>
     <tr><td>Photos</td><td>Yes, its whole purpose</td><td>Yes, 9 formats including HEIC and AVIF</td></tr>
     <tr><td>Video</td><td>No</td><td>Yes, with audio, timing and colour handled</td></tr>
     <tr><td>Upscaling engine</td><td>Real-ESRGAN (ncnn)</td><td>The same Real-ESRGAN (ncnn)</td></tr>
@@ -95,7 +95,7 @@
 
   <h2>Upscayl and Crisp, in detail</h2>
   <h3>Does Crisp really use the same upscaler as Upscayl?</h3>
-  <p>Yes. Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its licence, the AGPL-3.0, with its source linked in Crisp's NOTICES file. On a single image at the same model and scale you should expect the same output.</p>
+  <p>Yes. Crisp bundles upscayl-bin, an ncnn build of Real-ESRGAN, under its licence, the AGPL-3.0 (read on GitHub, 2 November 2026), with its source linked in Crisp's NOTICES file. On a single image at the same model and scale you should expect the same output.</p>
   <h3>Then why would I pay for Crisp?</h3>
   <p>For video, and for everything around the model: audio kept in sync, variable frame rate normalised, interlacing handled before it gets sharpened, HDR tone mapped, the ordering of restoration steps handled for you, and a timeline to actually cut with. For photos alone, Upscayl is free and does the job.</p>
   <h3>Can Upscayl do video if I extract the frames myself?</h3>
