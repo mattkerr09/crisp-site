@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1802",
-  "notes": "Audio effects such as Normalize and Echo now keep your sound at its original sample rate and length, so a clip no longer ends on a frozen frame. \u201cExport selected clips\u201d now appears in the panel you see when clips are selected, and it exports just those clips. Switching a montage to music-synced now shows straight away that the song sets its length. A photo your camera stored sideways is now enlarged at the size it shows on screen, and a grid of portrait phone videos now comes out portrait instead of cropping each one into a landscape cell. Typing \u201cdon\u2019t denoise too much\u201d, \u201cgo easy on the brightness\u201d or \u201cbrighten it, but not too much\u201d now makes a gentle change, instead of turning the request down or running it at full strength. \u201cRestore my wedding highlights\u201d now restores your highlights video instead of darkening its bright parts, and \u201ckeep the sound\u201d gets a straight answer. Time estimates for rotated phone clips and widescreen tapes are now worked out at the size Crisp actually writes.",
-  "pub_date": "2026-11-02T13:07:43Z",
+  "version": "1.0.1808",
+  "notes": "Screen recordings and other clips between 1440p and 4K now come out at 4K under Auto and Enhance, the size the label names, in the same time and at about half the file size; the message when it finishes says how to get 5K instead. Asking for a frame rate now gets the nearest one Crisp can make: \u201cmake it 120fps\u201d on 30fps footage now gives exactly 120fps instead of stopping at 90, and \u201cfour times the frame rate\u201d now smooths the motion instead of enlarging the picture.",
+  "pub_date": "2026-11-02T16:39:57Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlKM1dIcEsyVllYaGVIV3RCMHBRTHNobklZRno5SmNTTVZyMmlvTjM5SmpNb1dDR2x2TDduRWl0dmlKQkE4ZzBrazV2ZnBlMk9uSUFoVytQNEVwc1F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjI0NTI2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUbS9pWnRzSm0yVm1FUFdsRmxmazhQTkhtMXEvLzJJc3ZkVnU5eHVFbFROM05HeTM1cGtBUUtDcldXaHFkNWdBRmdjZ3dwVEVrNDdCTUYrUlkwMUtBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1802.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU56YklzV2k2V09tMm1IRjBnYmI4TFZvc2NXcTBYZHF2Q29ZYUhKeWZkd1E0c1JoTTBJUU5hM1Y5VE9nSTh4dklVSEtBNjRySDlqSERPaTVMWXREYkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjM3MTYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negoxOHk2NzdST20xYU1Qckx3SHRpTllaOThMUytuMThqSExwWU5WamthM2gxMTVlbFFwUmtyZzRuY1dqZHZXaUgzZFlUQTJSbjZvcmt6NG9Kc2VicVdEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1808.app.tar.gz"
     }
   }
 }
