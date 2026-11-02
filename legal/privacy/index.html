@@ -90,18 +90,10 @@
     everything said further up this page about Crisp itself is unchanged: the software contains no
     analytics SDK, no crash reporter and no advertising identifiers. Any content blocker stops the
     pixel, and nothing on this site depends on it loading.</li>
-    <li><strong>A cookie, for affiliate credit, on the homepage.</strong> The homepage (and
-    only the homepage) loads a 778-byte script from <strong>this domain</strong>,
-    <code>/sled.js</code>, a pinned copy we serve ourselves. If you arrive on a link carrying a <code>?ref=</code> parameter, it stores that
-    referral code in a cookie named <code>ta_ref</code> for <strong>90 days</strong> and tells
-    <code>usesled.com</code> that the click happened, which means Sled sees your IP address on
-    that one request. <strong>If you did not arrive on a referral link, nothing is sent to
-    usesled.com at all.</strong> Until 17 August 2026 that script was fetched from
-    <code>usesled.com</code> directly, so they saw every visitor&rsquo;s IP whether or not a
-    referral was involved; serving it ourselves is what makes the sentence above literally true.
-    Its only purpose is to pay the person who referred you if you later buy Crisp Pro. The cookie
-    holds a referral code, not an identity, and it is set by this website, never by the
-    app.</li>
+    <li><strong>No affiliate cookie.</strong> Until 2 November 2026 the homepage loaded a small script,
+    <code>/sled.js</code>, that kept an affiliate referral code in a cookie named <code>ta_ref</code> and told
+    <code>usesled.com</code> when someone arrived on a referral link. It has been removed: this site no longer sets
+    that cookie and never contacts usesled.com.</li>
     <li><strong>The amount you paid, on the thank-you page only.</strong> After a successful purchase,
     the thank-you page asks our own server (<code>kerr-affiliate-hub.kerrco.workers.dev</code>) how much
     that payment was, sending only the payment&rsquo;s id, so the sale is counted in our analytics at the
@@ -119,14 +111,10 @@
     and it sets no cookie and sends nothing anywhere. Dodo Payments, our merchant of record named
     further down this page, receives the code as order metadata when a purchase is made.
     <br><br>
-    Two things worth stating plainly, because this page has been wrong before by omission. This is
-    a <strong>second</strong> affiliate mechanism alongside the <code>ta_ref</code> cookie above,
-    and the two are not the same: that one is a cookie on the homepage kept for 90 days, this one
-    is local storage on <strong>all 124 pages</strong> kept for 30. An affiliate&rsquo;s link can
-    point at any page here, so a referral that lands on a comparison or how-to page is only seen
-    by this one. And a referral code is a tracker in the plain sense of the word (it
-    records where you came from so someone can be paid) so nothing on this site says we do
-    not track you.</li>
+    Worth stating plainly, because this page has been wrong before by omission: this is now the
+    <strong>only</strong> affiliate mechanism on the site (the <code>ta_ref</code> cookie above is gone), it is
+    local storage on every page, kept for 30 days, and a referral code is a tracker in the plain sense of the word
+    (it records where you came from so someone can be paid), so nothing on this site says we do not track you.</li>
     <li><strong>Privacy-friendly site analytics.</strong> This page said
     &ldquo;no site analytics &hellip; there is no Plausible&rdquo; until 17 August 2026, and that
     was <strong>wrong</strong>: Plausible has been on all 114 pages of this site. It is

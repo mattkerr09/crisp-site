@@ -153,11 +153,6 @@ INERT_SCRIPT_TYPES = {"application/ld+json"}
 #: not the filename. (I made exactly this mistake in the sibling pytest gate an hour ago: two
 #: of three controls sailed through a page-scoped exemption.)
 CONDITIONAL = {
-    "usesled.com": ("sled.js",
-                    "api/click beacon, fired strictly inside `if(ref)` — so only "
-                    "for visitors who arrived on an affiliate ?ref= link, which "
-                    "is what /legal/privacy/ discloses",
-                    "if(ref)"),
     # THE AMOUNT A BUYER PAID (2026-09-28). The thank-you page asks Kerr & Company's own hub what the
     # payment it just returned from actually cost, so Meta and Plausible count $64.50 for a founding sale
     # rather than a flat $129. Read aloud: "After you buy, this page asks our server how much that payment
