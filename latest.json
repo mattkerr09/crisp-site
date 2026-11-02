@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1777",
-  "notes": "Auto now upscales portrait phone videos as far as the same video sideways, so a 720p phone clip comes out in 4K. That takes about twice as long as the old 2\u00d7 result. Edits that mix shapes now take the shape you used most, and no clip is shrunk. On the free version, an editor export with a colour look stops at 60 seconds with the mark, as the app and the website describe. A Pro copy now checks its license about once a week, and being offline never turns Pro off.",
-  "pub_date": "2026-11-02T02:03:41Z",
+  "version": "1.0.1780",
+  "notes": "Upscaling to 4K now uses far less memory: on our test Mac a 40-second 4K render peaked at about 3 GB instead of 10 GB, with the same picture and the same speed. That leaves more room for your other apps while Crisp works, especially on Macs with 8 or 16 GB.",
+  "pub_date": "2026-11-02T05:34:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYxbFZpYkVyUDFjTm5wSWhLZnp3VU4vRmJpd2UxaWR5alZ5NzhudmJ3cWpkbU43bGhzQWZEVlh2Yy9teWVBR0Z4V24zVXpqNENpZ05iSVpXUld6ZXdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg0NTYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVS0FZbnZrbitoNEhZSzVqMjdBKzEwcjFwb2J6MUgvdEwwTWQyc3BFSXFHaXptYTYrSnZWNVcwVXNneG4rZnFZV0VPMlIwY2tOZktOZU92WURXUmlEQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1777.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx1VWtkVlRCbnI1cG11MUxCZlNMaGJsbFpXd0xHMEtTbXpYMWR3c1NlRDZXNi9mSXJWN3d5ZlVYWk1Oc0Urbkt3byt5ek5uYlUxcndvOG5ZWlk4SWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTk3MjAwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkSGlyVEp1dFdvc3FwWmZzNUltUm84K3RoRTduMENubGJHbjJLc3JjejhNV01oY0RJdVo0dnl6TkZuTlZ6SDB0UWdNOWh3a3U1L29EbXd6d2hpbWdCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1780.app.tar.gz"
     }
   }
 }
