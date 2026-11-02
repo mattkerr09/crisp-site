@@ -1265,36 +1265,6 @@
     "text": "Topaz Labs stopped selling perpetual licences on 3 October 2025."
    }
   ],
-  "learn/is-topaz-video-ai-free": [
-   {
-    "vendors": [
-     "Topaz"
-    ],
-    "kind": "PRICE",
-    "text": "Topaz used to sell a perpetual licence."
-   },
-   {
-    "vendors": [
-     "Adobe"
-    ],
-    "kind": "PRICE",
-    "text": "Adobe says the apps carry on as standalone products; what that means for pricing later is not something anyone outside the two companies can know yet."
-   },
-   {
-    "vendors": [
-     "Real-ESRGAN"
-    ],
-    "kind": "PRICE",
-    "text": "Open-source image upscalers such as Real-ESRGAN, and free apps built on it, cost nothing and work well on single images."
-   },
-   {
-    "vendors": [
-     "Topaz"
-    ],
-    "kind": "FEATURE",
-    "text": "Topaz has a deeper catalogue of models and more control over each one, a Windows version, and a long record in professional restoration work."
-   }
-  ],
   "learn/what-the-denoise-setting-does": [
    {
     "vendors": [
@@ -1664,13 +1634,6 @@
    }
   ],
   "vs/topaz-alternative-mac": [
-   {
-    "vendors": [
-     "Topaz"
-    ],
-    "kind": "FEATURE",
-    "text": "This isn't a \"Crisp beats Topaz\" pitch."
-   },
    {
     "vendors": [
      "Topaz"

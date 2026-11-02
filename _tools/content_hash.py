@@ -22,8 +22,8 @@ rot:
 
   INCLUDED   <title>, the `<article>` body, and JSON-LD that describes the PAGE
   EXCLUDED   <nav>, <footer>, everything else outside <article>, analytics/pixel scripts,
-             BreadcrumbList blocks, the `<div class="updated">` byline, and every
-             datePublished/dateModified value wherever it appears; and JSON-LD that RESTATES the
+             BreadcrumbList blocks, the `<div class="updated">` byline and the JSON-LD "author" that
+             restates it, and every datePublished/dateModified value wherever it appears; and JSON-LD that RESTATES the
              article: FAQPage blocks, Article "headline" and HowTo "name" (2026-10-19, below)
 
 ⚠️ SCHEMA THAT RESTATES THE PAGE IS NOT CONTENT (2026-10-19). FAQPage is now BUILT from the
@@ -59,6 +59,10 @@ BYLINE = re.compile(r'<div class="updated">.*?</div>', re.S | re.I)
 LDJSON = re.compile(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.S | re.I)
 # Date values, wherever they appear and however they are spaced.
 DATEFIELD = re.compile(r'"date(?:Modified|Published)"\s*:\s*"[^"]*"', re.I)
+# The author, wherever a block names one. It restates the byline under the H1, which is excluded above for the same
+# reason: _tools/byline.py writes the two together (2026-11-02), and counting the JSON-LD half would date-stamp 37 pages
+# "last updated today" for a change no reader can see in the article.
+AUTHORFIELD = re.compile(r'"author"\s*:\s*(?:\{[^{}]*\}|"[^"]*")\s*,?', re.I)
 ARTICLE = re.compile(r'<article\b[^>]*>(.*?)</article>', re.S | re.I)
 TITLE = re.compile(r'<title\b[^>]*>(.*?)</title>', re.S | re.I)
 TAGS = re.compile(r'<[^>]+>')
@@ -99,7 +103,7 @@ def content_of(html: str) -> str:
         block = _restated_removed(block)
         if block is None:
             continue                      # the visible FAQ restated as schema; the article text counts
-        parts.append(DATEFIELD.sub("", block))
+        parts.append(AUTHORFIELD.sub("", DATEFIELD.sub("", block)))
 
     body = ARTICLE.search(html)
     if body:

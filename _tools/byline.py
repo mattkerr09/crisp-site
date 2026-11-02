@@ -28,6 +28,10 @@ SITE = Path(__file__).resolve().parent.parent
 NAME = "Matt Kerr"
 OLD = '<div class="updated">Crisp · built in Grand Rapids · '
 NEW = f'<div class="updated">By {NAME}, who makes Crisp in Grand Rapids · '
+#: the five how-tos whose line is the month dateline dateline.py keeps true ("Updated October 2026 · step-by-step"):
+#: the name goes in front, and the "Updated <Month> <Year>" it maintains is left exactly as it is.
+OLD_MONTH = '<div class="updated">Updated '
+NEW_MONTH = NEW + 'Updated '
 AUTHOR = {"@type": "Person", "name": NAME, "url": "https://crispvideo.app/about/"}
 AUTHOR_JSON = json.dumps(AUTHOR, ensure_ascii=False, separators=(",", ":"))
 TYPES = {"Article", "HowTo", "CollectionPage", "TechArticle", "BlogPosting"}
@@ -60,10 +64,10 @@ def _fix_block(raw: str) -> str:
 
 def convert(page: Path) -> bool:
     text = page.read_text(encoding="utf-8")
-    if OLD not in text and NEW not in text:
+    if OLD not in text and NEW not in text and OLD_MONTH not in text:
         print(f"  SKIP {page.parent.relative_to(SITE)}: no standard byline under the H1")
         return False
-    out = text.replace(OLD, NEW, 1)
+    out = text.replace(OLD, NEW, 1) if OLD in text else text.replace(OLD_MONTH, NEW_MONTH, 1)
     out = LD.sub(lambda m: m.group(1) + _fix_block(m.group(2)) + m.group(3), out)
     if out != text:
         page.write_text(out, encoding="utf-8")
