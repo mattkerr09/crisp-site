@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1769",
-  "notes": "\u201cMake it 4K but faster\u201d keeps the upscale instead of playing your video at double speed, \u201cmake it 4K without sound\u201d now does both, and \u201cupscale by 2\u201d upscales 2\u00d7. Plain requests like \u201cfix my old tape\u201d, \u201cuse the fast model\u201d and \u201cenlarge it\u201d now work. On portrait phone videos, \u201cmake it 4K\u201d and \u201cmake it 1080p\u201d give the size you asked for, and \u201cthis reel is grainy\u201d cleans up your film reel instead of cutting it into highlights. Transparent PNGs keep their transparency when upscaled, looping a tape file makes a video QuickTime opens, a short 4:3 clip no longer letterboxes a widescreen edit, and the Export panel no longer offers AV1 in a MOV file. A license key pasted in lower case or with \u201cLicense key:\u201d in front now activates, and the price in the app always matches the unlock window.",
-  "pub_date": "2026-11-01T23:41:59Z",
+  "version": "1.0.1777",
+  "notes": "Auto now upscales portrait phone videos as far as the same video sideways, so a 720p phone clip comes out in 4K. That takes about twice as long as the old 2\u00d7 result. Edits that mix shapes now take the shape you used most, and no clip is shrunk. On the free version, an editor export with a colour look stops at 60 seconds with the mark, as the app and the website describe. A Pro copy now checks its license about once a week, and being offline never turns Pro off.",
+  "pub_date": "2026-11-02T02:03:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9iWVZINEZiU3hkTDJ1WmV4THJWdzB6d3dybTMrN3RxejNldVRxbzBUT09SLzY0ZTE2QXZRdHVaU2tNeDZjTFFlZjlSSUdPUTlSTU1SZnZ6TXpSQ1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTc1ODUzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0cWFhRmNJQXQxcUpkL0pJdTFreVZ0bTVwdC8rOFVqVkJDVk9jMnBUM2JTR0tpVk1PS0hxRWFYMTBkcHpXQ2g4dlAyOUJvZHVGQ3JmUnBFRGZrOGFDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1769.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUYxbFZpYkVyUDFjTm5wSWhLZnp3VU4vRmJpd2UxaWR5alZ5NzhudmJ3cWpkbU43bGhzQWZEVlh2Yy9teWVBR0Z4V24zVXpqNENpZ05iSVpXUld6ZXdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg0NTYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpVS0FZbnZrbitoNEhZSzVqMjdBKzEwcjFwb2J6MUgvdEwwTWQyc3BFSXFHaXptYTYrSnZWNVcwVXNneG4rZnFZV0VPMlIwY2tOZktOZU92WURXUmlEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1777.app.tar.gz"
     }
   }
 }
