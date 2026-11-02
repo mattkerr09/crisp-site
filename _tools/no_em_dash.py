@@ -41,7 +41,9 @@ ATTR_DESCS = ('name="description"', 'property="og:description"', 'name="twitter:
 
 def arms() -> set[str]:
     try:
-        return {l.split("|")[1].strip() for l in ARMS.read_text().splitlines() if l.startswith("crispvideo.app")}
+        # a title-only arm ("/path/ [title-only]", ARMS.md's note) locks the title, not the copy, so it is not skipped here
+        return {l.split("|")[1].strip() for l in ARMS.read_text().splitlines()
+                if l.startswith("crispvideo.app") and "[title-only]" not in l.split("|")[1]}
     except FileNotFoundError:
         raise SystemExit("no_em_dash: ~/ops/search/ARMS.md is missing; refusing to guess which pages are locked")
 
