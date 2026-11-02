@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1828",
-  "notes": "Crisp Pro is now $29 once, and $14.50 for everyone through November, our Black Friday price, applied for you at checkout. The unlock window shows the date the $14.50 price ends, in your own time zone. Free upscaling, restoring and colour exports now stop at 15 seconds, enough to see the difference on your own footage; everything else still runs at full length. Asking for an edit and then for restraint, like \u201cupscale it but go easy on the sharpening\u201d or \u201cenhance it, don\u2019t denoise too much\u201d, now keeps that edit gentle instead of picking the strongest setting or saying the edit was turned down.",
-  "pub_date": "2026-11-02T21:02:24Z",
+  "version": "1.0.1830",
+  "notes": "Before and After now show the same moment on a free clip longer than 15 seconds, so the comparison is the real one. The first enhance of a clip longer than the free 15 seconds now says what was cut and how to get the whole video, and it chimes when it finishes, like every other result.",
+  "pub_date": "2026-11-02T22:33:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFKYXJCazFTWUNCUDhnS21vSnFtVnJmVHNrTWVTeTY1cHhTM2IyNTZBTEZQYTYzczBOenllbGFCcFVMWVdMZENycnhTVkViTGJDKzFMUEE1ekJMSUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjUyNTE1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negp4NWRlWWxHaDVIYjUyUlBMd0pBOWJuWEJpOFZwMytUcllPWDg0ZDJ6R0dva3VtVFNzUWZTSGo0ZW9BUE9MWkZBQTRaSVFtbnN3QnZBWHBCNG9GUVpEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1828.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhzZTlqaHdZcWYzUjdQMXphMjY1Zi9uaksrSTlHblNldGorOXJuRnVtT3FTQTBRUi9qNEVNamU2MnRTbkNSOEJWNFQwdDdpd2hIWUovaEhoblNoVWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjU4MjYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwRVlubGFLQUdDOXdJbDg0akUrNUwyWmV4UFlhVTFyeCtmbTZPV3Bsd3kzSDNrOGxKNWhsaXFFRkxwdUxEd3ZnSkJWeUIwUjYrYVl5WCt2Z0ZjVWhBZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1830.app.tar.gz"
     }
   }
 }
