@@ -1,0 +1,11 @@
+{
+  "version": "1.0.1838",
+  "notes": "Crisp for Windows: restore, denoise and upscale video offline on your PC, then edit it on a real timeline. Free to use with a small mark; upscaling, restoring and colour exports stop at 15 seconds. Pro is $29 once, $14.50 through November. Windows 10 or 11, 64-bit.",
+  "pub_date": "2026-11-03T23:23:08Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNVZmlPaFBDM0R2dHNPcG9MRUFEUmVXbWloV3lPNThudmhSSGtmaU5tN2ZmRHhwRVVmM2pWZE5lbnRTblRlU0FEdktGSEtRbDlFTDZwUHpydkh4ZlF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzQ4MTg4CWZpbGU6Q3Jpc3AtMS4wLjE4MzgteDY0LXNldHVwLmV4ZQorM1JWRUx1TllXR2ttWjZnZVVtMEVyZDNJMi9qWWNmbC84SjVPVWtDdDJDTEdneXZkQmZoc21LQktBck54SURNb3hoZjJGS0ZNYnc1bzVHL1F1MmZDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1838-x64-setup.exe"
+    }
+  }
+}
