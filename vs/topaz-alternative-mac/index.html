@@ -118,13 +118,14 @@
     <tbody>
       <tr><td>Minimum macOS</td><td>macOS 13 (some features need 15)</td><td>macOS 14 (Sonoma), Apple Silicon</td></tr>
       <tr><td>Processor</td><td>M-series: &ldquo;Intel-based Macs are not currently supported&rdquo;</td><td>Apple Silicon</td></tr>
-      <tr><td>Memory</td><td>16&nbsp;GB RAM</td><td class="yes">measured peak 1.05&nbsp;GB</td></tr>
+      <tr><td>Memory</td><td>16&nbsp;GB RAM</td><td class="yes">measured peak 1.47&nbsp;GB</td></tr>
       <tr><td>Storage</td><td>45&nbsp;GB internal</td><td class="yes">the app plus your footage</td></tr>
     </tbody>
   </table></div>
-  <p>The memory row is the one worth pausing on. We measured Crisp doing the job those requirements
-  exist for, upscaling 1080p to 4K and sampling Crisp and every process it starts, and
-  the peak was <strong>1.05&nbsp;GB</strong>. It streams frames rather than holding the clip in
+  <p>The memory row is the one worth pausing on. We measured Crisp 1.0.1830 doing the job those
+  requirements exist for, upscaling a 10-second 1080p clip to 4K, and added up the memory of Crisp
+  and every process it starts every half second. The peak was <strong>1.47&nbsp;GB</strong>, almost
+  all of it the Core ML upscaler. It streams frames rather than holding the clip in
   memory, so a longer video does not raise that much.</p>
   <p class="muted">Two caveats, because these are not the same kind of number. Theirs is a
   <em>stated minimum</em> and ours is a <em>measured peak</em>. A vendor&rsquo;s floor is a
