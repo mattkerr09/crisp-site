@@ -67,6 +67,7 @@ def box(src: str, buy_first: bool) -> str:
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
+            f'{windows_line(src)}'
             f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
@@ -170,6 +171,26 @@ def pages() -> dict[Path, str]:
     }
 
 
+def windows_line(src: str) -> str:
+    """The Windows download, through the hub's counting route like the Mac's (src = this place + "-windows"). Empty until a
+    Windows release exists. Claims are only what the release run proved: the version, the requirement, the signer."""
+    w = llms_txt.windows()
+    if not w:
+        return ""
+    return (f'<p class="win-link">On {llms_txt.WIN_REQ}? <a data-track="{src}-windows" href="{llms_txt.dl_win_url(src + "-windows")}" '
+            f'rel="nofollow">Download Crisp {w["version"]} for Windows</a></p>')
+
+
+#: the home page's Windows line sits between these markers, under the hero's Mac button; this file writes it and --check reads it
+WIN_HOME = re.compile(r"<!-- windows-download:begin -->.*?<!-- windows-download:end -->", re.S)
+
+
+def home(s: str) -> str:
+    assert WIN_HOME.search(s), "index.html: the windows-download markers are gone"
+    return WIN_HOME.sub(lambda _m: "<!-- windows-download:begin -->" + windows_line("home-hero") + "<!-- windows-download:end -->",
+                        s, count=1)
+
+
 def page404(s: str) -> str:
     b = box("404", False)
     if "data-landing-box" in s:
@@ -184,6 +205,8 @@ def main(argv: list[str]) -> int:
     want = pages()
     p404 = SITE / "404.html"
     want[p404] = page404(p404.read_text())
+    ph = SITE / "index.html"
+    want[ph] = home(ph.read_text())
     stale = [str(p.relative_to(SITE)) for p, s in want.items() if not p.is_file() or p.read_text() != s]
     if check:
         print(f"landing pages: {'stale ' + ', '.join(stale) if stale else 'current'}")

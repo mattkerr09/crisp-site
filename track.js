@@ -10,7 +10,7 @@ document.addEventListener("click", function (e) {
   if (!a) return;
   var href = a.getAttribute("href") || "";
   var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
-  if (/\/Crisp\.dmg$/.test(href)) {
+  if (/\/Crisp\.dmg$|\/Crisp-[\d.]+-x64-setup\.exe$/.test(href)) {
     window.plausible("Download", { props: { button: name } });
   // ...and the hub's /buy/<app>, which opens the same Dodo checkout with the founding code applied (2026-10-01)
   } else if (/^https:\/\/(checkout\.dodopayments\.com\/|kerr-affiliate-hub\.kerrco\.workers\.dev\/buy\/)/.test(href)) {

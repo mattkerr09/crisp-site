@@ -10,6 +10,7 @@
 - [Licence terms](https://crispvideo.app/legal/terms/): one Pro licence runs on up to 3 Macs at a time
 - [Refunds](https://crispvideo.app/legal/refunds/): email within 30 days of purchase for a refund, no reason needed
 - [Download for Mac](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg): the current release, 1.0.1830
+- [Download for Windows](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1838-x64-setup.exe): Crisp 1.0.1838 for Windows 10 or 11, 64-bit, signed by Kerr & Company LLC
 - [FAQ](https://crispvideo.app/#faq): memory, speed, the Max lane, privacy, licensing
 
 ## Comparisons

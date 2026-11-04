@@ -180,6 +180,28 @@ def dl_url(src: str) -> str:
     return f"{DL_BASE}?src={src}&to={DMG}"
 
 
+#: WINDOWS 10 OR 11, 64-BIT (CEO, 2026-11-03: the signed Windows build is live). Read from the Windows updater's own manifest,
+#: which scripts/windows_release.py writes with the version and the VERSIONED, immutable installer it published, so a link
+#: here can never name an installer that was not published. None until a Windows release exists.
+WIN_REQ = "Windows 10 or 11, 64-bit"
+
+
+def windows() -> "dict | None":
+    try:
+        m = json.loads((SITE / "updater-windows.json").read_text())
+        url = m["platforms"]["windows-x86_64"]["url"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    if not re.fullmatch(r"https://github\.com/mattkerr09/crisp-site/releases/download/v1/Crisp-[\d.]+-x64-setup\.exe", url):
+        return None
+    return {"version": m["version"], "url": url}
+
+
+def dl_win_url(src: str) -> str:
+    w = windows()
+    return f"{DL_BASE}?src={src}&to={w['url']}" if w else ""
+
+
 def quarter(d: Decimal) -> Decimal:
     return (d / 4).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
@@ -242,6 +264,8 @@ def build() -> str:
         f"- [Refunds]({BASE}/legal/refunds/): email within {f['refund_days']} days of purchase for a refund, "
         f"no reason needed",
         f"- [Download for Mac]({f['dmg']}): the current release, {f['version']}",
+        *([f"- [Download for Windows]({windows()['url']}): Crisp {windows()['version']} for {WIN_REQ}, signed by Kerr & Company LLC"]
+          if windows() else []),
         f"- [FAQ]({BASE}/#faq): memory, speed, the Max lane, privacy, licensing",
         "",
         "## Comparisons",
