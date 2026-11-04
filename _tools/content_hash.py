@@ -55,6 +55,10 @@ import re
 
 # The byline directly under <h1>: "Crisp · built in Grand Rapids · published X · last updated Y".
 BYLINE = re.compile(r'<div class="updated">.*?</div>', re.S | re.I)
+# The legal pages' own body line, "Last updated: 4 November 2026.". page_dates.py writes it with the byline since the
+# 2026-11-04 audit (F16: the three legal pages' body lines said 17 Aug, 23 Aug and 1 Nov under a byline of 2026-11-04),
+# so it is a date line like the byline, and hashing it would walk the date forward the same way.
+BODY_UPDATED = re.compile(r'Last updated:\s*\d{1,2}\s+[A-Z][a-z]+\s+\d{4}')
 # Any JSON-LD block. Kept unless it is a BreadcrumbList, which restates the nav.
 LDJSON = re.compile(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.S | re.I)
 # Date values, wherever they appear and however they are spaced.
@@ -107,7 +111,7 @@ def content_of(html: str) -> str:
 
     body = ARTICLE.search(html)
     if body:
-        text = BYLINE.sub(" ", body.group(1))     # the byline is INSIDE the article
+        text = BODY_UPDATED.sub(" ", BYLINE.sub(" ", body.group(1)))     # the byline is INSIDE the article
         parts.append(TAGS.sub(" ", text))
 
     return re.sub(r"\s+", " ", " ".join(parts)).strip()

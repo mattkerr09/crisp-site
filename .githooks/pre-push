@@ -179,6 +179,11 @@ run_gate "sibling-links" python3 "$(dirname "$0")/../_tools/gate_sibling_links.p
 # WARNS past 30 days: those lines are printed below even when the gate passes, because a warning nobody sees is not one.
 # An urgent push that cannot wait for a re-read: CRISP_ALLOW_STALE_READS=1 git push (loud, not silent).
 run_gate "read-dates" python3 "$(dirname "$0")/../_tools/gate_read_dates.py"
+# page-dates: every dated page's dateModified, its byline and (on the legal pages) its "Last updated:" body line say when
+# its content last changed. Nothing ran the check, so the dates were right only when somebody remembered the tool: on
+# 2026-11-04 (audit F16) terms said "Last updated: 17 August 2026" under a byline of 2026-11-04. About 8 s.
+# FIX on a fail: python3 _tools/page_dates.py, commit the dates it wrote, push again.
+run_gate "page-dates" python3 "$(dirname "$0")/../_tools/page_dates.py" --check
 # founding: FOUNDINGCRISP ends 2026-11-25T01:26Z (and when its 24 places are used, per ~/ops/launch/founding-crisp.json).
 # After that no page may SHIP the founding price, the code or a founding line: founding.js hides them on the day, and this
 # refuses the next deploy until the generators have rewritten them out (CEO, 2026-10-21).

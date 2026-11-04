@@ -63,6 +63,15 @@ MODIFIED = re.compile(r'"dateModified":\s*"([^"]+)"')
 # dateModified (most still said 2026-09-15). The same date now goes to both. Safe from the walk-forward loop above:
 # content_hash.BYLINE strips this line before hashing, so writing it is never read as a content change.
 BYLINE_UPDATED = re.compile(r'(<div class="updated">[^<]*?last updated )(\d{4}-\d{2}-\d{2})')
+# ...and the legal pages' body line, "Last updated: 4 November 2026.", which was typed by hand and never moved: on
+# 2026-11-04 (audit F16) terms said 17 August, refunds 23 August and privacy 1 November, under a byline of 2026-11-04,
+# while all three had changed that day. The same date goes to it now. content_hash.BODY_UPDATED strips it before hashing.
+BODY_UPDATED = re.compile(r'(Last updated:\s*)(\d{1,2}\s+[A-Z][a-z]+\s+\d{4})')
+
+
+def _long(iso: str) -> str:
+    d = date.fromisoformat(iso)
+    return f"{d.day} {d.strftime('%B')} {d.year}"
 
 
 def _git(*args: str) -> str:
@@ -138,13 +147,16 @@ def main() -> int:
             continue
         cur = MODIFIED.search(text)
         vis = BYLINE_UPDATED.search(text)
+        body = BODY_UPDATED.search(text)
         field_ok = bool(cur and cur.group(1) == when)
         byline_ok = not vis or vis.group(2) == when
-        if field_ok and byline_ok:
+        body_ok = not body or body.group(2) == _long(when)
+        if field_ok and byline_ok and body_ok:
             continue
         wrong.append(f"{page.parent.relative_to(SITE)}: "
                      f"{cur.group(1) if cur else '(none)'} -> {when}"
-                     + ("" if byline_ok else f" (byline said {vis.group(2)})"))
+                     + ("" if byline_ok else f" (byline said {vis.group(2)})")
+                     + ("" if body_ok else f" (body said {body.group(2)})"))
         if check:
             continue
         out = text
@@ -159,6 +171,8 @@ def main() -> int:
                 lambda m: f'{m.group(0)},"dateModified":"{when}"', out, count=1)
         if not byline_ok:
             out = BYLINE_UPDATED.sub(lambda m: m.group(1) + when, out, count=1)
+        if not body_ok:
+            out = BODY_UPDATED.sub(lambda m: m.group(1) + _long(when), out, count=1)
         page.write_text(out)
         fixed.append(page)
     if check:
