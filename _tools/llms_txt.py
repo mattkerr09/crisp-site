@@ -145,7 +145,7 @@ def facts() -> dict:
         "chip": one(r'"processorRequirements":\s*"([^"]+)"', home, "processorRequirements"),
         # The free-tier export cap, read from the engine like the price (entitlement.FREE_EXPORT_CAP_SECONDS): the site cannot drift from it.
         "cap": int(one(r"(?m)^FREE_EXPORT_CAP_SECONDS\s*=\s*(\d+)", ENGINE.read_text(), "FREE_EXPORT_CAP_SECONDS")),
-        "macs": int(one(r"up to (\d+) Macs at a time", read("/legal/terms/"), "Macs per licence")),
+        "macs": int(one(r"up to (?:<strong>)?(\d+) (?:Macs|computers) at a time", read("/legal/terms/"), "seats per licence")),
         "refund_days": int(one(r"within (\d+) days of purchase", read("/legal/refunds/"), "refund window")),
         "version": json.loads((SITE / "latest.json").read_text())["version"],
         "dmg": dmg_target(one(r'data-track="hero" href="([^"]+Crisp\.dmg)"', home, "the download link")),
@@ -260,7 +260,7 @@ def build() -> str:
                       if founding_live(f) and not bnpl_on(f, now) else ""))
     out += [
         f"- [System requirements]({BASE}/#download): {f['os']}; {f['chip']}",
-        f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} Macs at a time",
+        f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} computers at a time, Mac or Windows",
         f"- [Refunds]({BASE}/legal/refunds/): email within {f['refund_days']} days of purchase for a refund, "
         f"no reason needed",
         f"- [Download for Mac]({f['dmg']}): the current release, {f['version']}",
