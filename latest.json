@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1830",
-  "notes": "Before and After now show the same moment on a free clip longer than 15 seconds, so the comparison is the real one. The first enhance of a clip longer than the free 15 seconds now says what was cut and how to get the whole video, and it chimes when it finishes, like every other result.",
-  "pub_date": "2026-11-02T22:33:23Z",
+  "version": "1.0.1839",
+  "notes": "Typed trims now do what you typed. \u201cTrim it to 2 seconds through 6 seconds\u201d and \u201ctrim to 2s-6s\u201d keep exactly that stretch, and asking to keep the last 30 seconds of a shorter clip says it is the whole clip instead of saying it did not understand. When you type \u201ctrim the first 5 seconds\u201d, the plan now says it keeps those 5 seconds and gives you the words to cut them instead.",
+  "pub_date": "2026-11-04T19:40:30Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhzZTlqaHdZcWYzUjdQMXphMjY1Zi9uaksrSTlHblNldGorOXJuRnVtT3FTQTBRUi9qNEVNamU2MnRTbkNSOEJWNFQwdDdpd2hIWUovaEhoblNoVWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjU4MjYzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpwRVlubGFLQUdDOXdJbDg0akUrNUwyWmV4UFlhVTFyeCtmbTZPV3Bsd3kzSDNrOGxKNWhsaXFFRkxwdUxEd3ZnSkJWeUIwUjYrYVl5WCt2Z0ZjVWhBZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1830.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBQanRmRGdtaXIycXp6NWtwSFFJVEF5YkpodmtxVk1Zdzgzc3lRdi9MUjdLR2IyMGVtb25JUE9kNDNFYkJzUUZ5dU4vZWhRanpUV2Z2dExsc25HbUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODIwNjkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQaGRsekpjMHVqNHFIckpYTGJ1T2JVN0ZqMUpEZlZWUHdTL0RzV1VxTE95SXpUQTc2UTNEL2dkQ1NLRjlWWHpOSmVRcTg0b3hFb1dpejlNNkhjWm5DUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1839.app.tar.gz"
     }
   }
 }
