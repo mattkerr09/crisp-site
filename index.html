@@ -1791,8 +1791,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="step rv d3"><div class="n">3</div><h3>Paste it into Crisp</h3>
         <p>Open Crisp, choose <em>Unlock Crisp Pro</em>, paste the key and press Activate. That
-          activation is the one moment Crisp talks to the licence server; Pro then keeps working
-          with the Wi-Fi switched off.</p>
+          activation, and a check about once a week while the Mac is online, are the only times Crisp
+          talks to the licence server; Pro keeps working with the Wi-Fi switched off.</p>
       </div>
     </div>
 
@@ -1849,7 +1849,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         It is the activation limit on the key you are sold, and
         <a href="/legal/terms/">the terms</a> say the same. Personal and commercial work are both
         covered.</p></div></details>
-      <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence, and downloading the optional Max model pack, never your footage.</p></details>
+      <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your Mac. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence and, on a Pro copy, re-checking it about once a week, the founding-price count on a free copy (nothing about you is sent), and downloading the optional Max model pack. Never your footage.</p></details>
       <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models are split across two apps: Topaz Video holds the ones that &ldquo;can be rendered locally&rdquo;, and its cloud app, Astra, holds the ones that are &ldquo;cloud rendering only&rdquo;. <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is one of the local ones, and their docs put its bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 19 October 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. Topaz's <a href="https://docs.topazlabs.com/topaz-video/filters/frame-interpolation" rel="nofollow">frame-interpolation docs</a> say &ldquo;the audio will not be modified by this enhancement and will be removed from the video&rdquo;. The bigger difference is shape. Their <a href="https://docs.topazlabs.com/topaz-video/reference-guide/user-interface" rel="nofollow">interface reference</a> documents two edits: the &ldquo;[ ]&rdquo; buttons that &ldquo;select the range of the input video&rdquo; and a Crop button. There is no timeline for arranging clips, so it takes a file and hands a file back (both read 19 October 2026). Crisp puts the upscale inside an edit: arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
       <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
            _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
