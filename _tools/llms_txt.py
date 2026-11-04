@@ -84,7 +84,7 @@ CAPPED_LANES = "upscaling, restoring and colour exports"
 
 def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
     return (f"{CAPPED_LANES} up to {cap} seconds, everything else at full length, "
-            f"all with a small {open_q}Made with Crisp{close_q} mark")
+            f"video and GIF exports with a small {open_q}Made with Crisp{close_q} mark")
 
 
 def offer_last_day(f: dict) -> str:
@@ -245,7 +245,7 @@ def build() -> str:
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
         f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; "
-        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every export carries a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
+        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “Made with Crisp” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
         f"generative Max lane and batch processing",
     ]
     if founding_live(f):
