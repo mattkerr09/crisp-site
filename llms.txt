@@ -48,7 +48,7 @@
 
 ## Legal
 - [Terms of Use](https://crispvideo.app/legal/terms/): The terms governing your use of Crisp, including licence, warranties, and limitation of liability.
-- [Privacy Policy](https://crispvideo.app/legal/privacy/): Crisp processes your photos and videos entirely on your Mac.
+- [Privacy Policy](https://crispvideo.app/legal/privacy/): Crisp processes your photos and videos entirely on your Mac or PC.
 - [Refund Policy](https://crispvideo.app/legal/refunds/): 30-day refunds, no reason needed.
 
 ## Company
