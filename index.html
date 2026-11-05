@@ -4,7 +4,9 @@
 <script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */
 /* .handheld: a phone or tablet, which cannot install a Mac app, so the hero leads with sending the link (2026-10-28).
    iPadOS Safari reports a Mac, so a "Mac" with a touch screen is a tablet; a real Mac reports 0 touch points and never matches. */
-(function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld'); })(navigator);</script>
+(function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld');
+  /* .win: a Windows desktop, where the hero leads with the Windows installer and the Mac one is second (2026-11-05). A phone or tablet is .handheld, never .win; no JS means neither. */
+  else if (/Windows NT/.test(u)) document.documentElement.classList.add('win'); })(navigator);</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -825,6 +827,42 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .handheld .hero .phone-link{display:none;}
 .handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
+/* WINDOWS DESKTOP FIRST (CEO, 2026-11-05). A Windows desktop that lands here (ChatGPT, TikTok, Google) was offered "Download free for
+   Mac" first and had to find the small Windows link. The head script marks such a page .win (never a phone or tablet, never without
+   JS): the Windows button leads, the Mac button becomes the quiet second one, and the fine print is the Windows one. A Mac, a phone
+   and a visitor without JavaScript see exactly what they saw. The two Windows pieces are written by _tools/landing_pages.py. */
+.win-btn,.fine-win{display:none;}
+.win .win-btn{display:inline-flex;}
+.win .hero-say .cta .btn-primary:not(.win-btn){background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.win .hero-say .cta .btn-primary:not(.win-btn):hover{background:rgba(255,255,255,.07);box-shadow:none;}
+.win .hero .win-link,.win .hero .fine,.win .hero .oldmac{display:none;}   /* the older-Mac list is for Macs */
+.win .hero .fine-win{display:block;margin-top:.9rem;font-size:.88rem;color:var(--grey-dim);}
+.win .hero .fine-win a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+/* THE HERO'S FIRST SCREEN ANSWERS WHAT THE VISITOR WAS TOLD (CEO, 2026-11-05). ChatGPT sent 163 of crispvideo.app's 304 visitors in
+   30 days, 161 of them to this page, and 83% left without a second page: they arrive already told what Crisp is, so the lede is one
+   line, the price is the next, and the button follows. The free limits sit under the button (.fine), where the old long lede
+   repeated them. On a phone the order is the same, and the send button now lands inside a 375x667 screen. */
+.lede-price{margin:-.9rem 0 1.6rem;max-width:46ch;font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--white);}
+.hero .lede-price strong{white-space:nowrap;}
+@media (max-width:860px){.hero-say .lede-price{max-width:58ch;margin:-1.2rem auto 2rem;}}
+@media (max-width:640px){
+  .handheld .hero-top{display:flex;flex-direction:column;}
+  .handheld .hero-head,.handheld .hero-say{display:contents;}
+  .handheld .hero-head>*,.handheld .hero-say>*{order:20;}
+  .handheld .hero-head>.pill{order:0;align-self:center;}
+  .handheld .hero-head>h1{order:1;}
+  .handheld .hero-say>.lede{order:2;margin:1rem auto .7rem;}
+  .handheld .hero-say>.lede-price{order:3;margin:0 auto .2rem;}
+  .handheld .hero-head>.send-first{order:4;margin:1rem 0 0;}
+  .handheld .hero-say>.cta{order:5;}
+  .handheld .hero-say>.fine{order:6;}
+  .handheld .hero-say>.oldmac{order:7;}
+  .handheld .hero-head>.hero-future{order:8;}
+  .handheld .hero-head>.hero-maker{order:9;}
+  /* a smaller headline and less air above it, so the send button is inside a 375x667 screen (the headline was four lines) */
+  .handheld .hero{padding-top:3.2rem;}
+  .handheld .hero .h-xl{font-size:clamp(1.85rem,8.3vw,2.3rem);}
+}
 /* The box the send-mac-link script builds under a send button once it has been pressed: what happened, the link as plain
    text to press and hold, and the other ways to send it. 44px buttons, Apple's minimum touch target. */
 .sendlink{margin:.9rem 0 0;max-width:26rem;font-size:.9rem;line-height:1.5;color:var(--grey);text-align:left;
@@ -973,8 +1011,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
       </div>
       <div class="hero-say">
-    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline. Free: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, and video exports carry a small mark; Pro <strong>$29 once</strong><span data-founding-copy>, <strong>$14.50</strong> through November</span>.</p>
+    <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.</p>
+    <p class="lede-price"><strong>Free to try.</strong> Pro is <strong>$29 once</strong><span data-founding-copy>, <strong>$14.50</strong> through November</span>.</p>
     <div class="cta">
+      <!-- windows-hero:begin --><a class="btn btn-primary win-btn" data-track="hero-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero-win&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe" rel="nofollow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>Download free for Windows</a><!-- windows-hero:end -->
       <a class="btn btn-primary" data-track="hero" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
         Download free for Mac
@@ -1012,6 +1052,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <p class="fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;Made with Crisp&rdquo; mark ·
       92&nbsp;MB · macOS 14 Sonoma or later (<a href="/download/#macos-speed">upscaling takes about 1.5&times; as long on 14</a>) · Apple Silicon<br>Pro is $29 once, with a 30-day refund ·
       <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero" data-track="hero-buy" rel="nofollow">Buy Pro</a></p>
+    <!-- windows-fine:begin --><p class="fine-win">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;Made with Crisp&rdquo; mark · Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them)<br>Pro is $29 once, with a 30-day refund · <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero-win" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a></p><!-- windows-fine:end -->
     <!-- THE OLDER-MAC LIST (CEO, 2026-09-28). The line above turns away everyone below macOS 26;
          this keeps them instead of losing them. Its own list (source crispvideo.app-older-mac), a
          separate consent from the footer newsletter. CAPTURE ONLY: nothing is sent to it without

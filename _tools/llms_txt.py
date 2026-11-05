@@ -223,6 +223,26 @@ def windows_line(src: str) -> str:
             f'<span class="win-gpu">It needs {WIN_GPU}; {WIN_GPU_NOTE}.</span></p>')
 
 
+def windows_hero_button(src: str) -> str:
+    """The home hero's Windows button (CEO, 2026-11-05: on a Windows desktop the Windows download leads, the Mac one is second).
+    Hidden by CSS unless the head script marked the page .win; empty until a Windows release exists. The hub counts it as src=<src>."""
+    if not windows():
+        return ""
+    return (f'<a class="btn btn-primary win-btn" data-track="hero-windows" href="{dl_win_url(src)}" rel="nofollow">'
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" '
+            'style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>Download free for Windows</a>')
+
+
+def windows_hero_fine(cap: int, src: str) -> str:
+    """The Windows twin of the hero's fine print (shown instead of the Mac's on a Windows desktop): the same free-tier sentence, the
+    Windows requirement from WIN_REQ / WIN_GPU, the same price and refund line, and its own Buy link."""
+    if not windows():
+        return ""
+    return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})'
+            f'<br>Pro is $29 once, with a 30-day refund · '
+            f'<a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src={src}" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a></p>')
+
+
 def quarter(d: Decimal) -> Decimal:
     return (d / 4).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 

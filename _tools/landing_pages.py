@@ -190,10 +190,18 @@ def windows_line(src: str) -> str:
 WIN_HOME = re.compile(r"<!-- windows-download:begin -->.*?<!-- windows-download:end -->", re.S)
 
 
+#: the Windows hero button (before the Mac button) and the Windows fine print (after the Mac's), written the same way
+WIN_HERO = re.compile(r"<!-- windows-hero:begin -->.*?<!-- windows-hero:end -->", re.S)
+WIN_FINE = re.compile(r"<!-- windows-fine:begin -->.*?<!-- windows-fine:end -->", re.S)
+
+
 def home(s: str) -> str:
-    assert WIN_HOME.search(s), "index.html: the windows-download markers are gone"
-    return WIN_HOME.sub(lambda _m: "<!-- windows-download:begin -->" + windows_line("home-hero") + "<!-- windows-download:end -->",
-                        s, count=1)
+    for rx, name in ((WIN_HOME, "windows-download"), (WIN_HERO, "windows-hero"), (WIN_FINE, "windows-fine")):
+        assert rx.search(s), f"index.html: the {name} markers are gone"
+    cap = llms_txt.facts()["cap"]
+    s = WIN_HOME.sub(lambda _m: "<!-- windows-download:begin -->" + windows_line("home-hero") + "<!-- windows-download:end -->", s, count=1)
+    s = WIN_HERO.sub(lambda _m: "<!-- windows-hero:begin -->" + llms_txt.windows_hero_button("home-hero-win") + "<!-- windows-hero:end -->", s, count=1)
+    return WIN_FINE.sub(lambda _m: "<!-- windows-fine:begin -->" + llms_txt.windows_hero_fine(cap, "home-hero-win") + "<!-- windows-fine:end -->", s, count=1)
 
 
 def page404(s: str) -> str:
