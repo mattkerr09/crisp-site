@@ -63,7 +63,7 @@ def box(src: str, buy_first: bool) -> str:
     found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
              f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-landing-box>'
-            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
+            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
@@ -168,6 +168,16 @@ def pages() -> dict[Path, str]:
             "Download Crisp for Mac",
             f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use: {llms_txt.free_tier(f['cap'], '&ldquo;', '&rdquo;')}; Pro removes the mark and the limit.",
             "download-page", False, macos_speed_section(f["os"])),
+        # THE ADDRESS ON THE FREE MARK (CEO, 2026-11-05): every free video export carries "Made with Crisp" and, under it,
+        # "crispvideo.app/w" (crisp scripts/make_watermark.py). This is that door: what Crisp is, and the download tagged
+        # src=watermark, so the visits and downloads the mark sends can be counted.
+        SITE / "w" / "index.html": page(
+            "w", "Made with Crisp: restore and upscale video, offline",
+            "You saw “Made with Crisp” on a video. Crisp restores, denoises and upscales video to 4K on your own Mac or PC, offline. Free to use.",
+            "You saw &ldquo;Made with Crisp&rdquo; on a video",
+            "That mark is on every free export from Crisp Video. Crisp restores, denoises and upscales old and low-res video to 4K "
+            "on your own Mac or Windows PC, offline: nothing is uploaded. It is free to use, and Pro removes the mark.",
+            "watermark", False),
     }
 
 
