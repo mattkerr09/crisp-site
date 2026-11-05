@@ -55,6 +55,20 @@ TRACK = '<script src="/track.js" defer></script>'
 KCO_BLOCK = re.compile(r'<div class="kco" data-kco>.*?</ul></div>', re.S)
 ARMS_FILE = Path.home() / "ops" / "search" / "ARMS.md"
 
+# THE NAV BUTTON AND THE FOOTER SAY MAC OR PC (CEO, 2026-11-05). A Windows visitor reading "Download for Mac" in the bar is a lost
+# download: the bar now says "Download" and opens /download/, which shows both, tagged nav-download (track.js counts it as the
+# "Download Page" event). The footer says "for Mac and PC" only for what runs on Windows: the video upscaler and the timeline editor
+# (the editor ran in the real Windows window in the Store screenshots); the photo upscaler and the auto-editor stay "for Mac" until a
+# Windows run proves them. NAVIGATION IS NOT CONTENT: both sit outside <article>, so content_hash ignores them and no page is re-dated.
+NAV_OLD = '<a class="btn" href="https://crispvideo.app/#download">Download for Mac</a>'
+NAV_NEW = '<a class="btn" data-track="nav-download" href="https://crispvideo.app/download/?src=nav-download">Download</a>'
+FOOTER_OLD_NEW = {
+    "offline AI video &amp; photo upscaler and auto-editor for Mac.":
+        "offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows.",
+    "offline AI video upscaler + full timeline editor for Mac.":
+        "offline AI video upscaler + full timeline editor for Mac and PC.",
+}
+
 
 def arms() -> set[str]:
     """The arms of a running experiment (~/ops/search/ARMS.md): their copy and links do not change mid-read, so an
@@ -127,6 +141,13 @@ def apply(p: Path) -> bool:
     if wants_founding(p, s) and "/founding.js" not in s:
         assert s.count("</body>") == 1, f"{p}: expected one </body>"
         s = s.replace("</body>", founding_tag() + "\n</body>")
+    # the bar and the footer for a PC too; an experiment arm keeps its copy and links as they are
+    if not is_arm(p):
+        if NAV_OLD in s:
+            assert s.count(NAV_OLD) == 1, f"{p}: expected one nav download button"
+            s = s.replace(NAV_OLD, NAV_NEW)
+        for old, new in FOOTER_OLD_NEW.items():
+            s = s.replace(old, new)
     if s != o:
         p.write_text(s)
         return True
@@ -149,6 +170,11 @@ def missing(p: Path) -> list[str]:
         out.append("founding bar")
     if not wants_founding(p, s) and p != SITE / "index.html" and "/founding.js" in s:
         out.append("founding bar where it must not be")
+    if not is_arm(p):
+        if NAV_OLD in s:
+            out.append("nav says Download for Mac")
+        if any(old in s for old in FOOTER_OLD_NEW):
+            out.append("footer says Mac only")
     return out
 
 

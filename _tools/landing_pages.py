@@ -128,7 +128,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
      ({url}): noindex, so it never competes with the homepage in search. -->
 <nav><div class="wrap nav-inner">
   <a class="nav-brand" href="{llms_txt.BASE}/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
-  <a class="btn" href="{llms_txt.BASE}/#download">Download for Mac</a>
+  <a class="btn" data-track="nav-download" href="{llms_txt.BASE}/download/?src=nav-download">Download</a>
 </div></nav>
 
 <article><div class="wrap">
@@ -138,7 +138,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 </div></article>
 
 <footer><div class="wrap">
-  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac. <a href="{llms_txt.BASE}/">crispvideo.app</a> &middot; <a href="{llms_txt.BASE}/about/">About</a></p>
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows. <a href="{llms_txt.BASE}/">crispvideo.app</a> &middot; <a href="{llms_txt.BASE}/about/">About</a></p>
   {sitewide_chrome.KCO}
 </div></footer>
 {sitewide_chrome.TRACK}

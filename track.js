@@ -12,6 +12,10 @@ document.addEventListener("click", function (e) {
   var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
   if (/\/Crisp\.dmg$|\/Crisp-[\d.]+-x64-setup\.exe$/.test(href)) {
     window.plausible("Download", { props: { button: name } });
+  // ...a tagged link to the download page (the bar's "Download", 2026-11-05) is the "Download Page" event: it opens a page that shows
+  // both installers, so it is counted apart from "Download", which is a file
+  } else if (/^(?:https:\/\/crispvideo\.app)?\/download\/(?:\?|$)/.test(href) && a.getAttribute("data-track")) {
+    window.plausible("Download Page", { props: { button: name } });
   // ...and the hub's /buy/<app>, which opens the same Dodo checkout with the founding code applied (2026-10-01)
   } else if (/^https:\/\/(checkout\.dodopayments\.com\/|kerr-affiliate-hub\.kerrco\.workers\.dev\/buy\/)/.test(href)) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || e.button !== 0) {
