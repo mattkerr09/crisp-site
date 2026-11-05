@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1845",
-  "notes": "After a free export, the line under the result now says when the Black Friday price ends and that every purchase comes with a 30-day refund, no reason needed.",
-  "pub_date": "2026-11-05T03:34:49Z",
+  "version": "1.0.1848",
+  "notes": "Asking for the first 15 seconds of a long clip right after its preview appears now always starts the render, instead of sometimes showing the upgrade window by mistake.",
+  "pub_date": "2026-11-05T05:55:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJTejM4c0JGaGZUZ2FFOEhqbzBaR0h2NEtOMkg0bExGRHdkbHdMQ0xyelNubVpVTXhPNDh0OVAzR09TNDIzNWE2LzN3S3UrZldxMWFpQ0tEWTVUY3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODQ5MTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPOG5PMXNuNDNEQWZVNG9BZkJiOCtlaTROZkZQd2duQkx4MG9EVnByR1Qxd2hIV3ZDWmZTVmsrdXVHNUNZTmxhWTdvd2JHazRPWUNWTUFOLzl3KzZDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1845.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJ5YnVLUmlsMnlCeDZYcDN2bkZZNzIzWjVlL2phMmNaWWUwS0pPQWVDSkNEb3VydHlOQjdMWkM0dGdjemw2cFhuY0VvWTQyWWVkUzhpSFFPdjVRQndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODU3Njc0CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpqakl6WmxpcWFWUklQTWtYeWc4bWRNMi9IWnRFQWdGZDU0WTVNa1dvMnhhQllRTis2dGhmUHBnUWZCRzdIWlM2aDg1eitqU1QwQlVEZTRPTkU5Z3hBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1848.app.tar.gz"
     }
   }
 }
