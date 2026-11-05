@@ -211,6 +211,18 @@ def dl_win_url(src: str) -> str:
     return f"{DL_BASE}?src={src}&to={w['url']}" if w else ""
 
 
+def windows_line(src: str) -> str:
+    """The Windows download, through the hub's counting route like the Mac's (src = this place + "-windows"). Empty until a
+    Windows release exists. Claims are only what the release run proved: the version, the requirement, the signer. ONE definition
+    for the home hero, the door pages and the 94 in-article boxes (it lived in landing_pages.py until the boxes needed it too)."""
+    w = windows()
+    if not w:
+        return ""
+    return (f'<p class="win-link">On {WIN_REQ}? <a data-track="{src}-windows" href="{dl_win_url(src + "-windows")}" '
+            f'rel="nofollow">Download Crisp {w["version"]} for Windows</a> '
+            f'<span class="win-gpu">It needs {WIN_GPU}; {WIN_GPU_NOTE}.</span></p>')
+
+
 def quarter(d: Decimal) -> Decimal:
     return (d / 4).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 

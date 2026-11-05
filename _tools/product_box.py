@@ -68,7 +68,7 @@ def box(where: str, page: str = "") -> str:
     found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
              f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
-            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac, offline.</p>'
+            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
@@ -76,9 +76,12 @@ def box(where: str, page: str = "") -> str:
             # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout
             # with the founding code applied and counts it under this page's src, as /dl does for downloads.
             f'<a class="btn btn-ghost" data-track="pbox-{where}-buy" href="{BUY}?src={src}" rel="nofollow">Buy Pro</a></p>'
+            # THE WINDOWS DOWNLOAD (CEO, 2026-11-05): the box says "Mac or PC", so a PC visitor needs their button too. One definition,
+            # shared with the home page and the door pages, so the version and the Vulkan line cannot differ between them.
+            f'{llms_txt.windows_line(src)}'
             # a phone visitor cannot install a Mac app: one line to send the link to themselves (track.js)
             f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>'
-            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
+            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · Mac: {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')
 

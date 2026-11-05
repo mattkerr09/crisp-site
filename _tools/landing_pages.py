@@ -182,14 +182,8 @@ def pages() -> dict[Path, str]:
 
 
 def windows_line(src: str) -> str:
-    """The Windows download, through the hub's counting route like the Mac's (src = this place + "-windows"). Empty until a
-    Windows release exists. Claims are only what the release run proved: the version, the requirement, the signer."""
-    w = llms_txt.windows()
-    if not w:
-        return ""
-    return (f'<p class="win-link">On {llms_txt.WIN_REQ}? <a data-track="{src}-windows" href="{llms_txt.dl_win_url(src + "-windows")}" '
-            f'rel="nofollow">Download Crisp {w["version"]} for Windows</a> '
-            f'<span class="win-gpu">It needs {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE}.</span></p>')
+    """The Windows download line: one definition, llms_txt.windows_line (the in-article boxes use it too)."""
+    return llms_txt.windows_line(src)
 
 
 #: the home page's Windows line sits between these markers, under the hero's Mac button; this file writes it and --check reads it
