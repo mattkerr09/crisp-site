@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1838",
-  "notes": "Crisp for Windows: restore, denoise and upscale video offline on your PC, then edit it on a real timeline. Free to use with a small mark; upscaling, restoring and colour exports stop at 15 seconds. Pro is $29 once, $14.50 through November. Windows 10 or 11, 64-bit.",
-  "pub_date": "2026-11-03T23:23:08Z",
+  "version": "1.0.1853",
+  "notes": "Typed trims now do what you typed, and asking how to remove the \u201cMade with Crisp\u201d mark opens the unlock window with the Black Friday price, its end date and the 30-day refund. The small mark on free video exports now shows the web address, crispvideo.app/w. Asking for the first 15 seconds of a long clip right after its preview appears always starts the render, and a folder Crisp can\u2019t write into gets one plain sentence about what to do.",
+  "pub_date": "2026-11-05T13:23:09Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNVZmlPaFBDM0R2dHNPcG9MRUFEUmVXbWloV3lPNThudmhSSGtmaU5tN2ZmRHhwRVVmM2pWZE5lbnRTblRlU0FEdktGSEtRbDlFTDZwUHpydkh4ZlF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzQ4MTg4CWZpbGU6Q3Jpc3AtMS4wLjE4MzgteDY0LXNldHVwLmV4ZQorM1JWRUx1TllXR2ttWjZnZVVtMEVyZDNJMi9qWWNmbC84SjVPVWtDdDJDTEdneXZkQmZoc21LQktBck54SURNb3hoZjJGS0ZNYnc1bzVHL1F1MmZDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1838-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9JUlZFaUxMUjQ3MjRoTFV1N3RuMmp0QzVkZGlRMytlRlV0VC9uMXlzamNMejEvb2FoQlBnNzYwcWNieVljQW5BNGs2T203V0UvVEpvR0FBNVZOUVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODg0OTg4CWZpbGU6Q3Jpc3AtMS4wLjE4NTMteDY0LXNldHVwLmV4ZQpwd2JCWkczYjdldDRsT3RMRmF4WXUxdk56MFhPY0tIenRVVVRXS0dhVFpGa3M3TlJ3NEFCaStCWXBRUldEdHdrUk5WUGM4YVdlTVlDcXVCUWtHVzNEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe"
     }
   }
 }
