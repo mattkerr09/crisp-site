@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1850",
-  "notes": "The small \u201cMade with Crisp\u201d mark on free video exports now has a second line with the web address, crispvideo.app/w, so anyone who sees your video can find Crisp. Pro exports carry no mark, as before.",
-  "pub_date": "2026-11-05T08:00:45Z",
+  "version": "1.0.1852",
+  "notes": "When Crisp can't save into a folder, the message now says plainly what to do: move or copy the clip somewhere you can write, such as your Movies or Downloads folder, and try again.",
+  "pub_date": "2026-11-05T12:48:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUlMb3F4Qzc0VkJsZ0tUUHQyWks4aEJjOTlSK2I4QmZLWWVIdVBEYXVxZkpPRmJZMTlHQWxTeEhsVU1UM1lzNHdGMk05UjJPTk5Ua3BvOUFrTzVtV2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODY1MzYyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negprZ2NQeGdPVW4xYS9pcE96YTdrdmQ2cEoxVjZmUlp5RG1tTmdxRmpOSkhlY24yNDJCSWE3d25tZFRHVG9XeW9Qd1NQTGZhcHJmYXZlZ3U4WUJqQzhCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1850.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUd5K3hCdm50bHVEaWtaYTRHZWNUZHo2Wk9kbG1lMzhBRzA4TmxrUEI2eUVDRUovbG84cEpHMjV0UFp6cHlQRlFiMlpHRkNKSk1NSGc5bGRTWXNhcEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODgyNTM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmMFpuc2E0M3lrUFJaVmhGTCtpNkU1TnJpdldPSnZMNjkyMUFwRWVKaUdiUHUraEtod296TFRRMmpJRGFsc2JaMUdpTDJUYS8wT0RPZGFUenNQTU9Ddz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1852.app.tar.gz"
     }
   }
 }
