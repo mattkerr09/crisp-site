@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1839",
-  "notes": "Typed trims now do what you typed. \u201cTrim it to 2 seconds through 6 seconds\u201d and \u201ctrim to 2s-6s\u201d keep exactly that stretch, and asking to keep the last 30 seconds of a shorter clip says it is the whole clip instead of saying it did not understand. When you type \u201ctrim the first 5 seconds\u201d, the plan now says it keeps those 5 seconds and gives you the words to cut them instead.",
-  "pub_date": "2026-11-04T19:40:30Z",
+  "version": "1.0.1842",
+  "notes": "Asking how to remove the \u201cMade with Crisp\u201d mark now opens the unlock window, with the Black Friday price and its end date, the 30-day refund and the Buy button, instead of a message with nothing to click. The unlock window also says plainly that you pay once and it\u2019s yours, with every 1.x update.",
+  "pub_date": "2026-11-05T01:22:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYVBQanRmRGdtaXIycXp6NWtwSFFJVEF5YkpodmtxVk1Zdzgzc3lRdi9MUjdLR2IyMGVtb25JUE9kNDNFYkJzUUZ5dU4vZWhRanpUV2Z2dExsc25HbUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODIwNjkxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpQaGRsekpjMHVqNHFIckpYTGJ1T2JVN0ZqMUpEZlZWUHdTL0RzV1VxTE95SXpUQTc2UTNEL2dkQ1NLRjlWWHpOSmVRcTg0b3hFb1dpejlNNkhjWm5DUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1839.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJOcHRrMXkwTnNKa1hqOU43RGt4RmJqLzVQaW1aR0dCQmRXYjVNY2tRMWNJdStoYjVzNkpDakwwdzlQMUlEclNBaXNhMnY0QmNoWTFXMW51eFJiQkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODQxMzMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJYkMrekhnY1oxVEF2ZThadlRBU3pIS2pkR1JuUjBJQlpUcS84NjRRMFVWU1ZZcjZDakEveHdMN0ZsdndIbEV4b3FlUzNRVEZZdzdsMVVOU2tYY1FEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1842.app.tar.gz"
     }
   }
 }
