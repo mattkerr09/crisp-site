@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1842",
-  "notes": "Asking how to remove the \u201cMade with Crisp\u201d mark now opens the unlock window, with the Black Friday price and its end date, the 30-day refund and the Buy button, instead of a message with nothing to click. The unlock window also says plainly that you pay once and it\u2019s yours, with every 1.x update.",
-  "pub_date": "2026-11-05T01:22:45Z",
+  "version": "1.0.1845",
+  "notes": "After a free export, the line under the result now says when the Black Friday price ends and that every purchase comes with a 30-day refund, no reason needed.",
+  "pub_date": "2026-11-05T03:34:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJOcHRrMXkwTnNKa1hqOU43RGt4RmJqLzVQaW1aR0dCQmRXYjVNY2tRMWNJdStoYjVzNkpDakwwdzlQMUlEclNBaXNhMnY0QmNoWTFXMW51eFJiQkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODQxMzMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpJYkMrekhnY1oxVEF2ZThadlRBU3pIS2pkR1JuUjBJQlpUcS84NjRRMFVWU1ZZcjZDakEveHdMN0ZsdndIbEV4b3FlUzNRVEZZdzdsMVVOU2tYY1FEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1842.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJTejM4c0JGaGZUZ2FFOEhqbzBaR0h2NEtOMkg0bExGRHdkbHdMQ0xyelNubVpVTXhPNDh0OVAzR09TNDIzNWE2LzN3S3UrZldxMWFpQ0tEWTVUY3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODQ5MTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpPOG5PMXNuNDNEQWZVNG9BZkJiOCtlaTROZkZQd2duQkx4MG9EVnByR1Qxd2hIV3ZDWmZTVmsrdXVHNUNZTmxhWTdvd2JHazRPWUNWTUFOLzl3KzZDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1845.app.tar.gz"
     }
   }
 }
