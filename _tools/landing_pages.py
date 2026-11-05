@@ -188,7 +188,8 @@ def windows_line(src: str) -> str:
     if not w:
         return ""
     return (f'<p class="win-link">On {llms_txt.WIN_REQ}? <a data-track="{src}-windows" href="{llms_txt.dl_win_url(src + "-windows")}" '
-            f'rel="nofollow">Download Crisp {w["version"]} for Windows</a></p>')
+            f'rel="nofollow">Download Crisp {w["version"]} for Windows</a> '
+            f'<span class="win-gpu">It needs {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE}.</span></p>')
 
 
 #: the home page's Windows line sits between these markers, under the hero's Mac button; this file writes it and --check reads it
