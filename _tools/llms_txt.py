@@ -141,8 +141,11 @@ def facts() -> dict:
         # When FOUNDINGCRISP expires in Dodo (CEO, 2026-10-21). The generators drop every founding line from then on.
         "ends": one(r'data-ends="([0-9T:\-]+Z)"', mount, "data-ends"),
         "bnpl": one(r"var\s+CRISP_BNPL_LIVE\s*=\s*(true|false)\s*;", home, "CRISP_BNPL_LIVE") == "true",
-        "os": one(r'"operatingSystem":\s*"([^"]+)"', home, "operatingSystem"),
-        "chip": one(r'"processorRequirements":\s*"([^"]+)"', home, "processorRequirements"),
+        # THE MAC'S FLOOR AND CHIP, from the lines that since 2026-11-05 also name Windows: "macOS 14.0 or later, Windows 10 or 11
+        # (64-bit)" and "Apple Silicon (M1 or later) on a Mac". Every box, the download page and the speed note were written for the
+        # Mac's part alone ("Download Crisp Video for Mac: <os>, <chip>"), so they get exactly that; Windows has its own line (WIN_REQ).
+        "os": one(r'"operatingSystem":\s*"[^"]*?(macOS\s+[\d.]+\s+or later)', home, "operatingSystem (its macOS part)"),
+        "chip": re.sub(r"\s+on a Mac$", "", one(r'"processorRequirements":\s*"([^"]+)"', home, "processorRequirements")),
         # The free-tier export cap, read from the engine like the price (entitlement.FREE_EXPORT_CAP_SECONDS): the site cannot drift from it.
         "cap": int(one(r"(?m)^FREE_EXPORT_CAP_SECONDS\s*=\s*(\d+)", ENGINE.read_text(), "FREE_EXPORT_CAP_SECONDS")),
         "macs": int(one(r"up to (?:<strong>)?(\d+) (?:Macs|computers) at a time", read("/legal/terms/"), "seats per licence")),
@@ -238,9 +241,9 @@ def build() -> str:
     out = [
         "# Crisp Video",
         "",
-        f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac, then lets you "
+        f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac or a Windows PC, then lets you "
         f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}; Pro is {money(p)} once, "
-        f"not a subscription. {f['os']}, {f['chip']}.",
+        f"not a subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}.",
         "",
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
@@ -259,7 +262,7 @@ def build() -> str:
                    + (f" (not on the {money(now)} founding price, which is under the {money(BNPL_FLOOR)} minimum)"
                       if founding_live(f) and not bnpl_on(f, now) else ""))
     out += [
-        f"- [System requirements]({BASE}/#download): {f['os']}; {f['chip']}",
+        f"- [System requirements]({BASE}/#download): Mac: {f['os']}, {f['chip']}; Windows: {WIN_REQ}",
         f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} computers at a time, Mac or Windows",
         f"- [Refunds]({BASE}/legal/refunds/): email within {f['refund_days']} days of purchase for a refund, "
         f"no reason needed",
