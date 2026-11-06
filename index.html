@@ -1238,49 +1238,42 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 
     <div class="ba" id="ba3">
-      <video class="ba-after" width="1280" height="720" poster="/boxing-poster.jpg"
-        data-src-1x="/boxing-after.mp4" data-src-2x="/boxing-after@2x.mp4"
+      <video class="ba-after" width="1280" height="720" poster="/market-poster.jpg"
+        data-src-1x="/market-after.mp4" data-src-2x="/market-after.mp4"
         muted loop playsinline preload="none"
-        aria-label="After Crisp Max: the same 1936 newsreel, grain cleaned and the collar and button placket on the young man's shirt resolved into distinct edges."></video>
+        aria-label="After Crisp Max: Market Street, San Francisco, in 1906, with the Ferry Building clock tower, the building fronts and the overhead wires drawn as distinct edges."></video>
       <video class="ba-before" width="1280" height="720"
-        data-src-1x="/boxing-before.mp4" data-src-2x="/boxing-before@2x.mp4"
+        data-src-1x="/market-before.mp4" data-src-2x="/market-before.mp4"
         muted loop playsinline preload="none"
-        aria-label="The 640x480 archival scan of the same crowd at the same size: soft and grainy, with faces and collars smeared."></video>
+        aria-label="The 640x480 archival transfer of the same street at the same size: soft, with the tower and the building fronts smeared."></video>
       <div class="ba-line"><span class="ba-grip"></span></div>
       <span class="ba-tag ba-l">Source</span><span class="ba-tag ba-r">Crisp Max</span>
       <input class="ba-range" type="range" min="0" max="100" value="42" step="0.1"
         aria-label="Reveal more of the source or the restored frame">
     </div>
 
-    <p class="ba-note"><strong>The hard case.</strong> Source: <em>Chevrolet
-      Leader News</em> (Vol.&nbsp;2, No.&nbsp;3, 1936), the crowd at an open-air boxing
-      match rather than the fight, from the Prelinger Archives at the Internet Archive under a
-      Creative Commons public-domain dedication. This is a real archival scan at 640&times;480,
-      not a clean file we degraded on purpose: it is soft and grainy because 1936 film digitised
-      decades later is soft and grainy. The clip above is that film run through
-      <strong>Max</strong>, the generative restore, on Apple Silicon. It is a restore rather than
-      an upscale, so both sides of the slider are the same size and only the detail differs.
-      One thing had to happen first, and it is the most useful thing on this page if you have
-      old footage of your own: the scan is <strong>telecined</strong>. It is 24fps film spread
-      across 30fps video, so a third of its frames are two film frames woven together. Restore
-      that as-is and you get the weave reconstructed in high fidelity. We did that the first
-      time, and threw away fifty minutes of compute. <code>fieldmatch,decimate</code> puts the
-      film frames back together first. <a href="/how-to/deinterlace-video-mac/">How to tell, and
-      how to fix it &rarr;</a>
-      Then Max works a frame at a time and it is not free: this 90-frame restore took
-      45.4&nbsp;minutes at 1280&times;960 (30.3&nbsp;seconds a frame) for
-      3.75&nbsp;seconds of film at 23.976fps. The free Enhance lane upscales the same clip
-      4&times; to 2560&times;1920 in 13.0&nbsp;seconds, which is 209 times faster and the reason
-      Enhance is the default.
-      Look at the young man's shirt on the right: in the scan the collar and the button placket
-      are one grey smear, and Max resolves them into an edge with separate buttons. The same
-      happens to the placket and stud on the white polo in the middle of frame.
-      <strong>And the part that flatters us, said plainly:</strong> Max removes the grain
-      completely, and skin and hair come back smoother than the film ever recorded. Those
-      strands are the model filling in, not detail recovered from the negative. Believe the
-      collar; do not believe the hair. Both clips play unedited at the same size, from the same
-      two and a half seconds, and both were compressed for the web with identical settings, so
-      neither side is flattered. On a Retina display you are watching the full 2560-wide file.</p>
+    <p class="ba-note"><strong>The hard case.</strong> Source: <em>A Trip Down Market Street</em>
+      (Miles Brothers, San Francisco, 1906), the Prelinger Archives copy at the Internet Archive, public
+      domain. This is a real archival transfer at 640&times;480, not a clean file we degraded on purpose:
+      it is soft because a 1906 print, copied and digitised a century later, is soft. The clip above is
+      that film run through <strong>Max</strong>, the generative restore in Crisp Pro, on a Mac. Both sides
+      are shown at the same size: on the left the transfer enlarged with a plain resize, on the right
+      Max&rsquo;s 1280&times;960 output, both cropped the same way to fit this frame.
+      One thing had to happen first, and it is worth knowing if you have old film of your own: the
+      transfer repeats each film frame two or three times to fill 30 frames a second. Max restores every
+      frame it is given, so the copies come back slightly different and flicker. Crisp gave it one copy of
+      each film frame instead, 58 of them for these 4.8 seconds.
+      <a href="/learn/what-is-telecine/">Why old film carries repeated frames &rarr;</a>
+      Max is slow on purpose: those 58 frames took 30 minutes 22 seconds on an M1 Ultra Mac Studio,
+      31.4 seconds a frame.
+      Look at the Ferry Building at the end of the street: in the transfer the clock tower is a grey shape,
+      and Max gives it its clock face, its windows and the line of its roof. The building fronts and the
+      overhead wires come out the same way.
+      <strong>And the part that flatters us, said plainly:</strong> Max smooths the film grain away
+      completely, and fine texture such as the cobbles and the horses&rsquo; coats may be the model
+      filling in rather than detail recovered from the film. Believe the tower and the window frames; be
+      wary of the cobbles. Both clips play the same two and a half seconds unedited, compressed for the
+      web with identical settings.</p>
 
     <div class="ba" id="ba2">
       <img class="ba-after" src="/demo-still-after.jpg" width="1704" height="896" loading="lazy" decoding="async"
