@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>Video checker: resolution, frame rate, bitrate (no upload)</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Free video checker: reads resolution, frame rate, bitrate, codec, HDR and interlacing in your browser. Nothing is uploaded. MP4, MOV, MKV, AVI, MPEG.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/tools/video-checker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Video checker: resolution, frame rate, bitrate (no upload)">
+<meta property="og:description" content="Free video checker: reads resolution, frame rate, bitrate, codec, HDR and interlacing in your browser. Nothing is uploaded. MP4, MOV, MKV, AVI, MPEG.">
+<meta property="og:url" content="https://crispvideo.app/tools/video-checker/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Video checker: resolution, frame rate, bitrate (no upload)">
+<meta name="twitter:description" content="Free video checker: reads resolution, frame rate, bitrate, codec, HDR and interlacing in your browser. Nothing is uploaded. MP4, MOV, MKV, AVI, MPEG.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
+<link rel="stylesheet" href="/style.css">
+<style>
+.vc-drop{display:block;margin:0 0 1.2rem;padding:1.6rem 1.3rem;border:1.5px dashed var(--hair-lit);border-radius:var(--r);background:var(--panel-2);text-align:center;cursor:pointer;}
+.vc-drop.vc-over{border-color:var(--cyan);background:rgba(90,200,250,.06);}
+.vc-drop strong{display:block;font-family:var(--head);font-size:1.1rem;color:var(--white);margin:0 0 .35rem;}
+.vc-drop .vc-sub{color:var(--grey);font-size:.92rem;}
+.vc-drop input{position:absolute;width:1px;height:1px;opacity:0;}
+.vc-drop .vc-pick{display:inline-block;margin:.9rem 0 0;padding:.6rem 1.15rem;border-radius:999px;background:var(--cyan);color:#04121a;font-weight:600;font-size:.95rem;}
+#vc-result{margin:0 0 2rem;padding:1.1rem 1.2rem;border:1px solid var(--hair);border-radius:var(--r);background:var(--panel);}
+#vc-result .vc-name{margin:0 0 .6rem;word-break:break-all;}
+#vc-result table.vc-table{min-width:0;font-size:.93rem;}
+#vc-result .vc-table th{width:8.2rem;color:var(--grey);font-weight:500;vertical-align:top;padding:.6rem .8rem .6rem 0;white-space:nowrap;}
+#vc-result .vc-table td{padding:.6rem 0;color:var(--white);word-break:break-word;}
+#vc-result .vc-verdict{margin:1rem 0 0;padding:.9rem 1rem;border-radius:var(--r-sm);background:rgba(90,200,250,.07);}
+#vc-result .vc-error{color:#ffb4a8;margin:0;}
+#vc-result .vc-note{color:var(--grey);font-size:.9rem;margin:.6rem 0 0;}
+@media (max-width:480px){#vc-result .vc-table th{width:6.2rem;white-space:normal;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crisp video checker","url":"https://crispvideo.app/tools/video-checker/","applicationCategory":"MultimediaApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Reads a video file's resolution, frame rate, bitrate, codec, colour and scan type in the browser. The file is never uploaded.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"datePublished":"2026-11-06","dateModified":"2026-11-06"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my video uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The checker is a script that runs in this page. It reads the few parts of the file that describe it, using your browser's own file reader, and shows the result. There is no upload button because nothing is sent. Turn off Wi-Fi after the page has loaded and it still works."}},{"@type":"Question","name":"How do I check a video's resolution on a Mac without a website?","acceptedAnswer":{"@type":"Answer","text":"Select the file in Finder, choose File > Get Info and open More Info: it lists the dimensions and the codecs. For the frame rate and the data rate (the bitrate), open the video in QuickTime Player and choose Window > Show Movie Inspector."}},{"@type":"Question","name":"What bitrate should a 1080p video have?","acceptedAnswer":{"@type":"Answer","text":"There is no single right number, because the codec matters as much as the size. HEVC was designed to need about half the bitrate of H.264 for the same picture. Two files on my Mac show how far apart they can be: an MPEG-2 copy of a 1936 newsreel at 368 × 480 runs at 3.5 Mbps, and an H.264 copy of a 1906 film at 640 × 480, a bigger frame, runs at 0.7 Mbps. Compare a file with others from the same camera or site. If it is far below them, it was squeezed, and it will show blocks in dark or busy scenes."}},{"@type":"Question","name":"Why does my 1080p video still look blurry?","acceptedAnswer":{"@type":"Answer","text":"Resolution is only the size of the frame. A 1080p file can carry a picture that was filmed small and enlarged, compressed hard, or simply out of focus. The checker tells you the size and the bitrate. A low bitrate for the size points to compression; a normal bitrate with a soft picture points to the camera or the lens."}}]}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Video checker", "item": "https://crispvideo.app/tools/video-checker/"}]}</script>
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
+  <a class="btn" data-track="nav-download" href="https://crispvideo.app/download/?src=nav-download">Download</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Video checker</div>
+  <h1>Check a video&rsquo;s resolution, frame rate and bitrate</h1>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-11-06 · Checked 6 November 2026</div>
+
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Pick a video below. This page reads its resolution, frame rate,
+  bitrate, codec, colour (HDR or not) and whether it is interlaced, and shows them in a second. The file stays on your computer: the
+  page reads it with your browser&rsquo;s own file reader and sends nothing. It reads MP4, MOV, MKV, WebM, AVI and MPEG files, from a phone
+  clip to a two-hour home movie.</p></div>
+
+  <label class="vc-drop" id="vc-drop" for="vc-file">
+    <strong>Drop a video here</strong>
+    <span class="vc-sub">or choose one. Nothing is uploaded.</span><br>
+    <span class="vc-pick">Choose a video</span>
+    <input type="file" id="vc-file" accept="video/*,.mkv,.avi,.mpg,.mpeg,.vob,.m2v,.ts,.webm,.mov,.m4v,.mp4,.3gp">
+  </label>
+  <div id="vc-result" hidden aria-live="polite"></div>
+
+  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt">$29</span> once</p><p class="pbox-found">Black Friday price <strong>$14.50</strong> for everyone through November, then $29. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=tools-video-checker-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=tools-video-checker-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="tools-video-checker-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=tools-video-checker-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1853 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;Made with Crisp&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+
+  <h2>What each line means</h2>
+  <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>Line</th><th>What it tells you</th></tr></thead>
+    <tbody>
+      <tr><td>Resolution</td><td>The size of each frame in pixels, as the video plays. Phones store upright clips sideways and mark them to turn on playback, so the checker shows the size you see and says when it was turned.</td></tr>
+      <tr><td>Frame rate</td><td>Pictures per second. &ldquo;Variable&rdquo; means the gap between frames changes, which phones and screen recorders do, and which makes sound drift in some editors.</td></tr>
+      <tr><td>Bitrate</td><td>How much data each second gets. For the same size and codec, a lower number means harder compression and more blocks in dark or busy scenes.</td></tr>
+      <tr><td>Video codec</td><td>How the picture is compressed. HEVC (H.265) was designed to need about half the data of H.264 for the same picture. ProRes and DV compress far less, so their files are much bigger.</td></tr>
+      <tr><td>Colour</td><td>SDR is ordinary video. HDR (HLG, HDR10 or Dolby Vision) is brighter-range video, and iPhone 12 and later record it by default. It looks washed out in apps that ignore it.</td></tr>
+      <tr><td>Scan</td><td>Interlaced video carries two half-pictures per frame. It came from TV-era cameras, tapes and DVDs, and its moving edges show comb lines on a computer screen.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Two ways to check on a Mac without a website</h2>
+  <p><strong>Finder.</strong> Select the file, choose File &gt; Get Info and open More Info. It lists the dimensions and the codecs.</p>
+  <p><strong>QuickTime Player.</strong> Open the video and choose Window &gt; Show Movie Inspector. It adds the frame rate and the data
+  rate, which is the bitrate. It cannot open MKV or AVI files, which is often why people end up on a page like this one.</p>
+  <p>The checker here reads those in one place, and it also flags interlaced files and files whose frame rate changes as they play.</p>
+
+  <h2>How it reads a file without uploading it</h2>
+  <p>A video file starts or ends with a short index that describes everything inside it: the size, the timing of every frame, the
+  codec, the colour. The checker finds that index and reads it, and only it. On a 2.6 GB test file (seven hours of a 1906 film joined end to end) the index was 21 MB, under 1% of
+  the file, and reading it took under a tenth of a second on my Mac. The picture itself is never decoded and never leaves your computer. There is no upload in the code, and
+  you can prove it: load this page, turn off Wi-Fi, and check a file.</p>
+  <p>What it cannot read yet: AVCHD files (.mts) from camcorders, and the length and sound of MPEG files. For those it says so rather
+  than guessing.</p>
+
+  <h2>What to do with what it finds</h2>
+  <p>Under the table, the checker says what Crisp&rsquo;s Auto setting would do with that exact file. The rule is the app&rsquo;s own:
+  Crisp aims for 4K, so a 1080p clip is doubled, a 720p clip tripled and a standard-definition clip (480 or 576 lines) enlarged four
+  times, with stronger clean-up for small, heavily compressed files. Interlaced video is rebuilt into whole frames first. A file that is already 4K needs cleaning,
+  not enlarging.</p>
+  <p>The free copy of Crisp does all of that on the first 15 seconds of a clip, with a small mark, so you can see your own footage
+  before you pay anything.</p>
+
+  <h2>Video file questions</h2>
+  <h3>Is my video uploaded?</h3>
+  <p>No. The checker is a script that runs in this page. It reads the few parts of the file that describe it, using your browser's own file reader, and shows the result. There is no upload button because nothing is sent. Turn off Wi-Fi after the page has loaded and it still works.</p>
+  <h3>How do I check a video's resolution on a Mac without a website?</h3>
+  <p>Select the file in Finder, choose File &gt; Get Info and open More Info: it lists the dimensions and the codecs. For the frame rate and the data rate (the bitrate), open the video in QuickTime Player and choose Window &gt; Show Movie Inspector.</p>
+  <h3>What bitrate should a 1080p video have?</h3>
+  <p>There is no single right number, because the codec matters as much as the size. HEVC was designed to need about half the bitrate of H.264 for the same picture. Two files on my Mac show how far apart they can be: an MPEG-2 copy of a 1936 newsreel at 368 × 480 runs at 3.5 Mbps, and an H.264 copy of a 1906 film at 640 × 480, a bigger frame, runs at 0.7 Mbps. Compare a file with others from the same camera or site. If it is far below them, it was squeezed, and it will show blocks in dark or busy scenes.</p>
+  <h3>Why does my 1080p video still look blurry?</h3>
+  <p>Resolution is only the size of the frame. A 1080p file can carry a picture that was filmed small and enlarged, compressed hard, or simply out of focus. The checker tells you the size and the bitrate. A low bitrate for the size points to compression; a normal bitrate with a soft picture points to the camera or the lens.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="https://crispvideo.app/learn/bitrate-vs-resolution/">Bitrate or resolution: which one makes a video look good</a></li>
+    <li><a href="https://crispvideo.app/learn/what-is-variable-frame-rate/">What variable frame rate is, and why sound drifts</a></li>
+    <li><a href="https://crispvideo.app/how-to/deinterlace-video-mac/">How to fix comb lines from interlaced video on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/upscale-video-on-mac/">How to upscale a video to 4K on a Mac</a></li>
+  </ul>
+
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt">$29</span> once</p><p class="pbox-found">Black Friday price <strong>$14.50</strong> for everyone through November, then $29. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=tools-video-checker-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=tools-video-checker-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="tools-video-checker-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=tools-video-checker-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1853 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;Made with Crisp&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+</div></article>
+
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows. <a href="https://crispvideo.app/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">About</a></p>
+  <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
+</div></footer>
+<script src="/tools/video-checker/checker.js" defer></script>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$29" data-ends="2026-12-01T07:59:59Z" style="max-width:520px;margin:1.25rem auto 0"></div>
+<script src="/founding.js" defer></script>
+<script src="/track.js" defer></script>
+</body>
+</html>
