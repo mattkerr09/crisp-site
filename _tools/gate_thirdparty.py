@@ -47,7 +47,9 @@ ROOT = Path(__file__).resolve().parent.parent
 #: advertising pixel" — and says plainly that a content blocker stops it. The
 #: app still ships no analytics, no crash reporter and no advertising
 #: identifiers; this is the marketing site, and the policy draws that line.
-ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io", "connect.facebook.net"}
+#: 2026-11-06: connect.facebook.net REMOVED. Matthew took the Meta pixel off the site ("Remove it"); a page that
+#: loads it again fails here.
+ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io"}
 
 #: (host, PATH) pairs a visitor may load — and nothing else from that host.
 #:

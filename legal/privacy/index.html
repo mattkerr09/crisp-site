@@ -23,10 +23,9 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Privacy Policy","description":"Crisp processes your photos and videos entirely on your Mac or PC. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.","datePublished":"2026-07-28","dateModified":"2026-11-05","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/legal/privacy/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Privacy Policy","description":"Crisp processes your photos and videos entirely on your Mac or PC. No uploads, no analytics, no telemetry. Exactly what the app sends, and when.","datePublished":"2026-07-28","dateModified":"2026-11-06","author":{"@type":"Person","name":"Matt Kerr"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/legal/privacy/"}
 </script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Legal", "item": "https://crispvideo.app/legal/"}, {"@type": "ListItem", "position": 3, "name": "Legal", "item": "https://crispvideo.app/legal/privacy/"}]}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Legal", "item": "https://crispvideo.app/legal/"}, {"@type": "ListItem", "position": 3, "name": "Legal", "item": "https://crispvideo.app/legal/privacy/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 <nav><div class="wrap nav-inner">
@@ -37,12 +36,12 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/legal/">Legal</a> &rsaquo; Legal</div>
   <h1>Privacy Policy</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-28 · last updated 2026-11-05</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-28 · last updated 2026-11-06</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede"><strong>Crisp processes your photos and videos entirely on your own computer, Mac or PC. They are
   never uploaded, and there is no analytics or telemetry of any kind in the app.</strong></p></div>
   <p>Crisp is published by <strong>Kerr &amp; Company LLC</strong>, a Michigan limited liability company, which is the data controller for any personal information described below.</p>
-  <p>Last updated: 5 November 2026. This page describes what the software actually does (it was
+  <p>Last updated: 6 November 2026. This page describes what the software actually does (it was
   written against the shipping code, not from a template) and, since 13 August, what this
   website does too.</p>
 
@@ -74,22 +73,13 @@
     you between sites, and does not build a profile. It is how we know whether anyone read the
     thing we just wrote. If you would rather not be counted, any content blocker stops it, and
     nothing on the site depends on it loading.</li>
-    <!-- Wording corrected 2026-08-23, with the change that made it true. This read "This site
-         loads …" while the pixel was hand-written into index.html and ran on 1 of 115 pages —
-         a sentence that overstated the tracking on 114 pages and understated it on none, but
-         still not what the site did. The pixel is now on every page, placed by
-         ops/bin/insert-meta-pixel.py, so this now says "Every page" and matches the Plausible
-         bullet above it. The copy moved in the same commit as the coverage. -->
-    <li><strong>An advertising pixel, which does set a cookie.</strong> Every page on this site loads
-    <code>connect.facebook.net/en_US/fbevents.js</code>, Meta&rsquo;s advertising pixel. It sets a
-    cookie named <code>_fbp</code> and reports to Meta that a page here was viewed, so we can tell
-    whether an advert we paid for actually brought anyone. <strong>Unlike the page counter above,
-    this one does follow you between sites and does contribute to a profile Meta holds about
-    you</strong>: that is what the product is, and it would be dishonest to describe it any
-    other way. It runs on the marketing site only. <strong>It is not in the app</strong>, and
-    everything said further up this page about Crisp itself is unchanged: the software contains no
-    analytics SDK, no crash reporter and no advertising identifiers. Any content blocker stops the
-    pixel, and nothing on this site depends on it loading.</li>
+    <!-- 2026-11-06: Matthew removed the Meta pixel from every page ("Remove it"): it reported every visit to Meta with no
+         consent prompt, which does not sit with "nothing is uploaded", and it brought one visit from Facebook in 30 days.
+         ops/bin/insert-meta-pixel.py refuses to run now, and site/_tools/gate_thirdparty.py no longer allows the host. -->
+    <li><strong>No advertising pixel.</strong> Until 6 November 2026 every page here also loaded Meta&rsquo;s advertising
+    pixel (<code>connect.facebook.net/en_US/fbevents.js</code>), which set a cookie named <code>_fbp</code> and told Meta
+    that a page was viewed. It has been removed. This site no longer contacts Facebook or Meta and sets no advertising
+    cookie; the cookieless page counter above is the only analytics left. The app never had it.</li>
     <li><strong>No affiliate cookie.</strong> Until 2 November 2026 the homepage loaded a small script,
     <code>/sled.js</code>, that kept an affiliate referral code in a cookie named <code>ta_ref</code> and told
     <code>usesled.com</code> when someone arrived on a referral link. It has been removed: this site no longer sets

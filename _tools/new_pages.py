@@ -84,7 +84,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{article_ld}</script>
 <script type="application/ld+json">{faq_ld}</script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- meta-pixel:begin --><script>!function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq('init','1734031344415692');fbq('track','PageView');</script><!-- meta-pixel:end -->
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">
