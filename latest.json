@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1852",
-  "notes": "When Crisp can't save into a folder, the message now says plainly what to do: move or copy the clip somewhere you can write, such as your Movies or Downloads folder, and try again.",
-  "pub_date": "2026-11-05T12:48:23Z",
+  "version": "1.0.1883",
+  "notes": "You can now blur faces in a video. Crisp finds them with your computer's own face detection, follows them as they move, and covers people seen side-on or from behind too. For a number plate, a screen or a logo, use Blur a box in the clip's tools and drag over it. It all runs on your computer and nothing is uploaded. It can miss faces that are tiny, far away or moving fast, so check the result.",
+  "pub_date": "2026-11-07T01:45:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUd5K3hCdm50bHVEaWtaYTRHZWNUZHo2Wk9kbG1lMzhBRzA4TmxrUEI2eUVDRUovbG84cEpHMjV0UFp6cHlQRlFiMlpHRkNKSk1NSGc5bGRTWXNhcEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODgyNTM4CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpmMFpuc2E0M3lrUFJaVmhGTCtpNkU1TnJpdldPSnZMNjkyMUFwRWVKaUdiUHUraEtod296TFRRMmpJRGFsc2JaMUdpTDJUYS8wT0RPZGFUenNQTU9Ddz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1852.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI0bVZrVGl1cXV6TGF2OVhGT2dENW1JVXdwL3pjd1hQNU05clpzdkc1cENjQVdyUjJBSlBVaXJQVHRSNDB0elpMQlE4Y093bDM0S3U3MDdVREI1OGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MDE1MDgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkV2JXY2YwTUdJOTdHeFdmalBDeUJ5Sm5rNXU3eC9IWXlkSWVveHFlVVA0RVRKNTRzbmk0djJhUVNVMnNVSHlzUHBDM1JVTlhhWm9ZVHhaSGQwcDJEZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1883.app.tar.gz"
     }
   }
 }
