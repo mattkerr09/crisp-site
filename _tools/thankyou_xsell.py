@@ -3,7 +3,8 @@
 three without the cross-sell, and Crisp makes 7 of 8 sales). It sits BELOW the key and the activation steps, never above them. Prices are read, never
 typed: the list prices from ~/ops/launch/dodo-facts.json (Dodo's own product records), the sale at half of each through the founding
 codes' end (FOUNDINGDOCKET and FOUNDINGOUTLIER, both 50% for everyone through November, as docketseo.app and outlier.host show),
-and the bundle from landing_pages.py, which a test holds to the till. The sale lines carry data-until and hide themselves after it,
+and NO bundle: the bundle is a cart of all three apps, so it would charge a Crisp buyer for Crisp again (CEO, sales
+audit, 7 Nov). From 1 December an owner's code may go here, once it exists. The sale lines carry data-until and hide themselves after it,
 because this page does not load founding.js. Every link to a sister app is rel="nofollow" (RULES 52) and the page stays noindex.
 
     python3 site/_tools/thankyou_xsell.py
@@ -46,13 +47,10 @@ def block() -> str:
         rows.append(
             f'    <li><strong>{name}.</strong> {line} <span data-until="{ENDS}">{money(full / 2)} until 30 November, then </span>{money(full)} once. '
             f'<a href="{HUB}/{slug}?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-{slug}">See {name}</a></li>')
-    bundle = (f'  <p style="text-align:left;max-width:none">All three together: {money(landing_pages.BUNDLE_USD)}'
-              f'<span data-until="{ENDS}">, or {money(landing_pages.BUNDLE_FOUNDING_USD)} through November</span>. '
-              f'<a href="{HUB}/bundle?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-bundle">See the bundle</a></p>')
     return "\n".join([
         "<!-- xsell:begin (written by _tools/thankyou_xsell.py) -->",
         '  <h2 style="margin-top:2.4rem">Also from Kerr &amp; Company</h2>',
-        '  <ul class="lede" style="padding-left:1.2rem;text-align:left">', *rows, "  </ul>", bundle,
+        '  <ul class="lede" style="padding-left:1.2rem;text-align:left">', *rows, "  </ul>",
         "  <script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){"
         "if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script>",
         "<!-- xsell:end -->"])
