@@ -71,6 +71,8 @@ def box(where: str, page: str = "") -> str:
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
+            # THE CURRENCY, TRUE (CEO sales audit, 2026-11-07): 6 of 8 November buyers paid in their own currency, 4 with tax added.
+            f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
             f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
             # BUY BESIDE THE FREE DOWNLOAD (content standard, 2026-10-05). The box used to send Pro to the
             # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout

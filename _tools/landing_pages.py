@@ -66,6 +66,7 @@ def box(src: str, buy_first: bool) -> str:
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
+            f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
             f'{windows_line(src)}'
             f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '

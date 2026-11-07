@@ -340,6 +340,7 @@ pre{max-width:100%;overflow-x:auto;}
 .btn-ghost{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .btn-ghost:hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .pbox .pbox-fine{font-size:.8rem;color:var(--grey-dim);margin:0;}
+.pbox .pbox-cur{font-size:.82rem;color:var(--grey-dim);margin:0 0 .5rem;}
 /* "On your phone?" in the product box (content standard, 2026-10-05): shown only on a narrow screen or a
    touch-only pointer, like the homepage's; track.js wires the button. */
 .phone-link{display:none;margin:0 0 .6rem;font-size:.88rem;color:var(--grey);}
