@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1883",
-  "notes": "You can now blur faces in a video. Crisp finds them with your computer's own face detection, follows them as they move, and covers people seen side-on or from behind too. For a number plate, a screen or a logo, use Blur a box in the clip's tools and drag over it. It all runs on your computer and nothing is uploaded. It can miss faces that are tiny, far away or moving fast, so check the result.",
-  "pub_date": "2026-11-07T01:45:46Z",
+  "version": "1.0.1899",
+  "notes": "Share a before-and-after: once you've enhanced a clip, one click makes a square video of the original and the result side by side, up to 15 seconds and small enough for a family group chat. The free mark on videos is now just the web address, crispvideo.app. Crisp can now ask, once and with one click, how you found it, and it counts a free copy's first finished export. Those two counts carry no name, file or address; the privacy page lists them. The Max download now fetches exactly the files Max was tested with, and checks each one.",
+  "pub_date": "2026-11-07T23:24:02Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI0bVZrVGl1cXV6TGF2OVhGT2dENW1JVXdwL3pjd1hQNU05clpzdkc1cENjQVdyUjJBSlBVaXJQVHRSNDB0elpMQlE4Y093bDM0S3U3MDdVREI1OGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MDE1MDgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkV2JXY2YwTUdJOTdHeFdmalBDeUJ5Sm5rNXU3eC9IWXlkSWVveHFlVVA0RVRKNTRzbmk0djJhUVNVMnNVSHlzUHBDM1JVTlhhWm9ZVHhaSGQwcDJEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1883.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9INzNkSElhMThzSlNuUUI3NUJzS3RPb01YbXJTekE5SFZaMy8rZTRBd3MrdXNYS0tHVHB0QWtEd21Ucnp0bVk2WGFjeUVrTDFZM2l1a3RpNUFmMGdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MDkzMjQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiUEtSZFBGMEhZaUJjdmlhZjVDUnRSaC9DUVRSeG55NmxwMjBuaFY0ZlVHajVtbkJaMFNjWjJlOHk2Wkw2VmRMYmFKUnNScVFVZ0FWRW9aS1dvZFlDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1899.app.tar.gz"
     }
   }
 }
