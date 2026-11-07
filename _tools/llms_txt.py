@@ -286,8 +286,8 @@ def build() -> str:
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
         f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; "
-        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds the "
-        f"generative Max lane and batch processing",
+        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds "
+        f"batch processing and, on a Mac, the generative Max lane",
     ]
     if founding_live(f):
         out.append(f"- [Black Friday founding price]({BASE}/#buy): {money(now)} {offer_who(f)}, then {money(p)} "
