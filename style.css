@@ -233,6 +233,14 @@ pre{max-width:100%;overflow-x:auto;}
 .btn-ghost:hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .pbox .pbox-fine{font-size:.8rem;color:var(--grey-dim);margin:0;}
 .pbox .pbox-cur{font-size:.82rem;color:var(--grey-dim);margin:0 0 .5rem;}
+.win-btn,.fine-win,.win-only{display:none;}
+.win .win-only{display:inline;}
+.win .mac-only{display:none;}
+.win .win-btn{display:inline-flex;}
+.win .fine-win{display:block;}
+.win .pbox[data-landing-box] .win-link{display:none;}
+.win .pbox[data-landing-box] .pbox-actions .btn:not(.win-btn){background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.win .pbox[data-landing-box] .pbox-actions .btn:not(.win-btn):hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .phone-link{display:none;margin:0 0 .6rem;font-size:.88rem;color:var(--grey);}
 .win-link{margin:-.2rem 0 .7rem;font-size:.88rem;color:var(--grey);}.win-gpu{display:block;margin-top:.15rem;font-size:.82rem;}.win-link a{color:var(--white);text-decoration:underline;text-underline-offset:3px;}
 .phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;

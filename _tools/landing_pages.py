@@ -18,6 +18,7 @@ exempts both with this reason. product_box.py skips noindex pages.
 
     python3 _tools/landing_pages.py          # write the English pages, then the German doors and boxes
     python3 _tools/landing_pages.py --check  # exit 1 if any managed English or German output differs
+    python3 _tools/landing_pages.py --selftest  # offline template checks; no pages written
 """
 from __future__ import annotations
 
@@ -32,6 +33,9 @@ import sitewide_chrome  # noqa: E402
 
 SITE = Path(__file__).resolve().parents[1]
 BOX = re.compile(r'<aside class="pbox" data-landing-box>.*?</aside>\n?', re.S)
+WINDOWS_HEAD = """<script>document.documentElement.classList.add('js');
+(function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld');
+  else if (/Windows NT/.test(u)) document.documentElement.classList.add('win'); })(navigator);</script>"""
 
 
 def buy_base() -> str:
@@ -61,7 +65,7 @@ def prepare_facts() -> None:
             llms_txt.ENGINE = engine
 
 
-def box(src: str, buy_first: bool) -> str:
+def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
     f = llms_txt.facts()
     m, q = llms_txt.money, llms_txt.quarter
     p, now = f["price"], f["now"]
@@ -71,6 +75,13 @@ def box(src: str, buy_first: bool) -> str:
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
            f'href="{buy_base()}?src={src}" rel="nofollow">Buy Crisp Pro</a>')
+    win = platform_swap and bool(llms_txt.windows())
+    win_dl = (f'<a class="btn win-btn" data-track="{src}-windows" '
+              f'href="{llms_txt.dl_win_url(src + "-windows")}" rel="nofollow">Download free for Windows</a> ') if win else ""
+    win_fine = (f'<p class="pbox-fine fine-win">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · '
+                f'{llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE} · '
+                f'{f["refund_days"]}-day refund, no reason needed. '
+                f'Also on the <a href="{llms_txt.MS_STORE}" data-track="{src}-ms-store" rel="nofollow">Microsoft Store</a>.</p>') if win else ""
     found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
              f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
     return (f'<aside class="pbox" data-landing-box>'
@@ -78,10 +89,11 @@ def box(src: str, buy_first: bool) -> str:
             f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
-            f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>'
+            f'<p class="pbox-actions">{win_dl}{buy + " " + dl if buy_first else dl + " " + buy}</p>'
             f'{windows_line(src)}'
-            f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
+            f'<p class="pbox-fine{" mac-only" if win else ""}">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
+            f'{win_fine}'
             f'</aside>\n')
 
 
@@ -130,9 +142,12 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+{WINDOWS_HEAD if llms_txt.windows() else ""}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>{title}</title>
+<meta property="og:title" content="{title}">
+<meta name="twitter:title" content="{title}">
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="{desc}">
 <meta name="robots" content="noindex, follow">
@@ -151,7 +166,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 <article><div class="wrap">
   <h1>{h1}</h1>
   <p class="lede">{lede}</p>
-  {box(src, buy_first)}{extra}  <p>Everything Pro adds, the licence terms and the answers to the usual questions are on the <a href="{llms_txt.BASE}/#buy">home page</a>.</p>
+  {box(src, buy_first, platform_swap=True)}{extra}  <p>Everything Pro adds, the licence terms and the answers to the usual questions are on the <a href="{llms_txt.BASE}/#buy">home page</a>.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -168,6 +183,13 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 def pages() -> dict[Path, str]:
     f = llms_txt.facts()
     m = llms_txt.money
+    download_intro = f'The current release, notarized by Apple: {f["os"]}, {f["chip"]}.'
+    speed = macos_speed_section(f["os"])
+    if llms_txt.windows():
+        download_intro = (f'<span class="mac-only">{download_intro}</span> '
+                          f'<span class="win-only">{llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}.</span>')
+        if speed:
+            speed = f'<div class="mac-only">\n{speed}</div>\n'
     return {
         SITE / "pricing" / "index.html": page(
             "pricing", f"Crisp pricing: free to try, Pro {m(f['price'])} once",
@@ -180,11 +202,11 @@ def pages() -> dict[Path, str]:
             f"{llms_txt.offer_last_day({'ends': BUNDLE_FOUNDING_ENDS})}, our Black Friday price, then {llms_txt.money(BUNDLE_USD)}.",
             "pricing-page", True),
         SITE / "download" / "index.html": page(
-            "download", "Download Crisp for Mac",
-            f"Download Crisp Video for Mac: {f['os']}, {f['chip']}. Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length.",
-            "Download Crisp for Mac",
-            f"The current release, notarized by Apple: {f['os']}, {f['chip']}. Free to use: {llms_txt.free_tier(f['cap'], '&ldquo;', '&rdquo;')}; Pro removes the mark and the limit.",
-            "download-page", False, macos_speed_section(f["os"])),
+            "download", "Download Crisp for Mac and Windows",
+            f"Download Crisp Video for Mac and Windows. Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length.",
+            "Download Crisp for Mac and Windows",
+            f"{download_intro} Free to use: {llms_txt.free_tier(f['cap'], '&ldquo;', '&rdquo;')}; Pro removes the mark and the limit.",
+            "download-page", False, speed),
         # THE ADDRESS ON THE FREE MARK (CEO, 2026-11-05): every free video export carries "crispvideo.app" and, under it,
         # "crispvideo.app/w" (crisp scripts/make_watermark.py). This is that door: what Crisp is, and the download tagged
         # src=watermark, so the visits and downloads the mark sends can be counted.
@@ -234,7 +256,77 @@ def page404(s: str) -> str:
     return s.replace(a, b + '<p><a class="btn btn-ghost" href="/">Back to Crisp</a></p>')
 
 
+def selftest() -> int:
+    """Render in memory with site-side fixture facts; never read the app checkout or write a page."""
+    import json
+    import subprocess
+    from unittest.mock import Mock, patch
+    import new_pages
+    import shipped_comments
+
+    assert WINDOWS_HEAD in (SITE / "index.html").read_text(), "keep platform detection the same as the home page"
+    engine = Mock()
+    engine.read_text.return_value = (f'PRICE_USD = {new_pages.PRICE_USD}\n'
+                                   f'FREE_EXPORT_CAP_SECONDS = {new_pages.FREE_EXPORT_CAP_SECONDS}\n')
+    with patch.object(llms_txt, "ENGINE", engine):
+        f = llms_txt.facts()
+        assert llms_txt.windows(), "selftest needs the repo's published Windows manifest"
+        rendered = pages()
+        for slug, src in (("download", "download-page"), ("pricing", "pricing-page"), ("w", "watermark")):
+            s = rendered[SITE / slug / "index.html"]
+            assert s.index(WINDOWS_HEAD) < s.index('<link rel="stylesheet"')
+            assert f'<link rel="canonical" href="{llms_txt.BASE}/{slug}/">' in s
+            actions = re.search(r'<p class="pbox-actions">(.*?)</p>', s).group(1)
+            assert actions.startswith('<a class="btn win-btn"')
+            assert f'data-track="{src}-windows"' in actions
+            assert f'href="{llms_txt.dl_win_url(src + "-windows")}"' in actions
+            assert f'href="{llms_txt.dl_url(src)}"' in actions
+            assert 'data-crisp-checkout' in actions
+            fine = re.search(r'<p class="pbox-fine fine-win">(.*?)</p>', s).group(1)
+            assert llms_txt.WIN_REQ in fine and llms_txt.WIN_GPU in fine
+            assert f'{f["refund_days"]}-day refund' in fine and llms_txt.MS_STORE in fine
+            assert 'macOS' not in fine and 'Apple' not in fine
+            assert '<p class="pbox-fine mac-only">' in s
+            title = re.search(r'<title>(.*?)</title>', s).group(1)
+            assert len(title) <= 60
+            assert f'<meta property="og:title" content="{title}">' in s
+            assert f'<meta name="twitter:title" content="{title}">' in s
+            assert not shipped_comments.clean(s, "html")[1]
+        download = rendered[SITE / "download" / "index.html"]
+        title = "Download Crisp for Mac and Windows"
+        assert f'<title>{title}</title>' in download and f'<h1>{title}</h1>' in download
+        assert '<span class="mac-only">The current release, notarized by Apple:' in download
+        assert f'<span class="win-only">{llms_txt.WIN_REQ}' in download
+        assert 'win-btn' not in box("404", False)
+        with patch.object(llms_txt, "windows", return_value=None):
+            for s in pages().values():
+                assert WINDOWS_HEAD not in s
+                assert 'win-btn' not in s and 'fine-win' not in s and 'mac-only' not in s
+                assert 'Download free for Mac' in s and 'macOS' in s
+        for src, buy_first in (("download-page", False), ("pricing-page", True)):
+            actions = re.search(r'<p class="pbox-actions">(.*?)</p>', box(src, buy_first, True)).group(1)
+            mac = re.search(r'<a class="([^"]+)"[^>]*>Download free for Mac</a>', actions).group(1)
+            assert ("btn-ghost" in mac) == buy_first
+
+    script = WINDOWS_HEAD.removeprefix("<script>").removesuffix("</script>")
+    cases = {"Windows NT 10.0; Win64; x64": True, "Windows NT 10.0; Mobi": False, "Macintosh; Intel Mac OS X": False,
+             "Linux x86_64": False, "iPhone": False, "Android": False, "": False}
+    probe = """const vm = require('node:vm');
+const {script, cases} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+for (const [userAgent, expected] of Object.entries(cases)) {
+  const classes = new Set();
+  vm.runInNewContext(script, {navigator: {userAgent}, document: {documentElement: {classList: {add: c => classes.add(c)}}}});
+  if (classes.has('win') !== expected) throw new Error(userAgent);
+}
+"""
+    subprocess.run(["node", "-e", probe], input=json.dumps({"script": script, "cases": cases}), text=True, check=True)
+    print("OK: three landing templates, platform links and requirements, titles, Mac fallback and seven user agents; no pages written")
+    return 0
+
+
 def main(argv: list[str]) -> int:
+    if "--selftest" in argv:
+        return selftest()
     import de_pages
 
     prepare_facts()
