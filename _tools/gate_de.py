@@ -342,7 +342,18 @@ def check(root: Path, scaffold: bool) -> list[str]:
 
             en_shape, de_shape = chrome(en), chrome(de)
         if written:
-            pass
+            # A written page skips only the MIRROR checks. Its structured data must still parse, and every Article, FAQPage or
+            # WebPage block must say inLanguage "de" (the Codex job that wired these gates flagged the gap, 2026-11-08).
+            for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', de_source, re.S):
+                try:
+                    data = json.loads(m.group(1))
+                except ValueError as error:
+                    fail(de_path, f"invalid JSON-LD: {error}")
+                    continue
+                for item in (data if isinstance(data, list) else [data]):
+                    if isinstance(item, dict) and item.get("@type") in ("Article", "FAQPage", "WebPage", "WebSite", "SoftwareApplication") \
+                            and item.get("inLanguage") != "de":
+                        fail(de_path, f"JSON-LD {item.get('@type')} must be de (inLanguage)")
         elif [tag for tag, _ in en_shape] != [tag for tag, _ in de_shape]:
             fail(de_path, "element structure differs from the English skeleton")
         else:
@@ -491,6 +502,7 @@ def selftest() -> int:
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),
         ("changed schema type", "de/index.html", '"@type": "Organization"', '"@type": "Thing"', "fixed value", True),
         ("wrong schema language", "de/index.html", '"inLanguage": "de"', '"inLanguage": "en"', "must be de", True),
+        ("written page without schema language", "de/vhs-digitalisieren-und-verbessern/index.html", '"inLanguage": "de",', '', "must be de (inLanguage)", True),
         ("forbidden word", "de/download/index.html", '</body>', '<!-- iMpReSsUm --></body>', "forbidden heading", True),
         ("encoded forbidden word", "de/download/index.html", '</body>', '<!-- &#73;mpressum --></body>', "forbidden heading", True),
         ("postal markup", "de/download/index.html", '</body>', '<address>123 Example Street</address></body>', "postal address", True),
