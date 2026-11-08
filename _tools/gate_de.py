@@ -613,7 +613,7 @@ def generator_selftest() -> None:
     with patch.object(de_pages.llms_txt, "windows", return_value=None):
         assert 'class="win-link"' not in de_pages.box("de-test", f=f)
     instalments = dict(f, price=Decimal("80"), now=Decimal("60"), bnpl=True)
-    assert 'TODO-DE: or 4 × 20 $' in de_pages.box("de-test", f=instalments)
+    assert 'oder 4 × 20 $' in de_pages.box("de-test", f=instalments)   # the German pay-in-four words
     assert 'TODO-DE: or 4 × 15 $' in de_pages.box("de-test", f=instalments)
     live = de_pages.llms_txt.founding_live
     with patch.object(de_pages.llms_txt, "founding_live", side_effect=lambda fact: live(fact, datetime(2030, 1, 1, tzinfo=timezone.utc))):
