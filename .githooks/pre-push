@@ -171,6 +171,10 @@ fi
 # CONTENT STANDARD rule 11 (2026-10-07): no em-dash a visitor can see on an unlocked page (titles, meta, copy, alt);
 # quotes and the experiment arms in ~/ops/search/ARMS.md are exempt. _tools/no_em_dash.py --apply rewrites them.
 run_gate "no-em-dash" python3 "$(dirname "$0")/../_tools/no_em_dash.py" --check
+# Pages serves this repo as it is, so a comment is public. Only region markers and the generator pointer may ship
+# (CEO QC 2026-11-08 found an old price and design notes in the home page's inline CSS).
+run_gate "shipped-comments" python3 "$(dirname "$0")/../_tools/shipped_comments.py" --check
+run_gate "shipped-comments-selftest" python3 "$(dirname "$0")/../_tools/shipped_comments.py" --selftest
 
 # ...and no page may link to a sister site (Bing reads sitewide links between commonly owned sites as a link scheme:
 # outlier.host's Bing impressions went from 45-89 a day to 0 within a day of such a block going onto 171 pages, 2026-09-15).

@@ -62,13 +62,6 @@
   event and, for the question, one of eight fixed answers. We keep a daily total of each and nothing else: no name, email, address,
   file, file name or identifier. Your computer remembers that it already sent them, so it never sends them twice.</p>
 
-  <!-- Added 2026-08-13. This page said "no third-party scripts" and never mentioned the
-       website at all, while crispvideo.app loads usesled.com/kerr-and-company/t.js, which
-       sets a ta_ref cookie so an affiliate who referred a sale is credited for it. Every
-       sentence above was true — they are all scoped to the app — but a visitor reading a
-       privacy policy linked from a website footer is asking about the website, and the one
-       third-party script on it was not named anywhere. On a product whose whole argument is
-       privacy, that omission does more damage than the cookie does. -->
   <h2>The website is a separate thing, and it counts visits</h2>
   <p>Everything above is about the software. This site, <code>crispvideo.app</code>, is not the
   software, and it is honest to say what it does separately.</p>
@@ -79,9 +72,6 @@
     you between sites, and does not build a profile. It is how we know whether anyone read the
     thing we just wrote. If you would rather not be counted, any content blocker stops it, and
     nothing on the site depends on it loading.</li>
-    <!-- 2026-11-06: Matthew removed the Meta pixel from every page ("Remove it"): it reported every visit to Meta with no
-         consent prompt, which does not sit with "nothing is uploaded", and it brought one visit from Facebook in 30 days.
-         ops/bin/insert-meta-pixel.py refuses to run now, and site/_tools/gate_thirdparty.py no longer allows the host. -->
     <li><strong>No advertising pixel.</strong> Until 6 November 2026 every page here also loaded Meta&rsquo;s advertising
     pixel, a script loaded from Facebook&rsquo;s servers, which set a cookie named <code>_fbp</code> and told Meta that a
     page was viewed. It has been removed. This site no longer contacts Facebook or Meta and sets no advertising

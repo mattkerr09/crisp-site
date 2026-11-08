@@ -83,13 +83,6 @@
   Ereignis und, bei der Frage, einer von acht festen Antworten. Wir speichern von jeder eine Tagessumme und sonst nichts: keinen Namen, keine E-Mail, keine Adresse,
   keine Datei, keinen Dateinamen und keine Kennung. Ihr Computer merkt sich, dass er sie bereits gesendet hat, und sendet sie daher nie zweimal.</p>
 
-  <!-- Added 2026-08-13. This page said "no third-party scripts" and never mentioned the
-       website at all, while crispvideo.app loads usesled.com/kerr-and-company/t.js, which
-       sets a ta_ref cookie so an affiliate who referred a sale is credited for it. Every
-       sentence above was true — they are all scoped to the app — but a visitor reading a
-       privacy policy linked from a website footer is asking about the website, and the one
-       third-party script on it was not named anywhere. On a product whose whole argument is
-       privacy, that omission does more damage than the cookie does. -->
   <h2>Die Website ist etwas anderes, und sie zählt Besuche</h2>
   <p>Alles oben Gesagte betrifft die Software. Diese Website, <code>crispvideo.app</code>, ist nicht die
   Software; deshalb beschreiben wir gesondert, was sie tut.</p>
@@ -100,9 +93,6 @@
     über verschiedene Websites hinweg und erstellt kein Profil. So wissen wir, ob jemand gelesen hat, was
     wir gerade geschrieben haben. Wenn Sie nicht gezählt werden möchten, stoppt es jeder Inhaltsblocker, und
     nichts auf der Website hängt davon ab, dass es lädt.</li>
-    <!-- 2026-11-06: Matthew removed the Meta pixel from every page ("Remove it"): it reported every visit to Meta with no
-         consent prompt, which does not sit with "nothing is uploaded", and it brought one visit from Facebook in 30 days.
-         ops/bin/insert-meta-pixel.py refuses to run now, and site/_tools/gate_thirdparty.py no longer allows the host. -->
     <li><strong>Kein Werbepixel.</strong> Bis zum 6. November 2026 lud jede Seite hier außerdem das Werbepixel von Meta,
     ein Skript, das von den Servern von Facebook geladen wurde, ein Cookie namens <code>_fbp</code> setzte und Meta mitteilte, dass eine
     Seite aufgerufen wurde. Es wurde entfernt. Diese Website kontaktiert Facebook und Meta nicht mehr und setzt kein Werbe-Cookie;

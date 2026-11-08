@@ -1,19 +1,3 @@
-/* SELF-HOSTED, woff2 only, and never a third-party host — the site's own pre-push check asserts
-   that an ordinary visitor loads nothing from anyone else, and a font CDN would break that as
-   surely as an analytics tag would.
-   WHY THESE. The display face was Futura, which is macOS-resident: on Windows the whole stack
-   fell through to system-ui and the page lost its typographic identity for every visitor who was
-   not already on a Mac — including the search traffic the 113 comparison and explainer pages
-   exist to catch. A webfont is the only way every reader sees the same page.
-   DM Sans carries the body: SIL Open Font Licence, one 30KB VARIABLE file covering 400-700, a
-   large x-height that holds up at 17px on a near-black ground, and — deliberately — not Inter,
-   which is the typeface every AI landing page reaches for.
-   Clash Display carries the headings, the same face outlier.host uses, so the two sites read as
-   one company. */
-/* ⚠️ DM SANS IS TWO FILES PER STYLE, SPLIT BY unicode-range. Until 2026-09-24 only the
-   latin-EXT subset shipped (dmsans-var*.woff2: 149 glyphs, no a-z), so every body line rendered
-   in the system fallback except capital A, NBSP and accented letters — two typefaces in one word.
-   dmsans-latin*.woff2 carries basic Latin; the ext file loads only for a character it covers. */
 @font-face{font-family:'DM Sans';src:url('/fonts/dmsans-latin.woff2') format('woff2');
   font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 @font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var.woff2') format('woff2');
@@ -26,15 +10,6 @@
   font-weight:500;font-style:normal;font-display:swap;}
 @font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-600.woff2') format('woff2');
   font-weight:600;font-style:normal;font-display:swap;}
-/* Crisp — shared styles for the guide and comparison pages.
- *
- * The homepage was rebuilt around the product; these 79 pages still carried their own inline
- * CSS, so following a "Guides" link dropped visitors into a different-looking site. They share
- * one templated vocabulary — 17 classes total — which is why a single stylesheet can carry all
- * of them, and why future changes are one file instead of seventy-nine.
- *
- * Tokens are identical to the homepage on purpose: same black, same hairlines, same cyan.
- */
 
 :root{
   --black:#000; --panel:#08090d; --panel-2:#0d0f15; --card:#101319;
@@ -44,7 +19,7 @@
   --r:18px; --r-sm:12px;
   --sans:'DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
   --head:'Clash Display',Futura,"Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  --w:820px;                 /* narrower than home: these are reading pages */
+  --w:820px;                 
 }
 
 *{box-sizing:border-box;}
@@ -54,15 +29,6 @@ body{
   font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 
-/* EMPHASIS THAT ACTUALLY EMPHASISES — the shared stylesheet had no `strong` rule, so all 1,285
-   <strong> tags across the other 112 pages inherited the muted body grey (rgb(161,169,184)) and
-   changed only their weight. Measured live on /vs/topaz-alternative-mac/: 27 of them, every one
-   the same colour as the prose around it, including "100% offline" and "own" — the exact phrases
-   those pages are arguing. Bold alone against a near-black background is a very small step in
-   value, so the markup was there and the emphasis was not.
-   This matches index.html's inline rule exactly; the homepage got it first and the rest of the
-   site is 112 pages of the same problem. 600 rather than the browser's 700 keeps it from shouting
-   now that it also carries colour. Where the parent is already --white this is a no-op. */
 p strong, li strong, td strong{color:var(--white);font-weight:600;}
 p em, li em{color:#c3cad6;}
 img{max-width:100%;height:auto;display:block;}
@@ -70,14 +36,12 @@ a{color:var(--ice);text-decoration:none;}
 a:hover{text-decoration:underline;text-underline-offset:3px;}
 .wrap{width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;}
 
-/* ---- nav (shared with the homepage's shape) ---- */
 nav{
   position:sticky;top:var(--kc-bar-h,0px);z-index:80;background:rgba(0,0,0,.6);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);
 }
 nav .btn{padding:.5rem 1.05rem;font-size:.88rem;}
-/* Same column as the prose below it, so the wordmark sits directly above the H1. */
 .nav-inner{
   display:flex;align-items:center;gap:1.5rem;height:56px;
   width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;
@@ -92,11 +56,6 @@ header .nav-inner{position:relative;}
 .nav-brand:hover{text-decoration:none;}
 .nav-brand svg{width:21px;height:21px;color:var(--cyan);}
 
-/* ---- headings ---- */
-/* The display face carries the headings here too, so a visitor who lands on a guide from search
-   meets the same page as one who lands on the home page. Weight comes DOWN to 600 with it: only
-   500 and 600 are shipped, and asking for 690 would have the browser synthesise a fake bold —
-   smeared stems, wrong sidebearings — which is worse than no display face at all. */
 h1{
   font-family:var(--head);
   font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.07;letter-spacing:-.012em;
@@ -120,7 +79,6 @@ p{margin:0 0 1.05rem;}
 .crumb a{color:var(--grey);}
 .updated{font-size:.83rem;color:var(--grey-dim);margin:.2rem 0 2.4rem;}
 
-/* ---- buttons ---- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
   padding:.78rem 1.4rem;border-radius:999px;font-weight:600;font-size:.96rem;
@@ -130,7 +88,6 @@ p{margin:0 0 1.05rem;}
 }
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px -12px rgba(90,200,250,1);text-decoration:none;}
 
-/* ---- call-to-action block ---- */
 .cta{
   margin:3rem 0;padding:2rem;border:1px solid var(--hair);border-radius:var(--r);
   background:
@@ -138,16 +95,11 @@ p{margin:0 0 1.05rem;}
     linear-gradient(180deg,var(--card),var(--panel-2));
   text-align:center;
 }
-/* The same lift the home page gives its cards, so a visitor who lands on a guide
-   from search gets the one site rather than a plainer relative of it. The shadow
-   is what reads as elevation on a near-black ground; a border change alone does
-   not. */
 .cta{transition:border-color .28s,box-shadow .28s;}
 .cta:hover{border-color:var(--hair-lit);box-shadow:0 26px 56px -30px rgba(90,200,250,.42);}
 .cta p{color:var(--grey);}
 .cta p:last-of-type{margin-bottom:1.3rem;}
 
-/* ---- callout box ---- */
 .box{
   margin:2rem 0;padding:1.35rem 1.5rem;border:1px solid var(--hair);border-radius:var(--r-sm);
   background:var(--panel-2);color:var(--grey);
@@ -157,17 +109,12 @@ p{margin:0 0 1.05rem;}
 .box strong{color:var(--white);}
 .box p:last-child{margin-bottom:0;}
 
-/* ---- prompt / command sample ---- */
 .prompt{
   display:inline-block;padding:.35rem .7rem;border-radius:8px;border:1px solid var(--hair-lit);
   background:rgba(90,200,250,.07);color:var(--ice);
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;
 }
 
-/* ---- comparison tables ----
-   .cmp is the <table> itself, so the scroll box has to be a real wrapper: a table can't be its
-   own overflow container, and without one a min-width table pushes the whole page sideways on a
-   phone. The wrapper scrolls; the page never does. */
 .cmp-wrap{
   overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.6rem 0 2.4rem;max-width:100%;
   border:1px solid var(--hair);border-radius:var(--r);background:var(--panel-2);
@@ -186,7 +133,6 @@ tbody td:first-child{color:var(--grey);}
 .yes{color:var(--green);font-weight:560;}
 .no{color:var(--grey-dim);}
 
-/* ---- step lists ---- */
 .steps{counter-reset:s;list-style:none;padding:0;margin:1.6rem 0 2.2rem;display:grid;gap:1.15rem;}
 .steps > li{position:relative;padding-left:3rem;color:var(--grey);}
 .steps > li::before{
@@ -196,8 +142,6 @@ tbody td:first-child{color:var(--grey);}
   background:rgba(90,200,250,.12);border:1px solid rgba(90,200,250,.32);
 }
 .steps > li strong{color:var(--white);}
-/* The template opens each step with an <h3>, whose section margin would otherwise drop the
-   text a full line below its own number. */
 .steps > li > h3{margin:0 0 .35rem;font-size:1.05rem;}
 .steps > li > p{margin:0;}
 .steps > li > p + p{margin-top:.6rem;}
@@ -214,11 +158,6 @@ hr{border:none;border-top:1px solid var(--hair);margin:3rem 0;}
 footer{border-top:1px solid var(--hair);margin-top:4rem;padding:2.4rem 0 3rem;
   color:var(--grey-dim);font-size:.88rem;}
 footer a{color:var(--grey);}
-/* The sibling-products line. Sits BELOW the existing footer row, separated by a
-   hairline and dimmed one step further than the copyright, so it reads as a
-   footnote rather than a second pitch. Crisp's whole design argument is
-   restraint; a cross-sell that shouts would undo more than it earns.
-   max-width keeps it near 65 characters at desktop widths. */
 .foot-sibling{border-top:1px solid var(--hair);margin-top:1.6rem;padding-top:1.6rem;
   color:var(--grey-dim);font-size:.84rem;line-height:1.65;max-width:62ch;}
 .foot-sibling strong{color:var(--grey);font-weight:600;}
@@ -227,24 +166,12 @@ footer a{color:var(--grey);}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-/* Source citations under a price table. It had no rule at all, so a paragraph of fine print
-   rendered at full body size and weight directly beneath the comparison it qualifies — louder
-   than the prices it was footnoting. --grey-dim is 4.82:1 on the page background (raised in
-   55cf220 after it measured 3.90:1). */
 .price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
 
-/* App screenshots in an article. <figure> had no rule, so the browser's 40px side margins applied: at 375px the
-   screenshot of the app, the one picture on the page that proves the claim, rendered about 255px wide inside a 330px
-   column, with its caption at full body size (measured 2026-11-02). Full column width, a caption that reads as one. */
 article figure{margin:1.8rem 0 2.2rem;}
 article figure img{border-radius:var(--r-sm);}
 article figcaption{margin-top:.7rem;font-size:.86rem;line-height:1.55;color:var(--grey-dim);}
 
-/* LIT FROM BEHIND, on the 113 pages that share this stylesheet. index.html lights each
-   <section>; these pages have no sections — they are one <article> — so the light goes on the
-   article instead: two soft washes, cyan high on the left and violet lower on the right, with
-   radii in percent so they scale with however long the page runs. Everything the article holds
-   rides above on z-index 1, because a wash that paints over body copy is a smear, not light. */
 article{position:relative;}
 article::before{content:"";position:absolute;inset:-3rem 0 0;z-index:0;pointer-events:none;
   background:
@@ -253,16 +180,6 @@ article::before{content:"";position:absolute;inset:-3rem 0 0;z-index:0;pointer-e
 article > *{position:relative;z-index:1;}
 
 
-/* CONTENT THAT RISES INTO PLACE, on the 113 pages that share this stylesheet.
-   index.html does this with an IntersectionObserver because it needed per-element stagger. Here
-   it is pure CSS, deliberately: adding a script tag to 113 files to hide their content is a
-   change whose failure mode is 113 blank pages, and the whole point of the js-gate on the
-   homepage was that hiding content is only safe when something guarantees it gets unhidden.
-   @supports gives that guarantee for free — a browser without scroll-driven animations simply
-   never applies the rule and shows the page normally. Nothing can hide content that is not
-   unhidden, because the hiding only exists where the un-hiding does.
-   Selectors are structural on purpose, so no page needs an edit: every /vs/ page has h2 and
-   article, 23 of 24 have a table, 11 have .cmp. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     article h2, article table, article .cmp, article figure {
@@ -277,10 +194,6 @@ article > *{position:relative;z-index:1;}
   }
 }
 
-/* Section hub index lists (/how-to/, /vs/, /for/, /best/, /legal/).
-   Two columns once there is room, because a 46-item single column is a scroll rather than a
-   list you can scan. The note after a link is optional and stays on the same line so the
-   scannable thing — the link text — keeps a straight left edge. */
 .hub-list{list-style:none;padding:0;margin:.6rem 0 1.8rem;
   display:grid;grid-template-columns:1fr;gap:.44rem 2rem;}
 @media (min-width:760px){.hub-list{grid-template-columns:1fr 1fr;}}
@@ -289,52 +202,28 @@ article > *{position:relative;z-index:1;}
 .hub-list a:hover{border-bottom-color:currentColor;}
 .hub-note{display:block;font-size:.85rem;color:var(--grey-dim);}
 
-/* THE QUICK-ANSWER BOX — 80 pages shipped `class="quick"` and nothing styled it.
-   The anatomy pass added the element to every page and never added a rule, so the one
-   block a reader is most likely to read rendered as a bare bold word and a paragraph,
-   with no box, no separation and nothing marking it as the answer. Found by a writer
-   who grepped for the selector instead of trusting that a shipped class is a styled one.
-   Matches the .box idiom above (hair border, --r-sm, --panel-2) with a cyan edge and a
-   label, so it reads as an answer rather than another paragraph. */
 .quick{margin:0 0 1.9rem;padding:1.15rem 1.35rem;border:1px solid var(--hair);
   border-left:3px solid var(--cyan);border-radius:var(--r-sm);background:var(--panel-2);}
 .quick>strong{display:block;margin:0 0 .5rem;font-family:var(--head);font-size:.78rem;
   letter-spacing:.09em;text-transform:uppercase;color:var(--cyan);font-weight:600;}
 .quick .lede{margin:0;color:var(--white);}
-/* ⛔ NO .hero-say OVERRIDE HERE, DELIBERATELY. I wrote one — the home page's block sits in
-   the hero and a second box would be a panel inside a panel — and it was DEAD CODE: index.html
-   does not load this stylesheet at all. It carries its own 52KB embedded <style> (which styles
-   .hero-say and has no .quick rule), so nothing in this file can ever reach the hero. Removed
-   rather than shipped, on the same rule as _tools/gate_exemptions_live.py: a rule that describes
-   nothing reads as a considered decision and pre-approves the case for the day it applies. */
 
-/* The four-payment price beside a price (Matthew, 2026-09-28): it may wrap to the next line on a
-   phone, but as one unit — never "or 4" on one line and "× $32.25" on the next. */
 .split{white-space:nowrap;}
 
-/* More from Kerr & Company — every page, every site (CEO order 2026-09-26) */
 .kco{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--hair);font-size:.84rem;color:var(--grey-dim);}
 .kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
 .kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
 .kco-list a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}
 
-/* A hostname or path in <code> is one unbreakable word: "connect.facebook.net/en_US/fbevents.js" made
-   /legal/privacy/ 433px wide on a 375px phone (the whole page zoomed out). Let it break anywhere. */
 code{overflow-wrap:anywhere;}
-/* ...and a command line in <pre> keeps its layout but scrolls inside its own box: /index/, the deinterlace and
-   reverse how-tos were 471-717px wide on a 375px phone (the whole page zoomed out). */
 pre{max-width:100%;overflow-x:auto;}
 
-/* ---- the in-article product box (2026-09-28: every guide gets a real next step right after the answer and
-   again at the end — _tools/product_box.py writes it from the site's own facts) ---- */
 .pbox{margin:2rem 0;padding:1.3rem 1.4rem 1.15rem;border:1px solid var(--hair-lit);border-radius:var(--r);
   background:radial-gradient(520px 240px at 12% -30%,rgba(90,200,250,.12),transparent 70%),linear-gradient(180deg,var(--card),var(--panel-2));}
 .pbox p{margin:0 0 .5rem;}
 .pbox-name{color:var(--grey);font-size:.95rem;}
 .pbox-name strong{color:var(--white);}
 .pbox-price{color:var(--grey);font-size:.95rem;line-height:1.25;}
-/* the price is the big number; its four-payment split sits on its baseline in the same typeface, weight 600,
-   about 45% of its size, full-strength colour (Matthew: the same-size version "looks bad") */
 .pbox-amt{font-family:var(--head);font-size:2rem;font-weight:600;color:var(--white);letter-spacing:-.02em;}
 .pbox-split{font-family:var(--head);font-size:.9rem;font-weight:600;color:var(--white);white-space:nowrap;}
 .pbox-found{font-size:.9rem;color:var(--grey);}
@@ -344,16 +233,12 @@ pre{max-width:100%;overflow-x:auto;}
 .btn-ghost:hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .pbox .pbox-fine{font-size:.8rem;color:var(--grey-dim);margin:0;}
 .pbox .pbox-cur{font-size:.82rem;color:var(--grey-dim);margin:0 0 .5rem;}
-/* "On your phone?" in the product box (content standard, 2026-10-05): shown only on a narrow screen or a
-   touch-only pointer, like the homepage's; track.js wires the button. */
 .phone-link{display:none;margin:0 0 .6rem;font-size:.88rem;color:var(--grey);}
 .win-link{margin:-.2rem 0 .7rem;font-size:.88rem;color:var(--grey);}.win-gpu{display:block;margin-top:.15rem;font-size:.82rem;}.win-link a{color:var(--white);text-decoration:underline;text-underline-offset:3px;}
 .phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;
   text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 .pbox .pbox-phone{margin:-.2rem 0 .7rem;}
 @media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}
-/* The box track.js builds under the send button once it has been pressed (2026-10-28): what happened, the link as plain
-   text to press and hold, and Copy / Email it / Text it. 44px buttons, Apple's minimum touch target. */
 .sendlink{margin:.2rem 0 .8rem;max-width:26rem;font-size:.88rem;line-height:1.5;color:var(--grey);scroll-margin:calc(var(--kc-bar-h,0px) + 72px) 0 6rem;}
 .sendlink p{margin:0 0 .6rem;}
 .sendlink [hidden]{display:none;}
@@ -363,10 +248,6 @@ pre{max-width:100%;overflow-x:auto;}
 .sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
 .sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.88rem;font-family:inherit;line-height:inherit;cursor:pointer;}
 
-/* ---- FUTURISTIC TOUCHES (Matthew, 2026-10-09; ~/ops/launch/FUTURISTIC-TOUCHES.md) ----
-   The guide pages already have the frosted nav, the glowing gradient button and the lifting call-to-action box. What
-   they lacked is the light: the same cyan glow the home page now has, bleeding down from the top behind the title, with
-   a faint violet off to the side. Behind everything, no motion, and it fades out well before the body copy. */
 body::before{content:"";position:absolute;left:0;right:0;top:0;height:34rem;z-index:-1;pointer-events:none;
   background:radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.14),transparent 70%),
              radial-gradient(35% 40% at 86% 6%,rgba(157,140,255,.07),transparent 70%);}

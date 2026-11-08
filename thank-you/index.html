@@ -64,9 +64,6 @@
   <p class="lede" id="key-intro">Your licence key is emailed to you by our payment provider. It
     looks like <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>: 36 characters.</p>
 
-  <!-- Dodo appends license_key, payment_id, status and email to the redirect. Showing the key
-       here is not a nicety: redirecting a buyer away from Dodo's own confirmation page, which is
-       where they used to SEE it, and then not showing it would be strictly worse than before. -->
   <p class="lede" id="key-shown" hidden>Here is your licence key. It has also been emailed to you. Copy it, then follow the three steps below.</p>
   <p id="key-value" hidden style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
      font-size:1.15rem;letter-spacing:.04em;background:rgba(255,255,255,.05);
@@ -106,20 +103,7 @@
   <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
 </div></footer>
 
-<!-- ⚠️ DELIBERATELY NOT WRAPPED IN meta-pixel:begin/end MARKERS. Those markers are not a label,
-     they are the region insert-meta-pixel.py REPLACES on its next run — marking this block would
-     arm exactly the deletion it must survive. The sibling site nearly lost its Purchase block
-     that way today. Leave it marker-less.
 
-     WHAT THIS DOES. Dodo redirects here with license_key, payment_id, status and email on the
-     query string. Two jobs: show the buyer their key, and tell Meta a sale happened.
-
-     ⚠️ GATED ON status=succeeded. Dodo redirects here for FAILED payments too, and firing
-     Purchase on those teaches the ad account to optimise toward conversions that never happened
-     — worse than no event at all, because the account acts confidently on false data.
-
-     ⚠️ textContent, NEVER innerHTML. license_key arrives from a URL a stranger can craft. This
-     page would otherwise render whatever markup somebody put in that parameter. -->
 <script>
 (function () {
   // Read from the copy the head scrub kept — the URL no longer carries them (see the top of <head>).

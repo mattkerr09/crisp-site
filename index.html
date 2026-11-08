@@ -39,22 +39,6 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 
 <style>
-/* SELF-HOSTED, woff2 only, and never a third-party host — the site's own pre-push check asserts
-   that an ordinary visitor loads nothing from anyone else, and a font CDN would break that as
-   surely as an analytics tag would.
-   WHY THESE. The display face was Futura, which is macOS-resident: on Windows the whole stack
-   fell through to system-ui and the page lost its typographic identity for every visitor who was
-   not already on a Mac — including the search traffic the 113 comparison and explainer pages
-   exist to catch. A webfont is the only way every reader sees the same page.
-   DM Sans carries the body: SIL Open Font Licence, one 30KB VARIABLE file covering 400-700, a
-   large x-height that holds up at 17px on a near-black ground, and — deliberately — not Inter,
-   which is the typeface every AI landing page reaches for.
-   Clash Display carries the headings, the same face outlier.host uses, so the two sites read as
-   one company. */
-/* ⚠️ DM SANS IS TWO FILES PER STYLE, SPLIT BY unicode-range. Until 2026-09-24 only the
-   latin-EXT subset shipped (dmsans-var*.woff2: 149 glyphs, no a-z), so every body line rendered
-   in the system fallback except capital A, NBSP and accented letters — two typefaces in one word.
-   dmsans-latin*.woff2 carries basic Latin; the ext file loads only for a character it covers. */
 @font-face{font-family:'DM Sans';src:url('/fonts/dmsans-latin.woff2') format('woff2');
   font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 @font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var.woff2') format('woff2');
@@ -68,38 +52,15 @@
 @font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-600.woff2') format('woff2');
   font-weight:600;font-style:normal;font-display:swap;}
 :root{
-  /* Was pure #000. Linear ships rgb(8,9,10) and Vercel/Stripe are similarly
-     near-black, because #000 behind #f5f7fa text haloes on OLED and reads cheap.
-     The old comment argued true black is "what a video canvas is" — that is a
-     fair point for the PLAYER, so the shot frame below keeps #000 and only the
-     page ground lifts. The video still sits on true black; the page no longer
-     pretends the whole browser window is a canvas. */
-  /* The ground carries a trace of the brand rather than being neutral grey-black. outlier.host
-     runs #070510 — a purple-black under a purple accent — and that single choice is why its
-     page reads as one designed object instead of dark chrome around content. Crisp's accent is
-     cyan, so the ground leans the same way, by about as much: 2-6 levels of blue, nowhere near
-     enough to tint a video frame, and the shot frame itself still sits on true #000. */
   --black:#060814; --panel:#0a0d1a; --panel-2:#0b0e1c; --card:#0e1222;
   --hair:#1b2133; --hair-lit:#2a314a;
   --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
   --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
   --grad:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
-  /* One glow, three strengths. outlier.host gets its floating look from a single
-     coloured shadow reused at different intensities — resting, hover, and featured
-     — rather than a different shadow per component. Same idea in Crisp's cyan. */
   --lift:0 24px 50px -28px rgba(90,200,250,.40);
   --lift-lg:0 32px 70px -34px rgba(90,200,250,.50);
   --r:18px; --r-sm:12px;
   --sans:'DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
-  /* Crisp is the only site here with a display face of its own, and that is the
-     point: four of these five sites were near-black with a blue accent and
-     -apple-system, so they read as one company shipping four things. Ground
-     colour cannot move — true black is functionally correct for a video tool,
-     it is what a video canvas is — so the separation has to come from type.
-     Futura is macOS-resident and is the display face of film titling, which is
-     authentic to a video restorer rather than decorative. Crisp is a macOS-only
-     app, so its visitors are on macOS and this renders for essentially all of
-     them; the stack degrades to Avenir Next and then the system sans. */
   --head:'Clash Display',Futura,"Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --w:1180px;
 }
@@ -111,49 +72,19 @@ img{max-width:100%;height:auto;display:block;}
 a{color:inherit;text-decoration:none;}
 .wrap{width:min(var(--w),calc(100% - 3rem));margin:0 auto;}
 
-/* type */
-/* Measured against the sites this is meant to sit beside: Linear's h1 is 64px at
-   weight 510 on a 1280px viewport. This was 94.7px at weight 700 — 1.5x the size
-   and far heavier — and Futura's perfect geometric circles at that size and weight
-   read as a party poster rather than a product. The face stays (it is the reason
-   this site does not look like the four competitors that all run -apple-system on
-   near-black); the SIZE and WEIGHT were doing the damage, not the typeface. */
-/* Clash Display sets WIDER than Futura at the same size, and the h1 is written with its own
-   line break — so at 3.9rem "Restore old memories" stopped fitting and wrapped to three lines,
-   pushing the fold down and shrinking the clip below it. Measured at 1440, not guessed. The
-   size comes down and the tracking tightens to hold the intended two lines. */
 .h-xl{font-family:var(--head);font-size:clamp(2.3rem,4.05vw,3.45rem);line-height:1.07;
   letter-spacing:-.015em;font-weight:500;margin:0;}
 .h-xl .setup{color:#6f7681;}
 .h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.1;letter-spacing:-.012em;font-weight:600;margin:0 0 .9rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
-/* EMPHASIS THAT ACTUALLY EMPHASISES. There was no `strong` rule anywhere on this site, so every
-   <strong> inherited the muted body grey and changed only its weight — 16 of them, all rendering
-   at rgb(161,169,184) exactly like the prose around them. Bold alone against a near-black
-   background is a very small step in value, which is why the copy read flat no matter how much of
-   it was marked up. Lifting to --white is the change; 600 rather than the browser's 700 keeps it
-   from shouting once it also carries colour. */
 p strong, li strong, td strong{color:var(--white);font-weight:600;}
-/* em keeps its italic and gains a little value — it is used for asides, not for emphasis. */
 p em, li em{color:#c3cad6;}
 .lede{font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--grey);margin:0;}
-/* The cyan-to-purple headline gradient was the most template-coded thing on the
-   page — it is the signature of every AI landing page shipped since 2023, and
-   none of the sites this wants to sit beside (Linear, Stripe, Apple, Screen
-   Studio) colour their headline at all. Matthew asked for outlier.host's
-   treatment, and outlier.host does not colour a headline either: it colours a
-   SHORT PHRASE inside one ("that never leaves your Mac", "not just a chat box")
-   and leaves the rest white. Three spans on this page use it — the payoff half
-   of the H1, one section heading, and the four numerals in the capability row,
-   which have no descenders to muddy. The setup line still recedes by value. */
 .grad{background:var(--grad);
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  /* An inline gradient span collapses its own descenders in Safari unless it is a
-     block box; outlier.host carries the same display:inline-block on .accent. */
   display:inline-block;}
 .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 1rem;}
 
-/* nav */
 .nav{position:sticky;top:var(--kc-bar-h,0px);z-index:80;background:rgba(0,0,0,.6);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(28,32,41,.9);}
@@ -165,17 +96,10 @@ p em, li em{color:#c3cad6;}
 .nav-links a:hover{color:var(--white);}
 @media(max-width:820px){.nav-links{display:none;}}
 
-/* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
   padding:.8rem 1.45rem;border-radius:999px;font-weight:600;font-size:1rem;
   border:1px solid transparent;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s;}
 .btn:hover{transform:translateY(-2px);}
-/* This button was flattened in an earlier pass on the argument that a coloured
-   glow is a 2023-SaaS tell. Matthew asked for outlier.host's treatment here, and
-   outlier.host is ours, so it is the house style rather than a template: a solid
-   fill (no vertical gradient, which is the part that actually reads as stock), a
-   1px inset highlight along the top edge so the cap catches light, and a glow
-   that is faint at rest and grows on hover. The lift stays. */
 .btn-primary{background:#5ac8fa;color:#04121b;
   box-shadow:0 10px 30px -14px rgba(90,200,250,.75),inset 0 1px 0 rgba(255,255,255,.34);}
 .btn-primary:hover{background:#7ad6fd;
@@ -183,21 +107,8 @@ p em, li em{color:#c3cad6;}
 .btn-ghost{border-color:var(--hair-lit);color:var(--white);background:rgba(255,255,255,.03);}
 .btn-ghost:hover{background:rgba(255,255,255,.07);}
 .btn-sm{padding:.5rem 1.05rem;font-size:.88rem;}
-/* A checkout button with no destination. Until CRISP_CHECKOUT_URL is filled in (see the script
-   at the foot of this file) the Buy button has no href at all, so it cannot quietly send someone
-   to the free download the way it used to — it reads as unavailable and says why underneath. */
 .btn[aria-disabled="true"]{opacity:.48;box-shadow:none;pointer-events:none;}
 
-/* hero — halo is a gradient, not a blurred layer (cheap, no compositing artefacts) */
-/* 7rem of head-room made sense when the hero ended in a static screenshot nobody needed to
-   reach. Now the proof is a playing clip, and every rem above the H1 pushes it under the fold —
-   so the top pad is tightened and the trust row pulled in, which lifts the demo ~90px. */
-/* THE MESH, ported from outlier.host. Three big blurred blobs on a fixed layer, drifting on
-   slow offset cycles so the ground under the page is never quite still. This is the single
-   thing that separates a live page from a dark rectangle, and it costs three empty <b> tags.
-   Crisp's cyan/ice/violet instead of Outlier's purple/fuchsia/indigo, and dialled down: this
-   sits behind a VIDEO tool, where a strong colour cast over footage would misrepresent the
-   thing being sold. blur(120px) on a fixed layer is composited once, not per scroll frame. */
 .mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .mesh b{position:absolute;border-radius:50%;filter:blur(120px);opacity:.58;}
 .mesh .m1{width:60vw;height:60vw;max-width:820px;max-height:820px;
@@ -209,8 +120,6 @@ p em, li em{color:#c3cad6;}
 .mesh .m3{width:46vw;height:46vw;max-width:640px;max-height:640px;
   background:radial-gradient(circle,rgba(168,228,255,.30),transparent 66%);
   top:40vw;left:30vw;animation:drift3 41s ease-in-out infinite;}
-/* A fourth, low and to the right. Three blobs all sit in the upper half of a 900px viewport,
-   so the bottom third of every screen stayed flat black while the top breathed. */
 .mesh .m4{width:44vw;height:44vw;max-width:600px;max-height:600px;
   background:radial-gradient(circle,rgba(90,200,250,.26),transparent 68%);
   bottom:-16vw;right:6vw;animation:drift4 33s ease-in-out infinite;}
@@ -218,30 +127,13 @@ p em, li em{color:#c3cad6;}
 @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(6vw,4vw) scale(1.12);}}
 @keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-5vw,6vw) scale(1.08);}}
 @keyframes drift3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-4vw,-5vw) scale(1.15);}}
-/* Everything the page actually says rides above the mesh. A fixed positioned layer paints over
-   any NON-positioned content that follows it, so this is not optional decoration — without it
-   the blobs would sit on top of the footer. */
 .hero,section,.foot,.band{z-index:1;}
-/* The nav needs to clear the sections, not just the mesh. It is sticky and first in the DOM, so
-   at an equal z-index every later section paints over it — which silently killed the header
-   Download button at every scroll position except the very top (hit-tested: reachable at y=0,
-   unreachable at 700/1500/2600, at both 390 and 1440). Restated after the mesh block so a later
-   equal-specificity rule cannot quietly demote it again. */
 .nav{z-index:80;}
 .foot{position:relative;}
 .hero{position:relative;text-align:center;padding:4.6rem 0 0;
   background:
-    /* The blue-and-violet double halo was the third template signature on this
-       page, after the headline gradient and the glowing button — a cyan/purple
-       wash behind a hero is the visual shorthand for "AI startup". One faint
-       cool light remains so the fold is not flat; the violet is gone. */
     radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.11), transparent 60%);
 }
-/* THE GROUND UNDER THE FOLD. outlier.host puts a 34px dot grid behind its hero and
-   masks it out before it reaches the content, which is what stops the page reading
-   as a flat black rectangle and makes everything on top of it look like it is
-   sitting ABOVE something. The mask is the important half: an unmasked repeating
-   grid tiles all the way to a hard edge and looks like a texture swatch. */
 .grid-ovl{position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 1px,transparent 0);
   background-size:34px 34px;
@@ -252,34 +144,17 @@ p em, li em{color:#c3cad6;}
   background-size:34px 34px;
   -webkit-mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);
   mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);}
-/* Everything the hero actually contains rides above that layer. Scoped to direct
-   children so a later addition to the hero cannot land underneath the grid. */
 .hero > *{position:relative;z-index:1;}
 .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;
   border:1px solid var(--hair-lit);background:rgba(90,200,250,.06);color:var(--ice);
   font-size:.82rem;font-weight:600;margin-bottom:1.4rem;}
 .pill svg{width:13px;height:13px;}
-/* HERO HEAD, TWO COLUMNS. The headline sat centred above a centred sentence above a centred
-   button — a stack every AI landing page ships, and the thing that reads as template. The
-   reference for this site (morphic.com, chosen from saaspo's video category) sets the headline
-   left and puts the supporting sentence and the action BESIDE it, which shortens the column the
-   eye travels and lifts the proof clip further up the fold.
-   Only the arrangement is borrowed. The face stays Futura and the size stays the 62.4px clamp
-   that was set against Linear's 64px; morphic runs Inter at 700, which is the most common
-   combination in SaaS and the opposite of why this site does not look like its competitors. */
 .hero-top{display:grid;grid-template-columns:1.06fr .94fr;gap:1rem 3rem;align-items:start;
   text-align:left;margin-bottom:2rem;}
 .hero-top .pill{margin-bottom:1.1rem;}
-/* A grid child defaults to min-width:auto, which refuses to shrink below its content — so a
-   62px headline in a 1.06fr column can push the grid wider than the page between 861px and about
-   1000px, where the two columns are live but narrow. min-width:0 lets it wrap instead. */
 .hero-head{min-width:0;}
-/* The one line under the H1 (FUTURE-VIBE-BRIEF, 2026-10-21): the feeling, not a second headline. Ice, not white, so the H1 stays
-   the loudest thing on the screen; balanced so it never ends on one word. */
 .hero-future{font-family:var(--head);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.4;color:var(--ice);
   margin:1rem 0 0;max-width:36ch;text-wrap:balance;}
-/* The maker, and one number he measured (CEO, 2026-11-02, WHAT-WORKS: pages with a named person and their own measured
-   numbers earn; 0% of Crisp's showed a person). Grey body type, so the H1 and the ice line stay the loud things. */
 .hero-maker{margin:1.2rem 0 0;max-width:42ch;font-size:.93rem;line-height:1.55;color:var(--grey);text-wrap:pretty;}
 .hero-maker strong{white-space:nowrap;}
 .hero-say{padding-bottom:.35rem;min-width:0;}
@@ -287,8 +162,6 @@ p em, li em{color:#c3cad6;}
 .hero-top .cta{justify-content:flex-start;}
 .hero-top .fine{margin-top:.9rem;}
 @media (max-width:860px){
-  /* One column below the breakpoint, and centred again — a left-aligned headline beside nothing
-     is just a headline with a ragged right edge. */
   .hero-top{grid-template-columns:1fr;text-align:center;gap:0;}
   .hero-say .lede{max-width:58ch;margin:1.3rem auto 2rem;}
   .hero-top .cta{justify-content:center;}
@@ -296,83 +169,26 @@ p em, li em{color:#c3cad6;}
   .hero-maker{margin:.9rem auto 0;}
 }
 .hero .lede{max-width:58ch;margin:1.3rem auto 2rem;}
-/* each bold price in the lede is "$29 once" / "$29" — one unit, which
-   fits a phone line; without this a 375px screen broke "$29" from "once" */
 .hero .lede strong{white-space:nowrap;}
 .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
 .fine{margin-top:1.1rem;font-size:.88rem;color:var(--grey-dim);}
-/* THE TRUST ROW SAT FLUSH ON THE DEMO — measured 0px between the bottom of "100% offline ·
-   Nothing uploaded · No account · One-time $64.50" and the top edge of the video, live at 1440px.
-   Nothing was overriding anything, which is why it was easy to miss: `.ba` sets `margin:0 auto`
-   for centring, and the `.ba + .ba{margin-top:2.8rem}` beside it applies only to a SECOND .ba
-   following a first — spacing BETWEEN stacked comparisons, never above the first one. No rule
-   ever supplied this gap.
-   Put on .trust rather than on the demo: .trust appears exactly once on the site, so it cannot
-   reach the second .ba further down the page, whereas any `.ba`-based selector needed certainty
-   about nesting that I did not have. */
-/* CAPABILITY ROW. framer.com and avo.bet both carry proof inside the first two screens — a
-   customer logo wall and "Supports 89+ Sportbooks". We have roughly one customer, so a CUSTOMER
-   wall would be a lie; AVO's is a CAPABILITY wall and that shape is available to us honestly.
-   Every figure here is read off the shipped app, not chosen for effect:
-     21   tasks the server dispatches (audio border compress convert crop fade frame gif grade
-          loop montage overlay reframe reverse rotate speed splitscreen stabilize timeline trim
-          upscale)
-     28   input formats — 20 video + 8 image DISTINCT FORMATS, from 33 extensions in the
-            open dialog's filter (app.js: VIDEO_EXTS + IMAGE_EXTS, which the import uses too). mpg/mpeg
-            are one format, as are jpg/jpeg, tif/tiff, mts/m2ts and dv/dif, which is why 33 extensions
-            is 28 formats. Was 16 until 2026-10-24, when the editor began taking tape and camcorder
-            files (.vob .vro .mod .tod .mts .m2t .dv .dif .mpeg4), each one rendered by the engine
-            (tests/test_the_first_enhance_works_in_every_tape_container.py).
-            ⚠️ THE OLD BREAKDOWN HERE SAID "9 video (_VIDEO_EXTS) + 7 image (IMAGE_EXTS)". It
-            still summed to 16 and the headline number was never wrong, but the COMPONENTS had
-            gone stale: IMAGE_EXTS gained heic, heif and avif, so it is 10 extensions now, not 7.
-            The risk was not the number — it was that anyone re-deriving it from this breakdown
-            would "correct" a correct figure. HEIC is the default iPhone photo format and is
-            counted here; if this row is ever rewritten, that is worth naming out loud
-     16x  presets.SCALE_PASSES tops out at 16
-     0    the number of bytes that leave the machine, which is the whole product
-   The accent finally does some work here: the page was near-black, grey, and one blue button,
-   where cofounder runs a full-colour scene and avo carries purple and green through its UI. */
 .caps{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
   background:linear-gradient(180deg,rgba(90,200,250,.04),transparent 70%);}
 .caps-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem 1rem;
   max-width:var(--w);margin:0 auto;padding:2.6rem 1.5rem;text-align:center;}
-/* The four numbers are the one place on this page where a gradient earns itself:
-   outlier.host runs the same treatment on its stat row, and a numeral has no
-   descenders or long measure to suffer from it. */
 .cap-n{font-family:var(--head);font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.02em;
   font-weight:500;color:var(--ice);
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .cap-l{margin:.5rem 0 0;font-size:.88rem;color:var(--grey);line-height:1.4;}
 @media (max-width:720px){.caps-in{grid-template-columns:repeat(2,1fr);padding:2rem 1.2rem;}}
-/* THE CONTROLS BESIDE THE EXPLANATION. The montage section carried the OUTPUT — a real 27s reel
-   cut from 174s of 1940 film — and a paragraph explaining how the choosing works, and no picture
-   of the thing doing the choosing. Framer and avo.bet both show their own interface at the point
-   where they explain it; we described ours.
-   The image is the real Auto-Montage panel from the shipped webview (Style, Target length, Layout,
-   the montage button, and the Split screen block under it), photographed in its first-open state
-   with only the loading splash hidden. Nothing is populated or posed. */
-/* The figure is portrait; the prose beside it is short. Aligning both to the top left a 395px
-   void hanging under the text (measured at 1680px) that read as a broken block. The text column
-   now carries both notes and is centred against the panel, so what is left is a gutter on two
-   sides rather than one hole on one. */
 .side-fig{display:grid;grid-template-columns:1fr 258px;gap:2.6rem;align-items:center;margin-top:1.9rem;}
 .side-fig .sf-text{display:flex;flex-direction:column;gap:1rem;}
-/* <figure> carries a 40px default margin on each side in every browser, which ate 80px of a 258px
-   column and rendered the panel at 178px — measured, not guessed. */
 .side-fig figure{margin:0;}
-/* .ba-note is centred, which is right for a note under a full-width clip and wrong beside a
-   figure — a centred ragged column next to a hard image edge reads as a mistake. */
 .side-fig .ba-note{text-align:left;margin:0;max-width:none;}
 .side-fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--hair-lit);display:block;}
 .side-fig figcaption{margin-top:.6rem;font-size:.82rem;line-height:1.45;color:var(--grey-dim);}
 @media (max-width:820px){.side-fig{grid-template-columns:1fr;gap:1.4rem;align-items:start;}
   .side-fig figure{max-width:340px;margin-inline:auto;}}
-/* NAMING THE 21, NOT JUST COUNTING THEM. The capability row says "21 tools" and a number is a
-   claim a visitor cannot check. avo.bet's density is largely its "Supports 89+ Sportbooks" wall —
-   it NAMES what it handles, and that is the honest kind of density: content a reader can use
-   rather than decoration. These are the tasks server.py actually dispatches, in the words the app
-   uses for them. */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem;
   margin:1.6rem 0 0;}
 .tools-grid span{display:block;padding:.55rem .7rem;border:1px solid var(--hair);border-radius:10px;
@@ -382,89 +198,34 @@ p em, li em{color:#c3cad6;}
   transform:translateY(-2px);}
 .tools-grid b{display:block;color:var(--white);font-weight:600;font-size:.9rem;}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
-/* THE HERO CLIP BLEEDS. Rendered beside framer.com, cofounder.co and avo.bet at an identical
-   1440x900, ours was the only one whose visual floated: 998px of footage centred in a 1440px
-   viewport with dark margin either side and nothing framing it. Cofounder's scene runs edge to
-   edge with no margin at all; Framer's product surface bleeds off the right edge. Theirs fill the
-   frame, ours sat in the middle of one.
-   Capped at 2200px because the 2x asset is 2560x1440 — past that the footage would be upscaled on
-   the page, which is a poor advertisement for an upscaler. The rounded corners and side borders go
-   with the bleed; a full-width band with rounded ends reads as a mistake. */
 .hero .ba{max-width:none;width:min(100vw,2200px);margin-left:calc(50% - min(50vw,1100px));
   border-radius:0;border-left:0;border-right:0;
-  /* A full-bleed 16:9 is 810px tall at 1440 — nearly an entire screen on its own, which pushes
-     everything below it off the fold. Capped to a cinematic band instead: the clip still runs edge
-     to edge, but crops rather than dictating the height of the page. */
-  /* ⚠️ A DEFINITE HEIGHT, NOT max-height. With only a max-height the container's own height is
-     auto, so `height:100%` on the in-flow layer resolves against nothing and is ignored: the
-     .ba-after video kept its natural 16:9 height (810px at 1440 wide) and was merely CLIPPED,
-     while .ba-before — absolutely positioned to inset:0 — took the container's real 502px. Two
-     layers of different heights, each cropped by object-fit:cover from a different origin, so the
-     two halves of the comparison no longer showed the same part of the frame. Measured 810 vs 502.
-     A definite height makes both layers resolve to the same box and the halves line up again. */
   aspect-ratio:auto;height:min(56vh,520px);}
 .hero .ba video{width:100%;height:100%;object-fit:cover;}
 @media (max-width:900px){
-  /* narrow screens are already edge to edge; the negative margin would only cause overflow */
   .hero .ba{width:auto;margin-left:0;border-radius:var(--r);border-left:1px solid var(--hair-lit);
     border-right:1px solid var(--hair-lit);
-    /* AND THE HEIGHT CAP GOES WITH THE BLEED. It exists so a full-bleed 16:9 does not eat the
-       desktop fold; there is no bleed here, so all it did was crop. Measured at 390: a 342-wide
-       container held at 472 tall cut a 16:9 frame to roughly 0.72:1 — a narrow vertical slice of
-       the subject, with the "Crisp Max" label clipped off the right edge. A comparison the reader
-       cannot read is not a comparison. Natural aspect below the breakpoint. */
     height:auto;}
   .hero .ba video{height:auto;object-fit:fill;}
 }
-/* direct children only: the price's split is a span too, and a flex gap would open between them */
 .trust > span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
 .trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
 
-/* product shot */
 .shot{margin:4.5rem auto 0;max-width:1060px;padding-bottom:6rem;}
-/* THE APP WINDOW HOVERS OVER THE PAGE. A black drop shadow reads as depth on white and as
-   almost nothing on a near-black ground, so the light has to be coloured — the same move
-   outlier.host makes behind its showcase. Two earlier attempts at this were a blurred ellipse
-   BEHIND the frame; both measured 0 levels of change above the window, because a radial
-   gradient that is transparent by its own edge puts all its light where the window already
-   covers it. A third shadow on the frame itself cannot miss: it is cast outward by definition. */
 .frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--hair-lit);background:var(--card);
   box-shadow:0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset,
              0 30px 110px -40px rgba(90,200,250,.55);}
-/* The shot is 900px natural but the frame is wider, so without this the screenshot sits
-   left with dead frame beside it. Fill the frame; the 1800px source keeps it sharp. */
 .frame img{display:block;width:100%;height:auto;}
 .cap{margin-top:1rem;font-size:.82rem;color:var(--grey-dim);text-align:center;}
 
-/* before/after — a range input does the work so it is keyboard- and touch-native, and the
-   comparison still shows both images if JS or CSS never arrives. */
 .ba{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--hair-lit);background:var(--card);line-height:0;
   box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
 .ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
-/* ⚠️ THE PHONE PANEL IS NOT 1000px WIDE, and that matters more here than anywhere else on the
-   page: it is the panel whose whole job is proving an upscaler works. The file is 704x576, so
-   in the inherited 1000px box a retina browser had to invent 1292 of the 1996 pixels it drew —
-   2.84x interpolation, softening the very thing being demonstrated.
-   Capping at the file's own width halves that to 2.00x and makes it exact on a standard
-   display. It is not capped to 352px (which would be 1:1 on retina) because that shrinks the
-   demo by 65%, and I could NOT measure the perceptual gain cleanly to justify it — three
-   attempts were confounded by the capture pipeline rather than the page. The justification
-   here is resampling arithmetic, not a sharpness figure.
-   ⚠️ A @2x FILE CANNOT HONESTLY EXIST. Max's lane is a fixed 2x of the short side, so the
-   176x144 source restores to 384x288; the 704x576 shipped here is already a presentation
-   upscale applied EQUALLY to both halves. A retina version would mean inventing detail on the
-   panel that exists to prove we do not. data-src-1x and data-src-2x point at the same file for
-   exactly this reason. */
 #ba4{max-width:704px;}
-/* ⚠️ BOTH ADJACENCIES, because only one was covered and the other was visibly broken: a panel
-   that follows a CAPTION got its gap, and a panel that follows ANOTHER PANEL got none, so the
-   NASA and Max sliders sat flush against each other with no separation at all. */
 .ba-note + .ba,
 .ba + .ba{margin-top:2.8rem;}
 
-/* clip-path, not an overflow box: both frames are the same size, so an absolutely-positioned
-   full-width image stays pixel-aligned with the one beneath it at every container width. */
 .ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
 .ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:rgba(255,255,255,.9);
   transform:translateX(-1px);pointer-events:none;box-shadow:0 0 18px rgba(0,0,0,.6);}
@@ -481,37 +242,17 @@ p em, li em{color:#c3cad6;}
 .ba-l{left:14px;} .ba-r{right:14px;color:var(--ice);border-color:rgba(90,200,250,.45);}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;
   -webkit-appearance:none;appearance:none;background:transparent;
-  /* The input covers the whole image, so without this a vertical swipe that starts on the
-     photo is eaten by the slider and the page won't scroll — the comparison would trap a
-     phone reader. pan-y hands vertical gestures back to the page, keeps horizontal ones. */
   touch-action:pan-y;}
 .ba-range:focus-visible{opacity:1;outline:3px solid var(--cyan);outline-offset:-3px;}
 .ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.88rem;line-height:1.65;color:var(--grey);text-align:center;}
-/* The recorded run: a reserved 16:9 box (width/height on the video and aspect-ratio here), so the poster
-   and the video take the same space and nothing below them moves when it starts. */
 .demo{max-width:1000px;margin:2.8rem auto 0;}
 .demo-frame{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;
   border:1px solid var(--hair-lit);box-shadow:0 18px 60px rgba(0,0,0,.45);}
 .demo-video{display:block;width:100%;height:100%;object-fit:cover;background:#000;}
 .demo-cap{max-width:760px;margin:1rem auto 0;font-size:.88rem;line-height:1.65;color:var(--grey);text-align:center;}
 
-/* sections */
 section{padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative;}
-/* LIT FROM BEHIND. Every section carries a light source sitting just above its own top edge,
-   so the page reads as a stack of panels with something glowing behind each one instead of one
-   flat sheet of black. The light alternates side and hue down the page — cyan from the left,
-   violet from the right — because eleven identical glows would read as a repeating texture
-   rather than as light.
-   It has to be a ::before and not another background layer on the section itself: .band
-   sections already paint --panel, and a second background-image on the same element sits
-   UNDER that, which is where the first attempt at the app-window glow died. Everything the
-   section holds rides above it on z-index 1. */
 section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  /* Radii in PERCENT, not pixels. The sections on this page run from 355px to 2991px tall —
-     measured — so a fixed 500px light lit the top eighth of the long ones and nothing else,
-     which is not "lit from behind", it is a stripe. A percentage radius scales with whatever
-     section it lands in. Two lights each, opposite corners, so a tall section is lit along its
-     whole length rather than at one end. */
   background:
     radial-gradient(82% 44% at 18% -4%, rgba(90,200,250,.11), transparent 64%),
     radial-gradient(72% 40% at 88% 104%, rgba(157,140,255,.08), transparent 66%);}
@@ -520,28 +261,13 @@ section:nth-of-type(even)::before{
     radial-gradient(82% 44% at 82% -4%, rgba(157,140,255,.10), transparent 64%),
     radial-gradient(72% 40% at 12% 104%, rgba(90,200,250,.08), transparent 66%);}
 section > *{position:relative;z-index:1;}
-/* The banded sections were opaque, so the drifting mesh behind the page simply vanished
-   wherever one of them sat — measured: identical pixels at scroll 4200 with the mesh on and
-   off. outlier.host solves this with a --glass surface rather than a solid one. Same here:
-   the band is now the panel colour at 78%, which still separates it from the page but lets
-   the light through. */
 .band{background:rgba(10,13,26,.60);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
-/* The seam where the light gets out. A flat 1px --hair rule across the top of a banded section
-   is the edge of a box; the same rule brightened in the middle and faded at both ends is the
-   edge of something lit. It rides above the section's own border on the same line. */
 .band::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
   pointer-events:none;
   background:linear-gradient(90deg,transparent,rgba(90,200,250,.5) 22%,rgba(157,140,255,.42) 62%,transparent);}
-/* SECTION HEADS LEFT, NOT CENTRED. Rendered beside framer.com and avo.bet at 1440, every heading
-   on this page was centred at up to 57.6px weight 680 — heavier AND larger than Framer's 54px/500
-   — which made "The whole restore pipeline, in one drop." stack over three lines and eat most of a
-   screen before any content. Both references set their section heads left and compact.
-   The bottom margin comes down with it: 3.5rem under a centred block reads as deliberate air, but
-   under a left-aligned head it just reads as a gap. */
 .head{max-width:64ch;margin:0 0 2.2rem;text-align:left;}
 .head .lede{font-size:1.06rem;}
 
-/* alternating feature rows */
 .row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .row + .row{margin-top:6rem;}
 .row.flip .col-text{order:2;}
@@ -553,7 +279,6 @@ section > *{position:relative;z-index:1;}
 .visual::before{content:"";position:absolute;inset:0;
   background:radial-gradient(420px 300px at 30% 20%,rgba(90,200,250,.14),transparent 70%);}
 
-/* metric tiles inside visuals */
 .metric{position:relative;text-align:center;padding:2rem;}
 .metric .big{font-size:clamp(2.6rem,6vw,4rem);font-weight:700;letter-spacing:-.04em;line-height:1;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
@@ -562,12 +287,7 @@ section > *{position:relative;z-index:1;}
 .bars{display:flex;align-items:flex-end;gap:7px;height:110px;margin-top:1.4rem;justify-content:center;}
 .bars i{width:9px;border-radius:3px;background:linear-gradient(180deg,#5ac8fa,#2f8fc4);display:block;}
 
-/* grid cards */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.1rem;}
-/* WHY THESE BOXES LOOK LIKE THEY ARE FLOATING. outlier.host does three things at
-   once on hover — the border lights, the box rises, and a coloured shadow appears
-   under it. Crisp did the first two, so its cards MOVED without ever looking
-   lifted: nothing was cast underneath them. The shadow is the whole effect. */
 .card{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
   border-radius:var(--r);padding:1.75rem;
   transition:border-color .28s,transform .28s,box-shadow .28s;}
@@ -578,7 +298,6 @@ section > *{position:relative;z-index:1;}
 .card h3{font-size:1.06rem;font-weight:640;margin:0 0 .45rem;letter-spacing:-.012em;}
 .card p{margin:0;color:var(--grey);font-size:.94rem;line-height:1.62;}
 
-/* steps */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.2rem;counter-reset:s;}
 .step{position:relative;}
 .step .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.94rem;
@@ -586,7 +305,6 @@ section > *{position:relative;z-index:1;}
 .step h3{font-size:1.06rem;margin:0 0 .4rem;font-weight:640;}
 .step p{margin:0;color:var(--grey);font-size:.94rem;}
 
-/* table */
 .cmp{overflow-x:auto;border:1px solid var(--hair);border-radius:var(--r);background:var(--panel-2);}
 table{border-collapse:collapse;width:100%;min-width:660px;font-size:.94rem;}
 th,td{padding:.95rem 1.15rem;text-align:left;border-bottom:1px solid var(--hair);}
@@ -599,16 +317,12 @@ tbody td:first-child{color:var(--grey);}
 td.y{color:#4ade80;font-weight:560;}
 td.n{color:var(--grey-dim);}
 
-/* pricing */
-/* cost-over-time — a subscription's real price is the one you pay again next year */
 .cost{max-width:840px;margin:3.6rem auto 0;border:1px solid var(--hair);border-radius:var(--r);
   background:linear-gradient(180deg,var(--card),var(--panel-2));padding:2.2rem 2.2rem 1.8rem;}
 .cost h3{font-size:1.35rem;font-weight:660;letter-spacing:-.022em;margin:0 0 .5rem;}
 .cost .sub{color:var(--grey);font-size:.94rem;margin:0 0 1.9rem;}
 .cost-row{display:grid;grid-template-columns:5.6rem 1fr;gap:1rem;align-items:center;margin:.75rem 0;}
 .cost-row .yr{font-size:.82rem;color:var(--grey-dim);letter-spacing:.01em;}
-/* flex, not grid: inside a grid the bar's percentage would resolve against an auto-sized
-   column that is itself sized from the bar — so every bar came out label-width. */
 .cost-bars{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;min-width:0;}
 .cost-bar{height:32px;border-radius:9px;display:flex;align-items:center;padding:0 .8rem;white-space:nowrap;
   font-size:.88rem;font-weight:640;width:var(--p);min-width:max-content;max-width:100%;flex:none;}
@@ -618,27 +332,11 @@ td.n{color:var(--grey-dim);}
   border:1px solid rgba(255,99,99,.38);color:#ffb9b9;}
 .cost .src{font-size:.78rem;color:var(--grey-dim);margin:1.6rem 0 0;line-height:1.6;}
 .cost .src a{color:var(--grey);}
-/* The instalment note. Sits between the price and the fine print in weight, because it is a
-   reason to buy rather than a disclaimer. Empty and [hidden] until CRISP_BNPL_LIVE is set.
 
-   ⚠️ DELIBERATELY NO `display` PROPERTY. `hidden` is enforced by the UA rule
-   `[hidden]{display:none}`, which ANY class selector outbids — `.cost .bnpl-note{display:block}`
-   would beat it and reveal an empty paragraph under the Buy button on every load, today, while
-   the flag is still false. The [hidden] rule below restates the guard at winning specificity so
-   a future edit that does add a display cannot silently unhide it. */
 .cost .bnpl-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.55;}
 .cost .bnpl-note strong{color:var(--white);font-weight:700;}
 .cost .bnpl-note[hidden]{display:none;}
-/* The tier card sits outside .cost and would otherwise inherit nothing. Same [hidden] restatement
-   at winning specificity, for the same reason: a future edit that adds a `display` must not be
-   able to reveal instalment copy the checkout cannot honour. */
 .tier .bnpl-note{font-size:.94rem;color:var(--grey);margin:.35rem 0 .9rem;line-height:1.5;}
-/* ⚠️ THE INSTALMENT FIGURE IS A PRICE, NOT A FOOTNOTE. It shipped at .86rem in --grey directly
-   under a 3rem/700 number, which is a 3.5x drop in size and a drop in contrast — near enough to
-   the price to pass a distance check (34px) and still read as small print, which is the thing
-   people skip. Distance was the wrong measurement; hierarchy is the one that decides whether it
-   is seen. The repeated price anchors the alternative to the number it is an alternative TO, so
-   the two are read as one offer rather than a price plus a disclaimer. */
 .tier .bnpl-note strong{color:var(--white);font-weight:700;}
 .tier .bnpl-note[hidden]{display:none;}
 .tier .founding-note{font-size:.94rem;color:var(--grey);margin:.35rem 0 .9rem;line-height:1.5;}
@@ -662,16 +360,9 @@ td.n{color:var(--grey-dim);}
 .tier .price{font-size:3rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1;}
 .tier .price.grad-price{background:var(--grad);-webkit-background-clip:text;background-clip:text;
   color:transparent;width:fit-content;}
-/* The "once" after the price must NOT inherit the transparent fill, or it disappears. */
 .tier .price.grad-price small{-webkit-text-fill-color:var(--grey-dim);color:var(--grey-dim);}
 .tier .price small{font-size:.94rem;font-weight:500;color:var(--grey-dim);letter-spacing:0;}
-/* the four-payment price, in the price's own font (Matthew, 2026-09-28): it may wrap to its own
-   line on a narrow card or a phone, but never break inside a price and its four-payment split, when it has one */
 .split{white-space:nowrap;}
-/* THE PRO PRICE'S SPLIT IS NOT THE PRICE'S SIZE (Matthew, 2026-09-28, on the literal same-size version:
-   "this looks bad" — a giant price with an equally giant "or 4 × …" wrapping onto two lines). The price
-   stays the hero number; the split sits on its baseline in the same typeface, weight 600, at 40% of the
-   price's size, in full-strength text colour — never the muted grey, never the gradient. */
 .tier .price .tier-split{font-size:.4em;font-weight:600;letter-spacing:0;color:var(--white);-webkit-text-fill-color:var(--white);}
 @media (max-width:480px){.tier .price .tier-split{display:block;margin-top:.45rem;}.tier .price .tier-split .sep{display:none;}}
 .tier .blurb{color:var(--grey);font-size:.94rem;margin:0 0 1.5rem;}
@@ -680,7 +371,6 @@ td.n{color:var(--grey-dim);}
 .tier li svg{width:16px;height:16px;color:#4ade80;flex:none;margin-top:.2rem;}
 .tier .btn{width:100%;margin-top:auto;}
 
-/* faq */
 .faq{max-width:780px;margin:0 auto;display:grid;gap:.65rem;}
 details{background:var(--panel-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:1.1rem 1.35rem;
   transition:border-color .22s,background .22s;}
@@ -693,13 +383,11 @@ summary::after{content:"+";color:var(--cyan);font-size:1.35rem;font-weight:300;l
 details[open] summary::after{content:"\2212";}
 details p{margin:.9rem 0 0;color:var(--grey);font-size:.94rem;}
 
-/* closing */
 .final{text-align:center;padding:9rem 0;
   background:radial-gradient(900px 480px at 50% 108%, rgba(90,200,250,.17), transparent 66%);}
 .final .lede{max-width:50ch;margin:1.2rem auto 2.4rem;}
 
 footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);font-size:.88rem;}
-/* More from Kerr & Company — every page, every site */
 .kco{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--hair);font-size:.84rem;color:var(--grey-dim);}
 .kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
 .kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
@@ -710,28 +398,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .foot a:hover{color:var(--white);}
 .foot .links{margin-left:auto;display:flex;gap:1.5rem;flex-wrap:wrap;}
 
-/* scroll reveal */
-/* CONTENT THAT RISES INTO PLACE. The page had the ESCAPE HATCH for this and not the feature:
-   `.rv` existed only inside the reduced-motion block below, with no base rule and not one element
-   using it. So the accessibility guard was written and the thing it guards never landed.
-   26px is outlier.host's figure and it is the right one — far enough to read as movement, short
-   enough that nothing appears to fly. The easing is its cubic-bezier too: fast out, long settle,
-   which is what makes it read as settling rather than sliding.
-   ⚠️ GATED ON .js, WHICH AN INLINE SCRIPT ADDS BEFORE PAINT. Without that, a browser with
-   JavaScript off — or any failure before the observer runs — leaves every revealed element at
-   opacity:0 forever, which is a blank page rather than a page without an animation. Absence of
-   the enhancement must never remove the content. */
-/* THE OFFSET LIVES IN VARIABLES, NOT IN THE TRANSFORM. outlier.host documents the trap in its
-   own stylesheet and it is worth repeating: a rule like `.rv:nth-child(odd){transform:...}` is
-   (0,2,0) and OUTRANKS `.rv.in{transform:none}` at (0,2,0) on source order — so a directional
-   offset written directly as a transform wins against the settled state and the element never
-   arrives. Variables carry the intent; one transform reads them. */
 .js .rv{opacity:0;transform:translate(var(--rx,0),var(--ry,26px)) scale(var(--rs,1));
   transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
 .js .rv.in{opacity:1;transform:none;}
 .js .rv.d1{transition-delay:.08s;} .js .rv.d2{transition-delay:.16s;} .js .rv.d3{transition-delay:.24s;}
-/* Content arrives from the side it sits on, the way outlier.host does it, so a grid does not
-   rise as one slab. Scoped to the grids where there is a left and a right to mean anything. */
 .js .cards > .rv:nth-child(odd),
 .js .steps > .rv:nth-child(odd){--rx:-30px;--ry:10px;}
 .js .cards > .rv:nth-child(even),
@@ -741,27 +411,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .js .side-fig > .rv{--rx:26px;--ry:8px;}
 .js .shot.rv,.js .cmp-wrap.rv{--ry:34px;--rs:.985;}
 .js .caps-in > .rv{--ry:18px;--rs:.97;}
-/* ⚠️ AND NO SIDEWAYS SLIDE ON A NARROW SCREEN. Every grid here is a single column below 820px,
-   so "from the left" and "from the right" mean nothing — and an unrevealed card sitting 30px to
-   the right of a 342px column is 10px wider than a 390px viewport, which made the whole document
-   scroll sideways. Measured in a real 390 viewport: scrollWidth 400 against clientWidth 390,
-   cards at L-6 R396. The page had no horizontal overflow before I added these offsets. */
-/* Overriding the TRANSFORM, not the variable. `--rx:0 !important` on `.js .rv` did not take:
-   measured live at a real 390 viewport with the media query matching (mq820 true) and the
-   computed value still -30px, transform still matrix(1,0,0,1,-30,10). Rather than keep guessing
-   at why a custom property lost a cascade it should have won, this sets the thing that actually
-   moves the box. `.js .rv.in{transform:none}` is more specific, so a revealed element still
-   lands where it belongs. */
 @media (max-width:820px){
   .js .rv{transform:translateY(var(--ry,26px)) scale(var(--rs,1));}
 }
-/* A REVEALED ELEMENT HANDS ITS TRANSITION BACK. `.js .rv` (0,2,0) outranks `.card` (0,1,0),
-   so every card and tier was running its HOVER on the reveal's 0.8s curve — and on the
-   stagger delay, so a .d3 card sat still for 240ms after the pointer arrived — while
-   box-shadow, which is not in that list at all, snapped with no transition. Measured on the
-   computed style, not guessed. Once the reveal has played there is nothing left for it to
-   animate, so the element takes this list instead. Placed after the delay rules so it wins
-   the tie on source order and can zero the delay. */
 .js .rv.rvd{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.2,.8,.2,1),
   border-color .28s,box-shadow .28s,background .24s,color .22s;
   transition-delay:0s;}
@@ -771,8 +423,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
 }
 
-/* Subscribe block — footer, deliberately quiet. It must not compete with the download CTA
-   above it; anyone who wants the app should still reach for the button, not the field. */
 .sub-wrap{border-top:1px solid var(--hair);padding:2.6rem 1.5rem 1.4rem;}
 .sub{max-width:520px;margin:0 auto;text-align:center;}
 .sub-label{display:block;font-family:var(--head);font-weight:640;font-size:1.02rem;letter-spacing:-.01em;}
@@ -785,12 +435,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .sub-msg{margin:.7rem 0 0;font-size:.86rem;min-height:1.2em;}
 .sub-msg.is-ok{color:var(--grey);}
 .sub-msg.is-bad{color:#ffb4a2;}
-/* Off-screen rather than display:none — a bot reading the DOM still sees a fillable field,
-   which is the entire point, while nobody sighted or using a screen reader ever meets it. */
 .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
-/* The older-Mac ask, beside each requirement line. Quiet on purpose: it is for the reader the line
-   above just turned away, and must not compete with the download button for everyone else.
-   16px in the field, because iOS Safari zooms the whole page into any input set smaller. */
 .oldmac{margin:.9rem 0 0;text-align:left;}
 .oldmac-ask{display:block;margin:0 0 .5rem;font-size:.88rem;line-height:1.5;color:var(--grey);}
 .oldmac-row{display:flex;gap:.5rem;flex-wrap:wrap;max-width:26rem;}
@@ -805,9 +450,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .oldmac-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 .step .step-dl{margin-top:.9rem;}
 .step .step-req{margin-top:.7rem;font-size:.84rem;color:var(--grey-dim);}
-/* "On your phone?" — a visitor on a phone can't install a Mac app, so the download buttons are
-   a dead end there; this line hands them the link to open later on their Mac (Outlier's pattern,
-   2026-10-02). Hidden on a desktop: the media query is a narrow screen OR a touch-only pointer. */
 .phone-link{display:none;margin:.75rem 0 0;font-size:.9rem;color:var(--grey);}
 .win-link{margin:.75rem 0 0;font-size:.9rem;color:var(--grey);}.win-gpu{display:block;margin-top:.15rem;font-size:.82rem;}.win-link a{color:var(--white);text-decoration:underline;text-underline-offset:3px;}
 .phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;
@@ -817,34 +459,19 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
   .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
 }
-/* PHONE AND TABLET: SEND THE LINK FIRST (2026-10-28). ChatGPT sent 80 visitors from 10-15 to 10-28 and 24 of them were on
-   a phone (19 iOS, 5 Android), where the first screen's only action was "Download free for Mac", which a phone cannot use.
-   The "On your phone?" line sat under it, below the first screen (measured: y=839 on a 393x659 iPhone viewport) as a text
-   link 23px tall, and in 30 days its tag (utm_source=phone-share) brought nobody back. So on a phone or tablet the hero now
-   says what Crisp is and leads with sending the link, right under the headline, and the download becomes the second,
-   quieter button. .handheld is set before paint by the first script in <head>; a Mac never gets it, at any window width,
-   so nothing here changes anything on a Mac. */
 .send-first{display:none;}
 .handheld .send-first{display:block;margin:1.5rem 0 0;}
 .send-say{margin:0 0 .9rem;font-size:1.02rem;line-height:1.5;color:var(--white);text-wrap:balance;}
 .handheld .hero .phone-link{display:none;}
 .handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
-/* WINDOWS DESKTOP FIRST (CEO, 2026-11-05). A Windows desktop that lands here (ChatGPT, TikTok, Google) was offered "Download free for
-   Mac" first and had to find the small Windows link. The head script marks such a page .win (never a phone or tablet, never without
-   JS): the Windows button leads, the Mac button becomes the quiet second one, and the fine print is the Windows one. A Mac, a phone
-   and a visitor without JavaScript see exactly what they saw. The two Windows pieces are written by _tools/landing_pages.py. */
 .win-btn,.fine-win{display:none;}
 .win .win-btn{display:inline-flex;}
 .win .hero-say .cta .btn-primary:not(.win-btn){background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .win .hero-say .cta .btn-primary:not(.win-btn):hover{background:rgba(255,255,255,.07);box-shadow:none;}
-.win .hero .win-link,.win .hero .fine,.win .hero .oldmac{display:none;}   /* the older-Mac list is for Macs */
+.win .hero .win-link,.win .hero .fine,.win .hero .oldmac{display:none;}   
 .win .hero .fine-win{display:block;margin-top:.9rem;font-size:.88rem;color:var(--grey-dim);}
 .win .hero .fine-win a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
-/* THE HERO'S FIRST SCREEN ANSWERS WHAT THE VISITOR WAS TOLD (CEO, 2026-11-05). ChatGPT sent 163 of crispvideo.app's 304 visitors in
-   30 days, 161 of them to this page, and 83% left without a second page: they arrive already told what Crisp is, so the lede is one
-   line, the price is the next, and the button follows. The free limits sit under the button (.fine), where the old long lede
-   repeated them. On a phone the order is the same, and the send button now lands inside a 375x667 screen. */
 .lede-price{margin:-.9rem 0 1.6rem;max-width:46ch;font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--white);}
 .hero .lede-price strong{white-space:nowrap;}
 @media (max-width:860px){.hero-say .lede-price{max-width:58ch;margin:-1.2rem auto 2rem;}}
@@ -862,14 +489,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .handheld .hero-say>.oldmac{order:7;}
   .handheld .hero-head>.hero-future{order:8;}
   .handheld .hero-head>.hero-maker{order:9;}
-  /* a smaller headline and less air above it, so the send button is inside a 375x667 screen (the headline was four lines) */
   .handheld .hero{padding-top:3.2rem;}
   .handheld .hero .h-xl{font-size:clamp(1.85rem,8.3vw,2.3rem);}
 }
-/* The box the send-mac-link script builds under a send button once it has been pressed: what happened, the link as plain
-   text to press and hold, and the other ways to send it. 44px buttons, Apple's minimum touch target. */
 .sendlink{margin:.9rem 0 0;max-width:26rem;font-size:.9rem;line-height:1.5;color:var(--grey);text-align:left;
-  scroll-margin:calc(var(--kc-bar-h,0px) + 72px) 0 6rem;}   /* the script scrolls it into view: clear of the sticky bars above, the chat button below */
+  scroll-margin:calc(var(--kc-bar-h,0px) + 72px) 0 6rem;}   
 .sendlink p{margin:0 0 .6rem;}
 .sendlink [hidden]{display:none;}
 .sendlink-msg{color:var(--white);}
@@ -877,17 +501,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   color:var(--white);word-break:break-all;-webkit-user-select:all;user-select:all;cursor:text;}
 .sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
 .sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.9rem;}
-.send-first .btn,.sendlink .btn{font-family:inherit;line-height:inherit;cursor:pointer;}   /* a <button> inherits neither the face nor the
-   line height by itself; without the second the hero's Send button stood 46px tall beside 53px links */
-/* THE TOP BAR ON A PHONE OR TABLET (2026-10-28, second change). The bar is sticky, so its bright "Download" asked every
-   phone visitor, on every screen of the page, for a download a phone cannot do. Under .handheld it gives way to a quiet
-   "Get it for your Mac" that runs the same send flow as the hero's button and opens the hero's box (data-send-box).
-   A Mac or a PC never gets .handheld, so its bar is unchanged. */
+.send-first .btn,.sendlink .btn{font-family:inherit;line-height:inherit;cursor:pointer;}   
 .nav-send{display:none;}
 .handheld .nav-in a[data-track="nav-download"]{display:none;}
-.handheld .nav-send{display:inline-flex;font-family:inherit;line-height:inherit;cursor:pointer;}   /* as tall as the Download it replaces */
-@media (max-width:820px){.handheld .nav-send{margin-left:auto;}}   /* the links are hidden here, so it sits at the right */
-/* One line beside the brand down to a 320px phone (measured): a little tighter below 375px, tighter again below 340px. */
+.handheld .nav-send{display:inline-flex;font-family:inherit;line-height:inherit;cursor:pointer;}   
+@media (max-width:820px){.handheld .nav-send{margin-left:auto;}}   
 .handheld .nav-send{white-space:nowrap;}
 @media (max-width:374px){.handheld .nav-in{gap:1rem;}.handheld .nav-send{padding:.5rem .85rem;font-size:.82rem;}}
 @media (max-width:339px){.handheld .nav-send{padding:.45rem .7rem;font-size:.76rem;}}
@@ -896,19 +514,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .hero .sendlink-ways{justify-content:center;}
 }
 
-/* ---------- FUTURISTIC TOUCHES (Matthew, 2026-10-09: "look how bookbreaker looks and then just add that to our other sites";
-   the brief is ~/ops/launch/FUTURISTIC-TOUCHES.md, the reference bookbreaker.bet). Not a redesign: Crisp keeps its own
-   colours, type, copy and links. It already had the frosted nav, the gradient on "On your Mac." and lifting cards; this
-   adds what it lacked. All CSS, all of it off under prefers-reduced-motion, and nothing changes layout. ---------- */
 
-/* 1. A real glow behind the hero: Crisp's cyan bleeding down from the top, a faint violet off to the side. */
 .hero{background:
   radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.19),transparent 70%),
   radial-gradient(35% 42% at 86% 8%,rgba(157,140,255,.10),transparent 70%);}
 
-/* 2. A slow drifting dot field behind the headline, three layers, masked so it fades out before the edges. It replaces
-   the static 34px dot grid. Tiny (1px) and at .6, so no text sits on anything a reader has to read through. */
-.hero::before{inset:auto;left:0;right:0;top:-4rem;width:auto;height:40rem;   /* inside the page width: no sideways scroll */
+.hero::before{inset:auto;left:0;right:0;top:-4rem;width:auto;height:40rem;   
   background-image:
     radial-gradient(rgba(255,255,255,.75) 1px,transparent 1.5px),
     radial-gradient(rgba(90,200,250,.7) 1px,transparent 1.5px),
@@ -919,24 +530,18 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   mask-image:radial-gradient(55% 62% at 50% 34%,#000 0%,transparent 78%);
   opacity:.6;animation:crisp-drift 90s linear infinite;}
 @keyframes crisp-drift{to{background-position:140px 140px,280px 305px,490px 370px}}
-@media (min-width:861px){            /* the headline sits in the left column here, so the field centres on it */
+@media (min-width:861px){            
   .hero::before{-webkit-mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);
     mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);}
 }
 
-/* 3. The primary button glows: a vertical gradient in Crisp's cyan, a 1px highlight on the top edge, a coloured shadow.
-   Its dark label stays 12.4:1 on the lightest stop and 10.0:1 on the darkest. */
 .btn-primary{background:linear-gradient(180deg,#8cdcfd 0%,#5ac8fa 100%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 34px -10px rgba(90,200,250,.85);}
 .btn-primary:hover{background:linear-gradient(180deg,#a2e3fe 0%,#6dcffb 100%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 44px -12px rgba(90,200,250,.95);}
 
-/* 4. Cards that lift also glow: a cyan hairline ring and a soft coloured shadow under them on hover. */
 .card:hover{box-shadow:0 0 0 1px rgba(90,200,250,.14),0 30px 80px -30px rgba(90,200,250,.45);}
 
-/* 5. The app itself on a 3D stage: the demo window starts tilted back and settles flat as it scrolls into view, with a
-   cyan glow under it. Browsers without scroll-driven animations get the glow and a flat window; phones and anyone
-   with reduced motion always get it flat. Nothing about the video or its controls changes. */
 .demo-frame{box-shadow:0 0 0 1px rgba(90,200,250,.18),0 40px 120px -30px rgba(90,200,250,.45),0 30px 60px -20px #000;}
 @media (min-width:761px) and (prefers-reduced-motion:no-preference){
   @supports (animation-timeline:view()){
@@ -949,12 +554,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 @media (prefers-reduced-motion:reduce){.hero::before{animation:none;}}
 </style>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- Meta pixel is inserted here on EVERY page by ops/bin/insert-meta-pixel.py,
-     anchored to the Plausible line above and fenced in meta-pixel:begin/end markers.
-     It used to be hand-written on this one page only, which is why it ran on 1 of 115
-     pages while /legal/privacy/ described it as something "this site" does. Do not
-     re-add it by hand: an unmarked copy is invisible to --remove and would fire
-     PageView twice on the highest-value page on the site. -->
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
 
@@ -978,14 +578,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <div class="hero">
   <div class="wrap">
-    <!-- The pill sits where Screen Studio puts "#1 Product of the Year" and Warp puts its
-         GitHub star count: the slot above the H1 that a stranger reads as credibility. It
-         used to say "Everything runs on your Mac" — a self-claim, and the third thing on
-         this screen to say it, after the lede and the "100% offline" tick. Apple's
-         notarization is the only assertion in this hero that a THIRD PARTY made and that a
-         visitor can check without trusting us: `spctl -a -t install /Applications/Crisp.app`
-         answers "Notarized Developer ID". Verified against the shipping bundle, staple
-         valid, on 2026-08-13, and the readiness scorer gates it on every run. -->
     <div class="hero-top">
       <div class="hero-head">
     <div class="pill">
@@ -993,17 +585,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       Notarized by Apple
     </div>
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your computer.</span></h1>
-    <!-- Under the H1, never replacing it (FUTURE-VIBE-BRIEF, 2026-10-21). Only what is true today: Crisp works on video FILES (so
-         "videos", not "tapes", which need a transfer first), on the Mac at your desk, and the video is never uploaded (the "Nothing
-         uploaded" tick below says the same). "Sharp enough for the TV you'll own in 2036" was the brief's example and is left out:
-         nobody can measure it. -->
     <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk, with nothing uploaded.</p>
-    <!-- Measured 2026-11-02 on the installed 1.0.1777, free engine, Auto, whole clip, median of 3 quiet runs:
-         ~/ops/research/crisp-speed-2026-11-01/PREREGISTRATION.md, metric 1b (206.3 s). Re-measure before changing it. -->
     <p class="hero-maker">I&rsquo;m Matt Kerr, and I make Crisp in Grand Rapids. On my M1 Ultra it takes a 40-second
       1080p phone clip to 4K in <strong>3&nbsp;min 26&nbsp;s</strong>.</p>
-    <!-- Shown only on a phone or tablet (.handheld, see the head script and the CSS): sending the link is the hero's first
-         action there, the download its second. The script at the foot of this file wires it. -->
     <div class="send-first">
       <p class="send-say">Crisp runs on a Mac or a Windows PC. Send yourself the link for later.</p>
       <button type="button" class="btn btn-primary" data-send-mac-link="hero-send">
@@ -1025,40 +609,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
     <!-- windows-download:begin --><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="home-hero-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1853 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><!-- windows-download:end -->
     <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
-    <!-- TWO actions since 2026-09-24, on Matthew's order: the second is the PROOF (the phone-clip
-         before/after, #ba4), not a softer copy of the download. The note below argued for one
-         action; it is kept for its history. ONE action in the hero, deliberately. "See pricing" used to sit here as a ghost
-         button, and it is the dilution pattern the reference set never uses: Screen Studio
-         has one CTA, Linear has none, and where Cursor and Raycast have two the second is a
-         different AUDIENCE (enterprise demo; Windows users) rather than a softer version of
-         the same click. Pricing is already in the nav, and the pricing section is four
-         screens down the same page — nothing was made harder to find.
-         The requirement line is Screen Studio's move: state the OS floor under the button so
-         nobody downloads 85 MB to find out it will not open.
-         ⚠️ CORRECTED 2026-09-21, AND THE OLD REASONING IS THE LESSON. This said "macOS 12.0 is
-         the shipping bundle's own LSMinimumSystemVersion, not a guess". That was true and it was
-         the WRONG LAYER. LSMinimumSystemVersion is what the bundle DECLARES; what the app needs
-         is what its Mach-O files require, and `vtool -show-build` on the installed 1.0.1307 finds
-         79 of them at minos 26.0 — including Python.framework itself, which the sidecar cannot
-         start without. So the app would launch on macOS 12 and then do nothing, which is worse
-         than refusing to open. The number here now comes from the binaries. Lowering the real
-         floor is a separate job (Matthew's to-do 42); this line only stops the site promising
-         something the artifact does not deliver. -->
-    <!-- ⚠️ "Free to use" ON ITS OWN IS THE TRAP THE CATEGORY KEEPS FALLING INTO. SuperResolution
-         spent its whole launch thread defending the word against people who found the in-app
-         purchase after downloading. The app itself now says so before a render — the export
-         panel appends "· export carries a 'Made with Crisp' mark" to the setup hint, added after
-         someone measured a free 4K export paying a +51% wall-clock second re-encode and learning
-         about it at the end. This is the same sentence one step earlier, on the button they press
-         first, so nobody downloads 85 MB to discover the term. -->
     <p class="fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark ·
       92&nbsp;MB · macOS 14 Sonoma or later (<a href="/download/#macos-speed">upscaling takes about 1.5&times; as long on 14</a>) · Apple Silicon<br>Pro is $29 once, with a 30-day refund ·
       <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero" data-track="hero-buy" rel="nofollow">Buy Pro</a></p>
     <!-- windows-fine:begin --><p class="fine-win">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them)<br>Pro is $29 once, with a 30-day refund · <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero-win" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a></p><!-- windows-fine:end -->
-    <!-- THE OLDER-MAC LIST (CEO, 2026-09-28). The line above turns away everyone below macOS 26;
-         this keeps them instead of losing them. Its own list (source crispvideo.app-older-mac), a
-         separate consent from the footer newsletter. CAPTURE ONLY: nothing is sent to it without
-         Matthew's own yes. The handler is the older-Mac block at the foot of this file. -->
     <form class="oldmac" data-oldmac="hero" novalidate>
       <label class="oldmac-ask" for="oldmac-hero-email">On an older Mac? Leave your email and we&rsquo;ll tell you the day Crisp runs on it.</label>
       <div class="oldmac-row">
@@ -1077,16 +631,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> <span>One-time $29</span></span>
     </div>
-    <!-- ⚠️ THIS SLOT USED TO HOLD A SCREENSHOT OF AN EMPTY APP — a timeline reading "Your
-         timeline is empty", which is the least persuasive thing that could sit above the fold
-         on a page whose whole claim is what comes out the other side. The reference set puts
-         the PROOF here: Screen Studio opens on a playing video at top:0. So this is the actual
-         restore, running, before a visitor has scrolled anywhere. The screenshot moved down to
-         "What it does", where showing the interface is the point. -->
     <div class="ba" id="ba">
-      <!-- No src= on purpose: the loader picks the 1x or 2x file by devicePixelRatio. It is in
-           the hero now, so the observer fires immediately — but preload="none" still means a
-           1x display never fetches the 4.5MB retina pair. -->
       <video class="ba-after" id="baAfter" width="960" height="720" poster="/birthday-poster.jpg"
         data-src-1x="/birthday-after.mp4" data-src-2x="/birthday-after@2x.mp4"
         muted loop playsinline preload="none"
@@ -1105,12 +650,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       the slow lane by design: this restore ran at about 26 seconds a frame. Against a plain resize
       to the same size it holds 1.23&times; the fine detail; the harder 1936 clip further down
       manages 1.50&times;. <a href="#restore">Both, measured &rarr;</a></p>
-    <!-- THE DEMO (CEO, 2026-09-29): Product Hunt launches Crisp on 10-03 and its page had no video. This
-         is a real run, recorded by scripts/record_demo.mjs: the shipped UI in WebKit against the installed
-         1.0.1407 engine started as a new free copy. The window opens empty, the built-in sample restores,
-         and the Before/After opens. The restore plays in real time, the pointer is drawn in, and the free
-         mark and its offer show because that is what a free copy does. Box reserved at 16:9 so nothing
-         shifts; the files load only when it scrolls into view. -->
     <figure class="demo" id="demo">
       <div class="demo-frame">
         <video class="demo-video" width="1280" height="720" poster="/demo-run-poster.jpg" muted loop playsinline
@@ -1129,10 +668,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 
 
-  <!-- Read off the shipped app: 21 dispatched tasks, 9 video + 7 image input extensions. Nothing here is rounded up.
-       The upscale figure is what the EDITOR reaches (tests/test_every_figure_and_tile_on_the_home_page_has_a_consumer.py measures
-       the prompt bar): 16x since 1.0.1597, the Enhance tool's Scale menu and "upscale it 16x" (scripts/scale_visible_readback.mjs,
-       in live_gate). It said 4x for a few hours on 2026-10-21, when the app could not yet reach 8x or 16x. -->
   <section class="caps" aria-label="What Crisp handles">
     <div class="caps-in">
       <div><div class="cap-n">23</div><p class="cap-l">tools, one window: restore, edit,<br>montage, convert</p></div>
@@ -1150,9 +685,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="lede">Most tools give you a single stage. Crisp runs the lot: denoise, low-light
         lift, restore and upscale. Then it hands you an editor for what comes next.</p>
     </div>
-      <!-- The 21 tasks server.py dispatches, named rather than counted. Read off the dispatch
-           list: audio border compress convert crop fade frame gif grade loop montage overlay
-           reframe reverse rotate speed splitscreen stabilize timeline trim upscale. -->
       <div class="tools-grid">
         <span><b>Upscale</b>to 4K, 2–16×</span>
         <span><b>Restore</b>generative Max lane</span>
@@ -1180,8 +712,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
 
 
-    <!-- Moved down from the hero, where an empty timeline was the first thing a visitor saw.
-         Here the interface IS the subject, so an empty project is honest rather than limp. -->
     <figure class="shot">
       <div class="frame"><img src="/img-app@2x.png" srcset="/img-app.png 1100w, /img-app@2x.png 2200w"
         sizes="(max-width: 1100px) 100vw, 1060px"
@@ -1355,18 +885,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         timeline if you would rather finish by hand.</p>
     </div>
 
-    <!-- ⚠️ THIS PLAYS ITSELF, AND IT DID NOT USED TO. With controls + preload="none" and no
-         autoplay it sat as a motionless poster directly beneath a hero that autoplays, so the
-         section advertising automatic CUTTING showed no cuts at all. Measured on the live page,
-         scrolled fully into view for eight seconds: paused true, currentTime 0, readyState 0 —
-         matt's "it's the same still" was a precise description of the page, not of the footage
-         (the file itself averages 25.2 mean abs diff second to second; it was never static).
-         ⚠️ THE REASON FOR `muted` HAS CHANGED TWICE, SO IT IS WRITTEN DOWN. Originally "there
-         is no audio track anyway"; then, under a 1956 musical that DID carry one, a real choice
-         not to spring a song on the reader. The eight clips behind the current reel are silent
-         and it is encoded with no audio stream at all, so the first reason holds again — but
-         `muted` STAYS regardless, because it is what browsers require before they will let a
-         video autoplay, and the footage may change again. `controls` stay too. -->
     <video src="/demo-montage.mp4" width="960" height="540" controls playsinline muted loop
       preload="none" data-play-in-view
       poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
@@ -1495,45 +1013,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <tbody>
           <tr><td>Price</td><td class="y">$29 one-time</td><td class="n">$299/yr or $59/mo</td><td class="n">Subscription or licence</td></tr>
           <tr><td>Who makes it</td><td class="y">Kerr &amp; Company, independent</td><td>Adobe, which completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 2 Nov 2026)</td><td>Digiarty Software (<a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">videoproc.com</a>, read 2 Nov 2026)</td></tr>
-          <!-- VideoProc's 5-year cost read "Recurring" and its keep-working cell read
-               "Varies". Both were wrong, and both were wrong in our favour. VideoProc sells a
-               one-time Lifetime License alongside its Premium 365 subscription, so a buyer who
-               picks the licence pays once and keeps it - checked on videoproc.com, 12 Aug 2026.
-               Misstating a named competitor's pricing model is the one error on this page that
-               is actually actionable, so these rows now describe their cheaper option rather
-               than their dearer one. No figure is quoted: the licence is running at a deep
-               promotional discount off list, and a promo quoted today is a false claim next
-               month. The audio cell three rows down is a different claim: it said "Varies"
-               until 19 Oct 2026, when VideoProc's page was re-read and found silent on audio
-               during interpolation, so it now says "Not stated". -->
           <tr><td>Cost after 5 years</td><td class="y">$29</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
           <tr><td>How you pay</td><td class="y">Once. It's yours</td><td class="n">Subscription only, for new licences</td><td class="n">Subscription or lifetime licence</td></tr>
-          <!-- Corrected 2026-09-09. This row has now been wrong in BOTH directions. It first
-               said "best model is cloud"; a later pass over-corrected that to "runs on-device,
-               just needs macOS 26 or 36 GB". Both halves were true of DIFFERENT products, and
-               the macOS half was inverted. Topaz, verbatim: Project Starlight "is only available
-               in cloud rendering" (topazlabs.com/starlight); Starlight Mini is the on-device one,
-               where "The recommendation for Mac is to have a minimum 36GB of RAM" and "All Apple
-               Silicon should be supported". macOS 26 is NOT a requirement — their system
-               requirements list macOS 15 for the Starlight series and note "We are actively
-               working on macOS 26 (Tahoe) support. Some features may not function as expected."
-               We were overstating a rival's requirement, which is the worst direction to err in. -->
           <tr><td>Runs fully offline</td><td class="y">Yes, every lane, generative included</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
-          <!-- Rows below verified 2026-09-09 against Topaz's CURRENT docs, not the legacy tree.
-               Trap worth remembering: docs.topazlabs.com/video-ai/* is the LEGACY doc set (search
-               returns "Quick Start (Legacy)", "Filters (Legacy)"); current lives at /topaz-video/*.
-               My first pass quoted the legacy pages. Both carried the same wording here, but that
-               was luck, so all three quotes were re-taken from /topaz-video/.
-                 Multi-clip timeline -- "Use the [ ] buttons to select the range of the input video"
-                   plus a Crop button; no timeline mentioned. Topaz DOES hold several files in a
-                   Video Library, but that is a source list, not an arrangement, so "trim and crop
-                   only" is about the EDITS, not about how many files it will accept.
-                 Auto-montage -- the filter set is Enhancement, Grain, Frame Interpolation, SDR to
-                   HDR, Stabilization, Motion Deblur, Denoise. Nothing editorial. This one rests on
-                   an ENUMERATION, which is why it is stronger than an absence.
-                 Audio when interpolating -- verbatim: "Frame interpolation is only applied to the
-                   video. The audio will not be modified by this enhancement and will be removed
-                   from the video." -->
           <tr><td>Multi-clip timeline</td><td class="y">Yes: arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Not stated</td></tr>
@@ -1541,38 +1023,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <tr><td>Watermark-free exports</td><td class="y">With Pro ($29)</td><td class="n">Paid</td><td class="n">Paid, after 5 free AI exports</td></tr>
         </tbody>
       </table></div>
-      <!-- Every Topaz and VideoProc cell above was re-read 19 Oct 2026 on the vendor's own pages.
-           Changed: "since Oct 2025" dropped (Topaz's pricing page shows only /yr and /mo plans but
-           states no date, and Topaz staff posts point to September 2025); VideoProc audio "Varies"
-           -> "Not stated" (its page says nothing about audio when interpolating); VideoProc model
-           choice "Limited" -> its own "30+ AI Models for Video/Image/Audio"; VideoProc exports
-           "Paid" -> its trial's "5 watermark-free exports" for AI tools. Topaz: 24 enhancement
-           models chosen by hand (docs filters/enhancement); filters enumerated, nothing editorial. -->
       <p class="src rv">Topaz and VideoProc rows re-read 19 October 2026 on each vendor's own pages:
         Topaz's <a href="https://www.topazlabs.com/pricing" rel="nofollow">pricing</a> and
         <a href="https://docs.topazlabs.com/topaz-video/filters" rel="nofollow">Topaz Video docs</a>,
         VideoProc's <a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">product page</a>
         and <a href="https://www.videoproc.com/video-converting-software/buy-mac.htm" rel="nofollow">Mac buy page</a>.</p>
 
-      <!-- ⛔ WHY THIS TABLE QUOTES LIST *AND* THE DATED OFFER, AND NOT ONE OR THE OTHER.
-           The note in the table above records a deliberate policy: "No figure is quoted: the
-           licence is running at a deep promotional discount off list, and a promo quoted today
-           is a false claim next month." That reasoning is right and it rules out quoting these
-           three at their current prices alone — every one of them is on offer.
-           But quoting LIST alone is wrong in the other direction: a reader comparing today would
-           pay $165 for Aiarty, not $235, and overstating a named competitor's price is the same
-           class of error as understating it, pointed the other way.
-           So each cell carries the list price, the current offer, and the DATE IT WAS READ. A
-           dated figure cannot become a false claim — it becomes an old one, which is honest.
-           ⚠️ EVERY PRICE BELOW WAS RE-FETCHED FROM THE VENDOR'S OWN BUY PAGE on 16 Sep 2026
-           (re-read 19 Oct 2026, every figure unchanged), at
-           the bytes, not from a summary. AVCLabs is the reason that matters: its PRODUCT page
-           says "a one-time purchase for $299.99" while its BUY page says $299.90 to $149.90.
-           Both are the vendor's own pages and both are true: list versus what you actually pay.
-           The buy page is the authoritative one for a price claim.
-           ⭐ AND THE HEADLINE CLAIM HOLDS EITHER WAY: $129 is the lowest of the four at list
-           AND at the current offer, so "the cheapest perpetual licence here" does not depend on
-           which column a reader trusts. -->
       <h3 class="h-md rv" style="margin-top:2.2rem">The other one-time licences</h3>
       <p class="src rv">Everyone here sells a perpetual licence, so this is the fair comparison,
         not Topaz, which stopped selling them. List price first, then what it actually costs
@@ -1585,16 +1041,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
               <td class="n">$235 list, $165 on offer</td>
               <td class="n">$299.90 list, $149.90 on offer</td>
               <td class="n">$437.99 list, $284.69 on offer</td></tr>
-          <!-- ⛔ TWO CELLS HERE SAY "not stated" AND THAT IS THE VERIFIED ANSWER, NOT A GAP.
-               My first draft put "1" against AVCLabs and HitPaw, taken from a briefing. I then
-               read both buy pages myself: AVCLabs states NO machine count anywhere on its
-               purchase page, and HitPaw's one-time prices sit in a different column set from its
-               5/10/100-device tier labels, so which tier the quoted $284.69 buys is not
-               established by that page.
-               Writing "1" would have UNDERSTATED two named competitors — the same class of error
-               the note in the table above calls "the one error on this page that is actually
-               actionable", pointed the other way. A cell saying what we could not establish is
-               worth more than a number we could not source. -->
           <tr><td>Macs per licence</td>
               <td class="y">3</td>
               <td>3</td>
@@ -1613,13 +1059,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
               <td class="n">Preview only, no export</td></tr>
         </tbody>
       </table></div>
-      <!-- Re-read 19 Oct 2026. Prices and machine counts unchanged. Free tier and offline cells
-           corrected from the vendors' own words: AVCLabs FAQ (faq-video-enhancer-ai.html) "Videos
-           generated by the free trial version will be watermarked" and exports "limited to a
-           maximum of 30 seconds"; HitPaw's buy page says the free licence "only supports preview"
-           and a paid one is needed to export, and lists Cloud Rendering as paid by AI credits;
-           HitPaw's Windows page says it can "process locally (no cloud uploads)". Neither HitPaw
-           page says offline, so its cell says locally. -->
       <p class="src rv">Sources, all read 19 October 2026:
         <a href="https://www.aiarty.com/ai-video-enhancer/buy.htm" rel="nofollow">Aiarty</a>,
         <a href="https://www.avclabs.com/purchase-video-enhancer-ai-mac.html" rel="nofollow">AVCLabs</a>
@@ -1629,18 +1068,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         the day we looked. Where a vendor does not state how many machines a licence covers, this
         table says so rather than guessing.</p>
     </div>
-      <!-- Sources re-read 19 Oct 2026, vendor pages only: aiarty.com/ai-video-enhancer/ (Trim, Crop,
-           batch); docs.topazlabs.com/topaz-video/reference-guide/trim-and-crop (the product page
-           itself lists no trim or crop); videoproc.com/video-converting-software/ ("Cut, Trim, and
-           Split", "join them in batches"); winxdvd.com/winxvideo-ai/ ("Merge Videos into One", batch
-           queue); videoproc.com/download.htm (Vlogger: "free video editing software with multi-track
-           timeline"); hitpaw.com/video-enhancer-mac.html + /vikpea-video-enhancer.html ("Smart Editing
-           Tools", background removal, batch; no trim or timeline named, so the old "timeline only trims
-           one clip" was dropped); avclabs.com/video-enhancer-ai.html (colour adjustment, batch; trim and
-           crop not named, so dropped); filmora.wondershare.com/ai-video-enhancer.html (Enhance local
-           and free on NVIDIA RTX 30+, cloud otherwise, other models cost AI credits);
-           blackmagicdesign.com/products/davinciresolve/studio ($295, Super Scale). No Blackmagic page
-           states one-time vs subscription, so "one-time" was dropped. -->
       <p class="ba-note">The timeline row is the one worth checking yourself, on each vendor's own
         pages (re-read 19&nbsp;October 2026). Aiarty lists trim and crop, and Topaz Video's own
         guide covers trim and crop. VideoProc Converter AI and Winxvideo AI cut and
@@ -1651,16 +1078,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         elsewhere. Filmora's free Enhance model runs locally only on an NVIDIA RTX 30-series GPU or
         newer. Otherwise it enhances in the cloud, and its other models spend AI credits. The
         closest honest rival is DaVinci&nbsp;Resolve&nbsp;Studio, which does both on your own
-        machine for $295. <!-- ⚠️ THIS SENTENCE WAS TRUE WHEN WRITTEN AND WENT STALE IN OUR OWN FAVOUR'S
-             OPPOSITE DIRECTION. On 12 Aug it read "the free build on this page is an older beta
-             and does not include the timeline", because the download really was a 29 June
-             pre-release that predated the timeline module. Builds have shipped to that same tag
-             since, and nobody updated the copy — so the page spent a day telling visitors its
-             flagship differentiator was missing from the thing they were about to download.
-             Re-verified before restoring the invitation: the DMG the button serves was fetched
-             and mounted, and its Contents/MacOS/crisp is byte-identical (SHA-256) to the
-             installed build whose screenshot appears above, which renders the timeline. No
-             build number here on purpose — it would go stale the next time I ship. -->
+        machine for $295. 
       And that row is one you can check without spending anything: the timeline is in the free
       download on this page.</p>
   </div>
@@ -1672,16 +1090,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="kicker">Pricing</p>
       <h2 class="h-lg rv">One price. <span class="grad">Yours forever.</span></h2>
       <p class="lede">No subscription, no credits, no cloud bill. Buy it once and it stays bought.</p>
-      <!-- ⚠️ WHAT THIS LINE DELIBERATELY DOES NOT SAY: how many Macs one licence covers. The
-           number is not in this repo — activation spends a seat at the payment provider and the
-           count lives in that product's configuration, not in the code. Our own terms say "Macs
-           you own or control", with no figure. Until the real number is known, stating one here
-           would be inventing it, and repeating the unbounded phrase would advertise a promise the
-           seat limit may not honour. Commercial use IS in the terms verbatim, so that half ships.
-           ⚠️ AND "nothing is metered" IS NOT "no limits". Batch is paid-only (entitlement.py:
-           "batch": paid) and the free tier carries the export mark. Those are FEATURE gates. A
-           meter is a credit, a render minute, a monthly quota or a per-export fee, and there is
-           none of those at either tier — which is the claim, and all of it is the claim. -->
       <p class="src">One licence covers <strong>up to 3 computers at a time</strong>, Mac or Windows. Deactivate
         one to move it to another. Personal <strong>and commercial</strong> work are both covered,
         as <a href="/legal/terms/">the licence terms</a> say. And <strong>nothing is metered</strong>: no
@@ -1710,9 +1118,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Batch processing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Pay once. Every 1.x update is included.</li>
         </ul>
-        <!-- THE ONLY PAID CTA ON THIS PAGE. It must never point at the DMG: this button sat
-             under a $129 price and downloaded the free, watermarked build. It now goes to #buy,
-             and CRISP_CHECKOUT_URL (foot of this file) repoints it in one edit. -->
         <a class="btn btn-primary" data-crisp-checkout data-track="pricing" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro</a>
       </div>
     </div>
@@ -1747,29 +1152,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════════════════
-     GET CRISP — this section exists to carry the two anchors the rest of the
-     product already links to, and to say what a buyer actually receives.
 
-     ⚠️ DRAFT, NOT REVIEWED BY A LAWYER. The commercial statements below (seller
-     identity, what the licence covers, delivery, refund window) were drafted by an
-     AI assistant from the source code and the existing /legal/ pages. They have not
-     been checked by a solicitor or against Dodo Payments' merchant-of-record onboarding
-     requirements, and the seller's street address is still missing — see
-     TODO-SELLER-ADDRESS below. Review before this ships.
-
-     #download — 243 links across the generated pages (/learn, /vs, /how-to, /for)
-                 and backend/server.py's _DOWNLOAD_PAGE all point at
-                 https://crispvideo.app/#download. No element on this page carried
-                 that id, so every one of them landed at the top of the homepage
-                 next to a download button by luck rather than design.
-     #buy      — ui/src/index.html's "Get a key ($129)" button, inside the Unlock
-                 Crisp Pro modal, is the ONLY purchase affordance in the shipped
-                 app. It points at https://crispvideo.app/#buy, which did not exist,
-                 so the one screen where a blocked user goes to pay led nowhere.
-
-     Do not rename or remove either id without changing those callers.
-  ══════════════════════════════════════════════════════════════════════════════ -->
 <section id="download">
   <div class="wrap">
     <div class="head">
@@ -1812,9 +1195,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p class="sub">Sold by Kerr &amp; Company LLC, Grand Rapids, Michigan, USA, through Dodo Payments,
         our merchant of record. Dodo takes the payment and handles sales tax and VAT; Crisp
         never sees or stores your card details.</p>
-      <!-- TODO-SELLER-ADDRESS: UK/EU distance-selling rules want a geographic address on the
-           site itself, not only in the merchant of record's records. City and state are here;
-           the street address still needs adding once it is decided what to publish. -->
 
       <p><strong>What the $29 buys.</strong> Video exports without the “crispvideo.app” mark or the 15-second limit, batch processing, and on a Mac the Max Quality generative restore lane. It is a licence for
         the version line you buy, not a subscription. It does not expire, there is nothing to
@@ -1836,11 +1216,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         money back, no reason needed, to the card you paid with.</p>
 
       <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro for $29</a></p>
-        <!-- INSTALMENTS. Empty until CRISP_BNPL_LIVE is set at the foot of this file.
-             Klarna and Afterpay sell Pay in 4: four payments TWO WEEKS apart, six weeks
-             end to end — not a monthly plan. An earlier draft said "$32/month for 4
-             months", which is a payment schedule no provider offers, printed beside a
-             price. It never shipped. -->
         <p class="founding-note">Black Friday price: <strong>$14.50</strong> for everyone through November, then $29. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
@@ -1862,11 +1237,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         covered.</p></div></details>
       <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your own computer, Mac or PC. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence and, on a Pro copy, re-checking it about once a week, the founding-price count on a free copy (nothing about you is sent), and downloading the optional Max model pack. Never your footage.</p></details>
       <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models are split across two apps: Topaz Video holds the ones that &ldquo;can be rendered locally&rdquo;, and its cloud app, Astra, holds the ones that are &ldquo;cloud rendering only&rdquo;. <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is one of the local ones, and their docs put its bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 19 October 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. Topaz's <a href="https://docs.topazlabs.com/topaz-video/filters/frame-interpolation" rel="nofollow">frame-interpolation docs</a> say &ldquo;the audio will not be modified by this enhancement and will be removed from the video&rdquo;. The bigger difference is shape. Their <a href="https://docs.topazlabs.com/topaz-video/reference-guide/user-interface" rel="nofollow">interface reference</a> documents two edits: the &ldquo;[ ]&rdquo; buttons that &ldquo;select the range of the input video&rdquo; and a Crop button. There is no timeline for arranging clips, so it takes a file and hands a file back (both read 19 October 2026). Crisp puts the upscale inside an edit: arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
-      <!-- "Overnight" was a 30x understatement and the app already knew it: pipeline.py's
-           _sv_preflight_phrase quotes 5 s of video = 1.8 h, 30 s = 10.9 h, 2 min = 43.5 h at
-           1080p output on an M1 Ultra, from a floor of 21.0 s per output megapixel per frame.
-           The docstring there says not to soften the strings; the same applies here. Keep the
-           "at least" — it is a floor off a fast desktop Mac, so a laptop is slower. -->
       <details><summary>Do I need a powerful Mac?</summary><p>Any Apple-Silicon Mac runs the fast tier, but it is not instant. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, ten seconds of 1080p took about a minute to reach 4K, and ten seconds of 480p about 23 seconds: roughly 6× and 2× the clip’s own length. A MacBook Air is slower, and we have not timed one yet. Crisp shows progress and the time left while a clip renders. The generative <em>Max</em> tier is an optional 4.6&nbsp;GB download and is far slower than the word “overnight” suggests. On video it is a desktop feature: a clip pushes peak memory past 27&nbsp;GB, so it wants a 48&nbsp;GB Mac at the very least and is only comfortable on 64&nbsp;GB. On a single photo there is no run of frames to hold at once, peak drops to about 11&nbsp;GB, and a 16&nbsp;GB Air handles it. Measured on an M1 Ultra, a Max frame costs about <strong>36 seconds per megapixel of output</strong>:
         33 seconds a frame at 720p, and around 74 at 1080p. That is <strong>roughly 3 hours for
         five seconds of 1080p, 18 hours for thirty seconds, and three days for two minutes</strong>. Crisp shows you that estimate before the job starts, not three minutes into it. Treat Max as a seconds-at-a-time tool for the one shot that matters. Enhance is the lane for whole clips.</p></details>
@@ -1879,17 +1249,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   </div>
 </section>
 
-<!-- ⚠️ THE ONLY PAGE GOOGLE ACTUALLY VISITS LINKED TO ALMOST NOTHING. Measured 2026-09-07 from
-     Search Console: this page earns 162 of the site's 204 impressions and 7 of its 8 clicks,
-     while 103 of 118 pages are not indexed — 59 of them never even fetched. The footer points at
-     the five section indexes, which was itself a fix, and beyond that the home page carried ONE
-     link to a leaf page. So the guides that answer a real search sat two hops from the only page
-     with any authority to lend them, and 90 of the 100 unindexed pages were reachable from
-     neither this page nor the Topaz comparison — the two pages Google returns to.
 
-     These are chosen, not swept: each is a job Crisp genuinely does (verified against the
-     engine's task list, not against the copy), and each is the page someone would actually want
-     next. A list of everything would be a link farm and would help nobody. -->
 <section id="common-jobs">
   <div class="wrap">
     <div class="head"><p class="kicker">Common jobs</p><h2 class="h-lg rv">Start from what you have.</h2></div>
@@ -1920,14 +1280,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 </section>
 
 <footer>
-  <!-- ⚠️ PLACEMENT IS DELIBERATE. The closing CTA two lines up says "Nothing to sign up for",
-       which is about USING Crisp and stays true — but a signup box directly beneath it would
-       read as a contradiction. It lives in the footer, framed as optional, and the ask is a
-       REASON rather than a newsletter: a one-time licence owner genuinely wants to know when a
-       new restore lane lands, and that doubles as the upgrade nudge.
-       ⚠️ NOTHING FIRES ON PAGE LOAD. The address is posted on submit, once, to our own worker —
-       not a marketing SDK. A third-party tag here would undo the "Nothing uploaded" hero on the
-       highest-value page we have, which is exactly why the worker exists. -->
   <div class="wrap sub-wrap">
     <form id="sub-form" class="sub" novalidate>
       <label class="sub-label" for="sub-email">New restore lanes and model improvements</label>
@@ -1938,8 +1290,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           placeholder="you@example.com" aria-label="Email address" required>
         <button type="submit" class="btn btn-primary btn-sm" id="sub-go">Keep me posted</button>
       </div>
-      <!-- Honeypot: a real person never fills this. Hidden from sight AND from screen readers,
-           and tabindex -1 so keyboard users cannot land on it by accident. -->
       <div class="sub-hp" aria-hidden="true">
         <label for="sub-company">Company</label>
         <input id="sub-company" name="company" type="text" tabindex="-1" autocomplete="off">
@@ -1951,21 +1301,12 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap foot">
     <div>© 2026 Crisp · Built by one person, in the open.</div>
     <div class="links">
-      <!-- ⚠️ THESE POINTED AT ONE PAGE EACH, NOT AT THE SECTION. "Guides" went to the upscaling
-           guide and "Comparisons" to the Topaz page, so 45 other guides and 23 other comparisons
-           had no route in from anywhere on the site — they existed only for search traffic, and
-           /how-to/ and /vs/ themselves returned 404. They point at the section indexes now. -->
       <a href="/how-to/">Guides</a>
       <a href="/vs/">Comparisons</a>
       <a href="/learn/">Learn</a>
       <a href="/for/">By use</a>
       <a href="/best/">Best of</a>
       <a href="https://github.com/mattkerr09/crisp-site/releases">Releases</a>
-      <!-- Terms, Privacy and Refunds are also stated beside the price, which is where they
-           matter most. Repeating them here is for the visitor who arrives cold from an ad and
-           looks in the footer for whether this is a real company — and for Meta's landing-page
-           review, which reads the destination page and expects a reachable privacy policy and a
-           way to contact a human. support@ is the address the legal pages already publish. -->
       <a href="/about/">About</a>
       <a href="/legal/privacy/">Privacy</a>
       <a href="/legal/terms/">Terms</a>
@@ -1973,10 +1314,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <a href="mailto:support@crispvideo.app">support@crispvideo.app</a>
     </div>
   </div>
-  <!-- "More from Kerr & Company" — the same block, same wording, on every page of every Kerr & Company site
-       (CEO order 2026-09-26, Matthew's AI-search visibility pass). It replaced this page's longer
-       "Also built by the same person" cross-sell so the homepage does not carry two. Plain followed links.
-       _tools/sitewide_chrome.py applies it; tests/test_every_page_carries_the_sitewide_chrome.py gates it. -->
   <div class="wrap foot foot-sibling">
     <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
   </div>
