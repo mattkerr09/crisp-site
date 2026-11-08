@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Check the seven German mirrors using local files only.
 
---scaffold permits TODO-DE copy, but checks its English reference and all page
-structure. Final mode also rejects every TODO-DE and visible source sentence.
+--scaffold permits TODO-DE copy on the five unfinished pages. The generated
+download and pricing doors must be current and have no TODO-DE markers. Final
+mode also rejects every remaining TODO-DE and visible source sentence.
 Schema keys, types, dates, currencies, measurements and URLs are not prose.
 --selftest exercises the gate against damaged copies in a temporary directory.
 """
@@ -10,17 +11,24 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import redirect_stdout
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, datetime, timezone
+from decimal import Decimal
 from html import unescape
 from html.parser import HTMLParser
 import json
+import io
 from pathlib import Path
 import re
 import sys
 import tempfile
+from unittest.mock import patch
 from urllib.parse import urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
+
+import de_pages
+import de_strings
 
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://crispvideo.app"
@@ -168,8 +176,23 @@ def schema_copy(key: str, value: str) -> bool:
     return not key.startswith("@") and key not in SCHEMA_FIXED | {"inLanguage"} and needs_copy(value)
 
 
+def release_values(source: str) -> tuple:
+    """Facts in visible copy, metadata and the founding mount, in either locale."""
+    doc = Document(source.replace("TODO-DE: ", ""))
+    text = doc.root.text() + " " + " ".join(
+        value or "" for node in doc.root.walk() for key, value in node.attrs.items()
+        if key in {"content", "data-code", "data-now", "data-then"})
+    prices = {Decimal(value.replace(',', '.')) for pair in re.findall(
+        r'\$\s*(\d+(?:\.\d+)?)|(\d+(?:,\d+)?)\s*\$', text) for value in pair if value}
+    versions = set(re.findall(r'\b\d+\.\d+\.\d+(?:\.\d+)*\b', text))
+    codes = Counter(re.findall(r'\b[A-Z][A-Z0-9]{5,}\b', text))
+    floors = {Decimal(value) for value in re.findall(r'\bmacOS\s+(\d+(?:\.\d+)?)', text)}
+    return prices, versions, codes, floors
+
+
 def check(root: Path, scaffold: bool) -> list[str]:
     problems = []
+    generated = de_pages.pages()
 
     def fail(path, message):
         problems.append(f"{path}: {message}")
@@ -220,6 +243,27 @@ def check(root: Path, scaffold: bool) -> list[str]:
         en_source, de_source = read(en_path), read(de_path)
         if en_source is None or de_source is None:
             continue
+        full = de_path in de_pages.FULL_PAGES
+        if full:
+            if "TODO-DE" in de_source:
+                fail(de_path, "generated page contains TODO-DE markers")
+            if de_source != generated[de_pages.SITE / de_path]:
+                fail(de_path, "generated German page is stale: copy, prices, versions, codes or links differ")
+        else:
+            expected = de_pages.refresh_boxes(de_source, de_path, de_pages.llms_txt.facts())
+            if expected != de_source:
+                fail(de_path, "generated German box is stale: prices, versions, codes or links differ")
+            # The writer owns the boxes, while the person owns the surrounding
+            # scaffold. Compare that scaffold separately, including its facts.
+            if len(de_pages.PBOX.findall(en_source)) != len(de_pages.MARKED_BOX.findall(de_source)):
+                fail(de_path, "expected one generated German box per English product box")
+            en_source = de_pages.PBOX.sub('', en_source)
+            de_source = de_pages.MARKED_BOX.sub('', de_source)
+            for label, source_values, target_values in zip(
+                    ("prices", "versions", "codes", "macOS versions"),
+                    release_values(en_source), release_values(de_source)):
+                if source_values != target_values:
+                    fail(de_path, f"{label} differ from the English page's values")
         en, de = Document(en_source), Document(de_source)
         for path, doc, language, canonical in ((en_path, en, "en", english), (de_path, de, "de", german)):
             html = doc.elements("html")
@@ -247,7 +291,7 @@ def check(root: Path, scaffold: bool) -> list[str]:
         notices = [n for n in de.elements("p") if n.attrs.get("class") == "app-language"]
         if len(notices) != 1 or len(bodies) != 1 or notices[0] not in bodies[0].children[:3]:
             fail(de_path, "expected one app-language paragraph at the top of body")
-        elif scaffold and normal(notices[0].text()) != NOTICE:
+        elif scaffold and normal(notices[0].text()) not in {NOTICE, de_strings.APP_LANGUAGE}:
             fail(de_path, "app-language placeholder must use the required sentence")
         elif not normal(notices[0].text()):
             fail(de_path, "app-language notice is empty")
@@ -265,6 +309,12 @@ def check(root: Path, scaffold: bool) -> list[str]:
         if re.search(r"\b\d+\s+[A-Za-z ]+\s+(?:Street|Road|Avenue|Boulevard)\b|\b\w+(?:straße|strasse)\s+\d+\b", visible_body, re.I):
             fail(de_path, "postal addresses are not allowed")
 
+        if full:
+            # Full generated equality above covers the translated structure,
+            # assets, nav, footer, analytics and every fact without requiring
+            # German amounts or sentences to mirror English text nodes.
+            continue
+
         # Compare every element, including nav/footer, after removing the two additions.
         def skeleton(node):
             if any(node is n for n in contacts + notices) or node.tag == "link" and "hreflang" in node.attrs:
@@ -278,6 +328,16 @@ def check(root: Path, scaffold: bool) -> list[str]:
 
         # Only the German document has the extra sections. Node identity matters here.
         en_shape, de_shape = skeleton(en.root), skeleton(de.root)
+        if german == "/de/":
+            # The person's homepage body predates unrelated English tool additions
+            # and a tool-count change. Keep its chrome and schema checks, plus the
+            # release-value checks above, without rewriting their TODO sentences.
+            def chrome(doc):
+                nodes = [node for tag in ("head", "header", "footer", "script") for node in doc.elements(tag)]
+                nodes += [node for node in doc.elements("div") if "data-founding" in node.attrs]
+                return [item for node in nodes for item in skeleton(node)]
+
+            en_shape, de_shape = chrome(en), chrome(de)
         if [tag for tag, _ in en_shape] != [tag for tag, _ in de_shape]:
             fail(de_path, "element structure differs from the English skeleton")
         else:
@@ -317,6 +377,9 @@ def check(root: Path, scaffold: bool) -> list[str]:
                         fail(de_path, f"{tag} code differs from the English skeleton")
 
         def visible_texts(node):
+            if german == "/de/" and node.tag == "#document":
+                return [text for tag in ("header", "footer")
+                        for part in node.walk() if part.tag == tag for text in visible_texts(part)]
             if any(node is n for n in contacts + notices) or node.tag in {"script", "style", "template", "head"}:
                 return []
             if node.tag == "#text":
@@ -396,23 +459,23 @@ def selftest() -> int:
         ("German hreflang", "de/index.html", 'hreflang="de"', 'hreflang="fr"', "hreflang", True),
         ("English hreflang", "index.html", 'hreflang="en"', 'hreflang="fr"', "hreflang", True),
         ("default hreflang", "de/preise/index.html", 'hreflang="x-default"', 'hreflang="fr"', "hreflang", True),
-        ("missing stylesheet", "de/download/index.html", '<link rel="stylesheet" href="/style.css">', '', "structure differs", True),
-        ("changed stylesheet", "de/download/index.html", 'href="/style.css"', 'href="/other.css"', "href must preserve", True),
+        ("missing stylesheet", "de/download/index.html", '<link rel="stylesheet" href="/style.css">', '', "generated German page is stale", True),
+        ("changed stylesheet", "de/download/index.html", 'href="/style.css"', 'href="/other.css"', "generated German page is stale", True),
         ("changed Plausible", "de/index.html", 'src="https://plausible.io/js/script.js"', 'src="/wrong.js"', "script src must preserve", True),
         ("missing title marker", "de/index.html", '<title>TODO-DE:', '<title>', "unmarked English", True),
         ("missing description marker", "de/index.html", 'content="TODO-DE: Crisp restores', 'content="Crisp restores', "unmarked English", True),
-        ("changed reference", "de/download/index.html", 'TODO-DE: Download Crisp for Mac', 'TODO-DE: Wrong reference', "English reference", True),
-        ("unmarked nav", "de/download/index.html", '>TODO-DE: Download</a>', '>Download</a>', "unmarked English", True),
-        ("footer removed", "de/download/index.html", '<footer>', '', "structure differs", True),
+        ("changed reference", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", True),
+        ("changed nav", "de/download/index.html", '>Download</a>', '>Wrong</a>', "generated German page is stale", True),
+        ("footer removed", "de/download/index.html", '<footer>', '', "generated German page is stale", True),
         ("missing contact", "de/download/index.html", CONTACT, '', "exact contact", True),
         ("changed contact email", "de/download/index.html", CONTACT, CONTACT.replace('support@', 'other@'), "exact contact", True),
         ("contact in footer", "de/download/index.html", CONTACT + '\n<footer>', '<footer>' + CONTACT, "above the footer", True),
-        ("missing app notice", "de/download/index.html", '<p class="app-language">' + NOTICE + '</p>', '', "app-language", True),
-        ("wrong app notice", "de/download/index.html", NOTICE, 'TODO-DE: different notice', "required sentence", True),
-        ("unmapped nav link", "de/download/index.html", ORIGIN + '/de/download/?src=nav-download', ORIGIN + '/download/?src=nav-download', "mapped link", True),
-        ("unmapped fragment", "de/download/index.html", '/de/download/#macos-speed', '/download/#macos-speed', "mapped link", True),
-        ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "mapped link", True),
-        ("changed price", "de/preise/index.html", '<span class="pbox-amt">$29</span>', '<span class="pbox-amt">$30</span>', "numbers or prices", True),
+        ("missing app notice", "de/download/index.html", '<p class="app-language">' + de_strings.APP_LANGUAGE + '</p>', '', "app-language", True),
+        ("wrong app notice", "de/download/index.html", de_strings.APP_LANGUAGE, 'TODO-DE: different notice', "required sentence", True),
+        ("unmapped nav link", "de/download/index.html", ORIGIN + '/de/download/?src=nav-download', ORIGIN + '/download/?src=nav-download', "generated German page is stale", True),
+        ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
+        ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
+        ("changed price", "de/preise/index.html", '<span class="pbox-amt">29 $</span>', '<span class="pbox-amt">30 $</span>', "generated German page is stale", True),
         ("changed JSON price", "de/index.html", '"price": "29"', '"price": "30"', "fixed value", True),
         ("unmarked JSON prose", "de/index.html", '"name": "TODO-DE: Crisp Video"', '"name": "Crisp Video"', "unmarked English", True),
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),
@@ -421,15 +484,23 @@ def selftest() -> int:
         ("forbidden word", "de/download/index.html", '</body>', '<!-- iMpReSsUm --></body>', "forbidden heading", True),
         ("encoded forbidden word", "de/download/index.html", '</body>', '<!-- &#73;mpressum --></body>', "forbidden heading", True),
         ("postal markup", "de/download/index.html", '</body>', '<address>123 Example Street</address></body>', "postal address", True),
-        ("plain postal address", "de/download/index.html", 'TODO-DE: Download Crisp for Mac</h1>', '123 Example Street</h1>', "postal addresses", True),
+        ("plain postal address", "de/download/index.html", de_strings.DOWNLOAD['h1'] + '</h1>', '123 Example Street</h1>', "postal addresses", True),
         ("phone link", "de/download/index.html", 'href="mailto:support@crispvideo.app"', 'href="tel:+15555550123"', "telephone links", True),
-        ("plain phone", "de/download/index.html", 'TODO-DE: Download Crisp for Mac</h1>', '+1 555 555 0123</h1>', "phone numbers", True),
+        ("plain phone", "de/download/index.html", de_strings.DOWNLOAD['h1'] + '</h1>', '+1 555 555 0123</h1>', "phone numbers", True),
         ("missing sitemap URL", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc>', '<loc>' + ORIGIN + '/other/</loc>', "one entry", True),
         ("invalid lastmod", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-11-07', '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-02-30', "valid YYYY-MM-DD", True),
         ("invalid sitemap XML", "sitemap.xml", '</urlset>', '', "invalid XML", True),
         ("final markers", "de/download/index.html", None, None, "TODO-DE markers", False),
-        ("English sentence", "de/download/index.html", 'TODO-DE: The picture comes out the same either way; only the wait changes.', 'The picture comes out the same either way; only the wait changes.', "English sentence remains", False),
+        ("English sentence", "de/download/index.html", de_strings.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),
         ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
+        ("stale Windows version", "de/download/index.html", 'Crisp 1.0.1853', 'Crisp 1.0.1852', "generated German page is stale", True),
+        ("stale code", "de/preise/index.html", 'FOUNDINGCRISP', 'WRONGCODE', "generated German page is stale", True),
+        ("stale bundle price", "de/preise/index.html", '49,50 $', '48,50 $', "generated German page is stale", True),
+        ("stale macOS floor", "de/download/index.html", 'macOS 14.0', 'macOS 13.0', "generated German page is stale", True),
+        ("unmarked homepage price", "de/index.html", '$29 once', '$28 once', "prices differ", True),
+        ("unmarked homepage code", "de/index.html", 'TODO-DE: FOUNDINGCRISP', 'WRONGCODE', "codes differ", True),
+        ("stale generated box", "de/datenschutz/index.html", '14,50 $', '13,50 $', "generated German box is stale", True),
+        ("missing box expiry", "de/datenschutz/index.html", de_pages.EXPIRY_SCRIPT, '', "generated German box is stale", True),
     ]
     with tempfile.TemporaryDirectory(prefix="crisp-de-gate-") as folder:
         root = Path(folder)
@@ -455,7 +526,8 @@ def selftest() -> int:
         # A marker-free fixture with synthetic copy must pass final mode. It is
         # deliberately not a translation, and retains each original digit.
         def dummy(text):
-            return "ZZZ " + " ".join(re.findall(r"\d+(?:[.,]\d+)*", text))
+            return " " + re.sub(r"[A-Za-z]+", lambda m: m.group(0) if m.group(0) == "macOS"
+                                or re.fullmatch(r"[A-Z]{6,}", m.group(0)) else "ZZZ", text) + " "
 
         def dummy_json(value):
             if isinstance(value, dict):
@@ -505,8 +577,69 @@ def selftest() -> int:
         if not any("English sentence remains" in error for error in errors) or any("TODO-DE markers" in error for error in errors):
             print(f"FAIL: final mode must reject English even after all markers are removed: {errors}")
             return 1
-    print(f"OK: {len(cases) + 2} German gate tests passed.")
+    generator_selftest()
+    print(f"OK: {len(cases) + 2} German gate tests and generator regression checks passed.")
     return 0
+
+
+def generator_selftest() -> None:
+    """Exercise changed sources and check/write mode, without touching the site."""
+    f = de_pages.llms_txt.facts()
+    changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), code="NEXTCRISP",
+                   ends="2026-12-16T07:59:59Z", os="macOS 15.0 or later", cap=22, refund_days=40)
+    current_win = de_pages.llms_txt.windows()
+    win = {"version": "2.3.4567", "url": current_win["url"].replace(current_win["version"], "2.3.4567")}
+    with patch.object(de_pages.llms_txt, "facts", return_value=changed), patch.object(de_pages.llms_txt, "windows", return_value=win):
+        page = de_pages.page("download", changed)
+        for value in ("41 $", "20,50 $", "NEXTCRISP", "15. Dezember", changed["ends"], win["version"], win["url"], changed["os"]):
+            assert value in page, f"German page did not update {value}"
+        assert 'id="macos-speed"' not in page, "speed section must follow the English macOS floor"
+        assert "22 Sekunden" in page and "40 Tage" in page
+        for name in de_pages.OTHER_PAGES:
+            before = (ROOT / name).read_text()
+            after = de_pages.refresh_boxes(before, name, changed)
+            assert de_pages.MARKED_BOX.sub('', before) == de_pages.MARKED_BOX.sub('', after), "box refresh changed body copy"
+            assert de_pages.refresh_boxes(after, name, changed) == after, "box refresh is not idempotent"
+    with patch.object(de_pages.llms_txt, "windows", return_value=None):
+        assert 'class="win-link"' not in de_pages.box("de-test", f=f)
+    instalments = dict(f, price=Decimal("80"), now=Decimal("60"), bnpl=True)
+    assert 'TODO-DE: or 4 × 20 $' in de_pages.box("de-test", f=instalments)
+    assert 'TODO-DE: or 4 × 15 $' in de_pages.box("de-test", f=instalments)
+    live = de_pages.llms_txt.founding_live
+    with patch.object(de_pages.llms_txt, "founding_live", side_effect=lambda fact: live(fact, datetime(2030, 1, 1, tzinfo=timezone.utc))):
+        assert 'class="pbox-found"' not in de_pages.page("download", f)
+        assert 'data-until=' not in de_pages.bundle(), "expired bundle offer remains"
+    assert de_pages.last_day("2026-12-01T08:00:00Z") == "30. November"
+    assert de_pages.EXPIRY_SCRIPT in de_pages.thankyou_xsell.block()
+    with tempfile.TemporaryDirectory(prefix="crisp-de-generator-") as folder:
+        root = Path(folder)
+        facts = root / "dodo-facts.json"
+        with patch.object(de_pages.thankyou_xsell, "FACTS", facts):
+            try:
+                de_pages.bundle()
+            except SystemExit as error:
+                assert "required regular prices file is missing" in str(error)
+            else:
+                raise AssertionError("missing regular prices did not fail")
+            facts.write_text(json.dumps({"products": {name: {"name": name, "price_cents": cents}
+                                                    for name, cents in (("Crisp", 3100), ("Docket SEO", 6100), ("Outlier", 5100))}}))
+            assert "143 $" in de_pages.bundle(), "bundle's separate total was not read from Dodo"
+        for name in de_pages.OTHER_PAGES:
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text((ROOT / name).read_text())
+        with patch.object(de_pages, "SITE", root), redirect_stdout(io.StringIO()):
+            assert de_pages.write(check=True) == 1, "missing German doors passed check"
+            assert de_pages.write() == 0
+            assert de_pages.write(check=True) == 0
+            page = root / de_pages.FULL_PAGES[0]
+            page.write_text(page.read_text().replace("29 $", "28 $", 1))
+            assert de_pages.write(check=True) == 1, "stale German price passed check"
+        # Exercise the English entry point's integration without writing English
+        # files or changing any release source.
+        with patch.object(de_pages, "write", return_value=1) as german_check, redirect_stdout(io.StringIO()):
+            assert de_pages.landing.main(["--check"]) == 1
+            german_check.assert_called_once_with(check=True)
 
 
 def main() -> int:

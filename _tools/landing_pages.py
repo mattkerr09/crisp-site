@@ -16,8 +16,8 @@ homepage's own CRISP_BUY_VIA for Buy. The analytics/pixel line comes from new_pa
 snippet from 404.html's head, so neither is typed twice. Not in the sitemap (noindex) — the page-finding test
 exempts both with this reason. product_box.py skips noindex pages.
 
-    python3 _tools/landing_pages.py          # write the two pages and refresh the 404 box
-    python3 _tools/landing_pages.py --check  # exit 1 if any of the three differs from what this would write
+    python3 _tools/landing_pages.py          # write the English pages, then the German doors and boxes
+    python3 _tools/landing_pages.py --check  # exit 1 if any managed English or German output differs
 """
 from __future__ import annotations
 
@@ -48,6 +48,17 @@ def buy_base() -> str:
 BUNDLE_URL = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle"
 BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("49.50"), Decimal("99")
 BUNDLE_FOUNDING_ENDS = "2026-12-01T07:59:59Z"
+
+
+def prepare_facts() -> None:
+    """A site-only worktree still reads the app's facts from the main checkout."""
+    gitfile = SITE / ".git"
+    if not llms_txt.ENGINE.is_file() and gitfile.is_file():
+        gitdir = (SITE / gitfile.read_text().strip().removeprefix("gitdir: ")).resolve()
+        common = (gitdir / (gitdir / "commondir").read_text().strip()).resolve()
+        engine = common.parent.parent / "backend" / "crisp_engine" / "entitlement.py"
+        if engine.is_file():
+            llms_txt.ENGINE = engine
 
 
 def box(src: str, buy_first: bool) -> str:
@@ -109,6 +120,12 @@ def macos_speed_section(os_line: str) -> str:
 
 def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_first: bool, extra: str = "") -> str:
     url = f"{llms_txt.BASE}/{slug}/"
+    # These reciprocal links already exist on the English doors. Preserve them
+    # when regenerating instead of deleting the German scaffold's source links.
+    german = {"download": "download", "pricing": "preise"}.get(slug)
+    alternates = ("\n".join(f'<link rel="alternate" hreflang="{lang}" href="{href}">'
+                           for lang, href in (("de", f"{llms_txt.BASE}/de/{german}/"),
+                                              ("en", url), ("x-default", url))) + "\n") if german else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +138,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="{url}">
-<link rel="stylesheet" href="/style.css">
+{alternates}<link rel="stylesheet" href="/style.css">
 {_analytics_line()}
 {_referral_line()}</head>
 <body>
@@ -215,6 +232,9 @@ def page404(s: str) -> str:
 
 
 def main(argv: list[str]) -> int:
+    import de_pages
+
+    prepare_facts()
     check = "--check" in argv
     want = pages()
     p404 = SITE / "404.html"
@@ -224,14 +244,15 @@ def main(argv: list[str]) -> int:
     stale = [str(p.relative_to(SITE)) for p, s in want.items() if not p.is_file() or p.read_text() != s]
     if check:
         print(f"landing pages: {'stale ' + ', '.join(stale) if stale else 'current'}")
-        return 1 if stale else 0
+        de_result = de_pages.write(check=True)
+        return 1 if stale or de_result else 0
     for p, s in want.items():
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(s)
     for p in want:                 # the chrome is in the template already, so this changes nothing — and
         sitewide_chrome.apply(p)   # if sitewide_chrome ever grows a new piece, --check then reports stale
     print(f"wrote {', '.join(str(p.relative_to(SITE)) for p in want)}")
-    return 0
+    return de_pages.write()
 
 
 if __name__ == "__main__":
