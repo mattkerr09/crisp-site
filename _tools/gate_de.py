@@ -15,7 +15,7 @@ from contextlib import redirect_stdout
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from decimal import Decimal
-from html import unescape
+from html import escape, unescape
 from html.parser import HTMLParser
 import json
 import io
@@ -475,7 +475,7 @@ def selftest() -> int:
         ("missing title marker", "de/index.html", '<title>TODO-DE:', '<title>', "unmarked English", True),
         ("missing description marker", "de/index.html", 'content="TODO-DE: Crisp restores', 'content="Crisp restores', "unmarked English", True),
         ("changed reference", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", True),
-        ("changed nav", "de/download/index.html", '>Download</a>', '>Wrong</a>', "generated German page is stale", True),
+        ("changed nav", "de/download/index.html", '>' + de_strings.NAV_DOWNLOAD + '</a>', '>Wrong</a>', "generated German page is stale", True),
         ("footer removed", "de/download/index.html", '<footer>', '', "generated German page is stale", True),
         ("missing contact", "de/download/index.html", CONTACT, '', "exact contact", True),
         ("changed contact email", "de/download/index.html", CONTACT, CONTACT.replace('support@', 'other@'), "exact contact", True),
@@ -500,7 +500,7 @@ def selftest() -> int:
         ("missing sitemap URL", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc>', '<loc>' + ORIGIN + '/other/</loc>', "one entry", True),
         ("invalid lastmod", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-11-07', '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-02-30', "valid YYYY-MM-DD", True),
         ("invalid sitemap XML", "sitemap.xml", '</urlset>', '', "invalid XML", True),
-        ("final markers", "de/download/index.html", None, None, "TODO-DE markers", False),
+        ("final markers", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", False),
         ("English sentence", "de/download/index.html", de_strings.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),
         ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
         ("stale Windows version", "de/download/index.html", 'Crisp 1.0.1853', 'Crisp 1.0.1852', "generated German page is stale", True),
@@ -518,20 +518,116 @@ def selftest() -> int:
             path = root / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(source, encoding="utf-8")
-        for label, name, before, after, expected, scaffold in cases:
-            path = root / name
-            if before is not None:
-                if before not in originals[name]:
-                    print(f"FAIL: selftest fixture no longer exists: {label}")
-                    return 1
-                path.write_text(originals[name].replace(before, after, 1), encoding="utf-8")
-            elif scaffold:
-                path.unlink()
-            errors = check(root, scaffold)
-            path.write_text(originals[name], encoding="utf-8")
-            if not any(expected in error for error in errors):
-                print(f"FAIL: selftest missed {label}: {errors}")
+
+        # Live pages are generated or de-written. Keep mirror-only checks alive
+        # with a TODO-DE skeleton of today's English homepage, in this folder.
+        mirror_labels = {
+            "changed Plausible", "missing title marker", "missing description marker",
+            "changed JSON price", "unmarked JSON prose", "invalid JSON",
+            "changed schema type", "wrong schema language", "sentence across inline tags",
+            "unmarked homepage price", "unmarked homepage code",
+        }
+
+        def run_cases(selected, sources):
+            for label, name, before, after, expected, scaffold in selected:
+                path = root / name
+                if before is not None:
+                    if before not in sources[name]:
+                        print(f"FAIL: selftest fixture no longer exists: {label}")
+                        return False
+                    path.write_text(sources[name].replace(before, after, 1), encoding="utf-8")
+                else:
+                    path.unlink()
+                errors = check(root, scaffold)
+                path.write_text(sources[name], encoding="utf-8")
+                if not any(expected in error for error in errors):
+                    print(f"FAIL: selftest missed {label}: {errors}")
+                    return False
+            return True
+
+        if not run_cases([case for case in cases if case[0] not in mirror_labels], originals):
+            return 1
+
+        # The written-page opt-out must leave these four checks active. Require
+        # every diagnostic, rather than accepting a failure for only one fault.
+        name = "de/index.html"
+        source = originals[name]
+        assert 'name="de-written"' in source
+        damaged = source.replace(CONTACT, '', 1).replace('lang="de"', 'lang="en"', 1)
+        damaged = damaged.replace('hreflang="de"', 'hreflang="fr"', 1)
+        damaged = damaged.replace('</body>', '<p>TODO-DE: test marker</p></body>', 1)
+        (root / name).write_text(damaged, encoding="utf-8")
+        errors = check(root, False)
+        (root / name).write_text(source, encoding="utf-8")
+        for expected in ("exact contact", "TODO-DE markers", "lang=de", "hreflang"):
+            if not any(error.startswith(name + ":") and expected in error for error in errors):
+                print(f"FAIL: de-written selftest missed {expected}: {errors}")
                 return 1
+
+        mirror_originals = dict(originals)
+        source = de_pages.PBOX.sub('', originals["index.html"])
+        mirror_originals["index.html"] = source
+        doc = Document(source)
+        edits = []
+
+        def mirror_json(value, key=""):
+            if isinstance(value, dict):
+                return {k: mirror_json(v, k) for k, v in value.items()}
+            if isinstance(value, list):
+                return [mirror_json(v, key) for v in value]
+            if isinstance(value, str):
+                if key == "inLanguage":
+                    return "de"
+                if schema_copy(key, value):
+                    return "TODO-DE: " + value
+                return local_link(value, "/")
+            return value
+
+        def mirror(node):
+            if node.tag == "script" and node.attrs.get("type") == "application/ld+json":
+                edits.append((node.open_end, node.close_start,
+                              json.dumps(mirror_json(json.loads(source[node.open_end:node.close_start])), indent=2)))
+                return
+            if node.tag in {"script", "style", "template"}:
+                return
+            if node.tag == "#text" and needs_copy(node.raw):
+                edits.append((node.start, node.end, "TODO-DE: " + node.raw))
+            elif node.tag != "#text" and node.tag != "#document":
+                attrs = dict(node.attrs)
+                for key, value in attrs.items():
+                    meta = attrs.get("name", attrs.get("property"))
+                    if key in COPY_ATTRS and value and needs_copy(value) or node.tag == "meta" and key == "content" and meta in META_COPY:
+                        attrs[key] = "TODO-DE: " + value
+                    elif node.tag == "html" and key == "lang":
+                        attrs[key] = "de"
+                    elif node.tag == "link" and attrs.get("rel") == "canonical" and key == "href":
+                        attrs[key] = ORIGIN + "/de/"
+                    elif node.tag == "link" and "hreflang" in attrs:
+                        continue
+                    elif key == "href" or node.tag == "meta" and meta == "og:url" and key == "content":
+                        attrs[key] = local_link(value, "/")
+                if attrs != node.attrs:
+                    tag = "<" + node.tag + "".join(
+                        " " + key + (f'="{escape(value, quote=True)}"' if value is not None else "")
+                        for key, value in attrs.items()) + ">"
+                    edits.append((node.start, node.open_end, tag))
+            for child in node.children:
+                mirror(child)
+
+        mirror(doc.root)
+        for start, end, replacement in sorted(edits, reverse=True):
+            source = source[:start] + replacement + source[end:]
+        source = source.replace('<body>', '<body>\n<p class="app-language">' + NOTICE + '</p>', 1)
+        source = source.replace('<footer>', CONTACT + '\n<footer>', 1)
+        mirror_originals["de/index.html"] = source
+        for name in ("index.html", "de/index.html"):
+            (root / name).write_text(mirror_originals[name], encoding="utf-8")
+        errors = check(root, True)
+        if errors:
+            print(f"FAIL: selftest needs a valid synthetic mirror first: {errors}")
+            return 1
+        if not run_cases([case for case in cases if case[0] in mirror_labels], mirror_originals):
+            return 1
 
         # A marker-free fixture with synthetic copy must pass final mode. It is
         # deliberately not a translation, and retains each original digit.
@@ -548,7 +644,7 @@ def selftest() -> int:
 
         for _, german in PAGES:
             name = german.lstrip("/") + "index.html"
-            source = originals[name]
+            source = mirror_originals[name]
             doc = Document(source)
             edits = []
 
@@ -582,13 +678,13 @@ def selftest() -> int:
             return 1
         for _, german in PAGES:
             name = german.lstrip("/") + "index.html"
-            (root / name).write_text(originals[name].replace("TODO-DE: ", ""), encoding="utf-8")
+            (root / name).write_text(mirror_originals[name].replace("TODO-DE: ", ""), encoding="utf-8")
         errors = check(root, False)
         if not any("English sentence remains" in error for error in errors) or any("TODO-DE markers" in error for error in errors):
             print(f"FAIL: final mode must reject English even after all markers are removed: {errors}")
             return 1
     generator_selftest()
-    print(f"OK: {len(cases) + 2} German gate tests and generator regression checks passed.")
+    print(f"OK: {len(cases) + 3} German gate tests and generator regression checks passed.")
     return 0
 
 

@@ -146,6 +146,11 @@ run_gate "third-party-hosts" python3 "$(dirname "$0")/../_tools/gate_thirdparty.
 # not hold it, which is the same reason the gate above exists at all.
 run_gate "exemptions-live" python3 "$(dirname "$0")/../_tools/gate_exemptions_live.py"
 
+# Keep generated German pages current and check both the pages and their gate.
+run_gate "de-pages-current" python3 "$(dirname "$0")/../_tools/de_pages.py" --check
+run_gate "de-gate" python3 "$(dirname "$0")/../_tools/gate_de.py"
+run_gate "de-gate-selftest" python3 "$(dirname "$0")/../_tools/gate_de.py" --selftest
+
 # ...and no JSON-LD block may declare a key twice. page_dates.py appended a second
 # dateModified to 16 pages because its regex could not see the one already there; a JSON
 # parser keeps the LAST, so the stale date won and crawlers read it while the correct value
