@@ -1,4 +1,4 @@
-// upstream-reviewed: 7c188606ec8456cf7631c944fd1cc5112796ab55b68384c547b7b91555122528
+// upstream-reviewed: 2824cf91adee883d7a93b0c3c7a128892995aaec2abe7ee41869eb4343b20d30
 (function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
