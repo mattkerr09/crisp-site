@@ -350,7 +350,9 @@ def check(root: Path, scaffold: bool) -> list[str]:
                 except ValueError as error:
                     fail(de_path, f"invalid JSON-LD: {error}")
                     continue
-                for item in (data if isinstance(data, list) else [data]):
+                items = data if isinstance(data, list) else [data]
+                items = items + [it for d in items if isinstance(d, dict) for it in d.get("@graph", [])]   # a graph hides its nodes
+                for item in items:
                     if isinstance(item, dict) and item.get("@type") in ("Article", "FAQPage", "WebPage", "WebSite", "SoftwareApplication") \
                             and item.get("inLanguage") != "de":
                         fail(de_path, f"JSON-LD {item.get('@type')} must be de (inLanguage)")
@@ -473,6 +475,12 @@ def selftest() -> int:
         return 1
     files = [url.lstrip("/") + "index.html" for pair in PAGES for url in pair] + ["sitemap.xml"]
     originals = {name: (ROOT / name).read_text(encoding="utf-8") for name in files}
+    # the sitemap date moves every time a German page changes, so the fixture reads it instead of naming one
+    found = re.search(re.escape("<loc>" + ORIGIN + "/de/</loc><lastmod>") + r"(\d{4}-\d{2}-\d{2})", originals["sitemap.xml"])
+    if not found:
+        print("FAIL: selftest cannot find the /de/ lastmod in sitemap.xml")
+        return 1
+    _DE_LASTMOD = found.group(1)
     cases = [
         ("missing page", "de/download/index.html", None, None, "No such file", True),
         ("wrong language", "de/index.html", 'lang="de"', 'lang="en"', "lang=de", True),
@@ -503,6 +511,7 @@ def selftest() -> int:
         ("changed schema type", "de/index.html", '"@type": "Organization"', '"@type": "Thing"', "fixed value", True),
         ("wrong schema language", "de/index.html", '"inLanguage": "de"', '"inLanguage": "en"', "must be de", True),
         ("written page without schema language", "de/vhs-digitalisieren-und-verbessern/index.html", '"inLanguage": "de",', '', "must be de (inLanguage)", True),
+        ("graph node without schema language", "de/index.html", '"inLanguage": "de"', '"inLanguage": "en"', "must be de (inLanguage)", True),
         ("forbidden word", "de/download/index.html", '</body>', '<!-- iMpReSsUm --></body>', "forbidden heading", True),
         ("encoded forbidden word", "de/download/index.html", '</body>', '<!-- &#73;mpressum --></body>', "forbidden heading", True),
         ("postal markup", "de/download/index.html", '</body>', '<address>123 Example Street</address></body>', "postal address", True),
@@ -510,7 +519,7 @@ def selftest() -> int:
         ("phone link", "de/download/index.html", 'href="mailto:support@crispvideo.app"', 'href="tel:+15555550123"', "telephone links", True),
         ("plain phone", "de/download/index.html", de_strings.DOWNLOAD['h1'] + '</h1>', '+1 555 555 0123</h1>', "phone numbers", True),
         ("missing sitemap URL", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc>', '<loc>' + ORIGIN + '/other/</loc>', "one entry", True),
-        ("invalid lastmod", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-11-07', '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-02-30', "valid YYYY-MM-DD", True),
+        ("invalid lastmod", "sitemap.xml", '<loc>' + ORIGIN + '/de/</loc><lastmod>' + _DE_LASTMOD, '<loc>' + ORIGIN + '/de/</loc><lastmod>2026-02-30', "valid YYYY-MM-DD", True),
         ("invalid sitemap XML", "sitemap.xml", '</urlset>', '', "invalid XML", True),
         ("final markers", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", False),
         ("English sentence", "de/download/index.html", de_strings.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),

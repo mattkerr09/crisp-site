@@ -98,6 +98,10 @@ def targets() -> list[Path]:
     for p in sorted(SITE.rglob("index.html")):
         if ".git" in p.parts or "_tools" in p.parts or p == SITE / "index.html" or p.parent.name == "thank-you":
             continue
+        # German pages carry the German box from _tools/de_pages.py, and _tools/gate_de.py checks it. This tool writes
+        # English, so it must never touch them (2026-11-08).
+        if p.relative_to(SITE).parts[0] == "de":
+            continue
         rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
         s = p.read_text()
         m = re.search(r'<link rel="canonical" href="https://crispvideo\.app(/[^"]*)"', s)
