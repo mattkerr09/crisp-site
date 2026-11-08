@@ -244,6 +244,9 @@ def check(root: Path, scaffold: bool) -> list[str]:
         if en_source is None or de_source is None:
             continue
         full = de_path in de_pages.FULL_PAGES
+        # A page WRITTEN in German carries <meta name="de-written">. It is not a mirror of the English page, so the mirror
+        # checks (same element structure, same box count, same numbers in the text) do not apply to it. The rest still does.
+        written = 'name="de-written"' in de_source
         if full:
             if "TODO-DE" in de_source:
                 fail(de_path, "generated page contains TODO-DE markers")
@@ -255,14 +258,14 @@ def check(root: Path, scaffold: bool) -> list[str]:
                 fail(de_path, "generated German box is stale: prices, versions, codes or links differ")
             # The writer owns the boxes, while the person owns the surrounding
             # scaffold. Compare that scaffold separately, including its facts.
-            if len(de_pages.PBOX.findall(en_source)) != len(de_pages.MARKED_BOX.findall(de_source)):
+            if not written and len(de_pages.PBOX.findall(en_source)) != len(de_pages.MARKED_BOX.findall(de_source)):
                 fail(de_path, "expected one generated German box per English product box")
             en_source = de_pages.PBOX.sub('', en_source)
             de_source = de_pages.MARKED_BOX.sub('', de_source)
             for label, source_values, target_values in zip(
                     ("prices", "versions", "codes", "macOS versions"),
                     release_values(en_source), release_values(de_source)):
-                if source_values != target_values:
+                if source_values != target_values and not written:
                     fail(de_path, f"{label} differ from the English page's values")
         en, de = Document(en_source), Document(de_source)
         for path, doc, language, canonical in ((en_path, en, "en", english), (de_path, de, "de", german)):
@@ -338,7 +341,9 @@ def check(root: Path, scaffold: bool) -> list[str]:
                 return [item for node in nodes for item in skeleton(node)]
 
             en_shape, de_shape = chrome(en), chrome(de)
-        if [tag for tag, _ in en_shape] != [tag for tag, _ in de_shape]:
+        if written:
+            pass
+        elif [tag for tag, _ in en_shape] != [tag for tag, _ in de_shape]:
             fail(de_path, "element structure differs from the English skeleton")
         else:
             for (tag, a), (_, b) in zip(en_shape, de_shape):
@@ -387,6 +392,11 @@ def check(root: Path, scaffold: bool) -> list[str]:
             return [text for child in node.children for text in visible_texts(child)]
 
         source_texts, target_texts = visible_texts(en.root), visible_texts(de.root)
+        # A page WRITTEN in German (not a line-by-line mirror) says so with <meta name="de-written">: it is its own text, so the
+        # mirror checks below (same text nodes, same numbers as the English page) do not apply. Everything else still does:
+        # lang, hreflang both ways, Kontakt, no Impressum, no TODO-DE, and the generated box (checked by de_pages --check).
+        if written:
+            source_texts = target_texts = []
         if Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(source_texts))) != Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(target_texts))):
             fail(de_path, "visible copy changes source numbers or prices")
         if scaffold:
@@ -591,7 +601,7 @@ def generator_selftest() -> None:
     win = {"version": "2.3.4567", "url": current_win["url"].replace(current_win["version"], "2.3.4567")}
     with patch.object(de_pages.llms_txt, "facts", return_value=changed), patch.object(de_pages.llms_txt, "windows", return_value=win):
         page = de_pages.page("download", changed)
-        for value in ("41 $", "20,50 $", "NEXTCRISP", "15. Dezember", changed["ends"], win["version"], win["url"], changed["os"]):
+        for value in ("41 $", "20,50 $", "NEXTCRISP", "15. Dezember", changed["ends"], win["version"], win["url"], de_strings.fact_de(changed["os"])):   # the German wording of the fact
             assert value in page, f"German page did not update {value}"
         assert 'id="macos-speed"' not in page, "speed section must follow the English macOS floor"
         assert "22 Sekunden" in page and "40 Tage" in page
