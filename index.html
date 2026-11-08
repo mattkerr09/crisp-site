@@ -459,6 +459,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
 .win-btn,.fine-win{display:none;}
+.win-only{display:none;}
+.win .win-only{display:inline;}
+.win .mac-only{display:none;}
 .win .win-btn{display:inline-flex;}
 .win .hero-say .cta .btn-primary:not(.win-btn){background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
 .win .hero-say .cta .btn-primary:not(.win-btn):hover{background:rgba(255,255,255,.07);box-shadow:none;}
@@ -575,7 +578,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="hero-head">
     <div class="pill">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
-      Notarized by Apple
+      <span class="mac-only">Notarized by Apple</span><span class="win-only">Signed by Kerr &amp; Company</span>
     </div>
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your computer.</span></h1>
     <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk, with nothing uploaded.</p>
@@ -639,7 +642,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         aria-label="Reveal more of the source or the restored frame">
     </div>
     <p class="ba-note">Real 1950s newsreel of Amos Alonzo Stagg&rsquo;s 95th birthday,
-      run through <strong>Max</strong>, the generative restore, on-device. Drag the handle. Max is
+      run through <strong>Max</strong>, the generative restore, on-device (Max runs on Macs today). Drag the handle. Max is
       the slow lane by design: this restore ran at about 26 seconds a frame. Against a plain resize
       to the same size it holds 1.23&times; the fine detail; the harder 1936 clip further down
       manages 1.50&times;. <a href="#restore">Both, measured &rarr;</a></p>
@@ -666,7 +669,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div><div class="cap-n">24</div><p class="cap-l">tools, one window: restore, edit,<br>montage, convert</p></div>
       <div><div class="cap-n">28</div><p class="cap-l">video &amp; photo formats in,<br>ProRes / H.265 / AV1 out</p></div>
       <div><div class="cap-n">16&times;</div><p class="cap-l">upscale, and a generative<br>restore lane past that</p></div>
-      <div><div class="cap-n">0</div><p class="cap-l">bytes uploaded. Every frame<br>stays on your Mac</p></div>
+      <div><div class="cap-n">0</div><p class="cap-l">bytes uploaded. Every frame<br>stays on your computer</p></div>
     </div>
   </section>
 
@@ -1009,7 +1012,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <tr><td>Who makes it</td><td class="y">Kerr &amp; Company, independent</td><td>Adobe, which completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 2 Nov 2026)</td><td>Digiarty Software (<a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">videoproc.com</a>, read 2 Nov 2026)</td></tr>
           <tr><td>Cost after 5 years</td><td class="y">$29</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
           <tr><td>How you pay</td><td class="y">Once. It's yours</td><td class="n">Subscription only, for new licences</td><td class="n">Subscription or lifetime licence</td></tr>
-          <tr><td>Runs fully offline</td><td class="y">Yes, every lane, generative included</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
+          <tr><td>Runs fully offline</td><td class="y">Yes, every lane (the generative one on a Mac)</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
           <tr><td>Multi-clip timeline</td><td class="y">Yes: arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Not stated</td></tr>
@@ -1160,6 +1163,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="step rv d1"><div class="n">1</div><h3>Download and use it free</h3>
         <p>The full editor, 4K upscale and montage, one file at a time. Upscaled and colour-graded video stops at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark.</p>
         <p class="step-dl"><a class="btn btn-ghost btn-sm" data-track="download-section" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-download-section&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download for Mac</a></p>
+        <!-- windows-step:begin --><!-- windows-step:end -->
         <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
         <p class="step-req">92&nbsp;MB · macOS 14 Sonoma or later (<a href="/download/#macos-speed">upscaling takes about 1.5&times; as long on 14</a>) · Apple Silicon · notarized by Apple</p>
         <form class="oldmac" data-oldmac="download" novalidate>
@@ -1629,7 +1633,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   if (window.crispSendLinkBound) return;
   window.crispSendLinkBound = true;
   var TITLE = 'Crisp Video for Mac';
-  var TEXT = 'Crisp Video for Mac is free, with the full editor and 4K upscaling up to 15 seconds, everything else at full length, with a small “crispvideo.app” mark. Open this on your Mac to download it.';
+  var TEXT = 'Crisp Video for Mac and Windows is free, with the full editor and 4K upscaling up to 15 seconds, everything else at full length, with a small “crispvideo.app” mark. Open this on your Mac or PC to download it.';
   var SAY = {
     shared: 'Done. When you’re at your Mac, open the link to download Crisp.',
     copied: 'Link copied. Paste it into a note or a message to yourself, then open it on your Mac.',

@@ -25,7 +25,7 @@ document.addEventListener("click", function (e) {
   if (window.crispSendLinkBound) return;
   window.crispSendLinkBound = true;
   var TITLE = 'Crisp Video for Mac';
-  var TEXT = 'Crisp Video for Mac is free, with the full editor and 4K upscaling up to 15 seconds, everything else at full length, with a small “crispvideo.app” mark. Open this on your Mac to download it.';
+  var TEXT = 'Crisp Video for Mac and Windows is free, with the full editor and 4K upscaling up to 15 seconds, everything else at full length, with a small “crispvideo.app” mark. Open this on your Mac or PC to download it.';
   var SAY = {
     shared: 'Done. When you’re at your Mac, open the link to download Crisp.',
     copied: 'Link copied. Paste it into a note or a message to yourself, then open it on your Mac.',
