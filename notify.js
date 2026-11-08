@@ -1,23 +1,3 @@
-/* "Coming to Windows — tell me when it's ready", as one script tag.
- *
- * ⚠️ IT PROMISES NO DATE, deliberately. Windows is real — AdPlaybook's CI
- * produces an .msi and a setup .exe, and ~/ops/windows-port/ carries the kit the
- * other three will use — but nothing has shipped to a customer and no date is
- * knowable. "Coming soon" with a sign-up is the honest shape for that: it states
- * the intent, and the list is the mechanism for "we do not know when yet".
- * A date here would be a promise nobody can keep, and the people who sign up are
- * exactly the ones who would remember it.
- *
- * ⚠️ EXPLICIT PLACEMENT, NEVER GUESSED. It renders into <div data-win-notify>
- * and does nothing at all if that element is absent. Four sites with four
- * layouts; a script deciding for itself where to inject a form is how you end up
- * with a signup box wedged into a footer nobody reads.
- *
- * Posts to the subscribe worker, which already accepts all four origins. The
- * source is "<host>-windows" so this list is separable from every other one —
- * a Windows waiting list is a different consent from a newsletter, and merging
- * them would mean mailing people about something they never asked for.
- */
 (function () {
   var mount = document.querySelector("[data-win-notify]");
   if (!mount || window.__kcWinNotify) return;
@@ -29,9 +9,6 @@
 
   root.innerHTML = [
     '<style>',
-    /* ⚠️ `all:initial` RESETS COLOUR TO BLACK, and this page is dark: the whole box read as near-black on
-       near-black (measured 2026-09-29 in WebKit at the foot of crispvideo.app). Inherit the page's own
-       text colour after the reset, so the widget reads on any theme it is mounted in. */
     ':host{all:initial;display:block;color:inherit}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
     '.w{display:flex;flex-direction:column;gap:.6rem;padding:1.1rem 1.2rem;border-radius:14px;',
@@ -73,17 +50,12 @@
     btn.disabled = true; msg.textContent = "One moment…";
     fetch(API, {
       method: "POST", headers: { "Content-Type": "application/json" },
-      /* A Windows waiting list is its OWN consent. Merging it with any other
-         list would mean mailing these people about something they never asked
-         for, and the source column is how that stays separable. */
       body: JSON.stringify({ email: v, source: host + "-windows" })
     }).then(function (r) { return r.json().catch(function () { return {}; }); })
       .then(function (d) {
         if (d && d.ok) { form.remove(); msg.textContent = "Done — you will hear the day it works."; }
         else { btn.disabled = false; msg.textContent = "That did not save. Try again in a moment."; }
       })
-      /* Never a silent failure. Telling someone they are on a list they are not
-         on is worse than telling them it did not work. */
       .catch(function () { btn.disabled = false; msg.textContent = "That did not save. Try again in a moment."; });
   });
 })();

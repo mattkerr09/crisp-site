@@ -1,11 +1,8 @@
 <!doctype html>
 <html lang="de">
 <head>
-<script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */
-/* .handheld: a phone or tablet, which cannot install a Mac app, so the hero leads with sending the link (2026-10-28).
-   iPadOS Safari reports a Mac, so a "Mac" with a touch screen is a tablet; a real Mac reports 0 touch points and never matches. */
+<script>document.documentElement.classList.add('js');
 (function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld');
-  /* .win: a Windows desktop, where the hero leads with the Windows installer and the Mac one is second (2026-11-05). A phone or tablet is .handheld, never .win; no JS means neither. */
   else if (/Windows NT/.test(u)) document.documentElement.classList.add('win'); })(navigator);</script>
 
 <meta charset="utf-8">

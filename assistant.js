@@ -1,39 +1,7 @@
-/* The assistant, as ONE SCRIPT TAG.
- *
- * ⚠️ WHY THIS EXISTS. I made the worker multi-tenant, verified every origin got
- * its own prices, and reported the assistant as shipped across all five sites.
- * It was on ONE. The other four had a backend ready to answer questions nobody
- * could ask, because the widget only ever existed inside builtbykerr's index.html.
- *
- * I measured the mechanism and called it the artefact — the exact failure this
- * portfolio's notes describe over and over, committed by the person writing them.
- *
- * So the widget no longer lives in a page. It is served from the worker, and a
- * site adopts it with one line and no CSS, no markup, no copy to keep in sync:
- *
- *     <script src="https://kerr-lead-agent.kerrco.workers.dev/embed.js" defer></script>
- *
- * Everything is namespaced under .kcw- and injected into a shadow root, so it
- * cannot inherit or leak styles into whatever page it lands on. Four sites, four
- * different design systems, one widget that none of them can break.
- */
 (function () {
   if (window.__kcAgentLoaded) return;
   window.__kcAgentLoaded = true;
 
-  /* ⚠️ FIRST-PARTY ON PURPOSE. This file is served from crispvideo.app rather
-   * than from the worker, because this site's pre-push gate refuses any
-   * third-party <script src> that loads for every visitor — and it is right to.
-   * The hero says "Nothing uploaded". A script fetched from another host on page
-   * load contradicts the product on the axis it is sold on, whoever owns it.
-   *
-   * The ONLY third-party contact is the fetch below, and it fires strictly
-   * inside the submit handler: a visitor types a question and presses send, and
-   * that press is the only thing that leaves the page. Same shape the gate
-   * already accepts for the subscribe form's POST.
-   *
-   * Because it is self-hosted it cannot read the API off its own src, so the
-   * endpoint is explicit. Keep it in sync with ~/ops/lead-agent/widget/. */
   var API = "https://kerr-lead-agent.kerrco.workers.dev";
 
   var host = document.createElement("div");
@@ -69,9 +37,6 @@
     '.kcw-note{padding:0 1rem .8rem;font-size:.72rem;color:#6b6152;line-height:1.5}',
     '[hidden]{display:none!important}',
     '@media (prefers-reduced-motion:reduce){.kcw-btn{transition:none}}',
-    /* ON A PHONE THE PILL COVERED "Download for Mac" (375px, CEO audit 2026-09-24). Icon-only there,
-       and hidden while the hero's buttons are on screen (see the observer below), so no CTA is
-       ever under it. The button keeps its accessible name through aria-label. */
     '@media (max-width:640px){.kcw-btn{width:48px;height:48px;padding:0;justify-content:center}.kcw-lbl{display:none}}',
     '</style>',
     '<button class="kcw-btn" part="button" aria-haspopup="dialog" aria-label="Ask a question">',
@@ -105,8 +70,6 @@
   }
   btn.addEventListener("click", function () { open(true); });
 
-  /* Hidden on a phone while the hero's buttons are visible — the one place the button sat on a CTA.
-     The panel is never hidden by this: only the closed button, and only while it could cover. */
   var heroCta = document.querySelector(".hero .cta");
   if (heroCta && window.IntersectionObserver && window.matchMedia) {
     var narrow = window.matchMedia("(max-width:640px)");
@@ -139,8 +102,6 @@
       turns.push({ role: "assistant", content: a });
     }).catch(function () {
       thinking.remove();
-      /* Never a silent dead end. If the assistant cannot answer, the visitor
-         still needs a way through — and that way is on the page they are on. */
       say("assistant", "I could not reach the server. The contact details on this page still work.");
     });
   });

@@ -1,11 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script>document.documentElement.classList.add('js');/* .rv is gated on this: no JS, no hiding */
-/* .handheld: a phone or tablet, which cannot install a Mac app, so the hero leads with sending the link (2026-10-28).
-   iPadOS Safari reports a Mac, so a "Mac" with a touch screen is a tablet; a real Mac reports 0 touch points and never matches. */
+<script>document.documentElement.classList.add('js');
 (function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld');
-  /* .win: a Windows desktop, where the hero leads with the Windows installer and the Mac one is second (2026-11-05). A phone or tablet is .handheld, never .win; no JS means neither. */
   else if (/Windows NT/.test(u)) document.documentElement.classList.add('win'); })(navigator);</script>
 
 <meta charset="utf-8">
@@ -1399,11 +1396,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 
 <script>
-// Before/after handle. Without it the divider simply stays put and both frames remain visible.
-/* Drives EVERY .ba panel on the page, not a single hardcoded id — there are two now (the video
-   pair and the still pair) and a second copy of this block would be two things to keep in step. */
-/* Play the standalone demo clips once they are actually on screen. preload="none" means
-   nothing is fetched until then, so this costs a visitor who never scrolls here nothing. */
 Array.prototype.forEach.call(document.querySelectorAll('video[data-play-in-view]'), function (v) {
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
@@ -1422,42 +1414,17 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
   range.addEventListener('input', function () { put(parseFloat(range.value)); });
   put(parseFloat(range.value));
 
-  /* Two <video> elements comparing the same five seconds have to stay on the same frame or the
-     comparison is a lie — a drifting pair shows you two different moments and calls the
-     difference restoration. They start together and are the same length, but autoplay grants
-     and decode cost are not identical, so this pulls the source back whenever it slips more
-     than a frame and a half behind. Cheap: one comparison per timeupdate tick, no rAF loop. */
   var vA = ba.querySelector('video.ba-after'), vB = ba.querySelector('video.ba-before');
   if (vA && vB) {
     vA.addEventListener('timeupdate', function () {
       if (Math.abs(vB.currentTime - vA.currentTime) > 0.05) vB.currentTime = vA.currentTime;
     });
-    /* If autoplay was refused and the viewer presses play on the restored side, the source has
-       to actually run alongside it. Without this it would only get seek-stepped once per
-       timeupdate tick — visibly stuttering next to a smooth clip, which reads as a defect in
-       the source rather than in the page. */
     vA.addEventListener('play', function () { var p = vB.play(); if (p && p.catch) p.catch(function () {}); });
     vA.addEventListener('pause', function () { vB.pause(); });
-    /* ⚠️ THE PAGE SHOWS THIS IN A 1000px BOX, AND EVERY MAC IS RETINA — so at devicePixelRatio 2
-       the browser wants 2000 real pixels and a 1280-wide file gets stretched 1.56x. The whole
-       point of the section is resolution, so shipping a demo the browser has to upscale
-       undercuts the argument. The 2x pair is the 2560x1920 restore delivered intact.
-
-       It is also 3.3MB, which nobody should pay for on a phone, on a 1x display, or without
-       ever scrolling here — hence preload="none" plus the observer. */
-    /* ⚠️ DPR ALONE PICKS THE WRONG FILE ON A PHONE. A handset is DPR 2-3, so a devicePixelRatio
-       test hands a 375px-wide screen the 2560 pair — 2.8MB of pixels it can never show. What
-       decides the file is how many device pixels this BOX needs: CSS width x DPR. A 343px box
-       at DPR 3 wants ~1029, so the 1280 pair covers it; a 1000px box at DPR 2 wants 2000, and
-       only the 2560 pair covers that without the browser stretching it. */
     var need = ba.getBoundingClientRect().width * (window.devicePixelRatio || 1);
     var tier = need > 1400 ? '2x' : '1x';
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var started = false;
-    /* ⚠️ CONTROLS GO ON THE TOP VIDEO ONLY. The source sits underneath with clip-path applied,
-       so a scrubber drawn on it is sliced down the middle by the handle and cannot be clicked.
-       One usable set of controls on the restored frame is enough: the sync handler above seeks
-       the source to match, so scrubbing one scrubs both and the comparison stays honest. */
     function showControls() { vA.controls = true; vB.controls = false; }
     function start() {
       if (started) return;
@@ -1465,13 +1432,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
       [vA, vB].forEach(function (v) {
         v.src = v.getAttribute('data-src-' + tier);
         v.load();
-        /* Reduced motion: load the frames but do not move them. The comparison still works —
-           the handle drags over two paused stills — so the section keeps its meaning. */
         if (still) { showControls(); return; }
-        /* Safari and iOS refuse autoplay until the element is muted AND the gesture policy is
-           satisfied; muted+playsinline covers it, but play() can still reject — Low Power Mode
-           and data-saver refuse it outright — and an unplayed pair would sit on a black
-           rectangle with no explanation. */
         var p = v.play();
         if (p && p.catch) p.catch(showControls);
       });
@@ -1481,108 +1442,31 @@ Array.prototype.forEach.call(document.querySelectorAll('.ba'), function (ba) {
         for (var i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) { start(); io.disconnect(); return; }
         }
-      }, { rootMargin: '500px 0px' });   /* start the fetch before it is on screen, not after */
+      }, { rootMargin: '500px 0px' });   
       io.observe(ba);
     } else {
-      start();   /* no observer: load immediately rather than show an empty box forever */
+      start();   
     }
   }
 });
 </script>
 
 <script>
-/* ── CRISP_CHECKOUT_URL ─────────────────────────────────────────────────────────────────────
-   THE ONE PLACE THE $129 CHECKOUT LINK LIVES. Paste the Dodo checkout URL between the quotes
-   (it looks like https://checkout.dodopayments.com/buy/pdt_…) and every paid button on this
-   page — the
-   Crisp Pro tier under Pricing, and the Buy button in #buy — points at it, and the "checkout is
-   not open yet" note disappears. That is the entire change. Nothing else needs editing, and no
-   other file on the site hardcodes a checkout URL.
 
-   ⚠️ NEVER POINT A PAID BUTTON AT THE DMG. Until this landed, all five buttons on this page
-   pointed at the same free download — including the one under the $129 price — so "Get Crisp"
-   charged nobody and handed over the watermarked build, while the app's own paywall (402 from
-   backend/server.py, Max and batch) was live. The four free CTAs (nav, hero, Free tier, closing
-   band) keep the DMG on purpose; the paid one must never drift back onto it.
 
-   While this is empty the Buy button carries no href and is marked aria-disabled, so it reads
-   as unavailable instead of quietly doing the wrong thing. An honest "not yet" beats a button
-   that takes money nowhere.
-   ───────────────────────────────────────────────────────────────────────────────────────── */
-/* ⚠️ THE PARAMETER IS redirect_url, AND DODO'S DOCS WILL TELL YOU return_url.
-   On a static buy link return_url does NOTHING, and it fails in the way that is hardest to
-   notice: the link still returns 200, still opens a real session, still shows $129 and still
-   takes the card. Only the landing differs. Measured on the live checkout — bare link and
-   ?return_url= both mention our URL 0 times in the session payload and are byte-identical;
-   ?redirect_url= mentions it once, as "return_url":"https://crispvideo.app/thank-you/".
-   So verify it in the PAYLOAD, never by the link loading.
-
-   Without this a buyer pays and stays on Dodo. /thank-you/ exists, returns 200, and is
-   unreachable by the only people it is for — no sale countable, and nowhere for a Purchase
-   event to fire, so ads optimise blind to whether they produced a sale. */
 var CRISP_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F";
-/* ── CRISP_BUY_VIA (2026-10-01, the Product Hunt rehearsal) ──────────────────────────────────────────
-   The buttons go through the hub's /buy/crisp, which opens a Dodo checkout SESSION with FOUNDINGCRISP
-   already applied — measured in a browser that day: "$129.00 $64.50 … Yay! You're saving 50%!", total
-   $64.50. Through the plain link above, a founding buyer had to find "Have a discount code?" and type it,
-   and the rehearsal of Saturday's visitor path found exactly that on the site's own Buy button.
-   CRISP_CHECKOUT_URL stays the Dodo link: it is the no-JavaScript href in the markup, the processor the
-   tests and scripts/build_crisp.sh's ship gate read (that gate keys on "dodopayments"), and the hub's own
-   fallback when it cannot open a session — so nobody is ever stranded. ?src= names the button pressed. */
+
 var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 
 (function () {
   var url = (CRISP_CHECKOUT_URL || "").trim();
 
-  /* ⚠️ THE INSTALMENT GUARD RUNS BEFORE THE EARLY RETURN, AND IT NOW HIDES RATHER THAN REVEALS.
-     The copy used to be injected here, which meant it existed only for visitors who ran scripts:
-     not for crawlers, not without JS, and not for the shared launch checklist, which reads the
-     served HTML and had been reporting Crisp as showing no instalment copy at all. It is static
-     markup now, so the guard has to work the other way round — if there is no checkout to honour
-     it, take it off the page. Left below the `if (!url) return` it would never run in exactly the
-     case it exists for: no checkout URL, and four payments still promised beside the price. */
-  /* ⚠️ THIS FLAG IS NOT THE WHOLE SWITCH, AND THAT IS THE PRICE OF THE COPY BEING STATIC.
-     Flipping it to false hides the notes for everyone who runs this script — which is almost
-     everyone — but the sentence is in the markup now, so a reader with JavaScript disabled or
-     blocked still sees it. The trade was deliberate: injected copy was invisible to crawlers and
-     to anyone without JS, on a page whose job is to be found. Fail-open is the right default
-     while BNPL is genuinely live at the checkout.
-
-     SO IF INSTALMENTS EVER HAVE TO GO DARK, FLIPPING THIS IS NOT ENOUGH. Delete the
-     `data-crisp-bnpl` paragraphs from the markup in the same change, or a no-JS visitor is left
-     reading a consumer-finance claim the checkout will not honour.
-
-     AND IT IS NO LONGER JUST THE PARAGRAPHS. The hero lede carries an INLINE
-     `data-crisp-bnpl` span, which this loop hides correctly — but the META DESCRIPTION also
-     names the four payments and NO script can gate a meta tag. So going dark means: flip this
-     flag, delete the two `bnpl-note` paragraphs, delete the inline span in the lede, and rewrite
-     the meta description at the top of this file. Four places, not one. Listing them here because
-     the previous version of this comment said "paragraphs" and was already incomplete. Raised by the session that
-     shipped the original JS-gated version, after it verified the dark path in a browser. */
-  /* 2026-09-24 23:04Z: ON again, on Matthew's word ("put these back, the bnpl options are offered
-     after putting in your info" — ops launch/MATTHEW-ORDERS-2026-09-07.md, 47d187e). Klarna and
-     Afterpay appear at Dodo's PAYMENT step, after the buyer's details, which is why every
-     outside check of step one saw neither (his own sighting, 2026-08-26, is the same fact). It
-     was off for a few hours that evening (0df8186) and every copy came back in the change that
-     turned it on. */
-  /* 2026-11-02: OFF, with every copy deleted in the same change (the four places above). Crisp is $29, and $14.50 through
-     November; Dodo shows Klarna and Afterpay only on a payment above $50.01, so neither price can be paid in four. */
   var CRISP_BNPL_LIVE = false;
   var bnpl = document.querySelectorAll('[data-crisp-bnpl]');
   if (!url || !CRISP_BNPL_LIVE) {
     for (var b = 0; b < bnpl.length; b++) bnpl[b].hidden = true;
   }
 
-  /* ⚠️ THE PENDING NOTICE IS INJECTED, NOT STATIC — THE EXACT OPPOSITE OF THE INSTALMENT COPY
-     ABOVE, AND FOR THE OPPOSITE REASON. The BNPL sentence is TRUE while checkout is live, so it
-     belongs in the served HTML where crawlers can read it. This one is FALSE while checkout is
-     live. It sat in the markup after CRISP_CHECKOUT_URL was filled in, so every crawler and answer
-     engine that fetched this page read "Checkout is not open yet ... nobody can be charged" beside
-     two working Buy buttons — and the JS below hid it, which fixed what a VISITOR sees and nothing
-     about what a MACHINE reads. Measured on the live page at the time: the note was
-     display:none/hidden and both buttons carried the real Dodo href, so no human was being turned
-     away; the cost was entirely in the served source. A sentence that is false in the shipping
-     state must not ship in the markup. */
   if (!url) {
     var anchor = document.querySelector('[data-crisp-checkout]');
     var host = anchor && anchor.closest ? anchor.closest('p') : null;
@@ -1594,21 +1478,8 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
         + 'to use with the watermark. If you already hold a key, it activates today.';
       host.parentNode.insertBefore(note, host.nextSibling);
     }
-    return;   // the pending state is the truthful one here
+    return;   
   }
-  /* ── CRISP_BNPL_LIVE ──────────────────────────────────────────────────────
-     Set to true ONLY once Klarna or Afterpay has been seen at Dodo's payment
-     step for this product. Dodo documents Klarna (USD, min $50.01) and Afterpay
-     (USD/GBP, min $50.01), and $129 clears both floors — but that is a fact
-     about Dodo, not about this merchant account. Three sessions have rendered
-     live checkouts here and on Docket and Outlier, and none of them named either
-     provider; the likely cause is that Dodo has not finished verifying the
-     business, so no methods are enabled yet.
-
-     A price page promising instalments the checkout will not offer is a
-     consumer-finance claim we cannot honour, on the page where money changes
-     hands. Same rule as the pixel: the copy goes live in the change that makes
-     it true, never before. */
 
   var buys = document.querySelectorAll('[data-crisp-checkout]');
   var via = (typeof CRISP_BUY_VIA === 'string' ? CRISP_BUY_VIA : '').trim();
@@ -1617,25 +1488,13 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
     buys[i].setAttribute('href', via ? via + '?src=' + encodeURIComponent(src) : url);
     buys[i].removeAttribute('aria-disabled');
   }
-  // Belt and braces: nothing authors this node in the live state any more, but an older cached
-  // copy of this page (or a future edit that reintroduces it) must not leave the claim standing.
   var notes = document.querySelectorAll('[data-checkout-pending]');
   for (var j = 0; j < notes.length; j++) notes[j].remove();
 })();
 </script>
 
 <script>
-/* Reveal on scroll. Adds .in once, then stops watching — a revealed element never un-reveals,
-   so re-observing it would only cost work. Anything already on screen at load is revealed
-   immediately by the observer's first callback, so the fold is never blank. */
 (function () {
-  /* WIDENING THE REVEAL FROM JS, NOT FROM THE MARKUP. Outlier carries `reveal` on 51 elements;
-     this page had it on 26, so most of it simply appeared. Adding the class here rather than in
-     the HTML is the safer half of the trade: `.js .rv{opacity:0}` only bites once this script has
-     run, so a script that never runs now hides NOTHING, where 25 more hardcoded classes would
-     have been 25 more things depending on the deadline below to become visible again.
-     Anything already inside a revealing block is skipped — nesting two fades reads as a stutter,
-     not as depth. */
   var EXTRA = '.hero-say .lede, .head .lede, .ba-note, .side-fig figure, .tools-grid span,' +
               '.caps-in > div, .tier, .faq details, .cmp-wrap, .metric, .shot, .band .visual';
   var extras = document.querySelectorAll(EXTRA);
@@ -1647,23 +1506,14 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   }
   var els = document.querySelectorAll('.rv');
   if (!els.length) return;
-  /* .in plays the reveal; .rvd, once it has finished, gives the element its own transition
-     back so hover feels like hover instead of like the reveal. 1150ms covers the 800ms
-     transition plus the longest stagger delay. transitionend would be exact, but it never
-     fires when transitions are off (reduced motion) or when the document is hidden, and
-     those are the two cases this page has already been bitten by. */
   function show(el) {
     el.classList.add('in');
     if (!el._rvdT) el._rvdT = setTimeout(function () { el.classList.add('rvd'); }, 1150);
   }
-  if (!('IntersectionObserver' in window)) {          /* old browser: show everything, no motion */
+  if (!('IntersectionObserver' in window)) {          
     for (var i = 0; i < els.length; i++) show(els[i]);
     return;
   }
-  /* TWO-WAY, like outlier.host: reveal on the way down and un-reveal on the way back up, so the
-     page animates in both directions instead of filling in once and staying filled. The observer
-     is deliberately NOT unobserved — that call was exactly what made the effect one-shot here.
-     Matthew asked for this after comparing the two pages side by side. */
   var revealed = 0;
   var io = new IntersectionObserver(function (entries) {
     for (var i = 0; i < entries.length; i++) {
@@ -1673,43 +1523,13 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
-  /* ⚠️ AN OBSERVER THAT NEVER FIRES LEAVES EVERY HEADING INVISIBLE. IntersectionObserver does not
-     report for a document that is hidden (document.hidden === true), which is the state of any
-     background tab, any headless render, and potentially a crawler. Measured: in that state all
-     ten <h2> on this page sit at opacity 0 — the page keeps its text for a reader but loses it for
-     anything that photographs or indexes it, and my own comparison screenshots were missing every
-     heading without my noticing.
-     So the reveal gets a deadline. After 2.5s anything still unrevealed is shown regardless. A
-     visitor scrolling normally never reaches it, because the observer resolves first; everything
-     else gets the page. */
   setTimeout(function () {
-    /* ⚠️ THE DEADLINE AND THE TWO-WAY OBSERVER MUST NOT FIGHT. Now that the observer also
-       REMOVES .in, a deadline that blindly reveals everything would be undone the moment the
-       observer next fired, and off-screen content would visibly flash in and out. So it only
-       fires when the observer has revealed NOTHING — which is the case it was written for: a
-       document that is hidden (background tab, headless render, crawler) never gets an
-       IntersectionObserver callback at all, and every heading would otherwise sit at opacity 0
-       for anything that photographs or indexes the page.
-       ⚠️ AND IT MUST NOT DISCONNECT THE OBSERVER. My first version did, reasoning that nothing
-       should be able to take the content away again — but that is a ONE-WAY DOOR: a tab that
-       loads in the background gets no callbacks, trips this deadline, and then has the two-way
-       reveal permanently dead for the rest of the session even after the user switches to it.
-       Measured: 80 of 80 elements revealed with 6 on screen. Leaving the observer connected is
-       both safer and more correct — a renderer that never fires it (crawler, headless) keeps the
-       content this just revealed, and a renderer that starts firing later simply corrects itself
-       to what is actually on screen. */
     if (revealed) return;
     for (var k = 0; k < els.length; k++) show(els[k]);
   }, 2500);
 })();
 </script>
 <script>
-/* Subscribe — posts to our own worker on submit, never on load.
-   ⚠️ EVERY FAILURE MODE MUST KEEP THE FORM AND MUST NOT CLAIM SUCCESS. A handler that treats
-   any SETTLED promise as success will tell someone they subscribed when the write failed —
-   fetch only rejects on a network error, so a 500, or a 200 carrying {ok:false}, both look
-   like success to `.then()`. All three are handled separately below and all three stay
-   retryable. */
 (function () {
   var f = document.getElementById('sub-form');
   if (!f) return;
@@ -1719,8 +1539,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     var email = (document.getElementById('sub-email').value || '').trim();
-    // The honeypot is checked HERE as well as at the worker: a bot that fills it gets the same
-    // reply a person does, so it learns nothing, and we never send the address on.
     var trap = (document.getElementById('sub-company').value || '').trim();
     if (!email || email.indexOf('@') < 1) { say('That address looks incomplete.', true); return; }
     if (trap) { say('Thanks — check your inbox.', false); return; }
@@ -1730,7 +1548,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, source: 'crispvideo.app' })
     }).then(function (r) {
-      // A 500 is a SETTLED promise. Read the status, then read the body's own verdict.
       return r.json().catch(function () { return {}; }).then(function (d) {
         return { ok: r.ok && d && d.ok !== false, d: d };
       });
@@ -1739,7 +1556,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
       say('Thanks — you are on the list.', false);
       f.querySelector('.sub-row').hidden = true;
     }).catch(function () {
-      // Network failure: offline, DNS, blocked. Keep the form, say so, stay retryable.
       say('Could not reach us just now — check your connection and try again.', true);
       go.disabled = false;
     });
@@ -1747,11 +1563,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 })();
 </script>
 <script>
-/* The older-Mac list — posts to our own worker on submit, never on load, the same way the footer form does.
-   ⚠️ ITS OWN LIST. source 'crispvideo.app-older-mac' keeps it separable from the footer newsletter and the
-   Windows list: someone who asked to hear the day Crisp runs on their Mac asked for that and nothing else.
-   ⛔ CAPTURE ONLY: nothing may be sent to this list without Matthew's own yes (CEO, 2026-09-28).
-   Same three failure modes as the footer form, all retryable, none claiming success. */
 (function () {
   var forms = document.querySelectorAll('form[data-oldmac]');
   if (!forms.length) return;
@@ -1785,9 +1596,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 })();
 </script>
 <script>
-/* The demo loads only when it scrolls into view and plays muted; it pauses when it leaves. Nothing is fetched
-   before that, and nothing leaves the page: the files are our own. Reduced motion: no autoplay, the controls
-   instead, so the recording is still one press away. */
 (function () {
   var v = document.querySelector('video[data-demo]');
   if (!v) return;
@@ -1819,22 +1627,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 
 <script src="/notify.js" defer></script>
 <script>
-/* send-mac-link:begin. THE SAME BLOCK is inline at the foot of index.html (so the homepage's phone action never waits on
-   another file, or on a blocker that refuses anything named track.js) and in track.js (every guide's product box); a test
-   in the Crisp suite keeps the two byte-identical, and whichever runs first is the only one that binds.
-
-   "Send the Mac link to yourself" (rebuilt 2026-10-28). Crisp is a Mac app, so a visitor on a phone or tablet has to get
-   the link to their Mac, and every path here ends with them holding it, whatever the browser:
-   1. the share sheet where there is one (Safari on iPhone and iPad, Chrome on Android, and the in-app browsers built on
-      them), then one line saying what to do next;
-   2. no share sheet: the link is copied at once, and the box under the button says "copied" only if the copy really worked;
-   3. a share sheet that fails or is closed, or a copy that does not work: the same box shows the link as plain text to
-      press and hold, a Copy button, and Email it / Text it links.
-   NOTHING HERE NAVIGATES ON ITS OWN. The old fallback set location.href to a mailto:, and an in-app browser whose app does
-   not hand mailto: on (a WKWebView, an Android WebView) did nothing at all, or replaced the page with an error; a share that
-   failed or was closed also ended in nothing. Mail and Messages are now links the visitor taps, beside the copy and the text.
-   kcCarry() keeps where the visitor came from (the hub snippet's kc_aff: ?ref=producthunt is stored as landing_source) on
-   the link, so the Mac visit it leads to still counts for that source. */
+/* send-mac-link:begin */
 (function () {
   if (window.crispSendLinkBound) return;
   window.crispSendLinkBound = true;
@@ -1849,8 +1642,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   function kcCarry(url) { try { var s = JSON.parse(localStorage.getItem('kc_aff') || 'null'); var v = (s && s.exp > Date.now() && s.v) || {}; var q = []; var r = v.ref || v.landing_source; if (r) q.push('ref=' + encodeURIComponent(r)); ['via', 'rekomi_ref', 'affonso_referral', 'awc', 'cjevent', 'irclickid'].forEach(function (k) { if (v[k]) q.push(k + '=' + encodeURIComponent(v[k])); }); return q.length ? url + '&' + q.join('&') : url; } catch (e) { return url; } }
   function ev(name, props) { try { if (window.plausible) window.plausible(name, { props: props }); } catch (e) {} }
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
-  /* done(true) only when a copy is known to have happened. navigator.clipboard first; then the textarea + execCommand that
-     older browsers and some in-app ones still need (16px so iOS does not zoom, fixed at the top so nothing scrolls). */
   function copy(t, done) {
     function legacy() {
       var ok = false, ta = null;
@@ -1871,9 +1662,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
     } catch (e) {}
     legacy();
   }
-  /* The box under the button: built on first use, after the paragraph the button sits in (or after the button itself). */
   function box(b, url) {
-    // a button elsewhere (the top bar's) names the send button whose box it opens, so the box lands in the page, not the bar
     var to = b.getAttribute('data-send-box'), named = to ? document.querySelector('[data-send-mac-link="' + to + '"]') : null;
     var host = named || (b.closest && b.closest('p')) || b, s = host.nextElementSibling;
     if (!s || s.className !== 'sendlink') {
@@ -1883,7 +1672,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
       var msg = s.appendChild(el('p', 'sendlink-msg'));
       msg.setAttribute('role', 'status');
       var u = s.appendChild(el('p', 'sendlink-url'));
-      u.addEventListener('click', function () {   // one tap selects the whole link, ready for Copy
+      u.addEventListener('click', function () {   
         try { var r = document.createRange(); r.selectNodeContents(u); var g = window.getSelection(); g.removeAllRanges(); g.addRange(r); } catch (e) {}
       });
       var w = s.appendChild(el('p', 'sendlink-ways'));
@@ -1912,7 +1701,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
       s.querySelector('.sendlink-msg').textContent = SAY[result === 'shared' ? 'shared' : result === 'copied' ? 'copied' : result === 'copy-failed' ? 'nocopy' : 'other'];
       s.querySelector('.sendlink-url').hidden = !full;
       s.querySelector('.sendlink-ways').hidden = !full;
-      if (s.scrollIntoView) s.scrollIntoView({ block: 'nearest' });   // on a phone the box lands under the fold otherwise
+      if (s.scrollIntoView) s.scrollIntoView({ block: 'nearest' });   
     } catch (e) {}
     ev('Send Mac Link Result', { result: result });
   }

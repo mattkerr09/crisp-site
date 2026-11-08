@@ -4,12 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
-/* ⛔ SCRUB THE URL BEFORE ANY TRACKER CAN READ IT (2026-09-28, CEO revenue audit #2, URGENT).
-   Dodo redirects a buyer here with license_key, email, payment_id and status on the URL, and every
-   tracker below reads the page URL as it loads: Meta's PageView sent all four as `dl=` (reproduced
-   locally with test values before this fix), and Plausible records the path and query. So this runs
-   FIRST — before Plausible, the Meta pixel and the affiliate snippet — keeps the four in memory for
-   the page script at the foot, and rewrites the address bar without them. Nothing is stored. */
 (function () {
   try {
     var params = new URLSearchParams(location.search), keep = {}, any = false;
@@ -106,16 +100,10 @@
 
 <script>
 (function () {
-  // Read from the copy the head scrub kept — the URL no longer carries them (see the top of <head>).
   var ret = window.__crispReturn || {};
   var status = (ret.status || '').toLowerCase();
   var key = (ret.license_key || '').trim();
 
-  // ⚠️ DODO REDIRECTS HERE FOR FAILED PAYMENTS TOO, AND THIS PAGE SAYS "PAYMENT CONFIRMED".
-  //    Telling somebody their payment succeeded when it did not is the worst sentence on the
-  //    site, and it is the DEFAULT state of this page — the copy was written for the happy path
-  //    because until now nothing could reach it any other way. Correct the page first, then
-  //    decide about the key.
   var failed = status && status !== 'succeeded';
   if (failed) {
     document.getElementById('eyebrow').textContent = 'Payment not completed';
@@ -124,55 +112,26 @@
     document.getElementById('key-intro').hidden = true;
   }
 
-  // A key belongs to a completed payment. If the payment failed, showing one — even one Dodo
-  // echoed back — hands over something that will not activate.
   if (key && !failed) {
     var el = document.getElementById('key-value');
-    el.textContent = key;                        // never innerHTML — this came off a URL
+    el.textContent = key;                        
     el.hidden = false;
     document.getElementById('key-shown').hidden = false;
     document.getElementById('key-intro').hidden = true;
   }
 
-  // A sale, and only a sale.
-  //
-  // eventID IS THE DEDUPE KEY, AND IT COSTS NOTHING TODAY TO GET RIGHT. Meta matches a pixel
-  // event to a server-side (Conversions API) event by eventID; without one it cannot tell they
-  // are the same sale. There is no CAPI here yet and no ad spend, so today this changes
-  // literally nothing — which is exactly why it is worth doing now. The day CAPI is added,
-  // every Crisp purchase would otherwise be counted TWICE, and that is a data-integrity bug
-  // discovered from a number that looks merely good rather than from an error.
-  //
-  // Dodo already puts payment_id on this redirect (see the note above), so the same value can
-  // be sent from both sides, which is the whole trick. If it is missing — a manual visit, a
-  // stripped URL — send the event without it rather than inventing an id, because a fabricated
-  // key would break dedupe more surely than an absent one.
-  //
-  // ⚠️ `value` IS THE LIST PRICE, NOT NECESSARILY WHAT WAS PAID. A founding-offer purchase at
-  // 50% off still reports 129.00, because Dodo's redirect carries license_key, payment_id,
-  // status and email — no amount. Not fixable from this page; it needs the server side that
-  // eventID is here to prepare for.
 })();
 </script>
 <script>
-/* The Purchase event — its own block on purpose: it reads the amount paid from our hub and hands it to
-   analytics only. It touches NO part of the page (tests/test_the_site_shows_nothing_it_cannot_back.py
-   checks exactly that), so no figure a visitor sees ever comes from a runtime read. */
 (function () {
   var ret = window.__crispReturn || {};
   var status = (ret.status || '').toLowerCase();
-  // ⚠️ THE AMOUNT ACTUALLY PAID, NOT A FLAT $129 (CEO revenue pass, 2026-09-28). Dodo's redirect carries no
-  // amount, so a founding purchase at $64.50 used to report 129.00. Our own hub now answers, for a succeeded
-  // payment of the last 72 hours, {"amount","currency","app"} and NOTHING about the buyer — asked with the
-  // payment id only, and only here, after a succeeded payment. A 404, an error or no answer in 4 s keeps
-  // the list price; either way Purchase fires ONCE (a late answer cannot send a second one).
   window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
   var pid = (ret.payment_id || '').trim();
   var fired = false;
   function purchase(value) {
     if (fired) return;
     fired = true;
-    // Plausible only since 2026-11-06 (Matthew removed the Meta pixel from the site).
     window.plausible('Purchase', { revenue: { currency: 'USD', amount: value } });
   }
   if (status === 'succeeded' && pid && typeof fetch === 'function') {
@@ -182,7 +141,7 @@
       .then(function (d) {
         clearTimeout(late);
         var amt = d && d.app === 'crisp' && d.currency === 'USD' ? Number(d.amount) : NaN;
-        purchase(amt > 0 && amt <= 29 ? amt : 29);   // the full price since 2026-11-02 (it was 129)
+        purchase(amt > 0 && amt <= 29 ? amt : 29);   
       })
       .catch(function () { clearTimeout(late); purchase(29); });
   } else if (status === 'succeeded') {

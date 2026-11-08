@@ -1,10 +1,3 @@
-/* Crisp video checker. Reads a video's own description (resolution, frame rate, bitrate, codec, colour, scan) IN THIS PAGE.
-   It never sends the file anywhere: there is no fetch, no form and no upload in this script. It reads small slices of the
-   file the visitor picked (File.slice), so a multi-gigabyte home video costs a few megabytes of memory, not its size.
-   Containers: MP4 / MOV / M4V (ISO boxes), MKV / WebM (EBML), AVI (RIFF), MPEG-1/2 program and transport streams (sequence
-   header). Anything else: the size and length the browser's own video element can read, if it can play the file.
-   The "what Crisp's Auto would do" line follows backend/crisp_engine/presets.py auto_plan (short side; 2x at 1600 and over;
-   otherwise round(2160 / short side) clamped to 2..4, Python rounding; stronger noise clean-up at 720 and under). */
 (function (root) {
   'use strict';
 
@@ -15,7 +8,6 @@
   const cc = (d, o) => String.fromCharCode(d.getUint8(o), d.getUint8(o + 1), d.getUint8(o + 2), d.getUint8(o + 3));
   const u64 = (d, o) => d.getUint32(o) * 4294967296 + d.getUint32(o + 4);
 
-  /* ---------- MP4 / MOV ---------- */
   function* kids(d, start, end) {
     let o = start;
     while (o + 8 <= end) {
@@ -48,7 +40,7 @@
       const len = d.getUint16(b.body + 6), raw = [];
       for (let i = 0; i < len; i++) raw.push(d.getUint8(b.body + 8 + i));
       Object.assign(out, parseSPS(raw));
-    } catch (e) { /* a short or odd SPS: keep the profile */ }
+    } catch (e) {  }
     return out;
   }
   function parseSPS(raw) {
@@ -84,7 +76,7 @@
         if (u(1)) u(1);
         if (u(1)) { u(3); u(1); if (u(1)) { out.prim = u(8); out.trc = u(8); out.mtx = u(8); } }
       }
-    } catch (e) { /* no colour description: leave it unstated */ }
+    } catch (e) {  }
     return out;
   }
   function hevcInfo(d, b) {
@@ -198,7 +190,6 @@
     return out;
   }
 
-  /* ---------- MKV / WebM ---------- */
   function vint(d, o, keepMarker) {
     const b = d.getUint8(o); let len = 1, mask = 0x80;
     while (len <= 8 && !(b & mask)) { len++; mask >>= 1; }
@@ -287,7 +278,6 @@
     return out;
   }
 
-  /* ---------- AVI ---------- */
   async function readAvi(file) {
     const d = await dv(file, 0, 256 * 1024);
     const le32 = o => d.getUint32(o, true), le16 = o => d.getUint16(o, true);
@@ -314,7 +304,6 @@
     return out;
   }
 
-  /* ---------- MPEG-1/2 program or transport stream: the video sequence header ---------- */
   async function readMpeg(file, kind) {
     const d = await dv(file, 0, 4 * 1024 * 1024);
     const n = d.byteLength;
@@ -327,7 +316,6 @@
       const out = { container: kind, width: w, height: h, codedW: w, codedH: h, fps, declaredBitrate: brv === 0x3FFFF ? 0 : brv * 400, vcodec: 'MPEG-1', audio: undefined };
       for (let j = i + 12; j + 10 < Math.min(n, i + 400); j++) {
         if (d.getUint8(j) === 0 && d.getUint8(j + 1) === 0 && d.getUint8(j + 2) === 1 && d.getUint8(j + 3) === 0xB5 && (d.getUint8(j + 4) >> 4) === 1) {
-          // sequence_extension: id(4) profile_level(8) progressive(1) chroma(2) h_ext(2) v_ext(2) bitrate_ext(12) marker(1) vbv_ext(8) low_delay(1) fr_n(2) fr_d(5)
           let bits = 0; for (let q = 0; q < 6; q++) bits = bits * 256 + d.getUint8(j + 4 + q);
           const at = (from, len) => Math.floor(bits / 2 ** (48 - from - len)) % 2 ** len;
           out.vcodec = 'MPEG-2'; out.interlaced = at(12, 1) === 0;
@@ -343,7 +331,6 @@
     return { error: 'No MPEG video header in the first 4 MB of this file. If it is AVCHD (.mts) from a camcorder, the checker cannot read it yet.' };
   }
 
-  /* ---------- dispatch ---------- */
   async function inspect(file) {
     const head = await dv(file, 0, 16);
     if (head.byteLength < 12) return { error: 'This file is too small to be a video.' };
@@ -371,7 +358,6 @@
     return r;
   }
 
-  /* ---------- words ---------- */
   function sizeName(w, h) {
     const s = Math.min(w, h), l = Math.max(w, h);
     if (s >= 4320 || l >= 7680) return '8K';
@@ -444,7 +430,6 @@
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.CrispChecker = api;
 
-  /* ---------- the page ---------- */
   if (typeof document === 'undefined') return;
   function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   async function fallback(file) {

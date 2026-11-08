@@ -1,62 +1,11 @@
-/* The founding offer, as a STICKY TOP BANNER that mounts itself.
- *
- * ⚠️ WHY IT MOVED. This rendered into <div data-founding> wherever each site
- * chose to put it, and Docket put it at 93% of the page — above the footer,
- * below the FAQ, in translucent gold on near-black. Matthew: "the one on docket
- * looks like shit and its all the way at the bottom, i need like a banner or a
- * pop up or something".
- *
- * He is right, and the placement was the bigger half. An offer nobody scrolls to
- * is not an offer. So this no longer asks a site where to go — it mounts a bar at
- * the very top of the document, on every site, identically.
- *
- * ⚠️ A BAR, NOT A MODAL, deliberately. A popup that covers the page is the single
- * most-hated pattern on the web, it is what people install blockers for, and on a
- * product page it interrupts exactly the person who was already reading about the
- * product. A bar is unmissable without being in the way, and it survives being
- * dismissed — which a modal does not, because dismissing a modal is a relief and
- * dismissing a bar is a decision.
- *
- * ⚠️ SOLID, NOT TRANSLUCENT. The old version used rgba(200,150,60,.09) over a
- * dark page and was barely readable. This is a solid amber ground with near-black
- * text — the highest contrast pairing available that still reads as an offer
- * rather than an error.
- *
- * Dismissal is remembered per site in localStorage, wrapped in try/catch because
- * a private window throws on access rather than returning null.
- */
-/* ⛔ THIS FILE IS A DELIBERATE FORK of the shared widget served by kerr-lead-agent.
- * It is NOT drift and must not be "fixed" by loading the worker's script or copying it
- * verbatim — both fail this site's own pre-push gate. The worker's tag is a third-party
- * <script src> the per-file exemption does not cover, and the worker's copy fetches the
- * count ON LOAD, which is a third-party request on every page view of a site whose hero
- * says "Nothing uploaded". PORT changes into this file; never adopt the file.
- *
- * ⚠️ THE COST OF A FORK IS THAT IT IS SILENT, AND IT WAS PAID ONCE ALREADY. The shared
- * widget's seven-day dismissal fix landed upstream on 2026-09-15 and this copy did not
- * inherit it, so a dismissal here still lasted forever — which is how a bar that had been
- * live since a1f3647 was reported as "there are no promo bars on crisp". Nothing was
- * broken, nothing failed a gate, and no check could see it.
- *
- * So the fork records WHICH upstream revision it was last reconciled against. When the
- * line below stops matching sha256(~/ops/lead-agent/widget/founding.js.txt), upstream has
- * moved and somebody must decide whether this file needs the change. ~/ops/bin/drift.py
- * checks it. Update this line ONLY after actually reading the upstream diff — bumping it
- * to silence the check is the one way to make this worse than having no check.
- *
- * upstream-reviewed: 7c188606ec8456cf7631c944fd1cc5112796ab55b68384c547b7b91555122528  (2026-10-05, the bar's " — " before the price became ": " (ops c84316f9); the count fetch and BNPL text stay forked)
- */
+// upstream-reviewed: 7c188606ec8456cf7631c944fd1cc5112796ab55b68384c547b7b91555122528
 (function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
-  /* THE OFFER ENDS ON A DATE (CEO, 2026-10-21): FOUNDINGCRISP expires in Dodo at the mount's data-ends. From that moment
-     the bar does not mount and every static founding line on the page (.pbox-found, .founding-note, [data-founding-copy])
-     is hidden, with no deploy needed. Checked BEFORE the dismissal below, so a visitor who dismissed the bar still loses
-     the stale lines. The push gate (_tools/gate_founding.py) then refuses any deploy that still ships them. */
   (function () {
     var m = document.querySelector("[data-founding]");
     var ends = m && m.getAttribute("data-ends");
-    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
     if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
     window.__kcFoundingEnded = true;
     var hide = function () {
@@ -67,29 +16,18 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  /* THE TRUE END DATE, BESIDE THE PRICE (CEO, 2026-11-02, Matthew: convert more page views into downloads and sales). The
-     offer really ends at the mount's data-ends, which the push gate holds equal to the lead agent's endsAt
-     (_tools/gate_founding.py: "data-ends must equal endsAt"), so the date shown is the checkout's own. Shown in the
-     visitor's own date: the offer ends at 07:59 UTC on 1 December, the last minute of 30 November in California, so one
-     fixed date would be wrong somewhere by hours. No date when the attribute is missing or unreadable: every line reads as before. A true
-     date is honest urgency; still no seat count beyond the cap. Here, BEFORE the bar's dismissal check, so a visitor who
-     dismissed the bar still sees the date in the page's own price lines. */
   var untilTxt = "";
   (function () {
     var mt = document.querySelector("[data-founding]");
     var e = mt && mt.getAttribute("data-ends");
     var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
     if (isNaN(t) || t <= n) return;
-    /* An end in the small hours names the day before (2026-11-02): 07:59 UTC on 1 December is 2:59 a.m. in New York, and
-       "until December 1" there would promise a day the offer does not give. Before noon, the visitor's time: the day before. */
     try {
       var end = new Date(t), day = end.getHours() < 12 ? new Date(t - 12 * 3600e3) : end;
       untilTxt = "until " + day.toLocaleDateString(undefined, { month: "long", day: "numeric" });
     } catch (x) {}
   })();
-  /* ...and in the page's own founding lines (the product box and the pricing notes), after "first N buyers". A line that does
-     not read that way is left exactly as it is, and nothing here can stop the bar. */
   if (untilTxt) {
     var dateLines = function () {
       try {
@@ -109,54 +47,20 @@
   }
 
   var KEY  = "kc-founding-dismissed";
-  /* A dismissal used to last forever ("1"), which hid the offer from every
-     returning visitor for good — including Matthew, who dismissed it and then
-     reported the bar missing from crispvideo.app (2026-09-15). The shared widget
-     was fixed the same day; this vendored copy is a FORK and did not inherit it,
-     which is the standing cost of forking and the reason this comment names it.
-     It now lasts seven days: the value is the dismissal time, and an old "1"
-     counts as expired. */
   try {
     var when = Number(localStorage.getItem(KEY));
     if (when && Date.now() - when < 7 * 24 * 60 * 60 * 1000) return;
   } catch (e) {}
 
-  /* Prices come from the mount if a site states them, else from the API. A site
-     that hard-codes them is a site that can drift from Dodo; the attribute is a
-     convenience, not the source of truth. */
   var mount = document.querySelector("[data-founding]");
   var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
-  /* THE PRICE AFTER THE OFFER, AS A FUTURE PRICE (2026-11-02, Crisp $29 and $14.50 through November for everyone). Crisp has
-     never charged $29, so the bar must not strike it through or call $14.50 "50% off" it (CEO: no "% off" against an
-     uncharged price). A mount with data-then says "Crisp Pro $14.50, until <date>, then $29" instead; data-was keeps the
-     old struck form only for a mount that still carries it. */
   var then = mount && mount.getAttribute("data-then");
-  /* 2026-09-28, Matthew: the pay-in-four price goes RIGHT NEXT TO the price, in the same font —
-     "$64.50 · or 4 × $16.13". It rides inside .now so it cannot be styled apart from the price.
-     From the mount, like the prices: a site whose checkout does not offer pay-in-four simply omits
-     data-now-split (the instalment gates fail a page that keeps it while CRISP_BNPL_LIVE is false). */
   var split = mount && mount.getAttribute("data-now-split");
   var first = mount && mount.getAttribute("data-first");
-  /* ⚠️ THE FALLBACK IS THE DANGEROUS HALF, NOT THE ATTRIBUTE. Until 2026-09-15 the mount
-     carried NO data-code at all, so the bar printed the OLD SHARED CODE through this default
-     and nobody had typed that code anywhere on the site. That shared code is being expired in
-     Dodo now that each app has its own, which would have turned this silent path into a bar
-     offering a code the checkout rejects. Both halves are set, so a missing attribute cannot
-     resurrect a dead code.
-
-     ⛔ AND THE RETIRED CODE IS NOT SPELLED OUT HERE, DELIBERATELY. A grep for a promo code
-     should find the code the site OFFERS, not a comment reminiscing about one it withdrew —
-     this file's own history includes a checker that harvested quoted strings out of comments
-     and reported them as live claims. Naming it here would make every future audit ambiguous. */
   var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  /* Ported from upstream (CEO, 2026-10-03 07:1xZ, launch day): on Crisp's Product Hunt launch day the bar carries one line
-     pointing at the launch. Product Hunt allows a site banner and forbids asking for upvotes, so it asks for feedback only.
-     The window is the launch day, 00:01 to 00:01 Pacific; outside it nothing changes. The link is a plain <a>: it makes no
-     request on load, so this file stays free of third-party requests. The /posts/ address redirects to the launch (read
-     live 07:06Z: 308 to /products/crisp-7?launch=crisp-8, then 200). */
   var PH = { url: "https://www.producthunt.com/posts/crisp-8", from: "2026-10-03T07:01:00Z", to: "2026-10-04T07:01:00Z" };
-  var phNow = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   /* __kcNow: a test clock only */
+  var phNow = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
   var phLive = phNow >= Date.parse(PH.from) && phNow < Date.parse(PH.to);
 
   var bar = document.createElement("div");
@@ -168,14 +72,6 @@
     '<style>',
     ':host{all:initial;display:block}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
-    /* ⚠️ SLIM AND DARK, NOT A MUSTARD SLAB. The first version was a full-width
-       amber ground 60px tall and Matthew's word for it was "big ass musterd
-       color banner", which is fair — a solid saturated fill across the whole
-       viewport competes with the page instead of sitting above it.
-       This is ~38px, near-black, with amber used as an ACCENT on the tag and the
-       new price only. Same information, a tenth of the visual weight. An
-       announcement bar should be noticed once and then ignored, and a loud one
-       gets dismissed for being loud rather than considered. */
     '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:nowrap;',
     '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
     '  font-size:.795rem;line-height:1.3;position:relative;overflow:hidden;',
@@ -200,9 +96,6 @@
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
     '@media(max-width:420px){.was{display:none}}',
-    /* The shared bar's phone rule (upstream 2b57346): the tag goes, the code tightens. And
-       because the price now carries its four-payment split, on a phone the line WRAPS rather
-       than ellipsising — a price cut off mid-figure is worse than a two-line bar. */
     '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '.ph{display:block;text-align:center;padding:.3rem 2.2rem .3rem .9rem;background:#1C1408;color:#EDE6D6;',
@@ -231,8 +124,6 @@
     var b = this;
     (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
       .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      /* If the clipboard is unavailable the code is still on screen and
-         selectable — never claim a copy that did not happen. */
       .catch(function () { b.textContent = "Select it"; });
   });
   root.querySelector(".x").addEventListener("click", function () {
@@ -241,21 +132,6 @@
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   });
 
-  /* ⛔ NO SEAT COUNT, EVER (Matthew, 2026-09-28: "it still says 24/25, get that tf off, and do this
-     for every site"). The count button and its call to the lead-agent worker's founding endpoint
-     are gone, and with them the only network request this file made — so it also left
-     gate_thirdparty.py's exemption table in the same change. The bar states the cap, when the
-     offer has one (data-first), and nothing else about seats. Do not bring back a count, a remaining
-     number or a "claimed" state without Matthew asking for it. */
-  /* ⚠️ INTO THE BODY, not before it. document.documentElement.insertBefore(bar,
-     document.body) puts an element between <head> and <body>, which is invalid
-     HTML — the browser silently discards it and NOTHING THROWS. The widget
-     reported no errors and simply was not there. */
-  /* ⚠️ THE BAR AND THE SITE'S STICKY NAV BOTH WANT top:0. They did from the start — the bar
-     covered the top of the nav once you scrolled — and on 2026-09-28 the four-payment price made the
-     bar wrap to two lines on a phone, where it then hid the whole nav, Download button included.
-     The bar publishes its height as --kc-bar-h and the nav sticks BELOW it (top:var(--kc-bar-h,0px)
-     in index.html and style.css). Re-measured on resize; back to 0 when dismissed. */
   function publishHeight() {
     try { document.documentElement.style.setProperty("--kc-bar-h", (bar.isConnected ? bar.offsetHeight : 0) + "px"); } catch (e) {}
   }
