@@ -481,6 +481,12 @@ def selftest() -> int:
         print("FAIL: selftest cannot find the /de/ lastmod in sitemap.xml")
         return 1
     _DE_LASTMOD = found.group(1)
+    # the Windows version moves with every Windows release, so the fixture reads it from the page (it named 1.0.1853)
+    win = re.search(r"Crisp (1\.0\.\d+) f", originals["de/download/index.html"])
+    if not win:
+        print("FAIL: selftest cannot find the Windows version on de/download/")
+        return 1
+    _WIN_VERSION = win.group(1)
     cases = [
         ("missing page", "de/download/index.html", None, None, "No such file", True),
         ("wrong language", "de/index.html", 'lang="de"', 'lang="en"', "lang=de", True),
@@ -524,7 +530,7 @@ def selftest() -> int:
         ("final markers", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", False),
         ("English sentence", "de/download/index.html", de_strings.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),
         ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
-        ("stale Windows version", "de/download/index.html", 'Crisp 1.0.1853', 'Crisp 1.0.1852', "generated German page is stale", True),
+        ("stale Windows version", "de/download/index.html", 'Crisp ' + _WIN_VERSION, 'Crisp 1.0.1', "generated German page is stale", True),
         ("stale code", "de/preise/index.html", 'FOUNDINGCRISP', 'WRONGCODE', "generated German page is stale", True),
         ("stale bundle price", "de/preise/index.html", '49,50 $', '48,50 $', "generated German page is stale", True),
         ("stale macOS floor", "de/download/index.html", 'macOS 14.0', 'macOS 13.0', "generated German page is stale", True),
