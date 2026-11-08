@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1899",
-  "notes": "Share a before-and-after: once you've enhanced a clip, one click makes a square video of the original and the result side by side, up to 15 seconds and small enough for a family group chat. The free mark on videos is now just the web address, crispvideo.app. Crisp can now ask, once and with one click, how you found it, and it counts a free copy's first finished export. Those two counts carry no name, file or address; the privacy page lists them. The Max download now fetches exactly the files Max was tested with, and checks each one.",
-  "pub_date": "2026-11-07T23:24:02Z",
+  "version": "1.0.1921",
+  "notes": "Tribute films: put the video clips from a life or a marriage on the timeline, type a name, the dates or a line like \"Fifty years married\", and a closing line, then choose about 3, 5 or 8 minutes (less footage makes a shorter film; nothing is repeated). Crisp keeps the clips in the order you set, picks calm moments of four to seven seconds from each, dissolves between them, adds a title card and an end card, and lays the Gentle bed, other bundled music or your own track underneath, with the clips' own sound kept if you tick the box. It runs on your Mac, so nothing is uploaded. Photos on the timeline are skipped for now. The Mac download is now kept under its version number too, so an earlier release can always be reinstalled.",
+  "pub_date": "2026-11-08T14:07:14Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9INzNkSElhMThzSlNuUUI3NUJzS3RPb01YbXJTekE5SFZaMy8rZTRBd3MrdXNYS0tHVHB0QWtEd21Ucnp0bVk2WGFjeUVrTDFZM2l1a3RpNUFmMGdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MDkzMjQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpiUEtSZFBGMEhZaUJjdmlhZjVDUnRSaC9DUVRSeG55NmxwMjBuaFY0ZlVHajVtbkJaMFNjWjJlOHk2Wkw2VmRMYmFKUnNScVFVZ0FWRW9aS1dvZFlDZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1899.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxZVFhNWWJwcTBSS3dKdjIyK0JveGhrUCtheDFlZjJLZlFSOEtzcmNrMEFoSlI2VTFEOFA0Z3hDQlBCSW9yY2pmOTNJUEJ4Nm9kTWFJcjA4cURwYmdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTQ2MjQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIVlg0ZStyTmdqQTczd2psd0FCdTZlUWJzZWlTNENPLy9VVTc1OHdWQzJVbGJLQVRqYVo0cVEyaUhDT01oYzMrcUZRSFV2OHVWallSZTJzbytMZ3REUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1921.app.tar.gz"
     }
   }
 }
