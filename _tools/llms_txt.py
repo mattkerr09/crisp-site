@@ -233,6 +233,10 @@ def windows_hero_button(src: str) -> str:
             'style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>Download free for Windows</a>')
 
 
+#: Crisp's live Microsoft Store listing (read 2026-11-07: live, 1.0.1853)
+MS_STORE = "https://apps.microsoft.com/detail/xpdngln859ct8m"
+
+
 def windows_hero_fine(cap: int, src: str) -> str:
     """The Windows twin of the hero's fine print (shown instead of the Mac's on a Windows desktop): the same free-tier sentence, the
     Windows requirement from WIN_REQ / WIN_GPU, the same price and refund line, and its own Buy link."""
@@ -240,7 +244,9 @@ def windows_hero_fine(cap: int, src: str) -> str:
         return ""
     return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})'
             f'<br>Pro is $29 once, with a 30-day refund · '
-            f'<a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src={src}" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a></p>')
+            f'<a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src={src}" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a>'
+            # a second way in, never instead of the direct download (CEO, 2026-11-08): the same app on the Microsoft Store
+            f' · or get it from the <a href="{MS_STORE}" data-track="hero-ms-store" rel="nofollow">Microsoft Store</a></p>')
 
 
 def quarter(d: Decimal) -> Decimal:
