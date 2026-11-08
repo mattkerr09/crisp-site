@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1853",
-  "notes": "Typed trims now do what you typed, and asking how to remove the \u201cMade with Crisp\u201d mark opens the unlock window with the Black Friday price, its end date and the 30-day refund. The small mark on free video exports now shows the web address, crispvideo.app/w. Asking for the first 15 seconds of a long clip right after its preview appears always starts the render, and a folder Crisp can\u2019t write into gets one plain sentence about what to do.",
-  "pub_date": "2026-11-05T13:23:09Z",
+  "version": "1.0.1934",
+  "notes": "Your first export now plays on any PC: Crisp saves H.264 by default, which every Windows player and browser plays without an extra codec. HEVC is still in the Format menu if you want smaller files. The free mark on videos is now just the web address, crispvideo.app. Licence messages now say \"this PC\" instead of \"this Mac\", and closing Crisp always ends its helper programs, even ones that were starting up.",
+  "pub_date": "2026-11-08T17:44:13Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9JUlZFaUxMUjQ3MjRoTFV1N3RuMmp0QzVkZGlRMytlRlV0VC9uMXlzamNMejEvb2FoQlBnNzYwcWNieVljQW5BNGs2T203V0UvVEpvR0FBNVZOUVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODg0OTg4CWZpbGU6Q3Jpc3AtMS4wLjE4NTMteDY0LXNldHVwLmV4ZQpwd2JCWkczYjdldDRsT3RMRmF4WXUxdk56MFhPY0tIenRVVVRXS0dhVFpGa3M3TlJ3NEFCaStCWXBRUldEdHdrUk5WUGM4YVdlTVlDcXVCUWtHVzNEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1853-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU10Z3hTbU1lSzZBUzNZUEFJNUVDRWljVjNLY0ZjYkRYRmdNVXNVaTRUYUY2YTY5cXdDcWtpR2RLcWM0a3ZDbjU4eG5lanNPNnYwYVE3YzlySWZlU3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTU5ODUzCWZpbGU6Q3Jpc3AtMS4wLjE5MzQteDY0LXNldHVwLmV4ZQpoOWUwa0FLSnlhSkM0bGVyVC9acTVDdGtUY2JCMThleVhlYU1sSC9Xa1BZMmdjMmtteGd1aENQbWJPWUhnMVo0K2o4VG1DekNtaUkwL25ibEZiNVZEZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1934-x64-setup.exe"
     }
   }
 }
