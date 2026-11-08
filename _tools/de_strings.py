@@ -17,6 +17,13 @@ def money(d) -> str:
     return f"{s} $"
 
 
+# Facts arrive in English from llms_txt.facts() ("macOS 14.0 or later", "Apple Silicon (M1 or later)"); only these phrases change.
+def fact_de(text: str) -> str:
+    return text.replace(" or later", " oder neuer")
+
+
+SPLIT = "oder 4 × {amount}"   # pay in four, when a price is high enough for it
+
 APP_LANGUAGE = "Die App selbst ist auf Englisch; diese Seiten erklären sie auf Deutsch."
 NAV_DOWNLOAD = "Download"
 CURRENCY = "Preise in US-Dollar. An der Kasse sehen Sie Ihre Währung und gegebenenfalls die Steuer Ihres Landes."

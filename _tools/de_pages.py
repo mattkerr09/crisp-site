@@ -46,7 +46,8 @@ def last_day(ends: str) -> str:
 
 
 def values(f: dict) -> dict:
-    return dict(f, price=words.money(f["price"]), now=words.money(f["now"]), ends=last_day(f["ends"]))
+    return dict(f, price=words.money(f["price"]), now=words.money(f["now"]), ends=last_day(f["ends"]),
+                os=words.fact_de(f["os"]), chip=words.fact_de(f["chip"]))
 
 
 def box(src: str, buy_first: bool = False, f: dict | None = None) -> str:
@@ -66,11 +67,11 @@ def box(src: str, buy_first: bool = False, f: dict | None = None) -> str:
                f'<span class="win-gpu">{words.BOX["windows_gpu"]}</span></p>') if win else ""
     # No approved instalment wording exists yet. Keep a visible translation marker
     # if a future price activates the English box's pay-in-four split.
-    split = (f'<span class="pbox-split"> · TODO-DE: or 4 × {words.money(llms_txt.quarter(f["price"]))}</span>'
+    split = (f'<span class="pbox-split"> · {words.SPLIT.format(amount=words.money(llms_txt.quarter(f["price"])))}</span>'
              if llms_txt.bnpl_on(f, f["price"]) else "")
     if found and llms_txt.bnpl_on(f, f["now"]):
         found = found.replace(f'<strong>{v["now"]}</strong>',
-                              f'<strong>{v["now"]} · TODO-DE: or 4 × {words.money(llms_txt.quarter(f["now"]))}</strong>', 1)
+                              f'<strong>{v["now"]} · {words.SPLIT.format(amount=words.money(llms_txt.quarter(f["now"])))}</strong>', 1)
     return (f'<!-- de-box:begin --><aside class="pbox" data-landing-box>'
             f'<p class="pbox-name">{words.BOX["name"]}</p>'
             f'<p class="pbox-price"><span class="pbox-amt">{v["price"]}</span> {words.BOX["once"]}{split}</p>'
