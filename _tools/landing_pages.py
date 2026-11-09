@@ -199,7 +199,7 @@ def pages() -> dict[Path, str]:
     return {
         SITE / "pricing" / "index.html": page(
             "pricing", "Crisp pricing: free to try, Pro with one payment",
-            f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. {llms_txt.price_copy(f)} No subscription.",
+            f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. {llms_txt.price_short(f)} No subscription.",
             "Crisp pricing",
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
             f"runs at full length; every free video export carries a small &ldquo;crispvideo.app&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. {llms_txt.price_copy(f)} {f['updates'].replace(' included', ' is included').capitalize()}. It removes the mark and the {f['cap']}-second limit and adds batch processing and, on a Mac, the Max restore lane. "

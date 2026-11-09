@@ -62,9 +62,22 @@ def price_copy(f: dict) -> str:
             f"Ab {future_day(f['ends'])}: {words.money(f['price'])}.")
 
 
+def price_short(f: dict) -> str:
+    """The launch price for a meta description, where a search result shows about 160 characters."""
+    if not llms_txt.founding_live(f):
+        return f"{words.money(f['price'])} einmalig."
+    return f"Einführungspreis {words.money(f['now'])} bis {f_ends_short(f['ends'])}, dann {words.money(f['price'])}."
+
+
+def f_ends_short(ends: str) -> str:
+    d = last_day(ends)
+    day, month = d.split(". ", 1)
+    return f"{day}. {month[:3]}."
+
+
 def values(f: dict) -> dict:
     return dict(f, price=words.money(f["price"]), now=words.money(f["now"]), ends=last_day(f["ends"]),
-                future=future_day(f["ends"]), price_copy=price_copy(f),
+                future=future_day(f["ends"]), price_copy=price_copy(f), price_short=price_short(f),
                 os=words.fact_de(f["os"]), chip=words.fact_de(f["chip"]))
 
 

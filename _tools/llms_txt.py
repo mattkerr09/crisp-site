@@ -113,6 +113,14 @@ def price_copy(f: dict) -> str:
             f"From {future_day(f)}: {money(f['price'])}.")
 
 
+def price_short(f: dict) -> str:
+    """The launch price for a meta description (a search result shows about 160 characters)."""
+    if not founding_live(f):
+        return f"{money(f['price'])} once."
+    end = offer_last_day(f).replace("through ", "").replace("November ", "Nov ")
+    return f"Launch price {money(f['now'])} through {end}, then {money(f['price'])}."
+
+
 def offer_who(f: dict) -> str:
     """Who gets the founding price, in the one phrase every generator uses: the cap while there is one, else everyone and when."""
     return f"for the first {f['first']} buyers" if f["first"] else f"for everyone {offer_last_day(f)}"

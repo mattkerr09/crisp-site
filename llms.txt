@@ -16,9 +16,9 @@
 ## Comparisons
 - [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): every comparison, with sources and dates
 - [Best Topaz alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): The best Topaz alternative for Mac: AI upscaling and restore that runs 100% on-device, no subscription, with an editor built in.
-- [Switch from Topaz Video AI to Crisp: launch pricing](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; the app is now called Topaz Video and costs $299/yr.
+- [Switch from Topaz Video AI to Crisp: launch pricing](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; Topaz Video costs $299/yr.
 - [UniFab alternative for Mac (2026): native, with a timeline](https://crispvideo.app/vs/unifab-alternative-mac/): UniFab All-In-One lists at US$319.99 for 17 tools, built Windows-first.
-- [Aiarty Video Enhancer vs Crisp on Mac: launch pricing](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Launch price: $14.50 once, through November 30. From December 1: $29.
+- [Aiarty Video Enhancer vs Crisp on Mac: launch pricing](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Crisp's launch price is $14.50 through Nov 30, then $29.
 - [DaVinci Resolve Super Scale vs Topaz Video on Mac (2026)](https://crispvideo.app/vs/davinci-resolve-super-scale-vs-topaz/): Super Scale comes with DaVinci Resolve Studio ($295, $236 on sale).
 - [Video2X for Mac (2026): no Mac build, and what to use](https://crispvideo.app/vs/video2x-alternative-mac/): Video2X ships for Windows and Linux only, built for x86 chips with AVX2.
 
@@ -52,5 +52,5 @@
 - [Refund Policy](https://crispvideo.app/legal/refunds/): 30-day refunds, no reason needed.
 
 ## Company
-- [About Crisp, made by Matthew Kerr in Grand Rapids](https://crispvideo.app/about/): Crisp is made by Matthew Kerr at Kerr & Company LLC in Grand Rapids, Michigan.
+- [About Crisp, made by Matthew Kerr in Grand Rapids](https://crispvideo.app/about/): Crisp is made by Matthew Kerr in Grand Rapids, Michigan: offline video restore and upscale.
 - [Made by Kerr & Company](https://kerrandcompanyholdings.com/): the company behind Crisp
