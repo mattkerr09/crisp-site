@@ -15,7 +15,7 @@ floor that moves regenerates every box on the next run instead of leaving 118 st
 WHERE:
   top ... after the page's Quick-answer block; a page without one (the hubs) gets it before its first <h2>,
           i.e. right after the intro. Not on legal documents (the terms themselves are not a sales page).
-  end ... in place of the old one-button CTA line ("Download Crisp for Mac — Free to try…") where the page
+  end ... in place of the old one-button CTA line ("Download Crisp for Mac: Free to use…") where the page
           has it, otherwise before the "Related" heading, otherwise before </article>.
 NOT ON: the homepage (it IS the product page), /thank-you/, merge stubs that canonicalise elsewhere, and the
 arms of a running experiment (~/ops/search/ARMS.md) — a box is new copy and new links on the arm.

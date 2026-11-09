@@ -198,7 +198,7 @@ def pages() -> dict[Path, str]:
             speed = f'<div class="mac-only">\n{speed}</div>\n'
     return {
         SITE / "pricing" / "index.html": page(
-            "pricing", "Crisp pricing: free to try, Pro with one payment",
+            "pricing", "Crisp pricing: free to use, Pro with one payment",
             f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. {llms_txt.price_short(f)} No subscription.",
             "Crisp pricing",
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
