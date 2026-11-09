@@ -451,6 +451,14 @@ def check(root: Path, scaffold: bool) -> list[str]:
             tree = ET.fromstring(sitemap)
             for _, german in PAGES:
                 matches = [u for u in tree.findall("s:url", NS) if u.findtext("s:loc", namespaces=NS) == ORIGIN + german]
+                # A noindex page stays OUT of the sitemap (9 Nov check-in: /de/download/ and /de/preise/ are noindex, the
+                # English pages are canonical); an indexable page has exactly one entry.
+                page_html = read(german.strip("/") + "/index.html") or ""
+                hidden = bool(re.search(r'<meta name="robots" content="[^"]*noindex', page_html))
+                if hidden:
+                    if matches:
+                        fail("sitemap.xml", f"{ORIGIN + german} is noindex and must not be in the sitemap")
+                    continue
                 if len(matches) != 1:
                     fail("sitemap.xml", f"expected one entry for {ORIGIN + german}")
                     continue
@@ -487,6 +495,12 @@ def selftest() -> int:
         print("FAIL: selftest cannot find the Windows version on de/download/")
         return 1
     _WIN_VERSION = win.group(1)
+    # the English home description changes with the copy (9 Nov: "Crisp enhancer restores ..."), so the fixture reads its opening
+    en_desc = re.search(r'<meta name="description" content="([^"]{0,22})', originals["index.html"])
+    if not en_desc:
+        print("FAIL: selftest cannot find the English home description")
+        return 1
+    _EN_DESC = en_desc.group(1)
     cases = [
         ("missing page", "de/download/index.html", None, None, "No such file", True),
         ("wrong language", "de/index.html", 'lang="de"', 'lang="en"', "lang=de", True),
@@ -498,7 +512,7 @@ def selftest() -> int:
         ("changed stylesheet", "de/download/index.html", 'href="/style.css"', 'href="/other.css"', "generated German page is stale", True),
         ("changed Plausible", "de/index.html", 'src="https://plausible.io/js/script.js"', 'src="/wrong.js"', "script src must preserve", True),
         ("missing title marker", "de/index.html", '<title>TODO-DE:', '<title>', "unmarked English", True),
-        ("missing description marker", "de/index.html", 'content="TODO-DE: Crisp restores', 'content="Crisp restores', "unmarked English", True),
+        ("missing description marker", "de/index.html", 'content="TODO-DE: ' + _EN_DESC, 'content="' + _EN_DESC, "unmarked English", True),
         ("changed reference", "de/download/index.html", de_strings.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", True),
         ("changed nav", "de/download/index.html", '>' + de_strings.NAV_DOWNLOAD + '</a>', '>Wrong</a>', "generated German page is stale", True),
         ("footer removed", "de/download/index.html", '<footer>', '', "generated German page is stale", True),
