@@ -33,7 +33,7 @@
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
-    if (when && Date.now() - when < 7 * 24 * 60 * 60 * 1000) return;
+    if (when && ((typeof window.__kcNow === "number") ? window.__kcNow : Date.now()) - when < 7 * 24 * 60 * 60 * 1000) return;
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
