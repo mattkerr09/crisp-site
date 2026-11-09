@@ -197,6 +197,10 @@ run_gate "page-dates" python3 "$(dirname "$0")/../_tools/page_dates.py" --check
 # After that no page may SHIP the founding price, the code or a founding line: founding.js hides them on the day, and this
 # refuses the next deploy until the generators have rewritten them out (CEO, 2026-10-21).
 run_gate "founding" python3 "$(dirname "$0")/../_tools/gate_founding.py"
+# Launch-price wording (CEO, 9 Nov 2026): nobody has paid $29 yet, so no "Black Friday price", "half price", "% off",
+# "save $" or struck $29 in our own price copy; rivals' quoted sales pass only through the gate's explicit allowlist.
+run_gate "price-words" python3 "$(dirname "$0")/../_tools/gate_price_words.py"
+run_gate "price-words-selftest" python3 "$(dirname "$0")/../_tools/gate_price_words.py" --selftest
 if tail -1 "$_REPORT" | grep -q '^  PASS     read-dates' && grep -q '^  WARN ' "$_REPORT".out 2>/dev/null; then
   echo "── read-dates: claim sets read more than 30 days ago (re-read before day 45) ─────"
   grep '^  WARN ' "$_REPORT".out | head -40
