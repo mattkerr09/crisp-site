@@ -41,6 +41,7 @@ END = "</div></article>"
 # run added one newline to all twenty files and --check reported all twenty stale forever.
 # The strip and the insert have to be exact inverses or "idempotent" is just a word in a
 # docstring. --check is what caught it.
+STUB = re.compile(r'<meta\s+http-equiv="refresh"\s+content="0;\s*url=', re.I)
 BLOCK = re.compile(r"  <h2>Related</h2>\n  <ul>\n(?:    <li>.*?</li>\n)+  </ul>\n\n")
 
 
@@ -51,7 +52,13 @@ def articles(section: Path) -> list[tuple[str, str, Path]]:
         page = d / "index.html"
         if not page.is_file():
             continue
-        m = re.search(r"<h1>(.*?)</h1>", page.read_text(), re.S)
+        text = page.read_text()
+        # A redirect stub (an instant meta refresh: how a merged page forwards, since GitHub Pages cannot send a 301) is
+        # not an article. Offered as a neighbour it put "This page has moved" in a Related list, which the site-vs-engine
+        # stub test then blocks (2026-11-09). Same pattern as tests/_sitehtml.py _STUB.
+        if STUB.search(text):
+            continue
+        m = re.search(r"<h1>(.*?)</h1>", text, re.S)
         if not m:
             continue
         out.append((d.name, re.sub(r"<[^>]+>", "", m.group(1)).strip(), page))
