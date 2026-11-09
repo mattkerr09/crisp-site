@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1921",
-  "notes": "Tribute films: put the video clips from a life or a marriage on the timeline, type a name, the dates or a line like \"Fifty years married\", and a closing line, then choose about 3, 5 or 8 minutes (less footage makes a shorter film; nothing is repeated). Crisp keeps the clips in the order you set, picks calm moments of four to seven seconds from each, dissolves between them, adds a title card and an end card, and lays the Gentle bed, other bundled music or your own track underneath, with the clips' own sound kept if you tick the box. It runs on your Mac, so nothing is uploaded. Photos on the timeline are skipped for now. The Mac download is now kept under its version number too, so an earlier release can always be reinstalled.",
-  "pub_date": "2026-11-08T14:23:08Z",
+  "version": "1.0.1954",
+  "notes": "Prices now read as a launch price: $14.50 once through November 30, then $29 from December 1. On a Windows PC whose graphics have no Vulkan, Crisp says so before Enhance starts instead of after. The Enhance tool now notes that very thin, faint lines, such as wires against the sky, can be smoothed away.",
+  "pub_date": "2026-11-09T07:04:29Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxZVFhNWWJwcTBSS3dKdjIyK0JveGhrUCtheDFlZjJLZlFSOEtzcmNrMEFoSlI2VTFEOFA0Z3hDQlBCSW9yY2pmOTNJUEJ4Nm9kTWFJcjA4cURwYmdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTQ2MjQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpIVlg0ZStyTmdqQTczd2psd0FCdTZlUWJzZWlTNENPLy9VVTc1OHdWQzJVbGJLQVRqYVo0cVEyaUhDT01oYzMrcUZRSFV2OHVWallSZTJzbytMZ3REUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1921.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoZHZ1Z0ZxN0V5dkRwZmh6N2s1dmZYbCtESTB1VDlIU3JZMm1yOW5WRXU2MnZvZHAraGZTUEREYW5JWmhFNnh1b0t4ZlE4QkpQQnArYVJhbTJNZGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjA3MzgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptVHQxQlhhdWRQVjVxQm4zS241VUloWnkxMGY0eWFOQmgrZjVUMVNDVVdNSEVlU3JyWldaY0ZtOTB4UjIvYzluUm0xcVhXQjh2N2QxaTBYem5OMXNBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1954.app.tar.gz"
     }
   }
 }
