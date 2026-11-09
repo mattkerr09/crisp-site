@@ -34,6 +34,10 @@ EXPIRY_SCRIPT = (
     "<script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){"
     "if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script>"
 )
+PRICE_SCRIPT = (
+    "<script>(function(){var n=Date.now();document.querySelectorAll('[data-price-ends]').forEach(function(e){"
+    "if(Date.parse(e.getAttribute('data-price-ends'))<=n)e.textContent=e.getAttribute('data-full-price');});})();</script>"
+)
 # Date values, in the same Pacific last-day convention as llms_txt.offer_last_day.
 MONTHS = ("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August",
           "September", "Oktober", "November", "Dezember")
@@ -45,8 +49,22 @@ def last_day(ends: str) -> str:
     return f"{last.day}. {MONTHS[last.month - 1]}"
 
 
+def future_day(ends: str) -> str:
+    end = datetime.fromisoformat(ends.replace("Z", "+00:00")).astimezone(ZoneInfo("America/Los_Angeles"))
+    day = (end + timedelta(seconds=1)).date()
+    return f"{day.day}. {MONTHS[day.month - 1]}"
+
+
+def price_copy(f: dict) -> str:
+    if not llms_txt.founding_live(f):
+        return f"{words.money(f['price'])} einmalig."
+    return (f"Einführungspreis: {words.money(f['now'])} einmalig, bis {last_day(f['ends'])}. "
+            f"Ab {future_day(f['ends'])}: {words.money(f['price'])}.")
+
+
 def values(f: dict) -> dict:
     return dict(f, price=words.money(f["price"]), now=words.money(f["now"]), ends=last_day(f["ends"]),
+                future=future_day(f["ends"]), price_copy=price_copy(f),
                 os=words.fact_de(f["os"]), chip=words.fact_de(f["chip"]))
 
 
@@ -54,6 +72,10 @@ def box(src: str, buy_first: bool = False, f: dict | None = None) -> str:
     landing.prepare_facts()
     f = f if f is not None else llms_txt.facts()
     v = values(f)
+    live = llms_txt.founding_live(f)
+    amount = f["now"] if live else f["price"]
+    price_attrs = (f' data-launch-price data-price-ends="{f["ends"]}" data-full-price="{v["price"]}"'
+                   if live else "")
     dl = (f'<a class="btn{" btn-ghost" if buy_first else ""}" data-track="{src}" '
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">{words.BOX["download_mac"]}</a>')
     buy = (f'<a class="btn{"" if buy_first else " btn-ghost"}" data-crisp-checkout data-track="{src}-buy" '
@@ -65,20 +87,15 @@ def box(src: str, buy_first: bool = False, f: dict | None = None) -> str:
                f'<a data-track="{src}-windows" href="{llms_txt.dl_win_url(src + "-windows")}" rel="nofollow">'
                f'{words.BOX["windows_dl"].format(win_version=win["version"])}</a> '
                f'<span class="win-gpu">{words.BOX["windows_gpu"]}</span></p>') if win else ""
-    # No approved instalment wording exists yet. Keep a visible translation marker
-    # if a future price activates the English box's pay-in-four split.
-    split = (f'<span class="pbox-split"> · {words.SPLIT.format(amount=words.money(llms_txt.quarter(f["price"])))}</span>'
-             if llms_txt.bnpl_on(f, f["price"]) else "")
-    if found and llms_txt.bnpl_on(f, f["now"]):
-        found = found.replace(f'<strong>{v["now"]}</strong>',
-                              f'<strong>{v["now"]} · {words.SPLIT.format(amount=words.money(llms_txt.quarter(f["now"])))}</strong>', 1)
+    split = (f'<span class="pbox-split"> · {words.SPLIT.format(amount=words.money(llms_txt.quarter(amount)))}</span>'
+             if llms_txt.bnpl_on(f, amount) else "")
     return (f'<!-- de-box:begin --><aside class="pbox" data-landing-box>'
             f'<p class="pbox-name">{words.BOX["name"]}</p>'
-            f'<p class="pbox-price"><span class="pbox-amt">{v["price"]}</span> {words.BOX["once"]}{split}</p>'
+            f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{words.money(amount)}</span> {words.BOX["once"]}{split}</p>'
             f'{found}<p class="pbox-cur">{words.CURRENCY}</p>'
             f'<p class="pbox-actions">{buy + " " + dl if buy_first else dl + " " + buy}</p>{windows}'
             f'<p class="pbox-fine">{words.BOX["fine"].format(**v)}</p></aside>'
-            f'{EXPIRY_SCRIPT}<!-- de-box:end -->')
+            f'{PRICE_SCRIPT}{EXPIRY_SCRIPT}<!-- de-box:end -->')
 
 
 def speed_section(f: dict) -> str:
@@ -99,14 +116,11 @@ def bundle() -> str:
     if not thankyou_xsell.FACTS.is_file():
         raise SystemExit(f"de_pages: required regular prices file is missing: {thankyou_xsell.FACTS}")
     apart = sum(thankyou_xsell.list_price(name) for name in ("Crisp", "Docket SEO", "Outlier"))
-    text = words.PRICES["bundle"].format(
-        apart=words.money(apart), bundle=words.money(landing.BUNDLE_USD),
-        bundle_now=words.money(landing.BUNDLE_FOUNDING_USD), ends_iso=landing.BUNDLE_FOUNDING_ENDS,
-        ends=last_day(landing.BUNDLE_FOUNDING_ENDS))
-    if not llms_txt.founding_live({"ends": landing.BUNDLE_FOUNDING_ENDS}):
-        text = re.sub(r'<span data-until="[^"]+">.*?</span>', '', text)
+    text = words.PRICES["bundle"].format(bundle_copy=price_copy({
+        "price": landing.BUNDLE_USD, "now": landing.BUNDLE_FOUNDING_USD, "ends": landing.BUNDLE_FOUNDING_ENDS}), apart=words.money(apart), future=future_day(landing.BUNDLE_FOUNDING_ENDS))
     return (f'<a href="{landing.BUNDLE_URL}?src=de-preise" rel="nofollow" '
-            f'data-track="de-preise-bundle">{text}</a>')
+            f'data-track="de-preise-bundle" data-launch-price data-price-ends="{landing.BUNDLE_FOUNDING_ENDS}" '
+            f'data-full-price="Alle drei Apps, Crisp, Docket SEO und Outlier. {words.money(landing.BUNDLE_USD)} einmalig.">{text}</a>')
 
 
 def page(slug: str, f: dict) -> str:

@@ -89,15 +89,28 @@ def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
 
 def offer_last_day(f: dict) -> str:
     """The offer's last day where it ends latest in the US (Pacific): FOUNDINGCRISP ends 2026-12-01T07:59:59Z, the last second
-    of 30 November in California. Said as "through November" when that is a month's last day, else "until 30 November". Read
+    of 30 November in California. The copy names both the month and day. Read
     from data-ends, never typed; anywhere east of California the offer in fact runs a few hours longer, never shorter."""
     import datetime as _dt
     from zoneinfo import ZoneInfo
     end = _dt.datetime.fromisoformat(f["ends"].replace("Z", "+00:00")).astimezone(ZoneInfo("America/Los_Angeles"))
     last = (end - _dt.timedelta(seconds=1)).date() if (end.hour, end.minute) == (0, 0) else end.date()
-    if (last + _dt.timedelta(days=1)).day == 1:
-        return f"through {last.strftime('%B')}"
-    return f"until {last.day} {last.strftime('%B')}"
+    return f"through {last.strftime('%B')} {last.day}"
+
+
+def future_day(f: dict) -> str:
+    import datetime as _dt
+    from zoneinfo import ZoneInfo
+    end = _dt.datetime.fromisoformat(f["ends"].replace("Z", "+00:00")).astimezone(ZoneInfo("America/Los_Angeles"))
+    day = (end + _dt.timedelta(seconds=1)).date()
+    return f"{day.strftime('%B')} {day.day}"
+
+
+def price_copy(f: dict) -> str:
+    if not founding_live(f):
+        return f"{money(f['price'])} once."
+    return (f"Launch price: {money(f['now'])} once, {offer_last_day(f)}. "
+            f"From {future_day(f)}: {money(f['price'])}.")
 
 
 def offer_who(f: dict) -> str:
@@ -243,7 +256,7 @@ def windows_hero_fine(cap: int, src: str) -> str:
     if not windows():
         return ""
     return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})'
-            f'<br>Pro is $29 once, with a 30-day refund · '
+            f'<br>{price_copy(facts())} 30-day refund · '
             f'<a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src={src}" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a>'
             # a second way in, never instead of the direct download (CEO, 2026-11-08): the same app on the Microsoft Store
             f' · or get it from the <a href="{MS_STORE}" data-track="hero-ms-store" rel="nofollow">Microsoft Store</a></p>')
@@ -270,7 +283,10 @@ def page_meta(rel: str) -> tuple[str, str]:
     title = html.unescape(one(r"<title>(.*?)</title>", s, f"{rel} title"))
     title = re.sub(r"\s*[—|]\s*Crisp(?: Video)?\s*$", "", title).strip()
     desc = html.unescape(one(r'<meta name="description" content="([^"]*)"', s, f"{rel} description"))
-    first = re.split(r"(?<=[.!?])\s", desc, maxsplit=1)[0]
+    sentences = re.split(r"(?<=[.!?])\s+", desc)
+    first = sentences[0]
+    if "Launch price:" in first and len(sentences) > 1 and sentences[1].startswith("From "):
+        first += " " + sentences[1]
     return title, first
 
 
@@ -286,22 +302,21 @@ def build() -> str:
         "# Crisp Video",
         "",
         f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac or a Windows PC, then lets you "
-        f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}; Pro is {money(p)} once, "
-        f"not a subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE}).",
+        f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}. {price_copy(f)} "
+        f"No subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE}).",
         "",
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
-        f"- [Pricing]({BASE}/#pricing): Free — the full editor, the full preview and the standard enhancement lanes; "
-        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro — {money(p)} once, {f['updates']}; removes the mark and the limit and adds "
+        f"- [Pricing]({BASE}/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; "
+        f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: {price_copy(f)} {f['updates'].capitalize()}; removes the mark and the limit and adds "
         f"batch processing and, on a Mac, the generative Max lane",
     ]
     if founding_live(f):
-        out.append(f"- [Black Friday founding price]({BASE}/#buy): {money(now)} {offer_who(f)}, then {money(p)} "
-                   f"(the offer ends {f['ends'][:10]} {f['ends'][11:16]} UTC) — the Buy button applies {f['code']} "
+        out.append(f"- [Launch price]({BASE}/#buy): {price_copy(f)} The Buy button applies {f['code']} "
                    f"at checkout; if it ever doesn't, choose “Have a discount code?” and enter it")
     if bnpl_on(f, p):
         out.append(f"- [Pay in four]({BASE}/#buy): {f['bnpl_providers']} at checkout{' ' + f['bnpl_where'] if f['bnpl_where'] else ''}"
-                   f" — {money(p)} as 4 payments of {money(quarter(p))}, two weeks apart"
+                   f". {money(p)} as 4 payments of {money(quarter(p))}, two weeks apart"
                    + (f" (founding: 4 × {money(quarter(now))})" if founding_live(f) and bnpl_on(f, now) else "")
                    + (f" (not on the {money(now)} founding price, which is under the {money(BNPL_FLOOR)} minimum)"
                       if founding_live(f) and not bnpl_on(f, now) else ""))
@@ -347,6 +362,9 @@ def build() -> str:
 
 
 if __name__ == "__main__":
+    import landing_pages
+    landing_pages.prepare_facts()
+    ENGINE = landing_pages.llms_txt.ENGINE
     text = build()
     if "--print" in sys.argv:
         print(text, end="")

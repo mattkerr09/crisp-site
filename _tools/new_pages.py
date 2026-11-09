@@ -98,7 +98,7 @@ HEAD = """<!DOCTYPE html>
 {body}
   <h2>{faq_heading}</h2>
 {faq_html}
-  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: enhanced exports up to {cap} seconds, everything else at full length, with a small mark. Pro removes the mark and the limit for ${price} once. Runs entirely on your Mac.</p>
+  <p><a class="btn" href="{site}/#download">Download Crisp for Mac</a> Free to try: enhanced exports up to {cap} seconds, everything else at full length, with a small mark. Pro removes the mark and the limit. {price_copy} Runs entirely on your Mac.</p>
 </div></article>
 
 <footer><div class="wrap">
@@ -115,6 +115,9 @@ def esc(s):
 
 
 def build(page):
+    import landing_pages
+    import llms_txt
+    landing_pages.prepare_facts()
     faq_html = "\n".join(
         f"  <h3>{q}</h3>\n  <p>{a}</p>" for q, a in page["faq"])
     # ⚠️ datePublished WAS THE LITERAL "2026-08-10" FOR EVERY PAGE THIS EVER WROTE. The pages were committed after
@@ -127,7 +130,7 @@ def build(page):
     # A placeholder only: faq_jsonld.rebuild() below replaces mainEntity with the questions and answers the page SHOWS,
     # so the schema can never be a second, drifting copy of the FAQ (166 of 346 schema questions had drifted).
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}'
-    html = HEAD.format(site=SITE, price=PRICE_USD, cap=FREE_EXPORT_CAP_SECONDS, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    html = HEAD.format(site=SITE, price=PRICE_USD, price_copy=llms_txt.price_copy(llms_txt.facts()), cap=FREE_EXPORT_CAP_SECONDS, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,

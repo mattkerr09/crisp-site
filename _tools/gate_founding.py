@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """No founding price ships once the founding offer has ended (CEO, 2026-10-21).
 
-FOUNDINGCRISP in Dodo: 50% off, for everyone (no limit since 2026-11-02, Matthew's Black Friday month), expires
+FOUNDINGCRISP in Dodo: launch price for everyone, no limit since 2026-11-02, expires
 2026-12-01T07:59:59Z. The home page's founding mount is the single place the offer is written (data-code, data-now,
 data-then, data-ends, and data-first only while the offer has a cap); the product boxes, the landing pages, llms.txt and
 every page's mount copy are generated from it. Two switches turn it off:
@@ -126,7 +126,7 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
         return bad, notes
     why = f"ended {ends}" if ended else "all places used"
     needles = [n for n in (code, price and f"{price}", "Founding price", "founding buyers", "founding price",
-                           "Black Friday price") if n]
+                           "Black Friday price", "Launch price", "launch price", "Einführungspreis") if n]
     for p in pages(site):
         text = visible(p)
         hit = [n for n in needles if n in text]
@@ -138,9 +138,9 @@ def problems(site: Path, now: dt.datetime, state: dict | None) -> tuple[list[str
 def selftest() -> bool:
     with tempfile.TemporaryDirectory() as d:
         site = Path(d)
-        mount_html = ('<div data-founding data-code="CODEX" data-was="$129" data-now="$64.50" data-first="24" '
+        mount_html = ('<div data-founding data-code="CODEX" data-then="$129" data-now="$64.50" data-first="24" '
                       'data-ends="2026-11-25T01:26:00Z"></div>')
-        (site / "index.html").write_text(f"<html><body>{mount_html}<p>Founding price $64.50 for the first 24 buyers.</p>"
+        (site / "index.html").write_text(f"<html><body>{mount_html}<p>Launch price: $64.50 once, through November 24. From November 25: $129.</p>"
                                          "<!-- Founding price in a comment does not count --></body></html>")
         live = {"source": "test", "total": 24, "left": 21, "sold_out": False, "expired": False,
                 "ends": "2026-11-25T01:26:00Z", "code": "CODEX"}
@@ -148,10 +148,14 @@ def selftest() -> bool:
         after = problems(site, dt.datetime(2026, 11, 26, tzinfo=dt.timezone.utc), live)[0]
         sold = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {**live, "left": 0, "sold_out": True})[0]
         wrong = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), {**live, "total": 25})[0]
+        labels = []
+        for label in ("Launch price", "launch price", "Einführungspreis"):
+            (site / "index.html").write_text(f"<html><body>{mount_html}<p>{label}</p></body></html>")
+            labels.append(bool(problems(site, dt.datetime(2026, 11, 26, tzinfo=dt.timezone.utc), live)[0]))
         no_end_mount = mount_html.replace(' data-ends="2026-11-25T01:26:00Z"', "")
         (site / "index.html").write_text("<html><body>" + no_end_mount + "</body></html>")
         no_end = problems(site, dt.datetime(2026, 11, 1, tzinfo=dt.timezone.utc), None)[0]
-    return not before and bool(after) and bool(sold) and bool(wrong) and bool(no_end)
+    return not before and bool(after) and bool(sold) and bool(wrong) and bool(no_end) and all(labels)
 
 
 def main(argv: list[str]) -> int:

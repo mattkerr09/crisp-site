@@ -58,18 +58,20 @@ def box(where: str, page: str = "") -> str:
     f = llms_txt.facts()
     src = (page.strip("/").replace("/", "-") + "-" if page.strip("/") else "") + f"pbox-{where}"
     p, now = f["price"], f["now"]
+    live = llms_txt.founding_live(f)
+    amount = now if live else p
+    price_attrs = f' data-launch-price data-full-price="{llms_txt.money(p)}"' if live else ""
     q = llms_txt.quarter
     m = llms_txt.money
-    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if llms_txt.bnpl_on(f, p) else ""
-    nsplit = f" · or 4 × {m(q(now))}" if llms_txt.bnpl_on(f, now) else ""     # none under the $50.01 floor
+    split = f'<span class="pbox-split"> · or 4 × {m(q(amount))}</span>' if llms_txt.bnpl_on(f, amount) else ""
     # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
     # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
     # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).
-    found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
-             f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
+    found = (f'<p class="pbox-found">Launch price, {llms_txt.offer_last_day(f)}. From {llms_txt.future_day(f)}: {m(p)}. '
+             f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if live else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
-            f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
+            f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'
             f'{found}'
             # THE CURRENCY, TRUE (CEO sales audit, 2026-11-07): 6 of 8 November buyers paid in their own currency, 4 with tax added.
             f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
@@ -164,6 +166,8 @@ def missing(p: Path) -> list[str]:
 
 
 if __name__ == "__main__":
+    import landing_pages
+    landing_pages.prepare_facts()
     pages = targets()
     if "--check" in sys.argv:
         bad = {str(p.relative_to(SITE)): m for p in pages if (m := missing(p))}

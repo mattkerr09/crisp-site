@@ -9,6 +9,8 @@
     if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
     window.__kcFoundingEnded = true;
     var hide = function () {
+      var prices = document.querySelectorAll("[data-launch-price]");
+      for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
       var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
       for (var i = 0; i < els.length; i++) els[i].style.display = "none";
     };
@@ -24,28 +26,10 @@
     var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
     if (isNaN(t) || t <= n) return;
     try {
-      var end = new Date(t), day = end.getHours() < 12 ? new Date(t - 12 * 3600e3) : end;
-      untilTxt = "until " + day.toLocaleDateString(undefined, { month: "long", day: "numeric" });
+      var day = new Date(t - 1000);
+      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
     } catch (x) {}
   })();
-  if (untilTxt) {
-    var dateLines = function () {
-      try {
-        if (!document.createTreeWalker || typeof NodeFilter === "undefined") return;
-        var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
-        for (var i = 0; i < els.length; i++) {
-          if ((els[i].textContent || "").indexOf(untilTxt) !== -1) continue;
-          var w = document.createTreeWalker(els[i], NodeFilter.SHOW_TEXT, null);
-          for (var tn = w.nextNode(); tn; tn = w.nextNode()) {
-            var m = /(first \d+ buyers)(?=[.,;:]|\s|$)/.exec(tn.nodeValue);
-            if (m) { tn.nodeValue = tn.nodeValue.replace(m[1], m[1] + ", " + untilTxt); break; }
-          }
-        }
-      } catch (x) {}
-    };
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", dateLines); else dateLines();
-  }
-
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -53,12 +37,12 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var was = mount && mount.getAttribute("data-was");
   var now = mount && mount.getAttribute("data-now");
   var then = mount && mount.getAttribute("data-then");
   var split = mount && mount.getAttribute("data-now-split");
   var first = mount && mount.getAttribute("data-first");
   var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
+  if (!now || !then || !untilTxt) return;
   var PH = { url: "https://www.producthunt.com/posts/crisp-8", from: "2026-10-03T07:01:00Z", to: "2026-10-04T07:01:00Z" };
   var phNow = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
   var phLive = phNow >= Date.parse(PH.from) && phNow < Date.parse(PH.to);
@@ -72,7 +56,7 @@
     '<style>',
     ':host{all:initial;display:block}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
-    '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:nowrap;',
+    '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;',
     '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
     '  font-size:.795rem;line-height:1.3;position:relative;overflow:hidden;',
     '  border-bottom:1px solid rgba(240,180,41,.22)}',
@@ -81,8 +65,7 @@
     '.tag{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.66rem;',
     '  color:#F0B429;white-space:nowrap;flex:none}',
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
-    '.txt{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
-    '.was{text-decoration:line-through;opacity:.42;margin-right:.28rem}',
+    '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
     '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
     '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
@@ -95,7 +78,6 @@
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:420px){.was{display:none}}',
     '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '.ph{display:block;text-align:center;padding:.3rem 2.2rem .3rem .9rem;background:#1C1408;color:#EDE6D6;',
@@ -104,15 +86,11 @@
     '.ph:hover{background:#261B0B}',
     '</style>',
     (phLive ? '<a class="ph" href="' + PH.url + '" target="_blank" rel="noopener">We\u2019re live on <b>Product Hunt</b> today. We\u2019d love your feedback \u2192</a>' : ''),
-    '<div class="bar" role="region" aria-label="' + (then ? 'Black Friday offer' : 'Founding offer') + '">',
-    '  <span class="tag">' + (then ? 'Black Friday' : 'Founding') + '</span>',
+    '<div class="bar" role="region" aria-label="Launch price">',
+    '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    (then && now
-      ? '  <span class="txt">Crisp Pro <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-        (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ', ' + untilTxt : '') + ', then ' + then
-      : '  <span class="txt">50% off' + (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ', ' + untilTxt : '') +
-        (was && now ? ': <span class="was">' + was + '</span><span class="now">' + now +
-                      (split ? ' · or 4 × ' + split : '') + '</span>' : '')),
+    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
+      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
     '  </span>',
     '  <span class="dot"></span>',
     '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',

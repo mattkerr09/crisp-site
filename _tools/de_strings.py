@@ -33,7 +33,7 @@ BOX = {
     "name": "<strong>Crisp Video</strong> stellt Videos wieder her, entfernt Rauschen und skaliert sie auf 4K hoch, offline auf Ihrem Mac oder PC.",
     "once": "einmalig",
     # {now}, {price} are money(); {code} the founding code; {ends} the last day of the offer, e.g. "30. November"
-    "found": "Black-Friday-Preis <strong>{now}</strong> für alle bis {ends}, danach {price}. Über den Kauf-Button wird der Code <strong>{code}</strong> an der Kasse automatisch eingelöst.",
+    "found": "Einführungspreis, bis {ends}. Ab {future}: {price}. Über den Kauf-Button wird der Code <strong>{code}</strong> an der Kasse automatisch eingelöst.",
     "buy": "Crisp Pro kaufen",
     "download_mac": "Kostenlos für den Mac herunterladen",
     "windows_q": "Windows 10 oder 11, 64 Bit?",
@@ -66,20 +66,19 @@ DOWNLOAD = {
 }
 
 PRICES = {
-    "title": "Crisp-Preise: kostenlos ausprobieren, Pro einmalig {price}",
+    "title": "Crisp-Preise: kostenlos ausprobieren, Pro einmal kaufen",
     "meta": ("Kostenlos nutzbar: KI-Exporte bis {cap} Sekunden, alles andere in voller Länge, mit einem kleinen Wasserzeichen. "
-             "Pro kostet {price} einmalig, kein Abo."),
+             "{price_copy} Kein Abo."),
     "h1": "Crisp: Preise",
     "free": ("Kostenlos: der ganze Editor und die ganze Vorschau. KI-Exporte (Hochskalieren, Wiederherstellen, Farblooks) enden nach {cap} "
              "Sekunden; alles andere, etwa Umwandeln, Stummschalten, Komprimieren und Endlosschleife, läuft in voller Länge. Jeder kostenlose "
              "Videoexport trägt ein kleines &bdquo;crispvideo.app&ldquo;-Wasserzeichen."),
-    "pro": ("Crisp Pro kostet {price} einmalig, kein Abo. Pro entfernt das Wasserzeichen und die {cap}-Sekunden-Grenze und bietet die "
+    "pro": ("{price_copy} Kein Abo. Pro entfernt das Wasserzeichen und die {cap}-Sekunden-Grenze und bietet die "
             "Stapelverarbeitung, auf dem Mac auch die Wiederherstellungsstufe &bdquo;Max&ldquo;. Eine Lizenz gilt für bis zu drei Computer gleichzeitig, Mac oder "
             "Windows. Alle Updates der Version 1.x sind enthalten, und Sie bekommen {refund_days} Tage lang Ihr Geld zurück, ohne Angabe "
             "von Gründen."),
     # the bundle: {bundle} regular, {apart} the three apps bought separately, {bundle_now} the November price
-    "bundle": ("Alle drei Apps (Crisp, Docket SEO und Outlier): einzeln {apart}, im Paket {bundle} einmalig"
-               "<span data-until=\"{ends_iso}\">, bis zum {ends} {bundle_now}</span>."),
+    "bundle": ("Alle drei Apps, Crisp, Docket SEO und Outlier. {bundle_copy} Einzeln ab {future}: {apart}."),
     "more": "Was Pro zusätzlich bietet, die Lizenzbedingungen und Antworten auf die üblichen Fragen finden Sie auf der <a href=\"/de/\">Startseite</a>.",
 }
 

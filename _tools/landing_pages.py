@@ -54,6 +54,10 @@ BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("49.50"), Decimal("99")
 BUNDLE_FOUNDING_ENDS = "2026-12-01T07:59:59Z"
 
 
+def bundle_copy() -> str:
+    return llms_txt.price_copy({"price": BUNDLE_USD, "now": BUNDLE_FOUNDING_USD, "ends": BUNDLE_FOUNDING_ENDS})
+
+
 def prepare_facts() -> None:
     """A site-only worktree still reads the app's facts from the main checkout."""
     gitfile = SITE / ".git"
@@ -69,8 +73,10 @@ def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
     f = llms_txt.facts()
     m, q = llms_txt.money, llms_txt.quarter
     p, now = f["price"], f["now"]
-    split = f'<span class="pbox-split"> · or 4 × {m(q(p))}</span>' if llms_txt.bnpl_on(f, p) else ""
-    nsplit = f" · or 4 × {m(q(now))}" if llms_txt.bnpl_on(f, now) else ""     # none under the $50.01 floor
+    live = llms_txt.founding_live(f)
+    amount = now if live else p
+    price_attrs = f' data-launch-price data-full-price="{m(p)}"' if live else ""
+    split = f'<span class="pbox-split"> · or 4 × {m(q(amount))}</span>' if llms_txt.bnpl_on(f, amount) else ""
     dl = (f'<a class="btn{"" if not buy_first else " btn-ghost"}" data-track="{src}" '
           f'href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a>')
     buy = (f'<a class="btn{" btn-ghost" if not buy_first else ""}" data-crisp-checkout data-track="{src}-buy" '
@@ -82,11 +88,11 @@ def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
                 f'{llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE} · '
                 f'{f["refund_days"]}-day refund, no reason needed. '
                 f'Also on the <a href="{llms_txt.MS_STORE}" data-track="{src}-ms-store" rel="nofollow">Microsoft Store</a>.</p>') if win else ""
-    found = (f'<p class="pbox-found">Black Friday price <strong>{m(now)}{nsplit}</strong> {llms_txt.offer_who(f)}, then {m(p)}. '
-             f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if llms_txt.founding_live(f) else ""
+    found = (f'<p class="pbox-found">Launch price, {llms_txt.offer_last_day(f)}. From {llms_txt.future_day(f)}: {m(p)}. '
+             f'The Buy button applies <strong>{f["code"]}</strong> at checkout.</p>') if live else ""
     return (f'<aside class="pbox" data-landing-box>'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
-            f'<p class="pbox-price"><span class="pbox-amt">{m(p)}</span> once{split}</p>'
+            f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
             f'<p class="pbox-actions">{win_dl}{buy + " " + dl if buy_first else dl + " " + buy}</p>'
@@ -192,14 +198,12 @@ def pages() -> dict[Path, str]:
             speed = f'<div class="mac-only">\n{speed}</div>\n'
     return {
         SITE / "pricing" / "index.html": page(
-            "pricing", f"Crisp pricing: free to try, Pro {m(f['price'])} once",
-            f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. Pro is {m(f['price'])} once, not a subscription.",
+            "pricing", "Crisp pricing: free to try, Pro with one payment",
+            f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. {llms_txt.price_copy(f)} No subscription.",
             "Crisp pricing",
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
-            f"runs at full length; every free video export carries a small &ldquo;crispvideo.app&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. Pro is a one-time "
-            f"{m(f['price'])}, {f['updates']}: it removes the mark and the {f['cap']}-second limit and adds batch processing and, on a Mac, the Max restore lane. "
-            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier, for {llms_txt.money(BUNDLE_FOUNDING_USD)} once</a> '
-            f"{llms_txt.offer_last_day({'ends': BUNDLE_FOUNDING_ENDS})}, our Black Friday price, then {llms_txt.money(BUNDLE_USD)}.",
+            f"runs at full length; every free video export carries a small &ldquo;crispvideo.app&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. {llms_txt.price_copy(f)} {f['updates'].replace(' included', ' is included').capitalize()}. It removes the mark and the {f['cap']}-second limit and adds batch processing and, on a Mac, the Max restore lane. "
+            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier. {bundle_copy()}</a>',
             "pricing-page", True),
         SITE / "download" / "index.html": page(
             "download", "Download Crisp for Mac and Windows",

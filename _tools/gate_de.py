@@ -510,7 +510,7 @@ def selftest() -> int:
         ("unmapped nav link", "de/download/index.html", ORIGIN + '/de/download/?src=nav-download', ORIGIN + '/download/?src=nav-download', "generated German page is stale", True),
         ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
         ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
-        ("changed price", "de/preise/index.html", '<span class="pbox-amt">29 $</span>', '<span class="pbox-amt">30 $</span>', "generated German page is stale", True),
+        ("changed price", "de/preise/index.html", 'data-full-price="29 $"', 'data-full-price="30 $"', "generated German page is stale", True),
         ("changed JSON price", "de/index.html", '"price": "29"', '"price": "30"', "fixed value", True),
         ("unmarked JSON prose", "de/index.html", '"name": "TODO-DE: Crisp Video"', '"name": "Crisp Video"', "unmarked English", True),
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),
@@ -534,7 +534,7 @@ def selftest() -> int:
         ("stale code", "de/preise/index.html", 'FOUNDINGCRISP', 'WRONGCODE', "generated German page is stale", True),
         ("stale bundle price", "de/preise/index.html", '49,50 $', '48,50 $', "generated German page is stale", True),
         ("stale macOS floor", "de/download/index.html", 'macOS 14.0', 'macOS 13.0', "generated German page is stale", True),
-        ("unmarked homepage price", "de/index.html", '$29 once', '$28 once', "prices differ", True),
+        ("unmarked homepage price", "de/index.html", '$14.50 once', '$13.50 once', "prices differ", True),
         ("unmarked homepage code", "de/index.html", 'TODO-DE: FOUNDINGCRISP', 'WRONGCODE', "codes differ", True),
         ("stale generated box", "de/datenschutz/index.html", '14,50 $', '13,50 $', "generated German box is stale", True),
         ("missing box expiry", "de/datenschutz/index.html", de_pages.EXPIRY_SCRIPT, '', "generated German box is stale", True),
@@ -736,12 +736,14 @@ def generator_selftest() -> None:
     with patch.object(de_pages.llms_txt, "windows", return_value=None):
         assert 'class="win-link"' not in de_pages.box("de-test", f=f)
     instalments = dict(f, price=Decimal("80"), now=Decimal("60"), bnpl=True)
-    assert 'oder 4 × 20 $' in de_pages.box("de-test", f=instalments)   # the German pay-in-four words
+    assert '60 $</span> einmalig' in de_pages.box("de-test", f=instalments)   # the launch amount leads
     assert 'oder 4 × 15 $' in de_pages.box("de-test", f=instalments)
     live = de_pages.llms_txt.founding_live
     with patch.object(de_pages.llms_txt, "founding_live", side_effect=lambda fact: live(fact, datetime(2030, 1, 1, tzinfo=timezone.utc))):
         assert 'class="pbox-found"' not in de_pages.page("download", f)
-        assert 'data-until=' not in de_pages.bundle(), "expired bundle offer remains"
+        assert 'oder 4 × 20 $' in de_pages.box("de-test", f=instalments)
+        assert '<span class="pbox-amt">29 $</span>' in de_pages.box("de-test", f=f)
+        assert 'Einführungspreis' not in de_pages.bundle(), "expired bundle offer remains"
     assert de_pages.last_day("2026-12-01T08:00:00Z") == "30. November"
     assert de_pages.EXPIRY_SCRIPT in de_pages.thankyou_xsell.block()
     with tempfile.TemporaryDirectory(prefix="crisp-de-generator-") as folder:
