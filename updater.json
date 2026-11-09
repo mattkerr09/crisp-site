@@ -1,7 +1,7 @@
 {
   "version": "1.0.1954",
   "notes": "Prices now read as a launch price: $14.50 once through November 30, then $29 from December 1. On a Windows PC whose graphics have no Vulkan, Crisp says so before Enhance starts instead of after. The Enhance tool now notes that very thin, faint lines, such as wires against the sky, can be smoothed away.",
-  "pub_date": "2026-11-09T07:04:29Z",
+  "pub_date": "2026-11-09T07:21:26Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoZHZ1Z0ZxN0V5dkRwZmh6N2s1dmZYbCtESTB1VDlIU3JZMm1yOW5WRXU2MnZvZHAraGZTUEREYW5JWmhFNnh1b0t4ZlE4QkpQQnArYVJhbTJNZGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjA3MzgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptVHQxQlhhdWRQVjVxQm4zS241VUloWnkxMGY0eWFOQmgrZjVUMVNDVVdNSEVlU3JyWldaY0ZtOTB4UjIvYzluUm0xcVhXQjh2N2QxaTBYem5OMXNBdz09Cg==",
