@@ -1,0 +1,11 @@
+{
+  "version": "1.0.1990",
+  "notes": "New: Fit a size. Say \"under 20 MB for Discord\", \"small enough to email\" or any size in MB, and Crisp makes an MP4 that fits, or tells you how to split it. New: Slow motion as its own tool, 2x, 4x or 8x slower with smooth in-between frames and the sound kept at its normal pitch, at full length without Pro too (Mac, and Windows PCs with Vulkan graphics). New: Old photos, which restores a whole folder of scans in one go and saves a before-and-after of each. On Windows, Blur the faces now finds faces. Max now says, where you pick it, that it can draw small things that were not there, such as letters on a number plate or eyelashes, so check details and faces at full size.",
+  "pub_date": "2026-11-09T21:45:53Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU9GdllXRDhLUW5Qd0dOaDVDVkFrTHFpa1lXYUJtK2N3b1NDTTNVc1lzeTFGbGZYd1gvWHVPNkRsdkNJaWV5dXFOVllUbVY1TkdFNlBkZkNFTE1CeWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjYwNzUzCWZpbGU6Q3Jpc3AtMS4wLjE5OTAteDY0LXNldHVwLmV4ZQpyaWVaTEJVdmVDdTcyY3pFT3JScVZBNnZUMjROWm91Smcra2JxdTNLNGhTUUZNck5jMlg4SklRNkF6QW5hWDhoYVVQdFg0REM2cUhNOUk0Q3ZOZmNBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe"
+    }
+  }
+}
