@@ -259,3 +259,10 @@ pre{max-width:100%;overflow-x:auto;}
 body::before{content:"";position:absolute;left:0;right:0;top:0;height:34rem;z-index:-1;pointer-events:none;
   background:radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.14),transparent 70%),
              radial-gradient(35% 40% at 86% 6%,rgba(157,140,255,.07),transparent 70%);}
+.fitcalc{margin:1.4rem 0 1.9rem;padding:1.15rem 1.35rem;border:1px solid var(--hair);border-radius:var(--r-sm);background:var(--panel-2);}
+.fitcalc>strong{display:block;margin:0 0 .3rem;font-family:var(--head);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--cyan);font-weight:600;}
+.fitcalc .fit-row{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;margin:.6rem 0 .9rem;}
+.fitcalc label{display:flex;flex-direction:column;gap:.3rem;font-size:.85rem;color:var(--grey);}
+.fitcalc select,.fitcalc input{font:inherit;font-size:1rem;color:var(--white);background:var(--card);border:1px solid var(--hair-lit);border-radius:8px;padding:.45rem .6rem;min-width:9rem;}
+.fitcalc .fit-out{margin:0 0 .5rem;color:var(--white);}
+.fitcalc .fit-note{margin:0;font-size:.85rem;color:var(--grey);}

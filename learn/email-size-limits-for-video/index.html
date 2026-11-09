@@ -88,6 +88,17 @@
   Whether a 24&nbsp;MB file still gets through depends on how the service counts, so for Gmail I aim for about
   18&nbsp;MB, or let Gmail make its Drive link.</p>
 
+  <div class="fitcalc" id="fit-calc">
+    <strong>Check your own video</strong>
+    <div class="fit-row">
+      <label>Sending it by <select id="fit-dest"><option value="gmail">Gmail</option><option value="outlook">Outlook.com</option><option value="wav">WhatsApp, as a video</option><option value="wad">WhatsApp, as a document</option><option value="md">Mail Drop</option></select></label>
+      <label>Length in minutes <input id="fit-min" type="number" min="0" step="0.5" value="3" inputmode="decimal"></label>
+      <label>Picture <select id="fit-q"><option value="1080">1080p</option><option value="720" selected>720p</option><option value="480">480p</option></select></label>
+    </div>
+    <p class="fit-out" id="fit-out" aria-live="polite">Pick where it's going and how long it runs.</p>
+    <p class="fit-note">The same sums as the table above, with Gmail's encoding allowance. To make a file smaller, <a href="https://crispvideo.app/how-to/compress-video-on-mac/">compress it in Crisp</a>; Compress runs at full length on the free copy.</p>
+  </div>
+
   <h2>What I measured on my Mac</h2>
   <p>I took a two-minute stretch of a 1938 home movie (Ivan Besse's reel from the Prelinger Archives, 640×480,
   11.6&nbsp;MB) and ran Crisp's Compress on it with H.264 output, on Crisp 1.0.1921, on 8 November 2026.
@@ -134,6 +145,40 @@
   <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt">$29</span> once</p><p class="pbox-found">Black Friday price <strong>$14.50</strong> for everyone through November, then $29. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-email-size-limits-for-video-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-email-size-limits-for-video-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-email-size-limits-for-video-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-email-size-limits-for-video-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1934-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1934 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
 </div></article>
+<script>
+(function () {
+  var L = {
+    gmail: { n: "Gmail", mb: 25, aim: 18.75, route: "let Gmail make its Drive link" },
+    outlook: { n: "Outlook.com", mb: 25, aim: 25, route: "share it from OneDrive" },
+    wav: { n: "WhatsApp (as a video)", mb: 100, aim: 100, route: "send it as a document instead" },
+    wad: { n: "WhatsApp (as a document)", mb: 2000, aim: 2000, route: "send a link" },
+    md: { n: "Mail Drop", mb: 5000, aim: 5000, route: "send a link from cloud storage" }
+  };
+  var Q = { "1080": 3128, "720": 1628, "480": 796 };
+  var d = document.getElementById("fit-dest"), m = document.getElementById("fit-min");
+  var q = document.getElementById("fit-q"), o = document.getElementById("fit-out");
+  if (!d || !m || !q || !o) return;
+  function mins(mb, k) { return mb * 1e6 * 8 * 0.96 / (k * 1000) / 60; }
+  function f(x) { return x < 10 ? x.toFixed(1) : Math.round(x).toLocaleString("en-US"); }
+  function down(x) { return x < 10 ? (Math.floor(x * 10) / 10).toFixed(1) : Math.floor(x).toLocaleString("en-US"); }
+  function run() {
+    var l = L[d.value], k = Q[q.value], t = parseFloat(m.value);
+    if (!l || !k || !(t > 0)) { o.textContent = "Enter the video's length in minutes."; return; }
+    var mb = t * 60 * k * 1000 / 8 / 0.96 / 1e6;
+    var s = "About " + f(mb) + " MB at " + q.value + "p. ";
+    if (mb <= l.aim) {
+      s += "That fits the " + f(l.mb) + " MB limit for " + l.n + (l.aim < l.mb ? ", with room for the encoding." : ".");
+    } else {
+      s += "That's over the " + f(l.mb) + " MB limit for " + l.n + (l.aim < l.mb ? " once encoding is counted" : "") +
+        ". About " + down(mins(l.aim, Q["720"])) + " min fit at 720p, or " + down(mins(l.aim, Q["480"])) +
+        " at 480p. For this length, " + l.route + ", or make the file smaller first.";
+    }
+    o.textContent = s;
+  }
+  d.addEventListener("change", run); q.addEventListener("change", run); m.addEventListener("input", run); run();
+})();
+</script>
+
 
 <footer><div class="wrap">
   <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows. <a href="https://crispvideo.app/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">About</a></p>
