@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1954",
-  "notes": "Prices now read as a launch price: $14.50 once through November 30, then $29 from December 1. On a Windows PC whose graphics have no Vulkan, Crisp says so before Enhance starts instead of after. The Enhance tool now notes that very thin, faint lines, such as wires against the sky, can be smoothed away.",
-  "pub_date": "2026-11-09T07:21:26Z",
+  "version": "1.0.1990",
+  "notes": "New: Fit a size. Say \"under 20 MB for Discord\", \"small enough to email\" or any size in MB, and Crisp makes an MP4 that fits, or tells you how to split it. New: Slow motion as its own tool, 2x, 4x or 8x slower with smooth in-between frames and the sound kept at its normal pitch, at full length without Pro too (Mac, and Windows PCs with Vulkan graphics). New: Old photos, which restores a whole folder of scans in one go and saves a before-and-after of each. On Windows, Blur the faces now finds faces. Max now says, where you pick it, that it can draw small things that were not there, such as letters on a number plate or eyelashes, so check details and faces at full size.",
+  "pub_date": "2026-11-09T21:32:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhoZHZ1Z0ZxN0V5dkRwZmh6N2s1dmZYbCtESTB1VDlIU3JZMm1yOW5WRXU2MnZvZHAraGZTUEREYW5JWmhFNnh1b0t4ZlE4QkpQQnArYVJhbTJNZGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjA3MzgwCWZpbGU6Q3Jpc3AuYXBwLnRhci5negptVHQxQlhhdWRQVjVxQm4zS241VUloWnkxMGY0eWFOQmgrZjVUMVNDVVdNSEVlU3JyWldaY0ZtOTB4UjIvYzluUm0xcVhXQjh2N2QxaTBYem5OMXNBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1954.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURvQWdsVFJTV2d6bS9BcUZzN1I0S0pRb21jSWYvc0ltUUxDYkp1bVRMSjFSWGxNejRBNXVuRHdLOXhaTzlQd0txbW9WcUhyRDV1d205bzdtV01vbHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU5MTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negppclBKUmhTYnYra290bFRKZDhzSGNoZFpVL1pFZy9CNE81VmRxSU9hTzdnbDhXUGRoc2J2ZGFYKy90enIwcjZkQ2R5NHBha3c5RHZSUFJpb1kxZ0pDdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990.app.tar.gz"
     }
   }
 }
