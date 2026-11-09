@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1934",
-  "notes": "Your first export now plays on any PC: Crisp saves H.264 by default, which every Windows player and browser plays without an extra codec. HEVC is still in the Format menu if you want smaller files. The free mark on videos is now just the web address, crispvideo.app. Licence messages now say \"this PC\" instead of \"this Mac\", and closing Crisp always ends its helper programs, even ones that were starting up.",
-  "pub_date": "2026-11-08T17:44:13Z",
+  "version": "1.0.1954",
+  "notes": "Prices now read as a launch price: $14.50 once through November 30, then $29 from December 1. If this PC's graphics have no Vulkan, Crisp says so before Enhance starts instead of after. The Enhance tool now notes that very thin, faint lines, such as wires against the sky, can be smoothed away.",
+  "pub_date": "2026-11-09T08:13:27Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU10Z3hTbU1lSzZBUzNZUEFJNUVDRWljVjNLY0ZjYkRYRmdNVXNVaTRUYUY2YTY5cXdDcWtpR2RLcWM0a3ZDbjU4eG5lanNPNnYwYVE3YzlySWZlU3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTU5ODUzCWZpbGU6Q3Jpc3AtMS4wLjE5MzQteDY0LXNldHVwLmV4ZQpoOWUwa0FLSnlhSkM0bGVyVC9acTVDdGtUY2JCMThleVhlYU1sSC9Xa1BZMmdjMmtteGd1aENQbWJPWUhnMVo0K2o4VG1DekNtaUkwL25ibEZiNVZEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1934-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUh6Q09NZUp4bExQQWNoY21Kd1hlVzZVUzcyR1hmVnNhRjBSMHV4aDRrNkl4S2V1WXFBOFVqUG94TWhuQ09JYUNVS0lITXB5M2s3UVpsVWJuNG1lL0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjEyMDA2CWZpbGU6Q3Jpc3AtMS4wLjE5NTQteDY0LXNldHVwLmV4ZQpJb1VNWFRxRXUvRFJwTkFGbGVvMkVhZFpUTSt5UHRDd1pVN3orRFJrRGhXU0w1RnZaZW0xVTlrZ3FxNHJOcnMvckpEV3BCSDlWQm1ObXg1ZzlBN2VEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1954-x64-setup.exe"
     }
   }
 }
