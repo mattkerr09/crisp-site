@@ -1,5 +1,5 @@
 {
- "written": "2026-10-21",
+ "written": "2026-11-09",
  "why": "Competitor claims that carried no checked-on date when the claim-date rule landed (CEO, 2026-10-19). Each needs a re-read of the vendor's own page and then a date on our page; delete its entry once it is dated. A claim that is not listed here and has no date FAILS the push. Re-record with --baseline only deliberately, and say why in the commit.",
  "undated": {
   "best/video-converter-for-mac": [
@@ -1157,7 +1157,7 @@
      "Aiarty"
     ],
     "kind": "FEATURE",
-    "text": "Aiarty's batch queue is included; in Crisp it's part of the $29 unlock."
+    "text": "Aiarty's batch queue is included; in Crisp it's part of the Pro unlock."
    },
    {
     "vendors": [
@@ -1296,7 +1296,7 @@
      "Premiere Pro"
     ],
     "kind": "FEATURE",
-    "text": "It covers the quick jobs that do not need a timeline: trimming, making a clip vertical, compressing, and cleaning up old footage, with AI upscaling built in and running on your Mac, for $29 once."
+    "text": "It covers the quick jobs that do not need a timeline: trimming, making a clip vertical, compressing, and cleaning up old footage, with AI upscaling built in and running on your Mac, with Pro."
    },
    {
     "vendors": [
@@ -1325,6 +1325,36 @@
     ],
     "kind": "FEATURE",
     "text": "One-clip jobs: cut it down, add a hook line, make it vertical (Mac iMovie projects are 16:9, so a true 9:16 export needs workarounds), and rescue a dark or noisy iPhone clip with the on-device upscaler and denoiser."
+   }
+  ],
+  "vs/topaz-alternative-mac": [
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "This is the big one Topaz has no answer for."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Topaz is enhance-only."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "What it won't do is replace Topaz's deep pro restoration pipeline: on the hardest archival work, or when you want per-artifact sliders, Topaz's broader lineup wins."
+   },
+   {
+    "vendors": [
+     "Topaz"
+    ],
+    "kind": "FEATURE",
+    "text": "Pick Crisp for own-it, offline, simple, and edit-too; pick Topaz for the deepest control and the highest ceiling."
    }
   ],
   "vs/upscayl-alternative-mac": [
