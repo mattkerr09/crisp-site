@@ -1,4 +1,4 @@
-// upstream-reviewed: 2824cf91adee883d7a93b0c3c7a128892995aaec2abe7ee41869eb4343b20d30
+// upstream-reviewed: 3cdb5d8622fbe035497aff70a12d75388b8071622098e00bc1bc0a3a9cd41427
 (function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -54,7 +54,7 @@
 
   root.innerHTML = [
     '<style>',
-    ':host{all:initial;display:block}',
+    ':host{all:initial;display:block;color:inherit}',
     '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
     '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;',
     '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
