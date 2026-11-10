@@ -6,6 +6,7 @@ document.addEventListener("click", function (e) {
   var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
   if (/\/Crisp\.dmg$|\/Crisp-[\d.]+-x64-setup\.exe$/.test(href)) {
     window.plausible("Download", { props: { button: name } });
+    try { crispNextSteps(a, /\.exe$/.test(href)); } catch (err) {}
   } else if (/^(?:https:\/\/crispvideo\.app)?\/download\/(?:\?|$)/.test(href) && a.getAttribute("data-track")) {
     window.plausible("Download Page", { props: { button: name } });
   } else if (/^https:\/\/(checkout\.dodopayments\.com\/|kerr-affiliate-hub\.kerrco\.workers\.dev\/buy\/)/.test(href)) {
@@ -120,3 +121,43 @@ document.addEventListener("click", function (e) {
   });
 })();
 /* send-mac-link:end */
+
+/* next-steps:begin */
+function crispNextSteps(a, win) {
+  var root = document.documentElement;
+  if (!/^en\b/i.test(root.lang || 'en') || root.classList.contains('handheld')) return;
+  if (!document.getElementById('crisp-next-css')) {
+    var st = document.createElement('style');
+    st.id = 'crisp-next-css';
+    st.textContent = '.crisp-next{margin:.9rem 0 1.1rem;padding:1rem 1.15rem;max-width:30rem;text-align:left;border:1px solid rgba(255,255,255,.14);' +
+      'border-radius:12px;background:rgba(255,255,255,.04);color:var(--white,#f2f4f7);font-size:.95rem;line-height:1.5;}' +
+      '.crisp-next strong{display:block;margin-bottom:.35rem;font-weight:650;}' +
+      '.crisp-next ol{margin:0;padding-left:1.25rem;color:var(--grey,#b4bbc6);}.crisp-next li{margin:.2rem 0;}' +
+      '.crisp-next li span{color:var(--white,#f2f4f7);}';
+    document.head.appendChild(st);
+  }
+  var steps = win
+    ? ['Open the Crisp setup file in your Downloads.', 'Follow its steps to install Crisp, then open Crisp.',
+       'Drop in a clip. The first 15 seconds restore free, with a small mark.']
+    : ['Open the Crisp .dmg in your Downloads.', 'Drag Crisp into Applications, then open it.',
+       'Drop in a clip. The first 15 seconds restore free, with a small mark.'];
+  var host = (a.closest && a.closest('p, .cta, .pbox-actions, .step-dl, li')) || a;
+  var old = document.querySelector('.crisp-next');
+  if (old && old.parentNode) old.parentNode.removeChild(old);
+  var box = document.createElement('div');
+  box.className = 'crisp-next';
+  box.setAttribute('role', 'status');
+  var h = document.createElement('strong');
+  h.textContent = 'Crisp is downloading.';
+  box.appendChild(h);
+  var ol = document.createElement('ol');
+  for (var i = 0; i < steps.length; i++) {
+    var li = document.createElement('li'), sp = document.createElement('span');
+    sp.textContent = steps[i];
+    li.appendChild(sp);
+    ol.appendChild(li);
+  }
+  box.appendChild(ol);
+  host.parentNode.insertBefore(box, host.nextSibling);
+}
+/* next-steps:end */
