@@ -292,13 +292,16 @@ def check(root: Path, scaffold: bool) -> list[str]:
                                   de_source[contacts[0].end:footers[0].start].strip()):
             fail(de_path, "contact block must be immediately above the footer")
         notices = [n for n in de.elements("p") if n.attrs.get("class") == "app-language"]
-        # The launch-price bar's mount and its plain founding.js sit first in <body> on the pages that carry the bar
-        # (sitewide_chrome.py, 10 Nov 2026: loaded there, the bar is drawn before the page paints and pushes nothing down).
+        # The launch-price bar's mount and its script (founding.js's text, inline) sit first in <body> on the pages that carry
+        # the bar (sitewide_chrome.py, 10 Nov 2026: there the bar is drawn before the page paints and pushes nothing down).
         # founding.js always put the bar above this notice once the page ran, so the notice is still the top of the page.
+        def _bar_script(c):
+            return c.tag == "script" and (c.attrs.get("src") == "/founding.js" or
+                                          "window.__kcFounding" in "".join(x.raw for x in c.children if x.tag == "#text"))
         top = [c for c in (bodies[0].children if len(bodies) == 1 else [])
                if not (c.tag == "#text" and not c.raw.strip())
                and not (c.tag == "div" and "data-founding" in c.attrs)
-               and not (c.tag == "script" and c.attrs.get("src") == "/founding.js")]
+               and not _bar_script(c)]
         if len(notices) != 1 or len(bodies) != 1 or notices[0] not in top[:1]:
             fail(de_path, "expected one app-language paragraph at the top of body")
         elif scaffold and normal(notices[0].text()) not in {NOTICE, de_strings.APP_LANGUAGE}:

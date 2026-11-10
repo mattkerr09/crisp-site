@@ -43,9 +43,6 @@
   var first = mount && mount.getAttribute("data-first");
   var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
   if (!now || !then || !untilTxt) return;
-  var PH = { url: "https://www.producthunt.com/posts/crisp-8", from: "2026-10-03T07:01:00Z", to: "2026-10-04T07:01:00Z" };
-  var phNow = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-  var phLive = phNow >= Date.parse(PH.from) && phNow < Date.parse(PH.to);
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -80,12 +77,7 @@
     '  .dot{display:none}}',
     '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
-    '.ph{display:block;text-align:center;padding:.3rem 2.2rem .3rem .9rem;background:#1C1408;color:#EDE6D6;',
-    '  font-size:.75rem;line-height:1.3;border-bottom:1px solid rgba(240,180,41,.18);text-decoration:none}',
-    '.ph b{color:#F0B429;font-weight:700}',
-    '.ph:hover{background:#261B0B}',
     '</style>',
-    (phLive ? '<a class="ph" href="' + PH.url + '" target="_blank" rel="noopener">We\u2019re live on <b>Product Hunt</b> today. We\u2019d love your feedback \u2192</a>' : ''),
     '<div class="bar" role="region" aria-label="Launch price">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',

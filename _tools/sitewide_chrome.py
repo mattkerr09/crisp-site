@@ -89,36 +89,71 @@ def is_arm(p: Path) -> bool:
 # THE BAR IS DRAWN BEFORE THE FIRST PAINT (Crisp, 2026-11-10). founding.js inserts the launch-price bar as the first thing in
 # <body>. Loaded with `defer` at the end of the page, it ran after the browser had already painted the page, so the bar arrived
 # 0.4 s in and pushed the whole page down by its own height (61 px on a phone): Lighthouse measured CLS 0.069 on the home page
-# from that one shift (layout-shift source: div.hero, moved 57 -> 118 px). The mount and a plain (blocking) script now sit
-# FIRST in <body>, so the bar is in place before anything below it is laid out: CLS 0.069 -> 0 on the home page, with no
-# Performance cost (three Lighthouse runs each on local copies: 81-82 before, 82-83 after; FCP the same). The mount has no
-# margin any more: at the top of the page an empty mount (a visitor who closed the bar, or after the offer ends) must take
-# no room. Measured and recorded in ~/ops/launch/crisp/cls-founding-bar-2026-11-10.md.
-FOUNDING_RE = re.compile(r'<div data-founding[^>]*></div>\n<script src="/founding\.js"></script>')
-#: the old placement (deferred, before </body>), migrated by apply()
-FOUNDING_OLD_RE = re.compile(r'\n?<div data-founding[^>]*></div>\n<script src="/founding\.js" defer></script>')
+# from that one shift (layout-shift source: div.hero, moved 57 -> 118 px). The mount and the bar's script now sit FIRST in <body>,
+# so the bar is in place before anything below it is laid out.
+# THE SCRIPT IS INLINE, NOT <script src>. The first version (66a86761) loaded /founding.js there as a plain blocking script: CLS
+# went to 0, but the live home page's mobile Lighthouse Performance fell from 97 to 86 (LCP 2.4 -> 4.2 s), because over HTTP/2
+# the simulated download of the blocking script queued behind the five video posters. On a local HTTP/2 copy, two runs each:
+# old deferred 89 (LCP 3.6 s, CLS 0.069), blocking 87 (4.0 s, CLS 0), inline 91 (3.5 s, CLS 0). So founding.js's own text is
+# written into each page, and founding.js stays the one source: this tool copies it (founding_script) and the tests fail any
+# page whose copy differs. The mount has no margin: at the top of the page an empty mount (a visitor who closed the bar, or
+# after the offer ends) must take no room. Measured and recorded in ~/ops/launch/crisp/cls-founding-bar-2026-11-10.md.
+FOUNDING_JS = SITE / "founding.js"
+MOUNT = r'<div data-founding[^>]*></div>'
+INLINE_START = "(function () {\n  if (window.__kcFounding) return;"
+#: any version of the inline bar (a stale copy is replaced by apply())
+FOUNDING_RE = re.compile(MOUNT + r'\n<script>\(function \(\) \{\n  if \(window\.__kcFounding\) return;.*?</script>\n?', re.S)
+#: the earlier placements, migrated by apply(): deferred before </body> (until 10 Nov) and blocking src first in <body> (66a86761)
+FOUNDING_OLD_RE = re.compile(r'\n?' + MOUNT + r'\n<script src="/founding\.js" defer></script>')
+FOUNDING_SRC_RE = re.compile(MOUNT + r'\n<script src="/founding\.js"></script>\n?')
 BODY_OPEN = re.compile(r'<body[^>]*>\n?')
 
 
-def founding_tag() -> str:
-    """The homepage's founding mount + script, verbatim — the single place the offer's figures are written."""
+def has_bar(s: str) -> bool:
+    """The page carries the bar's mount (an inline copy of founding.js reads selectors like [data-founding-copy] too)."""
+    return re.search(r'<div data-founding[\s>]', s) is not None
+
+
+def founding_script() -> str:
+    """founding.js as each page runs it: the file's code, without its first line (the upstream-reviewed sha, a comment that
+    the shipped-comments gate keeps out of pages)."""
+    first, rest = FOUNDING_JS.read_text(encoding="utf-8").split("\n", 1)
+    assert first.startswith("// upstream-reviewed:"), "founding.js: the upstream-reviewed line moved"
+    rest = rest.strip()
+    assert rest.startswith(INLINE_START), "founding.js no longer starts with its run-once guard; update INLINE_START"
+    assert "</script" not in rest.lower() and "<!--" not in rest, "founding.js holds text that would end an inline script"
+    return rest
+
+
+def founding_mount() -> str:
+    """The homepage's mount, verbatim: the single place the offer's figures are written."""
     home = (SITE / "index.html").read_text()
-    m = FOUNDING_RE.search(home)
-    assert m, "homepage: the founding mount moved — update founding_tag()"
-    return m.group(0)
+    m = re.search(MOUNT + r'\n<script', home)
+    assert m, "homepage: the founding mount moved; update founding_mount()"
+    return m.group(0)[:-len("\n<script")]
+
+
+def founding_tag() -> str:
+    return founding_mount() + "\n<script>" + founding_script() + "</script>"
 
 
 def founding_first_in_body(s: str) -> bool:
-    """The bar's mount + script are the first thing in <body>, so the bar is drawn before the page below it."""
+    """The bar's mount + its current inline script are the first thing in <body>, so the bar is drawn before the page below."""
     b = BODY_OPEN.search(s)
-    return bool(b) and FOUNDING_RE.match(s, b.end()) is not None
+    return bool(b) and s.startswith(founding_tag(), b.end())
 
 
-def _put_founding_first(s: str, p: Path) -> str:
+def _founding_current(s: str, p: Path) -> str:
+    tag = founding_tag()
+    if s.count(tag) == 1 and founding_first_in_body(s):
+        return s
+    for rx in (FOUNDING_OLD_RE, FOUNDING_SRC_RE, FOUNDING_RE):
+        s = rx.sub("", s)
+    assert not has_bar(s), f"{p}: a founding mount this tool does not recognise is still on the page"
     b = BODY_OPEN.search(s)
     assert b and s.count("<body") == 1, f"{p}: expected one <body>"
     head = s[:b.end()] if b.group(0).endswith("\n") else s[:b.end()] + "\n"
-    return head + founding_tag() + "\n" + s[b.end():]
+    return head + tag + "\n" + s[b.end():]
 
 
 # GERMAN PAGES KEEP THEIR OWN FOOTER AND OFFER (Crisp, 2026-11-10). de_pages.py writes the footer link as "Von Kerr &amp;
@@ -145,7 +180,7 @@ def wants_founding(p: Path, s: str) -> bool:
     if p == SITE / "index.html" or p.name != "index.html" or p.parent.name == "thank-you":
         return False
     if german(p):
-        return "/founding.js" in s
+        return has_bar(s)
     try:
         rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
     except ValueError:          # a page outside the site tree (the gate's own fixture): judge it on its canonical alone
@@ -187,12 +222,8 @@ def apply(p: Path) -> bool:
     # the Download/Buy events, on every page with a body (moved out of the homepage 2026-09-28)
     if "</body>" in s and TRACK not in s:
         s = s.replace("</body>", TRACK + "\n</body>")
-    if wants_founding(p, s):
-        if FOUNDING_OLD_RE.search(s):
-            s, n = FOUNDING_OLD_RE.subn("", s)
-            assert n == 1, f"{p}: expected one old founding mount, found {n}"
-        if "/founding.js" not in s:
-            s = _put_founding_first(s, p)
+    if wants_founding(p, s) or p == SITE / "index.html":
+        s = _founding_current(s, p)
     # the bar and the footer for a PC too; an experiment arm keeps its copy and links as they are
     if not is_arm(p):
         if NAV_OLD in s:
@@ -222,7 +253,9 @@ def missing(p: Path) -> list[str]:
         out.append("founding bar")
     elif wants_founding(p, s) and not founding_first_in_body(s):
         out.append("founding bar not first in body")
-    if not wants_founding(p, s) and p != SITE / "index.html" and "/founding.js" in s:
+    if p == SITE / "index.html" and not (s.count(founding_tag()) == 1 and founding_first_in_body(s)):
+        out.append("founding bar on the home page is stale or not first in body")
+    if not wants_founding(p, s) and p != SITE / "index.html" and has_bar(s):
         out.append("founding bar where it must not be")
     if not is_arm(p):
         if NAV_OLD in s:

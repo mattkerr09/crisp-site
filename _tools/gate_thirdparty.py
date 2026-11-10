@@ -118,11 +118,10 @@ NAVIGATION_FROM_JS = {
         "CRISP_BUY_VIA — the Buy buttons' href, the hub's /buy/crisp, which opens the same Dodo "
         "checkout with the founding code applied. It is where a click SENDS you; nothing is "
         "fetched from the hub to render this page.",
-    # A same-origin .js FILE assigning an href is the same act as an inline script doing it (CEO 2026-10-03,
-    # launch day): founding.js puts the Product Hunt launch link on an <a> the visitor may click.
-    ("www.producthunt.com", "founding.js"):
-        "founding.js — the launch-day line's <a href>, Crisp's Product Hunt launch page. It is where a "
-        "click SENDS you; the bar fetches nothing from Product Hunt.",
+    # ("www.producthunt.com", "founding.js") lived here from launch day (CEO 2026-10-03) for the bar's "We're live on
+    # Product Hunt" link. REMOVED 2026-11-10 with that line: its window (3-4 Oct) had passed, and founding.js's text is
+    # now written inline into every page that carries the bar (sitewide_chrome.py), where a leftover URL would have read
+    # as a third-party link on 106 pages.
 }
 
 #: Script blocks whose contents a browser never fetches. `application/ld+json` is
