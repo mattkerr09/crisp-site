@@ -1,7 +1,7 @@
 {
   "version": "1.0.2010",
   "notes": "New to Crisp? The first time it opens, it restores a built-in sample on its own, then offers one button, \"Make it look amazing\", on your first clip, and opens the result on a before-and-after slider. When a free export stops at 15 seconds, Crisp now asks one clear question about your video: a large before-and-after from the part you have not got yet, the price, and a plain \"Not now\". After you enter your key, one click exports the whole video. Crisp also sends two more anonymous counts, once each: the first time it opens, and the first time a free export reaches the free limit. No name, file or identifier is sent; the privacy page lists exactly what is.",
-  "pub_date": "2026-11-10T15:23:04Z",
+  "pub_date": "2026-11-10T15:41:16Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUZxem1WZGFOT1BuZXNLaDc2RTNHdFNHT1B2Mnk5NkRZNWNZOEpoSGZycDRYcTc1dXVxSHU4UXpBQXZTRnNVYWRoTUV4NWYvNTNKK0FRMVJodVo3RlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzIzNTcyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpCQkFnd0VIamgvbFNseC80Yi92Rm9YVTlib3d0anJSK3lnbDVYTGRZNnVWT0RuTHYzVkxjcHl6UlVqUXpUelV0NDNZbXpyZTh6ekJ5bEtKbnR1Z29Bdz09Cg==",
