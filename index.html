@@ -307,6 +307,7 @@ tbody tr{transition:background .2s;}
 tbody tr:hover td{background:rgba(90,200,250,.045);}
 tbody tr:last-child td{border-bottom:none;}
 tbody td:first-child{color:var(--grey);}
+tbody th[scope=row]{font-weight:inherit;color:var(--grey);}
 td.y{color:#4ade80;font-weight:560;}
 td.n{color:var(--grey-dim);}
 
@@ -1007,18 +1008,18 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     </div>
     <div class="cmp rv">
       <div class="cmp-wrap"><table>
-        <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc Converter AI</th></tr></thead>
+        <thead><tr><td></td><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc Converter AI</th></tr></thead>
         <tbody>
-          <tr><td>Price</td><td class="y">Launch price: $14.50 once, through November 30. From December 1: $29.</td><td class="n">$299/yr or $59/mo</td><td class="n">Subscription or licence</td></tr>
-          <tr><td>Who makes it</td><td class="y">Kerr &amp; Company, independent</td><td>Adobe, which completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 2 Nov 2026)</td><td>Digiarty Software (<a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">videoproc.com</a>, read 2 Nov 2026)</td></tr>
-          <tr><td>Cost after 5 years</td><td class="y">Launch price $14.50 through Nov 30, then $29</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
-          <tr><td>How you pay</td><td class="y">Once. It's yours</td><td class="n">Subscription only, for new licences</td><td class="n">Subscription or lifetime licence</td></tr>
-          <tr><td>Runs fully offline</td><td class="y">Yes, every lane (the generative one on a Mac)</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
-          <tr><td>Multi-clip timeline</td><td class="y">Yes: arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
-          <tr><td>Auto-montage to music</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
-          <tr><td>Audio when interpolating</td><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Not stated</td></tr>
-          <tr><td>Model choice</td><td class="y">Auto, with override</td><td class="n">Manual, 15+ models</td><td class="n">30+ models across video, image and audio</td></tr>
-          <tr><td>Watermark-free exports</td><td class="y">With Pro. Launch price $14.50 through Nov 30, then $29</td><td class="n">Paid</td><td class="n">Paid, after 5 free AI exports</td></tr>
+          <tr><th scope="row">Price</th><td class="y">Launch price: $14.50 once, through November 30. From December 1: $29.</td><td class="n">$299/yr or $59/mo</td><td class="n">Subscription or licence</td></tr>
+          <tr><th scope="row">Who makes it</th><td class="y">Kerr &amp; Company, independent</td><td>Adobe, which completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 2 Nov 2026)</td><td>Digiarty Software (<a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">videoproc.com</a>, read 2 Nov 2026)</td></tr>
+          <tr><th scope="row">Cost after 5 years</th><td class="y">Launch price $14.50 through Nov 30, then $29</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
+          <tr><th scope="row">How you pay</th><td class="y">Once. It's yours</td><td class="n">Subscription only, for new licences</td><td class="n">Subscription or lifetime licence</td></tr>
+          <tr><th scope="row">Runs fully offline</th><td class="y">Yes, every lane (the generative one on a Mac)</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
+          <tr><th scope="row">Multi-clip timeline</th><td class="y">Yes: arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
+          <tr><th scope="row">Auto-montage to music</th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
+          <tr><th scope="row">Audio when interpolating</th><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Not stated</td></tr>
+          <tr><th scope="row">Model choice</th><td class="y">Auto, with override</td><td class="n">Manual, 15+ models</td><td class="n">30+ models across video, image and audio</td></tr>
+          <tr><th scope="row">Watermark-free exports</th><td class="y">With Pro. Launch price $14.50 through Nov 30, then $29</td><td class="n">Paid</td><td class="n">Paid, after 5 free AI exports</td></tr>
         </tbody>
       </table></div>
       <p class="src rv">Topaz and VideoProc rows re-read 19 October 2026 on each vendor's own pages:
@@ -1032,25 +1033,25 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         not Topaz, which stopped selling them. List price first, then what it actually costs
         today, read from each vendor's own buy page on 19 October 2026.</p>
       <div class="cmp-wrap"><table>
-        <thead><tr><th>&nbsp;</th><th>Crisp</th><th>Aiarty Video Enhancer</th><th>AVCLabs Video Enhancer AI</th><th>HitPaw VikPea</th></tr></thead>
+        <thead><tr><td></td><th>Crisp</th><th>Aiarty Video Enhancer</th><th>AVCLabs Video Enhancer AI</th><th>HitPaw VikPea</th></tr></thead>
         <tbody>
-          <tr><td>One-time price</td>
+          <tr><th scope="row">One-time price</th>
               <td class="y">Launch price $14.50 through Nov 30, then $29</td>
               <td class="n">$235 list, $165 on offer</td>
               <td class="n">$299.90 list, $149.90 on offer</td>
               <td class="n">$437.99 list, $284.69 on offer</td></tr>
-          <tr><td>Macs per licence</td>
+          <tr><th scope="row">Macs per licence</th>
               <td class="y">3</td>
               <td>3</td>
               <td>Not stated on their buy page</td>
               <td>Tiered (5 / 10 / 100 devices)</td></tr>
-          <tr><td>Timeline editor</td>
+          <tr><th scope="row">Timeline editor</th>
               <td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
-          <tr><td>Auto-montage, cut to the beat</td>
+          <tr><th scope="row">Auto-montage, cut to the beat</th>
               <td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
-          <tr><td>Runs offline</td>
+          <tr><th scope="row">Runs offline</th>
               <td class="y">Yes</td><td>Yes</td><td>Yes</td><td>Locally, with paid cloud rendering as an option</td></tr>
-          <tr><td>Free tier</td>
+          <tr><th scope="row">Free tier</th>
               <td class="y">Full editor and 4K upscaler; enhanced exports up to 15 seconds, everything else at full length, watermarked</td>
               <td class="n">120-second cap, watermark, no batch</td>
               <td class="n">30-second cap, watermark</td>
@@ -1116,7 +1117,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Batch processing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Pay once. Every 1.x update is included.</li>
         </ul>
-        <a class="btn btn-primary" data-crisp-checkout data-track="pricing" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro</a>
+        <a class="btn btn-primary" data-crisp-checkout data-track="pricing" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-pricing" rel="nofollow">Buy Crisp Pro</a>
       </div>
     </div>
 
@@ -1214,7 +1215,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p><strong>If it isn't right.</strong> Ask within 30 days of purchase and you get your
         money back, no reason needed, to the card you paid with.</p>
 
-      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://checkout.dodopayments.com/buy/pdt_0NlgdruM2dusRx82wfrmQ?redirect_url=https%3A%2F%2Fcrispvideo.app%2Fthank-you%2F">Buy Crisp Pro. Launch price $14.50 through Nov 30, then $29</a></p>
+      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-buy-card" rel="nofollow">Buy Crisp Pro. Launch price $14.50 through Nov 30, then $29</a></p>
         <p class="founding-note">Launch price: $14.50 once, through November 30. From December 1: $29. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·

@@ -139,6 +139,7 @@ tbody tr{transition:background .2s;}
 tbody tr:hover td{background:rgba(90,200,250,.045);}
 tbody tr:last-child td{border-bottom:none;}
 tbody td:first-child{color:var(--grey);}
+tbody th[scope=row]{font-weight:inherit;color:var(--grey);}
 .yes{color:var(--green);font-weight:560;}
 .no{color:var(--grey-dim);}
 
