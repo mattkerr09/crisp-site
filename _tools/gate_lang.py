@@ -153,6 +153,11 @@ def release_values(source: str, todo: str) -> tuple:
     return prices, versions, codes, floors
 
 
+# /ja/'s requirements table: its row labels keep a word whole ("Windows" split as "Win / dow / s" at 375 px when the label
+# cells inherited overflow-wrap:anywhere, Article Studio's live check of 10 Nov 2026) and break Japanese at a phrase.
+JA_REQ_LABEL_RULE = "table.req tbody th,table.req tbody td:first-child{width:30%;overflow-wrap:normal;word-break:auto-phrase;}"
+
+
 class LanguageGate:
     def __init__(self, lang: str, root: Path | None = None):
         self.lang = lang
@@ -302,7 +307,8 @@ class LanguageGate:
                 if self.words.INLINE_STYLE not in styles:
                     fail(target_path, "Japanese inline line-breaking styles are required")
                 if english == "/" and ('class="req"' not in target_source or
-                        "table.req{min-width:0;}table.req td{overflow-wrap:anywhere;}" not in styles):
+                        "table.req{min-width:0;}table.req td{overflow-wrap:anywhere;}" not in styles or
+                        JA_REQ_LABEL_RULE not in styles):
                     fail(target_path, "home requirements table needs req class and inline width rules")
 
                 def check_tables(node, wrapped=False):
@@ -768,10 +774,12 @@ class LanguageGate:
             assert self.generator.last_day("2026-12-01T08:00:00Z") == "11月30日"
             assert self.generator.future_day("2026-12-01T07:59:59Z") == "12月1日"
             cases.extend([
-                (home, "word-break:auto-phrase;", "", "line-breaking styles"),
+                # The inline style's own word-break, not the page's first one: a later rule (JA_REQ_LABEL_RULE) also uses it.
+                (home, words.INLINE_STYLE, words.INLINE_STYLE.replace("word-break:auto-phrase;", "", 1), "line-breaking styles"),
                 (home, words.INLINE_STYLE, words.INLINE_STYLE.replace("overflow-wrap:anywhere;", "", 1), "line-breaking styles"),
                 (home, 'class="req"', 'class="wrong"', "requirements table"),
                 (home, "table.req{min-width:0;}", "", "requirements table"),
+                (home, JA_REQ_LABEL_RULE, "", "requirements table"),
                 (free, 'class="cmp-wrap"', 'class="wrong"', "cmp-wrap container"),
                 (home, "ja-home-pbox-top", "ja-home-pbox-1", "box is stale"),
                 (home, '</body>', '<p>半額</p></body>', "launch-price wording"),
