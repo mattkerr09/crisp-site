@@ -292,7 +292,14 @@ def check(root: Path, scaffold: bool) -> list[str]:
                                   de_source[contacts[0].end:footers[0].start].strip()):
             fail(de_path, "contact block must be immediately above the footer")
         notices = [n for n in de.elements("p") if n.attrs.get("class") == "app-language"]
-        if len(notices) != 1 or len(bodies) != 1 or notices[0] not in bodies[0].children[:3]:
+        # The launch-price bar's mount and its plain founding.js sit first in <body> on the pages that carry the bar
+        # (sitewide_chrome.py, 10 Nov 2026: loaded there, the bar is drawn before the page paints and pushes nothing down).
+        # founding.js always put the bar above this notice once the page ran, so the notice is still the top of the page.
+        top = [c for c in (bodies[0].children if len(bodies) == 1 else [])
+               if not (c.tag == "#text" and not c.raw.strip())
+               and not (c.tag == "div" and "data-founding" in c.attrs)
+               and not (c.tag == "script" and c.attrs.get("src") == "/founding.js")]
+        if len(notices) != 1 or len(bodies) != 1 or notices[0] not in top[:1]:
             fail(de_path, "expected one app-language paragraph at the top of body")
         elif scaffold and normal(notices[0].text()) not in {NOTICE, de_strings.APP_LANGUAGE}:
             fail(de_path, "app-language placeholder must use the required sentence")
@@ -521,6 +528,8 @@ def selftest() -> int:
         ("contact in footer", "de/download/index.html", CONTACT + '\n<footer>', '<footer>' + CONTACT, "above the footer", True),
         ("missing app notice", "de/download/index.html", '<p class="app-language">' + de_strings.APP_LANGUAGE + '</p>', '', "app-language", True),
         ("wrong app notice", "de/download/index.html", de_strings.APP_LANGUAGE, 'TODO-DE: different notice', "required sentence", True),
+        ("app notice below the bar's tag and other content", "de/datenschutz/index.html", '<p class="app-language">',
+         '<p>Seite</p>\n<p class="app-language">', "top of body", True),
         ("unmapped nav link", "de/download/index.html", ORIGIN + '/de/download/?src=nav-download', ORIGIN + '/download/?src=nav-download', "generated German page is stale", True),
         ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
         ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
