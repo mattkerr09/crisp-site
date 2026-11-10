@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2010",
-  "notes": "New to Crisp? The first time it opens, it restores a built-in sample on its own, then offers one button, \"Make it look amazing\", on your first clip, and opens the result on a before-and-after slider. When a free export stops at 15 seconds, Crisp now asks one clear question about your video: a large before-and-after from the part you have not got yet, the price, and a plain \"Not now\". After you enter your key, one click exports the whole video. Crisp also sends two more anonymous counts, once each: the first time it opens, and the first time a free export reaches the free limit. No name, file or identifier is sent; the privacy page lists exactly what is.",
-  "pub_date": "2026-11-10T16:57:02Z",
+  "version": "1.0.2028",
+  "notes": "Old photos come out cleaner when you enlarge them 2x or use Clean. The faster model could draw dark rings around eyes and small letter-like marks on the grain of old prints; photos now use a model that doesn't, and the result says which one ran. Choosing Faster still gives you the faster model. A single free photo no longer says \"0 photos left\".",
+  "pub_date": "2026-11-10T23:11:10Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUt3RksrRGlCRjlYTkpEaFAyb0o0cHd4SEJYOW5iVFArUmRvUFlwUUpMZ3RrTVhvL3JFUUdjWEdBYjZnV0Y0WFFjUHFiV0szSTliQmkwT3NlalVYNVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzI5ODIyCWZpbGU6Q3Jpc3AtMS4wLjIwMTAteDY0LXNldHVwLmV4ZQpydWhQKzJwRW4zWkNoS0E5ajMyVVJuQTBRdUtYT09YZFFkUi9zWTlwejNFeUR1VDZnOUIwVUlhRmwxWFUvcTZRa2JWeUpHMmJEU1ROQ25yYklmdmVDUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2010-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJsVUZLVDhtZmxjYUVEVm95RytzNzk4b0JQU0ZJNVRycDZQUTZwTFNnRmJ3V1k3emlOUlVtNkxjQndmaldZVGQvOUxxR3NQc1c4a04yMXJPOWhhVHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzUyMjcwCWZpbGU6Q3Jpc3AtMS4wLjIwMjgteDY0LXNldHVwLmV4ZQplTDdiZjlySUdtU0lPNFRLenZwNkJzaUEzRnFlTWdVeEhNWGlLU1NicXBNRzU3L1dVU1JSM1VROGI3QSsrRC8ydnF2elZPbWF2aVNtVndlNDd5ck1CUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2028-x64-setup.exe"
     }
   }
 }
