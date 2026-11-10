@@ -140,7 +140,7 @@ def alternates(slug: str) -> str:
     """Link only to doors owned by a strings module and present on disk."""
     if slug not in ("download", "pricing"):
         return ""
-    from lang_pages import load_words
+    import importlib
 
     english = f"/{slug}/"
     translations = []
@@ -149,7 +149,9 @@ def alternates(slug: str) -> str:
         # Use the chrome's ownership rule before loading a language module.
         if sitewide_chrome.language(SITE / lang / "index.html") != lang:
             continue
-        words = load_words(lang)
+        # the module this loop found, loaded from where it was found (lang_pages.load_words resolves beside lang_pages.__file__,
+        # which gate_lang's selftest points at a temporary folder; that made the German selftest fail on 10 Nov)
+        words = importlib.import_module(path.stem)
         route = dict(words.ROUTES).get(english)
         if route and (SITE / route.lstrip("/") / "index.html").is_file():
             translations.append((getattr(words, "HREFLANG", lang), route))
