@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>Compress a video for Discord: the 20 MB limit (2026)</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Discord&#x27;s free limit is 20 MB a file since August 2026. How much video fits, how to get under it on a Mac or PC, and what I measured.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/compress-video-for-discord/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compress a video for Discord: the 20 MB limit (2026)">
+<meta property="og:description" content="Discord&#x27;s free limit is 20 MB a file since August 2026. How much video fits, how to get under it on a Mac or PC, and what I measured.">
+<meta property="og:url" content="https://crispvideo.app/how-to/compress-video-for-discord/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compress a video for Discord: the 20 MB limit (2026)">
+<meta name="twitter:description" content="Discord&#x27;s free limit is 20 MB a file since August 2026. How much video fits, how to get under it on a Mac or PC, and what I measured.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to compress a video for Discord","description":"Discord's free limit is 20 MB a file since August 2026. How much video fits, how to get under it on a Mac or PC, and what I measured.","datePublished":"2026-11-10","dateModified":"2026-11-10","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/how-to/compress-video-for-discord/","image":"https://crispvideo.app/og.png?v=20261102"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Crisp","item":"https://crispvideo.app/"},{"@type":"ListItem","position":2,"name":"How-to","item":"https://crispvideo.app/how-to/"},{"@type":"ListItem","position":3,"name":"Compress for Discord","item":"https://crispvideo.app/how-to/compress-video-for-discord/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Discord's file size limit in 2026?","acceptedAnswer":{"@type":"Answer","text":"20 MB a file on a free account, since August 2026. Nitro Basic allows 50 MB and Nitro up to 1 GB. Discord says it is experimenting with limits, so some accounts may see more."}},{"@type":"Question","name":"Does Discord check the size before or after it compresses?","acceptedAnswer":{"@type":"Answer","text":"Before. Discord now checks the file you pick on both desktop and mobile, so a file over 20 MB is refused on a free account, wherever you send it from."}},{"@type":"Question","name":"How long a video can I send on Discord for free?","acceptedAnswer":{"@type":"Answer","text":"It depends on the picture size. In my test a two-minute clip fitted in 20 MB at 960×720. Longer clips need a smaller picture, and past about fifteen minutes even 360p doesn't fit, so split it or send a link."}},{"@type":"Question","name":"What video format works best on Discord?","acceptedAnswer":{"@type":"Answer","text":"An MP4 encoded with H.264. Discord lists H.264, HEVC and AV1, and H.264 is the one almost every phone and browser plays."}},{"@type":"Question","name":"Can I compress a video for Discord without uploading it?","acceptedAnswer":{"@type":"Answer","text":"Yes. A desktop app such as Crisp does it on your own computer, and some browser tools say they keep the file in the browser. Read each tool's page before you trust it with a private clip."}}]}</script>
+
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
+  <a class="btn" data-track="nav-download" href="https://crispvideo.app/download/?src=nav-download">Download</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/how-to/">How-to</a> &rsaquo; Compress for Discord</div>
+  <h1>How to <span class="grad">compress a video</span> for Discord</h1>
+  <div class="quick"><strong>Quick answer</strong><p class="lede">Discord lets free accounts send files up to 20 MB, Nitro Basic 50 MB and Nitro up to 1 GB, and it checks the size before it compresses anything. To get a longer clip under 20 MB, re-encode it as H.264 at a bitrate that lands just below the limit. In my test, Crisp took a 38.6 MB two-minute clip to 18.5 MB at 960×720 in 46 seconds, with a VMAF score of 92.9.</p></div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-11-10 · Checked 10 November 2026</div>
+
+  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$29">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $29. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=howto-compress-for-discord-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=howto-compress-for-discord-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="howto-compress-for-discord-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=howto-compress-for-discord-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1990 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+
+  <h2>Discord's limits, as of today</h2>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Account</th><th>Largest file you can send</th></tr></thead>
+    <tbody>
+      <tr><td>Free</td><td>20 MB</td></tr>
+      <tr><td>Nitro Basic</td><td>50 MB</td></tr>
+      <tr><td>Nitro</td><td>Up to 1 GB</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Read on Discord's File Attachments FAQ on 10 November 2026. The free limit went up from 10 MB in August 2026, so pages that still say 10 MB or 8 MB are out of date.</p>
+
+  <p style="font-size:.86rem;color:var(--grey-dim)">Sources: <a href="https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ" rel="nofollow noopener">Discord, File Attachments FAQ</a> · <a href="https://archive.org/details/prelinger" rel="nofollow noopener">Prelinger Archives, Ivan Besse home movies</a></p>
+
+  <p>Three details on that page matter more than the number:</p>
+
+  <ul>
+    <li><strong>The size counts before compression.</strong> Discord used to compress on mobile first and complain afterwards. Now desktop and mobile both check the file you pick, so the number you see is the one that counts.</li>
+    <li><strong>Android gets caught more often.</strong> Discord says phones on Android tend to make larger source files, so they hit the limit more often than before, even though the limit went up.</li>
+    <li><strong>Discord says it is experimenting with upload limits,</strong> and some accounts may be able to send more. If yours lets you send a bigger file, that's why.</li>
+  </ul>
+
+  <p>Discord lists MP4 files encoded with H.264, HEVC or AV1. H.264 is the safe choice: it's the oldest of the three, and almost every phone and browser plays it.</p>
+
+  <h2>How much video fits in 20 MB</h2>
+
+  <p>A file's size is its length times its bitrate. Aim a little under the limit, because encoders overshoot. Crisp aims at 19 MB, which is 152 megabits, and gives the sound 64 kbps. Here's what's left for the picture:</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Length</th><th>Bitrate left for the picture</th></tr></thead>
+    <tbody>
+      <tr><td>30 seconds</td><td>about 5,000 kbps</td></tr>
+      <tr><td>1 minute</td><td>about 2,470 kbps</td></tr>
+      <tr><td>2 minutes</td><td>about 1,200 kbps</td></tr>
+      <tr><td>3 minutes</td><td>about 780 kbps</td></tr>
+      <tr><td>5 minutes</td><td>about 440 kbps</td></tr>
+      <tr><td>10 minutes</td><td>about 190 kbps</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The arithmetic: 152,000 kilobits divided by the length in seconds, minus 64 for the sound. At two minutes, my test landed at 960×720. The longer the clip, the smaller the picture has to be, and past about fifteen minutes it doesn't fit at all: Crisp's floor is 100 kbps, the least it gives a 360p picture.</p>
+
+  <h2>What I measured</h2>
+
+  <p>On 10 November 2026 I ran Crisp 1.0.1990, installed on my Mac Studio (M1 Ultra, macOS 26.3.1), on three clips from Ivan Besse's 1938 home movie, a public-domain reel from the Prelinger Archives. Each time I asked for "under 20 MB for Discord".</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>The clip</th><th>What Crisp did</th></tr></thead>
+    <tbody>
+      <tr><td>2 minutes, 38.6 MB, 2560×1920 HEVC (the reel after Crisp's 4x Enhance)</td><td>Saved an 18.5 MB H.264 file at 960×720 in 46 seconds. It tried a larger picture first, got 19.35 MB, which was over its 19 MB aim, and stepped down.</td></tr>
+      <tr><td>2 minutes, 11.6 MB, 640×480</td><td>Did nothing, and said why</td></tr>
+      <tr><td>19 minutes 9 seconds, 51.3 MB, 640×480</td><td>Did nothing, and said how to split it</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>To check the quality of the 18.5 MB file, I scored it against the original scaled to the same 960×720 with VMAF, a 0 to 100 score built to track what people see. It averaged 92.9, and the worst frame scored 80.4.</p>
+
+  <figure>
+<img src="/how-to/compress-video-for-discord/discord-fit-frame.jpg" width="1452" height="540" loading="lazy" alt="The same frame at 0:30: the 38.6 MB enhanced file on the left, the 18.5 MB Discord file on the right, both shown at 720×540.">
+<figcaption>The same frame at 0:30: the 38.6 MB enhanced file on the left, the 18.5 MB Discord file on the right, both shown at 720×540.</figcaption>
+</figure>
+
+  <p>The two refusals are the part I like best, so here they are word for word. For the clip already under the limit:</p>
+
+  <blockquote><p>"This video is already 11.6 MB, under the 20 MB limit, so it can be sent as it is."</p></blockquote>
+
+  <p>For the 19-minute clip:</p>
+
+  <blockquote><p>"19 minutes 9 seconds of video in 20 MB leaves 68 kbps for the picture once the sound takes its 64 kbps, below the 100 kbps that 360p needs. Crisp aims at 19 MB to stay under it. Split it into 2 parts of about 9 minutes 35 seconds each, or share a link."</p></blockquote>
+
+  <p>Crisp never saves a file over the size you asked for. It either fits it, or tells you why it can't.</p>
+
+  <p>My copy is Crisp Pro. On the free copy, Fit a size works the same and isn't capped, but the export carries a small "crispvideo.app" mark.</p>
+
+  <h2>Step by step</h2>
+
+  <ol>
+    <li><strong>Open the video in Crisp,</strong> on a Mac or a Windows PC.</li>
+    <li><strong>Type what you want:</strong> "under 20 MB for Discord". Or use the Fit a size control in the Compress panel. If you have Nitro Basic, ask for 50 MB instead.</li>
+    <li><strong>Check the card.</strong> Crisp shows what it will do before it starts: "Fit to 20 MB with H.264, aimed at 19 MB to stay under Discord's 20 MB".</li>
+    <li><strong>Export.</strong> Crisp tries a picture size, checks the result, and steps down if it lands over the aim.</li>
+    <li><strong>Drag the file into Discord.</strong> It's an H.264 MP4, a format Discord lists.</li>
+  </ol>
+
+  <figure>
+<img src="/free-vs-pro/free-copy-editor.jpg" width="1600" height="863" loading="lazy" decoding="async"
+     alt="The free copy of Crisp on a Mac, with a 1906 street film in the editor.">
+<figcaption>The free copy of Crisp on a Mac, with a 1906 street film in the editor.</figcaption>
+</figure>
+
+  <p>Everything runs on your computer. The video isn't uploaded anywhere, which matters for clips of family or friends.</p>
+
+  <p>If you enhanced the clip first, as I did, fit it to size last. An upscale makes the file much bigger: Crisp's 4x Enhance turned the 11.6 MB clip into the 38.6 MB one. Discord only cares about the final size.</p>
+
+  <h2>The online compressors, read today</h2>
+
+  <p>I read the top results for "discord video compressor" on Bing on 10 November 2026.</p>
+
+  <div class="cmp-wrap"><table>
+    <thead><tr><th>Page</th><th>What it says the free limit is</th><th>Where your video goes</th></tr></thead>
+    <tbody>
+      <tr><td>VEED</td><td>10 MB, and 500 MB for Nitro</td><td>Uploaded to VEED</td></tr>
+      <tr><td>Flixier</td><td>10 MB</td><td>Stays in your browser, it says</td></tr>
+      <tr><td>SqueezeVid</td><td>20 MB, and up to 500 MB for Nitro</td><td>Your browser, or its servers if you choose</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Each was checked on the company's own page on 10 November 2026. All three state at least one limit Discord no longer uses: the free limit is 20 MB and Nitro goes up to 1 GB.</p>
+
+  <p>What they do better: there's nothing to install, and they work on a phone. For one short clip, that's hard to beat. Crisp is for when you do this often, when the clip is private, or when you've just cleaned up an old video and need it small enough to share.</p>
+
+  <h2>Ask Claude instead</h2>
+
+  <p>Crisp's free tools for Claude know Discord's limits too. Asked to fit a video for Discord, they answer with the 20 MB, 50 MB and 1 GB limits and the date they were last checked. <a href="https://crispvideo.app/how-to/use-crisp-in-claude/">Use Crisp's free video tools in Claude</a> shows how to add them.</p>
+
+  <h2>FAQ</h2>
+  <h3>What is Discord's file size limit in 2026?</h3>
+  <p>20 MB a file on a free account, since August 2026. Nitro Basic allows 50 MB and Nitro up to 1 GB. Discord says it is experimenting with limits, so some accounts may see more.</p>
+  <h3>Does Discord check the size before or after it compresses?</h3>
+  <p>Before. Discord now checks the file you pick on both desktop and mobile, so a file over 20 MB is refused on a free account, wherever you send it from.</p>
+  <h3>How long a video can I send on Discord for free?</h3>
+  <p>It depends on the picture size. In my test a two-minute clip fitted in 20 MB at 960×720. Longer clips need a smaller picture, and past about fifteen minutes even 360p doesn't fit, so split it or send a link.</p>
+  <h3>What video format works best on Discord?</h3>
+  <p>An MP4 encoded with H.264. Discord lists H.264, HEVC and AV1, and H.264 is the one almost every phone and browser plays.</p>
+  <h3>Can I compress a video for Discord without uploading it?</h3>
+  <p>Yes. A desktop app such as Crisp does it on your own computer, and some browser tools say they keep the file in the browser. Read each tool's page before you trust it with a private clip.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="https://crispvideo.app/how-to/compress-video-on-mac/">How to compress a video on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/use-crisp-in-claude/">Use Crisp's free video tools in Claude</a></li>
+    <li><a href="https://crispvideo.app/how-to/convert-mov-to-mp4-mac/">How to convert MOV to MP4 on a Mac</a></li>
+    <li><a href="https://crispvideo.app/how-to/convert-vhs-to-digital-mac/">How to convert VHS to digital on a Mac</a></li>
+  </ul>
+
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$29">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $29. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=howto-compress-for-discord-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=howto-compress-for-discord-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="howto-compress-for-discord-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=howto-compress-for-discord-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1990 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+</div></article>
+
+<footer><div class="wrap">
+  <p>◆ <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows. <a href="https://crispvideo.app/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">About</a></p>
+  <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
+</div></footer>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$29" data-ends="2026-12-01T07:59:59Z" style="max-width:520px;margin:1.25rem auto 0"></div>
+<script src="/founding.js" defer></script>
+<script src="/track.js" defer></script>
+</body>
+</html>
