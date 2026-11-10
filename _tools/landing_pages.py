@@ -136,14 +136,33 @@ def macos_speed_section(os_line: str) -> str:
 ''')
 
 
+def alternates(slug: str) -> str:
+    """Link only to doors owned by a strings module and present on disk."""
+    if slug not in ("download", "pricing"):
+        return ""
+    from lang_pages import load_words
+
+    english = f"/{slug}/"
+    translations = []
+    for path in sorted(Path(__file__).parent.glob("strings_*.py")):
+        lang = path.stem.removeprefix("strings_").replace("_", "-")
+        # Use the chrome's ownership rule before loading a language module.
+        if sitewide_chrome.language(SITE / lang / "index.html") != lang:
+            continue
+        words = load_words(lang)
+        route = dict(words.ROUTES).get(english)
+        if route and (SITE / route.lstrip("/") / "index.html").is_file():
+            translations.append((getattr(words, "HREFLANG", lang), route))
+    # Preserve the established German-only output, including its line order.
+    routes = (translations + [("en", english)] if len(translations) == 1
+              else [("en", english)] + translations)
+    routes.append(("x-default", english))
+    return "".join(f'<link rel="alternate" hreflang="{lang}" href="{llms_txt.BASE}{route}">\n'
+                   for lang, route in routes)
+
+
 def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_first: bool, extra: str = "") -> str:
     url = f"{llms_txt.BASE}/{slug}/"
-    # These reciprocal links already exist on the English doors. Preserve them
-    # when regenerating instead of deleting the German scaffold's source links.
-    german = {"download": "download", "pricing": "preise"}.get(slug)
-    alternates = ("\n".join(f'<link rel="alternate" hreflang="{lang}" href="{href}">'
-                           for lang, href in (("de", f"{llms_txt.BASE}/de/{german}/"),
-                                              ("en", url), ("x-default", url))) + "\n") if german else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,7 +178,7 @@ def page(slug: str, title: str, desc: str, h1: str, lede: str, src: str, buy_fir
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="{url}">
-{alternates}<link rel="stylesheet" href="/style.css">
+{alternates(slug)}<link rel="stylesheet" href="/style.css">
 {_analytics_line()}
 {_referral_line()}</head>
 <body>
