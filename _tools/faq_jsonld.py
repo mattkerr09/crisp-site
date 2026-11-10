@@ -14,7 +14,7 @@ copied from another page. Two hand-kept copies of one text will always drift, so
 The schema is derived from it, and _tools/schema_matches_page.py (a pre-push gate) fails the push when they differ.
 
 WHAT IS "THE PAGE'S FAQ". Inside <article>, the <h2> section with the most question headings (<h3>/<h4> whose text
-ends in "?"); a tie goes to the later section, because the FAQ closes the article and a callout box with a question
+ends in "?", the full-width "？", or, in Japanese, the question particle "か" before "。"); a tie goes to the later section, because the FAQ closes the article and a callout box with a question
 heading sits earlier ("Where Crisp wins" > "Is the quality actually good?"). Each question's answer is the run of
 <p>, <ul> and <ol> directly after it, stopping at the next heading, any other element (the product box <aside>
 that follows the last answer is not part of it) or a paragraph holding a class="btn" link (new_pages.py's download
@@ -53,6 +53,13 @@ ANSWER_PART = re.compile(r"\s*<(p|ul|ol)\b[^>]*>(.*?)</\1>", re.S | re.I)
 HIDDEN = re.compile(r"<(script|style|template|noscript)\b[^>]*>.*?</\1>|<!--.*?-->", re.S | re.I)
 
 
+def is_question(heading: str) -> bool:
+    """A heading that asks. Japanese ends a question with the particle か and a full stop (「無料版は体験版ですか。」), not "?":
+    the /ja/ pages of 10 Nov 2026 lost their FAQ schema to a "?"-only test that read their five questions as no FAQ."""
+    h = heading.rstrip()
+    return h.endswith(("?", "？", "か。", "か"))
+
+
 def visible_faq(page: str) -> list[tuple[str, str]]:
     """[(question, answer)] exactly as the page shows them, in page order. [] when the page shows no FAQ."""
     m = ARTICLE.search(page) or BODY.search(page)
@@ -63,7 +70,7 @@ def visible_faq(page: str) -> list[tuple[str, str]]:
         level = h.group(1).lower()
         if level in ("h1", "h2"):
             sections.append([h, []])
-        elif level in ("h3", "h4") and sections and text_of(h.group(2)).endswith("?"):
+        elif level in ("h3", "h4") and sections and is_question(text_of(h.group(2))):
             sections[-1][1].append(i)
     order = {id(s): k for k, s in enumerate(sections)}
     asked = [s for s in sections if s[1]]
