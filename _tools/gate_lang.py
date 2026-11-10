@@ -293,9 +293,29 @@ class LanguageGate:
                 if noindex != (english == "/pricing/"):
                     fail(target_path, "only the pricing page must be noindex")
                 if target.elements("s") or target.elements("del") or re.search(
-                        r"Black Friday|half price|metade do preço|mitad de precio|%\s*(?:off|de desconto|de descuento)",
+                        r"Black Friday|half price|metade do preço|mitad de precio|半額|ブラックフライデー|[%％]\s*(?:off|オフ|割引|de desconto|de descuento)",
                         normal(target.root.text()), re.I):
                     fail(target_path, "use launch-price wording without discount claims or struck-out prices")
+
+            if getattr(self.words, "HTML_LANG", self.lang) == "ja":
+                styles = "".join(target_source[node.open_end:node.close_start] for node in target.elements("style"))
+                if self.words.INLINE_STYLE not in styles:
+                    fail(target_path, "Japanese inline line-breaking styles are required")
+                if english == "/" and ('class="req"' not in target_source or
+                        "table.req{min-width:0;}table.req td{overflow-wrap:anywhere;}" not in styles):
+                    fail(target_path, "home requirements table needs req class and inline width rules")
+
+                def check_tables(node, wrapped=False):
+                    wrapped = wrapped or node.tag == "div" and "cmp-wrap" in (node.attrs.get("class") or "").split()
+                    if node.tag == "table" and not wrapped:
+                        for row in (child for child in node.walk() if child.tag == "tr"):
+                            if len([cell for cell in row.children if cell.tag in {"th", "td"}]) >= 3:
+                                fail(target_path, "comparison table needs a cmp-wrap container")
+                                break
+                    for child in node.children:
+                        check_tables(child, wrapped)
+
+                check_tables(target.root)
 
             contacts = [n for n in target.elements("section") if self.words.CONTACT_CLASS in (n.attrs.get("class") or "").split()]
             footers, bodies = target.elements("footer"), target.elements("body")
@@ -699,7 +719,7 @@ class LanguageGate:
         self.language_selftest()
         # The legacy entry point also protects the new locales and shared machinery.
         if self.lang == "de":
-            for lang in ("pt-br", "es"):
+            for lang in ("pt-br", "es", "ja"):
                 if LanguageGate(lang, self.ROOT).first_slice_selftest():
                     return 1
         print(f"OK: {len(cases) + 3} {self.words.LANGUAGE_NAME} gate tests and generator regression checks passed.")
@@ -741,6 +761,22 @@ class LanguageGate:
             (self.download_file, words.money(self.generator.llms_txt.facts()["now"]), "WRONGPRICE", "page is stale"),
             (pricing, '<meta name="robots" content="noindex, follow">', '', "noindex"),
         ]
+        if language == "ja":
+            assert words.money(Decimal("14.50")) == "$14.50"
+            assert words.money(Decimal("29")) == "$29.00"
+            assert words.money(Decimal("1234.50")) == "$1,234.50"
+            assert self.generator.last_day("2026-12-01T08:00:00Z") == "11月30日"
+            assert self.generator.future_day("2026-12-01T07:59:59Z") == "12月1日"
+            cases.extend([
+                (home, "word-break:auto-phrase;", "", "line-breaking styles"),
+                (home, words.INLINE_STYLE, words.INLINE_STYLE.replace("overflow-wrap:anywhere;", "", 1), "line-breaking styles"),
+                (home, 'class="req"', 'class="wrong"', "requirements table"),
+                (home, "table.req{min-width:0;}", "", "requirements table"),
+                (free, 'class="cmp-wrap"', 'class="wrong"', "cmp-wrap container"),
+                (home, "ja-home-pbox-top", "ja-home-pbox-1", "box is stale"),
+                (home, '</body>', '<p>半額</p></body>', "launch-price wording"),
+                (home, '</body>', '<p>50%オフ</p></body>', "launch-price wording"),
+            ])
         files = {url.lstrip("/") + "index.html" for pair in self.PAGES for url in pair} | {"sitemap.xml"}
         originals = {name: (self.ROOT / name).read_text() for name in files}
         with tempfile.TemporaryDirectory(prefix=f"crisp-{self.lang}-slice-") as folder:
@@ -768,6 +804,9 @@ class LanguageGate:
 
     def generator_selftest(self) -> None:
         """Exercise changed sources and check/write mode, without touching the site."""
+        for english in ("/download/", "/pricing/"):
+            assert self.generator.landing.alternates(english.strip("/")).strip() == alternates(english, self.words), \
+                "English and localized doors must advertise the same available translations"
         f = self.generator.llms_txt.facts()
         changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), code="NEXTCRISP",
                        ends="2026-12-16T07:59:59Z", os="macOS 15.0 or later", cap=22, refund_days=40)
@@ -825,6 +864,13 @@ class LanguageGate:
                 page = root / self.generator.FULL_PAGES[0]
                 page.write_text(page.read_text().replace(self.words.money(f["price"]), self.words.money(f["price"] - 1), 1))
                 assert self.generator.write(check=True) == 1, f"stale {self.words.LANGUAGE_NAME} price passed check"
+                written = root / self.generator.OTHER_PAGES[0]
+                source = written.read_text()
+                label = f'>{self.words.FOOTER["about"]}</a>'
+                assert label in source, "written page needs an about link fixture"
+                written.write_text(source.replace(label, '>Old footer</a>', 1))
+                assert self.generator.write() == 0
+                assert written.read_text() == source, "written footer did not follow locale copy"
 
 
     def language_selftest(self) -> None:

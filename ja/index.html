@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<script>document.documentElement.classList.add('js');
+(function (n) { var u = n.userAgent || ''; if (/iPhone|iPad|iPod|Android|Mobi/i.test(u) || (/Macintosh/.test(u) && n.maxTouchPoints > 1)) document.documentElement.classList.add('handheld');
+  else if (/Windows NT/.test(u)) document.documentElement.classList.add('win'); })(navigator);</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>動画を高画質化。Mac・PCでオフライン処理 | Crisp</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-500.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="ja-written" content="2026-11-10">
+<meta name="description" content="動画を高画質化するCrisp。古い動画を修復し、ノイズ除去と4Kまでのアップスケールができます。MacやWindows PCでオフライン処理し、タイムラインで編集できます。アカウント不要で無料から使えます。">
+<link rel="canonical" href="https://crispvideo.app/ja/">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://crispvideo.app/ja/">
+<meta property="og:title" content="動画を高画質化。Mac・PCでオフライン処理 | Crisp">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:description" content="動画を高画質化するCrisp。古い動画を修復し、ノイズ除去と4Kまでのアップスケールができます。MacやWindows PCでオフライン処理し、タイムラインで編集できます。アカウント不要で無料から使えます。">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="動画を高画質化。Mac・PCでオフライン処理 | Crisp">
+<meta name="twitter:description" content="動画を高画質化するCrisp。古い動画を修復し、ノイズ除去と4Kまでのアップスケールができます。MacやWindows PCでオフライン処理し、タイムラインで編集できます。アカウント不要で無料から使えます。">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
+
+<link rel="stylesheet" href="/style.css">
+<style>
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-latin.woff2') format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var.woff2') format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-latin-italic.woff2') format('woff2');
+  font-weight:400 700;font-style:italic;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'DM Sans';src:url('/fonts/dmsans-var-italic.woff2') format('woff2');
+  font-weight:400 700;font-style:italic;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-500.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Clash Display';src:url('/fonts/clashdisplay-600.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;}
+:root{
+  --black:#060814; --panel:#0a0d1a; --panel-2:#0b0e1c; --card:#0e1222;
+  --hair:#1b2133; --hair-lit:#2a314a;
+  --white:#f5f7fa; --grey:#a1a9b8; --grey-dim:#767f8f;
+  --cyan:#5ac8fa; --ice:#a8e4ff; --violet:#9d8cff;
+  --grad:linear-gradient(105deg,#cfefff 0%,#5ac8fa 42%,#9d8cff 100%);
+  --lift:0 24px 50px -28px rgba(90,200,250,.40);
+  --lift-lg:0 32px 70px -34px rgba(90,200,250,.50);
+  --r:18px; --r-sm:12px;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
+  --head:'Clash Display',Futura,"Avenir Next",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --w:1180px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(var(--w),calc(100% - 3rem));margin:0 auto;}
+
+.h-xl{font-family:var(--head);font-size:clamp(2.3rem,4.05vw,3.45rem);line-height:1.07;
+  letter-spacing:-.015em;font-weight:500;margin:0;}
+.h-xl .setup{color:#6f7681;}
+.h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.1;letter-spacing:-.012em;font-weight:600;margin:0 0 .9rem;}
+.h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
+p strong, li strong, td strong{color:var(--white);font-weight:600;}
+p em, li em{color:#c3cad6;}
+.lede{font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--grey);margin:0;}
+.grad{background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:inline-block;}
+.kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 1rem;}
+
+.nav{position:sticky;top:var(--kc-bar-h,0px);z-index:80;background:rgba(0,0,0,.6);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(28,32,41,.9);}
+.nav-in{display:flex;align-items:center;gap:2rem;height:56px;}
+.brand{font-family:var(--head);display:flex;align-items:center;gap:.55rem;font-weight:640;font-size:1rem;letter-spacing:-.015em;}
+.brand svg{width:21px;height:21px;color:var(--cyan);}
+.nav-links{display:flex;gap:1.9rem;margin-left:auto;}
+.nav-links a{color:var(--grey);font-size:.94rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+@media(max-width:820px){.nav-links{display:none;}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.8rem 1.45rem;border-radius:999px;font-weight:600;font-size:1rem;
+  border:1px solid transparent;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:#5ac8fa;color:#04121b;
+  box-shadow:0 10px 30px -14px rgba(90,200,250,.75),inset 0 1px 0 rgba(255,255,255,.34);}
+.btn-primary:hover{background:#7ad6fd;
+  box-shadow:0 18px 46px -14px rgba(90,200,250,.9),inset 0 1px 0 rgba(255,255,255,.42);}
+.btn-ghost{border-color:var(--hair-lit);color:var(--white);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{background:rgba(255,255,255,.07);}
+.btn-sm{padding:.5rem 1.05rem;font-size:.88rem;}
+.btn[aria-disabled="true"]{opacity:.48;box-shadow:none;pointer-events:none;}
+
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.mesh b{position:absolute;border-radius:50%;filter:blur(120px);opacity:.58;}
+.mesh .m1{width:60vw;height:60vw;max-width:820px;max-height:820px;
+  background:radial-gradient(circle,rgba(90,200,250,.44),transparent 68%);
+  top:-24vw;left:-10vw;animation:drift1 29s ease-in-out infinite;}
+.mesh .m2{width:52vw;height:52vw;max-width:720px;max-height:720px;
+  background:radial-gradient(circle,rgba(157,140,255,.36),transparent 66%);
+  top:-4vw;right:-14vw;animation:drift2 35s ease-in-out infinite;}
+.mesh .m3{width:46vw;height:46vw;max-width:640px;max-height:640px;
+  background:radial-gradient(circle,rgba(168,228,255,.30),transparent 66%);
+  top:40vw;left:30vw;animation:drift3 41s ease-in-out infinite;}
+.mesh .m4{width:44vw;height:44vw;max-width:600px;max-height:600px;
+  background:radial-gradient(circle,rgba(90,200,250,.26),transparent 68%);
+  bottom:-16vw;right:6vw;animation:drift4 33s ease-in-out infinite;}
+@keyframes drift4{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-6vw,-3vw) scale(1.1);}}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(6vw,4vw) scale(1.12);}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-5vw,6vw) scale(1.08);}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-4vw,-5vw) scale(1.15);}}
+.hero,section,.foot,.band{z-index:1;}
+.nav{z-index:80;}
+.foot{position:relative;}
+.hero{position:relative;text-align:center;padding:4.6rem 0 0;
+  background:
+    radial-gradient(1200px 640px at 50% -12%, rgba(90,200,250,.11), transparent 60%);
+}
+.grid-ovl{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 1px,transparent 0);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 0%,transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 0%,transparent 75%);}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);
+  mask-image:radial-gradient(ellipse 82% 58% at 50% 0%,#000 0%,transparent 74%);}
+.hero > *{position:relative;z-index:1;}
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;
+  border:1px solid var(--hair-lit);background:rgba(90,200,250,.06);color:var(--ice);
+  font-size:.82rem;font-weight:600;margin-bottom:1.4rem;}
+.pill svg{width:13px;height:13px;}
+.hero-top{display:grid;grid-template-columns:1.06fr .94fr;gap:1rem 3rem;align-items:start;
+  text-align:left;margin-bottom:2rem;}
+.hero-top .pill{margin-bottom:1.1rem;}
+.hero-head{min-width:0;}
+.hero-future{font-family:var(--head);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.4;color:var(--ice);
+  margin:1rem 0 0;max-width:36ch;text-wrap:balance;}
+.hero-maker{margin:1.2rem 0 0;max-width:42ch;font-size:.93rem;line-height:1.55;color:var(--grey);text-wrap:pretty;}
+.hero-maker strong{white-space:nowrap;}
+.hero-say{padding-bottom:.35rem;min-width:0;}
+.hero-say .lede{max-width:46ch;margin:0 0 1.6rem;}
+.hero-top .cta{justify-content:flex-start;}
+.hero-top .fine{margin-top:.9rem;}
+@media (max-width:860px){
+  .hero-top{grid-template-columns:1fr;text-align:center;gap:0;}
+  .hero-say .lede{max-width:58ch;margin:1.3rem auto 2rem;}
+  .hero-top .cta{justify-content:center;}
+  .hero-future{margin:1rem auto 0;}
+  .hero-maker{margin:.9rem auto 0;}
+}
+.hero .lede{max-width:58ch;margin:1.3rem auto 2rem;}
+.hero .lede strong{white-space:nowrap;}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+.fine{margin-top:1.1rem;font-size:.88rem;color:var(--grey-dim);}
+.caps{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  background:linear-gradient(180deg,rgba(90,200,250,.04),transparent 70%);}
+.caps-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem 1rem;
+  max-width:var(--w);margin:0 auto;padding:2.6rem 1.5rem;text-align:center;}
+.cap-n{font-family:var(--head);font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.02em;
+  font-weight:500;color:var(--ice);
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.cap-l{margin:.5rem 0 0;font-size:.88rem;color:var(--grey);line-height:1.4;}
+@media (max-width:720px){.caps-in{grid-template-columns:repeat(2,1fr);padding:2rem 1.2rem;}}
+.side-fig{display:grid;grid-template-columns:1fr 258px;gap:2.6rem;align-items:center;margin-top:1.9rem;}
+.side-fig .sf-text{display:flex;flex-direction:column;gap:1rem;}
+.side-fig figure{margin:0;}
+.side-fig .ba-note{text-align:left;margin:0;max-width:none;}
+.side-fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--hair-lit);display:block;}
+.side-fig figcaption{margin-top:.6rem;font-size:.82rem;line-height:1.45;color:var(--grey-dim);}
+@media (max-width:820px){.side-fig{grid-template-columns:1fr;gap:1.4rem;align-items:start;}
+  .side-fig figure{max-width:340px;margin-inline:auto;}}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem;
+  margin:1.6rem 0 0;}
+.tools-grid span{display:block;padding:.55rem .7rem;border:1px solid var(--hair);border-radius:10px;
+  background:var(--panel);font-size:.82rem;color:var(--grey-dim);line-height:1.35;
+  transition:border-color .22s,background .22s,color .22s,transform .22s;}
+.tools-grid span:hover{border-color:var(--hair-lit);background:var(--card);color:var(--grey);
+  transform:translateY(-2px);}
+.tools-grid b{display:block;color:var(--white);font-weight:600;font-size:.9rem;}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2rem;margin-top:1.9rem;margin-bottom:2.6rem;}
+.hero .ba{max-width:none;width:min(100vw,2200px);margin-left:calc(50% - min(50vw,1100px));
+  border-radius:0;border-left:0;border-right:0;
+  aspect-ratio:auto;height:min(56vh,520px);}
+.hero .ba video{width:100%;height:100%;object-fit:cover;}
+@media (max-width:900px){
+  .hero .ba{width:auto;margin-left:0;border-radius:var(--r);border-left:1px solid var(--hair-lit);
+    border-right:1px solid var(--hair-lit);
+    height:auto;}
+  .hero .ba video{height:auto;object-fit:fill;}
+}
+.trust > span{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--grey);font-weight:500;}
+.trust svg{width:14px;height:14px;color:#4ade80;flex:none;}
+
+.shot{margin:4.5rem auto 0;max-width:1060px;padding-bottom:6rem;}
+.frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--hair-lit);background:var(--card);
+  box-shadow:0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset,
+             0 30px 110px -40px rgba(90,200,250,.55);}
+.frame img{display:block;width:100%;height:auto;}
+.cap{margin-top:1rem;font-size:.82rem;color:var(--grey-dim);text-align:center;}
+
+.ba{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--hair-lit);background:var(--card);line-height:0;
+  box-shadow:0 50px 100px -40px rgba(0,0,0,.9);--x:42%;}
+.ba img,.ba video{display:block;width:100%;height:auto;background:#000;}
+#ba4{max-width:704px;}
+.ba-note + .ba,
+.ba + .ba{margin-top:2.8rem;}
+
+.ba-before{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--x)) 0 0);}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:rgba(255,255,255,.9);
+  transform:translateX(-1px);pointer-events:none;box-shadow:0 0 18px rgba(0,0,0,.6);}
+.ba-grip{position:absolute;top:50%;left:50%;width:42px;height:42px;transform:translate(-50%,-50%);
+  border-radius:50%;background:rgba(10,12,16,.82);border:1.5px solid rgba(255,255,255,.85);
+  backdrop-filter:blur(6px);}
+.ba-grip::before,.ba-grip::after{content:"";position:absolute;top:50%;width:0;height:0;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;margin-top:-5px;}
+.ba-grip::before{left:9px;border-right:6px solid rgba(255,255,255,.9);}
+.ba-grip::after{right:9px;border-left:6px solid rgba(255,255,255,.9);}
+.ba-tag{position:absolute;bottom:14px;padding:.3rem .7rem;border-radius:999px;font-size:.78rem;
+  font-weight:650;letter-spacing:.02em;line-height:1.6;background:rgba(6,8,12,.72);
+  border:1px solid rgba(255,255,255,.14);color:var(--white);backdrop-filter:blur(6px);}
+.ba-l{left:14px;} .ba-r{right:14px;color:var(--ice);border-color:rgba(90,200,250,.45);}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;
+  -webkit-appearance:none;appearance:none;background:transparent;
+  touch-action:pan-y;}
+.ba-range:focus-visible{opacity:1;outline:3px solid var(--cyan);outline-offset:-3px;}
+.ba-note{max-width:1000px;margin:1.1rem auto 0;font-size:.88rem;line-height:1.65;color:var(--grey);text-align:center;}
+.demo{max-width:1000px;margin:2.8rem auto 0;}
+.demo-frame{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;
+  border:1px solid var(--hair-lit);box-shadow:0 18px 60px rgba(0,0,0,.45);}
+.demo-video{display:block;width:100%;height:100%;object-fit:cover;background:#000;}
+.demo-cap{max-width:760px;margin:1rem auto 0;font-size:.88rem;line-height:1.65;color:var(--grey);text-align:center;}
+
+section{padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative;}
+section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(82% 44% at 18% -4%, rgba(90,200,250,.11), transparent 64%),
+    radial-gradient(72% 40% at 88% 104%, rgba(157,140,255,.08), transparent 66%);}
+section:nth-of-type(even)::before{
+  background:
+    radial-gradient(82% 44% at 82% -4%, rgba(157,140,255,.10), transparent 64%),
+    radial-gradient(72% 40% at 12% 104%, rgba(90,200,250,.08), transparent 66%);}
+section > *{position:relative;z-index:1;}
+.band{background:rgba(10,13,26,.60);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+.band::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(90,200,250,.5) 22%,rgba(157,140,255,.42) 62%,transparent);}
+.head{max-width:64ch;margin:0 0 2.2rem;text-align:left;}
+.head .lede{font-size:1.06rem;}
+
+.row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.row + .row{margin-top:6rem;}
+.row.flip .col-text{order:2;}
+@media(max-width:860px){.row{grid-template-columns:1fr;gap:2rem;}.row.flip .col-text{order:0;}}
+.col-text p{color:var(--grey);margin:0;}
+.visual{border-radius:var(--r);border:1px solid var(--hair);background:
+  linear-gradient(160deg,var(--card),var(--panel));aspect-ratio:4/3;position:relative;overflow:hidden;
+  display:grid;place-items:center;}
+.visual::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(420px 300px at 30% 20%,rgba(90,200,250,.14),transparent 70%);}
+
+.metric{position:relative;text-align:center;padding:2rem;}
+.metric .big{font-size:clamp(2.6rem,6vw,4rem);font-weight:700;letter-spacing:-.04em;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background:linear-gradient(120deg,#dff4ff,#5ac8fa);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.metric .small{color:var(--grey);font-size:.94rem;margin-top:.7rem;}
+.bars{display:flex;align-items:flex-end;gap:7px;height:110px;margin-top:1.4rem;justify-content:center;}
+.bars i{width:9px;border-radius:3px;background:linear-gradient(180deg,#5ac8fa,#2f8fc4);display:block;}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.1rem;}
+.card{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
+  border-radius:var(--r);padding:1.75rem;
+  transition:border-color .28s,transform .28s,box-shadow .28s;}
+.card:hover{border-color:var(--hair-lit);transform:translateY(-4px);box-shadow:var(--lift);}
+.card .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;margin-bottom:1.1rem;
+  background:rgba(90,200,250,.1);border:1px solid rgba(90,200,250,.22);}
+.card .ico svg{width:20px;height:20px;color:var(--cyan);}
+.card h3{font-size:1.06rem;font-weight:640;margin:0 0 .45rem;letter-spacing:-.012em;}
+.card p{margin:0;color:var(--grey);font-size:.94rem;line-height:1.62;}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.2rem;counter-reset:s;}
+.step{position:relative;}
+.step .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.94rem;
+  background:rgba(90,200,250,.12);border:1px solid rgba(90,200,250,.32);color:var(--ice);margin-bottom:1rem;}
+.step h3{font-size:1.06rem;margin:0 0 .4rem;font-weight:640;}
+.step p{margin:0;color:var(--grey);font-size:.94rem;}
+
+.cmp{overflow-x:auto;border:1px solid var(--hair);border-radius:var(--r);background:var(--panel-2);}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:.94rem;}table.req{min-width:0;}table.req td{overflow-wrap:anywhere;}
+th,td{padding:.95rem 1.15rem;text-align:left;border-bottom:1px solid var(--hair);}
+thead th{background:rgba(255,255,255,.028);font-weight:640;font-size:.88rem;letter-spacing:.02em;color:var(--grey);}
+thead th:nth-child(2){color:var(--ice);}
+tbody tr{transition:background .2s;}
+tbody tr:hover td{background:rgba(90,200,250,.045);}
+tbody tr:last-child td{border-bottom:none;}
+tbody td:first-child{color:var(--grey);}
+td.y{color:#4ade80;font-weight:560;}
+td.n{color:var(--grey-dim);}
+
+.cost{max-width:840px;margin:3.6rem auto 0;border:1px solid var(--hair);border-radius:var(--r);
+  background:linear-gradient(180deg,var(--card),var(--panel-2));padding:2.2rem 2.2rem 1.8rem;}
+.cost h3{font-size:1.35rem;font-weight:660;letter-spacing:-.022em;margin:0 0 .5rem;}
+.cost .sub{color:var(--grey);font-size:.94rem;margin:0 0 1.9rem;}
+.cost-row{display:grid;grid-template-columns:5.6rem 1fr;gap:1rem;align-items:center;margin:.75rem 0;}
+.cost-row .yr{font-size:.82rem;color:var(--grey-dim);letter-spacing:.01em;}
+.cost-bars{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;min-width:0;}
+.cost-bar{height:32px;border-radius:9px;display:flex;align-items:center;padding:0 .8rem;white-space:nowrap;
+  font-size:.88rem;font-weight:640;width:var(--p);min-width:max-content;max-width:100%;flex:none;}
+.cost-bar.us{background:linear-gradient(90deg,rgba(90,200,250,.34),rgba(90,200,250,.11));
+  border:1px solid rgba(90,200,250,.5);color:var(--ice);}
+.cost-bar.them{background:linear-gradient(90deg,rgba(255,99,99,.26),rgba(255,99,99,.07));
+  border:1px solid rgba(255,99,99,.38);color:#ffb9b9;}
+.cost .src{font-size:.78rem;color:var(--grey-dim);margin:1.6rem 0 0;line-height:1.6;}
+.cost .src a{color:var(--grey);}
+
+.cost .bnpl-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.55;}
+.cost .bnpl-note strong{color:var(--white);font-weight:700;}
+.cost .bnpl-note[hidden]{display:none;}
+.tier .bnpl-note{font-size:.94rem;color:var(--grey);margin:.35rem 0 .9rem;line-height:1.5;}
+.tier .bnpl-note strong{color:var(--white);font-weight:700;}
+.tier .bnpl-note[hidden]{display:none;}
+.tier .founding-note{font-size:.94rem;color:var(--grey);margin:.35rem 0 .9rem;line-height:1.5;}
+.cost .founding-note{font-size:.9rem;color:var(--grey);margin:.9rem 0 0;line-height:1.5;}
+.founding-note strong{color:var(--white);font-weight:700;}
+@media(max-width:640px){
+  .cost{padding:1.6rem 1.2rem 1.3rem;}
+  .cost-row{grid-template-columns:1fr;gap:.35rem;}
+  .cost-bar{font-size:.82rem;height:30px;}
+}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem;max-width:840px;margin:0 auto;}
+.tier{background:linear-gradient(180deg,var(--card),var(--panel-2));border:1px solid var(--hair);
+  border-radius:var(--r);padding:2.2rem 1.9rem;display:flex;flex-direction:column;
+  transition:border-color .28s,transform .28s,box-shadow .28s;}
+.tier:hover{border-color:var(--hair-lit);transform:translateY(-4px);box-shadow:var(--lift-lg);}
+.tier.pro{border-color:rgba(90,200,250,.42);
+  box-shadow:0 0 0 1px rgba(90,200,250,.1),0 40px 90px -46px rgba(90,200,250,.5);}
+.tier.pro:hover{box-shadow:0 0 0 1px rgba(90,200,250,.2),0 46px 100px -44px rgba(90,200,250,.66);}
+.tier .name{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--grey-dim);}
+.tier.pro .name{color:var(--cyan);}
+.tier .price{font-size:3rem;font-weight:700;letter-spacing:-.04em;margin:.6rem 0 .2rem;line-height:1;}
+.tier .price.grad-price{background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  color:transparent;width:fit-content;}
+.tier .price.grad-price small{-webkit-text-fill-color:var(--grey-dim);color:var(--grey-dim);}
+.tier .price small{font-size:.94rem;font-weight:500;color:var(--grey-dim);letter-spacing:0;}
+.split{white-space:nowrap;}
+.tier .price .tier-split{font-size:.4em;font-weight:600;letter-spacing:0;color:var(--white);-webkit-text-fill-color:var(--white);}
+@media (max-width:480px){.tier .price .tier-split{display:block;margin-top:.45rem;}.tier .price .tier-split .sep{display:none;}}
+.tier .blurb{color:var(--grey);font-size:.94rem;margin:0 0 1.5rem;}
+.tier ul{list-style:none;padding:0;margin:0 0 1.9rem;display:grid;gap:.65rem;}
+.tier li{display:flex;gap:.6rem;align-items:flex-start;font-size:.94rem;color:var(--grey);}
+.tier li svg{width:16px;height:16px;color:#4ade80;flex:none;margin-top:.2rem;}
+.tier .btn{width:100%;margin-top:auto;}
+
+.faq{max-width:780px;margin:0 auto;display:grid;gap:.65rem;}
+details{background:var(--panel-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:1.1rem 1.35rem;
+  transition:border-color .22s,background .22s;}
+details:hover{border-color:var(--hair-lit);background:var(--card);}
+details[open]{border-color:var(--hair-lit);}
+summary{cursor:pointer;font-weight:600;font-size:1rem;list-style:none;display:flex;
+  justify-content:space-between;align-items:center;gap:1rem;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--cyan);font-size:1.35rem;font-weight:300;line-height:1;flex:none;}
+details[open] summary::after{content:"\2212";}
+details p{margin:.9rem 0 0;color:var(--grey);font-size:.94rem;}
+
+.final{text-align:center;padding:9rem 0;
+  background:radial-gradient(900px 480px at 50% 108%, rgba(90,200,250,.17), transparent 66%);}
+.final .lede{max-width:50ch;margin:1.2rem auto 2.4rem;}
+
+footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);font-size:.88rem;}
+.kco{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--hair);font-size:.84rem;color:var(--grey-dim);}
+.kco-h{margin:0 0 .45rem;font-weight:600;color:var(--grey);}
+.kco-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
+.kco-list a{color:var(--grey);text-decoration:underline;text-underline-offset:2px;}
+
+.foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;}
+.foot a{color:var(--grey);}
+.foot a:hover{color:var(--white);}
+.foot .links{margin-left:auto;display:flex;gap:1.5rem;flex-wrap:wrap;}
+
+.js .rv{opacity:0;transform:translate(var(--rx,0),var(--ry,26px)) scale(var(--rs,1));
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.js .rv.in{opacity:1;transform:none;}
+.js .rv.d1{transition-delay:.08s;} .js .rv.d2{transition-delay:.16s;} .js .rv.d3{transition-delay:.24s;}
+.js .cards > .rv:nth-child(odd),
+.js .steps > .rv:nth-child(odd){--rx:-30px;--ry:10px;}
+.js .cards > .rv:nth-child(even),
+.js .steps > .rv:nth-child(even){--rx:30px;--ry:10px;}
+.js .tiers > .rv:nth-child(odd){--rx:-34px;--ry:6px;}
+.js .tiers > .rv:nth-child(even){--rx:34px;--ry:6px;}
+.js .side-fig > .rv{--rx:26px;--ry:8px;}
+.js .shot.rv,.js .cmp-wrap.rv{--ry:34px;--rs:.985;}
+.js .caps-in > .rv{--ry:18px;--rs:.97;}
+@media (max-width:820px){
+  .js .rv{transform:translateY(var(--ry,26px)) scale(var(--rs,1));}
+}
+.js .rv.rvd{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.2,.8,.2,1),
+  border-color .28s,box-shadow .28s,background .24s,color .22s;
+  transition-delay:0s;}
+@media(prefers-reduced-motion:reduce){
+  .mesh b{animation:none;}
+  .rv{opacity:1;transform:none;transition:none;}
+  *{animation:none!important;transition:none!important;scroll-behavior:auto;}
+}
+
+.sub-wrap{border-top:1px solid var(--hair);padding:2.6rem 1.5rem 1.4rem;}
+.sub{max-width:520px;margin:0 auto;text-align:center;}
+.sub-label{display:block;font-family:var(--head);font-weight:640;font-size:1.02rem;letter-spacing:-.01em;}
+.sub-why{margin:.5rem 0 1rem;color:var(--grey);font-size:.9rem;line-height:1.6;}
+.sub-row{display:flex;gap:.55rem;justify-content:center;flex-wrap:wrap;}
+.sub-row input{flex:1 1 15rem;min-width:0;padding:.62rem .85rem;border-radius:10px;
+  border:1px solid var(--hair-lit);background:rgba(255,255,255,.04);color:var(--white);
+  font-size:.94rem;}
+.sub-row input:focus{outline:2px solid var(--cyan);outline-offset:1px;}
+.sub-msg{margin:.7rem 0 0;font-size:.86rem;min-height:1.2em;}
+.sub-msg.is-ok{color:var(--grey);}
+.sub-msg.is-bad{color:#ffb4a2;}
+.sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.oldmac{margin:.9rem 0 0;text-align:left;}
+.oldmac-ask{display:block;margin:0 0 .5rem;font-size:.88rem;line-height:1.5;color:var(--grey);}
+.oldmac-row{display:flex;gap:.5rem;flex-wrap:wrap;max-width:26rem;}
+.oldmac-row input{flex:1 1 12rem;min-width:0;min-height:40px;padding:.45rem .75rem;border-radius:10px;
+  border:1px solid var(--hair-lit);background:rgba(255,255,255,.04);color:var(--white);font-size:1rem;}
+.oldmac-row input:focus{outline:2px solid var(--cyan);outline-offset:1px;}
+.oldmac-row .btn{flex:none;min-height:40px;}
+.oldmac-msg{margin:.45rem 0 0;font-size:.84rem;line-height:1.45;}
+.oldmac-msg:empty{margin:0;}
+.oldmac-msg.is-ok{color:var(--grey);}
+.oldmac-msg.is-bad{color:#ffb4a2;}
+.oldmac-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.step .step-dl{margin-top:.9rem;}
+.step .step-req{margin-top:.7rem;font-size:.84rem;color:var(--grey-dim);}
+.phone-link{display:none;margin:.75rem 0 0;font-size:.9rem;color:var(--grey);}
+.win-link{margin:.75rem 0 0;font-size:.9rem;color:var(--grey);}.win-gpu{display:block;margin-top:.15rem;font-size:.82rem;}.win-link a{color:var(--white);text-decoration:underline;text-underline-offset:3px;}
+.phone-link button{font:inherit;color:var(--white);background:none;border:0;padding:0;
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+@media (max-width:760px),(hover:none) and (pointer:coarse){.phone-link{display:block;}}
+@media (max-width:860px){
+  .hero-top .oldmac{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero-top .oldmac-row{justify-content:center;margin:0 auto;}
+}
+.send-first{display:none;}
+.handheld .send-first{display:block;margin:1.5rem 0 0;}
+.send-say{margin:0 0 .9rem;font-size:1.02rem;line-height:1.5;color:var(--white);text-wrap:balance;}
+.handheld .hero .phone-link{display:none;}
+.handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
+.win-btn,.fine-win{display:none;}
+.win .win-btn{display:inline-flex;}
+.win .hero-say .cta .btn-primary:not(.win-btn){background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
+.win .hero-say .cta .btn-primary:not(.win-btn):hover{background:rgba(255,255,255,.07);box-shadow:none;}
+.win .hero .win-link,.win .hero .fine,.win .hero .oldmac{display:none;}   
+.win .hero .fine-win{display:block;margin-top:.9rem;font-size:.88rem;color:var(--grey-dim);}
+.win .hero .fine-win a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.lede-price{margin:-.9rem 0 1.6rem;max-width:46ch;font-size:clamp(1.08rem,1.7vw,1.34rem);line-height:1.5;color:var(--white);}
+.hero .lede-price strong{white-space:nowrap;}
+@media (max-width:860px){.hero-say .lede-price{max-width:58ch;margin:-1.2rem auto 2rem;}}
+@media (max-width:640px){
+  .handheld .hero-top{display:flex;flex-direction:column;}
+  .handheld .hero-head,.handheld .hero-say{display:contents;}
+  .handheld .hero-head>*,.handheld .hero-say>*{order:20;}
+  .handheld .hero-head>.pill{order:0;align-self:center;}
+  .handheld .hero-head>h1{order:1;}
+  .handheld .hero-say>.lede{order:2;margin:1rem auto .7rem;}
+  .handheld .hero-say>.lede-price{order:3;margin:0 auto .2rem;}
+  .handheld .hero-head>.send-first{order:4;margin:1rem 0 0;}
+  .handheld .hero-say>.cta{order:5;}
+  .handheld .hero-say>.fine{order:6;}
+  .handheld .hero-say>.oldmac{order:7;}
+  .handheld .hero-head>.hero-future{order:8;}
+  .handheld .hero-head>.hero-maker{order:9;}
+  .handheld .hero{padding-top:3.2rem;}
+  .handheld .hero .h-xl{font-size:clamp(1.85rem,8.3vw,2.3rem);}
+}
+.sendlink{margin:.9rem 0 0;max-width:26rem;font-size:.9rem;line-height:1.5;color:var(--grey);text-align:left;
+  scroll-margin:calc(var(--kc-bar-h,0px) + 72px) 0 6rem;}   
+.sendlink p{margin:0 0 .6rem;}
+.sendlink [hidden]{display:none;}
+.sendlink-msg{color:var(--white);}
+.sendlink-url{padding:.6rem .8rem;border:1px solid var(--hair-lit);border-radius:10px;background:rgba(255,255,255,.04);
+  color:var(--white);word-break:break-all;-webkit-user-select:all;user-select:all;cursor:text;}
+.sendlink-ways{display:flex;flex-wrap:wrap;gap:.5rem;}
+.sendlink .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.9rem;}
+.send-first .btn,.sendlink .btn{font-family:inherit;line-height:inherit;cursor:pointer;}   
+.nav-send{display:none;}
+.handheld .nav-in a[data-track="nav-download"]{display:none;}
+.handheld .nav-send{display:inline-flex;font-family:inherit;line-height:inherit;cursor:pointer;}   
+@media (max-width:820px){.handheld .nav-send{margin-left:auto;}}   
+.handheld .nav-send{white-space:nowrap;}
+@media (max-width:374px){.handheld .nav-in{gap:1rem;}.handheld .nav-send{padding:.5rem .85rem;font-size:.82rem;}}
+@media (max-width:339px){.handheld .nav-send{padding:.45rem .7rem;font-size:.76rem;}}
+@media (max-width:860px){
+  .hero .sendlink{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero .sendlink-ways{justify-content:center;}
+}
+
+
+.hero{background:
+  radial-gradient(60% 55% at 50% 0%,rgba(90,200,250,.19),transparent 70%),
+  radial-gradient(35% 42% at 86% 8%,rgba(157,140,255,.10),transparent 70%);}
+
+.hero::before{inset:auto;left:0;right:0;top:-4rem;width:auto;height:40rem;   
+  background-image:
+    radial-gradient(rgba(255,255,255,.75) 1px,transparent 1.5px),
+    radial-gradient(rgba(90,200,250,.7) 1px,transparent 1.5px),
+    radial-gradient(rgba(157,140,255,.55) .8px,transparent 1.3px);
+  background-size:140px 140px,210px 210px,330px 330px;
+  background-position:0 0,70px 95px,160px 40px;
+  -webkit-mask-image:radial-gradient(55% 62% at 50% 34%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(55% 62% at 50% 34%,#000 0%,transparent 78%);
+  opacity:.6;animation:crisp-drift 90s linear infinite;}
+@keyframes crisp-drift{to{background-position:140px 140px,280px 305px,490px 370px}}
+@media (min-width:861px){            
+  .hero::before{-webkit-mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);
+    mask-image:radial-gradient(50% 60% at 34% 34%,#000 0%,transparent 78%);}
+}
+
+.btn-primary{background:linear-gradient(180deg,#8cdcfd 0%,#5ac8fa 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 34px -10px rgba(90,200,250,.85);}
+.btn-primary:hover{background:linear-gradient(180deg,#a2e3fe 0%,#6dcffb 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 44px -12px rgba(90,200,250,.95);}
+
+.card:hover{box-shadow:0 0 0 1px rgba(90,200,250,.14),0 30px 80px -30px rgba(90,200,250,.45);}
+
+.demo-frame{box-shadow:0 0 0 1px rgba(90,200,250,.18),0 40px 120px -30px rgba(90,200,250,.45),0 30px 60px -20px #000;}
+@media (min-width:761px) and (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .demo{perspective:1600px;}
+    .demo-frame{transform-origin:50% 0;animation:crisp-stage linear both;
+      animation-timeline:view();animation-range:entry 0% cover 45%;}
+    @keyframes crisp-stage{from{transform:rotateX(14deg) scale(.98)}to{transform:none}}
+  }
+}
+
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none;}}
+</style>
+<style>article p a,article li a,article td a{color:var(--ice);}article p a:hover,article li a:hover{text-decoration:underline;text-underline-offset:3px;}</style>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --><link rel="alternate" hreflang="en" href="https://crispvideo.app/">
+<link rel="alternate" hreflang="de" href="https://crispvideo.app/de/">
+<link rel="alternate" hreflang="es" href="https://crispvideo.app/es/">
+<link rel="alternate" hreflang="ja" href="https://crispvideo.app/ja/">
+<link rel="alternate" hreflang="pt-BR" href="https://crispvideo.app/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://crispvideo.app/">
+<style>body{overflow-wrap:anywhere;}h1,h2,h3,h4,h5,h6,th,td{overflow-wrap:anywhere;word-break:auto-phrase;}.nav-in,.nav-inner{flex-wrap:wrap;height:auto;min-height:56px;padding-block:.5rem;}.brand,.nav-brand{min-width:0;}.win .pbox[data-landing-box] .win-link{display:block;}</style>
+</head>
+<body>
+<p class="app-language">アプリ本体は英語です。このページでは日本語で説明しています。</p>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg>
+      Crisp Video
+    </a>
+    <nav class="nav-links">
+      <a href="#features">できること</a><a href="#free">無料版とPro</a><a href="#requirements">動作環境</a><a href="/ja/pricing/">料金</a><a href="#faq">よくある質問</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" data-track="nav-download" href="https://crispvideo.app/ja/download/?src=nav-download">ダウンロード</a>
+  </div>
+</header>
+
+<article><div class="wrap">
+  <h1>古い動画を、くっきりと。お使いのパソコンで。</h1>
+  <div class="updated">Grand RapidsでCrispを開発するMatt Kerrが執筆 · 2026年11月10日公開</div>
+  <div class="quick"><strong>概要</strong><p class="lede">Crisp Videoは古い動画や低解像度の動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。そのままタイムラインで編集できます。処理はすべてMacやWindows PC上で行います。動画のアップロードも、アカウントも不要です。無料で使えます。Proは月額料金のない買い切りです。</p></div>
+  <!-- ja-box:begin --><aside class="pbox" data-landing-box><p class="pbox-name"><strong>Crisp Video</strong>は動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。MacやPCでオフラインで処理します。</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-price-ends="2026-12-01T07:59:59Z" data-full-price="$29.00">$14.50</span> 買い切り</p><p class="pbox-found" data-until="2026-12-01T07:59:59Z">発売記念価格は11月30日まで$14.50です。12月1日からは$29.00です。購入ボタンを押すと、コード<strong>FOUNDINGCRISP</strong>が購入画面で適用されます。</p><p class="pbox-cur">価格は米ドルです。購入画面では、お住まいの地域の通貨と税額が表示されます。</p><p class="pbox-actions"><a class="btn" data-track="ja-home-pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=ja-home-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Mac版を無料ダウンロード</a> <a class="btn btn-ghost" data-crisp-checkout data-track="ja-home-pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=ja-home-pbox-top" rel="nofollow">Crisp Proを購入</a></p><p class="win-link">Windows 10または11の64ビット版をお使いですか。 <a data-track="ja-home-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=ja-home-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe" rel="nofollow">Windows版Crisp 1.0.1990をダウンロード</a> <span class="win-gpu">Vulkan対応のグラフィックスが必要です。2016年以降のPCの多くが対応しています。</span></p><p class="pbox-fine">無料版では、AIによるアップスケール、修復、カラールックの書き出しは15秒までです。それ以外は全編を書き出せます。動画とGIFには小さなcrispvideo.appの透かしが入ります。 · macOS 14.0以降 · Apple Silicon M1以降 · 30日以内なら理由を問わず返金します。</p></aside><script>(function(){var n=Date.now();document.querySelectorAll('[data-price-ends]').forEach(function(e){if(Date.parse(e.getAttribute('data-price-ends'))<=n)e.textContent=e.getAttribute('data-full-price');});})();</script><script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script><!-- ja-box:end -->
+
+  <h2 id="features">Crispでできること</h2>
+  <p>動画をCrispにドラッグしてください。ノイズ除去と暗い部分の補正を行ってから、映像を修復して4Kまでアップスケールします。Autoモードが動画に合うモデルと拡大率を選びます。先にノイズを取り除くことで、ノイズまで拡大してしまうのを防ぎます。</p>
+  <p>私のM1 Ultraでは、40秒の1080pのスマホ動画を4Kにするのに3分26秒かかりました。処理速度が低いMacでは、もっと時間がかかります。Crispには進み具合と残り時間が表示されます。</p>
+  <p>同じアプリで、次の作業もできます。</p>
+  <ul>
+    <li><strong>タイムライン編集。</strong>クリップを並べ、トリミングや分割を行えます。写真やカラールックを加え、編集した動画全体を4Kにアップスケールして書き出せます。</li>
+    <li><strong>Montage。</strong>長い動画から見どころを集めたり、短くまとめたり、音楽の拍に合わせて自動編集したりできます。</li>
+    <li><strong>音声。</strong>元の音声を保ち、映像との同期も維持します。音量調整と背景ノイズの除去もできます。</li>
+    <li><strong>写真。</strong>MacではJPEG、PNG、HEICの写真も数秒でアップスケールして修復できます。</li>
+  </ul>
+
+  <h2>古い家族の動画に</h2>
+  <p>デジタル化したVHSやビデオカメラの映像、初期のデジタルカメラやスマホの動画に向いています。大きなテレビで見るとぼやけたり、ノイズが目立ったりする動画を、お使いのパソコンで処理できます。</p>
+  <p>Crispには顔専用のモデルはありません。標準のEnhanceは、顔も映像のほかの部分と同じ方法できれいにします。顔を描き直す処理はしません。テープは先にデジタル化してください。手順は<a href="https://crispvideo.app/how-to/restore-old-home-videos-mac/">古いホームビデオの修復ガイド・英語</a>で説明しています。</p>
+
+  <h2 id="free">無料版とPro</h2>
+  <p>無料版には使用期限がなく、登録も不要です。制限は次の2つです。</p>
+  <ul>
+    <li>AIによるアップスケール、修復、カラールックの書き出しは15秒までです。編集、変換、圧縮など、それ以外は全編を処理できます。</li>
+    <li>動画とGIFには小さなcrispvideo.appの透かしが入ります。写真には入りません。</li>
+  </ul>
+  <p><strong>Pro</strong>は月額料金のない買い切りです。透かしと秒数制限がなくなり、複数ファイルの一括処理が使えます。Macでは、時間をかけて生成AIで映像を修復するMaxも使えます。バージョン1.xの全アップデートが含まれます。1ライセンスでMac・Windows合わせて同時に3台まで使えます。合わなければ、購入から30日以内は理由を問わず返金します。</p>
+  <p>詳しい違いは<a href="/ja/free-or-pro/">無料版とProの比較</a>をご覧ください。現在の価格は<a href="/ja/pricing/">料金ページ</a>に掲載しています。</p>
+
+  <h2>動画はお使いのパソコンに保管したまま</h2>
+  <p>Crispは動画をアップロードしません。アカウントも、サーバーの順番待ちも、クラウドもありません。Wi-Fiを切っても動きます。更新やライセンスの確認などで通信します。送信する内容は<a href="https://crispvideo.app/legal/privacy/">プライバシーポリシー・英語</a>で説明しています。</p>
+
+  <h2 id="requirements">動作環境</h2>
+  <table class="req">
+    <tr><th scope="row">Mac</th><td>Apple Silicon M1以降、macOS 14以降が必要です。macOS 14では、アップスケールに新しいmacOSの約1.5倍の時間がかかります。</td></tr>
+    <tr><th scope="row">Windows</th><td>Windows 10または11の64ビット版と、Vulkan対応のグラフィックスが必要です。2016年以降のPCの多くが対応しています。</td></tr>
+    <tr><th scope="row">Macのみの機能</th><td>JPEG、PNG、HEICの写真の処理とMaxが使えます。顔や指定範囲のぼかしも、現在はMacのみです。</td></tr>
+  </table>
+  <p>両OSでのダウンロードとインストールは<a href="/ja/download/">ダウンロードページ</a>をご覧ください。</p>
+
+  <h2 id="faq">よくある質問</h2>
+  <div class="faq">
+    <details><summary>1ライセンスで何台まで使えますか。</summary><p>Mac・Windows合わせて同時に3台まで使えます。4台目で使うには、先にほかの1台でライセンスを解除してください。個人利用と商用利用の両方に対応しています。</p></details>
+    <details><summary>本当にオフラインで動きますか。</summary><p>はい。MacでもPCでも、処理はすべてパソコン上で行います。Wi-Fiを切っても動きます。通信するのは、更新の確認、ライセンスの有効化、Proでの週に1回ほどのライセンス再確認です。無料版では発売記念価格を確認しますが、利用者の情報は送りません。任意のMaxモデルをダウンロードするときも通信します。動画を送ることはありません。</p></details>
+    <details><summary>高性能なMacが必要ですか。</summary><p>通常の高速処理はApple Silicon搭載のどのMacでも動きますが、すぐに終わるわけではありません。2026年10月13日にM1 Ultraで測ったところ、10秒の1080p動画を4Kにするのに約1分、10秒の480p動画では約23秒でした。MacBook Airではもっと時間がかかります。Crispには進み具合と残り時間が表示されます。生成AIを使うMaxは追加ダウンロードが必要で、処理にもかなり時間がかかります。動画には最低48 GBのメモリを持つMacが必要です。写真1枚なら16 GBのMacでも処理できます。</p></details>
+    <details><summary>音声が消えたり、映像とずれたりしませんか。</summary><p>音声は時間を変えずにそのままコピーします。フレームレートを上げても同期を保ちます。色も正しく変換し、色情報を付け直すため、色が薄くなるのを防げます。</p></details>
+    <details><summary>家族の顔が変わってしまいませんか。</summary><p>標準のEnhanceには顔専用のモデルがなく、顔を探して描き直す処理もしません。顔もほかの部分と同じ方法できれいにします。小さすぎたり、ピントが外れていたりする顔は、元の細部が記録されていないため、ぼやけたままです。時間のかかるMaxは、顔も含めて画面全体の細部を再構成します。看板に文字のような模様を描いたり、目にまつ毛を足したりすることがあります。同じ古い映像でMaxが文字を描いたときも、Enhanceは元にある部分を鮮明にするだけでした。看板やナンバープレートにはEnhanceのほうが安全です。知っている人の顔は、まずEnhanceを使い、元のサイズで比べてください。</p></details>
+    <details><summary>写真の処理や動画編集もできますか。</summary><p>はい。MacではJPEG、PNG、HEICの写真をドラッグすると、数秒でアップスケールして修復できます。Montageモードでは、長い動画から見どころを集めた動画、短くまとめた動画、音楽の拍に合わせた動画を自動で作れます。すべてパソコン上で処理します。</p></details>
+    <details><summary>Crispはいくらですか。</summary><p>月額料金はありません。無料版には使用期限がありません。AI処理の書き出しは15秒までで、動画とGIFには小さなcrispvideo.appの透かしが入ります。Crisp Proは買い切りです。透かしと秒数制限がなくなり、一括処理と、MacではMaxが使えます。クレジットやクラウドの利用料金もありません。</p></details>
+  </div>
+  <!-- ja-box:begin --><aside class="pbox" data-landing-box><p class="pbox-name"><strong>Crisp Video</strong>は動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。MacやPCでオフラインで処理します。</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-price-ends="2026-12-01T07:59:59Z" data-full-price="$29.00">$14.50</span> 買い切り</p><p class="pbox-found" data-until="2026-12-01T07:59:59Z">発売記念価格は11月30日まで$14.50です。12月1日からは$29.00です。購入ボタンを押すと、コード<strong>FOUNDINGCRISP</strong>が購入画面で適用されます。</p><p class="pbox-cur">価格は米ドルです。購入画面では、お住まいの地域の通貨と税額が表示されます。</p><p class="pbox-actions"><a class="btn" data-track="ja-home-pbox-bottom" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=ja-home-pbox-bottom&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Mac版を無料ダウンロード</a> <a class="btn btn-ghost" data-crisp-checkout data-track="ja-home-pbox-bottom-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=ja-home-pbox-bottom" rel="nofollow">Crisp Proを購入</a></p><p class="win-link">Windows 10または11の64ビット版をお使いですか。 <a data-track="ja-home-pbox-bottom-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=ja-home-pbox-bottom-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe" rel="nofollow">Windows版Crisp 1.0.1990をダウンロード</a> <span class="win-gpu">Vulkan対応のグラフィックスが必要です。2016年以降のPCの多くが対応しています。</span></p><p class="pbox-fine">無料版では、AIによるアップスケール、修復、カラールックの書き出しは15秒までです。それ以外は全編を書き出せます。動画とGIFには小さなcrispvideo.appの透かしが入ります。 · macOS 14.0以降 · Apple Silicon M1以降 · 30日以内なら理由を問わず返金します。</p></aside><script>(function(){var n=Date.now();document.querySelectorAll('[data-price-ends]').forEach(function(e){if(Date.parse(e.getAttribute('data-price-ends'))<=n)e.textContent=e.getAttribute('data-full-price');});})();</script><script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script><!-- ja-box:end -->
+
+  <h2>関連ページ</h2>
+  <ul>
+    <li><a href="/ja/download/">Mac・Windows版をダウンロード</a></li>
+    <li><a href="/ja/pricing/">料金</a></li>
+    <li><a href="/ja/free-or-pro/">無料版とProの比較</a></li>
+    <li><a href="https://crispvideo.app/how-to/upscale-video-on-mac/">Macで480pの動画を4Kにする方法・英語</a></li>
+    <li><a href="https://crispvideo.app/how-to/restore-old-home-videos-mac/">古いホームビデオを修復する方法・英語</a></li>
+    <li><a href="https://crispvideo.app/legal/privacy/">プライバシーポリシー・英語</a></li>
+  </ul>
+</div></article>
+
+<section class="kontakt"><h2>お問い合わせ</h2><p>Kerr &amp; Company LLC<br>メール <a href="mailto:support@crispvideo.app">support@crispvideo.app</a><br>ウェブサイト <a href="https://crispvideo.app/">crispvideo.app</a></p></section>
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>はオフラインで動くAIアプリです。Macでは動画と写真のアップスケールと自動編集、Windowsでは動画のアップスケールと編集ができます。 <a href="https://crispvideo.app/ja/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">運営会社について</a></p>
+  <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Kerr &amp; Companyが制作</a></li></ul></div>
+</div></footer>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "@type": "Organization",
+      "@id": "https://crispvideo.app/ja/#org",
+      "name": "Crisp Video",
+      "url": "https://crispvideo.app/ja/",
+      "logo": "https://crispvideo.app/apple-touch-icon.png",
+      "description": "CrispはMac向けのオフラインAI動画・写真ソフトを作っています。処理はすべて利用者のパソコンで行い、映像をアップロードしません。",
+      "sameAs": [
+        "https://github.com/mattkerr09/crisp-site",
+        "https://www.producthunt.com/products/crisp-7"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://crispvideo.app/ja/#website",
+      "url": "https://crispvideo.app/ja/",
+      "name": "Crisp Video",
+      "publisher": {
+        "@id": "https://crispvideo.app/ja/#org"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://crispvideo.app/ja/#author",
+      "name": "Matt Kerr",
+      "description": "Crispの開発者です。このサイトに掲載した速度や画質の数値は、主にApple M1 Ultra搭載のMac Studioなど、自分の機材で測定しています。",
+      "knowsAbout": [
+        "AI動画アップスケール",
+        "オフライン動画編集",
+        "macOS",
+        "Apple Silicon",
+        "ffmpeg",
+        "動画修復"
+      ],
+      "worksFor": {
+        "@id": "https://crispvideo.app/ja/#org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://crispvideo.app/ja/#app",
+      "name": "Crisp Video",
+      "alternateName": [
+        "Crisp",
+        "Mac版Crisp"
+      ],
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "動画編集とAIアップスケール",
+      "operatingSystem": "macOS 14.0以降、Windows 10または11の64ビット版",
+      "processorRequirements": "MacではApple Silicon M1以降",
+      "softwareVersion": "1.0.2010",
+      "url": "https://crispvideo.app/ja/",
+      "downloadUrl": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg",
+      "installUrl": "https://crispvideo.app/ja/download/",
+      "screenshot": "https://crispvideo.app/og.png",
+      "author": {
+        "@id": "https://crispvideo.app/ja/#author"
+      },
+      "publisher": {
+        "@id": "https://crispvideo.app/ja/#org"
+      },
+      "description": "MacとWindowsで使えるオフラインのAI動画アップスケールとタイムライン編集アプリです。クリップを並べてトリミングや分割を行い、写真やカラールックを加え、編集した動画を4Kで書き出せます。クラウドもアカウントも不要です。",
+      "featureList": [
+        "オフラインで4KまでAI動画アップスケール",
+        "Macでの写真のアップスケールと修復",
+        "トリミング、分割、並べ替え、クリップごとのカラールックを使えるタイムライン",
+        "暗い映像の補正とノイズ除去",
+        "音量調整と背景ノイズ除去",
+        "編集後の書き出し時に4Kにアップスケール"
+      ],
+      "inLanguage": "ja"
+    }
+  ]
+}</script>
+<script src="/track.js" defer></script>
+</body>
+</html>

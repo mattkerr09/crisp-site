@@ -68,7 +68,7 @@ PRICES = {
 }
 FOOTER = {
     "line": '<strong style="color:var(--text-mid)">Crisp</strong>: IA sin conexión para aumentar la resolución de vídeos y fotos y editar automáticamente en Mac, y para aumentar la resolución y editar vídeos en Windows.',
-    "about": "Acerca de",
+    "about": "Acerca de nosotros",
     "made_by": "Hecho por Kerr &amp; Company",
 }
 CONTACT_CLASS = "kontakt"   # the styled class (style.css .kontakt), shared by every language: a code name, not visible text
