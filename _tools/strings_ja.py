@@ -15,7 +15,7 @@ HTML_LANG = HREFLANG = "ja"
 PAGE_COUNT = "four"
 STRICT_COPY = True
 DOWNLOAD_INDEXABLE = True
-HOME_TITLE = "動画を高画質化。Mac・PCでオフライン処理 | Crisp"
+HOME_TITLE = "AIで動画を高画質化・4K化｜Mac/Windows対応 Crisp"
 ROUTES = (("/", "/ja/"), ("/download/", "/ja/download/"),
           ("/pricing/", "/ja/pricing/"), ("/free-vs-pro/", "/ja/free-or-pro/"))
 GENERATED_ROUTES = ("/download/", "/pricing/")
@@ -39,14 +39,14 @@ INLINE_STYLE = ("body{overflow-wrap:anywhere;}"
                 ".win .pbox[data-landing-box] .win-link{display:block;}")
 
 BOX = {
-    "name": "<strong>Crisp Video</strong>は動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。MacやPCでオフラインで処理します。",
+    "name": "<strong>Crisp Video</strong>は動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。MacやPC上で、オフラインのまま処理します。",
     "once": "買い切り",
-    "found": PRICE_COPY + "購入ボタンを押すと、コード<strong>{code}</strong>が購入画面で適用されます。",
+    "found": PRICE_COPY + "ボタンを押すと、購入画面でクーポンコード <strong>{code}</strong> が自動で適用されます。",
     "buy": "Crisp Proを購入",
     "download_mac": "Mac版を無料ダウンロード",
-    "windows_q": "Windows 10または11の64ビット版をお使いですか。",
+    "windows_q": "Windows 10/11（64ビット版）をお使いの方はこちら",
     "windows_dl": "Windows版Crisp {win_version}をダウンロード",
-    "windows_gpu": "Vulkan対応のグラフィックスが必要です。2016年以降のPCの多くが対応しています。",
+    "windows_gpu": "Vulkan対応のGPUが必要です。2016年以降のPCの多くが対応しています。",
     "fine": "無料版では、AIによるアップスケール、修復、カラールックの書き出しは{cap}秒までです。それ以外は全編を書き出せます。動画とGIFには小さなcrispvideo.appの透かしが入ります。 · {os} · {chip} · {refund_days}日以内なら理由を問わず返金します。",
 }
 DOWNLOAD = {
@@ -57,7 +57,7 @@ DOWNLOAD = {
     "speed_h": "macOSのバージョンによる処理速度の違い",
     "speed_p": "CrispはmacOS 14向けに作られ、macOS 14と26でテストしています。アップスケールの処理方式はmacOSのバージョンで変わります。",
     "speed_15": "<strong>macOS 15 Sequoia以降</strong>では、MacのGPUでCore MLを使います。通常の速度で処理します。",
-    "speed_14": "<strong>macOS 14</strong>では、MacのGPUでCrispのncnnエンジンを使います。アップスケールには約1.5倍の時間がかかります。",
+    "speed_14": "<strong>macOS 14</strong>では、MacのGPUでCrispのncnnエンジンを使います。macOS 15以降に比べてアップスケールに約1.5倍の時間がかかります。",
     "speed_same": "仕上がりは同じです。変わるのは待ち時間だけです。",
     "speed_measured": "2026年10月にM1 Ultra搭載のMac Studioで測定しました。3秒のクリップを2倍の720pに拡大したところ、Core MLでは3.4秒、macOS 14で使うncnnでは5.0秒でした。macOS 14用の処理方式を、新しいmacOS上で測った結果です。macOS 14が動くMacでの測定はまだ行っていません。",
     "more": 'Proの機能、ライセンス条件、よくある質問は<a href="/ja/">ホームページ</a>で説明しています。',
