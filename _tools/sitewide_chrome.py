@@ -162,24 +162,32 @@ def _founding_current(s: str, p: Path) -> str:
 # English bar to 5 (found and reverted on 10 Nov, before any push). So on a German page the footer link is checked in German,
 # the bar is never added, and where a German page already carries it (/de/datenschutz/, /de/kostenlos-oder-pro/) it is only
 # kept first in <body> like everywhere else.
-def german(p: Path) -> bool:
+def language(p: Path) -> str | None:
+    """A localized folder is owned by its strings module."""
     try:
-        return p.relative_to(SITE).parts[:1] == ("de",)
+        parts = p.relative_to(SITE).parts
     except ValueError:
-        return False
+        return None
+    if len(parts) < 2:
+        return None
+    lang = parts[0]
+    if re.fullmatch(r"[a-z]{2,8}(?:-[a-z0-9]{1,8})*", lang) and Path(__file__).with_name(f"strings_{lang}.py").is_file():
+        return lang
+    return None
 
 
 def kco_for(p: Path) -> str:
-    if german(p):
-        from de_strings import FOOTER
-        return KCO.replace("Made by Kerr &amp; Company", FOOTER["made_by"])
+    lang = language(p)
+    if lang:
+        from lang_pages import load_words
+        return KCO.replace("Made by Kerr &amp; Company", load_words(lang).FOOTER["made_by"])
     return KCO
 
 
 def wants_founding(p: Path, s: str) -> bool:
     if p == SITE / "index.html" or p.name != "index.html" or p.parent.name == "thank-you":
         return False
-    if german(p):
+    if language(p):
         return has_bar(s)
     try:
         rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
@@ -223,7 +231,7 @@ def row_headers(s: str) -> str:
 
 
 def wants_row_headers(p: Path) -> bool:
-    return not german(p) and not is_arm(p)
+    return not language(p) and not is_arm(p)
 
 
 def pages() -> list[Path]:
