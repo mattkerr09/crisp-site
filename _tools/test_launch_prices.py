@@ -47,7 +47,9 @@ def main():
             for copy in (llms_txt.price_copy(facts), landing_pages.bundle_copy(), de_pages.price_copy(facts), de_pages.bundle()):
                 assert ('Launch price' in copy or 'Einführungspreis' in copy) == active
     title, note = llms_txt.page_meta('/vs/aiarty-video-enhancer-alternative-mac/')
-    assert 'From December 1: $29.' in note, 'llms.txt cut off the future-price sentence'
+    # the summary must still say the price after the launch ends, in full; a page may word it "From December 1: $29." or "then $29."
+    # (the Aiarty page's description says "... $14.50 through Nov 30, then $29." since 9 Nov), but never stop before the $29
+    assert re.search(r'(From December 1: \$29\.|then \$29\.)', note), 'llms.txt cut off the future-price sentence'
     # Execute the real scripts with a small DOM stub. No browser, network, app or sound.
     probe = r'''
 const vm = require('node:vm');
