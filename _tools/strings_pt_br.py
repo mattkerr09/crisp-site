@@ -75,8 +75,8 @@ FOOTER = {
     "about": "Sobre",
     "made_by": "Feito por Kerr &amp; Company",
 }
-CONTACT_CLASS = "contato"
-CONTACT = ('<section class="contato"><h2>Contato</h2><p>Kerr &amp; Company LLC<br>'
+CONTACT_CLASS = "kontakt"   # the styled class (style.css .kontakt), shared by every language: a code name, not visible text
+CONTACT = ('<section class="kontakt"><h2>Contato</h2><p>Kerr &amp; Company LLC<br>'
            'E-mail: <a href="mailto:support@crispvideo.app">support@crispvideo.app</a><br>'
            'Site: <a href="https://crispvideo.app/">crispvideo.app</a></p></section>')
 TODO_NOTICE = APP_LANGUAGE
