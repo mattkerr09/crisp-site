@@ -86,17 +86,66 @@ def is_arm(p: Path) -> bool:
     return p.name == "index.html" and rel in arms()
 
 
+# THE BAR IS DRAWN BEFORE THE FIRST PAINT (Crisp, 2026-11-10). founding.js inserts the launch-price bar as the first thing in
+# <body>. Loaded with `defer` at the end of the page, it ran after the browser had already painted the page, so the bar arrived
+# 0.4 s in and pushed the whole page down by its own height (61 px on a phone): Lighthouse measured CLS 0.069 on the home page
+# from that one shift (layout-shift source: div.hero, moved 57 -> 118 px). The mount and a plain (blocking) script now sit
+# FIRST in <body>, so the bar is in place before anything below it is laid out: CLS 0.069 -> 0 on the home page, with no
+# Performance cost (three Lighthouse runs each on local copies: 81-82 before, 82-83 after; FCP the same). The mount has no
+# margin any more: at the top of the page an empty mount (a visitor who closed the bar, or after the offer ends) must take
+# no room. Measured and recorded in ~/ops/launch/crisp/cls-founding-bar-2026-11-10.md.
+FOUNDING_RE = re.compile(r'<div data-founding[^>]*></div>\n<script src="/founding\.js"></script>')
+#: the old placement (deferred, before </body>), migrated by apply()
+FOUNDING_OLD_RE = re.compile(r'\n?<div data-founding[^>]*></div>\n<script src="/founding\.js" defer></script>')
+BODY_OPEN = re.compile(r'<body[^>]*>\n?')
+
+
 def founding_tag() -> str:
     """The homepage's founding mount + script, verbatim — the single place the offer's figures are written."""
     home = (SITE / "index.html").read_text()
-    m = re.search(r'<div data-founding[^>]*></div>\n<script src="/founding\.js" defer></script>', home)
+    m = FOUNDING_RE.search(home)
     assert m, "homepage: the founding mount moved — update founding_tag()"
     return m.group(0)
+
+
+def founding_first_in_body(s: str) -> bool:
+    """The bar's mount + script are the first thing in <body>, so the bar is drawn before the page below it."""
+    b = BODY_OPEN.search(s)
+    return bool(b) and FOUNDING_RE.match(s, b.end()) is not None
+
+
+def _put_founding_first(s: str, p: Path) -> str:
+    b = BODY_OPEN.search(s)
+    assert b and s.count("<body") == 1, f"{p}: expected one <body>"
+    head = s[:b.end()] if b.group(0).endswith("\n") else s[:b.end()] + "\n"
+    return head + founding_tag() + "\n" + s[b.end():]
+
+
+# GERMAN PAGES KEEP THEIR OWN FOOTER AND OFFER (Crisp, 2026-11-10). de_pages.py writes the footer link as "Von Kerr &amp;
+# Company" (de_strings.FOOTER["made_by"]) and leaves the bar off ("founding.js inserts English sentences. The German offer uses
+# data-until."). This tool did not know that: run in apply mode it rewrote the German footer into English on 7 pages and added the
+# English bar to 5 (found and reverted on 10 Nov, before any push). So on a German page the footer link is checked in German,
+# the bar is never added, and where a German page already carries it (/de/datenschutz/, /de/kostenlos-oder-pro/) it is only
+# kept first in <body> like everywhere else.
+def german(p: Path) -> bool:
+    try:
+        return p.relative_to(SITE).parts[:1] == ("de",)
+    except ValueError:
+        return False
+
+
+def kco_for(p: Path) -> str:
+    if german(p):
+        from de_strings import FOOTER
+        return KCO.replace("Made by Kerr &amp; Company", FOOTER["made_by"])
+    return KCO
 
 
 def wants_founding(p: Path, s: str) -> bool:
     if p == SITE / "index.html" or p.name != "index.html" or p.parent.name == "thank-you":
         return False
+    if german(p):
+        return "/founding.js" in s
     try:
         rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
     except ValueError:          # a page outside the site tree (the gate's own fixture): judge it on its canonical alone
@@ -123,8 +172,8 @@ def apply(p: Path) -> bool:
         assert m, f"{p}: no viewport meta to anchor the verification tag"
         s = s[:m.end()] + ("" if m.group(0).endswith("\n") else "\n") + MSVALIDATE + "\n" + s[m.end():]
     # A footer whose block predates a wording change is regenerated in place — except on an experiment arm.
-    if "data-kco" in s and KCO not in s and not is_arm(p):
-        s, n = KCO_BLOCK.subn(KCO, s)
+    if "data-kco" in s and kco_for(p) not in s and not is_arm(p):
+        s, n = KCO_BLOCK.subn(lambda _m: kco_for(p), s)
         assert n == 1, f"{p}: expected one kco block to refresh, found {n}"
     if has_footer(s) and "data-kco" not in s:
         if p == SITE / "index.html":
@@ -133,14 +182,17 @@ def apply(p: Path) -> bool:
         else:
             # inside the footer's .wrap, after whatever the page already says there
             assert s.count("</footer>") == 1, f"{p}: expected one </footer>"
-            s, n = re.subn(r"</div>(\s*)</footer>", lambda m: "  " + KCO + "\n</div>" + m.group(1) + "</footer>", s)
+            s, n = re.subn(r"</div>(\s*)</footer>", lambda m: "  " + kco_for(p) + "\n</div>" + m.group(1) + "</footer>", s)
             assert n == 1, f"{p}: footer does not end in </div></footer>"
     # the Download/Buy events, on every page with a body (moved out of the homepage 2026-09-28)
     if "</body>" in s and TRACK not in s:
         s = s.replace("</body>", TRACK + "\n</body>")
-    if wants_founding(p, s) and "/founding.js" not in s:
-        assert s.count("</body>") == 1, f"{p}: expected one </body>"
-        s = s.replace("</body>", founding_tag() + "\n</body>")
+    if wants_founding(p, s):
+        if FOUNDING_OLD_RE.search(s):
+            s, n = FOUNDING_OLD_RE.subn("", s)
+            assert n == 1, f"{p}: expected one old founding mount, found {n}"
+        if "/founding.js" not in s:
+            s = _put_founding_first(s, p)
     # the bar and the footer for a PC too; an experiment arm keeps its copy and links as they are
     if not is_arm(p):
         if NAV_OLD in s:
@@ -162,12 +214,14 @@ def missing(p: Path) -> list[str]:
         out.append("msvalidate")
     if has_footer(s) and s.count("data-kco") != 1:
         out.append("kco footer")
-    elif has_footer(s) and KCO not in s and not is_arm(p):
+    elif has_footer(s) and kco_for(p) not in s and not is_arm(p):
         out.append("stale kco footer")
     if "</body>" in s and s.count(TRACK) != 1:
         out.append("track.js")
     if wants_founding(p, s) and s.count(founding_tag()) != 1:
         out.append("founding bar")
+    elif wants_founding(p, s) and not founding_first_in_body(s):
+        out.append("founding bar not first in body")
     if not wants_founding(p, s) and p != SITE / "index.html" and "/founding.js" in s:
         out.append("founding bar where it must not be")
     if not is_arm(p):
