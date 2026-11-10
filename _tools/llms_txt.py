@@ -264,7 +264,9 @@ def windows_hero_fine(cap: int, src: str) -> str:
     if not windows():
         return ""
     return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})'
-            f'<br>{price_copy(facts())} 30-day refund · '
+            # The price is said once on the first screen, in the hero's own price line by the button (10 Nov, both blind
+            # reviewers: four times was too many), so this line starts at the refund.
+            f'<br>30-day refund · '
             f'<a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src={src}" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a>'
             # a second way in, never instead of the direct download (CEO, 2026-11-08): the same app on the Microsoft Store
             f' · or get it from the <a href="{MS_STORE}" data-track="hero-ms-store" rel="nofollow">Microsoft Store</a></p>')

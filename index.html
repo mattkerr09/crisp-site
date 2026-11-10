@@ -67,7 +67,7 @@ a{color:inherit;text-decoration:none;}
 
 .h-xl{font-family:var(--head);font-size:clamp(2.3rem,4.05vw,3.45rem);line-height:1.07;
   letter-spacing:-.015em;font-weight:500;margin:0;}
-.h-xl .setup{color:#6f7681;}
+.h-xl .setup{color:#b4bbc6;}
 .h-lg{font-family:var(--head);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.1;letter-spacing:-.012em;font-weight:600;margin:0 0 .9rem;}
 .h-md{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.028em;font-weight:660;margin:0 0 .7rem;}
 p strong, li strong, td strong{color:var(--white);font-weight:600;}
@@ -457,8 +457,11 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .handheld .send-first{display:block;margin:1.5rem 0 0;}
 .send-say{margin:0 0 .9rem;font-size:1.02rem;line-height:1.5;color:var(--white);text-wrap:balance;}
 .handheld .hero .phone-link{display:none;}
-.handheld .hero-say .cta .btn-primary{background:rgba(255,255,255,.03);color:var(--white);border-color:var(--hair-lit);box-shadow:none;}
-.handheld .hero-say .cta .btn-primary:hover{background:rgba(255,255,255,.07);box-shadow:none;}
+.handheld .hero-say .cta{display:flex;width:100%;flex-direction:column;align-items:center;gap:.15rem;margin-top:.4rem;}
+.handheld .hero-say .cta .btn{background:none;border:0;box-shadow:none;padding:.4rem .5rem;color:var(--ice);font-weight:500;
+  text-decoration:underline;text-underline-offset:3px;}
+.handheld .hero-say .cta .btn:hover{background:none;box-shadow:none;transform:none;}
+.handheld .hero-say .cta .btn svg{display:none;}
 .win-btn,.fine-win{display:none;}
 .win-only{display:none;}
 .win .win-only{display:inline;}
@@ -607,9 +610,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <!-- windows-download:begin --><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="home-hero-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.1990-x64-setup.exe" rel="nofollow">Download Crisp 1.0.1990 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><!-- windows-download:end -->
     <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
     <p class="fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark ·
-      94&nbsp;MB · macOS 14 Sonoma or later (<a href="/download/#macos-speed">upscaling takes about 1.5&times; as long on 14</a>) · Apple Silicon<br>Launch price: $14.50 once, through November 30. From December 1: $29. 30-day refund ·
+      94&nbsp;MB · macOS 14 Sonoma or later (<a href="/download/#macos-speed">upscaling takes about 1.5&times; as long on 14</a>) · Apple Silicon<br>30-day refund ·
       <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero" data-track="hero-buy" rel="nofollow">Buy Pro</a></p>
-    <!-- windows-fine:begin --><p class="fine-win">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them)<br>Launch price: $14.50 once, through November 30. From December 1: $29. 30-day refund · <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero-win" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a> · or get it from the <a href="https://apps.microsoft.com/detail/xpdngln859ct8m" data-track="hero-ms-store" rel="nofollow">Microsoft Store</a></p><!-- windows-fine:end -->
+    <!-- windows-fine:begin --><p class="fine-win">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them)<br>30-day refund · <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-hero-win" data-track="hero-buy-windows" rel="nofollow">Buy Pro</a> · or get it from the <a href="https://apps.microsoft.com/detail/xpdngln859ct8m" data-track="hero-ms-store" rel="nofollow">Microsoft Store</a></p><!-- windows-fine:end -->
     <form class="oldmac" data-oldmac="hero" novalidate>
       <label class="oldmac-ask" for="oldmac-hero-email">On an older Mac? Leave your email and we&rsquo;ll tell you the day Crisp runs on it.</label>
       <div class="oldmac-row">
@@ -626,7 +629,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> 100% offline</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Nothing uploaded</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> <span>Launch price $14.50 through Nov 30, then $29</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Pay once, no subscription</span>
     </div>
     <div class="ba" id="ba">
       <video class="ba-after" id="baAfter" width="960" height="720" poster="/birthday-poster.jpg"
@@ -1498,7 +1501,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 
 <script>
 (function () {
-  var EXTRA = '.hero-say .lede, .head .lede, .ba-note, .side-fig figure, .tools-grid span,' +
+  var EXTRA = '.head .lede, .ba-note, .side-fig figure, .tools-grid span,' +
               '.caps-in > div, .tier, .faq details, .cmp-wrap, .metric, .shot, .band .visual';
   var extras = document.querySelectorAll(EXTRA);
   for (var x = 0; x < extras.length; x++) {
