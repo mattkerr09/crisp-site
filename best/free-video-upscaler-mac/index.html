@@ -165,11 +165,11 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Tool</th><th>Video on a Mac?</th><th>Cost and licence</th><th>What its own page says</th></tr></thead>
     <tbody>
-      <tr><td>ffmpeg (Lanczos resize)</td><td>Yes</td><td>Free, open source</td><td>A resampler: it enlarges the pixels you have and adds no detail</td></tr>
-      <tr><td><a href="https://github.com/xinntao/Real-ESRGAN" rel="nofollow">Real-ESRGAN</a></td><td>Frames only, from the command line</td><td>Free, BSD-3-Clause</td><td>A portable macOS build (dated 24 April 2022) that takes images; video means a Python script or splitting it into frames with ffmpeg, both documented for its anime-video model, and the GUIs are other people's projects</td></tr>
-      <tr><td><a href="https://github.com/upscayl/upscayl" rel="nofollow">Upscayl</a></td><td>No, images only</td><td>Free, AGPL-3.0</td><td>"Enlarge and enhance low-resolution images"; its README gives macOS 12 as the minimum; needs a Vulkan-capable GPU</td></tr>
-      <tr><td><a href="https://github.com/k4yt3x/video2x" rel="nofollow">Video2X</a></td><td>Not natively: Windows and Linux builds, a container image for macOS</td><td>Free, AGPL-3.0</td><td>"Cross-platform support for Windows and Linux"; runs Real-ESRGAN, Real-CUGAN and RIFE; asks for a Vulkan GPU and an Intel or AMD processor with AVX2</td></tr>
-      <tr><td>Crisp</td><td>Yes, video and photos</td><td>Free tier: exports up to 15 seconds, with a mark; Pro removes both. Launch price: $14.50 once, through November 30. From December 1: $29.</td><td>Free video exports and GIFs carry a "crispvideo.app" mark, about 12% of the frame's width, bottom right; photos come out unmarked</td></tr>
+      <tr><th scope="row">ffmpeg (Lanczos resize)</th><td>Yes</td><td>Free, open source</td><td>A resampler: it enlarges the pixels you have and adds no detail</td></tr>
+      <tr><th scope="row"><a href="https://github.com/xinntao/Real-ESRGAN" rel="nofollow">Real-ESRGAN</a></th><td>Frames only, from the command line</td><td>Free, BSD-3-Clause</td><td>A portable macOS build (dated 24 April 2022) that takes images; video means a Python script or splitting it into frames with ffmpeg, both documented for its anime-video model, and the GUIs are other people's projects</td></tr>
+      <tr><th scope="row"><a href="https://github.com/upscayl/upscayl" rel="nofollow">Upscayl</a></th><td>No, images only</td><td>Free, AGPL-3.0</td><td>"Enlarge and enhance low-resolution images"; its README gives macOS 12 as the minimum; needs a Vulkan-capable GPU</td></tr>
+      <tr><th scope="row"><a href="https://github.com/k4yt3x/video2x" rel="nofollow">Video2X</a></th><td>Not natively: Windows and Linux builds, a container image for macOS</td><td>Free, AGPL-3.0</td><td>"Cross-platform support for Windows and Linux"; runs Real-ESRGAN, Real-CUGAN and RIFE; asks for a Vulkan GPU and an Intel or AMD processor with AVX2</td></tr>
+      <tr><th scope="row">Crisp</th><td>Yes, video and photos</td><td>Free tier: exports up to 15 seconds, with a mark; Pro removes both. Launch price: $14.50 once, through November 30. From December 1: $29.</td><td>Free video exports and GIFs carry a "crispvideo.app" mark, about 12% of the frame's width, bottom right; photos come out unmarked</td></tr>
     </tbody>
   </table></div>
 
@@ -181,9 +181,9 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>One minute of 1080p at 30 fps, upscaled to 4K</th><th>Scratch space needed</th></tr></thead>
     <tbody>
-      <tr><td>Source frames as PNG (1,800 frames)</td><td>2.7 GB</td></tr>
-      <tr><td>Upscaled frames as PNG</td><td>15.2 GB</td></tr>
-      <tr><td>Total before you re-encode</td><td>17.9 GB</td></tr>
+      <tr><th scope="row">Source frames as PNG (1,800 frames)</th><td>2.7 GB</td></tr>
+      <tr><th scope="row">Upscaled frames as PNG</th><td>15.2 GB</td></tr>
+      <tr><th scope="row">Total before you re-encode</th><td>17.9 GB</td></tr>
     </tbody>
   </table></div>
   <p>Then comes the time: a fast 2× model took 0.72 to 0.82 seconds a 4K frame on a Mac Studio,

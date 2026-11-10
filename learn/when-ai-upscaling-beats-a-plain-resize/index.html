@@ -179,10 +179,10 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Route</th><th>Model</th><th>Seconds / 60 frames</th><th>PSNR (dB)</th><th>VMAF</th></tr></thead>
     <tbody>
-      <tr><td>4× AI enhance</td><td><strong>RealESRGAN_General_x4_v3</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
-      <tr><td>4× lanczos</td><td>.</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
-      <tr><td>2× AI enhance</td><td><strong>2x-ParimgCompact</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
-      <tr><td>2× lanczos</td><td>.</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
+      <tr><th scope="row">4× AI enhance</th><td><strong>RealESRGAN_General_x4_v3</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
+      <tr><th scope="row">4× lanczos</th><td>.</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
+      <tr><th scope="row">2× AI enhance</th><td><strong>2x-ParimgCompact</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
+      <tr><th scope="row">2× lanczos</th><td>.</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
     </tbody>
   </table></div>
 
@@ -211,9 +211,9 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Denoise value</th><th>Scale</th><th>Model that runs</th></tr></thead>
     <tbody>
-      <tr><td>below 0.5</td><td>2×</td><td><strong>2x-ParimgCompact</strong></td></tr>
-      <tr><td>below 0.5</td><td>any other, including 4×</td><td><strong>RealESRGAN_General_x4_v3</strong></td></tr>
-      <tr><td>0.5 or above</td><td>any</td><td><strong>RealESRGAN_General_WDN_x4_v3</strong></td></tr>
+      <tr><th scope="row">below 0.5</th><td>2×</td><td><strong>2x-ParimgCompact</strong></td></tr>
+      <tr><th scope="row">below 0.5</th><td>any other, including 4×</td><td><strong>RealESRGAN_General_x4_v3</strong></td></tr>
+      <tr><th scope="row">0.5 or above</th><td>any</td><td><strong>RealESRGAN_General_WDN_x4_v3</strong></td></tr>
     </tbody>
   </table></div>
 
@@ -325,12 +325,12 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Situation</th><th>Use</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td>Clean 1080p to 4K for a delivery spec</td><td>Lanczos</td><td>Nothing is damaged; you just need the pixel dimensions.</td></tr>
-      <tr><td>Matching resolutions in a timeline</td><td>Lanczos</td><td>Fast, predictable, no invented detail to mismatch.</td></tr>
-      <tr><td>A batch of 500 files, deadline tonight</td><td>Lanczos</td><td>Seconds per file against minutes per file.</td></tr>
-      <tr><td>Old 480p footage you want to actually watch</td><td>AI</td><td>Detail is missing; interpolation cannot invent it.</td></tr>
-      <tr><td>A heavily compressed download</td><td>AI</td><td>Blocking is a learnable artefact; Lanczos enlarges the blocks.</td></tr>
-      <tr><td>Noisy low-light phone video</td><td>AI</td><td>Denoise plus reconstruction; Lanczos sharpens the noise.</td></tr>
+      <tr><th scope="row">Clean 1080p to 4K for a delivery spec</th><td>Lanczos</td><td>Nothing is damaged; you just need the pixel dimensions.</td></tr>
+      <tr><th scope="row">Matching resolutions in a timeline</th><td>Lanczos</td><td>Fast, predictable, no invented detail to mismatch.</td></tr>
+      <tr><th scope="row">A batch of 500 files, deadline tonight</th><td>Lanczos</td><td>Seconds per file against minutes per file.</td></tr>
+      <tr><th scope="row">Old 480p footage you want to actually watch</th><td>AI</td><td>Detail is missing; interpolation cannot invent it.</td></tr>
+      <tr><th scope="row">A heavily compressed download</th><td>AI</td><td>Blocking is a learnable artefact; Lanczos enlarges the blocks.</td></tr>
+      <tr><th scope="row">Noisy low-light phone video</th><td>AI</td><td>Denoise plus reconstruction; Lanczos sharpens the noise.</td></tr>
     </tbody>
   </table></div>
   <p><strong>The gap, measured on one clip, including the axis where Lanczos wins.</strong> The source is a deliberately degraded clip from a fixed recipe: a detailed moving synthetic source, downscaled to 320 by 180, given mild noise, then encoded at a low H.264 bitrate so the compression artefacts are real. No randomness and no wall-clock, so the same input comes back every time. Both sides upscale it to 1280 by 720 at a matched 1.0 Mbps and are scored on decoded frames. Detail (variance of the Laplacian): Lanczos 328.5, Crisp 521.7, 59% more edge detail. Banding (share of flat pixels on a hard step): 26.97% against 12.75%, less than half the staircase in gradients. Residual grain: 0.54 against 0.47, modest. Do not choose a tool on that last row.</p>

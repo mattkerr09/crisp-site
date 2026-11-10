@@ -34,6 +34,8 @@ p em, li em{color:#c3cad6;}
 img{max-width:100%;height:auto;display:block;}
 a{color:var(--ice);text-decoration:none;}
 a:hover{text-decoration:underline;text-underline-offset:3px;}
+p a,li a,td a,th a,dd a,figcaption a,.crumb a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:currentColor;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);}
+p a:hover,li a:hover,td a:hover,th a:hover,dd a:hover,figcaption a:hover,.crumb a:hover{text-decoration-color:currentColor;}
 .wrap{width:min(var(--w),calc(100% - 2.6rem));margin:0 auto;}
 
 nav{

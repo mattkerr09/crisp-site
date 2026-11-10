@@ -181,11 +181,11 @@
   <h2>What the numbers actually look like</h2>
   <div class="cmp-wrap"><table>
     <tr><th>Situation</th><th>Rough working range</th><th>What you notice if you go under</th></tr>
-    <tr><td>1080p, talking head, locked off</td><td>8-12 Mbps</td><td>Very little. This is an easy scene.</td></tr>
-    <tr><td>1080p, handheld, moving background</td><td>15-25 Mbps</td><td>Texture smears during movement.</td></tr>
-    <tr><td>4K, general delivery</td><td>35-50 Mbps</td><td>Banding in skies, mushy foliage.</td></tr>
-    <tr><td>4K, high motion or grain</td><td>60-100 Mbps</td><td>Blocking that pulses with the motion.</td></tr>
-    <tr><td>Archival master</td><td>Higher, or an intermediate codec</td><td>Generational loss on every future edit.</td></tr>
+    <tr><th scope="row">1080p, talking head, locked off</th><td>8-12 Mbps</td><td>Very little. This is an easy scene.</td></tr>
+    <tr><th scope="row">1080p, handheld, moving background</th><td>15-25 Mbps</td><td>Texture smears during movement.</td></tr>
+    <tr><th scope="row">4K, general delivery</th><td>35-50 Mbps</td><td>Banding in skies, mushy foliage.</td></tr>
+    <tr><th scope="row">4K, high motion or grain</th><td>60-100 Mbps</td><td>Blocking that pulses with the motion.</td></tr>
+    <tr><th scope="row">Archival master</th><td>Higher, or an intermediate codec</td><td>Generational loss on every future edit.</td></tr>
   </table></div>
   <p>Treat those as starting points rather than rules. The honest answer is that the right bitrate
   depends on the content, and the way to find it is to encode a difficult thirty seconds and look at
@@ -219,9 +219,9 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Route back to 720p</th><th>From the clean 360p<br>PSNR dB / VMAF</th><th>From the starved copy<br>PSNR dB / VMAF</th></tr></thead>
     <tbody>
-      <tr><td>lanczos resize (no model)</td><td>40.77 / 98.99</td><td>26.56 / 31.13</td></tr>
-      <tr><td>2x-ParimgCompact: Crisp's model at 2x with denoise under 0.5</td><td>33.35 / 75.59</td><td>24.85 / 17.91</td></tr>
-      <tr><td>RealESRGAN_General_WDN_x4_v3: the route denoise 0.5 and above takes</td><td>36.33 / 96.83</td><td>25.10 / 27.43</td></tr>
+      <tr><th scope="row">lanczos resize (no model)</th><td>40.77 / 98.99</td><td>26.56 / 31.13</td></tr>
+      <tr><th scope="row">2x-ParimgCompact: Crisp's model at 2x with denoise under 0.5</th><td>33.35 / 75.59</td><td>24.85 / 17.91</td></tr>
+      <tr><th scope="row">RealESRGAN_General_WDN_x4_v3: the route denoise 0.5 and above takes</th><td>36.33 / 96.83</td><td>25.10 / 27.43</td></tr>
     </tbody>
   </table></div>
 

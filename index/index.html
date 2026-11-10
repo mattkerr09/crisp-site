@@ -172,13 +172,13 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Metric</th><th>What it means</th><th>Better</th></tr></thead>
     <tbody>
-    <tr><td><code>sharpness</code></td><td>Mean variance-of-Laplacian over sampled grayscale frames, how much edge detail survives.</td><td>Higher</td></tr>
-    <tr><td><code>levels</code></td><td>Distinct luma levels used, out of 256. A gradient that collapses to fewer levels is banding.</td><td>Higher</td></tr>
-    <tr><td><code>flat_steps</code></td><td>Share of near-flat-region pixels sitting on a hard step: banding you can see in skies and walls.</td><td>Lower</td></tr>
-    <tr><td><code>noise</code></td><td>Residual grain estimate on the output.</td><td>Context</td></tr>
-    <tr><td><code>temporal</code></td><td>Median frame-to-frame luma change: the flicker floor.</td><td>Lower</td></tr>
-    <tr><td><code>added_flicker</code></td><td><strong>Output flicker minus source flicker.</strong> Shimmer the upscaler <em>introduced</em>.</td><td>Lower</td></tr>
-    <tr><td><code>color_drift</code></td><td>Mean per-channel difference against the source.</td><td>Context</td></tr>
+    <tr><th scope="row"><code>sharpness</code></th><td>Mean variance-of-Laplacian over sampled grayscale frames, how much edge detail survives.</td><td>Higher</td></tr>
+    <tr><th scope="row"><code>levels</code></th><td>Distinct luma levels used, out of 256. A gradient that collapses to fewer levels is banding.</td><td>Higher</td></tr>
+    <tr><th scope="row"><code>flat_steps</code></th><td>Share of near-flat-region pixels sitting on a hard step: banding you can see in skies and walls.</td><td>Lower</td></tr>
+    <tr><th scope="row"><code>noise</code></th><td>Residual grain estimate on the output.</td><td>Context</td></tr>
+    <tr><th scope="row"><code>temporal</code></th><td>Median frame-to-frame luma change: the flicker floor.</td><td>Lower</td></tr>
+    <tr><th scope="row"><code>added_flicker</code></th><td><strong>Output flicker minus source flicker.</strong> Shimmer the upscaler <em>introduced</em>.</td><td>Lower</td></tr>
+    <tr><th scope="row"><code>color_drift</code></th><td>Mean per-channel difference against the source.</td><td>Context</td></tr>
     </tbody>
   </table></div>
 
@@ -195,12 +195,12 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Source</th><th>Preset</th><th>Output</th><th>sharpness</th><th>levels</th><th>flat_steps</th><th>added_flicker</th><th>fps</th></tr></thead>
     <tbody>
-    <tr><td>Compressed 480p web video</td><td>Enhance</td><td>2560&times;1440</td><td>428.5</td><td>223.8</td><td>6.70%</td><td>0.00</td><td>5.3</td></tr>
-    <tr><td>Compressed 480p web video</td><td>Low-light</td><td>2560&times;1440</td><td>382.0</td><td>194.2</td><td>6.62%</td><td>0.00</td><td>5.6</td></tr>
-    <tr><td>Dark, noisy phone clip</td><td>Enhance</td><td>3416&times;1920</td><td>161.9</td><td>141.8</td><td>14.78%</td><td>0.00</td><td>3.7</td></tr>
-    <tr><td>Dark, noisy phone clip</td><td>Low-light</td><td>3416&times;1920</td><td>230.6</td><td>176.8</td><td>15.58%</td><td>+0.25</td><td>3.6</td></tr>
-    <tr><td>Soft camcorder / DVD-era</td><td>Enhance</td><td>2880&times;1920</td><td>417.0</td><td>218.6</td><td>13.61%</td><td>&minus;0.50</td><td>4.4</td></tr>
-    <tr><td>Soft camcorder / DVD-era</td><td>Low-light</td><td>2880&times;1920</td><td>287.5</td><td>191.6</td><td>10.89%</td><td>&minus;0.75</td><td>3.7</td></tr>
+    <tr><th scope="row">Compressed 480p web video</th><td>Enhance</td><td>2560&times;1440</td><td>428.5</td><td>223.8</td><td>6.70%</td><td>0.00</td><td>5.3</td></tr>
+    <tr><th scope="row">Compressed 480p web video</th><td>Low-light</td><td>2560&times;1440</td><td>382.0</td><td>194.2</td><td>6.62%</td><td>0.00</td><td>5.6</td></tr>
+    <tr><th scope="row">Dark, noisy phone clip</th><td>Enhance</td><td>3416&times;1920</td><td>161.9</td><td>141.8</td><td>14.78%</td><td>0.00</td><td>3.7</td></tr>
+    <tr><th scope="row">Dark, noisy phone clip</th><td>Low-light</td><td>3416&times;1920</td><td>230.6</td><td>176.8</td><td>15.58%</td><td>+0.25</td><td>3.6</td></tr>
+    <tr><th scope="row">Soft camcorder / DVD-era</th><td>Enhance</td><td>2880&times;1920</td><td>417.0</td><td>218.6</td><td>13.61%</td><td>&minus;0.50</td><td>4.4</td></tr>
+    <tr><th scope="row">Soft camcorder / DVD-era</th><td>Low-light</td><td>2880&times;1920</td><td>287.5</td><td>191.6</td><td>10.89%</td><td>&minus;0.75</td><td>3.7</td></tr>
     </tbody>
   </table></div>
 

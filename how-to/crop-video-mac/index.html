@@ -165,10 +165,10 @@
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th>Source</th><th>What you ask</th><th>Output file</th><th>What is in it</th></tr></thead>
     <tbody>
-      <tr><td>1920×1080</td><td>"crop it to 9:16"</td><td>608×1080</td><td>the centre 608 columns. The 1,312 either side are gone.</td></tr>
-      <tr><td>1920×1080</td><td>"make it vertical"</td><td>1080×1920</td><td>the whole frame, redrawn at 1080×608, blurred fill above and below.</td></tr>
-      <tr><td>2880×2160</td><td>"crop it to 16:9"</td><td>2880×1620</td><td>full width at full resolution; 540 rows trimmed, half from each end.</td></tr>
-      <tr><td>2880×2160</td><td>"make it widescreen"</td><td>1920×1080</td><td>the whole frame, redrawn at 1440×1080, blurred fill down each side.</td></tr>
+      <tr><th scope="row">1920×1080</th><td>"crop it to 9:16"</td><td>608×1080</td><td>the centre 608 columns. The 1,312 either side are gone.</td></tr>
+      <tr><th scope="row">1920×1080</th><td>"make it vertical"</td><td>1080×1920</td><td>the whole frame, redrawn at 1080×608, blurred fill above and below.</td></tr>
+      <tr><th scope="row">2880×2160</th><td>"crop it to 16:9"</td><td>2880×1620</td><td>full width at full resolution; 540 rows trimmed, half from each end.</td></tr>
+      <tr><th scope="row">2880×2160</th><td>"make it widescreen"</td><td>1920×1080</td><td>the whole frame, redrawn at 1440×1080, blurred fill down each side.</td></tr>
     </tbody>
   </table></div>
   <p class="muted">Read the last two rows together: from one source, for one requested shape, Crop hands back a 2880-pixel-wide file and Reframe a 1920-pixel-wide one. Neither is the better answer. They answer different questions.</p>

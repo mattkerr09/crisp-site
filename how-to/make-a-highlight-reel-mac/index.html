@@ -164,16 +164,16 @@
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th>Signal</th><th>What it actually measures</th></tr></thead>
     <tbody>
-      <tr><td>motion</td><td>Frame-to-frame difference on downscaled frames.</td></tr>
-      <tr><td>audio</td><td>RMS loudness envelope of the mix.</td></tr>
-      <tr><td>trans</td><td>Audio <em>onset</em>: the positive jump in loudness. A bat crack, a golf strike.</td></tr>
-      <tr><td>speech</td><td>Share of a second's audio energy in the ~200–3500 Hz voice band against the full mix. A likelihood someone is talking, <strong>not</strong> recognition of any word.</td></tr>
-      <tr><td>scene</td><td>1 if an ffmpeg scene cut falls inside the window, 0 otherwise.</td></tr>
-      <tr><td>sharp</td><td>Edge energy. An out-of-focus second scores low.</td></tr>
-      <tr><td>luma</td><td>Mean luminance, absolute.</td></tr>
-      <tr><td>face</td><td>On-screen face area, from the bundled macOS Vision helper.</td></tr>
-      <tr><td>subject</td><td>Attention saliency: how prominent the main subject is.</td></tr>
-      <tr><td>text</td><td>Fraction of frame covered by <em>recognised text</em> (Vision OCR). This is what separates a title card from footage.</td></tr>
+      <tr><th scope="row">motion</th><td>Frame-to-frame difference on downscaled frames.</td></tr>
+      <tr><th scope="row">audio</th><td>RMS loudness envelope of the mix.</td></tr>
+      <tr><th scope="row">trans</th><td>Audio <em>onset</em>: the positive jump in loudness. A bat crack, a golf strike.</td></tr>
+      <tr><th scope="row">speech</th><td>Share of a second's audio energy in the ~200–3500 Hz voice band against the full mix. A likelihood someone is talking, <strong>not</strong> recognition of any word.</td></tr>
+      <tr><th scope="row">scene</th><td>1 if an ffmpeg scene cut falls inside the window, 0 otherwise.</td></tr>
+      <tr><th scope="row">sharp</th><td>Edge energy. An out-of-focus second scores low.</td></tr>
+      <tr><th scope="row">luma</th><td>Mean luminance, absolute.</td></tr>
+      <tr><th scope="row">face</th><td>On-screen face area, from the bundled macOS Vision helper.</td></tr>
+      <tr><th scope="row">subject</th><td>Attention saliency: how prominent the main subject is.</td></tr>
+      <tr><th scope="row">text</th><td>Fraction of frame covered by <em>recognised text</em> (Vision OCR). This is what separates a title card from footage.</td></tr>
     </tbody>
   </table></div>
   <p>Six of them are normalised inside their own clip, so the best second of a dull clip reads 1.0 exactly like the best second of an exciting one. Text and luminance stay absolute: a title card is a title card and black is black regardless of what else is in the file. The Vision helper is bundled and the build refuses to produce a Crisp without it; if it is unavailable anyway those three signals return empty and selection falls back to motion and audio. Longer clips are sampled more coarsely so analysis stays bounded: past about 15 minutes the Vision pass drops below one frame per second, and the motion pass falls from 2 fps toward 0.4.</p>
@@ -205,10 +205,10 @@
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th>Test signal</th><th>Broadband envelope<br><span class="muted">(the earlier detector)</span></th><th>30–150 Hz<br><span class="muted">(what ships)</span></th></tr></thead>
     <tbody>
-      <tr><td>bare click</td><td>127 found, 5.0 ms</td><td class="yes">128 found, 5.0 ms</td></tr>
-      <tr><td>+ sustained bass</td><td>127 found, 3.8 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
-      <tr><td>+ offbeat hats</td><td>127 found, 3.8 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
-      <tr><td>+ pad and melody</td><td class="no">174 found, 130.0 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
+      <tr><th scope="row">bare click</th><td>127 found, 5.0 ms</td><td class="yes">128 found, 5.0 ms</td></tr>
+      <tr><th scope="row">+ sustained bass</th><td>127 found, 3.8 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
+      <tr><th scope="row">+ offbeat hats</th><td>127 found, 3.8 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
+      <tr><th scope="row">+ pad and melody</th><td class="no">174 found, 130.0 ms</td><td class="yes">128 found, 3.7 ms</td></tr>
     </tbody>
   </table></div>
   <p class="muted">Offsets are the median distance from the true beat. A melody note starting mid-beat raises a broadband envelope exactly like a kick does, which is why a percussion-only test bed can make a broadband detector look perfect.</p>
