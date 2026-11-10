@@ -171,7 +171,8 @@ def language(p: Path) -> str | None:
     if len(parts) < 2:
         return None
     lang = parts[0]
-    if re.fullmatch(r"[a-z]{2,8}(?:-[a-z0-9]{1,8})*", lang) and Path(__file__).with_name(f"strings_{lang}.py").is_file():
+    from lang_pages import strings_module
+    if re.fullmatch(r"[a-z]{2,8}(?:-[a-z0-9]{1,8})*", lang) and Path(__file__).with_name(strings_module(lang) + ".py").is_file():
         return lang
     return None
 

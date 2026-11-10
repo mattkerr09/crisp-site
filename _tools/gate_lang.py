@@ -27,7 +27,7 @@ from unittest.mock import patch
 from urllib.parse import urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
-from lang_pages import LanguagePages
+from lang_pages import LanguagePages, alternate_routes, alternates, strings_module
 
 ORIGIN = "https://crispvideo.app"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
@@ -185,8 +185,7 @@ class LanguageGate:
         return urlunsplit(("", "", self.ROUTES[path], absolute.query, absolute.fragment))
 
     def alternates(self, english: str, localized: str) -> str:
-        return "\n".join(f'<link rel="alternate" hreflang="{lang}" href="{ORIGIN + path}">'
-                         for lang, path in ((self.lang, localized), ("en", english), ("x-default", english)))
+        return alternates(english, self.words)
 
     def check(self, root: Path, scaffold: bool) -> list[str]:
         problems = []
@@ -227,8 +226,8 @@ class LanguageGate:
                 for a, b in zip(source, target):
                     json_values(path, a, b, english, key, where + "[]")
             elif isinstance(source, str) and key == "inLanguage":
-                if target != self.lang:
-                    fail(path, f"{where} must be {self.lang}")
+                if target != getattr(self.words, "HTML_LANG", self.lang):
+                    fail(path, f"{where} must be {getattr(self.words, 'HTML_LANG', self.lang)}")
             elif isinstance(source, str) and schema_copy(key, source):
                 copy_value(path, where, source, target)
             else:
@@ -265,7 +264,7 @@ class LanguageGate:
                     if source_values != target_values and not written:
                         fail(target_path, f"{label} differ from the English page's values")
             en, target = Document(en_source), Document(target_source)
-            for path, doc, language, canonical in ((en_path, en, "en", english), (target_path, target, self.lang, localized)):
+            for path, doc, language, canonical in ((en_path, en, "en", english), (target_path, target, getattr(self.words, "HTML_LANG", self.lang), localized)):
                 html = doc.elements("html")
                 if len(html) != 1 or html[0].attrs.get("lang") != language:
                     fail(path, f"expected one html element with lang={language}")
@@ -274,12 +273,29 @@ class LanguageGate:
                 canonicals = [n.attrs.get("href") for n in links if n.attrs.get("rel") == "canonical"]
                 if doc is target and canonicals != [ORIGIN + canonical]:
                     fail(path, f"canonical must be {ORIGIN + canonical}")
-                expected = Counter((lang, ORIGIN + url) for lang, url in
-                                   ((self.lang, localized), ("en", english), ("x-default", english)))
+                expected = Counter((lang, ORIGIN + url) for lang, url in alternate_routes(english, self.words))
                 actual = Counter((n.attrs.get("hreflang"), n.attrs.get("href")) for n in links
                                  if n.attrs.get("rel") == "alternate" and "hreflang" in n.attrs)
                 if actual != expected:
-                    fail(path, f"expected exactly the reciprocal {self.lang}, en and x-default hreflang links in head")
+                    fail(path, "expected exactly the reciprocal hreflang links for all available translations in head")
+
+            if getattr(self.words, "STRICT_COPY", False):
+                if self.generator.landing.sitewide_chrome.has_bar(target_source) or "/founding.js" in target_source or "window.__kcFounding" in target_source:
+                    fail(target_path, "English founding bar must not appear on localized pages")
+                descriptions = [n.attrs.get("content", "") for n in target.elements("meta") if n.attrs.get("name") == "description"]
+                if len(descriptions) != 1 or not 70 <= len(unescape(descriptions[0])) <= 160:
+                    fail(target_path, "meta description must have 70 to 160 characters")
+                title = target.elements("title")
+                if english == "/" and (len(title) != 1 or normal(title[0].text()) != self.words.HOME_TITLE):
+                    fail(target_path, "home title must use the registered query")
+                noindex = any("noindex" in n.attrs.get("content", "") for n in target.elements("meta")
+                              if n.attrs.get("name") == "robots")
+                if noindex != (english == "/pricing/"):
+                    fail(target_path, "only the pricing page must be noindex")
+                if target.elements("s") or target.elements("del") or re.search(
+                        r"Black Friday|half price|metade do preço|mitad de precio|%\s*(?:off|de desconto|de descuento)",
+                        normal(target.root.text()), re.I):
+                    fail(target_path, "use launch-price wording without discount claims or struck-out prices")
 
             contacts = [n for n in target.elements("section") if self.words.CONTACT_CLASS in (n.attrs.get("class") or "").split()]
             footers, bodies = target.elements("footer"), target.elements("body")
@@ -305,6 +321,8 @@ class LanguageGate:
                 fail(target_path, "app-language placeholder must use the required sentence")
             elif not normal(notices[0].text()):
                 fail(target_path, "app-language notice is empty")
+            elif getattr(self.words, "STRICT_COPY", False) and normal(notices[0].text()) != self.words.APP_LANGUAGE:
+                fail(target_path, "app-language notice must use the required sentence")
 
             if any(re.search(re.escape(word), unescape(target_source), re.I) for word in self.words.FORBIDDEN_WORDS):
                 fail(target_path, self.words.FORBIDDEN_WORD_MESSAGE)
@@ -361,8 +379,8 @@ class LanguageGate:
                     items = items + [it for d in items if isinstance(d, dict) for it in d.get("@graph", [])]   # a graph hides its nodes
                     for item in items:
                         if isinstance(item, dict) and item.get("@type") in ("Article", "FAQPage", "WebPage", "WebSite", "SoftwareApplication")\
-                                and item.get("inLanguage") != self.lang:
-                            fail(target_path, f"JSON-LD {item.get('@type')} must be {self.lang} (inLanguage)")
+                                and item.get("inLanguage") != getattr(self.words, "HTML_LANG", self.lang):
+                            fail(target_path, f"JSON-LD {item.get('@type')} must be {getattr(self.words, 'HTML_LANG', self.lang)} (inLanguage)")
             elif [tag for tag, _ in en_shape] != [tag for tag, _ in target_shape]:
                 fail(target_path, "element structure differs from the English skeleton")
             else:
@@ -479,6 +497,8 @@ class LanguageGate:
 
     def selftest(self) -> int:
         """Mutation tests use only temporary copies; the working pages never change."""
+        if getattr(self.words, "STRICT_COPY", False):
+            return self.first_slice_selftest()
         baseline = self.check(self.ROOT, True)
         if baseline:
             print("FAIL: selftest needs a valid scaffold first:")
@@ -677,7 +697,73 @@ class LanguageGate:
                 return 1
         self.generator_selftest()
         self.language_selftest()
+        # The legacy entry point also protects the new locales and shared machinery.
+        if self.lang == "de":
+            for lang in ("pt-br", "es"):
+                if LanguageGate(lang, self.ROOT).first_slice_selftest():
+                    return 1
         print(f"OK: {len(cases) + 3} {self.words.LANGUAGE_NAME} gate tests and generator regression checks passed.")
+        return 0
+
+    def first_slice_selftest(self) -> int:
+        """Check locale output and reject damaged written pages as well as doors."""
+        errors = self.check(self.ROOT, False)
+        if errors:
+            print(f"FAIL: {self.lang} selftest needs valid pages: {errors}")
+            return 1
+        self.generator_selftest()
+        words = self.words
+        home = self.home_file
+        english = "index.html"
+        pricing = self.ROUTES["/pricing/"].lstrip("/") + "index.html"
+        free = self.ROUTES["/free-vs-pro/"].lstrip("/") + "index.html"
+        description = re.search(r'<meta name="description" content="[^"]*">',
+                                (self.ROOT / home).read_text()).group(0)
+        language = words.HTML_LANG
+        cases = [
+            (home, f'lang="{language}"', 'lang="en"', f"lang={language}"),
+            (home, f'hreflang="{words.HREFLANG}"', 'hreflang="wrong"', "hreflang"),
+            (english, 'hreflang="de"', 'hreflang="wrong"', "hreflang"),
+            (home, 'hreflang="x-default"', 'hreflang="wrong"', "hreflang"),
+            (home, words.APP_LANGUAGE, "Wrong notice", "required sentence"),
+            (home, '<p class="app-language">', '<p>Texto</p><p class="app-language">', "top of body"),
+            (home, description, '<meta name="description" content="Curta">', "70 to 160"),
+            (home, words.HOME_TITLE, "Wrong title", "registered query"),
+            (home, words.CONTACT, "", "exact contact"),
+            (home, f'"inLanguage": "{language}"', '"inLanguage": "en"', "inLanguage"),
+            (home, '</body>', '<div data-founding></div></body>', "English founding bar"),
+            (home, '</body>', '<script src="/founding.js"></script></body>', "English founding bar"),
+            (home, '</body>', '<script>window.__kcFounding = true;</script></body>', "English founding bar"),
+            (home, '</body>', '<p>It stays the face the camera recorded.</p></body>', "English sentence remains"),
+            (home, '</body>', '<p>Black Friday</p></body>', "launch-price wording"),
+            (home, '</body>', '<p><del>29</del></p></body>', "struck-out prices"),
+            (free, '</body>', f'<p>{self.todo}: copy</p></body>', f"{self.todo} markers"),
+            (self.download_file, words.money(self.generator.llms_txt.facts()["now"]), "WRONGPRICE", "page is stale"),
+            (pricing, '<meta name="robots" content="noindex, follow">', '', "noindex"),
+        ]
+        files = {url.lstrip("/") + "index.html" for pair in self.PAGES for url in pair} | {"sitemap.xml"}
+        originals = {name: (self.ROOT / name).read_text() for name in files}
+        with tempfile.TemporaryDirectory(prefix=f"crisp-{self.lang}-slice-") as folder:
+            root = Path(folder)
+            for name, source in originals.items():
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(source)
+            for name, before, after, diagnostic in cases:
+                assert before in originals[name], f"missing {self.lang} mutation fixture: {before}"
+                path = root / name
+                path.write_text(originals[name].replace(before, after, 1))
+                errors = self.check(root, False)
+                path.write_text(originals[name])
+                assert any(diagnostic in error for error in errors), f"missed {self.lang} mutation {diagnostic}: {errors}"
+            import sitewide_chrome as chrome
+            with patch.object(chrome, "SITE", root):
+                path = root / self.download_file
+                assert chrome.language(path) == self.lang
+                assert words.FOOTER["made_by"] in chrome.kco_for(path)
+                assert not chrome.wants_founding(path, originals[self.download_file])
+                assert not chrome.apply(path), "localized chrome is not idempotent"
+        print(f"OK: {len(cases)} {words.LANGUAGE_NAME} mutation tests and generator regression checks passed.")
         return 0
 
     def generator_selftest(self) -> None:
@@ -756,10 +842,11 @@ class LanguageGate:
             for source, target in sorted(self.PAGES, key=lambda pair: len(pair[1]), reverse=True):
                 text = text.replace(target, routes[source])
             text = text.replace(f'lang="{self.lang}"', f'lang="{code}"')
+            text = text.replace(f'lang="{getattr(self.words, "HTML_LANG", self.lang)}"', f'lang="{code}"')
             text = text.replace(f'name="{self.lang}-written"', f'name="{code}-written"')
             text = text.replace(f"{self.lang}-box:", f"{code}-box:")
             text = text.replace(self.todo, "TODO-" + code.upper())
-            return re.sub(r'("inLanguage"\s*:\s*")' + re.escape(self.lang) + '"',
+            return re.sub(r'("inLanguage"\s*:\s*")' + re.escape(getattr(self.words, "HTML_LANG", self.lang)) + '"',
                           lambda m: m.group(1) + code + '"', text)
 
         def locale_data(value):
@@ -771,11 +858,12 @@ class LanguageGate:
                 return tuple(locale_data(item) for item in value)
             return value
 
-        words = ModuleType(f"strings_{code}")
+        words = ModuleType(strings_module(code))
         for key, value in vars(self.words).items():
             if key.isupper():
                 setattr(words, key, locale_data(value))
         words.ROUTES = tuple(routes.items())
+        words.HTML_LANG = words.HREFLANG = code
         words.LANGUAGE_NAME = "Test"
         words.APP_LANGUAGE = "Test app-language notice."
         words.CONTACT_CLASS = "test-contact"
@@ -796,7 +884,7 @@ class LanguageGate:
             tools = root / "_tools"
             tools.mkdir()
             # Only a discovery marker is needed. The module itself stays in memory.
-            (tools / f"strings_{code}.py").write_text("# Temporary selftest fixture.\n")
+            (tools / (strings_module(code) + ".py")).write_text("# Temporary selftest fixture.\n")
             for english, target in self.PAGES:
                 for old, new in ((english, english), (target, routes[english])):
                     source = (self.ROOT / old.lstrip("/") / "index.html").read_text(encoding="utf-8")
@@ -804,6 +892,11 @@ class LanguageGate:
                     path.parent.mkdir(parents=True, exist_ok=True)
                     source = rebase(source).replace(rebase(self.CONTACT), words.CONTACT)
                     source = source.replace(self.words.APP_LANGUAGE, words.APP_LANGUAGE)
+                    source = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', '', source)
+                    fixture_alternates = '\n'.join(
+                        f'<link rel="alternate" hreflang="{language}" href="{ORIGIN + route}">'
+                        for language, route in ((code, routes[english]), ("en", english), ("x-default", english)))
+                    source = source.replace('</head>', fixture_alternates + '\n</head>', 1)
                     path.write_text(source, encoding="utf-8")
             (root / "sitemap.xml").write_text(rebase((self.ROOT / "sitemap.xml").read_text()), encoding="utf-8")
             with patch.dict(sys.modules, {words.__name__: words}), \

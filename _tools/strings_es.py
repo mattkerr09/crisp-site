@@ -1,0 +1,83 @@
+"""Spanish copy. Prices, releases and limits come from shared facts."""
+
+
+def money(amount) -> str:
+    value = f"{amount:.2f}".replace(".", ",")
+    return (value[:-3] if value.endswith(",00") else value) + " US$"
+
+
+def fact(text: str) -> str:
+    return text.replace(" or later", " o posterior").replace("(", "").replace(")", "")
+
+
+LANGUAGE_NAME = "Spanish"
+HTML_LANG = HREFLANG = "es"
+PAGE_COUNT = "four"
+STRICT_COPY = True
+DOWNLOAD_INDEXABLE = True
+HOME_TITLE = "Mejorar la calidad de video sin conexión en Mac y PC | Crisp"
+ROUTES = (("/", "/es/"), ("/download/", "/es/descargar/"),
+          ("/pricing/", "/es/precios/"), ("/free-vs-pro/", "/es/gratis-o-pro/"))
+GENERATED_ROUTES = ("/download/", "/pricing/")
+GENERATOR_COMMENT = "<!-- Generado por _tools/lang_pages.py. Edite el generador, no esta página. -->"
+APP_LANGUAGE = "La app en sí está en inglés; estas páginas la explican en español."
+NAV_DOWNLOAD = "Descargar"
+CURRENCY = "Precios en dólares estadounidenses. Al pagar verá su moneda y los impuestos locales que correspondan."
+SPLIT = "o 4 × {amount}"
+MONTHS = ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre")
+SHORT_MONTHS = tuple(month[:3] for month in MONTHS)
+DATE_FORMAT = "{day} de {month}"
+SHORT_DATE_FORMAT = "{day} de {month}."
+PRICE_ONCE = "{price}, en un solo pago."
+PRICE_COPY = "Precio de lanzamiento: {now}, hasta el {ends}. A partir del {future}: {price}."
+PRICE_SHORT = "Precio de lanzamiento: {now} hasta el {ends}; después, {price}."
+BUNDLE_FULL_PRICE = "Las tres apps: Crisp, Docket SEO y Outlier. {price}, en un solo pago."
+
+BOX = {
+    "name": "<strong>Crisp Video</strong> restaura vídeos, elimina ruido y aumenta la resolución hasta 4K en su Mac o PC, sin conexión.",
+    "once": "en un solo pago",
+    "found": "Precio de lanzamiento: {now}, hasta el {ends}. A partir del {future}: {price}. El botón de compra aplica el código <strong>{code}</strong> al pagar.",
+    "buy": "Comprar Crisp Pro",
+    "download_mac": "Descargar gratis para Mac",
+    "windows_q": "¿Usa Windows 10 u 11, de 64 bits?",
+    "windows_dl": "Descargar Crisp {win_version} para Windows",
+    "windows_gpu": "Necesita una tarjeta gráfica compatible con Vulkan. La mayoría de los PC de 2016 en adelante la tienen.",
+    "fine": "Gratis: exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color hasta {cap} segundos. Todo lo demás conserva la duración completa. Los vídeos y GIF exportados llevan una pequeña marca de agua crispvideo.app · {os} · {chip} · Reembolso en un plazo de {refund_days} días, sin dar explicaciones.",
+}
+DOWNLOAD = {
+    "title": "Descargar Crisp para Mac",
+    "meta": "Crisp para Mac: {os}, {chip}. Gratis: exportaciones con IA hasta {cap} segundos. El resto conserva la duración completa.",
+    "h1": "Descargar Crisp para Mac",
+    "lede": "La versión actual, verificada por Apple mediante notarización: {os}, {chip}. Gratis: exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color hasta {cap} segundos. Todo lo demás conserva la duración completa. Los vídeos y GIF exportados llevan una pequeña marca de agua crispvideo.app. Pro elimina la marca y el límite.",
+    "speed_h": "La velocidad de Crisp en su versión de macOS",
+    "speed_p": "Crisp está hecho para macOS 14 y probado en macOS 14 y 26. El método que usa para aumentar la resolución depende de su macOS:",
+    "speed_15": "<strong>macOS 15 Sequoia o posterior:</strong> Core ML, en la GPU de su Mac. Velocidad máxima.",
+    "speed_14": "<strong>macOS 14:</strong> otro método para aumentar la resolución, el motor ncnn de Crisp, también en la GPU de su Mac. El proceso tarda unas 1,5 veces lo que tarda con Core ML.",
+    "speed_same": "La imagen queda igual en ambos casos. Solo cambia la espera.",
+    "speed_measured": "Medido en un Mac Studio con M1 Ultra en octubre de 2026: un clip de 3 segundos, con la resolución duplicada a 720p, tardó 3,4 segundos con Core ML y 5,0 segundos con el motor ncnn que usa macOS 14. Se midió el motor de macOS 14 en un macOS más reciente. Aún no se ha medido en un Mac que ejecute el propio macOS 14.",
+    "more": 'Todo lo que añade Pro, las condiciones de la licencia y las respuestas a las preguntas habituales están en la <a href="/es/">página de inicio</a>.',
+}
+PRICES = {
+    "title": "Precios de Crisp: úselo gratis, compre Pro una vez",
+    "meta": "Gratis: IA hasta {cap} segundos, el resto completo, con marca de agua. {price_short}",
+    "h1": "Precios de Crisp",
+    "free": "Gratis: el editor completo y la vista previa completa. Las exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color se detienen a los {cap} segundos. Todo lo demás, como convertir, comprimir, quitar el sonido y repetir en bucle, conserva la duración completa. Cada vídeo exportado gratis lleva una pequeña marca de agua crispvideo.app. Para usar los {cap} segundos en la parte que le importa, recorte el clip a esa parte y ejecute Enhance o expórtelo con Upscale on export.",
+    "pro": "{price_copy} Sin suscripción. Pro elimina la marca de agua y el límite de {cap} segundos y añade el procesamiento por lotes y, en Mac, el modo de restauración Max. Una licencia cubre hasta tres ordenadores a la vez, Mac o Windows. Incluye todas las actualizaciones de la versión 1.x. Reembolso en un plazo de {refund_days} días, sin dar explicaciones.",
+    "bundle": "Las tres apps: Crisp, Docket SEO y Outlier. {bundle_copy} Por separado, a partir del {future}: {apart}.",
+    "more": DOWNLOAD["more"],
+}
+FOOTER = {
+    "line": '<strong style="color:var(--text-mid)">Crisp</strong>: IA sin conexión para aumentar la resolución de vídeos y fotos y editar automáticamente en Mac, y para aumentar la resolución y editar vídeos en Windows.',
+    "about": "Acerca de",
+    "made_by": "Hecho por Kerr &amp; Company",
+}
+CONTACT_CLASS = "contacto"
+CONTACT = ('<section class="contacto"><h2>Contacto</h2><p>Kerr &amp; Company LLC<br>'
+           'Correo: <a href="mailto:support@crispvideo.app">support@crispvideo.app</a><br>'
+           'Web: <a href="https://crispvideo.app/">crispvideo.app</a></p></section>')
+TODO_NOTICE = APP_LANGUAGE
+FORBIDDEN_WORDS = ()
+FORBIDDEN_WORD_MESSAGE = "forbidden wording"
+POSTAL_ADDRESS_PATTERN = r"\b\d+\s+[A-Za-z ]+\s+(?:Street|Road|Avenue|Boulevard)\b"
+SENTENCE_EXCEPTIONS = ("Crisp.", "Pro.", "Max.", "Mac.", "Windows.", "USD.", "GIF.", "MP4.", "AI.", "No.")
+GATE_WINDOWS_VERSION_PATTERN = r"Crisp (1\.0\.\d+) para Windows"
