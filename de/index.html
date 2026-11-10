@@ -302,6 +302,7 @@ section > *{position:relative;z-index:1;}
 
 .cmp{overflow-x:auto;border:1px solid var(--hair);border-radius:var(--r);background:var(--panel-2);}
 table{border-collapse:collapse;width:100%;min-width:660px;font-size:.94rem;}
+table.req{min-width:0;}table.req td{overflow-wrap:anywhere;}
 th,td{padding:.95rem 1.15rem;text-align:left;border-bottom:1px solid var(--hair);}
 thead th{background:rgba(255,255,255,.028);font-weight:640;font-size:.88rem;letter-spacing:.02em;color:var(--grey);}
 thead th:nth-child(2){color:var(--ice);}
@@ -624,7 +625,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   gesendet wird, steht in der <a href="https://crispvideo.app/de/datenschutz/">Datenschutzerklärung</a>.</p>
 
   <h2 id="voraussetzungen">Systemvoraussetzungen</h2>
-  <table>
+  <table class="req">
     <tr><th>Mac</th><td>Apple Silicon (M1 oder neuer), macOS 14 oder neuer. Unter macOS 14 dauert das Hochskalieren etwa 1,5-mal so
       lange wie unter neueren Versionen.</td></tr>
     <tr><th>Windows</th><td>Windows 10 oder 11, 64 Bit, mit einer Grafikkarte, die Vulkan unterstützt. Die haben die meisten PCs ab 2016.</td></tr>
