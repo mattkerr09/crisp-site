@@ -250,6 +250,26 @@
         A third list, for Windows, had its own box on the home page until 5 November 2026, when Crisp for Windows shipped; it holds no addresses.
         Every email has an unsubscribe link, and asking us to delete the address removes the row.</p>
 
+  <h2 id="helper">The free video helper in ChatGPT and Claude</h2>
+  <p>Separate from the app and this site, we run a free advice service at <code>mcp.crispvideo.app</code> that ChatGPT or Claude
+  can use when you add it as an app or connector. It answers questions about old tapes, faults in old video, camcorder files and
+  sending video, from tables built into it. It never receives a video, never opens or sends a file, and runs no command: the
+  ffmpeg commands it writes are text for you to run yourself, if you choose to.</p>
+  <ul>
+    <li><strong>What it receives:</strong> only what the assistant sends it as a question's inputs, for example a cassette label, a
+    tape format and how many tapes, symptoms in your words, a destination such as Gmail, a length, or a file name you mention.
+    Never your conversation, your account, or anything on your computer.</li>
+    <li><strong>What it is for:</strong> working out the answer and sending it back. Nothing else.</li>
+    <li><strong>What it keeps:</strong> nothing it is sent. It writes no log of inputs. It keeps one number, how many questions it
+    answered today, so it can stop at its daily limit, and a short-lived counter per session so one conversation cannot flood it.</li>
+    <li><strong>Who else is involved:</strong> Cloudflare hosts it and keeps its own short-lived traffic and security records under
+    <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. Nobody else receives anything. Inputs are
+    never sold or shared, and never used for advertising or training. ChatGPT and Claude handle your conversation under OpenAI's and
+    Anthropic's own policies.</li>
+    <li><strong>Your controls:</strong> there is nothing to delete. To stop using it, remove the app or connector in ChatGPT or
+    Claude. Questions go to <a href="mailto:support@crispvideo.app">support@crispvideo.app</a>.</li>
+  </ul>
+
 <h2>The only times Crisp contacts the internet</h2>
   <p>There are exactly six, and each is listed with what is sent:</p>
   <ul>
