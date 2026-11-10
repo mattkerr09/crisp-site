@@ -749,7 +749,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Pay once, no subscription</span>
     </div>
     <div class="ba" id="ba">
-      <video class="ba-after" id="baAfter" width="960" height="720" poster="/birthday-poster.jpg"
+      <video class="ba-after" id="baAfter" width="960" height="720" data-poster="/birthday-poster.jpg"
         data-src-1x="/birthday-after.mp4" data-src-2x="/birthday-after@2x.mp4"
         muted loop playsinline preload="none"
         aria-label="After Crisp Max: the same 1950s newsreel, grain cleaned and the checked shirt, the iced cake and both faces resolved into distinct edges."></video>
@@ -769,7 +769,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       manages 1.50&times;. <a href="#restore">Both, measured &rarr;</a></p>
     <figure class="demo" id="demo">
       <div class="demo-frame">
-        <video class="demo-video" width="1280" height="720" poster="/demo-run-poster.jpg" muted loop playsinline
+        <video class="demo-video" width="1280" height="720" data-poster="/demo-run-poster.jpg" muted loop playsinline
           preload="none" data-demo aria-label="Crisp restoring its built-in sample clip on a Mac, then showing the before and after">
           <source data-src="/demo-run.webm" type="video/webm">
           <source data-src="/demo-run.mp4" type="video/mp4">
@@ -892,7 +892,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 
     <div class="ba" id="ba3">
-      <video class="ba-after" width="1280" height="720" poster="/market-poster.jpg"
+      <video class="ba-after" width="1280" height="720" data-poster="/market-poster.jpg"
         data-src-1x="/market-after.mp4" data-src-2x="/market-after.mp4"
         muted loop playsinline preload="none"
         aria-label="After Crisp Max: Market Street, San Francisco, in 1906, with the Ferry Building clock tower, the building fronts and the overhead wires drawn as distinct edges."></video>
@@ -943,7 +943,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     <p class="ba-note"><strong>The easy case, and we will say why.</strong> A city at night from the International Space Station, NASA, public domain. Unlike the clip above, this one <em>was</em> degraded on purpose: a sharp original reduced to 426&times;224 to stand in for low-resolution footage, then upscaled 16&times; to 6816&times;3584 and shown here at 1704&times;896. That is a much kinder test than real archival film, because the detail was there to begin with. Against a plain resize to the same delivered size it scores 3.42&times; the fine detail, where the archival clip above manages 1.50&times;. Both are shown because one without the other tells you half the truth: this is what Crisp does when the source cooperates, and the clip above is what it does when the source does not.</p>
 
     <div class="ba" id="ba4">
-      <video class="ba-after" width="704" height="576" poster="/phone-poster.jpg"
+      <video class="ba-after" width="704" height="576" data-poster="/phone-poster.jpg"
         data-src-1x="/phone-after.mp4" data-src-2x="/phone-after.mp4"
         muted loop playsinline preload="none"
         aria-label="After Crisp Max: the same phone clip with individual leaves, clean window frames and readable water texture."></video>
@@ -1006,7 +1006,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <video src="/demo-montage.mp4" width="960" height="540" controls playsinline muted loop
       preload="none" data-play-in-view
-      poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
+      data-poster="/demo-montage-poster.jpg" style="width:100%;height:auto;border-radius:12px"
       aria-label="A 28-second highlight reel Crisp cut automatically from eight separate clips totalling 220 seconds."></video>
 
 
@@ -1742,6 +1742,15 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   }, { threshold: 0.35 }).observe(v);
 })();
 </script>
+<script>(function () {
+  var vs = [].slice.call(document.querySelectorAll('video[data-poster]'));
+  function set(v) { if (!v.getAttribute('poster')) v.setAttribute('poster', v.getAttribute('data-poster')); }
+  if (!('IntersectionObserver' in window)) { vs.forEach(set); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { set(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: '600px 0px' });
+  vs.forEach(function (v) { io.observe(v); });
+})();</script>
 <script src="/assistant.js" defer></script>
 <script src="/track.js" defer></script>
 
