@@ -47,18 +47,18 @@ def main():
             for copy in (llms_txt.price_copy(facts), landing_pages.bundle_copy(), de_pages.price_copy(facts), de_pages.bundle()):
                 assert ('Launch price' in copy or 'Einführungspreis' in copy) == active
     title, note = llms_txt.page_meta('/vs/aiarty-video-enhancer-alternative-mac/')
-    # the summary must still say the price after the launch ends, in full; a page may word it "From December 1: $29." or "then $29."
-    # (the Aiarty page's description says "... $14.50 through Nov 30, then $29." since 9 Nov), but never stop before the $29
-    assert re.search(r'(From December 1: \$29\.|then \$29\.)', note), 'llms.txt cut off the future-price sentence'
+    # the summary must still say the price after the launch ends, in full; a page may word it "From December 1: $19." or "then $19."
+    # The Aiarty page uses "... $14.50 through Nov 30, then $19."; never stop before the $19.
+    assert re.search(r'(From December 1: \$19\.|then \$19\.)', note), 'llms.txt cut off the future-price sentence'
     # Execute the real scripts with a small DOM stub. No browser, network, app or sound.
     probe = r'''
 const vm = require('node:vm');
 const {script, german, end} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
 for (const now of [end - 1, end, end + 1]) {
-  const prices = [{textContent: '$14.50', getAttribute: k => k === 'data-full-price' ? '$29' : new Date(end).toISOString()}];
+  const prices = [{textContent: '$14.50', getAttribute: k => k === 'data-full-price' ? '$19' : new Date(end).toISOString()}];
   const notes = [{style: {}}];
   const root = {innerHTML: '', querySelector: () => ({addEventListener() {}})};
-  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$14.50', 'data-then': '$29', 'data-code': 'FOUNDINGCRISP'})[k], remove() {}};
+  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$14.50', 'data-then': '$19', 'data-code': 'FOUNDINGCRISP'})[k], remove() {}};
   const doc = {
     readyState: 'complete',
     querySelector: () => mount,
@@ -70,18 +70,18 @@ for (const now of [end - 1, end, end + 1]) {
   vm.runInNewContext(script, {window: win, document: doc, localStorage: {getItem: () => null}, Date});
   if (now < end) {
     const text = root.innerHTML.replace(/<[^>]+>/g, ' ');
-    if (!/Launch price\s+\$14.50\s+through Nov 30, then \$29/.test(text) || !text.includes('FOUNDINGCRISP')) throw Error(text);
+    if (!/Launch price\s+\$14.50\s+through Nov 30, then \$19/.test(text) || !text.includes('FOUNDINGCRISP')) throw Error(text);
     if (prices[0].textContent !== '$14.50') throw Error('early price reset');
   } else {
-    if (root.innerHTML || prices[0].textContent !== '$29' || notes[0].style.display !== 'none') throw Error('expiry failed');
+    if (root.innerHTML || prices[0].textContent !== '$19' || notes[0].style.display !== 'none') throw Error('expiry failed');
   }
   // German pages do not load founding.js; they carry their own price and note switch.
-  const germanPrice = {textContent: '14,50 $', getAttribute: k => k === 'data-full-price' ? '29 $' : new Date(end).toISOString()};
+  const germanPrice = {textContent: '14,50 $', getAttribute: k => k === 'data-full-price' ? '19 $' : new Date(end).toISOString()};
   const germanNote = {removed: false, getAttribute: () => new Date(end).toISOString(), remove() {this.removed = true;}};
   vm.runInNewContext(german, {Date: {now: () => now, parse: Date.parse}, document: {
     querySelectorAll: s => s === '[data-price-ends]' ? [germanPrice] : [germanNote]
   }});
-  if (germanPrice.textContent !== (now < end ? '14,50 $' : '29 $') || germanNote.removed !== (now >= end)) throw Error('German expiry failed');
+  if (germanPrice.textContent !== (now < end ? '14,50 $' : '19 $') || germanNote.removed !== (now >= end)) throw Error('German expiry failed');
 }
 '''
     german = ''.join(re.findall(r'<script>(.*?)</script>', de_pages.PRICE_SCRIPT + de_pages.EXPIRY_SCRIPT))

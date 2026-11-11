@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Write the "Also from Kerr & Company" block on /thank-you/ (the CEO, 2026-11-07: Crisp's thank-you page was the only one of the
 three without the cross-sell, and Crisp makes 7 of 8 sales). It sits BELOW the key and the activation steps, never above them. Prices are read, never
-typed: the list prices from ~/ops/launch/dodo-facts.json (Dodo's own product records), the sale at half of each through the founding
-codes' end (FOUNDINGDOCKET and FOUNDINGOUTLIER, both 50% for everyone through November, as docketseo.app and outlier.host show),
-and NO bundle: the bundle is a cart of all three apps, so it would charge a Crisp buyer for Crisp again (CEO, sales
+typed in the template: December prices and unchanged November prices come from december_prices.json, Matthew's 11 November
+decision. November's prices were set from Dodo's earlier $59 and $49 records; they are not half of December's prices.
+No bundle: the bundle is a cart of all three apps, so it would charge a Crisp buyer for Crisp again (CEO, sales
 audit, 7 Nov). From 1 December an owner's code may go here, once it exists. The sale lines carry data-until and hide themselves after it,
 because this page does not load founding.js. Every link to a sister app is rel="nofollow" (RULES 52) and the page stays noindex.
 
@@ -22,7 +22,7 @@ SITE = HERE.parent
 sys.path.insert(0, str(HERE))
 import landing_pages  # noqa: E402
 
-FACTS = Path.home() / "ops" / "launch" / "dodo-facts.json"
+FACTS = HERE / "december_prices.json"
 HUB = "https://kerr-affiliate-hub.kerrco.workers.dev/buy"
 ENDS = landing_pages.BUNDLE_FOUNDING_ENDS          # every founding code ends together: 2026-12-01 07:59:59Z
 APPS = [("Docket SEO", "docket", "Audits your whole website on your own computer and tells you what to fix first."),
@@ -36,8 +36,18 @@ def money(d: Decimal) -> str:
 def list_price(name: str) -> Decimal:
     for p in json.loads(FACTS.read_text())["products"].values():
         if p["name"].startswith(name):
+            if p.get("source") == "PRICE_AFTER_LAUNCH_USD":
+                landing_pages.prepare_facts()
+                return landing_pages.llms_txt.facts()["price"]
             return Decimal(p["price_cents"]) / 100
-    raise SystemExit(f"no Dodo product named {name!r} in {FACTS}")
+    raise SystemExit(f"no product named {name!r} in {FACTS}")
+
+
+def launch_price(name: str) -> Decimal:
+    for p in json.loads(FACTS.read_text())["products"].values():
+        if p["name"].startswith(name):
+            return Decimal(p["launch_price_cents"]) / 100
+    raise SystemExit(f"no launch price for {name!r} in {FACTS}")
 
 
 def block() -> str:
@@ -45,7 +55,7 @@ def block() -> str:
     for name, slug, line in APPS:
         full = list_price(name)
         rows.append(
-            f'    <li><strong>{name}.</strong> {line} <span data-until="{ENDS}">{money(full / 2)} until 30 November, then </span>{money(full)} once. '
+            f'    <li><strong>{name}.</strong> {line} <span data-until="{ENDS}">{money(launch_price(name))} until 30 November, then </span>{money(full)} once. '
             f'<a href="{HUB}/{slug}?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-{slug}">See {name}</a></li>')
     return "\n".join([
         "<!-- xsell:begin (written by _tools/thankyou_xsell.py) -->",

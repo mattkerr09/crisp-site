@@ -45,12 +45,12 @@ def buy_base() -> str:
     return m.group(1)
 
 
-#: THE THREE-APP BUNDLE (Matthew approved 2026-10-14; re-priced 2026-11-02 with the video-game prices, read in the CEO's
-#: REVENUE-AUDIT-CHECKLIST entry of 18:24Z): Crisp + Docket SEO + Outlier for $49.50 once through November (FOUNDINGBUNDLE, for
-#: everyone, expires 2026-12-01T07:59:59Z), then $99 (ALLTHREE); bought separately $29 + $59 + $49 = $137. Names only, no
+#: THE THREE-APP BUNDLE (Matthew approved 2026-11-11): Crisp + Docket SEO + Outlier for $49.50 once through November
+#: (FOUNDINGBUNDLE, for everyone, expires 2026-12-01T07:59:59Z), then $59 (ALLTHREE).
+#: December's separate prices are $19 + $39 + $29 = $87. Names only, no
 #: sister-site URL: the link goes to the hub (RULES 52).
 BUNDLE_URL = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle"
-BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("49.50"), Decimal("99")
+BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("49.50"), Decimal("59")
 BUNDLE_FOUNDING_ENDS = "2026-12-01T07:59:59Z"
 
 
@@ -291,7 +291,8 @@ def selftest() -> int:
 
     assert WINDOWS_HEAD in (SITE / "index.html").read_text(), "keep platform detection the same as the home page"
     engine = Mock()
-    engine.read_text.return_value = (f'PRICE_USD = {new_pages.PRICE_USD}\n'
+    engine.read_text.return_value = (f'PRICE_AFTER_LAUNCH_USD = {new_pages.PRICE_USD}\n'
+                                   f'LAUNCH_ENDS = "{BUNDLE_FOUNDING_ENDS}"\n'
                                    f'FREE_EXPORT_CAP_SECONDS = {new_pages.FREE_EXPORT_CAP_SECONDS}\n')
     with patch.object(llms_txt, "ENGINE", engine):
         f = llms_txt.facts()

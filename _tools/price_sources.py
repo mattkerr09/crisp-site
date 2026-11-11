@@ -31,12 +31,16 @@ BASELINE = Path(__file__).resolve().parent / "price_sources_baseline.json"
 # ...nor are the figures the same till derives from it: the 4-payment instalment (129 / 4), the founding price (half of 129, then
 # a quarter of the founding price) that every page's product box carries. 24 pages went "NEW" on these three alone on 2026-10-15.
 def _ours() -> set:
-    """Crisp's own figures, DERIVED from the engine's price (llms_txt.facts, which reads entitlement.PRICE_USD and the founding
-    mount and refuses a mismatch): the price, the founding price, and their four-payment quarters. Typed, this set kept $129
+    """Crisp's own figures, DERIVED from the engine's December price (llms_txt.facts, which reads
+    entitlement.PRICE_AFTER_LAUNCH_USD and the founding mount and refuses a mismatch): both prices,
+    the bundle's prices and their four-payment quarters. Typed, this set kept $129
     as "ours" after the 2026-11-02 halving, so a stale "Crisp is $129" would have passed."""
     import llms_txt
+    import landing_pages
+    landing_pages.prepare_facts()
     f = llms_txt.facts()
-    figs = {f["price"], f["now"], llms_txt.quarter(f["price"]), llms_txt.quarter(f["now"])}
+    prices = {f["price"], f["now"], landing_pages.BUNDLE_USD, landing_pages.BUNDLE_FOUNDING_USD}
+    figs = prices | {llms_txt.quarter(price) for price in prices}
     out = {"0"}
     for d in figs:
         out |= {f"{d:.2f}", f"{d.normalize()}", f"{d:.2f}".rstrip("0").rstrip(".")}

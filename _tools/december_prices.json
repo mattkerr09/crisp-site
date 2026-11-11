@@ -1,0 +1,19 @@
+{
+  "decision": "Matthew approved 11 November 2026; regular prices start 1 December. November launch prices stay unchanged.",
+  "products": {
+    "crisp": {
+      "name": "Crisp",
+      "source": "PRICE_AFTER_LAUNCH_USD"
+    },
+    "docket": {
+      "name": "Docket SEO",
+      "price_cents": 3900,
+      "launch_price_cents": 2950
+    },
+    "outlier": {
+      "name": "Outlier",
+      "price_cents": 2900,
+      "launch_price_cents": 2450
+    }
+  }
+}

@@ -5,11 +5,11 @@ refund days, the free cap) is a {placeholder} that the site's generators fill fr
 (llms_txt.facts(), landing_pages.py), so a German page can never say an older price or version than its English twin.
 
 Rules for this text (approved 2026-11-07): "Sie"; one line saying the app itself is in English; no Impressum and no postal
-address, only the Kontakt block; prices in US dollars, written the German way ("29 $"), with the line that checkout shows
+address, only the Kontakt block; prices in US dollars, written the German way ("19 $"), with the line that checkout shows
 the buyer's currency and any local tax; nothing typed by hand that a generator knows.
 """
 
-# a money amount, German style: 29 $ / 14,50 $
+# a money amount, German style: 19 $ / 14,50 $
 def money(d) -> str:
     s = f"{d:.2f}".replace(".", ",")
     if s.endswith(",00"):
@@ -165,7 +165,7 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("unmapped nav link", "de/download/index.html", ORIGIN + '/de/download/?src=nav-download', ORIGIN + '/download/?src=nav-download', "generated German page is stale", True),
         ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
         ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
-        ("changed price", "de/preise/index.html", 'data-full-price="29 $"', 'data-full-price="30 $"', "generated German page is stale", True),
+        ("changed price", "de/preise/index.html", 'data-full-price="19 $"', 'data-full-price="30 $"', "generated German page is stale", True),
         ("changed JSON price", "de/index.html", '"price": "29"', '"price": "30"', "fixed value", True),
         ("unmarked JSON prose", "de/index.html", '"name": "TODO-DE: Crisp Video"', '"name": "Crisp Video"', "unmarked English", True),
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),

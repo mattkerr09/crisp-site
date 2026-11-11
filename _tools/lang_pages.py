@@ -174,6 +174,7 @@ class LanguagePages:
     def bundle(self) -> str:
         if not thankyou_xsell.FACTS.is_file():
             raise SystemExit(f"lang_pages {self.lang}: required regular prices file is missing: {thankyou_xsell.FACTS}")
+        # December's regular prices, separate from the unchanged November launch prices.
         apart = sum(thankyou_xsell.list_price(name) for name in ("Crisp", "Docket SEO", "Outlier"))
         text = self.words.PRICES["bundle"].format(bundle_copy=self.price_copy({
             "price": landing.BUNDLE_USD, "now": landing.BUNDLE_FOUNDING_USD, "ends": landing.BUNDLE_FOUNDING_ENDS}), apart=self.words.money(apart), future=self.future_day(landing.BUNDLE_FOUNDING_ENDS))

@@ -36,9 +36,9 @@ SITE = "https://crispvideo.app"
 #: 19->99 rewrite would just reset that clock a third time.
 #:
 #: This site repo is nested and gitignored by the app repo, so it cannot import
-#: entitlement.PRICE_USD. One declared constant per repo is the achievable
-#: single source; keep it equal to entitlement.PRICE_USD.
-PRICE_USD = 29   # 2026-11-02, Matthew's video-game price (was 129)
+#: entitlement.PRICE_AFTER_LAUNCH_USD. One declared constant per repo is the achievable
+#: single source; keep it equal to entitlement.PRICE_AFTER_LAUNCH_USD.
+PRICE_USD = 19   # Matthew approved 2026-11-11; November's launch price stays $14.50.
 #: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
 #: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
 FREE_EXPORT_CAP_SECONDS = 15
