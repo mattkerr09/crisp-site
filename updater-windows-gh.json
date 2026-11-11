@@ -1,10 +1,10 @@
 {
   "version": "1.0.2038",
   "notes": "Crisp now says exactly what it keeps private: your videos and photos never leave your computer. Ask Crisp about privacy and it also tells you the four anonymous counts it sends, once each, with no file names or anything that identifies you. When you enlarge a folder of photos, each result now says which model ran.",
-  "pub_date": "2026-11-11T08:57:35Z",
+  "pub_date": "2026-11-11T09:03:36Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxzcGpSZHJLZjlTSkNZY05jM0R5bUNMQWF1WmdCZXp3Z0l5UFNxQk14NFVVTTFVbDZTYzJKVGFCN2lMY09wUmN2Tm9nRml4Y0FXWXRRb0FtSGo2bGdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzg3NDU0CWZpbGU6Q3Jpc3AtMS4wLjIwMzgteDY0LXNldHVwLmV4ZQpqMjZaSzQvdURNRm42N2tTR2dTTGU0NVpoTDM5NDR6cW9KRzhtOXVtdWZaVG1iNmhEUjVOOFo4a0dKdjRlSFFudDB0YS9IaEhBbWRyamtRMjN6K29EZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFTMzVjbVZQYWViVCtHYVZmZW1VTDFwUElaSXdUM3RvR0hjNkc2ZUZTcG1jWDRaTXVqTDl5SVl6MnJZZVhlelgvdU02aUtKaWNNODJ2bWZxNjBuWGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzg3ODE2CWZpbGU6Q3Jpc3AtMS4wLjIwMzgteDY0LXNldHVwLmV4ZQpDU0VucUNLL3RxV09xYm1pdmVvZ2pQemFxYmR4S0N3V1VwQXpUOE5tS0FHNGNqbFk3Tm5CNGdIcGxjRHV2WUdER2lZU2RNL1NFV1Vqa25tWm1kYjZCZz09Cg==",
       "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2038-x64-setup.exe"
     }
   }
