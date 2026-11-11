@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2038",
-  "notes": "Crisp now says exactly what it keeps private: your videos and photos never leave your computer. Ask Crisp about privacy and it also tells you the four anonymous counts it sends, once each, with no file names or anything that identifies you. When you enlarge a folder of photos, each result now says which model ran.",
-  "pub_date": "2026-11-11T08:40:05Z",
+  "version": "1.0.2067",
+  "notes": "Crisp's first minute looks better. The built-in sample is now a real 1936 newsreel, so the before-and-after shows a plain difference, and it no longer hides the \"Start here\" steps behind the Jobs list. In light mode the timeline, the prompt's hint and the side panels are easier to read, and every blue button meets the accessibility contrast standard. Results name the model in plain words, such as \"General clean model\"; the technical name is in the tooltip. A damaged or non-video file now gets a clear message and stays off your timeline. Checking for updates now tells you when you're on the latest version, instead of wrongly saying you may be offline. Crisp Pro is $14.50 through November 30 and $19 from December 1, and the app now says so.",
+  "pub_date": "2026-11-11T20:47:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oaHJOdElPd3lvUnlUOW1JdElXNFM3T0tib3dKcWpmUlFmekNwZEJBSXk5cVdSSUl5R2JoclBUUVkyaVhqbU9QV3lxampsQzFXVTRXR3pqSkNtZUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzg1NDQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMRjVQQXJKNE5XNDBLZ0JaMmFQZWQ2UzdWMWo1Y0V3b294WDJFWENTUlNlamVPVGQxNW41SnIxdGw5VVJoQXg3a0NnZC9pVDgvam5yODBCeHpDbjFDZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2038.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ4Y3lvS2VOcUVCd1NneldkTjhlRFZZTWZ3M0xMMlJYVTMycWQ1c2psU29kNlg0eVN5bGZlblBYbjFWQXRBdkRXMHRhaG5PZE80YVcvdWUzZGlQY0F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDI5MzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMYmhoMG4vU1B5Q25EZC9RSWIwQjBsT3JUSUFDaXFPWkVXL09mZUh6Z3lELzhrMXY1cEVsMDhPL040bTZoYXh0RVVlM0M4Q3dZd3h5SmhUYk1uS0lDdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2067.app.tar.gz"
     }
   }
 }
