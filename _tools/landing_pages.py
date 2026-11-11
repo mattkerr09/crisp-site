@@ -291,7 +291,9 @@ def selftest() -> int:
 
     assert WINDOWS_HEAD in (SITE / "index.html").read_text(), "keep platform detection the same as the home page"
     engine = Mock()
-    engine.read_text.return_value = (f'PRICE_AFTER_LAUNCH_USD = {new_pages.PRICE_USD}\n'
+    engine.read_text.return_value = (f'PRICE_USD = {new_pages.PRICE_USD}\n'
+                                   'FOUNDING_OFF_USD = Decimal("4.50")\n'
+                                   'PRICE_AFTER_LAUNCH_USD = PRICE_USD\n'
                                    f'LAUNCH_ENDS = "{BUNDLE_FOUNDING_ENDS}"\n'
                                    f'FREE_EXPORT_CAP_SECONDS = {new_pages.FREE_EXPORT_CAP_SECONDS}\n')
     with patch.object(llms_txt, "ENGINE", engine):

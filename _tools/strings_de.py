@@ -166,7 +166,7 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
         ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
         ("changed price", "de/preise/index.html", 'data-full-price="19 $"', 'data-full-price="30 $"', "generated German page is stale", True),
-        ("changed JSON price", "de/index.html", '"price": "29"', '"price": "30"', "fixed value", True),
+        ("changed JSON price", "de/index.html", '"price": "14.50"', '"price": "30"', "fixed value", True),
         ("unmarked JSON prose", "de/index.html", '"name": "TODO-DE: Crisp Video"', '"name": "Crisp Video"', "unmarked English", True),
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),
         ("changed schema type", "de/index.html", '"@type": "Organization"', '"@type": "Thing"', "fixed value", True),

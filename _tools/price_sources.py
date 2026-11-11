@@ -28,8 +28,7 @@ SITE = Path(__file__).resolve().parent.parent
 BASELINE = Path(__file__).resolve().parent / "price_sources_baseline.json"
 
 # Crisp's own price is not a rival's price and needs no external source.
-# ...nor are the figures the same till derives from it: the 4-payment instalment (129 / 4), the founding price (half of 129, then
-# a quarter of the founding price) that every page's product box carries. 24 pages went "NEW" on these three alone on 2026-10-15.
+# The fixed founding discount and both prices' four-payment quarters come from the same facts reader.
 def _ours() -> set:
     """Crisp's own figures, DERIVED from the engine's December price (llms_txt.facts, which reads
     entitlement.PRICE_AFTER_LAUNCH_USD and the founding mount and refuses a mismatch): both prices,

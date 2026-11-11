@@ -209,7 +209,7 @@ def selftest() -> None:
             (site / 'style.css').write_text('.old {text-decoration:line-through}')
             page.write_text('<html><body>' + form + '</body></html>')
             assert problems(site), f'missed {form}'
-        page.write_text('<p>Launch price: $14.50 once, through November 30. From December 1: $29. 100% offline.</p>')
+        page.write_text('<p>Launch price: $14.50 once, through November 30. From December 1: $19. 100% offline.</p>')
         assert not problems(site)
         for quote in RIVAL_SALE_QUOTES:
             page.write_text('<p>Topaz Video: $299/yr, ' + quote + '.</p>')
@@ -223,7 +223,7 @@ def selftest() -> None:
                 assert problems(site), 'edited Topaz sale quote accepted'
             page.write_text('<p>' + quote + '. Crisp is $254 once.</p>')
             assert problems(site), 'Topaz quote exempted adjacent Crisp price'
-        page.write_text('<p>Launch price $14.50 through Nov 30, then $29.</p>')
+        page.write_text('<p>Launch price $14.50 through Nov 30, then $19.</p>')
         for name in ('founding.js', 'llms.txt'):
             extra = site / name
             for form in ('half price', '<s>$29</s>', '<del>$29</del>', '<span style="text-decoration:line-through">$29</span>'):
@@ -242,7 +242,7 @@ def selftest() -> None:
             page.write_text('<p>' + sentence + '</p>')
             rival.unlink()
             assert problems(site), 'allowlist accepted the wrong file'
-            page.write_text('Launch price $14.50 through Nov 30, then $29')
+            page.write_text('Launch price $14.50 through Nov 30, then $19')
         (site / 'founding.js').write_text("var css = '.was{text-decoration:line-through}';")
         assert problems(site), 'missed JS strike code'
     print(f'price words: {len(forms)} banned forms, both text assets and exact rival allowlist tests passed')

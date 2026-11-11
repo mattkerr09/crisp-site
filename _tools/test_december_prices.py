@@ -173,10 +173,53 @@ def source_checks():
     assert thankyou_xsell.block() in (SITE / "thank-you" / "index.html").read_text()
     assert {"14.50", "19.00", "3.63", "4.75", "49.50", "59.00", "12.38", "14.75"} <= price_sources.OURS
     assert not {"29", "29.00", "99", "99.00"} & price_sources.OURS
+    assert llms_txt.quarter(facts["price"]) == Decimal("4.75")
+    assert llms_txt.quarter(facts["now"]) == Decimal("3.63")
+    home = (SITE / "index.html").read_text()
+    graphs = [json.loads(script) for script in LD.findall(home)]
+    pro = [offer for graph in graphs for node in graph.get("@graph", [])
+           for offer in node.get("offers", []) if offer.get("name") == "Pro"]
+    assert len(pro) == 1, "home must carry one Pro Offer"
+    assert pro[0]["price"] == "14.50", "home Pro Offer must quote today's launch price"
+    assert pro[0]["priceValidUntil"] == "2026-11-30", "home Pro Offer must carry its last launch day"
+
+
+def facts_checks():
+    from unittest.mock import Mock, patch
+    import llms_txt
+
+    engine = ('PRICE_USD = Decimal("19")\n'
+              'FOUNDING_OFF_USD = Decimal("4.50")\n'
+              'PRICE_AFTER_LAUNCH_USD = PRICE_USD\n'
+              f'LAUNCH_ENDS = "{ENDS}"\n'
+              'FREE_EXPORT_CAP_SECONDS = 15\n')
+    for after in ('PRICE_USD', 'Decimal("19")', '19'):
+        source = engine.replace('PRICE_AFTER_LAUNCH_USD = PRICE_USD', f'PRICE_AFTER_LAUNCH_USD = {after}')
+        with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=source))):
+            facts = llms_txt.facts()
+            assert facts["price"] == Decimal("19") and facts["now"] == Decimal("14.50")
+
+    # A different list price and fixed discount must still derive the same launch price.
+    source = engine.replace('Decimal("19")', 'Decimal("25")').replace('Decimal("4.50")', 'Decimal("10.50")')
+    source = source.replace('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = Decimal("19")')
+    with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=source))):
+        assert llms_txt.facts()["now"] == Decimal("14.50")
+
+    for old, new, message in (('Decimal("4.50")', 'Decimal("4")', 'launch price'),
+                              ('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = OTHER_PRICE', 'could not read'),
+                              ('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = 20', 'full price')):
+        with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=engine.replace(old, new)))):
+            try:
+                llms_txt.facts()
+            except SystemExit as error:
+                assert message in str(error), str(error)
+            else:
+                raise AssertionError(f"facts accepted {new}")
 
 
 def main():
     selftest()
+    facts_checks()
     source_checks()
     errors = []
     counts = Counter()
