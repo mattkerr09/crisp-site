@@ -57,7 +57,7 @@ PAGES = [
 
   <h2>Doing it on a Mac without a subscription</h2>
   <p>Crisp runs the whole chain on your machine. Drop the clip in, ask it to clean up the noise and
-  upscale to 4K, and it does both locally with nothing uploaded anywhere. That last part matters more
+  upscale to 4K, and it does both locally with your videos kept on your computer. That last part matters more
   than it sounds for anyone working on client footage, since the usual alternative is handing an
   unreleased edit to a web service.</p>
 """,
@@ -124,7 +124,7 @@ PAGES = [
   <h2>Doing it on a Mac</h2>
   <p>Crisp detects interlaced sources and handles the deinterlace pass on-device, before any
   enhancement runs, so the ordering problem above is taken care of without you having to think about
-  it. Nothing is uploaded, which tends to matter for exactly the sort of irreplaceable family footage
+  it. Your videos never leave your computer, which tends to matter for exactly the sort of irreplaceable family footage
   that's most likely to be interlaced in the first place.</p>
 """,
  "faq": [
@@ -700,7 +700,7 @@ PAGES = [
   ("Why is the first frame slower than the rest?",
    "The model has to be loaded and initialised before the first frame can be processed. After that the per-frame cost settles into a steady rate, so a progress estimate taken from the first few seconds usually reads pessimistically."),
   ("Can I use my Mac while it runs?",
-   "Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Because nothing is uploaded, leaving a long job running overnight costs nothing beyond power."),
+   "Yes, though heavy work will compete for the same GPU and slow both. Light use is fine. Your videos never leave your computer. A long job running overnight costs nothing beyond power."),
  ],
 },
 
@@ -1260,7 +1260,7 @@ PAGES = [
   <p>This is the constraint that rules out most convenient tools. Footage containing identifiable
   students frequently cannot be uploaded to a third-party service, and the answer to "where is this
   processed" needs to be simple enough to put in an email to a head of department.</p>
-  <p>Crisp processes everything on the machine. No upload, no account, nothing transmitted. That is a
+  <p>Crisp processes everything on the machine. No upload or account. Your videos never leave your computer. That is a
   short answer to a question that otherwise involves reading somebody's terms of service.</p>
 
   <h2>A workflow that fits a prep period</h2>
@@ -1608,7 +1608,7 @@ PAGES = [
   <h2>Privacy is not an abstract concern here</h2>
   <p>Services include children, funerals, baptisms and people who did not choose to be filmed. Uploading
   that to a third-party service to process it is a conversation most churches would rather not have.
-  Crisp runs entirely on the machine, with nothing transmitted, which makes the answer short.</p>
+  Crisp runs entirely on the machine, with your videos kept on your computer, which makes the answer short.</p>
 
   <h2>Where Crisp is the wrong tool</h2>
   <p>It does not stream, so live broadcast needs whatever you already use. It does not generate

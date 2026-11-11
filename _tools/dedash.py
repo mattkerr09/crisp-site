@@ -45,7 +45,7 @@ def _spans_outside_tags(html: str):
         list items (term - definition)  : 30.2 per 1k                  <- correct typography
 
     An em-dash between a term and its definition is what that mark is FOR, and spec tables use it
-    the same way ("Yes - nothing uploaded"). Rewriting those would make the pages worse to read
+    the same way ("Yes - your videos never leave your computer"). Rewriting those would make the pages worse to read
     while chasing a number. The repeated footer tagline is boilerplate every commercial site has,
     and varying it is pure detection-gaming. So only genuine prose paragraphs are touched.
     """

@@ -1,5 +1,5 @@
 {
- "written": "2026-11-09",
+ "written": "2026-11-10",
  "why": "Competitor claims that carried no checked-on date when the claim-date rule landed (CEO, 2026-10-19). Each needs a re-read of the vendor's own page and then a date on our page; delete its entry once it is dated. A claim that is not listed here and has no date FAILS the push. Re-record with --baseline only deliberately, and say why in the commit.",
  "undated": {
   "best/video-converter-for-mac": [
@@ -91,7 +91,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -135,7 +135,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -285,7 +285,7 @@
      "Premiere Pro"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+    "text": "100% offline, your videos and photos never leave your computer | Yes | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -342,7 +342,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -409,7 +409,7 @@
      "HandBrake"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Uploads your clip | Yes"
+    "text": "100% offline, your videos never leave your computer | Uploads your clip | Yes"
    },
    {
     "vendors": [
@@ -471,7 +471,7 @@
      "QuickTime"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Uploads your video | Yes"
+    "text": "100% offline, your videos never leave your computer | Uploads your video | Yes"
    },
    {
     "vendors": [
@@ -599,7 +599,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -645,7 +645,7 @@
      "Photoshop"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Uploads your clip | Yes"
+    "text": "100% offline, your videos never leave your computer | Uploads your clip | Yes"
    },
    {
     "vendors": [
@@ -703,7 +703,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your photos"
+    "text": "100% offline, your videos and photos never leave your computer | Yes | Uploads your photos"
    }
   ],
   "how-to/mute-video-mac": [
@@ -807,7 +807,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -851,7 +851,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -907,7 +907,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -960,7 +960,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -1016,7 +1016,7 @@
      "iMovie"
     ],
     "kind": "FEATURE",
-    "text": "100% offline, nothing uploaded | Yes | Yes | Uploads your clip"
+    "text": "100% offline, your videos never leave your computer | Yes | Yes | Uploads your clip"
    },
    {
     "vendors": [
@@ -1108,7 +1108,7 @@
      "Topaz"
     ],
     "kind": "FEATURE",
-    "text": "Nothing is uploaded, unlike Topaz cloud."
+    "text": "Your videos never leave your computer, unlike Topaz cloud."
    }
   ],
   "learn/what-the-denoise-setting-does": [

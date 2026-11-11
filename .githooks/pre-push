@@ -135,6 +135,10 @@ esac
 # this website", which is how it survived review. Hence a gate.
 run_gate "third-party-hosts" python3 "$(dirname "$0")/../_tools/gate_thirdparty.py"
 
+# Privacy claims describe the media, since the app sends anonymous counts.
+run_gate "privacy-words" python3 "$(dirname "$0")/../_tools/gate_privacy_words.py"
+run_gate "privacy-words-selftest" python3 "$(dirname "$0")/../_tools/gate_privacy_words.py" --selftest
+
 # ...and every exemption THAT gate grants must still describe real code.
 #
 # The gate above carries per-file exemptions, each keyed to a marker, and it

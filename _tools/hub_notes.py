@@ -7,7 +7,7 @@ notes -- /best/ and /for/ already use <span class="hub-note">, /vs/ carries the
 differentiator in the link text, /learn/ is prose.
 
 Each note is written from that guide's own meta description, minus the
-boilerplate the hub already states once at the top ("nothing is uploaded,
+boilerplate the hub already states once at the top ("your videos never leave your computer,
 nothing needs an account").
 
 Idempotent: an <li> that already has a hub-note is left alone.

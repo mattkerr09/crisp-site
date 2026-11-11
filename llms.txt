@@ -38,7 +38,7 @@
 - [How to batch upscale videos on a Mac (2026)](https://crispvideo.app/how-to/batch-upscale-videos-mac/): Batch upscale videos on a Mac: test on one clip first, avoid filename collisions, and know why a big queue takes as long as it does.
 - [Stabilize shaky video on a Mac: the best free option](https://crispvideo.app/how-to/stabilize-shaky-video-mac/): Stabilize shaky video on a Mac and pick the best stabilizer: what software can and cannot fix, what it costs in framing, jello, and the free ffmpeg option.
 - [Deinterlace video on a Mac, and what interlacing is](https://crispvideo.app/how-to/deinterlace-video-mac/): Deinterlace video on a Mac, and what interlacing is: how to tell comb teeth from look-alikes, the ffmpeg check, and why a file's flag can lie after re-encoding.
-- [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, nothing uploaded.
+- [How to compress a video on a Mac: free, offline, no upload](https://crispvideo.app/how-to/compress-video-on-mac/): Compress a video on a Mac to make the file smaller for email or upload, one tap, 100% offline, your videos never leave your computer.
 - [How to convert MOV to MP4 on a Mac (2026): free, no upload](https://crispvideo.app/how-to/convert-mov-to-mp4-mac/): Convert MOV to MP4 on a Mac in one tap, 100% offline, usually losslessly with Pro.
 
 ## Who it is for

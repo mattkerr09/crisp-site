@@ -240,7 +240,7 @@ def pages() -> dict[Path, str]:
             "You saw “crispvideo.app” on a video. Crisp restores, denoises and upscales video to 4K on your own Mac or PC, offline. Free to use.",
             "You saw &ldquo;crispvideo.app&rdquo; on a video",
             "That mark is on every free export from Crisp Video. Crisp restores, denoises and upscales old and low-res video to 4K "
-            "on your own Mac or Windows PC, offline: nothing is uploaded. It is free to use, and Pro removes the mark.",
+            "on your own Mac or Windows PC, offline: your videos never leave your computer. It is free to use, and Pro removes the mark.",
             "watermark", False),
     }
 
