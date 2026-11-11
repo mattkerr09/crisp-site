@@ -181,11 +181,7 @@ def kco_for(p: Path) -> str:
     lang = language(p)
     if lang:
         from lang_pages import load_words
-        attribution = load_words(lang).FOOTER["made_by"]
-        # Translated guides keep the attribution without an off-site company link.
-        if lang in {"pt-br", "es"} and p.relative_to(SITE).parts[1] == "guia":
-            return '<div class="kco" data-kco><ul class="kco-list"><li>' + attribution + '</li></ul></div>'
-        return KCO.replace("Made by Kerr &amp; Company", attribution)
+        return KCO.replace("Made by Kerr &amp; Company", load_words(lang).FOOTER["made_by"])
     return KCO
 
 
