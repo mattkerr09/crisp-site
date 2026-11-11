@@ -40,11 +40,13 @@ def _ours() -> set:
     out = {"0"}
     for d in figs:
         out |= {f"{d:.2f}", f"{d.normalize()}", f"{d:.2f}".rstrip("0").rstrip(".")}
+    out |= {s.replace(".", ",") for s in out}  # pt-BR / es decimal commas, same derived figures
     return out
 
 
 OURS = _ours()
-MONEY = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)")
+# Keep group 1 as the figure for all callers, including the Spanish suffix form.
+MONEY = re.compile(r"(?:\$\s?|(?<![\w.,])(?=\d[\d,]*(?:\.\d+)?\s+US\$))(\d[\d,]*(?:\.\d+)?)")
 DATED = re.compile(r"Prices?\s+checked\s+\d", re.I)
 
 
@@ -80,7 +82,8 @@ def _text(p: Path) -> str:
 #: pages, then 8, then 6, because "$129." with a trailing full stop is not the string "$129" —
 #: the parser, not the site, moved the number three times. So the pattern proves itself against
 #: known-good text before the survey is believed.
-_MUST_MATCH = ("$129", "$ 129", "$1,299.99", "costs $299 a year", "$12/month", "$437.99 list")
+_MUST_MATCH = ("$129", "$ 129", "$1,299.99", "costs $299 a year", "$12/month", "$437.99 list",
+               "US$ 14,50", "14,50 US$", "US$ 29", "29 US$", "165,50 US$")
 _MUST_NOT = ("129 dollars", "£129", "$", "USD 129")
 
 

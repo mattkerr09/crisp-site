@@ -15,7 +15,8 @@ is looked at: comments, <script>, <style>, <head>, <nav> and <footer> are droppe
 
 WHAT A READ DATE IS. "read", "re-read", "checked", "verified", "accessed" or "retrieved", then at most eight short words that do not end a
 sentence ("read from each vendor's own buy page on"), then a date written as 15 October 2026, 15 Oct 2026, October 15, 2026, 2026-10-15
-or October 2026 (a month with no day counts as the 1st, which can only make it older). "first read ...", "earlier read ...",
+or October 2026. Portuguese and Spanish read/check labels also accept 15 de outubro de 2026 / octubre de 2026
+(a month with no day counts as the 1st, which can only make it older). "first read ...", "earlier read ...",
 "previously read ..." and "originally read ..." are history, not the current read, and are skipped. A date in the future is a failure (a
 typo that would hide a stale figure).
 
@@ -31,8 +32,9 @@ one ("Aiarty enhances video. It doesn't edit it."), or when it quotes a money fi
 one, or under a heading that names one ("Is Topaz Video AI free?" / "No. $299 a year ..."). A table row is a claim about every competitor named in the table's header row or
 in the row itself, when it has two or more filled cells; a column headed "Crisp" is left out when judging its kind. NOT claims:
 headings, <summary>, breadcrumbs (class *crumb*), the text of links to our own pages, "Crisp vs X" and "X alternative" (search terms),
-and any block inside an element marked data-claims="none" (for a block that names a competitor but only describes Crisp; the marker
-is visible in review, so use it sparingly and never to dodge a real claim). ffmpeg is deliberately not a competitor (see VENDORS).
+and Crisp's own product boxes (class pbox, data-pbox or data-landing-box), and any block inside an element marked data-claims="none"
+(for a block that names a competitor but only describes Crisp; the marker is visible in review, so use it sparingly and never to
+dodge a real claim). ffmpeg is deliberately not a competitor (see VENDORS).
 
 WHICH DATE COVERS A CLAIM (its claim set), nearest scope first; within a scope the OLDEST current read date is the one that counts:
   1. its own block: the same paragraph, list item, table row, <dd>, <figcaption> or <blockquote>. Any read date there covers it.
@@ -87,11 +89,20 @@ MONTHS = {m: i for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], start=1)}
 _MONTH = r"(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
 _M = _MONTH.replace("(", "(?:", 1)  # the same alternation, non-capturing, for the named groups below
+LOCAL_MONTHS = {m: i for names in (
+    "janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro",
+    "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre",
+) for i, m in enumerate(names.split(), start=1)}
+LOCAL_MONTHS["setiembre"] = 9
+_LOCAL_M = r"(?:" + "|".join(LOCAL_MONTHS) + r")"
 _DATE = (r"(?:(?P<d1>\d{1,2})\s+(?P<m1>" + _M + r")\.?,?\s+(?P<y1>\d{4})"        # 15 October 2026, 15 Oct. 2026
          r"|(?P<m2>" + _M + r")\.?\s+(?P<d2>\d{1,2})(?:st|nd|rd|th)?,?\s+(?P<y2>\d{4})"   # October 15, 2026
          r"|(?P<y3>\d{4})-(?P<n3>\d{2})-(?P<d3>\d{2})"                             # 2026-10-15
-         r"|(?P<m4>" + _M + r")\.?,?\s+(?P<y4>\d{4}))")                            # October 2026 -> the 1st
-_KEY = r"(?<![\w-])(?<!first )(?<!earlier )(?<!previously )(?<!originally )(?:re-?)?(?:read|checked|verified|accessed|retrieved)"
+         r"|(?P<m4>" + _M + r")\.?,?\s+(?P<y4>\d{4})"                             # October 2026 -> the 1st
+         r"|(?:(?P<d5>\d{1,2})\s+de\s+)?(?P<m5>" + _LOCAL_M + r")\s+de\s+(?P<y5>\d{4}))")
+_KEY = (r"(?:(?<![\w-])(?<!first )(?<!earlier )(?<!previously )(?<!originally )(?:re-?)?(?:read|checked|verified|accessed|retrieved)"
+        r"|(?<![\w-])(?:(?:lidos?|verificados?|consultado|conferido)\s+em|"
+        r"(?:leídos?|comprobados?|consultado|verificado)\s+el))")
 _GAP = r"(?:[:,]?\s+(?:[^\s\d]{0,39}[^\s\d.;!?])){0,8}?"  # up to eight short words, none ending a sentence
 READ = re.compile(_KEY + r"\b" + _GAP + r"[:,]?\s+(?:on\s+)?" + _DATE + r"\b", re.I)
 _DROP = re.compile(r"<!--.*?-->|<script.*?</script>|<style.*?</style>", re.S | re.I)
@@ -116,6 +127,8 @@ def _to_date(m: re.Match) -> date | None:
             return date(int(g["y3"]), int(g["n3"]), int(g["d3"]))
         if g["y4"]:
             return date(int(g["y4"]), MONTHS[g["m4"][:3].lower()], 1)
+        if g["y5"]:
+            return date(int(g["y5"]), LOCAL_MONTHS[g["m5"].lower()], int(g["d5"] or 1))
     except (ValueError, KeyError):
         return None
     return None
@@ -225,19 +238,23 @@ PLATFORM_CUE = re.compile(
 CAPABILITY_CUE = re.compile(
     r"\b(?:has|have|had|lacks?|lacking|supports?|supported|does\s+not|doesn't|did\s+not|didn't|do\s+not|don't|can't|cannot|"
     r"can\s+not|won't|will\s+not|isn't|aren't|no\s+longer|never|only|offers?|offered|includes?|included|ships?|lists?|listed|"
-    r"documents?|documented|exports?|imports?|limits?|limited|caps?|capped|up\s+to|maximum|without|no|yes|varies|stripped|manual)\b", re.I)
+    r"documents?|documented|exports?|imports?|limits?|limited|caps?|capped|up\s+to|maximum|without|no|yes|varies|stripped|manual|"
+    r"tem|têm|possui|possuem|não\s+tem|suportam?|apenas|inclui|incluem|oferece|oferecem|exportam?|limitam?|até|sem|"
+    r"tiene|tienen|carece|carecen|admite|admiten|solo|sólo|incluye|incluyen|ofrece|ofrecen|exportan|limitan|hasta|sin)\b", re.I)
 _PRONOUN = re.compile(r"^\W*(?:It|Its|It's|They|Their|Theirs|That app|This app|The app)\b")
 _SENT = re.compile(r"(?<=[.!?])[\"”’)]*\s+(?=[\"“(]?[A-Z0-9$])")
 _ABBREV = re.compile(r"\b(?:e\.g|i\.e|vs|etc|approx|Mr|Ms|Dr|No|cf)\.$", re.I)
 RECEIPT_CLASSES = {"price-receipts", "src", "sources", "receipts", "claims-checked"}
-_LABEL_WORDS = r"(?:all\s+)?(?:prices?|pricing|features?|specs?|requirements?|facts?|claims?|sources?)\b"
+_LABEL_WORDS = r"(?:all\s+)?(?:prices?|pricing|features?|specs?|requirements?|facts?|claims?|sources?|fontes|fuentes|preços|precios)\b"
 #: a stated checked line: a block that OPENS with "Prices checked ...", "Sources, all read ...", "Read 15 October 2026 from ...",
 #: or that has a sentence opening "Sources: ... read <date>" / "Prices ... checked <date>" (a bare mid-paragraph "Checked <date>." is
 #: that paragraph's own date, not a line for the page)
 _LABEL_START = re.compile(r"^\W*(?:" + _LABEL_WORDS + r"[^.!?]{0,300}?)?" + _KEY + r"\b", re.I)
 _LABEL_MID = re.compile(r"[.!?]\s+\W*" + _LABEL_WORDS + r"[^.!?]{0,300}?" + _KEY + r"\b", re.I)
-_PRICE_LABEL = re.compile(r"\b(?:prices?|pricing|costs?|plans?|buy\s+page|purchase\s+page|store)\b", re.I)
-_FEATURE_LABEL = re.compile(r"\b(?:features?|specs?|requirements?|README|docs?|documentation|guide|support|manual|help|system)\b", re.I)
+_PRICE_LABEL = re.compile(r"\b(?:prices?|pricing|costs?|plans?|buy\s+page|purchase\s+page|store|preços?|precios?)\b", re.I)
+_FEATURE_LABEL = re.compile(r"\b(?:features?|specs?|requirements?|README|docs?|documentation|guide|support|manual|help|system|"
+                            r"recursos?|funcionalidades?|funções|funciones|características|especificações|especificaciones|"
+                            r"requisitos|documentação|documentación|guia|guía|suporte|soporte|ajuda|ayuda|sistema)\b", re.I)
 
 
 def sentences(text: str) -> list[str]:
@@ -275,14 +292,14 @@ class Block:
         self.claim_text = ""           # the same, without the text of links to our own pages
         self.cells, self.cell_claim, self.th, self.hrefs = [], [], [], []
         self.ancestors = ancestors
-        self.optout = optout           # inside an element marked data-claims="none"
+        self.optout = optout           # inside data-claims="none" or Crisp's own product box
 
 
 class _Parser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.blocks: list[Block] = []
-        self.stack: list[tuple] = []   # (tag, block_idx|None, container_idx|None, internal_link, data-claims=none)
+        self.stack: list[tuple] = []   # (tag, block_idx|None, container_idx|None, internal_link, claim optout)
         self.containers: dict[int, dict] = {}
         self._cid = 0
         self.skip = 0
@@ -318,7 +335,8 @@ class _Parser(HTMLParser):
             self.stack.append((tag, None, None, False, False))
             return
         bi = ci = None
-        optout = (a.get("data-claims") or "").strip().lower() == "none"
+        optout = ((a.get("data-claims") or "").strip().lower() == "none"
+                  or "pbox" in (a.get("class") or "").split() or "data-pbox" in a or "data-landing-box" in a)
         if tag in _CONTAINERS and not self.skip:
             self._cid += 1
             ci = self._cid
@@ -747,6 +765,105 @@ def selftest() -> int:
         "a link to our own page is not a claim": not problems('<p>See <a href="/vs/topaz-alternative-mac/">Topaz has a plan</a>.</p>', today),
         "a block marked data-claims=none is not a claim": not problems('<p data-claims="none">Topaz is $1 a year.</p>', today),
     }
+    # Keep translated cases in the same gate as the English regressions. Check the
+    # date and failure kind too: an UNDATED failure does not prove stale reads work.
+    languages = {
+        "pt-BR": {
+            "months": "janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro".split(),
+            "reads": ("lido em", "lidos em", "verificado em", "verificados em", "consultado em", "conferido em"),
+            "sources": "Fontes", "price_read": "Preços verificados em", "feature_label": "recursos",
+            "features": ("tem editor", "têm editor", "possui editor", "possuem editor", "não tem editor",
+                         "suporta edição", "suportam edição", "apenas edita", "inclui editor", "incluem editor",
+                         "oferece edição", "oferecem edição", "exporta vídeo", "exportam vídeo", "limita a edição",
+                         "limitam a edição", "até quatro editores", "sem editor"),
+            "box": "US$ 14,50 em pagamento único. Preço de lançamento: US$ 14,50, até 30 de novembro.",
+        },
+        "es": {
+            "months": "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split(),
+            "reads": ("leído el", "leídos el", "comprobado el", "comprobados el", "consultado el", "verificado el"),
+            "sources": "Fuentes", "price_read": "Precios comprobados el", "feature_label": "funciones",
+            "features": ("tiene editor", "tienen editor", "carece de editor", "carecen de editor", "admite edición",
+                         "admiten edición", "no puede editar", "solo edita", "sólo edita", "incluye editor",
+                         "incluyen editor", "ofrece edición", "ofrecen edición", "exporta vídeo", "exportan vídeo",
+                         "limita la edición", "limitan la edición", "hasta cuatro editores", "sin editor"),
+            "box": "14,50 US$ en un solo pago. Precio de lanzamiento: 14,50 US$, hasta el 30 de noviembre.",
+        },
+    }
+    for lang, words in languages.items():
+        label = words["reads"][0]
+        month = words["months"][9]
+        fresh = f"15 de {month} de 2026"
+        old_day = today - timedelta(days=50)
+        old = f"{old_day.day} de {words['months'][old_day.month - 1]} de {old_day.year}"
+        future = f"16 de {month} de 2026"
+        price = "Aiarty: US$ 165."
+        for read in (*words["reads"], words["price_read"]):
+            html = f"<p>{price} {read} {fresh}.</p>"
+            v = judge_page(html, today)
+            checks[f"{lang} {read}: own block date"] = (
+                not v.failed and len(v.claims) == 1 and v.claims[0].covered == today and v.claims[0].how == "own")
+            checks[f"{lang} {read}: inline date"] = not problems(f"<p>Aiarty: US$ 165, {read} {fresh}.</p>", today)
+        for when, kind in ((old, "stale"), (future, "future")):
+            v = judge_page(f"<p>{price} {label} {when}.</p>", today)
+            checks[f"{lang} {kind} date fails"] = v.failed and bool(getattr(v, kind))
+            v = judge_page(f"<p>{label} {when}.</p>", today)
+            checks[f"{lang} loose {kind} read fails"] = v.failed and bool(v.loose_reads)
+        checks[f"{lang} undated price fails"] = bool(judge_page(f"<p>{price}</p>", today).undated_new)
+        for cue in words["features"]:
+            feature = f"<p>Aiarty {cue}.</p>"
+            v = judge_page(feature, today)
+            checks[f"{lang} undated feature '{cue}' fails"] = (
+                v.failed and len(v.undated_new) == 1 and v.claims[0].kind == "FEATURE")
+        feature = f"<p>Aiarty {words['features'][0]}.</p>"
+        source = f"<p>{words['sources']}: Aiarty, {label} {fresh}.</p>"
+        price_source = f"<p>{words['price_read']} {fresh}: Aiarty.</p>"
+        checks[f"{lang} price read in own block covers feature like English"] = not problems(
+            f"<p>Aiarty {words['features'][0]}. {words['price_read']} {fresh}.</p>", today)
+        v = judge_page(feature + source, today)
+        checks[f"{lang} page source covers feature"] = (
+            not v.failed and bool(v.claims) and v.claims[0].how == "page-line")
+        v = judge_page(feature + price_source, today)
+        checks[f"{lang} page price read does not cover feature"] = bool(v.undated_new)
+        checks[f"{lang} page price read covers price"] = not problems(f"<p>{price}</p>" + price_source, today)
+        checks[f"{lang} mixed price and feature label covers feature"] = not problems(
+            feature + f"<p>{words['sources']} {words['feature_label']}, {words['price_read']} {fresh}: Aiarty.</p>", today)
+        checks[f"{lang} another vendor's source does not cover feature"] = bool(
+            judge_page(feature + source.replace("Aiarty", "Topaz"), today).undated_new)
+        checks[f"{lang} bare mid-paragraph read is not a page source"] = bool(judge_page(
+            feature + f"<p>Aiarty. {label} {fresh}.</p>", today).undated_new)
+        checks[f"{lang} mid-paragraph sources line covers feature"] = not problems(
+            feature + f"<p>Notas. {words['sources']}: Aiarty, {label} {fresh}.</p>", today)
+        checks[f"{lang} month-only source covers feature"] = not problems(
+            feature + source.replace(fresh, f"{month} de 2026"), today)
+        for container in (row.format("Editor", words["features"][0]), f"<ul><li>Aiarty {words['features'][0]}.</li></ul>"):
+            v = judge_page(container + source, today)
+            checks[f"{lang} {container[:6]} source covers feature"] = (
+                not v.failed and bool(v.claims) and v.claims[0].how == "container")
+            checks[f"{lang} {container[:6]} price read does not cover feature"] = bool(
+                judge_page(container + price_source, today).undated_new)
+        for n, name in enumerate(words["months"], 1):
+            for spelling, expected in ((f"2 de {name} de 2026", date(2026, n, 2)),
+                                       (f"{name} de 2026", date(2026, n, 1))):
+                checks[f"{lang} parses {spelling}"] = reads_in(f"<p>{label} {spelling}</p>") == [expected]
+        # A vendor heading and a preceding vendor sentence must not turn our box into its claim.
+        for marker in ('class="pbox"', 'data-pbox="top"', 'data-landing-box'):
+            html = f'<h2>Topaz</h2><aside {marker}><p>Topaz. {words["box"]}</p><p>Crisp Windows</p></aside>'
+            checks[f"{lang} own box {marker} has no claims"] = not page_claims(html)
+            checks[f"{lang} own box {marker} ends at closing tag"] = bool(
+                judge_page(html + "<p>Topaz Windows.</p>", today).undated_new)
+            checks[f"{lang} own box {marker} keeps stale reads visible"] = bool(
+                problems(f'<aside {marker}><p>{label} {old}.</p></aside>', today))
+        checks[f"{lang} own prices after competitor are not claims"] = not page_claims(
+            f"<p>Topaz. {words['box']}</p>")
+    checks["es parses setiembre"] = reads_in("<p>leído el 2 de setiembre de 2026</p>") == [date(2026, 9, 2)]
+    for own in sorted(OURS):
+        comma = own.replace(".", ",")
+        for money in (f"US$ {comma}", f"{comma} US$"):
+            m = MONEY.search(money)
+            checks[f"own figure {money} is not theirs"] = bool(m) and m.group(1) == comma and not _theirs_money(money)
+    for money in ("US$ 165,50", "165,50 US$", "$1,299.99"):
+        checks[f"competitor figure {money} still needs a date"] = bool(
+            judge_page(f"<p>Aiarty: {money}.</p>", today).undated_new)
     bad = [k for k, ok in checks.items() if not ok]
     print("gate_read_dates self-check " + ("passed" if not bad else "FAILED: " + "; ".join(bad)))
     return 0 if not bad else 1
