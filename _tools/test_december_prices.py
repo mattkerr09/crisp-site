@@ -179,9 +179,12 @@ def source_checks():
     graphs = [json.loads(script) for script in LD.findall(home)]
     pro = [offer for graph in graphs for node in graph.get("@graph", [])
            for offer in node.get("offers", []) if offer.get("name") == "Pro"]
-    assert len(pro) == 1, "home must carry one Pro Offer"
-    assert pro[0]["price"] == "14.50", "home Pro Offer must quote today's launch price"
-    assert pro[0]["priceValidUntil"] == "2026-11-30", "home Pro Offer must carry its last launch day"
+    # Two dated Pro offers (CEO, 11 Nov): the launch price through Nov 30, the list price from Dec 1.
+    assert len(pro) == 2, "home must carry two dated Pro Offers"
+    launch = [o for o in pro if o.get("priceValidUntil")]
+    later = [o for o in pro if o.get("validFrom")]
+    assert len(launch) == 1 and launch[0]["price"] == "14.50" and launch[0]["priceValidUntil"] == "2026-11-30", launch
+    assert len(later) == 1 and later[0]["price"] == "19.00" and later[0]["validFrom"] == "2026-12-01", later
 
 
 def facts_checks():

@@ -1445,7 +1445,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 </footer>
 
 
-<!-- The Pro Offer moves to $19 on 1 December. The app's date test checks this. -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -1517,7 +1516,17 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://crispvideo.app/#buy",
-          "description": "One-time purchase. No subscription, no recurring fee."
+          "description": "One-time purchase at the launch price, through November 30. No subscription, no recurring fee."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "19.00",
+          "validFrom": "2026-12-01",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://crispvideo.app/#buy",
+          "description": "One-time purchase from December 1. No subscription, no recurring fee."
         }
       ]
     }
