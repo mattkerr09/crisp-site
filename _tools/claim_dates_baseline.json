@@ -27,50 +27,6 @@
     "text": "Topaz moved to $299 a year in October 2025, which is a meaningful line item for a channel that isn't yet earning."
    }
   ],
-  "how-to/add-a-border-to-video-mac": [
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "One-tap solid border | No direct border | Varies"
-   },
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Whole picture kept (no crop) | . | Often crops"
-   },
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Plain-English request | No | No"
-   },
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "100% offline, your videos never leave your computer | Yes | Uploads your clip"
-   },
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "PRICE",
-    "text": "Price | Free | Free + upsell"
-   },
-   {
-    "vendors": [
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "iMovie has no direct \"add a border\" control (you'd fake it with a background clip); online tools upload your footage and often crop."
-   }
-  ],
   "how-to/add-a-matte-look-to-video-mac": [
    {
     "vendors": [
@@ -204,80 +160,6 @@
     "text": "Make the card in whatever you like (Preview, Keynote, Canva, even a screenshot), export it as a PNG or JPEG and drop it on the timeline."
    }
   ],
-  "how-to/color-grade-video-mac": [
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "One-tap cinematic look | Manual sliders | Manual / LUTs | Yes"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Plain-English request | No | No | No"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Works on video AND photos | Video + images | Separate tools | Varies"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "HDR handled | . | Yes | Varies"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "100% offline, your videos and photos never leave your computer | Yes | Yes | Uploads your clip"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "PRICE",
-    "text": "No watermark | Yes | Yes | Often watermarked"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "PRICE",
-    "text": "Price | Free | Paid / steep | Free + upsell"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "DaVinci Resolve",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Premiere and DaVinci give you full control but a real learning curve; iMovie has sliders plus automatic colour, white-balance and skin-tone correction; online filters upload your footage."
-   }
-  ],
   "how-to/deinterlace-video-mac": [
    {
     "vendors": [
@@ -366,64 +248,6 @@
     ],
     "kind": "PRICE",
     "text": "Price | Free | Free + Pro upsell | ~$23/month"
-   }
-  ],
-  "how-to/loop-video-mac": [
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Export a looped FILE (not just loop playback) | Playback only | Copy-paste clips | Yes"
-   },
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Pick an exact repeat count | No | Manual | Varies"
-   },
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Plain-English request | No | No | No"
-   },
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "Fast / lossless | . | Re-encodes | Varies"
-   },
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "FEATURE",
-    "text": "100% offline, your videos never leave your computer | Yes | Yes | Uploads your clip"
-   },
-   {
-    "vendors": [
-     "QuickTime",
-     "iMovie"
-    ],
-    "kind": "PRICE",
-    "text": "Price | Free | Free | Free + upsell"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime"
-    ],
-    "kind": "FEATURE",
-    "text": "QuickTime only loops during playback (it doesn't save a looped file); iMovie means copy-pasting the clip over and over; online loopers upload your footage."
    }
   ],
   "how-to/make-a-photo-slideshow-mac": [

@@ -12,12 +12,14 @@ from html import unescape
 import json
 from pathlib import Path
 import re
+from tempfile import TemporaryDirectory
 import unicodedata
 from urllib.parse import urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 from gate_lang import Document, normal
 from lang_pages import LanguagePages, alternate_routes
+from sitewide_chrome import KCO
 
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://crispvideo.app"
@@ -159,6 +161,45 @@ def alternates(doc) -> Counter:
                    if n.attrs.get('rel') == 'alternate' and 'hreflang' in n.attrs)
 
 
+def css_classes(css: str) -> set[str]:
+    """Read class selectors, excluding comments and declaration values."""
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    css = re.sub(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'', '""', css)
+    return {name for selector in re.findall(r'([^{}]+)\{', css)
+            for name in re.findall(r'\.([A-Za-z_][\w-]*)', selector)}
+
+
+def stylesheet_errors(doc: Document, file: Path, root: Path = ROOT) -> list[str]:
+    """Check only CSS this page loads, resolving local links without a network."""
+    styles = [doc.source[n.open_end:n.close_start] for n in doc.elements('style')]
+    errors = []
+    for link in doc.elements('link'):
+        if 'stylesheet' not in (link.attrs.get('rel') or '').split():
+            continue
+        href = link.attrs.get('href') or ''
+        target = urlsplit(urljoin(ORIGIN + '/' + file.relative_to(root).as_posix(), href))
+        if not href or target.netloc != urlsplit(ORIGIN).netloc:
+            errors.append('cannot check stylesheet offline: ' + href)
+            continue
+        css_file = root / target.path.lstrip('/')
+        if not css_file.is_file():
+            errors.append('missing stylesheet: ' + href)
+            continue
+        styles.append(css_file.read_text())
+    defined = css_classes('\n'.join(styles))
+    used = {name for node in doc.root.walk() for name in (node.attrs.get('class') or '').split()}
+    errors.extend('class has no selector in loaded CSS: ' + name for name in sorted(used - defined))
+    return errors
+
+
+def guide_footer(words) -> str:
+    company = KCO.replace('Made by Kerr &amp; Company', words.FOOTER['made_by'])
+    return (f'<footer><div class="wrap">\n'
+            f'<p>&#9670; {words.FOOTER["line"]} <a href="{ORIGIN}{dict(words.ROUTES)["/"]}">crispvideo.app</a> &middot; '
+            f'<a href="{ORIGIN}/about/">{words.FOOTER["about"]}</a></p>\n'
+            f'{company}\n</div></footer>')
+
+
 def selftest():
     assert numbers('1.800 1,52 17,9 1.0.1458 −21,1 4,0', 'pt-br') == {'1800', '1.52', '17.9', '1.0.1458', '-21.1', '4'}
     assert numbers('1,800 1.52 17.9 1.0.1458 −21.1 4.0', 'en') == {'1800', '1.52', '17.9', '1.0.1458', '-21.1', '4'}
@@ -190,6 +231,24 @@ def selftest():
     assert not reader_address_errors('Tus vídeos se quedan en tu Mac. Verás tu moneda.')
     assert not reader_address_errors('Su README describe sus funciones y su versión para Mac.')
     assert not reader_address_errors('Un archivo comprimido no se verá como la grabación directa.')
+    assert css_classes('/* .fake {} */ .real:hover {content:".fake {}"; src:url(/fake.css);} '
+                       '@media (width < 50rem) {.nested > .other {color:red;}}') == {'real', 'nested', 'other'}
+    with TemporaryDirectory() as folder:
+        root = Path(folder)
+        (root / 'guide').mkdir()
+        (root / 'shared.css').write_text('.linked {color:red;}')
+        (root / 'guide/local.css').write_text('.relative {color:blue;}')
+        page = root / 'guide/index.html'
+        source = ('<link rel="stylesheet" href="/shared.css?v=1">'
+                  '<link rel="stylesheet" href="local.css">'
+                  '<style>.inline {color:green;}</style><p class="linked relative inline">Text</p>')
+        assert not stylesheet_errors(Document(source), page, root)
+        assert stylesheet_errors(Document(source.replace('relative inline', 'faq inline')), page, root) == [
+            'class has no selector in loaded CSS: faq']
+        assert 'missing stylesheet: missing.css' in stylesheet_errors(
+            Document(source.replace('local.css', 'missing.css')), page, root)
+        assert 'cannot check stylesheet offline: https://example.com/style.css' in stylesheet_errors(
+            Document('<link rel="stylesheet" href="https://example.com/style.css">'), page, root)
 
 
 def check() -> int:
@@ -228,7 +287,16 @@ def check() -> int:
         for error in spelling_errors(source, lang, entry['query']):
             fail(path, error)
         doc = documents[path] = Document(source)
+        for error in stylesheet_errors(doc, file):
+            fail(path, error)
         generator = LanguagePages(lang)
+        footers = doc.elements('footer')
+        if len(footers) != 1 or source[footers[0].start:footers[0].end] != guide_footer(generator.words):
+            fail(path, 'footer must match the shared local wording and company link byte for byte')
+        company_links = [n for footer in footers for n in footer.walk()
+                         if n.tag == 'a' and n.attrs.get('href') == 'https://kerrandcompanyholdings.com/']
+        if len(company_links) != 1:
+            fail(path, 'footer must have exactly one company link')
         if dict(generator.words.ROUTES).get(entry['english']) != path:
             fail(path, 'ROUTES does not register the English/local pair')
         html_nodes, articles = doc.elements('html'), doc.elements('article')
@@ -279,7 +347,7 @@ def check() -> int:
         local_date = '11 de novembro de 2026' if lang == 'pt-br' else '11 de noviembre de 2026'
         if not any(local_date in n.text() for n in doc.elements('div') if n.attrs.get('class') == 'updated'):
             fail(path, 'missing local publication dateline')
-        faqs = [n for n in doc.elements('section') if n.attrs.get('class') == 'faq']
+        faqs = [n for n in doc.elements('section') if n.attrs.get('id') == 'faq']
         visible_faq = []
         for section in faqs:
             pending = None
@@ -337,7 +405,9 @@ def check() -> int:
                     peer = Document(local.read_text())
                     if target.fragment not in {n.attrs.get('id') for n in peer.root.walk()}:
                         fail(path, 'missing link fragment: ' + href)
-            elif 'kerr' in target.netloc and not (target.netloc == 'kerr-affiliate-hub.kerrco.workers.dev' and target.path in {'/dl/crisp', '/buy/crisp'}):
+            elif 'kerr' in target.netloc and not (
+                    link in company_links or
+                    target.netloc == 'kerr-affiliate-hub.kerrco.workers.dev' and target.path in {'/dl/crisp', '/buy/crisp'}):
                 fail(path, 'link to another Kerr domain: ' + href)
         ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = ET.fromstring((ROOT / 'sitemap.xml').read_text()).findall('s:url', ns)
@@ -381,6 +451,26 @@ def check() -> int:
     for path in ('how-to/mute-video-mac', 'how-to/make-a-gif-on-mac'):
         if path in baseline:
             fail(path, 'dated Adobe table must be removed from the baseline')
+
+    dated_guides = ('add-a-border-to-video-mac', 'color-grade-video-mac', 'loop-video-mac')
+    dot_guides = ['how-to/' + name for name in (*dated_guides, 'change-video-speed-mac',
+                                              'mute-video-mac', 'compress-video-on-mac')]
+    dot_guides += ['pt-br/guia/remover-audio-de-video-mac', 'pt-br/guia/comprimir-video-mac',
+                   'es/guia/comprimir-video-mac']
+    for path in dot_guides:
+        doc = Document((ROOT / path / 'index.html').read_text())
+        if any(normal(node.text()) == '.' for node in doc.elements('td')):
+            fail(path, 'table cell must state a value or say it was not checked')
+        if path.removeprefix('how-to/') in dated_guides:
+            if path in baseline:
+                fail(path, 'dated comparison must be removed from the baseline')
+            for table in doc.elements('table'):
+                headers = ' '.join(node.text() for node in table.walk() if node.tag == 'th')
+                if 'iMovie' in headers:
+                    wrapper = next(node for node in doc.root.walk() if table in node.children)
+                    source_line = wrapper.children[wrapper.children.index(table) + 1:]
+                    if 'Checked 11 November 2026' not in normal(' '.join(n.text() for n in source_line)):
+                        fail(path, 'comparison needs its vendor read date below the table')
 
     for name in ('es/index.html', 'es/gratis-o-pro/index.html', 'es/descargar/index.html', 'es/precios/index.html'):
         if reader_address_errors(normal(Document((ROOT / name).read_text()).root.text())):
