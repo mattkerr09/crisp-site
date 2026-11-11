@@ -298,7 +298,7 @@ class LanguageGate:
                 if noindex != (english == "/pricing/"):
                     fail(target_path, "only the pricing page must be noindex")
                 if target.elements("s") or target.elements("del") or re.search(
-                        r"Black Friday|half price|metade do preço|mitad de precio|半額|ブラックフライデー|[%％]\s*(?:off|オフ|割引|de desconto|de descuento)",
+                        r"Black Friday|half price|metade do preço|mitad de precio|半額|ブラックフライデー|[%％]\s*(?:off\b|オフ|割引|de desconto|de descuento)",
                         normal(target.root.text()), re.I):
                     fail(target_path, "use launch-price wording without discount claims or struck-out prices")
 
@@ -762,6 +762,7 @@ class LanguageGate:
             (home, '</body>', '<script>window.__kcFounding = true;</script></body>', "English founding bar"),
             (home, '</body>', '<p>It stays the face the camera recorded.</p></body>', "English sentence remains"),
             (home, '</body>', '<p>Black Friday</p></body>', "launch-price wording"),
+            (home, '</body>', '<p>50% off</p></body>', "launch-price wording"),
             (home, '</body>', '<p><del>29</del></p></body>', "struck-out prices"),
             (free, '</body>', f'<p>{self.todo}: copy</p></body>', f"{self.todo} markers"),
             (self.download_file, words.money(self.generator.llms_txt.facts()["now"]), "WRONGPRICE", "page is stale"),
