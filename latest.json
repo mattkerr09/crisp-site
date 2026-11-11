@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2028",
-  "notes": "Old photos come out cleaner when you enlarge them 2x or use Clean. The faster model could draw dark rings around eyes and small letter-like marks on the grain of old prints; photos now use a model that doesn't, and the result says which one ran. Choosing Faster still gives you the faster model. A single free photo no longer says \"0 photos left\".",
-  "pub_date": "2026-11-10T22:38:35Z",
+  "version": "1.0.2038",
+  "notes": "Crisp now says exactly what it keeps private: your videos and photos never leave your computer. Ask Crisp about privacy and it also tells you the four anonymous counts it sends, once each, with no file names or anything that identifies you. When you enlarge a folder of photos, each result now says which model ran.",
+  "pub_date": "2026-11-11T08:32:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJmTGcwUnhUTS92R3VtaG00Uis1OFAycThVVng5VldTN2tOTG4reUVoNkd6WStpbWZSbU9HYkpwbXhFVTRMRzBnUE4wTEhyNUxiVGc4V1pqQnFJSndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzQ5NzAzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp5RDJsZm5PaU55MHprYjNzQ3o5ZXFEVUtTMWpabUlVRnROTzlPZ0syL2xYbWV4cGtjSFJlc1ZyN3dRVmY1dFQ1clhkc2EwQXhEcyttMGRtZldJWG5DZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2028.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1oaHJOdElPd3lvUnlUOW1JdElXNFM3T0tib3dKcWpmUlFmekNwZEJBSXk5cVdSSUl5R2JoclBUUVkyaVhqbU9QV3lxampsQzFXVTRXR3pqSkNtZUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzg1NDQyCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMRjVQQXJKNE5XNDBLZ0JaMmFQZWQ2UzdWMWo1Y0V3b294WDJFWENTUlNlamVPVGQxNW41SnIxdGw5VVJoQXg3a0NnZC9pVDgvam5yODBCeHpDbjFDZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2038.app.tar.gz"
     }
   }
 }
