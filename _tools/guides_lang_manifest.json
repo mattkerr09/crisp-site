@@ -127,7 +127,12 @@
     "demand": 2662,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/best/video-compressor-for-mac/",
@@ -137,7 +142,12 @@
     "demand": 222,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/extract-audio-from-video-mac/",
@@ -147,7 +157,12 @@
     "demand": 1131,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/trim-video-mac/",
@@ -157,7 +172,12 @@
     "demand": 374,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/convert-mov-to-mp4-mac/",
@@ -167,7 +187,12 @@
     "demand": 291,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/upscale-a-photo-mac/",
@@ -177,7 +202,12 @@
     "demand": 42,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/upscale-video-on-mac/",
@@ -187,7 +217,12 @@
     "demand": 203,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/convert-mkv-to-mp4-mac/",
@@ -197,7 +232,12 @@
     "demand": 103,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/best/free-video-upscaler-mac/",
@@ -207,7 +247,12 @@
     "demand": 69,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   },
   {
     "english": "/how-to/make-a-gif-on-mac/",
@@ -217,6 +262,11 @@
     "demand": 136,
     "demand_market": "Spain + Mexico",
     "demand_read": "2026-11-11",
-    "published": "2026-11-11"
+    "published": "2026-11-11",
+    "es_demand_split": {
+      "Spain": 4122,
+      "Mexico": 1111,
+      "source": "Bing exact, 90 days, read 2026-11-11"
+    }
   }
 ]

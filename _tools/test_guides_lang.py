@@ -77,6 +77,12 @@ def spelling_errors(source: str, lang: str, query: str) -> list[str]:
     return errors
 
 
+def reader_address_errors(text: str) -> bool:
+    """Catch formal reader address without rejecting an app's own README."""
+    return bool(re.search(r'\busted\b|\bsu(?:s)?\s+(?:Mac|PC|ordenador|moneda|grabaciones|vídeos|propio)\b|'
+                          r'\b(?:al pagar verá|úselo|expórtelo)\b', text, re.I))
+
+
 def value(raw: str, locale: str) -> str:
     raw = re.sub(r"\s", "", raw).replace("−", "-")
     # Versions and dotted codec names are preserved, not treated as decimals.
@@ -179,6 +185,11 @@ def selftest():
     assert spelling_errors('<table><tr><td>Videos</td></tr></table>', 'es', 'cortar video')
     assert spelling_errors('<h3>¿Un <strong>video</strong>?</h3>', 'es', 'cortar video')
     assert not spelling_errors('<a href="/video/">Vídeo</a><script>const video = 1;</script>', 'es', 'cortar video')
+    assert reader_address_errors('Sus vídeos se quedan en su Mac. Al pagar verá su moneda.')
+    assert reader_address_errors('Úselo gratis y expórtelo.')
+    assert not reader_address_errors('Tus vídeos se quedan en tu Mac. Verás tu moneda.')
+    assert not reader_address_errors('Su README describe sus funciones y su versión para Mac.')
+    assert not reader_address_errors('Un archivo comprimido no se verá como la grabación directa.')
 
 
 def check() -> int:
@@ -199,8 +210,12 @@ def check() -> int:
     required = {'english', 'lang', 'path', 'query', 'demand', 'demand_market', 'demand_read', 'published'}
     for entry in entries:
         path, lang = entry['path'], entry['lang']
-        if set(entry) != required or entry['demand_read'] != '2026-11-11' or entry['published'] != '2026-11-11':
+        fields = required | ({'es_demand_split'} if lang == 'es' else set())
+        if set(entry) != fields or entry['demand_read'] != '2026-11-11' or entry['published'] != '2026-11-11':
             fail(path, 'manifest fields or dates differ from the batch contract')
+        if lang == 'es' and entry.get('es_demand_split') != {
+                'Spain': 4122, 'Mexico': 1111, 'source': 'Bing exact, 90 days, read 2026-11-11'}:
+            fail(path, 'Spanish market split differs from the measured batch demand')
         if not isinstance(entry['demand'], int) or entry['demand'] <= 0:
             fail(path, 'demand must be a positive measured integer')
         if not re.fullmatch('/' + lang + r'/guia/[a-z0-9-]+/', path):
@@ -241,6 +256,8 @@ def check() -> int:
         en_article = english.elements('article')[0]
         body = doc.elements('body')[0]
         visible = normal(body.text())
+        if lang == 'es' and reader_address_errors(visible):
+            fail(path, 'Spanish reader address must use tú')
         allowed = numbers(normal(english.elements('body')[0].text()), 'en')
         allowed |= numbers(normal(Document(generator.box('test')).root.text()), lang)
         added = numbers(visible, lang) - allowed
@@ -327,6 +344,10 @@ def check() -> int:
         matches = [u for u in urls if u.findtext('s:loc', namespaces=ns) == ORIGIN + path]
         if len(matches) != 1 or matches[0].findtext('s:lastmod', namespaces=ns) != '2026-11-11':
             fail(path, 'sitemap entry missing, duplicated or incorrectly dated')
+
+    for name in ('es/index.html', 'es/gratis-o-pro/index.html', 'es/descargar/index.html', 'es/precios/index.html'):
+        if reader_address_errors(normal(Document((ROOT / name).read_text()).root.text())):
+            fail(name, 'Spanish reader address must use tú')
 
     for lang in ('pt-br', 'es'):
         own = [entry['path'] for entry in entries if entry['lang'] == lang and entry['path'] in signatures]
