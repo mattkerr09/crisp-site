@@ -192,6 +192,35 @@ def stylesheet_errors(doc: Document, file: Path, root: Path = ROOT) -> list[str]
     return errors
 
 
+def home_guide_errors(doc: Document, lang: str, entries: list[dict], root: Path = ROOT) -> list[str]:
+    errors = []
+    linked = set()
+    for link in doc.elements('a'):
+        href = link.attrs.get('href') or ''
+        target = urlsplit(urljoin(ORIGIN + '/' + lang + '/', href))
+        if '/guia/' not in target.path:
+            continue
+        if target.scheme != 'https' or target.netloc != urlsplit(ORIGIN).netloc or not re.fullmatch(
+                '/' + lang + r'/guia/[a-z0-9-]+/', target.path):
+            errors.append('guide link must stay in the home language folder: ' + href)
+            continue
+        linked.add(target.path)
+        text = normal(link.text())
+        if re.search(r'en inglés|em inglês', text, re.I):
+            errors.append('translated guide link has an English label: ' + href)
+        file = root / target.path.lstrip('/') / 'index.html'
+        if not file.is_file():
+            errors.append('missing home guide target: ' + href)
+            continue
+        h1s = Document(file.read_text()).elements('h1')
+        if len(h1s) != 1 or text != normal(h1s[0].text()):
+            errors.append('home guide link text must match its H1: ' + href)
+    for entry in entries:
+        if entry['lang'] == lang and entry['path'] not in linked:
+            errors.append('guide missing from language home: ' + entry['path'])
+    return errors
+
+
 def guide_footer(words) -> str:
     company = KCO.replace('Made by Kerr &amp; Company', words.FOOTER['made_by'])
     return (f'<footer><div class="wrap">\n'
@@ -249,6 +278,18 @@ def selftest():
             Document(source.replace('local.css', 'missing.css')), page, root)
         assert 'cannot check stylesheet offline: https://example.com/style.css' in stylesheet_errors(
             Document('<link rel="stylesheet" href="https://example.com/style.css">'), page, root)
+        guide = root / 'es/guia/example'
+        guide.mkdir(parents=True)
+        (guide / 'index.html').write_text('<h1>Guía de ejemplo</h1>')
+        entries = [{'lang': 'es', 'path': '/es/guia/example/'}]
+        home = '<a href="https://crispvideo.app/es/guia/example/">Guía de ejemplo</a>'
+        assert not home_guide_errors(Document(home), 'es', entries, root)
+        assert home_guide_errors(Document(''), 'es', entries, root)
+        assert home_guide_errors(Document(home.replace('/example/', '/missing/')), 'es', entries, root)
+        assert home_guide_errors(Document(home.replace('/es/', '/pt-br/')), 'es', entries, root)
+        assert home_guide_errors(Document(home.replace('crispvideo.app', 'example.com')), 'es', entries, root)
+        for label in ('Guía distinta', 'Guía de ejemplo, en inglés', 'Guía de ejemplo, em inglês'):
+            assert home_guide_errors(Document(home.replace('Guía de ejemplo', label)), 'es', entries, root)
 
 
 def check() -> int:
@@ -477,6 +518,9 @@ def check() -> int:
             fail(name, 'Spanish reader address must use tú')
 
     for lang in ('pt-br', 'es'):
+        home = Document((ROOT / lang / 'index.html').read_text())
+        for error in home_guide_errors(home, lang, entries):
+            fail('/' + lang + '/', error)
         own = [entry['path'] for entry in entries if entry['lang'] == lang and entry['path'] in signatures]
         all_pages = {}
         for file in (ROOT / lang).rglob('index.html'):
