@@ -50,6 +50,33 @@ def query_count(query: str, text: str) -> int:
     return len(re.findall(pattern, ' '.join(words(text))))
 
 
+def spelling_errors(source: str, lang: str, query: str) -> list[str]:
+    errors = []
+    if 'Handbrake' in source:
+        errors.append('product spelling must be HandBrake')
+    if lang == 'es':
+        doc = Document(source)
+
+        def visible(node):
+            # English app labels are quoted literally in code elements.
+            if node.tag in {'script', 'style', 'template', 'code'}:
+                return ''
+            if node.tag == '#text':
+                return unescape(node.raw)
+            return ' '.join(visible(child) for child in node.children)
+
+        text = normal(visible(doc.root))
+        text = re.sub(r'\b(?:Crisp Video|Topaz Video AI)\b', '', text)
+        # Permit the registered query, including natural articles and accents.
+        accents = dict(zip('aeioun', ('[aá]', '[eé]', '[ií]', '[oó]', '[uúü]', '[nñ]')))
+        tokens = [''.join(accents.get(c, re.escape(c)) for c in token) for token in words(query)]
+        joiner = r'(?: (?:la|el|las|los|un|una)){0,2} '
+        text = re.sub(r'\b' + joiner.join(tokens) + r'\b', '', text, flags=re.I)
+        if re.search(r'\bvideos?\b', text, re.I):
+            errors.append('Spanish prose must use vídeo/vídeos outside the query')
+    return errors
+
+
 def value(raw: str, locale: str) -> str:
     raw = re.sub(r"\s", "", raw).replace("−", "-")
     # Versions and dotted codec names are preserved, not treated as decimals.
@@ -143,6 +170,15 @@ def selftest():
     assert query_count('reducir tamaño de video', 'Reducir el tamaño de video') == 1
     assert query_count('cortar video', 'Video para cortar') == 0
     assert query_count('cortar video', 'Cortar video y cortar video') == 2
+    assert spelling_errors('<p>Handbrake</p>', 'pt-br', 'converter video')
+    assert spelling_errors('<script>"Handbrake"</script>', 'es', 'cortar video')
+    assert not spelling_errors('<p>HandBrake</p>', 'pt-br', 'converter video')
+    assert not spelling_errors('<p>Reducir el tamaño de un video. Vídeos en Crisp Video y Topaz Video AI.</p><code>Export video</code>', 'es', 'reducir tamaño de video')
+    assert not spelling_errors('<p>Cortar vídeo.</p>', 'es', 'cortar video')
+    assert spelling_errors('<p>Cortar video. Otro video.</p>', 'es', 'cortar video')
+    assert spelling_errors('<table><tr><td>Videos</td></tr></table>', 'es', 'cortar video')
+    assert spelling_errors('<h3>¿Un <strong>video</strong>?</h3>', 'es', 'cortar video')
+    assert not spelling_errors('<a href="/video/">Vídeo</a><script>const video = 1;</script>', 'es', 'cortar video')
 
 
 def check() -> int:
@@ -174,6 +210,8 @@ def check() -> int:
             fail(path, 'page is missing')
             continue
         source = file.read_text()
+        for error in spelling_errors(source, lang, entry['query']):
+            fail(path, error)
         doc = documents[path] = Document(source)
         generator = LanguagePages(lang)
         if dict(generator.words.ROUTES).get(entry['english']) != path:
