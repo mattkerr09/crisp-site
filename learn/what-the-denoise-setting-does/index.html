@@ -157,7 +157,7 @@
   <div class="quick"><strong>Quick answer</strong><p class="lede">In Crisp the denoise value does not run a
   filter over your frames. It picks which upscaling model handles the job. Below 0.5 at 2× you get the
   <strong>Fast 2× model (2x-ParimgCompact)</strong>; at 0.5 and above you get the
-  <strong>General clean model (it removes noise) (RealESRGAN_General_WDN_x4_v3)</strong>; below 0.5 at any other scale you get the
+  <strong>General clean model (it removes noise; RealESRGAN_General_WDN_x4_v3)</strong>; below 0.5 at any other scale you get the
   <strong>General detail model (RealESRGAN_General_x4_v3)</strong>. Above 0.5 it also adds a temporal+spatial
   hqdn3d pre-pass, which runs BEFORE the upscale; at 0.5 and below the model is the only thing
   that changes.</p></div>
