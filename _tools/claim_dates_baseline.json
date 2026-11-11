@@ -426,57 +426,6 @@
     "text": "QuickTime only loops during playback (it doesn't save a looped file); iMovie means copy-pasting the clip over and over; online loopers upload your footage."
    }
   ],
-  "how-to/make-a-gif-on-mac": [
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "Optimised palette (sharp, small) | Varies, often huge | Yes"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "Plain-English (\"make it a gif\") | No | No"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "Boomerang built-in | Sometimes | Manual"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "100% offline, your videos never leave your computer | Uploads your clip | Yes"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "No account | Watermarks, sign-ups | Subscription"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "PRICE",
-    "text": "Price | Free + upsell | ~$23/month"
-   },
-   {
-    "vendors": [
-     "Photoshop"
-    ],
-    "kind": "FEATURE",
-    "text": "The web \"video to GIF\" sites upload your footage, cap the length, and stamp a watermark; Photoshop is overkill and a subscription."
-   }
-  ],
   "how-to/make-a-photo-slideshow-mac": [
    {
     "vendors": [
@@ -512,80 +461,6 @@
     ],
     "kind": "FEATURE",
     "text": "100% offline, your videos and photos never leave your computer | Yes | Uploads your photos"
-   }
-  ],
-  "how-to/mute-video-mac": [
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Mute a clip (drop the audio) | Yes. Detach/mute | No mute-and-save | Yes"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Make it louder / quieter (0.1×–4.0×) | Yes. Volume bar | Playback only | Yes"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Keeps the video lossless (no re-compress) | Re-exports the video | . | Re-exports the video"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Plain-English request (\"mute it\") | No | No | No"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "100% offline, no account | Yes | Yes | Sign-in + subscription"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "PRICE",
-    "text": "No watermark | Yes | Yes | Yes"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "FEATURE",
-    "text": "Learning curve | Timeline basics | Simple | Steep"
-   },
-   {
-    "vendors": [
-     "iMovie",
-     "QuickTime",
-     "Premiere Pro"
-    ],
-    "kind": "PRICE",
-    "text": "Price | Free | Free | ~$23/month"
    }
   ],
   "how-to/normalize-audio-video-mac": [

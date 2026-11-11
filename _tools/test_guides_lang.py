@@ -345,6 +345,43 @@ def check() -> int:
         if len(matches) != 1 or matches[0].findtext('s:lastmod', namespaces=ns) != '2026-11-11':
             fail(path, 'sitemap entry missing, duplicated or incorrectly dated')
 
+    adobe_tables = (
+        ('how-to/mute-video-mac', 'Premiere', 'Not checked',
+         ('Mute a clip (drop the audio)', 'Keeps the video lossless (no re-compress)'),
+         'Read 11 November 2026', 'Adjust audio gain in Premiere'),
+        ('pt-br/guia/remover-audio-de-video-mac', 'Premiere', 'Não verificado',
+         ('Remover a faixa de áudio', 'Imagem sem recompressão'),
+         'Verificado em 11 de novembro de 2026', 'Adjust audio gain in Premiere'),
+        ('how-to/make-a-gif-on-mac', 'Photoshop', 'Not checked',
+         ('Optimised palette (sharp, small)', 'Boomerang built-in'),
+         'Read 11 November 2026', 'Create frame-based animations in Photoshop'),
+        ('es/guia/convertir-video-a-gif-mac', 'Photoshop', 'No comprobado',
+         ('Paleta optimizada', 'Boomerang integrado'),
+         'Comprobado el 11 de noviembre de 2026', 'Create frame-based animations in Photoshop'),
+    )
+    for path, vendor, unchecked, labels, date, help_page in adobe_tables:
+        doc = Document((ROOT / path / 'index.html').read_text())
+        table = doc.elements('table')[0]
+        rows = [node for node in table.walk() if node.tag == 'tr']
+        if normal(rows[0].children[-1].text()) != vendor:
+            fail(path, 'Adobe table must use the current product name')
+        if sum(normal(row.children[-1].text()) == unchecked for row in rows) != len(labels):
+            fail(path, 'only the unsupported Adobe cells should be unchecked')
+        for label in labels:
+            cells = [node for row in rows for node in row.children
+                     if node.tag in {'th', 'td'} and normal(row.children[0].text()) == label]
+            if not cells or normal(cells[-1].text()) != unchecked:
+                fail(path, 'unsupported Adobe cell must be unchecked: ' + label)
+        wrapper = next(node for node in doc.root.walk() if table in node.children)
+        source_line = wrapper.children[wrapper.children.index(table) + 1:]
+        source_text = normal(' '.join(node.text() for node in source_line))
+        if date not in source_text or help_page not in source_text or vendor not in source_text:
+            fail(path, 'missing Adobe help and plans read date below the table')
+    baseline = json.loads((ROOT / '_tools/claim_dates_baseline.json').read_text())['undated']
+    for path in ('how-to/mute-video-mac', 'how-to/make-a-gif-on-mac'):
+        if path in baseline:
+            fail(path, 'dated Adobe table must be removed from the baseline')
+
     for name in ('es/index.html', 'es/gratis-o-pro/index.html', 'es/descargar/index.html', 'es/precios/index.html'):
         if reader_address_errors(normal(Document((ROOT / name).read_text()).root.text())):
             fail(name, 'Spanish reader address must use tú')
