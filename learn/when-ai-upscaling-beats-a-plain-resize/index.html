@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say","description":"AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-09-15","dateModified":"2026-11-11"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling get worse at 4× than at 2×?","acceptedAnswer":{"@type":"Answer","text":"Not in the way the question assumes. Measured against a surviving 1280×720 original, the AI route trailed a plain lanczos resize by 23.4 VMAF points at 2× and by 1.2 VMAF points at 4×. The gap closed as the scale factor rose. Part of that is the job getting harder for both routes and part of it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to 2x-ParimgCompact, and at 4× it goes to RealESRGAN_General_x4_v3. This measurement cannot separate those two causes, because Crisp's router does not offer the combinations that would isolate them."}},{"@type":"Question","name":"Why is the 4× upscale faster than the 2× upscale in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because they are not the same model. On 60 frames of the same source clip, the 4× route (RealESRGAN_General_x4_v3) took 2.78 s and the 2× route (2x-ParimgCompact) took 3.89 s, so the 4× job finished about 28 percent sooner despite producing four times as many output pixels per input pixel. The denoise value and the scale factor together select the model, and the two selected models have different costs."}},{"@type":"Question","name":"How much slower is AI upscaling than a plain resize?","acceptedAnswer":{"@type":"Answer","text":"On 60 frames of a 1280×720 clip, a lanczos resize took 0.44 s at both scale factors. The AI routes took 2.78 s at 4× and 3.89 s at 2×, which is 6.3 and 8.8 times the wall clock, or roughly 46 and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean source the resize also scored closer to the original on both metrics."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling get worse at 4× than at 2×?","acceptedAnswer":{"@type":"Answer","text":"Not in the way the question assumes. Measured against a surviving 1280×720 original, the AI route trailed a plain lanczos resize by 23.4 VMAF points at 2× and by 1.2 VMAF points at 4×. The gap closed as the scale factor rose. Part of that is the job getting harder for both routes and part of it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to the Fast 2× model, and at 4× it goes to the General detail model. This measurement cannot separate those two causes, because Crisp's router does not offer the combinations that would isolate them."}},{"@type":"Question","name":"Why is the 4× upscale faster than the 2× upscale in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because they are not the same model. On 60 frames of the same source clip, the 4× route using the General detail model took 2.78 s and the 2× route using the Fast 2× model took 3.89 s, so the 4× job finished about 28 percent sooner despite producing four times as many output pixels per input pixel. The denoise value and the scale factor together select the model, and the two selected models have different costs."}},{"@type":"Question","name":"How much slower is AI upscaling than a plain resize?","acceptedAnswer":{"@type":"Answer","text":"On 60 frames of a 1280×720 clip, a lanczos resize took 0.44 s at both scale factors. The AI routes took 2.78 s at 4× and 3.89 s at 2×, which is 6.3 and 8.8 times the wall clock, or roughly 46 and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean source the resize also scored closer to the original on both metrics."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "AI upscaling vs a plain resize", "item": "https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
@@ -179,9 +179,9 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Route</th><th>Model</th><th>Seconds / 60 frames</th><th>PSNR (dB)</th><th>VMAF</th></tr></thead>
     <tbody>
-      <tr><th scope="row">4× AI enhance</th><td><strong>RealESRGAN_General_x4_v3</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
+      <tr><th scope="row">4× AI enhance</th><td><strong>General detail model (RealESRGAN_General_x4_v3)</strong></td><td>2.78</td><td>29.09</td><td>86.93</td></tr>
       <tr><th scope="row">4× lanczos</th><td>.</td><td>0.44</td><td>36.03</td><td>88.12</td></tr>
-      <tr><th scope="row">2× AI enhance</th><td><strong>2x-ParimgCompact</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
+      <tr><th scope="row">2× AI enhance</th><td><strong>Fast 2× model (2x-ParimgCompact)</strong></td><td>3.89</td><td>33.35</td><td>75.59</td></tr>
       <tr><th scope="row">2× lanczos</th><td>.</td><td>0.44</td><td>40.77</td><td>98.99</td></tr>
     </tbody>
   </table></div>
@@ -211,13 +211,13 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Denoise value</th><th>Scale</th><th>Model that runs</th></tr></thead>
     <tbody>
-      <tr><th scope="row">below 0.5</th><td>2×</td><td><strong>2x-ParimgCompact</strong></td></tr>
-      <tr><th scope="row">below 0.5</th><td>any other, including 4×</td><td><strong>RealESRGAN_General_x4_v3</strong></td></tr>
-      <tr><th scope="row">0.5 or above</th><td>any</td><td><strong>RealESRGAN_General_WDN_x4_v3</strong></td></tr>
+      <tr><th scope="row">below 0.5</th><td>2×</td><td><strong>Fast 2× model</strong></td></tr>
+      <tr><th scope="row">below 0.5</th><td>any other, including 4×</td><td><strong>General detail model</strong></td></tr>
+      <tr><th scope="row">0.5 or above</th><td>any</td><td><strong>General clean model (it removes noise) (RealESRGAN_General_WDN_x4_v3)</strong></td></tr>
     </tbody>
   </table></div>
 
-  <p><strong>2x-ParimgCompact is not Real-ESRGAN.</strong> It is a compact super-resolution network,
+  <p><strong>The Fast 2× model is not Real-ESRGAN.</strong> It is a compact super-resolution network,
   and calling it Real-ESRGAN would be false. Only the other two routes in that table are Real-ESRGAN
   models. So the 2× and 4× rows above are not one model tested at two settings; they are two
   different networks, and both the speed and the quality difference follow from that.</p>
@@ -228,8 +228,8 @@
   router will not give you the detail network at 2× at all. There is no combination to run that would
   isolate the cause.</p>
   <p>What can be said from the same harness is how much of the 2× deficit belongs to the model rather
-  than the scale. On this identical geometry, raising denoise to 0.5 or above at 2× routes to
-  RealESRGAN_General_WDN_x4_v3, which scored 36.33 dB and VMAF 96.83: turning a 23.4-point VMAF
+  than the scale. On this identical geometry, raising denoise to 0.5 or above at 2× routes to the
+  General clean model (it removes noise), which scored 36.33 dB and VMAF 96.83: turning a 23.4-point VMAF
   deficit into a 2.2-point one. Most of the 2× gap in the table above is the default model, not the
   scale factor. That routing is covered in full in
   <a href="https://crispvideo.app/learn/what-the-denoise-setting-does/">what the denoise setting
@@ -270,7 +270,7 @@
   resize-versus-model comparison should know that before reading the numbers, including ours.</p>
   <p>So the harness was also pointed at the degraded case a real clip actually is: crf 40 plus noise,
   on the photographic source. The ranking did not flip. Lanczos scored 26.56 dB and VMAF 31.13,
-  2x-ParimgCompact 24.85 and 17.91, RealESRGAN_General_WDN_x4_v3 25.10 and 27.43. Heavy degradation
+  Fast 2× model 24.85 and 17.91, General clean model (it removes noise) 25.10 and 27.43. Heavy degradation
   narrowed the compact model's VMAF deficit from 23.4 points to 13.2 without reversing the order. The
   result survives its own hardest control, which is the reason it is being published rather than
   softened.</p>
@@ -305,12 +305,12 @@
   <p>Not in the way the question assumes. Measured against a surviving 1280×720 original, the AI route
   trailed a plain lanczos resize by 23.4 VMAF points at 2× and by 1.2 VMAF points at 4×. The gap
   closed as the scale factor rose. Part of that is the job getting harder for both routes and part of
-  it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to
-  2x-ParimgCompact, and at 4× it goes to RealESRGAN_General_x4_v3. This measurement cannot separate
+  it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to the
+  Fast 2× model, and at 4× it goes to the General detail model. This measurement cannot separate
   those two causes, because Crisp's router does not offer the combinations that would isolate them.</p>
   <h3>Why is the 4× upscale faster than the 2× upscale in Crisp?</h3>
   <p>Because they are not the same model. On 60 frames of the same source clip, the 4× route
-  (RealESRGAN_General_x4_v3) took 2.78 s and the 2× route (2x-ParimgCompact) took 3.89 s, so the 4×
+  using the General detail model took 2.78 s and the 2× route using the Fast 2× model took 3.89 s, so the 4×
   job finished about 28 percent sooner despite producing four times as many output pixels per input
   pixel. The denoise value and the scale factor together select the model, and the two selected models
   have different costs.</p>
