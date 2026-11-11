@@ -23,11 +23,11 @@ not the prose.
 """
 import re
 import sys
-from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import faq_jsonld  # noqa: E402  (the FAQ schema is built from the FAQ the page shows, by the tool the gate trusts)
+from utc_date import utc_today_iso  # noqa: E402
 
 SITE = "https://crispvideo.app"
 #: The price, declared once. This generator said $19 through TWO portfolio-wide
@@ -126,7 +126,7 @@ def build(page):
     article_ld = ('{"@context":"https://schema.org","@type":"Article","headline":"%s",'
                   '"description":"%s","author":{"@type":"Organization","name":"Crisp"},'
                   '"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"%s"}'
-                  % (esc(page["h1"]), esc(page["desc"]), date.today().isoformat()))
+                  % (esc(page["h1"]), esc(page["desc"]), utc_today_iso()))
     # A placeholder only: faq_jsonld.rebuild() below replaces mainEntity with the questions and answers the page SHOWS,
     # so the schema can never be a second, drifting copy of the FAQ (166 of 346 schema questions had drifted).
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}'

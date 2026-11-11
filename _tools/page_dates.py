@@ -26,6 +26,7 @@ the commit the first run produced is a date-only commit and is skipped.
 """
 from __future__ import annotations
 
+import os
 import re
 import subprocess
 import sys
@@ -33,6 +34,7 @@ from datetime import date
 from pathlib import Path
 
 import content_hash
+from utc_date import utc_today_iso
 
 SITE = Path(__file__).resolve().parent.parent
 # A "date-bearing part" is any line whose only job is to state a date — JSON-LD's fields AND the
@@ -74,8 +76,8 @@ def _long(iso: str) -> str:
     return f"{d.day} {d.strftime('%B')} {d.year}"
 
 
-def _git(*args: str) -> str:
-    return subprocess.run(["git", *args], cwd=SITE, capture_output=True, text=True).stdout
+def _git(*args: str, env: dict[str, str] | None = None) -> str:
+    return subprocess.run(["git", *args], cwd=SITE, capture_output=True, text=True, env=env).stdout
 
 
 def content_changed(page: Path) -> str | None:
@@ -98,7 +100,8 @@ def content_changed(page: Path) -> str | None:
     file was created, and the creation date is the honest answer."""
     rel = str(page.relative_to(SITE))
     log = [l.partition(" ") for l in
-           _git("log", "--format=%H %ad", "--date=short", "--", rel).splitlines()]
+           _git("log", "--format=%H %ad", "--date=format-local:%Y-%m-%d", "--", rel,
+                env={**os.environ, "TZ": "UTC"}).splitlines()]
     if not log:
         return None
 
@@ -110,7 +113,7 @@ def content_changed(page: Path) -> str | None:
     if _git("status", "--porcelain", "--", rel).strip():
         try:
             if content_hash.hash_of(page.read_text(encoding="utf-8")) != at(log[0][0]):
-                return date.today().isoformat()
+                return utc_today_iso()
         except OSError:
             pass
 

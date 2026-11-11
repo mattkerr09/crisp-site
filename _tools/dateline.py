@@ -26,11 +26,13 @@ comparing, so writing it can never be what moves it: idempotent by construction,
 """
 from __future__ import annotations
 
+import os
 import re
 import subprocess
 import sys
-from datetime import date
 from pathlib import Path
+
+from utc_date import utc_today_iso
 
 SITE = Path(__file__).resolve().parent.parent
 DATELINE = re.compile(r'Updated ([A-Z][a-z]+) (\d{4})')
@@ -38,8 +40,8 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 
 
-def _git(*args: str) -> str:
-    return subprocess.run(["git", *args], cwd=SITE, capture_output=True, text=True).stdout
+def _git(*args: str, env: dict[str, str] | None = None) -> str:
+    return subprocess.run(["git", *args], cwd=SITE, capture_output=True, text=True, env=env).stdout
 
 
 def visible(html: str) -> str:
@@ -59,13 +61,14 @@ def last_visible_change(page: Path) -> str | None:
     """The date this page's visible text last changed. None if git knows nothing about it."""
     rel = str(page.relative_to(SITE))
     current = visible(page.read_text())
-    log = [l for l in _git("log", "--format=%H %ad", "--date=short", "--", rel).splitlines() if l.strip()]
+    log = [l for l in _git("log", "--format=%H %ad", "--date=format-local:%Y-%m-%d", "--", rel,
+                          env={**os.environ, "TZ": "UTC"}).splitlines() if l.strip()]
     if not log:
         return None
     # A dirty working tree counts only if the VISIBLE text differs from the last commit.
     head_blob = _git("show", f"{log[0].split(' ')[0]}:{rel}")
     if head_blob and visible(head_blob) != current:
-        return date.today().isoformat()
+        return utc_today_iso()
     newest, previous = None, current
     for line in log:
         sha, _, when = line.partition(" ")

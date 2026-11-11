@@ -78,6 +78,7 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from price_sources import MONEY, OURS  # noqa: E402  Crisp's own figures, from the one place they are listed
+from utc_date import utc_today  # noqa: E402
 BASELINE = Path(__file__).resolve().parent / "claim_dates_baseline.json"
 SECTIONS = ("vs", "learn")          # the first gate's scope; kept for anyone importing it. pages() now reads every public page.
 MAX_DAYS, WARN_DAYS = 45, 30
@@ -710,7 +711,7 @@ def scan(site: Path | None = None, today: date | None = None, max_days: int = MA
          known_undated: set | None = None) -> dict:
     """-> {page name: Verdict} for every public page."""
     root = Path(site) if site else SITE
-    today = today or date.today()
+    today = today or utc_today()
     known = load_baseline() if known_undated is None else known_undated
     return {page_name(p, root): judge_page(p.read_text(errors="replace"), today, max_days, warn_days, page_name(p, root), known)
             for p in pages(root)}
@@ -791,7 +792,7 @@ def main(argv: list[str]) -> int:
     if selftest():
         return 1
     site = Path(a.site) if a.site else SITE
-    today = date.fromisoformat(a.today) if a.today else date.today()
+    today = date.fromisoformat(a.today) if a.today else utc_today()
     if a.baseline:
         return _write_baseline(scan(site, today, a.max_days, a.warn_days, known_undated=set()), today)
     known = load_baseline()
