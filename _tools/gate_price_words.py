@@ -37,6 +37,13 @@ BANNED = re.compile(
     re.I,
 )
 PRICE = re.compile(r"(?:[$€£]\s*\d|\d[\d.,]*\s*[$€£]|\bUSD\s*\d)", re.I)
+# The supplied Topaz reading permits this first-year price only in these dated,
+# attributed clauses. It is not another allowed Crisp price.
+RIVAL_SALE_QUOTES = (
+    "$254 for the first year in Topaz Video's sale, read 11 Nov 2026",
+    "$254 first year in Topaz Video's sale, read 11 Nov 2026",
+)
+TOPAZ_SALE_PRICE = re.compile(r"\$\s*254(?!\d|\.\d|,\d)|\bUSD\s*254\b|\b254\s*\$")
 STRIKE = re.compile(r"(?:text-decoration(?:-line)?\s*:[^;}]*\bline-through\b)", re.I)
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
 BLOCK = set("p div section article aside h1 h2 h3 h4 h5 h6 li tr td th br title summary".split())
@@ -167,6 +174,11 @@ def problems(site: Path, allowlist=RIVAL_QUOTES) -> list[str]:
                 bad.append(f'{name}: price has a line-through style')
             if path.suffix == '.js' and re.search(r'\bline-through\b|class=["\']was["\']|data-was', source, re.I):
                 bad.append(f'{name}: former-price strike code')
+        sale_text = text
+        for quote in RIVAL_SALE_QUOTES:
+            sale_text = sale_text.replace(quote, '')
+        if TOPAZ_SALE_PRICE.search(sale_text):
+            bad.append(f'{name}: $254 requires the dated Topaz Video first-year sale quote')
         for file, sentence, reason in allowlist:
             if file == name:
                 assert reason.strip() and sentence == normal(sentence)
@@ -199,6 +211,19 @@ def selftest() -> None:
             assert problems(site), f'missed {form}'
         page.write_text('<p>Launch price: $14.50 once, through November 30. From December 1: $29. 100% offline.</p>')
         assert not problems(site)
+        for quote in RIVAL_SALE_QUOTES:
+            page.write_text('<p>Topaz Video: $299/yr, ' + quote + '.</p>')
+            assert not problems(site), 'dated Topaz sale quote rejected'
+            for changed in (quote.replace('Topaz Video', 'Crisp'),
+                            quote.replace('Topaz Video', 'Topaz Studio'),
+                            quote.replace('Topaz Video', 'UniFab'),
+                            quote.replace('11 Nov 2026', '10 Nov 2026'),
+                            quote.replace('first year', 'each year')):
+                page.write_text('<p>' + changed + '</p>')
+                assert problems(site), 'edited Topaz sale quote accepted'
+            page.write_text('<p>' + quote + '. Crisp is $254 once.</p>')
+            assert problems(site), 'Topaz quote exempted adjacent Crisp price'
+        page.write_text('<p>Launch price $14.50 through Nov 30, then $29.</p>')
         for name in ('founding.js', 'llms.txt'):
             extra = site / name
             for form in ('half price', '<s>$29</s>', '<del>$29</del>', '<span style="text-decoration:line-through">$29</span>'):

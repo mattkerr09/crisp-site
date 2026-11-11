@@ -16,7 +16,7 @@
 ## Comparisons
 - [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): every comparison, with sources and dates
 - [Best Topaz alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): The best Topaz alternative for Mac: AI upscaling and restore that runs 100% on-device, no subscription, with an editor built in.
-- [Switch from Topaz Video AI to Crisp: launch pricing](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; Topaz Video costs $299/yr.
+- [Switch from Topaz Video AI to Crisp: launch pricing](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; Topaz Video costs $299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026.
 - [UniFab alternative for Mac (2026): native, with a timeline](https://crispvideo.app/vs/unifab-alternative-mac/): UniFab All-In-One lists at US$319.99 for 17 tools, built Windows-first.
 - [Aiarty Video Enhancer vs Crisp on Mac: launch pricing](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Crisp's launch price is $14.50 through Nov 30, then $29.
 - [DaVinci Resolve Super Scale vs Topaz Video on Mac (2026)](https://crispvideo.app/vs/davinci-resolve-super-scale-vs-topaz/): Super Scale comes with DaVinci Resolve Studio ($295, $236 on sale).
@@ -24,7 +24,7 @@
 
 ## Learn
 - [Learn: video restoration explained](https://crispvideo.app/learn/): how video restoration and upscaling actually work
-- [Is Topaz Video AI free? What it costs and free options](https://crispvideo.app/learn/is-topaz-video-ai-free/): No: Topaz Video, formerly Video AI, is a subscription ($299 a year or $59 a month) and its pricing page lists no free plan.
+- [Is Topaz Video AI free? What it costs and free options](https://crispvideo.app/learn/is-topaz-video-ai-free/): No: Topaz Video, formerly Video AI, is a subscription ($299 a year, or $254 for the first year in Topaz Video's sale, read 11 Nov 2026, or $59 a month) and its pricing page lists no free plan.
 - [What is AI video upscaling? What a video enhancer does](https://crispvideo.app/learn/what-is-ai-video-upscaling/): What AI video upscaling is, and what a video enhancer really does: three separate jobs (bigger, cleaner, sharper), measured on two real clips.
 - [Why Topaz ended perpetual licences (and what it costs now)](https://crispvideo.app/learn/why-topaz-ended-perpetual-licences/): Topaz Labs stopped selling perpetual licences on 3 October 2025.
 - [Why VHS tapes degrade, and what can still be recovered](https://crispvideo.app/learn/why-vhs-tapes-degrade/): Magnetic tape loses signal whether you play it or not.
