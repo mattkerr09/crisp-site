@@ -860,7 +860,7 @@ class LanguageGate:
                 else:
                     raise AssertionError("missing regular prices did not fail")
                 facts.write_text(json.dumps({"products": {name: {"name": name, "price_cents": cents}
-                                                        for name, cents in (("Crisp", 3100), ("Docket SEO", 6100), ("Outlier", 5100))}}))
+                                                        for name, cents in (("Crisp", 3100), ("Check Engine SEO", 6100), ("Outlier", 5100))}}))
                 assert self.words.money(Decimal(143)) in self.generator.bundle(), "bundle's separate total was not read from Dodo"
             for name in self.generator.OTHER_PAGES:
                 path = root / name

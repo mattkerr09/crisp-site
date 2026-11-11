@@ -45,7 +45,7 @@ SHORT_DATE_FORMAT = "{day} de {month}."
 PRICE_ONCE = "{price}, en un solo pago."
 PRICE_COPY = "Precio de lanzamiento: {now}, hasta el {ends}. A partir del {future}: {price}."
 PRICE_SHORT = "Precio de lanzamiento: {now} hasta el {ends}; después, {price}."
-BUNDLE_FULL_PRICE = "Las tres apps: Crisp, Docket SEO y Outlier. {price}, en un solo pago."
+BUNDLE_FULL_PRICE = "Las tres apps: Crisp, Check Engine SEO y Outlier. {price}, en un solo pago."
 
 BOX = {
     "name": "<strong>Crisp Video</strong> restaura vídeos, elimina ruido y aumenta la resolución hasta 4K en tu Mac o PC, sin conexión.",
@@ -77,7 +77,7 @@ PRICES = {
     "h1": "Precios de Crisp",
     "free": "Gratis: el editor completo y la vista previa completa. Las exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color se detienen a los {cap} segundos. Todo lo demás, como convertir, comprimir, quitar el sonido y repetir en bucle, conserva la duración completa. Cada vídeo exportado gratis lleva una pequeña marca de agua crispvideo.app. Para usar los {cap} segundos en la parte que te importa, recorta el clip a esa parte y ejecuta Enhance o expórtalo con Upscale on export.",
     "pro": "{price_copy} Sin suscripción. Pro elimina la marca de agua y el límite de {cap} segundos y añade el procesamiento por lotes y, en Mac, el modo de restauración Max. Una licencia cubre hasta tres ordenadores a la vez, Mac o Windows. Incluye todas las actualizaciones de la versión 1.x. Reembolso en un plazo de {refund_days} días, sin dar explicaciones.",
-    "bundle": "Las tres apps: Crisp, Docket SEO y Outlier. {bundle_copy} Por separado, a partir del {future}: {apart}.",
+    "bundle": "Las tres apps: Crisp, Check Engine SEO y Outlier. {bundle_copy} Por separado, a partir del {future}: {apart}.",
     "more": DOWNLOAD["more"],
 }
 FOOTER = {

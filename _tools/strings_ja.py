@@ -30,7 +30,7 @@ DATE_FORMAT = SHORT_DATE_FORMAT = "{month}{day}日"
 PRICE_ONCE = "{price}の買い切りです。"
 PRICE_COPY = "発売記念価格は{ends}まで{now}です。{future}からは{price}です。"
 PRICE_SHORT = "発売記念価格は{ends}まで{now}です。その後は{price}です。"
-BUNDLE_FULL_PRICE = "Crisp、Docket SEO、Outlierの3本セットです。{price}の買い切りです。"
+BUNDLE_FULL_PRICE = "Crisp、Check Engine SEO、Outlierの3本セットです。{price}の買い切りです。"
 BOX_POSITIONS = {1: "top", 2: "bottom"}
 INLINE_STYLE = ("body{overflow-wrap:anywhere;}"
                 "h1,h2,h3,h4,h5,h6,th,td{overflow-wrap:anywhere;word-break:auto-phrase;}"
@@ -68,7 +68,7 @@ PRICES = {
     "h1": "Crispの料金",
     "free": "無料版でも、エディターとプレビューの全機能を使えます。AIによるアップスケール、修復、カラールックの書き出しは{cap}秒までです。変換、圧縮、消音、ループなど、それ以外は全編を処理します。無料版で書き出した動画には小さなcrispvideo.appの透かしが入ります。見たい部分に{cap}秒を使うには、先にその部分をトリミングしてからEnhanceを実行するか、Upscale on exportで書き出してください。",
     "pro": "{price_copy}月額料金はありません。Proでは透かしと{cap}秒の制限がなくなり、複数ファイルの一括処理が使えます。MacではMax修復モードも使えます。1ライセンスでMac・Windows合わせて同時に3台まで使えます。バージョン1.xの全アップデートが含まれます。{refund_days}日以内なら理由を問わず返金します。",
-    "bundle": "Crisp、Docket SEO、Outlierの3本セットです。{bundle_copy}{future}以降に個別に購入した場合の合計は{apart}です。",
+    "bundle": "Crisp、Check Engine SEO、Outlierの3本セットです。{bundle_copy}{future}以降に個別に購入した場合の合計は{apart}です。",
     "more": DOWNLOAD["more"],
 }
 FOOTER = {

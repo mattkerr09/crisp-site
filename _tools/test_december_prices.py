@@ -167,9 +167,9 @@ def source_checks():
     assert landing_pages.BUNDLE_FOUNDING_ENDS == ENDS
     assert thankyou_xsell.list_price("Crisp") == facts["price"]
     assert thankyou_xsell.list_price("Outlier") == Decimal("29")
-    assert thankyou_xsell.list_price("Docket SEO") == Decimal("39")
+    assert thankyou_xsell.list_price("Check Engine SEO") == Decimal("39")
     assert thankyou_xsell.launch_price("Outlier") == Decimal("24.50")
-    assert thankyou_xsell.launch_price("Docket SEO") == Decimal("29.50")
+    assert thankyou_xsell.launch_price("Check Engine SEO") == Decimal("29.50")
     assert thankyou_xsell.block() in (SITE / "thank-you" / "index.html").read_text()
     assert {"14.50", "19.00", "3.63", "4.75", "49.50", "59.00", "12.38", "14.75"} <= price_sources.OURS
     assert not {"29", "29.00", "99", "99.00"} & price_sources.OURS

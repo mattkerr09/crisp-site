@@ -45,7 +45,7 @@ def buy_base() -> str:
     return m.group(1)
 
 
-#: THE THREE-APP BUNDLE (Matthew approved 2026-11-11): Crisp + Docket SEO + Outlier for $49.50 once through November
+#: THE THREE-APP BUNDLE (Matthew approved 2026-11-11): Crisp + Check Engine SEO + Outlier for $49.50 once through November
 #: (FOUNDINGBUNDLE, for everyone, expires 2026-12-01T07:59:59Z), then $59 (ALLTHREE).
 #: December's separate prices are $19 + $39 + $29 = $87. Names only, no
 #: sister-site URL: the link goes to the hub (RULES 52).
@@ -224,7 +224,7 @@ def pages() -> dict[Path, str]:
             "Crisp pricing",
             f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
             f"runs at full length; every free video export carries a small &ldquo;crispvideo.app&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. {llms_txt.price_copy(f)} {f['updates'].replace(' included', ' is included').capitalize()}. It removes the mark and the {f['cap']}-second limit and adds batch processing and, on a Mac, the Max restore lane. "
-            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Docket SEO and Outlier. {bundle_copy()}</a>',
+            f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Check Engine SEO and Outlier. {bundle_copy()}</a>',
             "pricing-page", True),
         SITE / "download" / "index.html": page(
             "download", "Download Crisp for Mac and Windows",

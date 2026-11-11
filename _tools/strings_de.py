@@ -78,7 +78,7 @@ PRICES = {
             "Windows. Alle Updates der Version 1.x sind enthalten, und Sie bekommen {refund_days} Tage lang Ihr Geld zurück, ohne Angabe "
             "von Gründen."),
     # the bundle: {bundle} regular, {apart} the three apps bought separately, {bundle_now} the November price
-    "bundle": ("Alle drei Apps, Crisp, Docket SEO und Outlier. {bundle_copy} Einzeln ab {future}: {apart}."),
+    "bundle": ("Alle drei Apps, Crisp, Check Engine SEO und Outlier. {bundle_copy} Einzeln ab {future}: {apart}."),
     "more": "Was Pro zusätzlich bietet, die Lizenzbedingungen und Antworten auf die üblichen Fragen finden Sie auf der <a href=\"/de/\">Startseite</a>.",
 }
 
@@ -111,7 +111,7 @@ SHORT_DATE_FORMAT = "{day}. {month}."
 PRICE_ONCE = "{price} einmalig."
 PRICE_COPY = "Einführungspreis: {now} einmalig, bis {ends}. Ab {future}: {price}."
 PRICE_SHORT = "Einführungspreis {now} bis {ends}, dann {price}."
-BUNDLE_FULL_PRICE = "Alle drei Apps, Crisp, Docket SEO und Outlier. {price} einmalig."
+BUNDLE_FULL_PRICE = "Alle drei Apps, Crisp, Check Engine SEO und Outlier. {price} einmalig."
 CONTACT_CLASS = "kontakt"
 CONTACT = ('<section class="kontakt"><h2>' + KONTAKT_H + '</h2><p>Kerr &amp; Company LLC<br>'
            'E-Mail: <a href="mailto:support@crispvideo.app">support@crispvideo.app</a><br>'

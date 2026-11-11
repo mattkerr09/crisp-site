@@ -25,7 +25,7 @@ import landing_pages  # noqa: E402
 FACTS = HERE / "december_prices.json"
 HUB = "https://kerr-affiliate-hub.kerrco.workers.dev/buy"
 ENDS = landing_pages.BUNDLE_FOUNDING_ENDS          # every founding code ends together: 2026-12-01 07:59:59Z
-APPS = [("Docket SEO", "docket", "Audits your whole website on your own computer and tells you what to fix first."),
+APPS = [("Check Engine SEO", "docket", "Audits your whole website on your own computer and tells you what to fix first."),
         ("Outlier", "outlier", "Runs AI models on your Mac with no cloud and no subscription.")]
 
 
