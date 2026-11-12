@@ -305,16 +305,19 @@ def check() -> int:
     def fail(path, message):
         failures.append(f'{path}: {message}')
 
-    assert len(entries) == 22 and Counter(entry['lang'] for entry in entries) == {'pt-br': 12, 'es': 10}
-    assert len({entry['path'] for entry in entries}) == 22
+    assert len(entries) == 24 and Counter(entry['lang'] for entry in entries) == {'pt-br': 13, 'es': 11}
+    assert len({entry['path'] for entry in entries}) == 24
     required = {'english', 'lang', 'path', 'query', 'demand', 'demand_market', 'demand_read', 'published'}
     for entry in entries:
         path, lang = entry['path'], entry['lang']
+        heic = entry['english'] == '/how-to/convert-heic-to-jpg-mac/'
+        batch_date = '2026-11-12' if heic else '2026-11-11'
         fields = required | ({'es_demand_split'} if lang == 'es' else set())
-        if set(entry) != fields or entry['demand_read'] != '2026-11-11' or entry['published'] != '2026-11-11':
+        if set(entry) != fields or entry['demand_read'] != batch_date or entry['published'] != batch_date:
             fail(path, 'manifest fields or dates differ from the batch contract')
-        if lang == 'es' and entry.get('es_demand_split') != {
-                'Spain': 4122, 'Mexico': 1111, 'source': 'Bing exact, 90 days, read 2026-11-11'}:
+        split = {'Spain': 1065, 'Mexico': 115} if heic else {'Spain': 4122, 'Mexico': 1111}
+        split['source'] = 'Bing exact, 90 days, read ' + batch_date
+        if lang == 'es' and entry.get('es_demand_split') != split:
             fail(path, 'Spanish market split differs from the measured batch demand')
         if not isinstance(entry['demand'], int) or entry['demand'] <= 0:
             fail(path, 'demand must be a positive measured integer')
@@ -385,7 +388,9 @@ def check() -> int:
             fail(path, 'app-language notice differs from strings')
         if '/founding.js' in source or 'data-founding' in source:
             fail(path, 'English founding bar is present')
-        local_date = '11 de novembro de 2026' if lang == 'pt-br' else '11 de noviembre de 2026'
+        day = int(entry['published'].rsplit('-', 1)[1])
+        month = 'novembro' if lang == 'pt-br' else 'noviembre'
+        local_date = f'{day} de {month} de 2026'
         if not any(local_date in n.text() for n in doc.elements('div') if n.attrs.get('class') == 'updated'):
             fail(path, 'missing local publication dateline')
         faqs = [n for n in doc.elements('section') if n.attrs.get('id') == 'faq']
@@ -453,7 +458,7 @@ def check() -> int:
         ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = ET.fromstring((ROOT / 'sitemap.xml').read_text()).findall('s:url', ns)
         matches = [u for u in urls if u.findtext('s:loc', namespaces=ns) == ORIGIN + path]
-        if len(matches) != 1 or matches[0].findtext('s:lastmod', namespaces=ns) != '2026-11-11':
+        if len(matches) != 1 or matches[0].findtext('s:lastmod', namespaces=ns) != entry['published']:
             fail(path, 'sitemap entry missing, duplicated or incorrectly dated')
 
     adobe_tables = (
@@ -545,7 +550,7 @@ def check() -> int:
         for error in failures:
             print('  ' + error)
         return 1
-    print('\nOK: 22 translated guides pass all checks.')
+    print(f'\nOK: {len(entries)} translated guides pass all checks.')
     return 0
 
 

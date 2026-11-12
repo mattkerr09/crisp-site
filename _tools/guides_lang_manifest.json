@@ -268,5 +268,30 @@
       "Mexico": 1111,
       "source": "Bing exact, 90 days, read 2026-11-11"
     }
+  },
+  {
+    "english": "/how-to/convert-heic-to-jpg-mac/",
+    "lang": "pt-br",
+    "path": "/pt-br/guia/converter-heic-para-jpg-mac/",
+    "query": "converter heic para jpg",
+    "demand": 2832,
+    "demand_market": "Brazil",
+    "demand_read": "2026-11-12",
+    "published": "2026-11-12"
+  },
+  {
+    "english": "/how-to/convert-heic-to-jpg-mac/",
+    "lang": "es",
+    "path": "/es/guia/convertir-heic-a-jpg-mac/",
+    "query": "convertir heic a jpg",
+    "demand": 1180,
+    "demand_market": "Spain + Mexico",
+    "demand_read": "2026-11-12",
+    "published": "2026-11-12",
+    "es_demand_split": {
+      "Spain": 1065,
+      "Mexico": 115,
+      "source": "Bing exact, 90 days, read 2026-11-12"
+    }
   }
 ]
