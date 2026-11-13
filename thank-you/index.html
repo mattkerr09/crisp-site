@@ -86,10 +86,10 @@
 <!-- xsell:begin (written by _tools/thankyou_xsell.py) -->
   <h2 style="margin-top:2.4rem">Also from Kerr &amp; Company</h2>
   <ul class="lede" style="padding-left:1.2rem;text-align:left">
-    <li><strong>Check Engine SEO.</strong> Audits your whole website on your own computer and tells you what to fix first. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-product="docket" data-full-price="$39 once.">Black Friday sale: $19.99 once, 32% off our November price of $29.50, through December 2. Then $39.</span> <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/docket?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-docket">See Check Engine SEO</a></li>
-    <li><strong>Outlier.</strong> Runs AI models on your Mac with no cloud and no subscription. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-product="outlier" data-full-price="$29 once.">Black Friday sale: $16.99 once, 31% off our November price of $24.50, through December 2. Then $29.</span> <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/outlier?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-outlier">See Outlier</a></li>
+    <li><strong>Check Engine SEO.</strong> Audits your whole website on your own computer and tells you what to fix first. <span data-until="2026-12-03T07:59:59Z">Black Friday sale: $19.99 once, 32% off our November price of $29.50, through December 2. Then </span>$39 once. <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/docket?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-docket">See Check Engine SEO</a></li>
+    <li><strong>Outlier.</strong> Runs AI models on your Mac with no cloud and no subscription. <span data-until="2026-12-03T07:59:59Z">Black Friday sale: $16.99 once, 31% off our November price of $24.50, through December 2. Then </span>$29 once. <a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/outlier?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-outlier">See Outlier</a></li>
   </ul>
-  <script>(function(){var n=Date.now();document.querySelectorAll('[data-price-ends]').forEach(function(e){if(Date.parse(e.getAttribute('data-price-ends'))<=n)e.textContent=e.getAttribute('data-full-price');});})();</script>
+  <script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script>
 <!-- xsell:end -->
 
   <p style="margin-top:2.6rem"><a class="btn" href="/download/">Download Crisp</a>
@@ -139,17 +139,17 @@
     window.plausible('Purchase', { revenue: { currency: 'USD', amount: value } });
   }
   if (status === 'succeeded' && pid && typeof fetch === 'function') {
-    var late = setTimeout(function () { purchase(29); }, 4000);
+    var late = setTimeout(function () { purchase(19); }, 4000);
     fetch('https://kerr-affiliate-hub.kerrco.workers.dev/paid?payment_id=' + encodeURIComponent(pid))
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         clearTimeout(late);
         var amt = d && d.app === 'crisp' && d.currency === 'USD' ? Number(d.amount) : NaN;
-        purchase(amt > 0 && amt <= 29 ? amt : 29);   
+        purchase(amt > 0 && amt <= 19 ? amt : 19);   
       })
-      .catch(function () { clearTimeout(late); purchase(29); });
+      .catch(function () { clearTimeout(late); purchase(19); });
   } else if (status === 'succeeded') {
-    purchase(29);
+    purchase(19);
   }
 })();
 </script>

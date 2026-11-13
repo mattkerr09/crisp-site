@@ -4,7 +4,7 @@ three without the cross-sell, and Crisp makes 7 of 8 sales). It sits BELOW the k
 typed in the template: The sale, real November reference prices and regular prices come from december_prices.json, Matthew's
 13 November sale spec.
 No bundle: the bundle is a cart of all three apps, so it would charge a Crisp buyer for Crisp again (CEO, sales
-audit, 7 Nov). The sale lines carry data-price-ends and switch to regular prices after it,
+audit, 7 Nov). The sale lines carry data-until and remove themselves after it, leaving the list price,
 because this page does not load founding.js. Every link to a sister app is rel="nofollow" (RULES 52) and the page stays noindex.
 
     python3 site/_tools/thankyou_xsell.py
@@ -62,14 +62,16 @@ def block() -> str:
                                                  "percent": percent, "ends": ENDS})
         rows.append(
             f'    <li><strong>{name}.</strong> {line} '
-            f'<span data-launch-price data-price-ends="{ENDS}" data-product="{slug}" data-full-price="{money(full)} once.">{copy}</span> '
+            # The sale part sits in a span that removes itself at the end, leaving the list price. Not data-full-price: the
+            # page's own amount reader takes the first data-full-price it finds, which would then be another app's price.
+            f'<span data-until="{ENDS}">{copy.removesuffix(f"Then {money(full)}.").rstrip()} Then </span>{money(full)} once. '
             f'<a href="{HUB}/{slug}?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-{slug}">See {name}</a></li>')
     return "\n".join([
         "<!-- xsell:begin (written by _tools/thankyou_xsell.py) -->",
         '  <h2 style="margin-top:2.4rem">Also from Kerr &amp; Company</h2>',
         '  <ul class="lede" style="padding-left:1.2rem;text-align:left">', *rows, "  </ul>",
-        "  <script>(function(){var n=Date.now();document.querySelectorAll('[data-price-ends]').forEach(function(e){"
-        "if(Date.parse(e.getAttribute('data-price-ends'))<=n)e.textContent=e.getAttribute('data-full-price');});})();</script>",
+        "  <script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){"
+        "if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script>",
         "<!-- xsell:end -->"])
 
 

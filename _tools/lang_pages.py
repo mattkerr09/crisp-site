@@ -124,6 +124,12 @@ class LanguagePages:
         """The offer text for a meta description."""
         if not llms_txt.founding_live(f):
             return self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
+        # A meta description has room for about 165 characters, so a language may give a shorter sale form (no percent: the
+        # percent is only ever said as the full "our November price" sentence, on the page itself).
+        short = getattr(self.words, "SALE_META", None)
+        if short:
+            return short.format(now=self.words.money(f["now"]), ends=self.last_day(f["ends"]),
+                                then=self.words.money(f["price"]))
         return self.price_copy(f)
 
     def f_ends_short(self, ends: str) -> str:

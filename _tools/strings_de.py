@@ -67,7 +67,7 @@ DOWNLOAD = {
 
 PRICES = {
     "title": "Crisp-Preise: kostenlos ausprobieren, Pro einmal kaufen",
-    "meta": ("Kostenlos nutzbar: KI-Exporte bis {cap} Sekunden, alles andere in voller Länge, mit einem kleinen Wasserzeichen. "
+    "meta": ("Kostenlos: KI-Exporte bis {cap} Sekunden. "
              "{price_short}"),
     "h1": "Crisp: Preise",
     "free": ("Kostenlos: der ganze Editor und die ganze Vorschau. KI-Exporte (Hochskalieren, Wiederherstellen, Farblooks) enden nach {cap} "

@@ -851,7 +851,10 @@ class LanguageGate:
             assert self.generator.price_copy(expired) == expected
             assert self.generator.price_short(expired) == expected
         assert self.generator.last_day("2026-12-01T08:00:00Z") == self.words.DATE_FORMAT.format(day=30, month=self.words.MONTHS[10])
-        assert "data-price-ends" in self.generator.thankyou_xsell.block()
+        # The cross-sell's sale part removes itself at the end (data-until), leaving each app's list price; it must not use
+        # data-full-price, which the thank-you page's own amount reader takes as Crisp's price.
+        _xsell = self.generator.thankyou_xsell.block()
+        assert "data-until" in _xsell and "data-full-price" not in _xsell
         with tempfile.TemporaryDirectory(prefix=f"crisp-{self.lang}-generator-") as folder:
             root = Path(folder)
             facts = root / "dodo-facts.json"

@@ -124,10 +124,11 @@ def sale_copy(f: dict) -> str:
 
 
 def price_short(f: dict) -> str:
-    """The same complete sale line for metadata."""
+    """The sale for metadata, where about 165 characters is all a result shows: price, last day and the price after. The
+    percent is only ever said as the full "our November price" sentence (sale_copy), on the page itself."""
     if not founding_live(f):
         return f"{money(f['price'])} once."
-    return price_copy(f)
+    return f"Black Friday sale: {money(f['now'])} once {offer_last_day(f)}, then {money(f['price'])}."
 
 
 def price_markup(f: dict) -> str:

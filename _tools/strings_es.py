@@ -44,6 +44,7 @@ SHORT_MONTHS = tuple(month[:3] for month in MONTHS)
 DATE_FORMAT = "{day} de {month}"
 SHORT_DATE_FORMAT = "{day} de {month}."
 PRICE_ONCE = "{price}, en un solo pago."
+SALE_META = "Oferta de Black Friday: {now} hasta el {ends}; después, {then}."
 PRICE_COPY = 'Oferta de Black Friday: {now} en un solo pago, {percent}% de descuento sobre nuestro precio de noviembre de {november}, hasta el {ends}. Después, {price}.'
 PRICE_SHORT = PRICE_COPY
 BUNDLE_FULL_PRICE = "Las tres apps: Crisp, Check Engine SEO y Outlier. {price}, en un solo pago."
