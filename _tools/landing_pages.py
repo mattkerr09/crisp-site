@@ -227,12 +227,12 @@ def pages() -> dict[Path, str]:
     return {
         SITE / "pricing" / "index.html": page(
             "pricing", "Crisp pricing: free to use, Pro with one payment",
-            f"Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length, with a small mark. {llms_txt.price_short(f)}",
+            f"Crisp restores and upscales video offline on Mac and Windows. Free, with no account or time limit. {llms_txt.price_short(f)}",
             "Crisp pricing",
-            f"Free to use: the full editor and the full preview. Upscaling, restoring and colour exports stop at {f['cap']} seconds; everything else, such as Convert, Mute, Compress and Loop, "
-            f"runs at full length; every free video export carries a small &ldquo;crispvideo.app&rdquo; mark. To spend the free {f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on export. {llms_txt.price_markup(f)} {f['updates'].replace(' included', ' is included').capitalize()}. It removes the mark and the {f['cap']}-second limit and adds batch processing and, on a Mac, the Max restore lane. "
+            f"Crisp is free on Mac and Windows, offline, with no account or time limit. Pro is one payment. "
+            f"{llms_txt.price_markup(f)} {f['updates'].replace(' included', ' is included').capitalize()}. "
             f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Check Engine SEO and Outlier. {llms_txt.price_markup(bundle_facts())}</a>',
-            "pricing-page", True),
+            "pricing-page", True, llms_txt.free_pro_html(f["cap"]) + "\n"),
         SITE / "download" / "index.html": page(
             "download", "Download Crisp for Mac and Windows",
             f"Download Crisp Video for Mac and Windows. Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length.",
@@ -267,12 +267,19 @@ WIN_FINE = re.compile(r"<!-- windows-fine:begin -->.*?<!-- windows-fine:end -->"
 # the "Get Crisp" step further down offered only the Mac download, so a PC visitor who scrolled, or a PC buyer sent there
 # from the thank-you page, found no installer (Windows buy-path audit, 2026-11-08)
 WIN_STEP = re.compile(r"<!-- windows-step:begin -->.*?<!-- windows-step:end -->", re.S)
+FREE_PRO = re.compile(r"<!-- free-pro:begin -->.*?<!-- free-pro:end -->", re.S)
 
 
 def home(s: str) -> str:
     for rx, name in ((WIN_HOME, "windows-download"), (WIN_HERO, "windows-hero"), (WIN_FINE, "windows-fine"), (WIN_STEP, "windows-step")):
         assert rx.search(s), f"index.html: the {name} markers are gone"
-    cap = llms_txt.facts()["cap"]
+    f = llms_txt.facts()
+    cap = f["cap"]
+    assert FREE_PRO.search(s), "index.html: the free-pro markers are gone"
+    s = FREE_PRO.sub(lambda _m: '<!-- free-pro:begin -->\n'
+                     f'<div class="free-pro"><h2>{llms_txt.free_pro_heading(f)}</h2>\n'
+                     f'<div class="free-pro-lists">{llms_txt.free_pro_html(cap)}</div></div>\n'
+                     '<!-- free-pro:end -->', s, count=1)
     s = WIN_HOME.sub(lambda _m: "<!-- windows-download:begin -->" + windows_line("home-hero") + "<!-- windows-download:end -->", s, count=1)
     s = WIN_HERO.sub(lambda _m: "<!-- windows-hero:begin -->" + llms_txt.windows_hero_button("home-hero-win") + "<!-- windows-hero:end -->", s, count=1)
     s = WIN_STEP.sub(lambda _m: "<!-- windows-step:begin -->" + windows_line("home-download-section") + "<!-- windows-step:end -->", s, count=1)

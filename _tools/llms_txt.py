@@ -92,6 +92,51 @@ def free_tier(cap: int, open_q: str = "“", close_q: str = "”") -> str:
             f"video and GIF exports with a small {open_q}crispvideo.app{close_q} mark")
 
 
+def free_pro_lists(cap: int) -> tuple[tuple[str, tuple[str, ...]], ...]:
+    """The same terms on the home, pricing and Free vs Pro pages, and in llms.txt."""
+    return (
+        ("Free", (
+            "The whole app on Mac and Windows, offline, with no account and no time limit.",
+            "The full editor and preview.",
+            f"Every export at full length, except AI exports for upscale, restore and colour, which stop at {cap} seconds.",
+            'Free video exports carry a small "crispvideo.app" mark.',
+            "Photo upscales on a Mac never carry a mark. One photo at a time.",
+        )),
+        ("Pro adds", (
+            "AI exports at full length.",
+            "No mark.",
+            "Max restore on Mac, which is slow. A one-time model pack of about 4.6 GB. "
+            "For video, it wants a Mac with 48 GB of memory or more.",
+            "Batch processing to queue a whole folder. The free version does one at a time.",
+        )),
+    )
+
+
+def free_pro_html(cap: int) -> str:
+    return "\n".join(
+        f"<div><h3>{title}</h3>\n<ul>\n"
+        + "\n".join(f"  <li>{html.escape(item)}</li>" for item in items)
+        + "\n</ul></div>"
+        for title, items in free_pro_lists(cap))
+
+
+def free_faq(cap: int) -> str:
+    return ("Crisp is free on Mac and Windows, offline, with no account or time limit and the full editor and preview. "
+            f"AI exports for upscale, restore and colour stop at {cap} seconds, free video exports carry a small "
+            '"crispvideo.app" mark, and photo upscales on a Mac are unmarked, one photo at a time. '
+            "All other exports run at full length, and Pro adds full-length AI exports, no mark, Max restore on Mac "
+            "and batch processing for one payment.")
+
+
+def free_pro_heading(f: dict) -> str:
+    live = founding_live(f)
+    amount = money(f["now"] if live else f["price"])
+    if live:
+        amount = (f'<span data-launch-price data-price-ends="{f["ends"]}" '
+                  f'data-full-price="{money(f["price"])}">{amount}</span>')
+    return f"Free, or {amount} once"
+
+
 def offer_last_day(f: dict) -> str:
     """The offer's last day where it ends latest in the US (Pacific): FOUNDINGCRISP ends 2026-12-03T07:59:59Z, the last second
     of 2 December in California. The copy names both the month and day. Read
@@ -354,10 +399,11 @@ def page_meta(rel: str) -> tuple[str, str]:
     title = html.unescape(one(r"<title>(.*?)</title>", s, f"{rel} title"))
     title = re.sub(r"\s*[—|]\s*Crisp(?: Video)?\s*$", "", title).strip()
     desc = html.unescape(one(r'<meta name="description" content="([^"]*)"', s, f"{rel} description"))
-    sentences = re.split(r"(?<=[.!?])\s+", desc)
-    first = sentences[0]
-    if "Black Friday sale:" in first and len(sentences) > 1 and sentences[1].startswith("Then "):
-        first += " " + sentences[1]
+    first = re.split(r"(?<=[.!?])\s+", desc)[0]
+    # Short metadata uses ", then" while longer copy has a separate "Then" sentence.
+    # Both forms must give assistants the full, current price-model wording.
+    if "Black Friday sale:" in first:
+        first = first.partition("Black Friday sale:")[0] + price_copy(facts())
     return title, first
 
 
@@ -376,6 +422,10 @@ def build() -> str:
         f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}. {price_copy(f)} "
         f"No subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE}).",
         "",
+        "## Is Crisp free?",
+        "",
+        *[line for title, items in free_pro_lists(f["cap"])
+          for line in (title, "", *(f"- {item}" for item in items), "")],
         "## Product and pricing",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
         f"- [Pricing]({BASE}/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; "
