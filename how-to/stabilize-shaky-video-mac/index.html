@@ -33,7 +33,7 @@
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -53,18 +53,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -72,12 +60,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -99,38 +83,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -161,7 +129,7 @@
   <p class="lede">Handheld footage that jitters (a walk-and-talk, a phone clip, a bumpy pan) is hard to watch and harder to fix in a full editor. Here's how to <strong>stabilize a shaky video on a Mac</strong> in one tap, <strong>100% offline</strong>: Crisp tracks the frame-to-frame motion and counter-shifts each frame to steady the shot. The audio is kept, and there's no account, no upload.</p>
   <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · Updated October 2026 · step-by-step</div>
 
-  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-stabilize-shaky-video-mac-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-stabilize-shaky-video-mac-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
   <h2>The fastest way: just ask</h2>
   <p>Crisp has a plain-English box above the preview (“Tell Crisp what to do with the selected clip…”). Drop your video in and type it:</p>
   <ul>
@@ -206,7 +174,7 @@
       <tr><th scope="row">Keeps the full frame (mirror, not crop)</th><td class="yes">Yes</td><td class="no">Crops in</td><td class="no">Varies</td></tr>
       <tr><th scope="row">Audio kept in sync</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Varies</td></tr>
       <tr><th scope="row">100% offline, your videos never leave your computer</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Uploads your clip</td></tr>
-      <tr><th scope="row">Price</th><td class="yes">Free tier. Launch price: $14.50 once, through November 30. From December 1: $19.</td><td class="yes">Free</td><td class="no">Free + upsell</td></tr>
+      <tr><th scope="row">Price</th><td class="yes">Free tier. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td><td class="yes">Free</td><td class="no">Free + upsell</td></tr>
     </tbody>
   </table></div>
   <p class="muted">iMovie's stabilizer zooms in to hide the edges (you lose frame); online tools upload your footage and often watermark it. Crisp keeps the frame and keeps it local.</p>
@@ -241,7 +209,7 @@
   <p>Background: <a href="https://crispvideo.app/learn/why-phone-video-looks-shaky/">why some wobble cannot be stabilized away</a>.</p>
   <p>Background: <a href="https://crispvideo.app/learn/what-is-rolling-shutter/">why some wobble is not shake at all</a>.</p>
   <p>See also: <a href="https://crispvideo.app/for/#wedding-videographers">handheld wedding coverage</a>.</p>
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-stabilize-shaky-video-mac-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-stabilize-shaky-video-mac-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-stabilize-shaky-video-mac-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
     <h2 id="stabilizing-costs">What stabilizing fixes, and what it costs</h2>
   <p><strong>The part software can fix, and the part it cannot.</strong> Shake shows up in two places at once. The camera moves between frames, which puts the subject in a different spot each time: that jitter is what software corrects well, by shifting and rotating frames to follow a smoothed path. The camera also moves during each exposure, which smears that individual frame, and no realignment undoes it. Stabilize footage shot at a slow shutter speed and you get a rock-steady shot made of soft frames, which some people find more unsettling than the original shake. If your clip looks smeared when paused, that is the ceiling.</p>
   <p><strong>Stabilizing always costs framing.</strong> To cancel movement the tool pushes each frame around, which leaves empty wedges at the edges, and every stabilizer hides them the same way: by cropping inward and scaling back up. The smoother you ask for, the more it crops. Anything close to the edge of frame can be cropped out entirely, so check the composition afterwards, and the crop costs resolution: a 4K clip stabilized hard can land near 1080p in real detail. If you know a shot will need it, frame looser than feels right. <strong>Jello is a different problem.</strong> Most phone and mirrorless cameras use a rolling shutter, reading the sensor one line at a time, so the bottom of the frame is captured a fraction after the top; pan quickly and vertical lines lean and bend. That is a distortion inside the frame, so ordinary stabilizing only softens it. The reliable fixes are at capture time: pan more slowly, use a faster shutter, or use a camera with a mechanical or global shutter.</p>

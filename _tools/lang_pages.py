@@ -108,16 +108,23 @@ class LanguagePages:
         if not llms_txt.founding_live(f):
             return self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
         v = dict(price=self.words.money(f["price"]), now=self.words.money(f["now"]),
+                 november=self.words.money(f["november"]), percent=f["percent"],
                  ends=self.last_day(f["ends"]), future=self.future_day(f["ends"]))
         return self.words.PRICE_COPY.format(**v)
+
+    def price_markup(self, f: dict) -> str:
+        copy = self.price_copy(f)
+        if not llms_txt.founding_live(f):
+            return copy
+        regular = self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
+        return (f'<span data-launch-price data-price-ends="{f["ends"]}" '
+                f'data-full-price="{regular}">{copy}</span>')
 
     def price_short(self, f: dict) -> str:
         """The offer text for a meta description."""
         if not llms_txt.founding_live(f):
             return self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
-        v = dict(price=self.words.money(f["price"]), now=self.words.money(f["now"]),
-                 ends=self.f_ends_short(f["ends"]))
-        return self.words.PRICE_SHORT.format(**v)
+        return self.price_copy(f)
 
     def f_ends_short(self, ends: str) -> str:
         end = datetime.fromisoformat(ends.replace("Z", "+00:00")).astimezone(ZoneInfo("America/Los_Angeles"))
@@ -126,7 +133,7 @@ class LanguagePages:
 
     def values(self, f: dict) -> dict:
         return dict(f, price=self.words.money(f["price"]), now=self.words.money(f["now"]), ends=self.last_day(f["ends"]),
-                    future=self.future_day(f["ends"]), price_copy=self.price_copy(f), price_short=self.price_short(f),
+                    november=self.words.money(f["november"]), future=self.future_day(f["ends"]), price_copy=self.price_markup(f), price_short=self.price_short(f),
                     os=self.words.fact(f["os"]), chip=self.words.fact(f["chip"]))
 
     def box(self, src: str, buy_first: bool = False, f: dict | None = None) -> str:
@@ -177,7 +184,8 @@ class LanguagePages:
         # December's regular prices, separate from the unchanged November launch prices.
         apart = sum(thankyou_xsell.list_price(name) for name in ("Crisp", "Check Engine SEO", "Outlier"))
         text = self.words.PRICES["bundle"].format(bundle_copy=self.price_copy({
-            "price": landing.BUNDLE_USD, "now": landing.BUNDLE_FOUNDING_USD, "ends": landing.BUNDLE_FOUNDING_ENDS}), apart=self.words.money(apart), future=self.future_day(landing.BUNDLE_FOUNDING_ENDS))
+            "price": landing.BUNDLE_USD, "now": landing.BUNDLE_FOUNDING_USD, "november": landing.BUNDLE_NOVEMBER_USD,
+            "percent": landing.BUNDLE_PERCENT_OFF, "ends": landing.BUNDLE_FOUNDING_ENDS}), apart=self.words.money(apart), future=self.future_day(landing.BUNDLE_FOUNDING_ENDS))
         return (f'<a href="{landing.BUNDLE_URL}?src={self.lang}-{self.pricing_slug}" rel="nofollow" '
                 f'data-track="{self.lang}-{self.pricing_slug}-bundle" data-launch-price data-price-ends="{landing.BUNDLE_FOUNDING_ENDS}" '
                 f'data-full-price="{self.words.BUNDLE_FULL_PRICE.format(price=self.words.money(landing.BUNDLE_USD))}">{text}</a>')

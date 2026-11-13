@@ -24,12 +24,12 @@
 <meta name="twitter:description" content="How wedding videographers, churches, teachers, podcasters and YouTubers use Crisp on a Mac: the settings that suit their footage, and what will not help.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"datePublished": "2026-08-26", "dateModified":"2026-11-11", "@type":"CollectionPage","name":"Who Crisp is for: wedding videographers, churches, teachers and more","description":"How wedding videographers, churches, teachers, podcasters and YouTubers use Crisp on a Mac: the settings that suit their footage, and what will not help.","url":"https://crispvideo.app/for/","isPartOf":{"@type":"WebSite","name":"Crisp","url":"https://crispvideo.app/"},"mainEntity":{"@type":"ItemList","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://crispvideo.app/for/family-archivists/","name":"Restoring old home videos on a Mac"},{"@type":"ListItem","position":2,"url":"https://crispvideo.app/for/genealogists/","name":"Crisp for genealogists and family historians"},{"@type":"ListItem","position":3,"url":"https://crispvideo.app/for/musicians/","name":"Crisp for musicians"},{"@type":"ListItem","position":4,"url":"https://crispvideo.app/for/youtubers/","name":"Crisp for YouTubers"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"datePublished": "2026-08-26", "dateModified":"2026-11-13", "@type":"CollectionPage","name":"Who Crisp is for: wedding videographers, churches, teachers and more","description":"How wedding videographers, churches, teachers, podcasters and YouTubers use Crisp on a Mac: the settings that suit their footage, and what will not help.","url":"https://crispvideo.app/for/","isPartOf":{"@type":"WebSite","name":"Crisp","url":"https://crispvideo.app/"},"mainEntity":{"@type":"ItemList","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://crispvideo.app/for/family-archivists/","name":"Restoring old home videos on a Mac"},{"@type":"ListItem","position":2,"url":"https://crispvideo.app/for/genealogists/","name":"Crisp for genealogists and family historians"},{"@type":"ListItem","position":3,"url":"https://crispvideo.app/for/musicians/","name":"Crisp for musicians"},{"@type":"ListItem","position":4,"url":"https://crispvideo.app/for/youtubers/","name":"Crisp for YouTubers"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Crisp","item":"https://crispvideo.app/"},{"@type":"ListItem","position":2,"name":"By use","item":"https://crispvideo.app/for/"}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -49,18 +49,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -68,12 +56,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -95,38 +79,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -154,13 +122,13 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; By use</div>
   <h1>Who Crisp is for: wedding videographers, churches, teachers and more</h1>
-  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-08-26 · last updated 2026-11-11</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-08-26 · last updated 2026-11-13</div>
   <p>The same app, described for the work you are actually doing. Each entry covers the
   footage that trade tends to have, the settings that suit it, and the parts of Crisp that will not
   help, which is usually the more useful half. One real number to start from: on my M1 Ultra, Crisp
   1.0.1808 enhanced a 20-second 640×480 family tape to 2560×1920 in 43 seconds (2 November 2026).</p>
 
-  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="for-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="for-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
   <h2>By trade and purpose</h2>
   <ul class="hub-list">
     <li><a href="https://crispvideo.app/for/#churches">Crisp for churches and places of worship</a> <span class="hub-note">Long static services, one camera, poor light at the back of a hall.</span></li>
@@ -216,7 +184,7 @@
   <p><strong>Where Crisp is the wrong tool.</strong> It does not stream, so live broadcast needs whatever you already use. It burns in captions you type but does not transcribe speech, which matters because accessibility is a real obligation for many congregations; check that before planning a workflow around it. It has no multicam sync, and it will not fix audio recorded on a camera microphone at the back of a hall.</p>
 
   <h3 id="filmmakers" style="scroll-margin-top:96px">Independent filmmakers</h3>
-  <p>Crisp is a repair and finishing tool that sits beside Resolve, Premiere or Final Cut rather than replacing them. On your own Mac it denoises and <a href="https://crispvideo.app/how-to/stabilize-shaky-video-mac/">stabilises</a> shots you cannot reshoot, <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlaces</a> and upscales archive material, cuts trailers and vertical versions, and writes a ProRes 422 master for the edit. It works on faults of degradation, not faults of capture: sensor noise and camera shake yes, <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">missed focus</a> and <a href="https://crispvideo.app/learn/what-is-rolling-shutter/">rolling shutter</a> skew no. It upscales by inventing plausible detail rather than recovering what was shot, so run a ten-second test on your worst shot before you build a schedule around it. It needs macOS 14 (Sonoma) or later (upscaling takes about 1.5 times as long on 14 as on 15 or later) and Launch price: $14.50 once, through November 30. From December 1: $19. No subscription.</p>
+  <p>Crisp is a repair and finishing tool that sits beside Resolve, Premiere or Final Cut rather than replacing them. On your own Mac it denoises and <a href="https://crispvideo.app/how-to/stabilize-shaky-video-mac/">stabilises</a> shots you cannot reshoot, <a href="https://crispvideo.app/how-to/deinterlace-video-mac/">deinterlaces</a> and upscales archive material, cuts trailers and vertical versions, and writes a ProRes 422 master for the edit. It works on faults of degradation, not faults of capture: sensor noise and camera shake yes, <a href="https://crispvideo.app/learn/why-ai-upscaling-cant-fix-focus/">missed focus</a> and <a href="https://crispvideo.app/learn/what-is-rolling-shutter/">rolling shutter</a> skew no. It upscales by inventing plausible detail rather than recovering what was shot, so run a ten-second test on your worst shot before you build a schedule around it. It needs macOS 14 (Sonoma) or later (upscaling takes about 1.5 times as long on 14 as on 15 or later) and <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> No subscription.</p>
 
   <h3 id="gamers" style="scroll-margin-top:96px">Gamers and streamers</h3>
   <p>Game capture looks fine while you play and blocky once it has been through a capture encoder and then a platform encoder. That blocking is a bitrate problem, not a resolution one, and it is baked in at capture: an upscaler can make it less obvious but cannot recover what the encoder threw away, so the best fix is a higher capture bitrate next time. Older 720p or 1080p captures going to a 4K timeline do benefit, especially UI text and HUD elements. <a href="https://crispvideo.app/for/youtubers/">YouTube gives 4K uploads more bitrate</a>, so upscaling a 1080p capture to 4K before upload often looks visibly cleaner for the viewer. Avoid heavy denoising on dark gameplay footage.</p>
@@ -257,7 +225,7 @@
   <p>Read the entry whose footage is worst. The settings that rescue difficult material will
   handle easy material comfortably, but the reverse is not true, and choosing a tool on your
   easiest footage is how people end up with something that cannot cope when it matters.</p>
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="for-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=for-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="for-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=for-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 </div></article>
 
 <footer><div class="wrap">

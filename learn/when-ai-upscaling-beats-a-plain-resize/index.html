@@ -22,12 +22,12 @@
 <meta name="twitter:description" content="AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say","description":"AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-09-15","dateModified":"2026-11-11"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say","description":"AI upscaling vs a plain resize and ffmpeg Lanczos, measured: it trailed by 23.4 VMAF at 2x and 1.2 at 4x, yet had 59% more detail on a degraded clip.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-09-15","dateModified":"2026-11-13"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI upscaling get worse at 4× than at 2×?","acceptedAnswer":{"@type":"Answer","text":"Not in the way the question assumes. Measured against a surviving 1280×720 original, the AI route trailed a plain lanczos resize by 23.4 VMAF points at 2× and by 1.2 VMAF points at 4×. The gap closed as the scale factor rose. Part of that is the job getting harder for both routes and part of it is that the two scales run different models: at 2× with denoise below 0.5 the job goes to the Fast 2× model, and at 4× it goes to the General detail model. This measurement cannot separate those two causes, because Crisp's router does not offer the combinations that would isolate them."}},{"@type":"Question","name":"Why is the 4× upscale faster than the 2× upscale in Crisp?","acceptedAnswer":{"@type":"Answer","text":"Because they are not the same model. On 60 frames of the same source clip, the 4× route using the General detail model took 2.78 s and the 2× route using the Fast 2× model took 3.89 s, so the 4× job finished about 28 percent sooner despite producing four times as many output pixels per input pixel. The denoise value and the scale factor together select the model, and the two selected models have different costs."}},{"@type":"Question","name":"How much slower is AI upscaling than a plain resize?","acceptedAnswer":{"@type":"Answer","text":"On 60 frames of a 1280×720 clip, a lanczos resize took 0.44 s at both scale factors. The AI routes took 2.78 s at 4× and 3.89 s at 2×, which is 6.3 and 8.8 times the wall clock, or roughly 46 and 65 milliseconds per frame against about 7 milliseconds. That is the honest cost, and on a clean source the resize also scored closer to the original on both metrics."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "AI upscaling vs a plain resize", "item": "https://crispvideo.app/learn/when-ai-upscaling-beats-a-plain-resize/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -47,18 +47,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -66,12 +54,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -93,38 +77,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -152,7 +120,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; AI upscaling vs a plain resize</div>
   <h1>AI upscaling vs a plain resize, and ffmpeg Lanczos: what the measurements say</h1>
-  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-09-15 · last updated 2026-11-11</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-09-15 · last updated 2026-11-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">"Where does AI upscaling stop being
   worth the wait?" assumes the model leads on small jobs and falls apart on big ones. Measured against
@@ -162,7 +130,7 @@
   <strong>2.78 s</strong> at 4× and <strong>3.89 s</strong> at 2× per 60 frames, against
   <strong>0.44 s</strong> for the resize, six to nine times the wall clock. And the 4× job is the
   <em>faster</em> of the two AI routes, because the two scales run different models.</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-when-ai-upscaling-beats-a-plain-resize-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-when-ai-upscaling-beats-a-plain-resize-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <h2>The measurement</h2>
   <p>Crisp 1.0.1223, measured 2026-09-15, on a photographic archival boxing clip whose native
@@ -344,7 +312,7 @@
     <li><a href="https://crispvideo.app/index/">The Video Upscaler Index</a></li>
   </ul>
 
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-when-ai-upscaling-beats-a-plain-resize-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-when-ai-upscaling-beats-a-plain-resize-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-when-ai-upscaling-beats-a-plain-resize-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 </div></article>
 
 <footer><div class="wrap">

@@ -156,12 +156,8 @@ def _founding_current(s: str, p: Path) -> str:
     return head + tag + "\n" + s[b.end():]
 
 
-# GERMAN PAGES KEEP THEIR OWN FOOTER AND OFFER (Crisp, 2026-11-10). de_pages.py writes the footer link as "Von Kerr &amp;
-# Company" (de_strings.FOOTER["made_by"]) and leaves the bar off ("founding.js inserts English sentences. The German offer uses
-# data-until."). This tool did not know that: run in apply mode it rewrote the German footer into English on 7 pages and added the
-# English bar to 5 (found and reverted on 10 Nov, before any push). So on a German page the footer link is checked in German,
-# the bar is never added, and where a German page already carries it (/de/datenschutz/, /de/kostenlos-oder-pro/) it is only
-# kept first in <body> like everywhere else.
+# Localized pages own their translated footer, sale line and expiry scripts.
+# The shared bar renders English, so apply() removes old copies from those pages.
 def language(p: Path) -> str | None:
     """A localized folder is owned by its strings module."""
     try:
@@ -189,7 +185,7 @@ def wants_founding(p: Path, s: str) -> bool:
     if p == SITE / "index.html" or p.name != "index.html" or p.parent.name == "thank-you":
         return False
     if language(p):
-        return has_bar(s)
+        return False
     try:
         rel = "/" + p.parent.relative_to(SITE).as_posix() + "/"
     except ValueError:          # a page outside the site tree (the gate's own fixture): judge it on its canonical alone
@@ -268,6 +264,9 @@ def apply(p: Path) -> bool:
     # the Download/Buy events, on every page with a body (moved out of the homepage 2026-09-28)
     if "</body>" in s and TRACK not in s:
         s = s.replace("</body>", TRACK + "\n</body>")
+    if language(p):
+        for rx in (FOUNDING_OLD_RE, FOUNDING_SRC_RE, FOUNDING_RE):
+            s = rx.sub("", s)
     if wants_founding(p, s) or p == SITE / "index.html":
         s = _founding_current(s, p)
     if wants_row_headers(p):

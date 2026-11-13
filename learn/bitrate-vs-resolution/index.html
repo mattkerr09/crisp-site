@@ -22,12 +22,12 @@
 <meta name="twitter:description" content="Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bitrate vs resolution","description":"Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-11"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bitrate vs resolution","description":"Resolution is how many pixels you have. Bitrate is how much information describes them. Get the second one wrong and a 4K file will look worse than a good 1080p one.","author":{"@type":"Organization","name":"Crisp Video"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-13"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a bigger file always better?","acceptedAnswer":{"@type":"Answer","text":"Up to a point, and then it stops mattering. Past the bitrate a scene actually needs, extra bits describe information the encoder has already captured perfectly well, and you're only making the file harder to store and slower to upload. The point of diminishing returns depends entirely on how difficult the footage is."}},{"@type":"Question","name":"Should I export at a higher resolution than I shot?","acceptedAnswer":{"@type":"Answer","text":"For upload, often yes, because platforms allocate bitrate by resolution. For archival or local playback, no. You aren't adding real information, and you're making every future operation on the file slower."}},{"@type":"Question","name":"What is variable bitrate, and should I use it?","acceptedAnswer":{"@type":"Answer","text":"Variable bitrate lets the encoder spend more on difficult scenes and less on easy ones, which is almost always what you want for delivery. Constant bitrate is mainly useful when something downstream needs a predictable data rate."}},{"@type":"Question","name":"Why does my footage look worse after editing even though I didn't change anything?","acceptedAnswer":{"@type":"Answer","text":"Because exporting re-encodes it. Unless you're stream-copying, the export is a fresh compression pass, and any clip that passes through it loses a little. Keeping an intermediate or high-bitrate master limits how much that accumulates over successive edits."}},{"@type":"Question","name":"Will upscaling a low-bitrate video to 4K fix it?","acceptedAnswer":{"@type":"Answer","text":"No, and we measured how far off it is. Rebuilding our own 720p demo clip from a bitrate-starved copy (crf 40 plus noise), the best of three routes reached 26.56 dB PSNR and 31.13 VMAF against the surviving original, where the same routes from a clean 360p copy of the same clip reached 40.77 and 98.99. All three routes lost heavily and the ranking between them did not change. Upscaling adds pixels; the information the encoder discarded is not in any of them."}},{"@type":"Question","name":"What bitrate does Crisp export at?","acceptedAnswer":{"@type":"Answer","text":"It is derived from the output frame size: roughly 4.5 Mbps per megapixel plus 3, clamped between 8 and 100 Mbps, which lands near 8 Mbps at 720p, 12 at 1080p, 20 at 1440p and 40 at 4K. Every lane that does not add information is then capped at 1.2x whatever rate your source already had, so a small web clip is not re-encoded far above its own rate. The compress tool works the other way round, targeting roughly 30, 50 or 70 percent of your file's own bitrate depending on the level you pick."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Bitrate vs resolution", "item": "https://crispvideo.app/learn/bitrate-vs-resolution/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -47,18 +47,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -66,12 +54,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -93,38 +77,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -152,7 +120,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Bitrate vs resolution</div>
   <h1>Bitrate vs resolution</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-11-11</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-08-10 · last updated 2026-11-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Resolution is the container.
   Bitrate is what is actually in it. Resolution counts the pixels; bitrate is how many bits per
@@ -160,7 +128,7 @@
   the same screen. Upscaling raises the first number and cannot restore what the second threw away:
   on our own clip, rebuilt from a bitrate-starved copy, every route we measured scored far worse
   than it did from a clean copy, and the order they finished in did not change.</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-bitrate-vs-resolution-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-bitrate-vs-resolution-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-bitrate-vs-resolution-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-bitrate-vs-resolution-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <p>Two numbers decide how a video looks, and most people only pay attention to one of them.
   Resolution is the pixel count: 1920x1080, 3840x2160. Bitrate is how many bits per second the file
@@ -332,7 +300,7 @@
     <li><a href="https://crispvideo.app/index/">The Video Upscaler Index</a></li>
   </ul>
 
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-bitrate-vs-resolution-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-bitrate-vs-resolution-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-bitrate-vs-resolution-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-bitrate-vs-resolution-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-bitrate-vs-resolution-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 </div></article>
 
 <footer><div class="wrap">

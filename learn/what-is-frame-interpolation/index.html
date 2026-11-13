@@ -22,12 +22,12 @@
 <meta name="twitter:description" content="Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is frame interpolation?","description":"Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-11"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is frame interpolation?","description":"Frame interpolation invents new frames between the ones you shot, taking 30fps to 60 or beyond. How it works, where it fails badly.","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video"},"datePublished":"2026-08-10","dateModified":"2026-11-13"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does interpolation add real detail?","acceptedAnswer":{"@type":"Answer","text":"No. It adds frames, not resolution. Every intermediate frame is built from the two real frames on either side of it, so the level of detail is unchanged. If you want more detail you want upscaling, which is a separate operation and can be run alongside it."}},{"@type":"Question","name":"What multiplier should I use?","acceptedAnswer":{"@type":"Answer","text":"Doubling is the safe default and covers the common case of 30fps to 60fps. Larger multipliers give the motion estimator less to work with per generated frame, so artefacts become more likely. If you're interpolating for slow motion, shoot at the highest frame rate your camera allows first. Crisp's Smooth motion control offers Off, 2× and 3×; its API and command line accept 1, 2, 3 or 4 and reject anything else rather than rounding it."}},{"@type":"Question","name":"Will it fix a video that stutters?","acceptedAnswer":{"@type":"Answer","text":"It depends on the cause. If the source has a genuinely low frame rate, interpolation helps. If it stutters because of a frame rate mismatch with the display, or because the file is variable frame rate and something resampled it badly, interpolation will smooth over the symptom without addressing the cause."}},{"@type":"Question","name":"Does Crisp interpolate before or after upscaling?","acceptedAnswer":{"@type":"Answer","text":"After. Crisp runs the upscaler over a segment's frames first, and hands the already-upscaled frames to the interpolator. The order is fixed in the pipeline and is not a setting. It is the expensive order: the motion model is estimating over frames at output resolution, and Crisp's own disk-space check budgets working space for one plus the multiplier of output-sized frame sets per segment."}},{"@type":"Question","name":"Can I interpolate and upscale in the same pass?","acceptedAnswer":{"@type":"Answer","text":"Yes on the standard presets, as two stages in a fixed order: upscale first, then interpolate the upscaled frames. The generative Max restore lane is the exception. It refuses the combination with its own message telling you to turn Smooth motion off or use a standard preset, the job endpoint rejects the pair, and the app hides the Smooth motion control while Max is selected."}}]}</script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://crispvideo.app/learn/"}, {"@type": "ListItem", "position": 3, "name": "Frame interpolation", "item": "https://crispvideo.app/learn/what-is-frame-interpolation/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -47,18 +47,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -66,12 +54,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -93,38 +77,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -152,7 +120,7 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/learn/">Learn</a> &rsaquo; Frame interpolation</div>
   <h1>What is frame interpolation?</h1>
-  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-08-10 · last updated 2026-11-11</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-08-10 · last updated 2026-11-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Frame interpolation invents frames
   that were never shot: a model looks at two real frames, works out how everything moved between
@@ -161,7 +129,7 @@
   already-upscaled frames, using <strong>rife-v4.6</strong> through
   <span class="prompt">rife-ncnn-vulkan</span>, and the original audio is stream-copied so nothing
   drifts.</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-frame-interpolation-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-what-is-frame-interpolation-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-frame-interpolation-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-what-is-frame-interpolation-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <p>Frame interpolation creates frames that were never captured. Given two consecutive frames, the
   model works out how things moved between them and generates one or more intermediate pictures. Do
@@ -275,7 +243,7 @@
     <li><a href="https://crispvideo.app/learn/what-is-offline-video-editing/">What is offline video editing?</a></li>
   </ul>
 
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-frame-interpolation-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-what-is-frame-interpolation-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=learn-what-is-frame-interpolation-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="learn-what-is-frame-interpolation-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=learn-what-is-frame-interpolation-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 </div></article>
 
 <footer><div class="wrap">

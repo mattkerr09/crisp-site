@@ -28,8 +28,8 @@ MONTHS = tuple(f"{month}月" for month in range(1, 13))
 SHORT_MONTHS = MONTHS
 DATE_FORMAT = SHORT_DATE_FORMAT = "{month}{day}日"
 PRICE_ONCE = "{price}の買い切りです。"
-PRICE_COPY = "発売記念価格は{ends}まで{now}です。{future}からは{price}です。"
-PRICE_SHORT = "発売記念価格は{ends}まで{now}です。その後は{price}です。"
+PRICE_COPY = 'Black Friday セール：{now}の買い切り。11月の価格{november}から{percent}%オフ。{ends}まで。その後は{price}です。'
+PRICE_SHORT = PRICE_COPY
 BUNDLE_FULL_PRICE = "Crisp、Check Engine SEO、Outlierの3本セットです。{price}の買い切りです。"
 BOX_POSITIONS = {1: "top", 2: "bottom"}
 INLINE_STYLE = ("body{overflow-wrap:anywhere;}"
@@ -41,7 +41,7 @@ INLINE_STYLE = ("body{overflow-wrap:anywhere;}"
 BOX = {
     "name": "<strong>Crisp Video</strong>は動画を修復し、ノイズ除去と4Kまでのアップスケールを行います。MacやPC上で、オフラインのまま処理します。",
     "once": "買い切り",
-    "found": PRICE_COPY + "ボタンを押すと、購入画面でクーポンコード <strong>{code}</strong> が自動で適用されます。",
+    "found": 'Black Friday セール：{now}の買い切り。11月の価格{november}から{percent}%オフ。{ends}まで。その後は{price}です。 購入ボタンでセール価格が適用されます。',
     "buy": "Crisp Proを購入",
     "download_mac": "Mac版を無料ダウンロード",
     "windows_q": "Windows 10/11（64ビット版）をお使いの方はこちら",

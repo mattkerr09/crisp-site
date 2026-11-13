@@ -50,14 +50,14 @@ SHORT_MONTHS = tuple(month[:3] for month in MONTHS)
 DATE_FORMAT = "{day} de {month}"
 SHORT_DATE_FORMAT = "{day} de {month}."
 PRICE_ONCE = "{price}, em pagamento único."
-PRICE_COPY = "Preço de lançamento: {now}, até {ends}. A partir de {future}: {price}."
-PRICE_SHORT = "Preço de lançamento: {now} até {ends}; depois, {price}."
+PRICE_COPY = 'Promoção Black Friday: {now} em pagamento único, {percent}% de desconto sobre nosso preço de novembro de {november}, até {ends}. Depois, {price}.'
+PRICE_SHORT = PRICE_COPY
 BUNDLE_FULL_PRICE = "Os três apps: Crisp, Check Engine SEO e Outlier. {price}, em pagamento único."
 
 BOX = {
     "name": "<strong>Crisp Video</strong> restaura vídeos, remove ruído e aumenta a resolução até 4K no seu Mac ou PC, offline.",
     "once": "em pagamento único",
-    "found": "Preço de lançamento: {now}, até {ends}. A partir de {future}: {price}. O botão de compra aplica o código <strong>{code}</strong> na hora de pagar.",
+    "found": 'Promoção Black Friday: {now} em pagamento único, {percent}% de desconto sobre nosso preço de novembro de {november}, até {ends}. Depois, {price}. O botão de compra aplica o preço da promoção.',
     "buy": "Comprar Crisp Pro",
     "download_mac": "Baixar grátis para Mac",
     "windows_q": "Usa Windows 10 ou 11, de 64 bits?",

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
-<title>Switch from Topaz Video AI to Crisp: launch pricing</title>
+<title>Switch from Topaz Video AI to Crisp: pricing</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Topaz went subscription-only in October 2025; Topaz Video costs $299/yr. Crisp's launch price: $14.50 through Nov 30, then $19, fully offline on Mac.">
+<meta name="description" content="Topaz went subscription-only in October 2025; Topaz Video costs $299/yr. Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19., fully offline on Mac.">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Switch from Topaz Video AI to Crisp: launch pricing">
+<meta property="og:title" content="Switch from Topaz Video AI to Crisp: pricing">
 <meta property="og:description" content="Topaz ended perpetual licences in Oct 2025. What moves across to Crisp, and where Topaz still wins.">
 <meta property="og:url" content="https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/">
 <meta property="og:site_name" content="Crisp">
@@ -19,14 +19,14 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Switching from Topaz Video AI to Crisp">
-<meta name="twitter:description" content="Launch price $14.50 through Nov 30, then $19 vs $299/year, $254 first year in Topaz Video's sale, read 11 Nov 2026, an honest migration guide for Mac.">
+<meta name="twitter:description" content="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. vs $299/year, $254 first year in Topaz Video's sale, read 11 Nov 2026, an honest migration guide for Mac.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article",
  "headline":"Switching from Topaz Video AI to Crisp",
  "description":"Topaz went subscription-only in October 2025. An honest migration guide to Crisp for Mac, including where Topaz remains the better choice.",
- "datePublished":"2026-07-23","dateModified":"2026-11-11",
+ "datePublished":"2026-07-23","dateModified":"2026-11-13",
  "author":{"@type":"Person","name":"Matt Kerr"},
  "publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},
  "mainEntityOfPage":"https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/"}
@@ -34,7 +34,7 @@
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Compared", "item": "https://crispvideo.app/vs/"}, {"@type": "ListItem", "position": 3, "name": "Switching from Topaz Video AI", "item": "https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -54,18 +54,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -73,12 +61,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -100,38 +84,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -159,15 +127,15 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; Switching from Topaz Video AI</div>
   <h1>Switching from <span class="grad">Topaz Video AI</span> to Crisp</h1>
-  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-11-11</div>
+  <div class="updated">Crisp · built in Grand Rapids · published 2026-07-23 · last updated 2026-11-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">Topaz ended perpetual licences in October 2025. The app is now called
   <strong>Topaz Video</strong> and costs <strong>$299 a year, or $254 for the first year in Topaz Video's sale, read 11 Nov 2026</strong> on its annual plan with
   the all-apps Topaz Studio bundle at $399 a year
-  (checked 19 October 2026). Launch price: $14.50 once, through November 30. From December 1: $19. Crisp runs entirely on your own Mac or PC, and never
+  (checked 19 October 2026). <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> Crisp runs entirely on your own Mac or PC, and never
   uploads your footage. If the subscription is why you're here, this page tells you exactly
   what moves across and what doesn't.</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-switch-from-topaz-video-ai-to-crisp-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-switch-from-topaz-video-ai-to-crisp-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <h2>What actually changed at Topaz</h2>
   <p>Before October 2025 you could buy Topaz Video AI outright and keep the version you paid
@@ -180,14 +148,14 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th>Tool</th><th>Model</th><th>Cost</th><th>Runs offline</th></tr></thead>
     <tbody>
-      <tr><th scope="row"><strong>Crisp</strong></th><td>One-time</td><td>Launch price: $14.50 once, through November 30. From December 1: $19.</td><td>Yes</td></tr>
+      <tr><th scope="row"><strong>Crisp</strong></th><td>One-time</td><td><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td><td>Yes</td></tr>
       <tr><th scope="row">Topaz Video</th><td>Subscription</td><td>$299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026</td><td>Yes</td></tr>
       <tr><th scope="row">Aiarty Video Enhancer</th><td>One-time</td><td>$165</td><td>Yes</td></tr>
       <tr><th scope="row">VideoProc Converter AI</th><td>One-time</td><td>$54.95</td><td>Yes</td></tr>
       <tr><th scope="row">UniFab All-In-One</th><td>One-time</td><td>$319.99</td><td>Yes</td></tr>
     </tbody>
   </table></div>
-<p class="price-receipts"><strong>Prices checked 19 October 2026 in a rendered browser</strong>, read off <a href="https://www.topazlabs.com/pricing" rel="nofollow">topazlabs.com/pricing</a>: <strong>Topaz Video $299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026</strong> on the annual plan, Topaz Video Pro $699/yr, Topaz Studio (which bundles all six apps) $399/yr, and Topaz Studio Pro $799/yr. The browser version, Topaz for Web &ndash; Video, is a separate $199/yr, and topazlabs.com/topaz-video-ai still redirects, so the product is called <strong>Topaz Video</strong> now. An earlier version of this page said &ldquo;$25/month billed annually &mdash; $300 a year&rdquo;. $300 is twelve times the monthly figure rather than a price Topaz charges; its own annual plan is $299. That version also said Studio bundles seven apps, and Topaz lists six. Both corrected. The other three tools in the table above have their own pages and their own prices, read the same way. <strong>Aiarty Video Enhancer</strong>: lifetime $235 list, <strong>$165</strong> when checked, covering 3 Macs, read off <a href="https://www.aiarty.com/ai-video-enhancer/buy.htm" rel="nofollow">aiarty.com</a> on 19 October 2026, where the yearly plan is $99 list and $79 discounted. <strong>VideoProc Converter AI</strong>: lifetime $89.95 list, <strong>$54.95</strong> when checked, covering 1 Mac, read off <a href="https://www.videoproc.com/video-converting-software/buy-mac.htm" rel="nofollow">videoproc.com</a>’s Mac purchase page on 19 October 2026, where a 3-Mac yearly plan is $34.95 and a 5-Mac lifetime is $79.95. <strong>UniFab All-In-One</strong>: <strong>$319.99</strong> list, discounted to $229.99 when read off unifab.ai in a rendered browser on 19 October 2026. The figure and its working are set out in full on <a href="https://crispvideo.app/vs/unifab-alternative-mac/">the UniFab comparison</a>. Both the Aiarty and VideoProc figures are the Mac purchase pages, not the marketing pages, because the two disagree and the purchase page is the one you pay. Launch price: $14.50 once, through November 30. From December 1: $19. Buy from <a href="/#buy">this site</a>.</p>
+<p class="price-receipts"><strong>Prices checked 19 October 2026 in a rendered browser</strong>, read off <a href="https://www.topazlabs.com/pricing" rel="nofollow">topazlabs.com/pricing</a>: <strong>Topaz Video $299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026</strong> on the annual plan, Topaz Video Pro $699/yr, Topaz Studio (which bundles all six apps) $399/yr, and Topaz Studio Pro $799/yr. The browser version, Topaz for Web &ndash; Video, is a separate $199/yr, and topazlabs.com/topaz-video-ai still redirects, so the product is called <strong>Topaz Video</strong> now. An earlier version of this page said &ldquo;$25/month billed annually &mdash; $300 a year&rdquo;. $300 is twelve times the monthly figure rather than a price Topaz charges; its own annual plan is $299. That version also said Studio bundles seven apps, and Topaz lists six. Both corrected. The other three tools in the table above have their own pages and their own prices, read the same way. <strong>Aiarty Video Enhancer</strong>: lifetime $235 list, <strong>$165</strong> when checked, covering 3 Macs, read off <a href="https://www.aiarty.com/ai-video-enhancer/buy.htm" rel="nofollow">aiarty.com</a> on 19 October 2026, where the yearly plan is $99 list and $79 discounted. <strong>VideoProc Converter AI</strong>: lifetime $89.95 list, <strong>$54.95</strong> when checked, covering 1 Mac, read off <a href="https://www.videoproc.com/video-converting-software/buy-mac.htm" rel="nofollow">videoproc.com</a>’s Mac purchase page on 19 October 2026, where a 3-Mac yearly plan is $34.95 and a 5-Mac lifetime is $79.95. <strong>UniFab All-In-One</strong>: <strong>$319.99</strong> list, discounted to $229.99 when read off unifab.ai in a rendered browser on 19 October 2026. The figure and its working are set out in full on <a href="https://crispvideo.app/vs/unifab-alternative-mac/">the UniFab comparison</a>. Both the Aiarty and VideoProc figures are the Mac purchase pages, not the marketing pages, because the two disagree and the purchase page is the one you pay. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> Buy from <a href="/#buy">this site</a>.</p>
   <p>Every remaining one-time option sits between roughly $95 and $320. Crisp is the cheapest
   by a wide margin, and that deserves a caveat rather than a victory lap: an app built by
   one person is not going to match a decade of Topaz engineering on every axis. Read the next
@@ -235,7 +203,7 @@
   <h2>The short version</h2>
   <p>If you're a working pro who needs model breadth and interpolation, stay on Topaz. If you
   resent paying a subscription every month to keep software you used to own, and your work is mostly
-  upscaling plus editing on a Mac, Pro is a straightforward trade. Launch price: $14.50 once, through November 30. From December 1: $19.</p>
+  upscaling plus editing on a Mac, Pro is a straightforward trade. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></p>
 
   <h2>Which preset replaces which model</h2>
   <p>This is the part switchers actually get stuck on. Topaz hands you a catalogue and expects you
@@ -273,7 +241,7 @@
     <li><a href="https://crispvideo.app/vs/unifab-alternative-mac/">A UniFab alternative for Mac</a></li>
   </ul>
 
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-switch-from-topaz-video-ai-to-crisp-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-switch-from-topaz-video-ai-to-crisp-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-switch-from-topaz-video-ai-to-crisp-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 <p class="price-receipts"><strong>Prices checked 11 November 2026 for Topaz Video Personal only.</strong> Read on <a href="https://www.topazlabs.com/topaz-video" rel="nofollow">topazlabs.com/topaz-video</a>: $299/yr regular price, $254 first year in Topaz Video's sale, read 11 Nov 2026. Billed annually. First year only.</p>
 </div></article>
 <footer><div class="wrap">

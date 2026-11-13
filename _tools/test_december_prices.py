@@ -8,11 +8,14 @@ import json
 from pathlib import Path
 import re
 
-import gate_read_dates as reads
+from sale_test_facts import sale_engine
+
+with sale_engine():
+    import gate_read_dates as reads
 
 
 SITE = Path(__file__).resolve().parent.parent
-ENDS = "2026-12-01T07:59:59Z"
+ENDS = "2026-12-03T07:59:59Z"
 MONEY = re.compile(r"(?:US)?\$\s*(\d+(?:,\d{3})*(?:[.,]\d+)?)|(?<![\w.,])(\d+(?:[.,]\d+)?)\s*(?:US)?\$")
 OWN_NAME = re.compile(r"Crisp|Outlier|Docket|Check Engine|bundle", re.I)
 PBOX = re.compile(r'<aside\b[^>]*class="pbox"[^>]*>.*?</aside>', re.S)
@@ -47,7 +50,11 @@ def text_errors(raw):
         units = block.cells if block.tag == "tr" else reads.sentences(block.text)
         ours = containers.get(block.container, {}).get("ours", set()) if block.tag == "tr" else set()
         for i, text in enumerate(units):
-            old = set(amounts(text)) & {Decimal("29"), Decimal("99")}
+            old = set(amounts(text)) & {Decimal("14.50"), Decimal("29"), Decimal("99")}
+            if any(reference in text for reference in (
+                'November price of $14.50', 'Novemberpreis von 14,50 $', '11月の価格$14.50から',
+                'preço de novembro de US$ 14,50', 'precio de noviembre de 14,50 US$')):
+                old.discard(Decimal('14.50'))
             if "Outlier" in block.text and "Crisp" not in block.text:
                 old.discard(Decimal("29"))
             if not old:
@@ -71,13 +78,13 @@ class Attributes(HTMLParser):
         if tag == "meta" and "description" in (attrs.get("name", "") + attrs.get("property", "")):
             self.descriptions.append(attrs.get("content", ""))
         bundle = "/buy/bundle" in attrs.get("href", "")
-        expected = Decimal("59" if bundle else "19")
+        expected = Decimal({"bundle": "59", "outlier": "29", "docket": "39"}.get(attrs.get("data-product"), "59" if bundle else "19"))
         for key in ("data-then", "data-full-price", "data-was"):
             if key in attrs and amounts(attrs[key]) != [expected]:
                 self.errors.append(f"{key}: expected {expected}, got {attrs[key]!r}")
         if "data-founding" in attrs:
-            if amounts(attrs.get("data-now", "")) != [Decimal("14.50")]:
-                self.errors.append("founding mount lost $14.50")
+            if amounts(attrs.get("data-now", "")) != [Decimal("9.99")]:
+                self.errors.append("sale mount lost $9.99")
         for key in ("data-ends", "data-price-ends", "data-until"):
             if key in attrs and attrs[key] != ENDS:
                 self.errors.append(f"{key}: changed launch end {attrs[key]!r}")
@@ -87,6 +94,16 @@ def schema_errors(value, context=""):
     errors = []
     if isinstance(value, dict):
         context = value.get("name", context)
+        if value.get('@type') == 'Offer' and value.get('price') not in (None, '0', '0.00', 0):
+            price = str(value['price'])
+            if price == '9.99':
+                if value.get('priceValidUntil') != '2026-12-02' or value.get('validFrom'):
+                    errors.append('JSON-LD sale Offer has wrong dates')
+            elif price in ('19', '19.00'):
+                if value.get('validFrom') != '2026-12-03' or value.get('priceValidUntil'):
+                    errors.append('JSON-LD regular Offer has wrong dates')
+            else:
+                errors.append(f'JSON-LD Offer has stale price {price}')
         for key, item in value.items():
             if key in ("price", "minPrice", "maxPrice") and str(item) in ("29", "29.00", "99", "99.00"):
                 errors.append(f"JSON-LD {key}: stale {item}")
@@ -112,14 +129,14 @@ def page_errors(raw):
         errors += text_errors(f"<p>{title}</p>")
     for box in PBOX.findall(raw):
         price = re.search(r'<span\b[^>]*class="pbox-amt"[^>]*>(.*?)</span>', box, re.S)
-        if not price or amounts(price.group(1)) != [Decimal("14.50")]:
-            errors.append("product box lost its $14.50 launch price")
+        if not price or amounts(price.group(1)) != [Decimal("9.99")]:
+            errors.append("product box lost its $9.99 sale price")
         if 'data-full-price=' not in box:
             errors.append("product box lost its December price")
     for bundle in re.findall(r'<a\b[^>]*href="[^"]*/buy/bundle[^"]*"[^>]*>(.*?)</a>', raw, re.S):
         prices = amounts(re.sub(r"<[^>]+>", " ", bundle))
-        if prices[:2] != [Decimal("49.50"), Decimal("59")]:
-            errors.append("bundle lost its $49.50 launch price or $59 December price")
+        if prices[:3] != [Decimal("34.99"), Decimal("49.50"), Decimal("59")]:
+            errors.append("bundle lost its $34.99 sale, $49.50 November reference or $59 regular price")
     for script in LD.findall(raw):
         try:
             errors += schema_errors(json.loads(script))
@@ -148,9 +165,16 @@ def selftest():
     assert not page_errors('<p>Aiarty costs $29 a year. Its lifetime licence costs $99.</p>')
     assert not page_errors('<meta name="description" content="Aiarty costs $99 a year.">')
     assert not page_errors('<script type="application/ld+json">{"description":"Aiarty costs $99 a year."}</script>')
-    assert not page_errors('<p>Launch price $14.50 through Nov 30, then $19. Bundle $49.50, then $59.</p>')
+    assert page_errors('<p>Launch price $14.50 through Nov 30, then $19.</p>')
+    assert not page_errors('<p>Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</p>')
     assert not page_errors('<p>Outlier. Launch price $24.50, then $29 once.</p>')
     assert page_errors('<a href="https://example.test/buy/bundle">Launch $39.50, then $59.</a>')
+    for offer in ({'price': '14.50', 'priceValidUntil': '2026-12-02'},
+                  {'price': '9.99', 'priceValidUntil': '2026-11-30'},
+                  {'price': '19.00', 'validFrom': '2026-12-01'}):
+        assert schema_errors(dict(offer, **{'@type': 'Offer'}))
+    assert not schema_errors({'@type': 'Offer', 'price': '9.99', 'priceValidUntil': '2026-12-02'})
+    assert not schema_errors({'@type': 'Offer', 'price': '19.00', 'validFrom': '2026-12-03'})
 
 
 def source_checks():
@@ -161,63 +185,65 @@ def source_checks():
 
     facts = llms_txt.facts()
     assert facts["price"] == facts["then"] == Decimal("19")
-    assert facts["now"] == Decimal("14.50") and facts["ends"] == ENDS
+    assert facts["now"] == Decimal("9.99") and facts["ends"] == ENDS
     assert landing_pages.BUNDLE_USD == Decimal("59")
-    assert landing_pages.BUNDLE_FOUNDING_USD == Decimal("49.50")
+    assert landing_pages.BUNDLE_FOUNDING_USD == Decimal("34.99")
     assert landing_pages.BUNDLE_FOUNDING_ENDS == ENDS
     assert thankyou_xsell.list_price("Crisp") == facts["price"]
     assert thankyou_xsell.list_price("Outlier") == Decimal("29")
     assert thankyou_xsell.list_price("Check Engine SEO") == Decimal("39")
-    assert thankyou_xsell.launch_price("Outlier") == Decimal("24.50")
-    assert thankyou_xsell.launch_price("Check Engine SEO") == Decimal("29.50")
+    assert thankyou_xsell.sale_price("Outlier") == Decimal("16.99")
+    assert thankyou_xsell.sale_price("Check Engine SEO") == Decimal("19.99")
     assert thankyou_xsell.block() in (SITE / "thank-you" / "index.html").read_text()
-    assert {"14.50", "19.00", "3.63", "4.75", "49.50", "59.00", "12.38", "14.75"} <= price_sources.OURS
+    assert {"9.99", "14.50", "19.00", "2.50", "4.75", "34.99", "49.50", "59.00", "8.75", "14.75"} <= price_sources.OURS
     assert not {"29", "29.00", "99", "99.00"} & price_sources.OURS
     assert llms_txt.quarter(facts["price"]) == Decimal("4.75")
-    assert llms_txt.quarter(facts["now"]) == Decimal("3.63")
+    assert llms_txt.quarter(facts["now"]) == Decimal("2.50")
     home = (SITE / "index.html").read_text()
     graphs = [json.loads(script) for script in LD.findall(home)]
     pro = [offer for graph in graphs for node in graph.get("@graph", [])
            for offer in node.get("offers", []) if offer.get("name") == "Pro"]
-    # Two dated Pro offers (CEO, 11 Nov): the launch price through Nov 30, the list price from Dec 1.
+    # Two dated Pro offers: sale through December 2, regular price from December 3.
     assert len(pro) == 2, "home must carry two dated Pro Offers"
     launch = [o for o in pro if o.get("priceValidUntil")]
     later = [o for o in pro if o.get("validFrom")]
-    assert len(launch) == 1 and launch[0]["price"] == "14.50" and launch[0]["priceValidUntil"] == "2026-11-30", launch
-    assert len(later) == 1 and later[0]["price"] == "19.00" and later[0]["validFrom"] == "2026-12-01", later
+    assert len(launch) == 1 and launch[0]["price"] == "9.99" and launch[0]["priceValidUntil"] == "2026-12-02", launch
+    assert len(later) == 1 and later[0]["price"] == "19.00" and later[0]["validFrom"] == "2026-12-03", later
 
 
 def facts_checks():
     from unittest.mock import Mock, patch
     import llms_txt
+    from sale_test_facts import ENGINE_SOURCE
 
-    engine = ('PRICE_USD = Decimal("19")\n'
-              'FOUNDING_OFF_USD = Decimal("4.50")\n'
-              'PRICE_AFTER_LAUNCH_USD = PRICE_USD\n'
-              f'LAUNCH_ENDS = "{ENDS}"\n'
-              'FREE_EXPORT_CAP_SECONDS = 15\n')
-    for after in ('PRICE_USD', 'Decimal("19")', '19'):
-        source = engine.replace('PRICE_AFTER_LAUNCH_USD = PRICE_USD', f'PRICE_AFTER_LAUNCH_USD = {after}')
+    # The exact new names work without the old PRICE_AFTER_LAUNCH_USD alias.
+    for source in (ENGINE_SOURCE, ENGINE_SOURCE.replace('= 19\n', '= Decimal("19")\n')
+                   .replace('= 9.01\n', '= Decimal("9.01")\n')
+                   .replace('= 14.50\n', '= Decimal("14.50")\n')):
         with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=source))):
             facts = llms_txt.facts()
-            assert facts["price"] == Decimal("19") and facts["now"] == Decimal("14.50")
+            assert facts["price"] == Decimal("19") and facts["now"] == Decimal("9.99")
+            assert facts["november"] == Decimal("14.50") and facts["percent"] == 31
 
-    # A different list price and fixed discount must still derive the same launch price.
-    source = engine.replace('Decimal("19")', 'Decimal("25")').replace('Decimal("4.50")', 'Decimal("10.50")')
-    source = source.replace('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = Decimal("19")')
-    with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=source))):
-        assert llms_txt.facts()["now"] == Decimal("14.50")
-
-    for old, new, message in (('Decimal("4.50")', 'Decimal("4")', 'launch price'),
-                              ('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = OTHER_PRICE', 'could not read'),
-                              ('PRICE_AFTER_LAUNCH_USD = PRICE_USD', 'PRICE_AFTER_LAUNCH_USD = 20', 'full price')):
-        with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=engine.replace(old, new)))):
+    for old, new, message in (('= 9.01\n', '= 9\n', 'sale price'),
+                              ('NOVEMBER_PRICE_USD', 'OTHER_PRICE', 'could not read'),
+                              ('= 14.50\n', '= 15\n', 'November price'),
+                              ('= 19\n', '= 20\n', 'full price'),
+                              ('2026-12-03T07:59:59Z', '2026-12-02T07:59:59Z', 'LAUNCH_ENDS')):
+        with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=ENGINE_SOURCE.replace(old, new)))):
             try:
                 llms_txt.facts()
             except SystemExit as error:
                 assert message in str(error), str(error)
             else:
                 raise AssertionError(f"facts accepted {new}")
+    with patch.object(llms_txt, 'ENGINE', Path('/nonexistent/crisp-sale-engine/entitlement.py')):
+        try:
+            llms_txt.facts()
+        except SystemExit as error:
+            assert 'No price fallback' in str(error)
+        else:
+            raise AssertionError('missing engine silently accepted')
 
 
 def main():
@@ -236,8 +262,8 @@ def main():
         boxes += len(PBOX.findall(raw))
         errors += [f"{path.relative_to(SITE)}: {error}" for error in page_errors(raw)]
     llms = (SITE / "llms.txt").read_text(encoding="utf-8")
-    if "then $19" not in llms:
-        errors.append('llms.txt: missing "then $19"')
+    if "Then $19" not in llms:
+        errors.append('llms.txt: missing "Then $19"')
     for line in llms.splitlines():
         errors += ["llms.txt: " + error for error in text_errors(f"<p>{escape(line)}</p>")]
     if not boxes:
@@ -252,4 +278,6 @@ def main():
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sale_test_facts import sale_engine
+    with sale_engine():
+        raise SystemExit(main())

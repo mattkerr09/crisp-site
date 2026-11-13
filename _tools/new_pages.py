@@ -36,9 +36,9 @@ SITE = "https://crispvideo.app"
 #: 19->99 rewrite would just reset that clock a third time.
 #:
 #: This site repo is nested and gitignored by the app repo, so it cannot import
-#: entitlement.PRICE_AFTER_LAUNCH_USD. One declared constant per repo is the achievable
-#: single source; keep it equal to entitlement.PRICE_AFTER_LAUNCH_USD.
-PRICE_USD = 19   # Matthew approved 2026-11-11; November's launch price stays $14.50.
+#: entitlement.PRICE_USD. One declared constant per repo is the achievable
+#: single source; keep it equal to entitlement.PRICE_USD.
+PRICE_USD = 19   # Matthew approved 2026-11-11; Black Friday sale facts come from the engine.
 #: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
 #: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
 FREE_EXPORT_CAP_SECONDS = 15
@@ -130,7 +130,7 @@ def build(page):
     # A placeholder only: faq_jsonld.rebuild() below replaces mainEntity with the questions and answers the page SHOWS,
     # so the schema can never be a second, drifting copy of the FAQ (166 of 346 schema questions had drifted).
     faq_ld = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}'
-    html = HEAD.format(site=SITE, price=PRICE_USD, price_copy=llms_txt.price_copy(llms_txt.facts()), cap=FREE_EXPORT_CAP_SECONDS, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
+    html = HEAD.format(site=SITE, price=PRICE_USD, price_copy=llms_txt.price_markup(llms_txt.facts()), cap=FREE_EXPORT_CAP_SECONDS, slug=page["slug"], title=page["title"], desc=esc(page["desc"]),
                        ogtitle=esc(page["h1"]), crumb=page["crumb"], h1=page["h1"],
                        section=page.get("section", "Learn"),
                        body=page["body"], faq_heading=page["faq_heading"], faq_html=faq_html,

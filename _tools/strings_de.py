@@ -33,7 +33,7 @@ BOX = {
     "name": "<strong>Crisp Video</strong> stellt Videos wieder her, entfernt Rauschen und skaliert sie auf 4K hoch, offline auf Ihrem Mac oder PC.",
     "once": "einmalig",
     # {now}, {price} are money(); {code} the founding code; {ends} the last day of the offer, e.g. "30. November"
-    "found": "Einführungspreis, bis {ends}. Ab {future}: {price}. Über den Kauf-Button wird der Code <strong>{code}</strong> an der Kasse automatisch eingelöst.",
+    "found": 'Black Friday Angebot: {now} einmalig, {percent}% Rabatt auf unseren Novemberpreis von {november}, bis {ends}. Danach {price}. Der Kauf-Button wendet den Aktionspreis an.',
     "buy": "Crisp Pro kaufen",
     "download_mac": "Kostenlos für den Mac herunterladen",
     "windows_q": "Windows 10 oder 11, 64 Bit?",
@@ -109,8 +109,8 @@ SHORT_MONTHS = tuple(month[:3] for month in MONTHS)
 DATE_FORMAT = "{day}. {month}"
 SHORT_DATE_FORMAT = "{day}. {month}."
 PRICE_ONCE = "{price} einmalig."
-PRICE_COPY = "Einführungspreis: {now} einmalig, bis {ends}. Ab {future}: {price}."
-PRICE_SHORT = "Einführungspreis {now} bis {ends}, dann {price}."
+PRICE_COPY = 'Black Friday Angebot: {now} einmalig, {percent}% Rabatt auf unseren Novemberpreis von {november}, bis {ends}. Danach {price}.'
+PRICE_SHORT = PRICE_COPY
 BUNDLE_FULL_PRICE = "Alle drei Apps, Crisp, Check Engine SEO und Outlier. {price} einmalig."
 CONTACT_CLASS = "kontakt"
 CONTACT = ('<section class="kontakt"><h2>' + KONTAKT_H + '</h2><p>Kerr &amp; Company LLC<br>'
@@ -166,7 +166,7 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("unmapped home link", "de/download/index.html", 'href="/de/"', 'href="/"', "generated German page is stale", True),
         ("altered download", "de/download/index.html", 'Crisp.dmg', 'Other.dmg', "generated German page is stale", True),
         ("changed price", "de/preise/index.html", 'data-full-price="19 $"', 'data-full-price="30 $"', "generated German page is stale", True),
-        ("changed JSON price", "de/index.html", '"price": "14.50"', '"price": "30"', "fixed value", True),
+        ("changed JSON price", "de/index.html", '"price": "9.99"', '"price": "30"', "fixed value", True),
         ("unmarked JSON prose", "de/index.html", '"name": "TODO-DE: Crisp Video"', '"name": "Crisp Video"', "unmarked English", True),
         ("invalid JSON", "de/index.html", '"@context": "https://schema.org",', '"@context": ,', "invalid JSON-LD", True),
         ("changed schema type", "de/index.html", '"@type": "Organization"', '"@type": "Thing"', "fixed value", True),
@@ -186,11 +186,10 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("English sentence", "de/download/index.html", words.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),
         ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
         ("stale Windows version", "de/download/index.html", 'Crisp ' + _WIN_VERSION, 'Crisp 1.0.1', "generated German page is stale", True),
-        ("stale code", "de/preise/index.html", 'FOUNDINGCRISP', 'WRONGCODE', "generated German page is stale", True),
+        ("stale sale percent", "de/preise/index.html", '31% Rabatt', '30% Rabatt', "generated German page is stale", True),
         ("stale bundle price", "de/preise/index.html", '49,50 $', '48,50 $', "generated German page is stale", True),
         ("stale macOS floor", "de/download/index.html", 'macOS 14.0', 'macOS 13.0', "generated German page is stale", True),
-        ("unmarked homepage price", "de/index.html", '$14.50 once', '$13.50 once', "prices differ", True),
-        ("unmarked homepage code", "de/index.html", 'TODO-DE: FOUNDINGCRISP', 'WRONGCODE', "codes differ", True),
+        ("unmarked homepage price", "de/index.html", '$9.99 once', '$8.99 once', "prices differ", True),
         ("stale generated box", "de/datenschutz/index.html", '14,50 $', '13,50 $', "generated German box is stale", True),
         ("missing box expiry", "de/datenschutz/index.html", generator.EXPIRY_SCRIPT, '', "generated German box is stale", True),
     ]

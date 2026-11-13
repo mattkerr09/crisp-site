@@ -4,11 +4,11 @@ CEO, 2026-09-28, on Matthew's "make sure those pages and actually all pages are 
 sale" (~/ops/search/WHAT-WORKS-2026-09-28.md, checklist items 1 and 3): a real next step INSIDE the article,
 not only the menu button — a product box right after the part that answers the question, and again at the
 end, carrying Download free (and the way to Pro — a link to the buy card, not a checkout, so
-the checkout exemption stays on the homepage and a Buy event still means a real checkout click), the price with its four-payment split beside it, the founding code,
+the checkout exemption stays on the homepage and a Buy event still means a real checkout click), the price with its four-payment split beside it, the sale line,
 the requirements and the refund promise. The audit that day found 6 pages with no in-article path at all
 and 75 with one, at the very end.
 
-EVERY FIGURE IS READ, NOT TYPED: the price, the founding offer, pay-in-four, the macOS and chip requirements
+EVERY FIGURE IS READ, NOT TYPED: the price, the sale, pay-in-four, the macOS and chip requirements
 and the refund window come from llms_txt.facts() — the same reader llms.txt is built from — so a price or a
 floor that moves regenerates every box on the next run instead of leaving 118 stale copies.
 
@@ -65,10 +65,10 @@ def box(where: str, page: str = "") -> str:
     m = llms_txt.money
     split = f'<span class="pbox-split"> · or 4 × {m(q(amount))}</span>' if llms_txt.bnpl_on(f, amount) else ""
     # The box's Pro link goes to the homepage's pricing section, whose Buy runs through the hub and
-    # applies the code (since 10-01), so say that, not "enter it" (CEO, 2026-10-02). Two sentences,
+    # applies the sale price, so no code is shown (CEO, 2026-10-02). Two sentences,
     # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).
-    found = (f'<p class="pbox-found">Launch price, {llms_txt.offer_last_day(f)}. From {llms_txt.future_day(f)}: {m(p)}. '
-             f'Buy Pro applies <strong>{f["code"]}</strong> at checkout.</p>') if live else ""
+    found = (f'<p class="pbox-found">{llms_txt.price_copy(f)} '
+             'The Buy button applies the sale price.</p>') if live else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'

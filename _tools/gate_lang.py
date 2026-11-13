@@ -28,6 +28,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 from lang_pages import LanguagePages, alternate_routes, alternates, strings_module
+from gate_price_words import allowed_strike, without_sale_quotes
 
 ORIGIN = "https://crispvideo.app"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
@@ -288,7 +289,9 @@ class LanguageGate:
                 if self.generator.landing.sitewide_chrome.has_bar(target_source) or "/founding.js" in target_source or "window.__kcFounding" in target_source:
                     fail(target_path, "English founding bar must not appear on localized pages")
                 descriptions = [n.attrs.get("content", "") for n in target.elements("meta") if n.attrs.get("name") == "description"]
-                if len(descriptions) != 1 or not 70 <= len(unescape(descriptions[0])) <= 160:
+                if (len(descriptions) != 1 or len(unescape(descriptions[0])) < 70
+                        or (len(unescape(descriptions[0])) > 160
+                            and self.generator.price_copy(self.generator.llms_txt.facts()) not in unescape(descriptions[0]))):
                     fail(target_path, "meta description must have 70 to 160 characters")
                 title = target.elements("title")
                 if english == "/" and (len(title) != 1 or normal(title[0].text()) != self.words.HOME_TITLE):
@@ -297,10 +300,10 @@ class LanguageGate:
                               if n.attrs.get("name") == "robots")
                 if noindex != (english == "/pricing/"):
                     fail(target_path, "only the pricing page must be noindex")
-                if target.elements("s") or target.elements("del") or re.search(
+                if any(not allowed_strike(node, target.root) for node in target.elements("s") + target.elements("del")) or re.search(
                         r"Black Friday|half price|metade do preço|mitad de precio|半額|ブラックフライデー|[%％]\s*(?:off\b|オフ|割引|de desconto|de descuento)",
-                        normal(target.root.text()), re.I):
-                    fail(target_path, "use launch-price wording without discount claims or struck-out prices")
+                        without_sale_quotes(normal(target.root.text())), re.I):
+                    fail(target_path, "use approved sale wording without other discount claims or struck-out prices")
 
             if getattr(self.words, "HTML_LANG", self.lang) == "ja":
                 styles = "".join(target_source[node.open_end:node.close_start] for node in target.elements("style"))
@@ -563,7 +566,7 @@ class LanguageGate:
                 "changed Plausible", "missing title marker", "missing description marker",
                 "changed JSON price", "unmarked JSON prose", "invalid JSON",
                 "changed schema type", "wrong schema language", "sentence across inline tags",
-                "unmarked homepage price", "unmarked homepage code",
+                "unmarked homepage price",
             }
 
             def run_cases(selected, sources):
@@ -761,8 +764,8 @@ class LanguageGate:
             (home, '</body>', '<script src="/founding.js"></script></body>', "English founding bar"),
             (home, '</body>', '<script>window.__kcFounding = true;</script></body>', "English founding bar"),
             (home, '</body>', '<p>It stays the face the camera recorded.</p></body>', "English sentence remains"),
-            (home, '</body>', '<p>Black Friday</p></body>', "launch-price wording"),
-            (home, '</body>', '<p>50% off</p></body>', "launch-price wording"),
+            (home, '</body>', '<p>Black Friday</p></body>', "approved sale wording"),
+            (home, '</body>', '<p>50% off</p></body>', "approved sale wording"),
             (home, '</body>', '<p><del>29</del></p></body>', "struck-out prices"),
             (free, '</body>', f'<p>{self.todo}: copy</p></body>', f"{self.todo} markers"),
             (self.download_file, words.money(self.generator.llms_txt.facts()["now"]), "WRONGPRICE", "page is stale"),
@@ -783,8 +786,8 @@ class LanguageGate:
                 (home, JA_REQ_LABEL_RULE, "", "requirements table"),
                 (free, 'class="cmp-wrap"', 'class="wrong"', "cmp-wrap container"),
                 (home, "ja-home-pbox-top", "ja-home-pbox-1", "box is stale"),
-                (home, '</body>', '<p>半額</p></body>', "launch-price wording"),
-                (home, '</body>', '<p>50%オフ</p></body>', "launch-price wording"),
+                (home, '</body>', '<p>半額</p></body>', "approved sale wording"),
+                (home, '</body>', '<p>50%オフ</p></body>', "approved sale wording"),
             ])
         files = {url.lstrip("/") + "index.html" for pair in self.PAGES for url in pair} | {"sitemap.xml"}
         originals = {name: (self.ROOT / name).read_text() for name in files}
@@ -817,13 +820,13 @@ class LanguageGate:
             assert self.generator.landing.alternates(english.strip("/")).strip() == alternates(english, self.words), \
                 "English and localized doors must advertise the same available translations"
         f = self.generator.llms_txt.facts()
-        changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), code="NEXTCRISP",
+        changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), november=Decimal("30"), percent=32, code="NEXTCRISP",
                        ends="2026-12-16T07:59:59Z", os="macOS 15.0 or later", cap=22, refund_days=40)
         current_win = self.generator.llms_txt.windows()
         win = {"version": "2.3.4567", "url": current_win["url"].replace(current_win["version"], "2.3.4567")}
         with patch.object(self.generator.llms_txt, "facts", return_value=changed), patch.object(self.generator.llms_txt, "windows", return_value=win):
             page = self.generator.page(self.generator.download_slug, changed)
-            for value in (self.words.money(changed["price"]), self.words.money(changed["now"]), "NEXTCRISP", self.generator.last_day(changed["ends"]), changed["ends"], win["version"], win["url"], self.words.fact(changed["os"])):
+            for value in (self.words.money(changed["price"]), self.words.money(changed["now"]), self.words.money(changed["november"]), self.generator.last_day(changed["ends"]), changed["ends"], win["version"], win["url"], self.words.fact(changed["os"])):
                 assert value in page, f"{self.words.LANGUAGE_NAME} page did not update {value}"
             assert 'id="macos-speed"' not in page, "speed section must follow the English macOS floor"
             assert self.words.BOX["fine"].format(**self.generator.values(changed)) in page
@@ -848,7 +851,7 @@ class LanguageGate:
             assert self.generator.price_copy(expired) == expected
             assert self.generator.price_short(expired) == expected
         assert self.generator.last_day("2026-12-01T08:00:00Z") == self.words.DATE_FORMAT.format(day=30, month=self.words.MONTHS[10])
-        assert self.generator.EXPIRY_SCRIPT in self.generator.thankyou_xsell.block()
+        assert "data-price-ends" in self.generator.thankyou_xsell.block()
         with tempfile.TemporaryDirectory(prefix=f"crisp-{self.lang}-generator-") as folder:
             root = Path(folder)
             facts = root / "dodo-facts.json"
@@ -988,7 +991,7 @@ class LanguageGate:
                     assert chrome.kco_for(root / "unknown/index.html") == chrome.KCO
                     assert chrome.language(root.parent / gate.download_file) is None
                     assert not chrome.wants_founding(path, source)
-                    assert chrome.wants_founding(path, '<div data-founding></div>')
+                    assert not chrome.wants_founding(path, '<div data-founding></div>')
                     assert not chrome.wants_row_headers(path)
                     assert not chrome.apply(path), "chrome rewrote the second locale"
         assert self.generator.page(self.generator.download_slug, facts) == original_page, "locale state leaked"

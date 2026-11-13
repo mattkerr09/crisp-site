@@ -12,7 +12,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/clashdisplay-500.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Crisp enhancer restores, denoises and upscales old video to 4K offline on your Mac or PC. Free download, free to use. Launch price $14.50 through Nov 30, then $19.">
+<meta name="description" content="Crisp enhancer restores, denoises and upscales old video to 4K offline on your Mac or PC. Free download, free to use. Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.">
 <link rel="canonical" href="https://crispvideo.app/">
 <link rel="alternate" hreflang="en" href="https://crispvideo.app/">
 <link rel="alternate" hreflang="de" href="https://crispvideo.app/de/">
@@ -25,13 +25,13 @@
 <meta property="og:url" content="https://crispvideo.app/">
 <meta property="og:title" content="Crisp video enhancer: free offline download for Mac and PC">
 <meta property="og:site_name" content="Crisp Video">
-<meta property="og:description" content="Restore and upscale video to 4K on your Mac or PC, fully offline. Timeline editor, auto-montage, generative restore. Launch price: $14.50 once, through November 30. From December 1: $19. No subscription.">
+<meta property="og:description" content="Restore and upscale video to 4K on your Mac or PC, fully offline. Timeline editor, auto-montage, generative restore. Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. No subscription.">
 <meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Crisp video enhancer: free offline download for Mac and PC">
-<meta name="twitter:description" content="Restore, denoise and upscale old video to 4K on your Mac or PC, fully offline. Free: enhanced exports up to 15 seconds, everything else at full length, small mark; Launch price: $14.50 once, through November 30. From December 1: $19.">
+<meta name="twitter:description" content="Restore, denoise and upscale old video to 4K on your Mac or PC, fully offline. Free: enhanced exports up to 15 seconds, everything else at full length, small mark; Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.">
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 
 <style>
@@ -562,7 +562,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -582,18 +582,6 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -601,12 +589,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -628,38 +612,22 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -720,7 +688,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="hero-say">
     <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.</p>
-    <p class="lede-price"><strong>Free to use.</strong> <span data-launch-price data-full-price="Pro is $19 once.">Launch price: $14.50 once, through November 30. From December 1: $19.</span></p>
+    <p class="lede-price"><strong>Free to use.</strong> <span data-launch-price data-full-price="Pro is $19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></p>
     <div class="cta">
       <!-- windows-hero:begin --><a class="btn btn-primary win-btn" data-track="hero-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero-win&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>Download free for Windows</a><!-- windows-hero:end -->
       <a class="btn btn-primary" data-track="hero" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">
@@ -1135,16 +1103,16 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <div class="cmp-wrap"><table>
         <thead><tr><td></td><th>Crisp</th><th>Topaz Video AI</th><th>VideoProc Converter AI</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Price</th><td class="y">Launch price: $14.50 once, through November 30. From December 1: $19.</td><td class="n">$299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026, or $59/mo</td><td class="n">Subscription or licence</td></tr>
+          <tr><th scope="row">Price</th><td class="y"><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td><td class="n">$299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026, or $59/mo</td><td class="n">Subscription or licence</td></tr>
           <tr><th scope="row">Who makes it</th><td class="y">Kerr &amp; Company, independent</td><td>Adobe, which completed its purchase of Topaz Labs on 23 September 2026 (<a href="https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs" rel="nofollow">Adobe</a>, read 2 Nov 2026)</td><td>Digiarty Software (<a href="https://www.videoproc.com/video-converting-software/" rel="nofollow">videoproc.com</a>, read 2 Nov 2026)</td></tr>
-          <tr><th scope="row">Cost after 5 years at regular price</th><td class="y">Launch price $14.50 through Nov 30, then $19</td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
+          <tr><th scope="row">Cost after 5 years at regular price</th><td class="y"><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td><td class="n">$1,495</td><td class="n">Once, on the lifetime licence</td></tr>
           <tr><th scope="row">How you pay</th><td class="y">Once. It's yours</td><td class="n">Subscription only, for new licences</td><td class="n">Subscription or lifetime licence</td></tr>
           <tr><th scope="row">Runs fully offline</th><td class="y">Yes, every lane (the generative one on a Mac)</td><td class="n">Mostly. Project Starlight is cloud-only; Starlight Mini runs on-device</td><td class="n">Varies by feature</td></tr>
           <tr><th scope="row">Multi-clip timeline</th><td class="y">Yes: arrange, trim, split, reorder</td><td class="n">Trim and crop only</td><td class="n">Cut and merge, in a queue</td></tr>
           <tr><th scope="row">Auto-montage to music</th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td></tr>
           <tr><th scope="row">Audio when interpolating</th><td class="y">Stream-copied, in sync</td><td class="n">Stripped</td><td class="n">Not stated</td></tr>
           <tr><th scope="row">Model choice</th><td class="y">Auto, with override</td><td class="n">Manual, 15+ models</td><td class="n">30+ models across video, image and audio</td></tr>
-          <tr><th scope="row">Watermark-free exports</th><td class="y">With Pro. Launch price $14.50 through Nov 30, then $19</td><td class="n">Paid</td><td class="n">Paid, after 5 free AI exports</td></tr>
+          <tr><th scope="row">Watermark-free exports</th><td class="y">With Pro. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td><td class="n">Paid</td><td class="n">Paid, after 5 free AI exports</td></tr>
         </tbody>
       </table></div>
       <p class="src rv">Topaz and VideoProc rows re-read 19 October 2026 on each vendor's own pages:
@@ -1161,7 +1129,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <thead><tr><td></td><th>Crisp</th><th>Aiarty Video Enhancer</th><th>AVCLabs Video Enhancer AI</th><th>HitPaw VikPea</th></tr></thead>
         <tbody>
           <tr><th scope="row">One-time price</th>
-              <td class="y">Launch price $14.50 through Nov 30, then $19</td>
+              <td class="y"><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td>
               <td class="n">$235 list, $165 on offer</td>
               <td class="n">$299.90 list, $149.90 on offer</td>
               <td class="n">$437.99 list, $284.69 on offer</td></tr>
@@ -1232,9 +1200,9 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         <a class="btn btn-ghost" data-track="pricing-free" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-pricing-free&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free</a>
       </div>
       <div class="tier pro rv d2">
-        <div class="name">Crisp Pro</div><div class="price grad-price"><span data-launch-price data-full-price="$19">$14.50</span> <small>once</small></div>
-        <p class="founding-note">Launch price: $14.50 once, through November 30. From December 1: $19. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
-        <p class="founding-note"><a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle?src=crisp-home" rel="nofollow" data-track="pricing-bundle">All three apps, Crisp, Check Engine SEO and Outlier. Launch price: $49.50 once, through November 30. From December 1: $59.</a></p>
+        <div class="name">Crisp Pro</div><div class="price grad-price"><span data-launch-price data-full-price="$19">$9.99</span> <small>once</small></div>
+        <p class="founding-note">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p>
+        <p class="founding-note"><a href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle?src=crisp-home" rel="nofollow" data-track="pricing-bundle">All three apps, Crisp, Check Engine SEO and Outlier. Black Friday sale: $34.99 once, 29% off our November price of $49.50, through December 2. Then $59.</a></p>
         <p class="blurb">Everything in Free, without the mark or the 15-second limit, plus batch, and on a Mac the generative Max lane.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M20 6 9 17l-5-5"/></svg> Full-length exports, no watermark</li>
@@ -1248,7 +1216,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
     <div class="cost">
       <h3>Five years at the regular annual price</h3>
-      <p class="sub">Launch price: $14.50 once, through November 30. From December 1: $19. Topaz Video is <strong>$299 a year, or $254 for the first year in Topaz Video's sale, read 11 Nov 2026</strong>, and new licences are subscription-only.</p>
+      <p class="sub"><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> Topaz Video is <strong>$299 a year, or $254 for the first year in Topaz Video's sale, read 11 Nov 2026</strong>, and new licences are subscription-only.</p>
 
       <div class="cost-row"><div class="yr">Year 1</div><div class="cost-bars">
         <div class="cost-bar us" style="--p:1.3%">Crisp from Dec 1: $19</div>
@@ -1270,7 +1238,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         bundle of all their apps, is $399/yr. A business with $1M or more in yearly revenue needs a Pro
         licence: $699/yr for Topaz Video Pro, $799/yr for Studio Pro. Prices taken from
         <a href="https://www.topazlabs.com/pricing" rel="nofollow noopener">topazlabs.com/pricing</a>,
-        checked 19 October 2026. From December 1, Crisp's <strong>$19 buys the version you have, forever</strong>.</p>
+        checked 19 October 2026. From December 3, Crisp's <strong>$19 buys the version you have, forever</strong>.</p>
       <p class="price-receipts"><strong>Prices checked 11 November 2026 for Topaz Video Personal only.</strong> Read on <a href="https://www.topazlabs.com/topaz-video" rel="nofollow">topazlabs.com/topaz-video</a>: $299/yr regular price, $254 first year in Topaz Video's sale, read 11 Nov 2026. Billed annually. First year only.</p>
     </div>
   </div>
@@ -1340,8 +1308,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <p><strong>If it isn't right.</strong> Ask within 30 days of purchase and you get your
         money back, no reason needed, to the card you paid with.</p>
 
-      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-buy-card" rel="nofollow">Buy Crisp Pro. Launch price $14.50 through Nov 30, then $19</a></p>
-        <p class="founding-note">Launch price: $14.50 once, through November 30. From December 1: $19. The Buy button applies <strong>FOUNDINGCRISP</strong> for you at checkout; if it ever doesn&rsquo;t, click &lsquo;Have a discount code?&rsquo; and enter it.</p>
+      <p><a class="btn btn-primary" data-crisp-checkout data-track="buy-card" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=home-buy-card" rel="nofollow">Buy Crisp Pro. <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></a></p>
+        <p class="founding-note">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p>
 
       <p class="src"><a href="/legal/terms/">Terms</a> ·
         <a href="/legal/privacy/">Privacy</a> ·
@@ -1360,7 +1328,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         It is the activation limit on the key you are sold, and
         <a href="/legal/terms/">the terms</a> say the same. Personal and commercial work are both
         covered.</p></div></details>
-      <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your own computer, Mac or PC. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence and, on a Pro copy, re-checking it about once a week, the founding-price count on a free copy (nothing about you is sent), and downloading the optional Max model pack. Never your footage.</p></details>
+      <details><summary>Is it really 100% offline?</summary><p>Yes. Crisp runs entirely on your own computer, Mac or PC. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence and, on a Pro copy, re-checking it about once a week, the sale price check on a free copy (nothing about you is sent), and downloading the optional Max model pack. Never your footage.</p></details>
       <details><summary>How is this different from Topaz?</summary><p>Topaz moved to a subscription, and its Starlight restore models are split across two apps: Topaz Video holds the ones that &ldquo;can be rendered locally&rdquo;, and its cloud app, Astra, holds the ones that are &ldquo;cloud rendering only&rdquo;. <a href="https://docs.topazlabs.com/topaz-video/project-starlight-series/starlight-mini" rel="nofollow">Starlight Mini</a> is one of the local ones, and their docs put its bar at &ldquo;a minimum 36GB of RAM&rdquo; on Mac (read 19 October 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. Topaz's <a href="https://docs.topazlabs.com/topaz-video/filters/frame-interpolation" rel="nofollow">frame-interpolation docs</a> say &ldquo;the audio will not be modified by this enhancement and will be removed from the video&rdquo;. The bigger difference is shape. Their <a href="https://docs.topazlabs.com/topaz-video/reference-guide/user-interface" rel="nofollow">interface reference</a> documents two edits: the &ldquo;[ ]&rdquo; buttons that &ldquo;select the range of the input video&rdquo; and a Crop button. There is no timeline for arranging clips, so it takes a file and hands a file back (both read 19 October 2026). Crisp puts the upscale inside an edit: arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K.</p></details>
       <details><summary>Do I need a powerful Mac?</summary><p>Any Apple-Silicon Mac runs the fast tier, but it is not instant. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, ten seconds of 1080p took about a minute to reach 4K, and ten seconds of 480p about 23 seconds: roughly 6× and 2× the clip’s own length. A MacBook Air is slower, and we have not timed one yet. Crisp shows progress and the time left while a clip renders. The generative <em>Max</em> tier is an optional 4.6&nbsp;GB download and is far slower than the word “overnight” suggests. On video it is a desktop feature: a clip pushes peak memory past 27&nbsp;GB, so it wants a 48&nbsp;GB Mac at the very least and is only comfortable on 64&nbsp;GB. On a single photo there is no run of frames to hold at once, peak drops to about 11&nbsp;GB, and a 16&nbsp;GB Air handles it. Measured on an M1 Ultra, a Max frame costs about <strong>36 seconds per megapixel of output</strong>:
         33 seconds a frame at 720p, and around 74 at 1080p. That is <strong>roughly 3 hours for
@@ -1369,7 +1337,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <details><summary>What about damaged, dark, or noisy footage?</summary><p>That's exactly the target. Crisp denoises and lifts shadows <em>before</em> it upscales, so low-light and compressed clips come out clean instead of amplifying the mess.</p></details>
       <details><summary>Will it change my family's faces?</summary><p>Not with Enhance, the default. Crisp has no face model, and nothing in the restore looks for a face to redraw it. A face gets the same clean-up as the rest of the frame: less noise and grain, a real 2&times; or 4&times;. It stays the face the camera recorded. A face that was tiny or out of focus stays soft, because that detail was never there. Max, the slow generative lane, rebuilds detail everywhere, faces included, so on a face you know compare it with Enhance first. It can also draw things that were not in the film, such as letter-like marks on a sign or a number plate, or eyelashes on an eye, so check small details and faces at full size too. On the same old films where Max drew letters, Enhance, the default, sharpened what was there and drew none, so it is the safer choice for signs and number plates. <a href="/for/family-archivists/#faces">One face through both lanes</a>.</p></details>
       <details><summary>Does it do photos and editing too?</summary><p>Yes. Drop a JPEG, PNG, or HEIC and Crisp upscales &amp; restores the still in a few seconds. And the built-in <em>Montage</em> mode auto-edits a long video into a highlight reel, a tightened condense, or a music montage cut to the beat, all on-device and without the timeline.</p></details>
-      <details><summary>What does it cost?</summary><p>No subscription, ever. The Crisp editor and 4K upscaler are <strong>free</strong> (upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark). <strong>Launch price: $14.50 once, through November 30. From December 1: $19.</strong> It removes the watermark and the 15-second limit and adds batch and, on a Mac, Max Quality. No monthly bill, no credits, no cloud.</p></details>
+      <details><summary>What does it cost?</summary><p>No subscription, ever. The Crisp editor and 4K upscaler are <strong>free</strong> (upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark). <strong><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></strong> It removes the watermark and the 15-second limit and adds batch and, on a Mac, Max Quality. No monthly bill, no credits, no cloud.</p></details>
     </div>
   </div>
 </section>
@@ -1449,7 +1417,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   "@context": "https://schema.org",
   "@graph": [
     {
-      "datePublished": "2026-06-29", "dateModified":"2026-11-11", "@type": "Organization",
+      "datePublished": "2026-06-29", "dateModified":"2026-11-13", "@type": "Organization",
       "@id": "https://crispvideo.app/#org",
       "name": "Crisp Video",
       "url": "https://crispvideo.app/",
@@ -1489,7 +1457,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       "screenshot": "https://crispvideo.app/og.png",
       "author": {"@id": "https://crispvideo.app/#author"},
       "publisher": {"@id": "https://crispvideo.app/#org"},
-      "description": "Offline AI video upscaler with a full timeline editor for Mac and Windows. Arrange, trim and split clips, add photos and looks, then export the finished cut upscaled to 4K. Runs entirely on-device — no cloud, no account, no subscription. Free: enhanced exports up to 15 seconds, everything else at full length, with a watermark; Pro removes the watermark and the limit. Launch price: $14.50 once, through November 30. From December 1: $19.",
+      "description": "Offline AI video upscaler with a full timeline editor for Mac and Windows. Arrange, trim and split clips, add photos and looks, then export the finished cut upscaled to 4K. Runs entirely on-device — no cloud, no account, no subscription. Free: enhanced exports up to 15 seconds, everything else at full length, with a watermark; Pro removes the watermark and the limit. Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.",
       "featureList": [
         "AI video upscaling to 4K, fully offline",
         "Photo upscaling and restoration",
@@ -1511,22 +1479,22 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
         {
           "@type": "Offer",
           "name": "Pro",
-          "price": "14.50",
-          "priceValidUntil": "2026-11-30",
+          "price": "9.99",
+          "priceValidUntil": "2026-12-02",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://crispvideo.app/#buy",
-          "description": "One-time purchase at the launch price, through November 30. No subscription, no recurring fee."
+          "description": "Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19."
         },
         {
           "@type": "Offer",
           "name": "Pro",
           "price": "19.00",
-          "validFrom": "2026-12-01",
+          "validFrom": "2026-12-03",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://crispvideo.app/#buy",
-          "description": "One-time purchase from December 1. No subscription, no recurring fee."
+          "description": "One-time purchase from December 3. No subscription, no recurring fee."
         }
       ]
     }

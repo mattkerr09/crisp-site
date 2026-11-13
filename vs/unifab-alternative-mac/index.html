@@ -23,12 +23,12 @@
 <meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"A UniFab alternative for Mac","description":"UniFab All-In-One lists at US$319.99 for 17 tools, built Windows-first. Crisp is native to Apple Silicon, upscales and cleans up, and edits on a timeline.","datePublished":"2026-07-23","dateModified":"2026-11-11","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/unifab-alternative-mac/"}
+{"@context":"https://schema.org","@type":"Article","headline":"A UniFab alternative for Mac","description":"UniFab All-In-One lists at US$319.99 for 17 tools, built Windows-first. Crisp is native to Apple Silicon, upscales and cleans up, and edits on a timeline.","datePublished":"2026-07-23","dateModified":"2026-11-13","author":{"@type":"Person","name":"Matt Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp Video","url":"https://crispvideo.app/"},"mainEntityOfPage":"https://crispvideo.app/vs/unifab-alternative-mac/"}
 </script>
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Compared", "item": "https://crispvideo.app/vs/"}, {"@type": "ListItem", "position": 3, "name": "UniFab", "item": "https://crispvideo.app/vs/unifab-alternative-mac/"}]}</script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$14.50" data-then="$19" data-ends="2026-12-01T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19." data-then="$19" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -48,18 +48,6 @@
   })();
   if (window.__kcFoundingEnded) return;
 
-  var untilTxt = "";
-  (function () {
-    var mt = document.querySelector("[data-founding]");
-    var e = mt && mt.getAttribute("data-ends");
-    var t = e ? Date.parse(e) : NaN;
-    var n = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (isNaN(t) || t <= n) return;
-    try {
-      var day = new Date(t - 1000);
-      untilTxt = "through " + day.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" });
-    } catch (x) {}
-  })();
   var KEY  = "kc-founding-dismissed";
   try {
     var when = Number(localStorage.getItem(KEY));
@@ -67,12 +55,8 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var now = mount && mount.getAttribute("data-now");
-  var then = mount && mount.getAttribute("data-then");
-  var split = mount && mount.getAttribute("data-now-split");
-  var first = mount && mount.getAttribute("data-first");
-  var code = (mount && mount.getAttribute("data-code")) || "FOUNDINGCRISP";
-  if (!now || !then || !untilTxt) return;
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";
@@ -94,38 +78,22 @@
     '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
     '.txt{font-weight:500;white-space:normal;text-align:center}',
     '.now{font-weight:700;color:#F0B429}',
-    '.code{display:inline-flex;align-items:center;gap:.35rem;border:1px dashed rgba(240,180,41,.4);',
-    '  border-radius:5px;padding:.1rem .3rem .1rem .42rem;font-weight:700;letter-spacing:.05em;',
-    '  font-size:.735rem;color:#F0B429;white-space:nowrap;flex:none}',
-    'button.copy{border:0;background:rgba(240,180,41,.14);color:#F0B429;border-radius:4px;',
-    '  padding:.16rem .38rem;font-size:.68rem;font-weight:700;cursor:pointer;min-height:24px}',
-    'button.copy:hover{background:rgba(240,180,41,.28)}',
     '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
     '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
     '.x:hover{opacity:.9}',
     '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
     '  .dot{display:none}}',
-    '@media(max-width:480px){.tag{display:none}.code{letter-spacing:.02em}',
+    '@media(max-width:480px){.tag{display:none}',
     '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
     '</style>',
-    '<div class="bar" role="region" aria-label="Launch price">',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
     '  <span class="tag">Crisp Pro</span>',
     '  <span class="dot"></span>',
-    '  <span class="txt">Launch price <span class="now">' + now + (split ? ' · or 4 × ' + split : '') + '</span>' +
-      (first ? ' for the first ' + first + ' buyers' : '') + (untilTxt ? ' ' + untilTxt : '') + (then ? ', then ' + then : ''),
-    '  </span>',
-    '  <span class="dot"></span>',
-    '  <span class="code">' + code + '<button class="copy" type="button">Copy</button></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
     '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
     '</div>'
   ].join("");
 
-  root.querySelector(".copy").addEventListener("click", function () {
-    var b = this;
-    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
-      .then(function () { b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1800); })
-      .catch(function () { b.textContent = "Select it"; });
-  });
   root.querySelector(".x").addEventListener("click", function () {
     bar.remove();
     publishHeight();
@@ -153,15 +121,15 @@
 <article><div class="wrap">
   <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; <a href="https://crispvideo.app/vs/">Compared</a> &rsaquo; UniFab</div>
   <h1>A UniFab alternative for Mac</h1>
-  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-07-23 · last updated 2026-11-11</div>
+  <div class="updated">By Matt Kerr, who makes Crisp in Grand Rapids · published 2026-07-23 · last updated 2026-11-13</div>
 
   <div class="quick"><strong>Quick answer</strong><p class="lede">UniFab is a 17-tool AI suite (upscaling, denoise, deinterlace, DVD and Blu-ray
   ripping, audio conversion) sold as a $319.99 lifetime bundle, and built Windows-first. For Crisp:
-  Launch price: $14.50 once, through November 30. From December 1: $19. It is Apple-Silicon native, and does a much smaller number of things. The choice is genuinely
+  <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> It is Apple-Silicon native, and does a much smaller number of things. The choice is genuinely
   about how many of those 17 tools you will ever open. What Crisp adds is an editor: on my M1 Ultra it exported a
   60-second, two-clip cut in 6.7 seconds, or in 4&nbsp;min&nbsp;57&nbsp;s with the cut upscaled to 4K (Crisp 1.0.1777,
   2 November 2026).</p></div>
-      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-unifab-alternative-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-unifab-alternative-mac-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+      <aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-unifab-alternative-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-unifab-alternative-mac-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 
   <figure>
 <img src="/howto-upscale-finished-edit-mac.jpg" width="1200" height="838" decoding="async" loading="lazy"
@@ -172,7 +140,7 @@
   <div class="cmp-wrap"><table>
     <thead><tr><th></th><th>UniFab All-In-One</th><th>Crisp</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Price</th><td>$319.99 lifetime</td><td class="yes">Launch price: $14.50 once, through November 30. From December 1: $19.</td></tr>
+      <tr><th scope="row">Price</th><td>$319.99 lifetime</td><td class="yes"><span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span></td></tr>
       <tr><th scope="row">Built for</th><td>Windows first</td><td class="yes">Apple Silicon native</td></tr>
       <tr><th scope="row">Modules</th><td class="yes">17 (incl. disc ripping)</td><td>Upscale, cleanup, edit</td></tr>
       <tr><th scope="row">Multi-clip timeline</th><td>No timeline</td><td class="yes">Yes. Arrange, trim, split, reorder</td></tr>
@@ -181,7 +149,7 @@
     </tbody>
   </table></div>
 
-<p class="price-receipts"><strong>Prices checked 19 October 2026 in a rendered browser.</strong> Launch price: $14.50 once, through November 30. From December 1: $19. Buy from <a href="/#buy">this site</a>. <strong>UniFab All-In-One lists at $319.99 (written $319 where a round number reads better) and was discounted to $229.99 when checked.</strong> Read off unifab.ai in a rendered browser on 19 October 2026: the All-In-One page shows a standard price of $319.99 and a final price of $229.99 behind a running countdown, a licence for 5 computers, and “17 tools in one suite”. Those are US dollars, as unifab.ai shows them to a visitor in the US; we have not checked what it charges in Australian dollars or any other currency. <strong>UniFab has restructured the bundle since we last checked, and it is a price cut, not a correction on our side.</strong> On 27 August this page read $499.99 list discounted to $319.99, and UniFab’s promotion terms then said “the original price of $499.99” with 36% off: 36% off $499.99 is exactly $319.99, so that reading was right when it was taken. Their promotion page now advertises “UniFab All-In-One: 17-in-1”, where we previously counted 24 tools. Fewer tools, lower price. A plain fetch of the same URL that day returned $429.99, which matches nothing on the rendered page: their pricing is written by script, so anything read without a browser is reading a different block from the one a buyer sees. The figure quoted above is the standard price rather than the countdown price, because a promotion goes stale within days and a list price does not. /buy.htm still 404s and /online-pricing.htm prices FabCloud credits rather than the app, so check the live page before you buy: a discount that deep is a promotion, not the list price. Topaz from <a href="https://www.topazlabs.com/pricing">topazlabs.com/pricing</a>: $299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026, paid annually, $59/month month-to-month, Studio $69/month or $399/yr. Vendors change prices without notice. <strong>Re-read 19 October 2026, again in a rendered browser: the prices are unchanged (standard $319.99, final $229.99, licence for 5 computers) but the suite now advertises &ldquo;17 tools&rdquo;, where it said 16 on 16 September.</strong> So the bundle went 24 &rarr; 14 &rarr; 16 &rarr; 17 while the price stayed where it was, which is worth knowing if you are weighing a lifetime licence against what it will actually contain later.</p>
+<p class="price-receipts"><strong>Prices checked 19 October 2026 in a rendered browser.</strong> <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$19 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.</span> Buy from <a href="/#buy">this site</a>. <strong>UniFab All-In-One lists at $319.99 (written $319 where a round number reads better) and was discounted to $229.99 when checked.</strong> Read off unifab.ai in a rendered browser on 19 October 2026: the All-In-One page shows a standard price of $319.99 and a final price of $229.99 behind a running countdown, a licence for 5 computers, and “17 tools in one suite”. Those are US dollars, as unifab.ai shows them to a visitor in the US; we have not checked what it charges in Australian dollars or any other currency. <strong>UniFab has restructured the bundle since we last checked, and it is a price cut, not a correction on our side.</strong> On 27 August this page read $499.99 list discounted to $319.99, and UniFab’s promotion terms then said “the original price of $499.99” with 36% off: 36% off $499.99 is exactly $319.99, so that reading was right when it was taken. Their promotion page now advertises “UniFab All-In-One: 17-in-1”, where we previously counted 24 tools. Fewer tools, lower price. A plain fetch of the same URL that day returned $429.99, which matches nothing on the rendered page: their pricing is written by script, so anything read without a browser is reading a different block from the one a buyer sees. The figure quoted above is the standard price rather than the countdown price, because a promotion goes stale within days and a list price does not. /buy.htm still 404s and /online-pricing.htm prices FabCloud credits rather than the app, so check the live page before you buy: a discount that deep is a promotion, not the list price. Topaz from <a href="https://www.topazlabs.com/pricing">topazlabs.com/pricing</a>: $299/yr, $254 first year in Topaz Video's sale, read 11 Nov 2026, paid annually, $59/month month-to-month, Studio $69/month or $399/yr. Vendors change prices without notice. <strong>Re-read 19 October 2026, again in a rendered browser: the prices are unchanged (standard $319.99, final $229.99, licence for 5 computers) but the suite now advertises &ldquo;17 tools&rdquo;, where it said 16 on 16 September.</strong> So the bundle went 24 &rarr; 14 &rarr; 16 &rarr; 17 while the price stayed where it was, which is worth knowing if you are weighing a lifetime licence against what it will actually contain later.</p>
   <h2>Where UniFab is the better buy</h2>
   <p>Discs. UniFab rips DVD and Blu-ray, handles the container and codec mess that comes with them,
   and Crisp does none of that. If you are digitising a shelf of Blu-rays, this comparison is over,
@@ -237,7 +205,7 @@
     <li><a href="https://crispvideo.app/vs/#veed">The best VEED alternative for Mac</a></li>
   </ul>
 
-  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$14.50</span> once</p><p class="pbox-found">Launch price, through November 30. From December 1: $19. Buy Pro applies <strong>FOUNDINGCRISP</strong> at checkout.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-unifab-alternative-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-unifab-alternative-mac-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$19">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=vs-unifab-alternative-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="vs-unifab-alternative-mac-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=vs-unifab-alternative-mac-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2069-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2069 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
 <p class="price-receipts"><strong>Prices checked 11 November 2026 for Topaz Video Personal only.</strong> Read on <a href="https://www.topazlabs.com/topaz-video" rel="nofollow">topazlabs.com/topaz-video</a>: $299/yr regular price, $254 first year in Topaz Video's sale, read 11 Nov 2026. Billed annually. First year only.</p>
 </div></article>
 

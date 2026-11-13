@@ -31,14 +31,15 @@ BASELINE = Path(__file__).resolve().parent / "price_sources_baseline.json"
 # The fixed founding discount and both prices' four-payment quarters come from the same facts reader.
 def _ours() -> set:
     """Crisp's own figures, DERIVED from the engine's December price (llms_txt.facts, which reads
-    entitlement.PRICE_AFTER_LAUNCH_USD and the founding mount and refuses a mismatch): both prices,
+    entitlement.PRICE_USD, NOVEMBER_PRICE_USD and the founding mount and refuses a mismatch): both prices,
     the bundle's prices and their four-payment quarters. Typed, this set kept $129
     as "ours" after the 2026-11-02 halving, so a stale "Crisp is $129" would have passed."""
     import llms_txt
     import landing_pages
     landing_pages.prepare_facts()
     f = llms_txt.facts()
-    prices = {f["price"], f["now"], landing_pages.BUNDLE_USD, landing_pages.BUNDLE_FOUNDING_USD}
+    prices = {f["price"], f["now"], f["november"], landing_pages.BUNDLE_USD,
+              landing_pages.BUNDLE_FOUNDING_USD, landing_pages.BUNDLE_NOVEMBER_USD}
     figs = prices | {llms_txt.quarter(price) for price in prices}
     out = {"0"}
     for d in figs:
