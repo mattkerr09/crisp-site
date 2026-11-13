@@ -229,7 +229,9 @@ def pages() -> dict[Path, str]:
             "pricing", "Crisp pricing: free to use, Pro with one payment",
             f"Crisp restores and upscales video offline on Mac and Windows. Free, with no account or time limit. {llms_txt.price_short(f)}",
             "Crisp pricing",
-            f"Crisp is free on Mac and Windows, offline, with no account or time limit. Pro is one payment. "
+            f"Crisp's free version runs on Mac and Windows, offline, with no account or time limit. To spend the free "
+            f"{f['cap']} seconds on the part you care about, trim the clip to it, then run Enhance on it or export with Upscale on "
+            f"export. Pro is one payment. "
             f"{llms_txt.price_markup(f)} {f['updates'].replace(' included', ' is included').capitalize()}. "
             f'<a href="{BUNDLE_URL}?src=crisp-pricing" rel="nofollow" data-track="pricing-page-bundle">All three apps, Crisp, Check Engine SEO and Outlier. {llms_txt.price_markup(bundle_facts())}</a>',
             "pricing-page", True, llms_txt.free_pro_html(f["cap"]) + "\n"),

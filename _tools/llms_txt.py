@@ -121,7 +121,7 @@ def free_pro_html(cap: int) -> str:
 
 
 def free_faq(cap: int) -> str:
-    return ("Crisp is free on Mac and Windows, offline, with no account or time limit and the full editor and preview. "
+    return ("Crisp's free version runs on Mac and Windows, offline, with no account or time limit, and includes the full editor and preview. "
             f"AI exports for upscale, restore and colour stop at {cap} seconds, free video exports carry a small "
             '"crispvideo.app" mark, and photo upscales on a Mac are unmarked, one photo at a time. '
             "All other exports run at full length, and Pro adds full-length AI exports, no mark, Max restore on Mac "
