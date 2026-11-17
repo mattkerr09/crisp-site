@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2067",
-  "notes": "Crisp's first minute looks better. The built-in sample is now a real 1936 newsreel, so the before-and-after shows a plain difference, and it no longer hides the \"Start here\" steps behind the Jobs list. In light mode the timeline, the prompt's hint and the side panels are easier to read, and every blue button meets the accessibility contrast standard. Results name the model in plain words, such as \"General clean model\"; the technical name is in the tooltip. A damaged or non-video file now gets a clear message and stays off your timeline. Checking for updates now tells you when you're on the latest version, instead of wrongly saying you may be offline. Crisp Pro is $14.50 through November 30 and $19 from December 1, and the app now says so.",
-  "pub_date": "2026-11-11T20:47:24Z",
+  "version": "1.0.2083",
+  "notes": "Crisp's Black Friday sale is in the app now: Crisp Pro is $9.99 once, 31% off our November price of $14.50, through December 2, then $19, and the Buy button applies it for you. There's a new \"Old home video (VHS, film)\" preset: it uses Auto's picture fixes and turns down tape hiss. On Windows, Media, the timeline and the clip panel now show a file's name instead of its whole path. The editor's settings panel is easier to read, with larger labels and roomier rows, and the montage layouts have shorter names that fit.",
+  "pub_date": "2026-11-17T03:26:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUQ4Y3lvS2VOcUVCd1NneldkTjhlRFZZTWZ3M0xMMlJYVTMycWQ1c2psU29kNlg0eVN5bGZlblBYbjFWQXRBdkRXMHRhaG5PZE80YVcvdWUzZGlQY0F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDI5MzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMYmhoMG4vU1B5Q25EZC9RSWIwQjBsT3JUSUFDaXFPWkVXL09mZUh6Z3lELzhrMXY1cEVsMDhPL040bTZoYXh0RVVlM0M4Q3dZd3h5SmhUYk1uS0lDdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2067.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5YXJJcUl6Tm5KUXkxQTJYOFhSeStETmRPTU5JNWFKZkh2ZnpBa0JBZFRkTE55TUhicjQxVUhBT1VPZ3RsSHVVanFld2o2Wkp2azhna3hoRzlSRkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODg1OTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0SC9NSTgrcDI5eWI1SWpxN2RWSmdwb0NqUkdjQkxMNjhDcG9kMmlsYTZIa3hZa3JMZEthTXJRTUNkNEs3QnU1NC8vVG9yMTFEMUNONi8rVzJKb3RBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2083.app.tar.gz"
     }
   }
 }
