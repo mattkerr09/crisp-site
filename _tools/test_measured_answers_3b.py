@@ -26,8 +26,8 @@ PAGES = {
         ("3-second", "720p", "3.4 seconds", "Core ML", "M1 Ultra"),
     ),
     "learn/what-is-ai-video-upscaling/index.html": (
-        "/", "Max restore sample",
-        ("58 frames", "30 minutes 22 seconds", "M1 Ultra Mac Studio"),
+        "/how-to/upscale-video-on-mac/", "demo clip test",
+        ("132 frames", "29 seconds", "M1 Ultra"),
     ),
 }
 
