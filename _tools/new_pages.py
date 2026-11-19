@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Emit new learn/ articles using the site's existing page scaffolding.
 
-Why learn/ and not more how-to/: measured against the sibling site, which is the model Matt asked
+Why learn/ and not more how-to/: measured against the sibling site, which is the model Matthew asked
 to copy, the shape is 51 learn pages to 16 how-to. Crisp is the inverse — 40 how-to and 2 learn —
 so the task pages are well covered and the concept pages barely exist. learn/ answers "why is my
 video like this", how-to/ answers "how do I do X". They compete for different queries and can't
@@ -38,7 +38,7 @@ SITE = "https://crispvideo.app"
 #: This site repo is nested and gitignored by the app repo, so it cannot import
 #: entitlement.PRICE_USD. One declared constant per repo is the achievable
 #: single source; keep it equal to entitlement.PRICE_USD.
-PRICE_USD = 19   # Matthew approved 2026-11-11; Black Friday sale facts come from the engine.
+PRICE_USD = 29   # Matthew approved 2026-11-19; Black Friday sale facts come from the engine.
 #: The free-tier export cap, declared once here for the same reason as the price (this repo cannot import the engine); keep it
 #: equal to entitlement.FREE_EXPORT_CAP_SECONDS (tests/test_the_site_states_the_free_export_cap.py holds the line).
 FREE_EXPORT_CAP_SECONDS = 15

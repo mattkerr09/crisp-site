@@ -91,19 +91,19 @@ def main():
                 assert ('Black Friday' in copy) == active
             offers = llms_txt.pro_offers(facts)
             assert len(offers) == (2 if active else 1)
-            assert offers[-1]['price'] == '19.00'
+            assert offers[-1]['price'] == '29.00'
     title, note = llms_txt.page_meta('/vs/aiarty-video-enhancer-alternative-mac/')
     # The llms.txt summary must include the regular-price sentence after the sale line.
-    assert re.search(r'Then \$19\.', note), 'llms.txt cut off the future-price sentence'
+    assert re.search(r'Then \$29\.', note), 'llms.txt cut off the future-price sentence'
     # Execute the real scripts with a small DOM stub. No browser, network, app or sound.
     probe = r'''
 const vm = require('node:vm');
 const {script, german, end, surfaces} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
 for (const now of [end - 1, end, end + 1]) {
-  const prices = [{textContent: '$9.99', getAttribute: k => k === 'data-full-price' ? '$19' : new Date(end).toISOString()}];
+  const prices = [{textContent: '$9.99', getAttribute: k => k === 'data-full-price' ? '$29' : new Date(end).toISOString()}];
   const notes = [{style: {}}];
   const root = {innerHTML: '', querySelector: () => ({addEventListener() {}})};
-  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$9.99', 'data-then': '$19', 'data-code': 'FOUNDINGCRISP', 'data-sale-copy': 'Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.'})[k], remove() {}};
+  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$9.99', 'data-then': '$29', 'data-code': 'FOUNDINGCRISP', 'data-sale-copy': 'Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.'})[k], remove() {}};
   const doc = {
     readyState: 'complete',
     querySelector: () => mount,
@@ -115,18 +115,18 @@ for (const now of [end - 1, end, end + 1]) {
   vm.runInNewContext(script, {window: win, document: doc, localStorage: {getItem: () => null}, Date});
   if (now < end) {
     const text = root.innerHTML.replace(/<[^>]+>/g, ' ');
-    if (!text.includes('Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $19.') || text.includes('FOUNDING') || /button class="copy"/.test(root.innerHTML)) throw Error(text);
+    if (!text.includes('Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.') || text.includes('FOUNDING') || /button class="copy"/.test(root.innerHTML)) throw Error(text);
     if (prices[0].textContent !== '$9.99') throw Error('early price reset');
   } else {
-    if (root.innerHTML || prices[0].textContent !== '$19' || notes[0].style.display !== 'none') throw Error('expiry failed');
+    if (root.innerHTML || prices[0].textContent !== '$29' || notes[0].style.display !== 'none') throw Error('expiry failed');
   }
   // German pages do not load founding.js; they carry their own price and note switch.
-  const germanPrice = {textContent: '9,99 $', getAttribute: k => k === 'data-full-price' ? '19 $' : new Date(end).toISOString()};
+  const germanPrice = {textContent: '9,99 $', getAttribute: k => k === 'data-full-price' ? '29 $' : new Date(end).toISOString()};
   const germanNote = {removed: false, getAttribute: () => new Date(end).toISOString(), remove() {this.removed = true;}};
   vm.runInNewContext(german, {Date: {now: () => now, parse: Date.parse}, document: {
     querySelectorAll: s => s === '[data-price-ends]' ? [germanPrice] : [germanNote]
   }});
-  if (germanPrice.textContent !== (now < end ? '9,99 $' : '19 $') || germanNote.removed !== (now >= end)) throw Error('German expiry failed');
+  if (germanPrice.textContent !== (now < end ? '9,99 $' : '29 $') || germanNote.removed !== (now >= end)) throw Error('German expiry failed');
 }
 // Use the prices and mounts from every shipped page, including bundle and cross-sell prices.
 for (const surface of surfaces) for (const now of [end - 1, end, end + 1]) {

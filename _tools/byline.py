@@ -4,7 +4,7 @@
 WHY (CEO, 2026-11-02, from ~/ops/launch/WHAT-WORKS-2026-11-02.md). Across the company's 652 pages a named author byline
 was on 53% of the pages that earn clicks and 20% of the ones that earn nothing, and 0% of Crisp's pages showed one: the
 line under every H1 read "Crisp · built in Grand Rapids · published X · last updated Y". Crisp is made by one person,
-so the line now says so: "By Matt Kerr, who makes Crisp in Grand Rapids · published X · last updated Y".
+so the line now says so: "By Matthew Kerr, who makes Crisp in Grand Rapids · published X · last updated Y".
 
 ONE COMPONENT, NOT HAND-TYPED COPIES. This tool writes the line and the author field together, so the person a reader
 sees and the person the Article/HowTo/CollectionPage JSON-LD names cannot drift apart.
@@ -15,7 +15,7 @@ a link on the name (an <a> before the date) would hide the date from both, and t
 stale while every check stayed green. The link to /about/ lives in the JSON-LD author's "url" instead.
 
     python3 _tools/byline.py PATH [PATH ...]   # convert these pages (index.html files or their folders)
-    python3 _tools/byline.py --check           # exit 1 if a "By Matt Kerr" page names anyone else in its JSON-LD
+    python3 _tools/byline.py --check           # exit 1 if a "By Matthew Kerr" page names anyone else in its JSON-LD
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
-NAME = "Matt Kerr"
+NAME = "Matthew Kerr"
 OLD = '<div class="updated">Crisp · built in Grand Rapids · '
 NEW = f'<div class="updated">By {NAME}, who makes Crisp in Grand Rapids · '
 #: the five how-tos whose line is the month dateline dateline.py keeps true ("Updated October 2026 · step-by-step"):

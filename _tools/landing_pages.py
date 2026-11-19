@@ -45,12 +45,12 @@ def buy_base() -> str:
     return m.group(1)
 
 
-#: THE THREE-APP BUNDLE (Matthew approved 2026-11-11): Crisp + Check Engine SEO + Outlier for $34.99 once through December 2
-#: (29% off the real $49.50 November price, expires 2026-12-03T07:59:59Z), then $59 (ALLTHREE).
-#: December's separate prices are $19 + $39 + $29 = $87. Names only, no
+#: THE THREE-APP BUNDLE (Matthew approved 2026-11-19): Crisp + Check Engine SEO + Outlier for $34.99 once through December 2
+#: (29% off the real $49.50 November price, expires 2026-12-03T07:59:59Z), then $79 (ALLTHREE).
+#: December's separate prices are $29 + $39 + $39 = $107. Names only, no
 #: sister-site URL: the link goes to the hub (RULES 52).
 BUNDLE_URL = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle"
-BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("34.99"), Decimal("59")
+BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("34.99"), Decimal("79")
 BUNDLE_NOVEMBER_USD = Decimal("49.50")
 BUNDLE_PERCENT_OFF = 29
 BUNDLE_FOUNDING_ENDS = "2026-12-03T07:59:59Z"

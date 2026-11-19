@@ -1,5 +1,5 @@
 {
-  "decision": "Matthew approved 13 November 2026. Black Friday sale through December 2, then regular prices from December 3.",
+  "decision": "Matthew approved 19 November 2026. Source: ~/ops/launch/PRICES-FROM-3-DEC-2026-11-19.md. Black Friday sale through December 2, then regular prices from December 3.",
   "products": {
     "crisp": {
       "name": "Crisp",
@@ -13,7 +13,7 @@
     },
     "outlier": {
       "name": "Outlier",
-      "price_cents": 2900,
+      "price_cents": 3900,
       "november_price_cents": 2450,
       "sale_price_cents": 1699
     }

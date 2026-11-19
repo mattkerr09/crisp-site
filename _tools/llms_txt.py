@@ -16,6 +16,9 @@ NOTHING HERE IS TYPED TWICE. Each fact is read from the file that already has to
 tests/test_llms_txt_is_the_generated_one.py fails the push when llms.txt differs from what this prints, so a
 price or a page title that moves makes the file regenerate, not drift.
 
+The 19 November price decision changes the engine price to $29 and its fixed discount to $19.01.
+Regenerate llms.txt after that engine update lands; facts() deliberately rejects a site/engine mismatch.
+
 WHICH PAGES. Search Console could not rank the how-to guides (read 2026-09-28: one how-to with any data in
 90 days — 2 impressions), so HOWTOS is a stated editorial list: the guides for Crisp's core job (restore,
 upscale, denoise, stabilise), the one Search Console has seen first. Never a page that canonicalises

@@ -40,6 +40,7 @@ BANNED = re.compile(
 # Exact event names and real November comparisons only. The bundle has its own
 # approved percentage. Nothing here exempts a nearby, different sale claim.
 SALE_QUOTES = (
+    "Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.",
     "Black Friday sale", "31% off our November price", "29% off our November price", "32% off our November price",
     "Black Friday Angebot", "31% Rabatt auf unseren Novemberpreis", "29% Rabatt auf unseren Novemberpreis",
     "Black Friday セール", "11月の価格$14.50から31%オフ", "11月の価格$49.50から29%オフ",
