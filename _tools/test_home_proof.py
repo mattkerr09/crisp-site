@@ -96,7 +96,10 @@ def countdown_checks():
         source = (SITE / name).read_text()
         mount = re.search(r'<div data-founding\b[^>]*>', source)[0]
         attrs = dict(re.findall(r'(data-[a-z-]+)="([^"]*)"', mount))
-        assert source.count('data-sale-countdown data-founding-copy hidden></span>') == 1
+        # 2026-11-20: the old-home-video page was rebuilt (job cx-20261120-0620) and its hero sale line, with the
+        # countdown beside it, went; its sale line now lives only in the generated product boxes. Countdown: home only.
+        if name == 'index.html':
+            assert source.count('data-sale-countdown data-founding-copy hidden></span>') == 1
         assert source.count(script) == 1, name + " inline script is stale"
         assert '[data-sale-countdown]{' in (source if name == "index.html" else (SITE / 'style.css').read_text())
         pages.append({"name": name, "attrs": attrs})

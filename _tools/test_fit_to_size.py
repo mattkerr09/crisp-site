@@ -34,7 +34,9 @@ def original_functions():
     # Compile only the requested pure code from the real source. No app imports, encoders or sound.
     tree = ast.parse(ORIGINAL.read_text())
     names = {'size_budget', '_min_kbps', 'downscale_dims', '_size_options', '_SIZE_LADDER',
-             '_say_length', '_MIN_KBPS_1080P', '_MIN_KBPS_ABS'}
+             '_say_length', '_MIN_KBPS_1080P', '_MIN_KBPS_ABS',
+             # 2026-11-20: size_budget now takes its aim from these (the email preset's 18 MB aim).
+             'size_aim_bytes', 'DESTINATION_LIMITS_MB'}
     body = [n for n in tree.body if (isinstance(n, ast.FunctionDef) and n.name in names)
             or (isinstance(n, ast.Assign) and any(isinstance(t, ast.Name) and t.id in names for t in n.targets))]
     env = {'math': math}
@@ -169,7 +171,10 @@ def page_checks():
         assert 'Check if your clip fits: <a href="/tools/fit-video-to-size/">' in linked
     proof = re.search(r'<blockquote><p>(.*?)</p></blockquote>', page, re.S).group(1)
     assert proof in (SITE / 'how-to/compress-video-for-discord/index.html').read_text()
-    assert page.index('<blockquote>') < page.index("This page doesn't compress") < page.index('The free version puts') < page.index('class="pbox-price"') < page.index('href="/download/"')
+    # 2026-11-20: the page carries the site's own top and end product boxes (product_box.py), so the proof order is
+    # checked against the END box, and the download link may carry a source tag.
+    assert page.index('<blockquote>') < page.index("This page doesn't compress") < page.index('The free version puts') < page.rindex('class="pbox-price"')
+    assert 'href="/download/' in page or 'href="https://crispvideo.app/download/' in page
     assert '<loc>https://crispvideo.app/tools/fit-video-to-size/</loc>' in (SITE / 'sitemap.xml').read_text()
     print('fit-to-size: destination values, sources, dates, proof, FAQ, app labels, links and no-network checks passed')
 
