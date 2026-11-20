@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2122",
-  "notes": "Compress \u2192 Fit a size has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20, and every compress ends with a quality score (VMAF) in plain words. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-20T16:56:24Z",
+  "version": "1.0.2130",
+  "notes": "The menu bar now has Crisp > Unlock Pro\u2026 and Crisp > Enter Your Key\u2026, which open the unlock window directly. Crisp now opens in a larger window. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-20T19:44:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1rR1p2VzJ1L0xWdHBvZTFkeWs4bTlVVmJ0dG8xNytHNVlqNGhFVmxrUVRlcUFpakdUQXNtcFV1Z1I1ZmxxY0xGcGFOR21PZk5SUXo4VUZkRDZXc0FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTkzNjk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5U0ZNM1AxUlJEOUtJbzZjWDRyUDZ0SE0wellwb20wZlFHQWJJTEI0OFVVc1dtZkJKMUdYWEtqcVNUWnk1dmVBUzk0em5ESlR1S3ZzZ2EvNVRXMWNCZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2122.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5UdVRuZ1BST2VseHZrOHNGWE9tT1I4ZGd0OG16ZG42VzFIY1Nha2JtRk5XY0krR0VJQW5EK3pjRFBEQlNNM0F5TUlIOTdUZTNKemEwNVU4dFdFNWdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjAzNzg5CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpyZERKOWIreCtyOXc3OUhqZHpVZGVMYTgwVHdrcXdqUUg4N2RTbTVRTzFFN3IwS25rS2doVWp0dmZSWmxqdE9jQUlVWFdCSG5rcmJBOXppOVNDR0ZCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2130.app.tar.gz"
     }
   }
 }
