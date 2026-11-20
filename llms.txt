@@ -1,6 +1,6 @@
 # Crisp Video
 
-> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac or a Windows PC, then lets you edit it on a real timeline. Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small “crispvideo.app” mark. Black Friday sale: $9.99 once through December 2. Then $29. No subscription. Mac: macOS 14.0 or later, Apple Silicon (M1 or later). Windows: Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them).
+> Crisp Video restores, denoises and upscales old, low-res video up to 4K offline on a Mac or a Windows PC, then lets you edit it on a real timeline. Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small “crispvideo.app” mark. Black Friday sale: $9.99 once through December 2. Then $29. No subscription. Mac: macOS 14.0 or later, Apple Silicon (M1 or later). Windows: Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them).
 
 ## Is Crisp free?
 
@@ -70,7 +70,7 @@ Pro adds
 ## Who it is for
 - [Crisp Video for weddings, churches, teachers and more (Mac)](https://crispvideo.app/for/): by kind of work
 - [Upscale old home video (VHS, camcorder) on Mac or PC](https://crispvideo.app/for/family-archivists/): Restore VHS and camcorder files on Mac or PC.
-- [Upscale old YouTube videos to 4K on a Mac (2026)](https://crispvideo.app/for/youtubers/): Upscale old YouTube videos to 4K on a Mac, offline: why 4K uploads survive YouTube's encoder better, whether re-uploading is worth it, and when it is not.
+- [Upscale old YouTube videos up to 4K on a Mac (2026)](https://crispvideo.app/for/youtubers/): Upscale old YouTube videos up to 4K on a Mac, offline: why 4K uploads survive YouTube's encoder better, whether re-uploading is worth it, and when it is not.
 
 ## Legal
 - [Terms of Use](https://crispvideo.app/legal/terms/): The terms governing your use of Crisp, including licence, warranties, and limitation of liability.

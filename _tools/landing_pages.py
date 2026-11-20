@@ -251,9 +251,9 @@ def pages() -> dict[Path, str]:
         # src=watermark, so the visits and downloads the mark sends can be counted.
         SITE / "w" / "index.html": page(
             "w", "Made with Crisp: restore and upscale video, offline",
-            "You saw “crispvideo.app” on a video. Crisp restores, denoises and upscales video to 4K on your own Mac or PC, offline. Free to use.",
+            "You saw “crispvideo.app” on a video. Crisp restores, denoises and upscales video up to 4K on your own Mac or PC, offline. Free to use.",
             "You saw &ldquo;crispvideo.app&rdquo; on a video",
-            "That mark is on every free export from Crisp Video. Crisp restores, denoises and upscales old and low-res video to 4K "
+            "That mark is on every free export from Crisp Video. Crisp restores, denoises and upscales old and low-res video up to 4K "
             "on your own Mac or Windows PC, offline: your videos never leave your computer. It is free to use, and Pro removes the mark.",
             "watermark", False),
     }

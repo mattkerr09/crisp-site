@@ -448,7 +448,7 @@ def build() -> str:
     out = [
         "# Crisp Video",
         "",
-        f"> Crisp Video restores, denoises and upscales old, low-res video to 4K offline on a Mac or a Windows PC, then lets you "
+        f"> Crisp Video restores, denoises and upscales old, low-res video up to 4K offline on a Mac or a Windows PC, then lets you "
         f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}. {price_copy(f)} "
         f"No subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE}).",
         "",
