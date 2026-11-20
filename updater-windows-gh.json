@@ -1,6 +1,6 @@
 {
   "version": "1.0.2122",
-  "notes": "Unlock Pro now always opens its window; on some new installs the button did nothing. Quitting Crisp no longer gets stuck after you confirm you want to stop a running job. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "notes": "Black Friday sale: $9.99 once through December 2. Then $29.",
   "pub_date": "2026-11-20T17:00:20Z",
   "platforms": {
     "windows-x86_64": {

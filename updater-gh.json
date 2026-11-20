@@ -1,6 +1,6 @@
 {
   "version": "1.0.2122",
-  "notes": "Unlock Pro now always opens its window; on some new installs the button did nothing. Compress \u2192 Fit a size has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20, and every compress ends with a quality score (VMAF) in plain words. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "notes": "Compress \u2192 Fit a size has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20, and every compress ends with a quality score (VMAF) in plain words. Black Friday sale: $9.99 once through December 2. Then $29.",
   "pub_date": "2026-11-20T16:56:24Z",
   "platforms": {
     "darwin-aarch64": {
