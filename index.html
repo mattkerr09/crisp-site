@@ -438,6 +438,10 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 .sub-msg.is-ok{color:var(--grey);}
 .sub-msg.is-bad{color:#ffb4a2;}
 .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+h2.sub-label{margin:0;}
+.sub-row label{flex:0 0 100%;text-align:left;font-size:.85rem;color:var(--grey);}
+.sub-fine{margin:.6rem 0 0;font-size:.8rem;line-height:1.5;color:var(--grey);}
+.sub-fine a{color:inherit;text-decoration:underline;}
 .oldmac{margin:.9rem 0 0;text-align:left;}
 .oldmac-ask{display:block;margin:0 0 .5rem;font-size:.88rem;line-height:1.5;color:var(--grey);}
 .oldmac-row{display:flex;gap:.5rem;flex-wrap:wrap;max-width:26rem;}
@@ -1442,19 +1446,21 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
 
 <footer>
   <div class="wrap sub-wrap">
-    <form id="sub-form" class="sub" novalidate>
-      <label class="sub-label" for="sub-email">New restore lanes and model improvements</label>
-      <p class="sub-why">Crisp gets better at the same files over time. We email when a lane ships
-        that changes what your footage can look like. That is a few times a year, nothing else.</p>
+    <form id="sub-form" class="sub" method="post" action="https://kerr-subscribe.kerrco.workers.dev/monthly">
+      <h2 class="sub-label" id="sub-heading">Get one short update a month</h2>
+      <p class="sub-why">What changed in Crisp that month, and what's next. One email a month, nothing else.</p>
       <div class="sub-row">
-        <input id="sub-email" name="email" type="email" inputmode="email" autocomplete="email"
-          placeholder="you@example.com" aria-label="Email address" required>
-        <button type="submit" class="btn btn-primary btn-sm" id="sub-go">Keep me posted</button>
+        <label for="sub-email">Email</label>
+        <input id="sub-email" name="email" type="email" required placeholder="you@example.com"
+          autocomplete="email" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="btn btn-primary btn-sm" id="sub-go">Sign me up</button>
       </div>
       <div class="sub-hp" aria-hidden="true">
-        <label for="sub-company">Company</label>
-        <input id="sub-company" name="company" type="text" tabindex="-1" autocomplete="off">
+        <label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label>
       </div>
+      <p class="sub-fine"><small>We keep your address, this site's name and the date. Before the first update we email you once
+        to confirm, and nothing else comes until you click. Every email has a one-click unsubscribe.
+        <a href="/legal/privacy/">Privacy</a></small></p>
       <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -1709,31 +1715,27 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   var f = document.getElementById('sub-form');
   if (!f) return;
   var msg = document.getElementById('sub-msg'), go = document.getElementById('sub-go');
-  var ENDPOINT = 'https://kerr-subscribe.kerrco.workers.dev';
-  function say(t, bad) { msg.textContent = t; msg.className = 'sub-msg' + (bad ? ' is-bad' : ' is-ok'); }
+  var OK = "Thanks. Before the first update we'll email you once to confirm. Nothing else comes until you click it.";
+  var FAIL = "That didn't go through. Please try again in a moment.";
+  // Success ONLY when the worker says so: r.ok AND a JSON body with ok === true. A 200 with any other body is a failure.
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var email = (document.getElementById('sub-email').value || '').trim();
-    var trap = (document.getElementById('sub-company').value || '').trim();
-    if (!email || email.indexOf('@') < 1) { say('That address looks incomplete.', true); return; }
-    if (trap) { say('Thanks — check your inbox.', false); return; }
-    go.disabled = true; say('Sending…', false);
-    fetch(ENDPOINT, {
+    go.disabled = true; msg.textContent = '';
+    fetch(f.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, source: 'crispvideo.app' })
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(f))
     }).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (d) {
-        return { ok: r.ok && d && d.ok !== false, d: d };
+      return r.json().catch(function () { return {}; }).then(function (body) {
+        if (r.ok && body && body.ok === true) {
+          f.querySelector('.sub-row').hidden = true;
+          msg.textContent = OK;
+          return;
+        }
+        msg.textContent = (r.status === 429 && body && typeof body.error === 'string') ? body.error : FAIL;
+        go.disabled = false;
       });
-    }).then(function (res) {
-      if (!res.ok) { say('That did not go through. Try again in a moment.', true); go.disabled = false; return; }
-      say('Thanks — you are on the list.', false);
-      f.querySelector('.sub-row').hidden = true;
-    }).catch(function () {
-      say('Could not reach us just now — check your connection and try again.', true);
-      go.disabled = false;
-    });
+    }).catch(function () { msg.textContent = FAIL; go.disabled = false; });
   });
 })();
 </script>
