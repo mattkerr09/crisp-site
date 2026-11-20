@@ -25,11 +25,11 @@ document.addEventListener("click", function (e) {
 (function () {
   if (window.crispSendLinkBound) return;
   window.crispSendLinkBound = true;
-  var TITLE = 'Crisp Video for Mac';
+  var TITLE = 'Crisp Video for Mac and Windows';
   var TEXT = 'Crisp Video for Mac and Windows is free, with the full editor and 4K upscaling up to 15 seconds, everything else at full length, with a small “crispvideo.app” mark. Open this on your Mac or PC to download it.';
   var SAY = {
-    shared: 'Done. When you’re at your Mac, open the link to download Crisp.',
-    copied: 'Link copied. Paste it into a note or a message to yourself, then open it on your Mac.',
+    shared: 'Done. When you’re at your computer, open the link to download Crisp.',
+    copied: 'Link copied. Paste it into a note or a message to yourself, then open it on your Mac or PC.',
     other: 'Here’s the link. Copy it, or email or text it to yourself:',
     nocopy: 'Press and hold the link to copy it, or email or text it to yourself:'
   };
@@ -85,7 +85,7 @@ document.addEventListener("click", function (e) {
     s.setAttribute('data-url', url);
     s.querySelector('.sendlink-url').textContent = url;
     var links = s.querySelectorAll('.sendlink-ways a');
-    links[0].setAttribute('href', 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac: download link') + '&body=' + encodeURIComponent(TEXT + '\n\n' + url));
+    links[0].setAttribute('href', 'mailto:?subject=' + encodeURIComponent('Crisp Video for Mac and Windows: download link') + '&body=' + encodeURIComponent(TEXT + '\n\n' + url));
     links[1].setAttribute('href', 'sms:?&body=' + encodeURIComponent(TEXT + ' ' + url));
     return s;
   }

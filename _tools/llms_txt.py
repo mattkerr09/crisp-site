@@ -104,16 +104,15 @@ def free_pro_lists(cap: int) -> tuple[tuple[str, tuple[str, ...]], ...]:
         ("Free", (
             "The whole app on Mac and Windows, offline, with no account and no time limit.",
             "The full editor and preview.",
-            f"Every export at full length, except AI exports for upscale, restore and colour, which stop at {cap} seconds.",
+            f"Every export at full length, except enhanced videos (upscaled, restored or coloured), which stop at {cap} seconds.",
             'Free video exports carry a small "crispvideo.app" mark.',
             "Photo upscales on a Mac never carry a mark. One photo at a time.",
         )),
         ("Pro adds", (
-            "AI exports at full length.",
+            "Enhanced videos at full length.",
             "No mark.",
-            "Max restore on Mac, which is slow. A one-time model pack of about 4.6 GB. "
-            "For video, it wants a Mac with 48 GB of memory or more.",
             "Batch processing to queue a whole folder. The free version does one at a time.",
+            "Max, the strongest restore, on Macs that can run it. It is slow; what it needs is on the download page.",
         )),
     )
 
@@ -458,7 +457,7 @@ def build() -> str:
         *[line for title, items in free_pro_lists(f["cap"])
           for line in (title, "", *(f"- {item}" for item in items), "")],
         "## Product and pricing",
-        "- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar (Mac).",
+        "- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar on a Mac, or Help > Enter Your Key… on Windows.",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
         f"- [Pricing]({BASE}/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; "
         f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: {price_copy(f)} {f['updates'].capitalize()}; removes the mark and the limit and adds "

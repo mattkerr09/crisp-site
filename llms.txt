@@ -8,19 +8,19 @@ Free
 
 - The whole app on Mac and Windows, offline, with no account and no time limit.
 - The full editor and preview.
-- Every export at full length, except AI exports for upscale, restore and colour, which stop at 15 seconds.
+- Every export at full length, except enhanced videos (upscaled, restored or coloured), which stop at 15 seconds.
 - Free video exports carry a small "crispvideo.app" mark.
 - Photo upscales on a Mac never carry a mark. One photo at a time.
 
 Pro adds
 
-- AI exports at full length.
+- Enhanced videos at full length.
 - No mark.
-- Max restore on Mac, which is slow. A one-time model pack of about 4.6 GB. For video, it wants a Mac with 48 GB of memory or more.
 - Batch processing to queue a whole folder. The free version does one at a time.
+- Max, the strongest restore, on Macs that can run it. It is slow; what it needs is on the download page.
 
 ## Product and pricing
-- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar (Mac).
+- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar on a Mac, or Help > Enter Your Key… on Windows.
 - [Crisp Video](https://crispvideo.app/): what it does, real before/after clips, and the free download
 - [Pricing](https://crispvideo.app/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: Black Friday sale: $9.99 once through December 2. Then $29. Every 1.x update included; removes the mark and the limit and adds batch processing and, on a Mac, the generative Max lane
 - [Black Friday sale](https://crispvideo.app/#buy): Black Friday sale: $9.99 once through December 2. Then $29. The Buy button applies the sale price.

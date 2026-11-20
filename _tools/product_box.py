@@ -84,7 +84,7 @@ def box(where: str, page: str = "") -> str:
             # shared with the home page and the door pages, so the version and the Vulkan line cannot differ between them.
             f'{llms_txt.windows_line(src)}'
             # a phone visitor cannot install a Mac app: one line to send the link to themselves (track.js)
-            f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>'
+            f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send yourself the link</button></p>'
             f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · Mac: {f["os"]}{llms_txt.speed_note(f["os"])} · '
             f'{f["chip"]} · {f["refund_days"]}-day refund, no reason needed.</p>'
             f'</aside>\n')

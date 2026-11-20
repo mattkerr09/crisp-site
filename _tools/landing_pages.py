@@ -120,6 +120,14 @@ def _referral_line() -> str:
     return m.group(0)
 
 
+# The Free versus Pro lists keep Max to one plain line (CEO, 2026-11-20, from Quality Desk's stranger walk: "48 GB of memory"
+# on the main path made ordinary Mac owners think Pro would not fit). What Max needs lives here, with the other requirements.
+MAX_NEEDS = (
+    '  <h2 id="max">What Max needs (Pro, Mac only)</h2>\n'
+    "  <p>Max is Crisp's strongest restore, and its slowest. It needs a one-time model pack of about 4.6 GB, and for video a Mac "
+    "with 48 GB of memory or more. Everything else in Crisp runs on any Mac that meets the requirements at the top of this page.</p>\n")
+
+
 def macos_speed_section(os_line: str) -> str:
     """The download page says plainly what changes below macOS 15 (CEO, 2026-10-20). Empty when the floor is 15+."""
     m = re.search(r"macOS\s+(\d+)", os_line or "")
@@ -237,7 +245,7 @@ def pages() -> dict[Path, str]:
             f"Download Crisp Video for Mac and Windows. Free to use: enhanced exports up to {f['cap']} seconds, everything else at full length.",
             "Download Crisp for Mac and Windows",
             f"{download_intro} Free to use: {llms_txt.free_tier(f['cap'], '&ldquo;', '&rdquo;')}; Pro removes the mark and the limit.",
-            "download-page", False, speed),
+            "download-page", False, speed + MAX_NEEDS),
         # THE ADDRESS ON THE FREE MARK (CEO, 2026-11-05): every free video export carries "crispvideo.app" and, under it,
         # "crispvideo.app/w" (crisp scripts/make_watermark.py). This is that door: what Crisp is, and the download tagged
         # src=watermark, so the visits and downloads the mark sends can be counted.
