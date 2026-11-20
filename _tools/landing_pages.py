@@ -95,7 +95,7 @@ def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
     found = (f'<p class="pbox-found">{llms_txt.price_copy(f)} '
              'The Buy button applies the sale price.</p>') if live else ""
     return (f'<aside class="pbox" data-landing-box>'
-            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
+            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video up to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'
             f'{found}'
             f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'

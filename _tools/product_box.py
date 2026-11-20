@@ -70,7 +70,7 @@ def box(where: str, page: str = "") -> str:
     found = (f'<p class="pbox-found">{llms_txt.price_copy(f)} '
              'The Buy button applies the sale price.</p>') if live else ""
     return (f'<aside class="pbox" data-pbox="{where}">'
-            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p>'
+            f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video up to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'
             f'{found}'
             # THE CURRENCY, TRUE (CEO sales audit, 2026-11-07): 6 of 8 November buyers paid in their own currency, 4 with tax added.
