@@ -15,7 +15,7 @@ HTML_LANG = HREFLANG = "ja"
 PAGE_COUNT = "four"
 STRICT_COPY = True
 DOWNLOAD_INDEXABLE = True
-HOME_TITLE = "AIで動画を高画質化・4K化｜Mac/Windows対応 Crisp"
+HOME_TITLE = "AIで動画を高画質化（最大4K）｜Mac/Windows対応 Crisp"
 ROUTES = (("/", "/ja/"), ("/download/", "/ja/download/"),
           ("/pricing/", "/ja/pricing/"), ("/free-vs-pro/", "/ja/free-or-pro/"))
 GENERATED_ROUTES = ("/download/", "/pricing/")

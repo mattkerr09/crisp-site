@@ -30,7 +30,7 @@ CURRENCY = "Preise in US-Dollar. An der Kasse sehen Sie Ihre Währung und gegebe
 KONTAKT_H = "Kontakt"
 
 BOX = {
-    "name": "<strong>Crisp Video</strong> stellt Videos wieder her, entfernt Rauschen und skaliert sie auf 4K hoch, offline auf Ihrem Mac oder PC.",
+    "name": "<strong>Crisp Video</strong> stellt Videos wieder her, entfernt Rauschen und skaliert sie bis auf 4K hoch, offline auf Ihrem Mac oder PC.",
     "once": "einmalig",
     # {now}, {price} are money(); {code} the founding code; {ends} the last day of the offer, e.g. "30. November"
     "found": 'Black Friday Angebot: {now} einmalig bis {ends}. Danach {price}. Der Kauf-Button wendet den Aktionspreis an.',
