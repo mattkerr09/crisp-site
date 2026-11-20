@@ -13,6 +13,19 @@ import sys
 import unittest
 from urllib.parse import urlsplit
 
+# 20 Nov 2026 (Article Studio): find the reviewed compared-pages commit by its subject, not its hash, so a rebase keeps
+# this test working. Falls back to the original hash if the subject is not in this history.
+def _compared_commit():
+    import subprocess as _sp
+    out = _sp.run(["git", "log", "--format=%H", "-n", "1", "--fixed-strings",
+                   "--grep=codex: cx-20261120-1400-crispsite-best-compared Reworked seven pages"],
+                  cwd=str(Path(__file__).resolve().parent.parent), capture_output=True, text=True).stdout.strip()
+    return out or "90ae8a080e8832b077312d84fb06496a25674d77"
+
+
+COMPARED = _compared_commit()
+
+
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "a034b2e911134e179e0a56912ec503c3a6b8d3d3"
@@ -156,7 +169,7 @@ class MeasuredAnswers(unittest.TestCase):
                 self.assertIsNotNone(old_quick)
                 self.assertIsNotNone(new_quick)
                 # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: compare unchanged pages to the reviewed base; the comparison was rewritten.
-                approved = git('show', f'90ae8a080e8832b077312d84fb06496a25674d77:{name}')
+                approved = git('show', f'{COMPARED}:{name}')
                 if name.startswith('best/'):
                     from test_head_terms_1 import check_comparison
                     check_comparison(after, 'Free video upscalers for Mac compared')

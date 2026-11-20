@@ -29,6 +29,19 @@ import test_measured_answers_2 as round_two
 import test_measured_answers_3b as round_three
 from test_measured_answers import ANSWER, QUICK, git, visible
 
+# 20 Nov 2026 (Article Studio): find the reviewed compared-pages commit by its subject, not its hash, so a rebase keeps
+# this test working. Falls back to the original hash if the subject is not in this history.
+def _compared_commit():
+    import subprocess as _sp
+    out = _sp.run(["git", "log", "--format=%H", "-n", "1", "--fixed-strings",
+                   "--grep=codex: cx-20261120-1400-crispsite-best-compared Reworked seven pages"],
+                  cwd=str(Path(__file__).resolve().parent.parent), capture_output=True, text=True).stdout.strip()
+    return out or "90ae8a080e8832b077312d84fb06496a25674d77"
+
+
+COMPARED = _compared_commit()
+
+
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "316c3f06328e88ee66401c6ab4733e60d5948b73"
@@ -379,7 +392,7 @@ class HeadTerms(unittest.TestCase):
                 self.assertTrue(target.is_file() or (target / 'index.html').is_file(), href)
         for name, addition in SOURCE_LINKS.items():
             # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: keep source links while allowing already reviewed chrome and box updates.
-            approved = git('show', f'90ae8a080e8832b077312d84fb06496a25674d77:{name}')
+            approved = git('show', f'{COMPARED}:{name}')
             current = (ROOT / name).read_text()
             self.assertIn(addition.strip(), current)
             self.assertEqual(approved, current)
@@ -412,7 +425,7 @@ def checked_hook():
     try:
         with tempfile.TemporaryDirectory(prefix='crisp-tests-base-') as directory:
             baseline = Path(directory)
-            data = subprocess.run(['git', 'archive', '90ae8a080e8832b077312d84fb06496a25674d77'],
+            data = subprocess.run(['git', 'archive', COMPARED],
                                   cwd=ROOT, check=True, capture_output=True).stdout
             with tarfile.open(fileobj=io.BytesIO(data)) as archive:
                 members = archive.getmembers()

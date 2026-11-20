@@ -24,6 +24,19 @@ import product_box
 from test_head_terms_1 import check_comparison
 import schema_matches_page
 
+# 20 Nov 2026 (Article Studio): find the reviewed compared-pages commit by its subject, not its hash, so a rebase keeps
+# this test working. Falls back to the original hash if the subject is not in this history.
+def _compared_commit():
+    import subprocess as _sp
+    out = _sp.run(["git", "log", "--format=%H", "-n", "1", "--fixed-strings",
+                   "--grep=codex: cx-20261120-1400-crispsite-best-compared Reworked seven pages"],
+                  cwd=str(Path(__file__).resolve().parent.parent), capture_output=True, text=True).stdout.strip()
+    return out or "90ae8a080e8832b077312d84fb06496a25674d77"
+
+
+COMPARED = _compared_commit()
+
+
 SITE = Path(__file__).resolve().parents[1]
 REL = "best/free-video-upscaler-mac/index.html"
 CANONICAL = "https://crispvideo.app/best/free-video-upscaler-mac/"
@@ -186,7 +199,7 @@ class FreeUpscalerAnswer(unittest.TestCase):
             return {re.search(r'<loc>([^<]+)</loc>', entry).group(1): entry
                     for entry in re.findall(r'<url>.*?</url>', source, re.S)}
         # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: unrelated sitemap updates already exist at this job base.
-        approved = subprocess.run(['git', 'show', '90ae8a080e8832b077312d84fb06496a25674d77:sitemap.xml'],
+        approved = subprocess.run(['git', 'show', f'{COMPARED}:sitemap.xml'],
                                   cwd=SITE, check=True, capture_output=True, text=True).stdout
         current, base = urls(sitemap), urls(approved)
         self.assertIn(f'<lastmod>{article["dateModified"]}</lastmod>', current.pop(CANONICAL))
