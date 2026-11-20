@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -18,6 +19,9 @@ from urllib.parse import urlsplit
 
 import faq_jsonld
 import gate_read_dates
+import landing_pages
+import product_box
+from test_head_terms_1 import check_comparison
 import schema_matches_page
 
 SITE = Path(__file__).resolve().parents[1]
@@ -86,14 +90,8 @@ def answer_control(source: str) -> None:
     quick = re.search(r'<div class="quick">(.*?)</div>', source, re.S)
     assert quick, "missing near-top answer"
     answer = schema_matches_page.text_of(quick.group(1))
-    required = (
-        "free AI video upscaler for Mac", "Crisp's free version", "offline",
-        "no account or time limit", "full editor and preview",
-        "AI exports for upscale, restore and colour", "15 seconds per export",
-        'video and GIF exports carry a small "crispvideo.app" mark',
-        "All other exports run at full length", "upscaling a whole tape needs Pro",
-        "removes the limit and mark",
-    )
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: opening now answers the comparison; free terms remain below.
+    required = ("Free video upscaling on a Mac", "15 seconds", "crispvideo.app", "29 seconds", "132 frames", "M1 Ultra")
     missing = [phrase for phrase in required if phrase not in answer]
     assert not missing, f"near-top free-limit answer missing: {missing}"
     assert source.index('class="quick"') < source.index('data-pbox="top"')
@@ -134,48 +132,63 @@ class FreeUpscalerAnswer(unittest.TestCase):
         self.assertEqual(canon, [CANONICAL])
         boxes = lambda s: re.findall(r'<aside class="pbox".*?</aside>', s, re.S)
         self.assertEqual(len(boxes(self.source)), 2)
-        self.assertEqual(boxes(self.source), boxes(self.base))
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: render current boxes instead of pinning an expired sale.
+        landing_pages.prepare_facts()
+        self.assertEqual(boxes(self.source), [product_box.box(where, '/best/free-video-upscaler-mac/').strip()
+                                              for where in ('top', 'end')])
         self.assertIn("src=best-free-video-upscaler-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg", self.source)
         media = lambda s: re.findall(r'<(?:img|video|source)\b[^>]*>', s)
         self.assertEqual(media(self.source), media(self.base))
 
-    def test_no_new_external_links_or_prices(self):
-        def external(source):
-            urls = re.findall(r'(?:https?:)?//[^\s<>"\']+', source)
-            return Counter(url for url in urls if urlsplit(url).hostname != "crispvideo.app")
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: expanded rivals need sourced prices and dated links, not old link counts.
+    def test_comparison_links_prices_and_free_terms(self):
+        check_comparison(self.source, 'Free video upscalers for Mac compared')
+        shown = schema_matches_page.text_of(self.source)
+        for phrase in ("Crisp's free version works offline", "no account or time limit", "full editor and preview",
+                       "AI exports for upscale, restore and colour stop at 15 seconds per export",
+                       'video and GIF exports carry a small "crispvideo.app" mark',
+                       "All other exports run at full length", "Upscaling a whole tape needs Pro",
+                       "removes the limit and mark"):
+            self.assertIn(phrase, shown)
 
-        self.assertEqual(external(self.source), external(self.base))
-        prices = lambda s: Counter(re.findall(r'[$€£]\s*\d[\d.,]*', s))
-        self.assertEqual(prices(self.source), prices(self.base))
-        sale_spans = lambda s: Counter(re.findall(r'<span\b[^>]*data-launch-price[^>]*>.*?</span>', s, re.S))
-        self.assertEqual(sale_spans(self.source), sale_spans(self.base))
-
-    def test_rival_facts_dates_and_measurements_unchanged(self):
-        def claims(source):
-            return Counter((c.vendor, c.kind, c.text, c.covered) for c in gate_read_dates.page_claims(source))
-
-        self.assertTrue(claims(self.base), "preservation check must see rival claims")
-        self.assertEqual(claims(self.source), claims(self.base))
-        rows = lambda s: [row for row in re.findall(r'<tr>.*?</tr>', s, re.S)
-                          if any(name in row for name in ("Real-ESRGAN", "Upscayl", "Video2X"))]
-        self.assertEqual(rows(self.source), rows(self.base))
-        reads = lambda s: Counter(re.findall(r'(?:read|READMEs,) 11 November 2026', s))
-        self.assertEqual(reads(self.source), reads(self.base))
-        for heading in ("What the free command-line route costs, measured", "The free option nobody mentions"):
-            section = lambda s: s.split(f'<h2>{heading}</h2>', 1)[1].split('<h2>', 1)[0]
-            self.assertEqual(section(self.source), section(self.base))
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: preserve measured figures and sources through the rewritten explanation.
+    def test_measurements_preserved(self):
+        heading = "What the free command-line route costs, measured"
+        section = lambda s: s.split(f'<h2>{heading}</h2>', 1)[1].split('<h2>', 1)[0]
+        old = schema_matches_page.text_of(section(self.base))
+        current = schema_matches_page.text_of(section(self.source))
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: wording changed; all original measured numbers must survive.
+        figures = lambda text: Counter(re.findall(r'(?<![\d.])\d+(?:[,.]\d+)*(?![\d.])', text))
+        self.assertFalse(figures(old.replace('read 11 November 2026', '')) - figures(current))
+        for phrase in ('1.52 MB', '8.42 MB', '2.7 GB', '15.2 GB', '17.9 GB',
+                       '0.72 to 0.82 seconds', '23 minutes', '7 GB', 'not measured on a long render'):
+            self.assertIn(phrase, old)
+            self.assertIn(phrase, current)
+        self.assertIn('not a measured long render', current)
+        self.assertIn('href="/learn/why-4k-exports-take-so-long/"', section(self.source))
+        resize = self.source.split('<h2>Our plain-resize check</h2>', 1)[1].split('<h2>', 1)[0]
+        for phrase in ('three of four frames', 'all four', '23 July 2026',
+                       '/learn/what-is-ai-video-upscaling/', '/learn/when-ai-upscaling-beats-a-plain-resize/#lanczos'):
+            self.assertIn(phrase, resize)
 
     def test_dates_and_only_target_sitemap_entry(self):
         article = next(b for b in schema_matches_page.blocks(self.source) if b.get("@type") == "Article")
-        byline = schema_matches_page.byline_dates(self.source)
-        self.assertEqual(article["dateModified"], byline["dateModified"])
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: parse long visible dates and the Article block independent of JSON spacing.
+        line = schema_matches_page.text_of(schema_matches_page.BYLINE.search(self.source)[1])
+        for field, label in (('datePublished', 'published'), ('dateModified', 'last updated')):
+            shown = re.search(label + r' (\d{1,2} [A-Za-z]+ \d{4})', line)[1]
+            self.assertEqual(article[field], datetime.strptime(shown, '%d %B %Y').date().isoformat())
         self.assertEqual(article["datePublished"], "2026-07-04")
+        self.assertEqual(article["dateModified"], "2026-11-20")
         sitemap = (SITE / "sitemap.xml").read_text()
         # Keep complete non-target entries byte-for-byte, including their original dates.
         def urls(source):
             return {re.search(r'<loc>([^<]+)</loc>', entry).group(1): entry
                     for entry in re.findall(r'<url>.*?</url>', source, re.S)}
-        current, base = urls(sitemap), urls(base_file("sitemap.xml"))
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: unrelated sitemap updates already exist at this job base.
+        approved = subprocess.run(['git', 'show', '90ae8a080e8832b077312d84fb06496a25674d77:sitemap.xml'],
+                                  cwd=SITE, check=True, capture_output=True, text=True).stdout
+        current, base = urls(sitemap), urls(approved)
         self.assertIn(f'<lastmod>{article["dateModified"]}</lastmod>', current.pop(CANONICAL))
         base.pop(CANONICAL)
         self.assertEqual(current, base)

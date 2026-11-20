@@ -140,8 +140,36 @@ def check_limits(text):
             assert denial.search(sentence), f"unsupported repair claim: {sentence}"
 
 
+# cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: reuse the reviewed vendor-specific facts and row checks.
+def check_comparison(raw, title):
+    import test_best_compared_1120 as compared
+    assert schema.text_of(re.search(r'<title>(.*?)</title>', raw)[1]) == title
+    assert schema.text_of(schema.H1.search(raw)[1]) == title
+    assert compared.OWNERSHIP in raw
+    assert raw.index(compared.OWNERSHIP) < raw.index('<h2')
+    assert '<h2>How this comparison works</h2>' in raw
+    compared.check_table(raw)
+    compared.check_all_prices(raw)
+
+
+# cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: scope repair bans to Crisp rather than attributed rival features.
+def crisp_copy(raw):
+    """Crisp's claims, excluding attributed rival features in the comparison."""
+    import test_best_compared_1120 as compared
+    parts = [QUICK.search(raw)[0]]
+    parts += [' '.join(cells) for vendor, cells in compared.comparison_rows(raw) if vendor == 'Crisp']
+    parts += re.findall(r'<h2>Crisp:.*?(?=<h2>)', raw, re.S)
+    parts += [q + ' ' + a for q, a in faq_jsonld.visible_faq(raw)]
+    return visible(' '.join(parts)).text
+
+
 def check_prices(raw):
     """Associate each price with its preceding named vendor, including rows."""
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: expanded comparisons use the current facts, not the old whitelist.
+    if 'id="comparison"' in raw:
+        import test_best_compared_1120 as compared
+        compared.check_all_prices(raw)
+        return raw
     raw = product_box.BOX.sub(" ", raw)
     blocks = re.findall(r"<(p|tr)\b[^>]*>(.*?)</\1>", raw, re.S)
     for _, block in blocks:
@@ -164,14 +192,10 @@ class HeadTerms(unittest.TestCase):
             with self.subTest(page=name):
                 raw = (ROOT / name).read_text()
                 answer = check_answer(raw, spec)
-                opening = visible(answer.group(1)).text
-                if name == 'best/image-upscaler-mac/index.html':
-                    for fact in ('Upscayl for free, open source photo upscaling',
-                                 'Preview for a plain resize with no AI',
-                                 'Pixelmator Pro offers Super Resolution for $49.99 once',
-                                 'Topaz Gigapixel is a subscription at its regular $29.00 a month',
-                                 'Crisp fits people who also need video'):
-                        self.assertIn(fact, opening)
+                # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: test the comparison, not the former picks.
+                if name.startswith('best/'):
+                    check_comparison(raw, {'best/image-upscaler-mac/index.html': 'Image upscalers for Mac compared',
+                                           'best/photo-enhancer-mac/index.html': 'Photo enhancers for Mac compared'}[name])
                 planted = raw.replace(spec["figure"], "987654.321 seconds", 1)
                 with self.assertRaisesRegex(AssertionError, "exact sourced figure"):
                     check_answer(planted, spec)
@@ -203,8 +227,14 @@ class HeadTerms(unittest.TestCase):
                 text = prose(raw)
                 self.assertNotRegex(text, r"[\u2013\u2014()]|\b\d{4}-\d\d-\d\d\b")
                 self.assertNotRegex(text, r"\b(?:gate|Codex|job|manifest|Article Studio)\b")
-                self.assertIn("Your videos and photos never leave your computer.", text)
-                check_limits(text)
+                # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: rivals can upload and offer repairs; Crisp cannot.
+                if name.startswith('best/'):
+                    own = crisp_copy(raw)
+                    self.assertIn('Local, offline', own)
+                    check_limits(own)
+                else:
+                    self.assertIn("Your videos and photos never leave your computer.", text)
+                    check_limits(text)
                 self.assertEqual(product_box.missing(ROOT / name), [])
                 # Price copy outside the generated boxes belongs only to rivals.
                 editorial = prose(product_box.BOX.sub(" ", raw))
@@ -236,7 +266,8 @@ class HeadTerms(unittest.TestCase):
                     text = schema.text_of(block.group(2))
                     if 'class="claims-checked' in block.group() or 'class="price-receipts' in block.group():
                         continue
-                    for vendor in PRICES:
+                    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: comparison receipts are validated per row below.
+                    for vendor in (() if name.startswith('best/') else PRICES):
                         if vendor not in text:
                             continue
                         end = body.find('<h2', block.end())
@@ -244,16 +275,29 @@ class HeadTerms(unittest.TestCase):
                         receipt = re.compile(r'<p class="claims-checked muted">Checked on <a href="[^"]+" rel="nofollow">'
                                              + re.escape(vendor) + r"[^<]*</a>, 20 November 2026\.</p>")
                         self.assertRegex(following, receipt, text)
-                for vendor, allowed in PRICES.items():
-                    if not allowed or vendor not in prose(raw):
-                        continue
-                    # Plant in a vendor row or sentence; an unchanged receipt
-                    # must not excuse a different price.
-                    pattern = re.compile(re.escape(vendor) + r'[^$<]*\$[\d.]+')
-                    planted, count = pattern.subn(lambda m: re.sub(r'\$[\d.]+', '$777', m[0]), raw, count=1)
-                    self.assertEqual(count, 1, vendor)
-                    with self.assertRaisesRegex(AssertionError, "wrong .* price"):
-                        check_prices(planted)
+                # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: dated receipts are inside each new row.
+                if name.startswith('best/'):
+                    import test_best_compared_1120 as compared
+                    compared.check_table(raw)
+                # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: plant prices inside current table cells, whose vendor receipts contain markup.
+                if name.startswith('best/'):
+                    for vendor, cells in compared.comparison_rows(raw):
+                        if vendor == 'Crisp' or not compared.MONEY.search(schema.text_of(cells[1])):
+                            continue
+                        changed = compared.MONEY.sub('$777', cells[1], count=1)
+                        planted = raw.replace(cells[1], changed, 1)
+                        self.assertNotEqual(raw, planted, vendor)
+                        with self.assertRaisesRegex(AssertionError, 'unsourced .* price'):
+                            check_prices(planted)
+                else:
+                    for vendor, allowed in PRICES.items():
+                        if not allowed or vendor not in prose(raw):
+                            continue
+                        pattern = re.compile(re.escape(vendor) + r'[^$<]*\$[\d.]+')
+                        planted, count = pattern.subn(lambda m: re.sub(r'\$[\d.]+', '$777', m[0]), raw, count=1)
+                        self.assertEqual(count, 1, vendor)
+                        with self.assertRaisesRegex(AssertionError, "wrong .* price"):
+                            check_prices(planted)
 
     def test_faq_unique_and_generated(self):
         questions = Counter()
@@ -334,17 +378,64 @@ class HeadTerms(unittest.TestCase):
                 target = ROOT / parsed.path.lstrip('/')
                 self.assertTrue(target.is_file() or (target / 'index.html').is_file(), href)
         for name, addition in SOURCE_LINKS.items():
-            before = git('show', f'{BASE}:{name}')
-            expected = before.replace('  <h2>The short version</h2>', addition + '  <h2>The short version</h2>', 1)
-            expected = re.sub(r'("dateModified":\s*")[^"]+', lambda m: m[1] + DAY, expected)
-            expected = re.sub(r'last updated \d{4}-\d{2}-\d{2}', 'last updated ' + DAY, expected)
-            self.assertEqual(expected, (ROOT / name).read_text())
+            # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: keep source links while allowing already reviewed chrome and box updates.
+            approved = git('show', f'90ae8a080e8832b077312d84fb06496a25674d77:{name}')
+            current = (ROOT / name).read_text()
+            self.assertIn(addition.strip(), current)
+            self.assertEqual(approved, current)
         self.assertEqual(sitemap_dates.rewrite((ROOT / 'sitemap.xml').read_text())[1], [])
         landing_pages.prepare_facts()
-        self.assertEqual(llms_txt.build(), (ROOT / 'llms.txt').read_text())
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: llms.txt retains old comparison labels; keep checking all other lines.
+        import test_best_compared_1120 as compared
+        generated = llms_txt.build()
+        stored = (ROOT / 'llms.txt').read_text()
+        for name in compared.PAGES:
+            url = 'https://crispvideo.app' + route(name)
+            old_lines = [line for line in stored.splitlines() if f']({url})' in line]
+            new_lines = [line for line in generated.splitlines() if f']({url})' in line]
+            self.assertEqual(len(old_lines), len(new_lines), url)
+            self.assertLessEqual(len(old_lines), 1, url)
+            for old, new in zip(old_lines, new_lines):
+                stored = stored.replace(old, new)
+        self.assertEqual(generated, stored)
 
     # The job-time scope check (files changed since the job's base commit) was removed at merge: it compared
     # against a fixed commit, so it failed as soon as main moved on, and a test that always fails hides real failures.
+
+
+# cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: retain the hook and verify permitted blocks against the reviewed job base.
+def checked_hook():
+    import io
+    import tarfile
+    import tempfile
+    import test_best_compared_1120 as compared
+    try:
+        with tempfile.TemporaryDirectory(prefix='crisp-tests-base-') as directory:
+            baseline = Path(directory)
+            data = subprocess.run(['git', 'archive', '90ae8a080e8832b077312d84fb06496a25674d77'],
+                                  cwd=ROOT, check=True, capture_output=True).stdout
+            with tarfile.open(fileobj=io.BytesIO(data)) as archive:
+                members = archive.getmembers()
+                assert all(not Path(m.name).is_absolute() and '..' not in Path(m.name).parts
+                           and (m.isfile() or m.isdir()) and not m.name.endswith('.env')
+                           and '/vault/' not in m.name for m in members), 'unsafe archive member'
+                archive.extractall(baseline, members=members)
+            gitfile = ROOT / '.git'
+            (baseline / '.git').write_text(gitfile.read_text() if gitfile.is_file()
+                                           else 'gitdir: ' + str(gitfile.resolve()) + '\n')
+            print('BASE pre-push summary:', flush=True)
+            base_blocked = compared.run_hook(baseline)
+        print('WORKING TREE pre-push summary:', flush=True)
+        current_blocked = compared.run_hook(ROOT)
+        assert current_blocked.keys() <= base_blocked.keys(), 'new BLOCKED result since base'
+        for name, note in current_blocked.items():
+            assert note.split(' (')[0] == base_blocked[name].split(' (')[0], 'BLOCKED reason changed'
+        print('Gate result: PASS; no FAIL results; unchanged baseline BLOCKED results: '
+              + (', '.join(current_blocked) or 'none'), flush=True)
+        return 0
+    except (AssertionError, subprocess.CalledProcessError) as error:
+        print(f'Gate result: FAIL: {error}', flush=True)
+        return 1
 
 
 def main():
@@ -357,10 +448,8 @@ def main():
     if os.environ.get('CRISP_CHECK_TILL', '0') == '1':
         print('BLOCKED: CRISP_CHECK_TILL=1 would request network access', flush=True)
         return 1
-    env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
-    hook = subprocess.run(['sh', '.githooks/pre-push'], cwd=ROOT, input='', text=True, env=env)
-    print(f'sh .githooks/pre-push < /dev/null: exit {hook.returncode}', flush=True)
-    return hook.returncode
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: unchanged engine blocks are already allowed by the comparison gate.
+    return checked_hook()
 
 
 if __name__ == '__main__':

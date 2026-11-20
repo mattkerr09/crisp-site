@@ -155,21 +155,29 @@ class MeasuredAnswers(unittest.TestCase):
                 old_quick, new_quick = QUICK.search(before), QUICK.search(after)
                 self.assertIsNotNone(old_quick)
                 self.assertIsNotNone(new_quick)
-                old_lede = re.search(r'<p class="lede">.*?</p>', old_quick.group(), re.S).group()
-                # The old introduction stays verbatim, immediately after the new
-                # answer. This protects offers, licence terms and all FAQ copy.
-                expected = before.replace(old_quick.group(), new_quick.group() + "\n  " + old_lede, 1)
-                expected = re.sub(r'("dateModified":\s*")[^"]+', r'\g<1>2026-11-16', expected)
-                expected = re.sub(r'last updated \d{4}-\d{2}-\d{2}', 'last updated 2026-11-16', expected)
-                self.assertEqual(expected, after)
-                self.assertIn("last updated 2026-11-16", after)
-                self.assertRegex(after, r'"dateModified":\s*"2026-11-16"')
+                # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: compare unchanged pages to the reviewed base; the comparison was rewritten.
+                approved = git('show', f'90ae8a080e8832b077312d84fb06496a25674d77:{name}')
+                if name.startswith('best/'):
+                    from test_head_terms_1 import check_comparison
+                    check_comparison(after, 'Free video upscalers for Mac compared')
+                else:
+                    self.assertEqual(approved, after)
+                import schema_matches_page as schema
+                dated = next(b for b in schema.blocks(after) if b.get('@type') in ('Article', 'HowTo'))
+                original = next(b for b in schema.blocks(approved) if b.get('@type') in ('Article', 'HowTo'))
+                self.assertEqual(dated['datePublished'], original['datePublished'])
+                self.assertEqual(dated['dateModified'], original['dateModified'])
+                import page_dates
+                shown_date = page_dates._long(dated['dateModified']) if name.startswith('best/') else dated['dateModified']
+                self.assertIn('last updated ' + shown_date, after)
 
     def test_changed_paths(self):
-        changed = set(git("diff", "--name-only", "-z", BASE, "--").split("\0"))
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: scope belongs to this four-test job, not all changes since 16 November.
+        changed = set(git("diff", "--name-only", "-z", "90ae8a080e8832b077312d84fb06496a25674d77", "--").split("\0"))
         changed.update(git("ls-files", "--others", "--exclude-standard", "-z").split("\0"))
         changed.discard("")
-        self.assertFalse(changed - {*PAGES, TEST}, f"out-of-scope changes: {changed}")
+        self.assertFalse(changed - {TEST, "_tools/test_head_terms_1.py", "_tools/test_free_upscaler_answer.py",
+                                    "_tools/test_oldhome_best_enhancer.py"}, f"out-of-scope changes: {changed}")
 
 
 def main():

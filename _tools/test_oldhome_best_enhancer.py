@@ -42,38 +42,9 @@ def json_nodes(source):
 
 
 def rival_figures(source):
-    """Match each dated price set to its original site source, not just any page number."""
-    home = read('index.html')
-    comparison = home[home.index('<section id="compare">'):].split('</section>', 1)[0]
-    rows = nodes(source, 'tr')[2:]  # header and Crisp's row are not rival prices
-    expected = [
-        ('Topaz Video', comparison, 'read 11 Nov 2026',
-         '$299/yr, $254 first year in Topaz Video\'s sale, read 11 Nov 2026, or $59/mo',
-         {'$299', '$254', '$59', '$1,495'}),
-        ('Aiarty Video Enhancer', comparison, 'read 19 October 2026',
-         '$235 list, $165 on offer', {'$235', '$165'}),
-        ('HitPaw VikPea', comparison, 'read 19 October 2026',
-         '$437.99 list, $284.69 on offer', {'$437.99', '$284.69'}),
-        ('VideoProc Converter AI', read('vs/videoproc-alternative-mac/index.html'),
-         'checked 19 October 2026', '$54.95', {'$54.95', '$89.95'}),
-    ]
-    assert len(rows) == len(expected), 'all four rivals need a price row'
-    for row, (name, original, date, phrase, amounts) in zip(rows, expected):
-        shown = normal(row.text())
-        original = text_of(original)
-        assert shown.startswith(name), 'rival row order changed'
-        price_cell = [n for n in row.children if getattr(n, 'tag', '') in ('th', 'td')][1]
-        assert date in normal(price_cell.text()), name + ': missing original read date'
-        assert phrase in shown and phrase in original, name + ': price wording changed'
-        assert set(MONEY.findall(shown)) == amounts, name + ': unsourced price'
-        assert amounts <= set(MONEY.findall(original)), name + ': figure absent from source'
-        assert date.removeprefix('checked ').removeprefix('read ') in original, name + ': date absent from source'
-        if name == 'Topaz Video':
-            assert '$1,495 at $299/yr' in shown, 'five-year cost must use the regular price'
-    # Narrative may quote the ownership date, but may not introduce another rival price.
-    outside = re.sub(r'<table\b.*?</table>|<aside\b.*?</aside>', '', source, flags=re.S)
-    outside = text_of(re.search(r'<article>(.*?)</article>', outside, re.S)[1])
-    assert not MONEY.search(outside), 'new narrative price needs a source check'
+    # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: replace four historical offers with the sourced 10+ comparison.
+    from test_head_terms_1 import check_comparison
+    check_comparison(source, 'AI video enhancers for Mac compared')
 
 
 class OldHomeAndEnhancer(unittest.TestCase):
@@ -157,15 +128,16 @@ class OldHomeAndEnhancer(unittest.TestCase):
 
     def test_prices_dates_and_negative_controls(self):
         rival_figures(self.best)
-        for before, after in (('$235 list', '$236 list'), ('read 11 Nov 2026', 'read 12 Nov 2026'),
-                              ('$1,495 at', '$1,496 at'), ('offer, read 19 October 2026', 'offer, no read date')):
+        # cx-20261120-1420-crispsite-best-compared-tests, 20 November 2026: plant bad current prices and receipts rather than absent historical copy.
+        for before, after in (('$79.00', '$98765.00'),
+                              ("CapCut desktop's own page</a>, 20 November 2026.",
+                               "CapCut desktop's own page</a>, 21 November 2026."),
+                              ('See the price box', '$9.99'),
+                              ('How this comparison works', 'Missing method')):
             planted = self.best.replace(before, after, 1)
             self.assertNotEqual(planted, self.best)
             with self.assertRaises(AssertionError):
                 rival_figures(planted)
-        ownership = ('Adobe completed its purchase of Topaz Labs on 23 September 2026 '
-                     '(Adobe, read 20 Nov 2026); Topaz Video is still sold on its own.')
-        self.assertIn(ownership, text_of(self.best))
 
     def test_metadata_faq_css_and_reading_length(self):
         css = read('style.css')
