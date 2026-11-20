@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>Will your video fit? Discord, email and WhatsApp size limits (no upload)</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Check a video against Discord, email, WhatsApp or Slack size limits. Read MP4 and MOV details in your browser and see a Crisp size plan. No upload.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/tools/fit-video-to-size/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Will your video fit? Discord, email and WhatsApp size limits (no upload)">
+<meta property="og:description" content="Check a video against Discord, email, WhatsApp or Slack size limits. Read MP4 and MOV details in your browser and see a Crisp size plan. No upload.">
+<meta property="og:url" content="https://crispvideo.app/tools/fit-video-to-size/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Will your video fit? Discord, email and WhatsApp size limits (no upload)">
+<meta name="twitter:description" content="Check a video against Discord, email, WhatsApp or Slack size limits. Read MP4 and MOV details in your browser and see a Crisp size plan. No upload.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
+<link rel="stylesheet" href="/style.css">
+<style>
+.fit-picker{margin:1.4rem 0;padding:1.2rem;border:1px solid var(--hair-lit);border-radius:var(--r);background:var(--panel-2);}
+.fit-picker label{display:block;margin:0 0 .4rem;font-weight:600;}
+.fit-picker input,.fit-picker select{display:block;max-width:100%;margin:0 0 1rem;font:inherit;}
+.fit-picker select,.fit-picker input[type=number]{padding:.6rem;border:1px solid var(--hair-lit);border-radius:var(--r-sm);background:var(--panel);color:var(--white);}
+.fit-picker :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
+#fit-result{margin:1rem 0;padding:1.2rem;border:1px solid var(--hair-lit);border-radius:var(--r);background:var(--panel);overflow-wrap:anywhere;}
+#fit-result p:last-child{margin-bottom:0;}
+.fit-sources{font-size:.85rem;color:var(--grey);}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Will your video fit?","url":"https://crispvideo.app/tools/fit-video-to-size/","applicationCategory":"MultimediaApplication","operatingSystem":"Any browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check a video against Discord, email, WhatsApp or Slack size limits. Read MP4 and MOV details in your browser and see a Crisp size plan. No upload.","author":{"@type":"Person","name":"Matthew Kerr","url":"https://crispvideo.app/about/"},"datePublished":"2026-11-20","dateModified":"2026-11-20"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Discord's free file limit?","acceptedAnswer":{"@type":"Answer","text":"Discord's free file limit is 20 MB, according to its File Attachments FAQ, read 20 Nov 2026. Nitro Basic has a 50 MB limit."}},{"@type":"Question","name":"Why does email aim at 18 MB?","acceptedAnswer":{"@type":"Answer","text":"Gmail and Outlook.com each state a 25 MB limit. Email sends attachments base64-encoded, which adds about a third. Neither help page says whether that extra size counts, so this tool aims at 18 MB."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. This page reads the file details in your browser with the File API. It does not send the video anywhere."}}]}</script>
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crisp", "item": "https://crispvideo.app/"}, {"@type": "ListItem", "position": 2, "name": "Will your video fit?", "item": "https://crispvideo.app/tools/fit-video-to-size/"}]}</script>
+<!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
+<body>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29." data-then="$29" data-ends="2026-12-03T07:59:59Z"></div>
+<script>(function () {
+  if (window.__kcFounding) return;
+  window.__kcFounding = true;
+  (function () {
+    var m = document.querySelector("[data-founding]");
+    var ends = m && m.getAttribute("data-ends");
+    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
+    if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
+    window.__kcFoundingEnded = true;
+    var hide = function () {
+      var prices = document.querySelectorAll("[data-launch-price]");
+      for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
+      var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+      for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hide); else hide();
+  })();
+  if (window.__kcFoundingEnded) return;
+
+  var KEY  = "kc-founding-dismissed";
+  try {
+    var when = Number(localStorage.getItem(KEY));
+    if (when && ((typeof window.__kcNow === "number") ? window.__kcNow : Date.now()) - when < 7 * 24 * 60 * 60 * 1000) return;
+  } catch (e) {}
+
+  var mount = document.querySelector("[data-founding]");
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
+
+  var bar = document.createElement("div");
+  bar.id = "kc-founding-bar";
+  bar.style.cssText = "position:sticky;top:0;left:0;right:0;z-index:2147482000;width:100%";
+  var root = bar.attachShadow ? bar.attachShadow({ mode: "open" }) : bar;
+
+  root.innerHTML = [
+    '<style>',
+    ':host{all:initial;display:block;color:inherit}',
+    '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
+    '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;',
+    '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
+    '  font-size:.795rem;line-height:1.3;position:relative;overflow:hidden;',
+    '  border-bottom:1px solid rgba(240,180,41,.22)}',
+    '.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;',
+    '  background:linear-gradient(90deg,transparent,rgba(240,180,41,.5),transparent)}',
+    '.tag{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.66rem;',
+    '  color:#F0B429;white-space:nowrap;flex:none}',
+    '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
+    '.txt{font-weight:500;white-space:normal;text-align:center}',
+    '.now{font-weight:700;color:#F0B429}',
+    '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
+    '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
+    '.x:hover{opacity:.9}',
+    '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
+    '  .dot{display:none}}',
+    '@media(max-width:480px){.tag{display:none}',
+    '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
+    '</style>',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
+    '  <span class="tag">Crisp Pro</span>',
+    '  <span class="dot"></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
+    '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
+    '</div>'
+  ].join("");
+
+  root.querySelector(".x").addEventListener("click", function () {
+    bar.remove();
+    publishHeight();
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+  });
+
+  function publishHeight() {
+    try { document.documentElement.style.setProperty("--kc-bar-h", (bar.isConnected ? bar.offsetHeight : 0) + "px"); } catch (e) {}
+  }
+  function place() {
+    if (!document.body) return setTimeout(place, 50);
+    document.body.insertBefore(bar, document.body.firstChild);
+    if (mount) mount.remove();
+    publishHeight();
+    window.addEventListener("resize", publishHeight);
+    if (window.ResizeObserver) new ResizeObserver(publishHeight).observe(bar);
+  }
+  place();
+})();</script>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3.2"/></svg> Crisp Video</a>
+  <a class="btn" data-track="nav-download" href="https://crispvideo.app/download/?src=nav-download">Download</a>
+</div></nav>
+
+<article><div class="wrap">
+  <div class="crumb"><a href="https://crispvideo.app/">Crisp</a> &rsaquo; Will your video fit?</div>
+  <h1>Will your video fit? Discord, email and WhatsApp size limits</h1>
+  <div class="updated">By Matthew Kerr, who makes Crisp in Grand Rapids · published 2026-11-20 · last updated 2026-11-20</div>
+  <p class="lede">Pick a video and choose where to send it. See whether it fits and what Crisp would aim for if it needs to be smaller.</p>
+
+  <div class="fit-picker">
+    <label for="fit-file">Choose an MP4 or MOV video</label>
+    <input type="file" id="fit-file" accept=".mp4,.mov,.m4v,video/mp4,video/quicktime">
+    <p>Your file stays in your browser. Nothing is uploaded.</p>
+    <label for="fit-destination">Where are you sending it?</label>
+    <select id="fit-destination">
+      <option value="discord" data-limit-mb="20">Discord free: 20 MB</option>
+      <option value="basic" data-limit-mb="50">Discord Nitro Basic: 50 MB</option>
+      <option value="email" data-limit-mb="25" data-aim-mb="18">Email: 25 MB, aim at 18 MB</option>
+      <option value="whatsapp" data-limit-mb="100">WhatsApp: 100 MB</option>
+      <option value="slack" data-limit-mb="1000">Slack: 1 GB</option>
+      <option value="custom">Custom size in MB</option>
+    </select>
+    <div id="fit-custom-box" hidden>
+      <label for="fit-custom">Size limit in MB</label>
+      <input id="fit-custom" type="number" min="0.001" max="100000" step="any" value="25" inputmode="decimal">
+    </div>
+    <p>MB means 1,000,000 bytes. The plan aims at 95% of the limit, or 18 MB for email.</p>
+  </div>
+  <noscript><p>Turn on JavaScript to read a file and work out a size plan.</p></noscript>
+  <div id="fit-result" hidden aria-live="polite" aria-atomic="true"></div>
+
+  <h2>A measured export</h2>
+  <blockquote><p>In my test, Crisp took a 38.6 MB two-minute clip to 18.5 MB at 960×720 in 46 seconds, with a VMAF score of 92.9.</p></blockquote>
+  <p>From <a href="/how-to/compress-video-for-discord/#measured">Crisp's published Discord test</a>. That result is from one clip. Your video may need a different picture size or bitrate.</p>
+  <p>This page doesn't compress anything. Crisp does it on your Mac or PC, offline, in one click (Compress → Fit a size).</p>
+  <p>The free version puts a small "crispvideo.app" mark on exported video. Pro removes it.</p>
+  <aside class="pbox" data-pbox="fit">
+    <p class="pbox-name"><strong>Crisp Pro</strong></p>
+<p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$29">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>
+    <p class="pbox-actions"><a class="btn" data-track="fit-download" href="/download/">Download Crisp free</a> <a class="btn btn-ghost" data-track="fit-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=tools-fit-video-to-size-pbox-fit" rel="nofollow">Buy Pro</a></p>
+  </aside>
+
+  <h2>Size limits and sources</h2>
+  <p>These are file size limits. A service may also change the picture or ask for a supported format. WhatsApp's default video limit also calls for 720p. It uses 64 MB on slower connections. Use a custom 64 MB limit for that case.</p>
+  <ul class="fit-sources">
+    <li>Discord free, 20 MB: <q>For non-Nitro subscribers, the maximum file upload is 20MB.</q> <a href="https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ">Discord File Attachments FAQ</a>, read 20 Nov 2026.</li>
+    <li>Discord Nitro Basic, 50 MB: <q>Nitro Basic offers 50MB and Nitro offers up to 1GB.</q> <a href="https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ">Discord File Attachments FAQ</a>, read 20 Nov 2026.</li>
+    <li>Email, 25 MB, aimed at 18 MB: <q>For personal Gmail accounts, the limit is 25 MB.</q> <a href="https://support.google.com/mail/answer/6584">Gmail attachment help</a>, read 20 Nov 2026. <q>The attachment size limit for files is 25 MB.</q> <a href="https://support.microsoft.com/en-us/outlook/sending-limits-in-outlook-com">Outlook.com sending limits</a>, read 20 Nov 2026.</li>
+    <li>WhatsApp, 100 MB: <q>the default video size limit is 100MB and 720p resolution</q>, with 64 MB on slower connections. <a href="https://faq.whatsapp.com/453914586839706/">WhatsApp video help</a>, read 20 Nov 2026.</li>
+    <li>Slack, 1 GB: <q>Members and guests can add files up to 1GB in size.</q> <a href="https://slack.com/help/articles/201330736-Add-files-to-Slack">Add files to Slack</a>, read 20 Nov 2026.</li>
+  </ul>
+
+  <h2>Video size questions</h2>
+  <h3>What is Discord's free file limit?</h3>
+  <p>Discord's free file limit is 20 MB, according to its File Attachments FAQ, read 20 Nov 2026. Nitro Basic has a 50 MB limit.</p>
+  <h3>Why does email aim at 18 MB?</h3>
+  <p>Gmail and Outlook.com each state a 25 MB limit. Email sends attachments base64-encoded, which adds about a third. Neither help page says whether that extra size counts, so this tool aims at 18 MB.</p>
+  <h3>Is my file uploaded?</h3>
+  <p>No. This page reads the file details in your browser with the File API. It does not send the video anywhere.</p>
+</div></article>
+<footer><div class="wrap">
+  <p>&#9670; <strong style="color:var(--text-mid)">Crisp</strong>: offline AI video &amp; photo upscaler and auto-editor for Mac, and a video upscaler and editor for Windows. <a href="https://crispvideo.app/">crispvideo.app</a> &middot; <a href="https://crispvideo.app/about/">About</a></p>
+  <div class="kco" data-kco><ul class="kco-list"><li><a href="https://kerrandcompanyholdings.com/">Made by Kerr &amp; Company</a></li></ul></div>
+</div></footer>
+<script src="/tools/video-checker/checker.js" defer></script>
+<script src="/tools/fit-video-to-size/size-budget.js" defer></script>
+<script src="/tools/fit-video-to-size/fit.js" defer></script>
+<script src="/track.js" defer></script>
+</body>
+</html>

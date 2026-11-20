@@ -164,6 +164,7 @@
     const v = r.tracks.find(t => t.kind === 'vide'), a = r.tracks.find(t => t.kind === 'soun');
     if (!v) return Object.assign(r, { noVideo: true });
     const out = { container: r.container, duration: r.duration || (v.ts ? v.dur / v.ts : 0), fragmented: r.fragmented };
+    out.audioTracks = r.tracks.filter(t => t.kind === 'soun').length;
     out.codedW = v.w; out.codedH = v.h;
     const rot = v.rotation === 90 || v.rotation === 270;
     out.width = rot ? v.h : v.w; out.height = rot ? v.w : v.h; out.rotation = v.rotation || 0;
@@ -331,7 +332,7 @@
     return { error: 'No MPEG video header in the first 4 MB of this file. If it is AVCHD (.mts) from a camcorder, the checker cannot read it yet.' };
   }
 
-  async function inspect(file) {
+  async function inspect(file, mp4Only = false) {
     const head = await dv(file, 0, 16);
     if (head.byteLength < 12) return { error: 'This file is too small to be a video.' };
     const t4 = cc(head, 4), t0 = cc(head, 0);
@@ -348,7 +349,8 @@
         off += size;
       }
       r = await readMp4(file, top);
-    } else if (head.getUint32(0) === 0x1A45DFA3) r = await readMkv(file);
+    } else if (mp4Only) r = { error: 'This page can only read MP4 and MOV files. Choose an MP4 or MOV video.' };
+    else if (head.getUint32(0) === 0x1A45DFA3) r = await readMkv(file);
     else if (t0 === 'RIFF' && cc(head, 8) === 'AVI ') r = await readAvi(file);
     else if (head.getUint32(0) === 0x000001BA || head.getUint32(0) === 0x000001B3) r = await readMpeg(file, 'MPEG program stream');
     else if (head.getUint8(0) === 0x47 || (head.getUint8(4) === 0x47)) r = await readMpeg(file, 'MPEG transport stream');
