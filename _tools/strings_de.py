@@ -185,7 +185,7 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("invalid sitemap XML", "sitemap.xml", '</urlset>', '', "invalid XML", True),
         ("final markers", "de/download/index.html", words.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", False),
         ("English sentence", "de/download/index.html", words.DOWNLOAD['speed_same'], 'The picture comes out the same either way; only the wait changes.', "generated German page is stale", False),
-        ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
+        ("sentence across inline tags", "de/index.html", 'TODO-DE: Crisp Video restores, denoises and upscales footage up to 4K <strong>TODO-DE: offline</strong>TODO-DE: , then lets you edit it on a real timeline.', 'Crisp Video restores, denoises and upscales footage up to 4K <strong>offline</strong>, then lets you edit it on a real timeline.', "English sentence remains", False),
         ("stale Windows version", "de/download/index.html", 'Crisp ' + _WIN_VERSION, 'Crisp 1.0.1', "generated German page is stale", True),
         ("stale sale copy", "de/preise/index.html", '9,99 $ einmalig bis', '9,99 $ einmalig, 31% Rabatt bis', "generated German page is stale", True),
         ("stale bundle price", "de/preise/index.html", '34,99 $', '33,99 $', "generated German page is stale", True),
