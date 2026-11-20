@@ -186,6 +186,7 @@ footer a{color:var(--grey);}
 .price-receipts{font-size:.9rem;color:var(--grey-dim);line-height:1.5;}
 
 article figure{margin:1.8rem 0 2.2rem;}
+article figure video{display:block;width:100%;height:auto;border-radius:var(--r-sm);background:var(--panel);}
 article figure img{border-radius:var(--r-sm);}
 article figcaption{margin-top:.7rem;font-size:.86rem;line-height:1.55;color:var(--grey-dim);}
 
