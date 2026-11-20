@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
+<title>Photo restoration on Mac: restore old photos in a folder</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Restore old photos on a Mac with Crisp: clean or enlarge a folder and keep the originals. See the steps and the damage that needs another tool.">
+<meta name="theme-color" content="#060810">
+<link rel="canonical" href="https://crispvideo.app/how-to/restore-old-photos-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Photo restoration on Mac: restore old photos in a folder">
+<meta property="og:description" content="Restore old photos on a Mac with Crisp: clean or enlarge a folder and keep the originals. See the steps and the damage that needs another tool.">
+<meta property="og:url" content="https://crispvideo.app/how-to/restore-old-photos-mac/">
+<meta property="og:site_name" content="Crisp">
+<meta property="og:image" content="https://crispvideo.app/og.png?v=20261102">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photo restoration on Mac: restore old photos in a folder">
+<meta name="twitter:description" content="Restore old photos on a Mac with Crisp: clean or enlarge a folder and keep the originals. See the steps and the damage that needs another tool.">
+<meta name="twitter:image" content="https://crispvideo.app/og.png?v=20261102">
+<link rel="stylesheet" href="/style.css">
+<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script><!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Photo restoration on Mac: restore old photos in a folder","description":"Restore old photos on a Mac with Crisp: clean or enlarge a folder and keep the originals. See the steps and the damage that needs another tool.","author":{"@type":"Person","name":"Matthew Kerr","url":"https://crispvideo.app/about/"},"publisher":{"@type":"Organization","name":"Crisp"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://crispvideo.app/how-to/restore-old-photos-mac/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where will the Old photos panel put the finished pictures?","acceptedAnswer":{"@type":"Answer","text":"It saves new copies in a Crisp restored folder. It never changes the originals. This differs from the single-photo Upscale photo button, which saves the enlarged copy next to its source."}},{"@type":"Question","name":"Can each photo have a different look in the same batch?","acceptedAnswer":{"@type":"Answer","text":"The Old photos panel uses one look for the batch. Put pictures that need Clean in one folder and those that need a different enlargement or Sepia in another, then process each group with its chosen look."}},{"@type":"Question","name":"Does the Sepia choice bring back a print's lost colours?","acceptedAnswer":{"@type":"Answer","text":"No. Sepia is a look you choose for the batch. Crisp cannot colourise photos or automatically repair faded colour. Use another tool for those changes."}},{"@type":"Question","name":"Can I save a comparison for every restored photo?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Old photos panel can save a before-and-after image of each photo as well as the new copy. Review it against the original scan before sharing the result."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Crisp","item":"https://crispvideo.app/"},{"@type":"ListItem","position":2,"name":"How-to","item":"https://crispvideo.app/how-to/"},{"@type":"ListItem","position":3,"name":"Photo restoration on Mac: restore old photos in a folder","item":"https://crispvideo.app/how-to/restore-old-photos-mac/"}]}</script>
+</head>
+<body>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29." data-then="$29" data-ends="2026-12-03T07:59:59Z"></div>
+<script>(function () {
+  if (window.__kcFounding) return;
+  window.__kcFounding = true;
+  (function () {
+    var m = document.querySelector("[data-founding]");
+    var ends = m && m.getAttribute("data-ends");
+    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();
+    if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
+    window.__kcFoundingEnded = true;
+    var hide = function () {
+      var prices = document.querySelectorAll("[data-launch-price]");
+      for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
+      var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+      for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hide); else hide();
+  })();
+  if (window.__kcFoundingEnded) return;
+
+  var KEY  = "kc-founding-dismissed";
+  try {
+    var when = Number(localStorage.getItem(KEY));
+    if (when && ((typeof window.__kcNow === "number") ? window.__kcNow : Date.now()) - when < 7 * 24 * 60 * 60 * 1000) return;
+  } catch (e) {}
+
+  var mount = document.querySelector("[data-founding]");
+  var copy = mount && mount.getAttribute("data-sale-copy");
+  if (!copy) return;
+
+  var bar = document.createElement("div");
+  bar.id = "kc-founding-bar";
+  bar.style.cssText = "position:sticky;top:0;left:0;right:0;z-index:2147482000;width:100%";
+  var root = bar.attachShadow ? bar.attachShadow({ mode: "open" }) : bar;
+
+  root.innerHTML = [
+    '<style>',
+    ':host{all:initial;display:block;color:inherit}',
+    '*{box-sizing:border-box;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}',
+    '.bar{display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;',
+    '  padding:.4rem 2.2rem .4rem .9rem;background:#100D08;color:#EDE6D6;',
+    '  font-size:.795rem;line-height:1.3;position:relative;overflow:hidden;',
+    '  border-bottom:1px solid rgba(240,180,41,.22)}',
+    '.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;',
+    '  background:linear-gradient(90deg,transparent,rgba(240,180,41,.5),transparent)}',
+    '.tag{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.66rem;',
+    '  color:#F0B429;white-space:nowrap;flex:none}',
+    '.dot{width:3px;height:3px;border-radius:50%;background:rgba(237,230,214,.3);flex:none}',
+    '.txt{font-weight:500;white-space:normal;text-align:center}',
+    '.now{font-weight:700;color:#F0B429}',
+    '.x{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);border:0;background:none;',
+    '  cursor:pointer;color:#EDE6D6;opacity:.4;font-size:1rem;line-height:1;min-width:44px;min-height:38px}',
+    '.x:hover{opacity:.9}',
+    '@media(max-width:700px){.bar{font-size:.735rem;padding:.38rem 2rem .38rem .6rem;gap:.4rem}',
+    '  .dot{display:none}}',
+    '@media(max-width:480px){.tag{display:none}',
+    '  .bar{flex-wrap:wrap;row-gap:.2rem}.txt{white-space:normal;text-align:center}}',
+    '</style>',
+    '<div class="bar" role="region" aria-label="Black Friday sale">',
+    '  <span class="tag">Crisp Pro</span>',
+    '  <span class="dot"></span>',
+    '  <span class="txt">' + copy + ' The Buy button applies the sale price.</span>',
+    '  <button class="x" type="button" aria-label="Dismiss this offer">&times;</button>',
+    '</div>'
+  ].join("");
+
+  root.querySelector(".x").addEventListener("click", function () {
+    bar.remove();
+    publishHeight();
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+  });
+
+  function publishHeight() {
+    try { document.documentElement.style.setProperty("--kc-bar-h", (bar.isConnected ? bar.offsetHeight : 0) + "px"); } catch (e) {}
+  }
+  function place() {
+    if (!document.body) return setTimeout(place, 50);
+    document.body.insertBefore(bar, document.body.firstChild);
+    if (mount) mount.remove();
+    publishHeight();
+    window.addEventListener("resize", publishHeight);
+    if (window.ResizeObserver) new ResizeObserver(publishHeight).observe(bar);
+  }
+  place();
+})();</script>
+<nav><div class="wrap nav-inner">
+  <a class="nav-brand" href="https://crispvideo.app/">&#9670; Crisp Video</a>
+  <a class="btn" data-track="nav-download" href="https://crispvideo.app/download/?src=nav-download">Download</a>
+</div></nav>
+<article><div class="wrap">
+  <div class="crumb"><a href="/">Crisp</a> &rsaquo; <a href="/how-to/">How-to</a> &rsaquo; Photo restoration on Mac: restore old photos in a folder</div>
+  <h1>Photo restoration on Mac: restore old photos in a folder</h1>
+<div class="quick"><strong>Quick answer</strong><p class="lede" id="measured-answer">For photo restoration on a Mac, use Crisp's Old photos panel to restore old photos in a folder that needs denoising, sharpening, enlargement or a sepia look; choose another tool for scratches, tears, colourising, face restoration or faded-colour repair. Crisp's photo tools are Mac only; on Windows, Crisp upscales video, not photos. For face enhancement through a web upload, MyHeritage Photo Enhancer is an option with free signup required; no price was read. In our separate <a href="/how-to/fix-a-grainy-photo-mac/">grain test</a>, published 11 October 2026, Crisp 1.0.1460 on an M1 Ultra Mac Studio used Denoise 0.6 and landed 0.4 to 2.9 dB closer to the clean original than the Upscale photo button on photos where grain was added; this measured grain cleanup, not the Old photos panel or damaged prints.</p></div>
+<p class="claims-checked muted">Checked on <a href="https://www.myheritage.com/photo-enhancer" rel="nofollow">MyHeritage Photo Enhancer's own page</a>, 20 November 2026.</p>
+<aside class="pbox" data-pbox="top"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$29">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-top" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-restore-old-photos-mac-pbox-top&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-top-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-restore-old-photos-mac-pbox-top" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-restore-old-photos-mac-pbox-top-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-restore-old-photos-mac-pbox-top-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2081-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2081 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+  <div class="updated">By Matthew Kerr, who makes Crisp in Grand Rapids · published 20 November 2026 · last updated 20 November 2026</div>
+
+  <h2>Decide what needs another tool first</h2>
+  <p>A scan can be grainy and damaged at the same time. Cleaning its texture will not mend a missing piece. Sort out those needs before running a folder, so a smoother surface does not get mistaken for a repaired photograph.</p>
+<p>Crisp cannot remove scratches or tears, colourise photos, restore faces, or automatically repair faded colour. Those need another tool. Dust removal is a video option only.</p>
+  <p>For a face enhancement option, MyHeritage Photo Enhancer upscales faces in a photo through a web upload and requires free signup. No price was read. That is a choice if you want face enhancement and accept uploading the picture, not evidence that it will mend physical damage.</p>
+<p class="claims-checked muted">Checked on <a href="https://www.myheritage.com/photo-enhancer" rel="nofollow">MyHeritage Photo Enhancer's own page</a>, 20 November 2026.</p>
+  <p>If your aim is to preserve what was recorded, keep the scan alongside every edited copy. Crisp's panel puts its approach plainly: "Faces are cleaned like everything else, never redrawn." It does not offer face restoration.</p>
+  <h2>Restore a folder of old photos in Crisp</h2>
+  <ol class="steps">
+    <li><h3>Gather pictures that need the same treatment</h3><p>Put the photos you want to work on in a folder. The Old photos panel uses one look for the whole batch. A group of small scans for printing may need a different choice from pictures you only want cleaned.</p></li>
+    <li><h3>Open Old photos and give it the folder</h3><p>In Crisp on your Mac, open the <strong>Old photos</strong> panel and choose the whole folder. This is the folder route. For one enlarged picture instead, the <strong>Upscale photo</strong> button on a photo's card saves its copy next to the original.</p></li>
+    <li><h3>Pick a single look for the batch</h3><p>Choose <strong>Clean</strong> to denoise and sharpen. Choose <strong>Enlarge 2x</strong> for enlargement, or <strong>Enlarge 4x</strong> for printing. <strong>Sepia</strong> gives the batch a sepia look. It is a style choice, not colourising or automatic faded-colour repair.</p></li>
+    <li><h3>Choose whether to save comparisons</h3><p>The panel can also save a before-and-after image of each photo. Use that option if you want to review the batch or show someone how a copy differs from the scan. A comparison helps you notice a change without losing sight of the source.</p></li>
+    <li><h3>Run the batch and inspect the new copies</h3><p>New copies go in a <strong>Crisp restored</strong> folder. Originals never change. Open a result beside the original and check small features as well as the whole picture before sending it to print or sharing it.</p></li>
+  </ol>
+  <h2>Review the parts that matter</h2>
+  <ul>
+    <li><strong>Faces:</strong> look for a useful cleanup while keeping the person recognisable. A smoother cheek is not proof of recovered facial detail.</li>
+    <li><strong>Clothes and hair:</strong> compare fine texture. If the cleaned version loses something you value, keep the original scan available too.</li>
+    <li><strong>Borders and damage:</strong> scratches and missing areas require a different repair tool; compare them in both images.</li>
+    <li><strong>The whole batch:</strong> check both light and dark pictures. One look can suit some scans better than others, so split the folder when needed.</li>
+  </ul>
+  <p>Crisp runs offline. Your videos and photos never leave your computer. Photo processing is Mac only, even though the product download box also offers Windows for video work.</p>
+  <h2>What the published grain test tells us</h2>
+  <p>The <a href="/how-to/fix-a-grainy-photo-mac/">grain walkthrough published 11 October 2026</a> used installed Crisp 1.0.1460 on an M1 Ultra Mac Studio. Grain was added to known clean pictures. The request set Denoise 0.6 and landed 0.4 to 2.9 dB closer to the clean original than the Upscale photo button, as the <a href="/how-to/fix-a-grainy-photo-mac/">measured results</a> show.</p>
+  <p>That result supports trying grain cleanup. It does not measure the Old photos panel, scan damage, colour fading or the quality of a print. There is no before-and-after benchmark for this folder panel on this page. Review your own batch before deciding the result is good enough.</p>
+  <p>If you only need a larger single image, see the <a href="/best/image-upscaler-mac/">image upscaler choices</a>. If the problem is still unclear, the <a href="/best/photo-enhancer-mac/">photo enhancer list</a> separates enlargement, grain and face enhancement.</p>
+  <h2>Questions about restoring an album</h2>
+  <h3>Where will the Old photos panel put the finished pictures?</h3>
+  <p>It saves new copies in a Crisp restored folder. It never changes the originals. This differs from the single-photo Upscale photo button, which saves the enlarged copy next to its source.</p>
+  <h3>Can each photo have a different look in the same batch?</h3>
+  <p>The Old photos panel uses one look for the batch. Put pictures that need Clean in one folder and those that need a different enlargement or Sepia in another, then process each group with its chosen look.</p>
+  <h3>Does the Sepia choice bring back a print's lost colours?</h3>
+  <p>No. Sepia is a look you choose for the batch. Crisp cannot colourise photos or automatically repair faded colour. Use another tool for those changes.</p>
+  <h3>Can I save a comparison for every restored photo?</h3>
+  <p>Yes. The Old photos panel can save a before-and-after image of each photo as well as the new copy. Review it against the original scan before sharing the result.</p>
+<aside class="pbox" data-pbox="end"><p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video to 4K on your Mac or PC, offline.</p><p class="pbox-price"><span class="pbox-amt" data-launch-price data-full-price="$29">$9.99</span> once</p><p class="pbox-found">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29. The Buy button applies the sale price.</p><p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p><p class="pbox-actions"><a class="btn" data-track="pbox-end" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-restore-old-photos-mac-pbox-end&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">Download free for Mac</a> <a class="btn btn-ghost" data-track="pbox-end-buy" href="https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp?src=how-to-restore-old-photos-mac-pbox-end" rel="nofollow">Buy Pro</a></p><p class="win-link">On Windows 10 or 11, 64-bit? <a data-track="how-to-restore-old-photos-mac-pbox-end-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=how-to-restore-old-photos-mac-pbox-end-windows&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2081-x64-setup.exe" rel="nofollow">Download Crisp 1.0.2081 for Windows</a> <span class="win-gpu">It needs graphics that support Vulkan; most PCs from 2016 on have them.</span></p><p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p><p class="pbox-fine">Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small &ldquo;crispvideo.app&rdquo; mark · Mac: macOS 14.0 or later (<a href="/download/#macos-speed">slower upscaling on macOS 14</a>) · Apple Silicon (M1 or later) · 30-day refund, no reason needed.</p></aside>
+</div></article>
+<footer><div class="wrap"><p>Crisp makes photo tools for Mac and video tools for Mac and Windows. <a href="/about/">About Crisp</a> · <a href="/legal/privacy/">Privacy</a></p></div></footer>
+<script src="/track.js" defer></script>
+</body>
+</html>
