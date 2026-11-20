@@ -49,8 +49,15 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var copy = mount && mount.getAttribute("data-sale-copy");
-  if (!copy) return;
+  if (!mount) return;
+  var sale = mount.getAttribute("data-now");
+  var full = mount.getAttribute("data-then");
+  var ends = Date.parse(mount.getAttribute("data-ends"));
+  if (!sale || !full || isNaN(ends)) return;
+  var lastDay = new Date(ends).toLocaleDateString("en-US", {
+    timeZone: "America/Los_Angeles", month: "long", day: "numeric"
+  });
+  var copy = ["Black Friday sale", sale + " once through " + lastDay + ". Then " + full + "."].join(": ");
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";

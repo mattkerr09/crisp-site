@@ -28,7 +28,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 from lang_pages import LanguagePages, alternate_routes, alternates, strings_module
-from gate_price_words import allowed_strike, without_sale_quotes
+from gate_price_words import without_sale_quotes
 
 ORIGIN = "https://crispvideo.app"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
@@ -234,6 +234,9 @@ class LanguageGate:
             elif isinstance(source, str) and key == "inLanguage":
                 if target != getattr(self.words, "HTML_LANG", self.lang):
                     fail(path, f"{where} must be {getattr(self.words, 'HTML_LANG', self.lang)}")
+            elif key == "description" and source == self.generator.llms_txt.sale_copy(self.generator.llms_txt.facts()):
+                if target != self.generator.price_copy(self.generator.llms_txt.facts()):
+                    fail(path, f"{where} must use the translated sale sentence")
             elif isinstance(source, str) and schema_copy(key, source):
                 copy_value(path, where, source, target)
             else:
@@ -289,10 +292,8 @@ class LanguageGate:
                 if self.generator.landing.sitewide_chrome.has_bar(target_source) or "/founding.js" in target_source or "window.__kcFounding" in target_source:
                     fail(target_path, "English founding bar must not appear on localized pages")
                 descriptions = [n.attrs.get("content", "") for n in target.elements("meta") if n.attrs.get("name") == "description"]
-                if (len(descriptions) != 1 or len(unescape(descriptions[0])) < 70
-                        or (len(unescape(descriptions[0])) > 160
-                            and self.generator.price_copy(self.generator.llms_txt.facts()) not in unescape(descriptions[0]))):
-                    fail(target_path, "meta description must have 70 to 160 characters")
+                if len(descriptions) != 1 or not 70 <= len(unescape(descriptions[0])) <= 165:
+                    fail(target_path, "meta description must have 70 to 165 characters")
                 title = target.elements("title")
                 if english == "/" and (len(title) != 1 or normal(title[0].text()) != self.words.HOME_TITLE):
                     fail(target_path, "home title must use the registered query")
@@ -300,7 +301,7 @@ class LanguageGate:
                               if n.attrs.get("name") == "robots")
                 if noindex != (english == "/pricing/"):
                     fail(target_path, "only the pricing page must be noindex")
-                if any(not allowed_strike(node, target.root) for node in target.elements("s") + target.elements("del")) or re.search(
+                if target.elements("s") + target.elements("del") or re.search(
                         r"Black Friday|half price|metade do preço|mitad de precio|半額|ブラックフライデー|[%％]\s*(?:off\b|オフ|割引|de desconto|de descuento)",
                         without_sale_quotes(normal(target.root.text())), re.I):
                     fail(target_path, "use approved sale wording without other discount claims or struck-out prices")
@@ -619,6 +620,8 @@ class LanguageGate:
                 if isinstance(value, str):
                     if key == "inLanguage":
                         return self.lang
+                    if key == "description" and value == self.generator.llms_txt.sale_copy(self.generator.llms_txt.facts()):
+                        return self.generator.price_copy(self.generator.llms_txt.facts())
                     if schema_copy(key, value):
                         return self.todo + ": " + value
                     return self.local_link(value, "/")
@@ -756,7 +759,7 @@ class LanguageGate:
             (home, 'hreflang="x-default"', 'hreflang="wrong"', "hreflang"),
             (home, words.APP_LANGUAGE, "Wrong notice", "required sentence"),
             (home, '<p class="app-language">', '<p>Texto</p><p class="app-language">', "top of body"),
-            (home, description, '<meta name="description" content="Curta">', "70 to 160"),
+            (home, description, '<meta name="description" content="Curta">', "70 to 165"),
             (home, words.HOME_TITLE, "Wrong title", "registered query"),
             (home, words.CONTACT, "", "exact contact"),
             (home, f'"inLanguage": "{language}"', '"inLanguage": "en"', "inLanguage"),
@@ -820,13 +823,13 @@ class LanguageGate:
             assert self.generator.landing.alternates(english.strip("/")).strip() == alternates(english, self.words), \
                 "English and localized doors must advertise the same available translations"
         f = self.generator.llms_txt.facts()
-        changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), november=Decimal("30"), percent=32, code="NEXTCRISP",
+        changed = dict(f, price=Decimal("41"), now=Decimal("20.50"), code="NEXTCRISP",
                        ends="2026-12-16T07:59:59Z", os="macOS 15.0 or later", cap=22, refund_days=40)
         current_win = self.generator.llms_txt.windows()
         win = {"version": "2.3.4567", "url": current_win["url"].replace(current_win["version"], "2.3.4567")}
         with patch.object(self.generator.llms_txt, "facts", return_value=changed), patch.object(self.generator.llms_txt, "windows", return_value=win):
             page = self.generator.page(self.generator.download_slug, changed)
-            for value in (self.words.money(changed["price"]), self.words.money(changed["now"]), self.words.money(changed["november"]), self.generator.last_day(changed["ends"]), changed["ends"], win["version"], win["url"], self.words.fact(changed["os"])):
+            for value in (self.words.money(changed["price"]), self.words.money(changed["now"]), self.generator.last_day(changed["ends"]), changed["ends"], win["version"], win["url"], self.words.fact(changed["os"])):
                 assert value in page, f"{self.words.LANGUAGE_NAME} page did not update {value}"
             assert 'id="macos-speed"' not in page, "speed section must follow the English macOS floor"
             assert self.words.BOX["fine"].format(**self.generator.values(changed)) in page
@@ -851,7 +854,7 @@ class LanguageGate:
             assert self.generator.price_copy(expired) == expected
             assert self.generator.price_short(expired) == expected
         assert self.generator.last_day("2026-12-01T08:00:00Z") == self.words.DATE_FORMAT.format(day=30, month=self.words.MONTHS[10])
-        # The cross-sell's sale part removes itself at the end (data-until), leaving each app's list price; it must not use
+        # The cross-sell switches to each app's regular price at the end; it must not use
         # data-full-price, which the thank-you page's own amount reader takes as Crisp's price.
         _xsell = self.generator.thankyou_xsell.block()
         assert "data-until" in _xsell and "data-full-price" not in _xsell

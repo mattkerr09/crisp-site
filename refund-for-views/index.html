@@ -28,7 +28,7 @@
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end --></head>
 <body>
-<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-november="$14.50" data-percent="31" data-sale-copy="Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29." data-then="$29" data-ends="2026-12-03T07:59:59Z"></div>
+<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-then="$29" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
   window.__kcFounding = true;
@@ -79,8 +79,15 @@
   } catch (e) {}
 
   var mount = document.querySelector("[data-founding]");
-  var copy = mount && mount.getAttribute("data-sale-copy");
-  if (!copy) return;
+  if (!mount) return;
+  var sale = mount.getAttribute("data-now");
+  var full = mount.getAttribute("data-then");
+  var ends = Date.parse(mount.getAttribute("data-ends"));
+  if (!sale || !full || isNaN(ends)) return;
+  var lastDay = new Date(ends).toLocaleDateString("en-US", {
+    timeZone: "America/Los_Angeles", month: "long", day: "numeric"
+  });
+  var copy = ["Black Friday sale", sale + " once through " + lastDay + ". Then " + full + "."].join(": ");
 
   var bar = document.createElement("div");
   bar.id = "kc-founding-bar";

@@ -108,7 +108,6 @@ class LanguagePages:
         if not llms_txt.founding_live(f):
             return self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
         v = dict(price=self.words.money(f["price"]), now=self.words.money(f["now"]),
-                 november=self.words.money(f["november"]), percent=f["percent"],
                  ends=self.last_day(f["ends"]), future=self.future_day(f["ends"]))
         return self.words.PRICE_COPY.format(**v)
 
@@ -124,8 +123,7 @@ class LanguagePages:
         """The offer text for a meta description."""
         if not llms_txt.founding_live(f):
             return self.words.PRICE_ONCE.format(price=self.words.money(f["price"]))
-        # A meta description has room for about 165 characters, so a language may give a shorter sale form (no percent: the
-        # percent is only ever said as the full "our November price" sentence, on the page itself).
+        # A language may supply its metadata wording in the same plain shape.
         short = getattr(self.words, "SALE_META", None)
         if short:
             return short.format(now=self.words.money(f["now"]), ends=self.last_day(f["ends"]),
@@ -139,7 +137,7 @@ class LanguagePages:
 
     def values(self, f: dict) -> dict:
         return dict(f, price=self.words.money(f["price"]), now=self.words.money(f["now"]), ends=self.last_day(f["ends"]),
-                    november=self.words.money(f["november"]), future=self.future_day(f["ends"]), price_copy=self.price_markup(f), price_short=self.price_short(f),
+                    future=self.future_day(f["ends"]), price_copy=self.price_markup(f), price_short=self.price_short(f),
                     os=self.words.fact(f["os"]), chip=self.words.fact(f["chip"]))
 
     def box(self, src: str, buy_first: bool = False, f: dict | None = None) -> str:
@@ -187,11 +185,10 @@ class LanguagePages:
     def bundle(self) -> str:
         if not thankyou_xsell.FACTS.is_file():
             raise SystemExit(f"lang_pages {self.lang}: required regular prices file is missing: {thankyou_xsell.FACTS}")
-        # December's regular prices, separate from the unchanged November launch prices.
+        # The separate regular prices after the sale ends.
         apart = sum(thankyou_xsell.list_price(name) for name in ("Crisp", "Check Engine SEO", "Outlier"))
-        text = self.words.PRICES["bundle"].format(bundle_copy=self.price_copy({
-            "price": landing.BUNDLE_USD, "now": landing.BUNDLE_FOUNDING_USD, "november": landing.BUNDLE_NOVEMBER_USD,
-            "percent": landing.BUNDLE_PERCENT_OFF, "ends": landing.BUNDLE_FOUNDING_ENDS}), apart=self.words.money(apart), future=self.future_day(landing.BUNDLE_FOUNDING_ENDS))
+        text = self.words.PRICES["bundle"].format(bundle_copy=self.price_copy(landing.bundle_facts()),
+                                               apart=self.words.money(apart), future=self.future_day(landing.BUNDLE_FOUNDING_ENDS))
         return (f'<a href="{landing.BUNDLE_URL}?src={self.lang}-{self.pricing_slug}" rel="nofollow" '
                 f'data-track="{self.lang}-{self.pricing_slug}-bundle" data-launch-price data-price-ends="{landing.BUNDLE_FOUNDING_ENDS}" '
                 f'data-full-price="{self.words.BUNDLE_FULL_PRICE.format(price=self.words.money(landing.BUNDLE_USD))}">{text}</a>')
@@ -258,7 +255,7 @@ class LanguagePages:
         for name in self.OTHER_PAGES:
             source = self.refresh_boxes((self.SITE / name).read_text(encoding="utf-8"), name, f)
             if name == self.folder + "/index.html":
-                source = llms_txt.home_offer_schema(source, f)
+                source = llms_txt.home_offer_schema(source, f, self.price_copy(f))
             source = re.sub(r'(<footer>.*?<a href="' + re.escape(llms_txt.BASE) + r'/about/">)[^<]*(</a>)',
                             lambda m: m.group(1) + self.words.FOOTER["about"] + m.group(2), source, flags=re.S)
             # The homepage scaffold also carries a fixed schema version, not prose.

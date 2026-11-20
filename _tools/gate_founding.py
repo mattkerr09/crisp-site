@@ -126,7 +126,7 @@ def selftest() -> bool:
         sale_end = "2026-12-03T07:59:59Z"
         (site / "index.html").write_text(
             f'<div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-then="$29" data-ends="{sale_end}"></div>'
-            '<p>Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.</p>')
+            '<p>Black Friday sale: $9.99 once through December 2. Then $29.</p>')
         sale = {"source": "test", "unlimited": True, "total": None, "ends": sale_end, "code": "FOUNDINGCRISP"}
         end = dt.datetime.fromisoformat(sale_end.replace("Z", "+00:00"))
         sale_before = problems(site, end - dt.timedelta(seconds=1), sale)[0]

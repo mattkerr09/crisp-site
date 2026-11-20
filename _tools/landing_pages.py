@@ -46,19 +46,16 @@ def buy_base() -> str:
 
 
 #: THE THREE-APP BUNDLE (Matthew approved 2026-11-19): Crisp + Check Engine SEO + Outlier for $34.99 once through December 2
-#: (29% off the real $49.50 November price, expires 2026-12-03T07:59:59Z), then $79 (ALLTHREE).
+#: (expires 2026-12-03T07:59:59Z), then $79 (ALLTHREE). Plain copy approved 2026-11-20.
 #: December's separate prices are $29 + $39 + $39 = $107. Names only, no
 #: sister-site URL: the link goes to the hub (RULES 52).
 BUNDLE_URL = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/bundle"
 BUNDLE_FOUNDING_USD, BUNDLE_USD = Decimal("34.99"), Decimal("79")
-BUNDLE_NOVEMBER_USD = Decimal("49.50")
-BUNDLE_PERCENT_OFF = 29
 BUNDLE_FOUNDING_ENDS = "2026-12-03T07:59:59Z"
 
 
 def bundle_facts() -> dict:
-    return {"product": "bundle", "price": BUNDLE_USD, "now": BUNDLE_FOUNDING_USD, "november": BUNDLE_NOVEMBER_USD,
-            "percent": BUNDLE_PERCENT_OFF, "ends": BUNDLE_FOUNDING_ENDS}
+    return {"product": "bundle", "price": BUNDLE_USD, "now": BUNDLE_FOUNDING_USD, "ends": BUNDLE_FOUNDING_ENDS}
 
 
 def bundle_copy() -> str:
@@ -309,8 +306,7 @@ def selftest() -> int:
     assert WINDOWS_HEAD in (SITE / "index.html").read_text(), "keep platform detection the same as the home page"
     engine = Mock()
     engine.read_text.return_value = (f'PRICE_USD = {new_pages.PRICE_USD}\n'
-                                   'FOUNDING_OFF_USD = Decimal("9.01")\n'
-                                   'NOVEMBER_PRICE_USD = Decimal("14.50")\n'
+                                   'FOUNDING_OFF_USD = Decimal("19.01")\n'
                                    f'LAUNCH_ENDS = "{BUNDLE_FOUNDING_ENDS}"\n'
                                    f'FREE_EXPORT_CAP_SECONDS = {new_pages.FREE_EXPORT_CAP_SECONDS}\n')
     with patch.object(llms_txt, "ENGINE", engine):

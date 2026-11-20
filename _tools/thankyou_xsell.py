@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Write the "Also from Kerr & Company" block on /thank-you/ (the CEO, 2026-11-07: Crisp's thank-you page was the only one of the
 three without the cross-sell, and Crisp makes 7 of 8 sales). It sits BELOW the key and the activation steps, never above them. Prices are read, never
-typed in the template: The sale, real November reference prices and regular prices come from december_prices.json, Matthew's
-13 November sale spec.
+typed in the template: The sale and regular prices come from december_prices.json, Matthew's
+20 November plain sale copy decision.
 No bundle: the bundle is a cart of all three apps, so it would charge a Crisp buyer for Crisp again (CEO, sales
-audit, 7 Nov). The sale lines carry data-until and remove themselves after it, leaving the list price,
+audit, 7 Nov). The sale lines carry data-until and switch to the regular price after it,
 because this page does not load founding.js. Every link to a sister app is rel="nofollow" (RULES 52) and the page stays noindex.
 
     python3 site/_tools/thankyou_xsell.py
@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import re
 import sys
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -27,6 +27,9 @@ HUB = "https://kerr-affiliate-hub.kerrco.workers.dev/buy"
 ENDS = landing_pages.BUNDLE_FOUNDING_ENDS          # every sale ends together: 2026-12-03 07:59:59Z
 APPS = [("Check Engine SEO", "docket", "Audits your whole website on your own computer and tells you what to fix first."),
         ("Outlier", "outlier", "Runs AI models on your Mac with no cloud and no subscription.")]
+EXPIRY_SCRIPT = ("<script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){"
+                 "if(Date.parse(e.getAttribute('data-until'))<=n)e.textContent=e.getAttribute('data-regular-price');"
+                 "});})();</script>")
 
 
 def money(d: Decimal) -> str:
@@ -54,24 +57,19 @@ def block() -> str:
     rows = []
     for name, slug, line in APPS:
         full = list_price(name)
-        product = json.loads(FACTS.read_text())["products"][slug]
-        november = Decimal(product["november_price_cents"]) / 100
         now = sale_price(name)
-        percent = int(((november - now) / november * 100).to_integral_value(rounding=ROUND_HALF_UP))
-        copy = landing_pages.llms_txt.price_copy({"price": full, "now": now, "november": november,
-                                                 "percent": percent, "ends": ENDS})
+        copy = landing_pages.llms_txt.price_copy({"price": full, "now": now, "ends": ENDS})
         rows.append(
             f'    <li><strong>{name}.</strong> {line} '
-            # The sale part sits in a span that removes itself at the end, leaving the list price. Not data-full-price: the
+            # The whole sale line switches to the regular price. Not data-full-price: the
             # page's own amount reader takes the first data-full-price it finds, which would then be another app's price.
-            f'<span data-until="{ENDS}">{copy.removesuffix(f"Then {money(full)}.").rstrip()} Then </span>{money(full)} once. '
+            f'<span data-until="{ENDS}" data-product="{slug}" data-regular-price="{money(full)} once.">{copy}</span> '
             f'<a href="{HUB}/{slug}?src=ty-crisp-xsell" rel="nofollow" data-track="ty-xsell-{slug}">See {name}</a></li>')
     return "\n".join([
         "<!-- xsell:begin (written by _tools/thankyou_xsell.py) -->",
         '  <h2 style="margin-top:2.4rem">Also from Kerr &amp; Company</h2>',
         '  <ul class="lede" style="padding-left:1.2rem;text-align:left">', *rows, "  </ul>",
-        "  <script>(function(){var n=Date.now();document.querySelectorAll('[data-until]').forEach(function(e){"
-        "if(Date.parse(e.getAttribute('data-until'))<=n)e.remove();});})();</script>",
+        "  " + EXPIRY_SCRIPT,
         "<!-- xsell:end -->"])
 
 

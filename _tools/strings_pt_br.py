@@ -50,15 +50,15 @@ SHORT_MONTHS = tuple(month[:3] for month in MONTHS)
 DATE_FORMAT = "{day} de {month}"
 SHORT_DATE_FORMAT = "{day} de {month}."
 PRICE_ONCE = "{price}, em pagamento único."
-SALE_META = "Promoção Black Friday: {now} até {ends}; depois, {then}."
-PRICE_COPY = 'Promoção Black Friday: {now} em pagamento único, {percent}% de desconto sobre nosso preço de novembro de {november}, até {ends}. Depois, {price}.'
+PRICE_COPY = 'Promoção Black Friday: {now} em pagamento único até {ends}. Depois, {price}.'
 PRICE_SHORT = PRICE_COPY
+SALE_META = PRICE_COPY.replace("{price}", "{then}")
 BUNDLE_FULL_PRICE = "Os três apps: Crisp, Check Engine SEO e Outlier. {price}, em pagamento único."
 
 BOX = {
     "name": "<strong>Crisp Video</strong> restaura vídeos, remove ruído e aumenta a resolução até 4K no seu Mac ou PC, offline.",
     "once": "em pagamento único",
-    "found": 'Promoção Black Friday: {now} em pagamento único, {percent}% de desconto sobre nosso preço de novembro de {november}, até {ends}. Depois, {price}. O botão de compra aplica o preço da promoção.',
+    "found": 'Promoção Black Friday: {now} em pagamento único até {ends}. Depois, {price}. O botão de compra aplica o preço da promoção.',
     "buy": "Comprar Crisp Pro",
     "download_mac": "Baixar grátis para Mac",
     "windows_q": "Usa Windows 10 ou 11, de 64 bits?",
@@ -81,7 +81,7 @@ DOWNLOAD = {
 }
 PRICES = {
     "title": "Preços do Crisp: use grátis, compre o Pro uma vez",
-    "meta": "Grátis: exportações com IA até {cap} segundos, o resto em duração completa, com marca d'água. {price_short}",
+    "meta": "Grátis: IA até {cap} segundos, o resto completo, com marca d'água. {price_short}",
     "h1": "Preços do Crisp",
     "free": "Grátis: o editor completo e a prévia completa. Exportações com IA para aumentar a resolução, restaurar e aplicar estilos de cor param em {cap} segundos. Todo o resto, como converter, comprimir, tirar o som e repetir em ciclo, mantém a duração completa. Cada vídeo exportado grátis tem uma pequena marca d'água crispvideo.app. Para usar os {cap} segundos na parte que importa, corte o clipe nessa parte e execute Enhance ou exporte com Upscale on export.",
     "pro": "{price_copy} Sem assinatura. O Pro remove a marca d'água e o limite de {cap} segundos e inclui processamento em lote e, no Mac, o modo de restauração Max. Uma licença vale para até três computadores ao mesmo tempo, Mac ou Windows. Todas as atualizações da versão 1.x estão incluídas. Reembolso em até {refund_days} dias, sem precisar dar um motivo.",

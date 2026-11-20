@@ -13,6 +13,7 @@ import llms_txt
 import product_box
 import new_pages
 import pages_learn
+import thankyou_xsell
 from lang_pages import LanguagePages
 
 
@@ -98,16 +99,17 @@ def main():
     # Execute the real scripts with a small DOM stub. No browser, network, app or sound.
     probe = r'''
 const vm = require('node:vm');
-const {script, german, end, surfaces} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+const {script, german, xsellScript, xsell, end, surfaces} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
 for (const now of [end - 1, end, end + 1]) {
   const prices = [{textContent: '$9.99', getAttribute: k => k === 'data-full-price' ? '$29' : new Date(end).toISOString()}];
   const notes = [{style: {}}];
+  const countdowns = [{textContent: '', hidden: true}];
   const root = {innerHTML: '', querySelector: () => ({addEventListener() {}})};
-  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$9.99', 'data-then': '$29', 'data-code': 'FOUNDINGCRISP', 'data-sale-copy': 'Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.'})[k], remove() {}};
+  const mount = {getAttribute: k => ({'data-ends': new Date(end).toISOString(), 'data-now': '$9.99', 'data-then': '$29', 'data-code': 'FOUNDINGCRISP'})[k], remove() {}};
   const doc = {
     readyState: 'complete',
     querySelector: () => mount,
-    querySelectorAll: s => s === '[data-launch-price]' ? prices : s === '[data-sale-countdown]' ? [] : notes,
+    querySelectorAll: s => s === '[data-launch-price]' ? prices : s === '[data-sale-countdown]' ? countdowns : notes,
     createElement: () => ({style: {}, attachShadow: () => root}),
     body: {insertBefore() {}}, documentElement: {style: {setProperty() {}}}
   };
@@ -115,10 +117,12 @@ for (const now of [end - 1, end, end + 1]) {
   vm.runInNewContext(script, {window: win, document: doc, localStorage: {getItem: () => null}, Date});
   if (now < end) {
     const text = root.innerHTML.replace(/<[^>]+>/g, ' ');
-    if (!text.includes('Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.') || text.includes('FOUNDING') || /button class="copy"/.test(root.innerHTML)) throw Error(text);
+    if (!text.includes('Black Friday sale: $9.99 once through December 2. Then $29.') || text.includes('FOUNDING') || /button class="copy"/.test(root.innerHTML)) throw Error(text);
     if (prices[0].textContent !== '$9.99') throw Error('early price reset');
+    if (countdowns[0].hidden || countdowns[0].textContent !== 'Sale ends in 1 minute') throw Error('countdown missing');
   } else {
     if (root.innerHTML || prices[0].textContent !== '$29' || notes[0].style.display !== 'none') throw Error('expiry failed');
+    if (!countdowns[0].hidden) throw Error('expired countdown still visible');
   }
   // German pages do not load founding.js; they carry their own price and note switch.
   const germanPrice = {textContent: '9,99 $', getAttribute: k => k === 'data-full-price' ? '29 $' : new Date(end).toISOString()};
@@ -127,6 +131,14 @@ for (const now of [end - 1, end, end + 1]) {
     querySelectorAll: s => s === '[data-price-ends]' ? [germanPrice] : [germanNote]
   }});
   if (germanPrice.textContent !== (now < end ? '9,99 $' : '29 $') || germanNote.removed !== (now >= end)) throw Error('German expiry failed');
+  const crossSellPrices = xsell.map(p => ({textContent: p.text, getAttribute: k => p.attrs[k]}));
+  vm.runInNewContext(xsellScript, {Date: {now: () => now, parse: Date.parse}, document: {
+    querySelectorAll: () => crossSellPrices
+  }});
+  crossSellPrices.forEach((p, i) => {
+    const expected = now < end ? xsell[i].text : xsell[i].attrs['data-regular-price'];
+    if (p.textContent !== expected) throw Error('cross-sell expiry failed');
+  });
 }
 // Use the prices and mounts from every shipped page, including bundle and cross-sell prices.
 for (const surface of surfaces) for (const now of [end - 1, end, end + 1]) {
@@ -149,8 +161,16 @@ for (const surface of surfaces) for (const now of [end - 1, end, end + 1]) {
 }
 '''
     german = ''.join(re.findall(r'<script>(.*?)</script>', de_pages.PRICE_SCRIPT + de_pages.EXPIRY_SCRIPT))
+    from gate_price_words import Document, normal
+    cross_sell = [dict(text=normal(node.text()), attrs=node.attrs)
+                  for node in Document((llms_txt.SITE / 'thank-you/index.html').read_text()).root.walk()
+                  if 'data-regular-price' in node.attrs]
+    assert [p['text'] for p in cross_sell] == [
+        'Black Friday sale: $19.99 once through December 2. Then $39.',
+        'Black Friday sale: $16.99 once through December 2. Then $39.']
     payload = {'script': (Path(__file__).resolve().parent.parent / 'founding.js').read_text(),
-               'german': german, 'end': int(end.timestamp() * 1000), 'surfaces': shipped_surfaces()}
+               'german': german, 'xsellScript': thankyou_xsell.EXPIRY_SCRIPT.removeprefix('<script>').removesuffix('</script>'),
+               'xsell': cross_sell, 'end': int(end.timestamp() * 1000), 'surfaces': shipped_surfaces()}
     # A fixed Pacific date must survive the visitor's local time zone.
     import os
     for zone in ('America/Los_Angeles', 'Europe/Berlin', 'Asia/Tokyo'):

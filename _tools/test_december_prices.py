@@ -50,11 +50,7 @@ def text_errors(raw):
         units = block.cells if block.tag == "tr" else reads.sentences(block.text)
         ours = containers.get(block.container, {}).get("ours", set()) if block.tag == "tr" else set()
         for i, text in enumerate(units):
-            old = set(amounts(text)) & {Decimal("14.50"), Decimal("19"), Decimal("99")}
-            if any(reference in text for reference in (
-                'November price of $14.50', 'Novemberpreis von 14,50 $', '11月の価格$14.50から',
-                'preço de novembro de US$ 14,50', 'precio de noviembre de 14,50 US$')):
-                old.discard(Decimal('14.50'))
+            old = set(amounts(text)) & {Decimal("14.50"), Decimal("49.50"), Decimal("19"), Decimal("99")}
             if not old:
                 continue
             rival = (i not in ours and bool(by_block.get(block.idx)) if block.tag == "tr" else
@@ -80,9 +76,11 @@ class Attributes(HTMLParser):
                 self.errors.append("meta description exceeds 165 characters")
         bundle = "/buy/bundle" in attrs.get("href", "")
         expected = Decimal({"bundle": "79", "outlier": "39", "docket": "39"}.get(attrs.get("data-product"), "79" if bundle else "29"))
-        for key in ("data-then", "data-full-price", "data-was"):
+        for key in ("data-then", "data-full-price", "data-was", "data-regular-price"):
             if key in attrs and amounts(attrs[key]) != [expected]:
                 self.errors.append(f"{key}: expected {expected}, got {attrs[key]!r}")
+        if {"data-november", "data-percent", "data-sale-copy"} & attrs.keys():
+            self.errors.append("obsolete sale comparison attributes")
         if "data-founding" in attrs:
             if amounts(attrs.get("data-now", "")) != [Decimal("9.99")]:
                 self.errors.append("sale mount lost $9.99")
@@ -136,8 +134,8 @@ def page_errors(raw):
             errors.append("product box lost its December price")
     for bundle in re.findall(r'<a\b[^>]*href="[^"]*/buy/bundle[^"]*"[^>]*>(.*?)</a>', raw, re.S):
         prices = amounts(re.sub(r"<[^>]+>", " ", bundle))
-        if prices[:3] != [Decimal("34.99"), Decimal("49.50"), Decimal("79")]:
-            errors.append("bundle lost its $34.99 sale, $49.50 November reference or $79 regular price")
+        if prices[:2] != [Decimal("34.99"), Decimal("79")]:
+            errors.append("bundle lost its $34.99 sale or $79 regular price")
     for script in LD.findall(raw):
         try:
             errors += schema_errors(json.loads(script))
@@ -169,9 +167,11 @@ def selftest():
     assert not page_errors('<meta name="description" content="Aiarty costs $99 a year.">')
     assert not page_errors('<script type="application/ld+json">{"description":"Aiarty costs $99 a year."}</script>')
     assert page_errors('<p>Launch price $14.50 through Nov 30, then $19.</p>')
-    assert not page_errors('<p>Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.</p>')
-    assert not page_errors('<p>Outlier. Black Friday sale: $16.99 once, 31% off our November price of $24.50, through December 2. Then $39.</p>')
+    assert not page_errors('<p>Black Friday sale: $9.99 once through December 2. Then $29.</p>')
+    assert not page_errors('<p>Outlier. Black Friday sale: $16.99 once through December 2. Then $39.</p>')
     assert page_errors('<a href="https://example.test/buy/bundle">Launch $39.50, then $59.</a>')
+    assert page_errors('<p>Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.</p>')
+    assert page_errors('<a href="https://example.test/buy/bundle">Black Friday sale: $34.99 once, 29% off our November price of $49.50, through December 2. Then $79.</a>')
     for offer in ({'price': '14.50', 'priceValidUntil': '2026-12-02'},
                   {'price': '9.99', 'priceValidUntil': '2026-11-30'},
                   {'price': '29.00', 'validFrom': '2026-12-01'}):
@@ -198,8 +198,8 @@ def source_checks():
     assert thankyou_xsell.sale_price("Outlier") == Decimal("16.99")
     assert thankyou_xsell.sale_price("Check Engine SEO") == Decimal("19.99")
     assert thankyou_xsell.block() in (SITE / "thank-you" / "index.html").read_text()
-    assert {"9.99", "14.50", "29.00", "2.50", "7.25", "34.99", "49.50", "79.00", "8.75", "19.75"} <= price_sources.OURS
-    assert not {"19", "19.00", "59", "59.00", "99", "99.00"} & price_sources.OURS
+    assert {"9.99", "29.00", "2.50", "7.25", "34.99", "79.00", "8.75", "19.75"} <= price_sources.OURS
+    assert not {"14.50", "49.50", "19", "19.00", "59", "59.00", "99", "99.00"} & price_sources.OURS
     assert llms_txt.quarter(facts["price"]) == Decimal("7.25")
     assert llms_txt.quarter(facts["now"]) == Decimal("2.50")
     home = (SITE / "index.html").read_text()
@@ -212,6 +212,12 @@ def source_checks():
     later = [o for o in pro if o.get("validFrom")]
     assert len(launch) == 1 and launch[0]["price"] == "9.99" and launch[0]["priceValidUntil"] == "2026-12-02", launch
     assert len(later) == 1 and later[0]["price"] == "29.00" and later[0]["validFrom"] == "2026-12-03", later
+    from lang_pages import LanguagePages
+    for lang in ("de", "es", "ja", "pt-br"):
+        localized = (SITE / lang / "index.html").read_text()
+        offers = [offer for script in LD.findall(localized) for node in json.loads(script).get("@graph", [])
+                  for offer in node.get("offers", []) if offer.get("priceValidUntil")]
+        assert len(offers) == 1 and offers[0]["description"] == LanguagePages(lang).price_copy(facts), lang
 
 
 def facts_checks():
@@ -221,16 +227,17 @@ def facts_checks():
 
     # The exact new names work without the old PRICE_AFTER_LAUNCH_USD alias.
     for source in (ENGINE_SOURCE, ENGINE_SOURCE.replace('= 29\n', '= Decimal("29")\n')
-                   .replace('= 19.01\n', '= Decimal("19.01")\n')
-                   .replace('= 14.50\n', '= Decimal("14.50")\n')):
+                   .replace('= 19.01\n', '= Decimal("19.01")\n')):
         with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=source))):
             facts = llms_txt.facts()
             assert facts["price"] == Decimal("29") and facts["now"] == Decimal("9.99")
-            assert facts["november"] == Decimal("14.50") and facts["percent"] == 31
+            assert "november" not in facts and "percent" not in facts
+
+    with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=ENGINE_SOURCE +
+                      'NOVEMBER_PRICE_USD = "unused"\nSALE_PERCENT_OFF = "unused"\n'))):
+        assert llms_txt.facts() == facts, "engine comparison fields affected site facts"
 
     for old, new, message in (('= 19.01\n', '= 9\n', 'sale price'),
-                              ('NOVEMBER_PRICE_USD', 'OTHER_PRICE', 'could not read'),
-                              ('= 14.50\n', '= 15\n', 'November price'),
                               ('= 29\n', '= 20\n', 'full price'),
                               ('2026-12-03T07:59:59Z', '2026-12-02T07:59:59Z', 'LAUNCH_ENDS')):
         with patch.object(llms_txt, "ENGINE", Mock(read_text=Mock(return_value=ENGINE_SOURCE.replace(old, new)))):

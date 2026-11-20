@@ -66,7 +66,8 @@ def offers_checks(home):
             generator = lang_pages.LanguagePages(lang)
             source = llms_txt.read('/' + lang + '/')
             offers = next(node for node in nodes(source) if node.get("@type") == "SoftwareApplication")["offers"]
-            assert offers == expected, lang + " offers differ from English"
+            localized_expected = llms_txt.home_offers(llms_txt.facts(), generator.price_copy(llms_txt.facts()))
+            assert offers == localized_expected, lang + " offers differ from the translated sale facts"
             assert generator.pages()[SITE / lang / 'index.html'] == source, lang + " home is stale"
 
 
@@ -131,8 +132,8 @@ function run(page, test, loading, dismissed) {
   const window = {addEventListener() {},
     setInterval(callback, delay) { assert.equal(delay, 60000); tick = callback; return 1; },
     clearInterval(id) { assert.equal(id, 1); cleared = true; }};
-  const context = {window, document,
-    Date: {now: () => clock, parse: Date.parse},
+  class ClockDate extends Date { static now() { return clock; } }
+  const context = {window, document, Date: ClockDate,
     localStorage: {getItem: () => dismissed ? String(clock - 60000) : null},
     setTimeout() { throw Error('Unexpected timeout'); }};
   vm.runInNewContext(input.script, context);

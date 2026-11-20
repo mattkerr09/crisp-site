@@ -776,7 +776,7 @@ def selftest() -> int:
                          "suporta edição", "suportam edição", "apenas edita", "inclui editor", "incluem editor",
                          "oferece edição", "oferecem edição", "exporta vídeo", "exportam vídeo", "limita a edição",
                          "limitam a edição", "até quatro editores", "sem editor"),
-            "box": "US$ 14,50 em pagamento único. Preço de lançamento: US$ 14,50, até 30 de novembro.",
+            "box": "Promoção Black Friday: US$ 9,99 em pagamento único até 2 de dezembro. Depois, US$ 29.",
         },
         "es": {
             "months": "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split(),
@@ -786,7 +786,7 @@ def selftest() -> int:
                          "admiten edición", "no puede editar", "solo edita", "sólo edita", "incluye editor",
                          "incluyen editor", "ofrece edición", "ofrecen edición", "exporta vídeo", "exportan vídeo",
                          "limita la edición", "limitan la edición", "hasta cuatro editores", "sin editor"),
-            "box": "14,50 US$ en un solo pago. Precio de lanzamiento: 14,50 US$, hasta el 30 de noviembre.",
+            "box": "Oferta de Black Friday: 9,99 US$ en un solo pago hasta el 2 de diciembre. Después, 29 US$.",
         },
     }
     for lang, words in languages.items():
