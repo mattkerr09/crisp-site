@@ -257,6 +257,8 @@ class LanguagePages:
         want = {self.SITE / name: self.page(slug, f) for name, slug in zip(self.FULL_PAGES, (self.download_slug, self.pricing_slug))}
         for name in self.OTHER_PAGES:
             source = self.refresh_boxes((self.SITE / name).read_text(encoding="utf-8"), name, f)
+            if name == self.folder + "/index.html":
+                source = llms_txt.home_offer_schema(source, f)
             source = re.sub(r'(<footer>.*?<a href="' + re.escape(llms_txt.BASE) + r'/about/">)[^<]*(</a>)',
                             lambda m: m.group(1) + self.words.FOOTER["about"] + m.group(2), source, flags=re.S)
             # The homepage scaffold also carries a fixed schema version, not prose.
@@ -265,8 +267,11 @@ class LanguagePages:
             want[self.SITE / name] = source
         return want
 
-    def write(self, check: bool = False) -> int:
+    def write(self, check: bool = False, home_only: bool = False) -> int:
         want = self.pages()
+        if home_only:
+            home = self.SITE / self.folder / "index.html"
+            want = {home: want[home]}
         stale = [str(p.relative_to(self.SITE)) for p, source in want.items()
                  if not p.is_file() or p.read_text(encoding="utf-8") != source]
         if check:
@@ -283,12 +288,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("lang")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--home-only", action="store_true")
     args = parser.parse_args(argv)
     try:
         generator = LanguagePages(args.lang)
     except ValueError as error:
         parser.error(str(error))
-    return generator.write(check=args.check)
+    return generator.write(check=args.check, home_only=args.home_only)
 
 
 if __name__ == "__main__":

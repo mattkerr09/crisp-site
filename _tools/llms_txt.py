@@ -53,13 +53,16 @@ HOWTOS = [
     "/how-to/deinterlace-video-mac/",   # the merged interlacing explainer is a section here
     "/how-to/compress-video-on-mac/",
     "/how-to/convert-mov-to-mp4-mac/",
+    "/how-to/restore-old-photos-mac/",
 ]
+BEST = ["/best/image-upscaler-mac/", "/best/photo-enhancer-mac/"]
+TOOLS = ["/tools/fit-video-to-size/"]
 COMPARISONS = ["/vs/topaz-alternative-mac/", "/vs/switch-from-topaz-video-ai-to-crisp/", "/vs/unifab-alternative-mac/",
                "/vs/aiarty-video-enhancer-alternative-mac/",
                "/vs/davinci-resolve-super-scale-vs-topaz/",   # autocomplete 2026-11-02: "davinci resolve super scale vs topaz"
                "/vs/video2x-alternative-mac/"]                # autocomplete 2026-11-02: "video2x for mac", "video2x mac m1"
 LEARN = ["/learn/is-topaz-video-ai-free/", "/learn/what-is-ai-video-upscaling/", "/learn/why-topaz-ended-perpetual-licences/",
-         "/learn/why-vhs-tapes-degrade/"]
+         "/learn/why-vhs-tapes-degrade/", "/learn/is-it-safe-to-upload-family-videos-to-an-ai-upscaler/"]
 FOR = ["/for/family-archivists/", "/for/youtubers/"]
 
 
@@ -206,6 +209,45 @@ def offer_schema(f: dict) -> str:
         "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Crisp Video",
         "applicationCategory": "MultimediaApplication", "operatingSystem": "macOS, Windows",
         "offers": pro_offers(f)}, ensure_ascii=False) + '</script>'
+
+
+def home_offers(f: dict) -> list[dict]:
+    """The same complete Free and Pro offers on every language home."""
+    free = {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD",
+            "description": "The full editor and 4K upscaling; free " + free_tier(f["cap"]) + "."}
+    offers = [free]
+    for offer in pro_offers(f):
+        description = (sale_copy(f) if "priceValidUntil" in offer else
+                       f"One-time purchase from {future_day(f)}. No subscription, no recurring fee.")
+        offers.append(dict(offer, availability="https://schema.org/InStock", url=BASE + "/#buy",
+                           description=description))
+    return offers
+
+
+def home_offer_schema(source: str, f: dict) -> str:
+    """Refresh only the offers inside a home's SoftwareApplication block."""
+    ld = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
+    count = 0
+
+    def refresh(match):
+        nonlocal count
+        data = json.loads(match.group(2))
+        nodes = data.get("@graph", [data])
+        if not any(node.get("@type") == "SoftwareApplication" for node in nodes):
+            return match.group(0)
+        count += 1
+        indent = one(r'(?m)^( +)"featureList":', match.group(2), "home schema indentation")
+        offers = json.dumps(home_offers(f), ensure_ascii=False, indent=2).replace("\n", "\n" + indent)
+        body = match.group(2)
+        if re.search(r'"offers"\s*:', body):
+            body = re.sub(r'"offers"\s*:\s*\[.*?\]', lambda _m: '"offers": ' + offers, body, count=1, flags=re.S)
+        else:
+            body = body.replace(indent + '"featureList":', indent + '"offers": ' + offers + ',\n' + indent + '"featureList":', 1)
+        return match.group(1) + body + match.group(3)
+
+    result = ld.sub(refresh, source)
+    assert count == 1, "home must have one SoftwareApplication schema"
+    return result
 
 
 def offer_who(f: dict) -> str:
@@ -456,6 +498,7 @@ def build() -> str:
         "## Comparisons",
         link("/vs/", "every comparison, with sources and dates"),
         *[link(r) for r in COMPARISONS],
+        *[link(r) for r in BEST],
         "",
         "## Learn",
         link("/learn/", "how video restoration and upscaling actually work"),
@@ -464,6 +507,9 @@ def build() -> str:
         "## How-to guides",
         link("/how-to/", "every guide, by task"),
         *[link(r) for r in HOWTOS],
+        "",
+        "## Tools",
+        *[link(r) for r in TOOLS],
         "",
         "## Who it is for",
         link("/for/", "by kind of work"),

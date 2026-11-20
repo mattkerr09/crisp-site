@@ -283,3 +283,4 @@ body::before{content:"";position:absolute;left:0;right:0;top:0;height:34rem;z-in
 .fitcalc select,.fitcalc input{font:inherit;font-size:1rem;color:var(--white);background:var(--card);border:1px solid var(--hair-lit);border-radius:8px;padding:.45rem .6rem;min-width:9rem;}
 .fitcalc .fit-out{margin:0 0 .5rem;color:var(--white);}
 .fitcalc .fit-note{margin:0;font-size:.85rem;color:var(--grey);}
+[data-sale-countdown]{margin-inline-start:.4em;white-space:nowrap;}

@@ -64,6 +64,10 @@ def visible_faq(page: str) -> list[tuple[str, str]]:
     """[(question, answer)] exactly as the page shows them, in page order. [] when the page shows no FAQ."""
     m = ARTICLE.search(page) or BODY.search(page)
     body = HIDDEN.sub(" ", m.group(1) if m else page)
+    details = re.findall(r'<details\b[^>]*>\s*<summary\b[^>]*>(.*?)</summary>(.*?)</details>', body, re.S | re.I)
+    if details:
+        return [(text_of(question), text_of(answer)) for question, answer in details
+                if is_question(text_of(question)) and text_of(answer)]
     heads = list(HEADING.finditer(body))
     sections: list[list] = []
     for i, h in enumerate(heads):

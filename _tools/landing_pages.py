@@ -277,6 +277,7 @@ def home(s: str) -> str:
         assert rx.search(s), f"index.html: the {name} markers are gone"
     f = llms_txt.facts()
     cap = f["cap"]
+    s = llms_txt.home_offer_schema(s, f)
     assert FREE_PRO.search(s), "index.html: the free-pro markers are gone"
     s = FREE_PRO.sub(lambda _m: '<!-- free-pro:begin -->\n'
                      f'<div class="free-pro"><h2>{llms_txt.free_pro_heading(f)}</h2>\n'

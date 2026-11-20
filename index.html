@@ -151,6 +151,9 @@ p em, li em{color:#c3cad6;}
   text-align:left;margin-bottom:2rem;}
 .hero-top .pill{margin-bottom:1.1rem;}
 .hero-head{min-width:0;}
+.hero-eyebrow{font-size:.9rem;line-height:1.5;color:var(--ice);margin:0 0 .7rem;}
+.hero-proof{font-size:.9rem;line-height:1.5;color:var(--grey);margin:.9rem 0;}
+[data-sale-countdown]{margin-inline-start:.4em;white-space:nowrap;}
 .hero-future{font-family:var(--head);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.4;color:var(--ice);
   margin:1rem 0 0;max-width:36ch;text-wrap:balance;}
 .hero-maker{margin:1.2rem 0 0;max-width:42ch;font-size:.93rem;line-height:1.55;color:var(--grey);text-wrap:pretty;}
@@ -493,11 +496,13 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .handheld .hero-head,.handheld .hero-say{display:contents;}
   .handheld .hero-head>*,.handheld .hero-say>*{order:20;}
   .handheld .hero-head>.pill{order:0;align-self:center;}
+  .handheld .hero-head>.hero-eyebrow{order:0;margin:.7rem 0;}
   .handheld .hero-head>h1{order:1;}
   .handheld .hero-say>.lede{order:2;margin:1rem auto .7rem;}
   .handheld .hero-say>.lede-price{order:3;margin:0 auto .2rem;}
   .handheld .hero-head>.send-first{order:4;margin:1rem 0 0;}
   .handheld .hero-say>.cta{order:5;}
+  .handheld .hero-say>.hero-proof{order:6;}
   .handheld .hero-say>.fine{order:6;}
   .handheld .hero-say>.oldmac{order:7;}
   .handheld .hero-head>.hero-future{order:8;}
@@ -578,16 +583,40 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   (function () {
     var m = document.querySelector("[data-founding]");
     var ends = m && m.getAttribute("data-ends");
-    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
-    window.__kcFoundingEnded = true;
-    var hide = function () {
-      var prices = document.querySelectorAll("[data-launch-price]");
-      for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
-      var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
-      for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+    var endMs = Date.parse(ends);
+    if (!ends || isNaN(endMs)) return;
+    var timer;
+    var now = function () { return (typeof window.__kcNow === "number") ? window.__kcNow : Date.now(); };
+    window.__kcFoundingEnded = now() >= endMs;
+    var update = function () {
+      var left = endMs - now();
+      var countdowns = document.querySelectorAll("[data-sale-countdown]");
+      if (left <= 0) {
+        window.__kcFoundingEnded = true;
+        var prices = document.querySelectorAll("[data-launch-price]");
+        for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
+        var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+        for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+        for (var k = 0; k < countdowns.length; k++) countdowns[k].hidden = true;
+        if (bar) { bar.remove(); publishHeight(); }
+        if (timer) window.clearInterval(timer);
+        return;
+      }
+      var days = Math.floor(left / 86400000);
+      var hours = Math.floor(left % 86400000 / 3600000);
+      var minutes = Math.ceil(left / 60000);
+      var text = left < 3600000 ? minutes + (minutes === 1 ? " minute" : " minutes") :
+        days + (days === 1 ? " day " : " days ") + hours + (hours === 1 ? " hour" : " hours");
+      for (var n = 0; n < countdowns.length; n++) {
+        countdowns[n].textContent = "Sale ends in " + text;
+        countdowns[n].hidden = false;
+      }
     };
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hide); else hide();
+    var start = function () {
+      update();
+      if (!window.__kcFoundingEnded) timer = window.setInterval(update, 60000);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
   })();
   if (window.__kcFoundingEnded) return;
 
@@ -683,6 +712,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
       <span class="mac-only">Notarized by Apple</span><span class="win-only">Signed by Kerr &amp; Company</span>
     </div>
+    <p class="hero-eyebrow">AI video enhancer for Mac and PC, offline</p>
     <h1 class="h-xl"><span class="setup">Old, low-res video, made sharp.</span><br><span class="grad">On your computer.</span></h1>
     <p class="hero-future">The past, carried into the future: your family’s old videos, restored at your desk. Your videos never leave your computer.</p>
     <p class="hero-maker">I&rsquo;m Matthew Kerr, and I make Crisp in Grand Rapids. On my M1 Ultra it takes a 40-second
@@ -697,7 +727,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </div>
       <div class="hero-say">
     <p class="lede">Crisp Video restores, denoises and upscales footage to 4K <strong>offline</strong>, then lets you edit it on a real timeline.</p>
-    <p class="lede-price"><strong>Free to use.</strong> <span data-launch-price data-full-price="Pro is $29 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.</span></p>
+    <p class="lede-price"><strong>Free to use.</strong> <span data-launch-price data-full-price="Pro is $29 once.">Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29.</span> <span data-sale-countdown data-founding-copy hidden></span></p>
     <div class="cta">
       <!-- windows-hero:begin --><a class="btn btn-primary win-btn" data-track="hero-windows" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero-win&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2091-x64-setup.exe" rel="nofollow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:17px;height:17px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>Download free for Windows</a><!-- windows-hero:end -->
       <a class="btn btn-primary" data-track="hero" href="https://kerr-affiliate-hub.kerrco.workers.dev/dl/crisp?src=home-hero&to=https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg" rel="nofollow">
@@ -706,6 +736,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       </a>
       <a class="btn btn-ghost" href="#ba4">See a phone clip restored</a>
     </div>
+    <p class="hero-proof">Free download, about 94 MB, no email or account. Real exports, not previews. 30-day refund on Pro.</p>
     <!-- free-pro:begin -->
 <div class="free-pro"><h2>Free, or <span data-launch-price data-price-ends="2026-12-03T07:59:59Z" data-full-price="$29">$9.99</span> once</h2>
 <div class="free-pro-lists"><div><h3>Free</h3>
@@ -1348,6 +1379,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   <div class="wrap">
     <div class="head"><p class="kicker">FAQ</p><h2 class="h-lg rv">Clear answers.</h2></div>
     <div class="faq">
+      <details><summary>Is Crisp Video the Crisp phone app?</summary><p>No. Crisp Video is a Mac and Windows app from Kerr &amp; Company, paid once. The Crisp photo and video app on phones is a different product from a different company.</p></details>
       <details><summary>Is Crisp free?</summary><p>Crisp's free version runs on Mac and Windows, offline, with no account or time limit, and includes the full editor and preview. AI exports for upscale, restore and colour stop at 15 seconds, free video exports carry a small &quot;crispvideo.app&quot; mark, and photo upscales on a Mac are unmarked, one photo at a time. All other exports run at full length, and Pro adds full-length AI exports, no mark, Max restore on Mac and batch processing for one payment.</p></details>
       <details><summary>How many Macs does one licence cover?</summary>
         <div><p>Three at a time. Activate it on up to 3 computers, Mac or Windows; to move it to a fourth, deactivate
@@ -1450,7 +1482,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
       "url": "https://crispvideo.app/",
       "logo": "https://crispvideo.app/apple-touch-icon.png",
       "description": "Crisp makes offline AI video and photo software for Mac. Everything runs on the user's own machine; no footage is uploaded.",
-      "sameAs": ["https://github.com/mattkerr09/crisp-site", "https://www.producthunt.com/products/crisp-7"]
+      "sameAs": ["https://github.com/mattkerr09/crisp-site", "https://www.producthunt.com/products/crisp-7", "https://apps.microsoft.com/detail/xpdngln859ct8m", "https://alternativeto.net/software/crisp-video/", "https://www.saashub.com/crispvideo-app"]
     },
     {
       "@type": "WebSite",
@@ -1501,14 +1533,14 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           "name": "Free",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "The full editor and 4K upscaling; free upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark."
+          "description": "The full editor and 4K upscaling; free upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small “crispvideo.app” mark."
         },
         {
           "@type": "Offer",
           "name": "Pro",
           "price": "9.99",
-          "priceValidUntil": "2026-12-02",
           "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-02",
           "availability": "https://schema.org/InStock",
           "url": "https://crispvideo.app/#buy",
           "description": "Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29."
@@ -1517,8 +1549,8 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
           "@type": "Offer",
           "name": "Pro",
           "price": "29.00",
-          "validFrom": "2026-12-03",
           "priceCurrency": "USD",
+          "validFrom": "2026-12-03",
           "availability": "https://schema.org/InStock",
           "url": "https://crispvideo.app/#buy",
           "description": "One-time purchase from December 3. No subscription, no recurring fee."
@@ -1869,5 +1901,6 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
 })();
 /* send-mac-link:end */
 </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Crisp Video the Crisp phone app?", "acceptedAnswer": {"@type": "Answer", "text": "No. Crisp Video is a Mac and Windows app from Kerr & Company, paid once. The Crisp photo and video app on phones is a different product from a different company."}}, {"@type": "Question", "name": "Is Crisp free?", "acceptedAnswer": {"@type": "Answer", "text": "Crisp's free version runs on Mac and Windows, offline, with no account or time limit, and includes the full editor and preview. AI exports for upscale, restore and colour stop at 15 seconds, free video exports carry a small \"crispvideo.app\" mark, and photo upscales on a Mac are unmarked, one photo at a time. All other exports run at full length, and Pro adds full-length AI exports, no mark, Max restore on Mac and batch processing for one payment."}}, {"@type": "Question", "name": "How many Macs does one licence cover?", "acceptedAnswer": {"@type": "Answer", "text": "Three at a time. Activate it on up to 3 computers, Mac or Windows; to move it to a fourth, deactivate one of the others first. The number comes from the licence itself, not from this page. It is the activation limit on the key you are sold, and the terms say the same. Personal and commercial work are both covered."}}, {"@type": "Question", "name": "Is it really 100% offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Crisp runs entirely on your own computer, Mac or PC. No upload, no account, no queue, and it works with the Wi-Fi switched off. The only things that ever touch the network are checking for an update, activating a licence and, on a Pro copy, re-checking it about once a week, the sale price check on a free copy (nothing about you is sent), and downloading the optional Max model pack. Never your footage."}}, {"@type": "Question", "name": "How is this different from Topaz?", "acceptedAnswer": {"@type": "Answer", "text": "Topaz moved to a subscription, and its Starlight restore models are split across two apps: Topaz Video holds the ones that “can be rendered locally”, and its cloud app, Astra, holds the ones that are “cloud rendering only”. Starlight Mini is one of the local ones, and their docs put its bar at “a minimum 36GB of RAM” on Mac (read 19 October 2026). Crisp is a one-time-owned, fully-offline app with a generative-restore lane on-device, an AUTO mode instead of a 15-model picker, and interpolation that keeps your audio. Topaz's frame-interpolation docs say “the audio will not be modified by this enhancement and will be removed from the video”. The bigger difference is shape. Their interface reference documents two edits: the “[ ]” buttons that “select the range of the input video” and a Crop button. There is no timeline for arranging clips, so it takes a file and hands a file back (both read 19 October 2026). Crisp puts the upscale inside an edit: arrange, trim, split and reorder clips on a timeline, cut them to a track, then export the whole cut at 4K."}}, {"@type": "Question", "name": "Do I need a powerful Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Any Apple-Silicon Mac runs the fast tier, but it is not instant. Measured on an M1 Ultra with Crisp 1.0.1469 on 13 October 2026, ten seconds of 1080p took about a minute to reach 4K, and ten seconds of 480p about 23 seconds: roughly 6× and 2× the clip’s own length. A MacBook Air is slower, and we have not timed one yet. Crisp shows progress and the time left while a clip renders. The generative Max tier is an optional 4.6 GB download and is far slower than the word “overnight” suggests. On video it is a desktop feature: a clip pushes peak memory past 27 GB, so it wants a 48 GB Mac at the very least and is only comfortable on 64 GB. On a single photo there is no run of frames to hold at once, peak drops to about 11 GB, and a 16 GB Air handles it. Measured on an M1 Ultra, a Max frame costs about 36 seconds per megapixel of output: 33 seconds a frame at 720p, and around 74 at 1080p. That is roughly 3 hours for five seconds of 1080p, 18 hours for thirty seconds, and three days for two minutes. Crisp shows you that estimate before the job starts, not three minutes into it. Treat Max as a seconds-at-a-time tool for the one shot that matters. Enhance is the lane for whole clips."}}, {"@type": "Question", "name": "Will it strip my audio or drift out of sync?", "acceptedAnswer": {"@type": "Answer", "text": "No. Audio is stream-copied and never re-timed, even when you interpolate to a higher frame rate. Color is converted and re-tagged correctly, so nothing comes out washed-out."}}, {"@type": "Question", "name": "What about damaged, dark, or noisy footage?", "acceptedAnswer": {"@type": "Answer", "text": "That's exactly the target. Crisp denoises and lifts shadows before it upscales, so low-light and compressed clips come out clean instead of amplifying the mess."}}, {"@type": "Question", "name": "Will it change my family's faces?", "acceptedAnswer": {"@type": "Answer", "text": "Not with Enhance, the default. Crisp has no face model, and nothing in the restore looks for a face to redraw it. A face gets the same clean-up as the rest of the frame: less noise and grain, a real 2× or 4×. It stays the face the camera recorded. A face that was tiny or out of focus stays soft, because that detail was never there. Max, the slow generative lane, rebuilds detail everywhere, faces included, so on a face you know compare it with Enhance first. It can also draw things that were not in the film, such as letter-like marks on a sign or a number plate, or eyelashes on an eye, so check small details and faces at full size too. On the same old films where Max drew letters, Enhance, the default, sharpened what was there and drew none, so it is the safer choice for signs and number plates. One face through both lanes."}}, {"@type": "Question", "name": "Does it do photos and editing too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Drop a JPEG, PNG, or HEIC and Crisp upscales & restores the still in a few seconds. And the built-in Montage mode auto-edits a long video into a highlight reel, a tightened condense, or a music montage cut to the beat, all on-device and without the timeline."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "No subscription, ever. The Crisp editor and 4K upscaler are free (upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark). Black Friday sale: $9.99 once, 31% off our November price of $14.50, through December 2. Then $29. It removes the watermark and the 15-second limit and adds batch and, on a Mac, Max Quality. No monthly bill, no credits, no cloud."}}]}</script>
 </body>
 </html>

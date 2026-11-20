@@ -107,11 +107,11 @@ for (const now of [end - 1, end, end + 1]) {
   const doc = {
     readyState: 'complete',
     querySelector: () => mount,
-    querySelectorAll: s => s === '[data-launch-price]' ? prices : notes,
+    querySelectorAll: s => s === '[data-launch-price]' ? prices : s === '[data-sale-countdown]' ? [] : notes,
     createElement: () => ({style: {}, attachShadow: () => root}),
     body: {insertBefore() {}}, documentElement: {style: {setProperty() {}}}
   };
-  const win = {__kcNow: now, addEventListener() {}};
+  const win = {__kcNow: now, addEventListener() {}, setInterval() { return 1; }, clearInterval() {}};
   vm.runInNewContext(script, {window: win, document: doc, localStorage: {getItem: () => null}, Date});
   if (now < end) {
     const text = root.innerHTML.replace(/<[^>]+>/g, ' ');
@@ -139,7 +139,7 @@ for (const surface of surfaces) for (const now of [end - 1, end, end + 1]) {
     createElement: () => ({style: {}, attachShadow: () => root}),
     body: {insertBefore() {}}, documentElement: {style: {setProperty() {}}}
   };
-  if (surface.mount) vm.runInNewContext(script, {window: {__kcNow: now, addEventListener() {}},
+  if (surface.mount) vm.runInNewContext(script, {window: {__kcNow: now, addEventListener() {}, setInterval() { return 1; }, clearInterval() {}},
     document, localStorage: {getItem: () => null}, Date});
   else vm.runInNewContext(german, {document, Date: {now: () => now, parse: Date.parse}});
   prices.forEach((p, i) => {
