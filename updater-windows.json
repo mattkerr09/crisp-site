@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2122",
-  "notes": "Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-20T17:00:20Z",
+  "version": "1.0.2130",
+  "notes": "The Help menu now has Unlock Pro\u2026 and Enter Your Key\u2026, which open the unlock window directly. Crisp now opens in a larger window. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-20T22:49:50Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVHOCtKbm5vWkM5TEtyS21IY2dEVVhPVXFOMWlITkhHM3RpTTJYNktKRDhDaHVhQkxNeUo0K0VpYVdualZjWmxFUWNWR2hEMFBJRGE2Vk40M0plRndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTk0MDIwCWZpbGU6Q3Jpc3AtMS4wLjIxMjIteDY0LXNldHVwLmV4ZQpQbUxwelRrem93bGpPWjJzWU83Yk5YR0hDS0k3eWlZci9VMU9rOHdFb04wVlN3SXVoR293ZGVwWDBEM2JZOUtFbitiNG41ekFIbFpPTTNXaTBMaU5Bdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2122-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5rSTJNKzM1VnVuekdIWk1lb1k1aS85WkFocENRR0dENmpmRDlRWmVuMUhxckRoMS9INTJZTndqNFI5YVJFTGRtUXpkOWdSZmRPVVU2eUV2RkMyUWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjE0OTkwCWZpbGU6Q3Jpc3AtMS4wLjIxMzAteDY0LXNldHVwLmV4ZQo3TXk3VmlWNndSd0JScG50R0ZJTzUrRmpOek1Qay9zdmlWVnZ1R0JWRDNJWmVOYXBjOHU0U0dZOHB6ZSszMHd4VUc5dVpzS25CVytHckMyYmVuektDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2130-x64-setup.exe"
     }
   }
 }
