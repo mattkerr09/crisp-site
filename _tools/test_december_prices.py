@@ -55,6 +55,12 @@ def text_errors(raw):
                 continue
             rival = (i not in ours and bool(by_block.get(block.idx)) if block.tag == "tr" else
                      text in by_block.get(block.idx, []))
+            # Article Studio, 20 November 2026: a price cell in a comparison row whose row header names
+            # another product (dated by the row's claims-checked line) is that rival's price, even when
+            # the read-date gate does not list the rival; rows headed by our own products stay checked.
+            if (block.tag == "tr" and i > 0 and block.cells and block.cells[0].strip()
+                    and not OWN_NAME.search(block.cells[0]) and 'class="claims-checked' in raw):
+                rival = True
             if rival and not OWN_NAME.search(text):
                 continue
             errors.append("stale own price: " + text)

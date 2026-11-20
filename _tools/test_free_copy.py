@@ -37,7 +37,9 @@ def main() -> None:
         faq_schema = next(block for block in schemas if block.get("@type") == "FAQPage")
         question = next(item for item in faq_schema["mainEntity"] if item["name"] == "Is Crisp free?")
         assert question["acceptedAnswer"]["text"] == expected_faq
-        assert html.escape(expected_faq) in free
+        # Article Studio, 20 November 2026: compare the text, not one escaping of it; the page writes the
+        # apostrophe raw and the quotes as &quot;, which html.escape (quote=True) spells differently.
+        assert expected_faq in html.unescape(free)
 
         text = llms_txt.build()
         expected_section = ["## Is Crisp free?", ""]
