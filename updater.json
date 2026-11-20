@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2083",
-  "notes": "Crisp's Black Friday sale is in the app now: Crisp Pro is $9.99 once, 31% off our November price of $14.50, through December 2, then $19, and the Buy button applies it for you. There's a new \"Old home video (VHS, film)\" preset: it uses Auto's picture fixes and turns down tape hiss. On Windows, Media, the timeline and the clip panel now show a file's name instead of its whole path. The editor's settings panel is easier to read, with larger labels and roomier rows, and the montage layouts have shorter names that fit.",
-  "pub_date": "2026-11-17T03:26:46Z",
+  "version": "1.0.2089",
+  "notes": "Crisp Pro will be $29 from December 3. The Black Friday sale doesn't change: $9.99 once, 31% off our November price of $14.50, through December 2. New in Enhance: \"Keep tape motion\" keeps both moments from each interlaced frame of VHS and camcorder tape as separate frames, so motion looks smoother. It's off by default, and rendering can take longer.",
+  "pub_date": "2026-11-20T04:21:47Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5YXJJcUl6Tm5KUXkxQTJYOFhSeStETmRPTU5JNWFKZkh2ZnpBa0JBZFRkTE55TUhicjQxVUhBT1VPZ3RsSHVVanFld2o2Wkp2azhna3hoRzlSRkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODg1OTEzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negp0SC9NSTgrcDI5eWI1SWpxN2RWSmdwb0NqUkdjQkxMNjhDcG9kMmlsYTZIa3hZa3JMZEthTXJRTUNkNEs3QnU1NC8vVG9yMTFEMUNONi8rVzJKb3RBdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2083.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpvZlhBZGk3aHdSanpNUm1QWGZuSjY2TEMyS0U4Z0J3ekg2OGJBeEFHY1haSm5SMlNTWnZqWGFzbVdsUSsrOVRFTnJ3T3VkOWQwZDBIcWM0cG9BN2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxMjExCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3S21KSkdsb20wWEtuVi9NZm1lanZFckJBU0lvUUE3bHl2OWEzUkZMWVp2S1k3d29ROENzckE3VUVmR0pnaWRIR3Zzb0RYb1RwYnFJQzladzFrWXVEQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2089.app.tar.gz"
     }
   }
 }
