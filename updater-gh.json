@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2089",
-  "notes": "Crisp Pro will be $29 from December 3. The Black Friday sale doesn't change: $9.99 once, 31% off our November price of $14.50, through December 2. New in Enhance: \"Keep tape motion\" keeps both moments from each interlaced frame of VHS and camcorder tape as separate frames, so motion looks smoother. It's off by default, and rendering can take longer.",
-  "pub_date": "2026-11-20T04:21:47Z",
+  "version": "1.0.2122",
+  "notes": "Unlock Pro now always opens its window; on some new installs the button did nothing. Compress \u2192 Fit a size has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20, and every compress ends with a quality score (VMAF) in plain words. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-20T16:56:24Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUpvZlhBZGk3aHdSanpNUm1QWGZuSjY2TEMyS0U4Z0J3ekg2OGJBeEFHY1haSm5SMlNTWnZqWGFzbVdsUSsrOVRFTnJ3T3VkOWQwZDBIcWM0cG9BN2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxMjExCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3S21KSkdsb20wWEtuVi9NZm1lanZFckJBU0lvUUE3bHl2OWEzUkZMWVp2S1k3d29ROENzckE3VUVmR0pnaWRIR3Zzb0RYb1RwYnFJQzladzFrWXVEQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2089.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1rR1p2VzJ1L0xWdHBvZTFkeWs4bTlVVmJ0dG8xNytHNVlqNGhFVmxrUVRlcUFpakdUQXNtcFV1Z1I1ZmxxY0xGcGFOR21PZk5SUXo4VUZkRDZXc0FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTkzNjk1CWZpbGU6Q3Jpc3AuYXBwLnRhci5nego5U0ZNM1AxUlJEOUtJbzZjWDRyUDZ0SE0wellwb20wZlFHQWJJTEI0OFVVc1dtZkJKMUdYWEtqcVNUWnk1dmVBUzk0em5ESlR1S3ZzZ2EvNVRXMWNCZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2122.app.tar.gz"
     }
   }
 }
