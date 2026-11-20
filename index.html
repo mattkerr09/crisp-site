@@ -1715,13 +1715,13 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   var f = document.getElementById('sub-form');
   if (!f) return;
   var msg = document.getElementById('sub-msg'), go = document.getElementById('sub-go');
+  var ENDPOINT = 'https://kerr-subscribe.kerrco.workers.dev/monthly';
   var OK = "Thanks. Before the first update we'll email you once to confirm. Nothing else comes until you click it.";
   var FAIL = "That didn't go through. Please try again in a moment.";
-  // Success ONLY when the worker says so: r.ok AND a JSON body with ok === true. A 200 with any other body is a failure.
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     go.disabled = true; msg.textContent = '';
-    fetch(f.action, {
+    fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(f))
