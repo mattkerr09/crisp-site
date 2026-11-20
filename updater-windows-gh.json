@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2091",
-  "notes": "Crisp Pro will be $29 from December 3. The Black Friday sale doesn't change: $9.99 once, 31% off our November price of $14.50, through December 2. New in Enhance: \"Keep tape motion\" keeps both moments from each interlaced frame of VHS and camcorder tape as separate frames, so motion looks smoother. It's off by default, and rendering can take longer.",
-  "pub_date": "2026-11-20T04:46:45Z",
+  "version": "1.0.2105",
+  "notes": "Compress \u2192 Fit a size now has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20. After every compress, Crisp shows a quality score (VMAF) in plain words. The install folder now includes NOTICES.txt, with the licence notices and the source offer for FFmpeg and Crisp's other open-source parts. Crisp Pro will be $29 from December 3; the Black Friday sale stays $9.99 once through December 2.",
+  "pub_date": "2026-11-20T07:51:44Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM2UWNQTjZ3d1p5TE84ZGV2VU9LZDZyUE9oa3FXY0ZLdGZNbkl6ZHI3M3Y2VTVCeXRWYWJld2NicFJnRW1qQzU5cTVPSmlVL3NZeSszc3dLdkF4OGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTUwMDA1CWZpbGU6Q3Jpc3AtMS4wLjIwOTEteDY0LXNldHVwLmV4ZQpEeEdLNjdMMkJNYkMrZElza052RWpzZ1dBRkNGYlV4R1Y4QzlJQTlGaVd1VDUySC93dGV3QkFiY1lTaG5UMFdOdHZHZGl1c1dqNmtIQzZqSmJYRGFCdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2091-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1mR1NkV2FYOFUyMVVUenliSjFZa2JrSEdhL0Vxb3FKSjdNcDRlNC93bFp1NXdFN3NFekxaVWpjYy9TdEVreWo2R21lU1dlbGlrMFlHSCtidXpVNHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTYxMTA0CWZpbGU6Q3Jpc3AtMS4wLjIxMDUteDY0LXNldHVwLmV4ZQpDQVBLNFdsRVFuQ3I0NnovYnpmdStkMTlHaDdEQlU0bloyRnkxR3loRVhCZkw0bERVMkN0VmVwSVdXcTBZR2pTTGlMRlh4ejlTZnFtSDB1VWRCZWNEUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2105-x64-setup.exe"
     }
   }
 }
