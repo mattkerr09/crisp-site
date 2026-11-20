@@ -79,6 +79,7 @@ p{margin:0 0 1.05rem;}
 }
 .lede,.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.55;color:var(--grey);margin:0 0 1.6rem;}
 .muted{color:var(--grey);}
+.claims-checked{font-size:.9em;}
 .crumb{font-size:.85rem;color:var(--grey-dim);margin:2.2rem 0 .4rem;}
 .crumb a{color:var(--grey);}
 .updated{font-size:.83rem;color:var(--grey-dim);margin:.2rem 0 2.4rem;}
