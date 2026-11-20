@@ -496,7 +496,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   .handheld .hero-head,.handheld .hero-say{display:contents;}
   .handheld .hero-head>*,.handheld .hero-say>*{order:20;}
   .handheld .hero-head>.pill{order:0;align-self:center;}
-  .handheld .hero-head>.hero-eyebrow{order:0;margin:.7rem 0;}
+  .handheld .hero-head>.hero-eyebrow{order:5;margin:.9rem 0 0;}
   .handheld .hero-head>h1{order:1;}
   .handheld .hero-say>.lede{order:2;margin:1rem auto .7rem;}
   .handheld .hero-say>.lede-price{order:3;margin:0 auto .2rem;}
@@ -614,7 +614,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
     };
     var start = function () {
       update();
-      if (!window.__kcFoundingEnded) timer = window.setInterval(update, 60000);
+      if (!window.__kcFoundingEnded && typeof window.setInterval === "function") timer = window.setInterval(update, 60000);
     };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
   })();

@@ -83,7 +83,7 @@
     };
     var start = function () {
       update();
-      if (!window.__kcFoundingEnded) timer = window.setInterval(update, 60000);
+      if (!window.__kcFoundingEnded && typeof window.setInterval === "function") timer = window.setInterval(update, 60000);
     };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
   })();
