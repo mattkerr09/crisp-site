@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2081",
-  "notes": "Crisp's Black Friday sale is in the app now: Crisp Pro is $9.99 once, 31% off our November price of $14.50, through December 2, then $19, and the Buy button applies it for you. There's a new \"Old home video (VHS, film)\" preset: it uses Auto's picture fixes and turns down tape hiss. On Windows, Media, the timeline and the clip panel now show a file's name instead of its whole path. The editor's settings panel is easier to read, with larger labels and roomier rows, and the montage layouts have shorter names that fit.",
-  "pub_date": "2026-11-16T20:27:41Z",
+  "version": "1.0.2091",
+  "notes": "Crisp Pro will be $29 from December 3. The Black Friday sale doesn't change: $9.99 once, 31% off our November price of $14.50, through December 2. New in Enhance: \"Keep tape motion\" keeps both moments from each interlaced frame of VHS and camcorder tape as separate frames, so motion looks smoother. It's off by default, and rendering can take longer.",
+  "pub_date": "2026-11-20T04:46:45Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxTbzJHU1VIa2N0dE1TQmFrYjFxallxWS9US3BnUXRTSlBQak05cEJWSXJZTy9oeWtIa0o3d0E1WWhvMFpMZzd6VG9tQjRmaUNGa1IwNGNnRkFVZkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODYwODYxCWZpbGU6Q3Jpc3AtMS4wLjIwODEteDY0LXNldHVwLmV4ZQpudytKQi85N2EzRzJzZVgrdkxIRllVdDZjTWNrZTlqMHZFU2hMNG13aWdaOW1DRHlZZHRoK3F0TXZ4Y0h6UnBwUjV0OFErQ0p2c0Fka2d6MWl2OWFEdz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2081-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUM2UWNQTjZ3d1p5TE84ZGV2VU9LZDZyUE9oa3FXY0ZLdGZNbkl6ZHI3M3Y2VTVCeXRWYWJld2NicFJnRW1qQzU5cTVPSmlVL3NZeSszc3dLdkF4OGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTUwMDA1CWZpbGU6Q3Jpc3AtMS4wLjIwOTEteDY0LXNldHVwLmV4ZQpEeEdLNjdMMkJNYkMrZElza052RWpzZ1dBRkNGYlV4R1Y4QzlJQTlGaVd1VDUySC93dGV3QkFiY1lTaG5UMFdOdHZHZGl1c1dqNmtIQzZqSmJYRGFCdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2091-x64-setup.exe"
     }
   }
 }
