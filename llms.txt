@@ -20,6 +20,7 @@ Pro adds
 - Batch processing to queue a whole folder. The free version does one at a time.
 
 ## Product and pricing
+- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar (Mac).
 - [Crisp Video](https://crispvideo.app/): what it does, real before/after clips, and the free download
 - [Pricing](https://crispvideo.app/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: Black Friday sale: $9.99 once through December 2. Then $29. Every 1.x update included; removes the mark and the limit and adds batch processing and, on a Mac, the generative Max lane
 - [Black Friday sale](https://crispvideo.app/#buy): Black Friday sale: $9.99 once through December 2. Then $29. The Buy button applies the sale price.

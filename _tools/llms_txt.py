@@ -458,6 +458,7 @@ def build() -> str:
         *[line for title, items in free_pro_lists(f["cap"])
           for line in (title, "", *(f"- {item}" for item in items), "")],
         "## Product and pricing",
+        "- Already bought? Click Unlock Pro in Crisp and paste the key from your email. If Unlock Pro doesn't open, choose Crisp > Enter Your Key… from the menu bar (Mac).",
         f"- [Crisp Video]({BASE}/): what it does, real before/after clips, and the free download",
         f"- [Pricing]({BASE}/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; "
         f"{CAPPED_LANES} stop at {f['cap']} seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: {price_copy(f)} {f['updates'].capitalize()}; removes the mark and the limit and adds "
