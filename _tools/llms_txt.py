@@ -55,7 +55,7 @@ HOWTOS = [
     "/how-to/convert-mov-to-mp4-mac/",
     "/how-to/restore-old-photos-mac/",
 ]
-BEST = ["/best/image-upscaler-mac/", "/best/photo-enhancer-mac/"]
+BEST = ["/best/ai-video-enhancer-mac/", "/best/image-upscaler-mac/", "/best/photo-enhancer-mac/"]
 TOOLS = ["/tools/fit-video-to-size/"]
 COMPARISONS = ["/vs/topaz-alternative-mac/", "/vs/switch-from-topaz-video-ai-to-crisp/", "/vs/unifab-alternative-mac/",
                "/vs/aiarty-video-enhancer-alternative-mac/",
