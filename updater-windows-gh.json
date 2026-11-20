@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2105",
-  "notes": "Compress \u2192 Fit a size now has presets for Discord (20 MB, or 50 MB with Nitro Basic), email (Crisp aims at 18 MB so the file fits Gmail's and Outlook.com's 25 MB once it's attached), WhatsApp and Slack, each taken from the service's own help page on November 20. After every compress, Crisp shows a quality score (VMAF) in plain words. The install folder now includes NOTICES.txt, with the licence notices and the source offer for FFmpeg and Crisp's other open-source parts. Crisp Pro will be $29 from December 3; the Black Friday sale stays $9.99 once through December 2.",
-  "pub_date": "2026-11-20T07:51:44Z",
+  "version": "1.0.2122",
+  "notes": "Unlock Pro now always opens its window; on some new installs the button did nothing. Quitting Crisp no longer gets stuck after you confirm you want to stop a running job. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-20T17:00:20Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1mR1NkV2FYOFUyMVVUenliSjFZa2JrSEdhL0Vxb3FKSjdNcDRlNC93bFp1NXdFN3NFekxaVWpjYy9TdEVreWo2R21lU1dlbGlrMFlHSCtidXpVNHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTYxMTA0CWZpbGU6Q3Jpc3AtMS4wLjIxMDUteDY0LXNldHVwLmV4ZQpDQVBLNFdsRVFuQ3I0NnovYnpmdStkMTlHaDdEQlU0bloyRnkxR3loRVhCZkw0bERVMkN0VmVwSVdXcTBZR2pTTGlMRlh4ejlTZnFtSDB1VWRCZWNEUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2105-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVHOCtKbm5vWkM5TEtyS21IY2dEVVhPVXFOMWlITkhHM3RpTTJYNktKRDhDaHVhQkxNeUo0K0VpYVdualZjWmxFUWNWR2hEMFBJRGE2Vk40M0plRndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTk0MDIwCWZpbGU6Q3Jpc3AtMS4wLjIxMjIteDY0LXNldHVwLmV4ZQpQbUxwelRrem93bGpPWjJzWU83Yk5YR0hDS0k3eWlZci9VMU9rOHdFb04wVlN3SXVoR293ZGVwWDBEM2JZOUtFbitiNG41ekFIbFpPTTNXaTBMaU5Bdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2122-x64-setup.exe"
     }
   }
 }
