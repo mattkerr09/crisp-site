@@ -44,16 +44,40 @@
   (function () {
     var m = document.querySelector("[data-founding]");
     var ends = m && m.getAttribute("data-ends");
-    var nowMs = (typeof window.__kcNow === "number") ? window.__kcNow : Date.now();   
-    if (!ends || isNaN(Date.parse(ends)) || nowMs < Date.parse(ends)) return;
-    window.__kcFoundingEnded = true;
-    var hide = function () {
-      var prices = document.querySelectorAll("[data-launch-price]");
-      for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
-      var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
-      for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+    var endMs = Date.parse(ends);
+    if (!ends || isNaN(endMs)) return;
+    var timer;
+    var now = function () { return (typeof window.__kcNow === "number") ? window.__kcNow : Date.now(); };
+    window.__kcFoundingEnded = now() >= endMs;
+    var update = function () {
+      var left = endMs - now();
+      var countdowns = document.querySelectorAll("[data-sale-countdown]");
+      if (left <= 0) {
+        window.__kcFoundingEnded = true;
+        var prices = document.querySelectorAll("[data-launch-price]");
+        for (var j = 0; j < prices.length; j++) prices[j].textContent = prices[j].getAttribute("data-full-price");
+        var els = document.querySelectorAll(".pbox-found, .founding-note, [data-founding-copy]");
+        for (var i = 0; i < els.length; i++) els[i].style.display = "none";
+        for (var k = 0; k < countdowns.length; k++) countdowns[k].hidden = true;
+        if (bar) { bar.remove(); publishHeight(); }
+        if (timer) window.clearInterval(timer);
+        return;
+      }
+      var days = Math.floor(left / 86400000);
+      var hours = Math.floor(left % 86400000 / 3600000);
+      var minutes = Math.ceil(left / 60000);
+      var text = left < 3600000 ? minutes + (minutes === 1 ? " minute" : " minutes") :
+        days + (days === 1 ? " day " : " days ") + hours + (hours === 1 ? " hour" : " hours");
+      for (var n = 0; n < countdowns.length; n++) {
+        countdowns[n].textContent = "Sale ends in " + text;
+        countdowns[n].hidden = false;
+      }
     };
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hide); else hide();
+    var start = function () {
+      update();
+      if (!window.__kcFoundingEnded) timer = window.setInterval(update, 60000);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
   })();
   if (window.__kcFoundingEnded) return;
 
