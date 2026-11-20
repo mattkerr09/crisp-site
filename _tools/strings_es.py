@@ -61,9 +61,9 @@ BOX = {
     "fine": "Gratis: exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color hasta {cap} segundos. Todo lo demás conserva la duración completa. Los vídeos y GIF exportados llevan una pequeña marca de agua crispvideo.app · {os} · {chip} · Reembolso en un plazo de {refund_days} días, sin dar explicaciones.",
 }
 DOWNLOAD = {
-    "title": "Descargar Crisp para Mac",
-    "meta": "Crisp para Mac: {os}, {chip}. Gratis: exportaciones con IA hasta {cap} segundos. El resto conserva la duración completa.",
-    "h1": "Descargar Crisp para Mac",
+    "title": "Descargar Crisp para Mac y Windows",
+    "meta": "Crisp para Mac ({os}, {chip}) y Windows 10 u 11 de 64 bits. Gratis: exportaciones con IA hasta {cap} segundos.",
+    "h1": "Descargar Crisp para Mac y Windows",
     "lede": "La versión actual, verificada por Apple mediante notarización: {os}, {chip}. Gratis: exportaciones con IA para aumentar la resolución, restaurar y aplicar estilos de color hasta {cap} segundos. Todo lo demás conserva la duración completa. Los vídeos y GIF exportados llevan una pequeña marca de agua crispvideo.app. Pro elimina la marca y el límite.",
     "speed_h": "La velocidad de Crisp en tu versión de macOS",
     "speed_p": "Crisp está hecho para macOS 14 y probado en macOS 14 y 26. El método que usa para aumentar la resolución depende de tu macOS:",
