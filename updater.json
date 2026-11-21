@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2135",
-  "notes": "A short welcome tour shows what each button does; see it again any time from Help > Welcome Tour. Enhance \u2192 4K (2160p) now makes 4K from old 480- and 576-line video: it sharpens the picture 4\u00d7 with AI, then sizes it to 4K, keeping the shape right for 4:3 and widescreen tapes and DVDs. After an enhance you can see before and after on your own clip, a restore shows the time left, and the words are plainer. Crisp sends two more anonymous counts, named on the privacy page. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-21T03:13:34Z",
+  "version": "1.0.2141",
+  "notes": "Activating Pro is safer: if the licence server's answer gets lost on the way, Crisp asks before it could use another of your 3 seats, and offers Check or Activate anyway. Opening Crisp a second time now brings the open window to the front instead of starting another copy. Releasing this computer's seat finishes cleanly even when the licence server had already freed it. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-21T19:11:53Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUI1RUVvdlNCVE1oV201aUdlZ2NqNytpMlFGbGhRaUdzZnZEejdqL05menZ1ZUJlYzZFRUVKeEc4Y1BwenRSUEhlM3lWNWdoQjBKYkFEK0dQZlRwWmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjMwNzQzCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpHWEpHR1JzM0FMamp3Sm16aFFIZWcxeGtqVGF3cXdYb2ZwNUxmdGh1U2F1M21RTDhBcHBkYi9NRHcwbGpBUnNwYk1XU2lPcFFoTjBrZjkrNllCbkJDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2135.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJqWjVvalYxbXZmRkxFdDErQnlkTWxQandGMVgrQ2xaRmltNklGUHJjOWpweFhwRW1DSHJIRVlGcCtaY1hIOGpFQTBheWx0dW1ENCt1c1p4ZE1EMEF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Mjg4MjM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMaDY0MDV2cjRQYUtXZVYwN0xhZlM4Rk5MRHpzYVExVTcxNUM4SjhHSERybUtvQnlZblllOHNNKzAwT1NMUzZ3R2d4ZjZSKzdQZy9OR1U5Y28vcXFCUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2141.app.tar.gz"
     }
   }
 }
