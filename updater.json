@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2141",
-  "notes": "Activating Pro is safer: if the licence server's answer gets lost on the way, Crisp asks before it could use another of your 3 seats, and offers Check or Activate anyway. Opening Crisp a second time now brings the open window to the front instead of starting another copy. Releasing this computer's seat finishes cleanly even when the licence server had already freed it. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-21T19:11:53Z",
+  "version": "1.0.2151",
+  "notes": "Unlock Pro and Enter Your Key now open straight away, even while the welcome tour is showing. On a Windows PC whose graphics driver has no Vulkan, Crisp no longer sets off a Windows error box at launch: it says plainly what to install, and the tools that don't upscale keep working. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-21T23:58:09Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUJqWjVvalYxbXZmRkxFdDErQnlkTWxQandGMVgrQ2xaRmltNklGUHJjOWpweFhwRW1DSHJIRVlGcCtaY1hIOGpFQTBheWx0dW1ENCt1c1p4ZE1EMEF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Mjg4MjM2CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpMaDY0MDV2cjRQYUtXZVYwN0xhZlM4Rk5MRHpzYVExVTcxNUM4SjhHSERybUtvQnlZblllOHNNKzAwT1NMUzZ3R2d4ZjZSKzdQZy9OR1U5Y28vcXFCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2141.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtRaTRjN2Y4K1d5bTNyYWdXT1BnTitaNmxDWDZNdHBNeDVmMnJGdjc1RmgzNFZKczR6Ui9QQ0RLV3VGQXc1bDJGVEc2ZkhsN1ZuczhqZWhkSHg1MUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzA1NDE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKbVNTeVN4bzRTTFU5SDFnL24wdHViM0E1ejNzbEtmbkdHd1c3aTJURmxBbGk2ZVB4WVFURlJxL3Z5ZFBmRHdwMjZkVEJCMm5SL2pIdEFTcnhodTZBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2151.app.tar.gz"
     }
   }
 }
