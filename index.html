@@ -422,7 +422,7 @@ footer{border-top:1px solid var(--hair);padding:2.8rem 0;color:var(--grey-dim);f
   transition-delay:0s;}
 @media(prefers-reduced-motion:reduce){
   .mesh b{animation:none;}
-  .rv{opacity:1;transform:none;transition:none;}
+  .rv,.js .rv,.js .rv.in{opacity:1!important;transform:none!important;transition:none!important;}
   *{animation:none!important;transition:none!important;scroll-behavior:auto;}
 }
 
@@ -1693,6 +1693,10 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   }
   var els = document.querySelectorAll('.rv');
   if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (var m = 0; m < els.length; m++) els[m].classList.add('in');
+    return;
+  }
   function show(el) {
     el.classList.add('in');
     if (!el._rvdT) el._rvdT = setTimeout(function () { el.classList.add('rvd'); }, 1150);
@@ -1705,8 +1709,7 @@ var CRISP_BUY_VIA = "https://kerr-affiliate-hub.kerrco.workers.dev/buy/crisp";
   var io = new IntersectionObserver(function (entries) {
     for (var i = 0; i < entries.length; i++) {
       var t = entries[i].target;
-      if (entries[i].isIntersecting) { revealed++; show(t); }
-      else { t.classList.remove('in'); }
+      if (entries[i].isIntersecting) { revealed++; show(t); io.unobserve(t); }
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
