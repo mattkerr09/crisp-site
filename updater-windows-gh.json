@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2130",
-  "notes": "The Help menu now has Unlock Pro\u2026 and Enter Your Key\u2026, which open the unlock window directly. Crisp now opens in a larger window. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-20T22:49:50Z",
+  "version": "1.0.2135",
+  "notes": "A short welcome tour shows what each button does; see it again from Help > Welcome Tour. Enhance \u2192 4K (2160p) now makes 4K from old 480- and 576-line video: it sharpens the picture 4\u00d7 with AI, then sizes it to 4K, keeping the shape right for 4:3 and widescreen tapes and DVDs. After an enhance you can see before and after on your own clip, a restore shows the time left, and the words are plainer. Crisp sends two more anonymous counts, named on the privacy page. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-21T03:45:55Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU5rSTJNKzM1VnVuekdIWk1lb1k1aS85WkFocENRR0dENmpmRDlRWmVuMUhxckRoMS9INTJZTndqNFI5YVJFTGRtUXpkOWdSZmRPVVU2eUV2RkMyUWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjE0OTkwCWZpbGU6Q3Jpc3AtMS4wLjIxMzAteDY0LXNldHVwLmV4ZQo3TXk3VmlWNndSd0JScG50R0ZJTzUrRmpOek1Qay9zdmlWVnZ1R0JWRDNJWmVOYXBjOHU0U0dZOHB6ZSszMHd4VUc5dVpzS25CVytHckMyYmVuektDQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2130-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNNZXEvREhHMDNnbXVwSjUzT3FzZ3NKZ1dpWTg5OGRLM0tkZmFFeGsweDdSUzdjSCt4dEZrU0lKQlRFRjFDVU1YeGdYaTQwellocXhkTUFvVEUwSmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjMyNzU1CWZpbGU6Q3Jpc3AtMS4wLjIxMzUteDY0LXNldHVwLmV4ZQpoaEduU0JrYWlpOW9RMkZCMFRVYU95ZnYxcmNpRk45Wm40Y1RIdytwRFA3MDNNRjVRNnNLZm0xUnlabVMvd09xeEJPU2k4TkZUUlBQRE9YOGgyZmhCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2135-x64-setup.exe"
     }
   }
 }
