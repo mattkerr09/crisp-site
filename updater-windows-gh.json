@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2135",
-  "notes": "A short welcome tour shows what each button does; see it again from Help > Welcome Tour. Enhance \u2192 4K (2160p) now makes 4K from old 480- and 576-line video: it sharpens the picture 4\u00d7 with AI, then sizes it to 4K, keeping the shape right for 4:3 and widescreen tapes and DVDs. After an enhance you can see before and after on your own clip, a restore shows the time left, and the words are plainer. Crisp sends two more anonymous counts, named on the privacy page. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-21T03:45:55Z",
+  "version": "1.0.2141",
+  "notes": "Activating Pro is safer: if the licence server's answer gets lost on the way, Crisp asks before it could use another of your 3 seats, and offers Check or Activate anyway. Opening Crisp a second time now brings the open window to the front instead of starting another copy. Releasing this computer's seat finishes cleanly even when the licence server had already freed it. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-21T19:47:12Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUNNZXEvREhHMDNnbXVwSjUzT3FzZ3NKZ1dpWTg5OGRLM0tkZmFFeGsweDdSUzdjSCt4dEZrU0lKQlRFRjFDVU1YeGdYaTQwellocXhkTUFvVEUwSmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjMyNzU1CWZpbGU6Q3Jpc3AtMS4wLjIxMzUteDY0LXNldHVwLmV4ZQpoaEduU0JrYWlpOW9RMkZCMFRVYU95ZnYxcmNpRk45Wm40Y1RIdytwRFA3MDNNRjVRNnNLZm0xUnlabVMvd09xeEJPU2k4TkZUUlBQRE9YOGgyZmhCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2135-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURjUDR4NWVkaHB2Zlp4cHFTUGZGb1FlQ1IzTlVjOXJmQ2l1U0h6WDFZZ3pDMzdmbHg1Z2lEL1NBeUdHcnNwTHpKR1NwdkFRMU9ldmZlRmV0bWFnQXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjkwNDMyCWZpbGU6Q3Jpc3AtMS4wLjIxNDEteDY0LXNldHVwLmV4ZQpRLytRRmlib2R5OExmNFZ0ejFLaDBDRjhkcldDR1VETytoK01Kcjd5MlhzR3BVQmhVK2MvaUlTaUNQQlVlaGFyL2lwNGVuWmVRallpaExyMVBCM0JBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2141-x64-setup.exe"
     }
   }
 }
