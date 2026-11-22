@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2151",
-  "notes": "The Unlock Pro and Enter Your Key menu items now open straight away, even while the welcome tour is showing. On a Windows PC whose graphics driver has no Vulkan, Crisp no longer sets off a Windows error box at launch: it says plainly what to install, and the tools that don't upscale keep working. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-21T23:58:09Z",
+  "version": "1.0.2155",
+  "notes": "The Unlock Pro button now works even while the welcome card is showing: clicking it ends the tour and opens Unlock Pro, and the same goes for the other buttons behind the card. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-22T01:30:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUtRaTRjN2Y4K1d5bTNyYWdXT1BnTitaNmxDWDZNdHBNeDVmMnJGdjc1RmgzNFZKczR6Ui9QQ0RLV3VGQXc1bDJGVEc2ZkhsN1ZuczhqZWhkSHg1MUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzA1NDE3CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpKbVNTeVN4bzRTTFU5SDFnL24wdHViM0E1ejNzbEtmbkdHd1c3aTJURmxBbGk2ZVB4WVFURlJxL3Z5ZFBmRHdwMjZkVEJCMm5SL2pIdEFTcnhodTZBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2151.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUVZTCt6dHRabi9Jd1R3QVk1eWZJR21vNUVORVRxRmt4eUhuZTlYUGtxNGgrZzFkTXRQZXBrL3J5b3J5NzN6andVc0RGWU9nVEgrdStiYjhiTnM1aHdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzEwOTc1CWZpbGU6Q3Jpc3AuYXBwLnRhci5negpUS0VMODZjWnlGeDJBcTB4aUxobXpaWWxrTEZLTkJ1RHgrUDAyYis3TEtLb21uRUJxTWY0c2dzVUh0TWM5ODBsZ05JaVhaWEhyd3c2dndtZnl4bjJBQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2155.app.tar.gz"
     }
   }
 }
