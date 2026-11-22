@@ -211,7 +211,7 @@ class LanguagePages:
         localized = f'{llms_txt.BASE}{self.routes["/"]}{slug}/'
         source = source.replace(canonical, f'<link rel="canonical" href="{localized}">\n' +
                                 alternates("/download/" if download else "/pricing/", self.words))
-        source = source.replace('<body>', f'<body>\n<p class="app-language">{self.words.APP_LANGUAGE}</p>')
+        source = re.sub(r'<body([^>]*)>', lambda m: m.group(0) + f'\n<p class="app-language">{self.words.APP_LANGUAGE}</p>', source, count=1)
         if getattr(self.words, "INLINE_STYLE", ""):
             source = source.replace('</head>', f'<style>{self.words.INLINE_STYLE}</style>\n</head>')
         if download and getattr(self.words, "DOWNLOAD_INDEXABLE", False):

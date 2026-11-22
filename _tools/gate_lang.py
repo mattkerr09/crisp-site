@@ -661,7 +661,7 @@ class LanguageGate:
             mirror(doc.root)
             for start, end, replacement in sorted(edits, reverse=True):
                 source = source[:start] + replacement + source[end:]
-            source = source.replace('<body>', '<body>\n<p class="app-language">' + self.NOTICE + '</p>', 1)
+            source = re.sub(r'<body([^>]*)>', lambda m: m.group(0) + '\n<p class="app-language">' + self.NOTICE + '</p>', source, count=1)
             source = source.replace('<footer>', self.CONTACT + '\n<footer>', 1)
             mirror_originals[self.home_file] = source
             for name in ("index.html", self.home_file):
