@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2141",
-  "notes": "Activating Pro is safer: if the licence server's answer gets lost on the way, Crisp asks before it could use another of your 3 seats, and offers Check or Activate anyway. Opening Crisp a second time now brings the open window to the front instead of starting another copy. Releasing this computer's seat finishes cleanly even when the licence server had already freed it. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-21T19:47:12Z",
+  "version": "1.0.2151",
+  "notes": "Unlock Pro and Enter Your Key now open straight away, even while the welcome tour is showing. On a Windows PC whose graphics driver has no Vulkan, Crisp no longer sets off a Windows error box at launch: it says plainly what to install, and the tools that don't upscale keep working. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-22T00:25:14Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYURjUDR4NWVkaHB2Zlp4cHFTUGZGb1FlQ1IzTlVjOXJmQ2l1U0h6WDFZZ3pDMzdmbHg1Z2lEL1NBeUdHcnNwTHpKR1NwdkFRMU9ldmZlRmV0bWFnQXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjkwNDMyCWZpbGU6Q3Jpc3AtMS4wLjIxNDEteDY0LXNldHVwLmV4ZQpRLytRRmlib2R5OExmNFZ0ejFLaDBDRjhkcldDR1VETytoK01Kcjd5MlhzR3BVQmhVK2MvaUlTaUNQQlVlaGFyL2lwNGVuWmVRallpaExyMVBCM0JBQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2141-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYU1tUnV2MkhnL2V6MWc4V3VLRkUrNWJwVmpHSHZaWDU3NjUrdkcrM0lYVk5qeEoyWEk5SUc3dUtxUEJyWEVvR2MxTjV6UUVwQWtJMkt6UmVQZXZkSlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzA3MTE0CWZpbGU6Q3Jpc3AtMS4wLjIxNTEteDY0LXNldHVwLmV4ZQpBclRic0F2dGliWGNncXRDalUzTlBUdkNTVG0vK1R2aE5WSkpRME1qMVhxU1lMdTZ1NWxZcEpYZVR2WUlINk9yU2RiS2NFUnpqQ0V6dDY2WUNUQVlCQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2151-x64-setup.exe"
     }
   }
 }
