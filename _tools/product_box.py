@@ -69,20 +69,33 @@ def box(where: str, page: str = "") -> str:
     # not a dash (content standard, 2026-10-05). No founding line at all once the offer has ended (data-ends).
     found = (f'<p class="pbox-found">{llms_txt.price_copy(f)} '
              'The Buy button applies the sale price.</p>') if live else ""
+    # THE WINDOWS PAGE LEADS WITH WINDOWS (CEO, 2026-11-22, the first RULES 76 growth check): /windows/'s main button was this box's
+    # "Download free for Mac", so a PC reader of the one Windows page was handed the .dmg. There, the main button is the Windows
+    # installer (the hub's Windows route, the same URL as the Windows line), its requirement sits under it, and the Mac download
+    # is the second line. Everywhere else the box is unchanged.
+    win = page.strip("/") == "windows" and llms_txt.windows()
+    if win:
+        lead = (f'<a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_win_url(src + "-windows")}" rel="nofollow">'
+                'Download free for Windows</a> ')
+        second = (f'<p class="win-link">Needs {llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE}. On a Mac? '
+                  f'<a data-track="{src}-mac" href="{llms_txt.dl_url(src + "-mac")}" rel="nofollow">Download Crisp for Mac</a></p>')
+    else:
+        lead = f'<a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
+        second = llms_txt.windows_line(src)
     return (f'<aside class="pbox" data-pbox="{where}">'
             f'<p class="pbox-name"><strong>Crisp Video</strong> restores, denoises and upscales video up to 4K on your Mac or PC, offline.</p>'
             f'<p class="pbox-price"><span class="pbox-amt"{price_attrs}>{m(amount)}</span> once{split}</p>'
             f'{found}'
             # THE CURRENCY, TRUE (CEO sales audit, 2026-11-07): 6 of 8 November buyers paid in their own currency, 4 with tax added.
             f'<p class="pbox-cur">Priced in US dollars. Checkout shows your currency and any local tax.</p>'
-            f'<p class="pbox-actions"><a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '
+            f'<p class="pbox-actions">{lead}'
             # BUY BESIDE THE FREE DOWNLOAD (content standard, 2026-10-05). The box used to send Pro to the
             # homepage's pricing section, so a guide had no Buy link at all; the hub's /buy opens the checkout
             # with the founding code applied and counts it under this page's src, as /dl does for downloads.
             f'<a class="btn btn-ghost" data-track="pbox-{where}-buy" href="{BUY}?src={src}" rel="nofollow">Buy Pro</a></p>'
             # THE WINDOWS DOWNLOAD (CEO, 2026-11-05): the box says "Mac or PC", so a PC visitor needs their button too. One definition,
             # shared with the home page and the door pages, so the version and the Vulkan line cannot differ between them.
-            f'{llms_txt.windows_line(src)}'
+            f'{second}'
             # a phone visitor cannot install a Mac app: one line to send the link to themselves (track.js)
             f'<p class="phone-link pbox-phone">On your phone? <button type="button" data-send-mac-link>Send yourself the link</button></p>'
             f'<p class="pbox-fine">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · Mac: {f["os"]}{llms_txt.speed_note(f["os"])} · '
