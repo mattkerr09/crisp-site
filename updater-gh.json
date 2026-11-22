@@ -1,6 +1,6 @@
 {
   "version": "1.0.2151",
-  "notes": "Unlock Pro and Enter Your Key now open straight away, even while the welcome tour is showing. On a Windows PC whose graphics driver has no Vulkan, Crisp no longer sets off a Windows error box at launch: it says plainly what to install, and the tools that don't upscale keep working. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "notes": "The Unlock Pro and Enter Your Key menu items now open straight away, even while the welcome tour is showing. On a Windows PC whose graphics driver has no Vulkan, Crisp no longer sets off a Windows error box at launch: it says plainly what to install, and the tools that don't upscale keep working. Black Friday sale: $9.99 once through December 2. Then $29.",
   "pub_date": "2026-11-21T23:58:09Z",
   "platforms": {
     "darwin-aarch64": {
