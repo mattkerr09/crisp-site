@@ -169,7 +169,8 @@
   <p>Every operation (upscaling, low-light repair, montages, split screen, exports) runs
   locally using models bundled with the app. Crisp has no upload endpoint and no server that
   receives your files. You can verify this by running Crisp with networking disabled: everything
-  except licence activation and update checks continues to work.</p>
+  except licence activation, update checks, the sale price check and the optional Max download
+  continues to work.</p>
 
   <h2>No analytics in the app, and six anonymous counts</h2>
   <p>Crisp contains no analytics SDK, no crash reporter, no advertising identifiers, and no third-party scripts. Nothing reports
@@ -301,8 +302,8 @@
   </ul>
   <p>One more, and it is the installer, not the app: on Windows, if the PC does not already have Microsoft's WebView2 component, the installer downloads it from Microsoft while it installs. Nothing about you or your files is sent beyond the ordinary web request.</p>
   <p>If you never activate a licence and decline updates, Crisp makes no outbound connections at
-  all beyond the update check, the sale price check and the two one-time counts, which you can block at the firewall
-  without affecting editing.</p>
+  all beyond the update check, the sale price check and the anonymous counts (each sent at most once per computer),
+  all of which you can block at the firewall without affecting editing.</p>
 
   <h2>What is stored on your computer</h2>
   <p>Your licence key and activation record are stored in Crisp's application-support folder (<code>Library/Application Support/Crisp</code> in your home folder on a Mac, the <code>Crisp</code> folder in <code>%APPDATA%</code> on a PC) so
