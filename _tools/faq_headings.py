@@ -24,7 +24,6 @@ HEADINGS = {
     # ── vs/ : someone arriving from another tool ───────────────────────────────────────────
     "vs/inshot-alternative-mac":              "Switching from InShot",
     "vs/topaz-alternative-mac":               "Switching from Topaz",
-    "vs/topaz-video-ai-alternative-mac":      "Switching from Topaz Video AI",
 
     # ── how-to/ : the task the page teaches ────────────────────────────────────────────────
     "how-to/add-a-border-to-video-mac":       "Borders, in detail",

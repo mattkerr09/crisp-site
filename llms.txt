@@ -33,7 +33,7 @@ Pro adds
 
 ## Comparisons
 - [Crisp compared with other Mac video tools](https://crispvideo.app/vs/): every comparison, with sources and dates
-- [Best Topaz alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): The best Topaz alternative for Mac: AI upscaling and restore that runs 100% on-device, no subscription, with an editor built in.
+- [Topaz Video AI alternative for Mac (2026): offline, one-time](https://crispvideo.app/vs/topaz-alternative-mac/): The best Topaz alternative for Mac: AI upscaling and restore that runs 100% on-device, no subscription, with an editor built in.
 - [Switch from Topaz Video AI to Crisp: pricing](https://crispvideo.app/vs/switch-from-topaz-video-ai-to-crisp/): Topaz went subscription-only in October 2025; Topaz Video costs $299/yr.
 - [UniFab alternative for Mac (2026): native, with a timeline](https://crispvideo.app/vs/unifab-alternative-mac/): UniFab All-In-One lists at US$319.99 for 17 tools, built Windows-first.
 - [Aiarty Video Enhancer vs Crisp on Mac: pricing](https://crispvideo.app/vs/aiarty-video-enhancer-alternative-mac/): Aiarty Video Enhancer is $165 lifetime for 3 machines; Black Friday sale: $9.99 once through December 2. Then $29.
