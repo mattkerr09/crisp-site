@@ -1,6 +1,6 @@
 {
   "version": "1.0.2155",
-  "notes": "Clicking a button outside the welcome card now ends the tour. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "notes": "Black Friday sale: $9.99 once through December 2. Then $29.",
   "pub_date": "2026-11-22T02:05:35Z",
   "platforms": {
     "windows-x86_64": {
