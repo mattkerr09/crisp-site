@@ -585,7 +585,7 @@ h2.sub-label{margin:0;}
 <script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
 <!-- affiliate-hub:begin --><script src="https://kerr-affiliate-hub.kerrco.workers.dev/snippet.js" defer></script><!-- affiliate-hub:end -->
 </head>
-<body>
+<body data-no-sale-bar>
 <div data-founding data-code="FOUNDINGCRISP" data-now="$9.99" data-then="$29" data-ends="2026-12-03T07:59:59Z"></div>
 <script>(function () {
   if (window.__kcFounding) return;
@@ -638,6 +638,7 @@ h2.sub-label{margin:0;}
 
   var mount = document.querySelector("[data-founding]");
   if (!mount) return;
+  if (document.body && document.body.hasAttribute("data-no-sale-bar")) return;
   var sale = mount.getAttribute("data-now");
   var full = mount.getAttribute("data-then");
   var ends = Date.parse(mount.getAttribute("data-ends"));

@@ -96,6 +96,7 @@
 
   var mount = document.querySelector("[data-founding]");
   if (!mount) return;
+  if (document.body && document.body.hasAttribute("data-no-sale-bar")) return;
   var sale = mount.getAttribute("data-now");
   var full = mount.getAttribute("data-then");
   var ends = Date.parse(mount.getAttribute("data-ends"));
