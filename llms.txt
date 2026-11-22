@@ -45,7 +45,7 @@ Pro adds
 
 ## Learn
 - [Learn: video restoration explained](https://crispvideo.app/learn/): how video restoration and upscaling actually work
-- [Is Topaz Video AI free? No trial now, every plan checked](https://crispvideo.app/learn/is-topaz-video-ai-free/): No free desktop plan.
+- [Is Topaz Video AI free? No trial now, every plan checked](https://crispvideo.app/learn/is-topaz-video-ai-free/): Topaz Video is $299.00 a year or $59.00 a month, read 22 November 2026; there is no free desktop plan.
 - [What is AI video upscaling? What a video enhancer does](https://crispvideo.app/learn/what-is-ai-video-upscaling/): What AI video upscaling is, and what a video enhancer really does: three separate jobs (bigger, cleaner, sharper), measured on two real clips.
 - [Why Topaz ended perpetual licences (and what it costs now)](https://crispvideo.app/learn/why-topaz-ended-perpetual-licences/): Topaz Labs stopped selling perpetual licences on 3 October 2025.
 - [Why VHS tapes degrade, and what can still be recovered](https://crispvideo.app/learn/why-vhs-tapes-degrade/): Magnetic tape loses signal whether you play it or not.

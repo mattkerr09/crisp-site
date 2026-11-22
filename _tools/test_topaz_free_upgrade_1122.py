@@ -94,7 +94,7 @@ class TopazFreeUpgradeTests(unittest.TestCase):
         self.assertLessEqual(len(title), 60)
         for attr in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
             value = re.search(r'<meta ' + attr + r' content="([^"]+)"', self.source)[1]
-            self.assertTrue(value.startswith("No free desktop plan."))
+            self.assertTrue(value.startswith("Topaz Video is $299.00 a year or $59.00 a month"))
             self.assertLess(len(unescape(value)), 155)
 
     def test_no_long_dashes(self):
