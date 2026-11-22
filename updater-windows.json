@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2155",
-  "notes": "Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-22T02:05:35Z",
+  "version": "1.0.2160",
+  "notes": "On Windows, Unlock Pro and Enter Your Key now open. In version 1.0.2155, opening either one could make Crisp's window stop responding. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-22T08:01:11Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUIrVmp2dEZvUFAwZjVNMWwzY3NDQ0NaQllXREVzT25nZjJ0SkQ5YXlvSXI0Qy8xcC9oU3NRd3h4RjVXWEUxSTZJZHJ5ZzFkMitqTGZ2TXhPNWhBUUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzEzMTM1CWZpbGU6Q3Jpc3AtMS4wLjIxNTUteDY0LXNldHVwLmV4ZQpqZ0orT2g4MzFIYUFndHBXTjVCbzIreVZHcnEwZ1crenZjZlJnbjdzdkx0RmxNRjlUdGxrV1ZIcmZVREloTEUyeERoekpoUFJUaVpBNTcyOE5OQ1JCQT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2155-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFPQzFUR0I3L2NsTEJScktRaEVwNVFtSjZacEhBVlJMV2luS1R6TkJQY2Z5MXVEaHRTTkM1QXBaUzJtckhUSVdPY0tnS0MxaHROOGdwMzgvaFhwRGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM0NDcxCWZpbGU6Q3Jpc3AtMS4wLjIxNjAteDY0LXNldHVwLmV4ZQp3QW53UXRQR1hWVjFaTUp0NUNRWTZPUVNLdGR6cG0rZVhVWEo1T0luN0kvL1ZNdXFOM0QwOHgrT3NYL0lqdkd4ODJTbzBva09ZYzR2Q3BYaEVJbTdCUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2160-x64-setup.exe"
     }
   }
 }
