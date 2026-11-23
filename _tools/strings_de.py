@@ -38,7 +38,7 @@ BOX = {
     "download_mac": "Kostenlos für den Mac herunterladen",
     "windows_q": "Windows 10 oder 11, 64 Bit?",
     "windows_dl": "Crisp {win_version} für Windows herunterladen",
-    "windows_gpu": "Voraussetzung ist eine Grafikkarte mit Vulkan-Unterstützung; die haben die meisten PCs ab 2016.",
+    "windows_gpu": "KI-Hochskalierung braucht eine Grafikkarte mit Vulkan-Unterstützung (die haben die meisten PCs ab 2016); auf anderen PCs macht Crisp eine Standard-Hochskalierung, ohne KI.",
     # {cap} seconds of the free cap; {os} the macOS floor; {chip} the chip line; {refund_days}
     "fine": ("Kostenlos nutzbar: KI-Exporte (Hochskalieren, Wiederherstellen, Farblooks) bis {cap} Sekunden, alles andere in voller Länge, "
              "Video- und GIF-Exporte mit einem kleinen &bdquo;crispvideo.app&ldquo;-Wasserzeichen · {os} · {chip} · "

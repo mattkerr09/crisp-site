@@ -77,7 +77,7 @@ def box(where: str, page: str = "") -> str:
     if win:
         lead = (f'<a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_win_url(src + "-windows")}" rel="nofollow">'
                 'Download free for Windows</a> ')
-        second = (f'<p class="win-link">Needs {llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE}. On a Mac? '
+        second = (f'<p class="win-link">Needs {llms_txt.WIN_REQ}. {llms_txt.WIN_AI}. On a Mac? '
                   f'<a data-track="{src}-mac" href="{llms_txt.dl_url(src + "-mac")}" rel="nofollow">Download Crisp for Mac</a></p>')
     else:
         lead = f'<a class="btn" data-track="pbox-{where}" href="{llms_txt.dl_url(src)}" rel="nofollow">Download free for Mac</a> '

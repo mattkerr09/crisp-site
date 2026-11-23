@@ -47,7 +47,7 @@ BOX = {
     "download_mac": "Mac版を無料ダウンロード",
     "windows_q": "Windows 10/11（64ビット版）をお使いの方はこちら",
     "windows_dl": "Windows版Crisp {win_version}をダウンロード",
-    "windows_gpu": "Vulkan対応のGPUが必要です。2016年以降のPCの多くが対応しています。",
+    "windows_gpu": "AIによるアップスケールにはVulkan対応のGPUが必要です（2016年以降のPCの多くが対応しています）。それ以外のPCでは、AIを使わない標準のアップスケールになります。",
     "fine": "無料版では、AIによるアップスケール、修復、カラールックの書き出しは{cap}秒までです。それ以外は全編を書き出せます。動画とGIFには小さなcrispvideo.appの透かしが入ります。 · {os} · {chip} · {refund_days}日以内なら理由を問わず返金します。",
 }
 DOWNLOAD = {

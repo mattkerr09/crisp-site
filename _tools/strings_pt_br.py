@@ -63,7 +63,7 @@ BOX = {
     "download_mac": "Baixar grátis para Mac",
     "windows_q": "Usa Windows 10 ou 11, de 64 bits?",
     "windows_dl": "Baixar Crisp {win_version} para Windows",
-    "windows_gpu": "É preciso ter uma placa de vídeo com suporte a Vulkan. A maioria dos PCs de 2016 em diante tem uma.",
+    "windows_gpu": "Aumentar a resolução com IA exige uma placa de vídeo com suporte a Vulkan (a maioria dos PCs de 2016 em diante tem uma); nos outros PCs, o Crisp faz um aumento de resolução padrão, sem IA.",
     "fine": "Grátis: exportações com IA para aumentar a resolução, restaurar e aplicar estilos de cor até {cap} segundos. Todo o resto em duração completa. Vídeos e GIFs exportados têm uma pequena marca d'água crispvideo.app · {os} · {chip} · Reembolso em até {refund_days} dias, sem precisar dar um motivo.",
 }
 DOWNLOAD = {

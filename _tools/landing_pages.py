@@ -89,7 +89,7 @@ def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
     win_dl = (f'<a class="btn win-btn" data-track="{src}-windows" '
               f'href="{llms_txt.dl_win_url(src + "-windows")}" rel="nofollow">Download free for Windows</a> ') if win else ""
     win_fine = (f'<p class="pbox-fine fine-win">Free to use: {llms_txt.free_tier(f["cap"], "&ldquo;", "&rdquo;")} · '
-                f'{llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}; {llms_txt.WIN_GPU_NOTE} · '
+                f'{llms_txt.WIN_REQ}. {llms_txt.WIN_AI} · '
                 f'{f["refund_days"]}-day refund, no reason needed. '
                 f'Also on the <a href="{llms_txt.MS_STORE}" data-track="{src}-ms-store" rel="nofollow">Microsoft Store</a>.</p>') if win else ""
     found = (f'<p class="pbox-found">{llms_txt.price_copy(f)} '
@@ -226,7 +226,7 @@ def pages() -> dict[Path, str]:
     speed = macos_speed_section(f["os"])
     if llms_txt.windows():
         download_intro = (f'<span class="mac-only">{download_intro}</span> '
-                          f'<span class="win-only">{llms_txt.WIN_REQ}, with {llms_txt.WIN_GPU}.</span>')
+                          f'<span class="win-only">{llms_txt.WIN_REQ}. {llms_txt.WIN_AI}.</span>')
         if speed:
             speed = f'<div class="mac-only">\n{speed}</div>\n'
     return {

@@ -344,12 +344,15 @@ def dl_url(src: str) -> str:
 #: which scripts/windows_release.py writes with the version and the VERSIONED, immutable installer it published, so a link
 #: here can never name an installer that was not published. None until a Windows release exists.
 WIN_REQ = "Windows 10 or 11, 64-bit"
-#: AND THE GRAPHICS (CEO, 2026-11-05). The upscaler is ncnn on Vulkan and there is no CPU path (upscale.py passes no -g -1; the app stops
-#: with errors.NO_VULKAN_ON_THIS_PC when the driver offers none), so on Windows upscaling needs graphics that support Vulkan. Hardware: NVIDIA
+#: AND THE GRAPHICS (CEO, 2026-11-05). The AI upscaler is ncnn on Vulkan, so on Windows AI upscaling needs graphics that support Vulkan.
+#: Since Crisp 1.0.2183 a PC whose driver offers none gets a standard upscale (ffmpeg Lanczos + light denoise, named "not AI") instead of
+#: errors.NO_VULKAN_ON_THIS_PC, so every place that states the requirement says both halves: WIN_AI (CEO, 2026-11-23, RULES 71). Hardware: NVIDIA
 #: Kepler (2012) and newer, AMD GCN (2012) and newer, Intel Haswell/Skylake (2013 to 2015) and newer; Steam's survey put DirectX 12 GPUs, the
 #: same generations, at 94.14% of systems in February 2026. "Most PCs from 2016 on" is the claim that holds, and it is all this says.
 WIN_GPU = "graphics that support Vulkan"
 WIN_GPU_NOTE = "most PCs from 2016 on have them"
+#: The requirement with what a PC without Vulkan gets, on the same line (RULES 17: the caveat goes where the claim is).
+WIN_AI = f"AI upscaling needs {WIN_GPU} ({WIN_GPU_NOTE}); on other PCs Crisp makes a standard upscale, not AI"
 
 
 def windows() -> "dict | None":
@@ -377,7 +380,7 @@ def windows_line(src: str) -> str:
         return ""
     return (f'<p class="win-link">On {WIN_REQ}? <a data-track="{src}-windows" href="{dl_win_url(src + "-windows")}" '
             f'rel="nofollow">Download Crisp {w["version"]} for Windows</a> '
-            f'<span class="win-gpu">It needs {WIN_GPU}; {WIN_GPU_NOTE}.</span></p>')
+            f'<span class="win-gpu">{WIN_AI}.</span></p>')
 
 
 def windows_hero_button(src: str) -> str:
@@ -399,7 +402,7 @@ def windows_hero_fine(cap: int, src: str) -> str:
     Windows requirement from WIN_REQ / WIN_GPU, the same price and refund line, and its own Buy link."""
     if not windows():
         return ""
-    return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})'
+    return (f'<p class="fine-win">Free to use: {free_tier(cap, "&ldquo;", "&rdquo;")} · {WIN_REQ}. {WIN_AI}'
             # The price is said once on the first screen, in the hero's own price line by the button (10 Nov, both blind
             # reviewers: four times was too many), so this line starts at the refund.
             f'<br>30-day refund · '
@@ -450,7 +453,7 @@ def build() -> str:
         "",
         f"> Crisp Video restores, denoises and upscales old, low-res video up to 4K offline on a Mac or a Windows PC, then lets you "
         f"edit it on a real timeline. Free to use: {free_tier(f['cap'])}. {price_copy(f)} "
-        f"No subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE}).",
+        f"No subscription. Mac: {f['os']}, {f['chip']}. Windows: {WIN_REQ}. {WIN_AI}.",
         "",
         "## Is Crisp free?",
         "",
@@ -472,12 +475,12 @@ def build() -> str:
                    + (f" (not on the {money(now)} sale price, which is under the {money(BNPL_FLOOR)} minimum)"
                       if founding_live(f) and not bnpl_on(f, now) else ""))
     out += [
-        f"- [System requirements]({BASE}/#download): Mac: {f['os']}, {f['chip']}; Windows: {WIN_REQ}, with {WIN_GPU} ({WIN_GPU_NOTE})",
+        f"- [System requirements]({BASE}/#download): Mac: {f['os']}, {f['chip']}; Windows: {WIN_REQ}; {WIN_AI}",
         f"- [Licence terms]({BASE}/legal/terms/): one Pro licence runs on up to {f['macs']} computers at a time, Mac or Windows",
         f"- [Refunds]({BASE}/legal/refunds/): email within {f['refund_days']} days of purchase for a refund, "
         f"no reason needed",
         f"- [Download for Mac]({f['dmg']}): the current release, {f['version']}",
-        *([f"- [Download for Windows]({windows()['url']}): Crisp {windows()['version']} for {WIN_REQ}, with {WIN_GPU}, signed by Kerr & Company LLC"]
+        *([f"- [Download for Windows]({windows()['url']}): Crisp {windows()['version']} for {WIN_REQ}, signed by Kerr & Company LLC; {WIN_AI}"]
           if windows() else []),
         f"- [FAQ]({BASE}/#faq): memory, speed, the Max lane, privacy, licensing",
         "",

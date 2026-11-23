@@ -1,6 +1,6 @@
 # Crisp Video
 
-> Crisp Video restores, denoises and upscales old, low-res video up to 4K offline on a Mac or a Windows PC, then lets you edit it on a real timeline. Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small “crispvideo.app” mark. Black Friday sale: $9.99 once through December 2. Then $29. No subscription. Mac: macOS 14.0 or later, Apple Silicon (M1 or later). Windows: Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them).
+> Crisp Video restores, denoises and upscales old, low-res video up to 4K offline on a Mac or a Windows PC, then lets you edit it on a real timeline. Free to use: upscaling, restoring and colour exports up to 15 seconds, everything else at full length, video and GIF exports with a small “crispvideo.app” mark. Black Friday sale: $9.99 once through December 2. Then $29. No subscription. Mac: macOS 14.0 or later, Apple Silicon (M1 or later). Windows: Windows 10 or 11, 64-bit. AI upscaling needs graphics that support Vulkan (most PCs from 2016 on have them); on other PCs Crisp makes a standard upscale, not AI.
 
 ## Is Crisp free?
 
@@ -24,11 +24,11 @@ Pro adds
 - [Crisp Video](https://crispvideo.app/): what it does, real before/after clips, and the free download
 - [Pricing](https://crispvideo.app/#pricing): Free: the full editor, the full preview and the standard enhancement lanes; upscaling, restoring and colour exports stop at 15 seconds, everything else runs at full length, and every video export carries a small “crispvideo.app” mark. Pro: Black Friday sale: $9.99 once through December 2. Then $29. Every 1.x update included; removes the mark and the limit and adds batch processing and, on a Mac, the generative Max lane
 - [Black Friday sale](https://crispvideo.app/#buy): Black Friday sale: $9.99 once through December 2. Then $29. The Buy button applies the sale price.
-- [System requirements](https://crispvideo.app/#download): Mac: macOS 14.0 or later, Apple Silicon (M1 or later); Windows: Windows 10 or 11, 64-bit, with graphics that support Vulkan (most PCs from 2016 on have them)
+- [System requirements](https://crispvideo.app/#download): Mac: macOS 14.0 or later, Apple Silicon (M1 or later); Windows: Windows 10 or 11, 64-bit; AI upscaling needs graphics that support Vulkan (most PCs from 2016 on have them); on other PCs Crisp makes a standard upscale, not AI
 - [Licence terms](https://crispvideo.app/legal/terms/): one Pro licence runs on up to 3 computers at a time, Mac or Windows
 - [Refunds](https://crispvideo.app/legal/refunds/): email within 30 days of purchase for a refund, no reason needed
 - [Download for Mac](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp.dmg): the current release, 1.0.2155
-- [Download for Windows](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2185-x64-setup.exe): Crisp 1.0.2185 for Windows 10 or 11, 64-bit, with graphics that support Vulkan, signed by Kerr & Company LLC
+- [Download for Windows](https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2185-x64-setup.exe): Crisp 1.0.2185 for Windows 10 or 11, 64-bit, signed by Kerr & Company LLC; AI upscaling needs graphics that support Vulkan (most PCs from 2016 on have them); on other PCs Crisp makes a standard upscale, not AI
 - [FAQ](https://crispvideo.app/#faq): memory, speed, the Max lane, privacy, licensing
 
 ## Comparisons
