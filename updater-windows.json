@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2183",
-  "notes": "On a Windows PC whose graphics don't support Vulkan, Enhance now works: Crisp makes a standard upscale there (not AI) instead of stopping, and says so once. With dust removal, steadied brightness or Keep tape motion on, the preview is now a short clip instead of one frame, so it shows those fixes the way the video will get them. In the sale's last three days, Crisp says once when it opens when the sale ends and what Pro costs after. Screen readers no longer read out a notice after it has left the screen. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-23T06:25:30Z",
+  "version": "1.0.2185",
+  "notes": "When you reopen Crisp, clips you'd already added no longer show \"can't read\" if Crisp takes a moment to start: they're read again as soon as it's ready. On a Windows PC whose graphics don't support Vulkan, Enhance now works: Crisp makes a standard upscale there (not AI) instead of stopping, and says so once. With dust removal, steadied brightness or Keep tape motion on, the preview is now a short clip instead of one frame, so it shows those fixes the way the video will get them. In the sale's last three days, Crisp says once when it opens when the sale ends and what Pro costs after. Screen readers no longer read out a notice after it has left the screen. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-23T15:01:48Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5eG12QjRzTm5HZFNHZFBjcGMrSGJIYTdlSGpVeVVuUEpqbjJQWUhFM3cwQ1A4ODM4NjFIVHBXemE5bUV3RFJkRkNQeFByY3AwYjJpOXkvUlRUTXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDE1MTI5CWZpbGU6Q3Jpc3AtMS4wLjIxODMteDY0LXNldHVwLmV4ZQphSitIcDQ2N2E4ZTVYd2pYMXZnaWU2Z2tnNHJsQlJyNko0TUpPdW1Sa3JSaitONHR4Q1hnb3ErSVduSE40d0tEWmhuZVpQeU1Gc2ZqeUd0d2d1Mk5BZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2183-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhkN2V6ZkZvVUR0dG5QVzc1RmRnN3pLdHNSanBOS1JYVjBZVEprU3FKa0pzRFp1d1B3OU8xWXljRHZ0dHJvZWlKelJVOUx2NldVWnpvSEVQZlhkTnc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDQ2MTA4CWZpbGU6Q3Jpc3AtMS4wLjIxODUteDY0LXNldHVwLmV4ZQo3cTMyWEFUN1dmeWNEOUZGS3NCdXk0akdTVkpPYnpsdlJsKzcrY0h4dDY3YW5JSmxneThvRGNVUjBURVE5NVpITGtueHJ4bzZtLzNaTUFqeEtrbkFBUT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2185-x64-setup.exe"
     }
   }
 }
