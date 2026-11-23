@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2160",
-  "notes": "On Windows, Unlock Pro and Enter Your Key now open. In version 1.0.2155, opening either one could make Crisp's window stop responding. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-22T08:01:11Z",
+  "version": "1.0.2183",
+  "notes": "On a Windows PC whose graphics don't support Vulkan, Enhance now works: Crisp makes a standard upscale there (not AI) instead of stopping, and says so once. With dust removal, steadied brightness or Keep tape motion on, the preview is now a short clip instead of one frame, so it shows those fixes the way the video will get them. In the sale's last three days, Crisp says once when it opens when the sale ends and what Pro costs after. Screen readers no longer read out a notice after it has left the screen. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-23T06:25:30Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUFPQzFUR0I3L2NsTEJScktRaEVwNVFtSjZacEhBVlJMV2luS1R6TkJQY2Z5MXVEaHRTTkM1QXBaUzJtckhUSVdPY0tnS0MxaHROOGdwMzgvaFhwRGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM0NDcxCWZpbGU6Q3Jpc3AtMS4wLjIxNjAteDY0LXNldHVwLmV4ZQp3QW53UXRQR1hWVjFaTUp0NUNRWTZPUVNLdGR6cG0rZVhVWEo1T0luN0kvL1ZNdXFOM0QwOHgrT3NYL0lqdkd4ODJTbzBva09ZYzR2Q3BYaEVJbTdCUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2160-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUx5eG12QjRzTm5HZFNHZFBjcGMrSGJIYTdlSGpVeVVuUEpqbjJQWUhFM3cwQ1A4ODM4NjFIVHBXemE5bUV3RFJkRkNQeFByY3AwYjJpOXkvUlRUTXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDE1MTI5CWZpbGU6Q3Jpc3AtMS4wLjIxODMteDY0LXNldHVwLmV4ZQphSitIcDQ2N2E4ZTVYd2pYMXZnaWU2Z2tnNHJsQlJyNko0TUpPdW1Sa3JSaitONHR4Q1hnb3ErSVduSE40d0tEWmhuZVpQeU1Gc2ZqeUd0d2d1Mk5BZz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2183-x64-setup.exe"
     }
   }
 }
