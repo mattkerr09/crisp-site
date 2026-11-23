@@ -237,7 +237,9 @@ if [ ! -d "$CRISP_ROOT/tests" ]; then
 elif [ ! -x /opt/homebrew/bin/pytest ]; then
   record BLOCKED "site-vs-engine" "/opt/homebrew/bin/pytest is missing"
 else
-  SITE_TESTS=$(grep -rl 'SITE = ROOT / "site"' "$CRISP_ROOT/tests" 2>/dev/null)
+  # .py files only, never __pycache__: on 23 Nov a compiled tests/__pycache__/*.pyc carried the selector's bytes, grep -rl
+  # listed it, pytest refused it ("not found") and the push was BLOCKED (the release of 1.0.2183 for Windows).
+  SITE_TESTS=$(grep -rl --include='*.py' --exclude-dir=__pycache__ 'SITE = ROOT / "site"' "$CRISP_ROOT/tests" 2>/dev/null)
   if [ -z "$SITE_TESTS" ]; then
     # ⚠️ The selector is the literal `SITE = ROOT / "site"`. If that line is ever reworded this
     # matches nothing, which is a gate quietly testing zero files — BLOCKED, never a pass.
