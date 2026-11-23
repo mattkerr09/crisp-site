@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2185",
-  "notes": "When you reopen Crisp, clips you'd already added no longer show \"can't read\" if Crisp takes a moment to start: they're read again as soon as it's ready. On a Windows PC whose graphics don't support Vulkan, Enhance now works: Crisp makes a standard upscale there (not AI) instead of stopping, and says so once. With dust removal, steadied brightness or Keep tape motion on, the preview is now a short clip instead of one frame, so it shows those fixes the way the video will get them. In the sale's last three days, Crisp says once when it opens when the sale ends and what Pro costs after. Screen readers no longer read out a notice after it has left the screen. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-23T15:01:48Z",
+  "version": "1.0.2193",
+  "notes": "When you trim a clip and press Enhance, Crisp now cuts the original while it enhances instead of saving a re-encoded trim first, so fine detail like lettering and window lines comes through. Trims and other quick edits also keep more of the source's detail. Black Friday sale: $9.99 once through December 2. Then $29.",
+  "pub_date": "2026-11-23T23:31:20Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUhkN2V6ZkZvVUR0dG5QVzc1RmRnN3pLdHNSanBOS1JYVjBZVEprU3FKa0pzRFp1d1B3OU8xWXljRHZ0dHJvZWlKelJVOUx2NldVWnpvSEVQZlhkTnc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDQ2MTA4CWZpbGU6Q3Jpc3AtMS4wLjIxODUteDY0LXNldHVwLmV4ZQo3cTMyWEFUN1dmeWNEOUZGS3NCdXk0akdTVkpPYnpsdlJsKzcrY0h4dDY3YW5JSmxneThvRGNVUjBURVE5NVpITGtueHJ4bzZtLzNaTUFqeEtrbkFBUT09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2185-x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUF0dUkvZEpEeUtjQ2R6K1NLRzlFa3dQdTdGRWVnUCs0NUxITkh1NEFraGR2RzRZZUE3TncySWRMM2YrakVxK2ZYeDE2cEtiR2NPSzVsRSs2b3JDckFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDc2Njc5CWZpbGU6Q3Jpc3AtMS4wLjIxOTMteDY0LXNldHVwLmV4ZQp4N29LTVpKVXVwSnVtSWwrR3lxMmZWUVN2d3I1SnZCR1dPRlBWT0c4SmN2TXFpb1YyQkxxWDE0bGRINDVJaGxkWTAwVUNSQUFtdmkzajJaWmo2QnZBdz09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2193-x64-setup.exe"
     }
   }
 }
