@@ -9,20 +9,33 @@ asserts it, and a font CDN would break that as surely as an analytics tag would.
 | `dmsans-latin-italic.woff2` | DM Sans italic, basic Latin | variable | SIL Open Font License 1.1 |
 | `dmsans-var.woff2` | DM Sans, latin-EXT only (U+0100-02BA …) | variable 400–700 | SIL Open Font License 1.1 |
 | `dmsans-var-italic.woff2` | DM Sans italic, latin-EXT only | variable | SIL Open Font License 1.1 |
-| `clashdisplay-500.woff2` | Clash Display | 500 | ITF Free Font Licence (Fontshare) |
-| `clashdisplay-600.woff2` | Clash Display | 600 | ITF Free Font Licence (Fontshare) |
+| `bricolage-500.woff2` | Bricolage Grotesque (wdth 100, opsz 48), basic Latin | 500 (serves 500) | SIL Open Font License 1.1 (`OFL-BricolageGrotesque.txt`) |
+| `bricolage-700.woff2` | Bricolage Grotesque (wdth 100, opsz 48), basic Latin | 700 (serves 600-700) | SIL Open Font License 1.1 (`OFL-BricolageGrotesque.txt`) |
 
 **Provenance, stated plainly.** All four files came from `outlier-site/fonts`, where they are
 already serving on outlier.host — the same owner, the same company. DM Sans is published by
 Google Fonts under the SIL OFL, which permits commercial use, embedding and redistribution, so
 that half needs no further argument.
 
-Clash Display is Fontshare's, under the ITF Free Font Licence. **I could not read Fontshare's
-licence page to verify its terms myself — the page renders its text with JavaScript and returned
-nothing but the site title.** It is used here on the strength of it already being accepted and
-deployed for outlier.host by its owner, not on the strength of my having checked it. If that
-acceptance was ever in doubt, the display face is the only thing that would need to change:
-`--head` falls back to Futura and then the system stack, and the body face is unaffected.
+## The heading face: Bricolage Grotesque, since 2026-11-24 (CEO fix 131)
+
+Until 2026-11-24 the headings were Clash Display (Indian Type Foundry, Fontshare "Closed Source"). Its licence, the ITF Free
+Font License v2.0, allows self-hosting on our own site but forbids making the files available through a public repository
+(section 02), and this repo is public because it hosts the installers. So the two Clash files were removed (`git rm`, no
+history rewrite) and the headings moved to an OFL face.
+
+How it was chosen (2026-11-24, Crisp chat): five OFL candidates (Space Grotesk, Familjen Grotesk, Red Hat Display, Bricolage
+Grotesque at width 100 and at 87.5) were rendered on /, /pricing/ and /windows/ at 1280 and 375 wide against Clash Display, with
+heading line counts and the font's own metrics measured. Bricolage Grotesque at width 100, optical size 48 was closest: the
+same line breaks at 1280 (two headings get one line SHORTER at 375, none longer), cap height 0.66 against Clash's 0.67, and
+ink density matched by weight: Clash 500 measures 0.259 ink per glyph area and Bricolage 500 0.266; Clash 600 measures 0.335
+and Bricolage 700 0.326 (Bricolage 600 only 0.297). That is why the 600-700 face is Bricolage's weight 700. Space Grotesk
+was closest in advance width but stayed visibly lighter even at its heaviest (700: 0.279).
+
+The files are static instances of the variable font from github.com/google/fonts (ofl/bricolagegrotesque), pinned with
+fontTools' instancer (wght, wdth 100, opsz 48) and subset to the same basic-Latin range as `dmsans-latin.woff2`; the OFL
+allows both. The licence travels with them as `OFL-BricolageGrotesque.txt`. German, Spanish and Portuguese letters are
+inside that range; Japanese headings fall back to the system stack as before.
 
 ## What it costs
 
