@@ -60,7 +60,9 @@ TOOLS = ["/tools/fit-video-to-size/"]
 COMPARISONS = ["/vs/topaz-alternative-mac/", "/vs/switch-from-topaz-video-ai-to-crisp/", "/vs/unifab-alternative-mac/",
                "/vs/aiarty-video-enhancer-alternative-mac/",
                "/vs/davinci-resolve-super-scale-vs-topaz/",   # autocomplete 2026-11-02: "davinci resolve super scale vs topaz"
-               "/vs/video2x-alternative-mac/"]                # autocomplete 2026-11-02: "video2x for mac", "video2x mac m1"
+               "/vs/video2x-alternative-mac/",                # autocomplete 2026-11-02: "video2x for mac", "video2x mac m1"
+               "/vs/nero-ai-video-upscaler-alternative/",     # SaaSHub lists Crisp as a verified Nero rival (2026-11-24)
+               "/vs/dvdfab-enlarger-ai-alternative/"]         # SaaSHub lists Crisp as a verified DVDFab Enlarger AI rival (2026-11-24)
 LEARN = ["/learn/is-topaz-video-ai-free/", "/learn/what-is-ai-video-upscaling/", "/learn/why-topaz-ended-perpetual-licences/",
          "/learn/why-vhs-tapes-degrade/", "/learn/is-it-safe-to-upload-family-videos-to-an-ai-upscaler/"]
 FOR = ["/for/family-archivists/", "/for/youtubers/"]
