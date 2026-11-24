@@ -172,9 +172,10 @@ class NeroDvdfabComparisonTests(unittest.TestCase):
                 self.assertNotIn('\u2014', page)
 
     def test_unifab_refresh_is_consistent(self):
-        for phrase in ('19-in-1', 'US$319.99', 'US$219.99', '5 computers', 'read on 24 November 2026'):
+        for phrase in ('19 tools', 'US$319.99', 'US$219.99', '5 computers'):
             self.assertIn(phrase, self.reference)
-            self.assertIn(phrase, self.llms)
+            self.assertIn(phrase, self.llms)       # llms.txt's line is generated from the page's description
+        self.assertIn('read on 24 November 2026', self.reference)
         for stale in ('17 tools', '17-tool', '17-in-1', '$229.99', '$319 once', '$319 buys'):
             self.assertNotIn(stale, self.reference)
 
