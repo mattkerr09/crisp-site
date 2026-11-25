@@ -84,7 +84,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{article_ld}</script>
 <script type="application/ld+json">{faq_ld}</script>
-<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>
+<script async src="https://stats.kerrandcompanyholdings.com/js/pa-yP2PMbAAPWj11hXX05VXd.js"></script><script>window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};plausible.init()</script>
 </head>
 <body>
 <nav><div class="wrap nav-inner">

@@ -150,7 +150,7 @@ def gate_cases(generator, origin, lastmod, win_version, en_desc):
         ("default hreflang", "de/preise/index.html", 'hreflang="x-default"', 'hreflang="fr"', "hreflang", True),
         ("missing stylesheet", "de/download/index.html", '<link rel="stylesheet" href="/style.css">', '', "generated German page is stale", True),
         ("changed stylesheet", "de/download/index.html", 'href="/style.css"', 'href="/other.css"', "generated German page is stale", True),
-        ("changed Plausible", "de/index.html", 'src="https://plausible.io/js/script.js"', 'src="/wrong.js"', "script src must preserve", True),
+        ("changed Plausible", "de/index.html", 'src="https://stats.kerrandcompanyholdings.com/js/pa-yP2PMbAAPWj11hXX05VXd.js"', 'src="/wrong.js"', "script src must preserve", True),
         ("missing title marker", "de/index.html", '<title>TODO-DE:', '<title>', "unmarked English", True),
         ("missing description marker", "de/index.html", 'content="TODO-DE: ' + _EN_DESC, 'content="' + _EN_DESC, "unmarked English", True),
         ("changed reference", "de/download/index.html", words.DOWNLOAD['h1'], 'TODO-DE: Wrong reference', "TODO-DE markers", True),

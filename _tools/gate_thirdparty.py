@@ -49,7 +49,9 @@ ROOT = Path(__file__).resolve().parent.parent
 #: identifiers; this is the marketing site, and the policy draws that line.
 #: 2026-11-06: connect.facebook.net REMOVED. Matthew took the Meta pixel off the site ("Remove it"); a page that
 #: loads it again fails here.
-ALLOWED_ON_LOAD = {"crispvideo.app", "plausible.io"}
+#: 2026-11-25: plausible.io REPLACED by stats.kerrandcompanyholdings.com, our own Plausible server (Matthew's
+#: self-hosted swap); a page that loads plausible.io again fails here.
+ALLOWED_ON_LOAD = {"crispvideo.app", "stats.kerrandcompanyholdings.com"}
 
 #: (host, PATH) pairs a visitor may load — and nothing else from that host.
 #:

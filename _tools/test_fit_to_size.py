@@ -163,7 +163,7 @@ def page_checks():
     for label in ['Compress', 'Fit a size']:
         assert re.search(r'>\s*' + re.escape(label) + r'\s*<', ui_text), f'app label absent: {label}'
     checker = (SITE / 'tools/video-checker/index.html').read_text()
-    for tag in ['<script defer data-domain="crispvideo.app" src="https://plausible.io/js/script.js"></script>', '<script src="/track.js" defer></script>']:
+    for tag in ['<script async src="https://stats.kerrandcompanyholdings.com/js/pa-yP2PMbAAPWj11hXX05VXd.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>', '<script src="/track.js" defer></script>']:
         assert tag in page and tag in checker
     for name in ['how-to/compress-video-on-mac', 'how-to/compress-video-for-discord',
                  'best/video-compressor-for-mac', 'learn/email-size-limits-for-video', 'tools/video-checker']:

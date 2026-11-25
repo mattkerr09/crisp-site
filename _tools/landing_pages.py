@@ -109,7 +109,7 @@ def box(src: str, buy_first: bool, platform_swap: bool = False) -> str:
 
 def _analytics_line() -> str:
     import new_pages
-    line = next(l for l in new_pages.HEAD.splitlines() if "plausible.io/js/script.js" in l)
+    line = next(l for l in new_pages.HEAD.splitlines() if "https://stats.kerrandcompanyholdings.com/js/pa-yP2PMbAAPWj11hXX05VXd.js" in l)
     return line.replace("{{", "{").replace("}}", "}")
 
 
