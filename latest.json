@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2193",
-  "notes": "When you trim a clip and press Enhance, Crisp now cuts the original while it enhances instead of saving a re-encoded trim first, so fine detail like lettering and window lines comes through. Trims and other quick edits also keep more of the source's detail. When you reopen Crisp, clips you'd already added no longer show \"can't read\" if Crisp takes a moment to start: they're read again as soon as it's ready. With dust removal, steadied brightness or Keep tape motion on, the preview is now a short clip instead of one frame, so it shows those fixes the way the video will get them. In the sale's last three days, Crisp says once when it opens when the sale ends and what Pro costs after. Screen readers no longer read out a notice after it has left the screen. Black Friday sale: $9.99 once through December 2. Then $29.",
-  "pub_date": "2026-11-24T05:17:35Z",
+  "version": "1.0.2210",
+  "notes": "Scrolling text in screen recordings and rolling credits is no longer softened by mistake: Crisp now checks that footage is really interlaced before it rebuilds frames. Smooth motion has a 4x setting, so a 30 fps clip can play at 120 fps. You can save your Enhance settings as your own presets and pick them again later. The Jobs list stays readable in a narrow window, and the Denoise menu says what Auto will do for the preset you chose.",
+  "pub_date": "2026-11-25T07:20:07Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUdSK1AvN0Vwa2VxQVcwU1ZWQjRHTitrVU5CMVRCcDhqSGZGZ3QrY3hWVUNyVWVxZUJNVTlSVmZNLyt3d3gzRFZRcFU4T1JTSVBhRTRkT0xDbnlBSWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDk1OTMxCWZpbGU6Q3Jpc3AuYXBwLnRhci5negpkZXQwUmtoN2NzOWt0K28yNkRwdlVaV0JDc3JaRTBhTjFGelYrbWUwcU9lOVNVOXE0L0RNTURTYjlrYlMxc2N4bDBSREc2TVVwQ2hmZG9tSGYyaUZEZz09Cg==",
-      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2193.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1IxVWhNRm9xYUxWa1BETEswLzE2MENaZlZjK0ZUOGdHMy9BUEZWbjFOYVhtTkY4TnZLOFNFKzB5SVB0NHVmMjl3QlpYSk42UFZVbEFsT3paRTFNY1poR0VBRS9pK1FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQyNTUwCWZpbGU6Q3Jpc3AuYXBwLnRhci5nego3MUsxc1lKeUI2Qi94VVEvQ2dxbUxjVGVHK3o0V2tYNEV3ZHdKRWk2STNkYXBrdDJQQXBkS2o1M254Z2dCa1FSUnFUbzl2cXUyMGpxNHN6YXdNMmtDQT09Cg==",
+      "url": "https://github.com/mattkerr09/crisp-site/releases/download/v1/Crisp-1.0.2210.app.tar.gz"
     }
   }
 }
