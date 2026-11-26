@@ -4,9 +4,9 @@ document.addEventListener("click", function (e) {
   if (!a) return;
   var href = a.getAttribute("href") || "";
   var name = a.getAttribute("data-track") || (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 40);
-  if (/\/Crisp\.dmg$|\/Crisp-[\d.]+-x64-setup\.exe$/.test(href)) {
+  if (/(?:\/|%2[Ff])Crisp\.dmg(?:[&#?]|$)|(?:\/|%2[Ff])Crisp-[\d.]+-x64-setup\.exe(?:[&#?]|$)/.test(href)) {
     window.plausible("Download", { props: { button: name } });
-    try { crispNextSteps(a, /\.exe$/.test(href)); } catch (err) {}
+    try { crispNextSteps(a, /\.exe(?:[&#?]|$)/.test(href)); } catch (err) {}
   } else if (/^(?:https:\/\/crispvideo\.app)?\/download\/(?:\?|$)/.test(href) && a.getAttribute("data-track")) {
     window.plausible("Download Page", { props: { button: name } });
   } else if (/^https:\/\/(checkout\.dodopayments\.com\/|kerr-affiliate-hub\.kerrco\.workers\.dev\/buy\/)/.test(href)) {
